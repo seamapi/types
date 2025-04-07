@@ -2,6 +2,8 @@ export default {
   components: {
     schemas: {
       access_code: {
+        description:
+          'Represents a smart lock [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nAn access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam Access Code API, you can easily generate access codes on the hundreds of door lock models with which we integrate.\n\nSeam supports programming two types of access codes: [ongoing](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`.\n\nIn addition, for certain devices, Seam also supports [offline access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#offline-access-codes). Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code.',
         properties: {
           access_code_id: {
             description: 'Unique identifier for the access code.',
@@ -40,22 +42,36 @@ export default {
           },
           errors: {
             description:
-              'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
+              'Errors associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
             items: {
               discriminator: { propertyName: 'error_code' },
               oneOf: [
                 {
-                  description: 'Failed to set code on Smart Things device.',
+                  description: 'Failed to set code on SmartThings device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['smartthings_failed_to_set_access_code'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -63,7 +79,12 @@ export default {
                 {
                   description: 'Failed to set code after multiple retries.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -72,8 +93,17 @@ export default {
                       ],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -81,15 +111,29 @@ export default {
                 {
                   description: 'No free slots available on the device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['smartthings_no_free_slots_available'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -97,15 +141,29 @@ export default {
                 {
                   description: 'Failed to set code on device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['failed_to_set_on_device'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -113,15 +171,29 @@ export default {
                 {
                   description: 'Failed to remove code from device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['failed_to_remove_from_device'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -129,15 +201,29 @@ export default {
                 {
                   description: 'Duplicate access code detected on device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['duplicate_code_on_device'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -146,15 +232,29 @@ export default {
                   description:
                     'An attempt to modify this access code was prevented.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['duplicate_code_attempt_prevented'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -163,15 +263,29 @@ export default {
                   description:
                     'Igloohome bridge has too many pending jobs in the queue.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['igloohome_bridge_too_many_pending_jobs'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -179,23 +293,42 @@ export default {
                 {
                   description: 'Igloohome bridge is offline.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['igloohome_bridge_offline'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
                 },
                 {
-                  description: 'Lock as reached max amount of codes.',
+                  description: 'Lock has reached maximum amount of codes.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -204,25 +337,48 @@ export default {
                       ],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
                 },
                 {
                   description:
-                    'Unable to confirm the access code is set on Kwikset device.',
+                    'Unable to confirm that the access code is set on Kwikset device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['kwikset_unable_to_confirm_code'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -231,15 +387,29 @@ export default {
                   description:
                     'Unable to confirm the deletion of the access code on Kwikset device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['kwikset_unable_to_confirm_deletion'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -248,15 +418,29 @@ export default {
                   description:
                     'Code was modified or removed externally after Seam successfully set it on the device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['code_modified_external_to_seam'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -264,15 +448,29 @@ export default {
                 {
                   description: 'Invalid code length for August lock.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['august_lock_invalid_code_length'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -281,15 +479,29 @@ export default {
                   description:
                     'Access code has not yet been fully moved to the device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['august_device_programming_delay'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -297,15 +509,29 @@ export default {
                 {
                   description: 'All access code slots on the device are full.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['august_device_slots_full'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -313,15 +539,29 @@ export default {
                 {
                   description: 'August lock is missing a keypad.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['august_lock_missing_keypad'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -329,15 +569,29 @@ export default {
                 {
                   description: 'August lock is temporarily offline.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['august_lock_temporarily_offline'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -345,15 +599,29 @@ export default {
                 {
                   description: 'Salto site user is not subscribed.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['salto_ks_user_not_subscribed'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -362,15 +630,29 @@ export default {
                   description:
                     'Access code has not yet been fully moved to the device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['hubitat_device_programming_delay'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -378,15 +660,29 @@ export default {
                 {
                   description: 'No free positions available on the device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['hubitat_no_free_positions_available'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -394,15 +690,29 @@ export default {
                 {
                   description: 'Duplicate access code name detected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['wyze_duplicate_code_name'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -410,15 +720,29 @@ export default {
                 {
                   description: 'Potential duplicate access code detected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['wyze_potential_duplicate_code'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -426,15 +750,29 @@ export default {
                 {
                   description: 'No valid user level for Oracode.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['dormakaba_oracode_no_valid_user_level'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -792,12 +1130,12 @@ export default {
           },
           is_offline_access_code: {
             description:
-              'Indicates whether the access code is intended for use in offline scenarios. If "true," this code can be created on a device without a network connection.',
+              'Indicates whether the access code is intended for use in offline scenarios. If `true`, this code can be created on a device without a network connection.',
             type: 'boolean',
           },
           is_one_time_use: {
             description:
-              'Indicates whether the access code can only be used once. If "true," the code becomes invalid after the first use.',
+              'Indicates whether the access code can only be used once. If `true`, the code becomes invalid after the first use.',
             type: 'boolean',
           },
           is_scheduled_on_device: {
@@ -832,27 +1170,38 @@ export default {
           },
           status: {
             description:
-              '\n    Current status of the access code within the operational lifecycle. Values are "setting," a transitional phase that indicates that the code is being configured or activated; "set", which indicates that the code is active and operational; "unset," which indicates a deactivated or unused state, either before activation or after deliberate deactivation; "removing," which indicates a transitional period in which the code is being deleted or made inactive; and "unknown," which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting.\n  ',
+              'Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting.',
             enum: ['setting', 'set', 'unset', 'removing', 'unknown'],
             type: 'string',
           },
           type: {
             description:
-              'Nature of the access code. Values are "ongoing" for access codes that are active continuously until deactivated manually or "time_bound" for access codes that have a specific duration.',
+              'Nature of the access code. Values are `ongoing` for access codes that are active continuously until deactivated manually or `time_bound` for access codes that have a specific duration.',
             enum: ['time_bound', 'ongoing'],
             type: 'string',
           },
           warnings: {
             description:
-              'Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention.',
+              'Warnings associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
             items: {
+              description:
+                'Warnings associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
               discriminator: { propertyName: 'warning_code' },
               oneOf: [
                 {
-                  description: 'Failed to set code on Smart Things device.',
+                  description: 'Failed to set code on SmartThings device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -866,8 +1215,17 @@ export default {
                 {
                   description: 'Duplicate access code detected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -882,8 +1240,17 @@ export default {
                   description:
                     'Received an error when attempting to create this code.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -898,8 +1265,17 @@ export default {
                   description:
                     'Code was modified or removed externally after Seam successfully set it on the device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -913,8 +1289,17 @@ export default {
                 {
                   description: 'Delay in setting code on device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -928,8 +1313,17 @@ export default {
                 {
                   description: 'Delay in removing code from device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -942,10 +1336,19 @@ export default {
                 },
                 {
                   description:
-                    'Third party integration detected that may cause access codes to fail.',
+                    'Third-party integration detected that may cause access codes to fail.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -960,8 +1363,17 @@ export default {
                   description:
                     'Access code has not yet been fully moved to the device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -975,8 +1387,17 @@ export default {
                 {
                   description: 'August lock is temporarily offline.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -990,8 +1411,17 @@ export default {
                 {
                   description: 'Algopins must be used within 24 hours.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -1006,8 +1436,17 @@ export default {
                   description:
                     'Management was transferred to another workspace.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -1020,10 +1459,19 @@ export default {
                 },
                 {
                   description:
-                    'Unable to confirm the access code is set on Kwikset device.',
+                    'Unable to confirm that the access code is set on Kwikset device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -13424,6 +13872,8 @@ export default {
         'x-route-path': '/thermostats/schedules',
       },
       unmanaged_access_code: {
+        description:
+          'Represents an [unmanaged smart lock access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).\n\nAn access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly.\n\nWhen you create an access code on a device in Seam, it is created as a managed access code. Access codes that exist on a device that were not created through Seam are considered unmanaged codes. We strictly limit the operations that can be performed on unmanaged codes.\n\nPrior to using Seam to manage your devices, you may have used another lock management system to manage the access codes on your devices. Where possible, we help you keep any existing access codes on devices and transition those codes to ones managed by your Seam workspace.',
         properties: {
           access_code_id: {
             description: 'Unique identifier for the access code.',
@@ -13456,22 +13906,36 @@ export default {
           },
           errors: {
             description:
-              'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
+              'Errors associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
             items: {
               discriminator: { propertyName: 'error_code' },
               oneOf: [
                 {
-                  description: 'Failed to set code on Smart Things device.',
+                  description: 'Failed to set code on SmartThings device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['smartthings_failed_to_set_access_code'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -13479,7 +13943,12 @@ export default {
                 {
                   description: 'Failed to set code after multiple retries.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -13488,8 +13957,17 @@ export default {
                       ],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -13497,15 +13975,29 @@ export default {
                 {
                   description: 'No free slots available on the device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['smartthings_no_free_slots_available'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -13513,15 +14005,29 @@ export default {
                 {
                   description: 'Failed to set code on device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['failed_to_set_on_device'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -13529,15 +14035,29 @@ export default {
                 {
                   description: 'Failed to remove code from device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['failed_to_remove_from_device'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -13545,15 +14065,29 @@ export default {
                 {
                   description: 'Duplicate access code detected on device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['duplicate_code_on_device'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -13562,15 +14096,29 @@ export default {
                   description:
                     'An attempt to modify this access code was prevented.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['duplicate_code_attempt_prevented'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -13579,15 +14127,29 @@ export default {
                   description:
                     'Igloohome bridge has too many pending jobs in the queue.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['igloohome_bridge_too_many_pending_jobs'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -13595,23 +14157,42 @@ export default {
                 {
                   description: 'Igloohome bridge is offline.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['igloohome_bridge_offline'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
                 },
                 {
-                  description: 'Lock as reached max amount of codes.',
+                  description: 'Lock has reached maximum amount of codes.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -13620,25 +14201,48 @@ export default {
                       ],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
                 },
                 {
                   description:
-                    'Unable to confirm the access code is set on Kwikset device.',
+                    'Unable to confirm that the access code is set on Kwikset device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['kwikset_unable_to_confirm_code'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -13647,15 +14251,29 @@ export default {
                   description:
                     'Unable to confirm the deletion of the access code on Kwikset device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['kwikset_unable_to_confirm_deletion'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -13664,15 +14282,29 @@ export default {
                   description:
                     'Code was modified or removed externally after Seam successfully set it on the device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['code_modified_external_to_seam'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -13680,15 +14312,29 @@ export default {
                 {
                   description: 'Invalid code length for August lock.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['august_lock_invalid_code_length'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -13697,15 +14343,29 @@ export default {
                   description:
                     'Access code has not yet been fully moved to the device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['august_device_programming_delay'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -13713,15 +14373,29 @@ export default {
                 {
                   description: 'All access code slots on the device are full.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['august_device_slots_full'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -13729,15 +14403,29 @@ export default {
                 {
                   description: 'August lock is missing a keypad.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['august_lock_missing_keypad'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -13745,15 +14433,29 @@ export default {
                 {
                   description: 'August lock is temporarily offline.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['august_lock_temporarily_offline'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -13761,15 +14463,29 @@ export default {
                 {
                   description: 'Salto site user is not subscribed.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['salto_ks_user_not_subscribed'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -13778,15 +14494,29 @@ export default {
                   description:
                     'Access code has not yet been fully moved to the device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['hubitat_device_programming_delay'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -13794,15 +14524,29 @@ export default {
                 {
                   description: 'No free positions available on the device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['hubitat_no_free_positions_available'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -13810,15 +14554,29 @@ export default {
                 {
                   description: 'Duplicate access code name detected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['wyze_duplicate_code_name'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -13826,15 +14584,29 @@ export default {
                 {
                   description: 'Potential duplicate access code detected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['wyze_potential_duplicate_code'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -13842,15 +14614,29 @@ export default {
                 {
                   description: 'No valid user level for Oracode.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['dormakaba_oracode_no_valid_user_level'],
                       type: 'string',
                     },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -14187,7 +14973,11 @@ export default {
             },
             type: 'array',
           },
-          is_managed: { enum: [false], type: 'boolean' },
+          is_managed: {
+            description: 'Indicates that Seam does not manage the access code.',
+            enum: [false],
+            type: 'boolean',
+          },
           name: {
             description:
               'Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.',
@@ -14201,24 +14991,40 @@ export default {
             nullable: true,
             type: 'string',
           },
-          status: { enum: ['set'], type: 'string' },
+          status: {
+            description:
+              'Current status of the access code within the operational lifecycle. `set` indicates that the code is active and operational.',
+            enum: ['set'],
+            type: 'string',
+          },
           type: {
             description:
-              'Nature of the access code. Values are "ongoing" for access codes that are active continuously until deactivated manually or "time_bound" for access codes that have a specific duration.',
+              'Nature of the access code. Values are `ongoing` for access codes that are active continuously until deactivated manually or `time_bound` for access codes that have a specific duration.',
             enum: ['time_bound', 'ongoing'],
             type: 'string',
           },
           warnings: {
             description:
-              'Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention.',
+              'Warnings associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
             items: {
+              description:
+                'Warnings associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
               discriminator: { propertyName: 'warning_code' },
               oneOf: [
                 {
-                  description: 'Failed to set code on Smart Things device.',
+                  description: 'Failed to set code on SmartThings device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -14232,8 +15038,17 @@ export default {
                 {
                   description: 'Duplicate access code detected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -14248,8 +15063,17 @@ export default {
                   description:
                     'Received an error when attempting to create this code.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -14264,8 +15088,17 @@ export default {
                   description:
                     'Code was modified or removed externally after Seam successfully set it on the device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -14279,8 +15112,17 @@ export default {
                 {
                   description: 'Delay in setting code on device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -14294,8 +15136,17 @@ export default {
                 {
                   description: 'Delay in removing code from device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -14308,10 +15159,19 @@ export default {
                 },
                 {
                   description:
-                    'Third party integration detected that may cause access codes to fail.',
+                    'Third-party integration detected that may cause access codes to fail.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -14326,8 +15186,17 @@ export default {
                   description:
                     'Access code has not yet been fully moved to the device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -14341,8 +15210,17 @@ export default {
                 {
                   description: 'August lock is temporarily offline.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -14356,8 +15234,17 @@ export default {
                 {
                   description: 'Algopins must be used within 24 hours.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -14372,8 +15259,17 @@ export default {
                   description:
                     'Management was transferred to another workspace.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -14386,10 +15282,19 @@ export default {
                 },
                 {
                   description:
-                    'Unable to confirm the access code is set on Kwikset device.',
+                    'Unable to confirm that the access code is set on Kwikset device.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -16434,40 +17339,98 @@ export default {
   paths: {
     '/access_codes/create': {
       post: {
+        description:
+          'Creates a new [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
         operationId: 'accessCodesCreatePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  allow_external_modification: { type: 'boolean' },
+                  allow_external_modification: {
+                    description:
+                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                    type: 'boolean',
+                  },
                   attempt_for_offline_device: {
                     default: true,
                     type: 'boolean',
                   },
                   code: {
+                    description: 'Code to be used for access.',
                     maxLength: 9,
                     minLength: 4,
                     pattern: '^\\d+$',
                     type: 'string',
                   },
-                  common_code_key: { type: 'string' },
-                  device_id: { format: 'uuid', type: 'string' },
-                  ends_at: { type: 'string' },
-                  is_external_modification_allowed: { type: 'boolean' },
-                  is_offline_access_code: { type: 'boolean' },
-                  is_one_time_use: { type: 'boolean' },
+                  common_code_key: {
+                    description:
+                      'Key to identify access codes that should have the same code. Any two access codes with the same `common_code_key` are guaranteed to have the same `code`. See also [Creating and Updating Multiple Linked Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes).',
+                    type: 'string',
+                  },
+                  device_id: {
+                    description:
+                      'ID of the device for which to create the new access code.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  ends_at: {
+                    description:
+                      'Date and time at which the validity of the new access code ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                    type: 'string',
+                  },
+                  is_external_modification_allowed: {
+                    description:
+                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                    type: 'boolean',
+                  },
+                  is_offline_access_code: {
+                    description:
+                      'Indicates whether the access code is an [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes).',
+                    type: 'boolean',
+                  },
+                  is_one_time_use: {
+                    description:
+                      'Indicates whether the [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) is a single-use access code.',
+                    type: 'boolean',
+                  },
                   max_time_rounding: {
                     default: '1hour',
+                    description:
+                      'Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.',
                     enum: ['1hour', '1day', '1h', '1d'],
                     type: 'string',
                   },
-                  name: { type: 'string' },
-                  prefer_native_scheduling: { type: 'boolean' },
-                  preferred_code_length: { format: 'float', type: 'number' },
-                  starts_at: { type: 'string' },
-                  sync: { default: false, type: 'boolean' },
-                  use_backup_access_code_pool: { type: 'boolean' },
+                  name: {
+                    description: 'Name of the new access code.',
+                    type: 'string',
+                  },
+                  prefer_native_scheduling: {
+                    description:
+                      'Indicates whether [native scheduling](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`.',
+                    type: 'boolean',
+                  },
+                  preferred_code_length: {
+                    description:
+                      'Preferred code length. Only applicable if you do not specify a `code`. If the affected device does not support the preferred code length, Seam reverts to using the shortest supported code length.',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  starts_at: {
+                    description:
+                      'Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                    type: 'string',
+                  },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
+                  use_backup_access_code_pool: {
+                    description:
+                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code).',
+                    type: 'boolean',
+                  },
                   use_offline_access_code: { type: 'boolean' },
                 },
                 required: ['device_id'],
@@ -16511,50 +17474,100 @@ export default {
         'x-fern-sdk-method-name': 'create',
         'x-fern-sdk-return-value': 'access_code',
         'x-response-key': 'access_code',
+        'x-title': 'Create an Access Code',
       },
     },
     '/access_codes/create_multiple': {
       post: {
+        description:
+          'Creates new [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that share a common code across multiple devices.\n\nUsers with more than one door lock in a property may want to create groups of linked access codes, all of which have the same code (PIN). For example, a short-term rental host may want to provide guests the same PIN for both a front door lock and a back door lock.\n\nIf you specify a custom code, Seam assigns this custom code to each of the resulting access codes. However, in this case, Seam does not link these access codes together with a `common_code_key`. That is, `common_code_key` remains null for these access codes.\n\nIf you want to change these access codes that are not linked by a `common_code_key`, you cannot use `/access_codes/update_multiple`. However, you can update each of these access codes individually, using `/access_codes/update`.\n\nSee also [Creating and Updating Multiple Linked Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes).',
         operationId: 'accessCodesCreateMultiplePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  allow_external_modification: { type: 'boolean' },
+                  allow_external_modification: {
+                    description:
+                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                    type: 'boolean',
+                  },
                   attempt_for_offline_device: {
                     default: true,
                     type: 'boolean',
                   },
                   behavior_when_code_cannot_be_shared: {
                     default: 'throw',
+                    description:
+                      'Desired behavior if any device cannot share a code. If `throw` (default), no access codes will be created if any device cannot share a code. If `create_random_code`, a random code will be created on devices that cannot share a code.',
                     enum: ['throw', 'create_random_code'],
                     type: 'string',
                   },
                   code: {
+                    description: 'Code to be used for access.',
                     maxLength: 9,
                     minLength: 4,
                     pattern: '^\\d+$',
                     type: 'string',
                   },
                   device_ids: {
+                    description:
+                      'IDs of the devices for which to create the new access codes.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
-                  ends_at: { type: 'string' },
-                  is_external_modification_allowed: { type: 'boolean' },
-                  is_offline_access_code: { type: 'boolean' },
-                  is_one_time_use: { type: 'boolean' },
+                  ends_at: {
+                    description:
+                      'Date and time at which the validity of the new access code ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                    type: 'string',
+                  },
+                  is_external_modification_allowed: {
+                    description:
+                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                    type: 'boolean',
+                  },
+                  is_offline_access_code: {
+                    description:
+                      'Indicates whether the access code is an [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes).',
+                    type: 'boolean',
+                  },
+                  is_one_time_use: {
+                    description:
+                      'Indicates whether the [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) is a single-use access code.',
+                    type: 'boolean',
+                  },
                   max_time_rounding: {
                     default: '1hour',
+                    description:
+                      'Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.',
                     enum: ['1hour', '1day', '1h', '1d'],
                     type: 'string',
                   },
-                  name: { type: 'string' },
-                  prefer_native_scheduling: { type: 'boolean' },
-                  preferred_code_length: { format: 'float', type: 'number' },
-                  starts_at: { type: 'string' },
-                  use_backup_access_code_pool: { type: 'boolean' },
+                  name: {
+                    description: 'Name of the new access code.',
+                    type: 'string',
+                  },
+                  prefer_native_scheduling: {
+                    description:
+                      'Indicates whether [native scheduling](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`.',
+                    type: 'boolean',
+                  },
+                  preferred_code_length: {
+                    description:
+                      'Preferred code length. Only applicable if you do not specify a `code`. If the affected device does not support the preferred code length, Seam reverts to using the shortest supported code length.',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  starts_at: {
+                    description:
+                      'Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                    type: 'string',
+                  },
+                  use_backup_access_code_pool: {
+                    description:
+                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code).',
+                    type: 'boolean',
+                  },
                   use_offline_access_code: { type: 'boolean' },
                 },
                 required: ['device_ids'],
@@ -16597,48 +17610,98 @@ export default {
         'x-fern-sdk-method-name': 'create_multiple',
         'x-fern-sdk-return-value': 'access_codes',
         'x-response-key': 'access_codes',
+        'x-title': 'Create Multiple Linked Access Codes',
       },
       put: {
+        description:
+          'Creates new [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that share a common code across multiple devices.\n\nUsers with more than one door lock in a property may want to create groups of linked access codes, all of which have the same code (PIN). For example, a short-term rental host may want to provide guests the same PIN for both a front door lock and a back door lock.\n\nIf you specify a custom code, Seam assigns this custom code to each of the resulting access codes. However, in this case, Seam does not link these access codes together with a `common_code_key`. That is, `common_code_key` remains null for these access codes.\n\nIf you want to change these access codes that are not linked by a `common_code_key`, you cannot use `/access_codes/update_multiple`. However, you can update each of these access codes individually, using `/access_codes/update`.\n\nSee also [Creating and Updating Multiple Linked Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes).',
         operationId: 'accessCodesCreateMultiplePut',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  allow_external_modification: { type: 'boolean' },
+                  allow_external_modification: {
+                    description:
+                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                    type: 'boolean',
+                  },
                   attempt_for_offline_device: {
                     default: true,
                     type: 'boolean',
                   },
                   behavior_when_code_cannot_be_shared: {
                     default: 'throw',
+                    description:
+                      'Desired behavior if any device cannot share a code. If `throw` (default), no access codes will be created if any device cannot share a code. If `create_random_code`, a random code will be created on devices that cannot share a code.',
                     enum: ['throw', 'create_random_code'],
                     type: 'string',
                   },
                   code: {
+                    description: 'Code to be used for access.',
                     maxLength: 9,
                     minLength: 4,
                     pattern: '^\\d+$',
                     type: 'string',
                   },
                   device_ids: {
+                    description:
+                      'IDs of the devices for which to create the new access codes.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
-                  ends_at: { type: 'string' },
-                  is_external_modification_allowed: { type: 'boolean' },
-                  is_offline_access_code: { type: 'boolean' },
-                  is_one_time_use: { type: 'boolean' },
+                  ends_at: {
+                    description:
+                      'Date and time at which the validity of the new access code ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                    type: 'string',
+                  },
+                  is_external_modification_allowed: {
+                    description:
+                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                    type: 'boolean',
+                  },
+                  is_offline_access_code: {
+                    description:
+                      'Indicates whether the access code is an [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes).',
+                    type: 'boolean',
+                  },
+                  is_one_time_use: {
+                    description:
+                      'Indicates whether the [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) is a single-use access code.',
+                    type: 'boolean',
+                  },
                   max_time_rounding: {
                     default: '1hour',
+                    description:
+                      'Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.',
                     enum: ['1hour', '1day', '1h', '1d'],
                     type: 'string',
                   },
-                  name: { type: 'string' },
-                  prefer_native_scheduling: { type: 'boolean' },
-                  preferred_code_length: { format: 'float', type: 'number' },
-                  starts_at: { type: 'string' },
-                  use_backup_access_code_pool: { type: 'boolean' },
+                  name: {
+                    description: 'Name of the new access code.',
+                    type: 'string',
+                  },
+                  prefer_native_scheduling: {
+                    description:
+                      'Indicates whether [native scheduling](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`.',
+                    type: 'boolean',
+                  },
+                  preferred_code_length: {
+                    description:
+                      'Preferred code length. Only applicable if you do not specify a `code`. If the affected device does not support the preferred code length, Seam reverts to using the shortest supported code length.',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  starts_at: {
+                    description:
+                      'Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                    type: 'string',
+                  },
+                  use_backup_access_code_pool: {
+                    description:
+                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code).',
+                    type: 'boolean',
+                  },
                   use_offline_access_code: { type: 'boolean' },
                 },
                 required: ['device_ids'],
@@ -16679,19 +17742,35 @@ export default {
         tags: ['/access_codes'],
         'x-fern-ignore': true,
         'x-response-key': 'access_codes',
+        'x-title': 'Create Multiple Linked Access Codes',
       },
     },
     '/access_codes/delete': {
       post: {
+        description:
+          'Deletes an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
         operationId: 'accessCodesDeletePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  access_code_id: { format: 'uuid', type: 'string' },
-                  device_id: { format: 'uuid', type: 'string' },
-                  sync: { default: false, type: 'boolean' },
+                  access_code_id: {
+                    description: 'ID of the access code to delete.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  device_id: {
+                    description:
+                      'ID of the device for which to delete the access code.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
                 },
                 required: ['access_code_id'],
                 type: 'object',
@@ -16732,6 +17811,7 @@ export default {
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
+        'x-title': 'Delete an Access Code',
       },
     },
     '/access_codes/generate_code': {
@@ -16785,15 +17865,31 @@ export default {
     },
     '/access_codes/get': {
       post: {
+        description:
+          'Returns a specified [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nYou must specify either `access_code_id` or both `device_id` and `code`.',
         operationId: 'accessCodesGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  access_code_id: { format: 'uuid', type: 'string' },
-                  code: { type: 'string' },
-                  device_id: { format: 'uuid', type: 'string' },
+                  access_code_id: {
+                    description:
+                      'ID of the access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  code: {
+                    description:
+                      'Code of the access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.',
+                    type: 'string',
+                  },
+                  device_id: {
+                    description:
+                      'ID of the device containing the access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -16831,10 +17927,13 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'access_code',
         'x-response-key': 'access_code',
+        'x-title': 'Get an Access Code',
       },
     },
     '/access_codes/list': {
       post: {
+        description:
+          'Returns a list of all [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nSpecify either `device_id` or `access_code_ids`.',
         operationId: 'accessCodesListPost',
         requestBody: {
           content: {
@@ -16842,11 +17941,22 @@ export default {
               schema: {
                 properties: {
                   access_code_ids: {
+                    description:
+                      'IDs of the access codes that you want to retrieve. Specify either `device_id` or `access_code_ids`.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
-                  device_id: { format: 'uuid', type: 'string' },
-                  user_identifier_key: { type: 'string' },
+                  device_id: {
+                    description:
+                      'ID of the device for which you want to list access codes. Specify either `device_id` or `access_code_ids`.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identifier_key: {
+                    description:
+                      'Your user ID for the user by which to filter access codes.',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -16887,19 +17997,25 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'access_codes',
         'x-response-key': 'access_codes',
+        'x-title': 'List Access Codes',
       },
     },
     '/access_codes/pull_backup_access_code': {
       post: {
         description:
-          'Retrieves a backup access code for an access code. See also [Managing Backup Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes).',
+          "Retrieves a backup access code for an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). See also [Managing Backup Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes).\n\nA backup access code pool is a collection of pre-programmed access codes stored on a device, ready for use. These codes are programmed in addition to the regular access codes on Seam, serving as a safety net for any issues with the primary codes.\n\nIf there's ever a complication with a primary access code—be it due to intermittent connectivity, manual removal from a device, or provider outages—a backup code can be retrieved. Its end time can then be adjusted to align with the original code, facilitating seamless and uninterrupted access.\n\nYou can only pull backup access codes for time-bound access codes.\n\nBefore pulling a backup access code, make sure that the device's `properties.supports_backup_access_code_pool` is `true`. Then, to activate the backup pool, set `use_backup_access_code_pool` to `true` when creating an access code.",
         operationId: 'accessCodesPullBackupAccessCodePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  access_code_id: { format: 'uuid', type: 'string' },
+                  access_code_id: {
+                    description:
+                      'ID of the access code for which you want to pull a backup access code.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['access_code_id'],
                 type: 'object',
@@ -16941,10 +18057,13 @@ export default {
         'x-fern-sdk-method-name': 'pull_backup_access_code',
         'x-fern-sdk-return-value': 'access_code',
         'x-response-key': 'access_code',
+        'x-title': 'Pull a Backup Access Code',
       },
     },
     '/access_codes/simulate/create_unmanaged_access_code': {
       post: {
+        description:
+          'Simulates the creation of an [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) in a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).',
         operationId: 'accessCodesSimulateCreateUnmanagedAccessCodePost',
         requestBody: {
           content: {
@@ -16952,13 +18071,22 @@ export default {
               schema: {
                 properties: {
                   code: {
+                    description: 'Code of the simulated unmanaged access code.',
                     maxLength: 8,
                     minLength: 4,
                     pattern: '^\\d+$',
                     type: 'string',
                   },
-                  device_id: { format: 'uuid', type: 'string' },
-                  name: { type: 'string' },
+                  device_id: {
+                    description:
+                      'ID of the device for which you want to simulate the creation of an unmanaged access code.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  name: {
+                    description: 'Name of the simulated unmanaged access code.',
+                    type: 'string',
+                  },
                 },
                 required: ['device_id', 'name', 'code'],
                 type: 'object',
@@ -16999,21 +18127,45 @@ export default {
         'x-fern-sdk-method-name': 'create_unmanaged_access_code',
         'x-fern-sdk-return-value': 'access_code',
         'x-response-key': 'access_code',
+        'x-title': 'Simulate Creating an Unmanaged Access Code',
       },
     },
     '/access_codes/unmanaged/convert_to_managed': {
       patch: {
+        description:
+          'Converts an [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) to an [access code managed through Seam](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nAn unmanaged access code has a limited set of operations that you can perform on it. Once you convert an unmanaged access code to a managed access code, the full set of access code operations and lifecycle events becomes available for it.\n\nNote that not all device providers support converting an unmanaged access code to a managed access code.',
         operationId: 'accessCodesUnmanagedConvertToManagedPatch',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  access_code_id: { format: 'uuid', type: 'string' },
-                  allow_external_modification: { type: 'boolean' },
-                  force: { type: 'boolean' },
-                  is_external_modification_allowed: { type: 'boolean' },
-                  sync: { default: false, type: 'boolean' },
+                  access_code_id: {
+                    description:
+                      'ID of the unmanaged access code that you want to convert to a managed access code.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  allow_external_modification: {
+                    description:
+                      'Indicates whether external modification of the access code is allowed.',
+                    type: 'boolean',
+                  },
+                  force: {
+                    description:
+                      'Indicates whether to force the access code conversion. To switch management of an access code from one Seam workspace to another, set `force` to `true`.',
+                    type: 'boolean',
+                  },
+                  is_external_modification_allowed: {
+                    description:
+                      'Indicates whether external modification of the access code is allowed.',
+                    type: 'boolean',
+                  },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
                 },
                 required: ['access_code_id'],
                 type: 'object',
@@ -17048,19 +18200,43 @@ export default {
         'x-action-attempt-type': 'CONVERT_ACCESS_CODE_TO_MANAGED',
         'x-fern-ignore': true,
         'x-response-key': null,
+        'x-title': 'Convert an Unmanaged Access Code',
       },
       post: {
+        description:
+          'Converts an [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) to an [access code managed through Seam](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nAn unmanaged access code has a limited set of operations that you can perform on it. Once you convert an unmanaged access code to a managed access code, the full set of access code operations and lifecycle events becomes available for it.\n\nNote that not all device providers support converting an unmanaged access code to a managed access code.',
         operationId: 'accessCodesUnmanagedConvertToManagedPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  access_code_id: { format: 'uuid', type: 'string' },
-                  allow_external_modification: { type: 'boolean' },
-                  force: { type: 'boolean' },
-                  is_external_modification_allowed: { type: 'boolean' },
-                  sync: { default: false, type: 'boolean' },
+                  access_code_id: {
+                    description:
+                      'ID of the unmanaged access code that you want to convert to a managed access code.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  allow_external_modification: {
+                    description:
+                      'Indicates whether external modification of the access code is allowed.',
+                    type: 'boolean',
+                  },
+                  force: {
+                    description:
+                      'Indicates whether to force the access code conversion. To switch management of an access code from one Seam workspace to another, set `force` to `true`.',
+                    type: 'boolean',
+                  },
+                  is_external_modification_allowed: {
+                    description:
+                      'Indicates whether external modification of the access code is allowed.',
+                    type: 'boolean',
+                  },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
                 },
                 required: ['access_code_id'],
                 type: 'object',
@@ -17096,18 +18272,29 @@ export default {
         'x-fern-sdk-group-name': ['access_codes', 'unmanaged'],
         'x-fern-sdk-method-name': 'convert_to_managed',
         'x-response-key': null,
+        'x-title': 'Convert an Unmanaged Access Code',
       },
     },
     '/access_codes/unmanaged/delete': {
       post: {
+        description:
+          'Deletes an [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).',
         operationId: 'accessCodesUnmanagedDeletePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  access_code_id: { format: 'uuid', type: 'string' },
-                  sync: { default: false, type: 'boolean' },
+                  access_code_id: {
+                    description: 'ID of the unmanaged access code to delete.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
                 },
                 required: ['access_code_id'],
                 type: 'object',
@@ -17148,19 +18335,36 @@ export default {
         'x-fern-sdk-group-name': ['access_codes', 'unmanaged'],
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
+        'x-title': 'Delete an Unmanaged Access Code',
       },
     },
     '/access_codes/unmanaged/get': {
       post: {
+        description:
+          'Returns a specified [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).\n\nYou must specify either `access_code_id` or both `device_id` and `code`.',
         operationId: 'accessCodesUnmanagedGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  access_code_id: { format: 'uuid', type: 'string' },
-                  code: { type: 'string' },
-                  device_id: { format: 'uuid', type: 'string' },
+                  access_code_id: {
+                    description:
+                      'ID of the unmanaged access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  code: {
+                    description:
+                      'Code of the unmanaged access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.',
+                    type: 'string',
+                  },
+                  device_id: {
+                    description:
+                      'ID of the device containing the unmanaged access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -17200,18 +18404,30 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'access_code',
         'x-response-key': 'access_code',
+        'x-title': 'Get an Unmanaged Access Code',
       },
     },
     '/access_codes/unmanaged/list': {
       post: {
+        description:
+          'Returns a list of all [unmanaged access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).',
         operationId: 'accessCodesUnmanagedListPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
-                  user_identifier_key: { type: 'string' },
+                  device_id: {
+                    description:
+                      'ID of the device for which you want to list unmanaged access codes.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identifier_key: {
+                    description:
+                      'Your user ID for the user by which to filter unmanaged access codes.',
+                    type: 'string',
+                  },
                 },
                 required: ['device_id'],
                 type: 'object',
@@ -17255,20 +18471,40 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'access_codes',
         'x-response-key': 'access_codes',
+        'x-title': 'List Unmanaged Access Codes',
       },
     },
     '/access_codes/unmanaged/update': {
       patch: {
+        description:
+          'Updates a specified [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).',
         operationId: 'accessCodesUnmanagedUpdatePatch',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  access_code_id: { format: 'uuid', type: 'string' },
-                  allow_external_modification: { type: 'boolean' },
-                  force: { type: 'boolean' },
-                  is_external_modification_allowed: { type: 'boolean' },
+                  access_code_id: {
+                    description:
+                      'ID of the unmanaged access code that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  allow_external_modification: {
+                    description:
+                      'Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed.',
+                    type: 'boolean',
+                  },
+                  force: {
+                    description:
+                      'Indicates whether to force the unmanaged access code update.',
+                    type: 'boolean',
+                  },
+                  is_external_modification_allowed: {
+                    description:
+                      'Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed.',
+                    type: 'boolean',
+                  },
                   is_managed: { type: 'boolean' },
                 },
                 required: ['access_code_id', 'is_managed'],
@@ -17303,18 +18539,38 @@ export default {
         tags: ['/access_codes'],
         'x-fern-ignore': true,
         'x-response-key': null,
+        'x-title': 'Update an Unmanaged Access Code',
       },
       post: {
+        description:
+          'Updates a specified [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).',
         operationId: 'accessCodesUnmanagedUpdatePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  access_code_id: { format: 'uuid', type: 'string' },
-                  allow_external_modification: { type: 'boolean' },
-                  force: { type: 'boolean' },
-                  is_external_modification_allowed: { type: 'boolean' },
+                  access_code_id: {
+                    description:
+                      'ID of the unmanaged access code that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  allow_external_modification: {
+                    description:
+                      'Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed.',
+                    type: 'boolean',
+                  },
+                  force: {
+                    description:
+                      'Indicates whether to force the unmanaged access code update.',
+                    type: 'boolean',
+                  },
+                  is_external_modification_allowed: {
+                    description:
+                      'Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed.',
+                    type: 'boolean',
+                  },
                   is_managed: { type: 'boolean' },
                 },
                 required: ['access_code_id', 'is_managed'],
@@ -17350,46 +18606,115 @@ export default {
         'x-fern-sdk-group-name': ['access_codes', 'unmanaged'],
         'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
+        'x-title': 'Update an Unmanaged Access Code',
       },
     },
     '/access_codes/update': {
       patch: {
+        description:
+          'Updates a specified active or upcoming [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nSee also [Modifying Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/modifying-access-codes).',
         operationId: 'accessCodesUpdatePatch',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  access_code_id: { format: 'uuid', type: 'string' },
-                  allow_external_modification: { type: 'boolean' },
+                  access_code_id: {
+                    description:
+                      'ID of the access code that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  allow_external_modification: {
+                    description:
+                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                    type: 'boolean',
+                  },
                   attempt_for_offline_device: {
                     default: true,
                     type: 'boolean',
                   },
                   code: {
+                    description: 'Code to be used for access.',
                     maxLength: 9,
                     minLength: 4,
                     pattern: '^\\d+$',
                     type: 'string',
                   },
-                  device_id: { format: 'uuid', type: 'string' },
-                  ends_at: { type: 'string' },
-                  is_external_modification_allowed: { type: 'boolean' },
-                  is_managed: { type: 'boolean' },
-                  is_offline_access_code: { type: 'boolean' },
-                  is_one_time_use: { type: 'boolean' },
+                  device_id: {
+                    description:
+                      'ID of the device containing the access code that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  ends_at: {
+                    description:
+                      'Date and time at which the validity of the new access code ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                    type: 'string',
+                  },
+                  is_external_modification_allowed: {
+                    description:
+                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                    type: 'boolean',
+                  },
+                  is_managed: {
+                    description:
+                      'Indicates whether the access code is managed through Seam. Note that to convert an unmanaged access code into a managed access code, use `/access_codes/unmanaged/convert_to_managed`.',
+                    type: 'boolean',
+                  },
+                  is_offline_access_code: {
+                    description:
+                      'Indicates whether the access code is an [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes).',
+                    type: 'boolean',
+                  },
+                  is_one_time_use: {
+                    description:
+                      'Indicates whether the [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) is a single-use access code.',
+                    type: 'boolean',
+                  },
                   max_time_rounding: {
                     default: '1hour',
+                    description:
+                      'Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.',
                     enum: ['1hour', '1day', '1h', '1d'],
                     type: 'string',
                   },
-                  name: { type: 'string' },
-                  prefer_native_scheduling: { type: 'boolean' },
-                  preferred_code_length: { format: 'float', type: 'number' },
-                  starts_at: { type: 'string' },
-                  sync: { default: false, type: 'boolean' },
-                  type: { enum: ['ongoing', 'time_bound'], type: 'string' },
-                  use_backup_access_code_pool: { type: 'boolean' },
+                  name: {
+                    description: 'Name of the new access code.',
+                    type: 'string',
+                  },
+                  prefer_native_scheduling: {
+                    description:
+                      'Indicates whether [native scheduling](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`.',
+                    type: 'boolean',
+                  },
+                  preferred_code_length: {
+                    description:
+                      'Preferred code length. Only applicable if you do not specify a `code`. If the affected device does not support the preferred code length, Seam reverts to using the shortest supported code length.',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  starts_at: {
+                    description:
+                      'Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                    type: 'string',
+                  },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
+                  type: {
+                    description:
+                      'Type to which you want to convert the access code. To convert a time-bound access code to an ongoing access code, set `type` to `ongoing`. See also [Changing a time-bound access code to permanent access](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/modifying-access-codes#special-case-2-changing-a-time-bound-access-code-to-permanent-access).',
+                    enum: ['ongoing', 'time_bound'],
+                    type: 'string',
+                  },
+                  use_backup_access_code_pool: {
+                    description:
+                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code).',
+                    type: 'boolean',
+                  },
                   use_offline_access_code: { type: 'boolean' },
                 },
                 required: ['access_code_id'],
@@ -17430,44 +18755,113 @@ export default {
         'x-action-attempt-type': 'UPDATE_ACCESS_CODE',
         'x-fern-ignore': true,
         'x-response-key': null,
+        'x-title': 'Update an Access Code',
       },
       post: {
+        description:
+          'Updates a specified active or upcoming [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nSee also [Modifying Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/modifying-access-codes).',
         operationId: 'accessCodesUpdatePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  access_code_id: { format: 'uuid', type: 'string' },
-                  allow_external_modification: { type: 'boolean' },
+                  access_code_id: {
+                    description:
+                      'ID of the access code that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  allow_external_modification: {
+                    description:
+                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                    type: 'boolean',
+                  },
                   attempt_for_offline_device: {
                     default: true,
                     type: 'boolean',
                   },
                   code: {
+                    description: 'Code to be used for access.',
                     maxLength: 9,
                     minLength: 4,
                     pattern: '^\\d+$',
                     type: 'string',
                   },
-                  device_id: { format: 'uuid', type: 'string' },
-                  ends_at: { type: 'string' },
-                  is_external_modification_allowed: { type: 'boolean' },
-                  is_managed: { type: 'boolean' },
-                  is_offline_access_code: { type: 'boolean' },
-                  is_one_time_use: { type: 'boolean' },
+                  device_id: {
+                    description:
+                      'ID of the device containing the access code that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  ends_at: {
+                    description:
+                      'Date and time at which the validity of the new access code ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                    type: 'string',
+                  },
+                  is_external_modification_allowed: {
+                    description:
+                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                    type: 'boolean',
+                  },
+                  is_managed: {
+                    description:
+                      'Indicates whether the access code is managed through Seam. Note that to convert an unmanaged access code into a managed access code, use `/access_codes/unmanaged/convert_to_managed`.',
+                    type: 'boolean',
+                  },
+                  is_offline_access_code: {
+                    description:
+                      'Indicates whether the access code is an [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes).',
+                    type: 'boolean',
+                  },
+                  is_one_time_use: {
+                    description:
+                      'Indicates whether the [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) is a single-use access code.',
+                    type: 'boolean',
+                  },
                   max_time_rounding: {
                     default: '1hour',
+                    description:
+                      'Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.',
                     enum: ['1hour', '1day', '1h', '1d'],
                     type: 'string',
                   },
-                  name: { type: 'string' },
-                  prefer_native_scheduling: { type: 'boolean' },
-                  preferred_code_length: { format: 'float', type: 'number' },
-                  starts_at: { type: 'string' },
-                  sync: { default: false, type: 'boolean' },
-                  type: { enum: ['ongoing', 'time_bound'], type: 'string' },
-                  use_backup_access_code_pool: { type: 'boolean' },
+                  name: {
+                    description: 'Name of the new access code.',
+                    type: 'string',
+                  },
+                  prefer_native_scheduling: {
+                    description:
+                      'Indicates whether [native scheduling](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`.',
+                    type: 'boolean',
+                  },
+                  preferred_code_length: {
+                    description:
+                      'Preferred code length. Only applicable if you do not specify a `code`. If the affected device does not support the preferred code length, Seam reverts to using the shortest supported code length.',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  starts_at: {
+                    description:
+                      'Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                    type: 'string',
+                  },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
+                  type: {
+                    description:
+                      'Type to which you want to convert the access code. To convert a time-bound access code to an ongoing access code, set `type` to `ongoing`. See also [Changing a time-bound access code to permanent access](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/modifying-access-codes#special-case-2-changing-a-time-bound-access-code-to-permanent-access).',
+                    enum: ['ongoing', 'time_bound'],
+                    type: 'string',
+                  },
+                  use_backup_access_code_pool: {
+                    description:
+                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code).',
+                    type: 'boolean',
+                  },
                   use_offline_access_code: { type: 'boolean' },
                 },
                 required: ['access_code_id'],
@@ -17509,44 +18903,113 @@ export default {
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
+        'x-title': 'Update an Access Code',
       },
       put: {
+        description:
+          'Updates a specified active or upcoming [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nSee also [Modifying Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/modifying-access-codes).',
         operationId: 'accessCodesUpdatePut',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  access_code_id: { format: 'uuid', type: 'string' },
-                  allow_external_modification: { type: 'boolean' },
+                  access_code_id: {
+                    description:
+                      'ID of the access code that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  allow_external_modification: {
+                    description:
+                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                    type: 'boolean',
+                  },
                   attempt_for_offline_device: {
                     default: true,
                     type: 'boolean',
                   },
                   code: {
+                    description: 'Code to be used for access.',
                     maxLength: 9,
                     minLength: 4,
                     pattern: '^\\d+$',
                     type: 'string',
                   },
-                  device_id: { format: 'uuid', type: 'string' },
-                  ends_at: { type: 'string' },
-                  is_external_modification_allowed: { type: 'boolean' },
-                  is_managed: { type: 'boolean' },
-                  is_offline_access_code: { type: 'boolean' },
-                  is_one_time_use: { type: 'boolean' },
+                  device_id: {
+                    description:
+                      'ID of the device containing the access code that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  ends_at: {
+                    description:
+                      'Date and time at which the validity of the new access code ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                    type: 'string',
+                  },
+                  is_external_modification_allowed: {
+                    description:
+                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                    type: 'boolean',
+                  },
+                  is_managed: {
+                    description:
+                      'Indicates whether the access code is managed through Seam. Note that to convert an unmanaged access code into a managed access code, use `/access_codes/unmanaged/convert_to_managed`.',
+                    type: 'boolean',
+                  },
+                  is_offline_access_code: {
+                    description:
+                      'Indicates whether the access code is an [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes).',
+                    type: 'boolean',
+                  },
+                  is_one_time_use: {
+                    description:
+                      'Indicates whether the [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) is a single-use access code.',
+                    type: 'boolean',
+                  },
                   max_time_rounding: {
                     default: '1hour',
+                    description:
+                      'Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.',
                     enum: ['1hour', '1day', '1h', '1d'],
                     type: 'string',
                   },
-                  name: { type: 'string' },
-                  prefer_native_scheduling: { type: 'boolean' },
-                  preferred_code_length: { format: 'float', type: 'number' },
-                  starts_at: { type: 'string' },
-                  sync: { default: false, type: 'boolean' },
-                  type: { enum: ['ongoing', 'time_bound'], type: 'string' },
-                  use_backup_access_code_pool: { type: 'boolean' },
+                  name: {
+                    description: 'Name of the new access code.',
+                    type: 'string',
+                  },
+                  prefer_native_scheduling: {
+                    description:
+                      'Indicates whether [native scheduling](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`.',
+                    type: 'boolean',
+                  },
+                  preferred_code_length: {
+                    description:
+                      'Preferred code length. Only applicable if you do not specify a `code`. If the affected device does not support the preferred code length, Seam reverts to using the shortest supported code length.',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  starts_at: {
+                    description:
+                      'Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                    type: 'string',
+                  },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
+                  type: {
+                    description:
+                      'Type to which you want to convert the access code. To convert a time-bound access code to an ongoing access code, set `type` to `ongoing`. See also [Changing a time-bound access code to permanent access](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/modifying-access-codes#special-case-2-changing-a-time-bound-access-code-to-permanent-access).',
+                    enum: ['ongoing', 'time_bound'],
+                    type: 'string',
+                  },
+                  use_backup_access_code_pool: {
+                    description:
+                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code).',
+                    type: 'boolean',
+                  },
                   use_offline_access_code: { type: 'boolean' },
                 },
                 required: ['access_code_id'],
@@ -17587,20 +19050,38 @@ export default {
         'x-action-attempt-type': 'UPDATE_ACCESS_CODE',
         'x-fern-ignore': true,
         'x-response-key': null,
+        'x-title': 'Update an Access Code',
       },
     },
     '/access_codes/update_multiple': {
       patch: {
+        description:
+          'Updates [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that share a common code across multiple devices.\n\nSpecify the `common_code_key` to identify the set of access codes that you want to update.\n\nSee also [Update Linked Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes#update-linked-access-codes).',
         operationId: 'accessCodesUpdateMultiplePatch',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  common_code_key: { type: 'string' },
-                  ends_at: { type: 'string' },
-                  name: { type: 'string' },
-                  starts_at: { type: 'string' },
+                  common_code_key: {
+                    description:
+                      'Key that links the group of access codes, assigned on creation by `/access_codes/create_multiple`.',
+                    type: 'string',
+                  },
+                  ends_at: {
+                    description:
+                      'Date and time at which the validity of the new access code ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                    type: 'string',
+                  },
+                  name: {
+                    description: 'Name of the new access code.',
+                    type: 'string',
+                  },
+                  starts_at: {
+                    description:
+                      'Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                    type: 'string',
+                  },
                 },
                 required: ['common_code_key'],
                 type: 'object',
@@ -17634,18 +19115,36 @@ export default {
         tags: ['/access_codes'],
         'x-fern-ignore': true,
         'x-response-key': null,
+        'x-title': 'Update Multiple Linked Access Codes',
       },
       post: {
+        description:
+          'Updates [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that share a common code across multiple devices.\n\nSpecify the `common_code_key` to identify the set of access codes that you want to update.\n\nSee also [Update Linked Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes#update-linked-access-codes).',
         operationId: 'accessCodesUpdateMultiplePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  common_code_key: { type: 'string' },
-                  ends_at: { type: 'string' },
-                  name: { type: 'string' },
-                  starts_at: { type: 'string' },
+                  common_code_key: {
+                    description:
+                      'Key that links the group of access codes, assigned on creation by `/access_codes/create_multiple`.',
+                    type: 'string',
+                  },
+                  ends_at: {
+                    description:
+                      'Date and time at which the validity of the new access code ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                    type: 'string',
+                  },
+                  name: {
+                    description: 'Name of the new access code.',
+                    type: 'string',
+                  },
+                  starts_at: {
+                    description:
+                      'Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                    type: 'string',
+                  },
                 },
                 required: ['common_code_key'],
                 type: 'object',
@@ -17680,6 +19179,7 @@ export default {
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'update_multiple',
         'x-response-key': null,
+        'x-title': 'Update Multiple Linked Access Codes',
       },
     },
     '/acs/access_groups/add_user': {

@@ -4,22 +4,37 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the device for which to create the new access code. */
       device_id: string
+      /** Name of the new access code. */
       name?: string | undefined
+      /** Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       starts_at?: string | undefined
+      /** Date and time at which the validity of the new access code ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
       ends_at?: string | undefined
+      /** Code to be used for access. */
       code?: string | undefined
+      /**  */
       sync?: boolean
       attempt_for_offline_device?: boolean
+      /** Key to identify access codes that should have the same code. Any two access codes with the same `common_code_key` are guaranteed to have the same `code`. See also [Creating and Updating Multiple Linked Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes). */
       common_code_key?: string | undefined
+      /** Indicates whether [native scheduling](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`. */
       prefer_native_scheduling?: boolean | undefined
+      /** Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code). */
       use_backup_access_code_pool?: boolean | undefined
+      /** Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`. */
       allow_external_modification?: boolean | undefined
+      /** Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`. */
       is_external_modification_allowed?: boolean | undefined
+      /** Preferred code length. Only applicable if you do not specify a `code`. If the affected device does not support the preferred code length, Seam reverts to using the shortest supported code length. */
       preferred_code_length?: number | undefined
       use_offline_access_code?: boolean | undefined
+      /** Indicates whether the access code is an [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes). */
       is_offline_access_code?: boolean | undefined
+      /** Indicates whether the [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) is a single-use access code. */
       is_one_time_use?: boolean | undefined
+      /** Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`. */
       max_time_rounding?: '1hour' | '1day' | '1h' | '1d'
     }
     commonParams: {}
@@ -1143,13 +1158,19 @@ export interface Routes {
               message: string
             }
           }
-      /**  */
+      /** Represents a smart lock [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+    
+    An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam Access Code API, you can easily generate access codes on the hundreds of door lock models with which we integrate.
+    
+    Seam supports programming two types of access codes: [ongoing](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`.
+    
+    In addition, for certain devices, Seam also supports [offline access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#offline-access-codes). Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code. */
       access_code: {
         /** Unique identifier for a group of access codes that share the same code. */
         common_code_key: string | null
         /** Indicates whether the code is set on the device according to a preconfigured schedule. */
         is_scheduled_on_device?: boolean | undefined
-        /** Nature of the access code. Values are "ongoing" for access codes that are active continuously until deactivated manually or "time_bound" for access codes that have a specific duration. */
+        /** Nature of the access code. Values are `ongoing` for access codes that are active continuously until deactivated manually or `time_bound` for access codes that have a specific duration. */
         type: 'time_bound' | 'ongoing'
         /** Indicates whether the access code is waiting for a code assignment. */
         is_waiting_for_code_assignment?: boolean | undefined
@@ -1163,172 +1184,244 @@ export interface Routes {
         code: string | null
         /** Date and time at which the access code was created. */
         created_at: string
-        /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+        /** Errors associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
         errors: Array<
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_access_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_after_multiple_retries'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_no_free_slots_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_remove_from_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_on_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_attempt_prevented'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_too_many_pending_jobs'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_offline'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_offline_access_code_no_variance_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_deletion'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'code_modified_external_to_seam'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_invalid_code_length'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_programming_delay'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_slots_full'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_keypad'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_temporarily_offline'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_user_not_subscribed'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_device_programming_delay'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'wyze_duplicate_code_name'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'wyze_potential_duplicate_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'dormakaba_oracode_no_valid_user_level'
@@ -1445,76 +1538,100 @@ export interface Routes {
               error_code: 'bridge_disconnected'
             }
         >
-        /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
+        /** Warnings associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
         warnings: Array<
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'smartthings_failed_to_set_access_code'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_setting_on_device'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_lock_temporarily_offline'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'igloo_algopin_must_be_used_within_24_hours'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'kwikset_unable_to_confirm_code'
@@ -1526,9 +1643,7 @@ export interface Routes {
         starts_at?: (string | null) | undefined
         /** Date and time after which the time-bound access code becomes inactive. */
         ends_at?: (string | null) | undefined
-        /**
-            Current status of the access code within the operational lifecycle. Values are "setting," a transitional phase that indicates that the code is being configured or activated; "set", which indicates that the code is active and operational; "unset," which indicates a deactivated or unused state, either before activation or after deliberate deactivation; "removing," which indicates a transitional period in which the code is being deleted or made inactive; and "unknown," which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting.
-           */
+        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. */
         status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         /** Indicates whether a backup access code is available for use if the primary access code is lost or compromised. */
         is_backup_access_code_available: boolean
@@ -1538,9 +1653,9 @@ export interface Routes {
         pulled_backup_access_code_id?: (string | null) | undefined
         /** Indicates whether changes to the access code from external sources are permitted. */
         is_external_modification_allowed: boolean
-        /** Indicates whether the access code can only be used once. If "true," the code becomes invalid after the first use. */
+        /** Indicates whether the access code can only be used once. If `true`, the code becomes invalid after the first use. */
         is_one_time_use: boolean
-        /** Indicates whether the access code is intended for use in offline scenarios. If "true," this code can be created on a device without a network connection. */
+        /** Indicates whether the access code is intended for use in offline scenarios. If `true`, this code can be created on a device without a network connection. */
         is_offline_access_code: boolean
       }
     }
@@ -1550,21 +1665,35 @@ export interface Routes {
     method: 'POST' | 'PUT'
     queryParams: {}
     jsonBody: {
+      /** IDs of the devices for which to create the new access codes. */
       device_ids: string[]
+      /** Desired behavior if any device cannot share a code. If `throw` (default), no access codes will be created if any device cannot share a code. If `create_random_code`, a random code will be created on devices that cannot share a code. */
       behavior_when_code_cannot_be_shared?: 'throw' | 'create_random_code'
+      /** Preferred code length. Only applicable if you do not specify a `code`. If the affected device does not support the preferred code length, Seam reverts to using the shortest supported code length. */
       preferred_code_length?: number | undefined
+      /** Name of the new access code. */
       name?: string | undefined
+      /** Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       starts_at?: string | undefined
+      /** Date and time at which the validity of the new access code ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
       ends_at?: string | undefined
+      /** Code to be used for access. */
       code?: string | undefined
       attempt_for_offline_device?: boolean
+      /** Indicates whether [native scheduling](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`. */
       prefer_native_scheduling?: boolean | undefined
+      /** Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code). */
       use_backup_access_code_pool?: boolean | undefined
+      /** Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`. */
       allow_external_modification?: boolean | undefined
+      /** Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`. */
       is_external_modification_allowed?: boolean | undefined
       use_offline_access_code?: boolean | undefined
+      /** Indicates whether the access code is an [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes). */
       is_offline_access_code?: boolean | undefined
+      /** Indicates whether the [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) is a single-use access code. */
       is_one_time_use?: boolean | undefined
+      /** Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`. */
       max_time_rounding?: '1hour' | '1day' | '1h' | '1d'
     }
     commonParams: {}
@@ -1575,7 +1704,7 @@ export interface Routes {
         common_code_key: string | null
         /** Indicates whether the code is set on the device according to a preconfigured schedule. */
         is_scheduled_on_device?: boolean | undefined
-        /** Nature of the access code. Values are "ongoing" for access codes that are active continuously until deactivated manually or "time_bound" for access codes that have a specific duration. */
+        /** Nature of the access code. Values are `ongoing` for access codes that are active continuously until deactivated manually or `time_bound` for access codes that have a specific duration. */
         type: 'time_bound' | 'ongoing'
         /** Indicates whether the access code is waiting for a code assignment. */
         is_waiting_for_code_assignment?: boolean | undefined
@@ -1589,172 +1718,244 @@ export interface Routes {
         code: string | null
         /** Date and time at which the access code was created. */
         created_at: string
-        /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+        /** Errors associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
         errors: Array<
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_access_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_after_multiple_retries'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_no_free_slots_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_remove_from_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_on_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_attempt_prevented'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_too_many_pending_jobs'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_offline'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_offline_access_code_no_variance_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_deletion'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'code_modified_external_to_seam'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_invalid_code_length'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_programming_delay'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_slots_full'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_keypad'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_temporarily_offline'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_user_not_subscribed'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_device_programming_delay'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'wyze_duplicate_code_name'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'wyze_potential_duplicate_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'dormakaba_oracode_no_valid_user_level'
@@ -1871,76 +2072,100 @@ export interface Routes {
               error_code: 'bridge_disconnected'
             }
         >
-        /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
+        /** Warnings associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
         warnings: Array<
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'smartthings_failed_to_set_access_code'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_setting_on_device'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_lock_temporarily_offline'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'igloo_algopin_must_be_used_within_24_hours'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'kwikset_unable_to_confirm_code'
@@ -1952,9 +2177,7 @@ export interface Routes {
         starts_at?: (string | null) | undefined
         /** Date and time after which the time-bound access code becomes inactive. */
         ends_at?: (string | null) | undefined
-        /**
-            Current status of the access code within the operational lifecycle. Values are "setting," a transitional phase that indicates that the code is being configured or activated; "set", which indicates that the code is active and operational; "unset," which indicates a deactivated or unused state, either before activation or after deliberate deactivation; "removing," which indicates a transitional period in which the code is being deleted or made inactive; and "unknown," which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting.
-           */
+        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. */
         status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         /** Indicates whether a backup access code is available for use if the primary access code is lost or compromised. */
         is_backup_access_code_available: boolean
@@ -1964,9 +2187,9 @@ export interface Routes {
         pulled_backup_access_code_id?: (string | null) | undefined
         /** Indicates whether changes to the access code from external sources are permitted. */
         is_external_modification_allowed: boolean
-        /** Indicates whether the access code can only be used once. If "true," the code becomes invalid after the first use. */
+        /** Indicates whether the access code can only be used once. If `true`, the code becomes invalid after the first use. */
         is_one_time_use: boolean
-        /** Indicates whether the access code is intended for use in offline scenarios. If "true," this code can be created on a device without a network connection. */
+        /** Indicates whether the access code is intended for use in offline scenarios. If `true`, this code can be created on a device without a network connection. */
         is_offline_access_code: boolean
       }>
     }
@@ -1977,8 +2200,11 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the device for which to delete the access code. */
       device_id?: string | undefined
+      /** ID of the access code to delete. */
       access_code_id: string
+      /**  */
       sync?: boolean
     }
     formData: {}
@@ -3125,19 +3351,28 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the device containing the access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`. */
       device_id?: string | undefined
+      /** ID of the access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`. */
       access_code_id?: string | undefined
+      /** Code of the access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`. */
       code?: string | undefined
     }
     formData: {}
     jsonResponse: {
-      /**  */
+      /** Represents a smart lock [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+    
+    An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam Access Code API, you can easily generate access codes on the hundreds of door lock models with which we integrate.
+    
+    Seam supports programming two types of access codes: [ongoing](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`.
+    
+    In addition, for certain devices, Seam also supports [offline access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#offline-access-codes). Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code. */
       access_code: {
         /** Unique identifier for a group of access codes that share the same code. */
         common_code_key: string | null
         /** Indicates whether the code is set on the device according to a preconfigured schedule. */
         is_scheduled_on_device?: boolean | undefined
-        /** Nature of the access code. Values are "ongoing" for access codes that are active continuously until deactivated manually or "time_bound" for access codes that have a specific duration. */
+        /** Nature of the access code. Values are `ongoing` for access codes that are active continuously until deactivated manually or `time_bound` for access codes that have a specific duration. */
         type: 'time_bound' | 'ongoing'
         /** Indicates whether the access code is waiting for a code assignment. */
         is_waiting_for_code_assignment?: boolean | undefined
@@ -3151,172 +3386,244 @@ export interface Routes {
         code: string | null
         /** Date and time at which the access code was created. */
         created_at: string
-        /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+        /** Errors associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
         errors: Array<
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_access_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_after_multiple_retries'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_no_free_slots_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_remove_from_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_on_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_attempt_prevented'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_too_many_pending_jobs'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_offline'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_offline_access_code_no_variance_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_deletion'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'code_modified_external_to_seam'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_invalid_code_length'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_programming_delay'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_slots_full'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_keypad'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_temporarily_offline'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_user_not_subscribed'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_device_programming_delay'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'wyze_duplicate_code_name'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'wyze_potential_duplicate_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'dormakaba_oracode_no_valid_user_level'
@@ -3433,76 +3740,100 @@ export interface Routes {
               error_code: 'bridge_disconnected'
             }
         >
-        /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
+        /** Warnings associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
         warnings: Array<
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'smartthings_failed_to_set_access_code'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_setting_on_device'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_lock_temporarily_offline'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'igloo_algopin_must_be_used_within_24_hours'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'kwikset_unable_to_confirm_code'
@@ -3514,9 +3845,7 @@ export interface Routes {
         starts_at?: (string | null) | undefined
         /** Date and time after which the time-bound access code becomes inactive. */
         ends_at?: (string | null) | undefined
-        /**
-            Current status of the access code within the operational lifecycle. Values are "setting," a transitional phase that indicates that the code is being configured or activated; "set", which indicates that the code is active and operational; "unset," which indicates a deactivated or unused state, either before activation or after deliberate deactivation; "removing," which indicates a transitional period in which the code is being deleted or made inactive; and "unknown," which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting.
-           */
+        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. */
         status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         /** Indicates whether a backup access code is available for use if the primary access code is lost or compromised. */
         is_backup_access_code_available: boolean
@@ -3526,9 +3855,9 @@ export interface Routes {
         pulled_backup_access_code_id?: (string | null) | undefined
         /** Indicates whether changes to the access code from external sources are permitted. */
         is_external_modification_allowed: boolean
-        /** Indicates whether the access code can only be used once. If "true," the code becomes invalid after the first use. */
+        /** Indicates whether the access code can only be used once. If `true`, the code becomes invalid after the first use. */
         is_one_time_use: boolean
-        /** Indicates whether the access code is intended for use in offline scenarios. If "true," this code can be created on a device without a network connection. */
+        /** Indicates whether the access code is intended for use in offline scenarios. If `true`, this code can be created on a device without a network connection. */
         is_offline_access_code: boolean
       }
     }
@@ -3539,8 +3868,11 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the device for which you want to list access codes. Specify either `device_id` or `access_code_ids`. */
       device_id?: string | undefined
+      /** IDs of the access codes that you want to retrieve. Specify either `device_id` or `access_code_ids`. */
       access_code_ids?: string[] | undefined
+      /** Your user ID for the user by which to filter access codes. */
       user_identifier_key?: string | undefined
     }
     formData: {}
@@ -3550,7 +3882,7 @@ export interface Routes {
         common_code_key: string | null
         /** Indicates whether the code is set on the device according to a preconfigured schedule. */
         is_scheduled_on_device?: boolean | undefined
-        /** Nature of the access code. Values are "ongoing" for access codes that are active continuously until deactivated manually or "time_bound" for access codes that have a specific duration. */
+        /** Nature of the access code. Values are `ongoing` for access codes that are active continuously until deactivated manually or `time_bound` for access codes that have a specific duration. */
         type: 'time_bound' | 'ongoing'
         /** Indicates whether the access code is waiting for a code assignment. */
         is_waiting_for_code_assignment?: boolean | undefined
@@ -3564,172 +3896,244 @@ export interface Routes {
         code: string | null
         /** Date and time at which the access code was created. */
         created_at: string
-        /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+        /** Errors associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
         errors: Array<
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_access_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_after_multiple_retries'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_no_free_slots_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_remove_from_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_on_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_attempt_prevented'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_too_many_pending_jobs'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_offline'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_offline_access_code_no_variance_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_deletion'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'code_modified_external_to_seam'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_invalid_code_length'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_programming_delay'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_slots_full'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_keypad'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_temporarily_offline'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_user_not_subscribed'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_device_programming_delay'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'wyze_duplicate_code_name'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'wyze_potential_duplicate_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'dormakaba_oracode_no_valid_user_level'
@@ -3846,76 +4250,100 @@ export interface Routes {
               error_code: 'bridge_disconnected'
             }
         >
-        /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
+        /** Warnings associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
         warnings: Array<
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'smartthings_failed_to_set_access_code'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_setting_on_device'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_lock_temporarily_offline'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'igloo_algopin_must_be_used_within_24_hours'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'kwikset_unable_to_confirm_code'
@@ -3927,9 +4355,7 @@ export interface Routes {
         starts_at?: (string | null) | undefined
         /** Date and time after which the time-bound access code becomes inactive. */
         ends_at?: (string | null) | undefined
-        /**
-            Current status of the access code within the operational lifecycle. Values are "setting," a transitional phase that indicates that the code is being configured or activated; "set", which indicates that the code is active and operational; "unset," which indicates a deactivated or unused state, either before activation or after deliberate deactivation; "removing," which indicates a transitional period in which the code is being deleted or made inactive; and "unknown," which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting.
-           */
+        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. */
         status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         /** Indicates whether a backup access code is available for use if the primary access code is lost or compromised. */
         is_backup_access_code_available: boolean
@@ -3939,9 +4365,9 @@ export interface Routes {
         pulled_backup_access_code_id?: (string | null) | undefined
         /** Indicates whether changes to the access code from external sources are permitted. */
         is_external_modification_allowed: boolean
-        /** Indicates whether the access code can only be used once. If "true," the code becomes invalid after the first use. */
+        /** Indicates whether the access code can only be used once. If `true`, the code becomes invalid after the first use. */
         is_one_time_use: boolean
-        /** Indicates whether the access code is intended for use in offline scenarios. If "true," this code can be created on a device without a network connection. */
+        /** Indicates whether the access code is intended for use in offline scenarios. If `true`, this code can be created on a device without a network connection. */
         is_offline_access_code: boolean
       }>
     }
@@ -3951,18 +4377,25 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the access code for which you want to pull a backup access code. */
       access_code_id: string
     }
     commonParams: {}
     formData: {}
     jsonResponse: {
-      /**  */
+      /** Represents a smart lock [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+    
+    An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam Access Code API, you can easily generate access codes on the hundreds of door lock models with which we integrate.
+    
+    Seam supports programming two types of access codes: [ongoing](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`.
+    
+    In addition, for certain devices, Seam also supports [offline access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#offline-access-codes). Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code. */
       backup_access_code: {
         /** Unique identifier for a group of access codes that share the same code. */
         common_code_key: string | null
         /** Indicates whether the code is set on the device according to a preconfigured schedule. */
         is_scheduled_on_device?: boolean | undefined
-        /** Nature of the access code. Values are "ongoing" for access codes that are active continuously until deactivated manually or "time_bound" for access codes that have a specific duration. */
+        /** Nature of the access code. Values are `ongoing` for access codes that are active continuously until deactivated manually or `time_bound` for access codes that have a specific duration. */
         type: 'time_bound' | 'ongoing'
         /** Indicates whether the access code is waiting for a code assignment. */
         is_waiting_for_code_assignment?: boolean | undefined
@@ -3976,172 +4409,244 @@ export interface Routes {
         code: string | null
         /** Date and time at which the access code was created. */
         created_at: string
-        /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+        /** Errors associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
         errors: Array<
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_access_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_after_multiple_retries'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_no_free_slots_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_remove_from_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_on_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_attempt_prevented'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_too_many_pending_jobs'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_offline'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_offline_access_code_no_variance_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_deletion'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'code_modified_external_to_seam'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_invalid_code_length'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_programming_delay'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_slots_full'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_keypad'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_temporarily_offline'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_user_not_subscribed'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_device_programming_delay'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'wyze_duplicate_code_name'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'wyze_potential_duplicate_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'dormakaba_oracode_no_valid_user_level'
@@ -4258,76 +4763,100 @@ export interface Routes {
               error_code: 'bridge_disconnected'
             }
         >
-        /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
+        /** Warnings associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
         warnings: Array<
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'smartthings_failed_to_set_access_code'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_setting_on_device'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_lock_temporarily_offline'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'igloo_algopin_must_be_used_within_24_hours'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'kwikset_unable_to_confirm_code'
@@ -4339,9 +4868,7 @@ export interface Routes {
         starts_at?: (string | null) | undefined
         /** Date and time after which the time-bound access code becomes inactive. */
         ends_at?: (string | null) | undefined
-        /**
-            Current status of the access code within the operational lifecycle. Values are "setting," a transitional phase that indicates that the code is being configured or activated; "set", which indicates that the code is active and operational; "unset," which indicates a deactivated or unused state, either before activation or after deliberate deactivation; "removing," which indicates a transitional period in which the code is being deleted or made inactive; and "unknown," which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting.
-           */
+        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. */
         status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         /** Indicates whether a backup access code is available for use if the primary access code is lost or compromised. */
         is_backup_access_code_available: boolean
@@ -4351,18 +4878,24 @@ export interface Routes {
         pulled_backup_access_code_id?: (string | null) | undefined
         /** Indicates whether changes to the access code from external sources are permitted. */
         is_external_modification_allowed: boolean
-        /** Indicates whether the access code can only be used once. If "true," the code becomes invalid after the first use. */
+        /** Indicates whether the access code can only be used once. If `true`, the code becomes invalid after the first use. */
         is_one_time_use: boolean
-        /** Indicates whether the access code is intended for use in offline scenarios. If "true," this code can be created on a device without a network connection. */
+        /** Indicates whether the access code is intended for use in offline scenarios. If `true`, this code can be created on a device without a network connection. */
         is_offline_access_code: boolean
       }
-      /**  */
+      /** Represents a smart lock [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+    
+    An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam Access Code API, you can easily generate access codes on the hundreds of door lock models with which we integrate.
+    
+    Seam supports programming two types of access codes: [ongoing](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`.
+    
+    In addition, for certain devices, Seam also supports [offline access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#offline-access-codes). Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code. */
       access_code: {
         /** Unique identifier for a group of access codes that share the same code. */
         common_code_key: string | null
         /** Indicates whether the code is set on the device according to a preconfigured schedule. */
         is_scheduled_on_device?: boolean | undefined
-        /** Nature of the access code. Values are "ongoing" for access codes that are active continuously until deactivated manually or "time_bound" for access codes that have a specific duration. */
+        /** Nature of the access code. Values are `ongoing` for access codes that are active continuously until deactivated manually or `time_bound` for access codes that have a specific duration. */
         type: 'time_bound' | 'ongoing'
         /** Indicates whether the access code is waiting for a code assignment. */
         is_waiting_for_code_assignment?: boolean | undefined
@@ -4376,172 +4909,244 @@ export interface Routes {
         code: string | null
         /** Date and time at which the access code was created. */
         created_at: string
-        /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+        /** Errors associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
         errors: Array<
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_access_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_after_multiple_retries'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_no_free_slots_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_remove_from_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_on_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_attempt_prevented'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_too_many_pending_jobs'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_offline'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_offline_access_code_no_variance_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_deletion'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'code_modified_external_to_seam'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_invalid_code_length'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_programming_delay'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_slots_full'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_keypad'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_temporarily_offline'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_user_not_subscribed'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_device_programming_delay'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'wyze_duplicate_code_name'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'wyze_potential_duplicate_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'dormakaba_oracode_no_valid_user_level'
@@ -4658,76 +5263,100 @@ export interface Routes {
               error_code: 'bridge_disconnected'
             }
         >
-        /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
+        /** Warnings associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
         warnings: Array<
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'smartthings_failed_to_set_access_code'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_setting_on_device'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_lock_temporarily_offline'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'igloo_algopin_must_be_used_within_24_hours'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'kwikset_unable_to_confirm_code'
@@ -4739,9 +5368,7 @@ export interface Routes {
         starts_at?: (string | null) | undefined
         /** Date and time after which the time-bound access code becomes inactive. */
         ends_at?: (string | null) | undefined
-        /**
-            Current status of the access code within the operational lifecycle. Values are "setting," a transitional phase that indicates that the code is being configured or activated; "set", which indicates that the code is active and operational; "unset," which indicates a deactivated or unused state, either before activation or after deliberate deactivation; "removing," which indicates a transitional period in which the code is being deleted or made inactive; and "unknown," which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting.
-           */
+        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. */
         status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         /** Indicates whether a backup access code is available for use if the primary access code is lost or compromised. */
         is_backup_access_code_available: boolean
@@ -4751,9 +5378,9 @@ export interface Routes {
         pulled_backup_access_code_id?: (string | null) | undefined
         /** Indicates whether changes to the access code from external sources are permitted. */
         is_external_modification_allowed: boolean
-        /** Indicates whether the access code can only be used once. If "true," the code becomes invalid after the first use. */
+        /** Indicates whether the access code can only be used once. If `true`, the code becomes invalid after the first use. */
         is_one_time_use: boolean
-        /** Indicates whether the access code is intended for use in offline scenarios. If "true," this code can be created on a device without a network connection. */
+        /** Indicates whether the access code is intended for use in offline scenarios. If `true`, this code can be created on a device without a network connection. */
         is_offline_access_code: boolean
       }
     }
@@ -4763,16 +5390,25 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the device for which you want to simulate the creation of an unmanaged access code. */
       device_id: string
+      /** Name of the simulated unmanaged access code. */
       name: string
+      /** Code of the simulated unmanaged access code. */
       code: string
     }
     commonParams: {}
     formData: {}
     jsonResponse: {
-      /**  */
+      /** Represents an [unmanaged smart lock access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).
+    
+    An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly.
+    
+    When you create an access code on a device in Seam, it is created as a managed access code. Access codes that exist on a device that were not created through Seam are considered unmanaged codes. We strictly limit the operations that can be performed on unmanaged codes.
+    
+    Prior to using Seam to manage your devices, you may have used another lock management system to manage the access codes on your devices. Where possible, we help you keep any existing access codes on devices and transition those codes to ones managed by your Seam workspace. */
       access_code: {
-        /** Nature of the access code. Values are "ongoing" for access codes that are active continuously until deactivated manually or "time_bound" for access codes that have a specific duration. */
+        /** Nature of the access code. Values are `ongoing` for access codes that are active continuously until deactivated manually or `time_bound` for access codes that have a specific duration. */
         type: 'time_bound' | 'ongoing'
         /** Unique identifier for the access code. */
         access_code_id: string
@@ -4784,172 +5420,244 @@ export interface Routes {
         code: string | null
         /** Date and time at which the access code was created. */
         created_at: string
-        /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+        /** Errors associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
         errors: Array<
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_access_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_after_multiple_retries'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_no_free_slots_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_remove_from_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_on_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_attempt_prevented'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_too_many_pending_jobs'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_offline'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_offline_access_code_no_variance_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_deletion'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'code_modified_external_to_seam'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_invalid_code_length'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_programming_delay'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_slots_full'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_keypad'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_temporarily_offline'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_user_not_subscribed'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_device_programming_delay'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'wyze_duplicate_code_name'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'wyze_potential_duplicate_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'dormakaba_oracode_no_valid_user_level'
@@ -5066,86 +5774,112 @@ export interface Routes {
               error_code: 'bridge_disconnected'
             }
         >
-        /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
+        /** Warnings associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
         warnings: Array<
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'smartthings_failed_to_set_access_code'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_setting_on_device'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_lock_temporarily_offline'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'igloo_algopin_must_be_used_within_24_hours'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'kwikset_unable_to_confirm_code'
             }
         >
+        /** Indicates that Seam does not manage the access code. */
         is_managed: false
         /** Date and time at which the time-bound access code becomes active. */
         starts_at?: (string | null) | undefined
         /** Date and time after which the time-bound access code becomes inactive. */
         ends_at?: (string | null) | undefined
+        /** Current status of the access code within the operational lifecycle. `set` indicates that the code is active and operational. */
         status: 'set'
       }
     }
@@ -5156,10 +5890,15 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the unmanaged access code that you want to convert to a managed access code. */
       access_code_id: string
+      /** Indicates whether external modification of the access code is allowed. */
       is_external_modification_allowed?: boolean | undefined
+      /** Indicates whether external modification of the access code is allowed. */
       allow_external_modification?: boolean | undefined
+      /** Indicates whether to force the access code conversion. To switch management of an access code from one Seam workspace to another, set `force` to `true`. */
       force?: boolean | undefined
+      /**  */
       sync?: boolean
     }
     formData: {}
@@ -5171,7 +5910,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the unmanaged access code to delete. */
       access_code_id: string
+      /**  */
       sync?: boolean
     }
     formData: {}
@@ -6302,15 +7043,24 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the device containing the unmanaged access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`. */
       device_id?: string | undefined
+      /** ID of the unmanaged access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`. */
       access_code_id?: string | undefined
+      /** Code of the unmanaged access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`. */
       code?: string | undefined
     }
     formData: {}
     jsonResponse: {
-      /**  */
+      /** Represents an [unmanaged smart lock access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).
+    
+    An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly.
+    
+    When you create an access code on a device in Seam, it is created as a managed access code. Access codes that exist on a device that were not created through Seam are considered unmanaged codes. We strictly limit the operations that can be performed on unmanaged codes.
+    
+    Prior to using Seam to manage your devices, you may have used another lock management system to manage the access codes on your devices. Where possible, we help you keep any existing access codes on devices and transition those codes to ones managed by your Seam workspace. */
       access_code: {
-        /** Nature of the access code. Values are "ongoing" for access codes that are active continuously until deactivated manually or "time_bound" for access codes that have a specific duration. */
+        /** Nature of the access code. Values are `ongoing` for access codes that are active continuously until deactivated manually or `time_bound` for access codes that have a specific duration. */
         type: 'time_bound' | 'ongoing'
         /** Unique identifier for the access code. */
         access_code_id: string
@@ -6322,172 +7072,244 @@ export interface Routes {
         code: string | null
         /** Date and time at which the access code was created. */
         created_at: string
-        /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+        /** Errors associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
         errors: Array<
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_access_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_after_multiple_retries'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_no_free_slots_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_remove_from_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_on_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_attempt_prevented'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_too_many_pending_jobs'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_offline'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_offline_access_code_no_variance_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_deletion'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'code_modified_external_to_seam'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_invalid_code_length'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_programming_delay'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_slots_full'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_keypad'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_temporarily_offline'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_user_not_subscribed'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_device_programming_delay'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'wyze_duplicate_code_name'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'wyze_potential_duplicate_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'dormakaba_oracode_no_valid_user_level'
@@ -6604,86 +7426,112 @@ export interface Routes {
               error_code: 'bridge_disconnected'
             }
         >
-        /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
+        /** Warnings associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
         warnings: Array<
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'smartthings_failed_to_set_access_code'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_setting_on_device'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_lock_temporarily_offline'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'igloo_algopin_must_be_used_within_24_hours'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'kwikset_unable_to_confirm_code'
             }
         >
+        /** Indicates that Seam does not manage the access code. */
         is_managed: false
         /** Date and time at which the time-bound access code becomes active. */
         starts_at?: (string | null) | undefined
         /** Date and time after which the time-bound access code becomes inactive. */
         ends_at?: (string | null) | undefined
+        /** Current status of the access code within the operational lifecycle. `set` indicates that the code is active and operational. */
         status: 'set'
       }
     }
@@ -6694,13 +7542,15 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the device for which you want to list unmanaged access codes. */
       device_id: string
+      /** Your user ID for the user by which to filter unmanaged access codes. */
       user_identifier_key?: string | undefined
     }
     formData: {}
     jsonResponse: {
       access_codes: Array<{
-        /** Nature of the access code. Values are "ongoing" for access codes that are active continuously until deactivated manually or "time_bound" for access codes that have a specific duration. */
+        /** Nature of the access code. Values are `ongoing` for access codes that are active continuously until deactivated manually or `time_bound` for access codes that have a specific duration. */
         type: 'time_bound' | 'ongoing'
         /** Unique identifier for the access code. */
         access_code_id: string
@@ -6712,172 +7562,244 @@ export interface Routes {
         code: string | null
         /** Date and time at which the access code was created. */
         created_at: string
-        /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+        /** Errors associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
         errors: Array<
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_access_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_after_multiple_retries'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_no_free_slots_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_remove_from_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_on_device'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_attempt_prevented'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_too_many_pending_jobs'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_offline'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_offline_access_code_no_variance_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_deletion'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'code_modified_external_to_seam'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_invalid_code_length'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_programming_delay'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_slots_full'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_keypad'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_temporarily_offline'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_user_not_subscribed'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_device_programming_delay'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'wyze_duplicate_code_name'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'wyze_potential_duplicate_code'
             }
           | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
               is_access_code_error: true
+              /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'dormakaba_oracode_no_valid_user_level'
@@ -6994,86 +7916,112 @@ export interface Routes {
               error_code: 'bridge_disconnected'
             }
         >
-        /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
+        /** Warnings associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
         warnings: Array<
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'smartthings_failed_to_set_access_code'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_setting_on_device'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_lock_temporarily_offline'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'igloo_algopin_must_be_used_within_24_hours'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
             }
           | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'kwikset_unable_to_confirm_code'
             }
         >
+        /** Indicates that Seam does not manage the access code. */
         is_managed: false
         /** Date and time at which the time-bound access code becomes active. */
         starts_at?: (string | null) | undefined
         /** Date and time after which the time-bound access code becomes inactive. */
         ends_at?: (string | null) | undefined
+        /** Current status of the access code within the operational lifecycle. `set` indicates that the code is active and operational. */
         status: 'set'
       }>
     }
@@ -7084,10 +8032,14 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the unmanaged access code that you want to update. */
       access_code_id: string
       is_managed: boolean
+      /** Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. */
       allow_external_modification?: boolean | undefined
+      /** Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. */
       is_external_modification_allowed?: boolean | undefined
+      /** Indicates whether to force the unmanaged access code update. */
       force?: boolean | undefined
     }
     formData: {}
@@ -7098,24 +8050,41 @@ export interface Routes {
     method: 'POST' | 'PATCH' | 'PUT'
     queryParams: {}
     jsonBody: {
+      /** Name of the new access code. */
       name?: string | undefined
+      /** Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       starts_at?: string | undefined
+      /** Date and time at which the validity of the new access code ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
       ends_at?: string | undefined
+      /** Code to be used for access. */
       code?: string | undefined
+      /**  */
       sync?: boolean
       attempt_for_offline_device?: boolean
+      /** Indicates whether [native scheduling](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`. */
       prefer_native_scheduling?: boolean | undefined
+      /** Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code). */
       use_backup_access_code_pool?: boolean | undefined
+      /** Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`. */
       allow_external_modification?: boolean | undefined
+      /** Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`. */
       is_external_modification_allowed?: boolean | undefined
+      /** Preferred code length. Only applicable if you do not specify a `code`. If the affected device does not support the preferred code length, Seam reverts to using the shortest supported code length. */
       preferred_code_length?: number | undefined
       use_offline_access_code?: boolean | undefined
+      /** Indicates whether the access code is an [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes). */
       is_offline_access_code?: boolean | undefined
+      /** Indicates whether the [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) is a single-use access code. */
       is_one_time_use?: boolean | undefined
+      /** Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`. */
       max_time_rounding?: ('1hour' | '1day' | '1h' | '1d') | undefined
+      /** ID of the access code that you want to update. */
       access_code_id: string
+      /** ID of the device containing the access code that you want to update. */
       device_id?: string | undefined
+      /** Type to which you want to convert the access code. To convert a time-bound access code to an ongoing access code, set `type` to `ongoing`. See also [Changing a time-bound access code to permanent access](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/modifying-access-codes#special-case-2-changing-a-time-bound-access-code-to-permanent-access). */
       type?: ('ongoing' | 'time_bound') | undefined
+      /** Indicates whether the access code is managed through Seam. Note that to convert an unmanaged access code into a managed access code, use `/access_codes/unmanaged/convert_to_managed`. */
       is_managed?: boolean | undefined
     }
     commonParams: {}
@@ -8246,9 +9215,13 @@ export interface Routes {
     method: 'POST' | 'PATCH'
     queryParams: {}
     jsonBody: {
+      /** Date and time at which the validity of the new access code ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
       ends_at?: string | undefined
+      /** Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       starts_at?: string | undefined
+      /** Name of the new access code. */
       name?: string | undefined
+      /** Key that links the group of access codes, assigned on creation by `/access_codes/create_multiple`. */
       common_code_key: string
     }
     commonParams: {}
