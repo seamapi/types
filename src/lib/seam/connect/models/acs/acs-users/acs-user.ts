@@ -2,7 +2,7 @@ import { z } from 'zod'
 
 import { phone_number } from '../../phone-number.js'
 import { schedule } from '../../schedule.js'
-import { acs_user_pending_modification } from './pending-modifications.js'
+import { acs_user_pending_mutations } from './pending-mutations.js'
 
 export const acs_user_external_type = z.enum([
   'pti_user',
@@ -326,8 +326,7 @@ const common_acs_user = z
       .describe(
         'Errors associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
       ),
-    pending_modifications: z.array(acs_user_pending_modification).optional()
-      .describe(`
+    pending_mutations: z.array(acs_user_pending_mutations).optional().describe(`
       ---
       undocumented: Experimental.
       ---
