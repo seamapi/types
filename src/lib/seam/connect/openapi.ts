@@ -2486,23 +2486,30 @@ export default {
             type: 'string',
             'x-undocumented': 'Only used internally.',
           },
-          pending_modifications: {
+          pending_mutations: {
             items: {
-              discriminator: { propertyName: 'modification_code' },
+              discriminator: { propertyName: 'mutation_code' },
               oneOf: [
                 {
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
-                    modification_code: { enum: ['create'], type: 'string' },
+                    mutation_code: { enum: ['creating'], type: 'string' },
                   },
-                  required: ['created_at', 'modification_code'],
+                  required: ['created_at', 'mutation_code'],
                   type: 'object',
                 },
                 {
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
-                    modification_code: { enum: ['profile'], type: 'string' },
-                    modified_from: {
+                    mutation_code: { enum: ['deleting'], type: 'string' },
+                  },
+                  required: ['created_at', 'mutation_code'],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    from: {
                       properties: {
                         email_address: {
                           format: 'email',
@@ -2514,35 +2521,30 @@ export default {
                       },
                       type: 'object',
                     },
-                    modified_to: {
-                      properties: {
-                        email_address: {
-                          format: 'email',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        full_name: { nullable: true, type: 'string' },
-                        phone_number: { nullable: true, type: 'string' },
-                      },
-                      type: 'object',
-                    },
-                  },
-                  required: [
-                    'created_at',
-                    'modification_code',
-                    'modified_from',
-                    'modified_to',
-                  ],
-                  type: 'object',
-                },
-                {
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    modification_code: {
-                      enum: ['access_schedule'],
+                    mutation_code: {
+                      enum: ['updating_user_information'],
                       type: 'string',
                     },
-                    modified_from: {
+                    to: {
+                      properties: {
+                        email_address: {
+                          format: 'email',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        full_name: { nullable: true, type: 'string' },
+                        phone_number: { nullable: true, type: 'string' },
+                      },
+                      type: 'object',
+                    },
+                  },
+                  required: ['created_at', 'mutation_code', 'from', 'to'],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    from: {
                       properties: {
                         ends_at: {
                           description:
@@ -2561,7 +2563,11 @@ export default {
                       required: ['starts_at', 'ends_at'],
                       type: 'object',
                     },
-                    modified_to: {
+                    mutation_code: {
+                      enum: ['updating_access_schedule'],
+                      type: 'string',
+                    },
+                    to: {
                       properties: {
                         ends_at: {
                           description:
@@ -2581,48 +2587,34 @@ export default {
                       type: 'object',
                     },
                   },
-                  required: [
-                    'created_at',
-                    'modification_code',
-                    'modified_from',
-                    'modified_to',
-                  ],
+                  required: ['created_at', 'mutation_code', 'from', 'to'],
                   type: 'object',
                 },
                 {
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
-                    modification_code: {
-                      enum: ['suspension_state'],
-                      type: 'string',
-                    },
-                    modified_from: {
+                    from: {
                       properties: { is_suspended: { type: 'boolean' } },
                       required: ['is_suspended'],
                       type: 'object',
                     },
-                    modified_to: {
+                    mutation_code: {
+                      enum: ['updating_suspension_state'],
+                      type: 'string',
+                    },
+                    to: {
                       properties: { is_suspended: { type: 'boolean' } },
                       required: ['is_suspended'],
                       type: 'object',
                     },
                   },
-                  required: [
-                    'created_at',
-                    'modification_code',
-                    'modified_from',
-                    'modified_to',
-                  ],
+                  required: ['created_at', 'mutation_code', 'from', 'to'],
                   type: 'object',
                 },
                 {
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
-                    modification_code: {
-                      enum: ['acs_access_group_membership'],
-                      type: 'string',
-                    },
-                    modified_from: {
+                    from: {
                       properties: {
                         acs_access_group_id: {
                           format: 'uuid',
@@ -2633,7 +2625,11 @@ export default {
                       required: ['acs_access_group_id'],
                       type: 'object',
                     },
-                    modified_to: {
+                    mutation_code: {
+                      enum: ['updating_group_membership'],
+                      type: 'string',
+                    },
+                    to: {
                       properties: {
                         acs_access_group_id: {
                           format: 'uuid',
@@ -2645,12 +2641,7 @@ export default {
                       type: 'object',
                     },
                   },
-                  required: [
-                    'created_at',
-                    'modification_code',
-                    'modified_from',
-                    'modified_to',
-                  ],
+                  required: ['created_at', 'mutation_code', 'from', 'to'],
                   type: 'object',
                 },
               ],
@@ -15128,23 +15119,30 @@ export default {
             type: 'string',
             'x-undocumented': 'Only used internally.',
           },
-          pending_modifications: {
+          pending_mutations: {
             items: {
-              discriminator: { propertyName: 'modification_code' },
+              discriminator: { propertyName: 'mutation_code' },
               oneOf: [
                 {
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
-                    modification_code: { enum: ['create'], type: 'string' },
+                    mutation_code: { enum: ['creating'], type: 'string' },
                   },
-                  required: ['created_at', 'modification_code'],
+                  required: ['created_at', 'mutation_code'],
                   type: 'object',
                 },
                 {
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
-                    modification_code: { enum: ['profile'], type: 'string' },
-                    modified_from: {
+                    mutation_code: { enum: ['deleting'], type: 'string' },
+                  },
+                  required: ['created_at', 'mutation_code'],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    from: {
                       properties: {
                         email_address: {
                           format: 'email',
@@ -15156,35 +15154,30 @@ export default {
                       },
                       type: 'object',
                     },
-                    modified_to: {
-                      properties: {
-                        email_address: {
-                          format: 'email',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        full_name: { nullable: true, type: 'string' },
-                        phone_number: { nullable: true, type: 'string' },
-                      },
-                      type: 'object',
-                    },
-                  },
-                  required: [
-                    'created_at',
-                    'modification_code',
-                    'modified_from',
-                    'modified_to',
-                  ],
-                  type: 'object',
-                },
-                {
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    modification_code: {
-                      enum: ['access_schedule'],
+                    mutation_code: {
+                      enum: ['updating_user_information'],
                       type: 'string',
                     },
-                    modified_from: {
+                    to: {
+                      properties: {
+                        email_address: {
+                          format: 'email',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        full_name: { nullable: true, type: 'string' },
+                        phone_number: { nullable: true, type: 'string' },
+                      },
+                      type: 'object',
+                    },
+                  },
+                  required: ['created_at', 'mutation_code', 'from', 'to'],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    from: {
                       properties: {
                         ends_at: {
                           description:
@@ -15203,7 +15196,11 @@ export default {
                       required: ['starts_at', 'ends_at'],
                       type: 'object',
                     },
-                    modified_to: {
+                    mutation_code: {
+                      enum: ['updating_access_schedule'],
+                      type: 'string',
+                    },
+                    to: {
                       properties: {
                         ends_at: {
                           description:
@@ -15223,48 +15220,34 @@ export default {
                       type: 'object',
                     },
                   },
-                  required: [
-                    'created_at',
-                    'modification_code',
-                    'modified_from',
-                    'modified_to',
-                  ],
+                  required: ['created_at', 'mutation_code', 'from', 'to'],
                   type: 'object',
                 },
                 {
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
-                    modification_code: {
-                      enum: ['suspension_state'],
-                      type: 'string',
-                    },
-                    modified_from: {
+                    from: {
                       properties: { is_suspended: { type: 'boolean' } },
                       required: ['is_suspended'],
                       type: 'object',
                     },
-                    modified_to: {
+                    mutation_code: {
+                      enum: ['updating_suspension_state'],
+                      type: 'string',
+                    },
+                    to: {
                       properties: { is_suspended: { type: 'boolean' } },
                       required: ['is_suspended'],
                       type: 'object',
                     },
                   },
-                  required: [
-                    'created_at',
-                    'modification_code',
-                    'modified_from',
-                    'modified_to',
-                  ],
+                  required: ['created_at', 'mutation_code', 'from', 'to'],
                   type: 'object',
                 },
                 {
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
-                    modification_code: {
-                      enum: ['acs_access_group_membership'],
-                      type: 'string',
-                    },
-                    modified_from: {
+                    from: {
                       properties: {
                         acs_access_group_id: {
                           format: 'uuid',
@@ -15275,7 +15258,11 @@ export default {
                       required: ['acs_access_group_id'],
                       type: 'object',
                     },
-                    modified_to: {
+                    mutation_code: {
+                      enum: ['updating_group_membership'],
+                      type: 'string',
+                    },
+                    to: {
                       properties: {
                         acs_access_group_id: {
                           format: 'uuid',
@@ -15287,12 +15274,7 @@ export default {
                       type: 'object',
                     },
                   },
-                  required: [
-                    'created_at',
-                    'modification_code',
-                    'modified_from',
-                    'modified_to',
-                  ],
+                  required: ['created_at', 'mutation_code', 'from', 'to'],
                   type: 'object',
                 },
               ],

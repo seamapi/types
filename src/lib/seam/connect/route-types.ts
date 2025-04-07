@@ -8617,21 +8617,25 @@ export interface Routes {
             }
         >
         /**  */
-        pending_modifications?:
+        pending_mutations?:
           | Array<
               | {
                   created_at: string
-                  modification_code: 'create'
+                  mutation_code: 'creating'
                 }
               | {
                   created_at: string
-                  modification_code: 'profile'
-                  modified_from: {
+                  mutation_code: 'deleting'
+                }
+              | {
+                  created_at: string
+                  mutation_code: 'updating_user_information'
+                  from: {
                     email_address?: (string | null) | undefined
                     full_name?: (string | null) | undefined
                     phone_number?: ((string | undefined) | null) | undefined
                   }
-                  modified_to: {
+                  to: {
                     email_address?: (string | null) | undefined
                     full_name?: (string | null) | undefined
                     phone_number?: ((string | undefined) | null) | undefined
@@ -8639,14 +8643,14 @@ export interface Routes {
                 }
               | {
                   created_at: string
-                  modification_code: 'access_schedule'
-                  modified_from: {
+                  mutation_code: 'updating_access_schedule'
+                  from: {
                     /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                     starts_at: string
                     /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                     ends_at: string | null
                   }
-                  modified_to: {
+                  to: {
                     /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                     starts_at: string
                     /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
@@ -8655,21 +8659,21 @@ export interface Routes {
                 }
               | {
                   created_at: string
-                  modification_code: 'suspension_state'
-                  modified_from: {
+                  mutation_code: 'updating_suspension_state'
+                  from: {
                     is_suspended: boolean
                   }
-                  modified_to: {
+                  to: {
                     is_suspended: boolean
                   }
                 }
               | {
                   created_at: string
-                  modification_code: 'acs_access_group_membership'
-                  modified_from: {
+                  mutation_code: 'updating_group_membership'
+                  from: {
                     acs_access_group_id: string | null
                   }
-                  modified_to: {
+                  to: {
                     acs_access_group_id: string | null
                   }
                 }
@@ -13942,21 +13946,25 @@ export interface Routes {
             }
         >
         /**  */
-        pending_modifications?:
+        pending_mutations?:
           | Array<
               | {
                   created_at: string
-                  modification_code: 'create'
+                  mutation_code: 'creating'
                 }
               | {
                   created_at: string
-                  modification_code: 'profile'
-                  modified_from: {
+                  mutation_code: 'deleting'
+                }
+              | {
+                  created_at: string
+                  mutation_code: 'updating_user_information'
+                  from: {
                     email_address?: (string | null) | undefined
                     full_name?: (string | null) | undefined
                     phone_number?: ((string | undefined) | null) | undefined
                   }
-                  modified_to: {
+                  to: {
                     email_address?: (string | null) | undefined
                     full_name?: (string | null) | undefined
                     phone_number?: ((string | undefined) | null) | undefined
@@ -13964,14 +13972,14 @@ export interface Routes {
                 }
               | {
                   created_at: string
-                  modification_code: 'access_schedule'
-                  modified_from: {
+                  mutation_code: 'updating_access_schedule'
+                  from: {
                     /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                     starts_at: string
                     /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                     ends_at: string | null
                   }
-                  modified_to: {
+                  to: {
                     /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                     starts_at: string
                     /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
@@ -13980,21 +13988,21 @@ export interface Routes {
                 }
               | {
                   created_at: string
-                  modification_code: 'suspension_state'
-                  modified_from: {
+                  mutation_code: 'updating_suspension_state'
+                  from: {
                     is_suspended: boolean
                   }
-                  modified_to: {
+                  to: {
                     is_suspended: boolean
                   }
                 }
               | {
                   created_at: string
-                  modification_code: 'acs_access_group_membership'
-                  modified_from: {
+                  mutation_code: 'updating_group_membership'
+                  from: {
                     acs_access_group_id: string | null
                   }
-                  modified_to: {
+                  to: {
                     acs_access_group_id: string | null
                   }
                 }
@@ -14157,21 +14165,25 @@ export interface Routes {
             }
         >
         /**  */
-        pending_modifications?:
+        pending_mutations?:
           | Array<
               | {
                   created_at: string
-                  modification_code: 'create'
+                  mutation_code: 'creating'
                 }
               | {
                   created_at: string
-                  modification_code: 'profile'
-                  modified_from: {
+                  mutation_code: 'deleting'
+                }
+              | {
+                  created_at: string
+                  mutation_code: 'updating_user_information'
+                  from: {
                     email_address?: (string | null) | undefined
                     full_name?: (string | null) | undefined
                     phone_number?: ((string | undefined) | null) | undefined
                   }
-                  modified_to: {
+                  to: {
                     email_address?: (string | null) | undefined
                     full_name?: (string | null) | undefined
                     phone_number?: ((string | undefined) | null) | undefined
@@ -14179,14 +14191,14 @@ export interface Routes {
                 }
               | {
                   created_at: string
-                  modification_code: 'access_schedule'
-                  modified_from: {
+                  mutation_code: 'updating_access_schedule'
+                  from: {
                     /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                     starts_at: string
                     /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                     ends_at: string | null
                   }
-                  modified_to: {
+                  to: {
                     /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                     starts_at: string
                     /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
@@ -14195,21 +14207,21 @@ export interface Routes {
                 }
               | {
                   created_at: string
-                  modification_code: 'suspension_state'
-                  modified_from: {
+                  mutation_code: 'updating_suspension_state'
+                  from: {
                     is_suspended: boolean
                   }
-                  modified_to: {
+                  to: {
                     is_suspended: boolean
                   }
                 }
               | {
                   created_at: string
-                  modification_code: 'acs_access_group_membership'
-                  modified_from: {
+                  mutation_code: 'updating_group_membership'
+                  from: {
                     acs_access_group_id: string | null
                   }
-                  modified_to: {
+                  to: {
                     acs_access_group_id: string | null
                   }
                 }
@@ -14368,21 +14380,25 @@ export interface Routes {
             }
         >
         /**  */
-        pending_modifications?:
+        pending_mutations?:
           | Array<
               | {
                   created_at: string
-                  modification_code: 'create'
+                  mutation_code: 'creating'
                 }
               | {
                   created_at: string
-                  modification_code: 'profile'
-                  modified_from: {
+                  mutation_code: 'deleting'
+                }
+              | {
+                  created_at: string
+                  mutation_code: 'updating_user_information'
+                  from: {
                     email_address?: (string | null) | undefined
                     full_name?: (string | null) | undefined
                     phone_number?: ((string | undefined) | null) | undefined
                   }
-                  modified_to: {
+                  to: {
                     email_address?: (string | null) | undefined
                     full_name?: (string | null) | undefined
                     phone_number?: ((string | undefined) | null) | undefined
@@ -14390,14 +14406,14 @@ export interface Routes {
                 }
               | {
                   created_at: string
-                  modification_code: 'access_schedule'
-                  modified_from: {
+                  mutation_code: 'updating_access_schedule'
+                  from: {
                     /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                     starts_at: string
                     /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                     ends_at: string | null
                   }
-                  modified_to: {
+                  to: {
                     /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                     starts_at: string
                     /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
@@ -14406,21 +14422,21 @@ export interface Routes {
                 }
               | {
                   created_at: string
-                  modification_code: 'suspension_state'
-                  modified_from: {
+                  mutation_code: 'updating_suspension_state'
+                  from: {
                     is_suspended: boolean
                   }
-                  modified_to: {
+                  to: {
                     is_suspended: boolean
                   }
                 }
               | {
                   created_at: string
-                  modification_code: 'acs_access_group_membership'
-                  modified_from: {
+                  mutation_code: 'updating_group_membership'
+                  from: {
                     acs_access_group_id: string | null
                   }
-                  modified_to: {
+                  to: {
                     acs_access_group_id: string | null
                   }
                 }
@@ -14711,21 +14727,25 @@ export interface Routes {
             }
         >
         /**  */
-        pending_modifications?:
+        pending_mutations?:
           | Array<
               | {
                   created_at: string
-                  modification_code: 'create'
+                  mutation_code: 'creating'
                 }
               | {
                   created_at: string
-                  modification_code: 'profile'
-                  modified_from: {
+                  mutation_code: 'deleting'
+                }
+              | {
+                  created_at: string
+                  mutation_code: 'updating_user_information'
+                  from: {
                     email_address?: (string | null) | undefined
                     full_name?: (string | null) | undefined
                     phone_number?: ((string | undefined) | null) | undefined
                   }
-                  modified_to: {
+                  to: {
                     email_address?: (string | null) | undefined
                     full_name?: (string | null) | undefined
                     phone_number?: ((string | undefined) | null) | undefined
@@ -14733,14 +14753,14 @@ export interface Routes {
                 }
               | {
                   created_at: string
-                  modification_code: 'access_schedule'
-                  modified_from: {
+                  mutation_code: 'updating_access_schedule'
+                  from: {
                     /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                     starts_at: string
                     /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                     ends_at: string | null
                   }
-                  modified_to: {
+                  to: {
                     /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                     starts_at: string
                     /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
@@ -14749,21 +14769,21 @@ export interface Routes {
                 }
               | {
                   created_at: string
-                  modification_code: 'suspension_state'
-                  modified_from: {
+                  mutation_code: 'updating_suspension_state'
+                  from: {
                     is_suspended: boolean
                   }
-                  modified_to: {
+                  to: {
                     is_suspended: boolean
                   }
                 }
               | {
                   created_at: string
-                  modification_code: 'acs_access_group_membership'
-                  modified_from: {
+                  mutation_code: 'updating_group_membership'
+                  from: {
                     acs_access_group_id: string | null
                   }
-                  modified_to: {
+                  to: {
                     acs_access_group_id: string | null
                   }
                 }
@@ -14912,21 +14932,25 @@ export interface Routes {
             }
         >
         /**  */
-        pending_modifications?:
+        pending_mutations?:
           | Array<
               | {
                   created_at: string
-                  modification_code: 'create'
+                  mutation_code: 'creating'
                 }
               | {
                   created_at: string
-                  modification_code: 'profile'
-                  modified_from: {
+                  mutation_code: 'deleting'
+                }
+              | {
+                  created_at: string
+                  mutation_code: 'updating_user_information'
+                  from: {
                     email_address?: (string | null) | undefined
                     full_name?: (string | null) | undefined
                     phone_number?: ((string | undefined) | null) | undefined
                   }
-                  modified_to: {
+                  to: {
                     email_address?: (string | null) | undefined
                     full_name?: (string | null) | undefined
                     phone_number?: ((string | undefined) | null) | undefined
@@ -14934,14 +14958,14 @@ export interface Routes {
                 }
               | {
                   created_at: string
-                  modification_code: 'access_schedule'
-                  modified_from: {
+                  mutation_code: 'updating_access_schedule'
+                  from: {
                     /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                     starts_at: string
                     /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                     ends_at: string | null
                   }
-                  modified_to: {
+                  to: {
                     /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                     starts_at: string
                     /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
@@ -14950,21 +14974,21 @@ export interface Routes {
                 }
               | {
                   created_at: string
-                  modification_code: 'suspension_state'
-                  modified_from: {
+                  mutation_code: 'updating_suspension_state'
+                  from: {
                     is_suspended: boolean
                   }
-                  modified_to: {
+                  to: {
                     is_suspended: boolean
                   }
                 }
               | {
                   created_at: string
-                  modification_code: 'acs_access_group_membership'
-                  modified_from: {
+                  mutation_code: 'updating_group_membership'
+                  from: {
                     acs_access_group_id: string | null
                   }
-                  modified_to: {
+                  to: {
                     acs_access_group_id: string | null
                   }
                 }
@@ -49893,21 +49917,25 @@ export interface Routes {
             }
         >
         /**  */
-        pending_modifications?:
+        pending_mutations?:
           | Array<
               | {
                   created_at: string
-                  modification_code: 'create'
+                  mutation_code: 'creating'
                 }
               | {
                   created_at: string
-                  modification_code: 'profile'
-                  modified_from: {
+                  mutation_code: 'deleting'
+                }
+              | {
+                  created_at: string
+                  mutation_code: 'updating_user_information'
+                  from: {
                     email_address?: (string | null) | undefined
                     full_name?: (string | null) | undefined
                     phone_number?: ((string | undefined) | null) | undefined
                   }
-                  modified_to: {
+                  to: {
                     email_address?: (string | null) | undefined
                     full_name?: (string | null) | undefined
                     phone_number?: ((string | undefined) | null) | undefined
@@ -49915,14 +49943,14 @@ export interface Routes {
                 }
               | {
                   created_at: string
-                  modification_code: 'access_schedule'
-                  modified_from: {
+                  mutation_code: 'updating_access_schedule'
+                  from: {
                     /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                     starts_at: string
                     /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                     ends_at: string | null
                   }
-                  modified_to: {
+                  to: {
                     /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                     starts_at: string
                     /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
@@ -49931,21 +49959,21 @@ export interface Routes {
                 }
               | {
                   created_at: string
-                  modification_code: 'suspension_state'
-                  modified_from: {
+                  mutation_code: 'updating_suspension_state'
+                  from: {
                     is_suspended: boolean
                   }
-                  modified_to: {
+                  to: {
                     is_suspended: boolean
                   }
                 }
               | {
                   created_at: string
-                  modification_code: 'acs_access_group_membership'
-                  modified_from: {
+                  mutation_code: 'updating_group_membership'
+                  from: {
                     acs_access_group_id: string | null
                   }
-                  modified_to: {
+                  to: {
                     acs_access_group_id: string | null
                   }
                 }
