@@ -3,9 +3,19 @@ import { z } from 'zod'
 import { device_and_connected_account_error_options } from '../devices/index.js'
 
 const common_access_code_error = z.object({
-  message: z.string(),
-  is_access_code_error: z.literal(true),
-  created_at: z.string().datetime().optional(),
+  message: z
+    .string()
+    .describe(
+      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+    ),
+  is_access_code_error: z
+    .literal(true)
+    .describe('Indicates that this is an access code error.'),
+  created_at: z
+    .string()
+    .datetime()
+    .optional()
+    .describe('Date and time at which Seam created the error.'),
 })
 
 const error_code_description =
@@ -17,7 +27,7 @@ const smartthings_failed_to_set_access_code_error = common_access_code_error
       .literal('smartthings_failed_to_set_access_code')
       .describe(error_code_description),
   })
-  .describe('Failed to set code on Smart Things device.')
+  .describe('Failed to set code on SmartThings device.')
 
 const smartthings_failed_to_set_after_multiple_retries =
   common_access_code_error
@@ -92,7 +102,7 @@ const kwikset_unable_to_confirm_code = common_access_code_error
       .literal('kwikset_unable_to_confirm_code')
       .describe(error_code_description),
   })
-  .describe('Unable to confirm the access code is set on Kwikset device.')
+  .describe('Unable to confirm that the access code is set on Kwikset device.')
 
 const kwikset_unable_to_confirm_deletion = common_access_code_error
   .extend({
@@ -111,7 +121,7 @@ const igloohome_offline_access_code_no_variance_available =
         .literal('igloohome_offline_access_code_no_variance_available')
         .describe(error_code_description),
     })
-    .describe('Lock as reached max amount of codes.')
+    .describe('Lock has reached maximum amount of codes.')
 
 const august_lock_invalid_code_length = common_access_code_error
   .extend({
@@ -209,32 +219,36 @@ const dormakaba_oracode_no_valid_user_level = common_access_code_error
   })
   .describe('No valid user level for Oracode.')
 
-const access_code_error = z.discriminatedUnion('error_code', [
-  smartthings_failed_to_set_access_code_error,
-  smartthings_failed_to_set_after_multiple_retries,
-  smartthings_no_free_slots_available,
-  failed_to_set_on_device,
-  failed_to_remove_from_device,
-  duplicate_code_on_device,
-  duplicate_code_attempt_prevented,
-  igloohome_bridge_too_many_pending_jobs,
-  igloohome_bridge_offline,
-  igloohome_offline_access_code_no_variance_available,
-  kwikset_unable_to_confirm_code,
-  kwikset_unable_to_confirm_deletion,
-  code_modified_external_to_seam_error,
-  august_lock_invalid_code_length,
-  august_device_programming_delay_error,
-  august_device_slots_full,
-  august_lock_missing_keypad,
-  august_lock_temporarily_offline_error,
-  salto_ks_user_not_subscribed,
-  hubitat_device_programming_delay,
-  hubitat_no_free_positions_available,
-  wyze_duplicate_code_name,
-  wyze_potential_duplicate_code,
-  dormakaba_oracode_no_valid_user_level,
-])
+const access_code_error = z
+  .discriminatedUnion('error_code', [
+    smartthings_failed_to_set_access_code_error,
+    smartthings_failed_to_set_after_multiple_retries,
+    smartthings_no_free_slots_available,
+    failed_to_set_on_device,
+    failed_to_remove_from_device,
+    duplicate_code_on_device,
+    duplicate_code_attempt_prevented,
+    igloohome_bridge_too_many_pending_jobs,
+    igloohome_bridge_offline,
+    igloohome_offline_access_code_no_variance_available,
+    kwikset_unable_to_confirm_code,
+    kwikset_unable_to_confirm_deletion,
+    code_modified_external_to_seam_error,
+    august_lock_invalid_code_length,
+    august_device_programming_delay_error,
+    august_device_slots_full,
+    august_lock_missing_keypad,
+    august_lock_temporarily_offline_error,
+    salto_ks_user_not_subscribed,
+    hubitat_device_programming_delay,
+    hubitat_no_free_positions_available,
+    wyze_duplicate_code_name,
+    wyze_potential_duplicate_code,
+    dormakaba_oracode_no_valid_user_level,
+  ])
+  .describe(
+    'Errors associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+  )
 
 export type AccessCodeError = z.infer<typeof access_code_error>
 
@@ -301,8 +315,16 @@ const access_code_error_map = z.object({
 export type AccessCodeErrorMap = z.infer<typeof access_code_error_map>
 
 const common_access_code_warning = z.object({
-  message: z.string(),
-  created_at: z.string().datetime().optional(),
+  message: z
+    .string()
+    .describe(
+      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+    ),
+  created_at: z
+    .string()
+    .datetime()
+    .optional()
+    .describe('Date and time at which Seam created the warning.'),
 })
 
 const warning_code_description =
@@ -314,7 +336,7 @@ const smartthings_failed_to_set_access_code_warning = common_access_code_warning
       .literal('smartthings_failed_to_set_access_code')
       .describe(warning_code_description),
   })
-  .describe('Failed to set code on Smart Things device.')
+  .describe('Failed to set code on SmartThings device.')
 
 const august_device_programming_delay_warning = common_access_code_warning
   .extend({
@@ -381,7 +403,7 @@ const third_party_integration_detected = common_access_code_warning
       .describe(warning_code_description),
   })
   .describe(
-    'Third party integration detected that may cause access codes to fail.',
+    'Third-party integration detected that may cause access codes to fail.',
   )
 
 const igloo_algopin_must_be_used_within_24_hours = common_access_code_warning
@@ -406,22 +428,26 @@ const kwikset_unable_to_confirm_code_warning = common_access_code_warning
       .literal('kwikset_unable_to_confirm_code')
       .describe(warning_code_description),
   })
-  .describe('Unable to confirm the access code is set on Kwikset device.')
+  .describe('Unable to confirm that the access code is set on Kwikset device.')
 
-const access_code_warning = z.discriminatedUnion('warning_code', [
-  smartthings_failed_to_set_access_code_warning,
-  schlage_detected_duplicate,
-  schlage_creation_outage,
-  code_modified_external_to_seam_warning,
-  delay_in_setting_on_device,
-  delay_in_removing_from_device,
-  third_party_integration_detected,
-  august_device_programming_delay_warning,
-  august_lock_temporarily_offline_warning,
-  igloo_algopin_must_be_used_within_24_hours,
-  management_transferred,
-  kwikset_unable_to_confirm_code_warning,
-])
+const access_code_warning = z
+  .discriminatedUnion('warning_code', [
+    smartthings_failed_to_set_access_code_warning,
+    schlage_detected_duplicate,
+    schlage_creation_outage,
+    code_modified_external_to_seam_warning,
+    delay_in_setting_on_device,
+    delay_in_removing_from_device,
+    third_party_integration_detected,
+    august_device_programming_delay_warning,
+    august_lock_temporarily_offline_warning,
+    igloo_algopin_must_be_used_within_24_hours,
+    management_transferred,
+    kwikset_unable_to_confirm_code_warning,
+  ])
+  .describe(
+    'Warnings associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+  )
 
 export type AccessCodeWarning = z.infer<typeof access_code_warning>
 
@@ -472,7 +498,7 @@ export const access_code = z.object({
   type: z
     .enum(['time_bound', 'ongoing'])
     .describe(
-      'Nature of the access code. Values are "ongoing" for access codes that are active continuously until deactivated manually or "time_bound" for access codes that have a specific duration.',
+      'Nature of the access code. Values are `ongoing` for access codes that are active continuously until deactivated manually or `time_bound` for access codes that have a specific duration.',
     ),
   is_waiting_for_code_assignment: z
     .boolean()
@@ -514,12 +540,12 @@ export const access_code = z.object({
       ]),
     )
     .describe(
-      'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
+      'Errors associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
     ),
   warnings: z
     .array(access_code_warning)
     .describe(
-      'Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention.',
+      'Warnings associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
     ),
   is_managed: z
     .literal(true)
@@ -540,9 +566,11 @@ export const access_code = z.object({
     .describe(
       'Date and time after which the time-bound access code becomes inactive.',
     ),
-  status: z.enum(['setting', 'set', 'unset', 'removing', 'unknown']).describe(`
-    Current status of the access code within the operational lifecycle. Values are "setting," a transitional phase that indicates that the code is being configured or activated; "set", which indicates that the code is active and operational; "unset," which indicates a deactivated or unused state, either before activation or after deliberate deactivation; "removing," which indicates a transitional period in which the code is being deleted or made inactive; and "unknown," which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting.
-  `),
+  status: z
+    .enum(['setting', 'set', 'unset', 'removing', 'unknown'])
+    .describe(
+      'Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting.',
+    ),
   is_backup_access_code_available: z
     .boolean()
     .describe(
@@ -568,17 +596,24 @@ export const access_code = z.object({
   is_one_time_use: z
     .boolean()
     .describe(
-      'Indicates whether the access code can only be used once. If "true," the code becomes invalid after the first use.',
+      'Indicates whether the access code can only be used once. If `true`, the code becomes invalid after the first use.',
     ),
   is_offline_access_code: z
     .boolean()
     .describe(
-      'Indicates whether the access code is intended for use in offline scenarios. If "true," this code can be created on a device without a network connection.',
+      'Indicates whether the access code is intended for use in offline scenarios. If `true`, this code can be created on a device without a network connection.',
     ),
 }).describe(`
   ---
   route_path: /access_codes
   ---
+  Represents a smart lock [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+
+  An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam Access Code API, you can easily generate access codes on the hundreds of door lock models with which we integrate.
+
+  Seam supports programming two types of access codes: [ongoing](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#time-bound-access-codes). To differentiate between the two, refer to the \`type\` property of the access code. Ongoing codes display as \`ongoing\`, whereas time-bound codes are labeled \`time_bound\`.
+
+  In addition, for certain devices, Seam also supports [offline access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#offline-access-codes). Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code.
 `)
 
 export type AccessCode = z.infer<typeof access_code>
