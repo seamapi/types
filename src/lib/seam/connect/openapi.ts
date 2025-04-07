@@ -20325,7 +20325,7 @@ export default {
     '/acs/systems/list_compatible_credential_manager_acs_systems': {
       post: {
         description:
-          'Returns a list of all credential manager ACS systems that are compatible with a specified\n[access control system](https://docs.seam.co/latest/capability-guides/access-systems).\n\nSpecify the ACS system for which you want to retrieve all compatible credential manager ACS\nsystems by including the corresponding `acs_system_id` in the request body.',
+          'Returns a list of all credential manager ACS systems that are compatible with a specified [access control system](https://docs.seam.co/latest/capability-guides/access-systems).\n\nSpecify the ACS system for which you want to retrieve all compatible credential manager ACS systems by including the corresponding `acs_system_id` in the request body.',
         operationId: 'acsSystemsListCompatibleCredentialManagerAcsSystemsPost',
         requestBody: {
           content: {
