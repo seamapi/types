@@ -67,6 +67,9 @@ export type AcsUserPendingMutation = z.infer<typeof acs_user_pending_mutations>
 export const acs_user_pending_mutations_map = z.object({
   creating: creating.optional().nullable(),
   deleting: deleting.optional().nullable(),
+  updating_suspension_state: updating_suspension_state_mutation
+    .optional()
+    .nullable(),
   'updating_user_information.full_name': common_pending_mutation
     .extend({
       mutation_code: z.literal('updating_user_information'),
