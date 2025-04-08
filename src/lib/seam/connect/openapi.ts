@@ -27075,11 +27075,13 @@ export default {
                                   can_tailscale_proxy_reach_bridge: {
                                     description:
                                       'Tailscale proxy cannot reach the bridge',
+                                    nullable: true,
                                     type: 'boolean',
                                   },
                                   can_tailscale_proxy_reach_tailscale_network: {
                                     description:
                                       'Tailscale proxy cannot reach the Tailscale network',
+                                    nullable: true,
                                     type: 'boolean',
                                   },
                                   created_at: {
@@ -27095,16 +27097,19 @@ export default {
                                   is_bridge_socks_server_healthy: {
                                     description:
                                       "Bridge's SOCKS server is unhealthy",
+                                    nullable: true,
                                     type: 'boolean',
                                   },
                                   is_tailscale_proxy_reachable: {
                                     description:
                                       'Seam cannot reach the tailscale proxy',
+                                    nullable: true,
                                     type: 'boolean',
                                   },
                                   is_tailscale_proxy_socks_server_healthy: {
                                     description:
                                       "Tailscale proxy's SOCKS server is unhealthy",
+                                    nullable: true,
                                     type: 'boolean',
                                   },
                                   message: { type: 'string' },
@@ -27242,11 +27247,13 @@ export default {
                                   can_tailscale_proxy_reach_bridge: {
                                     description:
                                       'Tailscale proxy cannot reach the bridge',
+                                    nullable: true,
                                     type: 'boolean',
                                   },
                                   can_tailscale_proxy_reach_tailscale_network: {
                                     description:
                                       'Tailscale proxy cannot reach the Tailscale network',
+                                    nullable: true,
                                     type: 'boolean',
                                   },
                                   created_at: {
@@ -27262,16 +27269,19 @@ export default {
                                   is_bridge_socks_server_healthy: {
                                     description:
                                       "Bridge's SOCKS server is unhealthy",
+                                    nullable: true,
                                     type: 'boolean',
                                   },
                                   is_tailscale_proxy_reachable: {
                                     description:
                                       'Seam cannot reach the tailscale proxy',
+                                    nullable: true,
                                     type: 'boolean',
                                   },
                                   is_tailscale_proxy_socks_server_healthy: {
                                     description:
                                       "Tailscale proxy's SOCKS server is unhealthy",
+                                    nullable: true,
                                     type: 'boolean',
                                   },
                                   message: { type: 'string' },
@@ -27400,11 +27410,13 @@ export default {
                                   can_tailscale_proxy_reach_bridge: {
                                     description:
                                       'Tailscale proxy cannot reach the bridge',
+                                    nullable: true,
                                     type: 'boolean',
                                   },
                                   can_tailscale_proxy_reach_tailscale_network: {
                                     description:
                                       'Tailscale proxy cannot reach the Tailscale network',
+                                    nullable: true,
                                     type: 'boolean',
                                   },
                                   created_at: {
@@ -27420,16 +27432,19 @@ export default {
                                   is_bridge_socks_server_healthy: {
                                     description:
                                       "Bridge's SOCKS server is unhealthy",
+                                    nullable: true,
                                     type: 'boolean',
                                   },
                                   is_tailscale_proxy_reachable: {
                                     description:
                                       'Seam cannot reach the tailscale proxy',
+                                    nullable: true,
                                     type: 'boolean',
                                   },
                                   is_tailscale_proxy_socks_server_healthy: {
                                     description:
                                       "Tailscale proxy's SOCKS server is unhealthy",
+                                    nullable: true,
                                     type: 'boolean',
                                   },
                                   message: { type: 'string' },
@@ -27568,11 +27583,13 @@ export default {
                                   can_tailscale_proxy_reach_bridge: {
                                     description:
                                       'Tailscale proxy cannot reach the bridge',
+                                    nullable: true,
                                     type: 'boolean',
                                   },
                                   can_tailscale_proxy_reach_tailscale_network: {
                                     description:
                                       'Tailscale proxy cannot reach the Tailscale network',
+                                    nullable: true,
                                     type: 'boolean',
                                   },
                                   created_at: {
@@ -27588,16 +27605,19 @@ export default {
                                   is_bridge_socks_server_healthy: {
                                     description:
                                       "Bridge's SOCKS server is unhealthy",
+                                    nullable: true,
                                     type: 'boolean',
                                   },
                                   is_tailscale_proxy_reachable: {
                                     description:
                                       'Seam cannot reach the tailscale proxy',
+                                    nullable: true,
                                     type: 'boolean',
                                   },
                                   is_tailscale_proxy_socks_server_healthy: {
                                     description:
                                       "Tailscale proxy's SOCKS server is unhealthy",
+                                    nullable: true,
                                     type: 'boolean',
                                   },
                                   message: { type: 'string' },
