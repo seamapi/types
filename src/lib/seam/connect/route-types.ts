@@ -36885,15 +36885,15 @@ export interface Routes {
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_lan_unreachable'
               /** Seam cannot reach the tailscale proxy */
-              is_tailscale_proxy_reachable: boolean
+              is_tailscale_proxy_reachable: boolean | null
               /** Tailscale proxy's SOCKS server is unhealthy */
-              is_tailscale_proxy_socks_server_healthy: boolean
+              is_tailscale_proxy_socks_server_healthy: boolean | null
               /** Tailscale proxy cannot reach the Tailscale network */
-              can_tailscale_proxy_reach_tailscale_network: boolean
+              can_tailscale_proxy_reach_tailscale_network: boolean | null
               /** Tailscale proxy cannot reach the bridge */
-              can_tailscale_proxy_reach_bridge: boolean
+              can_tailscale_proxy_reach_bridge: boolean | null
               /** Bridge's SOCKS server is unhealthy */
-              is_bridge_socks_server_healthy: boolean
+              is_bridge_socks_server_healthy: boolean | null
             }
           | {
               message: string
@@ -36932,15 +36932,15 @@ export interface Routes {
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_lan_unreachable'
               /** Seam cannot reach the tailscale proxy */
-              is_tailscale_proxy_reachable: boolean
+              is_tailscale_proxy_reachable: boolean | null
               /** Tailscale proxy's SOCKS server is unhealthy */
-              is_tailscale_proxy_socks_server_healthy: boolean
+              is_tailscale_proxy_socks_server_healthy: boolean | null
               /** Tailscale proxy cannot reach the Tailscale network */
-              can_tailscale_proxy_reach_tailscale_network: boolean
+              can_tailscale_proxy_reach_tailscale_network: boolean | null
               /** Tailscale proxy cannot reach the bridge */
-              can_tailscale_proxy_reach_bridge: boolean
+              can_tailscale_proxy_reach_bridge: boolean | null
               /** Bridge's SOCKS server is unhealthy */
-              is_bridge_socks_server_healthy: boolean
+              is_bridge_socks_server_healthy: boolean | null
             }
           | {
               message: string
@@ -36979,15 +36979,15 @@ export interface Routes {
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_lan_unreachable'
               /** Seam cannot reach the tailscale proxy */
-              is_tailscale_proxy_reachable: boolean
+              is_tailscale_proxy_reachable: boolean | null
               /** Tailscale proxy's SOCKS server is unhealthy */
-              is_tailscale_proxy_socks_server_healthy: boolean
+              is_tailscale_proxy_socks_server_healthy: boolean | null
               /** Tailscale proxy cannot reach the Tailscale network */
-              can_tailscale_proxy_reach_tailscale_network: boolean
+              can_tailscale_proxy_reach_tailscale_network: boolean | null
               /** Tailscale proxy cannot reach the bridge */
-              can_tailscale_proxy_reach_bridge: boolean
+              can_tailscale_proxy_reach_bridge: boolean | null
               /** Bridge's SOCKS server is unhealthy */
-              is_bridge_socks_server_healthy: boolean
+              is_bridge_socks_server_healthy: boolean | null
             }
           | {
               message: string

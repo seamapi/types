@@ -15,18 +15,23 @@ export const bridge_lan_unreachable = common_bridge_client_session_error
       .describe(error_code_description),
     is_tailscale_proxy_reachable: z
       .boolean()
+      .nullable()
       .describe('Seam cannot reach the tailscale proxy'),
     is_tailscale_proxy_socks_server_healthy: z
       .boolean()
+      .nullable()
       .describe("Tailscale proxy's SOCKS server is unhealthy"),
     can_tailscale_proxy_reach_tailscale_network: z
       .boolean()
+      .nullable()
       .describe('Tailscale proxy cannot reach the Tailscale network'),
     can_tailscale_proxy_reach_bridge: z
       .boolean()
+      .nullable()
       .describe('Tailscale proxy cannot reach the bridge'),
     is_bridge_socks_server_healthy: z
       .boolean()
+      .nullable()
       .describe("Bridge's SOCKS server is unhealthy"),
   })
   .describe("Seam cannot reach the bridge's LAN")
