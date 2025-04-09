@@ -2995,16 +2995,13 @@ export default {
                     from: {
                       properties: {
                         ends_at: {
-                          description:
-                            "Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
                           format: 'date-time',
                           nullable: true,
                           type: 'string',
                         },
                         starts_at: {
-                          description:
-                            "Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
                           format: 'date-time',
+                          nullable: true,
                           type: 'string',
                         },
                       },
@@ -3018,16 +3015,13 @@ export default {
                     to: {
                       properties: {
                         ends_at: {
-                          description:
-                            "Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
                           format: 'date-time',
                           nullable: true,
                           type: 'string',
                         },
                         starts_at: {
-                          description:
-                            "Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
                           format: 'date-time',
+                          nullable: true,
                           type: 'string',
                         },
                       },
@@ -16085,16 +16079,13 @@ export default {
                     from: {
                       properties: {
                         ends_at: {
-                          description:
-                            "Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
                           format: 'date-time',
                           nullable: true,
                           type: 'string',
                         },
                         starts_at: {
-                          description:
-                            "Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
                           format: 'date-time',
+                          nullable: true,
                           type: 'string',
                         },
                       },
@@ -16108,16 +16099,13 @@ export default {
                     to: {
                       properties: {
                         ends_at: {
-                          description:
-                            "Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
                           format: 'date-time',
                           nullable: true,
                           type: 'string',
                         },
                         starts_at: {
-                          description:
-                            "Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
                           format: 'date-time',
+                          nullable: true,
                           type: 'string',
                         },
                       },
