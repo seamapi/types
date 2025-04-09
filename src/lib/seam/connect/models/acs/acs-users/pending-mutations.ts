@@ -1,7 +1,6 @@
 import { z } from 'zod'
 
 import { phone_number } from '../../phone-number.js'
-import { schedule } from '../../schedule.js'
 
 const common_pending_mutation = z.object({
   created_at: z.string().datetime(),
@@ -28,10 +27,15 @@ export const updating_user_information_mutation =
     to: acs_user_info.partial(),
   })
 
+const access_schedule = z.object({
+  starts_at: z.string().datetime().nullable(),
+  ends_at: z.string().datetime().nullable(),
+})
+
 const updating_access_schedule_mutation = common_pending_mutation.extend({
   mutation_code: z.literal('updating_access_schedule'),
-  from: schedule,
-  to: schedule,
+  from: access_schedule,
+  to: access_schedule,
 })
 
 const updating_suspension_state_mutation = common_pending_mutation.extend({
@@ -67,6 +71,9 @@ export type AcsUserPendingMutation = z.infer<typeof acs_user_pending_mutations>
 export const acs_user_pending_mutations_map = z.object({
   creating: creating.optional().nullable(),
   deleting: deleting.optional().nullable(),
+  updating_access_schedule: updating_access_schedule_mutation
+    .optional()
+    .nullable(),
   updating_group_membership: z
     .map(z.string().uuid(), updating_group_membership_mutation)
     .optional()

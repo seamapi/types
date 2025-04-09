@@ -9618,15 +9618,11 @@ export interface Routes {
                   created_at: string
                   mutation_code: 'updating_access_schedule'
                   from: {
-                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at: string
-                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string | null
                     ends_at: string | null
                   }
                   to: {
-                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at: string
-                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string | null
                     ends_at: string | null
                   }
                 }
@@ -14947,15 +14943,11 @@ export interface Routes {
                   created_at: string
                   mutation_code: 'updating_access_schedule'
                   from: {
-                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at: string
-                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string | null
                     ends_at: string | null
                   }
                   to: {
-                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at: string
-                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string | null
                     ends_at: string | null
                   }
                 }
@@ -15166,15 +15158,11 @@ export interface Routes {
                   created_at: string
                   mutation_code: 'updating_access_schedule'
                   from: {
-                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at: string
-                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string | null
                     ends_at: string | null
                   }
                   to: {
-                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at: string
-                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string | null
                     ends_at: string | null
                   }
                 }
@@ -15381,15 +15369,11 @@ export interface Routes {
                   created_at: string
                   mutation_code: 'updating_access_schedule'
                   from: {
-                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at: string
-                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string | null
                     ends_at: string | null
                   }
                   to: {
-                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at: string
-                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string | null
                     ends_at: string | null
                   }
                 }
@@ -15728,15 +15712,11 @@ export interface Routes {
                   created_at: string
                   mutation_code: 'updating_access_schedule'
                   from: {
-                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at: string
-                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string | null
                     ends_at: string | null
                   }
                   to: {
-                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at: string
-                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string | null
                     ends_at: string | null
                   }
                 }
@@ -15933,15 +15913,11 @@ export interface Routes {
                   created_at: string
                   mutation_code: 'updating_access_schedule'
                   from: {
-                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at: string
-                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string | null
                     ends_at: string | null
                   }
                   to: {
-                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at: string
-                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string | null
                     ends_at: string | null
                   }
                 }
@@ -50918,15 +50894,11 @@ export interface Routes {
                   created_at: string
                   mutation_code: 'updating_access_schedule'
                   from: {
-                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at: string
-                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string | null
                     ends_at: string | null
                   }
                   to: {
-                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at: string
-                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string | null
                     ends_at: string | null
                   }
                 }
