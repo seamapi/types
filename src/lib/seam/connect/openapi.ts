@@ -2941,17 +2941,19 @@ export default {
                 {
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
+                    message: { type: 'string' },
                     mutation_code: { enum: ['creating'], type: 'string' },
                   },
-                  required: ['created_at', 'mutation_code'],
+                  required: ['created_at', 'message', 'mutation_code'],
                   type: 'object',
                 },
                 {
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
+                    message: { type: 'string' },
                     mutation_code: { enum: ['deleting'], type: 'string' },
                   },
-                  required: ['created_at', 'mutation_code'],
+                  required: ['created_at', 'message', 'mutation_code'],
                   type: 'object',
                 },
                 {
@@ -2969,6 +2971,7 @@ export default {
                       },
                       type: 'object',
                     },
+                    message: { type: 'string' },
                     mutation_code: {
                       enum: ['updating_user_information'],
                       type: 'string',
@@ -2986,7 +2989,13 @@ export default {
                       type: 'object',
                     },
                   },
-                  required: ['created_at', 'mutation_code', 'from', 'to'],
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
                   type: 'object',
                 },
                 {
@@ -3008,6 +3017,7 @@ export default {
                       required: ['starts_at', 'ends_at'],
                       type: 'object',
                     },
+                    message: { type: 'string' },
                     mutation_code: {
                       enum: ['updating_access_schedule'],
                       type: 'string',
@@ -3029,7 +3039,13 @@ export default {
                       type: 'object',
                     },
                   },
-                  required: ['created_at', 'mutation_code', 'from', 'to'],
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
                   type: 'object',
                 },
                 {
@@ -3040,6 +3056,7 @@ export default {
                       required: ['is_suspended'],
                       type: 'object',
                     },
+                    message: { type: 'string' },
                     mutation_code: {
                       enum: ['updating_suspension_state'],
                       type: 'string',
@@ -3050,7 +3067,13 @@ export default {
                       type: 'object',
                     },
                   },
-                  required: ['created_at', 'mutation_code', 'from', 'to'],
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
                   type: 'object',
                 },
                 {
@@ -3067,6 +3090,7 @@ export default {
                       required: ['acs_access_group_id'],
                       type: 'object',
                     },
+                    message: { type: 'string' },
                     mutation_code: {
                       enum: ['updating_group_membership'],
                       type: 'string',
@@ -3083,7 +3107,13 @@ export default {
                       type: 'object',
                     },
                   },
-                  required: ['created_at', 'mutation_code', 'from', 'to'],
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
                   type: 'object',
                 },
               ],
@@ -16025,17 +16055,19 @@ export default {
                 {
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
+                    message: { type: 'string' },
                     mutation_code: { enum: ['creating'], type: 'string' },
                   },
-                  required: ['created_at', 'mutation_code'],
+                  required: ['created_at', 'message', 'mutation_code'],
                   type: 'object',
                 },
                 {
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
+                    message: { type: 'string' },
                     mutation_code: { enum: ['deleting'], type: 'string' },
                   },
-                  required: ['created_at', 'mutation_code'],
+                  required: ['created_at', 'message', 'mutation_code'],
                   type: 'object',
                 },
                 {
@@ -16053,6 +16085,7 @@ export default {
                       },
                       type: 'object',
                     },
+                    message: { type: 'string' },
                     mutation_code: {
                       enum: ['updating_user_information'],
                       type: 'string',
@@ -16070,7 +16103,13 @@ export default {
                       type: 'object',
                     },
                   },
-                  required: ['created_at', 'mutation_code', 'from', 'to'],
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
                   type: 'object',
                 },
                 {
@@ -16092,6 +16131,7 @@ export default {
                       required: ['starts_at', 'ends_at'],
                       type: 'object',
                     },
+                    message: { type: 'string' },
                     mutation_code: {
                       enum: ['updating_access_schedule'],
                       type: 'string',
@@ -16113,7 +16153,13 @@ export default {
                       type: 'object',
                     },
                   },
-                  required: ['created_at', 'mutation_code', 'from', 'to'],
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
                   type: 'object',
                 },
                 {
@@ -16124,6 +16170,7 @@ export default {
                       required: ['is_suspended'],
                       type: 'object',
                     },
+                    message: { type: 'string' },
                     mutation_code: {
                       enum: ['updating_suspension_state'],
                       type: 'string',
@@ -16134,7 +16181,13 @@ export default {
                       type: 'object',
                     },
                   },
-                  required: ['created_at', 'mutation_code', 'from', 'to'],
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
                   type: 'object',
                 },
                 {
@@ -16151,6 +16204,7 @@ export default {
                       required: ['acs_access_group_id'],
                       type: 'object',
                     },
+                    message: { type: 'string' },
                     mutation_code: {
                       enum: ['updating_group_membership'],
                       type: 'string',
@@ -16167,7 +16221,13 @@ export default {
                       type: 'object',
                     },
                   },
-                  required: ['created_at', 'mutation_code', 'from', 'to'],
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
                   type: 'object',
                 },
               ],
