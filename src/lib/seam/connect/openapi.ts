@@ -8230,6 +8230,7 @@ export default {
                             description:
                               "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
                             minimum: 0,
+                            nullable: true,
                             type: 'integer',
                           },
                           name: {
@@ -8260,7 +8261,6 @@ export default {
                           'thermostat_schedule_id',
                           'device_id',
                           'climate_preset_key',
-                          'max_override_period_minutes',
                           'starts_at',
                           'ends_at',
                           'created_at',
@@ -13856,6 +13856,7 @@ export default {
             description:
               "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
             minimum: 0,
+            nullable: true,
             type: 'integer',
           },
           name: {
@@ -13886,7 +13887,6 @@ export default {
           'thermostat_schedule_id',
           'device_id',
           'climate_preset_key',
-          'max_override_period_minutes',
           'starts_at',
           'ends_at',
           'created_at',
@@ -28777,10 +28777,11 @@ export default {
                     type: 'boolean',
                   },
                   max_override_period_minutes: {
-                    default: 0,
+                    default: null,
                     description:
                       "Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
                     minimum: 0,
+                    nullable: true,
                     type: 'integer',
                   },
                   name: {
@@ -29046,6 +29047,7 @@ export default {
                     description:
                       "Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
                     minimum: 0,
+                    nullable: true,
                     type: 'integer',
                   },
                   name: {
@@ -29126,6 +29128,7 @@ export default {
                     description:
                       "Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
                     minimum: 0,
+                    nullable: true,
                     type: 'integer',
                   },
                   name: {
@@ -30088,6 +30091,7 @@ export default {
                             type: 'string',
                           },
                         },
+                        required: ['user_identity_id'],
                         type: 'object',
                       },
                       {
@@ -30116,9 +30120,9 @@ export default {
                               },
                             },
                             type: 'object',
-                            'x-route-path': '/user_identities',
                           },
                         },
+                        required: ['user_identity'],
                         type: 'object',
                       },
                     ],

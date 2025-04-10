@@ -28,6 +28,8 @@ export const thermostat_schedule = z.object({
     .number()
     .int()
     .nonnegative()
+    .nullable()
+    .optional()
     .describe(
       "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
     ),
