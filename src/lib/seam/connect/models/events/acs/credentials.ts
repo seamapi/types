@@ -43,7 +43,8 @@ export const acs_credential_invalidated = acs_credential_event.extend({
   ---
   route_path: /acs/credentials
   ---
-  An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was invalidated.
+  An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was invalidated. That is, the credential cannot be used anymore.
+
 `)
 
 export const acs_credential_events = [

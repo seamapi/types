@@ -4,6 +4,7 @@ import { phone_number } from '../../phone-number.js'
 
 const common_pending_mutation = z.object({
   created_at: z.string().datetime(),
+  message: z.string(),
 })
 
 const creating = common_pending_mutation.extend({
