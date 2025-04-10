@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-import { access_method } from './access-method.js'
+import { requested_access_method } from './requested-access-method.js'
 
 export const access_grant = z.object({
   workspace_id: z
@@ -17,9 +17,9 @@ export const access_grant = z.object({
   location_ids: z
     .array(z.string().uuid())
     .describe('IDs of the locations to which access is being given.'),
-  access_methods: z
-    .array(access_method)
-    .describe('Access methods associated with this access grant.'),
+  requested_access_methods: z
+    .array(requested_access_method)
+    .describe('Access methods that the user requested for this access grant.'),
   display_name: z.string().describe('Display name of the access grant.'),
   created_at: z
     .string()
