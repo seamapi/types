@@ -7936,20 +7936,11 @@ export default {
                       },
                       schlage_metadata: {
                         properties: {
-                          access_code_length: {
-                            format: 'float',
-                            nullable: true,
-                            type: 'number',
-                          },
                           device_id: { type: 'string' },
                           device_name: { type: 'string' },
                           model: { type: 'string' },
                         },
-                        required: [
-                          'device_id',
-                          'device_name',
-                          'access_code_length',
-                        ],
+                        required: ['device_id', 'device_name'],
                         type: 'object',
                       },
                       seam_bridge_metadata: {

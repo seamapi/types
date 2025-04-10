@@ -19295,7 +19295,6 @@ export interface Routes {
             | {
                 device_id: string
                 device_name: string
-                access_code_length: number | null
                 model?: string | undefined
               }
             | undefined
@@ -20410,7 +20409,6 @@ export interface Routes {
             | {
                 device_id: string
                 device_name: string
-                access_code_length: number | null
                 model?: string | undefined
               }
             | undefined
@@ -25314,7 +25312,6 @@ export interface Routes {
             | {
                 device_id: string
                 device_name: string
-                access_code_length: number | null
                 model?: string | undefined
               }
             | undefined
@@ -26241,7 +26238,6 @@ export interface Routes {
             | {
                 device_id: string
                 device_name: string
-                access_code_length: number | null
                 model?: string | undefined
               }
             | undefined
@@ -27324,7 +27320,6 @@ export interface Routes {
             | {
                 device_id: string
                 device_name: string
-                access_code_length: number | null
                 model?: string | undefined
               }
             | undefined
@@ -28250,7 +28245,6 @@ export interface Routes {
             | {
                 device_id: string
                 device_name: string
-                access_code_length: number | null
                 model?: string | undefined
               }
             | undefined
@@ -31542,7 +31536,6 @@ export interface Routes {
             | {
                 device_id: string
                 device_name: string
-                access_code_length: number | null
                 model?: string | undefined
               }
             | undefined
@@ -32468,7 +32461,6 @@ export interface Routes {
             | {
                 device_id: string
                 device_name: string
-                access_code_length: number | null
                 model?: string | undefined
               }
             | undefined
@@ -39593,7 +39585,6 @@ export interface Routes {
             | {
                 device_id: string
                 device_name: string
-                access_code_length: number | null
                 model?: string | undefined
               }
             | undefined
@@ -42882,7 +42873,6 @@ export interface Routes {
             | {
                 device_id: string
                 device_name: string
-                access_code_length: number | null
                 model?: string | undefined
               }
             | undefined
@@ -43808,7 +43798,6 @@ export interface Routes {
             | {
                 device_id: string
                 device_name: string
-                access_code_length: number | null
                 model?: string | undefined
               }
             | undefined
@@ -49074,7 +49063,6 @@ export interface Routes {
             | {
                 device_id: string
                 device_name: string
-                access_code_length: number | null
                 model?: string | undefined
               }
             | undefined
@@ -50002,7 +49990,6 @@ export interface Routes {
             | {
                 device_id: string
                 device_name: string
-                access_code_length: number | null
                 model?: string | undefined
               }
             | undefined
