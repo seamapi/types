@@ -42,7 +42,6 @@ export const device_metadata = z
     schlage_metadata: z.object({
       device_id: z.string(),
       device_name: z.string(),
-      access_code_length: z.number().nullable(),
       model: z.string().optional(),
     }),
 
