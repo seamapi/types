@@ -30088,6 +30088,7 @@ export default {
                             type: 'string',
                           },
                         },
+                        required: ['user_identity_id'],
                         type: 'object',
                       },
                       {
@@ -30116,9 +30117,9 @@ export default {
                               },
                             },
                             type: 'object',
-                            'x-route-path': '/user_identities',
                           },
                         },
+                        required: ['user_identity'],
                         type: 'object',
                       },
                     ],
@@ -30201,53 +30202,6 @@ export default {
                           format: 'uuid',
                           type: 'string',
                         },
-                        access_methods: {
-                          description:
-                            'Access methods associated with this access grant.',
-                          items: {
-                            properties: {
-                              access_method_key: {
-                                description:
-                                  'Key for the access method - unique within an access grant.',
-                                type: 'string',
-                              },
-                              created_at: {
-                                description:
-                                  'Date and time at which the access method was created.',
-                                format: 'date-time',
-                                type: 'string',
-                              },
-                              display_name: {
-                                description:
-                                  'Display name of the access method.',
-                                type: 'string',
-                              },
-                              issued_at: {
-                                description:
-                                  'Date and time at which the access method was issued.',
-                                format: 'date-time',
-                                nullable: true,
-                                type: 'string',
-                              },
-                              mode: {
-                                description:
-                                  'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                                enum: ['code', 'card', 'mobile_key'],
-                                type: 'string',
-                              },
-                            },
-                            required: [
-                              'access_method_key',
-                              'display_name',
-                              'mode',
-                              'created_at',
-                              'issued_at',
-                            ],
-                            type: 'object',
-                            'x-undocumented': 'Unreleased.',
-                          },
-                          type: 'array',
-                        },
                         created_at: {
                           description:
                             'Date and time at which the access grant was created.',
@@ -30262,6 +30216,46 @@ export default {
                           description:
                             'IDs of the locations to which access is being given.',
                           items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                        requested_access_methods: {
+                          description:
+                            'Access methods that the user requested for this access grant.',
+                          items: {
+                            properties: {
+                              created_at: {
+                                description:
+                                  'Date and time at which the requested access method was added to this access grant.',
+                                format: 'date-time',
+                                type: 'string',
+                              },
+                              display_name: {
+                                description:
+                                  'Display name of the access method.',
+                                type: 'string',
+                              },
+                              mode: {
+                                description:
+                                  'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                                enum: ['code', 'card', 'mobile_key'],
+                                type: 'string',
+                              },
+                              provisioned_access_method_ids: {
+                                description:
+                                  'IDs of the locations to which access is being given.',
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
+                            },
+                            required: [
+                              'display_name',
+                              'mode',
+                              'created_at',
+                              'provisioned_access_method_ids',
+                            ],
+                            type: 'object',
+                            'x-undocumented': 'Unreleased.',
+                          },
                           type: 'array',
                         },
                         user_identity_id: {
@@ -30282,7 +30276,7 @@ export default {
                         'access_grant_id',
                         'user_identity_id',
                         'location_ids',
-                        'access_methods',
+                        'requested_access_methods',
                         'display_name',
                         'created_at',
                       ],
@@ -30313,6 +30307,417 @@ export default {
         'x-fern-sdk-return-value': 'access_grant',
         'x-response-key': 'access_grant',
         'x-title': 'Create an Access Grant',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
+    '/unstable_access_grants/get': {
+      post: {
+        description: 'Get an access grant.',
+        operationId: 'unstableAccessGrantsGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_grant_id: {
+                    description: 'ID of access grant to get.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['access_grant_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_grant: {
+                      properties: {
+                        access_grant_id: {
+                          description: 'ID of the access grant.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        created_at: {
+                          description:
+                            'Date and time at which the access grant was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        display_name: {
+                          description: 'Display name of the access grant.',
+                          type: 'string',
+                        },
+                        location_ids: {
+                          description:
+                            'IDs of the locations to which access is being given.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                        requested_access_methods: {
+                          description:
+                            'Access methods that the user requested for this access grant.',
+                          items: {
+                            properties: {
+                              created_at: {
+                                description:
+                                  'Date and time at which the requested access method was added to this access grant.',
+                                format: 'date-time',
+                                type: 'string',
+                              },
+                              display_name: {
+                                description:
+                                  'Display name of the access method.',
+                                type: 'string',
+                              },
+                              mode: {
+                                description:
+                                  'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                                enum: ['code', 'card', 'mobile_key'],
+                                type: 'string',
+                              },
+                              provisioned_access_method_ids: {
+                                description:
+                                  'IDs of the locations to which access is being given.',
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
+                            },
+                            required: [
+                              'display_name',
+                              'mode',
+                              'created_at',
+                              'provisioned_access_method_ids',
+                            ],
+                            type: 'object',
+                            'x-undocumented': 'Unreleased.',
+                          },
+                          type: 'array',
+                        },
+                        user_identity_id: {
+                          description:
+                            'ID of user identity to which access is being granted.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        workspace_id: {
+                          description:
+                            'Unique identifier for the Seam workspace associated with the access grant.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'workspace_id',
+                        'access_grant_id',
+                        'user_identity_id',
+                        'location_ids',
+                        'requested_access_methods',
+                        'display_name',
+                        'created_at',
+                      ],
+                      type: 'object',
+                      'x-undocumented': 'Unreleased.',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_grant', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_access_grants/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_access_grants'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'access_grant',
+        'x-response-key': 'access_grant',
+        'x-title': 'Get an Access Grant',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
+    '/unstable_access_grants/list': {
+      post: {
+        description: 'Get an access grant.',
+        operationId: 'unstableAccessGrantsListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_entrance_id: {
+                    description:
+                      'ID of entrance to filter list of access grants by.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_system_id: {
+                    description:
+                      'ID of system to filter list of access grants by.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  location_id: {
+                    description:
+                      'ID of location to filter list of access grants by.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of user identity to filter list of access grants by.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_grants: {
+                      items: {
+                        properties: {
+                          access_grant_id: {
+                            description: 'ID of the access grant.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          created_at: {
+                            description:
+                              'Date and time at which the access grant was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          display_name: {
+                            description: 'Display name of the access grant.',
+                            type: 'string',
+                          },
+                          location_ids: {
+                            description:
+                              'IDs of the locations to which access is being given.',
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                          requested_access_methods: {
+                            description:
+                              'Access methods that the user requested for this access grant.',
+                            items: {
+                              properties: {
+                                created_at: {
+                                  description:
+                                    'Date and time at which the requested access method was added to this access grant.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                display_name: {
+                                  description:
+                                    'Display name of the access method.',
+                                  type: 'string',
+                                },
+                                mode: {
+                                  description:
+                                    'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                                  enum: ['code', 'card', 'mobile_key'],
+                                  type: 'string',
+                                },
+                                provisioned_access_method_ids: {
+                                  description:
+                                    'IDs of the locations to which access is being given.',
+                                  items: { format: 'uuid', type: 'string' },
+                                  type: 'array',
+                                },
+                              },
+                              required: [
+                                'display_name',
+                                'mode',
+                                'created_at',
+                                'provisioned_access_method_ids',
+                              ],
+                              type: 'object',
+                              'x-undocumented': 'Unreleased.',
+                            },
+                            type: 'array',
+                          },
+                          user_identity_id: {
+                            description:
+                              'ID of user identity to which access is being granted.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          workspace_id: {
+                            description:
+                              'Unique identifier for the Seam workspace associated with the access grant.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'workspace_id',
+                          'access_grant_id',
+                          'user_identity_id',
+                          'location_ids',
+                          'requested_access_methods',
+                          'display_name',
+                          'created_at',
+                        ],
+                        type: 'object',
+                        'x-undocumented': 'Unreleased.',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_grants', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_access_grants/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_access_grants'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'access_grants',
+        'x-response-key': 'access_grants',
+        'x-title': 'List Access Grants',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
+    '/unstable_access_grants/list_access_methods': {
+      post: {
+        description: 'List all access methods for an access grant.',
+        operationId: 'unstableAccessGrantsListAccessMethodsPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_grant_id: {
+                    description:
+                      'ID of access grant to list access methods for.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['access_grant_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_methods: {
+                      items: {
+                        properties: {
+                          access_method_id: {
+                            description: 'ID of the access method.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          created_at: {
+                            description:
+                              'Date and time at which the access method was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          display_name: {
+                            description: 'Display name of the access method.',
+                            type: 'string',
+                          },
+                          issued_at: {
+                            description:
+                              'Date and time at which the access method was issued.',
+                            format: 'date-time',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          mode: {
+                            description:
+                              'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                            enum: ['code', 'card', 'mobile_key'],
+                            type: 'string',
+                          },
+                          workspace_id: {
+                            description:
+                              'Unique identifier for the Seam workspace associated with the access grant.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'workspace_id',
+                          'access_method_id',
+                          'display_name',
+                          'mode',
+                          'created_at',
+                          'issued_at',
+                        ],
+                        type: 'object',
+                        'x-undocumented': 'Unreleased.',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_methods', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_access_grants/list_access_methods',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_access_grants'],
+        'x-fern-sdk-method-name': 'list_access_methods',
+        'x-fern-sdk-return-value': 'access_methods',
+        'x-response-key': 'access_methods',
+        'x-title': 'Get the Access Methods for an Access Grant',
         'x-undocumented': 'Unreleased.',
       },
     },
