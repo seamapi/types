@@ -48342,24 +48342,132 @@ export interface Routes {
         user_identity_id: string
         /** IDs of the locations to which access is being given. */
         location_ids: string[]
-        /** Access methods associated with this access grant. */
-        access_methods: Array<{
-          /** Key for the access method - unique within an access grant. */
-          access_method_key: string
+        /** Access methods that the user requested for this access grant. */
+        requested_access_methods: Array<{
           /** Display name of the access method. */
           display_name: string
           /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
           mode: 'code' | 'card' | 'mobile_key'
-          /** Date and time at which the access method was created. */
+          /** Date and time at which the requested access method was added to this access grant. */
           created_at: string
-          /** Date and time at which the access method was issued. */
-          issued_at: string | null
+          /** IDs of the locations to which access is being given. */
+          provisioned_access_method_ids: string[]
         }>
         /** Display name of the access grant. */
         display_name: string
         /** Date and time at which the access grant was created. */
         created_at: string
       }
+    }
+  }
+  '/unstable_access_grants/get': {
+    route: '/unstable_access_grants/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** ID of access grant to get. */
+      access_grant_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      /**  */
+      access_grant: {
+        /** Unique identifier for the Seam workspace associated with the access grant. */
+        workspace_id: string
+        /** ID of the access grant. */
+        access_grant_id: string
+        /** ID of user identity to which access is being granted. */
+        user_identity_id: string
+        /** IDs of the locations to which access is being given. */
+        location_ids: string[]
+        /** Access methods that the user requested for this access grant. */
+        requested_access_methods: Array<{
+          /** Display name of the access method. */
+          display_name: string
+          /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+          mode: 'code' | 'card' | 'mobile_key'
+          /** Date and time at which the requested access method was added to this access grant. */
+          created_at: string
+          /** IDs of the locations to which access is being given. */
+          provisioned_access_method_ids: string[]
+        }>
+        /** Display name of the access grant. */
+        display_name: string
+        /** Date and time at which the access grant was created. */
+        created_at: string
+      }
+    }
+  }
+  '/unstable_access_grants/list': {
+    route: '/unstable_access_grants/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** ID of user identity to filter list of access grants by. */
+      user_identity_id?: string | undefined
+      /** ID of system to filter list of access grants by. */
+      acs_system_id?: string | undefined
+      /** ID of entrance to filter list of access grants by. */
+      acs_entrance_id?: string | undefined
+      /** ID of location to filter list of access grants by. */
+      location_id?: string | undefined
+    }
+    formData: {}
+    jsonResponse: {
+      access_grants: Array<{
+        /** Unique identifier for the Seam workspace associated with the access grant. */
+        workspace_id: string
+        /** ID of the access grant. */
+        access_grant_id: string
+        /** ID of user identity to which access is being granted. */
+        user_identity_id: string
+        /** IDs of the locations to which access is being given. */
+        location_ids: string[]
+        /** Access methods that the user requested for this access grant. */
+        requested_access_methods: Array<{
+          /** Display name of the access method. */
+          display_name: string
+          /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+          mode: 'code' | 'card' | 'mobile_key'
+          /** Date and time at which the requested access method was added to this access grant. */
+          created_at: string
+          /** IDs of the locations to which access is being given. */
+          provisioned_access_method_ids: string[]
+        }>
+        /** Display name of the access grant. */
+        display_name: string
+        /** Date and time at which the access grant was created. */
+        created_at: string
+      }>
+    }
+  }
+  '/unstable_access_grants/list_access_methods': {
+    route: '/unstable_access_grants/list_access_methods'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** ID of access grant to list access methods for. */
+      access_grant_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      access_methods: Array<{
+        /** Unique identifier for the Seam workspace associated with the access grant. */
+        workspace_id: string
+        /** ID of the access method. */
+        access_method_id: string
+        /** Display name of the access method. */
+        display_name: string
+        /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+        mode: 'code' | 'card' | 'mobile_key'
+        /** Date and time at which the access method was created. */
+        created_at: string
+        /** Date and time at which the access method was issued. */
+        issued_at: string | null
+      }>
     }
   }
   '/unstable_locations/add_devices': {
