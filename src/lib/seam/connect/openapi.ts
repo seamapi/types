@@ -10404,7 +10404,7 @@ export default {
           },
           {
             description:
-              'An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was invalidated.',
+              'An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was invalidated. That is, the credential cannot be used anymore.',
             properties: {
               acs_credential_id: { format: 'uuid', type: 'string' },
               acs_system_id: {
