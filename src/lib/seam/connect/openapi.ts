@@ -20963,6 +20963,61 @@ export default {
         'x-title': 'Encode a Credential',
       },
     },
+    '/acs/encoders/get': {
+      post: {
+        description:
+          'Returns a specified [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
+        operationId: 'acsEncodersGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_encoder_id: {
+                    description: 'ID of the desired encoder.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['acs_encoder_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_encoder: { $ref: '#/components/schemas/acs_encoder' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_encoder', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/encoders/get',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'encoders'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'acs_encoder',
+        'x-response-key': 'acs_encoder',
+        'x-title': 'Get an Encoder',
+      },
+    },
     '/acs/encoders/list': {
       post: {
         description:

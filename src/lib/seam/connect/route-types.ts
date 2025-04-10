@@ -12564,6 +12564,54 @@ export interface Routes {
           }
     }
   }
+  '/acs/encoders/get': {
+    route: '/acs/encoders/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** ID of the desired encoder. */
+      acs_encoder_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      /** Represents a hardware device that encodes [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) data onto physical cards within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+    
+    Some access control systems require credentials to be encoded onto plastic key cards using a card encoder. This process involves the following two key steps:
+    
+    1. Credential creation
+       Configure the access parameters for the credential.
+    2. Card encoding
+       Write the credential data onto the card using a compatible card encoder.
+    
+    Separately, the Seam API also supports card scanning, which enables you to scan and read the encoded data on a card. You can use this action to confirm consistency with access control system records or diagnose discrepancies if needed.
+    
+     See [Working with Card Encoders and Scanners](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).
+    
+    To verify if your access control system requires a card encoder, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides/overview#access-control-systems). */
+      acs_encoder: {
+        /** ID of the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners. */
+        acs_encoder_id: string
+        /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
+        acs_system_id: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
+        workspace_id: string
+        /** Errors associated with the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
+        errors: Array<{
+          /** Date and time at which Seam created the error. */
+          created_at: string
+          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+          error_code: 'acs_encoder_removed'
+        }>
+        /** Date and time at which the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) was created. */
+        created_at: string
+        /** Display name for the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
+        display_name: string
+      }
+    }
+  }
   '/acs/encoders/list': {
     route: '/acs/encoders/list'
     method: 'GET' | 'POST'
