@@ -30088,6 +30088,7 @@ export default {
                             type: 'string',
                           },
                         },
+                        required: ['user_identity_id'],
                         type: 'object',
                       },
                       {
@@ -30116,9 +30117,9 @@ export default {
                               },
                             },
                             type: 'object',
-                            'x-route-path': '/user_identities',
                           },
                         },
+                        required: ['user_identity'],
                         type: 'object',
                       },
                     ],

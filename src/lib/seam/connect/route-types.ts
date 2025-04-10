@@ -48295,19 +48295,17 @@ export interface Routes {
     commonParams: (
       | {
           /** ID of user identity for whom access is being granted. */
-          user_identity_id?: string | undefined
+          user_identity_id: string
         }
       | {
           /** When used, creates a new user identity with the given details, and grants them access. */
-          user_identity?:
-            | {
-                /** Unique email address for the user identity. */
-                email_address?: (string | null) | undefined
-                /** Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100). */
-                phone_number?: (string | null) | undefined
-                full_name?: (string | null) | undefined
-              }
-            | undefined
+          user_identity: {
+            /** Unique email address for the user identity. */
+            email_address?: (string | null) | undefined
+            /** Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100). */
+            phone_number?: (string | null) | undefined
+            full_name?: (string | null) | undefined
+          }
         }
     ) & {
       /** Set of IDs of existing locations to which access is being granted. */
