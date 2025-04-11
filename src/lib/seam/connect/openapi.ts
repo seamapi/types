@@ -27813,6 +27813,55 @@ export default {
         'x-undocumented': 'Seam Bridge Client only.',
       },
     },
+    '/seam/bridge/v1/bridge_client_sessions/report_status': {
+      post: {
+        description: "Report a Seam Bridge Bridge client's status.",
+        operationId: 'seamBridgeV1BridgeClientSessionsReportStatusPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  is_tailscale_connected: { nullable: true, type: 'boolean' },
+                  tailscale_ip_v4: { nullable: true, type: 'string' },
+                },
+                required: ['is_tailscale_connected', 'tailscale_ip_v4'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ bridge_client_session: [] }],
+        summary: '/seam/bridge/v1/bridge_client_sessions/report_status',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'bridge',
+          'v1',
+          'bridge_client_sessions',
+        ],
+        'x-fern-sdk-method-name': 'report_status',
+        'x-response-key': null,
+        'x-title': "Report a Bridge Client's Status",
+        'x-undocumented': 'Seam Bridge Client only.',
+      },
+    },
     '/seam/bridge/v1/bridge_connected_systems/list': {
       get: {
         description:

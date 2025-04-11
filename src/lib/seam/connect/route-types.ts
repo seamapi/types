@@ -37051,6 +37051,18 @@ export interface Routes {
       }
     }
   }
+  '/seam/bridge/v1/bridge_client_sessions/report_status': {
+    route: '/seam/bridge/v1/bridge_client_sessions/report_status'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      is_tailscale_connected: boolean | null
+      tailscale_ip_v4: string | null
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/seam/bridge/v1/bridge_connected_systems/list': {
     route: '/seam/bridge/v1/bridge_connected_systems/list'
     method: 'GET' | 'POST'
