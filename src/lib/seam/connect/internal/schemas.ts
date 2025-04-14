@@ -38,6 +38,7 @@ export {
   seam_event_type as event_type,
   fan_mode_setting,
   geolocation,
+  instant_key,
   location,
   lock_device_type,
   access_code as managed_access_code,
