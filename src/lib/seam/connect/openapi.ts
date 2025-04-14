@@ -27312,6 +27312,13 @@ export default {
                         },
                         tailscale_auth_key: { nullable: true, type: 'string' },
                         tailscale_hostname: { type: 'string' },
+                        telemetry_token: { nullable: true, type: 'string' },
+                        telemetry_token_expires_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        telemetry_url: { nullable: true, type: 'string' },
                       },
                       required: [
                         'created_at',
@@ -27325,6 +27332,9 @@ export default {
                         'bridge_client_time_zone',
                         'bridge_client_machine_identifier_key',
                         'errors',
+                        'telemetry_token',
+                        'telemetry_token_expires_at',
+                        'telemetry_url',
                       ],
                       type: 'object',
                       'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
@@ -27484,6 +27494,13 @@ export default {
                         },
                         tailscale_auth_key: { nullable: true, type: 'string' },
                         tailscale_hostname: { type: 'string' },
+                        telemetry_token: { nullable: true, type: 'string' },
+                        telemetry_token_expires_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        telemetry_url: { nullable: true, type: 'string' },
                       },
                       required: [
                         'created_at',
@@ -27497,6 +27514,9 @@ export default {
                         'bridge_client_time_zone',
                         'bridge_client_machine_identifier_key',
                         'errors',
+                        'telemetry_token',
+                        'telemetry_token_expires_at',
+                        'telemetry_url',
                       ],
                       type: 'object',
                       'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
@@ -27647,6 +27667,13 @@ export default {
                         },
                         tailscale_auth_key: { nullable: true, type: 'string' },
                         tailscale_hostname: { type: 'string' },
+                        telemetry_token: { nullable: true, type: 'string' },
+                        telemetry_token_expires_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        telemetry_url: { nullable: true, type: 'string' },
                       },
                       required: [
                         'created_at',
@@ -27660,6 +27687,9 @@ export default {
                         'bridge_client_time_zone',
                         'bridge_client_machine_identifier_key',
                         'errors',
+                        'telemetry_token',
+                        'telemetry_token_expires_at',
+                        'telemetry_url',
                       ],
                       type: 'object',
                       'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
@@ -27690,6 +27720,190 @@ export default {
         'x-fern-sdk-return-value': 'bridge_client_session',
         'x-response-key': 'bridge_client_session',
         'x-title': 'Get a Bridge Client Session',
+        'x-undocumented': 'Seam Bridge Client only.',
+      },
+    },
+    '/seam/bridge/v1/bridge_client_sessions/refresh_telemetry_token': {
+      post: {
+        description:
+          'Returns the bridge client session associated with the session token and refreshed telemetry token.',
+        operationId:
+          'seamBridgeV1BridgeClientSessionsRefreshTelemetryTokenPost',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    bridge_client_session: {
+                      properties: {
+                        bridge_client_machine_identifier_key: {
+                          type: 'string',
+                        },
+                        bridge_client_name: { type: 'string' },
+                        bridge_client_session_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        bridge_client_session_token: { type: 'string' },
+                        bridge_client_time_zone: { type: 'string' },
+                        created_at: { format: 'date-time', type: 'string' },
+                        errors: {
+                          items: {
+                            description:
+                              'Error associated with the `bridge_client_session`.',
+                            discriminator: { propertyName: 'error_code' },
+                            oneOf: [
+                              {
+                                description:
+                                  "Seam cannot reach the bridge's LAN",
+                                properties: {
+                                  can_tailscale_proxy_reach_bridge: {
+                                    description:
+                                      'Tailscale proxy cannot reach the bridge',
+                                    nullable: true,
+                                    type: 'boolean',
+                                  },
+                                  can_tailscale_proxy_reach_tailscale_network: {
+                                    description:
+                                      'Tailscale proxy cannot reach the Tailscale network',
+                                    nullable: true,
+                                    type: 'boolean',
+                                  },
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  error_code: {
+                                    description:
+                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                    enum: ['bridge_lan_unreachable'],
+                                    type: 'string',
+                                  },
+                                  is_bridge_socks_server_healthy: {
+                                    description:
+                                      "Bridge's SOCKS server is unhealthy",
+                                    nullable: true,
+                                    type: 'boolean',
+                                  },
+                                  is_tailscale_proxy_reachable: {
+                                    description:
+                                      'Seam cannot reach the tailscale proxy',
+                                    nullable: true,
+                                    type: 'boolean',
+                                  },
+                                  is_tailscale_proxy_socks_server_healthy: {
+                                    description:
+                                      "Tailscale proxy's SOCKS server is unhealthy",
+                                    nullable: true,
+                                    type: 'boolean',
+                                  },
+                                  message: { type: 'string' },
+                                },
+                                required: [
+                                  'message',
+                                  'created_at',
+                                  'error_code',
+                                  'is_tailscale_proxy_reachable',
+                                  'is_tailscale_proxy_socks_server_healthy',
+                                  'can_tailscale_proxy_reach_tailscale_network',
+                                  'can_tailscale_proxy_reach_bridge',
+                                  'is_bridge_socks_server_healthy',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  'Bridge has stopped communicating with Seam',
+                                properties: {
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  error_code: {
+                                    description:
+                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                    enum: ['no_communication_from_bridge'],
+                                    type: 'string',
+                                  },
+                                  message: { type: 'string' },
+                                },
+                                required: [
+                                  'message',
+                                  'created_at',
+                                  'error_code',
+                                ],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                          type: 'array',
+                        },
+                        pairing_code: {
+                          maxLength: 6,
+                          minLength: 6,
+                          type: 'string',
+                        },
+                        pairing_code_expires_at: {
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        tailscale_auth_key: { nullable: true, type: 'string' },
+                        tailscale_hostname: { type: 'string' },
+                        telemetry_token: { nullable: true, type: 'string' },
+                        telemetry_token_expires_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        telemetry_url: { nullable: true, type: 'string' },
+                      },
+                      required: [
+                        'created_at',
+                        'bridge_client_session_id',
+                        'bridge_client_session_token',
+                        'pairing_code',
+                        'pairing_code_expires_at',
+                        'tailscale_hostname',
+                        'tailscale_auth_key',
+                        'bridge_client_name',
+                        'bridge_client_time_zone',
+                        'bridge_client_machine_identifier_key',
+                        'errors',
+                        'telemetry_token',
+                        'telemetry_token_expires_at',
+                        'telemetry_url',
+                      ],
+                      type: 'object',
+                      'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
+                      'x-undocumented': 'Seam Bridge Client only.',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['bridge_client_session', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ bridge_client_session: [] }],
+        summary:
+          '/seam/bridge/v1/bridge_client_sessions/refresh_telemetry_token',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'bridge',
+          'v1',
+          'bridge_client_sessions',
+        ],
+        'x-fern-sdk-method-name': 'refresh_telemetry_token',
+        'x-fern-sdk-return-value': 'bridge_client_session',
+        'x-response-key': 'bridge_client_session',
+        'x-title': 'Refresh telemetry token for bridge client session',
         'x-undocumented': 'Seam Bridge Client only.',
       },
     },
@@ -27820,6 +28034,13 @@ export default {
                         },
                         tailscale_auth_key: { nullable: true, type: 'string' },
                         tailscale_hostname: { type: 'string' },
+                        telemetry_token: { nullable: true, type: 'string' },
+                        telemetry_token_expires_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        telemetry_url: { nullable: true, type: 'string' },
                       },
                       required: [
                         'created_at',
@@ -27833,6 +28054,9 @@ export default {
                         'bridge_client_time_zone',
                         'bridge_client_machine_identifier_key',
                         'errors',
+                        'telemetry_token',
+                        'telemetry_token_expires_at',
+                        'telemetry_url',
                       ],
                       type: 'object',
                       'x-route-path': '/seam/bridge/v1/bridge_client_sessions',

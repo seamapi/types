@@ -36988,6 +36988,9 @@ export interface Routes {
               error_code: 'no_communication_from_bridge'
             }
         >
+        telemetry_token: string | null
+        telemetry_token_expires_at: string | null
+        telemetry_url: string | null
       }
     }
   }
@@ -37035,6 +37038,59 @@ export interface Routes {
               error_code: 'no_communication_from_bridge'
             }
         >
+        telemetry_token: string | null
+        telemetry_token_expires_at: string | null
+        telemetry_url: string | null
+      }
+    }
+  }
+  '/seam/bridge/v1/bridge_client_sessions/refresh_telemetry_token': {
+    route: '/seam/bridge/v1/bridge_client_sessions/refresh_telemetry_token'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      /**  */
+      bridge_client_session: {
+        created_at: string
+        bridge_client_session_id: string
+        bridge_client_session_token: string
+        pairing_code: string
+        pairing_code_expires_at: string
+        tailscale_hostname: string
+        tailscale_auth_key: string | null
+        bridge_client_name: string
+        bridge_client_time_zone: string
+        bridge_client_machine_identifier_key: string
+        errors: Array<
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_lan_unreachable'
+              /** Seam cannot reach the tailscale proxy */
+              is_tailscale_proxy_reachable: boolean | null
+              /** Tailscale proxy's SOCKS server is unhealthy */
+              is_tailscale_proxy_socks_server_healthy: boolean | null
+              /** Tailscale proxy cannot reach the Tailscale network */
+              can_tailscale_proxy_reach_tailscale_network: boolean | null
+              /** Tailscale proxy cannot reach the bridge */
+              can_tailscale_proxy_reach_bridge: boolean | null
+              /** Bridge's SOCKS server is unhealthy */
+              is_bridge_socks_server_healthy: boolean | null
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'no_communication_from_bridge'
+            }
+        >
+        telemetry_token: string | null
+        telemetry_token_expires_at: string | null
+        telemetry_url: string | null
       }
     }
   }
@@ -37082,6 +37138,9 @@ export interface Routes {
               error_code: 'no_communication_from_bridge'
             }
         >
+        telemetry_token: string | null
+        telemetry_token_expires_at: string | null
+        telemetry_url: string | null
       }
     }
   }
