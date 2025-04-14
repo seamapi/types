@@ -78,6 +78,9 @@ export const bridge_client_session = z.object({
   bridge_client_time_zone: z.string(),
   bridge_client_machine_identifier_key: z.string(),
   errors: z.array(bridge_client_session_error),
+  telemetry_token: z.string().nullable(),
+  telemetry_token_expires_at: z.string().datetime().nullable(),
+  telemetry_url: z.string().nullable(),
 }).describe(`
   ---
   route_path: /seam/bridge/v1/bridge_client_sessions
