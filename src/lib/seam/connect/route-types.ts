@@ -48896,6 +48896,29 @@ export interface Routes {
       }>
     }
   }
+  '/user_identities/generate_instant_key': {
+    route: '/user_identities/generate_instant_key'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** ID of the user identity for which you want to generate an instant key. */
+      user_identity_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      /**  */
+      instant_key: {
+        instant_key_id: string
+        workspace_id: string
+        created_at: string
+        instant_key_url: string
+        client_session_id: string
+        user_identity_id: string
+        expires_at: string
+      }
+    }
+  }
   '/user_identities/get': {
     route: '/user_identities/get'
     method: 'GET' | 'POST'

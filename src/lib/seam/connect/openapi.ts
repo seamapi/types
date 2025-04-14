@@ -13659,6 +13659,29 @@ export default {
         ],
         'x-route-path': '/events',
       },
+      instant_key: {
+        properties: {
+          client_session_id: { format: 'uuid', type: 'string' },
+          created_at: { format: 'date-time', type: 'string' },
+          expires_at: { format: 'date-time', type: 'string' },
+          instant_key_id: { format: 'uuid', type: 'string' },
+          instant_key_url: { format: 'uri', type: 'string' },
+          user_identity_id: { format: 'uuid', type: 'string' },
+          workspace_id: { format: 'uuid', type: 'string' },
+        },
+        required: [
+          'instant_key_id',
+          'workspace_id',
+          'created_at',
+          'instant_key_url',
+          'client_session_id',
+          'user_identity_id',
+          'expires_at',
+        ],
+        type: 'object',
+        'x-route-path': '/user_identities',
+        'x-undocumented': 'Unreleased.',
+      },
       network: {
         properties: {
           created_at: { format: 'date-time', type: 'string' },
@@ -32355,6 +32378,62 @@ export default {
         'x-fern-sdk-return-value': 'enrollment_automations',
         'x-response-key': 'enrollment_automations',
         'x-title': 'List Enrollment Automations',
+      },
+    },
+    '/user_identities/generate_instant_key': {
+      post: {
+        description:
+          'Generates a new [instant key](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/instant-keys) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+        operationId: 'userIdentitiesGenerateInstantKeyPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity for which you want to generate an instant key.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['user_identity_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    instant_key: { $ref: '#/components/schemas/instant_key' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['instant_key', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/user_identities/generate_instant_key',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'generate_instant_key',
+        'x-fern-sdk-return-value': 'instant_key',
+        'x-response-key': 'instant_key',
+        'x-title': 'Generate an Instant Key',
       },
     },
     '/user_identities/get': {

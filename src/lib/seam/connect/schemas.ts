@@ -18,6 +18,7 @@ export {
   custom_metadata,
   device,
   device_provider,
+  instant_key,
   noise_threshold,
   pagination,
   seam_event,
