@@ -18,6 +18,7 @@ export type {
   DeviceError,
   DeviceProvider,
   DeviceWarning,
+  InstantKey,
   NoiseThreshold,
   SeamEvent,
   SeamEventType,
