@@ -10450,6 +10450,58 @@ export default {
           },
           {
             description:
+              'An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created.',
+            properties: {
+              acs_system_id: {
+                description:
+                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
+                format: 'uuid',
+                type: 'string',
+              },
+              acs_user_id: { format: 'uuid', type: 'string' },
+              connected_account_id: {
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: { enum: ['acs_user.created'], type: 'string' },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'acs_system_id',
+              'acs_user_id',
+              'event_type',
+            ],
+            type: 'object',
+            'x-route-path': '/acs/users',
+          },
+          {
+            description:
               'An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted.',
             properties: {
               acs_system_id: {
@@ -25525,6 +25577,7 @@ export default {
                       'acs_credential.issued',
                       'acs_credential.reissued',
                       'acs_credential.invalidated',
+                      'acs_user.created',
                       'acs_user.deleted',
                       'acs_encoder.added',
                       'acs_encoder.removed',
@@ -25610,6 +25663,7 @@ export default {
                         'acs_credential.issued',
                         'acs_credential.reissued',
                         'acs_credential.invalidated',
+                        'acs_user.created',
                         'acs_user.deleted',
                         'acs_encoder.added',
                         'acs_encoder.removed',
