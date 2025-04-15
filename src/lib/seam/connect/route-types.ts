@@ -37176,6 +37176,32 @@ export interface Routes {
       }>
     }
   }
+  '/seam/instant_key/v1/client_sessions/exchange_short_code': {
+    route: '/seam/instant_key/v1/client_sessions/exchange_short_code'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** The short code to exchange for a client session token */
+      short_code: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      /**  */
+      client_session: {
+        client_session_id: string
+        workspace_id: string
+        created_at: string
+        expires_at: string
+        token: string
+        user_identifier_key: string | null
+        device_count: number
+        connected_account_ids: string[]
+        connect_webview_ids: string[]
+        user_identity_ids: string[]
+      }
+    }
+  }
   '/thermostats/activate_climate_preset': {
     route: '/thermostats/activate_climate_preset'
     method: 'POST'
