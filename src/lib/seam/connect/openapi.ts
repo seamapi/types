@@ -28308,6 +28308,64 @@ export default {
         'x-undocumented': 'Seam Bridge Client only.',
       },
     },
+    '/seam/instant_key/v1/client_sessions/exchange_short_code': {
+      post: {
+        description:
+          'Exchanges a short code for a Client Session Token (CST).\nThis endpoint is used by mobile apps to securely retrieve a client session token \nusing a short code obtained from an instant key URL.',
+        operationId: 'seamInstantKeyV1ClientSessionsExchangeShortCodePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  short_code: {
+                    description:
+                      'The short code to exchange for a client session token',
+                    type: 'string',
+                  },
+                },
+                required: ['short_code'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    client_session: {
+                      $ref: '#/components/schemas/client_session',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['client_session', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ certified_client: [] }],
+        summary: '/seam/instant_key/v1/client_sessions/exchange_short_code',
+        tags: ['/client_sessions'],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'instant_key',
+          'v1',
+          'client_sessions',
+        ],
+        'x-fern-sdk-method-name': 'exchange_short_code',
+        'x-fern-sdk-return-value': 'client_session',
+        'x-response-key': 'client_session',
+        'x-title': 'Exchange Instant Key Short Code',
+      },
+    },
     '/thermostats/activate_climate_preset': {
       post: {
         description:
