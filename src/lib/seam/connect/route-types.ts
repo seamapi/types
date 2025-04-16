@@ -48468,9 +48468,11 @@ export interface Routes {
           mode: 'code' | 'card' | 'mobile_key'
           /** Date and time at which the requested access method was added to this access grant. */
           created_at: string
-          /** IDs of the locations to which access is being given. */
-          provisioned_access_method_ids: string[]
+          /** IDs of the access methods that were created for this requested access method. */
+          created_access_method_ids: string[]
         }>
+        /** IDs of the access methods that were created for this access grant. */
+        access_method_ids: string[]
         /** Display name of the access grant. */
         display_name: string
         /** Date and time at which the access grant was created. */
@@ -48507,9 +48509,11 @@ export interface Routes {
           mode: 'code' | 'card' | 'mobile_key'
           /** Date and time at which the requested access method was added to this access grant. */
           created_at: string
-          /** IDs of the locations to which access is being given. */
-          provisioned_access_method_ids: string[]
+          /** IDs of the access methods that were created for this requested access method. */
+          created_access_method_ids: string[]
         }>
+        /** IDs of the access methods that were created for this access grant. */
+        access_method_ids: string[]
         /** Display name of the access grant. */
         display_name: string
         /** Date and time at which the access grant was created. */
@@ -48551,9 +48555,11 @@ export interface Routes {
           mode: 'code' | 'card' | 'mobile_key'
           /** Date and time at which the requested access method was added to this access grant. */
           created_at: string
-          /** IDs of the locations to which access is being given. */
-          provisioned_access_method_ids: string[]
+          /** IDs of the access methods that were created for this requested access method. */
+          created_access_method_ids: string[]
         }>
+        /** IDs of the access methods that were created for this access grant. */
+        access_method_ids: string[]
         /** Display name of the access grant. */
         display_name: string
         /** Date and time at which the access grant was created. */
@@ -48561,8 +48567,8 @@ export interface Routes {
       }>
     }
   }
-  '/unstable_access_grants/list_access_methods': {
-    route: '/unstable_access_grants/list_access_methods'
+  '/unstable_access_methods/list': {
+    route: '/unstable_access_methods/list'
     method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}

@@ -13,9 +13,11 @@ export const requested_access_method = z.object({
     .describe(
       'Date and time at which the requested access method was added to this access grant.',
     ),
-  provisioned_access_method_ids: z
+  created_access_method_ids: z
     .array(z.string().uuid())
-    .describe('IDs of the locations to which access is being given.'),
+    .describe(
+      'IDs of the access methods that were created for this requested access method.',
+    ),
 }).describe(`
   ---
   undocumented: Unreleased.
