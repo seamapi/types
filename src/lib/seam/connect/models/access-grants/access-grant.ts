@@ -20,6 +20,11 @@ export const access_grant = z.object({
   requested_access_methods: z
     .array(requested_access_method)
     .describe('Access methods that the user requested for this access grant.'),
+  access_method_ids: z
+    .array(z.string().uuid())
+    .describe(
+      'IDs of the access methods that were created for this access grant.',
+    ),
   display_name: z.string().describe('Display name of the access grant.'),
   created_at: z
     .string()
