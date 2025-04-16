@@ -30604,6 +30604,12 @@ export default {
                           format: 'uuid',
                           type: 'string',
                         },
+                        access_method_ids: {
+                          description:
+                            'IDs of the access methods that were created for this access grant.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
                         created_at: {
                           description:
                             'Date and time at which the access grant was created.',
@@ -30625,6 +30631,12 @@ export default {
                             'Access methods that the user requested for this access grant.',
                           items: {
                             properties: {
+                              created_access_method_ids: {
+                                description:
+                                  'IDs of the access methods that were created for this requested access method.',
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
                               created_at: {
                                 description:
                                   'Date and time at which the requested access method was added to this access grant.',
@@ -30642,18 +30654,12 @@ export default {
                                 enum: ['code', 'card', 'mobile_key'],
                                 type: 'string',
                               },
-                              provisioned_access_method_ids: {
-                                description:
-                                  'IDs of the locations to which access is being given.',
-                                items: { format: 'uuid', type: 'string' },
-                                type: 'array',
-                              },
                             },
                             required: [
                               'display_name',
                               'mode',
                               'created_at',
-                              'provisioned_access_method_ids',
+                              'created_access_method_ids',
                             ],
                             type: 'object',
                             'x-undocumented': 'Unreleased.',
@@ -30679,6 +30685,7 @@ export default {
                         'user_identity_id',
                         'location_ids',
                         'requested_access_methods',
+                        'access_method_ids',
                         'display_name',
                         'created_at',
                       ],
@@ -30746,6 +30753,12 @@ export default {
                           format: 'uuid',
                           type: 'string',
                         },
+                        access_method_ids: {
+                          description:
+                            'IDs of the access methods that were created for this access grant.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
                         created_at: {
                           description:
                             'Date and time at which the access grant was created.',
@@ -30767,6 +30780,12 @@ export default {
                             'Access methods that the user requested for this access grant.',
                           items: {
                             properties: {
+                              created_access_method_ids: {
+                                description:
+                                  'IDs of the access methods that were created for this requested access method.',
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
                               created_at: {
                                 description:
                                   'Date and time at which the requested access method was added to this access grant.',
@@ -30784,18 +30803,12 @@ export default {
                                 enum: ['code', 'card', 'mobile_key'],
                                 type: 'string',
                               },
-                              provisioned_access_method_ids: {
-                                description:
-                                  'IDs of the locations to which access is being given.',
-                                items: { format: 'uuid', type: 'string' },
-                                type: 'array',
-                              },
                             },
                             required: [
                               'display_name',
                               'mode',
                               'created_at',
-                              'provisioned_access_method_ids',
+                              'created_access_method_ids',
                             ],
                             type: 'object',
                             'x-undocumented': 'Unreleased.',
@@ -30821,6 +30834,7 @@ export default {
                         'user_identity_id',
                         'location_ids',
                         'requested_access_methods',
+                        'access_method_ids',
                         'display_name',
                         'created_at',
                       ],
@@ -30907,6 +30921,12 @@ export default {
                             format: 'uuid',
                             type: 'string',
                           },
+                          access_method_ids: {
+                            description:
+                              'IDs of the access methods that were created for this access grant.',
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
                           created_at: {
                             description:
                               'Date and time at which the access grant was created.',
@@ -30928,6 +30948,12 @@ export default {
                               'Access methods that the user requested for this access grant.',
                             items: {
                               properties: {
+                                created_access_method_ids: {
+                                  description:
+                                    'IDs of the access methods that were created for this requested access method.',
+                                  items: { format: 'uuid', type: 'string' },
+                                  type: 'array',
+                                },
                                 created_at: {
                                   description:
                                     'Date and time at which the requested access method was added to this access grant.',
@@ -30945,18 +30971,12 @@ export default {
                                   enum: ['code', 'card', 'mobile_key'],
                                   type: 'string',
                                 },
-                                provisioned_access_method_ids: {
-                                  description:
-                                    'IDs of the locations to which access is being given.',
-                                  items: { format: 'uuid', type: 'string' },
-                                  type: 'array',
-                                },
                               },
                               required: [
                                 'display_name',
                                 'mode',
                                 'created_at',
-                                'provisioned_access_method_ids',
+                                'created_access_method_ids',
                               ],
                               type: 'object',
                               'x-undocumented': 'Unreleased.',
@@ -30982,6 +31002,7 @@ export default {
                           'user_identity_id',
                           'location_ids',
                           'requested_access_methods',
+                          'access_method_ids',
                           'display_name',
                           'created_at',
                         ],
@@ -31017,10 +31038,11 @@ export default {
         'x-undocumented': 'Unreleased.',
       },
     },
-    '/unstable_access_grants/list_access_methods': {
+    '/unstable_access_methods/list': {
       post: {
-        description: 'List all access methods for an access grant.',
-        operationId: 'unstableAccessGrantsListAccessMethodsPost',
+        description:
+          'List all access methods, usually filtered by access grant.',
+        operationId: 'unstableAccessMethodsListPost',
         requestBody: {
           content: {
             'application/json': {
@@ -31113,13 +31135,13 @@ export default {
           { console_session_with_workspace: [] },
           { api_key: [] },
         ],
-        summary: '/unstable_access_grants/list_access_methods',
+        summary: '/unstable_access_methods/list',
         tags: [],
-        'x-fern-sdk-group-name': ['unstable_access_grants'],
-        'x-fern-sdk-method-name': 'list_access_methods',
+        'x-fern-sdk-group-name': ['unstable_access_methods'],
+        'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'access_methods',
         'x-response-key': 'access_methods',
-        'x-title': 'Get the Access Methods for an Access Grant',
+        'x-title': 'List Access Methods',
         'x-undocumented': 'Unreleased.',
       },
     },
