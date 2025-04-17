@@ -48433,13 +48433,15 @@ export interface Routes {
       /** When used, creates a new location with the given entrances and devices, and gives the user access to this location. */
       location?:
         | {
+            /** Name of the location. */
+            name?: string | undefined
             /** Set of IDs of the [entrances](https://docs.seam.co/latest/api/acs/systems/list) to add to the location to which access is being granted. */
             acs_entrance_ids?: string[]
             /** Set of IDs of the [devices](https://docs.seam.co/latest/api/devices/list) to add to the location to which access is being granted. */
             device_ids?: string[]
           }
         | undefined
-      desired_access_methods: Array<{
+      requested_access_methods: Array<{
         /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
         mode: 'code' | 'card' | 'mobile_key'
       }>
