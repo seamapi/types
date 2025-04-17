@@ -30528,21 +30528,6 @@ export default {
                   },
                   {
                     properties: {
-                      desired_access_methods: {
-                        items: {
-                          properties: {
-                            mode: {
-                              description:
-                                'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                              enum: ['code', 'card', 'mobile_key'],
-                              type: 'string',
-                            },
-                          },
-                          required: ['mode'],
-                          type: 'object',
-                        },
-                        type: 'array',
-                      },
                       ends_at: {
                         description:
                           'Date and time at which the validity of the new grant ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
@@ -30567,6 +30552,10 @@ export default {
                             items: { format: 'uuid', type: 'string' },
                             type: 'array',
                           },
+                          name: {
+                            description: 'Name of the location.',
+                            type: 'string',
+                          },
                         },
                         type: 'object',
                       },
@@ -30576,6 +30565,21 @@ export default {
                         items: { format: 'uuid', type: 'string' },
                         type: 'array',
                       },
+                      requested_access_methods: {
+                        items: {
+                          properties: {
+                            mode: {
+                              description:
+                                'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                              enum: ['code', 'card', 'mobile_key'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['mode'],
+                          type: 'object',
+                        },
+                        type: 'array',
+                      },
                       starts_at: {
                         description:
                           'Date and time at which the validity of the new grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
@@ -30583,7 +30587,7 @@ export default {
                         type: 'string',
                       },
                     },
-                    required: ['desired_access_methods'],
+                    required: ['requested_access_methods'],
                     type: 'object',
                   },
                 ],
