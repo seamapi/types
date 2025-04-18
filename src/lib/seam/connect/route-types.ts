@@ -941,6 +941,68 @@ export interface Routes {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -3097,6 +3159,68 @@ export interface Routes {
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
             error: {
               type: string
               message: string
@@ -6818,6 +6942,68 @@ export interface Routes {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -8978,6 +9164,68 @@ export interface Routes {
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
             error: {
               type: string
               message: string
@@ -12351,6 +12599,68 @@ export interface Routes {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -13566,6 +13876,68 @@ export interface Routes {
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
             error: {
               type: string
               message: string
@@ -16992,6 +17364,68 @@ export interface Routes {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -18108,6 +18542,68 @@ export interface Routes {
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
             error: {
               type: string
               message: string
@@ -21239,30 +21735,6 @@ export interface Routes {
         can_simulate_disconnection?: boolean | undefined
       }>
     }
-  }
-  '/devices/simulate/access_code_lock': {
-    route: '/devices/simulate/access_code_lock'
-    method: 'POST'
-    queryParams: {}
-    jsonBody: {
-      device_id: string
-      access_code_id: string
-    }
-    commonParams: {}
-    formData: {}
-    jsonResponse: {}
-  }
-  '/devices/simulate/access_code_unlock': {
-    route: '/devices/simulate/access_code_unlock'
-    method: 'POST'
-    queryParams: {}
-    jsonBody: {
-      device_id: string
-      access_code_id: string
-    }
-    commonParams: {}
-    formData: {}
-    jsonResponse: {}
   }
   '/devices/simulate/connect': {
     route: '/devices/simulate/connect'
@@ -29933,6 +30405,68 @@ export interface Routes {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -30150,6 +30684,33 @@ export interface Routes {
               message: string
             }
           }
+    }
+  }
+  '/locks/simulate/keypad_code_entry': {
+    route: '/locks/simulate/keypad_code_entry'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      device_id: string
+      code: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      action_attempt?: any
+    }
+  }
+  '/locks/simulate/manual_lock_via_keypad': {
+    route: '/locks/simulate/manual_lock_via_keypad'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      device_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      action_attempt?: any
     }
   }
   '/locks/unlock_door': {
@@ -31051,6 +31612,68 @@ export interface Routes {
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
             error: {
               type: string
               message: string
@@ -34154,6 +34777,68 @@ export interface Routes {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -35283,6 +35968,68 @@ export interface Routes {
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
             error: {
               type: string
               message: string
@@ -36464,6 +37211,68 @@ export interface Routes {
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
             error: {
               type: string
               message: string
@@ -38116,6 +38925,68 @@ export interface Routes {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -39240,6 +40111,68 @@ export interface Routes {
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
             error: {
               type: string
               message: string
@@ -41376,6 +42309,68 @@ export interface Routes {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -42504,6 +43499,68 @@ export interface Routes {
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
             error: {
               type: string
               message: string
@@ -45585,6 +46642,68 @@ export interface Routes {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -46908,6 +48027,68 @@ export interface Routes {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -48059,6 +49240,68 @@ export interface Routes {
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
             error: {
               type: string
               message: string
@@ -52379,6 +53622,68 @@ export interface Routes {
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
             error: {
               type: string
               message: string

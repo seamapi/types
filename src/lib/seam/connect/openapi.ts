@@ -5846,6 +5846,202 @@ export default {
             type: 'object',
           },
           {
+            description: 'Simulating keypad code entry.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                enum: ['SIMULATE_KEYPAD_CODE_ENTRY'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Simulating keypad code entry succeeded.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                enum: ['SIMULATE_KEYPAD_CODE_ENTRY'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
+              result: { properties: {}, type: 'object' },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Simulating keypad code entry failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                enum: ['SIMULATE_KEYPAD_CODE_ENTRY'],
+                type: 'string',
+              },
+              error: {
+                properties: {
+                  message: { type: 'string' },
+                  type: { type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Simulating manual lock via keypad.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                enum: ['SIMULATE_MANUAL_LOCK_VIA_KEYPAD'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Simulating manual lock via keypad succeeded.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                enum: ['SIMULATE_MANUAL_LOCK_VIA_KEYPAD'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
+              result: { properties: {}, type: 'object' },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Simulating manual lock via keypad failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                enum: ['SIMULATE_MANUAL_LOCK_VIA_KEYPAD'],
+                type: 'string',
+              },
+              error: {
+                properties: {
+                  message: { type: 'string' },
+                  type: { type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -24706,98 +24902,6 @@ export default {
         'x-response-key': 'device_providers',
       },
     },
-    '/devices/simulate/access_code_lock': {
-      post: {
-        operationId: 'devicesSimulateAccessCodeLockPost',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  access_code_id: { format: 'uuid', type: 'string' },
-                  device_id: { format: 'uuid', type: 'string' },
-                },
-                required: ['device_id', 'access_code_id'],
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { api_key: [] },
-          { pat_with_workspace: [] },
-          { console_session_with_workspace: [] },
-        ],
-        summary: '/devices/simulate/access_code_lock',
-        tags: ['/devices'],
-        'x-fern-sdk-group-name': ['devices', 'simulate'],
-        'x-fern-sdk-method-name': 'access_code_lock',
-        'x-response-key': null,
-        'x-undocumented': 'Unreleased.',
-      },
-    },
-    '/devices/simulate/access_code_unlock': {
-      post: {
-        operationId: 'devicesSimulateAccessCodeUnlockPost',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  access_code_id: { format: 'uuid', type: 'string' },
-                  device_id: { format: 'uuid', type: 'string' },
-                },
-                required: ['device_id', 'access_code_id'],
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { api_key: [] },
-          { pat_with_workspace: [] },
-          { console_session_with_workspace: [] },
-        ],
-        summary: '/devices/simulate/access_code_unlock',
-        tags: ['/devices'],
-        'x-fern-sdk-group-name': ['devices', 'simulate'],
-        'x-fern-sdk-method-name': 'access_code_unlock',
-        'x-response-key': null,
-        'x-undocumented': 'Unreleased.',
-      },
-    },
     '/devices/simulate/connect': {
       post: {
         operationId: 'devicesSimulateConnectPost',
@@ -26147,6 +26251,108 @@ export default {
         'x-fern-sdk-method-name': 'lock_door',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
+      },
+    },
+    '/locks/simulate/keypad_code_entry': {
+      post: {
+        operationId: 'locksSimulateKeypadCodeEntryPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  code: { type: 'string' },
+                  device_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['device_id', 'code'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/access_code',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/locks/simulate/keypad_code_entry',
+        tags: ['/locks'],
+        'x-action-attempt-type': 'SIMULATE_KEYPAD_CODE_ENTRY',
+        'x-fern-sdk-group-name': ['locks', 'simulate'],
+        'x-fern-sdk-method-name': 'keypad_code_entry',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
+    '/locks/simulate/manual_lock_via_keypad': {
+      post: {
+        operationId: 'locksSimulateManualLockViaKeypadPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { device_id: { format: 'uuid', type: 'string' } },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/access_code',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/locks/simulate/manual_lock_via_keypad',
+        tags: ['/locks'],
+        'x-action-attempt-type': 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD',
+        'x-fern-sdk-group-name': ['locks', 'simulate'],
+        'x-fern-sdk-method-name': 'manual_lock_via_keypad',
+        'x-response-key': null,
+        'x-undocumented': 'Unreleased.',
       },
     },
     '/locks/unlock_door': {
