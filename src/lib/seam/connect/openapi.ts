@@ -26277,11 +26277,11 @@ export default {
                 schema: {
                   properties: {
                     action_attempt: {
-                      $ref: '#/components/schemas/access_code',
+                      $ref: '#/components/schemas/action_attempt',
                     },
                     ok: { type: 'boolean' },
                   },
-                  required: ['ok'],
+                  required: ['action_attempt', 'ok'],
                   type: 'object',
                 },
               },
@@ -26327,11 +26327,11 @@ export default {
                 schema: {
                   properties: {
                     action_attempt: {
-                      $ref: '#/components/schemas/access_code',
+                      $ref: '#/components/schemas/action_attempt',
                     },
                     ok: { type: 'boolean' },
                   },
-                  required: ['ok'],
+                  required: ['action_attempt', 'ok'],
                   type: 'object',
                 },
               },
@@ -26351,7 +26351,8 @@ export default {
         'x-action-attempt-type': 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD',
         'x-fern-sdk-group-name': ['locks', 'simulate'],
         'x-fern-sdk-method-name': 'manual_lock_via_keypad',
-        'x-response-key': null,
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
         'x-undocumented': 'Unreleased.',
       },
     },
