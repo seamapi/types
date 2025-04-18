@@ -52539,6 +52539,8 @@ export interface Routes {
     commonParams: {
       /** ID of the user identity for which you want to generate an instant key. */
       user_identity_id: string
+      /** The maximum number of times the instant key can be used. Defaults to 1. */
+      max_use_count?: number
     }
     formData: {}
     jsonResponse: {

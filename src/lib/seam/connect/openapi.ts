@@ -32681,6 +32681,13 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  max_use_count: {
+                    default: 1,
+                    description:
+                      'The maximum number of times the instant key can be used. Defaults to 1.',
+                    format: 'float',
+                    type: 'number',
+                  },
                   user_identity_id: {
                     description:
                       'ID of the user identity for which you want to generate an instant key.',
