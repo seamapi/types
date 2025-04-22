@@ -17563,6 +17563,16 @@ export default {
             type: 'string',
             'x-deprecated': 'use company_name',
           },
+          connect_webview_customization: {
+            properties: {
+              inviter_logo_url: { type: 'string' },
+              logo_shape: { enum: ['circle', 'square'], type: 'string' },
+              primary_button_color: { type: 'string' },
+              primary_button_text_color: { type: 'string' },
+              success_message: { type: 'string' },
+            },
+            type: 'object',
+          },
           is_sandbox: { type: 'boolean' },
           is_suspended: {
             description:
@@ -17577,6 +17587,7 @@ export default {
           'name',
           'company_name',
           'is_sandbox',
+          'connect_webview_customization',
           'is_suspended',
           'connect_partner_name',
         ],
@@ -33710,15 +33721,49 @@ export default {
                     type: 'string',
                     'x-deprecated': 'use company_name',
                   },
+                  connect_webview_customization: {
+                    properties: {
+                      logo_shape: {
+                        enum: ['circle', 'square'],
+                        nullable: true,
+                        type: 'string',
+                      },
+                      primary_button_color: { nullable: true, type: 'string' },
+                      primary_button_text_color: {
+                        nullable: true,
+                        type: 'string',
+                      },
+                      success_message: { nullable: true, type: 'string' },
+                    },
+                    type: 'object',
+                  },
                   is_sandbox: { default: false, type: 'boolean' },
                   name: { type: 'string' },
                   webview_logo_shape: {
+                    deprecated: true,
                     enum: ['circle', 'square'],
                     type: 'string',
+                    'x-deprecated':
+                      'Use `connect_webview_customization.webview_logo_shape` instead.',
                   },
-                  webview_primary_button_color: { type: 'string' },
-                  webview_primary_button_text_color: { type: 'string' },
-                  webview_success_message: { type: 'string' },
+                  webview_primary_button_color: {
+                    deprecated: true,
+                    type: 'string',
+                    'x-deprecated':
+                      'Use `connect_webview_customization.webview_primary_button_color` instead.',
+                  },
+                  webview_primary_button_text_color: {
+                    deprecated: true,
+                    type: 'string',
+                    'x-deprecated':
+                      'Use `connect_webview_customization.webview_primary_button_text_color` instead.',
+                  },
+                  webview_success_message: {
+                    deprecated: true,
+                    type: 'string',
+                    'x-deprecated':
+                      'Use `connect_webview_customization.webview_success_message` instead.',
+                  },
                 },
                 required: ['name'],
                 type: 'object',
@@ -33940,6 +33985,103 @@ export default {
         'x-fern-sdk-method-name': 'reset_sandbox',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
+      },
+    },
+    '/workspaces/update': {
+      patch: {
+        operationId: 'workspacesUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connect_partner_name: { type: 'string' },
+                  connect_webview_customization: {
+                    properties: {
+                      logo_shape: {
+                        enum: ['circle', 'square'],
+                        nullable: true,
+                        type: 'string',
+                      },
+                      primary_button_color: { nullable: true, type: 'string' },
+                      primary_button_text_color: {
+                        nullable: true,
+                        type: 'string',
+                      },
+                      success_message: { nullable: true, type: 'string' },
+                    },
+                    type: 'object',
+                  },
+                  is_suspended: { type: 'boolean' },
+                  name: { type: 'string' },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: { description: 'OK' },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { console_session_with_workspace: [] },
+          { pat_with_workspace: [] },
+        ],
+        summary: '/workspaces/update',
+        tags: ['/workspaces'],
+        'x-fern-ignore': true,
+        'x-response-key': null,
+      },
+      post: {
+        operationId: 'workspacesUpdatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connect_partner_name: { type: 'string' },
+                  connect_webview_customization: {
+                    properties: {
+                      logo_shape: {
+                        enum: ['circle', 'square'],
+                        nullable: true,
+                        type: 'string',
+                      },
+                      primary_button_color: { nullable: true, type: 'string' },
+                      primary_button_text_color: {
+                        nullable: true,
+                        type: 'string',
+                      },
+                      success_message: { nullable: true, type: 'string' },
+                    },
+                    type: 'object',
+                  },
+                  is_suspended: { type: 'boolean' },
+                  name: { type: 'string' },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: { description: 'OK' },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { console_session_with_workspace: [] },
+          { pat_with_workspace: [] },
+        ],
+        summary: '/workspaces/update',
+        tags: ['/workspaces'],
+        'x-fern-sdk-group-name': ['workspaces'],
+        'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
       },
     },
   },
