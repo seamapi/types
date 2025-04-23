@@ -5509,6 +5509,24 @@ export interface Routes {
       }
     }
   }
+  '/access_codes/report_device_constraints': {
+    route: '/access_codes/report_device_constraints'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** ID of the device to report constraints for. */
+      device_id: string
+      /** Array of supported code lengths between 4 and 20 inclusive; cannot be provided with min_code_length or max_code_length. */
+      supported_code_lengths?: number[] | undefined
+      /** Minimum supported code length between 4 and 20 inclusive; cannot be provided with supported_code_lengths. */
+      min_code_length?: number | undefined
+      /** Maximum supported code length between 4 and 20 inclusive; cannot be provided with supported_code_lengths. */
+      max_code_length?: number | undefined
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/access_codes/simulate/create_unmanaged_access_code': {
     route: '/access_codes/simulate/create_unmanaged_access_code'
     method: 'POST'
