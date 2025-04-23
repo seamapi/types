@@ -18381,6 +18381,79 @@ export default {
         'x-title': 'Pull a Backup Access Code',
       },
     },
+    '/access_codes/report_device_constraints': {
+      post: {
+        description:
+          'Allows clients to report supported code length constraints for a SmartThings lock device.',
+        operationId: 'accessCodesReportDeviceConstraintsPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: {
+                    description: 'ID of the device to report constraints for.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  max_code_length: {
+                    description:
+                      'Maximum supported code length between 4 and 20 inclusive; cannot be provided with supported_code_lengths.',
+                    maximum: 20,
+                    minimum: 4,
+                    type: 'integer',
+                  },
+                  min_code_length: {
+                    description:
+                      'Minimum supported code length between 4 and 20 inclusive; cannot be provided with supported_code_lengths.',
+                    maximum: 20,
+                    minimum: 4,
+                    type: 'integer',
+                  },
+                  supported_code_lengths: {
+                    description:
+                      'Array of supported code lengths between 4 and 20 inclusive; cannot be provided with min_code_length or max_code_length.',
+                    items: { maximum: 20, minimum: 4, type: 'integer' },
+                    minItems: 1,
+                    type: 'array',
+                  },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_codes/report_device_constraints',
+        tags: ['/access_codes'],
+        'x-fern-sdk-group-name': ['access_codes'],
+        'x-fern-sdk-method-name': 'report_device_constraints',
+        'x-response-key': null,
+        'x-title': 'Report Device Code Constraints',
+      },
+    },
     '/access_codes/simulate/create_unmanaged_access_code': {
       post: {
         description:
