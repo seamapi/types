@@ -55021,10 +55021,26 @@ export interface Routes {
        * @deprecated use company_name */
       connect_partner_name?: ((string | null) | null) | undefined
       is_sandbox?: boolean
+      /**
+       * @deprecated Use `connect_webview_customization.webview_primary_button_color` instead. */
       webview_primary_button_color?: string | undefined
+      /**
+       * @deprecated Use `connect_webview_customization.webview_primary_button_text_color` instead. */
       webview_primary_button_text_color?: string | undefined
+      /**
+       * @deprecated Use `connect_webview_customization.webview_logo_shape` instead. */
       webview_logo_shape?: ('circle' | 'square') | undefined
+      /**
+       * @deprecated Use `connect_webview_customization.webview_success_message` instead. */
       webview_success_message?: string | undefined
+      connect_webview_customization?:
+        | {
+            primary_button_color?: (string | null) | undefined
+            primary_button_text_color?: (string | null) | undefined
+            success_message?: (string | null) | undefined
+            logo_shape?: (('circle' | 'square') | null) | undefined
+          }
+        | undefined
     }
     commonParams: {}
     formData: {}
@@ -55035,6 +55051,13 @@ export interface Routes {
         name: string
         company_name: string
         is_sandbox: boolean
+        connect_webview_customization: {
+          primary_button_color?: string | undefined
+          primary_button_text_color?: string | undefined
+          success_message?: string | undefined
+          logo_shape?: ('circle' | 'square') | undefined
+          inviter_logo_url?: string | undefined
+        }
         /** True if a sandbox workspace has not been accessed in 14 days */
         is_suspended: boolean
         /**
@@ -55057,6 +55080,13 @@ export interface Routes {
         name: string
         company_name: string
         is_sandbox: boolean
+        connect_webview_customization: {
+          primary_button_color?: string | undefined
+          primary_button_text_color?: string | undefined
+          success_message?: string | undefined
+          logo_shape?: ('circle' | 'square') | undefined
+          inviter_logo_url?: string | undefined
+        }
         /** True if a sandbox workspace has not been accessed in 14 days */
         is_suspended: boolean
         /**
@@ -55078,6 +55108,13 @@ export interface Routes {
         name: string
         company_name: string
         is_sandbox: boolean
+        connect_webview_customization: {
+          primary_button_color?: string | undefined
+          primary_button_text_color?: string | undefined
+          success_message?: string | undefined
+          logo_shape?: ('circle' | 'square') | undefined
+          inviter_logo_url?: string | undefined
+        }
         /** True if a sandbox workspace has not been accessed in 14 days */
         is_suspended: boolean
         /**
@@ -56275,6 +56312,27 @@ export interface Routes {
             }
           }
     }
+  }
+  '/workspaces/update': {
+    route: '/workspaces/update'
+    method: 'POST' | 'PATCH'
+    queryParams: {}
+    jsonBody: {
+      name?: string | undefined
+      connect_partner_name?: string | undefined
+      connect_webview_customization?:
+        | {
+            primary_button_color?: (string | null) | undefined
+            primary_button_text_color?: (string | null) | undefined
+            success_message?: (string | null) | undefined
+            logo_shape?: (('circle' | 'square') | null) | undefined
+          }
+        | undefined
+      is_suspended?: boolean | undefined
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
   }
 }
 
