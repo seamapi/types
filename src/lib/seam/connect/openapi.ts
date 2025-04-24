@@ -2935,22 +2935,44 @@ export default {
             'x-undocumented': 'Only used internally.',
           },
           pending_mutations: {
+            description:
+              'Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system.',
             items: {
               discriminator: { propertyName: 'mutation_code' },
               oneOf: [
                 {
+                  description:
+                    'Seam is in the process of pushing a user creation to the integrated access system.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
                     mutation_code: { enum: ['creating'], type: 'string' },
                   },
                   required: ['created_at', 'message', 'mutation_code'],
                   type: 'object',
                 },
                 {
+                  description:
+                    'Seam is in the process of pushing a user deletion to the integrated access system.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
                     mutation_code: { enum: ['deleting'], type: 'string' },
                   },
                   required: ['created_at', 'message', 'mutation_code'],
@@ -2958,7 +2980,12 @@ export default {
                 },
                 {
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     from: {
                       properties: {
                         email_address: {
@@ -2971,7 +2998,10 @@ export default {
                       },
                       type: 'object',
                     },
-                    message: { type: 'string' },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
                     mutation_code: {
                       enum: ['updating_user_information'],
                       type: 'string',
@@ -2999,8 +3029,15 @@ export default {
                   type: 'object',
                 },
                 {
+                  description:
+                    'Seam is in the process of pushing an access schedule update to the integrated access system.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     from: {
                       properties: {
                         ends_at: {
@@ -3017,7 +3054,10 @@ export default {
                       required: ['starts_at', 'ends_at'],
                       type: 'object',
                     },
-                    message: { type: 'string' },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
                     mutation_code: {
                       enum: ['updating_access_schedule'],
                       type: 'string',
@@ -3049,14 +3089,24 @@ export default {
                   type: 'object',
                 },
                 {
+                  description:
+                    'Seam is in the process of pushing a suspension state update to the integrated access system.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     from: {
                       properties: { is_suspended: { type: 'boolean' } },
                       required: ['is_suspended'],
                       type: 'object',
                     },
-                    message: { type: 'string' },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
                     mutation_code: {
                       enum: ['updating_suspension_state'],
                       type: 'string',
@@ -3077,11 +3127,20 @@ export default {
                   type: 'object',
                 },
                 {
+                  description:
+                    'Seam is in the process of pushing an access group membership update to the integrated access system.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     from: {
+                      description: 'Old access group membership.',
                       properties: {
                         acs_access_group_id: {
+                          description: 'Old access group ID.',
                           format: 'uuid',
                           nullable: true,
                           type: 'string',
@@ -3090,14 +3149,19 @@ export default {
                       required: ['acs_access_group_id'],
                       type: 'object',
                     },
-                    message: { type: 'string' },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
                     mutation_code: {
                       enum: ['updating_group_membership'],
                       type: 'string',
                     },
                     to: {
+                      description: 'New access group membership.',
                       properties: {
                         acs_access_group_id: {
+                          description: 'New access group ID.',
                           format: 'uuid',
                           nullable: true,
                           type: 'string',
@@ -3119,7 +3183,6 @@ export default {
               ],
             },
             type: 'array',
-            'x-undocumented': 'Experimental.',
           },
           phone_number: {
             description:
@@ -8807,6 +8870,150 @@ export default {
                           'lower_limit_fahrenheit',
                           'upper_limit_celsius',
                           'upper_limit_fahrenheit',
+                        ],
+                        type: 'object',
+                      },
+                      thermostat_daily_programs: {
+                        default: null,
+                        items: {
+                          properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which the thermostat daily program was created.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            device_id: {
+                              description:
+                                'ID of the desired thermostat device.',
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            name: {
+                              description:
+                                'User-friendly name to identify the thermostat daily program.',
+                              type: 'string',
+                            },
+                            periods: {
+                              description:
+                                'Array of thermostat daily program periods.',
+                              items: {
+                                properties: {
+                                  climate_preset_key: {
+                                    description:
+                                      'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time.',
+                                    type: 'string',
+                                  },
+                                  starts_at_time: {
+                                    description:
+                                      'Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                                    pattern:
+                                      '^([01]\\d|2[0-3]):([0-5]\\d):([0-5]\\d)$',
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'starts_at_time',
+                                  'climate_preset_key',
+                                ],
+                                type: 'object',
+                              },
+                              type: 'array',
+                            },
+                            thermostat_daily_program_id: {
+                              description:
+                                'ID of the thermostat daily program.',
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                          },
+                          required: [
+                            'thermostat_daily_program_id',
+                            'device_id',
+                            'periods',
+                            'created_at',
+                          ],
+                          type: 'object',
+                        },
+                        nullable: true,
+                        type: 'array',
+                      },
+                      thermostat_weekly_program: {
+                        default: null,
+                        nullable: true,
+                        properties: {
+                          created_at: {
+                            description:
+                              'Date and time at which the thermostat weekly program was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          device_id: {
+                            description:
+                              'ID of the thermostat device the weekly program is for.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          friday_program_id: {
+                            description:
+                              'ID of the thermostat daily program to run on Fridays.',
+                            format: 'uuid',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          monday_program_id: {
+                            description:
+                              'ID of the thermostat daily program to run on Mondays.',
+                            format: 'uuid',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          saturday_program_id: {
+                            description:
+                              'ID of the thermostat daily program to run on Saturdays.',
+                            format: 'uuid',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          sunday_program_id: {
+                            description:
+                              'ID of the thermostat daily program to run on Sundays.',
+                            format: 'uuid',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          thursday_program_id: {
+                            description:
+                              'ID of the thermostat daily program to run on Thursdays.',
+                            format: 'uuid',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          tuesday_program_id: {
+                            description:
+                              'ID of the thermostat daily program to run on Tuesdays.',
+                            format: 'uuid',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          wednesday_program_id: {
+                            description:
+                              'ID of the thermostat daily program to run on Wednesdays.',
+                            format: 'uuid',
+                            nullable: true,
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'device_id',
+                          'monday_program_id',
+                          'tuesday_program_id',
+                          'wednesday_program_id',
+                          'thursday_program_id',
+                          'friday_program_id',
+                          'saturday_program_id',
+                          'sunday_program_id',
+                          'created_at',
                         ],
                         type: 'object',
                       },
@@ -16311,22 +16518,44 @@ export default {
             'x-undocumented': 'Only used internally.',
           },
           pending_mutations: {
+            description:
+              'Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system.',
             items: {
               discriminator: { propertyName: 'mutation_code' },
               oneOf: [
                 {
+                  description:
+                    'Seam is in the process of pushing a user creation to the integrated access system.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
                     mutation_code: { enum: ['creating'], type: 'string' },
                   },
                   required: ['created_at', 'message', 'mutation_code'],
                   type: 'object',
                 },
                 {
+                  description:
+                    'Seam is in the process of pushing a user deletion to the integrated access system.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
                     mutation_code: { enum: ['deleting'], type: 'string' },
                   },
                   required: ['created_at', 'message', 'mutation_code'],
@@ -16334,7 +16563,12 @@ export default {
                 },
                 {
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     from: {
                       properties: {
                         email_address: {
@@ -16347,7 +16581,10 @@ export default {
                       },
                       type: 'object',
                     },
-                    message: { type: 'string' },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
                     mutation_code: {
                       enum: ['updating_user_information'],
                       type: 'string',
@@ -16375,8 +16612,15 @@ export default {
                   type: 'object',
                 },
                 {
+                  description:
+                    'Seam is in the process of pushing an access schedule update to the integrated access system.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     from: {
                       properties: {
                         ends_at: {
@@ -16393,7 +16637,10 @@ export default {
                       required: ['starts_at', 'ends_at'],
                       type: 'object',
                     },
-                    message: { type: 'string' },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
                     mutation_code: {
                       enum: ['updating_access_schedule'],
                       type: 'string',
@@ -16425,14 +16672,24 @@ export default {
                   type: 'object',
                 },
                 {
+                  description:
+                    'Seam is in the process of pushing a suspension state update to the integrated access system.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     from: {
                       properties: { is_suspended: { type: 'boolean' } },
                       required: ['is_suspended'],
                       type: 'object',
                     },
-                    message: { type: 'string' },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
                     mutation_code: {
                       enum: ['updating_suspension_state'],
                       type: 'string',
@@ -16453,11 +16710,20 @@ export default {
                   type: 'object',
                 },
                 {
+                  description:
+                    'Seam is in the process of pushing an access group membership update to the integrated access system.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     from: {
+                      description: 'Old access group membership.',
                       properties: {
                         acs_access_group_id: {
+                          description: 'Old access group ID.',
                           format: 'uuid',
                           nullable: true,
                           type: 'string',
@@ -16466,14 +16732,19 @@ export default {
                       required: ['acs_access_group_id'],
                       type: 'object',
                     },
-                    message: { type: 'string' },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
                     mutation_code: {
                       enum: ['updating_group_membership'],
                       type: 'string',
                     },
                     to: {
+                      description: 'New access group membership.',
                       properties: {
                         acs_access_group_id: {
+                          description: 'New access group ID.',
                           format: 'uuid',
                           nullable: true,
                           type: 'string',
@@ -16495,7 +16766,6 @@ export default {
               ],
             },
             type: 'array',
-            'x-undocumented': 'Experimental.',
           },
           phone_number: {
             description:
@@ -18379,6 +18649,79 @@ export default {
         'x-fern-sdk-return-value': 'access_code',
         'x-response-key': 'access_code',
         'x-title': 'Pull a Backup Access Code',
+      },
+    },
+    '/access_codes/report_device_constraints': {
+      post: {
+        description:
+          'Allows clients to report supported code length constraints for a SmartThings lock device.',
+        operationId: 'accessCodesReportDeviceConstraintsPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: {
+                    description: 'ID of the device to report constraints for.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  max_code_length: {
+                    description:
+                      'Maximum supported code length between 4 and 20 inclusive; cannot be provided with supported_code_lengths.',
+                    maximum: 20,
+                    minimum: 4,
+                    type: 'integer',
+                  },
+                  min_code_length: {
+                    description:
+                      'Minimum supported code length between 4 and 20 inclusive; cannot be provided with supported_code_lengths.',
+                    maximum: 20,
+                    minimum: 4,
+                    type: 'integer',
+                  },
+                  supported_code_lengths: {
+                    description:
+                      'Array of supported code lengths between 4 and 20 inclusive; cannot be provided with min_code_length or max_code_length.',
+                    items: { maximum: 20, minimum: 4, type: 'integer' },
+                    minItems: 1,
+                    type: 'array',
+                  },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_codes/report_device_constraints',
+        tags: ['/access_codes'],
+        'x-fern-sdk-group-name': ['access_codes'],
+        'x-fern-sdk-method-name': 'report_device_constraints',
+        'x-response-key': null,
+        'x-title': 'Report Device Code Constraints',
       },
     },
     '/access_codes/simulate/create_unmanaged_access_code': {
@@ -28647,6 +28990,234 @@ export default {
         'x-title': 'Activate a Climate Preset',
       },
     },
+    '/thermostats/activate_weekly_program': {
+      post: {
+        description: 'Activates a thermostat weekly program.',
+        operationId: 'thermostatsActivateWeeklyProgramPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: {
+                    description:
+                      'ID of the thermostat device that the weekly program is for.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  friday_program_id: {
+                    description:
+                      'ID of the thermostat daily program to run on Fridays.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  monday_program_id: {
+                    description:
+                      'ID of the thermostat daily program to run on Mondays.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  saturday_program_id: {
+                    description:
+                      'ID of the thermostat daily program to run on Saturdays.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  sunday_program_id: {
+                    description:
+                      'ID of the thermostat daily program to run on Sundays.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  thursday_program_id: {
+                    description:
+                      'ID of the thermostat daily program to run on Thursdays.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  tuesday_program_id: {
+                    description:
+                      'ID of the thermostat daily program to run on Tuesdays.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  wednesday_program_id: {
+                    description:
+                      'ID of the thermostat daily program to run on Wednesdays.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    thermostat_weekly_program: {
+                      properties: {
+                        created_at: {
+                          description:
+                            'Date and time at which the thermostat weekly program was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        device_id: {
+                          description:
+                            'ID of the thermostat device the weekly program is for.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        friday_program_id: {
+                          description:
+                            'ID of the thermostat daily program to run on Fridays.',
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        monday_program_id: {
+                          description:
+                            'ID of the thermostat daily program to run on Mondays.',
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        saturday_program_id: {
+                          description:
+                            'ID of the thermostat daily program to run on Saturdays.',
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        sunday_program_id: {
+                          description:
+                            'ID of the thermostat daily program to run on Sundays.',
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        thursday_program_id: {
+                          description:
+                            'ID of the thermostat daily program to run on Thursdays.',
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        tuesday_program_id: {
+                          description:
+                            'ID of the thermostat daily program to run on Tuesdays.',
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        wednesday_program_id: {
+                          description:
+                            'ID of the thermostat daily program to run on Wednesdays.',
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'device_id',
+                        'monday_program_id',
+                        'tuesday_program_id',
+                        'wednesday_program_id',
+                        'thursday_program_id',
+                        'friday_program_id',
+                        'saturday_program_id',
+                        'sunday_program_id',
+                        'created_at',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['thermostat_weekly_program', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/thermostats/activate_weekly_program',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats'],
+        'x-fern-sdk-method-name': 'activate_weekly_program',
+        'x-fern-sdk-return-value': 'thermostat_weekly_program',
+        'x-response-key': 'thermostat_weekly_program',
+        'x-title': 'Activate a Thermostat Weekly Program',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
+    '/thermostats/clear_weekly_program': {
+      post: {
+        description: 'Clears a thermostat weekly program.',
+        operationId: 'thermostatsClearWeeklyProgramPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: {
+                    description:
+                      'ID of the thermostat device to clear the weekly program for.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/thermostats/clear_weekly_program',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats'],
+        'x-fern-sdk-method-name': 'clear_weekly_program',
+        'x-response-key': null,
+        'x-title': 'Clear a Thermostat Weekly Program',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
     '/thermostats/cool': {
       post: {
         description:
@@ -28830,6 +29401,347 @@ export default {
         'x-fern-sdk-method-name': 'create_climate_preset',
         'x-response-key': null,
         'x-title': 'Create a Climate Preset',
+      },
+    },
+    '/thermostats/daily_programs/create': {
+      post: {
+        description: 'Creates a thermostat daily program.',
+        operationId: 'thermostatsDailyProgramsCreatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: {
+                    description: 'ID of the desired thermostat device.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  name: {
+                    description:
+                      'User-friendly name to identify the thermostat daily program.',
+                    type: 'string',
+                  },
+                  periods: {
+                    description: 'Array of thermostat daily program periods.',
+                    items: {
+                      properties: {
+                        climate_preset_key: {
+                          description:
+                            'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time.',
+                          type: 'string',
+                        },
+                        starts_at_time: {
+                          description:
+                            'Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                          pattern: '^([01]\\d|2[0-3]):([0-5]\\d):([0-5]\\d)$',
+                          type: 'string',
+                        },
+                      },
+                      required: ['starts_at_time', 'climate_preset_key'],
+                      type: 'object',
+                    },
+                    type: 'array',
+                  },
+                },
+                required: ['device_id', 'periods'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    thermostat_daily_program: {
+                      properties: {
+                        created_at: {
+                          description:
+                            'Date and time at which the thermostat daily program was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        device_id: {
+                          description: 'ID of the desired thermostat device.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        name: {
+                          description:
+                            'User-friendly name to identify the thermostat daily program.',
+                          type: 'string',
+                        },
+                        periods: {
+                          description:
+                            'Array of thermostat daily program periods.',
+                          items: {
+                            properties: {
+                              climate_preset_key: {
+                                description:
+                                  'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time.',
+                                type: 'string',
+                              },
+                              starts_at_time: {
+                                description:
+                                  'Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                                pattern:
+                                  '^([01]\\d|2[0-3]):([0-5]\\d):([0-5]\\d)$',
+                                type: 'string',
+                              },
+                            },
+                            required: ['starts_at_time', 'climate_preset_key'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                        thermostat_daily_program_id: {
+                          description: 'ID of the thermostat daily program.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'thermostat_daily_program_id',
+                        'device_id',
+                        'periods',
+                        'created_at',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['thermostat_daily_program', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/thermostats/daily_programs/create',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats', 'daily_programs'],
+        'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'thermostat_daily_program',
+        'x-response-key': 'thermostat_daily_program',
+        'x-title': 'Create a Thermostat Daily Program',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
+    '/thermostats/daily_programs/delete': {
+      post: {
+        description: 'Deletes a thermostat daily program.',
+        operationId: 'thermostatsDailyProgramsDeletePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  thermostat_daily_program_id: {
+                    description: 'ID of the desired thermostat schedule.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['thermostat_daily_program_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/thermostats/daily_programs/delete',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats', 'daily_programs'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete a Thermostat Daily Program',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
+    '/thermostats/daily_programs/update': {
+      patch: {
+        description: 'Updates a specified thermostat daily program.',
+        operationId: 'thermostatsDailyProgramsUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  name: {
+                    description:
+                      'User-friendly name to identify the thermostat daily program.',
+                    type: 'string',
+                  },
+                  periods: {
+                    description: 'Array of thermostat daily program periods.',
+                    items: {
+                      properties: {
+                        climate_preset_key: {
+                          description:
+                            'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time.',
+                          type: 'string',
+                        },
+                        starts_at_time: {
+                          description:
+                            'Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                          pattern: '^([01]\\d|2[0-3]):([0-5]\\d):([0-5]\\d)$',
+                          type: 'string',
+                        },
+                      },
+                      required: ['starts_at_time', 'climate_preset_key'],
+                      type: 'object',
+                    },
+                    type: 'array',
+                  },
+                  thermostat_daily_program_id: {
+                    description: 'ID of the desired thermostat daily program.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['thermostat_daily_program_id', 'periods'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/thermostats/daily_programs/update',
+        tags: ['/thermostats'],
+        'x-fern-ignore': true,
+        'x-response-key': null,
+        'x-title': 'Update a Thermostat Daily Program',
+        'x-undocumented': 'Unreleased.',
+      },
+      post: {
+        description: 'Updates a specified thermostat daily program.',
+        operationId: 'thermostatsDailyProgramsUpdatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  name: {
+                    description:
+                      'User-friendly name to identify the thermostat daily program.',
+                    type: 'string',
+                  },
+                  periods: {
+                    description: 'Array of thermostat daily program periods.',
+                    items: {
+                      properties: {
+                        climate_preset_key: {
+                          description:
+                            'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time.',
+                          type: 'string',
+                        },
+                        starts_at_time: {
+                          description:
+                            'Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                          pattern: '^([01]\\d|2[0-3]):([0-5]\\d):([0-5]\\d)$',
+                          type: 'string',
+                        },
+                      },
+                      required: ['starts_at_time', 'climate_preset_key'],
+                      type: 'object',
+                    },
+                    type: 'array',
+                  },
+                  thermostat_daily_program_id: {
+                    description: 'ID of the desired thermostat daily program.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['thermostat_daily_program_id', 'periods'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/thermostats/daily_programs/update',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats', 'daily_programs'],
+        'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
+        'x-title': 'Update a Thermostat Daily Program',
+        'x-undocumented': 'Unreleased.',
       },
     },
     '/thermostats/delete_climate_preset': {
