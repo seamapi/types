@@ -27,7 +27,7 @@ export const thermostat_schedule = z.object({
   max_override_period_minutes: z
     .number()
     .int()
-    .nonnegative()
+    .positive()
     .nullable()
     .optional()
     .describe(
@@ -39,15 +39,11 @@ export const thermostat_schedule = z.object({
     .describe(
       'Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
     ),
-  unstable_is_override_allowed: z
+  is_override_allowed: z
     .boolean()
     .optional()
     .describe(
-      `
-        ---
-        undocumented: Unstable
-        ---
-        Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts.`,
+      "Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts.",
     ),
   ends_at: z
     .string()
