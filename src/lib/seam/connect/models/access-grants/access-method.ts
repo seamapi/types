@@ -23,6 +23,10 @@ export const access_method = z.object({
     .datetime()
     .nullable()
     .describe('Date and time at which the access method was issued.'),
+  instant_key_url: z
+    .string()
+    .optional()
+    .describe('URL of instant key for mobile key access methods.'),
 }).describe(`
   ---
   undocumented: Unreleased.
