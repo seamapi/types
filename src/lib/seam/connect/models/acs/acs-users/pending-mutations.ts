@@ -3,17 +3,28 @@ import { z } from 'zod'
 import { phone_number } from '../../phone-number.js'
 
 const common_pending_mutation = z.object({
-  created_at: z.string().datetime(),
-  message: z.string(),
+  created_at: z
+    .string()
+    .datetime()
+    .describe('Date and time at which the mutation was created.'),
+  message: z.string().describe('Detailed description of the mutation.'),
 })
 
-const creating = common_pending_mutation.extend({
-  mutation_code: z.literal('creating'),
-})
+const creating = common_pending_mutation
+  .extend({
+    mutation_code: z.literal('creating'),
+  })
+  .describe(
+    'Seam is in the process of pushing a user creation to the integrated access system.',
+  )
 
-const deleting = common_pending_mutation.extend({
-  mutation_code: z.literal('deleting'),
-})
+const deleting = common_pending_mutation
+  .extend({
+    mutation_code: z.literal('deleting'),
+  })
+  .describe(
+    'Seam is in the process of pushing a user deletion to the integrated access system.',
+  )
 
 const acs_user_info = z.object({
   email_address: z.string().email().nullable(),
@@ -33,27 +44,51 @@ const access_schedule = z.object({
   ends_at: z.string().datetime().nullable(),
 })
 
-const updating_access_schedule_mutation = common_pending_mutation.extend({
-  mutation_code: z.literal('updating_access_schedule'),
-  from: access_schedule,
-  to: access_schedule,
-})
+const updating_access_schedule_mutation = common_pending_mutation
+  .extend({
+    mutation_code: z.literal('updating_access_schedule'),
+    from: access_schedule,
+    to: access_schedule,
+  })
+  .describe(
+    'Seam is in the process of pushing an access schedule update to the integrated access system.',
+  )
 
-const updating_suspension_state_mutation = common_pending_mutation.extend({
-  mutation_code: z.literal('updating_suspension_state'),
-  from: z.object({ is_suspended: z.boolean() }),
-  to: z.object({ is_suspended: z.boolean() }),
-})
+const updating_suspension_state_mutation = common_pending_mutation
+  .extend({
+    mutation_code: z.literal('updating_suspension_state'),
+    from: z.object({ is_suspended: z.boolean() }),
+    to: z.object({ is_suspended: z.boolean() }),
+  })
+  .describe(
+    'Seam is in the process of pushing a suspension state update to the integrated access system.',
+  )
 
-const updating_group_membership_mutation = common_pending_mutation.extend({
-  mutation_code: z.literal('updating_group_membership'),
-  from: z.object({
-    acs_access_group_id: z.string().uuid().nullable(),
-  }),
-  to: z.object({
-    acs_access_group_id: z.string().uuid().nullable(),
-  }),
-})
+const updating_group_membership_mutation = common_pending_mutation
+  .extend({
+    mutation_code: z.literal('updating_group_membership'),
+    from: z
+      .object({
+        acs_access_group_id: z
+          .string()
+          .uuid()
+          .nullable()
+          .describe('Old access group ID.'),
+      })
+      .describe('Old access group membership.'),
+    to: z
+      .object({
+        acs_access_group_id: z
+          .string()
+          .uuid()
+          .nullable()
+          .describe('New access group ID.'),
+      })
+      .describe('New access group membership.'),
+  })
+  .describe(
+    'Seam is in the process of pushing an access group membership update to the integrated access system.',
+  )
 
 export const acs_user_pending_mutations = z.discriminatedUnion(
   'mutation_code',
