@@ -5509,6 +5509,24 @@ export interface Routes {
       }
     }
   }
+  '/access_codes/report_device_constraints': {
+    route: '/access_codes/report_device_constraints'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** ID of the device to report constraints for. */
+      device_id: string
+      /** Array of supported code lengths between 4 and 20 inclusive; cannot be provided with min_code_length or max_code_length. */
+      supported_code_lengths?: number[] | undefined
+      /** Minimum supported code length between 4 and 20 inclusive; cannot be provided with supported_code_lengths. */
+      min_code_length?: number | undefined
+      /** Maximum supported code length between 4 and 20 inclusive; cannot be provided with supported_code_lengths. */
+      max_code_length?: number | undefined
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/access_codes/simulate/create_unmanaged_access_code': {
     route: '/access_codes/simulate/create_unmanaged_access_code'
     method: 'POST'
@@ -9767,14 +9785,6 @@ export interface Routes {
         user_identity_email_address?: (string | null) | undefined
         /** Phone number of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
-        /**  */
-        latest_desired_state_synced_with_provider_at?:
-          | (string | null)
-          | undefined
-        /**  */
-        is_latest_desired_state_synced_with_provider?:
-          | (boolean | null)
-          | undefined
         /** Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         warnings: Array<
           | {
@@ -9837,21 +9847,27 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
-        /**  */
+        /** Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system. */
         pending_mutations?:
           | Array<
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'creating'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'deleting'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_user_information'
                   from: {
@@ -9866,7 +9882,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_access_schedule'
                   from: {
@@ -9879,7 +9897,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_suspension_state'
                   from: {
@@ -9890,13 +9910,19 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_group_membership'
+                  /** Old access group membership. */
                   from: {
+                    /** Old access group ID. */
                     acs_access_group_id: string | null
                   }
+                  /** New access group membership. */
                   to: {
+                    /** New access group ID. */
                     acs_access_group_id: string | null
                   }
                 }
@@ -14804,6 +14830,11 @@ export interface Routes {
         can_remove_acs_users_from_acs_access_groups?: boolean | undefined
         /** Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
         can_add_acs_users_to_acs_access_groups?: boolean | undefined
+        can_create_user?: boolean | undefined
+        can_delete_user?: boolean | undefined
+        can_update_user_information?: boolean | undefined
+        can_update_user_supension_state?: boolean | undefined
+        can_update_user_group_membership?: boolean | undefined
       }
     }
   }
@@ -14988,6 +15019,11 @@ export interface Routes {
         can_remove_acs_users_from_acs_access_groups?: boolean | undefined
         /** Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
         can_add_acs_users_to_acs_access_groups?: boolean | undefined
+        can_create_user?: boolean | undefined
+        can_delete_user?: boolean | undefined
+        can_update_user_information?: boolean | undefined
+        can_update_user_supension_state?: boolean | undefined
+        can_update_user_group_membership?: boolean | undefined
       }>
     }
   }
@@ -15172,6 +15208,11 @@ export interface Routes {
         can_remove_acs_users_from_acs_access_groups?: boolean | undefined
         /** Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
         can_add_acs_users_to_acs_access_groups?: boolean | undefined
+        can_create_user?: boolean | undefined
+        can_delete_user?: boolean | undefined
+        can_update_user_information?: boolean | undefined
+        can_update_user_supension_state?: boolean | undefined
+        can_update_user_group_membership?: boolean | undefined
       }>
     }
   }
@@ -15270,14 +15311,6 @@ export interface Routes {
         user_identity_email_address?: (string | null) | undefined
         /** Phone number of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
-        /**  */
-        latest_desired_state_synced_with_provider_at?:
-          | (string | null)
-          | undefined
-        /**  */
-        is_latest_desired_state_synced_with_provider?:
-          | (boolean | null)
-          | undefined
         /** Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         warnings: Array<
           | {
@@ -15340,21 +15373,27 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
-        /**  */
+        /** Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system. */
         pending_mutations?:
           | Array<
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'creating'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'deleting'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_user_information'
                   from: {
@@ -15369,7 +15408,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_access_schedule'
                   from: {
@@ -15382,7 +15423,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_suspension_state'
                   from: {
@@ -15393,13 +15436,19 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_group_membership'
+                  /** Old access group membership. */
                   from: {
+                    /** Old access group ID. */
                     acs_access_group_id: string | null
                   }
+                  /** New access group membership. */
                   to: {
+                    /** New access group ID. */
                     acs_access_group_id: string | null
                   }
                 }
@@ -15491,14 +15540,6 @@ export interface Routes {
         user_identity_email_address?: (string | null) | undefined
         /** Phone number of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
-        /**  */
-        latest_desired_state_synced_with_provider_at?:
-          | (string | null)
-          | undefined
-        /**  */
-        is_latest_desired_state_synced_with_provider?:
-          | (boolean | null)
-          | undefined
         /** Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         warnings: Array<
           | {
@@ -15561,21 +15602,27 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
-        /**  */
+        /** Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system. */
         pending_mutations?:
           | Array<
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'creating'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'deleting'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_user_information'
                   from: {
@@ -15590,7 +15637,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_access_schedule'
                   from: {
@@ -15603,7 +15652,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_suspension_state'
                   from: {
@@ -15614,13 +15665,19 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_group_membership'
+                  /** Old access group membership. */
                   from: {
+                    /** Old access group ID. */
                     acs_access_group_id: string | null
                   }
+                  /** New access group membership. */
                   to: {
+                    /** New access group ID. */
                     acs_access_group_id: string | null
                   }
                 }
@@ -15708,14 +15765,6 @@ export interface Routes {
         user_identity_email_address?: (string | null) | undefined
         /** Phone number of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
-        /**  */
-        latest_desired_state_synced_with_provider_at?:
-          | (string | null)
-          | undefined
-        /**  */
-        is_latest_desired_state_synced_with_provider?:
-          | (boolean | null)
-          | undefined
         /** Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         warnings: Array<
           | {
@@ -15778,21 +15827,27 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
-        /**  */
+        /** Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system. */
         pending_mutations?:
           | Array<
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'creating'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'deleting'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_user_information'
                   from: {
@@ -15807,7 +15862,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_access_schedule'
                   from: {
@@ -15820,7 +15877,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_suspension_state'
                   from: {
@@ -15831,13 +15890,19 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_group_membership'
+                  /** Old access group membership. */
                   from: {
+                    /** Old access group ID. */
                     acs_access_group_id: string | null
                   }
+                  /** New access group membership. */
                   to: {
+                    /** New access group ID. */
                     acs_access_group_id: string | null
                   }
                 }
@@ -16057,14 +16122,6 @@ export interface Routes {
         user_identity_email_address?: (string | null) | undefined
         /** Phone number of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
-        /**  */
-        latest_desired_state_synced_with_provider_at?:
-          | (string | null)
-          | undefined
-        /**  */
-        is_latest_desired_state_synced_with_provider?:
-          | (boolean | null)
-          | undefined
         /** Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         warnings: Array<
           | {
@@ -16127,21 +16184,27 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
-        /**  */
+        /** Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system. */
         pending_mutations?:
           | Array<
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'creating'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'deleting'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_user_information'
                   from: {
@@ -16156,7 +16219,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_access_schedule'
                   from: {
@@ -16169,7 +16234,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_suspension_state'
                   from: {
@@ -16180,13 +16247,19 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_group_membership'
+                  /** Old access group membership. */
                   from: {
+                    /** Old access group ID. */
                     acs_access_group_id: string | null
                   }
+                  /** New access group membership. */
                   to: {
+                    /** New access group ID. */
                     acs_access_group_id: string | null
                   }
                 }
@@ -16264,14 +16337,6 @@ export interface Routes {
         user_identity_email_address?: (string | null) | undefined
         /** Phone number of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
-        /**  */
-        latest_desired_state_synced_with_provider_at?:
-          | (string | null)
-          | undefined
-        /**  */
-        is_latest_desired_state_synced_with_provider?:
-          | (boolean | null)
-          | undefined
         /** Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         warnings: Array<
           | {
@@ -16334,21 +16399,27 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
-        /**  */
+        /** Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system. */
         pending_mutations?:
           | Array<
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'creating'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'deleting'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_user_information'
                   from: {
@@ -16363,7 +16434,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_access_schedule'
                   from: {
@@ -16376,7 +16449,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_suspension_state'
                   from: {
@@ -16387,13 +16462,19 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_group_membership'
+                  /** Old access group membership. */
                   from: {
+                    /** Old access group ID. */
                     acs_access_group_id: string | null
                   }
+                  /** New access group membership. */
                   to: {
+                    /** New access group ID. */
                     acs_access_group_id: string | null
                   }
                 }
@@ -20138,6 +20219,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -20177,6 +20260,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -20214,6 +20299,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -20254,7 +20341,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -20266,6 +20353,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -20512,6 +20640,12 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -21252,6 +21386,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -21291,6 +21427,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -21328,6 +21466,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -21368,7 +21508,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -21380,6 +21520,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -21626,6 +21807,12 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -22055,6 +22242,12 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -22592,6 +22785,12 @@ export interface Routes {
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
             }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
+            }
         >
         /** Date and time at which the device object was created. */
         created_at: string
@@ -23007,6 +23206,114 @@ export interface Routes {
                 /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
                 connected_account_id: string
                 event_type: 'access_code.unmanaged.removed'
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** ID of the access grant. */
+                access_grant_id: string
+                event_type: 'access_grant.created'
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** ID of the access grant. */
+                access_grant_id: string
+                event_type: 'access_grant.deleted'
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** ID of the access grant. */
+                access_grant_id: string
+                event_type: 'access_grant.access_granted_to_all_doors'
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** ID of the access grant. */
+                access_grant_id: string
+                event_type: 'access_grant.access_granted_to_door'
+                /** ID of the door, an [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details). */
+                acs_entrance_id: string
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** ID of the access grant. */
+                access_grant_id: string
+                event_type: 'access_grant.access_to_door_lost'
+                /** ID of the door, an [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details). */
+                acs_entrance_id: string
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** ID of the access method. */
+                access_method_id: string
+                event_type: 'access_method.issued'
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** ID of the access method. */
+                access_method_id: string
+                event_type: 'access_method.revoked'
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** ID of the access method. */
+                access_method_id: string
+                event_type: 'access_method.card_encoding_required'
               }
             | {
                 /** ID of the event. */
@@ -24111,6 +24418,14 @@ export interface Routes {
             | 'access_code.unmanaged.failed_to_convert_to_managed'
             | 'access_code.unmanaged.created'
             | 'access_code.unmanaged.removed'
+            | 'access_grant.created'
+            | 'access_grant.deleted'
+            | 'access_grant.access_granted_to_all_doors'
+            | 'access_grant.access_granted_to_door'
+            | 'access_grant.access_to_door_lost'
+            | 'access_method.issued'
+            | 'access_method.revoked'
+            | 'access_method.card_encoding_required'
             | 'acs_system.connected'
             | 'acs_system.added'
             | 'acs_system.disconnected'
@@ -24195,6 +24510,14 @@ export interface Routes {
             | 'access_code.unmanaged.failed_to_convert_to_managed'
             | 'access_code.unmanaged.created'
             | 'access_code.unmanaged.removed'
+            | 'access_grant.created'
+            | 'access_grant.deleted'
+            | 'access_grant.access_granted_to_all_doors'
+            | 'access_grant.access_granted_to_door'
+            | 'access_grant.access_to_door_lost'
+            | 'access_method.issued'
+            | 'access_method.revoked'
+            | 'access_method.card_encoding_required'
             | 'acs_system.connected'
             | 'acs_system.added'
             | 'acs_system.disconnected'
@@ -24563,6 +24886,114 @@ export interface Routes {
             /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
             connected_account_id: string
             event_type: 'access_code.unmanaged.removed'
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** ID of the access grant. */
+            access_grant_id: string
+            event_type: 'access_grant.created'
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** ID of the access grant. */
+            access_grant_id: string
+            event_type: 'access_grant.deleted'
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** ID of the access grant. */
+            access_grant_id: string
+            event_type: 'access_grant.access_granted_to_all_doors'
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** ID of the access grant. */
+            access_grant_id: string
+            event_type: 'access_grant.access_granted_to_door'
+            /** ID of the door, an [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details). */
+            acs_entrance_id: string
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** ID of the access grant. */
+            access_grant_id: string
+            event_type: 'access_grant.access_to_door_lost'
+            /** ID of the door, an [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details). */
+            acs_entrance_id: string
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** ID of the access method. */
+            access_method_id: string
+            event_type: 'access_method.issued'
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** ID of the access method. */
+            access_method_id: string
+            event_type: 'access_method.revoked'
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** ID of the access method. */
+            access_method_id: string
+            event_type: 'access_method.card_encoding_required'
           }
         | {
             /** ID of the event. */
@@ -26165,6 +26596,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -26204,6 +26637,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -26241,6 +26676,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -26281,7 +26718,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -26293,6 +26730,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -26539,6 +27017,12 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -27091,6 +27575,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -27130,6 +27616,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -27167,6 +27655,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -27207,7 +27697,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -27219,6 +27709,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -27465,6 +27996,12 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -28173,6 +28710,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -28212,6 +28751,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -28249,6 +28790,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -28289,7 +28832,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -28301,6 +28844,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -28547,6 +29131,12 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -29098,6 +29688,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -29137,6 +29729,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -29174,6 +29768,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -29214,7 +29810,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -29226,6 +29822,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -29472,6 +30109,12 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -34898,6 +35541,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -34937,6 +35582,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -34974,6 +35621,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -35014,7 +35663,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -35026,6 +35675,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -35272,6 +35962,12 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -35823,6 +36519,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -35862,6 +36560,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -35899,6 +36599,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -35939,7 +36641,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -35951,6 +36653,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -36197,6 +36940,12 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -41564,6 +42313,65 @@ export interface Routes {
           }
     }
   }
+  '/thermostats/activate_weekly_program': {
+    route: '/thermostats/activate_weekly_program'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** ID of the thermostat device that the weekly program is for. */
+      device_id: string
+      /** ID of the thermostat daily program to run on Mondays. */
+      monday_program_id?: string | undefined
+      /** ID of the thermostat daily program to run on Tuesdays. */
+      tuesday_program_id?: string | undefined
+      /** ID of the thermostat daily program to run on Wednesdays. */
+      wednesday_program_id?: string | undefined
+      /** ID of the thermostat daily program to run on Thursdays. */
+      thursday_program_id?: string | undefined
+      /** ID of the thermostat daily program to run on Fridays. */
+      friday_program_id?: string | undefined
+      /** ID of the thermostat daily program to run on Saturdays. */
+      saturday_program_id?: string | undefined
+      /** ID of the thermostat daily program to run on Sundays. */
+      sunday_program_id?: string | undefined
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      thermostat_weekly_program: {
+        /** ID of the thermostat device the weekly program is for. */
+        device_id: string
+        /** ID of the thermostat daily program to run on Mondays. */
+        monday_program_id: string | null
+        /** ID of the thermostat daily program to run on Tuesdays. */
+        tuesday_program_id: string | null
+        /** ID of the thermostat daily program to run on Wednesdays. */
+        wednesday_program_id: string | null
+        /** ID of the thermostat daily program to run on Thursdays. */
+        thursday_program_id: string | null
+        /** ID of the thermostat daily program to run on Fridays. */
+        friday_program_id: string | null
+        /** ID of the thermostat daily program to run on Saturdays. */
+        saturday_program_id: string | null
+        /** ID of the thermostat daily program to run on Sundays. */
+        sunday_program_id: string | null
+        /** Date and time at which the thermostat weekly program was created. */
+        created_at: string
+      }
+    }
+  }
+  '/thermostats/clear_weekly_program': {
+    route: '/thermostats/clear_weekly_program'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** ID of the thermostat device to clear the weekly program for. */
+      device_id: string
+    }
+    formData: {}
+    jsonResponse: {}
+  }
   '/thermostats/cool': {
     route: '/thermostats/cool'
     method: 'POST'
@@ -42794,6 +43602,78 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
+  '/thermostats/daily_programs/create': {
+    route: '/thermostats/daily_programs/create'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** ID of the desired thermostat device. */
+      device_id: string
+      /** User-friendly name to identify the thermostat daily program. */
+      name?: string | undefined
+      /** Array of thermostat daily program periods. */
+      periods: Array<{
+        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+        starts_at_time: string
+        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+        climate_preset_key: string
+      }>
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      thermostat_daily_program: {
+        /** ID of the thermostat daily program. */
+        thermostat_daily_program_id: string
+        /** ID of the desired thermostat device. */
+        device_id: string
+        /** User-friendly name to identify the thermostat daily program. */
+        name?: string | undefined
+        /** Array of thermostat daily program periods. */
+        periods: Array<{
+          /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+          starts_at_time: string
+          /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+          climate_preset_key: string
+        }>
+        /** Date and time at which the thermostat daily program was created. */
+        created_at: string
+      }
+    }
+  }
+  '/thermostats/daily_programs/delete': {
+    route: '/thermostats/daily_programs/delete'
+    method: 'DELETE' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** ID of the desired thermostat schedule. */
+      thermostat_daily_program_id: string
+    }
+    formData: {}
+    jsonResponse: {}
+  }
+  '/thermostats/daily_programs/update': {
+    route: '/thermostats/daily_programs/update'
+    method: 'PATCH' | 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** ID of the desired thermostat daily program. */
+      thermostat_daily_program_id: string
+      /** User-friendly name to identify the thermostat daily program. */
+      name?: string | undefined
+      /** Array of thermostat daily program periods. */
+      periods: Array<{
+        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+        starts_at_time: string
+        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+        climate_preset_key: string
+      }>
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/thermostats/delete_climate_preset': {
     route: '/thermostats/delete_climate_preset'
     method: 'POST' | 'DELETE'
@@ -43354,6 +44234,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -43393,6 +44275,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -43430,6 +44314,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -43470,7 +44356,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -43482,6 +44368,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -43728,6 +44655,12 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -46766,6 +47699,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -46805,6 +47740,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -46842,6 +47779,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -46882,7 +47821,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -46894,6 +47833,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -47140,6 +48120,12 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -47691,6 +48677,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -47730,6 +48718,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -47767,6 +48757,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -47807,7 +48799,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -47819,6 +48811,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -48065,6 +49098,12 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -49293,13 +50332,13 @@ export interface Routes {
       /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule. */
       climate_preset_key: string
       /** Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
-      max_override_period_minutes?: number | null
+      max_override_period_minutes?: (number | null) | undefined
       /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       starts_at: string
       /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       ends_at: string
       /** Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the schedule is active. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
-      is_override_allowed?: boolean
+      is_override_allowed?: boolean | undefined
     }
     commonParams: {}
     formData: {}
@@ -49319,7 +50358,7 @@ export interface Routes {
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at: string
         /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-        unstable_is_override_allowed?: boolean | undefined
+        is_override_allowed?: boolean | undefined
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         ends_at: string
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -49372,7 +50411,7 @@ export interface Routes {
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at: string
         /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-        unstable_is_override_allowed?: boolean | undefined
+        is_override_allowed?: boolean | undefined
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         ends_at: string
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -49414,7 +50453,7 @@ export interface Routes {
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at: string
         /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-        unstable_is_override_allowed?: boolean | undefined
+        is_override_allowed?: boolean | undefined
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         ends_at: string
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -52193,7 +53232,9 @@ export interface Routes {
         /** Date and time at which the access method was created. */
         created_at: string
         /** Date and time at which the access method was issued. */
-        issued_at: string | null
+        issued_at?: string | undefined
+        /** URL of instant key for mobile key access methods. */
+        instant_key_url?: string | undefined
       }>
     }
   }
@@ -53175,6 +54216,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -53214,6 +54257,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -53251,6 +54296,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -53291,7 +54338,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -53303,6 +54350,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -53549,6 +54637,12 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -54102,6 +55196,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -54141,6 +55237,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -54178,6 +55276,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -54218,7 +55318,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -54230,6 +55330,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -54477,6 +55618,12 @@ export interface Routes {
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
             }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
+            }
         >
         /** Date and time at which the device object was created. */
         created_at: string
@@ -54678,6 +55825,11 @@ export interface Routes {
         can_remove_acs_users_from_acs_access_groups?: boolean | undefined
         /** Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
         can_add_acs_users_to_acs_access_groups?: boolean | undefined
+        can_create_user?: boolean | undefined
+        can_delete_user?: boolean | undefined
+        can_update_user_information?: boolean | undefined
+        can_update_user_supension_state?: boolean | undefined
+        can_update_user_group_membership?: boolean | undefined
       }>
     }
   }
@@ -54737,14 +55889,6 @@ export interface Routes {
         user_identity_email_address?: (string | null) | undefined
         /** Phone number of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
-        /**  */
-        latest_desired_state_synced_with_provider_at?:
-          | (string | null)
-          | undefined
-        /**  */
-        is_latest_desired_state_synced_with_provider?:
-          | (boolean | null)
-          | undefined
         /** Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         warnings: Array<
           | {
@@ -54807,21 +55951,27 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
-        /**  */
+        /** Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system. */
         pending_mutations?:
           | Array<
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'creating'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'deleting'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_user_information'
                   from: {
@@ -54836,7 +55986,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_access_schedule'
                   from: {
@@ -54849,7 +56001,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_suspension_state'
                   from: {
@@ -54860,13 +56014,19 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_group_membership'
+                  /** Old access group membership. */
                   from: {
+                    /** Old access group ID. */
                     acs_access_group_id: string | null
                   }
+                  /** New access group membership. */
                   to: {
+                    /** New access group ID. */
                     acs_access_group_id: string | null
                   }
                 }
