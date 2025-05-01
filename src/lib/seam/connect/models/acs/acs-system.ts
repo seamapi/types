@@ -25,6 +25,12 @@ export const acs_system_capability_flags = z.object({
     .describe(
       'Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).',
     ),
+  can_update_user_schedule: z.boolean().optional(),
+  can_create_user: z.boolean().optional(),
+  can_delete_user: z.boolean().optional(),
+  can_update_user_information: z.boolean().optional(),
+  can_update_user_supension_state: z.boolean().optional(),
+  can_update_user_group_membership: z.boolean().optional(),
 })
 
 export const acs_location = z.object({
