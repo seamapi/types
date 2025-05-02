@@ -10,7 +10,7 @@ export const access_grant_created_event = access_grant_event.extend({
   event_type: z.literal('access_grant.created'),
 }).describe(`
     ---
-    route_path: /access_grants
+    route_path: /unstable_access_grants
     ---
     An access grant was created.
   `)
@@ -21,7 +21,7 @@ export const access_grant_deleted_event = access_grant_event.extend({
   event_type: z.literal('access_grant.deleted'),
 }).describe(`
     ---
-    route_path: /access_grants
+    route_path: /unstable_access_grants
     ---
     An access grant was deleted.
   `)
@@ -35,7 +35,7 @@ export const access_grant_access_granted_to_all_doors_event =
     event_type: z.literal('access_grant.access_granted_to_all_doors'),
   }).describe(`
     ---
-    route_path: /access_grants
+    route_path: /unstable_access_grants
     ---
     All access requested for an access grant was successfully granted.
   `)
@@ -57,7 +57,7 @@ export const access_grant_access_granted_to_door_event =
     acs_entrance_id,
   }).describe(`
     ---
-    route_path: /access_grants
+    route_path: /unstable_access_grants
     ---
     Access requested as part of an access grant to a particular door was successfully granted.
   `)
@@ -73,7 +73,7 @@ export const access_grant_access_to_door_lost_event = access_grant_event.extend(
   },
 ).describe(`
     ---
-    route_path: /access_grants
+    route_path: /unstable_access_grants
     ---
     Access to a particular door that was requested as part of an access grant was lost.
   `)
@@ -82,11 +82,10 @@ export type AccessGrantAccessToDoorLostEvent = z.infer<
   typeof access_grant_access_to_door_lost_event
 >
 
-export const access_code_events = [
+export const access_grant_events = [
   access_grant_created_event,
   access_grant_deleted_event,
   access_grant_access_granted_to_all_doors_event,
   access_grant_access_granted_to_door_event,
   access_grant_access_to_door_lost_event,
-  access_grant_deleted_event,
 ] as const
