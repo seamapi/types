@@ -5,7 +5,9 @@ import {
   climate_setting,
   fan_mode_setting,
   hvac_mode_setting,
+  thermostat_daily_program,
   thermostat_schedule,
+  thermostat_weekly_program,
 } from '../../thermostats/index.js'
 
 export const thermostat_capability_properties = z
@@ -41,6 +43,13 @@ export const thermostat_capability_properties = z
     available_climate_presets: z.array(climate_preset),
     fallback_climate_preset_key: z.string().min(1).nullable().default(null),
     active_thermostat_schedule: thermostat_schedule.nullable().default(null),
+    thermostat_daily_programs: z
+      .array(thermostat_daily_program)
+      .nullable()
+      .default(null),
+    thermostat_weekly_program: thermostat_weekly_program
+      .nullable()
+      .default(null),
     min_cooling_set_point_celsius: z.number(),
     min_cooling_set_point_fahrenheit: z.number(),
     max_cooling_set_point_celsius: z.number(),
