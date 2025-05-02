@@ -299,23 +299,6 @@ const common_acs_user = z
       .describe(
         'Phone number of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
       ),
-    latest_desired_state_synced_with_provider_at: z
-      .string()
-      .datetime()
-      .nullable()
-      .optional().describe(`
-      ---
-      undocumented: Only used internally.
-      ---
-      `),
-    is_latest_desired_state_synced_with_provider: z
-      .boolean()
-      .nullable()
-      .optional().describe(`
-      ---
-      undocumented: Only used internally.
-      ---
-      `),
     warnings: z
       .array(acs_users_warnings)
       .describe(
@@ -326,11 +309,12 @@ const common_acs_user = z
       .describe(
         'Errors associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
       ),
-    pending_mutations: z.array(acs_user_pending_mutations).optional().describe(`
-      ---
-      undocumented: Experimental.
-      ---
-      `),
+    pending_mutations: z
+      .array(acs_user_pending_mutations)
+      .optional()
+      .describe(
+        'Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system.',
+      ),
   })
   .merge(user_fields)
 

@@ -488,6 +488,77 @@ export interface Routes {
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
@@ -2707,6 +2778,77 @@ export interface Routes {
                 }
               | {
                   type: 'no_credential_on_encoder'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -5509,6 +5651,24 @@ export interface Routes {
       }
     }
   }
+  '/access_codes/report_device_constraints': {
+    route: '/access_codes/report_device_constraints'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** ID of the device for which to report constraints. */
+      device_id: string
+      /** Array of supported code lengths as integers between 4 and 20, inclusive. You can specify either `supported_code_lengths` or `min_code_length`/`max_code_length`. */
+      supported_code_lengths?: number[] | undefined
+      /** Minimum supported code length as an integer between 4 and 20, inclusive. You can specify either `min_code_length`/`max_code_length` or `supported_code_lengths`. */
+      min_code_length?: number | undefined
+      /** Maximum supported code length as an integer between 4 and 20, inclusive. You can specify either `min_code_length`/`max_code_length` or `supported_code_lengths`. */
+      max_code_length?: number | undefined
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/access_codes/simulate/create_unmanaged_access_code': {
     route: '/access_codes/simulate/create_unmanaged_access_code'
     method: 'POST'
@@ -6477,6 +6637,77 @@ export interface Routes {
                 }
               | {
                   type: 'no_credential_on_encoder'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -8724,6 +8955,77 @@ export interface Routes {
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
@@ -9767,14 +10069,6 @@ export interface Routes {
         user_identity_email_address?: (string | null) | undefined
         /** Phone number of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
-        /**  */
-        latest_desired_state_synced_with_provider_at?:
-          | (string | null)
-          | undefined
-        /**  */
-        is_latest_desired_state_synced_with_provider?:
-          | (boolean | null)
-          | undefined
         /** Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         warnings: Array<
           | {
@@ -9837,21 +10131,27 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
-        /**  */
+        /** Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system. */
         pending_mutations?:
           | Array<
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'creating'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'deleting'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_user_information'
                   from: {
@@ -9866,7 +10166,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_access_schedule'
                   from: {
@@ -9879,7 +10181,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_suspension_state'
                   from: {
@@ -9890,13 +10194,19 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_group_membership'
+                  /** Old access group membership. */
                   from: {
+                    /** Old access group ID. */
                     acs_access_group_id: string | null
                   }
+                  /** New access group membership. */
                   to: {
+                    /** New access group ID. */
                     acs_access_group_id: string | null
                   }
                 }
@@ -11685,6 +11995,1272 @@ export interface Routes {
       }
     }
   }
+  '/acs/encoders/encode_access_method': {
+    route: '/acs/encoders/encode_access_method'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** ID of the `acs_encoder` to use to encode the `access_method`. */
+      acs_encoder_id: string
+      /** ID of the `access_method` to encode onto a card. */
+      access_method_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      /**  */
+      action_attempt:
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'LOCK_DOOR'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'LOCK_DOOR'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'LOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'UNLOCK_DOOR'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'UNLOCK_DOOR'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SCAN_CREDENTIAL'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SCAN_CREDENTIAL'
+            result: {
+              /** Snapshot of credential data read from physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created. */
+                created_at: string | null
+                is_issued: boolean | null
+                /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) becomes usable. */
+                starts_at: string | null
+                /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) will stop being usable. */
+                ends_at: string | null
+                /** A number or string that physically identifies the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                card_number: string | null
+                /** Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                visionline_metadata?:
+                  | {
+                      /** Card ID for the Visionline card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      card_id: string
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is cancelled. */
+                      cancelled: boolean
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is discarded. */
+                      discarded: boolean
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is expired. */
+                      expired: boolean
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is overwritten. */
+                      overwritten: boolean
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is overridden. */
+                      overridden?: boolean | undefined
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is pending auto-update. */
+                      pending_auto_update: boolean
+                      /** Format of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      card_format: 'TLCode' | 'rfid48'
+                      /** Holden of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      card_holder?: string | undefined
+                      /** Number of issued cards associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      number_of_issued_cards: number
+                      /** IDs of the guest [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      guest_acs_entrance_ids?: string[] | undefined
+                      /** IDs of the common [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      common_acs_entrance_ids?: string[] | undefined
+                    }
+                  | undefined
+              } | null
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        acs_credential_id: string
+                        /** ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs. */
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        acs_system_id: string
+                        /** ID of the parent [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                        display_name: string
+                        /** Access (PIN) code for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        code?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
+                        /** Number of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        card_number?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been encoded onto a card. */
+                        is_issued?: boolean | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was encoded onto a card. */
+                        issued_at?: (string | undefined) | null
+                        /** Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`. */
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                              | 'assa_abloy_vostio_key'
+                              | 'salto_space_key'
+                            )
+                          | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                        external_type_display_name?: string | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created. */
+                        created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        workspace_id: string
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at?: string | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                        ends_at?: string | undefined
+                        /** Errors associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        /** Warnings associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'unknown_issue_with_acs_credential'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'needs_to_be_reissued'
+                            }
+                        >
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                        is_latest_desired_state_synced_with_provider?:
+                          | (boolean | null)
+                          | undefined
+                        /** Date and time at which the state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                        latest_desired_state_synced_with_provider_at?:
+                          | (string | null)
+                          | undefined
+                        /** Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        acs_credential_id: string
+                        /** ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs. */
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        acs_system_id: string
+                        /** ID of the parent [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                        display_name: string
+                        /** Access (PIN) code for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        code?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
+                        /** Number of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        card_number?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been encoded onto a card. */
+                        is_issued?: boolean | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was encoded onto a card. */
+                        issued_at?: (string | undefined) | null
+                        /** Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`. */
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                              | 'assa_abloy_vostio_key'
+                              | 'salto_space_key'
+                            )
+                          | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                        external_type_display_name?: string | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created. */
+                        created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        workspace_id: string
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at?: string | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                        ends_at?: string | undefined
+                        /** Errors associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        /** Warnings associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'unknown_issue_with_acs_credential'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'needs_to_be_reissued'
+                            }
+                        >
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                        is_latest_desired_state_synced_with_provider?:
+                          | (boolean | null)
+                          | undefined
+                        /** Date and time at which the state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                        latest_desired_state_synced_with_provider_at?:
+                          | (string | null)
+                          | undefined
+                        /** Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
+              warnings: Array<{
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
+                warning_message: string
+              }>
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SCAN_CREDENTIAL'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_CREDENTIAL'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_CREDENTIAL'
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
+            result:
+              | {
+                  /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  acs_credential_id: string
+                  /** ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs. */
+                  acs_user_id?: string | undefined
+                  acs_credential_pool_id?: string | undefined
+                  /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  acs_system_id: string
+                  /** ID of the parent [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                  display_name: string
+                  /** Access (PIN) code for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  code?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
+                  /** Number of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  card_number?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been encoded onto a card. */
+                  is_issued?: boolean | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was encoded onto a card. */
+                  issued_at?: (string | undefined) | null
+                  /** Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`. */
+                  access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                  external_type?:
+                    | (
+                        | 'pti_card'
+                        | 'brivo_credential'
+                        | 'hid_credential'
+                        | 'visionline_card'
+                        | 'salto_ks_credential'
+                        | 'assa_abloy_vostio_key'
+                        | 'salto_space_key'
+                      )
+                    | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                  external_type_display_name?: string | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created. */
+                  created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  workspace_id: string
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  starts_at?: string | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                  ends_at?: string | undefined
+                  /** Errors associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  errors: Array<{
+                    error_code: string
+                    message: string
+                  }>
+                  /** Warnings associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'unknown_issue_with_acs_credential'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'needs_to_be_reissued'
+                      }
+                  >
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                  is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                  is_latest_desired_state_synced_with_provider?:
+                    | (boolean | null)
+                    | undefined
+                  /** Date and time at which the state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                  latest_desired_state_synced_with_provider_at?:
+                    | (string | null)
+                    | undefined
+                  /** Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  visionline_metadata?:
+                    | {
+                        card_function_type: 'guest' | 'staff'
+                        joiner_acs_credential_ids?: string[] | undefined
+                        guest_acs_entrance_ids?: string[] | undefined
+                        common_acs_entrance_ids?: string[] | undefined
+                        is_valid?: boolean | undefined
+                        auto_join?: boolean | undefined
+                        card_id?: string | undefined
+                        credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
+                  is_managed: true
+                }
+              | {
+                  /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  acs_credential_id: string
+                  /** ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs. */
+                  acs_user_id?: string | undefined
+                  acs_credential_pool_id?: string | undefined
+                  /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  acs_system_id: string
+                  /** ID of the parent [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                  display_name: string
+                  /** Access (PIN) code for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  code?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
+                  /** Number of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  card_number?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been encoded onto a card. */
+                  is_issued?: boolean | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was encoded onto a card. */
+                  issued_at?: (string | undefined) | null
+                  /** Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`. */
+                  access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                  external_type?:
+                    | (
+                        | 'pti_card'
+                        | 'brivo_credential'
+                        | 'hid_credential'
+                        | 'visionline_card'
+                        | 'salto_ks_credential'
+                        | 'assa_abloy_vostio_key'
+                        | 'salto_space_key'
+                      )
+                    | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                  external_type_display_name?: string | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created. */
+                  created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  workspace_id: string
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  starts_at?: string | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                  ends_at?: string | undefined
+                  /** Errors associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  errors: Array<{
+                    error_code: string
+                    message: string
+                  }>
+                  /** Warnings associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'unknown_issue_with_acs_credential'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'needs_to_be_reissued'
+                      }
+                  >
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                  is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                  is_latest_desired_state_synced_with_provider?:
+                    | (boolean | null)
+                    | undefined
+                  /** Date and time at which the state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                  latest_desired_state_synced_with_provider_at?:
+                    | (string | null)
+                    | undefined
+                  /** Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  visionline_metadata?:
+                    | {
+                        card_function_type: 'guest' | 'staff'
+                        joiner_acs_credential_ids?: string[] | undefined
+                        guest_acs_entrance_ids?: string[] | undefined
+                        common_acs_entrance_ids?: string[] | undefined
+                        is_valid?: boolean | undefined
+                        auto_join?: boolean | undefined
+                        card_id?: string | undefined
+                        credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
+                  is_managed: false
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_CREDENTIAL'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SET_FAN_MODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SET_FAN_MODE'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SET_FAN_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SET_HVAC_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result: {
+              access_code?: any
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result: {
+              access_code?: any
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result: {
+              noise_threshold?: any
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result: {
+              noise_threshold?: any
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+    }
+  }
   '/acs/encoders/encode_credential': {
     route: '/acs/encoders/encode_credential'
     method: 'POST'
@@ -12134,6 +13710,77 @@ export interface Routes {
                 }
               | {
                   type: 'no_credential_on_encoder'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -13424,6 +15071,77 @@ export interface Routes {
                 }
               | {
                   type: 'no_credential_on_encoder'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -14804,6 +16522,12 @@ export interface Routes {
         can_remove_acs_users_from_acs_access_groups?: boolean | undefined
         /** Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
         can_add_acs_users_to_acs_access_groups?: boolean | undefined
+        can_update_user_schedule?: boolean | undefined
+        can_create_user?: boolean | undefined
+        can_delete_user?: boolean | undefined
+        can_update_user_information?: boolean | undefined
+        can_update_user_supension_state?: boolean | undefined
+        can_update_user_group_membership?: boolean | undefined
       }
     }
   }
@@ -14988,6 +16712,12 @@ export interface Routes {
         can_remove_acs_users_from_acs_access_groups?: boolean | undefined
         /** Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
         can_add_acs_users_to_acs_access_groups?: boolean | undefined
+        can_update_user_schedule?: boolean | undefined
+        can_create_user?: boolean | undefined
+        can_delete_user?: boolean | undefined
+        can_update_user_information?: boolean | undefined
+        can_update_user_supension_state?: boolean | undefined
+        can_update_user_group_membership?: boolean | undefined
       }>
     }
   }
@@ -15172,6 +16902,12 @@ export interface Routes {
         can_remove_acs_users_from_acs_access_groups?: boolean | undefined
         /** Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
         can_add_acs_users_to_acs_access_groups?: boolean | undefined
+        can_update_user_schedule?: boolean | undefined
+        can_create_user?: boolean | undefined
+        can_delete_user?: boolean | undefined
+        can_update_user_information?: boolean | undefined
+        can_update_user_supension_state?: boolean | undefined
+        can_update_user_group_membership?: boolean | undefined
       }>
     }
   }
@@ -15270,14 +17006,6 @@ export interface Routes {
         user_identity_email_address?: (string | null) | undefined
         /** Phone number of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
-        /**  */
-        latest_desired_state_synced_with_provider_at?:
-          | (string | null)
-          | undefined
-        /**  */
-        is_latest_desired_state_synced_with_provider?:
-          | (boolean | null)
-          | undefined
         /** Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         warnings: Array<
           | {
@@ -15340,21 +17068,27 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
-        /**  */
+        /** Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system. */
         pending_mutations?:
           | Array<
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'creating'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'deleting'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_user_information'
                   from: {
@@ -15369,7 +17103,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_access_schedule'
                   from: {
@@ -15382,7 +17118,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_suspension_state'
                   from: {
@@ -15393,13 +17131,19 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_group_membership'
+                  /** Old access group membership. */
                   from: {
+                    /** Old access group ID. */
                     acs_access_group_id: string | null
                   }
+                  /** New access group membership. */
                   to: {
+                    /** New access group ID. */
                     acs_access_group_id: string | null
                   }
                 }
@@ -15491,14 +17235,6 @@ export interface Routes {
         user_identity_email_address?: (string | null) | undefined
         /** Phone number of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
-        /**  */
-        latest_desired_state_synced_with_provider_at?:
-          | (string | null)
-          | undefined
-        /**  */
-        is_latest_desired_state_synced_with_provider?:
-          | (boolean | null)
-          | undefined
         /** Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         warnings: Array<
           | {
@@ -15561,21 +17297,27 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
-        /**  */
+        /** Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system. */
         pending_mutations?:
           | Array<
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'creating'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'deleting'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_user_information'
                   from: {
@@ -15590,7 +17332,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_access_schedule'
                   from: {
@@ -15603,7 +17347,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_suspension_state'
                   from: {
@@ -15614,13 +17360,19 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_group_membership'
+                  /** Old access group membership. */
                   from: {
+                    /** Old access group ID. */
                     acs_access_group_id: string | null
                   }
+                  /** New access group membership. */
                   to: {
+                    /** New access group ID. */
                     acs_access_group_id: string | null
                   }
                 }
@@ -15708,14 +17460,6 @@ export interface Routes {
         user_identity_email_address?: (string | null) | undefined
         /** Phone number of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
-        /**  */
-        latest_desired_state_synced_with_provider_at?:
-          | (string | null)
-          | undefined
-        /**  */
-        is_latest_desired_state_synced_with_provider?:
-          | (boolean | null)
-          | undefined
         /** Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         warnings: Array<
           | {
@@ -15778,21 +17522,27 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
-        /**  */
+        /** Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system. */
         pending_mutations?:
           | Array<
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'creating'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'deleting'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_user_information'
                   from: {
@@ -15807,7 +17557,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_access_schedule'
                   from: {
@@ -15820,7 +17572,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_suspension_state'
                   from: {
@@ -15831,13 +17585,19 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_group_membership'
+                  /** Old access group membership. */
                   from: {
+                    /** Old access group ID. */
                     acs_access_group_id: string | null
                   }
+                  /** New access group membership. */
                   to: {
+                    /** New access group ID. */
                     acs_access_group_id: string | null
                   }
                 }
@@ -16057,14 +17817,6 @@ export interface Routes {
         user_identity_email_address?: (string | null) | undefined
         /** Phone number of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
-        /**  */
-        latest_desired_state_synced_with_provider_at?:
-          | (string | null)
-          | undefined
-        /**  */
-        is_latest_desired_state_synced_with_provider?:
-          | (boolean | null)
-          | undefined
         /** Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         warnings: Array<
           | {
@@ -16127,21 +17879,27 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
-        /**  */
+        /** Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system. */
         pending_mutations?:
           | Array<
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'creating'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'deleting'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_user_information'
                   from: {
@@ -16156,7 +17914,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_access_schedule'
                   from: {
@@ -16169,7 +17929,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_suspension_state'
                   from: {
@@ -16180,13 +17942,19 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_group_membership'
+                  /** Old access group membership. */
                   from: {
+                    /** Old access group ID. */
                     acs_access_group_id: string | null
                   }
+                  /** New access group membership. */
                   to: {
+                    /** New access group ID. */
                     acs_access_group_id: string | null
                   }
                 }
@@ -16264,14 +18032,6 @@ export interface Routes {
         user_identity_email_address?: (string | null) | undefined
         /** Phone number of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
-        /**  */
-        latest_desired_state_synced_with_provider_at?:
-          | (string | null)
-          | undefined
-        /**  */
-        is_latest_desired_state_synced_with_provider?:
-          | (boolean | null)
-          | undefined
         /** Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         warnings: Array<
           | {
@@ -16334,21 +18094,27 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
-        /**  */
+        /** Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system. */
         pending_mutations?:
           | Array<
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'creating'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'deleting'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_user_information'
                   from: {
@@ -16363,7 +18129,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_access_schedule'
                   from: {
@@ -16376,7 +18144,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_suspension_state'
                   from: {
@@ -16387,13 +18157,19 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_group_membership'
+                  /** Old access group membership. */
                   from: {
+                    /** Old access group ID. */
                     acs_access_group_id: string | null
                   }
+                  /** New access group membership. */
                   to: {
+                    /** New access group ID. */
                     acs_access_group_id: string | null
                   }
                 }
@@ -16899,6 +18675,77 @@ export interface Routes {
                 }
               | {
                   type: 'no_credential_on_encoder'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -18090,6 +19937,77 @@ export interface Routes {
                 }
               | {
                   type: 'no_credential_on_encoder'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -20138,6 +22056,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -20177,6 +22097,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -20214,6 +22136,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -20254,7 +22178,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -20266,6 +22190,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -20513,6 +22478,12 @@ export interface Routes {
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
             }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
+            }
         >
         /** Date and time at which the device object was created. */
         created_at: string
@@ -20683,6 +22654,8 @@ export interface Routes {
       user_identifier_key?: string | undefined
       /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
+      /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
+      page_cursor?: (string | undefined) | null
       /**  */
       include_if?:
         | Array<
@@ -21252,6 +23225,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -21291,6 +23266,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -21328,6 +23305,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -21368,7 +23347,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -21380,6 +23359,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -21627,6 +23647,12 @@ export interface Routes {
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
             }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
+            }
         >
         /** Date and time at which the device object was created. */
         created_at: string
@@ -21645,6 +23671,15 @@ export interface Routes {
         can_simulate_connection?: boolean | undefined
         can_simulate_disconnection?: boolean | undefined
       }>
+      /** Information about the current page of results. */
+      pagination: {
+        /** Opaque value that can be used to select the next page of results via the `page_cursor` parameter. */
+        next_page_cursor: string | null
+        /** Indicates whether there is another page of results after this one. */
+        has_next_page: boolean
+        /** URL to get the next page of results. */
+        next_page_url: string | null
+      }
     }
   }
   '/devices/list_device_providers': {
@@ -22056,6 +24091,12 @@ export interface Routes {
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
             }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
+            }
         >
         /** Date and time at which the device object was created. */
         created_at: string
@@ -22280,6 +24321,8 @@ export interface Routes {
       user_identifier_key?: string | undefined
       /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
+      /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
+      page_cursor?: (string | undefined) | null
       /**  */
       include_if?:
         | Array<
@@ -22591,6 +24634,12 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -23007,6 +25056,114 @@ export interface Routes {
                 /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
                 connected_account_id: string
                 event_type: 'access_code.unmanaged.removed'
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** ID of the access grant. */
+                access_grant_id: string
+                event_type: 'access_grant.created'
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** ID of the access grant. */
+                access_grant_id: string
+                event_type: 'access_grant.deleted'
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** ID of the access grant. */
+                access_grant_id: string
+                event_type: 'access_grant.access_granted_to_all_doors'
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** ID of the access grant. */
+                access_grant_id: string
+                event_type: 'access_grant.access_granted_to_door'
+                /** ID of the door, an [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details). */
+                acs_entrance_id: string
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** ID of the access grant. */
+                access_grant_id: string
+                event_type: 'access_grant.access_to_door_lost'
+                /** ID of the door, an [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details). */
+                acs_entrance_id: string
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** ID of the access method. */
+                access_method_id: string
+                event_type: 'access_method.issued'
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** ID of the access method. */
+                access_method_id: string
+                event_type: 'access_method.revoked'
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** ID of the access method. */
+                access_method_id: string
+                event_type: 'access_method.card_encoding_required'
               }
             | {
                 /** ID of the event. */
@@ -24111,6 +26268,14 @@ export interface Routes {
             | 'access_code.unmanaged.failed_to_convert_to_managed'
             | 'access_code.unmanaged.created'
             | 'access_code.unmanaged.removed'
+            | 'access_grant.created'
+            | 'access_grant.deleted'
+            | 'access_grant.access_granted_to_all_doors'
+            | 'access_grant.access_granted_to_door'
+            | 'access_grant.access_to_door_lost'
+            | 'access_method.issued'
+            | 'access_method.revoked'
+            | 'access_method.card_encoding_required'
             | 'acs_system.connected'
             | 'acs_system.added'
             | 'acs_system.disconnected'
@@ -24195,6 +26360,14 @@ export interface Routes {
             | 'access_code.unmanaged.failed_to_convert_to_managed'
             | 'access_code.unmanaged.created'
             | 'access_code.unmanaged.removed'
+            | 'access_grant.created'
+            | 'access_grant.deleted'
+            | 'access_grant.access_granted_to_all_doors'
+            | 'access_grant.access_granted_to_door'
+            | 'access_grant.access_to_door_lost'
+            | 'access_method.issued'
+            | 'access_method.revoked'
+            | 'access_method.card_encoding_required'
             | 'acs_system.connected'
             | 'acs_system.added'
             | 'acs_system.disconnected'
@@ -24563,6 +26736,114 @@ export interface Routes {
             /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
             connected_account_id: string
             event_type: 'access_code.unmanaged.removed'
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** ID of the access grant. */
+            access_grant_id: string
+            event_type: 'access_grant.created'
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** ID of the access grant. */
+            access_grant_id: string
+            event_type: 'access_grant.deleted'
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** ID of the access grant. */
+            access_grant_id: string
+            event_type: 'access_grant.access_granted_to_all_doors'
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** ID of the access grant. */
+            access_grant_id: string
+            event_type: 'access_grant.access_granted_to_door'
+            /** ID of the door, an [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details). */
+            acs_entrance_id: string
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** ID of the access grant. */
+            access_grant_id: string
+            event_type: 'access_grant.access_to_door_lost'
+            /** ID of the door, an [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details). */
+            acs_entrance_id: string
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** ID of the access method. */
+            access_method_id: string
+            event_type: 'access_method.issued'
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** ID of the access method. */
+            access_method_id: string
+            event_type: 'access_method.revoked'
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** ID of the access method. */
+            access_method_id: string
+            event_type: 'access_method.card_encoding_required'
           }
         | {
             /** ID of the event. */
@@ -26165,6 +28446,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -26204,6 +28487,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -26241,6 +28526,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -26281,7 +28568,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -26293,6 +28580,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -26539,6 +28867,12 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -27091,6 +29425,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -27130,6 +29466,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -27167,6 +29505,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -27207,7 +29547,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -27219,6 +29559,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -27466,6 +29847,12 @@ export interface Routes {
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
             }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
+            }
         >
         /** Date and time at which the device object was created. */
         created_at: string
@@ -27604,6 +29991,8 @@ export interface Routes {
       user_identifier_key?: string | undefined
       /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
+      /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
+      page_cursor?: (string | undefined) | null
       /**  */
       include_if?:
         | Array<
@@ -28173,6 +30562,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -28212,6 +30603,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -28249,6 +30642,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -28289,7 +30684,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -28301,6 +30696,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -28547,6 +30983,12 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -29098,6 +31540,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -29137,6 +31581,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -29174,6 +31620,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -29214,7 +31662,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -29226,6 +31674,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -29472,6 +31961,12 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -29940,6 +32435,77 @@ export interface Routes {
                 }
               | {
                   type: 'no_credential_on_encoder'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -31145,6 +33711,77 @@ export interface Routes {
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
@@ -32325,6 +34962,77 @@ export interface Routes {
                 }
               | {
                   type: 'no_credential_on_encoder'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -33530,6 +36238,77 @@ export interface Routes {
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
@@ -34329,6 +37108,8 @@ export interface Routes {
       user_identifier_key?: string | undefined
       /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
+      /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
+      page_cursor?: (string | undefined) | null
       /**  */
       include_if?:
         | Array<
@@ -34898,6 +37679,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -34937,6 +37720,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -34974,6 +37759,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -35014,7 +37801,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -35026,6 +37813,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -35272,6 +38100,12 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -35823,6 +38657,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -35862,6 +38698,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -35899,6 +38737,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -35939,7 +38779,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -35951,6 +38791,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -36197,6 +39078,12 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -36670,6 +39557,77 @@ export interface Routes {
                 }
               | {
                   type: 'no_credential_on_encoder'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -37874,6 +40832,77 @@ export interface Routes {
                 }
               | {
                   type: 'no_credential_on_encoder'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -39117,6 +42146,77 @@ export interface Routes {
                 }
               | {
                   type: 'no_credential_on_encoder'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -40830,6 +43930,77 @@ export interface Routes {
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
@@ -41564,6 +44735,65 @@ export interface Routes {
           }
     }
   }
+  '/thermostats/activate_weekly_program': {
+    route: '/thermostats/activate_weekly_program'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** ID of the thermostat device that the weekly program is for. */
+      device_id: string
+      /** ID of the thermostat daily program to run on Mondays. */
+      monday_program_id?: string | undefined
+      /** ID of the thermostat daily program to run on Tuesdays. */
+      tuesday_program_id?: string | undefined
+      /** ID of the thermostat daily program to run on Wednesdays. */
+      wednesday_program_id?: string | undefined
+      /** ID of the thermostat daily program to run on Thursdays. */
+      thursday_program_id?: string | undefined
+      /** ID of the thermostat daily program to run on Fridays. */
+      friday_program_id?: string | undefined
+      /** ID of the thermostat daily program to run on Saturdays. */
+      saturday_program_id?: string | undefined
+      /** ID of the thermostat daily program to run on Sundays. */
+      sunday_program_id?: string | undefined
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      thermostat_weekly_program: {
+        /** ID of the thermostat device the weekly program is for. */
+        device_id: string
+        /** ID of the thermostat daily program to run on Mondays. */
+        monday_program_id: string | null
+        /** ID of the thermostat daily program to run on Tuesdays. */
+        tuesday_program_id: string | null
+        /** ID of the thermostat daily program to run on Wednesdays. */
+        wednesday_program_id: string | null
+        /** ID of the thermostat daily program to run on Thursdays. */
+        thursday_program_id: string | null
+        /** ID of the thermostat daily program to run on Fridays. */
+        friday_program_id: string | null
+        /** ID of the thermostat daily program to run on Saturdays. */
+        saturday_program_id: string | null
+        /** ID of the thermostat daily program to run on Sundays. */
+        sunday_program_id: string | null
+        /** Date and time at which the thermostat weekly program was created. */
+        created_at: string
+      }
+    }
+  }
+  '/thermostats/clear_weekly_program': {
+    route: '/thermostats/clear_weekly_program'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** ID of the thermostat device to clear the weekly program for. */
+      device_id: string
+    }
+    formData: {}
+    jsonResponse: {}
+  }
   '/thermostats/cool': {
     route: '/thermostats/cool'
     method: 'POST'
@@ -42017,6 +45247,77 @@ export interface Routes {
                 }
               | {
                   type: 'no_credential_on_encoder'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -42794,6 +46095,78 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
+  '/thermostats/daily_programs/create': {
+    route: '/thermostats/daily_programs/create'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** ID of the desired thermostat device. */
+      device_id: string
+      /** User-friendly name to identify the thermostat daily program. */
+      name?: string | undefined
+      /** Array of thermostat daily program periods. */
+      periods: Array<{
+        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+        starts_at_time: string
+        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+        climate_preset_key: string
+      }>
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      thermostat_daily_program: {
+        /** ID of the thermostat daily program. */
+        thermostat_daily_program_id: string
+        /** ID of the desired thermostat device. */
+        device_id: string
+        /** User-friendly name to identify the thermostat daily program. */
+        name?: string | undefined
+        /** Array of thermostat daily program periods. */
+        periods: Array<{
+          /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+          starts_at_time: string
+          /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+          climate_preset_key: string
+        }>
+        /** Date and time at which the thermostat daily program was created. */
+        created_at: string
+      }
+    }
+  }
+  '/thermostats/daily_programs/delete': {
+    route: '/thermostats/daily_programs/delete'
+    method: 'DELETE' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** ID of the desired thermostat schedule. */
+      thermostat_daily_program_id: string
+    }
+    formData: {}
+    jsonResponse: {}
+  }
+  '/thermostats/daily_programs/update': {
+    route: '/thermostats/daily_programs/update'
+    method: 'PATCH' | 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** ID of the desired thermostat daily program. */
+      thermostat_daily_program_id: string
+      /** User-friendly name to identify the thermostat daily program. */
+      name?: string | undefined
+      /** Array of thermostat daily program periods. */
+      periods: Array<{
+        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+        starts_at_time: string
+        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+        climate_preset_key: string
+      }>
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/thermostats/delete_climate_preset': {
     route: '/thermostats/delete_climate_preset'
     method: 'POST' | 'DELETE'
@@ -43354,6 +46727,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -43393,6 +46768,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -43430,6 +46807,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -43470,7 +46849,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -43482,6 +46861,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -43728,6 +47148,12 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -44202,6 +47628,77 @@ export interface Routes {
                 }
               | {
                   type: 'no_credential_on_encoder'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -45417,6 +48914,77 @@ export interface Routes {
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
@@ -46197,6 +49765,8 @@ export interface Routes {
       user_identifier_key?: string | undefined
       /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
+      /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
+      page_cursor?: (string | undefined) | null
       /**  */
       include_if?:
         | Array<
@@ -46766,6 +50336,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -46805,6 +50377,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -46842,6 +50416,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -46882,7 +50458,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -46894,6 +50470,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -47140,6 +50757,12 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -47691,6 +51314,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -47730,6 +51355,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -47767,6 +51394,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -47807,7 +51436,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -47819,6 +51448,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -48065,6 +51735,12 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -48535,6 +52211,77 @@ export interface Routes {
                 }
               | {
                   type: 'no_credential_on_encoder'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -49293,13 +53040,13 @@ export interface Routes {
       /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule. */
       climate_preset_key: string
       /** Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
-      max_override_period_minutes?: number | null
+      max_override_period_minutes?: (number | null) | undefined
       /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       starts_at: string
       /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       ends_at: string
       /** Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the schedule is active. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
-      is_override_allowed?: boolean
+      is_override_allowed?: boolean | undefined
     }
     commonParams: {}
     formData: {}
@@ -49319,7 +53066,7 @@ export interface Routes {
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at: string
         /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-        unstable_is_override_allowed?: boolean | undefined
+        is_override_allowed?: boolean | undefined
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         ends_at: string
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -49372,7 +53119,7 @@ export interface Routes {
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at: string
         /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-        unstable_is_override_allowed?: boolean | undefined
+        is_override_allowed?: boolean | undefined
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         ends_at: string
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -49414,7 +53161,7 @@ export interface Routes {
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at: string
         /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-        unstable_is_override_allowed?: boolean | undefined
+        is_override_allowed?: boolean | undefined
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         ends_at: string
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -49920,6 +53667,77 @@ export interface Routes {
                 }
               | {
                   type: 'no_credential_on_encoder'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -51158,6 +54976,77 @@ export interface Routes {
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
@@ -52193,7 +56082,9 @@ export interface Routes {
         /** Date and time at which the access method was created. */
         created_at: string
         /** Date and time at which the access method was issued. */
-        issued_at: string | null
+        issued_at?: string | undefined
+        /** URL of instant key for mobile key access methods. */
+        instant_key_url?: string | undefined
       }>
     }
   }
@@ -53175,6 +57066,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -53214,6 +57107,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -53251,6 +57146,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -53291,7 +57188,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -53303,6 +57200,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -53549,6 +57487,12 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -54102,6 +58046,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -54141,6 +58087,8 @@ export interface Routes {
                   can_edit?: boolean | undefined
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program?: boolean | undefined
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: ((string | null) | undefined) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -54178,6 +58126,8 @@ export interface Routes {
                   can_edit: boolean
                   /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
                   can_delete: boolean
+                  /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                  can_program: boolean
                   /** User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
                   name?: (string | null) | undefined
                   /** Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
@@ -54218,7 +58168,7 @@ export interface Routes {
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
                   /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
-                  unstable_is_override_allowed?: boolean | undefined
+                  is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
@@ -54230,6 +58180,47 @@ export interface Routes {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                   }>
+                } | null)
+              | undefined
+            thermostat_daily_programs?:
+              | (Array<{
+                  /** ID of the thermostat daily program. */
+                  thermostat_daily_program_id: string
+                  /** ID of the desired thermostat device. */
+                  device_id: string
+                  /** User-friendly name to identify the thermostat daily program. */
+                  name?: string | undefined
+                  /** Array of thermostat daily program periods. */
+                  periods: Array<{
+                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at_time: string
+                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                    climate_preset_key: string
+                  }>
+                  /** Date and time at which the thermostat daily program was created. */
+                  created_at: string
+                }> | null)
+              | undefined
+            thermostat_weekly_program?:
+              | ({
+                  /** ID of the thermostat device the weekly program is for. */
+                  device_id: string
+                  /** ID of the thermostat daily program to run on Mondays. */
+                  monday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Tuesdays. */
+                  tuesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Wednesdays. */
+                  wednesday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Thursdays. */
+                  thursday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Fridays. */
+                  friday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Saturdays. */
+                  saturday_program_id: string | null
+                  /** ID of the thermostat daily program to run on Sundays. */
+                  sunday_program_id: string | null
+                  /** Date and time at which the thermostat weekly program was created. */
+                  created_at: string
                 } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
@@ -54477,6 +58468,12 @@ export interface Routes {
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
             }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_timezone_not_configured'
+            }
         >
         /** Date and time at which the device object was created. */
         created_at: string
@@ -54678,6 +58675,12 @@ export interface Routes {
         can_remove_acs_users_from_acs_access_groups?: boolean | undefined
         /** Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
         can_add_acs_users_to_acs_access_groups?: boolean | undefined
+        can_update_user_schedule?: boolean | undefined
+        can_create_user?: boolean | undefined
+        can_delete_user?: boolean | undefined
+        can_update_user_information?: boolean | undefined
+        can_update_user_supension_state?: boolean | undefined
+        can_update_user_group_membership?: boolean | undefined
       }>
     }
   }
@@ -54737,14 +58740,6 @@ export interface Routes {
         user_identity_email_address?: (string | null) | undefined
         /** Phone number of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
-        /**  */
-        latest_desired_state_synced_with_provider_at?:
-          | (string | null)
-          | undefined
-        /**  */
-        is_latest_desired_state_synced_with_provider?:
-          | (boolean | null)
-          | undefined
         /** Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         warnings: Array<
           | {
@@ -54807,21 +58802,27 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
-        /**  */
+        /** Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system. */
         pending_mutations?:
           | Array<
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'creating'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'deleting'
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_user_information'
                   from: {
@@ -54836,7 +58837,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_access_schedule'
                   from: {
@@ -54849,7 +58852,9 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_suspension_state'
                   from: {
@@ -54860,13 +58865,19 @@ export interface Routes {
                   }
                 }
               | {
+                  /** Date and time at which the mutation was created. */
                   created_at: string
+                  /** Detailed description of the mutation. */
                   message: string
                   mutation_code: 'updating_group_membership'
+                  /** Old access group membership. */
                   from: {
+                    /** Old access group ID. */
                     acs_access_group_id: string | null
                   }
+                  /** New access group membership. */
                   to: {
+                    /** New access group ID. */
                     acs_access_group_id: string | null
                   }
                 }
@@ -55567,6 +59578,77 @@ export interface Routes {
                 }
               | {
                   type: 'no_credential_on_encoder'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
