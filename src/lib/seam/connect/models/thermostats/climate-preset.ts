@@ -18,6 +18,11 @@ export const climate_preset = z.object({
     .describe(
       'Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.',
     ),
+  can_program: z
+    .boolean()
+    .describe(
+      'Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.',
+    ),
   name: z
     .string()
     .nullable()

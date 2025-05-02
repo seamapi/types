@@ -1,6 +1,8 @@
 import { z } from 'zod'
 
 import { access_code_events } from './access-codes.js'
+import { access_grant_events } from './access-grants.js'
+import { access_method_events } from './access-methods.js'
 import { acs_events } from './acs/index.js'
 import { action_attempt_events } from './action-attempts.js'
 import { client_session_events } from './client-sessions.js'
@@ -12,6 +14,8 @@ import { phone_events } from './phones.js'
 
 export const seam_event = z.discriminatedUnion('event_type', [
   ...access_code_events,
+  ...access_grant_events,
+  ...access_method_events,
   ...acs_events,
   ...client_session_events,
   ...connected_account_events,
