@@ -107,7 +107,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'tedee',
   ],
 
-  thermostats: ['ecobee', 'nest'],
+  thermostats: ['ecobee', 'nest', 'sensi', 'honeywell_resideo'],
   noise_sensors: ['minut', 'noiseaware'],
   access_control_systems: [
     'pti',
