@@ -2,6 +2,7 @@ import { z } from 'zod'
 
 import { activate_climate_preset_action_attempt } from './activate-climate-preset.js'
 import { deprecated_action_attempts } from './deprecated.js'
+import { encode_access_method_action_attempt } from './encode-access-method.js'
 import { encode_credential_action_attempt } from './encode-credential.js'
 import { lock_door_action_attempt } from './lock-door.js'
 import { reset_sandbox_workspace_action_attempt } from './reset-sandbox-workspace.js'
@@ -16,6 +17,7 @@ export const action_attempt = z.union([
   ...lock_door_action_attempt.options,
   ...unlock_door_action_attempt.options,
   ...scan_credential_action_attempt.options,
+  ...encode_access_method_action_attempt.options,
   ...encode_credential_action_attempt.options,
   ...reset_sandbox_workspace_action_attempt.options,
   ...set_fan_mode_action_attempt.options,
