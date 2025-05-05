@@ -5656,13 +5656,13 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the device to report constraints for. */
+      /** ID of the device for which to report constraints. */
       device_id: string
-      /** Array of supported code lengths between 4 and 20 inclusive; cannot be provided with min_code_length or max_code_length. */
+      /** Array of supported code lengths as integers between 4 and 20, inclusive. You can specify either `supported_code_lengths` or `min_code_length`/`max_code_length`. */
       supported_code_lengths?: number[] | undefined
-      /** Minimum supported code length between 4 and 20 inclusive; cannot be provided with supported_code_lengths. */
+      /** Minimum supported code length as an integer between 4 and 20, inclusive. You can specify either `min_code_length`/`max_code_length` or `supported_code_lengths`. */
       min_code_length?: number | undefined
-      /** Maximum supported code length between 4 and 20 inclusive; cannot be provided with supported_code_lengths. */
+      /** Maximum supported code length as an integer between 4 and 20, inclusive. You can specify either `min_code_length`/`max_code_length` or `supported_code_lengths`. */
       max_code_length?: number | undefined
     }
     commonParams: {}
@@ -22654,6 +22654,8 @@ export interface Routes {
       user_identifier_key?: string | undefined
       /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
+      /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
+      page_cursor?: (string | undefined) | null
       /**  */
       include_if?:
         | Array<
@@ -23669,6 +23671,15 @@ export interface Routes {
         can_simulate_connection?: boolean | undefined
         can_simulate_disconnection?: boolean | undefined
       }>
+      /** Information about the current page of results. */
+      pagination: {
+        /** Opaque value that can be used to select the next page of results via the `page_cursor` parameter. */
+        next_page_cursor: string | null
+        /** Indicates whether there is another page of results after this one. */
+        has_next_page: boolean
+        /** URL to get the next page of results. */
+        next_page_url: string | null
+      }
     }
   }
   '/devices/list_device_providers': {
@@ -24310,6 +24321,8 @@ export interface Routes {
       user_identifier_key?: string | undefined
       /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
+      /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
+      page_cursor?: (string | undefined) | null
       /**  */
       include_if?:
         | Array<
@@ -29978,6 +29991,8 @@ export interface Routes {
       user_identifier_key?: string | undefined
       /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
+      /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
+      page_cursor?: (string | undefined) | null
       /**  */
       include_if?:
         | Array<
@@ -37093,6 +37108,8 @@ export interface Routes {
       user_identifier_key?: string | undefined
       /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
+      /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
+      page_cursor?: (string | undefined) | null
       /**  */
       include_if?:
         | Array<
@@ -49748,6 +49765,8 @@ export interface Routes {
       user_identifier_key?: string | undefined
       /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
+      /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
+      page_cursor?: (string | undefined) | null
       /**  */
       include_if?:
         | Array<
