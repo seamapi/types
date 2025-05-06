@@ -19273,7 +19273,7 @@ export default {
     '/access_codes/report_device_constraints': {
       post: {
         description:
-          'Allows clients to report supported code length constraints for a SmartThings lock device.',
+          'Enables you to report access code-related constraints for a device. Currently, supports reporting supported code length constraints for SmartThings devices.',
         operationId: 'accessCodesReportDeviceConstraintsPost',
         requestBody: {
           content: {
@@ -19281,27 +19281,28 @@ export default {
               schema: {
                 properties: {
                   device_id: {
-                    description: 'ID of the device to report constraints for.',
+                    description:
+                      'ID of the device for which to report constraints.',
                     format: 'uuid',
                     type: 'string',
                   },
                   max_code_length: {
                     description:
-                      'Maximum supported code length between 4 and 20 inclusive; cannot be provided with supported_code_lengths.',
+                      'Maximum supported code length as an integer between 4 and 20, inclusive. You can specify either `min_code_length`/`max_code_length` or `supported_code_lengths`.',
                     maximum: 20,
                     minimum: 4,
                     type: 'integer',
                   },
                   min_code_length: {
                     description:
-                      'Minimum supported code length between 4 and 20 inclusive; cannot be provided with supported_code_lengths.',
+                      'Minimum supported code length as an integer between 4 and 20, inclusive. You can specify either `min_code_length`/`max_code_length` or `supported_code_lengths`.',
                     maximum: 20,
                     minimum: 4,
                     type: 'integer',
                   },
                   supported_code_lengths: {
                     description:
-                      'Array of supported code lengths between 4 and 20 inclusive; cannot be provided with min_code_length or max_code_length.',
+                      'Array of supported code lengths as integers between 4 and 20, inclusive. You can specify either `supported_code_lengths` or `min_code_length`/`max_code_length`.',
                     items: { maximum: 20, minimum: 4, type: 'integer' },
                     minItems: 1,
                     type: 'array',
@@ -19340,7 +19341,7 @@ export default {
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'report_device_constraints',
         'x-response-key': null,
-        'x-title': 'Report Device Code Constraints',
+        'x-title': 'Report Device Access Code Constraints',
       },
     },
     '/access_codes/simulate/create_unmanaged_access_code': {
@@ -22988,6 +22989,12 @@ export default {
                 properties: {
                   acs_credential_id: { format: 'uuid', type: 'string' },
                   acs_system_id: { format: 'uuid', type: 'string' },
+                  location_id: {
+                    format: 'uuid',
+                    nullable: true,
+                    type: 'string',
+                    'x-undocumented': 'Experimental locations.',
+                  },
                 },
                 type: 'object',
               },
@@ -25826,6 +25833,12 @@ export default {
                     ],
                     type: 'string',
                   },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    nullable: true,
+                    type: 'string',
+                  },
                   unstable_location_id: {
                     format: 'uuid',
                     nullable: true,
@@ -25854,8 +25867,9 @@ export default {
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                   },
-                  required: ['devices', 'ok'],
+                  required: ['devices', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
@@ -26365,6 +26379,12 @@ export default {
                       'tado',
                       'sensi',
                     ],
+                    type: 'string',
+                  },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    nullable: true,
                     type: 'string',
                   },
                   unstable_location_id: {
@@ -27197,6 +27217,12 @@ export default {
                     ],
                     type: 'string',
                   },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    nullable: true,
+                    type: 'string',
+                  },
                   unstable_location_id: {
                     format: 'uuid',
                     nullable: true,
@@ -27662,6 +27688,12 @@ export default {
                   manufacturer: {
                     description: 'Manufacturer by which to filter devices.',
                     enum: ['noiseaware', 'minut'],
+                    type: 'string',
+                  },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    nullable: true,
                     type: 'string',
                   },
                   unstable_location_id: {
@@ -30853,6 +30885,12 @@ export default {
                     enum: ['ecobee', 'nest', 'honeywell_resideo', 'tado'],
                     type: 'string',
                   },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    nullable: true,
+                    type: 'string',
+                  },
                   unstable_location_id: {
                     format: 'uuid',
                     nullable: true,
@@ -32983,10 +33021,110 @@ export default {
         'x-undocumented': 'Unreleased.',
       },
     },
+    '/unstable_locations/add_acs_entrances': {
+      post: {
+        description: 'Add entrances to a specific location.',
+        operationId: 'unstableLocationsAddAcsEntrancesPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_entrance_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    minItems: 1,
+                    type: 'array',
+                  },
+                  location_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['location_id', 'acs_entrance_ids'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_locations/add_acs_entrances',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_locations'],
+        'x-fern-sdk-method-name': 'add_acs_entrances',
+        'x-response-key': null,
+        'x-title': 'Add ACS Entrances',
+        'x-undocumented': 'Experimental locations.',
+      },
+      put: {
+        description: 'Add entrances to a specific location.',
+        operationId: 'unstableLocationsAddAcsEntrancesPut',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_entrance_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    minItems: 1,
+                    type: 'array',
+                  },
+                  location_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['location_id', 'acs_entrance_ids'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_locations/add_acs_entrances',
+        tags: [],
+        'x-fern-ignore': true,
+        'x-response-key': null,
+        'x-title': 'Add ACS Entrances',
+        'x-undocumented': 'Experimental locations.',
+      },
+    },
     '/unstable_locations/add_devices': {
       post: {
-        description:
-          'Add devices to a specific location. If a device already belongs to a location it will be moved.',
+        description: 'Add devices to a specific location.',
         operationId: 'unstableLocationsAddDevicesPost',
         requestBody: {
           content: {
@@ -33036,8 +33174,7 @@ export default {
         'x-undocumented': 'Experimental locations.',
       },
       put: {
-        description:
-          'Add devices to a specific location. If a device already belongs to a location it will be moved.',
+        description: 'Add devices to a specific location.',
         operationId: 'unstableLocationsAddDevicesPut',
         requestBody: {
           content: {
@@ -33095,6 +33232,14 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  acs_entrance_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                  device_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
                   geolocation: {
                     properties: {
                       latitude: { format: 'float', type: 'number' },
@@ -33513,6 +33658,57 @@ export default {
         'x-fern-sdk-return-value': 'locations',
         'x-response-key': 'locations',
         'x-title': 'List Locations',
+        'x-undocumented': 'Experimental locations.',
+      },
+    },
+    '/unstable_locations/remove_acs_entrances': {
+      post: {
+        description: 'Remove entrances from a specific location.',
+        operationId: 'unstableLocationsRemoveAcsEntrancesPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_entrance_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                  location_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['location_id', 'acs_entrance_ids'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_locations/remove_acs_entrances',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_locations'],
+        'x-fern-sdk-method-name': 'remove_acs_entrances',
+        'x-response-key': null,
+        'x-title': 'Remove ACS Entrances',
         'x-undocumented': 'Experimental locations.',
       },
     },
