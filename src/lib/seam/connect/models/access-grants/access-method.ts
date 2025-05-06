@@ -27,6 +27,12 @@ export const access_method = z.object({
     .string()
     .optional()
     .describe('URL of instant key for mobile key access methods.'),
+  is_card_encoding_required: z
+    .boolean()
+    .optional()
+    .describe(
+      'Whether card encoding is required for plastic card access methods.',
+    ),
 }).describe(`
   ---
   undocumented: Unreleased.
