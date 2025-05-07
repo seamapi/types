@@ -29609,7 +29609,7 @@ export default {
     '/seam/instant_key/v1/client_sessions/exchange_short_code': {
       post: {
         description:
-          'Exchanges a short code for a Client Session Token (CST).\nThis endpoint is used by mobile apps to securely retrieve a client session token \nusing a short code obtained from an instant key URL.',
+          'Exchanges a short code for a Client Session Token (CST).\nThis endpoint is used by mobile apps to securely retrieve a client session token\nusing a short code obtained from an instant key URL.',
         operationId: 'seamInstantKeyV1ClientSessionsExchangeShortCodePost',
         requestBody: {
           content: {
@@ -29662,6 +29662,7 @@ export default {
         'x-fern-sdk-return-value': 'client_session',
         'x-response-key': 'client_session',
         'x-title': 'Exchange Instant Key Short Code',
+        'x-undocumented': 'Seam Instant Key only.',
       },
     },
     '/thermostats/activate_climate_preset': {
