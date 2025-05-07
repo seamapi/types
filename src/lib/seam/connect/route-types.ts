@@ -200,6 +200,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -339,6 +340,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -607,6 +609,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -744,6 +747,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -2504,6 +2508,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -2643,6 +2648,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -2911,6 +2917,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -3048,6 +3055,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -6378,6 +6386,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -6517,6 +6526,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -6785,6 +6795,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -6922,6 +6933,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -8686,6 +8698,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -8825,6 +8838,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -9093,6 +9107,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -9230,6 +9245,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -10483,6 +10499,7 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_key'
               | 'salto_space_key'
+              | 'latch_access'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -10685,6 +10702,7 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_key'
               | 'salto_space_key'
+              | 'latch_access'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -10848,6 +10866,7 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_key'
               | 'salto_space_key'
+              | 'latch_access'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -11015,6 +11034,7 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_key'
               | 'salto_space_key'
+              | 'latch_access'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -11188,6 +11208,7 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_key'
               | 'salto_space_key'
+              | 'latch_access'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -11443,6 +11464,7 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_key'
               | 'salto_space_key'
+              | 'latch_access'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -11594,6 +11616,7 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_key'
               | 'salto_space_key'
+              | 'latch_access'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -11759,6 +11782,7 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_key'
               | 'salto_space_key'
+              | 'latch_access'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -11918,6 +11942,7 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_key'
               | 'salto_space_key'
+              | 'latch_access'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -12196,6 +12221,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -12335,6 +12361,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -12603,6 +12630,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -12740,6 +12768,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -13464,6 +13493,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -13603,6 +13633,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -13871,6 +13902,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -14008,6 +14040,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -14827,6 +14860,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -14966,6 +15000,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -15234,6 +15269,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -15371,6 +15407,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -16267,6 +16304,7 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_key'
               | 'salto_space_key'
+              | 'latch_access'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -18470,6 +18508,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -18609,6 +18648,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -18877,6 +18917,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -19014,6 +19055,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -19734,6 +19776,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -19873,6 +19916,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -20141,6 +20185,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -20278,6 +20323,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -32234,6 +32280,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -32373,6 +32420,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -32641,6 +32689,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -32778,6 +32827,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -33500,6 +33550,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -33639,6 +33690,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -33907,6 +33959,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -34044,6 +34097,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -34765,6 +34819,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -34904,6 +34959,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -35172,6 +35228,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -35309,6 +35366,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -36031,6 +36089,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -36170,6 +36229,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -36438,6 +36498,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -36575,6 +36636,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -39364,6 +39426,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -39503,6 +39566,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -39771,6 +39835,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -39908,6 +39973,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -40641,6 +40707,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -40780,6 +40847,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -41048,6 +41116,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -41185,6 +41254,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -41957,6 +42027,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -42096,6 +42167,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -42364,6 +42436,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -42501,6 +42574,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -43731,6 +43805,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -43870,6 +43945,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -44138,6 +44214,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -44275,6 +44352,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -45062,6 +45140,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -45201,6 +45280,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -45469,6 +45549,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -45606,6 +45687,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -47445,6 +47527,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -47584,6 +47667,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -47852,6 +47936,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -47989,6 +48074,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -48721,6 +48807,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -48860,6 +48947,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -49128,6 +49216,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -49265,6 +49354,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -52032,6 +52122,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -52171,6 +52262,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -52439,6 +52531,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -52576,6 +52669,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -53490,6 +53584,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -53629,6 +53724,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -53897,6 +53993,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -54034,6 +54131,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -54789,6 +54887,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -54928,6 +55027,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -55196,6 +55296,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -55333,6 +55434,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -59472,6 +59574,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -59611,6 +59714,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -59879,6 +59983,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -60016,6 +60121,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
