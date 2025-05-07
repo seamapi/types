@@ -22502,7 +22502,7 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'lockly_timezone_not_configured'
+              warning_code: 'lockly_time_zone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -23671,7 +23671,7 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'lockly_timezone_not_configured'
+              warning_code: 'lockly_time_zone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -24115,7 +24115,7 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'lockly_timezone_not_configured'
+              warning_code: 'lockly_time_zone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -24659,7 +24659,7 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'lockly_timezone_not_configured'
+              warning_code: 'lockly_time_zone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -28892,7 +28892,7 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'lockly_timezone_not_configured'
+              warning_code: 'lockly_time_zone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -29871,7 +29871,7 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'lockly_timezone_not_configured'
+              warning_code: 'lockly_time_zone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -31008,7 +31008,7 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'lockly_timezone_not_configured'
+              warning_code: 'lockly_time_zone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -31986,7 +31986,7 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'lockly_timezone_not_configured'
+              warning_code: 'lockly_time_zone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -38133,7 +38133,7 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'lockly_timezone_not_configured'
+              warning_code: 'lockly_time_zone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -39111,7 +39111,7 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'lockly_timezone_not_configured'
+              warning_code: 'lockly_time_zone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -47191,7 +47191,7 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'lockly_timezone_not_configured'
+              warning_code: 'lockly_time_zone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -50804,7 +50804,7 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'lockly_timezone_not_configured'
+              warning_code: 'lockly_time_zone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -51782,7 +51782,7 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'lockly_timezone_not_configured'
+              warning_code: 'lockly_time_zone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -57600,7 +57600,7 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'lockly_timezone_not_configured'
+              warning_code: 'lockly_time_zone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
@@ -58580,7 +58580,7 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'lockly_timezone_not_configured'
+              warning_code: 'lockly_time_zone_not_configured'
             }
         >
         /** Date and time at which the device object was created. */
