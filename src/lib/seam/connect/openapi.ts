@@ -3281,6 +3281,29 @@ export default {
                   required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created on Latch Mission Control. Please use the Latch Mission Control to manage this user.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      enum: ['latch_resident_user'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -17477,6 +17500,29 @@ export default {
                   required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created on Latch Mission Control. Please use the Latch Mission Control to manage this user.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      enum: ['latch_resident_user'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -19167,6 +19213,19 @@ export default {
                     format: 'uuid',
                     type: 'string',
                   },
+                  limit: {
+                    default: 55_000,
+                    description:
+                      'Numerical limit on the number of access codes to return.',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    nullable: true,
+                    type: 'string',
+                  },
                   user_identifier_key: {
                     description:
                       'Your user ID for the user by which to filter access codes.',
@@ -19189,8 +19248,9 @@ export default {
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                   },
-                  required: ['access_codes', 'ok'],
+                  required: ['access_codes', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
