@@ -306,14 +306,14 @@ const device_has_flaky_connection = common_device_warning
   })
   .describe('Device has flaky connection.')
 
-const lockly_timezone_not_configured = common_device_warning
+const lockly_time_zone_not_configured = common_device_warning
   .extend({
     warning_code: z
-      .literal('lockly_timezone_not_configured')
+      .literal('lockly_time_zone_not_configured')
       .describe(warning_code_description),
   })
   .describe(
-    'We detected that this device does not have a timezone configured. Time bound codes may not work as expected.',
+    'We detected that this device does not have a time zone configured. Time bound codes may not work as expected.',
   )
 
 export const unknown_issue_with_phone = common_device_warning
@@ -343,7 +343,7 @@ const device_warning = z.discriminatedUnion('warning_code', [
   salto_ks_privacy_mode,
   salto_ks_subscription_limit_almost_reached,
   unknown_issue_with_phone,
-  lockly_timezone_not_configured,
+  lockly_time_zone_not_configured,
 ])
 
 export type DeviceWarning = z.infer<typeof device_warning>
@@ -387,7 +387,7 @@ export const device_warning_map = z.object({
   salto_ks_subscription_limit_almost_reached:
     salto_ks_subscription_limit_almost_reached.optional().nullable(),
   unknown_issue_with_phone: unknown_issue_with_phone.optional().nullable(),
-  lockly_timezone_not_configured: lockly_timezone_not_configured
+  lockly_time_zone_not_configured: lockly_time_zone_not_configured
     .optional()
     .nullable(),
 })

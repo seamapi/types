@@ -9515,14 +9515,14 @@ export default {
                 },
                 {
                   description:
-                    'We detected that this device does not have a timezone configured. Time bound codes may not work as expected.',
+                    'We detected that this device does not have a time zone configured. Time bound codes may not work as expected.',
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['lockly_timezone_not_configured'],
+                      enum: ['lockly_time_zone_not_configured'],
                       type: 'string',
                     },
                   },
@@ -18341,14 +18341,14 @@ export default {
                 },
                 {
                   description:
-                    'We detected that this device does not have a timezone configured. Time bound codes may not work as expected.',
+                    'We detected that this device does not have a time zone configured. Time bound codes may not work as expected.',
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['lockly_timezone_not_configured'],
+                      enum: ['lockly_time_zone_not_configured'],
                       type: 'string',
                     },
                   },
