@@ -4144,6 +4144,10 @@ export interface Routes {
       access_code_ids?: string[] | undefined
       /** Your user ID for the user by which to filter access codes. */
       user_identifier_key?: string | undefined
+      /** Numerical limit on the number of access codes to return. */
+      limit?: number
+      /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
+      page_cursor?: (string | undefined) | null
     }
     formData: {}
     jsonResponse: {
@@ -4640,6 +4644,15 @@ export interface Routes {
         /** Indicates whether the access code is intended for use in offline scenarios. If `true`, this code can be created on a device without a network connection. */
         is_offline_access_code: boolean
       }>
+      /** Information about the current page of results. */
+      pagination: {
+        /** Opaque value that can be used to select the next page of results via the `page_cursor` parameter. */
+        next_page_cursor: string | null
+        /** Indicates whether there is another page of results after this one. */
+        has_next_page: boolean
+        /** URL to get the next page of results. */
+        next_page_url: string | null
+      }
     }
   }
   '/access_codes/pull_backup_access_code': {
@@ -10099,6 +10112,13 @@ export interface Routes {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               warning_code: 'unknown_issue_with_acs_user'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'latch_resident_user'
             }
         >
         /** Errors associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
@@ -17045,6 +17065,13 @@ export interface Routes {
               message: string
               warning_code: 'unknown_issue_with_acs_user'
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'latch_resident_user'
+            }
         >
         /** Errors associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         errors: Array<
@@ -17274,6 +17301,13 @@ export interface Routes {
               message: string
               warning_code: 'unknown_issue_with_acs_user'
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'latch_resident_user'
+            }
         >
         /** Errors associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         errors: Array<
@@ -17498,6 +17532,13 @@ export interface Routes {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               warning_code: 'unknown_issue_with_acs_user'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'latch_resident_user'
             }
         >
         /** Errors associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
@@ -17856,6 +17897,13 @@ export interface Routes {
               message: string
               warning_code: 'unknown_issue_with_acs_user'
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'latch_resident_user'
+            }
         >
         /** Errors associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         errors: Array<
@@ -18070,6 +18118,13 @@ export interface Routes {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               warning_code: 'unknown_issue_with_acs_user'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'latch_resident_user'
             }
         >
         /** Errors associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
@@ -58870,6 +58925,13 @@ export interface Routes {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               warning_code: 'unknown_issue_with_acs_user'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'latch_resident_user'
             }
         >
         /** Errors associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
