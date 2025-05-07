@@ -133,6 +133,14 @@ export const unknown_issue_with_acs_user = common_acs_user_warning
     'An unknown issue occurred while syncing the state of this [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user.',
   )
 
+export const latch_resident_user = common_acs_user_warning
+  .extend({
+    warning_code: z.literal('latch_resident_user'),
+  })
+  .describe(
+    'Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created on Latch Mission Control. Please use the Latch Mission Control to manage this user.',
+  )
+
 export const acs_users_warning_map = z.object({
   being_deleted: acs_users_being_deleted.optional().nullable(),
   salto_ks_user_not_subscribed: acs_users_salto_ks_user_not_subscribed
@@ -141,6 +149,7 @@ export const acs_users_warning_map = z.object({
   unknown_issue_with_acs_user: unknown_issue_with_acs_user
     .optional()
     .nullable(),
+  latch_resident_user: latch_resident_user.optional().nullable(),
 })
 
 export const acs_users_warnings = z
@@ -148,6 +157,7 @@ export const acs_users_warnings = z
     acs_users_being_deleted,
     acs_users_salto_ks_user_not_subscribed,
     unknown_issue_with_acs_user,
+    latch_resident_user,
   ])
   .describe(
     'Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
