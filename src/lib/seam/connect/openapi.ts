@@ -19167,6 +19167,19 @@ export default {
                     format: 'uuid',
                     type: 'string',
                   },
+                  limit: {
+                    default: 55_000,
+                    description:
+                      'Numerical limit on the number of access codes to return.',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    nullable: true,
+                    type: 'string',
+                  },
                   user_identifier_key: {
                     description:
                       'Your user ID for the user by which to filter access codes.',
@@ -19189,8 +19202,9 @@ export default {
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                   },
-                  required: ['access_codes', 'ok'],
+                  required: ['access_codes', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
