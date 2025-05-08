@@ -1080,6 +1080,37 @@ export interface Routes {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -1701,6 +1732,14 @@ export interface Routes {
               /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate_code_name'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
@@ -2228,6 +2267,14 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate_code_name'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -3388,6 +3435,37 @@ export interface Routes {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -4042,6 +4120,14 @@ export interface Routes {
               /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate_code_name'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
@@ -4549,6 +4635,14 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate_code_name'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -5078,6 +5172,14 @@ export interface Routes {
               /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate_code_name'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
@@ -5571,6 +5673,14 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate_code_name'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -6100,6 +6210,14 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate_code_name'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -7266,6 +7384,37 @@ export interface Routes {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -7898,6 +8047,14 @@ export interface Routes {
               /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate_code_name'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
@@ -8381,6 +8538,14 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate_code_name'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -9565,6 +9730,37 @@ export interface Routes {
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
             error: {
               type: string
               message: string
@@ -13101,6 +13297,37 @@ export interface Routes {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -14360,6 +14587,37 @@ export interface Routes {
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
             error: {
               type: string
               message: string
@@ -15727,6 +15985,37 @@ export interface Routes {
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
             error: {
               type: string
               message: string
@@ -19388,6 +19677,37 @@ export interface Routes {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -20643,6 +20963,37 @@ export interface Routes {
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
             error: {
               type: string
               message: string
@@ -33160,6 +33511,37 @@ export interface Routes {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -34417,6 +34799,37 @@ export interface Routes {
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
             error: {
               type: string
               message: string
@@ -35699,6 +36112,37 @@ export interface Routes {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -36956,6 +37400,37 @@ export interface Routes {
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
             error: {
               type: string
               message: string
@@ -40306,6 +40781,37 @@ export interface Routes {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -41574,6 +42080,37 @@ export interface Routes {
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
             error: {
               type: string
               message: string
@@ -42894,6 +43431,37 @@ export interface Routes {
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
             error: {
               type: string
               message: string
@@ -44685,6 +45253,37 @@ export interface Routes {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -44929,26 +45528,1290 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
-      thermostat_weekly_program: {
-        /** ID of the thermostat device the weekly program is for. */
-        device_id: string
-        /** ID of the thermostat daily program to run on Mondays. */
-        monday_program_id: string | null
-        /** ID of the thermostat daily program to run on Tuesdays. */
-        tuesday_program_id: string | null
-        /** ID of the thermostat daily program to run on Wednesdays. */
-        wednesday_program_id: string | null
-        /** ID of the thermostat daily program to run on Thursdays. */
-        thursday_program_id: string | null
-        /** ID of the thermostat daily program to run on Fridays. */
-        friday_program_id: string | null
-        /** ID of the thermostat daily program to run on Saturdays. */
-        saturday_program_id: string | null
-        /** ID of the thermostat daily program to run on Sundays. */
-        sunday_program_id: string | null
-        /** Date and time at which the thermostat weekly program was created. */
-        created_at: string
-      }
+      /**  */
+      action_attempt:
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'LOCK_DOOR'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'LOCK_DOOR'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'LOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'UNLOCK_DOOR'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'UNLOCK_DOOR'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SCAN_CREDENTIAL'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SCAN_CREDENTIAL'
+            result: {
+              /** Snapshot of credential data read from physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created. */
+                created_at: string | null
+                is_issued: boolean | null
+                /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) becomes usable. */
+                starts_at: string | null
+                /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) will stop being usable. */
+                ends_at: string | null
+                /** A number or string that physically identifies the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                card_number: string | null
+                /** Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                visionline_metadata?:
+                  | {
+                      /** Card ID for the Visionline card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      card_id: string
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is cancelled. */
+                      cancelled: boolean
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is discarded. */
+                      discarded: boolean
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is expired. */
+                      expired: boolean
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is overwritten. */
+                      overwritten: boolean
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is overridden. */
+                      overridden?: boolean | undefined
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is pending auto-update. */
+                      pending_auto_update: boolean
+                      /** Format of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      card_format: 'TLCode' | 'rfid48'
+                      /** Holden of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      card_holder?: string | undefined
+                      /** Number of issued cards associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      number_of_issued_cards: number
+                      /** IDs of the guest [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      guest_acs_entrance_ids?: string[] | undefined
+                      /** IDs of the common [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      common_acs_entrance_ids?: string[] | undefined
+                    }
+                  | undefined
+              } | null
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        acs_credential_id: string
+                        /** ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs. */
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        acs_system_id: string
+                        /** ID of the parent [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                        display_name: string
+                        /** Access (PIN) code for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        code?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
+                        /** Number of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        card_number?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been encoded onto a card. */
+                        is_issued?: boolean | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was encoded onto a card. */
+                        issued_at?: (string | undefined) | null
+                        /** Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`. */
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                              | 'assa_abloy_vostio_key'
+                              | 'salto_space_key'
+                            )
+                          | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                        external_type_display_name?: string | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created. */
+                        created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        workspace_id: string
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at?: string | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                        ends_at?: string | undefined
+                        /** Errors associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        /** Warnings associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'unknown_issue_with_acs_credential'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'needs_to_be_reissued'
+                            }
+                        >
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                        is_latest_desired_state_synced_with_provider?:
+                          | (boolean | null)
+                          | undefined
+                        /** Date and time at which the state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                        latest_desired_state_synced_with_provider_at?:
+                          | (string | null)
+                          | undefined
+                        /** Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        acs_credential_id: string
+                        /** ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs. */
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        acs_system_id: string
+                        /** ID of the parent [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                        display_name: string
+                        /** Access (PIN) code for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        code?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
+                        /** Number of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        card_number?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been encoded onto a card. */
+                        is_issued?: boolean | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was encoded onto a card. */
+                        issued_at?: (string | undefined) | null
+                        /** Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`. */
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                              | 'assa_abloy_vostio_key'
+                              | 'salto_space_key'
+                            )
+                          | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                        external_type_display_name?: string | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created. */
+                        created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        workspace_id: string
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at?: string | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                        ends_at?: string | undefined
+                        /** Errors associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        /** Warnings associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'unknown_issue_with_acs_credential'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'needs_to_be_reissued'
+                            }
+                        >
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                        is_latest_desired_state_synced_with_provider?:
+                          | (boolean | null)
+                          | undefined
+                        /** Date and time at which the state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                        latest_desired_state_synced_with_provider_at?:
+                          | (string | null)
+                          | undefined
+                        /** Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
+              warnings: Array<{
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
+                warning_message: string
+              }>
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SCAN_CREDENTIAL'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+              /** Whether card encoding is required for plastic card access methods. */
+              is_card_encoding_required?: boolean | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_CREDENTIAL'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_CREDENTIAL'
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
+            result:
+              | {
+                  /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  acs_credential_id: string
+                  /** ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs. */
+                  acs_user_id?: string | undefined
+                  acs_credential_pool_id?: string | undefined
+                  /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  acs_system_id: string
+                  /** ID of the parent [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                  display_name: string
+                  /** Access (PIN) code for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  code?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
+                  /** Number of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  card_number?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been encoded onto a card. */
+                  is_issued?: boolean | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was encoded onto a card. */
+                  issued_at?: (string | undefined) | null
+                  /** Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`. */
+                  access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                  external_type?:
+                    | (
+                        | 'pti_card'
+                        | 'brivo_credential'
+                        | 'hid_credential'
+                        | 'visionline_card'
+                        | 'salto_ks_credential'
+                        | 'assa_abloy_vostio_key'
+                        | 'salto_space_key'
+                      )
+                    | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                  external_type_display_name?: string | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created. */
+                  created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  workspace_id: string
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  starts_at?: string | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                  ends_at?: string | undefined
+                  /** Errors associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  errors: Array<{
+                    error_code: string
+                    message: string
+                  }>
+                  /** Warnings associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'unknown_issue_with_acs_credential'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'needs_to_be_reissued'
+                      }
+                  >
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                  is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                  is_latest_desired_state_synced_with_provider?:
+                    | (boolean | null)
+                    | undefined
+                  /** Date and time at which the state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                  latest_desired_state_synced_with_provider_at?:
+                    | (string | null)
+                    | undefined
+                  /** Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  visionline_metadata?:
+                    | {
+                        card_function_type: 'guest' | 'staff'
+                        joiner_acs_credential_ids?: string[] | undefined
+                        guest_acs_entrance_ids?: string[] | undefined
+                        common_acs_entrance_ids?: string[] | undefined
+                        is_valid?: boolean | undefined
+                        auto_join?: boolean | undefined
+                        card_id?: string | undefined
+                        credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
+                  is_managed: true
+                }
+              | {
+                  /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  acs_credential_id: string
+                  /** ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs. */
+                  acs_user_id?: string | undefined
+                  acs_credential_pool_id?: string | undefined
+                  /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  acs_system_id: string
+                  /** ID of the parent [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                  display_name: string
+                  /** Access (PIN) code for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  code?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
+                  /** Number of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  card_number?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been encoded onto a card. */
+                  is_issued?: boolean | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was encoded onto a card. */
+                  issued_at?: (string | undefined) | null
+                  /** Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`. */
+                  access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                  external_type?:
+                    | (
+                        | 'pti_card'
+                        | 'brivo_credential'
+                        | 'hid_credential'
+                        | 'visionline_card'
+                        | 'salto_ks_credential'
+                        | 'assa_abloy_vostio_key'
+                        | 'salto_space_key'
+                      )
+                    | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                  external_type_display_name?: string | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created. */
+                  created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  workspace_id: string
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  starts_at?: string | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                  ends_at?: string | undefined
+                  /** Errors associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  errors: Array<{
+                    error_code: string
+                    message: string
+                  }>
+                  /** Warnings associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'unknown_issue_with_acs_credential'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'needs_to_be_reissued'
+                      }
+                  >
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                  is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                  is_latest_desired_state_synced_with_provider?:
+                    | (boolean | null)
+                    | undefined
+                  /** Date and time at which the state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                  latest_desired_state_synced_with_provider_at?:
+                    | (string | null)
+                    | undefined
+                  /** Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  visionline_metadata?:
+                    | {
+                        card_function_type: 'guest' | 'staff'
+                        joiner_acs_credential_ids?: string[] | undefined
+                        guest_acs_entrance_ids?: string[] | undefined
+                        common_acs_entrance_ids?: string[] | undefined
+                        is_valid?: boolean | undefined
+                        auto_join?: boolean | undefined
+                        card_id?: string | undefined
+                        credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
+                  is_managed: false
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_CREDENTIAL'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SET_FAN_MODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SET_FAN_MODE'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SET_FAN_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SET_HVAC_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result: {
+              access_code?: any
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result: {
+              access_code?: any
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result: {
+              noise_threshold?: any
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result: {
+              noise_threshold?: any
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
     }
   }
   '/thermostats/clear_weekly_program': {
@@ -44961,7 +46824,1292 @@ export interface Routes {
       device_id: string
     }
     formData: {}
-    jsonResponse: {}
+    jsonResponse: {
+      /**  */
+      action_attempt:
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'LOCK_DOOR'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'LOCK_DOOR'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'LOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'UNLOCK_DOOR'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'UNLOCK_DOOR'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SCAN_CREDENTIAL'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SCAN_CREDENTIAL'
+            result: {
+              /** Snapshot of credential data read from physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created. */
+                created_at: string | null
+                is_issued: boolean | null
+                /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) becomes usable. */
+                starts_at: string | null
+                /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) will stop being usable. */
+                ends_at: string | null
+                /** A number or string that physically identifies the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                card_number: string | null
+                /** Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                visionline_metadata?:
+                  | {
+                      /** Card ID for the Visionline card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      card_id: string
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is cancelled. */
+                      cancelled: boolean
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is discarded. */
+                      discarded: boolean
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is expired. */
+                      expired: boolean
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is overwritten. */
+                      overwritten: boolean
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is overridden. */
+                      overridden?: boolean | undefined
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is pending auto-update. */
+                      pending_auto_update: boolean
+                      /** Format of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      card_format: 'TLCode' | 'rfid48'
+                      /** Holden of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      card_holder?: string | undefined
+                      /** Number of issued cards associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      number_of_issued_cards: number
+                      /** IDs of the guest [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      guest_acs_entrance_ids?: string[] | undefined
+                      /** IDs of the common [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      common_acs_entrance_ids?: string[] | undefined
+                    }
+                  | undefined
+              } | null
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        acs_credential_id: string
+                        /** ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs. */
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        acs_system_id: string
+                        /** ID of the parent [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                        display_name: string
+                        /** Access (PIN) code for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        code?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
+                        /** Number of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        card_number?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been encoded onto a card. */
+                        is_issued?: boolean | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was encoded onto a card. */
+                        issued_at?: (string | undefined) | null
+                        /** Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`. */
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                              | 'assa_abloy_vostio_key'
+                              | 'salto_space_key'
+                            )
+                          | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                        external_type_display_name?: string | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created. */
+                        created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        workspace_id: string
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at?: string | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                        ends_at?: string | undefined
+                        /** Errors associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        /** Warnings associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'unknown_issue_with_acs_credential'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'needs_to_be_reissued'
+                            }
+                        >
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                        is_latest_desired_state_synced_with_provider?:
+                          | (boolean | null)
+                          | undefined
+                        /** Date and time at which the state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                        latest_desired_state_synced_with_provider_at?:
+                          | (string | null)
+                          | undefined
+                        /** Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        acs_credential_id: string
+                        /** ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs. */
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        acs_system_id: string
+                        /** ID of the parent [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                        display_name: string
+                        /** Access (PIN) code for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        code?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
+                        /** Number of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        card_number?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been encoded onto a card. */
+                        is_issued?: boolean | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was encoded onto a card. */
+                        issued_at?: (string | undefined) | null
+                        /** Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`. */
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                              | 'assa_abloy_vostio_key'
+                              | 'salto_space_key'
+                            )
+                          | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                        external_type_display_name?: string | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created. */
+                        created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        workspace_id: string
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at?: string | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                        ends_at?: string | undefined
+                        /** Errors associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        /** Warnings associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'unknown_issue_with_acs_credential'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'needs_to_be_reissued'
+                            }
+                        >
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                        is_latest_desired_state_synced_with_provider?:
+                          | (boolean | null)
+                          | undefined
+                        /** Date and time at which the state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                        latest_desired_state_synced_with_provider_at?:
+                          | (string | null)
+                          | undefined
+                        /** Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
+              warnings: Array<{
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
+                warning_message: string
+              }>
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SCAN_CREDENTIAL'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+              /** Whether card encoding is required for plastic card access methods. */
+              is_card_encoding_required?: boolean | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_CREDENTIAL'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_CREDENTIAL'
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
+            result:
+              | {
+                  /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  acs_credential_id: string
+                  /** ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs. */
+                  acs_user_id?: string | undefined
+                  acs_credential_pool_id?: string | undefined
+                  /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  acs_system_id: string
+                  /** ID of the parent [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                  display_name: string
+                  /** Access (PIN) code for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  code?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
+                  /** Number of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  card_number?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been encoded onto a card. */
+                  is_issued?: boolean | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was encoded onto a card. */
+                  issued_at?: (string | undefined) | null
+                  /** Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`. */
+                  access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                  external_type?:
+                    | (
+                        | 'pti_card'
+                        | 'brivo_credential'
+                        | 'hid_credential'
+                        | 'visionline_card'
+                        | 'salto_ks_credential'
+                        | 'assa_abloy_vostio_key'
+                        | 'salto_space_key'
+                      )
+                    | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                  external_type_display_name?: string | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created. */
+                  created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  workspace_id: string
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  starts_at?: string | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                  ends_at?: string | undefined
+                  /** Errors associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  errors: Array<{
+                    error_code: string
+                    message: string
+                  }>
+                  /** Warnings associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'unknown_issue_with_acs_credential'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'needs_to_be_reissued'
+                      }
+                  >
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                  is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                  is_latest_desired_state_synced_with_provider?:
+                    | (boolean | null)
+                    | undefined
+                  /** Date and time at which the state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                  latest_desired_state_synced_with_provider_at?:
+                    | (string | null)
+                    | undefined
+                  /** Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  visionline_metadata?:
+                    | {
+                        card_function_type: 'guest' | 'staff'
+                        joiner_acs_credential_ids?: string[] | undefined
+                        guest_acs_entrance_ids?: string[] | undefined
+                        common_acs_entrance_ids?: string[] | undefined
+                        is_valid?: boolean | undefined
+                        auto_join?: boolean | undefined
+                        card_id?: string | undefined
+                        credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
+                  is_managed: true
+                }
+              | {
+                  /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  acs_credential_id: string
+                  /** ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs. */
+                  acs_user_id?: string | undefined
+                  acs_credential_pool_id?: string | undefined
+                  /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  acs_system_id: string
+                  /** ID of the parent [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                  display_name: string
+                  /** Access (PIN) code for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  code?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
+                  /** Number of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  card_number?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been encoded onto a card. */
+                  is_issued?: boolean | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was encoded onto a card. */
+                  issued_at?: (string | undefined) | null
+                  /** Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`. */
+                  access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                  external_type?:
+                    | (
+                        | 'pti_card'
+                        | 'brivo_credential'
+                        | 'hid_credential'
+                        | 'visionline_card'
+                        | 'salto_ks_credential'
+                        | 'assa_abloy_vostio_key'
+                        | 'salto_space_key'
+                      )
+                    | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                  external_type_display_name?: string | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created. */
+                  created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  workspace_id: string
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  starts_at?: string | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                  ends_at?: string | undefined
+                  /** Errors associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  errors: Array<{
+                    error_code: string
+                    message: string
+                  }>
+                  /** Warnings associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'unknown_issue_with_acs_credential'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'needs_to_be_reissued'
+                      }
+                  >
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                  is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                  is_latest_desired_state_synced_with_provider?:
+                    | (boolean | null)
+                    | undefined
+                  /** Date and time at which the state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                  latest_desired_state_synced_with_provider_at?:
+                    | (string | null)
+                    | undefined
+                  /** Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  visionline_metadata?:
+                    | {
+                        card_function_type: 'guest' | 'staff'
+                        joiner_acs_credential_ids?: string[] | undefined
+                        guest_acs_entrance_ids?: string[] | undefined
+                        common_acs_entrance_ids?: string[] | undefined
+                        is_valid?: boolean | undefined
+                        auto_join?: boolean | undefined
+                        card_id?: string | undefined
+                        credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
+                  is_managed: false
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_CREDENTIAL'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SET_FAN_MODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SET_FAN_MODE'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SET_FAN_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SET_HVAC_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result: {
+              access_code?: any
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result: {
+              access_code?: any
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result: {
+              noise_threshold?: any
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result: {
+              noise_threshold?: any
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+    }
   }
   '/thermostats/cool': {
     route: '/thermostats/cool'
@@ -46020,6 +49168,37 @@ export interface Routes {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -46340,7 +49519,1292 @@ export interface Routes {
     }
     commonParams: {}
     formData: {}
-    jsonResponse: {}
+    jsonResponse: {
+      /**  */
+      action_attempt:
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'LOCK_DOOR'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'LOCK_DOOR'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'LOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'UNLOCK_DOOR'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'UNLOCK_DOOR'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SCAN_CREDENTIAL'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SCAN_CREDENTIAL'
+            result: {
+              /** Snapshot of credential data read from physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created. */
+                created_at: string | null
+                is_issued: boolean | null
+                /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) becomes usable. */
+                starts_at: string | null
+                /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) will stop being usable. */
+                ends_at: string | null
+                /** A number or string that physically identifies the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                card_number: string | null
+                /** Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                visionline_metadata?:
+                  | {
+                      /** Card ID for the Visionline card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      card_id: string
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is cancelled. */
+                      cancelled: boolean
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is discarded. */
+                      discarded: boolean
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is expired. */
+                      expired: boolean
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is overwritten. */
+                      overwritten: boolean
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is overridden. */
+                      overridden?: boolean | undefined
+                      /** Indicates whether the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is pending auto-update. */
+                      pending_auto_update: boolean
+                      /** Format of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      card_format: 'TLCode' | 'rfid48'
+                      /** Holden of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      card_holder?: string | undefined
+                      /** Number of issued cards associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      number_of_issued_cards: number
+                      /** IDs of the guest [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      guest_acs_entrance_ids?: string[] | undefined
+                      /** IDs of the common [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                      common_acs_entrance_ids?: string[] | undefined
+                    }
+                  | undefined
+              } | null
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        acs_credential_id: string
+                        /** ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs. */
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        acs_system_id: string
+                        /** ID of the parent [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                        display_name: string
+                        /** Access (PIN) code for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        code?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
+                        /** Number of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        card_number?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been encoded onto a card. */
+                        is_issued?: boolean | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was encoded onto a card. */
+                        issued_at?: (string | undefined) | null
+                        /** Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`. */
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                              | 'assa_abloy_vostio_key'
+                              | 'salto_space_key'
+                            )
+                          | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                        external_type_display_name?: string | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created. */
+                        created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        workspace_id: string
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at?: string | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                        ends_at?: string | undefined
+                        /** Errors associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        /** Warnings associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'unknown_issue_with_acs_credential'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'needs_to_be_reissued'
+                            }
+                        >
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                        is_latest_desired_state_synced_with_provider?:
+                          | (boolean | null)
+                          | undefined
+                        /** Date and time at which the state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                        latest_desired_state_synced_with_provider_at?:
+                          | (string | null)
+                          | undefined
+                        /** Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        acs_credential_id: string
+                        /** ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs. */
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        acs_system_id: string
+                        /** ID of the parent [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                        display_name: string
+                        /** Access (PIN) code for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        code?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
+                        /** Number of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        card_number?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been encoded onto a card. */
+                        is_issued?: boolean | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was encoded onto a card. */
+                        issued_at?: (string | undefined) | null
+                        /** Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`. */
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                              | 'assa_abloy_vostio_key'
+                              | 'salto_space_key'
+                            )
+                          | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                        external_type_display_name?: string | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created. */
+                        created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        workspace_id: string
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at?: string | undefined
+                        /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                        ends_at?: string | undefined
+                        /** Errors associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        /** Warnings associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'unknown_issue_with_acs_credential'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'needs_to_be_reissued'
+                            }
+                        >
+                        /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                        is_latest_desired_state_synced_with_provider?:
+                          | (boolean | null)
+                          | undefined
+                        /** Date and time at which the state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                        latest_desired_state_synced_with_provider_at?:
+                          | (string | null)
+                          | undefined
+                        /** Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
+              warnings: Array<{
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
+                warning_message: string
+              }>
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SCAN_CREDENTIAL'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            /** If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card. */
+            result: {
+              /** Unique identifier for the Seam workspace associated with the access grant. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+              mode: 'code' | 'card' | 'mobile_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at?: string | undefined
+              /** URL of instant key for mobile key access methods. */
+              instant_key_url?: string | undefined
+              /** Whether card encoding is required for plastic card access methods. */
+              is_card_encoding_required?: boolean | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_ACCESS_METHOD'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_CREDENTIAL'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_CREDENTIAL'
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
+            result:
+              | {
+                  /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  acs_credential_id: string
+                  /** ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs. */
+                  acs_user_id?: string | undefined
+                  acs_credential_pool_id?: string | undefined
+                  /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  acs_system_id: string
+                  /** ID of the parent [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                  display_name: string
+                  /** Access (PIN) code for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  code?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
+                  /** Number of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  card_number?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been encoded onto a card. */
+                  is_issued?: boolean | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was encoded onto a card. */
+                  issued_at?: (string | undefined) | null
+                  /** Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`. */
+                  access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                  external_type?:
+                    | (
+                        | 'pti_card'
+                        | 'brivo_credential'
+                        | 'hid_credential'
+                        | 'visionline_card'
+                        | 'salto_ks_credential'
+                        | 'assa_abloy_vostio_key'
+                        | 'salto_space_key'
+                      )
+                    | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                  external_type_display_name?: string | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created. */
+                  created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  workspace_id: string
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  starts_at?: string | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                  ends_at?: string | undefined
+                  /** Errors associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  errors: Array<{
+                    error_code: string
+                    message: string
+                  }>
+                  /** Warnings associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'unknown_issue_with_acs_credential'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'needs_to_be_reissued'
+                      }
+                  >
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                  is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                  is_latest_desired_state_synced_with_provider?:
+                    | (boolean | null)
+                    | undefined
+                  /** Date and time at which the state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                  latest_desired_state_synced_with_provider_at?:
+                    | (string | null)
+                    | undefined
+                  /** Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  visionline_metadata?:
+                    | {
+                        card_function_type: 'guest' | 'staff'
+                        joiner_acs_credential_ids?: string[] | undefined
+                        guest_acs_entrance_ids?: string[] | undefined
+                        common_acs_entrance_ids?: string[] | undefined
+                        is_valid?: boolean | undefined
+                        auto_join?: boolean | undefined
+                        card_id?: string | undefined
+                        credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
+                  is_managed: true
+                }
+              | {
+                  /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  acs_credential_id: string
+                  /** ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs. */
+                  acs_user_id?: string | undefined
+                  acs_credential_pool_id?: string | undefined
+                  /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  acs_system_id: string
+                  /** ID of the parent [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                  display_name: string
+                  /** Access (PIN) code for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  code?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
+                  /** Number of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  card_number?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been encoded onto a card. */
+                  is_issued?: boolean | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was encoded onto a card. */
+                  issued_at?: (string | undefined) | null
+                  /** Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`. */
+                  access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                  external_type?:
+                    | (
+                        | 'pti_card'
+                        | 'brivo_credential'
+                        | 'hid_credential'
+                        | 'visionline_card'
+                        | 'salto_ks_credential'
+                        | 'assa_abloy_vostio_key'
+                        | 'salto_space_key'
+                      )
+                    | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+                  external_type_display_name?: string | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created. */
+                  created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  workspace_id: string
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  starts_at?: string | undefined
+                  /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                  ends_at?: string | undefined
+                  /** Errors associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  errors: Array<{
+                    error_code: string
+                    message: string
+                  }>
+                  /** Warnings associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'unknown_issue_with_acs_credential'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'needs_to_be_reissued'
+                      }
+                  >
+                  /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                  is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                  is_latest_desired_state_synced_with_provider?:
+                    | (boolean | null)
+                    | undefined
+                  /** Date and time at which the state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                  latest_desired_state_synced_with_provider_at?:
+                    | (string | null)
+                    | undefined
+                  /** Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  visionline_metadata?:
+                    | {
+                        card_function_type: 'guest' | 'staff'
+                        joiner_acs_credential_ids?: string[] | undefined
+                        guest_acs_entrance_ids?: string[] | undefined
+                        common_acs_entrance_ids?: string[] | undefined
+                        is_valid?: boolean | undefined
+                        auto_join?: boolean | undefined
+                        card_id?: string | undefined
+                        credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
+                  is_managed: false
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Type of action that the action attempt tracks. */
+            action_type: 'ENCODE_CREDENTIAL'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  type: 'no_credential_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SET_FAN_MODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SET_FAN_MODE'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SET_FAN_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SET_HVAC_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result: {
+              access_code?: any
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result: {
+              access_code?: any
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result: {
+              noise_threshold?: any
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result: {
+              noise_threshold?: any
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+    }
   }
   '/thermostats/delete_climate_preset': {
     route: '/thermostats/delete_climate_preset'
@@ -48407,6 +52871,37 @@ export interface Routes {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -49674,6 +54169,37 @@ export interface Routes {
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
             error: {
               type: string
               message: string
@@ -53002,6 +57528,37 @@ export interface Routes {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -54464,6 +59021,37 @@ export interface Routes {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -55754,6 +60342,37 @@ export interface Routes {
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
             error: {
               type: string
               message: string
@@ -60441,6 +65060,37 @@ export interface Routes {
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
             error: {
               type: string
               message: string
