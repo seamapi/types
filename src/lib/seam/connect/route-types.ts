@@ -1732,14 +1732,6 @@ export interface Routes {
               /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'schlage_detected_duplicate_code_name'
-            }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
@@ -2267,14 +2259,6 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
-            }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'schlage_detected_duplicate_code_name'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -4120,14 +4104,6 @@ export interface Routes {
               /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'schlage_detected_duplicate_code_name'
-            }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
@@ -4635,14 +4611,6 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
-            }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'schlage_detected_duplicate_code_name'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -5172,14 +5140,6 @@ export interface Routes {
               /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'schlage_detected_duplicate_code_name'
-            }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
@@ -5673,14 +5633,6 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
-            }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'schlage_detected_duplicate_code_name'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -6210,14 +6162,6 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
-            }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'schlage_detected_duplicate_code_name'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -8047,14 +7991,6 @@ export interface Routes {
               /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'schlage_detected_duplicate_code_name'
-            }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
@@ -8538,14 +8474,6 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
-            }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'schlage_detected_duplicate_code_name'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -45688,6 +45616,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -45827,6 +45756,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -46095,6 +46025,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -46232,6 +46163,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -46985,6 +46917,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -47124,6 +47057,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -47392,6 +47326,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -47529,6 +47464,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -49680,6 +49616,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -49819,6 +49756,7 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_key'
                               | 'salto_space_key'
+                              | 'latch_access'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -50087,6 +50025,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
@@ -50224,6 +50163,7 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_key'
                         | 'salto_space_key'
+                        | 'latch_access'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
