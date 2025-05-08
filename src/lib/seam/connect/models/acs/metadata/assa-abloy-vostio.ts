@@ -13,6 +13,7 @@ export type AcsEntranceAssaAbloyVostioMetadata = z.infer<
 >
 
 export const acs_credential_vostio_metadata = z.object({
+  auto_join: z.boolean().optional(),
   override_guest_acs_entrance_ids: z.string().array().optional(),
   key_id: z.string().optional(),
   key_issuing_request_id: z.string().optional(),
