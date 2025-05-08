@@ -295,6 +295,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -435,6 +436,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -704,6 +706,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -842,6 +845,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -2634,6 +2638,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -2774,6 +2779,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -3043,6 +3049,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -3181,6 +3188,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -6543,6 +6551,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -6683,6 +6692,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -6952,6 +6962,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -7090,6 +7101,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -8886,6 +8898,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -9026,6 +9039,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -9295,6 +9309,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -9433,6 +9448,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -10718,6 +10734,7 @@ export interface Routes {
         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
         assa_abloy_vostio_metadata?:
           | {
+              auto_join?: boolean | undefined
               override_guest_acs_entrance_ids?: string[] | undefined
               key_id?: string | undefined
               key_issuing_request_id?: string | undefined
@@ -10768,6 +10785,7 @@ export interface Routes {
       /** Vostio-specific metadata for the new credential. */
       assa_abloy_vostio_metadata?:
         | {
+            auto_join?: boolean | undefined
             override_all_guest_acs_entrances?: boolean | undefined
             join_all_guest_acs_entrances?: boolean | undefined
             override_guest_acs_entrance_ids?: string[] | undefined
@@ -10921,6 +10939,7 @@ export interface Routes {
         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
         assa_abloy_vostio_metadata?:
           | {
+              auto_join?: boolean | undefined
               override_guest_acs_entrance_ids?: string[] | undefined
               key_id?: string | undefined
               key_issuing_request_id?: string | undefined
@@ -11085,6 +11104,7 @@ export interface Routes {
         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
         assa_abloy_vostio_metadata?:
           | {
+              auto_join?: boolean | undefined
               override_guest_acs_entrance_ids?: string[] | undefined
               key_id?: string | undefined
               key_issuing_request_id?: string | undefined
@@ -11253,6 +11273,7 @@ export interface Routes {
         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
         assa_abloy_vostio_metadata?:
           | {
+              auto_join?: boolean | undefined
               override_guest_acs_entrance_ids?: string[] | undefined
               key_id?: string | undefined
               key_issuing_request_id?: string | undefined
@@ -11427,6 +11448,7 @@ export interface Routes {
         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
         assa_abloy_vostio_metadata?:
           | {
+              auto_join?: boolean | undefined
               override_guest_acs_entrance_ids?: string[] | undefined
               key_id?: string | undefined
               key_issuing_request_id?: string | undefined
@@ -11683,6 +11705,7 @@ export interface Routes {
         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
         assa_abloy_vostio_metadata?:
           | {
+              auto_join?: boolean | undefined
               override_guest_acs_entrance_ids?: string[] | undefined
               key_id?: string | undefined
               key_issuing_request_id?: string | undefined
@@ -11835,6 +11858,7 @@ export interface Routes {
         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
         assa_abloy_vostio_metadata?:
           | {
+              auto_join?: boolean | undefined
               override_guest_acs_entrance_ids?: string[] | undefined
               key_id?: string | undefined
               key_issuing_request_id?: string | undefined
@@ -12001,6 +12025,7 @@ export interface Routes {
         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
         assa_abloy_vostio_metadata?:
           | {
+              auto_join?: boolean | undefined
               override_guest_acs_entrance_ids?: string[] | undefined
               key_id?: string | undefined
               key_issuing_request_id?: string | undefined
@@ -12161,6 +12186,7 @@ export interface Routes {
         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
         assa_abloy_vostio_metadata?:
           | {
+              auto_join?: boolean | undefined
               override_guest_acs_entrance_ids?: string[] | undefined
               key_id?: string | undefined
               key_issuing_request_id?: string | undefined
@@ -12440,6 +12466,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -12580,6 +12607,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -12849,6 +12877,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -12987,6 +13016,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -13743,6 +13773,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -13883,6 +13914,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -14152,6 +14184,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -14290,6 +14323,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -15141,6 +15175,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -15281,6 +15316,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -15550,6 +15586,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -15688,6 +15725,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -16616,6 +16654,7 @@ export interface Routes {
         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
         assa_abloy_vostio_metadata?:
           | {
+              auto_join?: boolean | undefined
               override_guest_acs_entrance_ids?: string[] | undefined
               key_id?: string | undefined
               key_issuing_request_id?: string | undefined
@@ -18820,6 +18859,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -18960,6 +19000,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -19229,6 +19270,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -19367,6 +19409,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -20119,6 +20162,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -20259,6 +20303,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -20528,6 +20573,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -20666,6 +20712,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -32654,6 +32701,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -32794,6 +32842,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -33063,6 +33112,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -33201,6 +33251,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -33955,6 +34006,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -34095,6 +34147,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -34364,6 +34417,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -34502,6 +34556,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -35255,6 +35310,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -35395,6 +35451,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -35664,6 +35721,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -35802,6 +35860,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -36556,6 +36615,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -36696,6 +36756,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -36965,6 +37026,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -37103,6 +37165,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -39924,6 +39987,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -40064,6 +40128,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -40333,6 +40398,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -40471,6 +40537,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -41236,6 +41303,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -41376,6 +41444,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -41645,6 +41714,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -41783,6 +41853,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -42587,6 +42658,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -42727,6 +42799,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -42996,6 +43069,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -43134,6 +43208,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -44396,6 +44471,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -44536,6 +44612,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -44805,6 +44882,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -44943,6 +45021,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -48319,6 +48398,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -48459,6 +48539,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -48728,6 +48809,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -48866,6 +48948,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -52026,6 +52109,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -52166,6 +52250,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -52435,6 +52520,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -52573,6 +52659,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -53337,6 +53424,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -53477,6 +53565,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -53746,6 +53835,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -53884,6 +53974,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -56683,6 +56774,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -56823,6 +56915,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -57092,6 +57185,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -57230,6 +57324,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -58176,6 +58271,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -58316,6 +58412,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -58585,6 +58682,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -58723,6 +58821,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -59510,6 +59609,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -59650,6 +59750,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -59919,6 +60020,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -60057,6 +60159,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -64228,6 +64331,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -64368,6 +64472,7 @@ export interface Routes {
                         /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                         assa_abloy_vostio_metadata?:
                           | {
+                              auto_join?: boolean | undefined
                               override_guest_acs_entrance_ids?:
                                 | string[]
                                 | undefined
@@ -64637,6 +64742,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
@@ -64775,6 +64881,7 @@ export interface Routes {
                   /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
                   assa_abloy_vostio_metadata?:
                     | {
+                        auto_join?: boolean | undefined
                         override_guest_acs_entrance_ids?: string[] | undefined
                         key_id?: string | undefined
                         key_issuing_request_id?: string | undefined
