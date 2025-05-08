@@ -1237,6 +1237,30 @@ export default {
                   type: 'object',
                 },
                 {
+                  description: 'Duplicate access code name detected.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['schlage_detected_duplicate_code_name'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
                   description:
                     'Received an error when attempting to create this code.',
                   properties: {
@@ -6327,6 +6351,104 @@ export default {
               },
               action_type: {
                 enum: ['SIMULATE_MANUAL_LOCK_VIA_KEYPAD'],
+                type: 'string',
+              },
+              error: {
+                properties: {
+                  message: { type: 'string' },
+                  type: { type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Pushing thermostat weekly programs.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                enum: ['PUSH_THERMOSTAT_PROGRAMS'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Pushing thermostat weekly programs succeeded.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                enum: ['PUSH_THERMOSTAT_PROGRAMS'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
+              result: { properties: {}, type: 'object' },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Pushing thermostat weekly programs failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                enum: ['PUSH_THERMOSTAT_PROGRAMS'],
                 type: 'string',
               },
               error: {
@@ -16193,6 +16315,30 @@ export default {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['schlage_detected_duplicate'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Duplicate access code name detected.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['schlage_detected_duplicate_code_name'],
                       type: 'string',
                     },
                   },
@@ -29864,86 +30010,12 @@ export default {
               'application/json': {
                 schema: {
                   properties: {
-                    ok: { type: 'boolean' },
-                    thermostat_weekly_program: {
-                      properties: {
-                        created_at: {
-                          description:
-                            'Date and time at which the thermostat weekly program was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        device_id: {
-                          description:
-                            'ID of the thermostat device the weekly program is for.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        friday_program_id: {
-                          description:
-                            'ID of the thermostat daily program to run on Fridays.',
-                          format: 'uuid',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        monday_program_id: {
-                          description:
-                            'ID of the thermostat daily program to run on Mondays.',
-                          format: 'uuid',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        saturday_program_id: {
-                          description:
-                            'ID of the thermostat daily program to run on Saturdays.',
-                          format: 'uuid',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        sunday_program_id: {
-                          description:
-                            'ID of the thermostat daily program to run on Sundays.',
-                          format: 'uuid',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        thursday_program_id: {
-                          description:
-                            'ID of the thermostat daily program to run on Thursdays.',
-                          format: 'uuid',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        tuesday_program_id: {
-                          description:
-                            'ID of the thermostat daily program to run on Tuesdays.',
-                          format: 'uuid',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        wednesday_program_id: {
-                          description:
-                            'ID of the thermostat daily program to run on Wednesdays.',
-                          format: 'uuid',
-                          nullable: true,
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'device_id',
-                        'monday_program_id',
-                        'tuesday_program_id',
-                        'wednesday_program_id',
-                        'thursday_program_id',
-                        'friday_program_id',
-                        'saturday_program_id',
-                        'sunday_program_id',
-                        'created_at',
-                      ],
-                      type: 'object',
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
                     },
+                    ok: { type: 'boolean' },
                   },
-                  required: ['thermostat_weekly_program', 'ok'],
+                  required: ['action_attempt', 'ok'],
                   type: 'object',
                 },
               },
@@ -29961,10 +30033,11 @@ export default {
         ],
         summary: '/thermostats/activate_weekly_program',
         tags: ['/thermostats'],
+        'x-action-attempt-type': 'PUSH_THERMOSTAT_PROGRAMS',
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'activate_weekly_program',
-        'x-fern-sdk-return-value': 'thermostat_weekly_program',
-        'x-response-key': 'thermostat_weekly_program',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
         'x-title': 'Activate a Thermostat Weekly Program',
         'x-undocumented': 'Unreleased.',
       },
@@ -29996,8 +30069,13 @@ export default {
             content: {
               'application/json': {
                 schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
                   type: 'object',
                 },
               },
@@ -30015,9 +30093,11 @@ export default {
         ],
         summary: '/thermostats/clear_weekly_program',
         tags: ['/thermostats'],
+        'x-action-attempt-type': 'PUSH_THERMOSTAT_PROGRAMS',
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'clear_weekly_program',
-        'x-response-key': null,
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
         'x-title': 'Clear a Thermostat Weekly Program',
         'x-undocumented': 'Unreleased.',
       },
@@ -30447,8 +30527,13 @@ export default {
             content: {
               'application/json': {
                 schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
                   type: 'object',
                 },
               },
@@ -30466,8 +30551,9 @@ export default {
         ],
         summary: '/thermostats/daily_programs/update',
         tags: ['/thermostats'],
+        'x-action-attempt-type': 'PUSH_THERMOSTAT_PROGRAMS',
         'x-fern-ignore': true,
-        'x-response-key': null,
+        'x-response-key': 'action_attempt',
         'x-title': 'Update a Thermostat Daily Program',
         'x-undocumented': 'Unreleased.',
       },
@@ -30522,8 +30608,13 @@ export default {
             content: {
               'application/json': {
                 schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
                   type: 'object',
                 },
               },
@@ -30541,9 +30632,11 @@ export default {
         ],
         summary: '/thermostats/daily_programs/update',
         tags: ['/thermostats'],
+        'x-action-attempt-type': 'PUSH_THERMOSTAT_PROGRAMS',
         'x-fern-sdk-group-name': ['thermostats', 'daily_programs'],
         'x-fern-sdk-method-name': 'update',
-        'x-response-key': null,
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
         'x-title': 'Update a Thermostat Daily Program',
         'x-undocumented': 'Unreleased.',
       },

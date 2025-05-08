@@ -372,6 +372,14 @@ const schlage_detected_duplicate = common_access_code_warning
   })
   .describe('Duplicate access code detected.')
 
+const schlage_detected_duplicate_code_name = common_access_code_warning
+  .extend({
+    warning_code: z
+      .literal('schlage_detected_duplicate_code_name')
+      .describe(warning_code_description),
+  })
+  .describe('Duplicate access code name detected.')
+
 const schlage_creation_outage = common_access_code_warning
   .extend({
     warning_code: z
@@ -434,6 +442,7 @@ const access_code_warning = z
   .discriminatedUnion('warning_code', [
     smartthings_failed_to_set_access_code_warning,
     schlage_detected_duplicate,
+    schlage_detected_duplicate_code_name,
     schlage_creation_outage,
     code_modified_external_to_seam_warning,
     delay_in_setting_on_device,
@@ -455,6 +464,9 @@ const access_code_warning_map = z.object({
   smartthings_failed_to_set_access_code:
     smartthings_failed_to_set_access_code_warning.optional().nullable(),
   schlage_detected_duplicate: schlage_detected_duplicate.optional().nullable(),
+  schlage_duplicate_code_name: schlage_detected_duplicate_code_name
+    .optional()
+    .nullable(),
   schlage_creation_outage: schlage_creation_outage.optional().nullable(),
   code_modified_external_to_seam_warning: code_modified_external_to_seam_warning
     .optional()
