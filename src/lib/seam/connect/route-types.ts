@@ -1732,6 +1732,14 @@ export interface Routes {
               /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate_code_name'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
@@ -2259,6 +2267,14 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate_code_name'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -4104,6 +4120,14 @@ export interface Routes {
               /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate_code_name'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
@@ -4611,6 +4635,14 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate_code_name'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -5140,6 +5172,14 @@ export interface Routes {
               /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate_code_name'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
@@ -5633,6 +5673,14 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate_code_name'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -6162,6 +6210,14 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate_code_name'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -7991,6 +8047,14 @@ export interface Routes {
               /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate_code_name'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
@@ -8474,6 +8538,14 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate_code_name'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */

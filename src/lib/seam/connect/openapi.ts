@@ -1237,6 +1237,30 @@ export default {
                   type: 'object',
                 },
                 {
+                  description: 'Duplicate access code name detected.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['schlage_detected_duplicate_code_name'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
                   description:
                     'Received an error when attempting to create this code.',
                   properties: {
@@ -16291,6 +16315,30 @@ export default {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['schlage_detected_duplicate'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Duplicate access code name detected.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['schlage_detected_duplicate_code_name'],
                       type: 'string',
                     },
                   },
