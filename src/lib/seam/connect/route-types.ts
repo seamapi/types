@@ -11309,6 +11309,7 @@ export interface Routes {
           /** ID of the user identity for which you want to retrieve all credentials. */
           user_identity_id: string
         }
+      | {}
     ) & {
       /** Number of credentials to return. */
       limit?: number

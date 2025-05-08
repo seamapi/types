@@ -21829,6 +21829,7 @@ export default {
                         required: ['user_identity_id'],
                         type: 'object',
                       },
+                      { properties: {}, type: 'object' },
                     ],
                   },
                   {
