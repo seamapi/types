@@ -1651,6 +1651,7 @@ export default {
             description:
               'Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
             properties: {
+              auto_join: { type: 'boolean' },
               door_names: { items: { type: 'string' }, type: 'array' },
               endpoint_id: { type: 'string' },
               key_id: { type: 'string' },
@@ -3721,6 +3722,7 @@ export default {
                             description:
                               'Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
                             properties: {
+                              auto_join: { type: 'boolean' },
                               door_names: {
                                 items: { type: 'string' },
                                 type: 'array',
@@ -4117,6 +4119,7 @@ export default {
                             description:
                               'Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
                             properties: {
+                              auto_join: { type: 'boolean' },
                               door_names: {
                                 items: { type: 'string' },
                                 type: 'array',
@@ -4914,6 +4917,7 @@ export default {
                         description:
                           'Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
                         properties: {
+                          auto_join: { type: 'boolean' },
                           door_names: {
                             items: { type: 'string' },
                             type: 'array',
@@ -5308,6 +5312,7 @@ export default {
                         description:
                           'Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
                         properties: {
+                          auto_join: { type: 'boolean' },
                           door_names: {
                             items: { type: 'string' },
                             type: 'array',
@@ -16705,6 +16710,7 @@ export default {
             description:
               'Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
             properties: {
+              auto_join: { type: 'boolean' },
               door_names: { items: { type: 'string' }, type: 'array' },
               endpoint_id: { type: 'string' },
               key_id: { type: 'string' },
@@ -21438,6 +21444,7 @@ export default {
                     description:
                       'Vostio-specific metadata for the new credential.',
                     properties: {
+                      auto_join: { type: 'boolean' },
                       join_all_guest_acs_entrances: { type: 'boolean' },
                       override_all_guest_acs_entrances: { type: 'boolean' },
                       override_guest_acs_entrance_ids: {
@@ -21822,6 +21829,7 @@ export default {
                         required: ['user_identity_id'],
                         type: 'object',
                       },
+                      { properties: {}, type: 'object' },
                     ],
                   },
                   {
