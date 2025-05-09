@@ -68,6 +68,14 @@ const acs_users_failed_to_delete_on_acs_system = common_acs_user_error
     `Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not deleted on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).`,
   )
 
+const acs_users_latch_conflict_with_resident_user = common_acs_user_error
+  .extend({
+    error_code: z.literal('latch_conflict_with_resident_user'),
+  })
+  .describe(
+    `Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).`,
+  )
+
 const acs_user_errors = z
   .discriminatedUnion('error_code', [
     acs_users_deleted_externally,
@@ -75,6 +83,7 @@ const acs_user_errors = z
     acs_users_failed_to_create_on_acs_system,
     acs_users_failed_to_update_on_acs_system,
     acs_users_failed_to_delete_on_acs_system,
+    acs_users_latch_conflict_with_resident_user,
   ])
   .describe(
     'Errors associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
@@ -91,6 +100,9 @@ export const acs_users_error_map = z.object({
     .optional()
     .nullable(),
   failed_to_delete_on_acs_system: acs_users_failed_to_delete_on_acs_system
+    .optional()
+    .nullable(),
+  latch_conflict_with_resident_user: acs_users_latch_conflict_with_resident_user
     .optional()
     .nullable(),
 })

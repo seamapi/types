@@ -2895,6 +2895,29 @@ export default {
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      enum: ['latch_conflict_with_resident_user'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -17211,6 +17234,29 @@ export default {
                     },
                     error_code: {
                       enum: ['failed_to_delete_on_acs_system'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      enum: ['latch_conflict_with_resident_user'],
                       type: 'string',
                     },
                     message: {
