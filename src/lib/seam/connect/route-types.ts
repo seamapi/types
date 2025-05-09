@@ -10314,6 +10314,13 @@ export interface Routes {
               message: string
               error_code: 'failed_to_delete_on_acs_system'
             }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'latch_conflict_with_resident_user'
+            }
         >
         /** Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system. */
         pending_mutations?:
@@ -17405,6 +17412,13 @@ export interface Routes {
               message: string
               error_code: 'failed_to_delete_on_acs_system'
             }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'latch_conflict_with_resident_user'
+            }
         >
         /** Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system. */
         pending_mutations?:
@@ -17641,6 +17655,13 @@ export interface Routes {
               message: string
               error_code: 'failed_to_delete_on_acs_system'
             }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'latch_conflict_with_resident_user'
+            }
         >
         /** Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system. */
         pending_mutations?:
@@ -17872,6 +17893,13 @@ export interface Routes {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               error_code: 'failed_to_delete_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'latch_conflict_with_resident_user'
             }
         >
         /** Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system. */
@@ -18237,6 +18265,13 @@ export interface Routes {
               message: string
               error_code: 'failed_to_delete_on_acs_system'
             }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'latch_conflict_with_resident_user'
+            }
         >
         /** Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system. */
         pending_mutations?:
@@ -18458,6 +18493,13 @@ export interface Routes {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               error_code: 'failed_to_delete_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'latch_conflict_with_resident_user'
             }
         >
         /** Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system. */
@@ -63896,6 +63938,13 @@ export interface Routes {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               error_code: 'failed_to_delete_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'latch_conflict_with_resident_user'
             }
         >
         /** Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system. */
