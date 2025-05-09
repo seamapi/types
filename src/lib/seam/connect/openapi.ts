@@ -29837,6 +29837,54 @@ export default {
         'x-undocumented': 'Seam Instant Key only.',
       },
     },
+    '/seam/mobile_sdk/v1/acs/credentials/list': {
+      post: {
+        description: 'Returns a list of all ACS credentials.',
+        operationId: 'seamMobileSdkV1AcsCredentialsListPost',
+        requestBody: {
+          content: {
+            'application/json': { schema: { properties: {}, type: 'object' } },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_credentials: {
+                      items: { $ref: '#/components/schemas/acs_credential' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_credentials', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session: [] }],
+        summary: '/seam/mobile_sdk/v1/acs/credentials/list',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'mobile_sdk',
+          'v1',
+          'acs',
+          'credentials',
+        ],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'acs_credentials',
+        'x-response-key': 'acs_credentials',
+        'x-title': 'List Credentials',
+        'x-undocumented': 'Mobile SDK only.',
+      },
+    },
     '/thermostats/activate_climate_preset': {
       post: {
         description:
