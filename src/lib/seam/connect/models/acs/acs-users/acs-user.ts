@@ -337,6 +337,12 @@ const common_acs_user = z
       .describe(
         'Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system.',
       ),
+    last_successful_sync_at: z.string().datetime().nullable().describe(`
+        ---
+        undocumented: Only used internally.
+        ---
+        The last time an internal sync job completed for this ACS user.
+      `),
   })
   .merge(user_fields)
 

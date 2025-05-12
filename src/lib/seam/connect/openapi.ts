@@ -2954,6 +2954,14 @@ export default {
               'Indicates whether the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users).',
             type: 'boolean',
           },
+          last_successful_sync_at: {
+            description:
+              'The last time an internal sync job completed for this ACS user.',
+            format: 'date-time',
+            nullable: true,
+            type: 'string',
+            'x-undocumented': 'Only used internally.',
+          },
           pending_mutations: {
             description:
               'Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system.',
@@ -3348,6 +3356,7 @@ export default {
           'display_name',
           'warnings',
           'errors',
+          'last_successful_sync_at',
           'is_managed',
         ],
         type: 'object',
@@ -17304,6 +17313,14 @@ export default {
               'Indicates whether the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users).',
             type: 'boolean',
           },
+          last_successful_sync_at: {
+            description:
+              'The last time an internal sync job completed for this ACS user.',
+            format: 'date-time',
+            nullable: true,
+            type: 'string',
+            'x-undocumented': 'Only used internally.',
+          },
           pending_mutations: {
             description:
               'Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system.',
@@ -17698,6 +17715,7 @@ export default {
           'display_name',
           'warnings',
           'errors',
+          'last_successful_sync_at',
           'is_managed',
         ],
         type: 'object',
