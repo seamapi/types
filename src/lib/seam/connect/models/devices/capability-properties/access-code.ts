@@ -5,7 +5,7 @@ export const access_code_code_constraint = z.object({
     'no_zeros', // Nuki
     'cannot_start_with_12', // Nuki
     'no_triple_consecutive_ints', // Brivo
-    'cannot_specify_pin_code', // Lockly
+    'cannot_specify_pin_code', // Dormakaba?
     'pin_code_matches_existing_set', // Salto
     'start_date_in_future', // Kwikset
     'no_ascending_or_descending_sequence', // Tedee
