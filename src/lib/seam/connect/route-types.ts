@@ -10403,6 +10403,8 @@ export interface Routes {
                 }
             >
           | undefined
+        /** The last time an internal sync job completed for this ACS user. */
+        last_successful_sync_at: string | null
         /** Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         full_name?: string | undefined
         /**
@@ -17501,6 +17503,8 @@ export interface Routes {
                 }
             >
           | undefined
+        /** The last time an internal sync job completed for this ACS user. */
+        last_successful_sync_at: string | null
         /** Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         full_name?: string | undefined
         /**
@@ -17744,6 +17748,8 @@ export interface Routes {
                 }
             >
           | undefined
+        /** The last time an internal sync job completed for this ACS user. */
+        last_successful_sync_at: string | null
         /** Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         full_name?: string | undefined
         /**
@@ -17983,6 +17989,8 @@ export interface Routes {
                 }
             >
           | undefined
+        /** The last time an internal sync job completed for this ACS user. */
+        last_successful_sync_at: string | null
         /** Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         full_name?: string | undefined
         /**
@@ -18354,6 +18362,8 @@ export interface Routes {
                 }
             >
           | undefined
+        /** The last time an internal sync job completed for this ACS user. */
+        last_successful_sync_at: string | null
         /** Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         full_name?: string | undefined
         /**
@@ -18583,6 +18593,8 @@ export interface Routes {
                 }
             >
           | undefined
+        /** The last time an internal sync job completed for this ACS user. */
+        last_successful_sync_at: string | null
         /** Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         full_name?: string | undefined
         /**
@@ -64028,6 +64040,8 @@ export interface Routes {
                 }
             >
           | undefined
+        /** The last time an internal sync job completed for this ACS user. */
+        last_successful_sync_at: string | null
         /** Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         full_name?: string | undefined
         /**
