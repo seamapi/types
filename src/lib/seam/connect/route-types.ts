@@ -1438,6 +1438,16 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'no_space_for_access_code_on_device'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_too_many_pending_jobs'
             }
           | {
@@ -1973,6 +1983,16 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_attempt_prevented'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'no_space_for_access_code_on_device'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -3834,6 +3854,16 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'no_space_for_access_code_on_device'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_too_many_pending_jobs'
             }
           | {
@@ -4349,6 +4379,16 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_attempt_prevented'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'no_space_for_access_code_on_device'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -4890,6 +4930,16 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'no_space_for_access_code_on_device'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_too_many_pending_jobs'
             }
           | {
@@ -5391,6 +5441,16 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_attempt_prevented'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'no_space_for_access_code_on_device'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -5930,6 +5990,16 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_attempt_prevented'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'no_space_for_access_code_on_device'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -7775,6 +7845,16 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'no_space_for_access_code_on_device'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_too_many_pending_jobs'
             }
           | {
@@ -8266,6 +8346,16 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_attempt_prevented'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'no_space_for_access_code_on_device'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */

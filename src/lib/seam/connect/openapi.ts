@@ -260,6 +260,36 @@ export default {
                   type: 'object',
                 },
                 {
+                  description: 'No space for access code on device.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['no_space_for_access_code_on_device'],
+                      type: 'string',
+                    },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                },
+                {
                   description:
                     'Igloohome bridge has too many pending jobs in the queue.',
                   properties: {
@@ -15413,6 +15443,36 @@ export default {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['duplicate_code_attempt_prevented'],
+                      type: 'string',
+                    },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'No space for access code on device.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['no_space_for_access_code_on_device'],
                       type: 'string',
                     },
                     is_access_code_error: {
