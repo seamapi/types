@@ -1478,16 +1478,6 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'schlage_lock_exceeds_maximum_number_of_access_codes'
-            }
-          | {
-              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Indicates that this is an access code error. */
-              is_access_code_error: true
-              /** Date and time at which Seam created the error. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_code'
             }
           | {
@@ -2023,16 +2013,6 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_offline_access_code_no_variance_available'
-            }
-          | {
-              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Indicates that this is an access code error. */
-              is_access_code_error: true
-              /** Date and time at which Seam created the error. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'schlage_lock_exceeds_maximum_number_of_access_codes'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -3894,16 +3874,6 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'schlage_lock_exceeds_maximum_number_of_access_codes'
-            }
-          | {
-              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Indicates that this is an access code error. */
-              is_access_code_error: true
-              /** Date and time at which Seam created the error. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_code'
             }
           | {
@@ -4419,16 +4389,6 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_offline_access_code_no_variance_available'
-            }
-          | {
-              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Indicates that this is an access code error. */
-              is_access_code_error: true
-              /** Date and time at which Seam created the error. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'schlage_lock_exceeds_maximum_number_of_access_codes'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -4970,16 +4930,6 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'schlage_lock_exceeds_maximum_number_of_access_codes'
-            }
-          | {
-              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Indicates that this is an access code error. */
-              is_access_code_error: true
-              /** Date and time at which Seam created the error. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_code'
             }
           | {
@@ -5481,16 +5431,6 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_offline_access_code_no_variance_available'
-            }
-          | {
-              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Indicates that this is an access code error. */
-              is_access_code_error: true
-              /** Date and time at which Seam created the error. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'schlage_lock_exceeds_maximum_number_of_access_codes'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -6030,16 +5970,6 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_offline_access_code_no_variance_available'
-            }
-          | {
-              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Indicates that this is an access code error. */
-              is_access_code_error: true
-              /** Date and time at which Seam created the error. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'schlage_lock_exceeds_maximum_number_of_access_codes'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -7885,16 +7815,6 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'schlage_lock_exceeds_maximum_number_of_access_codes'
-            }
-          | {
-              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Indicates that this is an access code error. */
-              is_access_code_error: true
-              /** Date and time at which Seam created the error. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_code'
             }
           | {
@@ -8386,16 +8306,6 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_offline_access_code_no_variance_available'
-            }
-          | {
-              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Indicates that this is an access code error. */
-              is_access_code_error: true
-              /** Date and time at which Seam created the error. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'schlage_lock_exceeds_maximum_number_of_access_codes'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */

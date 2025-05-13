@@ -383,38 +383,6 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Lock has reached maximum amount of codes.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: [
-                        'schlage_lock_exceeds_maximum_number_of_access_codes',
-                      ],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                },
-                {
                   description:
                     'Unable to confirm that the access code is set on Kwikset device.',
                   properties: {
@@ -15565,38 +15533,6 @@ export default {
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: [
                         'igloohome_offline_access_code_no_variance_available',
-                      ],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'Lock has reached maximum amount of codes.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: [
-                        'schlage_lock_exceeds_maximum_number_of_access_codes',
                       ],
                       type: 'string',
                     },
