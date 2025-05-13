@@ -131,15 +131,6 @@ const igloohome_offline_access_code_no_variance_available =
     })
     .describe('Lock has reached maximum amount of codes.')
 
-const schlage_lock_exceeds_maximum_number_of_access_codes =
-  common_access_code_error
-    .extend({
-      error_code: z
-        .literal('schlage_lock_exceeds_maximum_number_of_access_codes')
-        .describe(error_code_description),
-    })
-    .describe('Lock has reached maximum amount of codes.')
-
 const august_lock_invalid_code_length = common_access_code_error
   .extend({
     error_code: z
@@ -249,7 +240,6 @@ const access_code_error = z
     igloohome_bridge_too_many_pending_jobs,
     igloohome_bridge_offline,
     igloohome_offline_access_code_no_variance_available,
-    schlage_lock_exceeds_maximum_number_of_access_codes,
     kwikset_unable_to_confirm_code,
     kwikset_unable_to_confirm_deletion,
     code_modified_external_to_seam_error,
@@ -332,8 +322,6 @@ const access_code_error_map = z.object({
   dormakaba_oracode_no_valid_user_level: dormakaba_oracode_no_valid_user_level
     .optional()
     .nullable(),
-  schlage_lock_exceeds_maximum_number_of_access_codes:
-    schlage_lock_exceeds_maximum_number_of_access_codes.optional().nullable(),
 })
 
 export type AccessCodeErrorMap = z.infer<typeof access_code_error_map>
