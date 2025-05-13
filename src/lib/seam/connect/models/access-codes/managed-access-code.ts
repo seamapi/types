@@ -80,6 +80,14 @@ const duplicate_code_attempt_prevented = common_access_code_error
   })
   .describe('An attempt to modify this access code was prevented.')
 
+const no_space_for_access_code_on_device = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('no_space_for_access_code_on_device')
+      .describe(error_code_description),
+  })
+  .describe('No space for access code on device.')
+
 const igloohome_bridge_too_many_pending_jobs = common_access_code_error
   .extend({
     error_code: z
@@ -228,6 +236,7 @@ const access_code_error = z
     failed_to_remove_from_device,
     duplicate_code_on_device,
     duplicate_code_attempt_prevented,
+    no_space_for_access_code_on_device,
     igloohome_bridge_too_many_pending_jobs,
     igloohome_bridge_offline,
     igloohome_offline_access_code_no_variance_available,
@@ -262,6 +271,9 @@ const access_code_error_map = z.object({
     .nullable(),
   failed_to_set_on_device: failed_to_set_on_device.optional().nullable(),
   failed_to_remove_from_device: failed_to_remove_from_device
+    .optional()
+    .nullable(),
+  no_space_for_access_code_on_device: no_space_for_access_code_on_device
     .optional()
     .nullable(),
   duplicate_code_on_device: duplicate_code_on_device.optional().nullable(),
