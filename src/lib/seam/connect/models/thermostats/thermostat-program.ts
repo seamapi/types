@@ -22,11 +22,17 @@ export const thermostat_daily_program = z.object({
   device_id: z.string().uuid().describe('ID of the desired thermostat device.'),
   name: z
     .string()
-    .optional()
+    .nullable()
     .describe('User-friendly name to identify the thermostat daily program.'),
   periods: z
     .array(thermostat_daily_program_period)
     .describe('Array of thermostat daily program periods.'),
+  workspace_id: z
+    .string()
+    .uuid()
+    .describe(
+      'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program.',
+    ),
   created_at: z
     .string()
     .datetime()
@@ -36,10 +42,6 @@ export const thermostat_daily_program = z.object({
 })
 
 export const thermostat_weekly_program = z.object({
-  device_id: z
-    .string()
-    .uuid()
-    .describe('ID of the thermostat device the weekly program is for.'),
   monday_program_id: z
     .string()
     .uuid()
