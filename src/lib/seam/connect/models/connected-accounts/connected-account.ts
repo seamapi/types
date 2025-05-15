@@ -76,6 +76,10 @@ export const connected_account_error = z.discriminatedUnion('error_code', [
   salto_ks_subscription_limit_exceeded,
 ])
 
+export type ConnectedAccountError = z.infer<typeof connected_account_error>
+
+export type ConnectedAccountWarning = z.infer<typeof connected_account_warning>
+
 const connected_account_error_map = z.object({
   account_disconnected: account_disconnected.nullable().optional(),
   invalid_credentials: invalid_credentials.nullable().optional(),
