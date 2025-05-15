@@ -22762,7 +22762,7 @@ export interface Routes {
                   /** ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device. */
                   device_id: string
                   /** User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
-                  name?: string | undefined
+                  name: string | null
                   /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
                   climate_preset_key: string
                   /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
@@ -22773,6 +22773,8 @@ export interface Routes {
                   is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule. */
+                  workspace_id: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
                   created_at: string
                   /** Errors associated with the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -22785,45 +22787,51 @@ export interface Routes {
                 } | null)
               | undefined
             thermostat_daily_programs?:
-              | (Array<{
-                  /** ID of the thermostat daily program. */
-                  thermostat_daily_program_id: string
-                  /** ID of the desired thermostat device. */
-                  device_id: string
-                  /** User-friendly name to identify the thermostat daily program. */
-                  name?: string | undefined
-                  /** Array of thermostat daily program periods. */
-                  periods: Array<{
-                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at_time: string
-                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
-                    climate_preset_key: string
-                  }>
-                  /** Date and time at which the thermostat daily program was created. */
-                  created_at: string
-                }> | null)
+              | (
+                  | Array<{
+                      /** ID of the thermostat daily program. */
+                      thermostat_daily_program_id: string
+                      /** ID of the desired thermostat device. */
+                      device_id: string
+                      /** User-friendly name to identify the thermostat daily program. */
+                      name: string | null
+                      /** Array of thermostat daily program periods. */
+                      periods: Array<{
+                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at_time: string
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        climate_preset_key: string
+                      }>
+                      /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
+                      workspace_id: string
+                      /** Date and time at which the thermostat daily program was created. */
+                      created_at: string
+                    }>
+                  | undefined
+                )
               | undefined
             thermostat_weekly_program?:
-              | ({
-                  /** ID of the thermostat device the weekly program is for. */
-                  device_id: string
-                  /** ID of the thermostat daily program to run on Mondays. */
-                  monday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Tuesdays. */
-                  tuesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Wednesdays. */
-                  wednesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Thursdays. */
-                  thursday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Fridays. */
-                  friday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Saturdays. */
-                  saturday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Sundays. */
-                  sunday_program_id: string | null
-                  /** Date and time at which the thermostat weekly program was created. */
-                  created_at: string
-                } | null)
+              | (
+                  | ({
+                      /** ID of the thermostat daily program to run on Mondays. */
+                      monday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Tuesdays. */
+                      tuesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Wednesdays. */
+                      wednesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Thursdays. */
+                      thursday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Fridays. */
+                      friday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Saturdays. */
+                      saturday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Sundays. */
+                      sunday_program_id: string | null
+                      /** Date and time at which the thermostat weekly program was created. */
+                      created_at: string
+                    } | null)
+                  | undefined
+                )
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -23931,7 +23939,7 @@ export interface Routes {
                   /** ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device. */
                   device_id: string
                   /** User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
-                  name?: string | undefined
+                  name: string | null
                   /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
                   climate_preset_key: string
                   /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
@@ -23942,6 +23950,8 @@ export interface Routes {
                   is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule. */
+                  workspace_id: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
                   created_at: string
                   /** Errors associated with the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -23954,45 +23964,51 @@ export interface Routes {
                 } | null)
               | undefined
             thermostat_daily_programs?:
-              | (Array<{
-                  /** ID of the thermostat daily program. */
-                  thermostat_daily_program_id: string
-                  /** ID of the desired thermostat device. */
-                  device_id: string
-                  /** User-friendly name to identify the thermostat daily program. */
-                  name?: string | undefined
-                  /** Array of thermostat daily program periods. */
-                  periods: Array<{
-                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at_time: string
-                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
-                    climate_preset_key: string
-                  }>
-                  /** Date and time at which the thermostat daily program was created. */
-                  created_at: string
-                }> | null)
+              | (
+                  | Array<{
+                      /** ID of the thermostat daily program. */
+                      thermostat_daily_program_id: string
+                      /** ID of the desired thermostat device. */
+                      device_id: string
+                      /** User-friendly name to identify the thermostat daily program. */
+                      name: string | null
+                      /** Array of thermostat daily program periods. */
+                      periods: Array<{
+                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at_time: string
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        climate_preset_key: string
+                      }>
+                      /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
+                      workspace_id: string
+                      /** Date and time at which the thermostat daily program was created. */
+                      created_at: string
+                    }>
+                  | undefined
+                )
               | undefined
             thermostat_weekly_program?:
-              | ({
-                  /** ID of the thermostat device the weekly program is for. */
-                  device_id: string
-                  /** ID of the thermostat daily program to run on Mondays. */
-                  monday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Tuesdays. */
-                  tuesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Wednesdays. */
-                  wednesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Thursdays. */
-                  thursday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Fridays. */
-                  friday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Saturdays. */
-                  saturday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Sundays. */
-                  sunday_program_id: string | null
-                  /** Date and time at which the thermostat weekly program was created. */
-                  created_at: string
-                } | null)
+              | (
+                  | ({
+                      /** ID of the thermostat daily program to run on Mondays. */
+                      monday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Tuesdays. */
+                      tuesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Wednesdays. */
+                      wednesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Thursdays. */
+                      thursday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Fridays. */
+                      friday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Saturdays. */
+                      saturday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Sundays. */
+                      sunday_program_id: string | null
+                      /** Date and time at which the thermostat weekly program was created. */
+                      created_at: string
+                    } | null)
+                  | undefined
+                )
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -29152,7 +29168,7 @@ export interface Routes {
                   /** ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device. */
                   device_id: string
                   /** User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
-                  name?: string | undefined
+                  name: string | null
                   /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
                   climate_preset_key: string
                   /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
@@ -29163,6 +29179,8 @@ export interface Routes {
                   is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule. */
+                  workspace_id: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
                   created_at: string
                   /** Errors associated with the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -29175,45 +29193,51 @@ export interface Routes {
                 } | null)
               | undefined
             thermostat_daily_programs?:
-              | (Array<{
-                  /** ID of the thermostat daily program. */
-                  thermostat_daily_program_id: string
-                  /** ID of the desired thermostat device. */
-                  device_id: string
-                  /** User-friendly name to identify the thermostat daily program. */
-                  name?: string | undefined
-                  /** Array of thermostat daily program periods. */
-                  periods: Array<{
-                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at_time: string
-                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
-                    climate_preset_key: string
-                  }>
-                  /** Date and time at which the thermostat daily program was created. */
-                  created_at: string
-                }> | null)
+              | (
+                  | Array<{
+                      /** ID of the thermostat daily program. */
+                      thermostat_daily_program_id: string
+                      /** ID of the desired thermostat device. */
+                      device_id: string
+                      /** User-friendly name to identify the thermostat daily program. */
+                      name: string | null
+                      /** Array of thermostat daily program periods. */
+                      periods: Array<{
+                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at_time: string
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        climate_preset_key: string
+                      }>
+                      /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
+                      workspace_id: string
+                      /** Date and time at which the thermostat daily program was created. */
+                      created_at: string
+                    }>
+                  | undefined
+                )
               | undefined
             thermostat_weekly_program?:
-              | ({
-                  /** ID of the thermostat device the weekly program is for. */
-                  device_id: string
-                  /** ID of the thermostat daily program to run on Mondays. */
-                  monday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Tuesdays. */
-                  tuesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Wednesdays. */
-                  wednesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Thursdays. */
-                  thursday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Fridays. */
-                  friday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Saturdays. */
-                  saturday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Sundays. */
-                  sunday_program_id: string | null
-                  /** Date and time at which the thermostat weekly program was created. */
-                  created_at: string
-                } | null)
+              | (
+                  | ({
+                      /** ID of the thermostat daily program to run on Mondays. */
+                      monday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Tuesdays. */
+                      tuesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Wednesdays. */
+                      wednesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Thursdays. */
+                      thursday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Fridays. */
+                      friday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Saturdays. */
+                      saturday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Sundays. */
+                      sunday_program_id: string | null
+                      /** Date and time at which the thermostat weekly program was created. */
+                      created_at: string
+                    } | null)
+                  | undefined
+                )
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -30131,7 +30155,7 @@ export interface Routes {
                   /** ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device. */
                   device_id: string
                   /** User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
-                  name?: string | undefined
+                  name: string | null
                   /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
                   climate_preset_key: string
                   /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
@@ -30142,6 +30166,8 @@ export interface Routes {
                   is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule. */
+                  workspace_id: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
                   created_at: string
                   /** Errors associated with the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -30154,45 +30180,51 @@ export interface Routes {
                 } | null)
               | undefined
             thermostat_daily_programs?:
-              | (Array<{
-                  /** ID of the thermostat daily program. */
-                  thermostat_daily_program_id: string
-                  /** ID of the desired thermostat device. */
-                  device_id: string
-                  /** User-friendly name to identify the thermostat daily program. */
-                  name?: string | undefined
-                  /** Array of thermostat daily program periods. */
-                  periods: Array<{
-                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at_time: string
-                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
-                    climate_preset_key: string
-                  }>
-                  /** Date and time at which the thermostat daily program was created. */
-                  created_at: string
-                }> | null)
+              | (
+                  | Array<{
+                      /** ID of the thermostat daily program. */
+                      thermostat_daily_program_id: string
+                      /** ID of the desired thermostat device. */
+                      device_id: string
+                      /** User-friendly name to identify the thermostat daily program. */
+                      name: string | null
+                      /** Array of thermostat daily program periods. */
+                      periods: Array<{
+                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at_time: string
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        climate_preset_key: string
+                      }>
+                      /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
+                      workspace_id: string
+                      /** Date and time at which the thermostat daily program was created. */
+                      created_at: string
+                    }>
+                  | undefined
+                )
               | undefined
             thermostat_weekly_program?:
-              | ({
-                  /** ID of the thermostat device the weekly program is for. */
-                  device_id: string
-                  /** ID of the thermostat daily program to run on Mondays. */
-                  monday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Tuesdays. */
-                  tuesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Wednesdays. */
-                  wednesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Thursdays. */
-                  thursday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Fridays. */
-                  friday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Saturdays. */
-                  saturday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Sundays. */
-                  sunday_program_id: string | null
-                  /** Date and time at which the thermostat weekly program was created. */
-                  created_at: string
-                } | null)
+              | (
+                  | ({
+                      /** ID of the thermostat daily program to run on Mondays. */
+                      monday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Tuesdays. */
+                      tuesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Wednesdays. */
+                      wednesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Thursdays. */
+                      thursday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Fridays. */
+                      friday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Saturdays. */
+                      saturday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Sundays. */
+                      sunday_program_id: string | null
+                      /** Date and time at which the thermostat weekly program was created. */
+                      created_at: string
+                    } | null)
+                  | undefined
+                )
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -31268,7 +31300,7 @@ export interface Routes {
                   /** ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device. */
                   device_id: string
                   /** User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
-                  name?: string | undefined
+                  name: string | null
                   /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
                   climate_preset_key: string
                   /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
@@ -31279,6 +31311,8 @@ export interface Routes {
                   is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule. */
+                  workspace_id: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
                   created_at: string
                   /** Errors associated with the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -31291,45 +31325,51 @@ export interface Routes {
                 } | null)
               | undefined
             thermostat_daily_programs?:
-              | (Array<{
-                  /** ID of the thermostat daily program. */
-                  thermostat_daily_program_id: string
-                  /** ID of the desired thermostat device. */
-                  device_id: string
-                  /** User-friendly name to identify the thermostat daily program. */
-                  name?: string | undefined
-                  /** Array of thermostat daily program periods. */
-                  periods: Array<{
-                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at_time: string
-                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
-                    climate_preset_key: string
-                  }>
-                  /** Date and time at which the thermostat daily program was created. */
-                  created_at: string
-                }> | null)
+              | (
+                  | Array<{
+                      /** ID of the thermostat daily program. */
+                      thermostat_daily_program_id: string
+                      /** ID of the desired thermostat device. */
+                      device_id: string
+                      /** User-friendly name to identify the thermostat daily program. */
+                      name: string | null
+                      /** Array of thermostat daily program periods. */
+                      periods: Array<{
+                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at_time: string
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        climate_preset_key: string
+                      }>
+                      /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
+                      workspace_id: string
+                      /** Date and time at which the thermostat daily program was created. */
+                      created_at: string
+                    }>
+                  | undefined
+                )
               | undefined
             thermostat_weekly_program?:
-              | ({
-                  /** ID of the thermostat device the weekly program is for. */
-                  device_id: string
-                  /** ID of the thermostat daily program to run on Mondays. */
-                  monday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Tuesdays. */
-                  tuesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Wednesdays. */
-                  wednesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Thursdays. */
-                  thursday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Fridays. */
-                  friday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Saturdays. */
-                  saturday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Sundays. */
-                  sunday_program_id: string | null
-                  /** Date and time at which the thermostat weekly program was created. */
-                  created_at: string
-                } | null)
+              | (
+                  | ({
+                      /** ID of the thermostat daily program to run on Mondays. */
+                      monday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Tuesdays. */
+                      tuesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Wednesdays. */
+                      wednesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Thursdays. */
+                      thursday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Fridays. */
+                      friday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Saturdays. */
+                      saturday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Sundays. */
+                      sunday_program_id: string | null
+                      /** Date and time at which the thermostat weekly program was created. */
+                      created_at: string
+                    } | null)
+                  | undefined
+                )
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -32246,7 +32286,7 @@ export interface Routes {
                   /** ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device. */
                   device_id: string
                   /** User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
-                  name?: string | undefined
+                  name: string | null
                   /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
                   climate_preset_key: string
                   /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
@@ -32257,6 +32297,8 @@ export interface Routes {
                   is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule. */
+                  workspace_id: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
                   created_at: string
                   /** Errors associated with the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -32269,45 +32311,51 @@ export interface Routes {
                 } | null)
               | undefined
             thermostat_daily_programs?:
-              | (Array<{
-                  /** ID of the thermostat daily program. */
-                  thermostat_daily_program_id: string
-                  /** ID of the desired thermostat device. */
-                  device_id: string
-                  /** User-friendly name to identify the thermostat daily program. */
-                  name?: string | undefined
-                  /** Array of thermostat daily program periods. */
-                  periods: Array<{
-                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at_time: string
-                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
-                    climate_preset_key: string
-                  }>
-                  /** Date and time at which the thermostat daily program was created. */
-                  created_at: string
-                }> | null)
+              | (
+                  | Array<{
+                      /** ID of the thermostat daily program. */
+                      thermostat_daily_program_id: string
+                      /** ID of the desired thermostat device. */
+                      device_id: string
+                      /** User-friendly name to identify the thermostat daily program. */
+                      name: string | null
+                      /** Array of thermostat daily program periods. */
+                      periods: Array<{
+                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at_time: string
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        climate_preset_key: string
+                      }>
+                      /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
+                      workspace_id: string
+                      /** Date and time at which the thermostat daily program was created. */
+                      created_at: string
+                    }>
+                  | undefined
+                )
               | undefined
             thermostat_weekly_program?:
-              | ({
-                  /** ID of the thermostat device the weekly program is for. */
-                  device_id: string
-                  /** ID of the thermostat daily program to run on Mondays. */
-                  monday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Tuesdays. */
-                  tuesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Wednesdays. */
-                  wednesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Thursdays. */
-                  thursday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Fridays. */
-                  friday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Saturdays. */
-                  saturday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Sundays. */
-                  sunday_program_id: string | null
-                  /** Date and time at which the thermostat weekly program was created. */
-                  created_at: string
-                } | null)
+              | (
+                  | ({
+                      /** ID of the thermostat daily program to run on Mondays. */
+                      monday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Tuesdays. */
+                      tuesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Wednesdays. */
+                      wednesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Thursdays. */
+                      thursday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Fridays. */
+                      friday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Saturdays. */
+                      saturday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Sundays. */
+                      sunday_program_id: string | null
+                      /** Date and time at which the thermostat weekly program was created. */
+                      created_at: string
+                    } | null)
+                  | undefined
+                )
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -38549,7 +38597,7 @@ export interface Routes {
                   /** ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device. */
                   device_id: string
                   /** User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
-                  name?: string | undefined
+                  name: string | null
                   /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
                   climate_preset_key: string
                   /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
@@ -38560,6 +38608,8 @@ export interface Routes {
                   is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule. */
+                  workspace_id: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
                   created_at: string
                   /** Errors associated with the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -38572,45 +38622,51 @@ export interface Routes {
                 } | null)
               | undefined
             thermostat_daily_programs?:
-              | (Array<{
-                  /** ID of the thermostat daily program. */
-                  thermostat_daily_program_id: string
-                  /** ID of the desired thermostat device. */
-                  device_id: string
-                  /** User-friendly name to identify the thermostat daily program. */
-                  name?: string | undefined
-                  /** Array of thermostat daily program periods. */
-                  periods: Array<{
-                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at_time: string
-                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
-                    climate_preset_key: string
-                  }>
-                  /** Date and time at which the thermostat daily program was created. */
-                  created_at: string
-                }> | null)
+              | (
+                  | Array<{
+                      /** ID of the thermostat daily program. */
+                      thermostat_daily_program_id: string
+                      /** ID of the desired thermostat device. */
+                      device_id: string
+                      /** User-friendly name to identify the thermostat daily program. */
+                      name: string | null
+                      /** Array of thermostat daily program periods. */
+                      periods: Array<{
+                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at_time: string
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        climate_preset_key: string
+                      }>
+                      /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
+                      workspace_id: string
+                      /** Date and time at which the thermostat daily program was created. */
+                      created_at: string
+                    }>
+                  | undefined
+                )
               | undefined
             thermostat_weekly_program?:
-              | ({
-                  /** ID of the thermostat device the weekly program is for. */
-                  device_id: string
-                  /** ID of the thermostat daily program to run on Mondays. */
-                  monday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Tuesdays. */
-                  tuesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Wednesdays. */
-                  wednesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Thursdays. */
-                  thursday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Fridays. */
-                  friday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Saturdays. */
-                  saturday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Sundays. */
-                  sunday_program_id: string | null
-                  /** Date and time at which the thermostat weekly program was created. */
-                  created_at: string
-                } | null)
+              | (
+                  | ({
+                      /** ID of the thermostat daily program to run on Mondays. */
+                      monday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Tuesdays. */
+                      tuesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Wednesdays. */
+                      wednesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Thursdays. */
+                      thursday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Fridays. */
+                      friday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Saturdays. */
+                      saturday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Sundays. */
+                      sunday_program_id: string | null
+                      /** Date and time at which the thermostat weekly program was created. */
+                      created_at: string
+                    } | null)
+                  | undefined
+                )
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -39527,7 +39583,7 @@ export interface Routes {
                   /** ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device. */
                   device_id: string
                   /** User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
-                  name?: string | undefined
+                  name: string | null
                   /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
                   climate_preset_key: string
                   /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
@@ -39538,6 +39594,8 @@ export interface Routes {
                   is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule. */
+                  workspace_id: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
                   created_at: string
                   /** Errors associated with the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -39550,45 +39608,51 @@ export interface Routes {
                 } | null)
               | undefined
             thermostat_daily_programs?:
-              | (Array<{
-                  /** ID of the thermostat daily program. */
-                  thermostat_daily_program_id: string
-                  /** ID of the desired thermostat device. */
-                  device_id: string
-                  /** User-friendly name to identify the thermostat daily program. */
-                  name?: string | undefined
-                  /** Array of thermostat daily program periods. */
-                  periods: Array<{
-                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at_time: string
-                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
-                    climate_preset_key: string
-                  }>
-                  /** Date and time at which the thermostat daily program was created. */
-                  created_at: string
-                }> | null)
+              | (
+                  | Array<{
+                      /** ID of the thermostat daily program. */
+                      thermostat_daily_program_id: string
+                      /** ID of the desired thermostat device. */
+                      device_id: string
+                      /** User-friendly name to identify the thermostat daily program. */
+                      name: string | null
+                      /** Array of thermostat daily program periods. */
+                      periods: Array<{
+                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at_time: string
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        climate_preset_key: string
+                      }>
+                      /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
+                      workspace_id: string
+                      /** Date and time at which the thermostat daily program was created. */
+                      created_at: string
+                    }>
+                  | undefined
+                )
               | undefined
             thermostat_weekly_program?:
-              | ({
-                  /** ID of the thermostat device the weekly program is for. */
-                  device_id: string
-                  /** ID of the thermostat daily program to run on Mondays. */
-                  monday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Tuesdays. */
-                  tuesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Wednesdays. */
-                  wednesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Thursdays. */
-                  thursday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Fridays. */
-                  friday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Saturdays. */
-                  saturday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Sundays. */
-                  sunday_program_id: string | null
-                  /** Date and time at which the thermostat weekly program was created. */
-                  created_at: string
-                } | null)
+              | (
+                  | ({
+                      /** ID of the thermostat daily program to run on Mondays. */
+                      monday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Tuesdays. */
+                      tuesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Wednesdays. */
+                      wednesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Thursdays. */
+                      thursday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Fridays. */
+                      friday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Saturdays. */
+                      saturday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Sundays. */
+                      sunday_program_id: string | null
+                      /** Date and time at which the thermostat weekly program was created. */
+                      created_at: string
+                    } | null)
+                  | undefined
+                )
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -45812,19 +45876,19 @@ export interface Routes {
       /** ID of the thermostat device that the weekly program is for. */
       device_id: string
       /** ID of the thermostat daily program to run on Mondays. */
-      monday_program_id?: string | undefined
+      monday_program_id?: (string | undefined) | null
       /** ID of the thermostat daily program to run on Tuesdays. */
-      tuesday_program_id?: string | undefined
+      tuesday_program_id?: (string | undefined) | null
       /** ID of the thermostat daily program to run on Wednesdays. */
-      wednesday_program_id?: string | undefined
+      wednesday_program_id?: (string | undefined) | null
       /** ID of the thermostat daily program to run on Thursdays. */
-      thursday_program_id?: string | undefined
+      thursday_program_id?: (string | undefined) | null
       /** ID of the thermostat daily program to run on Fridays. */
-      friday_program_id?: string | undefined
+      friday_program_id?: (string | undefined) | null
       /** ID of the thermostat daily program to run on Saturdays. */
-      saturday_program_id?: string | undefined
+      saturday_program_id?: (string | undefined) | null
       /** ID of the thermostat daily program to run on Sundays. */
-      sunday_program_id?: string | undefined
+      sunday_program_id?: (string | undefined) | null
     }
     commonParams: {}
     formData: {}
@@ -49796,7 +49860,7 @@ export interface Routes {
         /** ID of the desired thermostat device. */
         device_id: string
         /** User-friendly name to identify the thermostat daily program. */
-        name?: string | undefined
+        name: string | null
         /** Array of thermostat daily program periods. */
         periods: Array<{
           /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
@@ -49804,6 +49868,8 @@ export interface Routes {
           /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
           climate_preset_key: string
         }>
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
+        workspace_id: string
         /** Date and time at which the thermostat daily program was created. */
         created_at: string
       }
@@ -51809,7 +51875,7 @@ export interface Routes {
                   /** ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device. */
                   device_id: string
                   /** User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
-                  name?: string | undefined
+                  name: string | null
                   /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
                   climate_preset_key: string
                   /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
@@ -51820,6 +51886,8 @@ export interface Routes {
                   is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule. */
+                  workspace_id: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
                   created_at: string
                   /** Errors associated with the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -51832,45 +51900,51 @@ export interface Routes {
                 } | null)
               | undefined
             thermostat_daily_programs?:
-              | (Array<{
-                  /** ID of the thermostat daily program. */
-                  thermostat_daily_program_id: string
-                  /** ID of the desired thermostat device. */
-                  device_id: string
-                  /** User-friendly name to identify the thermostat daily program. */
-                  name?: string | undefined
-                  /** Array of thermostat daily program periods. */
-                  periods: Array<{
-                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at_time: string
-                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
-                    climate_preset_key: string
-                  }>
-                  /** Date and time at which the thermostat daily program was created. */
-                  created_at: string
-                }> | null)
+              | (
+                  | Array<{
+                      /** ID of the thermostat daily program. */
+                      thermostat_daily_program_id: string
+                      /** ID of the desired thermostat device. */
+                      device_id: string
+                      /** User-friendly name to identify the thermostat daily program. */
+                      name: string | null
+                      /** Array of thermostat daily program periods. */
+                      periods: Array<{
+                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at_time: string
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        climate_preset_key: string
+                      }>
+                      /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
+                      workspace_id: string
+                      /** Date and time at which the thermostat daily program was created. */
+                      created_at: string
+                    }>
+                  | undefined
+                )
               | undefined
             thermostat_weekly_program?:
-              | ({
-                  /** ID of the thermostat device the weekly program is for. */
-                  device_id: string
-                  /** ID of the thermostat daily program to run on Mondays. */
-                  monday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Tuesdays. */
-                  tuesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Wednesdays. */
-                  wednesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Thursdays. */
-                  thursday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Fridays. */
-                  friday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Saturdays. */
-                  saturday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Sundays. */
-                  sunday_program_id: string | null
-                  /** Date and time at which the thermostat weekly program was created. */
-                  created_at: string
-                } | null)
+              | (
+                  | ({
+                      /** ID of the thermostat daily program to run on Mondays. */
+                      monday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Tuesdays. */
+                      tuesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Wednesdays. */
+                      wednesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Thursdays. */
+                      thursday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Fridays. */
+                      friday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Saturdays. */
+                      saturday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Sundays. */
+                      sunday_program_id: string | null
+                      /** Date and time at which the thermostat weekly program was created. */
+                      created_at: string
+                    } | null)
+                  | undefined
+                )
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -55500,7 +55574,7 @@ export interface Routes {
                   /** ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device. */
                   device_id: string
                   /** User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
-                  name?: string | undefined
+                  name: string | null
                   /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
                   climate_preset_key: string
                   /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
@@ -55511,6 +55585,8 @@ export interface Routes {
                   is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule. */
+                  workspace_id: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
                   created_at: string
                   /** Errors associated with the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -55523,45 +55599,51 @@ export interface Routes {
                 } | null)
               | undefined
             thermostat_daily_programs?:
-              | (Array<{
-                  /** ID of the thermostat daily program. */
-                  thermostat_daily_program_id: string
-                  /** ID of the desired thermostat device. */
-                  device_id: string
-                  /** User-friendly name to identify the thermostat daily program. */
-                  name?: string | undefined
-                  /** Array of thermostat daily program periods. */
-                  periods: Array<{
-                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at_time: string
-                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
-                    climate_preset_key: string
-                  }>
-                  /** Date and time at which the thermostat daily program was created. */
-                  created_at: string
-                }> | null)
+              | (
+                  | Array<{
+                      /** ID of the thermostat daily program. */
+                      thermostat_daily_program_id: string
+                      /** ID of the desired thermostat device. */
+                      device_id: string
+                      /** User-friendly name to identify the thermostat daily program. */
+                      name: string | null
+                      /** Array of thermostat daily program periods. */
+                      periods: Array<{
+                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at_time: string
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        climate_preset_key: string
+                      }>
+                      /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
+                      workspace_id: string
+                      /** Date and time at which the thermostat daily program was created. */
+                      created_at: string
+                    }>
+                  | undefined
+                )
               | undefined
             thermostat_weekly_program?:
-              | ({
-                  /** ID of the thermostat device the weekly program is for. */
-                  device_id: string
-                  /** ID of the thermostat daily program to run on Mondays. */
-                  monday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Tuesdays. */
-                  tuesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Wednesdays. */
-                  wednesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Thursdays. */
-                  thursday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Fridays. */
-                  friday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Saturdays. */
-                  saturday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Sundays. */
-                  sunday_program_id: string | null
-                  /** Date and time at which the thermostat weekly program was created. */
-                  created_at: string
-                } | null)
+              | (
+                  | ({
+                      /** ID of the thermostat daily program to run on Mondays. */
+                      monday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Tuesdays. */
+                      tuesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Wednesdays. */
+                      wednesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Thursdays. */
+                      thursday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Fridays. */
+                      friday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Saturdays. */
+                      saturday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Sundays. */
+                      sunday_program_id: string | null
+                      /** Date and time at which the thermostat weekly program was created. */
+                      created_at: string
+                    } | null)
+                  | undefined
+                )
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -56478,7 +56560,7 @@ export interface Routes {
                   /** ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device. */
                   device_id: string
                   /** User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
-                  name?: string | undefined
+                  name: string | null
                   /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
                   climate_preset_key: string
                   /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
@@ -56489,6 +56571,8 @@ export interface Routes {
                   is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule. */
+                  workspace_id: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
                   created_at: string
                   /** Errors associated with the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -56501,45 +56585,51 @@ export interface Routes {
                 } | null)
               | undefined
             thermostat_daily_programs?:
-              | (Array<{
-                  /** ID of the thermostat daily program. */
-                  thermostat_daily_program_id: string
-                  /** ID of the desired thermostat device. */
-                  device_id: string
-                  /** User-friendly name to identify the thermostat daily program. */
-                  name?: string | undefined
-                  /** Array of thermostat daily program periods. */
-                  periods: Array<{
-                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at_time: string
-                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
-                    climate_preset_key: string
-                  }>
-                  /** Date and time at which the thermostat daily program was created. */
-                  created_at: string
-                }> | null)
+              | (
+                  | Array<{
+                      /** ID of the thermostat daily program. */
+                      thermostat_daily_program_id: string
+                      /** ID of the desired thermostat device. */
+                      device_id: string
+                      /** User-friendly name to identify the thermostat daily program. */
+                      name: string | null
+                      /** Array of thermostat daily program periods. */
+                      periods: Array<{
+                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at_time: string
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        climate_preset_key: string
+                      }>
+                      /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
+                      workspace_id: string
+                      /** Date and time at which the thermostat daily program was created. */
+                      created_at: string
+                    }>
+                  | undefined
+                )
               | undefined
             thermostat_weekly_program?:
-              | ({
-                  /** ID of the thermostat device the weekly program is for. */
-                  device_id: string
-                  /** ID of the thermostat daily program to run on Mondays. */
-                  monday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Tuesdays. */
-                  tuesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Wednesdays. */
-                  wednesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Thursdays. */
-                  thursday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Fridays. */
-                  friday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Saturdays. */
-                  saturday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Sundays. */
-                  sunday_program_id: string | null
-                  /** Date and time at which the thermostat weekly program was created. */
-                  created_at: string
-                } | null)
+              | (
+                  | ({
+                      /** ID of the thermostat daily program to run on Mondays. */
+                      monday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Tuesdays. */
+                      tuesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Wednesdays. */
+                      wednesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Thursdays. */
+                      thursday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Fridays. */
+                      friday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Saturdays. */
+                      saturday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Sundays. */
+                      sunday_program_id: string | null
+                      /** Date and time at which the thermostat weekly program was created. */
+                      created_at: string
+                    } | null)
+                  | undefined
+                )
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -58149,7 +58239,7 @@ export interface Routes {
         /** ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device. */
         device_id: string
         /** User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
-        name?: string | undefined
+        name: string | null
         /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
         climate_preset_key: string
         /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
@@ -58160,6 +58250,8 @@ export interface Routes {
         is_override_allowed?: boolean | undefined
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         ends_at: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule. */
+        workspace_id: string
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
         created_at: string
         /** Errors associated with the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -58202,7 +58294,7 @@ export interface Routes {
         /** ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device. */
         device_id: string
         /** User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
-        name?: string | undefined
+        name: string | null
         /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
         climate_preset_key: string
         /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
@@ -58213,6 +58305,8 @@ export interface Routes {
         is_override_allowed?: boolean | undefined
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         ends_at: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule. */
+        workspace_id: string
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
         created_at: string
         /** Errors associated with the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -58244,7 +58338,7 @@ export interface Routes {
         /** ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device. */
         device_id: string
         /** User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
-        name?: string | undefined
+        name: string | null
         /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
         climate_preset_key: string
         /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
@@ -58255,6 +58349,8 @@ export interface Routes {
         is_override_allowed?: boolean | undefined
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         ends_at: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule. */
+        workspace_id: string
         /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
         created_at: string
         /** Errors associated with the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -62413,7 +62509,7 @@ export interface Routes {
                   /** ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device. */
                   device_id: string
                   /** User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
-                  name?: string | undefined
+                  name: string | null
                   /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
                   climate_preset_key: string
                   /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
@@ -62424,6 +62520,8 @@ export interface Routes {
                   is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule. */
+                  workspace_id: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
                   created_at: string
                   /** Errors associated with the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -62436,45 +62534,51 @@ export interface Routes {
                 } | null)
               | undefined
             thermostat_daily_programs?:
-              | (Array<{
-                  /** ID of the thermostat daily program. */
-                  thermostat_daily_program_id: string
-                  /** ID of the desired thermostat device. */
-                  device_id: string
-                  /** User-friendly name to identify the thermostat daily program. */
-                  name?: string | undefined
-                  /** Array of thermostat daily program periods. */
-                  periods: Array<{
-                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at_time: string
-                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
-                    climate_preset_key: string
-                  }>
-                  /** Date and time at which the thermostat daily program was created. */
-                  created_at: string
-                }> | null)
+              | (
+                  | Array<{
+                      /** ID of the thermostat daily program. */
+                      thermostat_daily_program_id: string
+                      /** ID of the desired thermostat device. */
+                      device_id: string
+                      /** User-friendly name to identify the thermostat daily program. */
+                      name: string | null
+                      /** Array of thermostat daily program periods. */
+                      periods: Array<{
+                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at_time: string
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        climate_preset_key: string
+                      }>
+                      /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
+                      workspace_id: string
+                      /** Date and time at which the thermostat daily program was created. */
+                      created_at: string
+                    }>
+                  | undefined
+                )
               | undefined
             thermostat_weekly_program?:
-              | ({
-                  /** ID of the thermostat device the weekly program is for. */
-                  device_id: string
-                  /** ID of the thermostat daily program to run on Mondays. */
-                  monday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Tuesdays. */
-                  tuesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Wednesdays. */
-                  wednesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Thursdays. */
-                  thursday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Fridays. */
-                  friday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Saturdays. */
-                  saturday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Sundays. */
-                  sunday_program_id: string | null
-                  /** Date and time at which the thermostat weekly program was created. */
-                  created_at: string
-                } | null)
+              | (
+                  | ({
+                      /** ID of the thermostat daily program to run on Mondays. */
+                      monday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Tuesdays. */
+                      tuesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Wednesdays. */
+                      wednesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Thursdays. */
+                      thursday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Fridays. */
+                      friday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Saturdays. */
+                      saturday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Sundays. */
+                      sunday_program_id: string | null
+                      /** Date and time at which the thermostat weekly program was created. */
+                      created_at: string
+                    } | null)
+                  | undefined
+                )
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -63393,7 +63497,7 @@ export interface Routes {
                   /** ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device. */
                   device_id: string
                   /** User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
-                  name?: string | undefined
+                  name: string | null
                   /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
                   climate_preset_key: string
                   /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
@@ -63404,6 +63508,8 @@ export interface Routes {
                   is_override_allowed?: boolean | undefined
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule. */
+                  workspace_id: string
                   /** Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
                   created_at: string
                   /** Errors associated with the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -63416,45 +63522,51 @@ export interface Routes {
                 } | null)
               | undefined
             thermostat_daily_programs?:
-              | (Array<{
-                  /** ID of the thermostat daily program. */
-                  thermostat_daily_program_id: string
-                  /** ID of the desired thermostat device. */
-                  device_id: string
-                  /** User-friendly name to identify the thermostat daily program. */
-                  name?: string | undefined
-                  /** Array of thermostat daily program periods. */
-                  periods: Array<{
-                    /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-                    starts_at_time: string
-                    /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
-                    climate_preset_key: string
-                  }>
-                  /** Date and time at which the thermostat daily program was created. */
-                  created_at: string
-                }> | null)
+              | (
+                  | Array<{
+                      /** ID of the thermostat daily program. */
+                      thermostat_daily_program_id: string
+                      /** ID of the desired thermostat device. */
+                      device_id: string
+                      /** User-friendly name to identify the thermostat daily program. */
+                      name: string | null
+                      /** Array of thermostat daily program periods. */
+                      periods: Array<{
+                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at_time: string
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        climate_preset_key: string
+                      }>
+                      /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
+                      workspace_id: string
+                      /** Date and time at which the thermostat daily program was created. */
+                      created_at: string
+                    }>
+                  | undefined
+                )
               | undefined
             thermostat_weekly_program?:
-              | ({
-                  /** ID of the thermostat device the weekly program is for. */
-                  device_id: string
-                  /** ID of the thermostat daily program to run on Mondays. */
-                  monday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Tuesdays. */
-                  tuesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Wednesdays. */
-                  wednesday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Thursdays. */
-                  thursday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Fridays. */
-                  friday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Saturdays. */
-                  saturday_program_id: string | null
-                  /** ID of the thermostat daily program to run on Sundays. */
-                  sunday_program_id: string | null
-                  /** Date and time at which the thermostat weekly program was created. */
-                  created_at: string
-                } | null)
+              | (
+                  | ({
+                      /** ID of the thermostat daily program to run on Mondays. */
+                      monday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Tuesdays. */
+                      tuesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Wednesdays. */
+                      wednesday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Thursdays. */
+                      thursday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Fridays. */
+                      friday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Saturdays. */
+                      saturday_program_id: string | null
+                      /** ID of the thermostat daily program to run on Sundays. */
+                      sunday_program_id: string | null
+                      /** Date and time at which the thermostat weekly program was created. */
+                      created_at: string
+                    } | null)
+                  | undefined
+                )
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined

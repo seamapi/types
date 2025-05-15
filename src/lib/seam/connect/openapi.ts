@@ -8906,6 +8906,7 @@ export default {
                           name: {
                             description:
                               'User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+                            nullable: true,
                             type: 'string',
                           },
                           starts_at: {
@@ -8920,13 +8921,21 @@ export default {
                             format: 'uuid',
                             type: 'string',
                           },
+                          workspace_id: {
+                            description:
+                              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
                         },
                         required: [
                           'thermostat_schedule_id',
                           'device_id',
+                          'name',
                           'climate_preset_key',
                           'starts_at',
                           'ends_at',
+                          'workspace_id',
                           'created_at',
                           'errors',
                         ],
@@ -9304,7 +9313,6 @@ export default {
                         type: 'object',
                       },
                       thermostat_daily_programs: {
-                        default: null,
                         items: {
                           properties: {
                             created_at: {
@@ -9322,6 +9330,7 @@ export default {
                             name: {
                               description:
                                 'User-friendly name to identify the thermostat daily program.',
+                              nullable: true,
                               type: 'string',
                             },
                             periods: {
@@ -9356,32 +9365,32 @@ export default {
                               format: 'uuid',
                               type: 'string',
                             },
+                            workspace_id: {
+                              description:
+                                'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program.',
+                              format: 'uuid',
+                              type: 'string',
+                            },
                           },
                           required: [
                             'thermostat_daily_program_id',
                             'device_id',
+                            'name',
                             'periods',
+                            'workspace_id',
                             'created_at',
                           ],
                           type: 'object',
                         },
-                        nullable: true,
                         type: 'array',
                       },
                       thermostat_weekly_program: {
-                        default: null,
                         nullable: true,
                         properties: {
                           created_at: {
                             description:
                               'Date and time at which the thermostat weekly program was created.',
                             format: 'date-time',
-                            type: 'string',
-                          },
-                          device_id: {
-                            description:
-                              'ID of the thermostat device the weekly program is for.',
-                            format: 'uuid',
                             type: 'string',
                           },
                           friday_program_id: {
@@ -9435,7 +9444,6 @@ export default {
                           },
                         },
                         required: [
-                          'device_id',
                           'monday_program_id',
                           'tuesday_program_id',
                           'wednesday_program_id',
@@ -15149,6 +15157,7 @@ export default {
           name: {
             description:
               'User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+            nullable: true,
             type: 'string',
           },
           starts_at: {
@@ -15163,13 +15172,21 @@ export default {
             format: 'uuid',
             type: 'string',
           },
+          workspace_id: {
+            description:
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule.',
+            format: 'uuid',
+            type: 'string',
+          },
         },
         required: [
           'thermostat_schedule_id',
           'device_id',
+          'name',
           'climate_preset_key',
           'starts_at',
           'ends_at',
+          'workspace_id',
           'created_at',
           'errors',
         ],
@@ -30095,42 +30112,49 @@ export default {
                     description:
                       'ID of the thermostat daily program to run on Fridays.',
                     format: 'uuid',
+                    nullable: true,
                     type: 'string',
                   },
                   monday_program_id: {
                     description:
                       'ID of the thermostat daily program to run on Mondays.',
                     format: 'uuid',
+                    nullable: true,
                     type: 'string',
                   },
                   saturday_program_id: {
                     description:
                       'ID of the thermostat daily program to run on Saturdays.',
                     format: 'uuid',
+                    nullable: true,
                     type: 'string',
                   },
                   sunday_program_id: {
                     description:
                       'ID of the thermostat daily program to run on Sundays.',
                     format: 'uuid',
+                    nullable: true,
                     type: 'string',
                   },
                   thursday_program_id: {
                     description:
                       'ID of the thermostat daily program to run on Thursdays.',
                     format: 'uuid',
+                    nullable: true,
                     type: 'string',
                   },
                   tuesday_program_id: {
                     description:
                       'ID of the thermostat daily program to run on Tuesdays.',
                     format: 'uuid',
+                    nullable: true,
                     type: 'string',
                   },
                   wednesday_program_id: {
                     description:
                       'ID of the thermostat daily program to run on Wednesdays.',
                     format: 'uuid',
+                    nullable: true,
                     type: 'string',
                   },
                 },
@@ -30493,6 +30517,7 @@ export default {
                         name: {
                           description:
                             'User-friendly name to identify the thermostat daily program.',
+                          nullable: true,
                           type: 'string',
                         },
                         periods: {
@@ -30523,11 +30548,19 @@ export default {
                           format: 'uuid',
                           type: 'string',
                         },
+                        workspace_id: {
+                          description:
+                            'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
                       },
                       required: [
                         'thermostat_daily_program_id',
                         'device_id',
+                        'name',
                         'periods',
+                        'workspace_id',
                         'created_at',
                       ],
                       type: 'object',

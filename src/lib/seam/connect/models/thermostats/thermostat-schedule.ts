@@ -15,7 +15,7 @@ export const thermostat_schedule = z.object({
     ),
   name: z
     .string()
-    .optional()
+    .nullable()
     .describe(
       'User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
     ),
@@ -50,6 +50,12 @@ export const thermostat_schedule = z.object({
     .datetime()
     .describe(
       'Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+    ),
+  workspace_id: z
+    .string()
+    .uuid()
+    .describe(
+      'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule.',
     ),
   created_at: z
     .string()
