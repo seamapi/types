@@ -25586,6 +25586,7 @@ export default {
         'x-fern-sdk-group-name': ['connected_accounts'],
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
+        'x-title': 'Delete a Connected Account',
       },
     },
     '/connected_accounts/get': {
@@ -25646,6 +25647,7 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'connected_account',
         'x-response-key': 'connected_account',
+        'x-title': 'Get a Connected Account',
       },
     },
     '/connected_accounts/list': {
@@ -25723,6 +25725,7 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'connected_accounts',
         'x-response-key': 'connected_accounts',
+        'x-title': 'List Connected Accounts',
       },
     },
     '/connected_accounts/update': {
@@ -25783,6 +25786,7 @@ export default {
         'x-fern-sdk-group-name': ['connected_accounts'],
         'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
+        'x-title': 'Update a Connected Account',
       },
     },
     '/devices/delete': {
