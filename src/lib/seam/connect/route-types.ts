@@ -21599,6 +21599,7 @@ export interface Routes {
             | 'tado'
             | 'salto_space'
             | 'sensi'
+            | 'kwikset2'
             | 'yale_access'
             | 'hid_cm'
             | 'google_nest'
@@ -24356,6 +24357,7 @@ export interface Routes {
           | 'tado'
           | 'salto_space'
           | 'sensi'
+          | 'kwikset2'
         display_name: string
         image_url: string
         provider_categories: Array<
