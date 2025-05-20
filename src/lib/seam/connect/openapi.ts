@@ -9820,6 +9820,7 @@ export default {
               'tado',
               'salto_space',
               'sensi',
+              'kwikset2',
             ],
             type: 'string',
           },
@@ -25320,6 +25321,7 @@ export default {
                         'tado',
                         'salto_space',
                         'sensi',
+                        'kwikset2',
                         'yale_access',
                         'hid_cm',
                         'google_nest',
@@ -26137,19 +26139,20 @@ export default {
                       'unknown',
                       'wyze',
                       'yale',
-                      'minut',
                       'two_n',
                       'ttlock',
-                      'nest',
                       'igloohome',
-                      'ecobee',
                       'hubitat',
                       'controlbyweb',
                       'smartthings',
                       'dormakaba_oracode',
                       'tedee',
-                      'honeywell_resideo',
                       'akiles',
+                      'ecobee',
+                      'honeywell_resideo',
+                      'minut',
+                      'nest',
+                      'noiseaware',
                       'tado',
                       'sensi',
                     ],
@@ -26685,19 +26688,20 @@ export default {
                       'unknown',
                       'wyze',
                       'yale',
-                      'minut',
                       'two_n',
                       'ttlock',
-                      'nest',
                       'igloohome',
-                      'ecobee',
                       'hubitat',
                       'controlbyweb',
                       'smartthings',
                       'dormakaba_oracode',
                       'tedee',
-                      'honeywell_resideo',
                       'akiles',
+                      'ecobee',
+                      'honeywell_resideo',
+                      'minut',
+                      'nest',
+                      'noiseaware',
                       'tado',
                       'sensi',
                     ],
@@ -28009,7 +28013,7 @@ export default {
                   },
                   manufacturer: {
                     description: 'Manufacturer by which to filter devices.',
-                    enum: ['noiseaware', 'minut'],
+                    enum: ['minut', 'noiseaware'],
                     type: 'string',
                   },
                   page_cursor: {
@@ -30093,175 +30097,6 @@ export default {
         'x-title': 'Activate a Climate Preset',
       },
     },
-    '/thermostats/activate_weekly_program': {
-      post: {
-        description: 'Activates a thermostat weekly program.',
-        operationId: 'thermostatsActivateWeeklyProgramPost',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  device_id: {
-                    description:
-                      'ID of the thermostat device that the weekly program is for.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
-                  friday_program_id: {
-                    description:
-                      'ID of the thermostat daily program to run on Fridays.',
-                    format: 'uuid',
-                    nullable: true,
-                    type: 'string',
-                  },
-                  monday_program_id: {
-                    description:
-                      'ID of the thermostat daily program to run on Mondays.',
-                    format: 'uuid',
-                    nullable: true,
-                    type: 'string',
-                  },
-                  saturday_program_id: {
-                    description:
-                      'ID of the thermostat daily program to run on Saturdays.',
-                    format: 'uuid',
-                    nullable: true,
-                    type: 'string',
-                  },
-                  sunday_program_id: {
-                    description:
-                      'ID of the thermostat daily program to run on Sundays.',
-                    format: 'uuid',
-                    nullable: true,
-                    type: 'string',
-                  },
-                  thursday_program_id: {
-                    description:
-                      'ID of the thermostat daily program to run on Thursdays.',
-                    format: 'uuid',
-                    nullable: true,
-                    type: 'string',
-                  },
-                  tuesday_program_id: {
-                    description:
-                      'ID of the thermostat daily program to run on Tuesdays.',
-                    format: 'uuid',
-                    nullable: true,
-                    type: 'string',
-                  },
-                  wednesday_program_id: {
-                    description:
-                      'ID of the thermostat daily program to run on Wednesdays.',
-                    format: 'uuid',
-                    nullable: true,
-                    type: 'string',
-                  },
-                },
-                required: ['device_id'],
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    action_attempt: {
-                      $ref: '#/components/schemas/action_attempt',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['action_attempt', 'ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { client_session: [] },
-          { pat_with_workspace: [] },
-          { console_session_with_workspace: [] },
-          { api_key: [] },
-        ],
-        summary: '/thermostats/activate_weekly_program',
-        tags: ['/thermostats'],
-        'x-action-attempt-type': 'PUSH_THERMOSTAT_PROGRAMS',
-        'x-fern-sdk-group-name': ['thermostats'],
-        'x-fern-sdk-method-name': 'activate_weekly_program',
-        'x-fern-sdk-return-value': 'action_attempt',
-        'x-response-key': 'action_attempt',
-        'x-title': 'Activate a Thermostat Weekly Program',
-        'x-undocumented': 'Unreleased.',
-      },
-    },
-    '/thermostats/clear_weekly_program': {
-      post: {
-        description: 'Clears a thermostat weekly program.',
-        operationId: 'thermostatsClearWeeklyProgramPost',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  device_id: {
-                    description:
-                      'ID of the thermostat device to clear the weekly program for.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
-                },
-                required: ['device_id'],
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    action_attempt: {
-                      $ref: '#/components/schemas/action_attempt',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['action_attempt', 'ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { client_session: [] },
-          { pat_with_workspace: [] },
-          { console_session_with_workspace: [] },
-          { api_key: [] },
-        ],
-        summary: '/thermostats/clear_weekly_program',
-        tags: ['/thermostats'],
-        'x-action-attempt-type': 'PUSH_THERMOSTAT_PROGRAMS',
-        'x-fern-sdk-group-name': ['thermostats'],
-        'x-fern-sdk-method-name': 'clear_weekly_program',
-        'x-fern-sdk-return-value': 'action_attempt',
-        'x-response-key': 'action_attempt',
-        'x-title': 'Clear a Thermostat Weekly Program',
-        'x-undocumented': 'Unreleased.',
-      },
-    },
     '/thermostats/cool': {
       post: {
         description:
@@ -31216,7 +31051,13 @@ export default {
                   },
                   manufacturer: {
                     description: 'Manufacturer by which to filter devices.',
-                    enum: ['ecobee', 'nest', 'honeywell_resideo', 'tado'],
+                    enum: [
+                      'ecobee',
+                      'honeywell_resideo',
+                      'nest',
+                      'tado',
+                      'sensi',
+                    ],
                     type: 'string',
                   },
                   page_cursor: {
@@ -32671,6 +32512,115 @@ export default {
         'x-fern-sdk-method-name': 'update_climate_preset',
         'x-response-key': null,
         'x-title': 'Update a Climate Preset',
+      },
+    },
+    '/thermostats/update_weekly_program': {
+      post: {
+        description: 'Activates a thermostat weekly program.',
+        operationId: 'thermostatsUpdateWeeklyProgramPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: {
+                    description:
+                      'ID of the thermostat device that the weekly program is for.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  friday_program_id: {
+                    description:
+                      'ID of the thermostat daily program to run on Fridays.',
+                    format: 'uuid',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  monday_program_id: {
+                    description:
+                      'ID of the thermostat daily program to run on Mondays.',
+                    format: 'uuid',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  saturday_program_id: {
+                    description:
+                      'ID of the thermostat daily program to run on Saturdays.',
+                    format: 'uuid',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  sunday_program_id: {
+                    description:
+                      'ID of the thermostat daily program to run on Sundays.',
+                    format: 'uuid',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  thursday_program_id: {
+                    description:
+                      'ID of the thermostat daily program to run on Thursdays.',
+                    format: 'uuid',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  tuesday_program_id: {
+                    description:
+                      'ID of the thermostat daily program to run on Tuesdays.',
+                    format: 'uuid',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  wednesday_program_id: {
+                    description:
+                      'ID of the thermostat daily program to run on Wednesdays.',
+                    format: 'uuid',
+                    nullable: true,
+                    type: 'string',
+                  },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/thermostats/update_weekly_program',
+        tags: ['/thermostats'],
+        'x-action-attempt-type': 'PUSH_THERMOSTAT_PROGRAMS',
+        'x-fern-sdk-group-name': ['thermostats'],
+        'x-fern-sdk-method-name': 'update_weekly_program',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
+        'x-title': 'Activate a Thermostat Weekly Program',
+        'x-undocumented': 'Unreleased.',
       },
     },
     '/unstable_access_grants/create': {
@@ -34547,6 +34497,12 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  acs_system_ids: {
+                    description:
+                      "List of ACS system IDs to associate with the user identity through ACS users. If there's no user with the same email address or phone number in the specified ACS systems, a new ACS user is created. If there is an existing user with the same email or phone number in the specified ACS systems, the user is linked to the user identity.",
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
                   email_address: {
                     description: 'Unique email address for the user identity.',
                     format: 'email',
