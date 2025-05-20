@@ -49,6 +49,7 @@ export const DEVICE_PROVIDERS = {
   TADO: 'tado',
   SALTO_SPACE: 'salto_space',
   SENSI: 'sensi',
+  KWIKSET2: 'kwikset2',
 } as const
 
 export type DeviceProviderName =
@@ -90,6 +91,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'assa_abloy_credential_service',
     'latch',
     'akiles',
+    'sensi',
   ],
 
   consumer_smartlocks: [
