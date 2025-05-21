@@ -25691,6 +25691,10 @@ export default {
                       'Returns accounts whose custom_metadata contains all of the provided key/value pairs.',
                     type: 'object',
                   },
+                  customer_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
                   limit: {
                     default: 11_000,
                     description:
@@ -25950,6 +25954,10 @@ export default {
                     description:
                       'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices.',
                     type: 'object',
+                  },
+                  customer_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
                   },
                   device_ids: {
                     description:
@@ -26499,6 +26507,10 @@ export default {
                     description:
                       'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices.',
                     type: 'object',
+                  },
+                  customer_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
                   },
                   device_ids: {
                     description:
@@ -27059,6 +27071,10 @@ export default {
                   },
                   connect_webview_id: { format: 'uuid', type: 'string' },
                   connected_account_id: { format: 'uuid', type: 'string' },
+                  customer_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
                   device_id: { format: 'uuid', type: 'string' },
                   device_ids: {
                     items: { format: 'uuid', type: 'string' },
@@ -27392,6 +27408,10 @@ export default {
                     description:
                       'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices.',
                     type: 'object',
+                  },
+                  customer_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
                   },
                   device_ids: {
                     description:
@@ -27949,6 +27969,10 @@ export default {
                     description:
                       'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices.',
                     type: 'object',
+                  },
+                  customer_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
                   },
                   device_ids: {
                     description:
@@ -30975,6 +30999,10 @@ export default {
                     description:
                       'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices.',
                     type: 'object',
+                  },
+                  customer_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
                   },
                   device_ids: {
                     description:

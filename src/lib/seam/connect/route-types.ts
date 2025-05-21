@@ -21875,6 +21875,7 @@ export interface Routes {
       user_identifier_key?: string | undefined
       /** Returns accounts whose custom_metadata contains all of the provided key/value pairs. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
+      customer_ids?: string[] | undefined
       /** Maximum number of records to return per page. */
       limit?: number
       /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
@@ -23113,6 +23114,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      customer_ids?: string[] | undefined
       /** ID of the connected account by which to filter. */
       connected_account_id?: string | undefined
       /** Array of IDs of the connected accounts by which to filter devices. */
@@ -24790,6 +24792,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      customer_ids?: string[] | undefined
       /** ID of the connected account by which to filter. */
       connected_account_id?: string | undefined
       /** Array of IDs of the connected accounts by which to filter devices. */
@@ -27051,6 +27054,7 @@ export interface Routes {
       connect_webview_id?: string | undefined
       limit?: number
       event_ids?: string[] | undefined
+      customer_ids?: string[] | undefined
     }
     formData: {}
     jsonResponse: {
@@ -30509,6 +30513,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      customer_ids?: string[] | undefined
       /** ID of the connected account by which to filter. */
       connected_account_id?: string | undefined
       /** Array of IDs of the connected accounts by which to filter devices. */
@@ -37894,6 +37899,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      customer_ids?: string[] | undefined
       /** ID of the connected account by which to filter. */
       connected_account_id?: string | undefined
       /** Array of IDs of the connected accounts by which to filter devices. */
@@ -52231,6 +52237,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      customer_ids?: string[] | undefined
       /** ID of the connected account by which to filter. */
       connected_account_id?: string | undefined
       /** Array of IDs of the connected accounts by which to filter devices. */
