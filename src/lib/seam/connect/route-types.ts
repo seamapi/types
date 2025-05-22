@@ -22795,15 +22795,15 @@ export interface Routes {
                   | Array<{
                       /** ID of the thermostat daily program. */
                       thermostat_daily_program_id: string
-                      /** ID of the desired thermostat device. */
+                      /** ID of the thermostat device on which the thermostat daily program is configured. */
                       device_id: string
                       /** User-friendly name to identify the thermostat daily program. */
                       name: string | null
                       /** Array of thermostat daily program periods. */
                       periods: Array<{
-                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        /** Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at_time: string
-                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`. */
                         climate_preset_key: string
                       }>
                       /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
@@ -23974,15 +23974,15 @@ export interface Routes {
                   | Array<{
                       /** ID of the thermostat daily program. */
                       thermostat_daily_program_id: string
-                      /** ID of the desired thermostat device. */
+                      /** ID of the thermostat device on which the thermostat daily program is configured. */
                       device_id: string
                       /** User-friendly name to identify the thermostat daily program. */
                       name: string | null
                       /** Array of thermostat daily program periods. */
                       periods: Array<{
-                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        /** Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at_time: string
-                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`. */
                         climate_preset_key: string
                       }>
                       /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
@@ -29207,15 +29207,15 @@ export interface Routes {
                   | Array<{
                       /** ID of the thermostat daily program. */
                       thermostat_daily_program_id: string
-                      /** ID of the desired thermostat device. */
+                      /** ID of the thermostat device on which the thermostat daily program is configured. */
                       device_id: string
                       /** User-friendly name to identify the thermostat daily program. */
                       name: string | null
                       /** Array of thermostat daily program periods. */
                       periods: Array<{
-                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        /** Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at_time: string
-                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`. */
                         climate_preset_key: string
                       }>
                       /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
@@ -30194,15 +30194,15 @@ export interface Routes {
                   | Array<{
                       /** ID of the thermostat daily program. */
                       thermostat_daily_program_id: string
-                      /** ID of the desired thermostat device. */
+                      /** ID of the thermostat device on which the thermostat daily program is configured. */
                       device_id: string
                       /** User-friendly name to identify the thermostat daily program. */
                       name: string | null
                       /** Array of thermostat daily program periods. */
                       periods: Array<{
-                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        /** Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at_time: string
-                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`. */
                         climate_preset_key: string
                       }>
                       /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
@@ -31340,15 +31340,15 @@ export interface Routes {
                   | Array<{
                       /** ID of the thermostat daily program. */
                       thermostat_daily_program_id: string
-                      /** ID of the desired thermostat device. */
+                      /** ID of the thermostat device on which the thermostat daily program is configured. */
                       device_id: string
                       /** User-friendly name to identify the thermostat daily program. */
                       name: string | null
                       /** Array of thermostat daily program periods. */
                       periods: Array<{
-                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        /** Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at_time: string
-                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`. */
                         climate_preset_key: string
                       }>
                       /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
@@ -32326,15 +32326,15 @@ export interface Routes {
                   | Array<{
                       /** ID of the thermostat daily program. */
                       thermostat_daily_program_id: string
-                      /** ID of the desired thermostat device. */
+                      /** ID of the thermostat device on which the thermostat daily program is configured. */
                       device_id: string
                       /** User-friendly name to identify the thermostat daily program. */
                       name: string | null
                       /** Array of thermostat daily program periods. */
                       periods: Array<{
-                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        /** Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at_time: string
-                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`. */
                         climate_preset_key: string
                       }>
                       /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
@@ -38638,15 +38638,15 @@ export interface Routes {
                   | Array<{
                       /** ID of the thermostat daily program. */
                       thermostat_daily_program_id: string
-                      /** ID of the desired thermostat device. */
+                      /** ID of the thermostat device on which the thermostat daily program is configured. */
                       device_id: string
                       /** User-friendly name to identify the thermostat daily program. */
                       name: string | null
                       /** Array of thermostat daily program periods. */
                       periods: Array<{
-                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        /** Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at_time: string
-                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`. */
                         climate_preset_key: string
                       }>
                       /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
@@ -39624,15 +39624,15 @@ export interface Routes {
                   | Array<{
                       /** ID of the thermostat daily program. */
                       thermostat_daily_program_id: string
-                      /** ID of the desired thermostat device. */
+                      /** ID of the thermostat device on which the thermostat daily program is configured. */
                       device_id: string
                       /** User-friendly name to identify the thermostat daily program. */
                       name: string | null
                       /** Array of thermostat daily program periods. */
                       periods: Array<{
-                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        /** Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at_time: string
-                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`. */
                         climate_preset_key: string
                       }>
                       /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
@@ -44578,9 +44578,9 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the desired thermostat device. */
+      /** ID of the thermostat device for which you want to activate a climate preset. */
       device_id: string
-      /** Climate preset key of the desired climate preset. */
+      /** Climate preset key of the climate preset that you want to activate. */
       climate_preset_key: string
     }
     commonParams: {}
@@ -45885,7 +45885,7 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the desired thermostat device. */
+      /** ID of the thermostat device that you want to set to cool mode. */
       device_id: string
       /** Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `cooling_set_point` parameters. */
       cooling_set_point_celsius?: number | undefined
@@ -47196,7 +47196,7 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the desired thermostat device. */
+      /** ID of the thermostat device for which you want create a climate preset. */
       device_id: string
       /** Indicates whether a person at the thermostat or using the API can change the thermostat's settings.
        * @deprecated Use 'thermostat_schedule.is_override_allowed' */
@@ -47227,33 +47227,34 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the desired thermostat device. */
+      /** ID of the thermostat device for which you want to create a daily program. */
       device_id: string
       /** User-friendly name to identify the thermostat daily program. */
       name?: string | undefined
       /** Array of thermostat daily program periods. */
       periods: Array<{
-        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+        /** Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at_time: string
-        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`. */
         climate_preset_key: string
       }>
     }
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /** Represents a thermostat daily program, consisting of a set of periods, each of which has a starting time and the key that identifies the climate preset to apply at the starting time. */
       thermostat_daily_program: {
         /** ID of the thermostat daily program. */
         thermostat_daily_program_id: string
-        /** ID of the desired thermostat device. */
+        /** ID of the thermostat device on which the thermostat daily program is configured. */
         device_id: string
         /** User-friendly name to identify the thermostat daily program. */
         name: string | null
         /** Array of thermostat daily program periods. */
         periods: Array<{
-          /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+          /** Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
           starts_at_time: string
-          /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+          /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`. */
           climate_preset_key: string
         }>
         /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
@@ -47269,7 +47270,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired thermostat schedule. */
+      /** ID of the thermostat daily program that you want to delete. */
       thermostat_daily_program_id: string
     }
     formData: {}
@@ -47280,15 +47281,15 @@ export interface Routes {
     method: 'PATCH' | 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the desired thermostat daily program. */
+      /** ID of the thermostat daily program that you want to update. */
       thermostat_daily_program_id: string
-      /** User-friendly name to identify the thermostat daily program. */
+      /** User-friendly name to identify the thermostat daily program that you want to update. */
       name?: string | undefined
-      /** Array of thermostat daily program periods. */
+      /** Array of thermostat daily program periods. The periods that you specify overwrite any existing periods for the daily program. */
       periods: Array<{
-        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+        /** Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at_time: string
-        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`. */
         climate_preset_key: string
       }>
     }
@@ -48594,9 +48595,9 @@ export interface Routes {
     method: 'POST' | 'DELETE'
     queryParams: {}
     jsonBody: {
-      /** ID of the desired thermostat device. */
+      /** ID of the thermostat device for which you want to delete a climate preset. */
       device_id: string
-      /** Climate preset key of the desired climate preset. */
+      /** Climate preset key of the climate preset that you want to delete. */
       climate_preset_key: string
     }
     commonParams: {}
@@ -48609,9 +48610,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired thermostat device. */
+      /** ID of the thermostat device that you want to retrieve. */
       device_id?: string | undefined
-      /** User-friendly name of the desired thermostat device. */
+      /** User-friendly name of the thermostat device that you want to retrieve. */
       name?: string | undefined
     }
     formData: {}
@@ -49292,15 +49293,15 @@ export interface Routes {
                   | Array<{
                       /** ID of the thermostat daily program. */
                       thermostat_daily_program_id: string
-                      /** ID of the desired thermostat device. */
+                      /** ID of the thermostat device on which the thermostat daily program is configured. */
                       device_id: string
                       /** User-friendly name to identify the thermostat daily program. */
                       name: string | null
                       /** Array of thermostat daily program periods. */
                       periods: Array<{
-                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        /** Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at_time: string
-                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`. */
                         climate_preset_key: string
                       }>
                       /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
@@ -49610,7 +49611,7 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the desired thermostat device. */
+      /** ID of the thermostat device that you want to set to heat mode. */
       device_id: string
       /** Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `heating_set_point` parameters. */
       heating_set_point_celsius?: number | undefined
@@ -50921,7 +50922,7 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the desired thermostat device. */
+      /** ID of the thermostat device that you want to set to heat-cool mode. */
       device_id: string
       /** Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `heating_set_point` parameters. */
       heating_set_point_celsius?: number | undefined
@@ -52244,7 +52245,7 @@ export interface Routes {
       connected_account_ids?: string[] | undefined
       /** ID of the Connect Webview by which to filter devices. */
       connect_webview_id?: string | undefined
-      /** Device type by which to filter devices. */
+      /** Device type by which to filter thermostat devices. */
       device_type?:
         | (
             | 'ecobee_thermostat'
@@ -52254,7 +52255,7 @@ export interface Routes {
             | 'sensi_thermostat'
           )
         | undefined
-      /** Array of device types by which to filter devices. */
+      /** Array of device types by which to filter thermostat devices. */
       device_types?:
         | Array<
             | 'ecobee_thermostat'
@@ -52264,7 +52265,7 @@ export interface Routes {
             | 'sensi_thermostat'
           >
         | undefined
-      /** Manufacturer by which to filter devices. */
+      /** Manufacturer by which to filter thermostat devices. */
       manufacturer?:
         | ('ecobee' | 'honeywell_resideo' | 'nest' | 'tado' | 'sensi')
         | undefined
@@ -52992,15 +52993,15 @@ export interface Routes {
                   | Array<{
                       /** ID of the thermostat daily program. */
                       thermostat_daily_program_id: string
-                      /** ID of the desired thermostat device. */
+                      /** ID of the thermostat device on which the thermostat daily program is configured. */
                       device_id: string
                       /** User-friendly name to identify the thermostat daily program. */
                       name: string | null
                       /** Array of thermostat daily program periods. */
                       periods: Array<{
-                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        /** Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at_time: string
-                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`. */
                         climate_preset_key: string
                       }>
                       /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
@@ -53978,15 +53979,15 @@ export interface Routes {
                   | Array<{
                       /** ID of the thermostat daily program. */
                       thermostat_daily_program_id: string
-                      /** ID of the desired thermostat device. */
+                      /** ID of the thermostat device on which the thermostat daily program is configured. */
                       device_id: string
                       /** User-friendly name to identify the thermostat daily program. */
                       name: string | null
                       /** Array of thermostat daily program periods. */
                       periods: Array<{
-                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        /** Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at_time: string
-                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`. */
                         climate_preset_key: string
                       }>
                       /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
@@ -54296,7 +54297,7 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the desired thermostat device. */
+      /** ID of the thermostat device that you want to set to off mode. */
       device_id: string
       /**  */
       sync?: boolean
@@ -55781,9 +55782,9 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the desired thermostat device. */
+      /** ID of the thermostat device for which you want to set the fallback climate preset. */
       device_id: string
-      /** Climate preset key of the desired climate preset. */
+      /** Climate preset key of the climate preset that you want to set as the fallback climate preset. */
       climate_preset_key: string
     }
     commonParams: {}
@@ -55795,6 +55796,7 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the thermostat device for which you want to set the fan mode. */
       device_id: string
       /**
        * @deprecated Use `fan_mode_setting` instead. */
@@ -57108,12 +57110,12 @@ export interface Routes {
     jsonBody:
       | {
           hvac_mode_setting: 'off'
-          /** ID of the desired thermostat device. */
+          /** ID of the thermostat device for which you want to set the HVAC mode. */
           device_id: string
         }
       | {
           hvac_mode_setting: 'cool'
-          /** ID of the desired thermostat device. */
+          /** ID of the thermostat device for which you want to set the HVAC mode. */
           device_id: string
           /** Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `cooling_set_point` parameters. */
           cooling_set_point_celsius?: number | undefined
@@ -57122,7 +57124,7 @@ export interface Routes {
         }
       | {
           hvac_mode_setting: 'heat'
-          /** ID of the desired thermostat device. */
+          /** ID of the thermostat device for which you want to set the HVAC mode. */
           device_id: string
           /** Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `heating_set_point` parameters. */
           heating_set_point_celsius?: number | undefined
@@ -57131,7 +57133,7 @@ export interface Routes {
         }
       | {
           hvac_mode_setting: 'heat_cool'
-          /** ID of the desired thermostat device. */
+          /** ID of the thermostat device for which you want to set the HVAC mode. */
           device_id: string
           /** Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `cooling_set_point` parameters. */
           cooling_set_point_celsius?: number | undefined
@@ -58444,7 +58446,7 @@ export interface Routes {
     method: 'POST' | 'PATCH'
     queryParams: {}
     jsonBody: {
-      /** ID of the desired thermostat device. */
+      /** ID of the thermostat device for which you want to set a temperature threshold. */
       device_id: string
       /** Lower temperature limit in in °C. Seam alerts you if the reported temperature is lower than this value. You can specify either `lower_limit` but not both. */
       lower_limit_celsius?: (number | undefined) | null
@@ -58529,7 +58531,7 @@ export interface Routes {
     method: 'POST' | 'PATCH'
     queryParams: {}
     jsonBody: {
-      /** ID of the desired thermostat device. */
+      /** ID of the thermostat device for which you want to update a climate preset. */
       device_id: string
       /** Unique key to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). */
       climate_preset_key: string
@@ -58560,7 +58562,7 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the thermostat device that the weekly program is for. */
+      /** ID of the thermostat device for which you want to update the weekly program. */
       device_id: string
       /** ID of the thermostat daily program to run on Mondays. */
       monday_program_id?: (string | undefined) | null
@@ -61248,15 +61250,15 @@ export interface Routes {
                   | Array<{
                       /** ID of the thermostat daily program. */
                       thermostat_daily_program_id: string
-                      /** ID of the desired thermostat device. */
+                      /** ID of the thermostat device on which the thermostat daily program is configured. */
                       device_id: string
                       /** User-friendly name to identify the thermostat daily program. */
                       name: string | null
                       /** Array of thermostat daily program periods. */
                       periods: Array<{
-                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        /** Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at_time: string
-                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`. */
                         climate_preset_key: string
                       }>
                       /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */
@@ -62236,15 +62238,15 @@ export interface Routes {
                   | Array<{
                       /** ID of the thermostat daily program. */
                       thermostat_daily_program_id: string
-                      /** ID of the desired thermostat device. */
+                      /** ID of the thermostat device on which the thermostat daily program is configured. */
                       device_id: string
                       /** User-friendly name to identify the thermostat daily program. */
                       name: string | null
                       /** Array of thermostat daily program periods. */
                       periods: Array<{
-                        /** Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        /** Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at_time: string
-                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time. */
+                        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`. */
                         climate_preset_key: string
                       }>
                       /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program. */

@@ -9314,6 +9314,8 @@ export default {
                       },
                       thermostat_daily_programs: {
                         items: {
+                          description:
+                            'Represents a thermostat daily program, consisting of a set of periods, each of which has a starting time and the key that identifies the climate preset to apply at the starting time.',
                           properties: {
                             created_at: {
                               description:
@@ -9323,7 +9325,7 @@ export default {
                             },
                             device_id: {
                               description:
-                                'ID of the desired thermostat device.',
+                                'ID of the thermostat device on which the thermostat daily program is configured.',
                               format: 'uuid',
                               type: 'string',
                             },
@@ -9337,15 +9339,17 @@ export default {
                               description:
                                 'Array of thermostat daily program periods.',
                               items: {
+                                description:
+                                  'Period for a thermostat daily program. Consists of a starts at time and the key that identifies the configured climate preset to apply at the starting time.',
                                 properties: {
                                   climate_preset_key: {
                                     description:
-                                      'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time.',
+                                      'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.',
                                     type: 'string',
                                   },
                                   starts_at_time: {
                                     description:
-                                      'Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                                      'Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                                     pattern:
                                       '^([01]\\d|2[0-3]):([0-5]\\d):([0-5]\\d)$',
                                     type: 'string',
@@ -9381,6 +9385,8 @@ export default {
                             'created_at',
                           ],
                           type: 'object',
+                          'x-route-path':
+                            '/thermostats/thermostat_daily_programs',
                         },
                         type: 'array',
                       },
@@ -30076,11 +30082,12 @@ export default {
                 properties: {
                   climate_preset_key: {
                     description:
-                      'Climate preset key of the desired climate preset.',
+                      'Climate preset key of the climate preset that you want to activate.',
                     type: 'string',
                   },
                   device_id: {
-                    description: 'ID of the desired thermostat device.',
+                    description:
+                      'ID of the thermostat device for which you want to activate a climate preset.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -30150,7 +30157,8 @@ export default {
                     type: 'number',
                   },
                   device_id: {
-                    description: 'ID of the desired thermostat device.',
+                    description:
+                      'ID of the thermostat device that you want to set to cool mode.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -30231,7 +30239,8 @@ export default {
                     type: 'number',
                   },
                   device_id: {
-                    description: 'ID of the desired thermostat device.',
+                    description:
+                      'ID of the thermostat device for which you want create a climate preset.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -30314,7 +30323,8 @@ export default {
     },
     '/thermostats/daily_programs/create': {
       post: {
-        description: 'Creates a thermostat daily program.',
+        description:
+          'Creates a thermostat daily program. A daily program consists of a set of periods, where each period includes a start time and the key of a configured climate preset. Once you have defined a daily program, you can assign it to one or more days within a weekly program.',
         operationId: 'thermostatsDailyProgramsCreatePost',
         requestBody: {
           content: {
@@ -30322,7 +30332,8 @@ export default {
               schema: {
                 properties: {
                   device_id: {
-                    description: 'ID of the desired thermostat device.',
+                    description:
+                      'ID of the thermostat device for which you want to create a daily program.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -30334,15 +30345,17 @@ export default {
                   periods: {
                     description: 'Array of thermostat daily program periods.',
                     items: {
+                      description:
+                        'Period for a thermostat daily program. Consists of a starts at time and the key that identifies the configured climate preset to apply at the starting time.',
                       properties: {
                         climate_preset_key: {
                           description:
-                            'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time.',
+                            'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.',
                           type: 'string',
                         },
                         starts_at_time: {
                           description:
-                            'Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                            'Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                           pattern: '^([01]\\d|2[0-3]):([0-5]\\d):([0-5]\\d)$',
                           type: 'string',
                         },
@@ -30367,6 +30380,8 @@ export default {
                   properties: {
                     ok: { type: 'boolean' },
                     thermostat_daily_program: {
+                      description:
+                        'Represents a thermostat daily program, consisting of a set of periods, each of which has a starting time and the key that identifies the climate preset to apply at the starting time.',
                       properties: {
                         created_at: {
                           description:
@@ -30375,7 +30390,8 @@ export default {
                           type: 'string',
                         },
                         device_id: {
-                          description: 'ID of the desired thermostat device.',
+                          description:
+                            'ID of the thermostat device on which the thermostat daily program is configured.',
                           format: 'uuid',
                           type: 'string',
                         },
@@ -30389,15 +30405,17 @@ export default {
                           description:
                             'Array of thermostat daily program periods.',
                           items: {
+                            description:
+                              'Period for a thermostat daily program. Consists of a starts at time and the key that identifies the configured climate preset to apply at the starting time.',
                             properties: {
                               climate_preset_key: {
                                 description:
-                                  'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time.',
+                                  'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.',
                                 type: 'string',
                               },
                               starts_at_time: {
                                 description:
-                                  'Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                                  'Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                                 pattern:
                                   '^([01]\\d|2[0-3]):([0-5]\\d):([0-5]\\d)$',
                                 type: 'string',
@@ -30429,6 +30447,7 @@ export default {
                         'created_at',
                       ],
                       type: 'object',
+                      'x-route-path': '/thermostats/thermostat_daily_programs',
                     },
                   },
                   required: ['thermostat_daily_program', 'ok'],
@@ -30454,7 +30473,6 @@ export default {
         'x-fern-sdk-return-value': 'thermostat_daily_program',
         'x-response-key': 'thermostat_daily_program',
         'x-title': 'Create a Thermostat Daily Program',
-        'x-undocumented': 'Unreleased.',
       },
     },
     '/thermostats/daily_programs/delete': {
@@ -30467,7 +30485,8 @@ export default {
               schema: {
                 properties: {
                   thermostat_daily_program_id: {
-                    description: 'ID of the desired thermostat schedule.',
+                    description:
+                      'ID of the thermostat daily program that you want to delete.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -30506,12 +30525,12 @@ export default {
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
         'x-title': 'Delete a Thermostat Daily Program',
-        'x-undocumented': 'Unreleased.',
       },
     },
     '/thermostats/daily_programs/update': {
       patch: {
-        description: 'Updates a specified thermostat daily program.',
+        description:
+          'Updates a specified thermostat daily program. The periods that you specify overwrite any existing periods for the daily program.',
         operationId: 'thermostatsDailyProgramsUpdatePatch',
         requestBody: {
           content: {
@@ -30520,21 +30539,24 @@ export default {
                 properties: {
                   name: {
                     description:
-                      'User-friendly name to identify the thermostat daily program.',
+                      'User-friendly name to identify the thermostat daily program that you want to update.',
                     type: 'string',
                   },
                   periods: {
-                    description: 'Array of thermostat daily program periods.',
+                    description:
+                      'Array of thermostat daily program periods. The periods that you specify overwrite any existing periods for the daily program.',
                     items: {
+                      description:
+                        'Period for a thermostat daily program. Consists of a starts at time and the key that identifies the configured climate preset to apply at the starting time.',
                       properties: {
                         climate_preset_key: {
                           description:
-                            'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time.',
+                            'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.',
                           type: 'string',
                         },
                         starts_at_time: {
                           description:
-                            'Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                            'Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                           pattern: '^([01]\\d|2[0-3]):([0-5]\\d):([0-5]\\d)$',
                           type: 'string',
                         },
@@ -30545,7 +30567,8 @@ export default {
                     type: 'array',
                   },
                   thermostat_daily_program_id: {
-                    description: 'ID of the desired thermostat daily program.',
+                    description:
+                      'ID of the thermostat daily program that you want to update.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -30589,10 +30612,10 @@ export default {
         'x-fern-ignore': true,
         'x-response-key': 'action_attempt',
         'x-title': 'Update a Thermostat Daily Program',
-        'x-undocumented': 'Unreleased.',
       },
       post: {
-        description: 'Updates a specified thermostat daily program.',
+        description:
+          'Updates a specified thermostat daily program. The periods that you specify overwrite any existing periods for the daily program.',
         operationId: 'thermostatsDailyProgramsUpdatePost',
         requestBody: {
           content: {
@@ -30601,21 +30624,24 @@ export default {
                 properties: {
                   name: {
                     description:
-                      'User-friendly name to identify the thermostat daily program.',
+                      'User-friendly name to identify the thermostat daily program that you want to update.',
                     type: 'string',
                   },
                   periods: {
-                    description: 'Array of thermostat daily program periods.',
+                    description:
+                      'Array of thermostat daily program periods. The periods that you specify overwrite any existing periods for the daily program.',
                     items: {
+                      description:
+                        'Period for a thermostat daily program. Consists of a starts at time and the key that identifies the configured climate preset to apply at the starting time.',
                       properties: {
                         climate_preset_key: {
                           description:
-                            'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time.',
+                            'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.',
                           type: 'string',
                         },
                         starts_at_time: {
                           description:
-                            'Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                            'Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                           pattern: '^([01]\\d|2[0-3]):([0-5]\\d):([0-5]\\d)$',
                           type: 'string',
                         },
@@ -30626,7 +30652,8 @@ export default {
                     type: 'array',
                   },
                   thermostat_daily_program_id: {
-                    description: 'ID of the desired thermostat daily program.',
+                    description:
+                      'ID of the thermostat daily program that you want to update.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -30672,7 +30699,6 @@ export default {
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
         'x-title': 'Update a Thermostat Daily Program',
-        'x-undocumented': 'Unreleased.',
       },
     },
     '/thermostats/delete_climate_preset': {
@@ -30687,11 +30713,12 @@ export default {
                 properties: {
                   climate_preset_key: {
                     description:
-                      'Climate preset key of the desired climate preset.',
+                      'Climate preset key of the climate preset that you want to delete.',
                     type: 'string',
                   },
                   device_id: {
-                    description: 'ID of the desired thermostat device.',
+                    description:
+                      'ID of the thermostat device for which you want to delete a climate preset.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -30743,13 +30770,14 @@ export default {
               schema: {
                 properties: {
                   device_id: {
-                    description: 'ID of the desired thermostat device.',
+                    description:
+                      'ID of the thermostat device that you want to retrieve.',
                     format: 'uuid',
                     type: 'string',
                   },
                   name: {
                     description:
-                      'User-friendly name of the desired thermostat device.',
+                      'User-friendly name of the thermostat device that you want to retrieve.',
                     type: 'string',
                   },
                 },
@@ -30805,7 +30833,8 @@ export default {
               schema: {
                 properties: {
                   device_id: {
-                    description: 'ID of the desired thermostat device.',
+                    description:
+                      'ID of the thermostat device that you want to set to heat mode.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -30893,7 +30922,8 @@ export default {
                     type: 'number',
                   },
                   device_id: {
-                    description: 'ID of the desired thermostat device.',
+                    description:
+                      'ID of the thermostat device that you want to set to heat-cool mode.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -31011,7 +31041,8 @@ export default {
                     type: 'array',
                   },
                   device_type: {
-                    description: 'Device type by which to filter devices.',
+                    description:
+                      'Device type by which to filter thermostat devices.',
                     enum: [
                       'ecobee_thermostat',
                       'nest_thermostat',
@@ -31023,7 +31054,7 @@ export default {
                   },
                   device_types: {
                     description:
-                      'Array of device types by which to filter devices.',
+                      'Array of device types by which to filter thermostat devices.',
                     items: {
                       enum: [
                         'ecobee_thermostat',
@@ -31084,7 +31115,8 @@ export default {
                     type: 'number',
                   },
                   manufacturer: {
-                    description: 'Manufacturer by which to filter devices.',
+                    description:
+                      'Manufacturer by which to filter thermostat devices.',
                     enum: [
                       'ecobee',
                       'honeywell_resideo',
@@ -31169,7 +31201,8 @@ export default {
               schema: {
                 properties: {
                   device_id: {
-                    description: 'ID of the desired thermostat device.',
+                    description:
+                      'ID of the thermostat device that you want to set to off mode.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -31672,11 +31705,12 @@ export default {
                 properties: {
                   climate_preset_key: {
                     description:
-                      'Climate preset key of the desired climate preset.',
+                      'Climate preset key of the climate preset that you want to set as the fallback climate preset.',
                     type: 'string',
                   },
                   device_id: {
-                    description: 'ID of the desired thermostat device.',
+                    description:
+                      'ID of the thermostat device for which you want to set the fallback climate preset.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -31726,7 +31760,12 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
+                  device_id: {
+                    description:
+                      'ID of the thermostat device for which you want to set the fan mode.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   fan_mode: {
                     deprecated: true,
                     enum: ['auto', 'on', 'circulate'],
@@ -31802,7 +31841,8 @@ export default {
                   {
                     properties: {
                       device_id: {
-                        description: 'ID of the desired thermostat device.',
+                        description:
+                          'ID of the thermostat device for which you want to set the HVAC mode.',
                         format: 'uuid',
                         type: 'string',
                       },
@@ -31826,7 +31866,8 @@ export default {
                         type: 'number',
                       },
                       device_id: {
-                        description: 'ID of the desired thermostat device.',
+                        description:
+                          'ID of the thermostat device for which you want to set the HVAC mode.',
                         format: 'uuid',
                         type: 'string',
                       },
@@ -31838,7 +31879,8 @@ export default {
                   {
                     properties: {
                       device_id: {
-                        description: 'ID of the desired thermostat device.',
+                        description:
+                          'ID of the thermostat device for which you want to set the HVAC mode.',
                         format: 'uuid',
                         type: 'string',
                       },
@@ -31874,7 +31916,8 @@ export default {
                         type: 'number',
                       },
                       device_id: {
-                        description: 'ID of the desired thermostat device.',
+                        description:
+                          'ID of the thermostat device for which you want to set the HVAC mode.',
                         format: 'uuid',
                         type: 'string',
                       },
@@ -31951,7 +31994,8 @@ export default {
               schema: {
                 properties: {
                   device_id: {
-                    description: 'ID of the desired thermostat device.',
+                    description:
+                      'ID of the thermostat device for which you want to set a temperature threshold.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -32031,7 +32075,8 @@ export default {
               schema: {
                 properties: {
                   device_id: {
-                    description: 'ID of the desired thermostat device.',
+                    description:
+                      'ID of the thermostat device for which you want to set a temperature threshold.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -32355,7 +32400,8 @@ export default {
                     type: 'number',
                   },
                   device_id: {
-                    description: 'ID of the desired thermostat device.',
+                    description:
+                      'ID of the thermostat device for which you want to update a climate preset.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -32464,7 +32510,8 @@ export default {
                     type: 'number',
                   },
                   device_id: {
-                    description: 'ID of the desired thermostat device.',
+                    description:
+                      'ID of the thermostat device for which you want to update a climate preset.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -32550,7 +32597,8 @@ export default {
     },
     '/thermostats/update_weekly_program': {
       post: {
-        description: 'Activates a thermostat weekly program.',
+        description:
+          'Updates the thermostat weekly program for a thermostat device. To configure a weekly program, specify the ID of the daily program that you want to use for each day of the week. When you update a weekly program, the set of programs that you specify overwrites any previous weekly program for the thermostat.',
         operationId: 'thermostatsUpdateWeeklyProgramPost',
         requestBody: {
           content: {
@@ -32559,7 +32607,7 @@ export default {
                 properties: {
                   device_id: {
                     description:
-                      'ID of the thermostat device that the weekly program is for.',
+                      'ID of the thermostat device for which you want to update the weekly program.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -32653,8 +32701,7 @@ export default {
         'x-fern-sdk-method-name': 'update_weekly_program',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
-        'x-title': 'Activate a Thermostat Weekly Program',
-        'x-undocumented': 'Unreleased.',
+        'x-title': 'Update the Thermostat Weekly Program',
       },
     },
     '/unstable_access_grants/create': {
