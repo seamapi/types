@@ -34484,6 +34484,101 @@ export default {
         'x-undocumented': 'Experimental locations.',
       },
     },
+    '/unstable_partner/resources/push': {
+      post: {
+        description: 'Send Seam some of your resources.',
+        operationId: 'unstablePartnerResourcesPushPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                oneOf: [
+                  {
+                    items: {
+                      properties: {
+                        custom_metadata: {
+                          additionalProperties: { type: 'string' },
+                          type: 'object',
+                        },
+                        customer_key: { type: 'string' },
+                        description: { type: 'string' },
+                        email_address: { type: 'string' },
+                        ends_at: { type: 'string' },
+                        icon_url: { type: 'string' },
+                        location_keys: {
+                          items: { type: 'string' },
+                          type: 'array',
+                        },
+                        name: { type: 'string' },
+                        partner_resource_key: { type: 'string' },
+                        partner_resource_type: { type: 'string' },
+                        phone_number: { type: 'string' },
+                        starts_at: { type: 'string' },
+                        user_identity_key: { type: 'string' },
+                      },
+                      type: 'object',
+                    },
+                    type: 'array',
+                  },
+                  {
+                    properties: {
+                      custom_metadata: {
+                        additionalProperties: { type: 'string' },
+                        type: 'object',
+                      },
+                      customer_key: { type: 'string' },
+                      description: { type: 'string' },
+                      email_address: { type: 'string' },
+                      ends_at: { type: 'string' },
+                      icon_url: { type: 'string' },
+                      location_keys: {
+                        items: { type: 'string' },
+                        type: 'array',
+                      },
+                      name: { type: 'string' },
+                      partner_resource_key: { type: 'string' },
+                      partner_resource_type: { type: 'string' },
+                      phone_number: { type: 'string' },
+                      starts_at: { type: 'string' },
+                      user_identity_key: { type: 'string' },
+                    },
+                    type: 'object',
+                  },
+                ],
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_partner/resources/push',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_partner', 'resources'],
+        'x-fern-sdk-method-name': 'push',
+        'x-response-key': null,
+        'x-title': 'Push partner resources at Seam',
+        'x-undocumented': 'Experimental partner resources.',
+      },
+    },
     '/user_identities/add_acs_user': {
       post: {
         description:
