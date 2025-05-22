@@ -10519,7 +10519,9 @@ export interface Routes {
       /** ID of the desired access group. */
       acs_access_group_id: string
       /** ID of the desired user. */
-      acs_user_id: string
+      acs_user_id?: string | undefined
+      /** ID of the desired user identity. */
+      user_identity_id?: string | undefined
     }
     formData: {}
     jsonResponse: {}
@@ -10855,8 +10857,12 @@ export interface Routes {
     commonParams: {
       /** ACS system ID of the credential manager for the new credential. */
       credential_manager_acs_system_id?: string | undefined
-      /** ID of the ACS user to whom the new credential belongs. */
-      acs_user_id: string
+      /** ID of the ACS user to whom the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`. */
+      acs_user_id?: string | undefined
+      /** ID of the user identity to whom the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`. If the ACS system contains an ACS user with the same `email_address` or `phone_number` as the user identity that you specify, they are linked, and the credential belongs to the ACS user. If the ACS system does not have a corresponding ACS user, one is created. */
+      user_identity_id?: string | undefined
+      /** ID of the ACS system to which the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`. */
+      acs_system_id?: string | undefined
       /** Access method for the new credential. Supported values: `code`, `card`, `mobile_key`. */
       access_method: 'code' | 'card' | 'mobile_key'
       /** Access (PIN) code for the new credential. There may be manufacturer-specific code restrictions. For details, see the applicable [device or system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides/overview). */
@@ -22161,6 +22167,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -23160,6 +23167,7 @@ export interface Routes {
                 | 'honeywell_resideo_thermostat'
                 | 'tado_thermostat'
                 | 'sensi_thermostat'
+                | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
           )
@@ -23203,6 +23211,7 @@ export interface Routes {
                 | 'honeywell_resideo_thermostat'
                 | 'tado_thermostat'
                 | 'sensi_thermostat'
+                | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
           >
@@ -23340,6 +23349,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -24472,6 +24482,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Unique identifier for the account associated with the device. */
@@ -24838,6 +24849,7 @@ export interface Routes {
                 | 'honeywell_resideo_thermostat'
                 | 'tado_thermostat'
                 | 'sensi_thermostat'
+                | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
           )
@@ -24881,6 +24893,7 @@ export interface Routes {
                 | 'honeywell_resideo_thermostat'
                 | 'tado_thermostat'
                 | 'sensi_thermostat'
+                | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
           >
@@ -25018,6 +25031,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Unique identifier for the account associated with the device. */
@@ -28573,6 +28587,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -29560,6 +29575,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -30706,6 +30722,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -31692,6 +31709,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -38004,6 +38022,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -38990,6 +39009,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -48659,6 +48679,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -52253,6 +52274,7 @@ export interface Routes {
             | 'honeywell_resideo_thermostat'
             | 'tado_thermostat'
             | 'sensi_thermostat'
+            | 'smartthings_thermostat'
           )
         | undefined
       /** Array of device types by which to filter thermostat devices. */
@@ -52263,6 +52285,7 @@ export interface Routes {
             | 'honeywell_resideo_thermostat'
             | 'tado_thermostat'
             | 'sensi_thermostat'
+            | 'smartthings_thermostat'
           >
         | undefined
       /** Manufacturer by which to filter thermostat devices. */
@@ -52359,6 +52382,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -53345,6 +53369,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -60616,6 +60641,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -61604,6 +61630,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
