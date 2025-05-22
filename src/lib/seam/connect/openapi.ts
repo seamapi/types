@@ -22260,12 +22260,18 @@ export default {
                   },
                   acs_user_id: {
                     description:
-                      'ID of the access system user from which you want to unassign a credential.',
+                      'ID of the access system user from which you want to unassign a credential. You can only provide one of acs_user_id or user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity from which you want to unassign a credential. You can only provide one of acs_user_id or user_identity_id.',
                     format: 'uuid',
                     type: 'string',
                   },
                 },
-                required: ['acs_user_id', 'acs_credential_id'],
+                required: ['acs_credential_id'],
                 type: 'object',
               },
             },
@@ -22320,12 +22326,18 @@ export default {
                   },
                   acs_user_id: {
                     description:
-                      'ID of the access system user from which you want to unassign a credential.',
+                      'ID of the access system user from which you want to unassign a credential. You can only provide one of acs_user_id or user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity from which you want to unassign a credential. You can only provide one of acs_user_id or user_identity_id.',
                     format: 'uuid',
                     type: 'string',
                   },
                 },
-                required: ['acs_user_id', 'acs_credential_id'],
+                required: ['acs_credential_id'],
                 type: 'object',
               },
             },

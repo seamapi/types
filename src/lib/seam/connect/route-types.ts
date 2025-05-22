@@ -11770,8 +11770,10 @@ export interface Routes {
     method: 'PATCH' | 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the access system user from which you want to unassign a credential. */
-      acs_user_id: string
+      /** ID of the access system user from which you want to unassign a credential. You can only provide one of acs_user_id or user_identity_id. */
+      acs_user_id?: string | undefined
+      /** ID of the user identity from which you want to unassign a credential. You can only provide one of acs_user_id or user_identity_id. */
+      user_identity_id?: string | undefined
       /** ID of the credential that you want to unassign from an access system user. */
       acs_credential_id: string
     }
