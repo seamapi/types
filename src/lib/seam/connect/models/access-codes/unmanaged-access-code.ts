@@ -36,6 +36,10 @@ export const unmanaged_access_code = access_code
     When you create an access code on a device in Seam, it is created as a managed access code. Access codes that exist on a device that were not created through Seam are considered unmanaged codes. We strictly limit the operations that can be performed on unmanaged codes.
 
     Prior to using Seam to manage your devices, you may have used another lock management system to manage the access codes on your devices. Where possible, we help you keep any existing access codes on devices and transition those codes to ones managed by your Seam workspace.
+
+    Not all providers support unmanaged access codes. The following providers do not support unmanaged access codes:
+    
+    - [Kwikset](https://docs.seam.co/latest/device-and-system-integration-guides/kwikset-locks)
   `)
 
 export type UnmanagedAccessCode = z.infer<typeof unmanaged_access_code>

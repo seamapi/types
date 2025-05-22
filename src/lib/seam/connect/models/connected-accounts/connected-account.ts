@@ -178,6 +178,7 @@ export const connected_account = z.object({
   ---
   route_path: /connected_accounts
   ---
+  Represents a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). A connected account is an external third-party account to which your user has authorized Seam to get access, for example, an August account with a list of door locks.
 `)
 
 export type ConnectedAccount = z.infer<typeof connected_account>

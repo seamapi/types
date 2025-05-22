@@ -3,7 +3,7 @@ export default {
     schemas: {
       access_code: {
         description:
-          'Represents a smart lock [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nAn access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam Access Code API, you can easily generate access codes on the hundreds of door lock models with which we integrate.\n\nSeam supports programming two types of access codes: [ongoing](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`.\n\nIn addition, for certain devices, Seam also supports [offline access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#offline-access-codes). Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code.',
+          'Represents a smart lock [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nAn access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam Access Code API, you can easily generate access codes on the hundreds of door lock models with which we integrate.\n\nSeam supports programming two types of access codes: [ongoing](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`. An ongoing access code is active, until it has been removed from the device. To specify an ongoing access code, leave both `starts_at` and `ends_at` empty. A time-bound access code will be programmed at the `starts_at` time and removed at the `ends_at` time.\n\nIn addition, for certain devices, Seam also supports [offline access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#offline-access-codes). Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code.',
         properties: {
           access_code_id: {
             description: 'Unique identifier for the access code.',
@@ -1180,7 +1180,7 @@ export default {
           },
           name: {
             description:
-              'Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.',
+              "Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.\n      \n      Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.\n      \n      To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.\n      \n      To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components).",
             nullable: true,
             type: 'string',
           },
@@ -7124,6 +7124,8 @@ export default {
         'x-route-path': '/action_attempts',
       },
       client_session: {
+        description:
+          "Represents a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens). If you want to restrict your users' access to their own devices, use client sessions.\n\nYou create each client session with a custom `user_identifier_key`. Normally, the `user_identifier_key` is a user ID that your application provides.\n\nWhen calling the Seam API from your backend using an API key, you can pass the `user_identifier_key` as a parameter to limit results to the associated client session. For example, `/devices/list?user_identifier_key=123` only returns devices associated with the client session created with the `user_identifier_key` `123`.\n\nA client session has a token that you can use with the Seam JavaScript SDK to make requests from the client (browser) directly to the Seam API. The token restricts the user's access to only the devices that they own.\n\nSee also [Get Started with React](https://docs.seam.co/latest/ui-components/overview/getting-started-with-seam-components/get-started-with-react-components-and-client-session-tokens).",
         properties: {
           client_session_id: { format: 'uuid', type: 'string' },
           connect_webview_ids: {
@@ -7161,18 +7163,22 @@ export default {
         'x-route-path': '/client_sessions',
       },
       connect_webview: {
+        description:
+          'Represents a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).\n\nConnect Webviews are fully-embedded client-side components that you add to your app. Your users interact with your embedded Connect Webviews to link their IoT device or system accounts to Seam. That is, Connect Webviews walk your users through the process of logging in to their device or system accounts. Seam handles all the authentication steps, and—once your user has completed the authorization through your app—you can access and control their devices or systems using the Seam API.\n\nConnect Webviews perform credential validation, multifactor authentication (when applicable), and error handling for each brand that Seam supports. Further, Connect Webviews work across all modern browsers and platforms, including Chrome, Safari, and Firefox.\n\nTo enable a user to connect their device or system account to Seam through your app, first create a `connect_webview`. Once created, this `connect_webview` includes a URL that you can use to open an [iframe](https://www.w3schools.com/html/html_iframe.asp) or new window containing the Connect Webview for your user.\n\nWhen you create a Connect Webview, specify the desired provider category key in the `provider_category` parameter. Alternately, to specify a list of providers explicitly, use the `accepted_providers` parameter with a list of device provider keys.\n\nTo list all providers within a category, use `/devices/list_device_providers` with the desired `provider_category` filter. To list all provider keys, use `/devices/list_device_providers` with no filters.',
         properties: {
           accepted_devices: {
             deprecated: true,
             items: { type: 'string' },
             type: 'array',
             'x-deprecated': 'Unused. Will be removed.',
+            'x-undocumented': 'Unused. Will be removed.',
           },
           accepted_providers: { items: { type: 'string' }, type: 'array' },
           any_device_allowed: {
             deprecated: true,
             type: 'boolean',
             'x-deprecated': 'Unused. Will be removed.',
+            'x-undocumented': 'Unused. Will be removed.',
           },
           any_provider_allowed: { type: 'boolean' },
           authorized_at: {
@@ -7240,6 +7246,8 @@ export default {
         'x-route-path': '/connect_webviews',
       },
       connected_account: {
+        description:
+          'Represents a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). A connected account is an external third-party account to which your user has authorized Seam to get access, for example, an August account with a list of door locks.',
         properties: {
           account_type: { type: 'string' },
           account_type_display_name: { type: 'string' },
@@ -7513,6 +7521,8 @@ export default {
         'x-route-path': '/connected_accounts',
       },
       device: {
+        description:
+          'Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that has been connected to Seam.',
         properties: {
           can_hvac_cool: { type: 'boolean' },
           can_hvac_heat: { type: 'boolean' },
@@ -8082,7 +8092,8 @@ export default {
                             type: 'string',
                           },
                           manufacturer: {
-                            description: 'Manufacturer of the device.',
+                            description:
+                              'Manufacturer of the device. When a device, such as a smart lock, is connected through a smart hub, the manufacturer of the device might be different from that of the smart hub.',
                             type: 'string',
                           },
                           model: {
@@ -8778,6 +8789,8 @@ export default {
                         type: 'array',
                       },
                       code_constraints: {
+                        description:
+                          'Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific.',
                         items: {
                           oneOf: [
                             {
@@ -9901,6 +9914,8 @@ export default {
         'x-route-path': '/user_identities/enrollment_automations',
       },
       event: {
+        description:
+          "Represents an event. Events let you know when something interesting happens in your workspace. For example, when a lock is unlocked, Seam creates a `lock.unlocked` event. When a device's battery level is low, Seam creates a `device.battery_low` event.\n\nAs with other API resources, you can retrieve an individual event or a list of events. Seam also provides a separate [webhook](https://docs.seam.co/latest/developer-tools/webhooks) system for sending the event objects directly to an endpoint on your sever. Manage webhooks through [Seam Console](https://console.seam.co). You can also use the webhooks sandbox in Seam Console to see the different payloads for each event and test them against your own endpoints.",
         discriminator: { propertyName: 'event_type' },
         oneOf: [
           {
@@ -15203,7 +15218,7 @@ export default {
       },
       unmanaged_access_code: {
         description:
-          'Represents an [unmanaged smart lock access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).\n\nAn access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly.\n\nWhen you create an access code on a device in Seam, it is created as a managed access code. Access codes that exist on a device that were not created through Seam are considered unmanaged codes. We strictly limit the operations that can be performed on unmanaged codes.\n\nPrior to using Seam to manage your devices, you may have used another lock management system to manage the access codes on your devices. Where possible, we help you keep any existing access codes on devices and transition those codes to ones managed by your Seam workspace.',
+          'Represents an [unmanaged smart lock access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).\n\nAn access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly.\n\nWhen you create an access code on a device in Seam, it is created as a managed access code. Access codes that exist on a device that were not created through Seam are considered unmanaged codes. We strictly limit the operations that can be performed on unmanaged codes.\n\nPrior to using Seam to manage your devices, you may have used another lock management system to manage the access codes on your devices. Where possible, we help you keep any existing access codes on devices and transition those codes to ones managed by your Seam workspace.\n\nNot all providers support unmanaged access codes. The following providers do not support unmanaged access codes:\n\n- [Kwikset](https://docs.seam.co/latest/device-and-system-integration-guides/kwikset-locks)',
         properties: {
           access_code_id: {
             description: 'Unique identifier for the access code.',
@@ -16340,7 +16355,7 @@ export default {
           },
           name: {
             description:
-              'Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.',
+              "Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.\n      \n      Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.\n      \n      To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.\n      \n      To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components).",
             nullable: true,
             type: 'string',
           },
@@ -17807,6 +17822,8 @@ export default {
         'x-route-path': '/acs/users/unmanaged',
       },
       unmanaged_device: {
+        description:
+          'Represents an [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices). An unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).',
         properties: {
           can_hvac_cool: { type: 'boolean' },
           can_hvac_heat: { type: 'boolean' },
@@ -18326,7 +18343,8 @@ export default {
                 type: 'string',
               },
               manufacturer: {
-                description: 'Manufacturer of the device.',
+                description:
+                  'Manufacturer of the device. When a device, such as a smart lock, is connected through a smart hub, the manufacturer of the device might be different from that of the smart hub.',
                 type: 'string',
               },
               model: {
@@ -18690,7 +18708,7 @@ export default {
       },
       user_identity: {
         description:
-          'Represents a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with an application user account.',
+          'Represents a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with an application user account.',
         properties: {
           created_at: {
             description:
@@ -18755,6 +18773,8 @@ export default {
         'x-route-path': '/webhooks',
       },
       workspace: {
+        description:
+          'Represents a Seam [workspace](https://docs.seam.co/latest/core-concepts/workspaces). A workspace is a top-level entity that encompasses all other resources below it, such as devices, connected accounts, and Connect Webviews. Seam provides two types of workspaces. A [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces) is a special type of workspace designed for testing code. Sandbox workspaces offer test device accounts and virtual devices that you can connect and control. This ability to work with virtual devices is quite handy because it removes the need to own physical devices from multiple brands. To connect real devices and systems to Seam, use a [production workspace](https://docs.seam.co/latest/core-concepts/workspaces#production-workspaces).',
         properties: {
           company_name: { type: 'string' },
           connect_partner_name: {
@@ -18891,7 +18911,7 @@ export default {
                   },
                   device_id: {
                     description:
-                      'ID of the device for which to create the new access code.',
+                      'ID of the device for which you want to create the new access code.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -18923,7 +18943,8 @@ export default {
                     type: 'string',
                   },
                   name: {
-                    description: 'Name of the new access code.',
+                    description:
+                      "Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.\n      \n      Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.\n      \n      To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.\n      \n      To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components).",
                     type: 'string',
                   },
                   prefer_native_scheduling: {
@@ -19033,7 +19054,7 @@ export default {
                   },
                   device_ids: {
                     description:
-                      'IDs of the devices for which to create the new access codes.',
+                      'IDs of the devices for which you want to create the new access codes.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
@@ -19065,7 +19086,8 @@ export default {
                     type: 'string',
                   },
                   name: {
-                    description: 'Name of the new access code.',
+                    description:
+                      "Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.\n      \n      Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.\n      \n      To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.\n      \n      To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components).",
                     type: 'string',
                   },
                   prefer_native_scheduling: {
@@ -19167,7 +19189,7 @@ export default {
                   },
                   device_ids: {
                     description:
-                      'IDs of the devices for which to create the new access codes.',
+                      'IDs of the devices for which you want to create the new access codes.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
@@ -19199,7 +19221,8 @@ export default {
                     type: 'string',
                   },
                   name: {
-                    description: 'Name of the new access code.',
+                    description:
+                      "Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.\n      \n      Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.\n      \n      To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.\n      \n      To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components).",
                     type: 'string',
                   },
                   prefer_native_scheduling: {
@@ -19277,13 +19300,14 @@ export default {
               schema: {
                 properties: {
                   access_code_id: {
-                    description: 'ID of the access code to delete.',
+                    description:
+                      'ID of the access code that you want to delete.',
                     format: 'uuid',
                     type: 'string',
                   },
                   device_id: {
                     description:
-                      'ID of the device for which to delete the access code.',
+                      'ID of the device for which you want to delete the access code.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -19337,12 +19361,21 @@ export default {
     },
     '/access_codes/generate_code': {
       post: {
+        description:
+          'Generates a code for an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes), given a device ID.',
         operationId: 'accessCodesGenerateCodePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
-                properties: { device_id: { format: 'uuid', type: 'string' } },
+                properties: {
+                  device_id: {
+                    description:
+                      'ID of the device for which you want to generate a code.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
                 required: ['device_id'],
                 type: 'object',
               },
@@ -19382,6 +19415,7 @@ export default {
         'x-fern-sdk-method-name': 'generate_code',
         'x-fern-sdk-return-value': 'generated_code',
         'x-response-key': 'generated_code',
+        'x-title': 'Generate a Code',
       },
     },
     '/access_codes/get': {
@@ -19538,7 +19572,7 @@ export default {
     '/access_codes/pull_backup_access_code': {
       post: {
         description:
-          "Retrieves a backup access code for an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). See also [Managing Backup Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes).\n\nA backup access code pool is a collection of pre-programmed access codes stored on a device, ready for use. These codes are programmed in addition to the regular access codes on Seam, serving as a safety net for any issues with the primary codes.\n\nIf there's ever a complication with a primary access code—be it due to intermittent connectivity, manual removal from a device, or provider outages—a backup code can be retrieved. Its end time can then be adjusted to align with the original code, facilitating seamless and uninterrupted access.\n\nYou can only pull backup access codes for time-bound access codes.\n\nBefore pulling a backup access code, make sure that the device's `properties.supports_backup_access_code_pool` is `true`. Then, to activate the backup pool, set `use_backup_access_code_pool` to `true` when creating an access code.",
+          "Retrieves a backup access code for an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). See also [Managing Backup Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes).\n\nA backup access code pool is a collection of pre-programmed access codes stored on a device, ready for use. These codes are programmed in addition to the regular access codes on Seam, serving as a safety net for any issues with the primary codes. If there's ever a complication with a primary access code—be it due to intermittent connectivity, manual removal from a device, or provider outages—a backup code can be retrieved. Its end time can then be adjusted to align with the original code, facilitating seamless and uninterrupted access.\n\nYou can pull a backup access code from the pool at any time. These backup codes are guaranteed to work immediately and automatically programmed to be removed from the device after the access code ends.\n\nYou can only pull backup access codes for time-bound access codes.\n\nBefore pulling a backup access code, make sure that the device's `properties.supports_backup_access_code_pool` is `true`. Then, to activate the backup pool, set `use_backup_access_code_pool` to `true` when creating an access code.",
         operationId: 'accessCodesPullBackupAccessCodePost',
         requestBody: {
           content: {
@@ -19598,7 +19632,7 @@ export default {
     '/access_codes/report_device_constraints': {
       post: {
         description:
-          'Enables you to report access code-related constraints for a device. Currently, supports reporting supported code length constraints for SmartThings devices.',
+          'Enables you to report access code-related constraints for a device. Currently, supports reporting supported code length constraints for SmartThings devices.\n\nSpecify either `supported_code_lengths` or `min_code_length`/`max_code_length`.',
         operationId: 'accessCodesReportDeviceConstraintsPost',
         requestBody: {
           content: {
@@ -19607,7 +19641,7 @@ export default {
                 properties: {
                   device_id: {
                     description:
-                      'ID of the device for which to report constraints.',
+                      'ID of the device for which you want to report constraints.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -19757,7 +19791,7 @@ export default {
                   },
                   allow_external_modification: {
                     description:
-                      'Indicates whether external modification of the access code is allowed.',
+                      'Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the access code is allowed.',
                     type: 'boolean',
                   },
                   force: {
@@ -19767,7 +19801,7 @@ export default {
                   },
                   is_external_modification_allowed: {
                     description:
-                      'Indicates whether external modification of the access code is allowed.',
+                      'Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the access code is allowed.',
                     type: 'boolean',
                   },
                   sync: {
@@ -19828,7 +19862,7 @@ export default {
                   },
                   allow_external_modification: {
                     description:
-                      'Indicates whether external modification of the access code is allowed.',
+                      'Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the access code is allowed.',
                     type: 'boolean',
                   },
                   force: {
@@ -19838,7 +19872,7 @@ export default {
                   },
                   is_external_modification_allowed: {
                     description:
-                      'Indicates whether external modification of the access code is allowed.',
+                      'Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the access code is allowed.',
                     type: 'boolean',
                   },
                   sync: {
@@ -19895,7 +19929,8 @@ export default {
               schema: {
                 properties: {
                   access_code_id: {
-                    description: 'ID of the unmanaged access code to delete.',
+                    description:
+                      'ID of the unmanaged access code that you want to delete.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -20289,7 +20324,8 @@ export default {
                     type: 'string',
                   },
                   name: {
-                    description: 'Name of the new access code.',
+                    description:
+                      "Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.\n      \n      Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.\n      \n      To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.\n      \n      To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components).",
                     type: 'string',
                   },
                   prefer_native_scheduling: {
@@ -20436,7 +20472,8 @@ export default {
                     type: 'string',
                   },
                   name: {
-                    description: 'Name of the new access code.',
+                    description:
+                      "Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.\n      \n      Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.\n      \n      To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.\n      \n      To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components).",
                     type: 'string',
                   },
                   prefer_native_scheduling: {
@@ -20584,7 +20621,8 @@ export default {
                     type: 'string',
                   },
                   name: {
-                    description: 'Name of the new access code.',
+                    description:
+                      "Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.\n      \n      Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.\n      \n      To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.\n      \n      To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components).",
                     type: 'string',
                   },
                   prefer_native_scheduling: {
@@ -20683,7 +20721,8 @@ export default {
                     type: 'string',
                   },
                   name: {
-                    description: 'Name of the new access code.',
+                    description:
+                      "Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.\n      \n      Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.\n      \n      To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.\n      \n      To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components).",
                     type: 'string',
                   },
                   starts_at: {
@@ -20746,7 +20785,8 @@ export default {
                     type: 'string',
                   },
                   name: {
-                    description: 'Name of the new access code.',
+                    description:
+                      "Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.\n      \n      Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.\n      \n      To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.\n      \n      To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components).",
                     type: 'string',
                   },
                   starts_at: {
@@ -20794,7 +20834,7 @@ export default {
     '/acs/access_groups/add_user': {
       post: {
         description:
-          'Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsAddUserPost',
         requestBody: {
           content: {
@@ -20802,12 +20842,14 @@ export default {
               schema: {
                 properties: {
                   acs_access_group_id: {
-                    description: 'ID of the desired access group.',
+                    description:
+                      'ID of the access group to which you want to add an access system user.',
                     format: 'uuid',
                     type: 'string',
                   },
                   acs_user_id: {
-                    description: 'ID of the desired user.',
+                    description:
+                      'ID of the access system user that you want to add to an access group.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -20848,7 +20890,7 @@ export default {
       },
       put: {
         description:
-          'Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsAddUserPut',
         requestBody: {
           content: {
@@ -20856,12 +20898,14 @@ export default {
               schema: {
                 properties: {
                   acs_access_group_id: {
-                    description: 'ID of the desired access group.',
+                    description:
+                      'ID of the access group to which you want to add an access system user.',
                     format: 'uuid',
                     type: 'string',
                   },
                   acs_user_id: {
-                    description: 'ID of the desired user.',
+                    description:
+                      'ID of the access system user that you want to add to an access group.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -20911,7 +20955,7 @@ export default {
               schema: {
                 properties: {
                   acs_access_group_id: {
-                    description: 'ID of the desired access group.',
+                    description: 'ID of the access group that you want to get.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -20969,13 +21013,13 @@ export default {
                 properties: {
                   acs_system_id: {
                     description:
-                      'ID of the access control system for which you want to retrieve all access groups.',
+                      'ID of the access system for which you want to retrieve all access groups.',
                     format: 'uuid',
                     type: 'string',
                   },
                   acs_user_id: {
                     description:
-                      'ID of the user for which you want to retrieve all access groups.',
+                      'ID of the access system user for which you want to retrieve all access groups.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -21089,7 +21133,7 @@ export default {
     '/acs/access_groups/list_users': {
       post: {
         description:
-          'Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsListUsersPost',
         requestBody: {
           content: {
@@ -21098,7 +21142,7 @@ export default {
                 properties: {
                   acs_access_group_id: {
                     description:
-                      'ID of the access group for which you want to retrieve all users.',
+                      'ID of the access group for which you want to retrieve all access system users.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -21148,7 +21192,7 @@ export default {
     '/acs/access_groups/remove_user': {
       post: {
         description:
-          'Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsRemoveUserPost',
         requestBody: {
           content: {
@@ -21156,17 +21200,20 @@ export default {
               schema: {
                 properties: {
                   acs_access_group_id: {
-                    description: 'ID of the desired access group.',
+                    description:
+                      'ID of the access group from which you want to remove an access system user.',
                     format: 'uuid',
                     type: 'string',
                   },
                   acs_user_id: {
-                    description: 'ID of the desired user.',
+                    description:
+                      'ID of the access system user that you want to remove from an access group.',
                     format: 'uuid',
                     type: 'string',
                   },
                   user_identity_id: {
-                    description: 'ID of the desired user identity.',
+                    description:
+                      'ID of the user identity associated with the user that you want to remove from an access group.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -21217,7 +21264,8 @@ export default {
               schema: {
                 properties: {
                   acs_access_group_id: {
-                    description: 'ID of the desired unmanaged access group.',
+                    description:
+                      'ID of the unmanaged access group that you want to get.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -21260,6 +21308,7 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'acs_access_group',
         'x-response-key': 'acs_access_group',
+        'x-title': 'Get an Unmanaged Access Group',
         'x-undocumented':
           'No unmanaged access groups are currently implemented.',
       },
@@ -21276,13 +21325,13 @@ export default {
                 properties: {
                   acs_system_id: {
                     description:
-                      'ID of the access control system for which you want to retrieve all unmanaged access groups.',
+                      'ID of the access system for which you want to retrieve all unmanaged access groups.',
                     format: 'uuid',
                     type: 'string',
                   },
                   acs_user_id: {
                     description:
-                      'ID of the user for which you want to retrieve all unmanaged access groups.',
+                      'ID of the access system user for which you want to retrieve all unmanaged access groups.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -21327,19 +21376,26 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_access_groups',
         'x-response-key': 'acs_access_groups',
+        'x-title': 'List Unmanaged Access Groups',
         'x-undocumented':
           'No unmanaged access groups are currently implemented.',
       },
     },
     '/acs/credential_pools/list': {
       post: {
+        description: 'Returns a list of all credential pools.',
         operationId: 'acsCredentialPoolsListPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_system_id: { format: 'uuid', type: 'string' },
+                  acs_system_id: {
+                    description:
+                      'ID of the access system for which you want to list credential pools.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_system_id'],
                 type: 'object',
@@ -21384,28 +21440,48 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_credential_pools',
         'x-response-key': 'acs_credential_pools',
+        'x-title': 'List Credential Pools',
         'x-undocumented': 'Replaced by enrollment automations.',
       },
     },
     '/acs/credential_provisioning_automations/launch': {
       post: {
+        description: 'Launches a credential provisioning automation.',
         operationId: 'acsCredentialProvisioningAutomationsLaunchPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_credential_pool_id: { format: 'uuid', type: 'string' },
-                  create_credential_manager_user: { type: 'boolean' },
+                  acs_credential_pool_id: {
+                    description:
+                      'ID of the credential pool for which you want to launch a credential provisioning automation.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  create_credential_manager_user: {
+                    description:
+                      'Indicates whether to create an associated credential manager user. If you set `create_credential_manager_user` to `true`, you cannot specify a `credential_manager_acs_user_id`.',
+                    type: 'boolean',
+                  },
                   credential_manager_acs_system_id: {
+                    description:
+                      'Access system ID of the credential manager for which you want to launch a credential provisioning automation.',
                     format: 'uuid',
                     type: 'string',
                   },
                   credential_manager_acs_user_id: {
+                    description:
+                      'ID of the associated access system user within the credential manager. If you specify a `credential_manager_acs_user_id`, you cannot set `create_credential_manager_user` to `true`.',
                     format: 'uuid',
                     type: 'string',
                   },
-                  user_identity_id: { format: 'uuid', type: 'string' },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity for which you want to launch a credential provisioning automation.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: [
                   'user_identity_id',
@@ -21450,13 +21526,14 @@ export default {
         'x-fern-sdk-method-name': 'launch',
         'x-fern-sdk-return-value': 'acs_credential_provisioning_automation',
         'x-response-key': 'acs_credential_provisioning_automation',
+        'x-title': 'Launch a Credential Provisioning Automation',
         'x-undocumented': 'Replaced by enrollment automations.',
       },
     },
     '/acs/credentials/assign': {
       patch: {
         description:
-          'Assigns a specified [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) to a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+          'Assigns a specified [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) to a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsCredentialsAssignPatch',
         requestBody: {
           content: {
@@ -21464,12 +21541,14 @@ export default {
               schema: {
                 properties: {
                   acs_credential_id: {
-                    description: 'ID of the desired credential.',
+                    description:
+                      'ID of the credential that you want to assign to an access system user.',
                     format: 'uuid',
                     type: 'string',
                   },
                   acs_user_id: {
-                    description: 'ID of the desired user.',
+                    description:
+                      'ID of the access system user to whom you want to assign a credential.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -21514,7 +21593,7 @@ export default {
       },
       post: {
         description:
-          'Assigns a specified [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) to a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+          'Assigns a specified [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) to a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsCredentialsAssignPost',
         requestBody: {
           content: {
@@ -21522,12 +21601,14 @@ export default {
               schema: {
                 properties: {
                   acs_credential_id: {
-                    description: 'ID of the desired credential.',
+                    description:
+                      'ID of the credential that you want to assign to an access system user.',
                     format: 'uuid',
                     type: 'string',
                   },
                   acs_user_id: {
-                    description: 'ID of the desired user.',
+                    description:
+                      'ID of the access system user to whom you want to assign a credential.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -21590,13 +21671,13 @@ export default {
                   },
                   acs_system_id: {
                     description:
-                      'ID of the ACS system to which the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`.',
+                      'ID of the access system to which the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`.',
                     format: 'uuid',
                     type: 'string',
                   },
                   acs_user_id: {
                     description:
-                      'ID of the ACS user to whom the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`.',
+                      'ID of the access system user to whom the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -21649,8 +21730,16 @@ export default {
                     description:
                       'Salto Space-specific metadata for the new credential.',
                     properties: {
-                      assign_new_key: { type: 'boolean' },
-                      update_current_key: { type: 'boolean' },
+                      assign_new_key: {
+                        description:
+                          'Indicates whether to assign a first, new card to a user. See also [Programming Salto Space Card-based Credentials](https://docs.seam.co/latest/device-and-system-integration-guides/salto-proaccess-space-access-system/programming-salto-space-card-based-credentials).',
+                        type: 'boolean',
+                      },
+                      update_current_key: {
+                        description:
+                          "Indicates whether to update the user's existing card. See also [Programming Salto Space Card-based Credentials](https://docs.seam.co/latest/device-and-system-integration-guides/salto-proaccess-space-access-system/programming-salto-space-card-based-credentials).",
+                        type: 'boolean',
+                      },
                     },
                     type: 'object',
                   },
@@ -21662,7 +21751,7 @@ export default {
                   },
                   user_identity_id: {
                     description:
-                      'ID of the user identity to whom the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`. If the ACS system contains an ACS user with the same `email_address` or `phone_number` as the user identity that you specify, they are linked, and the credential belongs to the ACS user. If the ACS system does not have a corresponding ACS user, one is created.',
+                      'ID of the user identity to whom the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`. If the access system contains a user with the same `email_address` or `phone_number` as the user identity that you specify, they are linked, and the credential belongs to the access system user. If the access system does not have a corresponding user, one is created.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -21748,7 +21837,7 @@ export default {
     '/acs/credentials/create_offline_code': {
       post: {
         description:
-          'Creates a new offline [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+          'Creates a new offline [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) for a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsCredentialsCreateOfflineCodePost',
         requestBody: {
           content: {
@@ -21757,7 +21846,7 @@ export default {
                 properties: {
                   acs_user_id: {
                     description:
-                      'ID of the ACS user to whom the new credential belongs.',
+                      'ID of the access system user to whom the new credential belongs.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -21839,7 +21928,8 @@ export default {
               schema: {
                 properties: {
                   acs_credential_id: {
-                    description: 'ID of the desired credential.',
+                    description:
+                      'ID of the credential that you want to delete.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -21890,7 +21980,7 @@ export default {
               schema: {
                 properties: {
                   acs_credential_id: {
-                    description: 'ID of the desired credential.',
+                    description: 'ID of the credential that you want to get.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -21952,7 +22042,7 @@ export default {
                         properties: {
                           acs_user_id: {
                             description:
-                              'ID of the ACS user for which you want to retrieve all credentials.',
+                              'ID of the access system user for which you want to retrieve all credentials.',
                             format: 'uuid',
                             type: 'string',
                           },
@@ -21964,7 +22054,7 @@ export default {
                         properties: {
                           acs_system_id: {
                             description:
-                              'ID of the access control system for which you want to retrieve all credentials.',
+                              'ID of the access system for which you want to retrieve all credentials.',
                             format: 'uuid',
                             type: 'string',
                           },
@@ -21976,13 +22066,13 @@ export default {
                         properties: {
                           acs_system_id: {
                             description:
-                              'ID of the access control system for which you want to retrieve all credentials.',
+                              'ID of the access system for which you want to retrieve all credentials.',
                             format: 'uuid',
                             type: 'string',
                           },
                           acs_user_id: {
                             description:
-                              'ID of the ACS user for which you want to retrieve all credentials.',
+                              'ID of the access system user for which you want to retrieve all credentials.',
                             format: 'uuid',
                             type: 'string',
                           },
@@ -22081,7 +22171,7 @@ export default {
                 properties: {
                   acs_credential_id: {
                     description:
-                      'ID of the credential for which you want to retrieve all entrances to which this credential grants access.',
+                      'ID of the credential for which you want to retrieve all entrances to which the credential grants access.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -22131,7 +22221,7 @@ export default {
     '/acs/credentials/unassign': {
       patch: {
         description:
-          'Unassigns a specified [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) from a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+          'Unassigns a specified [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) from a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsCredentialsUnassignPatch',
         requestBody: {
           content: {
@@ -22139,12 +22229,14 @@ export default {
               schema: {
                 properties: {
                   acs_credential_id: {
-                    description: 'ID of the desired credential.',
+                    description:
+                      'ID of the credential that you want to unassign from an access system user.',
                     format: 'uuid',
                     type: 'string',
                   },
                   acs_user_id: {
-                    description: 'ID of the desired user.',
+                    description:
+                      'ID of the access system user from which you want to unassign a credential.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -22189,7 +22281,7 @@ export default {
       },
       post: {
         description:
-          'Unassigns a specified [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) from a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+          'Unassigns a specified [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) from a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsCredentialsUnassignPost',
         requestBody: {
           content: {
@@ -22197,12 +22289,14 @@ export default {
               schema: {
                 properties: {
                   acs_credential_id: {
-                    description: 'ID of the desired credential.',
+                    description:
+                      'ID of the credential that you want to unassign from an access system user.',
                     format: 'uuid',
                     type: 'string',
                   },
                   acs_user_id: {
-                    description: 'ID of the desired user.',
+                    description:
+                      'ID of the access system user from which you want to unassign a credential.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -22258,7 +22352,8 @@ export default {
               schema: {
                 properties: {
                   acs_credential_id: {
-                    description: 'ID of the desired unmanaged credential.',
+                    description:
+                      'ID of the unmanaged credential that you want to get.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -22316,10 +22411,12 @@ export default {
               schema: {
                 oneOf: [
                   {
+                    description:
+                      'ID of the access system user for which you want to list unmanaged credentials.',
                     properties: {
                       acs_user_id: {
                         description:
-                          'ID of the ACS user for which you want to retrieve all credentials.',
+                          'ID of the access system user for which you want to retrieve all credentials.',
                         format: 'uuid',
                         type: 'string',
                       },
@@ -22328,10 +22425,12 @@ export default {
                     type: 'object',
                   },
                   {
+                    description:
+                      'ID of the access system for which you want to list unmanaged credentials.',
                     properties: {
                       acs_system_id: {
                         description:
-                          'ID of the access control system for which you want to retrieve all credentials.',
+                          'ID of the access system for which you want to retrieve all credentials.',
                         format: 'uuid',
                         type: 'string',
                       },
@@ -22340,16 +22439,18 @@ export default {
                     type: 'object',
                   },
                   {
+                    description:
+                      'ID of the access system and ID of the access system user for which you want to list unmanaged credentials.',
                     properties: {
                       acs_system_id: {
                         description:
-                          'ID of the access control system for which you want to retrieve all credentials.',
+                          'ID of the access system for which you want to retrieve all credentials.',
                         format: 'uuid',
                         type: 'string',
                       },
                       acs_user_id: {
                         description:
-                          'ID of the ACS user for which you want to retrieve all credentials.',
+                          'ID of the access system user for which you want to retrieve all credentials.',
                         format: 'uuid',
                         type: 'string',
                       },
@@ -22358,6 +22459,8 @@ export default {
                     type: 'object',
                   },
                   {
+                    description:
+                      'ID of the user identity for which you want to list unmanaged credentials.',
                     properties: {
                       user_identity_id: {
                         description:
@@ -22424,12 +22527,13 @@ export default {
               schema: {
                 properties: {
                   acs_credential_id: {
-                    description: 'ID of the desired credential.',
+                    description:
+                      'ID of the credential that you want to update.',
                     type: 'string',
                   },
                   code: {
                     description:
-                      'Replacement access (PIN) code for the credential.',
+                      'Replacement access (PIN) code for the credential that you want to update.',
                     pattern: '^\\d+$',
                     type: 'string',
                   },
@@ -22488,12 +22592,13 @@ export default {
               schema: {
                 properties: {
                   acs_credential_id: {
-                    description: 'ID of the desired credential.',
+                    description:
+                      'ID of the credential that you want to update.',
                     type: 'string',
                   },
                   code: {
                     description:
-                      'Replacement access (PIN) code for the credential.',
+                      'Replacement access (PIN) code for the credential that you want to update.',
                     pattern: '^\\d+$',
                     type: 'string',
                   },
@@ -22685,7 +22790,7 @@ export default {
               schema: {
                 properties: {
                   acs_encoder_id: {
-                    description: 'ID of the desired encoder.',
+                    description: 'ID of the encoder that you want to get.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -22743,13 +22848,13 @@ export default {
                     properties: {
                       acs_system_id: {
                         description:
-                          'ID of the `acs_system` for which you want to retrieve all `acs_encoder`s.',
+                          'ID of the access system for which you want to retrieve all encoders.',
                         format: 'uuid',
                         type: 'string',
                       },
                       limit: {
                         default: 500,
-                        description: 'Number of `acs_encoders` to return.',
+                        description: 'Number of encoders to return.',
                         format: 'float',
                         type: 'number',
                       },
@@ -22761,13 +22866,13 @@ export default {
                     properties: {
                       acs_system_ids: {
                         description:
-                          'IDs of the `acs_system`s for which you want to retrieve all `acs_encoder`s.',
+                          'IDs of the access systems for which you want to retrieve all encoders.',
                         items: { format: 'uuid', type: 'string' },
                         type: 'array',
                       },
                       limit: {
                         default: 500,
-                        description: 'Number of `acs_encoders` to return.',
+                        description: 'Number of encoders to return.',
                         format: 'float',
                         type: 'number',
                       },
@@ -22779,13 +22884,13 @@ export default {
                     properties: {
                       acs_encoder_ids: {
                         description:
-                          'IDs of the `acs_encoder`s that you want to retrieve.',
+                          'IDs of the encoders that you want to retrieve.',
                         items: { format: 'uuid', type: 'string' },
                         type: 'array',
                       },
                       limit: {
                         default: 500,
-                        description: 'Number of `acs_encoders` to return.',
+                        description: 'Number of encoders to return.',
                         format: 'float',
                         type: 'number',
                       },
@@ -22845,7 +22950,7 @@ export default {
               schema: {
                 properties: {
                   acs_encoder_id: {
-                    description: 'ID of the `acs_encoder` to use for the scan.',
+                    description: 'ID of the encoder to use for the scan.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -23232,14 +23337,18 @@ export default {
     '/acs/entrances/get': {
       post: {
         description:
-          'Returns a specified [ACS entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+          'Returns a specified [access system entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
         operationId: 'acsEntrancesGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_entrance_id: { format: 'uuid', type: 'string' },
+                  acs_entrance_id: {
+                    description: 'ID of the entrance that you want to get.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_entrance_id'],
                 type: 'object',
@@ -23283,14 +23392,26 @@ export default {
     },
     '/acs/entrances/grant_access': {
       post: {
+        description:
+          'Grants a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) access to a specified [access system entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
         operationId: 'acsEntrancesGrantAccessPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_entrance_id: { format: 'uuid', type: 'string' },
-                  acs_user_id: { format: 'uuid', type: 'string' },
+                  acs_entrance_id: {
+                    description:
+                      'ID of the entrance to which you want to grant an access system user access.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_user_id: {
+                    description:
+                      'ID of the access system user to whom you want to grant access to an entrance.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_entrance_id', 'acs_user_id'],
                 type: 'object',
@@ -23330,16 +23451,28 @@ export default {
     '/acs/entrances/list': {
       post: {
         description:
-          'Returns a list of all [ACS entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+          'Returns a list of all [access system entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
         operationId: 'acsEntrancesListPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_credential_id: { format: 'uuid', type: 'string' },
-                  acs_system_id: { format: 'uuid', type: 'string' },
+                  acs_credential_id: {
+                    description:
+                      'ID of the credential for which you want to retrieve all entrances.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_system_id: {
+                    description:
+                      'ID of the access system for which you want to retrieve all entrances.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   location_id: {
+                    description:
+                      'ID of the location for which you want to retrieve all entrances.',
                     format: 'uuid',
                     nullable: true,
                     type: 'string',
@@ -23398,8 +23531,15 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  acs_entrance_id: { format: 'uuid', type: 'string' },
+                  acs_entrance_id: {
+                    description:
+                      'ID of the entrance for which you want to list all credentials that grant access.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   include_if: {
+                    description:
+                      'Conditions that credentials must meet to be included in the returned list.',
                     items: {
                       enum: ['visionline_metadata.is_valid'],
                       type: 'string',
@@ -23453,7 +23593,7 @@ export default {
     '/acs/systems/get': {
       post: {
         description:
-          'Returns a specified [access control system](https://docs.seam.co/latest/capability-guides/access-systems).\n\nSpecify the desired access control system by including the corresponding `acs_system_id` in the request body.',
+          'Returns a specified [access system](https://docs.seam.co/latest/capability-guides/access-systems).',
         operationId: 'acsSystemsGetPost',
         requestBody: {
           content: {
@@ -23461,7 +23601,8 @@ export default {
               schema: {
                 properties: {
                   acs_system_id: {
-                    description: 'ID of the desired access control system.',
+                    description:
+                      'ID of the access system that you want to get.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -23508,7 +23649,7 @@ export default {
     '/acs/systems/list': {
       post: {
         description:
-          'Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems).\n\nTo filter the list of returned access control systems by a specific connected account ID, include the `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the response includes all access control systems connected to your workspace.',
+          'Returns a list of all [access systems](https://docs.seam.co/latest/capability-guides/access-systems).\n\nTo filter the list of returned access systems by a specific connected account ID, include the `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the response includes all access systems connected to your workspace.',
         operationId: 'acsSystemsListPost',
         requestBody: {
           content: {
@@ -23517,7 +23658,7 @@ export default {
                 properties: {
                   connected_account_id: {
                     description:
-                      'ID of the connected account by which to filter the list of returned access control systems.',
+                      'ID of the connected account by which you want to filter the list of access systems.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -23567,7 +23708,7 @@ export default {
     '/acs/systems/list_compatible_credential_manager_acs_systems': {
       post: {
         description:
-          'Returns a list of all credential manager ACS systems that are compatible with a specified [access control system](https://docs.seam.co/latest/capability-guides/access-systems).\n\nSpecify the ACS system for which you want to retrieve all compatible credential manager ACS systems by including the corresponding `acs_system_id` in the request body.',
+          'Returns a list of all credential manager systems that are compatible with a specified [access system](https://docs.seam.co/latest/capability-guides/access-systems).\n\nSpecify the access system for which you want to retrieve all compatible credential manager systems by including the corresponding `acs_system_id` in the request body.',
         operationId: 'acsSystemsListCompatibleCredentialManagerAcsSystemsPost',
         requestBody: {
           content: {
@@ -23576,7 +23717,7 @@ export default {
                 properties: {
                   acs_system_id: {
                     description:
-                      'ID of the ACS system for which you want to retrieve all compatible credential manager ACS systems.',
+                      'ID of the access system for which you want to retrieve all compatible credential manager systems.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -23627,7 +23768,7 @@ export default {
     '/acs/users/add_to_access_group': {
       post: {
         description:
-          'Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
         operationId: 'acsUsersAddToAccessGroupPost',
         requestBody: {
           content: {
@@ -23635,12 +23776,14 @@ export default {
               schema: {
                 properties: {
                   acs_access_group_id: {
-                    description: 'ID of the desired access group.',
+                    description:
+                      'ID of the access group to which you want to add an access system user.',
                     format: 'uuid',
                     type: 'string',
                   },
                   acs_user_id: {
-                    description: 'ID of the desired `acs_user`.',
+                    description:
+                      'ID of the access system user that you want to add to an access group.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -23681,7 +23824,7 @@ export default {
       },
       put: {
         description:
-          'Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
         operationId: 'acsUsersAddToAccessGroupPut',
         requestBody: {
           content: {
@@ -23689,12 +23832,14 @@ export default {
               schema: {
                 properties: {
                   acs_access_group_id: {
-                    description: 'ID of the desired access group.',
+                    description:
+                      'ID of the access group to which you want to add an access system user.',
                     format: 'uuid',
                     type: 'string',
                   },
                   acs_user_id: {
-                    description: 'ID of the desired `acs_user`.',
+                    description:
+                      'ID of the access system user that you want to add to an access group.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -23736,7 +23881,7 @@ export default {
     '/acs/users/create': {
       post: {
         description:
-          'Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+          'Creates a new [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsUsersCreatePost',
         requestBody: {
           content: {
@@ -23745,27 +23890,34 @@ export default {
                 properties: {
                   access_schedule: {
                     description:
-                      "`starts_at` and `ends_at` timestamps for the new `acs_user`'s access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. `starts_at` defaults to the current time if not provided. `ends_at` is optional and must be a time in the future and after `starts_at`.",
+                      "`starts_at` and `ends_at` timestamps for the new access system user's access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. If you omit `starts_at`, it defaults to the current time. `ends_at` is optional and must be a time in the future and after `starts_at`.",
                     properties: {
                       ends_at: {
+                        description:
+                          "Ending timestamp for the new access system user's access.",
                         format: 'date-time',
                         nullable: true,
                         type: 'string',
                       },
-                      starts_at: { format: 'date-time', type: 'string' },
+                      starts_at: {
+                        description:
+                          "Starting timestamp for the new access system user's access.",
+                        format: 'date-time',
+                        type: 'string',
+                      },
                     },
                     type: 'object',
                   },
                   acs_access_group_ids: {
                     default: [],
                     description:
-                      'Array of `access_group_id`s to indicate the access groups to which to add the new `acs_user`.',
+                      'Array of access group IDs to indicate the access groups to which you want to add the new access system user.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
                   acs_system_id: {
                     description:
-                      'ID of the `acs_system` to which to add the new `acs_user`.',
+                      'ID of the access system to which you want to add the new access system user.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -23782,7 +23934,7 @@ export default {
                     type: 'string',
                   },
                   full_name: {
-                    description: 'Full name of the new `acs_user`.',
+                    description: 'Full name of the new access system user.',
                     type: 'string',
                   },
                   phone_number: {
@@ -23792,7 +23944,7 @@ export default {
                   },
                   user_identity_id: {
                     description:
-                      'ID of the user identity with which to associate the new `acs_user`.',
+                      'ID of the user identity with which you want to associate the new access system user.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -23839,7 +23991,7 @@ export default {
     '/acs/users/delete': {
       post: {
         description:
-          "Deletes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the ACS user's [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).",
+          "Deletes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the access system user's [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).",
         operationId: 'acsUsersDeletePost',
         requestBody: {
           content: {
@@ -23847,7 +23999,8 @@ export default {
               schema: {
                 properties: {
                   acs_user_id: {
-                    description: 'ID of the desired `acs_user`.',
+                    description:
+                      'ID of the access system user that you want to delete.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -23890,7 +24043,7 @@ export default {
     '/acs/users/get': {
       post: {
         description:
-          'Returns a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+          'Returns a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsUsersGetPost',
         requestBody: {
           content: {
@@ -23898,7 +24051,8 @@ export default {
               schema: {
                 properties: {
                   acs_user_id: {
-                    description: 'ID of the desired `acs_user`.',
+                    description:
+                      'ID of the access system user that you want to get.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -23945,7 +24099,7 @@ export default {
     '/acs/users/list': {
       post: {
         description:
-          'Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+          'Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsUsersListPost',
         requestBody: {
           content: {
@@ -23954,11 +24108,16 @@ export default {
                 properties: {
                   acs_system_id: {
                     description:
-                      'ID of the `acs_system` for which you want to retrieve all `acs_user`s.',
+                      'ID of the `acs_system` for which you want to retrieve all access system users.',
                     format: 'uuid',
                     type: 'string',
                   },
-                  created_before: { format: 'date-time', type: 'string' },
+                  created_before: {
+                    description:
+                      'Timestamp by which to limit returned access system users. Returns users created before this timestamp.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
                   limit: {
                     default: 500,
                     description:
@@ -23975,24 +24134,24 @@ export default {
                   },
                   search: {
                     description:
-                      'String for which to search. Filters returned `acs_user`s to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address`, `acs_user_id`, `user_identity_id`, `user_identity_full_name` or `user_identity_phone_number`.',
+                      'String for which to search. Filters returned access system users to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address`, `acs_user_id`, `user_identity_id`, `user_identity_full_name` or `user_identity_phone_number`.',
                     minLength: 1,
                     type: 'string',
                   },
                   user_identity_email_address: {
                     description:
-                      'Email address of the user identity for which you want to retrieve all `acs_user`s.',
+                      'Email address of the user identity for which you want to retrieve all access system users.',
                     type: 'string',
                   },
                   user_identity_id: {
                     description:
-                      'ID of the user identity for which you want to retrieve all `acs_user`s.',
+                      'ID of the user identity for which you want to retrieve all access system users.',
                     format: 'uuid',
                     type: 'string',
                   },
                   user_identity_phone_number: {
                     description:
-                      'Phone number of the user identity for which you want to retrieve all `acs_user`s, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`).',
+                      'Phone number of the user identity for which you want to retrieve all access system users, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`).',
                     type: 'string',
                   },
                 },
@@ -24042,7 +24201,7 @@ export default {
     '/acs/users/list_accessible_entrances': {
       post: {
         description:
-          'Lists the [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) has access.',
+          'Lists the [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) has access.',
         operationId: 'acsUsersListAccessibleEntrancesPost',
         requestBody: {
           content: {
@@ -24050,7 +24209,8 @@ export default {
               schema: {
                 properties: {
                   acs_user_id: {
-                    description: 'ID of the desired `acs_user`.',
+                    description:
+                      'ID of the access system user for whom you want to list accessible entrances.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -24101,7 +24261,7 @@ export default {
     '/acs/users/remove_from_access_group': {
       post: {
         description:
-          'Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
         operationId: 'acsUsersRemoveFromAccessGroupPost',
         requestBody: {
           content: {
@@ -24109,12 +24269,14 @@ export default {
               schema: {
                 properties: {
                   acs_access_group_id: {
-                    description: 'ID of the desired access group.',
+                    description:
+                      'ID of the access group from which you want to remove an access system user.',
                     format: 'uuid',
                     type: 'string',
                   },
                   acs_user_id: {
-                    description: 'ID of the desired `acs_user`.',
+                    description:
+                      'ID of the access system user that you want to remove from an access group.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -24157,7 +24319,7 @@ export default {
     '/acs/users/revoke_access_to_all_entrances': {
       post: {
         description:
-          'Revokes access to all [entrances](https://docs.seam.co/latest/api/acs/entrances) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+          'Revokes access to all [entrances](https://docs.seam.co/latest/api/acs/entrances) for a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsUsersRevokeAccessToAllEntrancesPost',
         requestBody: {
           content: {
@@ -24165,7 +24327,8 @@ export default {
               schema: {
                 properties: {
                   acs_user_id: {
-                    description: 'ID of the desired `acs_user`.',
+                    description:
+                      'ID of the access system user for whom you want to revoke access.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -24208,7 +24371,7 @@ export default {
     '/acs/users/suspend': {
       post: {
         description:
-          "[Suspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#suspend-an-acs-user) a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Suspending an ACS user revokes their access temporarily. To restore an ACS user's access, you can [unsuspend](https://docs.seam.co/latest/api/acs/users/unsuspend) them.",
+          "[Suspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#suspend-an-acs-user) a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Suspending an access system user revokes their access temporarily. To restore an access system user's access, you can [unsuspend](https://docs.seam.co/latest/api/acs/users/unsuspend) them.",
         operationId: 'acsUsersSuspendPost',
         requestBody: {
           content: {
@@ -24216,7 +24379,8 @@ export default {
               schema: {
                 properties: {
                   acs_user_id: {
-                    description: 'ID of the desired `acs_user`.',
+                    description:
+                      'ID of the access system user that you want to suspend.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -24258,12 +24422,21 @@ export default {
     },
     '/acs/users/unmanaged/get': {
       post: {
+        description:
+          'Returns a specified unmanaged [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsUsersUnmanagedGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
-                properties: { acs_user_id: { format: 'uuid', type: 'string' } },
+                properties: {
+                  acs_user_id: {
+                    description:
+                      'ID of the unmanaged access system user that you want to get.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
                 required: ['acs_user_id'],
                 type: 'object',
               },
@@ -24302,22 +24475,49 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'acs_user',
         'x-response-key': 'acs_user',
+        'x-title': 'Get an Unmanaged ACS User',
         'x-undocumented': 'No unmanaged users are currently implemented.',
       },
     },
     '/acs/users/unmanaged/list': {
       post: {
+        description:
+          'Returns a list of all unmanaged [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsUsersUnmanagedListPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_system_id: { format: 'uuid', type: 'string' },
-                  limit: { default: 500, format: 'float', type: 'number' },
-                  user_identity_email_address: { type: 'string' },
-                  user_identity_id: { format: 'uuid', type: 'string' },
-                  user_identity_phone_number: { type: 'string' },
+                  acs_system_id: {
+                    description:
+                      'ID of the access system for which you want to retrieve all unmanaged access system users.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  limit: {
+                    default: 500,
+                    description:
+                      'Number of unmanaged access system users to return.',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  user_identity_email_address: {
+                    description:
+                      'Email address of the user identity for which you want to retrieve all unmanaged access system users.',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity for which you want to retrieve all unmanaged access system users.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_phone_number: {
+                    description:
+                      'Phone number of the user identity for which you want to retrieve all unmanaged access system users.',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -24359,13 +24559,14 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_users',
         'x-response-key': 'acs_users',
+        'x-title': 'List Unmanaged ACS Users',
         'x-undocumented': 'No unmanaged users are currently implemented.',
       },
     },
     '/acs/users/unsuspend': {
       post: {
         description:
-          '[Unsuspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). While [suspending an ACS user](https://docs.seam.co/latest/api/acs/users/suspend) revokes their access temporarily, unsuspending the ACS user restores their access.',
+          '[Unsuspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). While [suspending an access system user](https://docs.seam.co/latest/api/acs/users/suspend) revokes their access temporarily, unsuspending the access system user restores their access.',
         operationId: 'acsUsersUnsuspendPost',
         requestBody: {
           content: {
@@ -24373,7 +24574,8 @@ export default {
               schema: {
                 properties: {
                   acs_user_id: {
-                    description: 'ID of the desired `acs_user`.',
+                    description:
+                      'ID of the access system user that you want to unsuspend.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -24416,7 +24618,7 @@ export default {
     '/acs/users/update': {
       patch: {
         description:
-          'Updates the properties of a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+          'Updates the properties of a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsUsersUpdatePatch',
         requestBody: {
           content: {
@@ -24425,11 +24627,21 @@ export default {
                 properties: {
                   access_schedule: {
                     description:
-                      "`starts_at` and `ends_at` timestamps for the `acs_user`'s access. If you specify an `access_schedule`, you must include both `starts_at` and `ends_at`. `ends_at` must be a time in the future and after `starts_at`.",
+                      "`starts_at` and `ends_at` timestamps for the access system user's access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. If you omit `starts_at`, it defaults to the current time. `ends_at` is optional and must be a time in the future and after `starts_at`.",
                     nullable: true,
                     properties: {
-                      ends_at: { format: 'date-time', type: 'string' },
-                      starts_at: { format: 'date-time', type: 'string' },
+                      ends_at: {
+                        description:
+                          "Ending timestamp for the access system user's access.",
+                        format: 'date-time',
+                        type: 'string',
+                      },
+                      starts_at: {
+                        description:
+                          "Starting timestamp for the access system user's access.",
+                        format: 'date-time',
+                        type: 'string',
+                      },
                     },
                     required: ['starts_at', 'ends_at'],
                     type: 'object',
@@ -24500,7 +24712,7 @@ export default {
       },
       post: {
         description:
-          'Updates the properties of a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+          'Updates the properties of a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsUsersUpdatePost',
         requestBody: {
           content: {
@@ -24509,11 +24721,21 @@ export default {
                 properties: {
                   access_schedule: {
                     description:
-                      "`starts_at` and `ends_at` timestamps for the `acs_user`'s access. If you specify an `access_schedule`, you must include both `starts_at` and `ends_at`. `ends_at` must be a time in the future and after `starts_at`.",
+                      "`starts_at` and `ends_at` timestamps for the access system user's access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. If you omit `starts_at`, it defaults to the current time. `ends_at` is optional and must be a time in the future and after `starts_at`.",
                     nullable: true,
                     properties: {
-                      ends_at: { format: 'date-time', type: 'string' },
-                      starts_at: { format: 'date-time', type: 'string' },
+                      ends_at: {
+                        description:
+                          "Ending timestamp for the access system user's access.",
+                        format: 'date-time',
+                        type: 'string',
+                      },
+                      starts_at: {
+                        description:
+                          "Starting timestamp for the access system user's access.",
+                        format: 'date-time',
+                        type: 'string',
+                      },
                     },
                     required: ['starts_at', 'ends_at'],
                     type: 'object',
@@ -24586,13 +24808,20 @@ export default {
     },
     '/action_attempts/get': {
       post: {
+        description:
+          'Returns a specified [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts).',
         operationId: 'actionAttemptsGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  action_attempt_id: { format: 'uuid', type: 'string' },
+                  action_attempt_id: {
+                    description:
+                      'ID of the action attempt that you want to get.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['action_attempt_id'],
                 type: 'object',
@@ -24633,10 +24862,13 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
+        'x-title': 'Get an Action Attempt',
       },
     },
     '/action_attempts/list': {
       post: {
+        description:
+          'Returns a list of the [action attempts](https://docs.seam.co/latest/core-concepts/action-attempts) that you specify as an array of `action_attempt_id`s.',
         operationId: 'actionAttemptsListPost',
         requestBody: {
           content: {
@@ -24644,6 +24876,8 @@ export default {
               schema: {
                 properties: {
                   action_attempt_ids: {
+                    description:
+                      'IDs of the action attempts that you want to retrieve.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
@@ -24687,16 +24921,25 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'action_attempts',
         'x-response-key': 'action_attempts',
+        'x-title': 'List Action Attempts',
       },
     },
     '/bridges/get': {
       post: {
+        description:
+          'Returns a specified [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
         operationId: 'bridgesGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
-                properties: { bridge_id: { format: 'uuid', type: 'string' } },
+                properties: {
+                  bridge_id: {
+                    description: 'ID of the Seam Bridge that you want to get.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
                 required: ['bridge_id'],
                 type: 'object',
               },
@@ -24743,10 +24986,14 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'bridge',
         'x-response-key': 'bridge',
+        'x-title': 'Get a Seam Bridge',
+        'x-undocumented': 'Not yet for customer use.',
       },
     },
     '/bridges/list': {
       post: {
+        description:
+          'Returns a list of all [Seam Bridges](https://docs.seam.co/latest/capability-guides/seam-bridge).',
         operationId: 'bridgesListPost',
         requestBody: {
           content: {
@@ -24796,10 +25043,14 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'bridges',
         'x-response-key': 'bridges',
+        'x-title': 'List Seam Bridges',
+        'x-undocumented': 'Not yet for customer use.',
       },
     },
     '/client_sessions/create': {
       post: {
+        description:
+          'Creates a new [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
         operationId: 'clientSessionsCreatePost',
         requestBody: {
           content: {
@@ -24807,16 +25058,32 @@ export default {
               schema: {
                 properties: {
                   connect_webview_ids: {
+                    description:
+                      'IDs of the [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) for which you want to create a client session.',
                     items: { type: 'string' },
                     type: 'array',
                   },
                   connected_account_ids: {
+                    description:
+                      'IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) for which you want to create a client session.',
                     items: { type: 'string' },
                     type: 'array',
                   },
-                  expires_at: { format: 'date-time', type: 'string' },
-                  user_identifier_key: { minLength: 1, type: 'string' },
+                  expires_at: {
+                    description:
+                      'Date and time at which the client session should expire, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
+                  user_identifier_key: {
+                    description:
+                      'Your user ID for the user for whom you want to create a client session.',
+                    minLength: 1,
+                    type: 'string',
+                  },
                   user_identity_ids: {
+                    description:
+                      'IDs of the [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to create a client session.',
                     items: { type: 'string' },
                     type: 'array',
                   },
@@ -24859,8 +25126,11 @@ export default {
         'x-fern-sdk-method-name': 'create',
         'x-fern-sdk-return-value': 'client_session',
         'x-response-key': 'client_session',
+        'x-title': 'Create a Client Session',
       },
       put: {
+        description:
+          'Creates a new [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
         operationId: 'clientSessionsCreatePut',
         requestBody: {
           content: {
@@ -24868,16 +25138,32 @@ export default {
               schema: {
                 properties: {
                   connect_webview_ids: {
+                    description:
+                      'IDs of the [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) for which you want to create a client session.',
                     items: { type: 'string' },
                     type: 'array',
                   },
                   connected_account_ids: {
+                    description:
+                      'IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) for which you want to create a client session.',
                     items: { type: 'string' },
                     type: 'array',
                   },
-                  expires_at: { format: 'date-time', type: 'string' },
-                  user_identifier_key: { minLength: 1, type: 'string' },
+                  expires_at: {
+                    description:
+                      'Date and time at which the client session should expire, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
+                  user_identifier_key: {
+                    description:
+                      'Your user ID for the user for whom you want to create a client session.',
+                    minLength: 1,
+                    type: 'string',
+                  },
                   user_identity_ids: {
+                    description:
+                      'IDs of the [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to create a client session.',
                     items: { type: 'string' },
                     type: 'array',
                   },
@@ -24918,17 +25204,25 @@ export default {
         tags: ['/client_sessions'],
         'x-fern-ignore': true,
         'x-response-key': 'client_session',
+        'x-title': 'Create a Client Session',
       },
     },
     '/client_sessions/delete': {
       post: {
+        description:
+          'Deletes a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
         operationId: 'clientSessionsDeletePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  client_session_id: { format: 'uuid', type: 'string' },
+                  client_session_id: {
+                    description:
+                      'ID of the client session that you want to delete.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['client_session_id'],
                 type: 'object',
@@ -24962,18 +25256,29 @@ export default {
         'x-fern-sdk-group-name': ['client_sessions'],
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
+        'x-title': 'Delete a Client Session',
       },
     },
     '/client_sessions/get': {
       post: {
+        description:
+          'Returns a specified [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
         operationId: 'clientSessionsGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  client_session_id: { type: 'string' },
-                  user_identifier_key: { type: 'string' },
+                  client_session_id: {
+                    description:
+                      'ID of the client session that you want to get.',
+                    type: 'string',
+                  },
+                  user_identifier_key: {
+                    description:
+                      'User identifier key associated with the client session that you want to get.',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -25013,10 +25318,13 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'client_session',
         'x-response-key': 'client_session',
+        'x-title': 'Get a Client Session',
       },
     },
     '/client_sessions/get_or_create': {
       post: {
+        description:
+          'Returns a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens) with specific characteristics or creates a new client session with these characteristics if it does not yet exist.',
         operationId: 'clientSessionsGetOrCreatePost',
         requestBody: {
           content: {
@@ -25024,16 +25332,32 @@ export default {
               schema: {
                 properties: {
                   connect_webview_ids: {
+                    description:
+                      'IDs of the [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) that you want to associate with the client session (or that are already associated with the existing client session).',
                     items: { type: 'string' },
                     type: 'array',
                   },
                   connected_account_ids: {
+                    description:
+                      'IDs of the [connected accounts](https://docs.seam.co/latest/api/connected_accounts) that you want to associate with the client session (or that are already associated with the existing client session).',
                     items: { type: 'string' },
                     type: 'array',
                   },
-                  expires_at: { format: 'date-time', type: 'string' },
-                  user_identifier_key: { minLength: 1, type: 'string' },
+                  expires_at: {
+                    description:
+                      'Date and time at which the client session should expire (or at which the existing client session expires), in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
+                  user_identifier_key: {
+                    description:
+                      'Your user ID for the user that you want to associate with the client session (or that is already associated with the existing client session).',
+                    minLength: 1,
+                    type: 'string',
+                  },
                   user_identity_ids: {
+                    description:
+                      'IDs of the [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session (or that are already associated with the existing client session).',
                     items: { type: 'string' },
                     type: 'array',
                   },
@@ -25076,27 +25400,44 @@ export default {
         'x-fern-sdk-method-name': 'get_or_create',
         'x-fern-sdk-return-value': 'client_session',
         'x-response-key': 'client_session',
+        'x-title': 'Get or Create a Client Session',
       },
     },
     '/client_sessions/grant_access': {
       patch: {
+        description:
+          'Grants a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens) access to one or more resources, such as [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews), [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity), and so on.',
         operationId: 'clientSessionsGrantAccessPatch',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  client_session_id: { type: 'string' },
+                  client_session_id: {
+                    description:
+                      'ID of the client session to which you want to grant access to resources.',
+                    type: 'string',
+                  },
                   connect_webview_ids: {
+                    description:
+                      'IDs of the [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) that you want to associate with the client session.',
                     items: { type: 'string' },
                     type: 'array',
                   },
                   connected_account_ids: {
+                    description:
+                      'IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) that you want to associate with the client session.',
                     items: { type: 'string' },
                     type: 'array',
                   },
-                  user_identifier_key: { type: 'string' },
+                  user_identifier_key: {
+                    description:
+                      'Your user ID for the user that you want to associate with the client session.',
+                    type: 'string',
+                  },
                   user_identity_ids: {
+                    description:
+                      'IDs of the [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session.',
                     items: { type: 'string' },
                     type: 'array',
                   },
@@ -25136,25 +25477,42 @@ export default {
         tags: ['/client_sessions'],
         'x-fern-ignore': true,
         'x-response-key': null,
+        'x-title': 'Grant Access to a Client Session',
       },
       post: {
+        description:
+          'Grants a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens) access to one or more resources, such as [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews), [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity), and so on.',
         operationId: 'clientSessionsGrantAccessPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  client_session_id: { type: 'string' },
+                  client_session_id: {
+                    description:
+                      'ID of the client session to which you want to grant access to resources.',
+                    type: 'string',
+                  },
                   connect_webview_ids: {
+                    description:
+                      'IDs of the [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) that you want to associate with the client session.',
                     items: { type: 'string' },
                     type: 'array',
                   },
                   connected_account_ids: {
+                    description:
+                      'IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) that you want to associate with the client session.',
                     items: { type: 'string' },
                     type: 'array',
                   },
-                  user_identifier_key: { type: 'string' },
+                  user_identifier_key: {
+                    description:
+                      'Your user ID for the user that you want to associate with the client session.',
+                    type: 'string',
+                  },
                   user_identity_ids: {
+                    description:
+                      'IDs of the [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session.',
                     items: { type: 'string' },
                     type: 'array',
                   },
@@ -25195,21 +25553,44 @@ export default {
         'x-fern-sdk-group-name': ['client_sessions'],
         'x-fern-sdk-method-name': 'grant_access',
         'x-response-key': null,
+        'x-title': 'Grant Access to a Client Session',
       },
     },
     '/client_sessions/list': {
       post: {
+        description:
+          'Returns a list of all [client sessions](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
         operationId: 'clientSessionsListPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  client_session_id: { type: 'string' },
-                  connect_webview_id: { type: 'string' },
-                  user_identifier_key: { type: 'string' },
-                  user_identity_id: { type: 'string' },
-                  without_user_identifier_key: { type: 'boolean' },
+                  client_session_id: {
+                    description:
+                      'ID of the client session that you want to retrieve.',
+                    type: 'string',
+                  },
+                  connect_webview_id: {
+                    description:
+                      'ID of the [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) for which you want to retrieve client sessions.',
+                    type: 'string',
+                  },
+                  user_identifier_key: {
+                    description:
+                      'Your user ID for the user by which you want to filter client sessions.',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to retrieve client sessions.',
+                    type: 'string',
+                  },
+                  without_user_identifier_key: {
+                    description:
+                      'Indicates whether to retrieve only client sessions without associated user identifier keys.',
+                    type: 'boolean',
+                  },
                 },
                 type: 'object',
               },
@@ -25249,17 +25630,25 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'client_sessions',
         'x-response-key': 'client_sessions',
+        'x-title': 'List Client Sessions',
       },
     },
     '/client_sessions/revoke': {
       post: {
+        description:
+          'Revokes a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).\n\nNote that [deleting a client session](https://docs.seam.co/latest/api/client_sessions/delete) is a separate action.',
         operationId: 'clientSessionsRevokePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  client_session_id: { format: 'uuid', type: 'string' },
+                  client_session_id: {
+                    description:
+                      'ID of the client session that you want to revoke.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['client_session_id'],
                 type: 'object',
@@ -25293,10 +25682,13 @@ export default {
         'x-fern-sdk-group-name': ['client_sessions'],
         'x-fern-sdk-method-name': 'revoke',
         'x-response-key': null,
+        'x-title': 'Revoke a Client Session',
       },
     },
     '/connect_webviews/create': {
       post: {
+        description:
+          'Creates a new [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).\n\nTo enable a user to connect their devices or systems to Seam, they must sign in to their device or system account. To enable a user to sign in, you create a `connect_webview`. After creating the Connect Webview, you receive a URL that you can use to display the visual component of this Connect Webview for your user. You can open an iframe or new window to display the Connect Webview.\n\nYou should make a new `connect_webview` for each unique login request. Each `connect_webview` tracks the user that signed in with it. You receive an error if you reuse a Connect Webview for the same user twice or if you use the same Connect Webview for multiple users.\n\nSee also: [Connect Webview Process](https://docs.seam.co/latest/core-concepts/connect-webviews/connect-webview-process).',
         operationId: 'connectWebviewsCreatePost',
         requestBody: {
           content: {
@@ -25304,6 +25696,8 @@ export default {
               schema: {
                 properties: {
                   accepted_providers: {
+                    description:
+                      'Accepted device provider keys as an alternative to `provider_category`. Use this parameter to specify accepted providers explicitly. See [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). To list all provider keys, use [`/devices/list_device_providers`](https://docs.seam.co/latest/api/devices/list_device_providers) with no filters.',
                     items: {
                       enum: [
                         'dormakaba_community',
@@ -25363,6 +25757,8 @@ export default {
                   },
                   automatically_manage_new_devices: {
                     default: true,
+                    description:
+                      'Indicates whether newly-added devices should appear as [managed devices](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices). See also: [Customize the Behavior Settings of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-behavior-settings-of-your-connect-webviews).',
                     type: 'boolean',
                   },
                   custom_metadata: {
@@ -25373,15 +25769,28 @@ export default {
                         { type: 'boolean' },
                       ],
                     },
+                    description:
+                      'Custom metadata that you want to associate with the Connect Webview. Supports up to 50 JSON key:value pairs. [Adding custom metadata to a Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview) enables you to store custom information, like customer details or internal IDs from your application. The custom metadata is then transferred to any [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) that were connected using the Connect Webview, making it easy to find and filter these resources in your [workspace](https://docs.seam.co/latest/core-concepts/workspaces). You can also [filter Connect Webviews by custom metadata](https://docs.seam.co/latest/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata).',
                     type: 'object',
                   },
-                  custom_redirect_failure_url: { type: 'string' },
-                  custom_redirect_url: { type: 'string' },
+                  custom_redirect_failure_url: {
+                    description:
+                      'Alternative URL that you want to redirect the user to on an error. If you do not set this parameter, the Connect Webview falls back to the `custom_redirect_url`.',
+                    type: 'string',
+                  },
+                  custom_redirect_url: {
+                    description:
+                      'URL that you want to redirect the user to after the provider login is complete.',
+                    type: 'string',
+                  },
                   device_selection_mode: {
                     enum: ['none', 'single', 'multiple'],
                     type: 'string',
+                    'x-undocumented': 'Not supported.',
                   },
                   provider_category: {
+                    description:
+                      'Specifies the category of providers that you want to include. To list all providers within a category, use [`/devices/list_device_providers`](https://docs.seam.co/latest/api/devices/list_device_providers) with the desired `provider_category` filter.',
                     enum: [
                       'stable',
                       'consumer_smartlocks',
@@ -25392,7 +25801,12 @@ export default {
                     ],
                     type: 'string',
                   },
-                  wait_for_device_creation: { default: false, type: 'boolean' },
+                  wait_for_device_creation: {
+                    default: false,
+                    description:
+                      'Indicates whether Seam should finish syncing all devices in a newly-connected account before completing the associated Connect Webview. See also: [Customize the Behavior Settings of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-behavior-settings-of-your-connect-webviews).',
+                    type: 'boolean',
+                  },
                 },
                 type: 'object',
               },
@@ -25432,17 +25846,25 @@ export default {
         'x-fern-sdk-method-name': 'create',
         'x-fern-sdk-return-value': 'connect_webview',
         'x-response-key': 'connect_webview',
+        'x-title': 'Create a Connect Webview',
       },
     },
     '/connect_webviews/delete': {
       post: {
+        description:
+          'Deletes a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).\n\nYou do not need to delete a Connect Webview once a user completes it. Instead, you can simply ignore completed Connect Webviews.',
         operationId: 'connectWebviewsDeletePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  connect_webview_id: { format: 'uuid', type: 'string' },
+                  connect_webview_id: {
+                    description:
+                      'ID of the Connect Webview that you want to delete.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['connect_webview_id'],
                 type: 'object',
@@ -25476,17 +25898,25 @@ export default {
         'x-fern-sdk-group-name': ['connect_webviews'],
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
+        'x-title': 'Delete a Connect Webview',
       },
     },
     '/connect_webviews/get': {
       post: {
+        description:
+          "Returns a specified [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).\n\nUnless you're using a `custom_redirect_url`, you should poll a newly-created `connect_webview` to find out if the user has signed in or to get details about what devices they've connected.",
         operationId: 'connectWebviewsGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  connect_webview_id: { format: 'uuid', type: 'string' },
+                  connect_webview_id: {
+                    description:
+                      'ID of the Connect Webview that you want to get.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['connect_webview_id'],
                 type: 'object',
@@ -25527,10 +25957,13 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'connect_webview',
         'x-response-key': 'connect_webview',
+        'x-title': 'Get a Connect Webview',
       },
     },
     '/connect_webviews/list': {
       post: {
+        description:
+          'Returns a list of all [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews).',
         operationId: 'connectWebviewsListPost',
         requestBody: {
           content: {
@@ -25542,13 +25975,19 @@ export default {
                       oneOf: [{ type: 'string' }, { type: 'boolean' }],
                     },
                     description:
-                      'Returns webviews whose custom_metadata contains all of the provided key/value pairs.',
+                      'Custom metadata pairs by which you want to [filter Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata). Returns Connect Webviews with `custom_metadata` that contains all of the provided key:value pairs.',
                     type: 'object',
                   },
-                  limit: { default: 500, format: 'float', type: 'number' },
+                  limit: {
+                    default: 500,
+                    description:
+                      'Maximum number of records to return per page.',
+                    format: 'float',
+                    type: 'number',
+                  },
                   user_identifier_key: {
                     description:
-                      'Returns webviews that can be accessed by the provided user_identifier_key.',
+                      'Your user ID for the user by which you want to filter Connect Webviews.',
                     type: 'string',
                   },
                 },
@@ -25591,18 +26030,30 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'connect_webviews',
         'x-response-key': 'connect_webviews',
+        'x-title': 'List Connect Webviews',
       },
     },
     '/connected_accounts/delete': {
       post: {
+        description:
+          'Deletes a specified [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).\n\nDeleting a connected account triggers a `connected_account.deleted` event and removes the connected account and all data associated with the connected account from Seam, including devices, events, access codes, and so on. For every deleted resource, Seam sends a corresponding deleted event, but the resource is not deleted from the provider.\n\nFor example, if you delete a connected account with a device that has an access code, Seam sends a `connected_account.deleted` event, a `device.deleted` event, and an `access_code.deleted` event, but Seam does not remove the access code from the device.',
         operationId: 'connectedAccountsDeletePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  connected_account_id: { format: 'uuid', type: 'string' },
-                  sync: { default: false, type: 'boolean' },
+                  connected_account_id: {
+                    description:
+                      'ID of the connected account that you want to delete.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
                 },
                 required: ['connected_account_id'],
                 type: 'object',
@@ -25641,6 +26092,8 @@ export default {
     },
     '/connected_accounts/get': {
       post: {
+        description:
+          'Returns a specified [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
         operationId: 'connectedAccountsGetPost',
         requestBody: {
           content: {
@@ -25649,13 +26102,25 @@ export default {
                 oneOf: [
                   {
                     properties: {
-                      connected_account_id: { format: 'uuid', type: 'string' },
+                      connected_account_id: {
+                        description:
+                          'ID of the connected account that you want to get.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                     },
                     required: ['connected_account_id'],
                     type: 'object',
                   },
                   {
-                    properties: { email: { format: 'email', type: 'string' } },
+                    properties: {
+                      email: {
+                        description:
+                          'Email address associated with the connected account that you want to get.',
+                        format: 'email',
+                        type: 'string',
+                      },
+                    },
                     required: ['email'],
                     type: 'object',
                   },
@@ -25702,6 +26167,8 @@ export default {
     },
     '/connected_accounts/list': {
       post: {
+        description:
+          'Returns a list of all [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts).',
         operationId: 'connectedAccountsListPost',
         requestBody: {
           content: {
@@ -25713,7 +26180,7 @@ export default {
                       oneOf: [{ type: 'string' }, { type: 'boolean' }],
                     },
                     description:
-                      'Returns accounts whose custom_metadata contains all of the provided key/value pairs.',
+                      'Custom metadata pairs by which you want to filter connected accounts. Returns connected accounts with `custom_metadata` that contains all of the provided key:value pairs.',
                     type: 'object',
                   },
                   customer_ids: {
@@ -25736,7 +26203,7 @@ export default {
                   },
                   user_identifier_key: {
                     description:
-                      'Returns accounts that can be accessed by the provided user_identifier_key.',
+                      'Your user ID for the user by which you want to filter connected accounts.',
                     type: 'string',
                   },
                 },
@@ -25784,14 +26251,25 @@ export default {
     },
     '/connected_accounts/update': {
       post: {
+        description:
+          'Updates a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
         operationId: 'connectedAccountsUpdatePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  automatically_manage_new_devices: { type: 'boolean' },
-                  connected_account_id: { format: 'uuid', type: 'string' },
+                  automatically_manage_new_devices: {
+                    description:
+                      'Indicates whether newly-added devices should appear as [managed devices](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).',
+                    type: 'boolean',
+                  },
+                  connected_account_id: {
+                    description:
+                      'ID of the connected account that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   custom_metadata: {
                     additionalProperties: {
                       nullable: true,
@@ -25800,6 +26278,8 @@ export default {
                         { type: 'boolean' },
                       ],
                     },
+                    description:
+                      'Custom metadata that you want to associate with the connected account. Supports up to 50 JSON key:value pairs. [Adding custom metadata to a connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account) enables you to store custom information, like customer details or internal IDs from your application. Then, you can [filter connected accounts by the desired metadata](https://docs.seam.co/latest/core-concepts/connected-accounts/filtering-connected-accounts-by-custom-metadata).',
                     type: 'object',
                   },
                 },
@@ -25845,12 +26325,20 @@ export default {
     },
     '/devices/delete': {
       post: {
+        description:
+          'Deletes a specified [device](https://docs.seam.co/latest/core-concepts/devices).',
         operationId: 'devicesDeletePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
-                properties: { device_id: { format: 'uuid', type: 'string' } },
+                properties: {
+                  device_id: {
+                    description: 'ID of the device that you want to delete.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
                 required: ['device_id'],
                 type: 'object',
               },
@@ -25885,20 +26373,30 @@ export default {
         'x-fern-sdk-group-name': ['devices'],
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
+        'x-title': 'Delete a Device',
         'x-undocumented':
           'Deleting a device is no longer supported and will be removed.',
       },
     },
     '/devices/get': {
       post: {
+        description:
+          'Returns a specified [device](https://docs.seam.co/latest/core-concepts/devices).\n\nYou must specify either `device_id` or `name`.',
         operationId: 'devicesGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
-                  name: { type: 'string' },
+                  device_id: {
+                    description: 'ID of the device that you want to get.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  name: {
+                    description: 'Name of the device that you want to get.',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -25936,6 +26434,7 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'device',
         'x-response-key': 'device',
+        'x-title': 'Get a Device',
       },
     },
     '/devices/list': {
@@ -25950,25 +26449,25 @@ export default {
                 properties: {
                   connect_webview_id: {
                     description:
-                      'ID of the Connect Webview by which to filter devices.',
+                      'ID of the Connect Webview for which you want to list devices.',
                     format: 'uuid',
                     type: 'string',
                   },
                   connected_account_id: {
                     description:
-                      'ID of the connected account by which to filter.',
+                      'ID of the connected account for which you want to list devices.',
                     format: 'uuid',
                     type: 'string',
                   },
                   connected_account_ids: {
                     description:
-                      'Array of IDs of the connected accounts by which to filter devices.',
+                      'Array of IDs of the connected accounts for which you want to list devices.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
                   created_before: {
                     description:
-                      'Date threshold for devices to return. If specified, returns only devices created before the specified date.',
+                      'Timestamp by which to limit returned devices. Returns devices created before this timestamp.',
                     format: 'date-time',
                     type: 'string',
                   },
@@ -25977,7 +26476,7 @@ export default {
                       oneOf: [{ type: 'string' }, { type: 'boolean' }],
                     },
                     description:
-                      'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices.',
+                      'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.',
                     type: 'object',
                   },
                   customer_ids: {
@@ -25986,12 +26485,13 @@ export default {
                   },
                   device_ids: {
                     description:
-                      'Array of device IDs by which to filter devices.',
+                      'Array of device IDs for which you want to list devices.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
                   device_type: {
-                    description: 'Device type by which to filter devices.',
+                    description:
+                      'Device type for which you want to list devices.',
                     oneOf: [
                       {
                         enum: [
@@ -26049,7 +26549,7 @@ export default {
                   },
                   device_types: {
                     description:
-                      'Array of device types by which to filter devices.',
+                      'Array of device types for which you want to list devices.',
                     items: {
                       oneOf: [
                         {
@@ -26156,7 +26656,8 @@ export default {
                     type: 'number',
                   },
                   manufacturer: {
-                    description: 'Manufacturer by which to filter devices.',
+                    description:
+                      'Manufacturer for which you want to list devices.',
                     enum: [
                       'akuvox',
                       'august',
@@ -26206,6 +26707,8 @@ export default {
                     type: 'string',
                   },
                   unstable_location_id: {
+                    description:
+                      'ID of the location for which you want to list devices.',
                     format: 'uuid',
                     nullable: true,
                     type: 'string',
@@ -26213,7 +26716,7 @@ export default {
                   },
                   user_identifier_key: {
                     description:
-                      'Your own internal user ID for the user by which to filter devices.',
+                      'Your own internal user ID for the user for which you want to list devices.',
                     type: 'string',
                   },
                 },
@@ -26262,6 +26765,8 @@ export default {
     },
     '/devices/list_device_providers': {
       post: {
+        description:
+          'Returns a list of all device providers.\n\nThe information that this endpoint returns for each provider includes a set of [capability flags](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities#capability-flags), such as `device_provider.can_remotely_unlock`. If at least one supported device from a provider has a specific capability, the corresponding capability flag is `true`.\n\nWhen you create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews), you can customize the providers—that is, the brands—that it displays. In the `/connect_webviews/create` request, include the desired set of device provider keys in the `accepted_providers` parameter. See also [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).',
         operationId: 'devicesListDeviceProvidersPost',
         requestBody: {
           content: {
@@ -26269,6 +26774,8 @@ export default {
               schema: {
                 properties: {
                   provider_category: {
+                    description:
+                      'Category for which you want to list providers.',
                     enum: [
                       'stable',
                       'consumer_smartlocks',
@@ -26318,16 +26825,26 @@ export default {
         'x-fern-sdk-method-name': 'list_device_providers',
         'x-fern-sdk-return-value': 'device_providers',
         'x-response-key': 'device_providers',
+        'x-title': 'List Device Providers',
       },
     },
     '/devices/simulate/connect': {
       post: {
+        description:
+          'Simulates connecting a device to Seam. Only applicable for [sandbox devices](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](https://docs.seam.co/latest/core-concepts/devices/testing-your-app-against-device-disconnection-and-removal).',
         operationId: 'devicesSimulateConnectPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
-                properties: { device_id: { format: 'uuid', type: 'string' } },
+                properties: {
+                  device_id: {
+                    description:
+                      'ID of the device that you want to simulate connecting to Seam.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
                 required: ['device_id'],
                 type: 'object',
               },
@@ -26360,16 +26877,26 @@ export default {
         'x-fern-sdk-group-name': ['devices', 'simulate'],
         'x-fern-sdk-method-name': 'connect',
         'x-response-key': null,
+        'x-title': 'Simulate Device Connection',
       },
     },
     '/devices/simulate/disconnect': {
       post: {
+        description:
+          'Simulates disconnecting a device from Seam. Only applicable for [sandbox devices](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](https://docs.seam.co/latest/core-concepts/devices/testing-your-app-against-device-disconnection-and-removal).',
         operationId: 'devicesSimulateDisconnectPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
-                properties: { device_id: { format: 'uuid', type: 'string' } },
+                properties: {
+                  device_id: {
+                    description:
+                      'ID of the device that you want to simulate disconnecting from Seam.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
                 required: ['device_id'],
                 type: 'object',
               },
@@ -26402,16 +26929,26 @@ export default {
         'x-fern-sdk-group-name': ['devices', 'simulate'],
         'x-fern-sdk-method-name': 'disconnect',
         'x-response-key': null,
+        'x-title': 'Simulate Device Disconnection',
       },
     },
     '/devices/simulate/remove': {
       post: {
+        description:
+          'Simulates removing a device from Seam. Only applicable for [sandbox devices](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](https://docs.seam.co/latest/core-concepts/devices/testing-your-app-against-device-disconnection-and-removal).',
         operationId: 'devicesSimulateRemovePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
-                properties: { device_id: { format: 'uuid', type: 'string' } },
+                properties: {
+                  device_id: {
+                    description:
+                      'ID of the device that you want to simulate removing from Seam.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
                 required: ['device_id'],
                 type: 'object',
               },
@@ -26444,18 +26981,30 @@ export default {
         'x-fern-sdk-group-name': ['devices', 'simulate'],
         'x-fern-sdk-method-name': 'remove',
         'x-response-key': null,
+        'x-title': 'Simulate Device Removal',
       },
     },
     '/devices/unmanaged/get': {
       post: {
+        description:
+          'Returns a specified [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).\n\nAn unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).\n\nYou must specify either `device_id` or `name`.',
         operationId: 'devicesUnmanagedGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
-                  name: { type: 'string' },
+                  device_id: {
+                    description:
+                      'ID of the unmanaged device that you want to get.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  name: {
+                    description:
+                      'Name of the unmanaged device that you want to get.',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -26493,10 +27042,13 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'device',
         'x-response-key': 'device',
+        'x-title': 'Get an Unmanaged Device',
       },
     },
     '/devices/unmanaged/list': {
       post: {
+        description:
+          'Returns a list of all [unmanaged devices](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).\n\nAn unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).',
         operationId: 'devicesUnmanagedListPost',
         requestBody: {
           content: {
@@ -26505,25 +27057,25 @@ export default {
                 properties: {
                   connect_webview_id: {
                     description:
-                      'ID of the Connect Webview by which to filter devices.',
+                      'ID of the Connect Webview for which you want to list devices.',
                     format: 'uuid',
                     type: 'string',
                   },
                   connected_account_id: {
                     description:
-                      'ID of the connected account by which to filter.',
+                      'ID of the connected account for which you want to list devices.',
                     format: 'uuid',
                     type: 'string',
                   },
                   connected_account_ids: {
                     description:
-                      'Array of IDs of the connected accounts by which to filter devices.',
+                      'Array of IDs of the connected accounts for which you want to list devices.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
                   created_before: {
                     description:
-                      'Date threshold for devices to return. If specified, returns only devices created before the specified date.',
+                      'Timestamp by which to limit returned devices. Returns devices created before this timestamp.',
                     format: 'date-time',
                     type: 'string',
                   },
@@ -26532,7 +27084,7 @@ export default {
                       oneOf: [{ type: 'string' }, { type: 'boolean' }],
                     },
                     description:
-                      'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices.',
+                      'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.',
                     type: 'object',
                   },
                   customer_ids: {
@@ -26541,12 +27093,13 @@ export default {
                   },
                   device_ids: {
                     description:
-                      'Array of device IDs by which to filter devices.',
+                      'Array of device IDs for which you want to list devices.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
                   device_type: {
-                    description: 'Device type by which to filter devices.',
+                    description:
+                      'Device type for which you want to list devices.',
                     oneOf: [
                       {
                         enum: [
@@ -26604,7 +27157,7 @@ export default {
                   },
                   device_types: {
                     description:
-                      'Array of device types by which to filter devices.',
+                      'Array of device types for which you want to list devices.',
                     items: {
                       oneOf: [
                         {
@@ -26711,7 +27264,8 @@ export default {
                     type: 'number',
                   },
                   manufacturer: {
-                    description: 'Manufacturer by which to filter devices.',
+                    description:
+                      'Manufacturer for which you want to list devices.',
                     enum: [
                       'akuvox',
                       'august',
@@ -26761,6 +27315,8 @@ export default {
                     type: 'string',
                   },
                   unstable_location_id: {
+                    description:
+                      'ID of the location for which you want to list devices.',
                     format: 'uuid',
                     nullable: true,
                     type: 'string',
@@ -26768,7 +27324,7 @@ export default {
                   },
                   user_identifier_key: {
                     description:
-                      'Your own internal user ID for the user by which to filter devices.',
+                      'Your own internal user ID for the user for which you want to list devices.',
                     type: 'string',
                   },
                 },
@@ -26810,18 +27366,31 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'devices',
         'x-response-key': 'devices',
+        'x-title': 'List Unmanaged Devices',
       },
     },
     '/devices/unmanaged/update': {
       patch: {
+        description:
+          'Updates a specified [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices). To convert an unmanaged device to managed, set `is_managed` to `true`.\n\nAn unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).',
         operationId: 'devicesUnmanagedUpdatePatch',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
-                  is_managed: { enum: [true], type: 'boolean' },
+                  device_id: {
+                    description:
+                      'ID of the unmanaged device that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  is_managed: {
+                    description:
+                      'Indicates whether the device is managed. Set this parameter to `true` to convert an unmanaged device to managed.',
+                    enum: [true],
+                    type: 'boolean',
+                  },
                 },
                 required: ['device_id', 'is_managed'],
                 type: 'object',
@@ -26854,16 +27423,29 @@ export default {
         tags: ['/devices'],
         'x-fern-ignore': true,
         'x-response-key': null,
+        'x-title': 'Update an Unmanaged Device',
       },
       post: {
+        description:
+          'Updates a specified [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices). To convert an unmanaged device to managed, set `is_managed` to `true`.\n\nAn unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).',
         operationId: 'devicesUnmanagedUpdatePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
-                  is_managed: { enum: [true], type: 'boolean' },
+                  device_id: {
+                    description:
+                      'ID of the unmanaged device that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  is_managed: {
+                    description:
+                      'Indicates whether the device is managed. Set this parameter to `true` to convert an unmanaged device to managed.',
+                    enum: [true],
+                    type: 'boolean',
+                  },
                 },
                 required: ['device_id', 'is_managed'],
                 type: 'object',
@@ -26897,10 +27479,13 @@ export default {
         'x-fern-sdk-group-name': ['devices', 'unmanaged'],
         'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
+        'x-title': 'Update an Unmanaged Device',
       },
     },
     '/devices/update': {
       patch: {
+        description:
+          "Updates a specified [device](https://docs.seam.co/latest/core-concepts/devices).\n\nYou can add or change [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) for a device, change the device's name, or [convert a managed device to unmanaged](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).",
         operationId: 'devicesUpdatePatch',
         requestBody: {
           content: {
@@ -26915,13 +27500,34 @@ export default {
                         { type: 'boolean' },
                       ],
                     },
+                    description:
+                      'Custom metadata that you want to associate with the device. Supports up to 50 JSON key:value pairs. [Adding custom metadata to a device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) enables you to store custom information, like customer details or internal IDs from your application. Then, you can [filter devices by the desired metadata](https://docs.seam.co/latest/core-concepts/devices/filtering-devices-by-custom-metadata).',
                     type: 'object',
                   },
-                  device_id: { format: 'uuid', type: 'string' },
-                  is_managed: { default: true, type: 'boolean' },
-                  name: { nullable: true, type: 'string' },
+                  device_id: {
+                    description: 'ID of the device that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  is_managed: {
+                    default: true,
+                    description:
+                      'Indicates whether the device is managed. To unmanage a device, set `is_managed` to `false`.',
+                    type: 'boolean',
+                  },
+                  name: {
+                    description: 'Name for the device.',
+                    nullable: true,
+                    type: 'string',
+                  },
                   properties: {
-                    properties: { name: { nullable: true, type: 'string' } },
+                    properties: {
+                      name: {
+                        description: 'Name for the device.',
+                        nullable: true,
+                        type: 'string',
+                      },
+                    },
                     type: 'object',
                   },
                 },
@@ -26957,8 +27563,11 @@ export default {
         tags: ['/devices'],
         'x-fern-ignore': true,
         'x-response-key': null,
+        'x-title': 'Update a Device',
       },
       post: {
+        description:
+          "Updates a specified [device](https://docs.seam.co/latest/core-concepts/devices).\n\nYou can add or change [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) for a device, change the device's name, or [convert a managed device to unmanaged](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).",
         operationId: 'devicesUpdatePost',
         requestBody: {
           content: {
@@ -26973,13 +27582,34 @@ export default {
                         { type: 'boolean' },
                       ],
                     },
+                    description:
+                      'Custom metadata that you want to associate with the device. Supports up to 50 JSON key:value pairs. [Adding custom metadata to a device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) enables you to store custom information, like customer details or internal IDs from your application. Then, you can [filter devices by the desired metadata](https://docs.seam.co/latest/core-concepts/devices/filtering-devices-by-custom-metadata).',
                     type: 'object',
                   },
-                  device_id: { format: 'uuid', type: 'string' },
-                  is_managed: { default: true, type: 'boolean' },
-                  name: { nullable: true, type: 'string' },
+                  device_id: {
+                    description: 'ID of the device that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  is_managed: {
+                    default: true,
+                    description:
+                      'Indicates whether the device is managed. To unmanage a device, set `is_managed` to `false`.',
+                    type: 'boolean',
+                  },
+                  name: {
+                    description: 'Name for the device.',
+                    nullable: true,
+                    type: 'string',
+                  },
                   properties: {
-                    properties: { name: { nullable: true, type: 'string' } },
+                    properties: {
+                      name: {
+                        description: 'Name for the device.',
+                        nullable: true,
+                        type: 'string',
+                      },
+                    },
                     type: 'object',
                   },
                 },
@@ -27016,10 +27646,13 @@ export default {
         'x-fern-sdk-group-name': ['devices'],
         'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
+        'x-title': 'Update a Device',
       },
     },
     '/events/get': {
       post: {
+        description:
+          'Returns a specified event. This endpoint returns the same event that would be sent to a [webhook](https://docs.seam.co/latest/developer-tools/webhooks), but it enables you to retrieve an event that already took place.',
         operationId: 'eventsGetPost',
         requestBody: {
           content: {
@@ -27067,10 +27700,13 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'event',
         'x-response-key': 'event',
+        'x-title': 'Get an Event',
       },
     },
     '/events/list': {
       post: {
+        description:
+          'Returns a list of all events. This endpoint returns the same events that would be sent to a [webhook](https://docs.seam.co/latest/developer-tools/webhooks), but it enables you to filter or see events that already took place.',
         operationId: 'eventsListPost',
         requestBody: {
           content: {
@@ -27345,6 +27981,7 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'events',
         'x-response-key': 'events',
+        'x-title': 'List Events',
       },
     },
     '/locks/get': {
@@ -27408,25 +28045,25 @@ export default {
                 properties: {
                   connect_webview_id: {
                     description:
-                      'ID of the Connect Webview by which to filter devices.',
+                      'ID of the Connect Webview for which you want to list devices.',
                     format: 'uuid',
                     type: 'string',
                   },
                   connected_account_id: {
                     description:
-                      'ID of the connected account by which to filter.',
+                      'ID of the connected account for which you want to list devices.',
                     format: 'uuid',
                     type: 'string',
                   },
                   connected_account_ids: {
                     description:
-                      'Array of IDs of the connected accounts by which to filter devices.',
+                      'Array of IDs of the connected accounts for which you want to list devices.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
                   created_before: {
                     description:
-                      'Date threshold for devices to return. If specified, returns only devices created before the specified date.',
+                      'Timestamp by which to limit returned devices. Returns devices created before this timestamp.',
                     format: 'date-time',
                     type: 'string',
                   },
@@ -27435,7 +28072,7 @@ export default {
                       oneOf: [{ type: 'string' }, { type: 'boolean' }],
                     },
                     description:
-                      'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices.',
+                      'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.',
                     type: 'object',
                   },
                   customer_ids: {
@@ -27444,7 +28081,7 @@ export default {
                   },
                   device_ids: {
                     description:
-                      'Array of device IDs by which to filter devices.',
+                      'Array of device IDs for which you want to list devices.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
@@ -27605,6 +28242,8 @@ export default {
                     type: 'string',
                   },
                   unstable_location_id: {
+                    description:
+                      'ID of the location for which you want to list devices.',
                     format: 'uuid',
                     nullable: true,
                     type: 'string',
@@ -27612,7 +28251,7 @@ export default {
                   },
                   user_identifier_key: {
                     description:
-                      'Your own internal user ID for the user by which to filter devices.',
+                      'Your own internal user ID for the user for which you want to list devices.',
                     type: 'string',
                   },
                 },
@@ -27969,25 +28608,25 @@ export default {
                 properties: {
                   connect_webview_id: {
                     description:
-                      'ID of the Connect Webview by which to filter devices.',
+                      'ID of the Connect Webview for which you want to list devices.',
                     format: 'uuid',
                     type: 'string',
                   },
                   connected_account_id: {
                     description:
-                      'ID of the connected account by which to filter.',
+                      'ID of the connected account for which you want to list devices.',
                     format: 'uuid',
                     type: 'string',
                   },
                   connected_account_ids: {
                     description:
-                      'Array of IDs of the connected accounts by which to filter devices.',
+                      'Array of IDs of the connected accounts for which you want to list devices.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
                   created_before: {
                     description:
-                      'Date threshold for devices to return. If specified, returns only devices created before the specified date.',
+                      'Timestamp by which to limit returned devices. Returns devices created before this timestamp.',
                     format: 'date-time',
                     type: 'string',
                   },
@@ -27996,7 +28635,7 @@ export default {
                       oneOf: [{ type: 'string' }, { type: 'boolean' }],
                     },
                     description:
-                      'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices.',
+                      'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.',
                     type: 'object',
                   },
                   customer_ids: {
@@ -28005,7 +28644,7 @@ export default {
                   },
                   device_ids: {
                     description:
-                      'Array of device IDs by which to filter devices.',
+                      'Array of device IDs for which you want to list devices.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
@@ -28082,6 +28721,8 @@ export default {
                     type: 'string',
                   },
                   unstable_location_id: {
+                    description:
+                      'ID of the location for which you want to list devices.',
                     format: 'uuid',
                     nullable: true,
                     type: 'string',
@@ -28089,7 +28730,7 @@ export default {
                   },
                   user_identifier_key: {
                     description:
-                      'Your own internal user ID for the user by which to filter devices.',
+                      'Your own internal user ID for the user for which you want to list devices.',
                     type: 'string',
                   },
                 },
@@ -31023,25 +31664,25 @@ export default {
                 properties: {
                   connect_webview_id: {
                     description:
-                      'ID of the Connect Webview by which to filter devices.',
+                      'ID of the Connect Webview for which you want to list devices.',
                     format: 'uuid',
                     type: 'string',
                   },
                   connected_account_id: {
                     description:
-                      'ID of the connected account by which to filter.',
+                      'ID of the connected account for which you want to list devices.',
                     format: 'uuid',
                     type: 'string',
                   },
                   connected_account_ids: {
                     description:
-                      'Array of IDs of the connected accounts by which to filter devices.',
+                      'Array of IDs of the connected accounts for which you want to list devices.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
                   created_before: {
                     description:
-                      'Date threshold for devices to return. If specified, returns only devices created before the specified date.',
+                      'Timestamp by which to limit returned devices. Returns devices created before this timestamp.',
                     format: 'date-time',
                     type: 'string',
                   },
@@ -31050,7 +31691,7 @@ export default {
                       oneOf: [{ type: 'string' }, { type: 'boolean' }],
                     },
                     description:
-                      'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices.',
+                      'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.',
                     type: 'object',
                   },
                   customer_ids: {
@@ -31059,7 +31700,7 @@ export default {
                   },
                   device_ids: {
                     description:
-                      'Array of device IDs by which to filter devices.',
+                      'Array of device IDs for which you want to list devices.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
@@ -31158,6 +31799,8 @@ export default {
                     type: 'string',
                   },
                   unstable_location_id: {
+                    description:
+                      'ID of the location for which you want to list devices.',
                     format: 'uuid',
                     nullable: true,
                     type: 'string',
@@ -31165,7 +31808,7 @@ export default {
                   },
                   user_identifier_key: {
                     description:
-                      'Your own internal user ID for the user by which to filter devices.',
+                      'Your own internal user ID for the user for which you want to list devices.',
                     type: 'string',
                   },
                 },
@@ -34773,7 +35416,7 @@ export default {
     '/user_identities/delete': {
       post: {
         description:
-          'Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). To delete a user identity, you must first delete any [ACS credentials](https://docs.seam.co/latest/api/access-control-systems/credentials) and [enrollment automations](https://docs.seam.co/latest/api/user_identities/enrollment_automations/delete) associated with the user identity. You must also deactivate any associated phones.',
+          'Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). To delete a user identity, you must first delete any [credentials](https://docs.seam.co/latest/api/access-control-systems/credentials) and [enrollment automations](https://docs.seam.co/latest/api/user_identities/enrollment_automations/delete) associated with the user identity. You must also deactivate any associated phones.',
         operationId: 'userIdentitiesDeletePost',
         requestBody: {
           content: {
@@ -36369,6 +37012,8 @@ export default {
     },
     '/workspaces/reset_sandbox': {
       post: {
+        description:
+          'Resets a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). Note that this endpoint is only available for sandbox workspaces.',
         operationId: 'workspacesResetSandboxPost',
         responses: {
           200: {
