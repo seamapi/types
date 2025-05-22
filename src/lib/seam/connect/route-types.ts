@@ -60332,6 +60332,45 @@ export interface Routes {
       }
     }
   }
+  '/unstable_partner/resources/push': {
+    route: '/unstable_partner/resources/push'
+    method: 'POST'
+    queryParams: {}
+    jsonBody:
+      | Array<{
+          partner_resource_type?: string | undefined
+          partner_resource_key?: string | undefined
+          customer_key?: string | undefined
+          email_address?: string | undefined
+          phone_number?: string | undefined
+          starts_at?: string | undefined
+          ends_at?: string | undefined
+          user_identity_key?: string | undefined
+          location_keys?: string[] | undefined
+          name?: string | undefined
+          description?: string | undefined
+          icon_url?: string | undefined
+          custom_metadata?: Record<string, string> | undefined
+        }>
+      | {
+          partner_resource_type?: string | undefined
+          partner_resource_key?: string | undefined
+          customer_key?: string | undefined
+          email_address?: string | undefined
+          phone_number?: string | undefined
+          starts_at?: string | undefined
+          ends_at?: string | undefined
+          user_identity_key?: string | undefined
+          location_keys?: string[] | undefined
+          name?: string | undefined
+          description?: string | undefined
+          icon_url?: string | undefined
+          custom_metadata?: Record<string, string> | undefined
+        }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/user_identities/add_acs_user': {
     route: '/user_identities/add_acs_user'
     method: 'POST' | 'PUT'
