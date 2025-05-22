@@ -48,6 +48,8 @@ export {
   pagination,
   phone,
   phone_number,
+  phone_registration,
+  phone_session,
   thermostat_capability_properties,
   thermostat_device_type,
   thermostat_schedule,
