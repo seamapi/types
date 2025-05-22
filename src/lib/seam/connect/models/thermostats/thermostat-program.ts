@@ -1,25 +1,34 @@
 import { z } from 'zod'
 
-export const thermostat_daily_program_period = z.object({
-  starts_at_time: z
-    .string()
-    .regex(/^([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$/)
-    .describe(
-      'Time at which the thermostat daily program entry starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
-    ),
-  climate_preset_key: z
-    .string()
-    .describe(
-      'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the starts_at_time.',
-    ),
-})
+export const thermostat_daily_program_period = z
+  .object({
+    starts_at_time: z
+      .string()
+      .regex(/^([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$/)
+      .describe(
+        'Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+      ),
+    climate_preset_key: z
+      .string()
+      .describe(
+        'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.',
+      ),
+  })
+  .describe(
+    'Period for a thermostat daily program. Consists of a starts at time and the key that identifies the configured climate preset to apply at the starting time.',
+  )
 
 export const thermostat_daily_program = z.object({
   thermostat_daily_program_id: z
     .string()
     .uuid()
     .describe('ID of the thermostat daily program.'),
-  device_id: z.string().uuid().describe('ID of the desired thermostat device.'),
+  device_id: z
+    .string()
+    .uuid()
+    .describe(
+      'ID of the thermostat device on which the thermostat daily program is configured.',
+    ),
   name: z
     .string()
     .nullable()
@@ -39,7 +48,12 @@ export const thermostat_daily_program = z.object({
     .describe(
       'Date and time at which the thermostat daily program was created.',
     ),
-})
+}).describe(`
+  ---
+  route_path: /thermostats/thermostat_daily_programs
+  ---
+  Represents a thermostat daily program, consisting of a set of periods, each of which has a starting time and the key that identifies the climate preset to apply at the starting time.
+`)
 
 export const thermostat_weekly_program = z.object({
   monday_program_id: z
