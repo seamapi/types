@@ -21588,9 +21588,15 @@ export default {
                     enum: ['code', 'card', 'mobile_key'],
                     type: 'string',
                   },
+                  acs_system_id: {
+                    description:
+                      'ID of the ACS system to which the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   acs_user_id: {
                     description:
-                      'ID of the ACS user to whom the new credential belongs.',
+                      'ID of the ACS user to whom the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -21654,6 +21660,12 @@ export default {
                     format: 'date-time',
                     type: 'string',
                   },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity to whom the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`. If the ACS system contains an ACS user with the same `email_address` or `phone_number` as the user identity that you specify, they are linked, and the credential belongs to the ACS user. If the ACS system does not have a corresponding ACS user, one is created.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   visionline_metadata: {
                     description:
                       'Visionline-specific metadata for the new credential.',
@@ -21692,7 +21704,7 @@ export default {
                     type: 'object',
                   },
                 },
-                required: ['acs_user_id', 'access_method'],
+                required: ['access_method'],
                 type: 'object',
               },
             },
