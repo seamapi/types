@@ -483,7 +483,12 @@ export const common_device_properties = z.object({
       'Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage.',
     ),
   // todo: use enum
-  manufacturer: z.string().optional().describe('Manufacturer of the device.'),
+  manufacturer: z
+    .string()
+    .optional()
+    .describe(
+      'Manufacturer of the device. When a device, such as a smart lock, is connected through a smart hub, the manufacturer of the device might be different from that of the smart hub.',
+    ),
   image_url: z.string().url().optional().describe('Image URL for the device.'),
   image_alt_text: z
     .string()
@@ -635,6 +640,7 @@ export const device = z
     ---
     route_path: /devices
     ---
+    Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that has been connected to Seam.
   `)
 
 export type Device = z.infer<typeof device>

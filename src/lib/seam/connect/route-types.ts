@@ -4,9 +4,15 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the device for which to create the new access code. */
+      /** ID of the device for which you want to create the new access code. */
       device_id: string
-      /** Name of the new access code. */
+      /** Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
+          
+          Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.
+          
+          To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.
+          
+          To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components). */
       name?: string | undefined
       /** Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       starts_at?: string | undefined
@@ -1336,7 +1342,7 @@ export interface Routes {
     
     An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam Access Code API, you can easily generate access codes on the hundreds of door lock models with which we integrate.
     
-    Seam supports programming two types of access codes: [ongoing](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`.
+    Seam supports programming two types of access codes: [ongoing](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`. An ongoing access code is active, until it has been removed from the device. To specify an ongoing access code, leave both `starts_at` and `ends_at` empty. A time-bound access code will be programmed at the `starts_at` time and removed at the `ends_at` time.
     
     In addition, for certain devices, Seam also supports [offline access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#offline-access-codes). Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code. */
       access_code: {
@@ -1352,7 +1358,13 @@ export interface Routes {
         access_code_id: string
         /** Unique identifier for the device associated with the access code. */
         device_id: string
-        /** Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes. */
+        /** Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
+              
+              Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.
+              
+              To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.
+              
+              To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components). */
         name: string | null
         /** Code used for access. Typically, a numeric or alphanumeric string. */
         code: string | null
@@ -1849,13 +1861,19 @@ export interface Routes {
     method: 'POST' | 'PUT'
     queryParams: {}
     jsonBody: {
-      /** IDs of the devices for which to create the new access codes. */
+      /** IDs of the devices for which you want to create the new access codes. */
       device_ids: string[]
       /** Desired behavior if any device cannot share a code. If `throw` (default), no access codes will be created if any device cannot share a code. If `create_random_code`, a random code will be created on devices that cannot share a code. */
       behavior_when_code_cannot_be_shared?: 'throw' | 'create_random_code'
       /** Preferred code length. Only applicable if you do not specify a `code`. If the affected device does not support the preferred code length, Seam reverts to using the shortest supported code length. */
       preferred_code_length?: number | undefined
-      /** Name of the new access code. */
+      /** Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
+          
+          Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.
+          
+          To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.
+          
+          To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components). */
       name?: string | undefined
       /** Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       starts_at?: string | undefined
@@ -1896,7 +1914,13 @@ export interface Routes {
         access_code_id: string
         /** Unique identifier for the device associated with the access code. */
         device_id: string
-        /** Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes. */
+        /** Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
+              
+              Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.
+              
+              To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.
+              
+              To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components). */
         name: string | null
         /** Code used for access. Typically, a numeric or alphanumeric string. */
         code: string | null
@@ -2394,9 +2418,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the device for which to delete the access code. */
+      /** ID of the device for which you want to delete the access code. */
       device_id?: string | undefined
-      /** ID of the access code to delete. */
+      /** ID of the access code that you want to delete. */
       access_code_id: string
       /**  */
       sync?: boolean
@@ -3703,6 +3727,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the device for which you want to generate a code. */
       device_id: string
     }
     formData: {}
@@ -3732,7 +3757,7 @@ export interface Routes {
     
     An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam Access Code API, you can easily generate access codes on the hundreds of door lock models with which we integrate.
     
-    Seam supports programming two types of access codes: [ongoing](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`.
+    Seam supports programming two types of access codes: [ongoing](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`. An ongoing access code is active, until it has been removed from the device. To specify an ongoing access code, leave both `starts_at` and `ends_at` empty. A time-bound access code will be programmed at the `starts_at` time and removed at the `ends_at` time.
     
     In addition, for certain devices, Seam also supports [offline access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#offline-access-codes). Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code. */
       access_code: {
@@ -3748,7 +3773,13 @@ export interface Routes {
         access_code_id: string
         /** Unique identifier for the device associated with the access code. */
         device_id: string
-        /** Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes. */
+        /** Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
+              
+              Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.
+              
+              To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.
+              
+              To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components). */
         name: string | null
         /** Code used for access. Typically, a numeric or alphanumeric string. */
         code: string | null
@@ -4272,7 +4303,13 @@ export interface Routes {
         access_code_id: string
         /** Unique identifier for the device associated with the access code. */
         device_id: string
-        /** Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes. */
+        /** Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
+              
+              Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.
+              
+              To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.
+              
+              To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components). */
         name: string | null
         /** Code used for access. Typically, a numeric or alphanumeric string. */
         code: string | null
@@ -4788,7 +4825,7 @@ export interface Routes {
     
     An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam Access Code API, you can easily generate access codes on the hundreds of door lock models with which we integrate.
     
-    Seam supports programming two types of access codes: [ongoing](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`.
+    Seam supports programming two types of access codes: [ongoing](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`. An ongoing access code is active, until it has been removed from the device. To specify an ongoing access code, leave both `starts_at` and `ends_at` empty. A time-bound access code will be programmed at the `starts_at` time and removed at the `ends_at` time.
     
     In addition, for certain devices, Seam also supports [offline access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#offline-access-codes). Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code. */
       backup_access_code: {
@@ -4804,7 +4841,13 @@ export interface Routes {
         access_code_id: string
         /** Unique identifier for the device associated with the access code. */
         device_id: string
-        /** Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes. */
+        /** Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
+              
+              Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.
+              
+              To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.
+              
+              To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components). */
         name: string | null
         /** Code used for access. Typically, a numeric or alphanumeric string. */
         code: string | null
@@ -5298,7 +5341,7 @@ export interface Routes {
     
     An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam Access Code API, you can easily generate access codes on the hundreds of door lock models with which we integrate.
     
-    Seam supports programming two types of access codes: [ongoing](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`.
+    Seam supports programming two types of access codes: [ongoing](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`. An ongoing access code is active, until it has been removed from the device. To specify an ongoing access code, leave both `starts_at` and `ends_at` empty. A time-bound access code will be programmed at the `starts_at` time and removed at the `ends_at` time.
     
     In addition, for certain devices, Seam also supports [offline access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#offline-access-codes). Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code. */
       access_code: {
@@ -5314,7 +5357,13 @@ export interface Routes {
         access_code_id: string
         /** Unique identifier for the device associated with the access code. */
         device_id: string
-        /** Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes. */
+        /** Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
+              
+              Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.
+              
+              To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.
+              
+              To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components). */
         name: string | null
         /** Code used for access. Typically, a numeric or alphanumeric string. */
         code: string | null
@@ -5811,7 +5860,7 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the device for which to report constraints. */
+      /** ID of the device for which you want to report constraints. */
       device_id: string
       /** Array of supported code lengths as integers between 4 and 20, inclusive. You can specify either `supported_code_lengths` or `min_code_length`/`max_code_length`. */
       supported_code_lengths?: number[] | undefined
@@ -5845,7 +5894,11 @@ export interface Routes {
     
     When you create an access code on a device in Seam, it is created as a managed access code. Access codes that exist on a device that were not created through Seam are considered unmanaged codes. We strictly limit the operations that can be performed on unmanaged codes.
     
-    Prior to using Seam to manage your devices, you may have used another lock management system to manage the access codes on your devices. Where possible, we help you keep any existing access codes on devices and transition those codes to ones managed by your Seam workspace. */
+    Prior to using Seam to manage your devices, you may have used another lock management system to manage the access codes on your devices. Where possible, we help you keep any existing access codes on devices and transition those codes to ones managed by your Seam workspace.
+    
+    Not all providers support unmanaged access codes. The following providers do not support unmanaged access codes:
+    
+    - [Kwikset](https://docs.seam.co/latest/device-and-system-integration-guides/kwikset-locks) */
       access_code: {
         /** Nature of the access code. Values are `ongoing` for access codes that are active continuously until deactivated manually or `time_bound` for access codes that have a specific duration. */
         type: 'time_bound' | 'ongoing'
@@ -5853,7 +5906,13 @@ export interface Routes {
         access_code_id: string
         /** Unique identifier for the device associated with the access code. */
         device_id: string
-        /** Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes. */
+        /** Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
+              
+              Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.
+              
+              To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.
+              
+              To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components). */
         name: string | null
         /** Code used for access. Typically, a numeric or alphanumeric string. */
         code: string | null
@@ -6341,9 +6400,9 @@ export interface Routes {
     commonParams: {
       /** ID of the unmanaged access code that you want to convert to a managed access code. */
       access_code_id: string
-      /** Indicates whether external modification of the access code is allowed. */
+      /** Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the access code is allowed. */
       is_external_modification_allowed?: boolean | undefined
-      /** Indicates whether external modification of the access code is allowed. */
+      /** Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the access code is allowed. */
       allow_external_modification?: boolean | undefined
       /** Indicates whether to force the access code conversion. To switch management of an access code from one Seam workspace to another, set `force` to `true`. */
       force?: boolean | undefined
@@ -6359,7 +6418,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the unmanaged access code to delete. */
+      /** ID of the unmanaged access code that you want to delete. */
       access_code_id: string
       /**  */
       sync?: boolean
@@ -7681,7 +7740,11 @@ export interface Routes {
     
     When you create an access code on a device in Seam, it is created as a managed access code. Access codes that exist on a device that were not created through Seam are considered unmanaged codes. We strictly limit the operations that can be performed on unmanaged codes.
     
-    Prior to using Seam to manage your devices, you may have used another lock management system to manage the access codes on your devices. Where possible, we help you keep any existing access codes on devices and transition those codes to ones managed by your Seam workspace. */
+    Prior to using Seam to manage your devices, you may have used another lock management system to manage the access codes on your devices. Where possible, we help you keep any existing access codes on devices and transition those codes to ones managed by your Seam workspace.
+    
+    Not all providers support unmanaged access codes. The following providers do not support unmanaged access codes:
+    
+    - [Kwikset](https://docs.seam.co/latest/device-and-system-integration-guides/kwikset-locks) */
       access_code: {
         /** Nature of the access code. Values are `ongoing` for access codes that are active continuously until deactivated manually or `time_bound` for access codes that have a specific duration. */
         type: 'time_bound' | 'ongoing'
@@ -7689,7 +7752,13 @@ export interface Routes {
         access_code_id: string
         /** Unique identifier for the device associated with the access code. */
         device_id: string
-        /** Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes. */
+        /** Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
+              
+              Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.
+              
+              To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.
+              
+              To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components). */
         name: string | null
         /** Code used for access. Typically, a numeric or alphanumeric string. */
         code: string | null
@@ -8189,7 +8258,13 @@ export interface Routes {
         access_code_id: string
         /** Unique identifier for the device associated with the access code. */
         device_id: string
-        /** Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes. */
+        /** Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
+              
+              Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.
+              
+              To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.
+              
+              To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components). */
         name: string | null
         /** Code used for access. Typically, a numeric or alphanumeric string. */
         code: string | null
@@ -8693,7 +8768,13 @@ export interface Routes {
     method: 'POST' | 'PATCH' | 'PUT'
     queryParams: {}
     jsonBody: {
-      /** Name of the new access code. */
+      /** Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
+          
+          Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.
+          
+          To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.
+          
+          To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components). */
       name?: string | undefined
       /** Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       starts_at?: string | undefined
@@ -10036,7 +10117,13 @@ export interface Routes {
       ends_at?: string | undefined
       /** Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       starts_at?: string | undefined
-      /** Name of the new access code. */
+      /** Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
+          
+          Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.
+          
+          To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.
+          
+          To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components). */
       name?: string | undefined
       /** Key that links the group of access codes, assigned on creation by `/access_codes/create_multiple`. */
       common_code_key: string
@@ -10051,9 +10138,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired access group. */
+      /** ID of the access group to which you want to add an access system user. */
       acs_access_group_id: string
-      /** ID of the desired user. */
+      /** ID of the access system user that you want to add to an access group. */
       acs_user_id: string
     }
     formData: {}
@@ -10065,7 +10152,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired access group. */
+      /** ID of the access group that you want to get. */
       acs_access_group_id: string
     }
     formData: {}
@@ -10128,9 +10215,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the access control system for which you want to retrieve all access groups. */
+      /** ID of the access system for which you want to retrieve all access groups. */
       acs_system_id?: string | undefined
-      /** ID of the user for which you want to retrieve all access groups. */
+      /** ID of the access system user for which you want to retrieve all access groups. */
       acs_user_id?: string | undefined
       /** ID of the user identity for which you want to retrieve all access groups. */
       user_identity_id?: string | undefined
@@ -10288,7 +10375,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the access group for which you want to retrieve all users. */
+      /** ID of the access group for which you want to retrieve all access system users. */
       acs_access_group_id: string
     }
     formData: {}
@@ -10516,11 +10603,11 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired access group. */
+      /** ID of the access group from which you want to remove an access system user. */
       acs_access_group_id: string
-      /** ID of the desired user. */
+      /** ID of the access system user that you want to remove from an access group. */
       acs_user_id?: string | undefined
-      /** ID of the desired user identity. */
+      /** ID of the user identity associated with the user that you want to remove from an access group. */
       user_identity_id?: string | undefined
     }
     formData: {}
@@ -10532,7 +10619,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired unmanaged access group. */
+      /** ID of the unmanaged access group that you want to get. */
       acs_access_group_id: string
     }
     formData: {}
@@ -10591,9 +10678,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the access control system for which you want to retrieve all unmanaged access groups. */
+      /** ID of the access system for which you want to retrieve all unmanaged access groups. */
       acs_system_id?: string | undefined
-      /** ID of the user for which you want to retrieve all unmanaged access groups. */
+      /** ID of the access system user for which you want to retrieve all unmanaged access groups. */
       acs_user_id?: string | undefined
     }
     formData: {}
@@ -10651,6 +10738,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the access system for which you want to list credential pools. */
       acs_system_id: string
     }
     formData: {}
@@ -10672,10 +10760,15 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the user identity for which you want to launch a credential provisioning automation. */
       user_identity_id: string
+      /** Access system ID of the credential manager for which you want to launch a credential provisioning automation. */
       credential_manager_acs_system_id: string
+      /** ID of the credential pool for which you want to launch a credential provisioning automation. */
       acs_credential_pool_id?: string | undefined
+      /** Indicates whether to create an associated credential manager user. If you set `create_credential_manager_user` to `true`, you cannot specify a `credential_manager_acs_user_id`. */
       create_credential_manager_user?: boolean | undefined
+      /** ID of the associated access system user within the credential manager. If you specify a `credential_manager_acs_user_id`, you cannot set `create_credential_manager_user` to `true`. */
       credential_manager_acs_user_id?: string | undefined
     }
     formData: {}
@@ -10695,9 +10788,9 @@ export interface Routes {
     method: 'PATCH' | 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the desired user. */
+      /** ID of the access system user to whom you want to assign a credential. */
       acs_user_id: string
-      /** ID of the desired credential. */
+      /** ID of the credential that you want to assign to an access system user. */
       acs_credential_id: string
     }
     commonParams: {}
@@ -10857,11 +10950,11 @@ export interface Routes {
     commonParams: {
       /** ACS system ID of the credential manager for the new credential. */
       credential_manager_acs_system_id?: string | undefined
-      /** ID of the ACS user to whom the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`. */
+      /** ID of the access system user to whom the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`. */
       acs_user_id?: string | undefined
-      /** ID of the user identity to whom the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`. If the ACS system contains an ACS user with the same `email_address` or `phone_number` as the user identity that you specify, they are linked, and the credential belongs to the ACS user. If the ACS system does not have a corresponding ACS user, one is created. */
+      /** ID of the user identity to whom the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`. If the access system contains a user with the same `email_address` or `phone_number` as the user identity that you specify, they are linked, and the credential belongs to the access system user. If the access system does not have a corresponding user, one is created. */
       user_identity_id?: string | undefined
-      /** ID of the ACS system to which the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`. */
+      /** ID of the access system to which the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`. */
       acs_system_id?: string | undefined
       /** Access method for the new credential. Supported values: `code`, `card`, `mobile_key`. */
       access_method: 'code' | 'card' | 'mobile_key'
@@ -10901,7 +10994,9 @@ export interface Routes {
       /** Salto Space-specific metadata for the new credential. */
       salto_space_metadata?:
         | {
+            /** Indicates whether to assign a first, new card to a user. See also [Programming Salto Space Card-based Credentials](https://docs.seam.co/latest/device-and-system-integration-guides/salto-proaccess-space-access-system/programming-salto-space-card-based-credentials). */
             assign_new_key?: boolean | undefined
+            /** Indicates whether to update the user's existing card. See also [Programming Salto Space Card-based Credentials](https://docs.seam.co/latest/device-and-system-integration-guides/salto-proaccess-space-access-system/programming-salto-space-card-based-credentials). */
             update_current_key?: boolean | undefined
           }
         | undefined
@@ -11064,7 +11159,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the ACS user to whom the new credential belongs. */
+      /** ID of the access system user to whom the new credential belongs. */
       acs_user_id: string
       /** IDs of the [`acs_entrance`s](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) for which the new credential grants access. */
       allowed_acs_entrance_id: string
@@ -11229,7 +11324,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired credential. */
+      /** ID of the credential that you want to delete. */
       acs_credential_id: string
     }
     formData: {}
@@ -11241,7 +11336,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired credential. */
+      /** ID of the credential that you want to get. */
       acs_credential_id: string
     }
     formData: {}
@@ -11399,17 +11494,17 @@ export interface Routes {
     jsonBody: {}
     commonParams: (
       | {
-          /** ID of the ACS user for which you want to retrieve all credentials. */
+          /** ID of the access system user for which you want to retrieve all credentials. */
           acs_user_id: string
         }
       | {
-          /** ID of the access control system for which you want to retrieve all credentials. */
+          /** ID of the access system for which you want to retrieve all credentials. */
           acs_system_id: string
         }
       | {
-          /** ID of the ACS user for which you want to retrieve all credentials. */
+          /** ID of the access system user for which you want to retrieve all credentials. */
           acs_user_id: string
-          /** ID of the access control system for which you want to retrieve all credentials. */
+          /** ID of the access system for which you want to retrieve all credentials. */
           acs_system_id: string
         }
       | {
@@ -11574,7 +11669,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the credential for which you want to retrieve all entrances to which this credential grants access. */
+      /** ID of the credential for which you want to retrieve all entrances to which the credential grants access. */
       acs_credential_id: string
     }
     formData: {}
@@ -11671,9 +11766,9 @@ export interface Routes {
     method: 'PATCH' | 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the desired user. */
+      /** ID of the access system user from which you want to unassign a credential. */
       acs_user_id: string
-      /** ID of the desired credential. */
+      /** ID of the credential that you want to unassign from an access system user. */
       acs_credential_id: string
     }
     commonParams: {}
@@ -11831,7 +11926,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired unmanaged credential. */
+      /** ID of the unmanaged credential that you want to get. */
       acs_credential_id: string
     }
     formData: {}
@@ -11985,17 +12080,17 @@ export interface Routes {
     jsonBody: {}
     commonParams:
       | {
-          /** ID of the ACS user for which you want to retrieve all credentials. */
+          /** ID of the access system user for which you want to retrieve all credentials. */
           acs_user_id: string
         }
       | {
-          /** ID of the access control system for which you want to retrieve all credentials. */
+          /** ID of the access system for which you want to retrieve all credentials. */
           acs_system_id: string
         }
       | {
-          /** ID of the ACS user for which you want to retrieve all credentials. */
+          /** ID of the access system user for which you want to retrieve all credentials. */
           acs_user_id: string
-          /** ID of the access control system for which you want to retrieve all credentials. */
+          /** ID of the access system for which you want to retrieve all credentials. */
           acs_system_id: string
         }
       | {
@@ -12150,9 +12245,9 @@ export interface Routes {
     method: 'PATCH' | 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the desired credential. */
+      /** ID of the credential that you want to update. */
       acs_credential_id: string
-      /** Replacement access (PIN) code for the credential. */
+      /** Replacement access (PIN) code for the credential that you want to update. */
       code?: string | undefined
       /** Replacement date and time at which the validity of the credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after the `starts_at` value that you set when creating the credential. */
       ends_at?: string | undefined
@@ -14926,7 +15021,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired encoder. */
+      /** ID of the encoder that you want to get. */
       acs_encoder_id: string
     }
     formData: {}
@@ -14975,21 +15070,21 @@ export interface Routes {
     jsonBody: {}
     commonParams:
       | {
-          /** ID of the `acs_system` for which you want to retrieve all `acs_encoder`s. */
+          /** ID of the access system for which you want to retrieve all encoders. */
           acs_system_id: string
-          /** Number of `acs_encoders` to return. */
+          /** Number of encoders to return. */
           limit?: number
         }
       | {
-          /** IDs of the `acs_system`s for which you want to retrieve all `acs_encoder`s. */
+          /** IDs of the access systems for which you want to retrieve all encoders. */
           acs_system_ids: string[]
-          /** Number of `acs_encoders` to return. */
+          /** Number of encoders to return. */
           limit?: number
         }
       | {
-          /** IDs of the `acs_encoder`s that you want to retrieve. */
+          /** IDs of the encoders that you want to retrieve. */
           acs_encoder_ids: string[]
-          /** Number of `acs_encoders` to return. */
+          /** Number of encoders to return. */
           limit?: number
         }
     formData: {}
@@ -15023,7 +15118,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the `acs_encoder` to use for the scan. */
+      /** ID of the encoder to use for the scan. */
       acs_encoder_id: string
     }
     formData: {}
@@ -16416,6 +16511,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the entrance that you want to get. */
       acs_entrance_id: string
     }
     formData: {}
@@ -16515,7 +16611,9 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the entrance to which you want to grant an access system user access. */
       acs_entrance_id: string
+      /** ID of the access system user to whom you want to grant access to an entrance. */
       acs_user_id: string
     }
     commonParams: {}
@@ -16528,9 +16626,11 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the access system for which you want to retrieve all entrances. */
       acs_system_id?: string | undefined
+      /** ID of the credential for which you want to retrieve all entrances. */
       acs_credential_id?: string | undefined
-      /**  */
+      /** ID of the location for which you want to retrieve all entrances. */
       location_id?: (string | null) | undefined
     }
     formData: {}
@@ -16628,7 +16728,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the entrance for which you want to list all credentials that grant access. */
       acs_entrance_id: string
+      /** Conditions that credentials must meet to be included in the returned list. */
       include_if?: Array<'visionline_metadata.is_valid'> | undefined
     }
     formData: {}
@@ -16780,7 +16882,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired access control system. */
+      /** ID of the access system that you want to get. */
       acs_system_id: string
     }
     formData: {}
@@ -16975,7 +17077,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the connected account by which to filter the list of returned access control systems. */
+      /** ID of the connected account by which you want to filter the list of access systems. */
       connected_account_id?: string | undefined
     }
     formData: {}
@@ -17165,7 +17267,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the ACS system for which you want to retrieve all compatible credential manager ACS systems. */
+      /** ID of the access system for which you want to retrieve all compatible credential manager systems. */
       acs_system_id: string
     }
     formData: {}
@@ -17355,9 +17457,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired `acs_user`. */
+      /** ID of the access system user that you want to add to an access group. */
       acs_user_id: string
-      /** ID of the desired access group. */
+      /** ID of the access group to which you want to add an access system user. */
       acs_access_group_id: string
     }
     formData: {}
@@ -17368,18 +17470,20 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** Full name of the new `acs_user`. */
+      /** Full name of the new access system user. */
       full_name: string
-      /** ID of the `acs_system` to which to add the new `acs_user`. */
+      /** ID of the access system to which you want to add the new access system user. */
       acs_system_id: string
-      /** Array of `access_group_id`s to indicate the access groups to which to add the new `acs_user`. */
+      /** Array of access group IDs to indicate the access groups to which you want to add the new access system user. */
       acs_access_group_ids?: string[]
-      /** ID of the user identity with which to associate the new `acs_user`. */
+      /** ID of the user identity with which you want to associate the new access system user. */
       user_identity_id?: string | undefined
-      /** `starts_at` and `ends_at` timestamps for the new `acs_user`'s access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. `starts_at` defaults to the current time if not provided. `ends_at` is optional and must be a time in the future and after `starts_at`. */
+      /** `starts_at` and `ends_at` timestamps for the new access system user's access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. If you omit `starts_at`, it defaults to the current time. `ends_at` is optional and must be a time in the future and after `starts_at`. */
       access_schedule?:
         | {
+            /** Starting timestamp for the new access system user's access. */
             starts_at?: string | undefined
+            /** Ending timestamp for the new access system user's access. */
             ends_at?: (string | undefined) | null
           }
         | undefined
@@ -17622,7 +17726,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired `acs_user`. */
+      /** ID of the access system user that you want to delete. */
       acs_user_id: string
     }
     formData: {}
@@ -17634,7 +17738,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired `acs_user`. */
+      /** ID of the access system user that you want to get. */
       acs_user_id: string
     }
     formData: {}
@@ -17867,18 +17971,19 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the user identity for which you want to retrieve all `acs_user`s. */
+      /** ID of the user identity for which you want to retrieve all access system users. */
       user_identity_id?: string | undefined
-      /** Phone number of the user identity for which you want to retrieve all `acs_user`s, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`). */
+      /** Phone number of the user identity for which you want to retrieve all access system users, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`). */
       user_identity_phone_number?: string | undefined
-      /** Email address of the user identity for which you want to retrieve all `acs_user`s. */
+      /** Email address of the user identity for which you want to retrieve all access system users. */
       user_identity_email_address?: string | undefined
-      /** ID of the `acs_system` for which you want to retrieve all `acs_user`s. */
+      /** ID of the `acs_system` for which you want to retrieve all access system users. */
       acs_system_id?: string | undefined
-      /** String for which to search. Filters returned `acs_user`s to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address`, `acs_user_id`, `user_identity_id`, `user_identity_full_name` or `user_identity_phone_number`. */
+      /** String for which to search. Filters returned access system users to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address`, `acs_user_id`, `user_identity_id`, `user_identity_full_name` or `user_identity_phone_number`. */
       search?: string | undefined
       /** Maximum number of records to return per page. */
       limit?: number
+      /** Timestamp by which to limit returned access system users. Returns users created before this timestamp. */
       created_before?: Date | undefined
       /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
       page_cursor?: (string | undefined) | null
@@ -18117,7 +18222,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired `acs_user`. */
+      /** ID of the access system user for whom you want to list accessible entrances. */
       acs_user_id: string
     }
     formData: {}
@@ -18215,9 +18320,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired `acs_user`. */
+      /** ID of the access system user that you want to remove from an access group. */
       acs_user_id: string
-      /** ID of the desired access group. */
+      /** ID of the access group from which you want to remove an access system user. */
       acs_access_group_id: string
     }
     formData: {}
@@ -18228,7 +18333,7 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the desired `acs_user`. */
+      /** ID of the access system user for whom you want to revoke access. */
       acs_user_id: string
     }
     commonParams: {}
@@ -18241,7 +18346,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired `acs_user`. */
+      /** ID of the access system user that you want to suspend. */
       acs_user_id: string
     }
     formData: {}
@@ -18253,6 +18358,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the unmanaged access system user that you want to get. */
       acs_user_id: string
     }
     formData: {}
@@ -18481,10 +18587,15 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the user identity for which you want to retrieve all unmanaged access system users. */
       user_identity_id?: string | undefined
+      /** Phone number of the user identity for which you want to retrieve all unmanaged access system users. */
       user_identity_phone_number?: string | undefined
+      /** Email address of the user identity for which you want to retrieve all unmanaged access system users. */
       user_identity_email_address?: string | undefined
+      /** ID of the access system for which you want to retrieve all unmanaged access system users. */
       acs_system_id?: string | undefined
+      /** Number of unmanaged access system users to return. */
       limit?: number
     }
     formData: {}
@@ -18712,7 +18823,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired `acs_user`. */
+      /** ID of the access system user that you want to unsuspend. */
       acs_user_id: string
     }
     formData: {}
@@ -18723,10 +18834,12 @@ export interface Routes {
     method: 'PATCH' | 'POST'
     queryParams: {}
     jsonBody: {
-      /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. If you specify an `access_schedule`, you must include both `starts_at` and `ends_at`. `ends_at` must be a time in the future and after `starts_at`. */
+      /** `starts_at` and `ends_at` timestamps for the access system user's access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. If you omit `starts_at`, it defaults to the current time. `ends_at` is optional and must be a time in the future and after `starts_at`. */
       access_schedule?:
         | ({
+            /** Starting timestamp for the access system user's access. */
             starts_at: string
+            /** Ending timestamp for the access system user's access. */
             ends_at: string
           } | null)
         | undefined
@@ -18753,6 +18866,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the action attempt that you want to get. */
       action_attempt_id: string
     }
     formData: {}
@@ -20057,6 +20171,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** IDs of the action attempts that you want to retrieve. */
       action_attempt_ids: string[]
     }
     formData: {}
@@ -21361,6 +21476,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the Seam Bridge that you want to get. */
       bridge_id: string
     }
     formData: {}
@@ -21393,16 +21509,29 @@ export interface Routes {
     method: 'POST' | 'PUT'
     queryParams: {}
     jsonBody: {
+      /** Your user ID for the user for whom you want to create a client session. */
       user_identifier_key?: string | undefined
+      /** IDs of the [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) for which you want to create a client session. */
       connect_webview_ids?: string[] | undefined
+      /** IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) for which you want to create a client session. */
       connected_account_ids?: string[] | undefined
+      /** IDs of the [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to create a client session. */
       user_identity_ids?: string[] | undefined
+      /** Date and time at which the client session should expire, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       expires_at?: Date | undefined
     }
     commonParams: {}
     formData: {}
     jsonResponse: {
-      /**  */
+      /** Represents a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens). If you want to restrict your users' access to their own devices, use client sessions.
+    
+    You create each client session with a custom `user_identifier_key`. Normally, the `user_identifier_key` is a user ID that your application provides.
+    
+    When calling the Seam API from your backend using an API key, you can pass the `user_identifier_key` as a parameter to limit results to the associated client session. For example, `/devices/list?user_identifier_key=123` only returns devices associated with the client session created with the `user_identifier_key` `123`.
+    
+    A client session has a token that you can use with the Seam JavaScript SDK to make requests from the client (browser) directly to the Seam API. The token restricts the user's access to only the devices that they own.
+    
+    See also [Get Started with React](https://docs.seam.co/latest/ui-components/overview/getting-started-with-seam-components/get-started-with-react-components-and-client-session-tokens). */
       client_session: {
         client_session_id: string
         workspace_id: string
@@ -21423,6 +21552,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the client session that you want to delete. */
       client_session_id: string
     }
     formData: {}
@@ -21434,12 +21564,22 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the client session that you want to get. */
       client_session_id?: string | undefined
+      /** User identifier key associated with the client session that you want to get. */
       user_identifier_key?: string | undefined
     }
     formData: {}
     jsonResponse: {
-      /**  */
+      /** Represents a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens). If you want to restrict your users' access to their own devices, use client sessions.
+    
+    You create each client session with a custom `user_identifier_key`. Normally, the `user_identifier_key` is a user ID that your application provides.
+    
+    When calling the Seam API from your backend using an API key, you can pass the `user_identifier_key` as a parameter to limit results to the associated client session. For example, `/devices/list?user_identifier_key=123` only returns devices associated with the client session created with the `user_identifier_key` `123`.
+    
+    A client session has a token that you can use with the Seam JavaScript SDK to make requests from the client (browser) directly to the Seam API. The token restricts the user's access to only the devices that they own.
+    
+    See also [Get Started with React](https://docs.seam.co/latest/ui-components/overview/getting-started-with-seam-components/get-started-with-react-components-and-client-session-tokens). */
       client_session: {
         client_session_id: string
         workspace_id: string
@@ -21459,16 +21599,29 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** Your user ID for the user that you want to associate with the client session (or that is already associated with the existing client session). */
       user_identifier_key?: string | undefined
+      /** IDs of the [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) that you want to associate with the client session (or that are already associated with the existing client session). */
       connect_webview_ids?: string[] | undefined
+      /** IDs of the [connected accounts](https://docs.seam.co/latest/api/connected_accounts) that you want to associate with the client session (or that are already associated with the existing client session). */
       connected_account_ids?: string[] | undefined
+      /** IDs of the [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session (or that are already associated with the existing client session). */
       user_identity_ids?: string[] | undefined
+      /** Date and time at which the client session should expire (or at which the existing client session expires), in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       expires_at?: Date | undefined
     }
     commonParams: {}
     formData: {}
     jsonResponse: {
-      /**  */
+      /** Represents a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens). If you want to restrict your users' access to their own devices, use client sessions.
+    
+    You create each client session with a custom `user_identifier_key`. Normally, the `user_identifier_key` is a user ID that your application provides.
+    
+    When calling the Seam API from your backend using an API key, you can pass the `user_identifier_key` as a parameter to limit results to the associated client session. For example, `/devices/list?user_identifier_key=123` only returns devices associated with the client session created with the `user_identifier_key` `123`.
+    
+    A client session has a token that you can use with the Seam JavaScript SDK to make requests from the client (browser) directly to the Seam API. The token restricts the user's access to only the devices that they own.
+    
+    See also [Get Started with React](https://docs.seam.co/latest/ui-components/overview/getting-started-with-seam-components/get-started-with-react-components-and-client-session-tokens). */
       client_session: {
         client_session_id: string
         workspace_id: string
@@ -21489,15 +21642,28 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the client session to which you want to grant access to resources. */
       client_session_id?: string | undefined
+      /** Your user ID for the user that you want to associate with the client session. */
       user_identifier_key?: string | undefined
+      /** IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) that you want to associate with the client session. */
       connected_account_ids?: string[] | undefined
+      /** IDs of the [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) that you want to associate with the client session. */
       connect_webview_ids?: string[] | undefined
+      /** IDs of the [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session. */
       user_identity_ids?: string[] | undefined
     }
     formData: {}
     jsonResponse: {
-      /**  */
+      /** Represents a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens). If you want to restrict your users' access to their own devices, use client sessions.
+    
+    You create each client session with a custom `user_identifier_key`. Normally, the `user_identifier_key` is a user ID that your application provides.
+    
+    When calling the Seam API from your backend using an API key, you can pass the `user_identifier_key` as a parameter to limit results to the associated client session. For example, `/devices/list?user_identifier_key=123` only returns devices associated with the client session created with the `user_identifier_key` `123`.
+    
+    A client session has a token that you can use with the Seam JavaScript SDK to make requests from the client (browser) directly to the Seam API. The token restricts the user's access to only the devices that they own.
+    
+    See also [Get Started with React](https://docs.seam.co/latest/ui-components/overview/getting-started-with-seam-components/get-started-with-react-components-and-client-session-tokens). */
       client_session: {
         client_session_id: string
         workspace_id: string
@@ -21518,10 +21684,15 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the client session that you want to retrieve. */
       client_session_id?: string | undefined
+      /** Your user ID for the user by which you want to filter client sessions. */
       user_identifier_key?: string | undefined
+      /** ID of the [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) for which you want to retrieve client sessions. */
       connect_webview_id?: string | undefined
+      /** Indicates whether to retrieve only client sessions without associated user identifier keys. */
       without_user_identifier_key?: boolean | undefined
+      /** ID of the [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to retrieve client sessions. */
       user_identity_id?: string | undefined
     }
     formData: {}
@@ -21546,6 +21717,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the client session that you want to revoke. */
       client_session_id: string
     }
     formData: {}
@@ -21556,9 +21728,13 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /**  */
       device_selection_mode?: ('none' | 'single' | 'multiple') | undefined
+      /** URL that you want to redirect the user to after the provider login is complete. */
       custom_redirect_url?: string | undefined
+      /** Alternative URL that you want to redirect the user to on an error. If you do not set this parameter, the Connect Webview falls back to the `custom_redirect_url`. */
       custom_redirect_failure_url?: string | undefined
+      /** Accepted device provider keys as an alternative to `provider_category`. Use this parameter to specify accepted providers explicitly. See [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). To list all provider keys, use [`/devices/list_device_providers`](https://docs.seam.co/latest/api/devices/list_device_providers) with no filters. */
       accepted_providers?:
         | Array<
             | 'dormakaba_community'
@@ -21613,6 +21789,7 @@ export interface Routes {
             | 'google_nest'
           >
         | undefined
+      /** Specifies the category of providers that you want to include. To list all providers within a category, use [`/devices/list_device_providers`](https://docs.seam.co/latest/api/devices/list_device_providers) with the desired `provider_category` filter. */
       provider_category?:
         | (
             | 'stable'
@@ -21623,14 +21800,27 @@ export interface Routes {
             | 'internal_beta'
           )
         | undefined
+      /** Custom metadata that you want to associate with the Connect Webview. Supports up to 50 JSON key:value pairs. [Adding custom metadata to a Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview) enables you to store custom information, like customer details or internal IDs from your application. The custom metadata is then transferred to any [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) that were connected using the Connect Webview, making it easy to find and filter these resources in your [workspace](https://docs.seam.co/latest/core-concepts/workspaces). You can also [filter Connect Webviews by custom metadata](https://docs.seam.co/latest/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata). */
       custom_metadata?: Record<string, string | boolean | null> | undefined
+      /** Indicates whether newly-added devices should appear as [managed devices](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices). See also: [Customize the Behavior Settings of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-behavior-settings-of-your-connect-webviews). */
       automatically_manage_new_devices?: boolean
+      /** Indicates whether Seam should finish syncing all devices in a newly-connected account before completing the associated Connect Webview. See also: [Customize the Behavior Settings of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-behavior-settings-of-your-connect-webviews). */
       wait_for_device_creation?: boolean
     }
     commonParams: {}
     formData: {}
     jsonResponse: {
-      /**  */
+      /** Represents a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).
+    
+    Connect Webviews are fully-embedded client-side components that you add to your app. Your users interact with your embedded Connect Webviews to link their IoT device or system accounts to Seam. That is, Connect Webviews walk your users through the process of logging in to their device or system accounts. Seam handles all the authentication steps, and—once your user has completed the authorization through your app—you can access and control their devices or systems using the Seam API.
+    
+    Connect Webviews perform credential validation, multifactor authentication (when applicable), and error handling for each brand that Seam supports. Further, Connect Webviews work across all modern browsers and platforms, including Chrome, Safari, and Firefox.
+    
+    To enable a user to connect their device or system account to Seam through your app, first create a `connect_webview`. Once created, this `connect_webview` includes a URL that you can use to open an [iframe](https://www.w3schools.com/html/html_iframe.asp) or new window containing the Connect Webview for your user.
+    
+    When you create a Connect Webview, specify the desired provider category key in the `provider_category` parameter. Alternately, to specify a list of providers explicitly, use the `accepted_providers` parameter with a list of device provider keys.
+    
+    To list all providers within a category, use `/devices/list_device_providers` with the desired `provider_category` filter. To list all provider keys, use `/devices/list_device_providers` with no filters. */
       connect_webview: {
         connect_webview_id: string
         workspace_id: string
@@ -21663,6 +21853,7 @@ export interface Routes {
     method: 'DELETE' | 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the Connect Webview that you want to delete. */
       connect_webview_id: string
     }
     commonParams: {}
@@ -21675,11 +21866,22 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the Connect Webview that you want to get. */
       connect_webview_id: string
     }
     formData: {}
     jsonResponse: {
-      /**  */
+      /** Represents a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).
+    
+    Connect Webviews are fully-embedded client-side components that you add to your app. Your users interact with your embedded Connect Webviews to link their IoT device or system accounts to Seam. That is, Connect Webviews walk your users through the process of logging in to their device or system accounts. Seam handles all the authentication steps, and—once your user has completed the authorization through your app—you can access and control their devices or systems using the Seam API.
+    
+    Connect Webviews perform credential validation, multifactor authentication (when applicable), and error handling for each brand that Seam supports. Further, Connect Webviews work across all modern browsers and platforms, including Chrome, Safari, and Firefox.
+    
+    To enable a user to connect their device or system account to Seam through your app, first create a `connect_webview`. Once created, this `connect_webview` includes a URL that you can use to open an [iframe](https://www.w3schools.com/html/html_iframe.asp) or new window containing the Connect Webview for your user.
+    
+    When you create a Connect Webview, specify the desired provider category key in the `provider_category` parameter. Alternately, to specify a list of providers explicitly, use the `accepted_providers` parameter with a list of device provider keys.
+    
+    To list all providers within a category, use `/devices/list_device_providers` with the desired `provider_category` filter. To list all provider keys, use `/devices/list_device_providers` with no filters. */
       connect_webview: {
         connect_webview_id: string
         workspace_id: string
@@ -21713,10 +21915,11 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** Returns webviews that can be accessed by the provided user_identifier_key. */
+      /** Your user ID for the user by which you want to filter Connect Webviews. */
       user_identifier_key?: string | undefined
-      /** Returns webviews whose custom_metadata contains all of the provided key/value pairs. */
+      /** Custom metadata pairs by which you want to [filter Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata). Returns Connect Webviews with `custom_metadata` that contains all of the provided key:value pairs. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
+      /** Maximum number of records to return per page. */
       limit?: number
     }
     formData: {}
@@ -21753,7 +21956,9 @@ export interface Routes {
     method: 'DELETE' | 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the connected account that you want to delete. */
       connected_account_id: string
+      /**  */
       sync?: boolean
     }
     commonParams: {}
@@ -21767,14 +21972,16 @@ export interface Routes {
     jsonBody: {}
     commonParams:
       | {
+          /** ID of the connected account that you want to get. */
           connected_account_id: string
         }
       | {
+          /** Email address associated with the connected account that you want to get. */
           email: string
         }
     formData: {}
     jsonResponse: {
-      /**  */
+      /** Represents a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). A connected account is an external third-party account to which your user has authorized Seam to get access, for example, an August account with a list of door locks. */
       connected_account: {
         connected_account_id?: string | undefined
         created_at?: string | undefined
@@ -21877,9 +22084,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** Returns accounts that can be accessed by the provided user_identifier_key. */
+      /** Your user ID for the user by which you want to filter connected accounts. */
       user_identifier_key?: string | undefined
-      /** Returns accounts whose custom_metadata contains all of the provided key/value pairs. */
+      /** Custom metadata pairs by which you want to filter connected accounts. Returns connected accounts with `custom_metadata` that contains all of the provided key:value pairs. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
       customer_ids?: string[] | undefined
       /** Maximum number of records to return per page. */
@@ -21999,14 +22206,17 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the connected account that you want to update. */
       connected_account_id: string
+      /** Indicates whether newly-added devices should appear as [managed devices](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices). */
       automatically_manage_new_devices?: boolean | undefined
+      /** Custom metadata that you want to associate with the connected account. Supports up to 50 JSON key:value pairs. [Adding custom metadata to a connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account) enables you to store custom information, like customer details or internal IDs from your application. Then, you can [filter connected accounts by the desired metadata](https://docs.seam.co/latest/core-concepts/connected-accounts/filtering-connected-accounts-by-custom-metadata). */
       custom_metadata?: Record<string, string | boolean | null> | undefined
     }
     commonParams: {}
     formData: {}
     jsonResponse: {
-      /**  */
+      /** Represents a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). A connected account is an external third-party account to which your user has authorized Seam to get access, for example, an August account with a list of door locks. */
       connected_account: {
         connected_account_id?: string | undefined
         created_at?: string | undefined
@@ -22109,6 +22319,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the device that you want to delete. */
       device_id: string
     }
     formData: {}
@@ -22120,12 +22331,14 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the device that you want to get. */
       device_id?: string | undefined
+      /** Name of the device that you want to get. */
       name?: string | undefined
     }
     formData: {}
     jsonResponse: {
-      /**  */
+      /** Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that has been connected to Seam. */
       device: {
         /** Unique identifier for the device. */
         device_id: string
@@ -22235,7 +22448,7 @@ export interface Routes {
                 status: 'critical' | 'low' | 'good' | 'full'
               }
             | undefined
-          /** Manufacturer of the device. */
+          /** Manufacturer of the device. When a device, such as a smart lock, is connected through a smart hub, the manufacturer of the device might be different from that of the smart hub. */
           manufacturer?: string | undefined
           /** Image URL for the device. */
           image_url?: string | undefined
@@ -22595,6 +22808,7 @@ export interface Routes {
             _experimental_supported_code_from_access_codes_lengths?:
               | (number[] | undefined)
               | undefined
+            /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
                   | Array<
@@ -23122,13 +23336,13 @@ export interface Routes {
     jsonBody: {}
     commonParams: {
       customer_ids?: string[] | undefined
-      /** ID of the connected account by which to filter. */
+      /** ID of the connected account for which you want to list devices. */
       connected_account_id?: string | undefined
-      /** Array of IDs of the connected accounts by which to filter devices. */
+      /** Array of IDs of the connected accounts for which you want to list devices. */
       connected_account_ids?: string[] | undefined
-      /** ID of the Connect Webview by which to filter devices. */
+      /** ID of the Connect Webview for which you want to list devices. */
       connect_webview_id?: string | undefined
-      /** Device type by which to filter devices. */
+      /** Device type for which you want to list devices. */
       device_type?:
         | (
             | (
@@ -23172,7 +23386,7 @@ export interface Routes {
             | ('ios_phone' | 'android_phone')
           )
         | undefined
-      /** Array of device types by which to filter devices. */
+      /** Array of device types for which you want to list devices. */
       device_types?:
         | Array<
             | (
@@ -23216,7 +23430,7 @@ export interface Routes {
             | ('ios_phone' | 'android_phone')
           >
         | undefined
-      /** Manufacturer by which to filter devices. */
+      /** Manufacturer for which you want to list devices. */
       manufacturer?:
         | (
             | 'akuvox'
@@ -23259,15 +23473,15 @@ export interface Routes {
             | 'sensi'
           )
         | undefined
-      /** Array of device IDs by which to filter devices. */
+      /** Array of device IDs for which you want to list devices. */
       device_ids?: string[] | undefined
       /** Numerical limit on the number of devices to return. */
       limit?: number
-      /** Date threshold for devices to return. If specified, returns only devices created before the specified date. */
+      /** Timestamp by which to limit returned devices. Returns devices created before this timestamp. */
       created_before?: Date | undefined
-      /** Your own internal user ID for the user by which to filter devices. */
+      /** Your own internal user ID for the user for which you want to list devices. */
       user_identifier_key?: string | undefined
-      /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices. */
+      /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
       /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
       page_cursor?: (string | undefined) | null
@@ -23303,7 +23517,7 @@ export interface Routes {
             | 'can_simulate_disconnection'
           >
         | undefined
-      /**  */
+      /** ID of the location for which you want to list devices. */
       unstable_location_id?: (string | null) | undefined
     }
     formData: {}
@@ -23417,7 +23631,7 @@ export interface Routes {
                 status: 'critical' | 'low' | 'good' | 'full'
               }
             | undefined
-          /** Manufacturer of the device. */
+          /** Manufacturer of the device. When a device, such as a smart lock, is connected through a smart hub, the manufacturer of the device might be different from that of the smart hub. */
           manufacturer?: string | undefined
           /** Image URL for the device. */
           image_url?: string | undefined
@@ -23777,6 +23991,7 @@ export interface Routes {
             _experimental_supported_code_from_access_codes_lengths?:
               | (number[] | undefined)
               | undefined
+            /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
                   | Array<
@@ -24312,6 +24527,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** Category for which you want to list providers. */
       provider_category?:
         | (
             | 'stable'
@@ -24401,6 +24617,7 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the device that you want to simulate connecting to Seam. */
       device_id: string
     }
     commonParams: {}
@@ -24412,6 +24629,7 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the device that you want to simulate disconnecting from Seam. */
       device_id: string
     }
     commonParams: {}
@@ -24423,6 +24641,7 @@ export interface Routes {
     method: 'DELETE' | 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the device that you want to simulate removing from Seam. */
       device_id: string
     }
     commonParams: {}
@@ -24435,12 +24654,14 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the unmanaged device that you want to get. */
       device_id?: string | undefined
+      /** Name of the unmanaged device that you want to get. */
       name?: string | undefined
     }
     formData: {}
     jsonResponse: {
-      /**  */
+      /** Represents an [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices). An unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed). */
       device: {
         /** Unique identifier for the device. */
         device_id: string
@@ -24746,7 +24967,7 @@ export interface Routes {
           name: string
           /** Indicates whether the device is online. */
           online: boolean
-          /** Manufacturer of the device. */
+          /** Manufacturer of the device. When a device, such as a smart lock, is connected through a smart hub, the manufacturer of the device might be different from that of the smart hub. */
           manufacturer?: string | undefined
           /** Image URL for the device. */
           image_url?: string | undefined
@@ -24804,13 +25025,13 @@ export interface Routes {
     jsonBody: {}
     commonParams: {
       customer_ids?: string[] | undefined
-      /** ID of the connected account by which to filter. */
+      /** ID of the connected account for which you want to list devices. */
       connected_account_id?: string | undefined
-      /** Array of IDs of the connected accounts by which to filter devices. */
+      /** Array of IDs of the connected accounts for which you want to list devices. */
       connected_account_ids?: string[] | undefined
-      /** ID of the Connect Webview by which to filter devices. */
+      /** ID of the Connect Webview for which you want to list devices. */
       connect_webview_id?: string | undefined
-      /** Device type by which to filter devices. */
+      /** Device type for which you want to list devices. */
       device_type?:
         | (
             | (
@@ -24854,7 +25075,7 @@ export interface Routes {
             | ('ios_phone' | 'android_phone')
           )
         | undefined
-      /** Array of device types by which to filter devices. */
+      /** Array of device types for which you want to list devices. */
       device_types?:
         | Array<
             | (
@@ -24898,7 +25119,7 @@ export interface Routes {
             | ('ios_phone' | 'android_phone')
           >
         | undefined
-      /** Manufacturer by which to filter devices. */
+      /** Manufacturer for which you want to list devices. */
       manufacturer?:
         | (
             | 'akuvox'
@@ -24941,15 +25162,15 @@ export interface Routes {
             | 'sensi'
           )
         | undefined
-      /** Array of device IDs by which to filter devices. */
+      /** Array of device IDs for which you want to list devices. */
       device_ids?: string[] | undefined
       /** Numerical limit on the number of devices to return. */
       limit?: number
-      /** Date threshold for devices to return. If specified, returns only devices created before the specified date. */
+      /** Timestamp by which to limit returned devices. Returns devices created before this timestamp. */
       created_before?: Date | undefined
-      /** Your own internal user ID for the user by which to filter devices. */
+      /** Your own internal user ID for the user for which you want to list devices. */
       user_identifier_key?: string | undefined
-      /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices. */
+      /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
       /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
       page_cursor?: (string | undefined) | null
@@ -24985,7 +25206,7 @@ export interface Routes {
             | 'can_simulate_disconnection'
           >
         | undefined
-      /**  */
+      /** ID of the location for which you want to list devices. */
       unstable_location_id?: (string | null) | undefined
     }
     formData: {}
@@ -25295,7 +25516,7 @@ export interface Routes {
           name: string
           /** Indicates whether the device is online. */
           online: boolean
-          /** Manufacturer of the device. */
+          /** Manufacturer of the device. When a device, such as a smart lock, is connected through a smart hub, the manufacturer of the device might be different from that of the smart hub. */
           manufacturer?: string | undefined
           /** Image URL for the device. */
           image_url?: string | undefined
@@ -25352,7 +25573,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the unmanaged device that you want to update. */
       device_id: string
+      /** Indicates whether the device is managed. Set this parameter to `true` to convert an unmanaged device to managed. */
       is_managed: true
     }
     formData: {}
@@ -25364,14 +25587,19 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the device that you want to update. */
       device_id: string
       properties?:
         | {
+            /** Name for the device. */
             name?: (string | null) | undefined
           }
         | undefined
+      /** Name for the device. */
       name?: (string | null) | undefined
+      /** Indicates whether the device is managed. To unmanage a device, set `is_managed` to `false`. */
       is_managed?: boolean
+      /** Custom metadata that you want to associate with the device. Supports up to 50 JSON key:value pairs. [Adding custom metadata to a device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) enables you to store custom information, like customer details or internal IDs from your application. Then, you can [filter devices by the desired metadata](https://docs.seam.co/latest/core-concepts/devices/filtering-devices-by-custom-metadata). */
       custom_metadata?: Record<string, string | boolean | null> | undefined
     }
     formData: {}
@@ -25389,7 +25617,9 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
-      /**  */
+      /** Represents an event. Events let you know when something interesting happens in your workspace. For example, when a lock is unlocked, Seam creates a `lock.unlocked` event. When a device's battery level is low, Seam creates a `device.battery_low` event.
+    
+    As with other API resources, you can retrieve an individual event or a list of events. Seam also provides a separate [webhook](https://docs.seam.co/latest/developer-tools/webhooks) system for sending the event objects directly to an endpoint on your sever. Manage webhooks through [Seam Console](https://console.seam.co). You can also use the webhooks sandbox in Seam Console to see the different payloads for each event and test them against your own endpoints. */
       event?:
         | (
             | {
@@ -28545,7 +28775,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
-      /**  */
+      /** Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that has been connected to Seam. */
       lock: {
         /** Unique identifier for the device. */
         device_id: string
@@ -28655,7 +28885,7 @@ export interface Routes {
                 status: 'critical' | 'low' | 'good' | 'full'
               }
             | undefined
-          /** Manufacturer of the device. */
+          /** Manufacturer of the device. When a device, such as a smart lock, is connected through a smart hub, the manufacturer of the device might be different from that of the smart hub. */
           manufacturer?: string | undefined
           /** Image URL for the device. */
           image_url?: string | undefined
@@ -29015,6 +29245,7 @@ export interface Routes {
             _experimental_supported_code_from_access_codes_lengths?:
               | (number[] | undefined)
               | undefined
+            /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
                   | Array<
@@ -29533,7 +29764,7 @@ export interface Routes {
         can_simulate_connection?: boolean | undefined
         can_simulate_disconnection?: boolean | undefined
       }
-      /**  */
+      /** Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that has been connected to Seam. */
       device: {
         /** Unique identifier for the device. */
         device_id: string
@@ -29643,7 +29874,7 @@ export interface Routes {
                 status: 'critical' | 'low' | 'good' | 'full'
               }
             | undefined
-          /** Manufacturer of the device. */
+          /** Manufacturer of the device. When a device, such as a smart lock, is connected through a smart hub, the manufacturer of the device might be different from that of the smart hub. */
           manufacturer?: string | undefined
           /** Image URL for the device. */
           image_url?: string | undefined
@@ -30003,6 +30234,7 @@ export interface Routes {
             _experimental_supported_code_from_access_codes_lengths?:
               | (number[] | undefined)
               | undefined
+            /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
                   | Array<
@@ -30530,11 +30762,11 @@ export interface Routes {
     jsonBody: {}
     commonParams: {
       customer_ids?: string[] | undefined
-      /** ID of the connected account by which to filter. */
+      /** ID of the connected account for which you want to list devices. */
       connected_account_id?: string | undefined
-      /** Array of IDs of the connected accounts by which to filter devices. */
+      /** Array of IDs of the connected accounts for which you want to list devices. */
       connected_account_ids?: string[] | undefined
-      /** ID of the Connect Webview by which to filter devices. */
+      /** ID of the Connect Webview for which you want to list devices. */
       connect_webview_id?: string | undefined
       /** Device type by which to filter devices. */
       device_type?:
@@ -30632,15 +30864,15 @@ export interface Routes {
             | 'akiles'
           )
         | undefined
-      /** Array of device IDs by which to filter devices. */
+      /** Array of device IDs for which you want to list devices. */
       device_ids?: string[] | undefined
       /** Numerical limit on the number of devices to return. */
       limit?: number
-      /** Date threshold for devices to return. If specified, returns only devices created before the specified date. */
+      /** Timestamp by which to limit returned devices. Returns devices created before this timestamp. */
       created_before?: Date | undefined
-      /** Your own internal user ID for the user by which to filter devices. */
+      /** Your own internal user ID for the user for which you want to list devices. */
       user_identifier_key?: string | undefined
-      /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices. */
+      /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
       /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
       page_cursor?: (string | undefined) | null
@@ -30676,7 +30908,7 @@ export interface Routes {
             | 'can_simulate_disconnection'
           >
         | undefined
-      /**  */
+      /** ID of the location for which you want to list devices. */
       unstable_location_id?: (string | null) | undefined
     }
     formData: {}
@@ -30790,7 +31022,7 @@ export interface Routes {
                 status: 'critical' | 'low' | 'good' | 'full'
               }
             | undefined
-          /** Manufacturer of the device. */
+          /** Manufacturer of the device. When a device, such as a smart lock, is connected through a smart hub, the manufacturer of the device might be different from that of the smart hub. */
           manufacturer?: string | undefined
           /** Image URL for the device. */
           image_url?: string | undefined
@@ -31150,6 +31382,7 @@ export interface Routes {
             _experimental_supported_code_from_access_codes_lengths?:
               | (number[] | undefined)
               | undefined
+            /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
                   | Array<
@@ -31777,7 +32010,7 @@ export interface Routes {
                 status: 'critical' | 'low' | 'good' | 'full'
               }
             | undefined
-          /** Manufacturer of the device. */
+          /** Manufacturer of the device. When a device, such as a smart lock, is connected through a smart hub, the manufacturer of the device might be different from that of the smart hub. */
           manufacturer?: string | undefined
           /** Image URL for the device. */
           image_url?: string | undefined
@@ -32137,6 +32370,7 @@ export interface Routes {
             _experimental_supported_code_from_access_codes_lengths?:
               | (number[] | undefined)
               | undefined
+            /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
                   | Array<
@@ -37918,11 +38152,11 @@ export interface Routes {
     jsonBody: {}
     commonParams: {
       customer_ids?: string[] | undefined
-      /** ID of the connected account by which to filter. */
+      /** ID of the connected account for which you want to list devices. */
       connected_account_id?: string | undefined
-      /** Array of IDs of the connected accounts by which to filter devices. */
+      /** Array of IDs of the connected accounts for which you want to list devices. */
       connected_account_ids?: string[] | undefined
-      /** ID of the Connect Webview by which to filter devices. */
+      /** ID of the Connect Webview for which you want to list devices. */
       connect_webview_id?: string | undefined
       /** Device type by which to filter devices. */
       device_type?: ('noiseaware_activity_zone' | 'minut_sensor') | undefined
@@ -37932,15 +38166,15 @@ export interface Routes {
         | undefined
       /** Manufacturer by which to filter devices. */
       manufacturer?: ('minut' | 'noiseaware') | undefined
-      /** Array of device IDs by which to filter devices. */
+      /** Array of device IDs for which you want to list devices. */
       device_ids?: string[] | undefined
       /** Numerical limit on the number of devices to return. */
       limit?: number
-      /** Date threshold for devices to return. If specified, returns only devices created before the specified date. */
+      /** Timestamp by which to limit returned devices. Returns devices created before this timestamp. */
       created_before?: Date | undefined
-      /** Your own internal user ID for the user by which to filter devices. */
+      /** Your own internal user ID for the user for which you want to list devices. */
       user_identifier_key?: string | undefined
-      /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices. */
+      /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
       /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
       page_cursor?: (string | undefined) | null
@@ -37976,7 +38210,7 @@ export interface Routes {
             | 'can_simulate_disconnection'
           >
         | undefined
-      /**  */
+      /** ID of the location for which you want to list devices. */
       unstable_location_id?: (string | null) | undefined
     }
     formData: {}
@@ -38090,7 +38324,7 @@ export interface Routes {
                 status: 'critical' | 'low' | 'good' | 'full'
               }
             | undefined
-          /** Manufacturer of the device. */
+          /** Manufacturer of the device. When a device, such as a smart lock, is connected through a smart hub, the manufacturer of the device might be different from that of the smart hub. */
           manufacturer?: string | undefined
           /** Image URL for the device. */
           image_url?: string | undefined
@@ -38450,6 +38684,7 @@ export interface Routes {
             _experimental_supported_code_from_access_codes_lengths?:
               | (number[] | undefined)
               | undefined
+            /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
                   | Array<
@@ -39077,7 +39312,7 @@ export interface Routes {
                 status: 'critical' | 'low' | 'good' | 'full'
               }
             | undefined
-          /** Manufacturer of the device. */
+          /** Manufacturer of the device. When a device, such as a smart lock, is connected through a smart hub, the manufacturer of the device might be different from that of the smart hub. */
           manufacturer?: string | undefined
           /** Image URL for the device. */
           image_url?: string | undefined
@@ -39437,6 +39672,7 @@ export interface Routes {
             _experimental_supported_code_from_access_codes_lengths?:
               | (number[] | undefined)
               | undefined
+            /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
                   | Array<
@@ -44429,7 +44665,15 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
-      /**  */
+      /** Represents a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens). If you want to restrict your users' access to their own devices, use client sessions.
+    
+    You create each client session with a custom `user_identifier_key`. Normally, the `user_identifier_key` is a user ID that your application provides.
+    
+    When calling the Seam API from your backend using an API key, you can pass the `user_identifier_key` as a parameter to limit results to the associated client session. For example, `/devices/list?user_identifier_key=123` only returns devices associated with the client session created with the `user_identifier_key` `123`.
+    
+    A client session has a token that you can use with the Seam JavaScript SDK to make requests from the client (browser) directly to the Seam API. The token restricts the user's access to only the devices that they own.
+    
+    See also [Get Started with React](https://docs.seam.co/latest/ui-components/overview/getting-started-with-seam-components/get-started-with-react-components-and-client-session-tokens). */
       client_session: {
         client_session_id: string
         workspace_id: string
@@ -48637,7 +48881,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
-      /**  */
+      /** Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that has been connected to Seam. */
       thermostat: {
         /** Unique identifier for the device. */
         device_id: string
@@ -48747,7 +48991,7 @@ export interface Routes {
                 status: 'critical' | 'low' | 'good' | 'full'
               }
             | undefined
-          /** Manufacturer of the device. */
+          /** Manufacturer of the device. When a device, such as a smart lock, is connected through a smart hub, the manufacturer of the device might be different from that of the smart hub. */
           manufacturer?: string | undefined
           /** Image URL for the device. */
           image_url?: string | undefined
@@ -49107,6 +49351,7 @@ export interface Routes {
             _experimental_supported_code_from_access_codes_lengths?:
               | (number[] | undefined)
               | undefined
+            /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
                   | Array<
@@ -52260,11 +52505,11 @@ export interface Routes {
     jsonBody: {}
     commonParams: {
       customer_ids?: string[] | undefined
-      /** ID of the connected account by which to filter. */
+      /** ID of the connected account for which you want to list devices. */
       connected_account_id?: string | undefined
-      /** Array of IDs of the connected accounts by which to filter devices. */
+      /** Array of IDs of the connected accounts for which you want to list devices. */
       connected_account_ids?: string[] | undefined
-      /** ID of the Connect Webview by which to filter devices. */
+      /** ID of the Connect Webview for which you want to list devices. */
       connect_webview_id?: string | undefined
       /** Device type by which to filter thermostat devices. */
       device_type?:
@@ -52292,15 +52537,15 @@ export interface Routes {
       manufacturer?:
         | ('ecobee' | 'honeywell_resideo' | 'nest' | 'tado' | 'sensi')
         | undefined
-      /** Array of device IDs by which to filter devices. */
+      /** Array of device IDs for which you want to list devices. */
       device_ids?: string[] | undefined
       /** Numerical limit on the number of devices to return. */
       limit?: number
-      /** Date threshold for devices to return. If specified, returns only devices created before the specified date. */
+      /** Timestamp by which to limit returned devices. Returns devices created before this timestamp. */
       created_before?: Date | undefined
-      /** Your own internal user ID for the user by which to filter devices. */
+      /** Your own internal user ID for the user for which you want to list devices. */
       user_identifier_key?: string | undefined
-      /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices. */
+      /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
       /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
       page_cursor?: (string | undefined) | null
@@ -52336,7 +52581,7 @@ export interface Routes {
             | 'can_simulate_disconnection'
           >
         | undefined
-      /**  */
+      /** ID of the location for which you want to list devices. */
       unstable_location_id?: (string | null) | undefined
     }
     formData: {}
@@ -52450,7 +52695,7 @@ export interface Routes {
                 status: 'critical' | 'low' | 'good' | 'full'
               }
             | undefined
-          /** Manufacturer of the device. */
+          /** Manufacturer of the device. When a device, such as a smart lock, is connected through a smart hub, the manufacturer of the device might be different from that of the smart hub. */
           manufacturer?: string | undefined
           /** Image URL for the device. */
           image_url?: string | undefined
@@ -52810,6 +53055,7 @@ export interface Routes {
             _experimental_supported_code_from_access_codes_lengths?:
               | (number[] | undefined)
               | undefined
+            /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
                   | Array<
@@ -53437,7 +53683,7 @@ export interface Routes {
                 status: 'critical' | 'low' | 'good' | 'full'
               }
             | undefined
-          /** Manufacturer of the device. */
+          /** Manufacturer of the device. When a device, such as a smart lock, is connected through a smart hub, the manufacturer of the device might be different from that of the smart hub. */
           manufacturer?: string | undefined
           /** Image URL for the device. */
           image_url?: string | undefined
@@ -53797,6 +54043,7 @@ export interface Routes {
             _experimental_supported_code_from_access_codes_lengths?:
               | (number[] | undefined)
               | undefined
+            /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
                   | Array<
@@ -60404,7 +60651,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
-      /** Represents a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with an application user account. */
+      /** Represents a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with an application user account. */
       user_identity: {
         /** ID of the user identity. */
         user_identity_id: string
@@ -60567,7 +60814,7 @@ export interface Routes {
         }
     formData: {}
     jsonResponse: {
-      /** Represents a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with an application user account. */
+      /** Represents a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with an application user account. */
       user_identity: {
         /** ID of the user identity. */
         user_identity_id: string
@@ -60748,7 +60995,7 @@ export interface Routes {
                 status: 'critical' | 'low' | 'good' | 'full'
               }
             | undefined
-          /** Manufacturer of the device. */
+          /** Manufacturer of the device. When a device, such as a smart lock, is connected through a smart hub, the manufacturer of the device might be different from that of the smart hub. */
           manufacturer?: string | undefined
           /** Image URL for the device. */
           image_url?: string | undefined
@@ -61108,6 +61355,7 @@ export interface Routes {
             _experimental_supported_code_from_access_codes_lengths?:
               | (number[] | undefined)
               | undefined
+            /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
                   | Array<
@@ -61737,7 +61985,7 @@ export interface Routes {
                 status: 'critical' | 'low' | 'good' | 'full'
               }
             | undefined
-          /** Manufacturer of the device. */
+          /** Manufacturer of the device. When a device, such as a smart lock, is connected through a smart hub, the manufacturer of the device might be different from that of the smart hub. */
           manufacturer?: string | undefined
           /** Image URL for the device. */
           image_url?: string | undefined
@@ -62097,6 +62345,7 @@ export interface Routes {
             _experimental_supported_code_from_access_codes_lengths?:
               | (number[] | undefined)
               | undefined
+            /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
                   | Array<
@@ -63195,7 +63444,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
-      /**  */
+      /** Represents a Seam [workspace](https://docs.seam.co/latest/core-concepts/workspaces). A workspace is a top-level entity that encompasses all other resources below it, such as devices, connected accounts, and Connect Webviews. Seam provides two types of workspaces. A [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces) is a special type of workspace designed for testing code. Sandbox workspaces offer test device accounts and virtual devices that you can connect and control. This ability to work with virtual devices is quite handy because it removes the need to own physical devices from multiple brands. To connect real devices and systems to Seam, use a [production workspace](https://docs.seam.co/latest/core-concepts/workspaces#production-workspaces). */
       workspace: {
         workspace_id: string
         name: string
@@ -63224,7 +63473,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
-      /**  */
+      /** Represents a Seam [workspace](https://docs.seam.co/latest/core-concepts/workspaces). A workspace is a top-level entity that encompasses all other resources below it, such as devices, connected accounts, and Connect Webviews. Seam provides two types of workspaces. A [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces) is a special type of workspace designed for testing code. Sandbox workspaces offer test device accounts and virtual devices that you can connect and control. This ability to work with virtual devices is quite handy because it removes the need to own physical devices from multiple brands. To connect real devices and systems to Seam, use a [production workspace](https://docs.seam.co/latest/core-concepts/workspaces#production-workspaces). */
       workspace: {
         workspace_id: string
         name: string

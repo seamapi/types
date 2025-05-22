@@ -32,7 +32,12 @@ export const access_code_capability_properties = z.object({
   _experimental_supported_code_from_access_codes_lengths: z
     .array(z.number())
     .optional(),
-  code_constraints: z.array(access_code_constraint).optional(),
+  code_constraints: z
+    .array(access_code_constraint)
+    .optional()
+    .describe(
+      'Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific.',
+    ),
   supported_code_lengths: z.array(z.number()).optional(),
   max_active_codes_supported: z.number().optional(),
   supports_backup_access_code_pool: z.boolean().optional(),

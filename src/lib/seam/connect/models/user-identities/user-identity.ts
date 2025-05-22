@@ -35,7 +35,7 @@ export const user_identity = z.object({
   ---
   route_path: /user_identities
   ---
-  Represents a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with an application user account.
+  Represents a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with an application user account.
 `)
 
 export type UserIdentity = z.output<typeof user_identity>
