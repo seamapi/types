@@ -10519,7 +10519,9 @@ export interface Routes {
       /** ID of the desired access group. */
       acs_access_group_id: string
       /** ID of the desired user. */
-      acs_user_id: string
+      acs_user_id?: string | undefined
+      /** ID of the desired user identity. */
+      user_identity_id?: string | undefined
     }
     formData: {}
     jsonResponse: {}
