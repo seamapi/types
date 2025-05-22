@@ -20849,12 +20849,18 @@ export default {
                   },
                   acs_user_id: {
                     description:
-                      'ID of the access system user that you want to add to an access group.',
+                      'ID of the access system user that you want to add to an access group. You can only provide one of acs_user_id or user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the desired user identity that you want to add to an access group. You can only provide one of acs_user_id or user_identity_id. If the ACS system contains an ACS user with the same `email_address` or `phone_number` as the user identity that you specify, they are linked, and the access group membership belongs to the ACS user. If the ACS system does not have a corresponding ACS user, one is created.',
                     format: 'uuid',
                     type: 'string',
                   },
                 },
-                required: ['acs_access_group_id', 'acs_user_id'],
+                required: ['acs_access_group_id'],
                 type: 'object',
               },
             },
@@ -20905,12 +20911,18 @@ export default {
                   },
                   acs_user_id: {
                     description:
-                      'ID of the access system user that you want to add to an access group.',
+                      'ID of the access system user that you want to add to an access group. You can only provide one of acs_user_id or user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the desired user identity that you want to add to an access group. You can only provide one of acs_user_id or user_identity_id. If the ACS system contains an ACS user with the same `email_address` or `phone_number` as the user identity that you specify, they are linked, and the access group membership belongs to the ACS user. If the ACS system does not have a corresponding ACS user, one is created.',
                     format: 'uuid',
                     type: 'string',
                   },
                 },
-                required: ['acs_access_group_id', 'acs_user_id'],
+                required: ['acs_access_group_id'],
                 type: 'object',
               },
             },
