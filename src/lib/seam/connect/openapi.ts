@@ -15116,6 +15116,636 @@ export default {
         type: 'object',
         'x-route-path': '/phones',
       },
+      phone_registration: {
+        properties: {
+          is_being_activated: { type: 'boolean' },
+          phone_registration_id: { type: 'string' },
+          provider_name: { nullable: true, type: 'string' },
+          provider_state: {},
+        },
+        required: [
+          'phone_registration_id',
+          'provider_name',
+          'is_being_activated',
+        ],
+        type: 'object',
+        'x-route-path': '/seam/mobile_sdk/v1/phone_sessions',
+        'x-undocumented': 'Seam Mobile SDK only.',
+      },
+      phone_session: {
+        properties: {
+          provider_sessions: {
+            items: {
+              properties: {
+                acs_credentials: {
+                  items: {
+                    description:
+                      'Means by which an [access control system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).\n\nAn access control system generally uses digital means of access to authorize a user trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.\n\nFor each `acs_credential`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type.',
+                    properties: {
+                      access_method: {
+                        description:
+                          'Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`.',
+                        enum: ['code', 'card', 'mobile_key'],
+                        type: 'string',
+                      },
+                      acs_credential_id: {
+                        description:
+                          'ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      acs_credential_pool_id: {
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      acs_entrances: {
+                        items: {
+                          description:
+                            'Represents an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).\n\nIn an access control system, an entrance is a secured door, gate, zone, or other method of entry. You can list details for all the `acs_entrance` resources in your workspace or get these details for a specific `acs_entrance`. You can also list all entrances associated with a specific credential, and you can list all credentials associated with a specific entrance.',
+                          properties: {
+                            acs_entrance_id: {
+                              description:
+                                'ID of the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            acs_system_id: {
+                              description:
+                                'ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            assa_abloy_vostio_metadata: {
+                              description:
+                                'ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+                              properties: {
+                                door_name: { type: 'string' },
+                                door_number: {
+                                  format: 'float',
+                                  type: 'number',
+                                },
+                                door_type: {
+                                  enum: [
+                                    'CommonDoor',
+                                    'EntranceDoor',
+                                    'GuestDoor',
+                                    'Elevator',
+                                  ],
+                                  type: 'string',
+                                },
+                                pms_id: { type: 'string' },
+                                stand_open: { type: 'boolean' },
+                              },
+                              required: ['door_type', 'door_name'],
+                              type: 'object',
+                            },
+                            created_at: {
+                              description:
+                                'Date and time at which the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) was created.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            display_name: {
+                              description:
+                                'Display name for the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+                              type: 'string',
+                            },
+                            dormakaba_community_metadata: {
+                              description:
+                                'dormakaba Community-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+                              properties: {
+                                access_point_name: { type: 'string' },
+                              },
+                              required: ['access_point_name'],
+                              type: 'object',
+                            },
+                            errors: {
+                              description:
+                                'Errors associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+                              items: {
+                                properties: {
+                                  error_code: {
+                                    description:
+                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                },
+                                required: ['error_code', 'message'],
+                                type: 'object',
+                              },
+                              type: 'array',
+                            },
+                            latch_metadata: {
+                              description:
+                                'Latch-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+                              properties: {
+                                accessibility_type: { type: 'string' },
+                                door_name: { type: 'string' },
+                                door_type: { type: 'string' },
+                                is_connected: { type: 'boolean' },
+                              },
+                              required: [
+                                'accessibility_type',
+                                'door_name',
+                                'door_type',
+                                'is_connected',
+                              ],
+                              type: 'object',
+                            },
+                            salto_ks_metadata: {
+                              description:
+                                'Salto KS-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+                              properties: {
+                                battery_level: { type: 'string' },
+                                door_name: { type: 'string' },
+                                intrusion_alarm: { type: 'boolean' },
+                                left_open_alarm: { type: 'boolean' },
+                                lock_type: { type: 'string' },
+                                locked_state: { type: 'string' },
+                                online: { type: 'boolean' },
+                                privacy_mode: { type: 'boolean' },
+                              },
+                              required: [
+                                'door_name',
+                                'locked_state',
+                                'lock_type',
+                                'battery_level',
+                              ],
+                              type: 'object',
+                            },
+                            salto_space_metadata: {
+                              description:
+                                'Salto Space-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+                              properties: {
+                                door_description: { type: 'string' },
+                                door_name: { type: 'string' },
+                                ext_door_id: { type: 'string' },
+                              },
+                              required: ['door_name', 'ext_door_id'],
+                              type: 'object',
+                            },
+                            visionline_metadata: {
+                              description:
+                                'Visionline-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+                              properties: {
+                                door_category: {
+                                  enum: [
+                                    'entrance',
+                                    'guest',
+                                    'elevator reader',
+                                    'common',
+                                    'common (PMS)',
+                                  ],
+                                  type: 'string',
+                                },
+                                door_name: { type: 'string' },
+                                profiles: {
+                                  items: {
+                                    properties: {
+                                      visionline_door_profile_id: {
+                                        type: 'string',
+                                      },
+                                      visionline_door_profile_type: {
+                                        enum: ['BLE', 'commonDoor', 'touch'],
+                                        type: 'string',
+                                      },
+                                    },
+                                    required: [
+                                      'visionline_door_profile_id',
+                                      'visionline_door_profile_type',
+                                    ],
+                                    type: 'object',
+                                  },
+                                  type: 'array',
+                                },
+                              },
+                              required: ['door_name', 'door_category'],
+                              type: 'object',
+                            },
+                          },
+                          required: [
+                            'acs_system_id',
+                            'acs_entrance_id',
+                            'created_at',
+                            'display_name',
+                            'errors',
+                          ],
+                          type: 'object',
+                          'x-route-path': '/acs/entrances',
+                        },
+                        type: 'array',
+                      },
+                      acs_system_id: {
+                        description:
+                          'ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      acs_user_id: {
+                        description:
+                          'ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      assa_abloy_vostio_metadata: {
+                        description:
+                          'Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+                        properties: {
+                          auto_join: { type: 'boolean' },
+                          door_names: {
+                            items: { type: 'string' },
+                            type: 'array',
+                          },
+                          endpoint_id: { type: 'string' },
+                          key_id: { type: 'string' },
+                          key_issuing_request_id: { type: 'string' },
+                          override_guest_acs_entrance_ids: {
+                            items: { type: 'string' },
+                            type: 'array',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      card_number: {
+                        description:
+                          'Number of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+                        nullable: true,
+                        type: 'string',
+                      },
+                      code: {
+                        description:
+                          'Access (PIN) code for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+                        nullable: true,
+                        type: 'string',
+                      },
+                      created_at: {
+                        description:
+                          'Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created.',
+                        format: 'date-time',
+                        type: 'string',
+                      },
+                      display_name: {
+                        description:
+                          'Display name that corresponds to the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type.',
+                        minLength: 1,
+                        type: 'string',
+                      },
+                      ends_at: {
+                        description:
+                          'Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                        type: 'string',
+                      },
+                      errors: {
+                        description:
+                          'Errors associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+                        items: {
+                          properties: {
+                            error_code: { type: 'string' },
+                            message: { type: 'string' },
+                          },
+                          required: ['error_code', 'message'],
+                          type: 'object',
+                        },
+                        type: 'array',
+                      },
+                      external_type: {
+                        description:
+                          'Brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
+                        enum: [
+                          'pti_card',
+                          'brivo_credential',
+                          'hid_credential',
+                          'visionline_card',
+                          'salto_ks_credential',
+                          'assa_abloy_vostio_key',
+                          'salto_space_key',
+                          'latch_access',
+                        ],
+                        type: 'string',
+                      },
+                      external_type_display_name: {
+                        description:
+                          'Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type.',
+                        type: 'string',
+                      },
+                      is_issued: {
+                        description:
+                          'Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been encoded onto a card.',
+                        type: 'boolean',
+                      },
+                      is_latest_desired_state_synced_with_provider: {
+                        description:
+                          'Indicates whether the latest state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been synced from Seam to the provider.',
+                        nullable: true,
+                        type: 'boolean',
+                      },
+                      is_managed: { enum: [true], type: 'boolean' },
+                      is_multi_phone_sync_credential: {
+                        description:
+                          'Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                        type: 'boolean',
+                      },
+                      is_one_time_use: {
+                        description:
+                          'Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use.',
+                        type: 'boolean',
+                      },
+                      issued_at: {
+                        description:
+                          'Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was encoded onto a card.',
+                        format: 'date-time',
+                        nullable: true,
+                        type: 'string',
+                      },
+                      latest_desired_state_synced_with_provider_at: {
+                        description:
+                          'Date and time at which the state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was most recently synced from Seam to the provider.',
+                        format: 'date-time',
+                        nullable: true,
+                        type: 'string',
+                      },
+                      parent_acs_credential_id: {
+                        description:
+                          'ID of the parent [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      starts_at: {
+                        description:
+                          'Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                        type: 'string',
+                      },
+                      visionline_metadata: {
+                        description:
+                          'Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+                        properties: {
+                          auto_join: { type: 'boolean' },
+                          card_function_type: {
+                            enum: ['guest', 'staff'],
+                            type: 'string',
+                          },
+                          card_id: { type: 'string' },
+                          common_acs_entrance_ids: {
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                          credential_id: { type: 'string' },
+                          guest_acs_entrance_ids: {
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                          is_valid: { type: 'boolean' },
+                          joiner_acs_credential_ids: {
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                        },
+                        required: ['card_function_type'],
+                        type: 'object',
+                      },
+                      warnings: {
+                        description:
+                          'Warnings associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+                        items: {
+                          description:
+                            'Warning associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+                          discriminator: { propertyName: 'warning_code' },
+                          oneOf: [
+                            {
+                              description:
+                                'Indicates that the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is waiting to be issued.',
+                              properties: {
+                                created_at: {
+                                  description:
+                                    'Date and time at which Seam created the warning.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                message: {
+                                  description:
+                                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                  type: 'string',
+                                },
+                                warning_code: {
+                                  description:
+                                    'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                  enum: ['waiting_to_be_issued'],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'created_at',
+                                'message',
+                                'warning_code',
+                              ],
+                              type: 'object',
+                            },
+                            {
+                              description:
+                                "Indicates that the schedule of one of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials)'s children was modified externally.",
+                              properties: {
+                                created_at: {
+                                  description:
+                                    'Date and time at which Seam created the warning.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                message: {
+                                  description:
+                                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                  type: 'string',
+                                },
+                                warning_code: {
+                                  description:
+                                    'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                  enum: ['schedule_externally_modified'],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'created_at',
+                                'message',
+                                'warning_code',
+                              ],
+                              type: 'object',
+                            },
+                            {
+                              description:
+                                'Indicates that the schedule of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.',
+                              properties: {
+                                created_at: {
+                                  description:
+                                    'Date and time at which Seam created the warning.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                message: {
+                                  description:
+                                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                  type: 'string',
+                                },
+                                warning_code: {
+                                  description:
+                                    'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                  enum: ['schedule_modified'],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'created_at',
+                                'message',
+                                'warning_code',
+                              ],
+                              type: 'object',
+                            },
+                            {
+                              description:
+                                'Indicates that the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is being deleted.',
+                              properties: {
+                                created_at: {
+                                  description:
+                                    'Date and time at which Seam created the warning.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                message: {
+                                  description:
+                                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                  type: 'string',
+                                },
+                                warning_code: {
+                                  description:
+                                    'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                  enum: ['being_deleted'],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'created_at',
+                                'message',
+                                'warning_code',
+                              ],
+                              type: 'object',
+                            },
+                            {
+                              description:
+                                'An unknown issue occurred while syncing the state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.',
+                              properties: {
+                                created_at: {
+                                  description:
+                                    'Date and time at which Seam created the warning.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                message: {
+                                  description:
+                                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                  type: 'string',
+                                },
+                                warning_code: {
+                                  description:
+                                    'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                  enum: ['unknown_issue_with_acs_credential'],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'created_at',
+                                'message',
+                                'warning_code',
+                              ],
+                              type: 'object',
+                            },
+                            {
+                              description:
+                                'Access permissions for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.',
+                              properties: {
+                                created_at: {
+                                  description:
+                                    'Date and time at which Seam created the warning.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                message: {
+                                  description:
+                                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                  type: 'string',
+                                },
+                                warning_code: {
+                                  description:
+                                    'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                  enum: ['needs_to_be_reissued'],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'created_at',
+                                'message',
+                                'warning_code',
+                              ],
+                              type: 'object',
+                            },
+                          ],
+                        },
+                        type: 'array',
+                      },
+                      workspace_id: {
+                        description:
+                          'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                    },
+                    required: [
+                      'acs_credential_id',
+                      'acs_system_id',
+                      'display_name',
+                      'access_method',
+                      'created_at',
+                      'workspace_id',
+                      'errors',
+                      'warnings',
+                      'is_managed',
+                      'acs_entrances',
+                    ],
+                    type: 'object',
+                    'x-route-path': '/acs/credentials',
+                  },
+                  type: 'array',
+                },
+                phone_registration: {
+                  properties: {
+                    is_being_activated: { type: 'boolean' },
+                    phone_registration_id: { type: 'string' },
+                    provider_name: { nullable: true, type: 'string' },
+                    provider_state: {},
+                  },
+                  required: [
+                    'phone_registration_id',
+                    'provider_name',
+                    'is_being_activated',
+                  ],
+                  type: 'object',
+                  'x-route-path': '/seam/mobile_sdk/v1/phone_sessions',
+                  'x-undocumented': 'Seam Mobile SDK only.',
+                },
+              },
+              required: ['phone_registration', 'acs_credentials'],
+              type: 'object',
+            },
+            type: 'array',
+          },
+        },
+        required: ['provider_sessions'],
+        type: 'object',
+        'x-route-path': '/seam/mobile_sdk/v1/phone_sessions',
+        'x-undocumented': 'Seam Mobile SDK only.',
+      },
       thermostat_schedule: {
         description:
           'Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time.',
@@ -30767,6 +31397,64 @@ export default {
         'x-fern-sdk-return-value': 'acs_credentials',
         'x-response-key': 'acs_credentials',
         'x-title': 'List Credentials',
+        'x-undocumented': 'Mobile SDK only.',
+      },
+    },
+    '/seam/mobile_sdk/v1/phone_sessions/get_or_create': {
+      post: {
+        description: 'Get or create a session for a mobile SDK phone.',
+        operationId: 'seamMobileSdkV1PhoneSessionsGetOrCreatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  custom_sdk_installation_id: { type: 'string' },
+                  phone_device_metadata: {
+                    properties: {
+                      manufacturer: { type: 'string' },
+                      model: { type: 'string' },
+                      os_version: { type: 'string' },
+                    },
+                    type: 'object',
+                  },
+                  phone_os: { enum: ['ios', 'android'], type: 'string' },
+                },
+                required: ['custom_sdk_installation_id', 'phone_os'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    phone_session: {
+                      $ref: '#/components/schemas/phone_session',
+                    },
+                  },
+                  required: ['phone_session', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session: [] }],
+        summary: '/seam/mobile_sdk/v1/phone_sessions/get_or_create',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'mobile_sdk', 'v1', 'phone_sessions'],
+        'x-fern-sdk-method-name': 'get_or_create',
+        'x-fern-sdk-return-value': 'phone_session',
+        'x-response-key': 'phone_session',
+        'x-title': 'Get or Create a Phone Session',
         'x-undocumented': 'Mobile SDK only.',
       },
     },

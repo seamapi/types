@@ -44843,6 +44843,265 @@ export interface Routes {
       }>
     }
   }
+  '/seam/mobile_sdk/v1/phone_sessions/get_or_create': {
+    route: '/seam/mobile_sdk/v1/phone_sessions/get_or_create'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      custom_sdk_installation_id: string
+      phone_os: 'ios' | 'android'
+      phone_device_metadata?:
+        | {
+            os_version?: string | undefined
+            manufacturer?: string | undefined
+            model?: string | undefined
+          }
+        | undefined
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      /**  */
+      phone_session: {
+        provider_sessions: Array<{
+          /**  */
+          phone_registration: {
+            phone_registration_id: string
+            provider_state?: any
+            provider_name: string | null
+            is_being_activated: boolean
+          }
+          acs_credentials: Array<{
+            /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+            acs_credential_id: string
+            /** ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs. */
+            acs_user_id?: string | undefined
+            acs_credential_pool_id?: string | undefined
+            /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+            acs_system_id: string
+            /** ID of the parent [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+            parent_acs_credential_id?: string | undefined
+            /** Display name that corresponds to the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+            display_name: string
+            /** Access (PIN) code for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+            code?: (string | undefined) | null
+            /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+            is_one_time_use?: boolean | undefined
+            /** Number of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+            card_number?: (string | undefined) | null
+            /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been encoded onto a card. */
+            is_issued?: boolean | undefined
+            /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was encoded onto a card. */
+            issued_at?: (string | undefined) | null
+            /** Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`. */
+            access_method: 'code' | 'card' | 'mobile_key'
+            /** Brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+            external_type?:
+              | (
+                  | 'pti_card'
+                  | 'brivo_credential'
+                  | 'hid_credential'
+                  | 'visionline_card'
+                  | 'salto_ks_credential'
+                  | 'assa_abloy_vostio_key'
+                  | 'salto_space_key'
+                  | 'latch_access'
+                )
+              | undefined
+            /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. */
+            external_type_display_name?: string | undefined
+            /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created. */
+            created_at: string
+            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+            workspace_id: string
+            /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+            starts_at?: string | undefined
+            /** Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+            ends_at?: string | undefined
+            /** Errors associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+            errors: Array<{
+              error_code: string
+              message: string
+            }>
+            /** Warnings associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+            warnings: Array<
+              | {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: 'waiting_to_be_issued'
+                }
+              | {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: 'schedule_externally_modified'
+                }
+              | {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: 'schedule_modified'
+                }
+              | {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: 'being_deleted'
+                }
+              | {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: 'unknown_issue_with_acs_credential'
+                }
+              | {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: 'needs_to_be_reissued'
+                }
+            >
+            /** Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+            is_multi_phone_sync_credential?: boolean | undefined
+            /** Indicates whether the latest state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been synced from Seam to the provider. */
+            is_latest_desired_state_synced_with_provider?:
+              | (boolean | null)
+              | undefined
+            /** Date and time at which the state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+            latest_desired_state_synced_with_provider_at?:
+              | (string | null)
+              | undefined
+            /** Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+            visionline_metadata?:
+              | {
+                  card_function_type: 'guest' | 'staff'
+                  joiner_acs_credential_ids?: string[] | undefined
+                  guest_acs_entrance_ids?: string[] | undefined
+                  common_acs_entrance_ids?: string[] | undefined
+                  is_valid?: boolean | undefined
+                  auto_join?: boolean | undefined
+                  card_id?: string | undefined
+                  credential_id?: string | undefined
+                }
+              | undefined
+            /** Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
+            assa_abloy_vostio_metadata?:
+              | {
+                  auto_join?: boolean | undefined
+                  override_guest_acs_entrance_ids?: string[] | undefined
+                  key_id?: string | undefined
+                  key_issuing_request_id?: string | undefined
+                  door_names?: string[] | undefined
+                  endpoint_id?: string | undefined
+                }
+              | undefined
+            is_managed: true
+            acs_entrances: Array<{
+              /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). */
+              acs_system_id: string
+              /** ID of the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). */
+              acs_entrance_id: string
+              /** Date and time at which the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) was created. */
+              created_at: string
+              /** Display name for the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). */
+              display_name: string
+              /** Errors associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). */
+              errors: Array<{
+                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                error_code: string
+                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                message: string
+              }>
+              /** Latch-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). */
+              latch_metadata?:
+                | {
+                    accessibility_type: string
+                    door_name: string
+                    door_type: string
+                    is_connected: boolean
+                  }
+                | undefined
+              /** Visionline-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). */
+              visionline_metadata?:
+                | {
+                    door_name: string
+                    door_category:
+                      | 'entrance'
+                      | 'guest'
+                      | 'elevator reader'
+                      | 'common'
+                      | 'common (PMS)'
+                    profiles?:
+                      | Array<{
+                          visionline_door_profile_id: string
+                          visionline_door_profile_type:
+                            | 'BLE'
+                            | 'commonDoor'
+                            | 'touch'
+                        }>
+                      | undefined
+                  }
+                | undefined
+              /** Salto KS-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). */
+              salto_ks_metadata?:
+                | {
+                    door_name: string
+                    locked_state: string
+                    lock_type: string
+                    online?: boolean | undefined
+                    battery_level: string
+                    left_open_alarm?: boolean | undefined
+                    intrusion_alarm?: boolean | undefined
+                    privacy_mode?: boolean | undefined
+                  }
+                | undefined
+              /** dormakaba Community-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). */
+              dormakaba_community_metadata?:
+                | {
+                    access_point_name: string
+                  }
+                | undefined
+              /** ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). */
+              assa_abloy_vostio_metadata?:
+                | {
+                    door_type:
+                      | 'CommonDoor'
+                      | 'EntranceDoor'
+                      | 'GuestDoor'
+                      | 'Elevator'
+                    door_name: string
+                    door_number?: number | undefined
+                    stand_open?: boolean | undefined
+                    pms_id?: string | undefined
+                  }
+                | undefined
+              /** Salto Space-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). */
+              salto_space_metadata?:
+                | {
+                    door_name: string
+                    ext_door_id: string
+                    door_description?: string | undefined
+                  }
+                | undefined
+            }>
+          }>
+        }>
+      }
+    }
+  }
   '/thermostats/activate_climate_preset': {
     route: '/thermostats/activate_climate_preset'
     method: 'POST'
