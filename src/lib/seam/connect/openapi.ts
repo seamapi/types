@@ -24959,12 +24959,18 @@ export default {
                   },
                   acs_user_id: {
                     description:
-                      'ID of the access system user that you want to remove from an access group.',
+                      'ID of the access system user that you want to remove from an access group. You can only provide acs_user_id or user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity that you want to remove from an access group. You can only provide acs_user_id or user_identity_id.',
                     format: 'uuid',
                     type: 'string',
                   },
                 },
-                required: ['acs_user_id', 'acs_access_group_id'],
+                required: ['acs_access_group_id'],
                 type: 'object',
               },
             },
