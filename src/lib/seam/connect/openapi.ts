@@ -24880,14 +24880,25 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  acs_system_id: {
+                    description:
+                      'ID of the access system for which you want to list accessible entrances. You can only provide acs_system_id with user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   acs_user_id: {
                     description:
-                      'ID of the access system user for whom you want to list accessible entrances.',
+                      'ID of the access system user for whom you want to list accessible entrances. You can only provide acs_user_id or user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity for whom you want to list accessible entrances. You can only provide acs_user_id or user_identity_id.',
                     format: 'uuid',
                     type: 'string',
                   },
                 },
-                required: ['acs_user_id'],
                 type: 'object',
               },
             },
