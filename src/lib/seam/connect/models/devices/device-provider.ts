@@ -72,6 +72,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'yale',
     'nuki',
     'salto',
+    'salto_space',
     'controlbyweb',
     'minut',
     'my_2n',
@@ -92,6 +93,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'latch',
     'akiles',
     'sensi',
+    'assa_abloy_vostio',
   ],
 
   consumer_smartlocks: [
@@ -119,7 +121,6 @@ export const PROVIDER_CATEGORY_MAP = {
     'salto_ks',
     'assa_abloy_vostio',
     'salto_space',
-    'assa_abloy_vostio',
   ],
 
   internal_beta: ALL_DEVICE_PROVIDERS,
