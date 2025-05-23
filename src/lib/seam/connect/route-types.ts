@@ -16619,8 +16619,10 @@ export interface Routes {
     jsonBody: {
       /** ID of the entrance to which you want to grant an access system user access. */
       acs_entrance_id: string
-      /** ID of the access system user to whom you want to grant access to an entrance. */
-      acs_user_id: string
+      /** ID of the user identity to whom you want to grant access to an entrance. You can only provide one of acs_user_id or user_identity_id. If the ACS system contains an ACS user with the same `email_address` or `phone_number` as the user identity that you specify, they are linked, and the access group membership belongs to the ACS user. If the ACS system does not have a corresponding ACS user, one is created. */
+      user_identity_id?: string | undefined
+      /** ID of the access system user to whom you want to grant access to an entrance. You can only provide one of acs_user_id or user_identity_id. */
+      acs_user_id?: string | undefined
     }
     commonParams: {}
     formData: {}
@@ -47759,7 +47761,7 @@ export interface Routes {
       /** ID of the thermostat device for which you want to create a daily program. */
       device_id: string
       /** User-friendly name to identify the thermostat daily program. */
-      name?: string | undefined
+      name: string
       /** Array of thermostat daily program periods. */
       periods: Array<{
         /** Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
@@ -47813,7 +47815,7 @@ export interface Routes {
       /** ID of the thermostat daily program that you want to update. */
       thermostat_daily_program_id: string
       /** User-friendly name to identify the thermostat daily program that you want to update. */
-      name?: string | undefined
+      name: string
       /** Array of thermostat daily program periods. The periods that you specify overwrite any existing periods for the daily program. */
       periods: Array<{
         /** Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
