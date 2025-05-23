@@ -18332,8 +18332,10 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the access system user that you want to remove from an access group. */
-      acs_user_id: string
+      /** ID of the access system user that you want to remove from an access group. You can only provide acs_user_id or user_identity_id. */
+      acs_user_id?: string | undefined
+      /** ID of the user identity that you want to remove from an access group. You can only provide acs_user_id or user_identity_id. */
+      user_identity_id?: string | undefined
       /** ID of the access group from which you want to remove an access system user. */
       acs_access_group_id: string
     }
