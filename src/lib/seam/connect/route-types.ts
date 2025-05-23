@@ -47759,7 +47759,7 @@ export interface Routes {
       /** ID of the thermostat device for which you want to create a daily program. */
       device_id: string
       /** User-friendly name to identify the thermostat daily program. */
-      name?: string | undefined
+      name: string
       /** Array of thermostat daily program periods. */
       periods: Array<{
         /** Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
@@ -47813,7 +47813,7 @@ export interface Routes {
       /** ID of the thermostat daily program that you want to update. */
       thermostat_daily_program_id: string
       /** User-friendly name to identify the thermostat daily program that you want to update. */
-      name?: string | undefined
+      name: string
       /** Array of thermostat daily program periods. The periods that you specify overwrite any existing periods for the daily program. */
       periods: Array<{
         /** Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
