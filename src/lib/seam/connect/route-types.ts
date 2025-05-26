@@ -17746,8 +17746,12 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the access system user that you want to get. */
-      acs_user_id: string
+      /** ID of the access system user that you want to get. You can only provide acs_user_id or user_identity_id. */
+      acs_user_id?: string | undefined
+      /** ID of the user identity that you want to get. You can only provide acs_user_id or user_identity_id. */
+      user_identity_id?: string | undefined
+      /** ID of the access system that you want to get. You can only provide acs_user_id or user_identity_id. */
+      acs_system_id?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -18347,8 +18351,12 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the access system user for whom you want to revoke access. */
-      acs_user_id: string
+      /** ID of the access system user for whom you want to revoke access. You can only provide acs_user_id or user_identity_id. */
+      acs_user_id?: string | undefined
+      /** ID of the user identity for whom you want to revoke access. You can only provide acs_user_id or user_identity_id. */
+      user_identity_id?: string | undefined
+      /** ID of the access system for which you want to revoke access. You can only provide acs_system_id with user_identity_id. */
+      acs_system_id?: string | undefined
     }
     commonParams: {}
     formData: {}
@@ -18360,8 +18368,12 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the access system user that you want to suspend. */
-      acs_user_id: string
+      /** ID of the access system user that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id. */
+      acs_user_id?: string | undefined
+      /** ID of the user identity that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id. */
+      user_identity_id?: string | undefined
+      /** ID of the access system that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id. */
+      acs_system_id?: string | undefined
     }
     formData: {}
     jsonResponse: {}
@@ -18837,8 +18849,12 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the access system user that you want to unsuspend. */
-      acs_user_id: string
+      /** ID of the access system user that you want to unsuspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id. */
+      acs_user_id?: string | undefined
+      /** ID of the user identity that you want to unsuspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id. */
+      user_identity_id?: string | undefined
+      /** ID of the access system of the user that you want to unsuspend. You can only provide acs_system_id with user_identity_id. */
+      acs_system_id?: string | undefined
     }
     formData: {}
     jsonResponse: {}
@@ -21836,12 +21852,18 @@ export interface Routes {
     
     To list all providers within a category, use `/devices/list_device_providers` with the desired `provider_category` filter. To list all provider keys, use `/devices/list_device_providers` with no filters. */
       connect_webview: {
+        /** ID of the Connect Webview. */
         connect_webview_id: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the Connect Webview. */
         workspace_id: string
+        /** Date and time at which the Connect Webview was created. */
         created_at: string
+        /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the Connect Webview. */
         connected_account_id: string | null
+        /** URL for the Connect Webview. You use the URL to display the Connect Webview flow to your user. */
         url: string
         device_selection_mode: 'none' | 'single' | 'multiple'
+        /** List of accepted [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). */
         accepted_providers: string[]
         /**
          * @deprecated Unused. Will be removed. */
@@ -21849,15 +21871,25 @@ export interface Routes {
         /**
          * @deprecated Unused. Will be removed. */
         any_device_allowed: boolean
+        /** Indicates whether any provider is allowed. */
         any_provider_allowed: boolean
+        /** Indicates whether the user logged in successfully using the Connect Webview. */
         login_successful: boolean
+        /** Status of the Connect Webview. `authorized` indicates that the user has successfully logged into their device or system account, thereby completing the Connect Webview. */
         status: 'pending' | 'failed' | 'authorized'
+        /** URL to which the Connect Webview should redirect when the user successfully pairs a device or system. If you do not set the `custom_redirect_failure_url`, the Connect Webview redirects to the `custom_redirect_url` when an unexpected error occurs. */
         custom_redirect_url: string | null
+        /** URL to which the Connect Webview should redirect when an unexpected error occurs. */
         custom_redirect_failure_url: string | null
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
+        /** Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API. */
         automatically_manage_new_devices: boolean
+        /** Indicates whether Seam should [finish syncing all devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#wait_for_device_creation) in a newly-connected account before completing the associated Connect Webview. */
         wait_for_device_creation: boolean
+        /** Date and time at which the user authorized (through the Connect Webview) the management of their devices. */
         authorized_at: string | null
+        /** Selected provider of the Connect Webview, one of the [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). */
         selected_provider: string | null
       }
     }
@@ -21897,12 +21929,18 @@ export interface Routes {
     
     To list all providers within a category, use `/devices/list_device_providers` with the desired `provider_category` filter. To list all provider keys, use `/devices/list_device_providers` with no filters. */
       connect_webview: {
+        /** ID of the Connect Webview. */
         connect_webview_id: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the Connect Webview. */
         workspace_id: string
+        /** Date and time at which the Connect Webview was created. */
         created_at: string
+        /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the Connect Webview. */
         connected_account_id: string | null
+        /** URL for the Connect Webview. You use the URL to display the Connect Webview flow to your user. */
         url: string
         device_selection_mode: 'none' | 'single' | 'multiple'
+        /** List of accepted [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). */
         accepted_providers: string[]
         /**
          * @deprecated Unused. Will be removed. */
@@ -21910,15 +21948,25 @@ export interface Routes {
         /**
          * @deprecated Unused. Will be removed. */
         any_device_allowed: boolean
+        /** Indicates whether any provider is allowed. */
         any_provider_allowed: boolean
+        /** Indicates whether the user logged in successfully using the Connect Webview. */
         login_successful: boolean
+        /** Status of the Connect Webview. `authorized` indicates that the user has successfully logged into their device or system account, thereby completing the Connect Webview. */
         status: 'pending' | 'failed' | 'authorized'
+        /** URL to which the Connect Webview should redirect when the user successfully pairs a device or system. If you do not set the `custom_redirect_failure_url`, the Connect Webview redirects to the `custom_redirect_url` when an unexpected error occurs. */
         custom_redirect_url: string | null
+        /** URL to which the Connect Webview should redirect when an unexpected error occurs. */
         custom_redirect_failure_url: string | null
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
+        /** Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API. */
         automatically_manage_new_devices: boolean
+        /** Indicates whether Seam should [finish syncing all devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#wait_for_device_creation) in a newly-connected account before completing the associated Connect Webview. */
         wait_for_device_creation: boolean
+        /** Date and time at which the user authorized (through the Connect Webview) the management of their devices. */
         authorized_at: string | null
+        /** Selected provider of the Connect Webview, one of the [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). */
         selected_provider: string | null
       }
     }
@@ -21939,12 +21987,18 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       connect_webviews: Array<{
+        /** ID of the Connect Webview. */
         connect_webview_id: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the Connect Webview. */
         workspace_id: string
+        /** Date and time at which the Connect Webview was created. */
         created_at: string
+        /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the Connect Webview. */
         connected_account_id: string | null
+        /** URL for the Connect Webview. You use the URL to display the Connect Webview flow to your user. */
         url: string
         device_selection_mode: 'none' | 'single' | 'multiple'
+        /** List of accepted [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). */
         accepted_providers: string[]
         /**
          * @deprecated Unused. Will be removed. */
@@ -21952,15 +22006,25 @@ export interface Routes {
         /**
          * @deprecated Unused. Will be removed. */
         any_device_allowed: boolean
+        /** Indicates whether any provider is allowed. */
         any_provider_allowed: boolean
+        /** Indicates whether the user logged in successfully using the Connect Webview. */
         login_successful: boolean
+        /** Status of the Connect Webview. `authorized` indicates that the user has successfully logged into their device or system account, thereby completing the Connect Webview. */
         status: 'pending' | 'failed' | 'authorized'
+        /** URL to which the Connect Webview should redirect when the user successfully pairs a device or system. If you do not set the `custom_redirect_failure_url`, the Connect Webview redirects to the `custom_redirect_url` when an unexpected error occurs. */
         custom_redirect_url: string | null
+        /** URL to which the Connect Webview should redirect when an unexpected error occurs. */
         custom_redirect_failure_url: string | null
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
+        /** Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API. */
         automatically_manage_new_devices: boolean
+        /** Indicates whether Seam should [finish syncing all devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#wait_for_device_creation) in a newly-connected account before completing the associated Connect Webview. */
         wait_for_device_creation: boolean
+        /** Date and time at which the user authorized (through the Connect Webview) the management of their devices. */
         authorized_at: string | null
+        /** Selected provider of the Connect Webview, one of the [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). */
         selected_provider: string | null
       }>
     }
@@ -22087,6 +22151,7 @@ export interface Routes {
               }
             }
         >
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         automatically_manage_new_devices: boolean
       }
@@ -22201,6 +22266,7 @@ export interface Routes {
               }
             }
         >
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         automatically_manage_new_devices: boolean
       }>
@@ -22322,6 +22388,7 @@ export interface Routes {
               }
             }
         >
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         automatically_manage_new_devices: boolean
       }
@@ -23328,6 +23395,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -24511,6 +24579,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -29765,6 +29834,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -30754,6 +30824,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -31902,6 +31973,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -32890,6 +32962,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -39204,6 +39277,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -40192,6 +40266,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -50130,6 +50205,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -53834,6 +53910,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -54822,6 +54899,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -62134,6 +62212,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -63124,6 +63203,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
