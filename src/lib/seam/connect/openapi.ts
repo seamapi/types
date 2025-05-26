@@ -7173,39 +7173,70 @@ export default {
             'x-deprecated': 'Unused. Will be removed.',
             'x-undocumented': 'Unused. Will be removed.',
           },
-          accepted_providers: { items: { type: 'string' }, type: 'array' },
+          accepted_providers: {
+            description:
+              'List of accepted [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).',
+            items: { type: 'string' },
+            type: 'array',
+          },
           any_device_allowed: {
             deprecated: true,
             type: 'boolean',
             'x-deprecated': 'Unused. Will be removed.',
             'x-undocumented': 'Unused. Will be removed.',
           },
-          any_provider_allowed: { type: 'boolean' },
+          any_provider_allowed: {
+            description: 'Indicates whether any provider is allowed.',
+            type: 'boolean',
+          },
           authorized_at: {
+            description:
+              'Date and time at which the user authorized (through the Connect Webview) the management of their devices.',
             format: 'date-time',
             nullable: true,
             type: 'string',
           },
-          automatically_manage_new_devices: { type: 'boolean' },
-          connect_webview_id: { format: 'uuid', type: 'string' },
+          automatically_manage_new_devices: {
+            description:
+              'Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API.',
+            type: 'boolean',
+          },
+          connect_webview_id: {
+            description: 'ID of the Connect Webview.',
+            format: 'uuid',
+            type: 'string',
+          },
           connected_account_id: {
+            description:
+              'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the Connect Webview.',
             format: 'uuid',
             nullable: true,
             type: 'string',
           },
-          created_at: { format: 'date-time', type: 'string' },
+          created_at: {
+            description:
+              'Date and time at which the Connect Webview was created.',
+            format: 'date-time',
+            type: 'string',
+          },
           custom_metadata: {
             additionalProperties: {
               oneOf: [{ type: 'string' }, { type: 'boolean' }],
             },
+            description:
+              'Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application.',
             type: 'object',
           },
           custom_redirect_failure_url: {
+            description:
+              'URL to which the Connect Webview should redirect when an unexpected error occurs.',
             format: 'uri',
             nullable: true,
             type: 'string',
           },
           custom_redirect_url: {
+            description:
+              'URL to which the Connect Webview should redirect when the user successfully pairs a device or system. If you do not set the `custom_redirect_failure_url`, the Connect Webview redirects to the `custom_redirect_url` when an unexpected error occurs.',
             format: 'uri',
             nullable: true,
             type: 'string',
@@ -7214,12 +7245,40 @@ export default {
             enum: ['none', 'single', 'multiple'],
             type: 'string',
           },
-          login_successful: { type: 'boolean' },
-          selected_provider: { nullable: true, type: 'string' },
-          status: { enum: ['pending', 'failed', 'authorized'], type: 'string' },
-          url: { format: 'uri', type: 'string' },
-          wait_for_device_creation: { type: 'boolean' },
-          workspace_id: { format: 'uuid', type: 'string' },
+          login_successful: {
+            description:
+              'Indicates whether the user logged in successfully using the Connect Webview.',
+            type: 'boolean',
+          },
+          selected_provider: {
+            description:
+              'Selected provider of the Connect Webview, one of the [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).',
+            nullable: true,
+            type: 'string',
+          },
+          status: {
+            description:
+              'Status of the Connect Webview. `authorized` indicates that the user has successfully logged into their device or system account, thereby completing the Connect Webview.',
+            enum: ['pending', 'failed', 'authorized'],
+            type: 'string',
+          },
+          url: {
+            description:
+              'URL for the Connect Webview. You use the URL to display the Connect Webview flow to your user.',
+            format: 'uri',
+            type: 'string',
+          },
+          wait_for_device_creation: {
+            description:
+              'Indicates whether Seam should [finish syncing all devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#wait_for_device_creation) in a newly-connected account before completing the associated Connect Webview.',
+            type: 'boolean',
+          },
+          workspace_id: {
+            description:
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the Connect Webview.',
+            format: 'uuid',
+            type: 'string',
+          },
         },
         required: [
           'connect_webview_id',
@@ -7258,6 +7317,8 @@ export default {
             additionalProperties: {
               oneOf: [{ type: 'string' }, { type: 'boolean' }],
             },
+            description:
+              'Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application.',
             type: 'object',
           },
           errors: {
@@ -7567,6 +7628,8 @@ export default {
             additionalProperties: {
               oneOf: [{ type: 'string' }, { type: 'boolean' }],
             },
+            description:
+              'Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application.',
             type: 'object',
           },
           device_id: {
@@ -24722,14 +24785,25 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  acs_system_id: {
+                    description:
+                      'ID of the access system that you want to get. You can only provide acs_user_id or user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   acs_user_id: {
                     description:
-                      'ID of the access system user that you want to get.',
+                      'ID of the access system user that you want to get. You can only provide acs_user_id or user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity that you want to get. You can only provide acs_user_id or user_identity_id.',
                     format: 'uuid',
                     type: 'string',
                   },
                 },
-                required: ['acs_user_id'],
                 type: 'object',
               },
             },
@@ -25015,14 +25089,25 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  acs_system_id: {
+                    description:
+                      'ID of the access system for which you want to revoke access. You can only provide acs_system_id with user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   acs_user_id: {
                     description:
-                      'ID of the access system user for whom you want to revoke access.',
+                      'ID of the access system user for whom you want to revoke access. You can only provide acs_user_id or user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity for whom you want to revoke access. You can only provide acs_user_id or user_identity_id.',
                     format: 'uuid',
                     type: 'string',
                   },
                 },
-                required: ['acs_user_id'],
                 type: 'object',
               },
             },
@@ -25067,14 +25152,25 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  acs_system_id: {
+                    description:
+                      'ID of the access system that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   acs_user_id: {
                     description:
-                      'ID of the access system user that you want to suspend.',
+                      'ID of the access system user that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id.',
                     format: 'uuid',
                     type: 'string',
                   },
                 },
-                required: ['acs_user_id'],
                 type: 'object',
               },
             },
@@ -25262,14 +25358,25 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  acs_system_id: {
+                    description:
+                      'ID of the access system of the user that you want to unsuspend. You can only provide acs_system_id with user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   acs_user_id: {
                     description:
-                      'ID of the access system user that you want to unsuspend.',
+                      'ID of the access system user that you want to unsuspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity that you want to unsuspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id.',
                     format: 'uuid',
                     type: 'string',
                   },
                 },
-                required: ['acs_user_id'],
                 type: 'object',
               },
             },
