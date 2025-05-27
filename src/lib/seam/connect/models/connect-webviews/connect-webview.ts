@@ -9,15 +9,38 @@ export const connect_webview_device_selection_mode = z.enum([
 ])
 
 export const connect_webview = z.object({
-  connect_webview_id: z.string().uuid(),
-  workspace_id: z.string().uuid(),
-  created_at: z.string().datetime(),
-  connected_account_id: z.string().uuid().nullable(),
-  url: z.string().url(),
+  connect_webview_id: z.string().uuid().describe('ID of the Connect Webview.'),
+  workspace_id: z
+    .string()
+    .uuid()
+    .describe(
+      'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the Connect Webview.',
+    ),
+  created_at: z
+    .string()
+    .datetime()
+    .describe('Date and time at which the Connect Webview was created.'),
+  connected_account_id: z
+    .string()
+    .uuid()
+    .nullable()
+    .describe(
+      'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the Connect Webview.',
+    ),
+  url: z
+    .string()
+    .url()
+    .describe(
+      'URL for the Connect Webview. You use the URL to display the Connect Webview flow to your user.',
+    ),
   device_selection_mode: connect_webview_device_selection_mode,
 
   // TODO: Use enum value.
-  accepted_providers: z.array(z.string()),
+  accepted_providers: z
+    .array(z.string())
+    .describe(
+      'List of accepted [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).',
+    ),
 
   accepted_devices: z.array(z.string()).describe(
     `
@@ -36,16 +59,57 @@ export const connect_webview = z.object({
       `,
   ),
 
-  any_provider_allowed: z.boolean(),
-  login_successful: z.boolean(),
-  status: z.enum(['pending', 'failed', 'authorized']),
-  custom_redirect_url: z.string().url().nullable(),
-  custom_redirect_failure_url: z.string().url().nullable(),
+  any_provider_allowed: z
+    .boolean()
+    .describe('Indicates whether any provider is allowed.'),
+  login_successful: z
+    .boolean()
+    .describe(
+      'Indicates whether the user logged in successfully using the Connect Webview.',
+    ),
+  status: z
+    .enum(['pending', 'failed', 'authorized'])
+    .describe(
+      'Status of the Connect Webview. `authorized` indicates that the user has successfully logged into their device or system account, thereby completing the Connect Webview.',
+    ),
+  custom_redirect_url: z
+    .string()
+    .url()
+    .nullable()
+    .describe(
+      'URL to which the Connect Webview should redirect when the user successfully pairs a device or system. If you do not set the `custom_redirect_failure_url`, the Connect Webview redirects to the `custom_redirect_url` when an unexpected error occurs.',
+    ),
+  custom_redirect_failure_url: z
+    .string()
+    .url()
+    .nullable()
+    .describe(
+      'URL to which the Connect Webview should redirect when an unexpected error occurs.',
+    ),
   custom_metadata,
-  automatically_manage_new_devices: z.boolean(),
-  wait_for_device_creation: z.boolean(),
-  authorized_at: z.string().datetime().nullable(),
-  selected_provider: z.string().nullable(),
+  automatically_manage_new_devices: z
+    .boolean()
+    .describe(
+      'Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API.',
+    ),
+  wait_for_device_creation: z
+    .boolean()
+    .describe(
+      'Indicates whether Seam should [finish syncing all devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#wait_for_device_creation) in a newly-connected account before completing the associated Connect Webview.',
+    ),
+  authorized_at: z
+    .string()
+    .datetime()
+    .nullable()
+    .describe(
+      'Date and time at which the user authorized (through the Connect Webview) the management of their devices.',
+    ),
+  selected_provider: z
+    .string()
+    .nullable()
+    .describe(
+      'Selected provider of the Connect Webview, one of the [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).',
+    ),
 }).describe(`
   ---
   route_path: /connect_webviews
