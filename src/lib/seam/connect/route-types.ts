@@ -1718,8 +1718,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -1727,8 +1730,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -2274,8 +2280,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -2283,8 +2292,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -4133,8 +4145,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -4142,8 +4157,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -4663,8 +4681,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -4672,8 +4693,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -5201,8 +5225,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -5210,8 +5237,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -5717,8 +5747,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -5726,8 +5759,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -6266,8 +6302,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -6275,8 +6314,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -8112,8 +8154,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -8121,8 +8166,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -8618,8 +8666,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -8627,8 +8678,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -17734,8 +17788,12 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the access system user that you want to delete. */
-      acs_user_id: string
+      /** ID of the access system user that you want to delete. You must provide either acs_user_id or user_identity_id */
+      acs_user_id?: string | undefined
+      /** ID of the user identity that you want to delete. You must provide either acs_user_id or user_identity_id. If you provide user_identity_id, you must also provide acs_system_id. */
+      user_identity_id?: string | undefined
+      /** ID of the access system that you want to delete. You must provide acs_system_id with user_identity_id. */
+      acs_system_id?: string | undefined
     }
     formData: {}
     jsonResponse: {}
@@ -17746,8 +17804,12 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the access system user that you want to get. */
-      acs_user_id: string
+      /** ID of the access system user that you want to get. You can only provide acs_user_id or user_identity_id. */
+      acs_user_id?: string | undefined
+      /** ID of the user identity that you want to get. You can only provide acs_user_id or user_identity_id. */
+      user_identity_id?: string | undefined
+      /** ID of the access system that you want to get. You can only provide acs_user_id or user_identity_id. */
+      acs_system_id?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -18347,8 +18409,12 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the access system user for whom you want to revoke access. */
-      acs_user_id: string
+      /** ID of the access system user for whom you want to revoke access. You can only provide acs_user_id or user_identity_id. */
+      acs_user_id?: string | undefined
+      /** ID of the user identity for whom you want to revoke access. You can only provide acs_user_id or user_identity_id. */
+      user_identity_id?: string | undefined
+      /** ID of the access system for which you want to revoke access. You can only provide acs_system_id with user_identity_id. */
+      acs_system_id?: string | undefined
     }
     commonParams: {}
     formData: {}
@@ -18360,8 +18426,12 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the access system user that you want to suspend. */
-      acs_user_id: string
+      /** ID of the access system user that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id. */
+      acs_user_id?: string | undefined
+      /** ID of the user identity that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id. */
+      user_identity_id?: string | undefined
+      /** ID of the access system that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id. */
+      acs_system_id?: string | undefined
     }
     formData: {}
     jsonResponse: {}
@@ -18837,8 +18907,12 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the access system user that you want to unsuspend. */
-      acs_user_id: string
+      /** ID of the access system user that you want to unsuspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id. */
+      acs_user_id?: string | undefined
+      /** ID of the user identity that you want to unsuspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id. */
+      user_identity_id?: string | undefined
+      /** ID of the access system of the user that you want to unsuspend. You can only provide acs_system_id with user_identity_id. */
+      acs_system_id?: string | undefined
     }
     formData: {}
     jsonResponse: {}
@@ -18857,8 +18931,12 @@ export interface Routes {
             ends_at: string
           } | null)
         | undefined
-      /** ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
-      acs_user_id: string
+      /** ID of the access system user that you want to update. You can only provide acs_user_id or user_identity_id. */
+      acs_user_id?: string | undefined
+      /** ID of the user identity that you want to update. You can only provide acs_user_id or user_identity_id. If you provide user_identity_id, you must also provide acs_system_id. */
+      user_identity_id?: string | undefined
+      /** ID of the access system that you want to update. You can only provide acs_system_id with user_identity_id. */
+      acs_system_id?: string | undefined
       /** Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
       full_name?: string | undefined
       /**
@@ -22045,25 +22123,39 @@ export interface Routes {
     jsonResponse: {
       /** Represents a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). A connected account is an external third-party account to which your user has authorized Seam to get access, for example, an August account with a list of door locks. */
       connected_account: {
+        /** Unique identifier for the connected account. */
         connected_account_id?: string | undefined
+        /** Date and time at which the connected account was created. */
         created_at?: string | undefined
+        /** User identifier associated with the connected account. */
         user_identifier?:
           | {
+              /** Username of the user identifier associated with the connected account. */
               username?: string | undefined
+              /** API URL for the user identifier associated with the connected account. */
               api_url?: string | undefined
+              /** Email address of the user identifier associated with the connected account. */
               email?: string | undefined
+              /** Phone number of the user identifier associated with the connected account. */
               phone?: string | undefined
+              /** Indicates whether the user identifier associated with the connected account is exclusive. */
               exclusive?: boolean | undefined
             }
           | undefined
+        /** Type of connected account. */
         account_type?: string | undefined
+        /** Display name for the connected account type. */
         account_type_display_name: string
+        /** Errors associated with the connected account. */
         errors: Array<
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
@@ -22071,8 +22163,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -22080,8 +22175,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -22089,25 +22187,36 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Salto KS metadata associated with the connected account that has an error. */
               salto_ks_metadata: {
+                /** Salto sites associated with the connected account that has an error. */
                 sites: Array<{
+                  /** ID of a Salto site associated with the connected account that has an error. */
                   site_id: string
+                  /** Name of a Salto site associated with the connected account that has an error. */
                   site_name: string
+                  /** Count of subscribed site users for a Salto site associated with the connected account that has an error. */
                   subscribed_site_user_count: number
+                  /** Subscription limit of site users for a Salto site associated with the connected account that has an error. */
                   site_user_subscription_limit: number
                 }>
               }
             }
         >
+        /** Warnings associated with the connected account. */
         warnings: Array<
           | {
               /** Date and time at which Seam created the warning. */
               created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
@@ -22115,6 +22224,7 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the warning. */
               created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_connected_account'
@@ -22122,14 +22232,21 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the warning. */
               created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_ks_subscription_limit_almost_reached'
+              /** Salto KS metadata associated with the connected account that has a warning. */
               salto_ks_metadata: {
+                /** Salto sites associated with the connected account that has a warning. */
                 sites: Array<{
+                  /** ID of a Salto site associated with the connected account that has a warning. */
                   site_id: string
+                  /** Name of a Salto site associated with the connected account that has a warning. */
                   site_name: string
+                  /** Subscription limit of site users for a Salto site associated with the connected account that has a warning. */
                   site_user_subscription_limit: number
+                  /** Count of subscribed site users for a Salto site associated with the connected account that has a warning. */
                   subscribed_site_user_count: number
                 }>
               }
@@ -22137,6 +22254,7 @@ export interface Routes {
         >
         /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
+        /** Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API. */
         automatically_manage_new_devices: boolean
       }
     }
@@ -22160,25 +22278,39 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       connected_accounts: Array<{
+        /** Unique identifier for the connected account. */
         connected_account_id?: string | undefined
+        /** Date and time at which the connected account was created. */
         created_at?: string | undefined
+        /** User identifier associated with the connected account. */
         user_identifier?:
           | {
+              /** Username of the user identifier associated with the connected account. */
               username?: string | undefined
+              /** API URL for the user identifier associated with the connected account. */
               api_url?: string | undefined
+              /** Email address of the user identifier associated with the connected account. */
               email?: string | undefined
+              /** Phone number of the user identifier associated with the connected account. */
               phone?: string | undefined
+              /** Indicates whether the user identifier associated with the connected account is exclusive. */
               exclusive?: boolean | undefined
             }
           | undefined
+        /** Type of connected account. */
         account_type?: string | undefined
+        /** Display name for the connected account type. */
         account_type_display_name: string
+        /** Errors associated with the connected account. */
         errors: Array<
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
@@ -22186,8 +22318,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -22195,8 +22330,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -22204,25 +22342,36 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Salto KS metadata associated with the connected account that has an error. */
               salto_ks_metadata: {
+                /** Salto sites associated with the connected account that has an error. */
                 sites: Array<{
+                  /** ID of a Salto site associated with the connected account that has an error. */
                   site_id: string
+                  /** Name of a Salto site associated with the connected account that has an error. */
                   site_name: string
+                  /** Count of subscribed site users for a Salto site associated with the connected account that has an error. */
                   subscribed_site_user_count: number
+                  /** Subscription limit of site users for a Salto site associated with the connected account that has an error. */
                   site_user_subscription_limit: number
                 }>
               }
             }
         >
+        /** Warnings associated with the connected account. */
         warnings: Array<
           | {
               /** Date and time at which Seam created the warning. */
               created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
@@ -22230,6 +22379,7 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the warning. */
               created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_connected_account'
@@ -22237,14 +22387,21 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the warning. */
               created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_ks_subscription_limit_almost_reached'
+              /** Salto KS metadata associated with the connected account that has a warning. */
               salto_ks_metadata: {
+                /** Salto sites associated with the connected account that has a warning. */
                 sites: Array<{
+                  /** ID of a Salto site associated with the connected account that has a warning. */
                   site_id: string
+                  /** Name of a Salto site associated with the connected account that has a warning. */
                   site_name: string
+                  /** Subscription limit of site users for a Salto site associated with the connected account that has a warning. */
                   site_user_subscription_limit: number
+                  /** Count of subscribed site users for a Salto site associated with the connected account that has a warning. */
                   subscribed_site_user_count: number
                 }>
               }
@@ -22252,6 +22409,7 @@ export interface Routes {
         >
         /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
+        /** Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API. */
         automatically_manage_new_devices: boolean
       }>
       /** Information about the current page of results. */
@@ -22282,25 +22440,39 @@ export interface Routes {
     jsonResponse: {
       /** Represents a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). A connected account is an external third-party account to which your user has authorized Seam to get access, for example, an August account with a list of door locks. */
       connected_account: {
+        /** Unique identifier for the connected account. */
         connected_account_id?: string | undefined
+        /** Date and time at which the connected account was created. */
         created_at?: string | undefined
+        /** User identifier associated with the connected account. */
         user_identifier?:
           | {
+              /** Username of the user identifier associated with the connected account. */
               username?: string | undefined
+              /** API URL for the user identifier associated with the connected account. */
               api_url?: string | undefined
+              /** Email address of the user identifier associated with the connected account. */
               email?: string | undefined
+              /** Phone number of the user identifier associated with the connected account. */
               phone?: string | undefined
+              /** Indicates whether the user identifier associated with the connected account is exclusive. */
               exclusive?: boolean | undefined
             }
           | undefined
+        /** Type of connected account. */
         account_type?: string | undefined
+        /** Display name for the connected account type. */
         account_type_display_name: string
+        /** Errors associated with the connected account. */
         errors: Array<
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
@@ -22308,8 +22480,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -22317,8 +22492,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -22326,25 +22504,36 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Salto KS metadata associated with the connected account that has an error. */
               salto_ks_metadata: {
+                /** Salto sites associated with the connected account that has an error. */
                 sites: Array<{
+                  /** ID of a Salto site associated with the connected account that has an error. */
                   site_id: string
+                  /** Name of a Salto site associated with the connected account that has an error. */
                   site_name: string
+                  /** Count of subscribed site users for a Salto site associated with the connected account that has an error. */
                   subscribed_site_user_count: number
+                  /** Subscription limit of site users for a Salto site associated with the connected account that has an error. */
                   site_user_subscription_limit: number
                 }>
               }
             }
         >
+        /** Warnings associated with the connected account. */
         warnings: Array<
           | {
               /** Date and time at which Seam created the warning. */
               created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
@@ -22352,6 +22541,7 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the warning. */
               created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_connected_account'
@@ -22359,14 +22549,21 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the warning. */
               created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_ks_subscription_limit_almost_reached'
+              /** Salto KS metadata associated with the connected account that has a warning. */
               salto_ks_metadata: {
+                /** Salto sites associated with the connected account that has a warning. */
                 sites: Array<{
+                  /** ID of a Salto site associated with the connected account that has a warning. */
                   site_id: string
+                  /** Name of a Salto site associated with the connected account that has a warning. */
                   site_name: string
+                  /** Subscription limit of site users for a Salto site associated with the connected account that has a warning. */
                   site_user_subscription_limit: number
+                  /** Count of subscribed site users for a Salto site associated with the connected account that has a warning. */
                   subscribed_site_user_count: number
                 }>
               }
@@ -22374,6 +22571,7 @@ export interface Routes {
         >
         /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
+        /** Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API. */
         automatically_manage_new_devices: boolean
       }
     }
@@ -23254,8 +23452,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -23263,8 +23464,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -24438,8 +24642,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -24447,8 +24654,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -24891,8 +25101,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -24900,8 +25113,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -25440,8 +25656,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -25449,8 +25668,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -29693,8 +29915,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -29702,8 +29927,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -30683,8 +30911,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -30692,8 +30923,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -31832,8 +32066,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -31841,8 +32078,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -32821,8 +33061,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -32830,8 +33073,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -39136,8 +39382,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -39145,8 +39394,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -40125,8 +40377,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -40134,8 +40389,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -50064,8 +50322,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -50073,8 +50334,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -53769,8 +54033,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -53778,8 +54045,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -54758,8 +55028,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -54767,8 +55040,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -62071,8 +62347,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -62080,8 +62359,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -63062,8 +63344,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -63071,8 +63356,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'

@@ -1105,16 +1105,28 @@ export default {
                       enum: ['invalid_credentials'],
                       type: 'string',
                     },
-                    is_bridge_error: { type: 'boolean' },
-                    is_connected_account_error: { type: 'boolean' },
-                    message: { type: 'string' },
+                    is_bridge_error: {
+                      description:
+                        'Indicates whether the error is related to Seam Bridge.',
+                      type: 'boolean',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates whether the error is related specifically to the connected account.',
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
                 },
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\n  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -1128,9 +1140,21 @@ export default {
                       enum: ['bridge_disconnected'],
                       type: 'string',
                     },
-                    is_bridge_error: { type: 'boolean' },
-                    is_connected_account_error: { type: 'boolean' },
-                    message: { type: 'string' },
+                    is_bridge_error: {
+                      description:
+                        'Indicates whether the error is related to Seam Bridge.',
+                      type: 'boolean',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates whether the error is related specifically to the connected account.',
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
@@ -7308,11 +7332,30 @@ export default {
         description:
           'Represents a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). A connected account is an external third-party account to which your user has authorized Seam to get access, for example, an August account with a list of door locks.',
         properties: {
-          account_type: { type: 'string' },
-          account_type_display_name: { type: 'string' },
-          automatically_manage_new_devices: { type: 'boolean' },
-          connected_account_id: { format: 'uuid', type: 'string' },
-          created_at: { format: 'date-time', type: 'string' },
+          account_type: {
+            description: 'Type of connected account.',
+            type: 'string',
+          },
+          account_type_display_name: {
+            description: 'Display name for the connected account type.',
+            type: 'string',
+          },
+          automatically_manage_new_devices: {
+            description:
+              'Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API.',
+            type: 'boolean',
+          },
+          connected_account_id: {
+            description: 'Unique identifier for the connected account.',
+            format: 'uuid',
+            type: 'string',
+          },
+          created_at: {
+            description:
+              'Date and time at which the connected account was created.',
+            format: 'date-time',
+            type: 'string',
+          },
           custom_metadata: {
             additionalProperties: {
               oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -7322,6 +7365,7 @@ export default {
             type: 'object',
           },
           errors: {
+            description: 'Errors associated with the connected account.',
             items: {
               discriminator: { propertyName: 'error_code' },
               oneOf: [
@@ -7340,9 +7384,21 @@ export default {
                       enum: ['account_disconnected'],
                       type: 'string',
                     },
-                    is_bridge_error: { type: 'boolean' },
-                    is_connected_account_error: { type: 'boolean' },
-                    message: { type: 'string' },
+                    is_bridge_error: {
+                      description:
+                        'Indicates whether the error is related to Seam Bridge.',
+                      type: 'boolean',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates whether the error is related specifically to the connected account.',
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
@@ -7362,16 +7418,28 @@ export default {
                       enum: ['invalid_credentials'],
                       type: 'string',
                     },
-                    is_bridge_error: { type: 'boolean' },
-                    is_connected_account_error: { type: 'boolean' },
-                    message: { type: 'string' },
+                    is_bridge_error: {
+                      description:
+                        'Indicates whether the error is related to Seam Bridge.',
+                      type: 'boolean',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates whether the error is related specifically to the connected account.',
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
                 },
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\n  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -7385,9 +7453,21 @@ export default {
                       enum: ['bridge_disconnected'],
                       type: 'string',
                     },
-                    is_bridge_error: { type: 'boolean' },
-                    is_connected_account_error: { type: 'boolean' },
-                    message: { type: 'string' },
+                    is_bridge_error: {
+                      description:
+                        'Indicates whether the error is related to Seam Bridge.',
+                      type: 'boolean',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates whether the error is related specifically to the connected account.',
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
@@ -7408,21 +7488,51 @@ export default {
                       enum: ['salto_ks_subscription_limit_exceeded'],
                       type: 'string',
                     },
-                    is_bridge_error: { type: 'boolean' },
-                    is_connected_account_error: { type: 'boolean' },
-                    message: { type: 'string' },
+                    is_bridge_error: {
+                      description:
+                        'Indicates whether the error is related to Seam Bridge.',
+                      type: 'boolean',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates whether the error is related specifically to the connected account.',
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     salto_ks_metadata: {
+                      description:
+                        'Salto KS metadata associated with the connected account that has an error.',
                       properties: {
                         sites: {
+                          description:
+                            'Salto sites associated with the connected account that has an error.',
                           items: {
+                            description:
+                              'Salto site associated with the connected account that has an error.',
                             properties: {
-                              site_id: { type: 'string' },
-                              site_name: { type: 'string' },
+                              site_id: {
+                                description:
+                                  'ID of a Salto site associated with the connected account that has an error.',
+                                type: 'string',
+                              },
+                              site_name: {
+                                description:
+                                  'Name of a Salto site associated with the connected account that has an error.',
+                                type: 'string',
+                              },
                               site_user_subscription_limit: {
+                                description:
+                                  'Subscription limit of site users for a Salto site associated with the connected account that has an error.',
                                 minimum: 0,
                                 type: 'integer',
                               },
                               subscribed_site_user_count: {
+                                description:
+                                  'Count of subscribed site users for a Salto site associated with the connected account that has an error.',
                                 minimum: 0,
                                 type: 'integer',
                               },
@@ -7455,22 +7565,46 @@ export default {
             type: 'array',
           },
           user_identifier: {
+            description:
+              'User identifier associated with the connected account.',
             properties: {
-              api_url: { type: 'string' },
-              email: { type: 'string' },
-              exclusive: { type: 'boolean' },
-              phone: { type: 'string' },
-              username: { type: 'string' },
+              api_url: {
+                description:
+                  'API URL for the user identifier associated with the connected account.',
+                type: 'string',
+              },
+              email: {
+                description:
+                  'Email address of the user identifier associated with the connected account.',
+                type: 'string',
+              },
+              exclusive: {
+                description:
+                  'Indicates whether the user identifier associated with the connected account is exclusive.',
+                type: 'boolean',
+              },
+              phone: {
+                description:
+                  'Phone number of the user identifier associated with the connected account.',
+                type: 'string',
+              },
+              username: {
+                description:
+                  'Username of the user identifier associated with the connected account.',
+                type: 'string',
+              },
             },
             type: 'object',
           },
           warnings: {
+            description: 'Warnings associated with the connected account.',
             items: {
-              description: 'Warning associated with the `connected_account`.',
+              description: 'Warning associated with the connected account.',
               discriminator: { propertyName: 'warning_code' },
               oneOf: [
                 {
-                  description: 'Scheduled downtime for account planned.',
+                  description:
+                    'Scheduled downtime planned for the connected account.',
                   properties: {
                     created_at: {
                       description:
@@ -7478,7 +7612,11 @@ export default {
                       format: 'date-time',
                       type: 'string',
                     },
-                    message: { type: 'string' },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -7491,7 +7629,7 @@ export default {
                 },
                 {
                   description:
-                    'An unknown issue occurred while syncing the state of this connected account with the provider. This issue may affect the proper functioning of one or more resources in this account.',
+                    'An unknown issue occurred while syncing the state of the connected account with the provider. This issue may affect the proper functioning of one or more resources in the account.',
                   properties: {
                     created_at: {
                       description:
@@ -7499,7 +7637,11 @@ export default {
                       format: 'date-time',
                       type: 'string',
                     },
-                    message: { type: 'string' },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -7512,7 +7654,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this.',
+                    'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site.',
                   properties: {
                     created_at: {
                       description:
@@ -7520,19 +7662,41 @@ export default {
                       format: 'date-time',
                       type: 'string',
                     },
-                    message: { type: 'string' },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     salto_ks_metadata: {
+                      description:
+                        'Salto KS metadata associated with the connected account that has a warning.',
                       properties: {
                         sites: {
+                          description:
+                            'Salto sites associated with the connected account that has a warning.',
                           items: {
+                            description:
+                              'Salto site associated with the connected account that has a warning.',
                             properties: {
-                              site_id: { type: 'string' },
-                              site_name: { type: 'string' },
+                              site_id: {
+                                description:
+                                  'ID of a Salto site associated with the connected account that has a warning.',
+                                type: 'string',
+                              },
+                              site_name: {
+                                description:
+                                  'Name of a Salto site associated with the connected account that has a warning.',
+                                type: 'string',
+                              },
                               site_user_subscription_limit: {
+                                description:
+                                  'Subscription limit of site users for a Salto site associated with the connected account that has a warning.',
                                 minimum: 0,
                                 type: 'integer',
                               },
                               subscribed_site_user_count: {
+                                description:
+                                  'Count of subscribed site users for a Salto site associated with the connected account that has a warning.',
                                 minimum: 0,
                                 type: 'integer',
                               },
@@ -8003,16 +8167,28 @@ export default {
                       enum: ['invalid_credentials'],
                       type: 'string',
                     },
-                    is_bridge_error: { type: 'boolean' },
-                    is_connected_account_error: { type: 'boolean' },
-                    message: { type: 'string' },
+                    is_bridge_error: {
+                      description:
+                        'Indicates whether the error is related to Seam Bridge.',
+                      type: 'boolean',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates whether the error is related specifically to the connected account.',
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
                 },
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\n  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -8026,9 +8202,21 @@ export default {
                       enum: ['bridge_disconnected'],
                       type: 'string',
                     },
-                    is_bridge_error: { type: 'boolean' },
-                    is_connected_account_error: { type: 'boolean' },
-                    message: { type: 'string' },
+                    is_bridge_error: {
+                      description:
+                        'Indicates whether the error is related to Seam Bridge.',
+                      type: 'boolean',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates whether the error is related specifically to the connected account.',
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
@@ -17007,16 +17195,28 @@ export default {
                       enum: ['invalid_credentials'],
                       type: 'string',
                     },
-                    is_bridge_error: { type: 'boolean' },
-                    is_connected_account_error: { type: 'boolean' },
-                    message: { type: 'string' },
+                    is_bridge_error: {
+                      description:
+                        'Indicates whether the error is related to Seam Bridge.',
+                      type: 'boolean',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates whether the error is related specifically to the connected account.',
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
                 },
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\n  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -17030,9 +17230,21 @@ export default {
                       enum: ['bridge_disconnected'],
                       type: 'string',
                     },
-                    is_bridge_error: { type: 'boolean' },
-                    is_connected_account_error: { type: 'boolean' },
-                    message: { type: 'string' },
+                    is_bridge_error: {
+                      description:
+                        'Indicates whether the error is related to Seam Bridge.',
+                      type: 'boolean',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates whether the error is related specifically to the connected account.',
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
@@ -18923,16 +19135,28 @@ export default {
                       enum: ['invalid_credentials'],
                       type: 'string',
                     },
-                    is_bridge_error: { type: 'boolean' },
-                    is_connected_account_error: { type: 'boolean' },
-                    message: { type: 'string' },
+                    is_bridge_error: {
+                      description:
+                        'Indicates whether the error is related to Seam Bridge.',
+                      type: 'boolean',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates whether the error is related specifically to the connected account.',
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
                 },
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\n  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -18946,9 +19170,21 @@ export default {
                       enum: ['bridge_disconnected'],
                       type: 'string',
                     },
-                    is_bridge_error: { type: 'boolean' },
-                    is_connected_account_error: { type: 'boolean' },
-                    message: { type: 'string' },
+                    is_bridge_error: {
+                      description:
+                        'Indicates whether the error is related to Seam Bridge.',
+                      type: 'boolean',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates whether the error is related specifically to the connected account.',
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
@@ -24733,14 +24969,25 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  acs_system_id: {
+                    description:
+                      'ID of the access system that you want to delete. You must provide acs_system_id with user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   acs_user_id: {
                     description:
-                      'ID of the access system user that you want to delete.',
+                      'ID of the access system user that you want to delete. You must provide either acs_user_id or user_identity_id',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity that you want to delete. You must provide either acs_user_id or user_identity_id. If you provide user_identity_id, you must also provide acs_system_id.',
                     format: 'uuid',
                     type: 'string',
                   },
                 },
-                required: ['acs_user_id'],
                 type: 'object',
               },
             },
@@ -24785,14 +25032,25 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  acs_system_id: {
+                    description:
+                      'ID of the access system that you want to get. You can only provide acs_user_id or user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   acs_user_id: {
                     description:
-                      'ID of the access system user that you want to get.',
+                      'ID of the access system user that you want to get. You can only provide acs_user_id or user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity that you want to get. You can only provide acs_user_id or user_identity_id.',
                     format: 'uuid',
                     type: 'string',
                   },
                 },
-                required: ['acs_user_id'],
                 type: 'object',
               },
             },
@@ -25078,14 +25336,25 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  acs_system_id: {
+                    description:
+                      'ID of the access system for which you want to revoke access. You can only provide acs_system_id with user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   acs_user_id: {
                     description:
-                      'ID of the access system user for whom you want to revoke access.',
+                      'ID of the access system user for whom you want to revoke access. You can only provide acs_user_id or user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity for whom you want to revoke access. You can only provide acs_user_id or user_identity_id.',
                     format: 'uuid',
                     type: 'string',
                   },
                 },
-                required: ['acs_user_id'],
                 type: 'object',
               },
             },
@@ -25130,14 +25399,25 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  acs_system_id: {
+                    description:
+                      'ID of the access system that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   acs_user_id: {
                     description:
-                      'ID of the access system user that you want to suspend.',
+                      'ID of the access system user that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id.',
                     format: 'uuid',
                     type: 'string',
                   },
                 },
-                required: ['acs_user_id'],
                 type: 'object',
               },
             },
@@ -25325,14 +25605,25 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  acs_system_id: {
+                    description:
+                      'ID of the access system of the user that you want to unsuspend. You can only provide acs_system_id with user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   acs_user_id: {
                     description:
-                      'ID of the access system user that you want to unsuspend.',
+                      'ID of the access system user that you want to unsuspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity that you want to unsuspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id.',
                     format: 'uuid',
                     type: 'string',
                   },
                 },
-                required: ['acs_user_id'],
                 type: 'object',
               },
             },
@@ -25398,9 +25689,15 @@ export default {
                     required: ['starts_at', 'ends_at'],
                     type: 'object',
                   },
+                  acs_system_id: {
+                    description:
+                      'ID of the access system that you want to update. You can only provide acs_system_id with user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   acs_user_id: {
                     description:
-                      'ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+                      'ID of the access system user that you want to update. You can only provide acs_user_id or user_identity_id.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -25428,8 +25725,13 @@ export default {
                       'Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
                     type: 'string',
                   },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity that you want to update. You can only provide acs_user_id or user_identity_id. If you provide user_identity_id, you must also provide acs_system_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
-                required: ['acs_user_id'],
                 type: 'object',
               },
             },
@@ -25492,9 +25794,15 @@ export default {
                     required: ['starts_at', 'ends_at'],
                     type: 'object',
                   },
+                  acs_system_id: {
+                    description:
+                      'ID of the access system that you want to update. You can only provide acs_system_id with user_identity_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   acs_user_id: {
                     description:
-                      'ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+                      'ID of the access system user that you want to update. You can only provide acs_user_id or user_identity_id.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -25522,8 +25830,13 @@ export default {
                       'Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
                     type: 'string',
                   },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity that you want to update. You can only provide acs_user_id or user_identity_id. If you provide user_identity_id, you must also provide acs_system_id.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
-                required: ['acs_user_id'],
                 type: 'object',
               },
             },
