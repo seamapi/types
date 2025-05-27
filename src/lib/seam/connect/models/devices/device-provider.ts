@@ -114,7 +114,6 @@ export const PROVIDER_CATEGORY_MAP = {
   thermostats: ['ecobee', 'nest', 'sensi', 'honeywell_resideo'],
   noise_sensors: ['minut', 'noiseaware'],
   access_control_systems: [
-    'pti',
     'visionline',
     'assa_abloy_credential_service',
     'latch',
