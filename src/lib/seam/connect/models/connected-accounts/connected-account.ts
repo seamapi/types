@@ -7,9 +7,21 @@ const common_connected_account_error = z.object({
     .string()
     .datetime()
     .describe('Date and time at which Seam created the error.'),
-  message: z.string(),
-  is_connected_account_error: z.boolean().optional(),
-  is_bridge_error: z.boolean().optional(),
+  message: z
+    .string()
+    .describe(
+      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+    ),
+  is_connected_account_error: z
+    .boolean()
+    .optional()
+    .describe(
+      'Indicates whether the error is related specifically to the connected account.',
+    ),
+  is_bridge_error: z
+    .boolean()
+    .optional()
+    .describe('Indicates whether the error is related to Seam Bridge.'),
 })
 
 const error_code_description =
@@ -23,7 +35,11 @@ const common_connected_account_warning = z.object({
     .string()
     .datetime()
     .describe('Date and time at which Seam created the warning.'),
-  message: z.string(),
+  message: z
+    .string()
+    .describe(
+      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+    ),
 })
 
 export const account_disconnected = common_connected_account_error
@@ -42,11 +58,15 @@ export const invalid_credentials = common_connected_account_error
   })
   .describe('Credentials provided were invalid.')
 
-export const bridge_disconnected = common_connected_account_error.extend({
-  error_code: z.literal('bridge_disconnected').describe(error_code_description),
-})
-  .describe(`Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
-  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).`)
+export const bridge_disconnected = common_connected_account_error
+  .extend({
+    error_code: z
+      .literal('bridge_disconnected')
+      .describe(error_code_description),
+  })
+  .describe(
+    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+  )
 
 export const salto_ks_subscription_limit_exceeded =
   common_connected_account_error
@@ -54,16 +74,48 @@ export const salto_ks_subscription_limit_exceeded =
       error_code: z
         .literal('salto_ks_subscription_limit_exceeded')
         .describe(error_code_description),
-      salto_ks_metadata: z.object({
-        sites: z.array(
-          z.object({
-            site_id: z.string(),
-            site_name: z.string(),
-            subscribed_site_user_count: z.number().int().min(0),
-            site_user_subscription_limit: z.number().int().min(0),
-          }),
+      salto_ks_metadata: z
+        .object({
+          sites: z
+            .array(
+              z
+                .object({
+                  site_id: z
+                    .string()
+                    .describe(
+                      'ID of a Salto site associated with the connected account that has an error.',
+                    ),
+                  site_name: z
+                    .string()
+                    .describe(
+                      'Name of a Salto site associated with the connected account that has an error.',
+                    ),
+                  subscribed_site_user_count: z
+                    .number()
+                    .int()
+                    .min(0)
+                    .describe(
+                      'Count of subscribed site users for a Salto site associated with the connected account that has an error.',
+                    ),
+                  site_user_subscription_limit: z
+                    .number()
+                    .int()
+                    .min(0)
+                    .describe(
+                      'Subscription limit of site users for a Salto site associated with the connected account that has an error.',
+                    ),
+                })
+                .describe(
+                  'Salto site associated with the connected account that has an error.',
+                ),
+            )
+            .describe(
+              'Salto sites associated with the connected account that has an error.',
+            ),
+        })
+        .describe(
+          'Salto KS metadata associated with the connected account that has an error.',
         ),
-      }),
     })
     .describe(
       'Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.',
@@ -101,7 +153,7 @@ export const unknown_issue_with_connected_account =
         .describe(warning_code_description),
     })
     .describe(
-      'An unknown issue occurred while syncing the state of this connected account with the provider. This issue may affect the proper functioning of one or more resources in this account.',
+      'An unknown issue occurred while syncing the state of the connected account with the provider. This issue may affect the proper functioning of one or more resources in the account.',
     )
 
 const scheduled_maintenance_window = common_connected_account_warning
@@ -110,7 +162,7 @@ const scheduled_maintenance_window = common_connected_account_warning
       .literal('scheduled_maintenance_window')
       .describe(warning_code_description),
   })
-  .describe('Scheduled downtime for account planned.')
+  .describe('Scheduled downtime planned for the connected account.')
 
 const salto_ks_subscription_limit_almost_reached =
   common_connected_account_warning
@@ -118,19 +170,51 @@ const salto_ks_subscription_limit_almost_reached =
       warning_code: z
         .literal('salto_ks_subscription_limit_almost_reached')
         .describe(warning_code_description),
-      salto_ks_metadata: z.object({
-        sites: z.array(
-          z.object({
-            site_id: z.string(),
-            site_name: z.string(),
-            site_user_subscription_limit: z.number().int().min(0),
-            subscribed_site_user_count: z.number().int().min(0),
-          }),
+      salto_ks_metadata: z
+        .object({
+          sites: z
+            .array(
+              z
+                .object({
+                  site_id: z
+                    .string()
+                    .describe(
+                      'ID of a Salto site associated with the connected account that has a warning.',
+                    ),
+                  site_name: z
+                    .string()
+                    .describe(
+                      'Name of a Salto site associated with the connected account that has a warning.',
+                    ),
+                  site_user_subscription_limit: z
+                    .number()
+                    .int()
+                    .min(0)
+                    .describe(
+                      'Subscription limit of site users for a Salto site associated with the connected account that has a warning.',
+                    ),
+                  subscribed_site_user_count: z
+                    .number()
+                    .int()
+                    .min(0)
+                    .describe(
+                      'Count of subscribed site users for a Salto site associated with the connected account that has a warning.',
+                    ),
+                })
+                .describe(
+                  'Salto site associated with the connected account that has a warning.',
+                ),
+            )
+            .describe(
+              'Salto sites associated with the connected account that has a warning.',
+            ),
+        })
+        .describe(
+          'Salto KS metadata associated with the connected account that has a warning.',
         ),
-      }),
     })
     .describe(
-      'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this.',
+      'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site.',
     )
 
 const connected_account_warning = z
@@ -139,7 +223,7 @@ const connected_account_warning = z
     unknown_issue_with_connected_account,
     salto_ks_subscription_limit_almost_reached,
   ])
-  .describe('Warning associated with the `connected_account`.')
+  .describe('Warning associated with the connected account.')
 
 const connected_account_warning_map = z.object({
   scheduled_maintenance_window: scheduled_maintenance_window
@@ -157,23 +241,67 @@ export type ConnectedAccountWarningMap = z.infer<
 >
 
 export const connected_account = z.object({
-  connected_account_id: z.string().uuid().optional(),
-  created_at: z.string().datetime().optional(),
+  connected_account_id: z
+    .string()
+    .uuid()
+    .optional()
+    .describe('Unique identifier for the connected account.'),
+  created_at: z
+    .string()
+    .datetime()
+    .optional()
+    .describe('Date and time at which the connected account was created.'),
   user_identifier: z
     .object({
-      username: z.string().optional(),
-      api_url: z.string().optional(),
-      email: z.string().optional(),
-      phone: z.string().optional(),
-      exclusive: z.boolean().optional(),
+      username: z
+        .string()
+        .optional()
+        .describe(
+          'Username of the user identifier associated with the connected account.',
+        ),
+      api_url: z
+        .string()
+        .optional()
+        .describe(
+          'API URL for the user identifier associated with the connected account.',
+        ),
+      email: z
+        .string()
+        .optional()
+        .describe(
+          'Email address of the user identifier associated with the connected account.',
+        ),
+      phone: z
+        .string()
+        .optional()
+        .describe(
+          'Phone number of the user identifier associated with the connected account.',
+        ),
+      exclusive: z
+        .boolean()
+        .optional()
+        .describe(
+          'Indicates whether the user identifier associated with the connected account is exclusive.',
+        ),
     })
-    .optional(),
-  account_type: z.string().optional(),
-  account_type_display_name: z.string(),
-  errors: z.array(connected_account_error),
-  warnings: z.array(connected_account_warning),
+    .optional()
+    .describe('User identifier associated with the connected account.'),
+  account_type: z.string().optional().describe('Type of connected account.'),
+  account_type_display_name: z
+    .string()
+    .describe('Display name for the connected account type.'),
+  errors: z
+    .array(connected_account_error)
+    .describe('Errors associated with the connected account.'),
+  warnings: z
+    .array(connected_account_warning)
+    .describe('Warnings associated with the connected account.'),
   custom_metadata,
-  automatically_manage_new_devices: z.boolean(),
+  automatically_manage_new_devices: z
+    .boolean()
+    .describe(
+      'Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API.',
+    ),
 }).describe(`
   ---
   route_path: /connected_accounts

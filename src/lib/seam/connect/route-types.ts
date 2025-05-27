@@ -1718,8 +1718,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -1727,8 +1730,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -1839,7 +1845,7 @@ export interface Routes {
         starts_at?: (string | null) | undefined
         /** Date and time after which the time-bound access code becomes inactive. */
         ends_at?: (string | null) | undefined
-        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. */
+        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. See also [Lifecycle of Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/lifecycle-of-access-codes). */
         status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         /** Indicates whether a backup access code is available for use if the primary access code is lost or compromised. */
         is_backup_access_code_available: boolean
@@ -2274,8 +2280,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -2283,8 +2292,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -2395,7 +2407,7 @@ export interface Routes {
         starts_at?: (string | null) | undefined
         /** Date and time after which the time-bound access code becomes inactive. */
         ends_at?: (string | null) | undefined
-        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. */
+        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. See also [Lifecycle of Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/lifecycle-of-access-codes). */
         status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         /** Indicates whether a backup access code is available for use if the primary access code is lost or compromised. */
         is_backup_access_code_available: boolean
@@ -4133,8 +4145,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -4142,8 +4157,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -4254,7 +4272,7 @@ export interface Routes {
         starts_at?: (string | null) | undefined
         /** Date and time after which the time-bound access code becomes inactive. */
         ends_at?: (string | null) | undefined
-        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. */
+        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. See also [Lifecycle of Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/lifecycle-of-access-codes). */
         status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         /** Indicates whether a backup access code is available for use if the primary access code is lost or compromised. */
         is_backup_access_code_available: boolean
@@ -4663,8 +4681,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -4672,8 +4693,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -4784,7 +4808,7 @@ export interface Routes {
         starts_at?: (string | null) | undefined
         /** Date and time after which the time-bound access code becomes inactive. */
         ends_at?: (string | null) | undefined
-        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. */
+        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. See also [Lifecycle of Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/lifecycle-of-access-codes). */
         status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         /** Indicates whether a backup access code is available for use if the primary access code is lost or compromised. */
         is_backup_access_code_available: boolean
@@ -5201,8 +5225,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -5210,8 +5237,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -5322,7 +5352,7 @@ export interface Routes {
         starts_at?: (string | null) | undefined
         /** Date and time after which the time-bound access code becomes inactive. */
         ends_at?: (string | null) | undefined
-        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. */
+        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. See also [Lifecycle of Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/lifecycle-of-access-codes). */
         status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         /** Indicates whether a backup access code is available for use if the primary access code is lost or compromised. */
         is_backup_access_code_available: boolean
@@ -5717,8 +5747,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -5726,8 +5759,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -5838,7 +5874,7 @@ export interface Routes {
         starts_at?: (string | null) | undefined
         /** Date and time after which the time-bound access code becomes inactive. */
         ends_at?: (string | null) | undefined
-        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. */
+        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. See also [Lifecycle of Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/lifecycle-of-access-codes). */
         status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         /** Indicates whether a backup access code is available for use if the primary access code is lost or compromised. */
         is_backup_access_code_available: boolean
@@ -6266,8 +6302,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -6275,8 +6314,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -8112,8 +8154,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -8121,8 +8166,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -8618,8 +8666,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -8627,8 +8678,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -17734,8 +17788,12 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the access system user that you want to delete. */
-      acs_user_id: string
+      /** ID of the access system user that you want to delete. You must provide either acs_user_id or user_identity_id */
+      acs_user_id?: string | undefined
+      /** ID of the user identity that you want to delete. You must provide either acs_user_id or user_identity_id. If you provide user_identity_id, you must also provide acs_system_id. */
+      user_identity_id?: string | undefined
+      /** ID of the access system that you want to delete. You must provide acs_system_id with user_identity_id. */
+      acs_system_id?: string | undefined
     }
     formData: {}
     jsonResponse: {}
@@ -17746,8 +17804,12 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the access system user that you want to get. */
-      acs_user_id: string
+      /** ID of the access system user that you want to get. You can only provide acs_user_id or user_identity_id. */
+      acs_user_id?: string | undefined
+      /** ID of the user identity that you want to get. You can only provide acs_user_id or user_identity_id. */
+      user_identity_id?: string | undefined
+      /** ID of the access system that you want to get. You can only provide acs_user_id or user_identity_id. */
+      acs_system_id?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -18347,8 +18409,12 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the access system user for whom you want to revoke access. */
-      acs_user_id: string
+      /** ID of the access system user for whom you want to revoke access. You can only provide acs_user_id or user_identity_id. */
+      acs_user_id?: string | undefined
+      /** ID of the user identity for whom you want to revoke access. You can only provide acs_user_id or user_identity_id. */
+      user_identity_id?: string | undefined
+      /** ID of the access system for which you want to revoke access. You can only provide acs_system_id with user_identity_id. */
+      acs_system_id?: string | undefined
     }
     commonParams: {}
     formData: {}
@@ -18360,8 +18426,12 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the access system user that you want to suspend. */
-      acs_user_id: string
+      /** ID of the access system user that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id. */
+      acs_user_id?: string | undefined
+      /** ID of the user identity that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id. */
+      user_identity_id?: string | undefined
+      /** ID of the access system that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id. */
+      acs_system_id?: string | undefined
     }
     formData: {}
     jsonResponse: {}
@@ -18837,8 +18907,12 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the access system user that you want to unsuspend. */
-      acs_user_id: string
+      /** ID of the access system user that you want to unsuspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id. */
+      acs_user_id?: string | undefined
+      /** ID of the user identity that you want to unsuspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id. */
+      user_identity_id?: string | undefined
+      /** ID of the access system of the user that you want to unsuspend. You can only provide acs_system_id with user_identity_id. */
+      acs_system_id?: string | undefined
     }
     formData: {}
     jsonResponse: {}
@@ -18857,8 +18931,12 @@ export interface Routes {
             ends_at: string
           } | null)
         | undefined
-      /** ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
-      acs_user_id: string
+      /** ID of the access system user that you want to update. You can only provide acs_user_id or user_identity_id. */
+      acs_user_id?: string | undefined
+      /** ID of the user identity that you want to update. You can only provide acs_user_id or user_identity_id. If you provide user_identity_id, you must also provide acs_system_id. */
+      user_identity_id?: string | undefined
+      /** ID of the access system that you want to update. You can only provide acs_system_id with user_identity_id. */
+      acs_system_id?: string | undefined
       /** Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
       full_name?: string | undefined
       /**
@@ -21836,12 +21914,18 @@ export interface Routes {
     
     To list all providers within a category, use `/devices/list_device_providers` with the desired `provider_category` filter. To list all provider keys, use `/devices/list_device_providers` with no filters. */
       connect_webview: {
+        /** ID of the Connect Webview. */
         connect_webview_id: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the Connect Webview. */
         workspace_id: string
+        /** Date and time at which the Connect Webview was created. */
         created_at: string
+        /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the Connect Webview. */
         connected_account_id: string | null
+        /** URL for the Connect Webview. You use the URL to display the Connect Webview flow to your user. */
         url: string
         device_selection_mode: 'none' | 'single' | 'multiple'
+        /** List of accepted [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). */
         accepted_providers: string[]
         /**
          * @deprecated Unused. Will be removed. */
@@ -21849,15 +21933,25 @@ export interface Routes {
         /**
          * @deprecated Unused. Will be removed. */
         any_device_allowed: boolean
+        /** Indicates whether any provider is allowed. */
         any_provider_allowed: boolean
+        /** Indicates whether the user logged in successfully using the Connect Webview. */
         login_successful: boolean
+        /** Status of the Connect Webview. `authorized` indicates that the user has successfully logged into their device or system account, thereby completing the Connect Webview. */
         status: 'pending' | 'failed' | 'authorized'
+        /** URL to which the Connect Webview should redirect when the user successfully pairs a device or system. If you do not set the `custom_redirect_failure_url`, the Connect Webview redirects to the `custom_redirect_url` when an unexpected error occurs. */
         custom_redirect_url: string | null
+        /** URL to which the Connect Webview should redirect when an unexpected error occurs. */
         custom_redirect_failure_url: string | null
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
+        /** Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API. */
         automatically_manage_new_devices: boolean
+        /** Indicates whether Seam should [finish syncing all devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#wait_for_device_creation) in a newly-connected account before completing the associated Connect Webview. */
         wait_for_device_creation: boolean
+        /** Date and time at which the user authorized (through the Connect Webview) the management of their devices. */
         authorized_at: string | null
+        /** Selected provider of the Connect Webview, one of the [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). */
         selected_provider: string | null
       }
     }
@@ -21897,12 +21991,18 @@ export interface Routes {
     
     To list all providers within a category, use `/devices/list_device_providers` with the desired `provider_category` filter. To list all provider keys, use `/devices/list_device_providers` with no filters. */
       connect_webview: {
+        /** ID of the Connect Webview. */
         connect_webview_id: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the Connect Webview. */
         workspace_id: string
+        /** Date and time at which the Connect Webview was created. */
         created_at: string
+        /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the Connect Webview. */
         connected_account_id: string | null
+        /** URL for the Connect Webview. You use the URL to display the Connect Webview flow to your user. */
         url: string
         device_selection_mode: 'none' | 'single' | 'multiple'
+        /** List of accepted [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). */
         accepted_providers: string[]
         /**
          * @deprecated Unused. Will be removed. */
@@ -21910,15 +22010,25 @@ export interface Routes {
         /**
          * @deprecated Unused. Will be removed. */
         any_device_allowed: boolean
+        /** Indicates whether any provider is allowed. */
         any_provider_allowed: boolean
+        /** Indicates whether the user logged in successfully using the Connect Webview. */
         login_successful: boolean
+        /** Status of the Connect Webview. `authorized` indicates that the user has successfully logged into their device or system account, thereby completing the Connect Webview. */
         status: 'pending' | 'failed' | 'authorized'
+        /** URL to which the Connect Webview should redirect when the user successfully pairs a device or system. If you do not set the `custom_redirect_failure_url`, the Connect Webview redirects to the `custom_redirect_url` when an unexpected error occurs. */
         custom_redirect_url: string | null
+        /** URL to which the Connect Webview should redirect when an unexpected error occurs. */
         custom_redirect_failure_url: string | null
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
+        /** Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API. */
         automatically_manage_new_devices: boolean
+        /** Indicates whether Seam should [finish syncing all devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#wait_for_device_creation) in a newly-connected account before completing the associated Connect Webview. */
         wait_for_device_creation: boolean
+        /** Date and time at which the user authorized (through the Connect Webview) the management of their devices. */
         authorized_at: string | null
+        /** Selected provider of the Connect Webview, one of the [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). */
         selected_provider: string | null
       }
     }
@@ -21939,12 +22049,18 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       connect_webviews: Array<{
+        /** ID of the Connect Webview. */
         connect_webview_id: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the Connect Webview. */
         workspace_id: string
+        /** Date and time at which the Connect Webview was created. */
         created_at: string
+        /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the Connect Webview. */
         connected_account_id: string | null
+        /** URL for the Connect Webview. You use the URL to display the Connect Webview flow to your user. */
         url: string
         device_selection_mode: 'none' | 'single' | 'multiple'
+        /** List of accepted [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). */
         accepted_providers: string[]
         /**
          * @deprecated Unused. Will be removed. */
@@ -21952,15 +22068,25 @@ export interface Routes {
         /**
          * @deprecated Unused. Will be removed. */
         any_device_allowed: boolean
+        /** Indicates whether any provider is allowed. */
         any_provider_allowed: boolean
+        /** Indicates whether the user logged in successfully using the Connect Webview. */
         login_successful: boolean
+        /** Status of the Connect Webview. `authorized` indicates that the user has successfully logged into their device or system account, thereby completing the Connect Webview. */
         status: 'pending' | 'failed' | 'authorized'
+        /** URL to which the Connect Webview should redirect when the user successfully pairs a device or system. If you do not set the `custom_redirect_failure_url`, the Connect Webview redirects to the `custom_redirect_url` when an unexpected error occurs. */
         custom_redirect_url: string | null
+        /** URL to which the Connect Webview should redirect when an unexpected error occurs. */
         custom_redirect_failure_url: string | null
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
+        /** Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API. */
         automatically_manage_new_devices: boolean
+        /** Indicates whether Seam should [finish syncing all devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#wait_for_device_creation) in a newly-connected account before completing the associated Connect Webview. */
         wait_for_device_creation: boolean
+        /** Date and time at which the user authorized (through the Connect Webview) the management of their devices. */
         authorized_at: string | null
+        /** Selected provider of the Connect Webview, one of the [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). */
         selected_provider: string | null
       }>
     }
@@ -21997,25 +22123,39 @@ export interface Routes {
     jsonResponse: {
       /** Represents a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). A connected account is an external third-party account to which your user has authorized Seam to get access, for example, an August account with a list of door locks. */
       connected_account: {
+        /** Unique identifier for the connected account. */
         connected_account_id?: string | undefined
+        /** Date and time at which the connected account was created. */
         created_at?: string | undefined
+        /** User identifier associated with the connected account. */
         user_identifier?:
           | {
+              /** Username of the user identifier associated with the connected account. */
               username?: string | undefined
+              /** API URL for the user identifier associated with the connected account. */
               api_url?: string | undefined
+              /** Email address of the user identifier associated with the connected account. */
               email?: string | undefined
+              /** Phone number of the user identifier associated with the connected account. */
               phone?: string | undefined
+              /** Indicates whether the user identifier associated with the connected account is exclusive. */
               exclusive?: boolean | undefined
             }
           | undefined
+        /** Type of connected account. */
         account_type?: string | undefined
+        /** Display name for the connected account type. */
         account_type_display_name: string
+        /** Errors associated with the connected account. */
         errors: Array<
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
@@ -22023,8 +22163,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -22032,8 +22175,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -22041,25 +22187,36 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Salto KS metadata associated with the connected account that has an error. */
               salto_ks_metadata: {
+                /** Salto sites associated with the connected account that has an error. */
                 sites: Array<{
+                  /** ID of a Salto site associated with the connected account that has an error. */
                   site_id: string
+                  /** Name of a Salto site associated with the connected account that has an error. */
                   site_name: string
+                  /** Count of subscribed site users for a Salto site associated with the connected account that has an error. */
                   subscribed_site_user_count: number
+                  /** Subscription limit of site users for a Salto site associated with the connected account that has an error. */
                   site_user_subscription_limit: number
                 }>
               }
             }
         >
+        /** Warnings associated with the connected account. */
         warnings: Array<
           | {
               /** Date and time at which Seam created the warning. */
               created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
@@ -22067,6 +22224,7 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the warning. */
               created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_connected_account'
@@ -22074,20 +22232,29 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the warning. */
               created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_ks_subscription_limit_almost_reached'
+              /** Salto KS metadata associated with the connected account that has a warning. */
               salto_ks_metadata: {
+                /** Salto sites associated with the connected account that has a warning. */
                 sites: Array<{
+                  /** ID of a Salto site associated with the connected account that has a warning. */
                   site_id: string
+                  /** Name of a Salto site associated with the connected account that has a warning. */
                   site_name: string
+                  /** Subscription limit of site users for a Salto site associated with the connected account that has a warning. */
                   site_user_subscription_limit: number
+                  /** Count of subscribed site users for a Salto site associated with the connected account that has a warning. */
                   subscribed_site_user_count: number
                 }>
               }
             }
         >
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
+        /** Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API. */
         automatically_manage_new_devices: boolean
       }
     }
@@ -22111,25 +22278,39 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       connected_accounts: Array<{
+        /** Unique identifier for the connected account. */
         connected_account_id?: string | undefined
+        /** Date and time at which the connected account was created. */
         created_at?: string | undefined
+        /** User identifier associated with the connected account. */
         user_identifier?:
           | {
+              /** Username of the user identifier associated with the connected account. */
               username?: string | undefined
+              /** API URL for the user identifier associated with the connected account. */
               api_url?: string | undefined
+              /** Email address of the user identifier associated with the connected account. */
               email?: string | undefined
+              /** Phone number of the user identifier associated with the connected account. */
               phone?: string | undefined
+              /** Indicates whether the user identifier associated with the connected account is exclusive. */
               exclusive?: boolean | undefined
             }
           | undefined
+        /** Type of connected account. */
         account_type?: string | undefined
+        /** Display name for the connected account type. */
         account_type_display_name: string
+        /** Errors associated with the connected account. */
         errors: Array<
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
@@ -22137,8 +22318,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -22146,8 +22330,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -22155,25 +22342,36 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Salto KS metadata associated with the connected account that has an error. */
               salto_ks_metadata: {
+                /** Salto sites associated with the connected account that has an error. */
                 sites: Array<{
+                  /** ID of a Salto site associated with the connected account that has an error. */
                   site_id: string
+                  /** Name of a Salto site associated with the connected account that has an error. */
                   site_name: string
+                  /** Count of subscribed site users for a Salto site associated with the connected account that has an error. */
                   subscribed_site_user_count: number
+                  /** Subscription limit of site users for a Salto site associated with the connected account that has an error. */
                   site_user_subscription_limit: number
                 }>
               }
             }
         >
+        /** Warnings associated with the connected account. */
         warnings: Array<
           | {
               /** Date and time at which Seam created the warning. */
               created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
@@ -22181,6 +22379,7 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the warning. */
               created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_connected_account'
@@ -22188,20 +22387,29 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the warning. */
               created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_ks_subscription_limit_almost_reached'
+              /** Salto KS metadata associated with the connected account that has a warning. */
               salto_ks_metadata: {
+                /** Salto sites associated with the connected account that has a warning. */
                 sites: Array<{
+                  /** ID of a Salto site associated with the connected account that has a warning. */
                   site_id: string
+                  /** Name of a Salto site associated with the connected account that has a warning. */
                   site_name: string
+                  /** Subscription limit of site users for a Salto site associated with the connected account that has a warning. */
                   site_user_subscription_limit: number
+                  /** Count of subscribed site users for a Salto site associated with the connected account that has a warning. */
                   subscribed_site_user_count: number
                 }>
               }
             }
         >
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
+        /** Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API. */
         automatically_manage_new_devices: boolean
       }>
       /** Information about the current page of results. */
@@ -22232,25 +22440,39 @@ export interface Routes {
     jsonResponse: {
       /** Represents a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). A connected account is an external third-party account to which your user has authorized Seam to get access, for example, an August account with a list of door locks. */
       connected_account: {
+        /** Unique identifier for the connected account. */
         connected_account_id?: string | undefined
+        /** Date and time at which the connected account was created. */
         created_at?: string | undefined
+        /** User identifier associated with the connected account. */
         user_identifier?:
           | {
+              /** Username of the user identifier associated with the connected account. */
               username?: string | undefined
+              /** API URL for the user identifier associated with the connected account. */
               api_url?: string | undefined
+              /** Email address of the user identifier associated with the connected account. */
               email?: string | undefined
+              /** Phone number of the user identifier associated with the connected account. */
               phone?: string | undefined
+              /** Indicates whether the user identifier associated with the connected account is exclusive. */
               exclusive?: boolean | undefined
             }
           | undefined
+        /** Type of connected account. */
         account_type?: string | undefined
+        /** Display name for the connected account type. */
         account_type_display_name: string
+        /** Errors associated with the connected account. */
         errors: Array<
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
@@ -22258,8 +22480,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -22267,8 +22492,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -22276,25 +22504,36 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Salto KS metadata associated with the connected account that has an error. */
               salto_ks_metadata: {
+                /** Salto sites associated with the connected account that has an error. */
                 sites: Array<{
+                  /** ID of a Salto site associated with the connected account that has an error. */
                   site_id: string
+                  /** Name of a Salto site associated with the connected account that has an error. */
                   site_name: string
+                  /** Count of subscribed site users for a Salto site associated with the connected account that has an error. */
                   subscribed_site_user_count: number
+                  /** Subscription limit of site users for a Salto site associated with the connected account that has an error. */
                   site_user_subscription_limit: number
                 }>
               }
             }
         >
+        /** Warnings associated with the connected account. */
         warnings: Array<
           | {
               /** Date and time at which Seam created the warning. */
               created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
@@ -22302,6 +22541,7 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the warning. */
               created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_connected_account'
@@ -22309,20 +22549,29 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the warning. */
               created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_ks_subscription_limit_almost_reached'
+              /** Salto KS metadata associated with the connected account that has a warning. */
               salto_ks_metadata: {
+                /** Salto sites associated with the connected account that has a warning. */
                 sites: Array<{
+                  /** ID of a Salto site associated with the connected account that has a warning. */
                   site_id: string
+                  /** Name of a Salto site associated with the connected account that has a warning. */
                   site_name: string
+                  /** Subscription limit of site users for a Salto site associated with the connected account that has a warning. */
                   site_user_subscription_limit: number
+                  /** Count of subscribed site users for a Salto site associated with the connected account that has a warning. */
                   subscribed_site_user_count: number
                 }>
               }
             }
         >
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
+        /** Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API. */
         automatically_manage_new_devices: boolean
       }
     }
@@ -23203,8 +23452,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -23212,8 +23464,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -23328,6 +23583,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -23474,7 +23730,6 @@ export interface Routes {
             | 'igloohome'
             | 'hubitat'
             | 'controlbyweb'
-            | 'smartthings'
             | 'dormakaba_oracode'
             | 'tedee'
             | 'akiles'
@@ -23485,6 +23740,7 @@ export interface Routes {
             | 'noiseaware'
             | 'tado'
             | 'sensi'
+            | 'smartthings'
           )
         | undefined
       /** Array of device IDs for which you want to list devices. */
@@ -24386,8 +24642,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -24395,8 +24654,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -24511,6 +24773,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -24838,8 +25101,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -24847,8 +25113,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -25163,7 +25432,6 @@ export interface Routes {
             | 'igloohome'
             | 'hubitat'
             | 'controlbyweb'
-            | 'smartthings'
             | 'dormakaba_oracode'
             | 'tedee'
             | 'akiles'
@@ -25174,6 +25442,7 @@ export interface Routes {
             | 'noiseaware'
             | 'tado'
             | 'sensi'
+            | 'smartthings'
           )
         | undefined
       /** Array of device IDs for which you want to list devices. */
@@ -25387,8 +25656,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -25396,8 +25668,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -29640,8 +29915,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -29649,8 +29927,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -29765,6 +30046,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -30629,8 +30911,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -30638,8 +30923,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -30754,6 +31042,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -30864,7 +31153,6 @@ export interface Routes {
             | 'salto'
             | 'schlage'
             | 'seam'
-            | 'smartthings'
             | 'wyze'
             | 'yale'
             | 'two_n'
@@ -30876,6 +31164,7 @@ export interface Routes {
             | 'dormakaba_oracode'
             | 'tedee'
             | 'akiles'
+            | 'smartthings'
           )
         | undefined
       /** Array of device IDs for which you want to list devices. */
@@ -31777,8 +32066,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -31786,8 +32078,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -31902,6 +32197,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -32765,8 +33061,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -32774,8 +33073,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -32890,6 +33192,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -39079,8 +39382,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -39088,8 +39394,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -39204,6 +39513,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -40067,8 +40377,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -40076,8 +40389,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -40192,6 +40508,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -50005,8 +50322,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -50014,8 +50334,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -50130,6 +50453,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -52808,7 +53132,14 @@ export interface Routes {
         | undefined
       /** Manufacturer by which to filter thermostat devices. */
       manufacturer?:
-        | ('ecobee' | 'honeywell_resideo' | 'nest' | 'tado' | 'sensi')
+        | (
+            | 'ecobee'
+            | 'honeywell_resideo'
+            | 'nest'
+            | 'tado'
+            | 'sensi'
+            | 'smartthings'
+          )
         | undefined
       /** Array of device IDs for which you want to list devices. */
       device_ids?: string[] | undefined
@@ -53709,8 +54040,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -53718,8 +54052,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -53834,6 +54171,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -54697,8 +55035,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -54706,8 +55047,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -54822,6 +55166,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -62009,8 +62354,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -62018,8 +62366,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -62134,6 +62485,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
@@ -62999,8 +63351,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
@@ -63008,8 +63363,11 @@ export interface Routes {
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates whether the error is related specifically to the connected account. */
               is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to Seam Bridge. */
               is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'bridge_disconnected'
@@ -63124,6 +63482,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. */
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
