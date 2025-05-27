@@ -1845,7 +1845,7 @@ export interface Routes {
         starts_at?: (string | null) | undefined
         /** Date and time after which the time-bound access code becomes inactive. */
         ends_at?: (string | null) | undefined
-        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. */
+        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. See also [Lifecycle of Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/lifecycle-of-access-codes). */
         status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         /** Indicates whether a backup access code is available for use if the primary access code is lost or compromised. */
         is_backup_access_code_available: boolean
@@ -2407,7 +2407,7 @@ export interface Routes {
         starts_at?: (string | null) | undefined
         /** Date and time after which the time-bound access code becomes inactive. */
         ends_at?: (string | null) | undefined
-        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. */
+        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. See also [Lifecycle of Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/lifecycle-of-access-codes). */
         status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         /** Indicates whether a backup access code is available for use if the primary access code is lost or compromised. */
         is_backup_access_code_available: boolean
@@ -4272,7 +4272,7 @@ export interface Routes {
         starts_at?: (string | null) | undefined
         /** Date and time after which the time-bound access code becomes inactive. */
         ends_at?: (string | null) | undefined
-        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. */
+        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. See also [Lifecycle of Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/lifecycle-of-access-codes). */
         status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         /** Indicates whether a backup access code is available for use if the primary access code is lost or compromised. */
         is_backup_access_code_available: boolean
@@ -4808,7 +4808,7 @@ export interface Routes {
         starts_at?: (string | null) | undefined
         /** Date and time after which the time-bound access code becomes inactive. */
         ends_at?: (string | null) | undefined
-        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. */
+        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. See also [Lifecycle of Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/lifecycle-of-access-codes). */
         status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         /** Indicates whether a backup access code is available for use if the primary access code is lost or compromised. */
         is_backup_access_code_available: boolean
@@ -5352,7 +5352,7 @@ export interface Routes {
         starts_at?: (string | null) | undefined
         /** Date and time after which the time-bound access code becomes inactive. */
         ends_at?: (string | null) | undefined
-        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. */
+        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. See also [Lifecycle of Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/lifecycle-of-access-codes). */
         status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         /** Indicates whether a backup access code is available for use if the primary access code is lost or compromised. */
         is_backup_access_code_available: boolean
@@ -5874,7 +5874,7 @@ export interface Routes {
         starts_at?: (string | null) | undefined
         /** Date and time after which the time-bound access code becomes inactive. */
         ends_at?: (string | null) | undefined
-        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. */
+        /** Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. See also [Lifecycle of Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/lifecycle-of-access-codes). */
         status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         /** Indicates whether a backup access code is available for use if the primary access code is lost or compromised. */
         is_backup_access_code_available: boolean
@@ -23730,7 +23730,6 @@ export interface Routes {
             | 'igloohome'
             | 'hubitat'
             | 'controlbyweb'
-            | 'smartthings'
             | 'dormakaba_oracode'
             | 'tedee'
             | 'akiles'
@@ -23741,6 +23740,7 @@ export interface Routes {
             | 'noiseaware'
             | 'tado'
             | 'sensi'
+            | 'smartthings'
           )
         | undefined
       /** Array of device IDs for which you want to list devices. */
@@ -25432,7 +25432,6 @@ export interface Routes {
             | 'igloohome'
             | 'hubitat'
             | 'controlbyweb'
-            | 'smartthings'
             | 'dormakaba_oracode'
             | 'tedee'
             | 'akiles'
@@ -25443,6 +25442,7 @@ export interface Routes {
             | 'noiseaware'
             | 'tado'
             | 'sensi'
+            | 'smartthings'
           )
         | undefined
       /** Array of device IDs for which you want to list devices. */
@@ -31153,7 +31153,6 @@ export interface Routes {
             | 'salto'
             | 'schlage'
             | 'seam'
-            | 'smartthings'
             | 'wyze'
             | 'yale'
             | 'two_n'
@@ -31165,6 +31164,7 @@ export interface Routes {
             | 'dormakaba_oracode'
             | 'tedee'
             | 'akiles'
+            | 'smartthings'
           )
         | undefined
       /** Array of device IDs for which you want to list devices. */
@@ -53132,7 +53132,14 @@ export interface Routes {
         | undefined
       /** Manufacturer by which to filter thermostat devices. */
       manufacturer?:
-        | ('ecobee' | 'honeywell_resideo' | 'nest' | 'tado' | 'sensi')
+        | (
+            | 'ecobee'
+            | 'honeywell_resideo'
+            | 'nest'
+            | 'tado'
+            | 'sensi'
+            | 'smartthings'
+          )
         | undefined
       /** Array of device IDs for which you want to list devices. */
       device_ids?: string[] | undefined
