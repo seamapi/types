@@ -27302,6 +27302,58 @@ export default {
         'x-title': 'List Connected Accounts',
       },
     },
+    '/connected_accounts/sync': {
+      post: {
+        description:
+          'Request a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) sync attempt for the specified connected_account_id.',
+        operationId: 'connectedAccountsSyncPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connected_account_id: {
+                    description:
+                      'ID of the connected account that you want to sync.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['connected_account_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/connected_accounts/sync',
+        tags: ['/connected_accounts'],
+        'x-fern-sdk-group-name': ['connected_accounts'],
+        'x-fern-sdk-method-name': 'sync',
+        'x-response-key': null,
+        'x-title': 'Sync a Connected Account',
+      },
+    },
     '/connected_accounts/update': {
       post: {
         description:

@@ -22327,6 +22327,18 @@ export interface Routes {
       }
     }
   }
+  '/connected_accounts/sync': {
+    route: '/connected_accounts/sync'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** ID of the connected account that you want to sync. */
+      connected_account_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/connected_accounts/update': {
     route: '/connected_accounts/update'
     method: 'POST'
