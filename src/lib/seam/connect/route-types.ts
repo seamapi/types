@@ -22327,6 +22327,18 @@ export interface Routes {
       }
     }
   }
+  '/connected_accounts/sync': {
+    route: '/connected_accounts/sync'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** ID of the connected account that you want to sync. */
+      connected_account_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/connected_accounts/update': {
     route: '/connected_accounts/update'
     method: 'POST'
@@ -60748,6 +60760,18 @@ export interface Routes {
       }
     }
   }
+  '/unstable_access_grants/delete': {
+    route: '/unstable_access_grants/delete'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** ID of access grant to delete. */
+      access_grant_id: string
+    }
+    formData: {}
+    jsonResponse: {}
+  }
   '/unstable_access_grants/get': {
     route: '/unstable_access_grants/get'
     method: 'GET' | 'POST'
@@ -60834,6 +60858,18 @@ export interface Routes {
         created_at: string
       }>
     }
+  }
+  '/unstable_access_methods/delete': {
+    route: '/unstable_access_methods/delete'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** ID of access method to get. */
+      access_method_id: string
+    }
+    formData: {}
+    jsonResponse: {}
   }
   '/unstable_access_methods/get': {
     route: '/unstable_access_methods/get'

@@ -27302,6 +27302,58 @@ export default {
         'x-title': 'List Connected Accounts',
       },
     },
+    '/connected_accounts/sync': {
+      post: {
+        description:
+          'Request a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) sync attempt for the specified connected_account_id.',
+        operationId: 'connectedAccountsSyncPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connected_account_id: {
+                    description:
+                      'ID of the connected account that you want to sync.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['connected_account_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/connected_accounts/sync',
+        tags: ['/connected_accounts'],
+        'x-fern-sdk-group-name': ['connected_accounts'],
+        'x-fern-sdk-method-name': 'sync',
+        'x-response-key': null,
+        'x-title': 'Sync a Connected Account',
+      },
+    },
     '/connected_accounts/update': {
       post: {
         description:
@@ -34740,6 +34792,57 @@ export default {
         'x-undocumented': 'Unreleased.',
       },
     },
+    '/unstable_access_grants/delete': {
+      post: {
+        description: 'Delete an access grant.',
+        operationId: 'unstableAccessGrantsDeletePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_grant_id: {
+                    description: 'ID of access grant to delete.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['access_grant_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_access_grants/delete',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_access_grants'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete an Access Grant',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
     '/unstable_access_grants/get': {
       post: {
         description: 'Get an access grant.',
@@ -35056,6 +35159,57 @@ export default {
         'x-fern-sdk-return-value': 'access_grants',
         'x-response-key': 'access_grants',
         'x-title': 'List Access Grants',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
+    '/unstable_access_methods/delete': {
+      post: {
+        description: 'Delete an access method.',
+        operationId: 'unstableAccessMethodsDeletePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_method_id: {
+                    description: 'ID of access method to get.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['access_method_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_access_methods/delete',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_access_methods'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete an Access Method',
         'x-undocumented': 'Unreleased.',
       },
     },
