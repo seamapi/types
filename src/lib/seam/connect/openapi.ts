@@ -2330,32 +2330,6 @@ export default {
             type: 'string',
           },
           acs_user_count: { format: 'float', type: 'number' },
-          can_add_acs_users_to_acs_access_groups: {
-            description:
-              'Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).',
-            type: 'boolean',
-          },
-          can_automate_enrollment: {
-            description:
-              'Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
-            type: 'boolean',
-          },
-          can_create_acs_access_groups: {
-            description:
-              'Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).',
-            type: 'boolean',
-          },
-          can_create_user: { type: 'boolean' },
-          can_delete_user: { type: 'boolean' },
-          can_remove_acs_users_from_acs_access_groups: {
-            description:
-              'Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).',
-            type: 'boolean',
-          },
-          can_update_user_group_membership: { type: 'boolean' },
-          can_update_user_information: { type: 'boolean' },
-          can_update_user_schedule: { type: 'boolean' },
-          can_update_user_supension_state: { type: 'boolean' },
           connected_account_id: {
             description:
               'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',

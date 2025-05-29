@@ -17038,20 +17038,6 @@ export interface Routes {
               misconfigured_acs_entrance_ids?: string[] | undefined
             }
         >
-        /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). */
-        can_automate_enrollment?: boolean | undefined
-        /** Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
-        can_create_acs_access_groups?: boolean | undefined
-        /** Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
-        can_remove_acs_users_from_acs_access_groups?: boolean | undefined
-        /** Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
-        can_add_acs_users_to_acs_access_groups?: boolean | undefined
-        can_update_user_schedule?: boolean | undefined
-        can_create_user?: boolean | undefined
-        can_delete_user?: boolean | undefined
-        can_update_user_information?: boolean | undefined
-        can_update_user_supension_state?: boolean | undefined
-        can_update_user_group_membership?: boolean | undefined
       }
     }
   }
@@ -17228,20 +17214,6 @@ export interface Routes {
               misconfigured_acs_entrance_ids?: string[] | undefined
             }
         >
-        /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). */
-        can_automate_enrollment?: boolean | undefined
-        /** Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
-        can_create_acs_access_groups?: boolean | undefined
-        /** Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
-        can_remove_acs_users_from_acs_access_groups?: boolean | undefined
-        /** Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
-        can_add_acs_users_to_acs_access_groups?: boolean | undefined
-        can_update_user_schedule?: boolean | undefined
-        can_create_user?: boolean | undefined
-        can_delete_user?: boolean | undefined
-        can_update_user_information?: boolean | undefined
-        can_update_user_supension_state?: boolean | undefined
-        can_update_user_group_membership?: boolean | undefined
       }>
     }
   }
@@ -17418,20 +17390,6 @@ export interface Routes {
               misconfigured_acs_entrance_ids?: string[] | undefined
             }
         >
-        /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). */
-        can_automate_enrollment?: boolean | undefined
-        /** Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
-        can_create_acs_access_groups?: boolean | undefined
-        /** Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
-        can_remove_acs_users_from_acs_access_groups?: boolean | undefined
-        /** Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
-        can_add_acs_users_to_acs_access_groups?: boolean | undefined
-        can_update_user_schedule?: boolean | undefined
-        can_create_user?: boolean | undefined
-        can_delete_user?: boolean | undefined
-        can_update_user_information?: boolean | undefined
-        can_update_user_supension_state?: boolean | undefined
-        can_update_user_group_membership?: boolean | undefined
       }>
     }
   }
@@ -63593,20 +63551,6 @@ export interface Routes {
               misconfigured_acs_entrance_ids?: string[] | undefined
             }
         >
-        /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). */
-        can_automate_enrollment?: boolean | undefined
-        /** Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
-        can_create_acs_access_groups?: boolean | undefined
-        /** Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
-        can_remove_acs_users_from_acs_access_groups?: boolean | undefined
-        /** Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
-        can_add_acs_users_to_acs_access_groups?: boolean | undefined
-        can_update_user_schedule?: boolean | undefined
-        can_create_user?: boolean | undefined
-        can_delete_user?: boolean | undefined
-        can_update_user_information?: boolean | undefined
-        can_update_user_supension_state?: boolean | undefined
-        can_update_user_group_membership?: boolean | undefined
       }>
     }
   }
