@@ -308,6 +308,9 @@ const common_acs_user = z
         ---
         The last time an internal sync job completed for this ACS user.
       `),
+    connected_account_id: z.string().uuid().describe(`
+      The ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that is associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+    `),
   })
   .merge(user_fields)
 

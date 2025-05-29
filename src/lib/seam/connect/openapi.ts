@@ -2777,6 +2777,12 @@ export default {
             format: 'uuid',
             type: 'string',
           },
+          connected_account_id: {
+            description:
+              '\n      The ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that is associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).\n    ',
+            format: 'uuid',
+            type: 'string',
+          },
           created_at: {
             description:
               'Date and time at which the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created.',
@@ -3385,6 +3391,7 @@ export default {
           'warnings',
           'errors',
           'last_successful_sync_at',
+          'connected_account_id',
           'is_managed',
         ],
         type: 'object',
@@ -18087,6 +18094,12 @@ export default {
             format: 'uuid',
             type: 'string',
           },
+          connected_account_id: {
+            description:
+              '\n      The ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that is associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).\n    ',
+            format: 'uuid',
+            type: 'string',
+          },
           created_at: {
             description:
               'Date and time at which the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created.',
@@ -18695,6 +18708,7 @@ export default {
           'warnings',
           'errors',
           'last_successful_sync_at',
+          'connected_account_id',
           'is_managed',
         ],
         type: 'object',
