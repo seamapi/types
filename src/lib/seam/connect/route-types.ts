@@ -23615,6 +23615,7 @@ export interface Routes {
             | 'akiles'
             | 'ecobee'
             | 'honeywell_resideo'
+            | 'kwikset2'
             | 'minut'
             | 'nest'
             | 'noiseaware'
@@ -25317,6 +25318,7 @@ export interface Routes {
             | 'akiles'
             | 'ecobee'
             | 'honeywell_resideo'
+            | 'kwikset2'
             | 'minut'
             | 'nest'
             | 'noiseaware'
@@ -31044,6 +31046,7 @@ export interface Routes {
             | 'dormakaba_oracode'
             | 'tedee'
             | 'akiles'
+            | 'kwikset2'
             | 'smartthings'
           )
         | undefined
