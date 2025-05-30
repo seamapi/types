@@ -19769,6 +19769,11 @@ export default {
         scheme: 'bearer',
         type: 'http',
       },
+      customer_client_session: {
+        bearerFormat: 'Customer Client Session Token',
+        scheme: 'bearer',
+        type: 'http',
+      },
       pat_with_workspace: {
         bearerFormat: 'API Token',
         scheme: 'bearer',
@@ -26122,6 +26127,8 @@ export default {
                     items: { type: 'string' },
                     type: 'array',
                   },
+                  customer_id: { type: 'string' },
+                  customer_key: { type: 'string' },
                   expires_at: {
                     description:
                       'Date and time at which the client session should expire, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
@@ -26202,6 +26209,8 @@ export default {
                     items: { type: 'string' },
                     type: 'array',
                   },
+                  customer_id: { type: 'string' },
+                  customer_key: { type: 'string' },
                   expires_at: {
                     description:
                       'Date and time at which the client session should expire, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
@@ -26836,6 +26845,7 @@ export default {
                       'URL that you want to redirect the user to after the provider login is complete.',
                     type: 'string',
                   },
+                  customer_id: { format: 'uuid', type: 'string' },
                   device_selection_mode: {
                     enum: ['none', 'single', 'multiple'],
                     type: 'string',
@@ -26889,6 +26899,7 @@ export default {
         },
         security: [
           { client_session: [] },
+          { customer_client_session: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
@@ -27031,6 +27042,7 @@ export default {
                       'Custom metadata pairs by which you want to [filter Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata). Returns Connect Webviews with `custom_metadata` that contains all of the provided key:value pairs.',
                     type: 'object',
                   },
+                  customer_id: { type: 'string' },
                   limit: {
                     default: 500,
                     description:
@@ -27073,6 +27085,7 @@ export default {
         },
         security: [
           { client_session: [] },
+          { customer_client_session: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
