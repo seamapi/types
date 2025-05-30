@@ -21505,6 +21505,8 @@ export interface Routes {
     method: 'POST' | 'PUT'
     queryParams: {}
     jsonBody: {
+      customer_id?: string | undefined
+      customer_key?: string | undefined
       /** Your user ID for the user for whom you want to create a client session. */
       user_identifier_key?: string | undefined
       /** IDs of the [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) for which you want to create a client session. */
@@ -21730,6 +21732,7 @@ export interface Routes {
       custom_redirect_url?: string | undefined
       /** Alternative URL that you want to redirect the user to on an error. If you do not set this parameter, the Connect Webview falls back to the `custom_redirect_url`. */
       custom_redirect_failure_url?: string | undefined
+      customer_id?: string | undefined
       /** Accepted device provider keys as an alternative to `provider_category`. Use this parameter to specify accepted providers explicitly. See [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). To list all provider keys, use [`/devices/list_device_providers`](https://docs.seam.co/latest/api/devices/list_device_providers) with no filters. */
       accepted_providers?:
         | Array<
@@ -21943,6 +21946,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      customer_id?: string | undefined
       /** Your user ID for the user by which you want to filter Connect Webviews. */
       user_identifier_key?: string | undefined
       /** Custom metadata pairs by which you want to [filter Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata). Returns Connect Webviews with `custom_metadata` that contains all of the provided key:value pairs. */
