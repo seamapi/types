@@ -19769,6 +19769,11 @@ export default {
         scheme: 'bearer',
         type: 'http',
       },
+      customer_client_session: {
+        bearerFormat: 'Customer Client Session Token',
+        scheme: 'bearer',
+        type: 'http',
+      },
       pat_with_workspace: {
         bearerFormat: 'API Token',
         scheme: 'bearer',
@@ -26122,6 +26127,8 @@ export default {
                     items: { type: 'string' },
                     type: 'array',
                   },
+                  customer_id: { type: 'string' },
+                  customer_key: { type: 'string' },
                   expires_at: {
                     description:
                       'Date and time at which the client session should expire, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
@@ -26202,6 +26209,8 @@ export default {
                     items: { type: 'string' },
                     type: 'array',
                   },
+                  customer_id: { type: 'string' },
+                  customer_key: { type: 'string' },
                   expires_at: {
                     description:
                       'Date and time at which the client session should expire, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
@@ -26836,6 +26845,7 @@ export default {
                       'URL that you want to redirect the user to after the provider login is complete.',
                     type: 'string',
                   },
+                  customer_id: { format: 'uuid', type: 'string' },
                   device_selection_mode: {
                     enum: ['none', 'single', 'multiple'],
                     type: 'string',
@@ -26889,6 +26899,7 @@ export default {
         },
         security: [
           { client_session: [] },
+          { customer_client_session: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
@@ -27031,6 +27042,7 @@ export default {
                       'Custom metadata pairs by which you want to [filter Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata). Returns Connect Webviews with `custom_metadata` that contains all of the provided key:value pairs.',
                     type: 'object',
                   },
+                  customer_id: { type: 'string' },
                   limit: {
                     default: 500,
                     description:
@@ -27073,6 +27085,7 @@ export default {
         },
         security: [
           { client_session: [] },
+          { customer_client_session: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
@@ -31900,6 +31913,85 @@ export default {
         'x-undocumented': 'Mobile SDK only.',
       },
     },
+    '/seam/partner/v1/resources/list': {
+      post: {
+        description: 'List partner resources that have been pushed to Seam.',
+        operationId: 'seamPartnerV1ResourcesListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  resource_type_alias: {
+                    description: 'Filter by resource type alias.',
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    partner_resources: {
+                      items: {
+                        properties: {
+                          custom_metadata: {
+                            additionalProperties: { type: 'string' },
+                            type: 'object',
+                          },
+                          customer_key: { type: 'string' },
+                          description: { type: 'string' },
+                          email_address: { type: 'string' },
+                          ends_at: { type: 'string' },
+                          location_keys: {
+                            items: { type: 'string' },
+                            type: 'array',
+                          },
+                          name: { type: 'string' },
+                          partner_resource_key: { type: 'string' },
+                          partner_resource_type: { type: 'string' },
+                          phone_number: { type: 'string' },
+                          starts_at: { type: 'string' },
+                          user_identity_key: { type: 'string' },
+                        },
+                        required: [
+                          'partner_resource_type',
+                          'partner_resource_key',
+                          'customer_key',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['partner_resources', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ customer_client_session: [] }],
+        summary: '/seam/partner/v1/resources/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'partner', 'v1', 'resources'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'partner_resources',
+        'x-response-key': 'partner_resources',
+        'x-title': 'List partner resources at Seam',
+        'x-undocumented': 'Partner building blocks/UI only.',
+      },
+    },
     '/thermostats/activate_climate_preset': {
       post: {
         description:
@@ -36396,6 +36488,200 @@ export default {
         'x-undocumented': 'Experimental locations.',
       },
     },
+    '/unstable_partner/building_blocks/generate_link': {
+      post: {
+        description: 'Creates a new bridge client session.',
+        operationId: 'unstablePartnerBuildingBlocksGenerateLinkPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  bridge_client_machine_identifier_key: { type: 'string' },
+                  bridge_client_name: { type: 'string' },
+                  bridge_client_time_zone: { type: 'string' },
+                },
+                required: [
+                  'bridge_client_name',
+                  'bridge_client_time_zone',
+                  'bridge_client_machine_identifier_key',
+                ],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    bridge_client_session: {
+                      properties: {
+                        bridge_client_machine_identifier_key: {
+                          type: 'string',
+                        },
+                        bridge_client_name: { type: 'string' },
+                        bridge_client_session_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        bridge_client_session_token: { type: 'string' },
+                        bridge_client_time_zone: { type: 'string' },
+                        created_at: { format: 'date-time', type: 'string' },
+                        errors: {
+                          items: {
+                            description:
+                              'Error associated with the `bridge_client_session`.',
+                            discriminator: { propertyName: 'error_code' },
+                            oneOf: [
+                              {
+                                description:
+                                  "Seam cannot reach the bridge's LAN",
+                                properties: {
+                                  can_tailscale_proxy_reach_bridge: {
+                                    description:
+                                      'Tailscale proxy cannot reach the bridge',
+                                    nullable: true,
+                                    type: 'boolean',
+                                  },
+                                  can_tailscale_proxy_reach_tailscale_network: {
+                                    description:
+                                      'Tailscale proxy cannot reach the Tailscale network',
+                                    nullable: true,
+                                    type: 'boolean',
+                                  },
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  error_code: {
+                                    description:
+                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                    enum: ['bridge_lan_unreachable'],
+                                    type: 'string',
+                                  },
+                                  is_bridge_socks_server_healthy: {
+                                    description:
+                                      "Bridge's SOCKS server is unhealthy",
+                                    nullable: true,
+                                    type: 'boolean',
+                                  },
+                                  is_tailscale_proxy_reachable: {
+                                    description:
+                                      'Seam cannot reach the tailscale proxy',
+                                    nullable: true,
+                                    type: 'boolean',
+                                  },
+                                  is_tailscale_proxy_socks_server_healthy: {
+                                    description:
+                                      "Tailscale proxy's SOCKS server is unhealthy",
+                                    nullable: true,
+                                    type: 'boolean',
+                                  },
+                                  message: { type: 'string' },
+                                },
+                                required: [
+                                  'message',
+                                  'created_at',
+                                  'error_code',
+                                  'is_tailscale_proxy_reachable',
+                                  'is_tailscale_proxy_socks_server_healthy',
+                                  'can_tailscale_proxy_reach_tailscale_network',
+                                  'can_tailscale_proxy_reach_bridge',
+                                  'is_bridge_socks_server_healthy',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  'Bridge has stopped communicating with Seam',
+                                properties: {
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  error_code: {
+                                    description:
+                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                    enum: ['no_communication_from_bridge'],
+                                    type: 'string',
+                                  },
+                                  message: { type: 'string' },
+                                },
+                                required: [
+                                  'message',
+                                  'created_at',
+                                  'error_code',
+                                ],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                          type: 'array',
+                        },
+                        pairing_code: {
+                          maxLength: 6,
+                          minLength: 6,
+                          type: 'string',
+                        },
+                        pairing_code_expires_at: {
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        tailscale_auth_key: { nullable: true, type: 'string' },
+                        tailscale_hostname: { type: 'string' },
+                        telemetry_token: { nullable: true, type: 'string' },
+                        telemetry_token_expires_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        telemetry_url: { nullable: true, type: 'string' },
+                      },
+                      required: [
+                        'created_at',
+                        'bridge_client_session_id',
+                        'bridge_client_session_token',
+                        'pairing_code',
+                        'pairing_code_expires_at',
+                        'tailscale_hostname',
+                        'tailscale_auth_key',
+                        'bridge_client_name',
+                        'bridge_client_time_zone',
+                        'bridge_client_machine_identifier_key',
+                        'errors',
+                        'telemetry_token',
+                        'telemetry_token_expires_at',
+                        'telemetry_url',
+                      ],
+                      type: 'object',
+                      'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
+                      'x-undocumented': 'Seam Bridge Client only.',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['bridge_client_session', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ certified_client: [] }],
+        summary: '/unstable_partner/building_blocks/generate_link',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_partner', 'building_blocks'],
+        'x-fern-sdk-method-name': 'generate_link',
+        'x-fern-sdk-return-value': 'bridge_client_session',
+        'x-response-key': 'bridge_client_session',
+        'x-title': 'Generate a building block magic link',
+      },
+    },
     '/unstable_partner/resources/push': {
       post: {
         description: 'Send Seam some of your resources.',
@@ -36416,7 +36702,6 @@ export default {
                         description: { type: 'string' },
                         email_address: { type: 'string' },
                         ends_at: { type: 'string' },
-                        icon_url: { type: 'string' },
                         location_keys: {
                           items: { type: 'string' },
                           type: 'array',
@@ -36442,7 +36727,6 @@ export default {
                       description: { type: 'string' },
                       email_address: { type: 'string' },
                       ends_at: { type: 'string' },
-                      icon_url: { type: 'string' },
                       location_keys: {
                         items: { type: 'string' },
                         type: 'array',
