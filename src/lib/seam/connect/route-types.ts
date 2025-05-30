@@ -21505,6 +21505,8 @@ export interface Routes {
     method: 'POST' | 'PUT'
     queryParams: {}
     jsonBody: {
+      customer_id?: string | undefined
+      customer_key?: string | undefined
       /** Your user ID for the user for whom you want to create a client session. */
       user_identifier_key?: string | undefined
       /** IDs of the [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) for which you want to create a client session. */
@@ -21730,6 +21732,7 @@ export interface Routes {
       custom_redirect_url?: string | undefined
       /** Alternative URL that you want to redirect the user to on an error. If you do not set this parameter, the Connect Webview falls back to the `custom_redirect_url`. */
       custom_redirect_failure_url?: string | undefined
+      customer_id?: string | undefined
       /** Accepted device provider keys as an alternative to `provider_category`. Use this parameter to specify accepted providers explicitly. See [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). To list all provider keys, use [`/devices/list_device_providers`](https://docs.seam.co/latest/api/devices/list_device_providers) with no filters. */
       accepted_providers?:
         | Array<
@@ -21943,6 +21946,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      customer_id?: string | undefined
       /** Your user ID for the user by which you want to filter Connect Webviews. */
       user_identifier_key?: string | undefined
       /** Custom metadata pairs by which you want to [filter Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata). Returns Connect Webviews with `custom_metadata` that contains all of the provided key:value pairs. */
@@ -45346,6 +45350,33 @@ export interface Routes {
       }
     }
   }
+  '/seam/partner/v1/resources/list': {
+    route: '/seam/partner/v1/resources/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** Filter by resource type alias. */
+      resource_type_alias?: string | undefined
+    }
+    formData: {}
+    jsonResponse: {
+      partner_resources: Array<{
+        partner_resource_type: string
+        partner_resource_key: string
+        customer_key: string
+        email_address?: string | undefined
+        phone_number?: string | undefined
+        starts_at?: string | undefined
+        ends_at?: string | undefined
+        user_identity_key?: string | undefined
+        location_keys?: string[] | undefined
+        name?: string | undefined
+        description?: string | undefined
+        custom_metadata?: Record<string, string> | undefined
+      }>
+    }
+  }
   '/thermostats/activate_climate_preset': {
     route: '/thermostats/activate_climate_preset'
     method: 'POST'
@@ -61140,6 +61171,60 @@ export interface Routes {
       }
     }
   }
+  '/unstable_partner/building_blocks/generate_link': {
+    route: '/unstable_partner/building_blocks/generate_link'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      bridge_client_name: string
+      bridge_client_time_zone: string
+      bridge_client_machine_identifier_key: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      /**  */
+      bridge_client_session: {
+        created_at: string
+        bridge_client_session_id: string
+        bridge_client_session_token: string
+        pairing_code: string
+        pairing_code_expires_at: string
+        tailscale_hostname: string
+        tailscale_auth_key: string | null
+        bridge_client_name: string
+        bridge_client_time_zone: string
+        bridge_client_machine_identifier_key: string
+        errors: Array<
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_lan_unreachable'
+              /** Seam cannot reach the tailscale proxy */
+              is_tailscale_proxy_reachable: boolean | null
+              /** Tailscale proxy's SOCKS server is unhealthy */
+              is_tailscale_proxy_socks_server_healthy: boolean | null
+              /** Tailscale proxy cannot reach the Tailscale network */
+              can_tailscale_proxy_reach_tailscale_network: boolean | null
+              /** Tailscale proxy cannot reach the bridge */
+              can_tailscale_proxy_reach_bridge: boolean | null
+              /** Bridge's SOCKS server is unhealthy */
+              is_bridge_socks_server_healthy: boolean | null
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'no_communication_from_bridge'
+            }
+        >
+        telemetry_token: string | null
+        telemetry_token_expires_at: string | null
+        telemetry_url: string | null
+      }
+    }
+  }
   '/unstable_partner/resources/push': {
     route: '/unstable_partner/resources/push'
     method: 'POST'
@@ -61157,7 +61242,6 @@ export interface Routes {
           location_keys?: string[] | undefined
           name?: string | undefined
           description?: string | undefined
-          icon_url?: string | undefined
           custom_metadata?: Record<string, string> | undefined
         }>
       | {
@@ -61172,7 +61256,6 @@ export interface Routes {
           location_keys?: string[] | undefined
           name?: string | undefined
           description?: string | undefined
-          icon_url?: string | undefined
           custom_metadata?: Record<string, string> | undefined
         }
     commonParams: {}
