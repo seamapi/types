@@ -7743,8 +7743,10 @@ export default {
           can_turn_off_hvac: { type: 'boolean' },
           capabilities_supported: {
             description:
-              'Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health.',
+              '\n        Collection of capabilities that the device supports when connected to Seam. Values are `access_code`, which indicates that the device can manage and utilize digital PIN codes for secure access; `lock`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; `noise_detection`, which indicates that the device supports monitoring and responding to ambient noise levels; `thermostat`, which indicates that the device can regulate and adjust indoor temperatures; `battery`, which indicates that the device can manage battery life and health; and `phone`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities#capability-flags).\n        ',
             items: {
+              description:
+                '\n        Collection of capabilities that the device supports when connected to Seam. **Important:** Superseded by [capability flags](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities#capability-flags).\n        ',
               enum: [
                 'access_code',
                 'lock',
@@ -7786,6 +7788,7 @@ export default {
             description: 'Type of the device.',
             oneOf: [
               {
+                description: 'Device type for smartlocks.\n          ',
                 enum: [
                   'akuvox_lock',
                   'august_lock',
@@ -7818,10 +7821,12 @@ export default {
                 type: 'string',
               },
               {
+                description: 'Device type for noise sensors.\n          ',
                 enum: ['noiseaware_activity_zone', 'minut_sensor'],
                 type: 'string',
               },
               {
+                description: 'Device type for thermostats.\n          ',
                 enum: [
                   'ecobee_thermostat',
                   'nest_thermostat',
@@ -7833,7 +7838,7 @@ export default {
                 type: 'string',
               },
               {
-                description: 'Type of phone.',
+                description: 'Device type for phones.\n          ',
                 enum: ['ios_phone', 'android_phone'],
                 type: 'string',
               },
@@ -8216,15 +8221,16 @@ export default {
             nullable: true,
             properties: {
               location_name: {
-                description: 'Name of the device location.',
+                description: 'Name of the device location.\n          ',
                 type: 'string',
               },
               timezone: {
-                description: 'Time zone of the device location.',
+                description: 'Time zone of the device location.\n          ',
                 type: 'string',
               },
             },
             type: 'object',
+            'x-property-group-key': 'hardware',
           },
           nickname: {
             description:
@@ -8241,11 +8247,11 @@ export default {
                         properties: {
                           accessory_keypad: {
                             description:
-                              'Represents the accessory keypad state.',
+                              'Accessory keypad properties and state.',
                             properties: {
                               battery: {
                                 description:
-                                  'Indicates if the keypad battery properties.',
+                                  'Keypad battery properties.\n          ',
                                 properties: {
                                   level: {
                                     format: 'float',
@@ -8259,14 +8265,17 @@ export default {
                               },
                               is_connected: {
                                 description:
-                                  'Indicates if the accessory_keypad is connected to the device.',
+                                  'Indicates if an accessory keypad is connected to the device.\n        ',
                                 type: 'boolean',
                               },
                             },
                             required: ['is_connected'],
                             type: 'object',
+                            'x-property-group-key': 'hardware',
                           },
                           appearance: {
+                            description:
+                              'Appearance-related properties, as reported by the device.',
                             properties: {
                               name: {
                                 description:
@@ -8276,24 +8285,30 @@ export default {
                             },
                             required: ['name'],
                             type: 'object',
+                            'x-property-group-key': 'hardware',
                           },
                           battery: {
                             description:
-                              'Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage.',
+                              'Represents the current status of the battery charge level.',
                             properties: {
                               level: {
+                                description:
+                                  'Battery charge level as a value between 0 and 1, inclusive.\n          ',
                                 format: 'float',
                                 maximum: 1,
                                 minimum: 0,
                                 type: 'number',
                               },
                               status: {
+                                description:
+                                  'Represents the current status of the battery charge level. Values are `critical`, which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; `low`, which signifies that the battery is under the preferred threshold and should be charged soon; `good`, which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and `full`, which represents a battery that is fully charged, providing the maximum duration of usage.\n          ',
                                 enum: ['critical', 'low', 'good', 'full'],
                                 type: 'string',
                               },
                             },
                             required: ['level', 'status'],
                             type: 'object',
+                            'x-property-group-key': 'hardware',
                           },
                           battery_level: {
                             description:
@@ -8302,33 +8317,40 @@ export default {
                             maximum: 1,
                             minimum: 0,
                             type: 'number',
+                            'x-property-group-key': 'hardware',
                           },
                           currently_triggering_noise_threshold_ids: {
                             description:
                               'Array of noise threshold IDs that are currently triggering.',
                             items: { type: 'string' },
                             type: 'array',
+                            'x-property-group-key': 'noise_sensors',
                           },
                           has_direct_power: {
                             description:
                               'Indicates whether the device has direct power.',
                             type: 'boolean',
+                            'x-property-group-key': 'hardware',
                           },
                           image_alt_text: {
                             description: 'Alt text for the device image.',
                             type: 'string',
+                            'x-property-group-key': 'hardware',
                           },
                           image_url: {
                             description: 'Image URL for the device.',
                             format: 'uri',
                             type: 'string',
+                            'x-property-group-key': 'hardware',
                           },
                           manufacturer: {
                             description:
                               'Manufacturer of the device. When a device, such as a smart lock, is connected through a smart hub, the manufacturer of the device might be different from that of the smart hub.',
                             type: 'string',
+                            'x-property-group-key': 'hardware',
                           },
                           model: {
+                            description: 'Device model-related properties.',
                             properties: {
                               accessory_keypad_supported: {
                                 deprecated: true,
@@ -8338,33 +8360,35 @@ export default {
                               },
                               can_connect_accessory_keypad: {
                                 description:
-                                  'Indicates whether the device can connect a accessory keypad.',
+                                  '\n          Indicates whether the device can connect a accessory keypad.\n      ',
                                 type: 'boolean',
                               },
                               display_name: {
                                 description:
-                                  'Display name of the device model.',
+                                  '\n          Display name of the device model.\n      ',
                                 type: 'string',
                               },
                               has_built_in_keypad: {
                                 description:
-                                  'Indicates whether the device has a built in accessory keypad.',
+                                  '\n          Indicates whether the device has a built in accessory keypad.\n      ',
                                 type: 'boolean',
                               },
                               manufacturer_display_name: {
                                 description:
-                                  'Display name that corresponds to the manufacturer-specific terminology for the device.',
+                                  '\n          Display name that corresponds to the manufacturer-specific terminology for the device.\n      ',
                                 type: 'string',
                               },
                               offline_access_codes_supported: {
-                                description:
-                                  'Indicates whether the device supports offline access codes.',
+                                deprecated: true,
                                 type: 'boolean',
+                                'x-deprecated':
+                                  'use device.can_program_offline_access_codes.',
                               },
                               online_access_codes_supported: {
-                                description:
-                                  'Indicates whether the device supports online access codes.',
+                                deprecated: true,
                                 type: 'boolean',
+                                'x-deprecated':
+                                  'use device.can_program_online_access_codes.',
                               },
                             },
                             required: [
@@ -8384,11 +8408,13 @@ export default {
                               'Indicates current noise level in decibels, if the device supports noise detection.',
                             format: 'float',
                             type: 'number',
+                            'x-property-group-key': 'noise_sensors',
                           },
                           offline_access_codes_enabled: {
                             description:
                               'Indicates whether it is currently possible to use offline access codes for the device.',
                             type: 'boolean',
+                            'x-property-group-key': 'access_codes',
                           },
                           online: {
                             description:
@@ -8399,28 +8425,33 @@ export default {
                             description:
                               'Indicates whether it is currently possible to use online access codes for the device.',
                             type: 'boolean',
+                            'x-property-group-key': 'access_codes',
                           },
                           serial_number: {
                             description: 'Serial number of the device.',
                             type: 'string',
+                            'x-property-group-key': 'hardware',
                           },
                           supports_accessory_keypad: {
                             deprecated: true,
                             type: 'boolean',
                             'x-deprecated':
                               'use device.properties.model.can_connect_accessory_keypad',
+                            'x-property-group-key': 'access_codes',
                           },
                           supports_offline_access_codes: {
                             deprecated: true,
                             type: 'boolean',
                             'x-deprecated': 'use offline_access_codes_enabled',
+                            'x-property-group-key': 'access_codes',
                           },
                         },
                         required: ['online', 'name', 'appearance', 'model'],
                         type: 'object',
                       },
                       {
-                        description: 'Properties of the phone.',
+                        description:
+                          '\n          Properties of the phone.\n          ',
                         properties: {
                           assa_abloy_credential_service_metadata: {
                             description:
@@ -8475,31 +8506,88 @@ export default {
                     ],
                   },
                   {
+                    description: 'Provider-specific metadata.',
                     properties: {
                       akiles_metadata: {
+                        description:
+                          'Metadata for an Akiles device.\n          ',
                         properties: {
-                          _member_group_id: { type: 'string' },
-                          gadget_id: { type: 'string' },
-                          gadget_name: { type: 'string' },
-                          product_name: { type: 'string' },
+                          _member_group_id: {
+                            description:
+                              'Group ID to which to add users for an Akiles device.\n          ',
+                            type: 'string',
+                          },
+                          gadget_id: {
+                            description:
+                              'Gadget ID for an Akiles device.\n          ',
+                            type: 'string',
+                          },
+                          gadget_name: {
+                            description:
+                              'Gadget name for an Akiles device.\n          ',
+                            type: 'string',
+                          },
+                          product_name: {
+                            description:
+                              'Product name for an Akiles device.\n          ',
+                            type: 'string',
+                          },
                         },
                         required: ['gadget_name', 'gadget_id', 'product_name'],
                         type: 'object',
                       },
                       assa_abloy_vostio_metadata: {
-                        properties: { encoder_name: { type: 'string' } },
+                        description:
+                          'Metadata for an ASSA ABLOY Vostio system.\n          ',
+                        properties: {
+                          encoder_name: {
+                            description:
+                              'Encoder name for an ASSA ABLOY Vostio system.\n          ',
+                            type: 'string',
+                          },
+                        },
                         required: ['encoder_name'],
                         type: 'object',
                       },
                       august_metadata: {
+                        description:
+                          'Metadata for an August device.\n          ',
                         properties: {
-                          has_keypad: { type: 'boolean' },
-                          house_id: { type: 'string' },
-                          house_name: { type: 'string' },
-                          keypad_battery_level: { type: 'string' },
-                          lock_id: { type: 'string' },
-                          lock_name: { type: 'string' },
-                          model: { type: 'string' },
+                          has_keypad: {
+                            description:
+                              'Indicates whether an August device has a keypad.\n          ',
+                            type: 'boolean',
+                          },
+                          house_id: {
+                            description:
+                              'House ID for an August device.\n          ',
+                            type: 'string',
+                          },
+                          house_name: {
+                            description:
+                              'House name for an August device.\n          ',
+                            type: 'string',
+                          },
+                          keypad_battery_level: {
+                            description:
+                              'Keypad battery level for an August device.\n          ',
+                            type: 'string',
+                          },
+                          lock_id: {
+                            description:
+                              'Lock ID for an August device.\n          ',
+                            type: 'string',
+                          },
+                          lock_name: {
+                            description:
+                              'Lock name for an August device.\n          ',
+                            type: 'string',
+                          },
+                          model: {
+                            description:
+                              'Model for an August device.\n          ',
+                            type: 'string',
+                          },
                         },
                         required: [
                           'lock_id',
@@ -8510,17 +8598,47 @@ export default {
                         type: 'object',
                       },
                       avigilon_alta_metadata: {
+                        description:
+                          'Metadata for an Avigilon Alta system.\n          ',
                         properties: {
-                          entry_name: { type: 'string' },
+                          entry_name: {
+                            description:
+                              'Entry name for an Avigilon Alta system.\n          ',
+                            type: 'string',
+                          },
                           entry_relays_total_count: {
+                            description:
+                              'Total count of entry relays for an Avigilon Alta system.\n          ',
                             format: 'float',
                             type: 'number',
                           },
-                          org_name: { type: 'string' },
-                          site_id: { format: 'float', type: 'number' },
-                          site_name: { type: 'string' },
-                          zone_id: { format: 'float', type: 'number' },
-                          zone_name: { type: 'string' },
+                          org_name: {
+                            description:
+                              'Organization name for an Avigilon Alta system.\n          ',
+                            type: 'string',
+                          },
+                          site_id: {
+                            description:
+                              'Site ID for an Avigilon Alta system.\n          ',
+                            format: 'float',
+                            type: 'number',
+                          },
+                          site_name: {
+                            description:
+                              'Site name for an Avigilon Alta system.\n          ',
+                            type: 'string',
+                          },
+                          zone_id: {
+                            description:
+                              'Zone ID for an Avigilon Alta system.\n          ',
+                            format: 'float',
+                            type: 'number',
+                          },
+                          zone_name: {
+                            description:
+                              'Zone name for an Avigilon Alta system.\n          ',
+                            type: 'string',
+                          },
                         },
                         required: [
                           'entry_name',
@@ -8534,50 +8652,134 @@ export default {
                         type: 'object',
                       },
                       brivo_metadata: {
-                        properties: { device_name: { type: 'string' } },
+                        description: 'Metadata for a Brivo device.\n          ',
+                        properties: {
+                          device_name: {
+                            description:
+                              'Device name for a Brivo device.\n          ',
+                            type: 'string',
+                          },
+                        },
                         required: ['device_name'],
                         type: 'object',
                       },
                       controlbyweb_metadata: {
+                        description:
+                          'Metadata for a ControlByWeb device.\n          ',
                         properties: {
-                          device_id: { type: 'string' },
-                          device_name: { type: 'string' },
-                          relay_name: { nullable: true, type: 'string' },
+                          device_id: {
+                            description:
+                              'Device ID for a ControlByWeb device.\n          ',
+                            type: 'string',
+                          },
+                          device_name: {
+                            description:
+                              'Device name for a ControlByWeb device.\n          ',
+                            type: 'string',
+                          },
+                          relay_name: {
+                            description:
+                              'Relay name for a ControlByWeb device.\n          ',
+                            nullable: true,
+                            type: 'string',
+                          },
                         },
                         required: ['device_id', 'device_name', 'relay_name'],
                         type: 'object',
                       },
                       dormakaba_oracode_metadata: {
+                        description:
+                          'Metadata for a dormakaba Oracode device.\n          ',
                         properties: {
                           device_id: {
+                            description:
+                              'Device ID for a dormakaba Oracode device.\n          ',
                             oneOf: [
                               { format: 'float', type: 'number' },
                               { type: 'string' },
                             ],
                           },
-                          door_id: { format: 'float', type: 'number' },
-                          door_is_wireless: { type: 'boolean' },
-                          door_name: { type: 'string' },
-                          iana_timezone: { type: 'string' },
+                          door_id: {
+                            description:
+                              'Door ID for a dormakaba Oracode device.\n          ',
+                            format: 'float',
+                            type: 'number',
+                          },
+                          door_is_wireless: {
+                            description:
+                              'Indicates whether a door is wireless for a dormakaba Oracode device.\n          ',
+                            type: 'boolean',
+                          },
+                          door_name: {
+                            description:
+                              'Door name for a dormakaba Oracode device.\n          ',
+                            type: 'string',
+                          },
+                          iana_timezone: {
+                            description:
+                              'IANA time zone for a dormakaba Oracode device.\n          ',
+                            type: 'string',
+                          },
                           predefined_time_slots: {
+                            description:
+                              'Predefined time slots for a dormakaba Oracode device.\n          ',
                             items: {
+                              description:
+                                'Time slot for a dormakaba Oracode device.\n          ',
                               properties: {
-                                check_in_time: { type: 'string' },
-                                check_out_time: { type: 'string' },
+                                check_in_time: {
+                                  description:
+                                    'Check in time for a time slot for a dormakaba Oracode device.\n          ',
+                                  type: 'string',
+                                },
+                                check_out_time: {
+                                  description:
+                                    'Checkout time for a time slot for a dormakaba Oracode device.\n          ',
+                                  type: 'string',
+                                },
                                 dormakaba_oracode_user_level_id: {
+                                  description:
+                                    'ID of a user level for a dormakaba Oracode device.\n          ',
                                   format: 'uuid',
                                   type: 'string',
                                 },
                                 ext_dormakaba_oracode_user_level_prefix: {
+                                  description:
+                                    'Prefix for a user level for a dormakaba Oracode device.\n          ',
                                   format: 'float',
                                   type: 'number',
                                 },
-                                is_24_hour: { type: 'boolean' },
-                                is_biweekly_mode: { type: 'boolean' },
-                                is_master: { type: 'boolean' },
-                                is_one_shot: { type: 'boolean' },
-                                name: { type: 'string' },
-                                prefix: { format: 'float', type: 'number' },
+                                is_24_hour: {
+                                  description:
+                                    'Indicates whether a time slot for a dormakaba Oracode device is a 24-hour time slot.\n          ',
+                                  type: 'boolean',
+                                },
+                                is_biweekly_mode: {
+                                  description:
+                                    'Indicates whether a time slot for a dormakaba Oracode device is in biweekly mode.\n          ',
+                                  type: 'boolean',
+                                },
+                                is_master: {
+                                  description:
+                                    'Indicates whether a time slot for a dormakaba Oracode device is a master time slot.\n          ',
+                                  type: 'boolean',
+                                },
+                                is_one_shot: {
+                                  description:
+                                    'Indicates whether a time slot for a dormakaba Oracode device is a one-shot time slot.\n          ',
+                                  type: 'boolean',
+                                },
+                                name: {
+                                  description:
+                                    'Name of a time slot for a dormakaba Oracode device.\n          ',
+                                  type: 'string',
+                                },
+                                prefix: {
+                                  description:
+                                    'Prefix for a time slot for a dormakaba Oracode device.\n          ',
+                                  format: 'float',
+                                  type: 'number',
+                                },
                               },
                               required: [
                                 'name',
@@ -8596,12 +8798,20 @@ export default {
                             type: 'array',
                           },
                           site_id: {
-                            description: '@DEPRECATED',
+                            deprecated: true,
+                            description:
+                              'Site ID for a dormakaba Oracode device.',
                             format: 'float',
                             nullable: true,
                             type: 'number',
+                            'x-deprecated':
+                              'Previously marked as "@DEPRECATED."',
                           },
-                          site_name: { type: 'string' },
+                          site_name: {
+                            description:
+                              'Site name for a dormakaba Oracode device.\n          ',
+                            type: 'string',
+                          },
                         },
                         required: [
                           'door_name',
@@ -8612,18 +8822,41 @@ export default {
                         type: 'object',
                       },
                       ecobee_metadata: {
+                        description:
+                          'Metadata for an ecobee device.\n          ',
                         properties: {
-                          device_name: { type: 'string' },
-                          ecobee_device_id: { type: 'string' },
+                          device_name: {
+                            description:
+                              'Device name for an ecobee device.\n          ',
+                            type: 'string',
+                          },
+                          ecobee_device_id: {
+                            description:
+                              'Device ID for an ecobee device.\n          ',
+                            type: 'string',
+                          },
                         },
                         required: ['ecobee_device_id', 'device_name'],
                         type: 'object',
                       },
                       four_suites_metadata: {
+                        description:
+                          'Metadata for a 4SUITES device.\n          ',
                         properties: {
-                          device_id: { format: 'float', type: 'number' },
-                          device_name: { type: 'string' },
+                          device_id: {
+                            description:
+                              'Device ID for a 4SUITES device.\n          ',
+                            format: 'float',
+                            type: 'number',
+                          },
+                          device_name: {
+                            description:
+                              'Device name for a 4SUITES device.\n          ',
+                            type: 'string',
+                          },
                           reclose_delay_in_seconds: {
+                            description:
+                              'Reclose delay, in seconds, for a 4SUITES device.\n          ',
                             format: 'float',
                             type: 'number',
                           },
@@ -8636,17 +8869,36 @@ export default {
                         type: 'object',
                       },
                       genie_metadata: {
+                        description: 'Metadata for a Genie device.\n          ',
                         properties: {
-                          device_name: { type: 'string' },
-                          door_name: { type: 'string' },
+                          device_name: {
+                            description:
+                              'Lock name for a Genie device.\n          ',
+                            type: 'string',
+                          },
+                          door_name: {
+                            description:
+                              'Door name for a Genie device.\n          ',
+                            type: 'string',
+                          },
                         },
                         required: ['device_name', 'door_name'],
                         type: 'object',
                       },
                       honeywell_resideo_metadata: {
+                        description:
+                          'Metadata for a Honeywell Resideo device.\n          ',
                         properties: {
-                          device_name: { type: 'string' },
-                          honeywell_resideo_device_id: { type: 'string' },
+                          device_name: {
+                            description:
+                              'Device name for a Honeywell Resideo device.\n          ',
+                            type: 'string',
+                          },
+                          honeywell_resideo_device_id: {
+                            description:
+                              'Device ID for a Honeywell Resideo device.\n          ',
+                            type: 'string',
+                          },
                         },
                         required: [
                           'honeywell_resideo_device_id',
@@ -8655,94 +8907,238 @@ export default {
                         type: 'object',
                       },
                       hubitat_metadata: {
+                        description:
+                          'Metadata for a Hubitat device.\n          ',
                         properties: {
-                          device_id: { type: 'string' },
-                          device_label: { type: 'string' },
-                          device_name: { type: 'string' },
+                          device_id: {
+                            description:
+                              'Device ID for a Hubitat device.\n          ',
+                            type: 'string',
+                          },
+                          device_label: {
+                            description:
+                              'Device label for a Hubitat device.\n          ',
+                            type: 'string',
+                          },
+                          device_name: {
+                            description:
+                              'Device name for a Hubitat device.\n          ',
+                            type: 'string',
+                          },
                         },
                         required: ['device_id', 'device_name', 'device_label'],
                         type: 'object',
                       },
                       igloo_metadata: {
+                        description:
+                          'Metadata for an igloo device.\n          ',
                         properties: {
-                          bridge_id: { type: 'string' },
-                          device_id: { type: 'string' },
-                          model: { type: 'string' },
+                          bridge_id: {
+                            description:
+                              'Bridge ID for an igloo device.\n          ',
+                            type: 'string',
+                          },
+                          device_id: {
+                            description:
+                              'Device ID for an igloo device.\n          ',
+                            type: 'string',
+                          },
+                          model: {
+                            description:
+                              'Model for an igloo device.\n          ',
+                            type: 'string',
+                          },
                         },
                         required: ['device_id', 'bridge_id'],
                         type: 'object',
                       },
                       igloohome_metadata: {
+                        description:
+                          'Metadata for an igloohome device.\n          ',
                         properties: {
-                          bridge_id: { type: 'string' },
-                          bridge_name: { type: 'string' },
-                          device_id: { type: 'string' },
-                          device_name: { type: 'string' },
-                          keypad_id: { type: 'string' },
+                          bridge_id: {
+                            description:
+                              'Bridge ID for an igloohome device.\n          ',
+                            type: 'string',
+                          },
+                          bridge_name: {
+                            description:
+                              'Bridge name for an igloohome device.\n          ',
+                            type: 'string',
+                          },
+                          device_id: {
+                            description:
+                              'Device ID for an igloohome device.\n          ',
+                            type: 'string',
+                          },
+                          device_name: {
+                            description:
+                              'Device name for an igloohome device.\n          ',
+                            type: 'string',
+                          },
+                          keypad_id: {
+                            description:
+                              'Keypad ID for an igloohome device.\n          ',
+                            type: 'string',
+                          },
                         },
                         required: ['device_id', 'device_name'],
                         type: 'object',
                       },
                       kwikset_metadata: {
+                        description:
+                          'Metadata for a Kwikset device.\n          ',
                         properties: {
-                          device_id: { type: 'string' },
-                          device_name: { type: 'string' },
-                          model_number: { type: 'string' },
+                          device_id: {
+                            description:
+                              'Device ID for a Kwikset device.\n          ',
+                            type: 'string',
+                          },
+                          device_name: {
+                            description:
+                              'Device name for a Kwikset device.\n          ',
+                            type: 'string',
+                          },
+                          model_number: {
+                            description:
+                              'Model number for a Kwikset device.\n          ',
+                            type: 'string',
+                          },
                         },
                         required: ['device_id', 'device_name', 'model_number'],
                         type: 'object',
                       },
                       lockly_metadata: {
+                        description:
+                          'Metadata for a Lockly device.\n          ',
                         properties: {
-                          device_id: { type: 'string' },
-                          device_name: { type: 'string' },
-                          model: { type: 'string' },
+                          device_id: {
+                            description:
+                              'Device ID for a Lockly device.\n          ',
+                            type: 'string',
+                          },
+                          device_name: {
+                            description:
+                              'Device name for a Lockly device.\n          ',
+                            type: 'string',
+                          },
+                          model: {
+                            description:
+                              'Model for a Lockly device.\n          ',
+                            type: 'string',
+                          },
                         },
                         required: ['device_id', 'device_name'],
                         type: 'object',
                       },
                       minut_metadata: {
+                        description: 'Metadata for a Minut device.\n          ',
                         properties: {
-                          device_id: { type: 'string' },
-                          device_name: { type: 'string' },
+                          device_id: {
+                            description:
+                              'Device ID for a Minut device.\n          ',
+                            type: 'string',
+                          },
+                          device_name: {
+                            description:
+                              'Device name for a Minut device.\n          ',
+                            type: 'string',
+                          },
                           latest_sensor_values: {
+                            description:
+                              'Latest sensor values for a Minut device.\n          ',
                             properties: {
                               accelerometer_z: {
+                                description:
+                                  'Latest accelerometer Z-axis reading for a Minut device.\n          ',
                                 properties: {
-                                  time: { type: 'string' },
-                                  value: { format: 'float', type: 'number' },
+                                  time: {
+                                    description:
+                                      'Time of latest accelerometer Z-axis reading for a Minut device.\n          ',
+                                    type: 'string',
+                                  },
+                                  value: {
+                                    description:
+                                      'Value of latest accelerometer Z-axis reading for a Minut device.\n          ',
+                                    format: 'float',
+                                    type: 'number',
+                                  },
                                 },
                                 required: ['time', 'value'],
                                 type: 'object',
                               },
                               humidity: {
+                                description:
+                                  'Latest humidity reading for a Minut device.\n          ',
                                 properties: {
-                                  time: { type: 'string' },
-                                  value: { format: 'float', type: 'number' },
+                                  time: {
+                                    description:
+                                      'Time of latest humidity reading for a Minut device.\n          ',
+                                    type: 'string',
+                                  },
+                                  value: {
+                                    description:
+                                      'Value of latest humidity reading for a Minut device.\n          ',
+                                    format: 'float',
+                                    type: 'number',
+                                  },
                                 },
                                 required: ['time', 'value'],
                                 type: 'object',
                               },
                               pressure: {
+                                description:
+                                  'Latest pressure reading for a Minut device.\n          ',
                                 properties: {
-                                  time: { type: 'string' },
-                                  value: { format: 'float', type: 'number' },
+                                  time: {
+                                    description:
+                                      'Time of latest pressure reading for a Minut device.\n          ',
+                                    type: 'string',
+                                  },
+                                  value: {
+                                    description:
+                                      'Value of latest pressure reading for a Minut device.\n          ',
+                                    format: 'float',
+                                    type: 'number',
+                                  },
                                 },
                                 required: ['time', 'value'],
                                 type: 'object',
                               },
                               sound: {
+                                description:
+                                  'Latest sound reading for a Minut device.\n          ',
                                 properties: {
-                                  time: { type: 'string' },
-                                  value: { format: 'float', type: 'number' },
+                                  time: {
+                                    description:
+                                      'Time of latest sound reading for a Minut device.\n          ',
+                                    type: 'string',
+                                  },
+                                  value: {
+                                    description:
+                                      'Value of latest sound reading for a Minut device.\n          ',
+                                    format: 'float',
+                                    type: 'number',
+                                  },
                                 },
                                 required: ['time', 'value'],
                                 type: 'object',
                               },
                               temperature: {
+                                description:
+                                  'Latest temperature reading for a Minut device.\n          ',
                                 properties: {
-                                  time: { type: 'string' },
-                                  value: { format: 'float', type: 'number' },
+                                  time: {
+                                    description:
+                                      'Time of latest temperature reading for a Minut device.\n          ',
+                                    type: 'string',
+                                  },
+                                  value: {
+                                    description:
+                                      'Value of latest temperature reading for a Minut device.\n          ',
+                                    format: 'float',
+                                    type: 'number',
+                                  },
                                 },
                                 required: ['time', 'value'],
                                 type: 'object',
@@ -8766,11 +9162,29 @@ export default {
                         type: 'object',
                       },
                       nest_metadata: {
+                        description:
+                          'Metadata for a Google Nest device.\n          ',
                         properties: {
-                          device_custom_name: { type: 'string' },
-                          device_name: { type: 'string' },
-                          display_name: { type: 'string' },
-                          nest_device_id: { type: 'string' },
+                          device_custom_name: {
+                            description:
+                              'Custom device name for a Google Nest device. The device owner sets this value.\n          ',
+                            type: 'string',
+                          },
+                          device_name: {
+                            description:
+                              'Device name for a Google Nest device. Google sets this value.\n          ',
+                            type: 'string',
+                          },
+                          display_name: {
+                            description:
+                              'Display name for a Google Nest device.\n          ',
+                            type: 'string',
+                          },
+                          nest_device_id: {
+                            description:
+                              'Device ID for a Google Nest device.\n          ',
+                            type: 'string',
+                          },
                         },
                         required: [
                           'nest_device_id',
@@ -8780,18 +9194,37 @@ export default {
                         type: 'object',
                       },
                       noiseaware_metadata: {
+                        description:
+                          'Metadata for a NoiseAware device.\n          ',
                         properties: {
-                          device_id: { type: 'string' },
+                          device_id: {
+                            description:
+                              'Device ID for a NoiseAware device.\n          ',
+                            type: 'string',
+                          },
                           device_model: {
+                            description:
+                              'Device model for a NoiseAware device.\n          ',
                             enum: ['indoor', 'outdoor'],
                             type: 'string',
                           },
-                          device_name: { type: 'string' },
+                          device_name: {
+                            description:
+                              'Device name for a NoiseAware device.\n          ',
+                            type: 'string',
+                          },
                           noise_level_decibel: {
+                            description:
+                              'Noise level, in decibels, for a NoiseAware device.\n          ',
                             format: 'float',
                             type: 'number',
                           },
-                          noise_level_nrs: { format: 'float', type: 'number' },
+                          noise_level_nrs: {
+                            description:
+                              'Noise level, expressed as a Noise Risk Score (NRS), for a NoiseAware device.\n          ',
+                            format: 'float',
+                            type: 'number',
+                          },
                         },
                         required: [
                           'device_model',
@@ -8803,24 +9236,71 @@ export default {
                         type: 'object',
                       },
                       nuki_metadata: {
+                        description: 'Metadata for a Nuki device.\n          ',
                         properties: {
-                          device_id: { type: 'string' },
-                          device_name: { type: 'string' },
-                          keypad_2_paired: { type: 'boolean' },
-                          keypad_battery_critical: { type: 'boolean' },
-                          keypad_paired: { type: 'boolean' },
+                          device_id: {
+                            description:
+                              'Device ID for a Nuki device.\n          ',
+                            type: 'string',
+                          },
+                          device_name: {
+                            description:
+                              'Device name for a Nuki device.\n          ',
+                            type: 'string',
+                          },
+                          keypad_2_paired: {
+                            description:
+                              'Indicates whether keypad 2 is paired for a Nuki device.\n          ',
+                            type: 'boolean',
+                          },
+                          keypad_battery_critical: {
+                            description:
+                              'Indicates whether the keypad battery is in a critical state for a Nuki device.\n          ',
+                            type: 'boolean',
+                          },
+                          keypad_paired: {
+                            description:
+                              'Indicates whether the keypad is paired for a Nuki device.\n          ',
+                            type: 'boolean',
+                          },
                         },
                         required: ['device_id', 'device_name'],
                         type: 'object',
                       },
                       salto_ks_metadata: {
+                        description:
+                          'Metadata for a Salto KS device.\n          ',
                         properties: {
-                          battery_level: { type: 'string' },
-                          customer_reference: { type: 'string' },
-                          lock_id: { type: 'string' },
-                          lock_type: { type: 'string' },
-                          locked_state: { type: 'string' },
-                          model: { type: 'string' },
+                          battery_level: {
+                            description:
+                              'Battery level for a Salto KS device.\n          ',
+                            type: 'string',
+                          },
+                          customer_reference: {
+                            description:
+                              'Customer reference for a Salto KS device.\n          ',
+                            type: 'string',
+                          },
+                          lock_id: {
+                            description:
+                              'Lock ID for a Salto KS device.\n          ',
+                            type: 'string',
+                          },
+                          lock_type: {
+                            description:
+                              'Lock type for a Salto KS device.\n          ',
+                            type: 'string',
+                          },
+                          locked_state: {
+                            description:
+                              'Locked state for a Salto KS device.\n          ',
+                            type: 'string',
+                          },
+                          model: {
+                            description:
+                              'Model for a Salto KS device.\n          ',
+                            type: 'string',
+                          },
                         },
                         required: [
                           'lock_id',
@@ -8832,15 +9312,39 @@ export default {
                         type: 'object',
                       },
                       salto_metadata: {
-                        description:
-                          '\n    ---\n    deprecated: Use `salto_ks_metadata ` instead.\n    ',
+                        deprecated: true,
+                        description: 'Metada for a Salto device.',
                         properties: {
-                          battery_level: { type: 'string' },
-                          customer_reference: { type: 'string' },
-                          lock_id: { type: 'string' },
-                          lock_type: { type: 'string' },
-                          locked_state: { type: 'string' },
-                          model: { type: 'string' },
+                          battery_level: {
+                            description:
+                              'Battery level for a Salto device.\n          ',
+                            type: 'string',
+                          },
+                          customer_reference: {
+                            description:
+                              'Customer reference for a Salto device.\n          ',
+                            type: 'string',
+                          },
+                          lock_id: {
+                            description:
+                              'Lock ID for a Salto device.\n          ',
+                            type: 'string',
+                          },
+                          lock_type: {
+                            description:
+                              'Lock type for a Salto device.\n          ',
+                            type: 'string',
+                          },
+                          locked_state: {
+                            description:
+                              'Locked state for a Salto device.\n          ',
+                            type: 'string',
+                          },
+                          model: {
+                            description:
+                              'Model for a Salto device.\n          ',
+                            type: 'string',
+                          },
                         },
                         required: [
                           'lock_id',
@@ -8850,21 +9354,47 @@ export default {
                           'locked_state',
                         ],
                         type: 'object',
+                        'x-deprecated': 'Use `salto_ks_metadata ` instead.',
                       },
                       schlage_metadata: {
+                        description:
+                          'Metadata for a Schlage device.\n          ',
                         properties: {
-                          device_id: { type: 'string' },
-                          device_name: { type: 'string' },
-                          model: { type: 'string' },
+                          device_id: {
+                            description:
+                              'Device ID for a Schlage device.\n          ',
+                            type: 'string',
+                          },
+                          device_name: {
+                            description:
+                              'Device name for a Schlage device.\n          ',
+                            type: 'string',
+                          },
+                          model: {
+                            description:
+                              'Model for a Schlage device.\n          ',
+                            type: 'string',
+                          },
                         },
                         required: ['device_id', 'device_name'],
                         type: 'object',
                       },
                       seam_bridge_metadata: {
+                        description: 'Metadata for Seam Bridge.\n          ',
                         properties: {
-                          device_num: { format: 'float', type: 'number' },
-                          name: { type: 'string' },
+                          device_num: {
+                            description:
+                              'Device number for Seam Bridge.\n          ',
+                            format: 'float',
+                            type: 'number',
+                          },
+                          name: {
+                            description: 'Name for Seam Bridge.\n          ',
+                            type: 'string',
+                          },
                           unlock_method: {
+                            description:
+                              'Unlock method for Seam Bridge.\n          ',
                             enum: ['bridge', 'doorking'],
                             type: 'string',
                           },
@@ -8873,41 +9403,113 @@ export default {
                         type: 'object',
                       },
                       sensi_metadata: {
+                        description: 'Metadata for a Sensi device.\n          ',
                         properties: {
-                          device_id: { type: 'string' },
-                          device_name: { type: 'string' },
-                          product_type: { type: 'string' },
+                          device_id: {
+                            description:
+                              'Device ID for a Sensi device.\n          ',
+                            type: 'string',
+                          },
+                          device_name: {
+                            description:
+                              'Device name for a Sensi device.\n          ',
+                            type: 'string',
+                          },
+                          product_type: {
+                            description:
+                              'Product type for a Sensi device.\n          ',
+                            type: 'string',
+                          },
                         },
                         required: ['device_id', 'device_name', 'product_type'],
                         type: 'object',
                       },
                       smartthings_metadata: {
+                        description:
+                          'Metadata for a SmartThings device.\n          ',
                         properties: {
-                          device_id: { type: 'string' },
-                          device_name: { type: 'string' },
-                          location_id: { type: 'string' },
-                          model: { type: 'string' },
+                          device_id: {
+                            description:
+                              'Device ID for a SmartThings device.\n          ',
+                            type: 'string',
+                          },
+                          device_name: {
+                            description:
+                              'Device name for a SmartThings device.\n          ',
+                            type: 'string',
+                          },
+                          location_id: {
+                            description:
+                              'Location ID for a SmartThings device.\n          ',
+                            type: 'string',
+                          },
+                          model: {
+                            description:
+                              'Model for a SmartThings device.\n          ',
+                            type: 'string',
+                          },
                         },
                         required: ['device_id', 'device_name'],
                         type: 'object',
                       },
                       tado_metadata: {
+                        description: 'Metadata for a tado° device.\n          ',
                         properties: {
-                          device_type: { type: 'string' },
-                          serial_no: { type: 'string' },
+                          device_type: {
+                            description:
+                              'Device type for a tado° device.\n          ',
+                            type: 'string',
+                          },
+                          serial_no: {
+                            description:
+                              'Serial number for a tado° device.\n          ',
+                            type: 'string',
+                          },
                         },
                         required: ['serial_no', 'device_type'],
                         type: 'object',
                       },
                       tedee_metadata: {
+                        description: 'Metadata for a Tedee device.\n          ',
                         properties: {
-                          bridge_id: { format: 'float', type: 'number' },
-                          bridge_name: { type: 'string' },
-                          device_id: { format: 'float', type: 'number' },
-                          device_model: { type: 'string' },
-                          device_name: { type: 'string' },
-                          keypad_id: { format: 'float', type: 'number' },
-                          serial_number: { type: 'string' },
+                          bridge_id: {
+                            description:
+                              'Bridge ID for a Tedee device.\n          ',
+                            format: 'float',
+                            type: 'number',
+                          },
+                          bridge_name: {
+                            description:
+                              'Bridge name for a Tedee device.\n          ',
+                            type: 'string',
+                          },
+                          device_id: {
+                            description:
+                              'Device ID for a Tedee device.\n          ',
+                            format: 'float',
+                            type: 'number',
+                          },
+                          device_model: {
+                            description:
+                              'Device model for a Tedee device.\n          ',
+                            type: 'string',
+                          },
+                          device_name: {
+                            description:
+                              'Device name for a Tedee device.\n          ',
+                            type: 'string',
+                          },
+                          keypad_id: {
+                            description:
+                              'Keypad ID for a Tedee device.\n          ',
+                            format: 'float',
+                            type: 'number',
+                          },
+                          serial_number: {
+                            description:
+                              'Serial number for a Tedee device.\n          ',
+                            type: 'string',
+                          },
                         },
                         required: [
                           'device_id',
@@ -8920,16 +9522,48 @@ export default {
                         type: 'object',
                       },
                       ttlock_metadata: {
+                        description:
+                          'Metadata for a TTLock device.\n          ',
                         properties: {
-                          feature_value: { type: 'string' },
+                          feature_value: {
+                            description:
+                              'Feature value for a TTLock device.\n          ',
+                            type: 'string',
+                          },
                           features: {
+                            description:
+                              'Features for a TTLock device.\n          ',
                             properties: {
-                              incomplete_keyboard_passcode: { type: 'boolean' },
-                              lock_command: { type: 'boolean' },
-                              passcode: { type: 'boolean' },
-                              passcode_management: { type: 'boolean' },
-                              unlock_via_gateway: { type: 'boolean' },
-                              wifi: { type: 'boolean' },
+                              incomplete_keyboard_passcode: {
+                                description:
+                                  'Indicates whether a TTLock device supports an incomplete keyboard passcode.\n          ',
+                                type: 'boolean',
+                              },
+                              lock_command: {
+                                description:
+                                  'Indicates whether a TTLock device supports the lock command.\n          ',
+                                type: 'boolean',
+                              },
+                              passcode: {
+                                description:
+                                  'Indicates whether a TTLock device supports a passcode.\n          ',
+                                type: 'boolean',
+                              },
+                              passcode_management: {
+                                description:
+                                  'Indicates whether a TTLock device supports passcode management.\n          ',
+                                type: 'boolean',
+                              },
+                              unlock_via_gateway: {
+                                description:
+                                  'Indicates whether a TTLock device supports unlock via gateway.\n          ',
+                                type: 'boolean',
+                              },
+                              wifi: {
+                                description:
+                                  'Indicates whether a TTLock device supports Wi-Fi.\n          ',
+                                type: 'boolean',
+                              },
                             },
                             required: [
                               'passcode',
@@ -8941,17 +9575,38 @@ export default {
                             ],
                             type: 'object',
                           },
-                          has_gateway: { type: 'boolean' },
-                          lock_alias: { type: 'string' },
-                          lock_id: { format: 'float', type: 'number' },
+                          has_gateway: {
+                            description:
+                              'Indicates whether a TTLock device has a gateway.\n          ',
+                            type: 'boolean',
+                          },
+                          lock_alias: {
+                            description:
+                              'Lock alias for a TTLock device.\n          ',
+                            type: 'string',
+                          },
+                          lock_id: {
+                            description:
+                              'Lock ID for a TTLock device.\n          ',
+                            format: 'float',
+                            type: 'number',
+                          },
                           wireless_keypads: {
+                            description:
+                              'Wireless keypads for a TTLock device.\n          ',
                             items: {
                               properties: {
                                 wireless_keypad_id: {
+                                  description:
+                                    'ID for a wireless keypad for a TTLock device.\n          ',
                                   format: 'float',
                                   type: 'number',
                                 },
-                                wireless_keypad_name: { type: 'string' },
+                                wireless_keypad_name: {
+                                  description:
+                                    'Name for a wireless keypad for a TTLock device.\n          ',
+                                  type: 'string',
+                                },
                               },
                               required: [
                                 'wireless_keypad_id',
@@ -8971,31 +9626,80 @@ export default {
                         type: 'object',
                       },
                       two_n_metadata: {
+                        description: 'Metadata for a 2N device.\n          ',
                         properties: {
-                          device_id: { format: 'float', type: 'number' },
-                          device_name: { type: 'string' },
+                          device_id: {
+                            description:
+                              'Device ID for a 2N device.\n          ',
+                            format: 'float',
+                            type: 'number',
+                          },
+                          device_name: {
+                            description:
+                              'Device name for a 2N device.\n          ',
+                            type: 'string',
+                          },
                         },
                         required: ['device_id', 'device_name'],
                         type: 'object',
                       },
                       visionline_metadata: {
-                        properties: { encoder_id: { type: 'string' } },
+                        description:
+                          'Metadata for an ASSA ABLOY Visionline system.\n          ',
+                        properties: {
+                          encoder_id: {
+                            description:
+                              'Encoder ID for an ASSA ABLOY Visionline system.\n          ',
+                            type: 'string',
+                          },
+                        },
                         required: ['encoder_id'],
                         type: 'object',
                       },
                       wyze_metadata: {
+                        description: 'Metadata for a Wyze device.\n          ',
                         properties: {
-                          device_id: { type: 'string' },
-                          device_info_model: { type: 'string' },
-                          device_name: { type: 'string' },
-                          keypad_uuid: { type: 'string' },
+                          device_id: {
+                            description:
+                              'Device ID for a Wyze device.\n          ',
+                            type: 'string',
+                          },
+                          device_info_model: {
+                            description:
+                              'Device information model for a Wyze device.\n          ',
+                            type: 'string',
+                          },
+                          device_name: {
+                            description:
+                              'Device name for a Wyze device.\n          ',
+                            type: 'string',
+                          },
+                          keypad_uuid: {
+                            description:
+                              'Keypad UUID for a Wyze device.\n          ',
+                            type: 'string',
+                          },
                           locker_status_hardlock: {
+                            description:
+                              'Locker status (hardlock) for a Wyze device.\n          ',
                             format: 'float',
                             type: 'number',
                           },
-                          product_model: { type: 'string' },
-                          product_name: { type: 'string' },
-                          product_type: { type: 'string' },
+                          product_model: {
+                            description:
+                              'Product model for a Wyze device.\n          ',
+                            type: 'string',
+                          },
+                          product_name: {
+                            description:
+                              'Product name for a Wyze device.\n          ',
+                            type: 'string',
+                          },
+                          product_type: {
+                            description:
+                              'Product type for a Wyze device.\n          ',
+                            type: 'string',
+                          },
                         },
                         required: [
                           'device_id',
@@ -9009,6 +9713,7 @@ export default {
                       },
                     },
                     type: 'object',
+                    'x-property-group-key': 'provider_metadata',
                   },
                 ],
               },
@@ -9019,15 +9724,20 @@ export default {
                       _experimental_supported_code_from_access_codes_lengths: {
                         items: { format: 'float', type: 'number' },
                         type: 'array',
+                        'x-undocumented': 'Marked as experimental.',
                       },
                       code_constraints: {
                         description:
                           'Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific.',
                         items: {
+                          description: 'Access code constraint.',
                           oneOf: [
                             {
+                              description: 'Code constraint for access codes.',
                               properties: {
                                 constraint_type: {
+                                  description:
+                                    'Code constraint type for access codes.',
                                   enum: [
                                     'no_zeros',
                                     'cannot_start_with_12',
@@ -9047,13 +9757,24 @@ export default {
                               type: 'object',
                             },
                             {
+                              description: 'Name constraint for access codes.',
                               properties: {
                                 constraint_type: {
                                   enum: ['name_length', 'name_must_be_unique'],
                                   type: 'string',
                                 },
-                                max_length: { format: 'float', type: 'number' },
-                                min_length: { format: 'float', type: 'number' },
+                                max_length: {
+                                  description:
+                                    'Maximum name length constraint for access codes.',
+                                  format: 'float',
+                                  type: 'number',
+                                },
+                                min_length: {
+                                  description:
+                                    'Minimum name length constraint for access codes.',
+                                  format: 'float',
+                                  type: 'number',
+                                },
                               },
                               required: ['constraint_type'],
                               type: 'object',
@@ -9061,26 +9782,57 @@ export default {
                           ],
                         },
                         type: 'array',
+                        'x-property-group-key': 'access_codes',
                       },
-                      door_open: { type: 'boolean' },
-                      has_native_entry_events: { type: 'boolean' },
+                      door_open: {
+                        description: 'Indicates whether the door is open.',
+                        type: 'boolean',
+                        'x-property-group-key': 'locks',
+                      },
+                      has_native_entry_events: {
+                        description:
+                          'Indicates whether the device supports native entry events.',
+                        type: 'boolean',
+                        'x-property-group-key': 'access_codes',
+                      },
                       keypad_battery: {
+                        description: 'Keypad battery status.',
                         properties: {
-                          level: { format: 'float', type: 'number' },
+                          level: {
+                            description:
+                              'Keypad battery charge level.\n          ',
+                            format: 'float',
+                            type: 'number',
+                          },
                         },
                         required: ['level'],
                         type: 'object',
+                        'x-property-group-key': 'access_codes',
                       },
-                      locked: { type: 'boolean' },
+                      locked: {
+                        description: 'Indicates whether the lock is locked.',
+                        type: 'boolean',
+                        'x-property-group-key': 'locks',
+                      },
                       max_active_codes_supported: {
+                        description:
+                          'Maximum number of active access codes that the device supports.',
                         format: 'float',
                         type: 'number',
+                        'x-property-group-key': 'access_codes',
                       },
                       supported_code_lengths: {
+                        description: 'Supported code lengths for access codes.',
                         items: { format: 'float', type: 'number' },
                         type: 'array',
+                        'x-property-group-key': 'access_codes',
                       },
-                      supports_backup_access_code_pool: { type: 'boolean' },
+                      supports_backup_access_code_pool: {
+                        description:
+                          'Indicates whether the device supports a [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes).',
+                        type: 'boolean',
+                        'x-property-group-key': 'access_codes',
+                      },
                     },
                     type: 'object',
                   },
@@ -9089,7 +9841,7 @@ export default {
                       active_thermostat_schedule: {
                         default: null,
                         description:
-                          'Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time.',
+                          'Active [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
                         nullable: true,
                         properties: {
                           climate_preset_key: {
@@ -9186,9 +9938,12 @@ export default {
                           'errors',
                         ],
                         type: 'object',
+                        'x-property-group-key': 'thermostats',
                         'x-route-path': '/thermostats/schedules',
                       },
                       available_climate_presets: {
+                        description:
+                          'Available [climate presets](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) for the thermostat.',
                         items: {
                           properties: {
                             can_delete: {
@@ -9279,22 +10034,30 @@ export default {
                           type: 'object',
                         },
                         type: 'array',
+                        'x-property-group-key': 'thermostats',
                       },
                       available_fan_mode_settings: {
+                        description:
+                          'Fan mode settings that the thermostat supports.',
                         items: {
                           enum: ['auto', 'on', 'circulate'],
                           type: 'string',
                         },
                         type: 'array',
+                        'x-property-group-key': 'thermostats',
                       },
                       available_hvac_mode_settings: {
+                        description:
+                          'HVAC mode settings that the thermostat supports.',
                         items: {
                           enum: ['off', 'heat', 'cool', 'heat_cool'],
                           type: 'string',
                         },
                         type: 'array',
+                        'x-property-group-key': 'thermostats',
                       },
                       current_climate_setting: {
+                        description: 'Current climate setting.',
                         properties: {
                           can_delete: {
                             description:
@@ -9374,6 +10137,7 @@ export default {
                           },
                         },
                         type: 'object',
+                        'x-property-group-key': 'thermostats',
                       },
                       default_climate_setting: {
                         deprecated: true,
@@ -9458,93 +10222,168 @@ export default {
                         type: 'object',
                         'x-deprecated':
                           'use fallback_climate_preset_key to specify a fallback climate preset instead.',
+                        'x-property-group-key': 'thermostats',
                       },
                       fallback_climate_preset_key: {
                         default: null,
+                        description:
+                          'Key of the [fallback climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) for the thermostat.',
                         minLength: 1,
                         nullable: true,
                         type: 'string',
+                        'x-property-group-key': 'thermostats',
                       },
                       fan_mode_setting: {
                         deprecated: true,
                         enum: ['auto', 'on', 'circulate'],
                         type: 'string',
                         'x-deprecated':
-                          'use current_climate_setting.fan_mode_setting instead.',
+                          'Use `current_climate_setting.fan_mode_setting` instead.',
+                        'x-property-group-key': 'thermostats',
                       },
-                      is_cooling: { type: 'boolean' },
-                      is_fan_running: { type: 'boolean' },
-                      is_heating: { type: 'boolean' },
-                      is_temporary_manual_override_active: { type: 'boolean' },
+                      is_cooling: {
+                        description:
+                          'Indicates whether the connected HVAC system is currently cooling, as reported by the thermostat.',
+                        type: 'boolean',
+                        'x-property-group-key': 'thermostats',
+                      },
+                      is_fan_running: {
+                        description:
+                          'Indicates whether the fan in the connected HVAC system is currently running, as reported by the thermostat.',
+                        type: 'boolean',
+                        'x-property-group-key': 'thermostats',
+                      },
+                      is_heating: {
+                        description:
+                          'Indicates whether the connected HVAC system is currently heating, as reported by the thermostat.',
+                        type: 'boolean',
+                        'x-property-group-key': 'thermostats',
+                      },
+                      is_temporary_manual_override_active: {
+                        description:
+                          'Indicates whether the current thermostat settings differ from the most recent active program or schedule that Seam activated. For this condition to occur, `current_climate_setting.manual_override_allowed` must also be `true`.',
+                        type: 'boolean',
+                        'x-property-group-key': 'thermostats',
+                      },
                       max_cooling_set_point_celsius: {
+                        description:
+                          'Maximum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.',
                         format: 'float',
                         type: 'number',
+                        'x-property-group-key': 'thermostats',
                       },
                       max_cooling_set_point_fahrenheit: {
+                        description:
+                          'Maximum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.',
                         format: 'float',
                         type: 'number',
+                        'x-property-group-key': 'thermostats',
                       },
                       max_heating_set_point_celsius: {
+                        description:
+                          'Maximum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.',
                         format: 'float',
                         type: 'number',
+                        'x-property-group-key': 'thermostats',
                       },
                       max_heating_set_point_fahrenheit: {
+                        description:
+                          'Maximum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.',
                         format: 'float',
                         type: 'number',
+                        'x-property-group-key': 'thermostats',
                       },
                       min_cooling_set_point_celsius: {
+                        description:
+                          'Minimum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.',
                         format: 'float',
                         type: 'number',
+                        'x-property-group-key': 'thermostats',
                       },
                       min_cooling_set_point_fahrenheit: {
+                        description:
+                          'Minimum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.',
                         format: 'float',
                         type: 'number',
+                        'x-property-group-key': 'thermostats',
                       },
                       min_heating_cooling_delta_celsius: {
+                        description:
+                          'Minimum [temperature difference](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °C between the cooling and heating set points when in heat-cool (auto) mode.',
                         format: 'float',
                         type: 'number',
+                        'x-property-group-key': 'thermostats',
                       },
                       min_heating_cooling_delta_fahrenheit: {
+                        description:
+                          'Minimum [temperature difference](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °F between the cooling and heating set points when in heat-cool (auto) mode.',
                         format: 'float',
                         type: 'number',
+                        'x-property-group-key': 'thermostats',
                       },
                       min_heating_set_point_celsius: {
+                        description:
+                          'Minimum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.',
                         format: 'float',
                         type: 'number',
+                        'x-property-group-key': 'thermostats',
                       },
                       min_heating_set_point_fahrenheit: {
+                        description:
+                          'Minimum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.',
                         format: 'float',
                         type: 'number',
+                        'x-property-group-key': 'thermostats',
                       },
                       relative_humidity: {
+                        description:
+                          'Reported relative humidity, as a value between 0 and 1, inclusive.',
                         format: 'float',
                         maximum: 1,
                         minimum: 0,
                         type: 'number',
+                        'x-property-group-key': 'thermostats',
                       },
-                      temperature_celsius: { format: 'float', type: 'number' },
-                      temperature_fahrenheit: {
+                      temperature_celsius: {
+                        description: 'Reported temperature in °C.',
                         format: 'float',
                         type: 'number',
+                        'x-property-group-key': 'thermostats',
+                      },
+                      temperature_fahrenheit: {
+                        description: 'Reported temperature in °F.',
+                        format: 'float',
+                        type: 'number',
+                        'x-property-group-key': 'thermostats',
                       },
                       temperature_threshold: {
+                        description:
+                          'Current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.',
                         properties: {
                           lower_limit_celsius: {
+                            description:
+                              'Lower limit in °C within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.\n          ',
                             format: 'float',
                             nullable: true,
                             type: 'number',
                           },
                           lower_limit_fahrenheit: {
+                            description:
+                              'Lower limit in °F within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.\n          ',
                             format: 'float',
                             nullable: true,
                             type: 'number',
                           },
                           upper_limit_celsius: {
+                            description:
+                              'Upper limit in °C within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.\n          ',
                             format: 'float',
                             nullable: true,
                             type: 'number',
                           },
                           upper_limit_fahrenheit: {
+                            description:
+                              'Upper limit in °F within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.\n          ',
                             format: 'float',
                             nullable: true,
                             type: 'number',
@@ -9557,8 +10396,11 @@ export default {
                           'upper_limit_fahrenheit',
                         ],
                         type: 'object',
+                        'x-property-group-key': 'thermostats',
                       },
                       thermostat_daily_programs: {
+                        description:
+                          'Configured [daily programs](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.',
                         items: {
                           description:
                             'Represents a thermostat daily program, consisting of a set of periods, each of which has a starting time and the key that identifies the climate preset to apply at the starting time.',
@@ -9635,8 +10477,11 @@ export default {
                             '/thermostats/thermostat_daily_programs',
                         },
                         type: 'array',
+                        'x-property-group-key': 'thermostats',
                       },
                       thermostat_weekly_program: {
+                        description:
+                          'Current [weekly program](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.',
                         nullable: true,
                         properties: {
                           created_at: {
@@ -9706,6 +10551,7 @@ export default {
                           'created_at',
                         ],
                         type: 'object',
+                        'x-property-group-key': 'thermostats',
                       },
                     },
                     type: 'object',
@@ -9714,6 +10560,15 @@ export default {
               },
             ],
             description: 'Properties of the device.',
+            'x-property-groups': {
+              access_codes: { name: 'Access Codes' },
+              hardware: { name: 'Hardware' },
+              locks: { name: 'Locks' },
+              noise_sensors: { name: 'Noise Sensors' },
+              phones: { name: 'Phones' },
+              provider_metadata: { name: 'Provider Metadata' },
+              thermostats: { name: 'Thermostats' },
+            },
           },
           warnings: {
             description:
@@ -10009,6 +10864,15 @@ export default {
           'custom_metadata',
         ],
         type: 'object',
+        'x-property-groups': {
+          access_codes: { name: 'Access Codes' },
+          hardware: { name: 'Hardware' },
+          locks: { name: 'Locks' },
+          noise_sensors: { name: 'Noise Sensors' },
+          phones: { name: 'Phones' },
+          provider_metadata: { name: 'Provider Metadata' },
+          thermostats: { name: 'Thermostats' },
+        },
         'x-route-path': '/devices',
       },
       device_provider: {
@@ -15220,7 +16084,7 @@ export default {
         description: "Represents an app user's mobile phone.",
         properties: {
           created_at: {
-            description: 'Date and time at which the `phone` was created.',
+            description: 'Date and time at which the phone was created.\n  ',
             format: 'date-time',
             type: 'string',
           },
@@ -15229,26 +16093,26 @@ export default {
               oneOf: [{ type: 'string' }, { type: 'boolean' }],
             },
             description:
-              'Optional [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) for the phone.',
+              'Optional [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) for the phone.\n  ',
             type: 'object',
           },
           device_id: {
-            description: 'ID of the `phone`.',
+            description: 'ID of the phone.\n          ',
             format: 'uuid',
             type: 'string',
           },
           device_type: {
-            description: 'Type of phone.',
+            description: 'Device type for phones.\n          ',
             enum: ['ios_phone', 'android_phone'],
             type: 'string',
           },
           display_name: {
             description:
-              'Display name of the phone. Defaults to `nickname` (if it is set) or `properties.appearance.name` otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.',
+              'Display name of the phone. Defaults to `nickname` (if it is set) or `properties.appearance.name` otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.\n  ',
             type: 'string',
           },
           errors: {
-            description: 'Errors associated with the `phone`.',
+            description: 'Errors associated with the phone.',
             items: {
               properties: {
                 error_code: { type: 'string' },
@@ -15261,11 +16125,11 @@ export default {
           },
           nickname: {
             description:
-              'Optional nickname to describe the phone, settable through Seam.',
+              'Optional nickname to describe the phone, settable through Seam.\n  ',
             type: 'string',
           },
           properties: {
-            description: 'Properties of the phone.',
+            description: '\n          Properties of the phone.\n          ',
             properties: {
               assa_abloy_credential_service_metadata: {
                 description:
@@ -15316,7 +16180,7 @@ export default {
             type: 'object',
           },
           warnings: {
-            description: 'Warnings associated with the `phone`.',
+            description: 'Warnings associated with the phone.',
             items: {
               properties: {
                 message: { type: 'string' },
@@ -15329,7 +16193,7 @@ export default {
           },
           workspace_id: {
             description:
-              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `phone`.',
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the phone.\n  ',
             format: 'uuid',
             type: 'string',
           },
@@ -15346,6 +16210,7 @@ export default {
           'properties',
         ],
         type: 'object',
+        'x-property-groups': { phones: { name: 'Phones' } },
         'x-route-path': '/phones',
       },
       phone_registration: {
@@ -18731,8 +19596,10 @@ export default {
           can_turn_off_hvac: { type: 'boolean' },
           capabilities_supported: {
             description:
-              'Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health.',
+              '\n        Collection of capabilities that the device supports when connected to Seam. Values are `access_code`, which indicates that the device can manage and utilize digital PIN codes for secure access; `lock`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; `noise_detection`, which indicates that the device supports monitoring and responding to ambient noise levels; `thermostat`, which indicates that the device can regulate and adjust indoor temperatures; `battery`, which indicates that the device can manage battery life and health; and `phone`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities#capability-flags).\n        ',
             items: {
+              description:
+                '\n        Collection of capabilities that the device supports when connected to Seam. **Important:** Superseded by [capability flags](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities#capability-flags).\n        ',
               enum: [
                 'access_code',
                 'lock',
@@ -18766,6 +19633,7 @@ export default {
             description: 'Type of the device.',
             oneOf: [
               {
+                description: 'Device type for smartlocks.\n          ',
                 enum: [
                   'akuvox_lock',
                   'august_lock',
@@ -18798,10 +19666,12 @@ export default {
                 type: 'string',
               },
               {
+                description: 'Device type for noise sensors.\n          ',
                 enum: ['noiseaware_activity_zone', 'minut_sensor'],
                 type: 'string',
               },
               {
+                description: 'Device type for thermostats.\n          ',
                 enum: [
                   'ecobee_thermostat',
                   'nest_thermostat',
@@ -18813,7 +19683,7 @@ export default {
                 type: 'string',
               },
               {
-                description: 'Type of phone.',
+                description: 'Device type for phones.\n          ',
                 enum: ['ios_phone', 'android_phone'],
                 type: 'string',
               },
@@ -19187,23 +20057,25 @@ export default {
             nullable: true,
             properties: {
               location_name: {
-                description: 'Name of the device location.',
+                description: 'Name of the device location.\n          ',
                 type: 'string',
               },
               timezone: {
-                description: 'Time zone of the device location.',
+                description: 'Time zone of the device location.\n          ',
                 type: 'string',
               },
             },
             type: 'object',
+            'x-property-group-key': 'hardware',
           },
           properties: {
+            description: 'properties of the device.',
             properties: {
               accessory_keypad: {
-                description: 'Represents the accessory keypad state.',
+                description: 'Accessory keypad properties and state.',
                 properties: {
                   battery: {
-                    description: 'Indicates if the keypad battery properties.',
+                    description: 'Keypad battery properties.\n          ',
                     properties: {
                       level: {
                         format: 'float',
@@ -19217,30 +20089,36 @@ export default {
                   },
                   is_connected: {
                     description:
-                      'Indicates if the accessory_keypad is connected to the device.',
+                      'Indicates if an accessory keypad is connected to the device.\n        ',
                     type: 'boolean',
                   },
                 },
                 required: ['is_connected'],
                 type: 'object',
+                'x-property-group-key': 'hardware',
               },
               battery: {
                 description:
-                  'Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage.',
+                  'Represents the current status of the battery charge level.',
                 properties: {
                   level: {
+                    description:
+                      'Battery charge level as a value between 0 and 1, inclusive.\n          ',
                     format: 'float',
                     maximum: 1,
                     minimum: 0,
                     type: 'number',
                   },
                   status: {
+                    description:
+                      'Represents the current status of the battery charge level. Values are `critical`, which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; `low`, which signifies that the battery is under the preferred threshold and should be charged soon; `good`, which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and `full`, which represents a battery that is fully charged, providing the maximum duration of usage.\n          ',
                     enum: ['critical', 'low', 'good', 'full'],
                     type: 'string',
                   },
                 },
                 required: ['level', 'status'],
                 type: 'object',
+                'x-property-group-key': 'hardware',
               },
               battery_level: {
                 description:
@@ -19249,22 +20127,27 @@ export default {
                 maximum: 1,
                 minimum: 0,
                 type: 'number',
+                'x-property-group-key': 'hardware',
               },
               image_alt_text: {
                 description: 'Alt text for the device image.',
                 type: 'string',
+                'x-property-group-key': 'hardware',
               },
               image_url: {
                 description: 'Image URL for the device.',
                 format: 'uri',
                 type: 'string',
+                'x-property-group-key': 'hardware',
               },
               manufacturer: {
                 description:
                   'Manufacturer of the device. When a device, such as a smart lock, is connected through a smart hub, the manufacturer of the device might be different from that of the smart hub.',
                 type: 'string',
+                'x-property-group-key': 'hardware',
               },
               model: {
+                description: 'Device model-related properties.',
                 properties: {
                   accessory_keypad_supported: {
                     deprecated: true,
@@ -19274,32 +20157,35 @@ export default {
                   },
                   can_connect_accessory_keypad: {
                     description:
-                      'Indicates whether the device can connect a accessory keypad.',
+                      '\n          Indicates whether the device can connect a accessory keypad.\n      ',
                     type: 'boolean',
                   },
                   display_name: {
-                    description: 'Display name of the device model.',
+                    description:
+                      '\n          Display name of the device model.\n      ',
                     type: 'string',
                   },
                   has_built_in_keypad: {
                     description:
-                      'Indicates whether the device has a built in accessory keypad.',
+                      '\n          Indicates whether the device has a built in accessory keypad.\n      ',
                     type: 'boolean',
                   },
                   manufacturer_display_name: {
                     description:
-                      'Display name that corresponds to the manufacturer-specific terminology for the device.',
+                      '\n          Display name that corresponds to the manufacturer-specific terminology for the device.\n      ',
                     type: 'string',
                   },
                   offline_access_codes_supported: {
-                    description:
-                      'Indicates whether the device supports offline access codes.',
+                    deprecated: true,
                     type: 'boolean',
+                    'x-deprecated':
+                      'use device.can_program_offline_access_codes.',
                   },
                   online_access_codes_supported: {
-                    description:
-                      'Indicates whether the device supports online access codes.',
+                    deprecated: true,
                     type: 'boolean',
+                    'x-deprecated':
+                      'use device.can_program_online_access_codes.',
                   },
                 },
                 required: ['display_name', 'manufacturer_display_name'],
@@ -19315,6 +20201,7 @@ export default {
                 description:
                   'Indicates whether it is currently possible to use offline access codes for the device.',
                 type: 'boolean',
+                'x-property-group-key': 'access_codes',
               },
               online: {
                 description: 'Indicates whether the device is online.',
@@ -19324,10 +20211,20 @@ export default {
                 description:
                   'Indicates whether it is currently possible to use online access codes for the device.',
                 type: 'boolean',
+                'x-property-group-key': 'access_codes',
               },
             },
             required: ['name', 'online', 'model'],
             type: 'object',
+            'x-property-groups': {
+              access_codes: { name: 'access codes' },
+              hardware: { name: 'hardware' },
+              locks: { name: 'locks' },
+              noise_sensors: { name: 'noise sensors' },
+              phones: { name: 'phones' },
+              provider_metadata: { name: 'provider metadata' },
+              thermostats: { name: 'thermostats' },
+            },
           },
           warnings: {
             description:
@@ -19621,6 +20518,15 @@ export default {
           'properties',
         ],
         type: 'object',
+        'x-property-groups': {
+          access_codes: { name: 'Access Codes' },
+          hardware: { name: 'Hardware' },
+          locks: { name: 'Locks' },
+          noise_sensors: { name: 'Noise Sensors' },
+          phones: { name: 'Phones' },
+          provider_metadata: { name: 'Provider Metadata' },
+          thermostats: { name: 'Thermostats' },
+        },
         'x-route-path': '/devices/unmanaged',
       },
       user_identity: {
@@ -27612,6 +28518,7 @@ export default {
                       'Device type for which you want to list devices.',
                     oneOf: [
                       {
+                        description: 'Device type for smartlocks.\n          ',
                         enum: [
                           'akuvox_lock',
                           'august_lock',
@@ -27644,10 +28551,13 @@ export default {
                         type: 'string',
                       },
                       {
+                        description:
+                          'Device type for noise sensors.\n          ',
                         enum: ['noiseaware_activity_zone', 'minut_sensor'],
                         type: 'string',
                       },
                       {
+                        description: 'Device type for thermostats.\n          ',
                         enum: [
                           'ecobee_thermostat',
                           'nest_thermostat',
@@ -27659,7 +28569,7 @@ export default {
                         type: 'string',
                       },
                       {
-                        description: 'Type of phone.',
+                        description: 'Device type for phones.\n          ',
                         enum: ['ios_phone', 'android_phone'],
                         type: 'string',
                       },
@@ -27671,6 +28581,8 @@ export default {
                     items: {
                       oneOf: [
                         {
+                          description:
+                            'Device type for smartlocks.\n          ',
                           enum: [
                             'akuvox_lock',
                             'august_lock',
@@ -27703,10 +28615,14 @@ export default {
                           type: 'string',
                         },
                         {
+                          description:
+                            'Device type for noise sensors.\n          ',
                           enum: ['noiseaware_activity_zone', 'minut_sensor'],
                           type: 'string',
                         },
                         {
+                          description:
+                            'Device type for thermostats.\n          ',
                           enum: [
                             'ecobee_thermostat',
                             'nest_thermostat',
@@ -27718,7 +28634,7 @@ export default {
                           type: 'string',
                         },
                         {
-                          description: 'Type of phone.',
+                          description: 'Device type for phones.\n          ',
                           enum: ['ios_phone', 'android_phone'],
                           type: 'string',
                         },
@@ -28221,6 +29137,7 @@ export default {
                       'Device type for which you want to list devices.',
                     oneOf: [
                       {
+                        description: 'Device type for smartlocks.\n          ',
                         enum: [
                           'akuvox_lock',
                           'august_lock',
@@ -28253,10 +29170,13 @@ export default {
                         type: 'string',
                       },
                       {
+                        description:
+                          'Device type for noise sensors.\n          ',
                         enum: ['noiseaware_activity_zone', 'minut_sensor'],
                         type: 'string',
                       },
                       {
+                        description: 'Device type for thermostats.\n          ',
                         enum: [
                           'ecobee_thermostat',
                           'nest_thermostat',
@@ -28268,7 +29188,7 @@ export default {
                         type: 'string',
                       },
                       {
-                        description: 'Type of phone.',
+                        description: 'Device type for phones.\n          ',
                         enum: ['ios_phone', 'android_phone'],
                         type: 'string',
                       },
@@ -28280,6 +29200,8 @@ export default {
                     items: {
                       oneOf: [
                         {
+                          description:
+                            'Device type for smartlocks.\n          ',
                           enum: [
                             'akuvox_lock',
                             'august_lock',
@@ -28312,10 +29234,14 @@ export default {
                           type: 'string',
                         },
                         {
+                          description:
+                            'Device type for noise sensors.\n          ',
                           enum: ['noiseaware_activity_zone', 'minut_sensor'],
                           type: 'string',
                         },
                         {
+                          description:
+                            'Device type for thermostats.\n          ',
                           enum: [
                             'ecobee_thermostat',
                             'nest_thermostat',
@@ -28327,7 +29253,7 @@ export default {
                           type: 'string',
                         },
                         {
-                          description: 'Type of phone.',
+                          description: 'Device type for phones.\n          ',
                           enum: ['ios_phone', 'android_phone'],
                           type: 'string',
                         },
@@ -29242,6 +30168,7 @@ export default {
                     description:
                       'Array of device types by which to filter devices.',
                     items: {
+                      description: 'Device type for smartlocks.\n          ',
                       enum: [
                         'akuvox_lock',
                         'august_lock',
@@ -29778,6 +30705,7 @@ export default {
                     description:
                       'Array of device types by which to filter devices.',
                     items: {
+                      description: 'Device type for noise sensors.\n          ',
                       enum: ['noiseaware_activity_zone', 'minut_sensor'],
                       type: 'string',
                     },
@@ -32979,6 +33907,7 @@ export default {
                     description:
                       'Array of device types by which to filter thermostat devices.',
                     items: {
+                      description: 'Device type for thermostats.\n          ',
                       enum: [
                         'ecobee_thermostat',
                         'nest_thermostat',

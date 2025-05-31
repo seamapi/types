@@ -16,23 +16,23 @@ const basePhoneDeviceSchema = device.pick({
 })
 
 export const phone = z.object({
-  device_id:
-    basePhoneDeviceSchema.shape.device_id.describe('ID of the `phone`.'),
-  nickname: basePhoneDeviceSchema.shape.nickname.describe(
-    'Optional nickname to describe the phone, settable through Seam.',
-  ),
-  display_name: basePhoneDeviceSchema.shape.display_name.describe(
-    'Display name of the phone. Defaults to `nickname` (if it is set) or `properties.appearance.name` otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.',
-  ),
-  workspace_id: basePhoneDeviceSchema.shape.workspace_id.describe(
-    'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `phone`.',
-  ),
-  created_at: basePhoneDeviceSchema.shape.created_at.describe(
-    'Date and time at which the `phone` was created.',
-  ),
-  custom_metadata: basePhoneDeviceSchema.shape.custom_metadata.describe(
-    'Optional [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) for the phone.',
-  ),
+  device_id: basePhoneDeviceSchema.shape.device_id.describe(`ID of the phone.
+          `),
+  nickname: basePhoneDeviceSchema.shape.nickname
+    .describe(`Optional nickname to describe the phone, settable through Seam.
+  `),
+  display_name: basePhoneDeviceSchema.shape.display_name
+    .describe(`Display name of the phone. Defaults to \`nickname\` (if it is set) or \`properties.appearance.name\` otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.
+  `),
+  workspace_id: basePhoneDeviceSchema.shape.workspace_id
+    .describe(`ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the phone.
+  `),
+  created_at: basePhoneDeviceSchema.shape.created_at
+    .describe(`Date and time at which the phone was created.
+  `),
+  custom_metadata: basePhoneDeviceSchema.shape.custom_metadata
+    .describe(`Optional [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) for the phone.
+  `),
 
   errors: z
     .array(
@@ -41,7 +41,7 @@ export const phone = z.object({
         message: z.string(),
       }),
     )
-    .describe('Errors associated with the `phone`.'),
+    .describe('Errors associated with the phone.'),
   warnings: z
     .array(
       z.object({
@@ -49,12 +49,15 @@ export const phone = z.object({
         message: z.string(),
       }),
     )
-    .describe('Warnings associated with the `phone`.'),
+    .describe('Warnings associated with the phone.'),
   device_type: phone_device_type,
   properties: phone_specific_properties,
 }).describe(`
   ---
   route_path: /phones
+  property_groups:
+    phones:
+      name: Phones
   ---
   Represents an app user's mobile phone.
 `)

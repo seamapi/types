@@ -18,6 +18,8 @@ export const device_capability_flags =
   })
 
 export const battery_status = z.enum(['critical', 'low', 'good', 'full'])
+  .describe(`Represents the current status of the battery charge level. Values are \`critical\`, which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; \`low\`, which signifies that the battery is under the preferred threshold and should be charged soon; \`good\`, which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and \`full\`, which represents a battery that is fully charged, providing the maximum duration of usage.
+          `)
 
 export type BatteryStatus = z.infer<typeof battery_status>
 
@@ -404,108 +406,136 @@ export const common_device_properties = z.object({
       `),
   accessory_keypad: z
     .object({
-      is_connected: z
-        .boolean()
-        .describe(
-          'Indicates if the accessory_keypad is connected to the device.',
-        ),
+      is_connected: z.boolean()
+        .describe(`Indicates if an accessory keypad is connected to the device.
+        `),
       battery: z
         .object({
           level: z.number().min(0).max(1),
         })
-        .optional()
-        .describe('Indicates if the keypad battery properties.'),
+        .optional().describe(`Keypad battery properties.
+          `),
     })
-    .optional()
-    .describe('Represents the accessory keypad state.'),
+    .optional().describe(`
+          ---
+          property_group_key: hardware
+          ---
+          Accessory keypad properties and state.
+          `),
   appearance: z.object({
     name: z
       .string()
       .describe(
         'Name of the device as seen from the provider API and application, not settable through Seam.',
       ),
-  }),
-  model: z.object({
-    can_connect_accessory_keypad: z
-      .boolean()
-      .optional()
-      .describe('Indicates whether the device can connect a accessory keypad.'),
-    display_name: z.string().describe('Display name of the device model.'),
-    manufacturer_display_name: z
-      .string()
-      .describe(
-        'Display name that corresponds to the manufacturer-specific terminology for the device.',
-      ),
-    has_built_in_keypad: z
-      .boolean()
-      .optional()
-      .describe(
-        'Indicates whether the device has a built in accessory keypad.',
-      ),
-    offline_access_codes_supported: z
-      .boolean()
-      .optional()
-      .describe('Indicates whether the device supports offline access codes.'),
-    online_access_codes_supported: z
-      .boolean()
-      .optional()
-      .describe('Indicates whether the device supports online access codes.'),
-    accessory_keypad_supported: z
-      .boolean()
-      .optional()
-      .describe(
-        `
-      ---
-      deprecated: use device.properties.model.can_connect_accessory_keypad
-      ---
-      `,
-      ),
-  }),
-  has_direct_power: z
-    .boolean()
-    .optional()
-    .describe('Indicates whether the device has direct power.'),
-  battery_level: z
-    .number()
-    .min(0)
-    .max(1)
-    .optional()
-    .describe(
-      'Indicates the battery level of the device as a decimal value between 0 and 1, inclusive.',
-    ),
+  }).describe(`
+          ---
+          property_group_key: hardware
+          ---
+          Appearance-related properties, as reported by the device.
+          `),
+  model: z
+    .object({
+      can_connect_accessory_keypad: z.boolean().optional().describe(`
+          Indicates whether the device can connect a accessory keypad.
+      `),
+      display_name: z.string().describe(`
+          Display name of the device model.
+      `),
+      manufacturer_display_name: z.string().describe(`
+          Display name that corresponds to the manufacturer-specific terminology for the device.
+      `),
+      has_built_in_keypad: z.boolean().optional().describe(`
+          Indicates whether the device has a built in accessory keypad.
+      `),
+      offline_access_codes_supported: z.boolean().optional().describe(`
+          ---
+          deprecated: use device.can_program_offline_access_codes.
+          ---
+          `),
+      online_access_codes_supported: z.boolean().optional().describe(`
+          ---
+          deprecated: use device.can_program_online_access_codes.
+          ---
+          `),
+      accessory_keypad_supported: z.boolean().optional().describe(`
+        ---
+        deprecated: use device.properties.model.can_connect_accessory_keypad
+        ---
+        `),
+    })
+    .describe(`Device model-related properties.`),
+  has_direct_power: z.boolean().optional().describe(`
+          ---
+          property_group_key: hardware
+          ---
+          Indicates whether the device has direct power.
+          `),
+  battery_level: z.number().min(0).max(1).optional().describe(`
+          ---
+          property_group_key: hardware
+          ---
+          Indicates the battery level of the device as a decimal value between 0 and 1, inclusive.
+          `),
   battery: z
     .object({
-      level: z.number().min(0).max(1),
+      level: z.number().min(0).max(1)
+        .describe(`Battery charge level as a value between 0 and 1, inclusive.
+          `),
       status: battery_status,
     })
-    .optional()
-    .describe(
-      'Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage.',
-    ),
+    .optional().describe(`
+          ---
+          property_group_key: hardware
+          ---
+          Represents the current status of the battery charge level.
+          `),
   // todo: use enum
-  manufacturer: z
-    .string()
-    .optional()
-    .describe(
-      'Manufacturer of the device. When a device, such as a smart lock, is connected through a smart hub, the manufacturer of the device might be different from that of the smart hub.',
-    ),
-  image_url: z.string().url().optional().describe('Image URL for the device.'),
-  image_alt_text: z
-    .string()
-    .optional()
-    .describe('Alt text for the device image.'),
-  serial_number: z.string().optional().describe('Serial number of the device.'),
+  manufacturer: z.string().optional().describe(`
+          ---
+          property_group_key: hardware
+          ---
+          Manufacturer of the device. When a device, such as a smart lock, is connected through a smart hub, the manufacturer of the device might be different from that of the smart hub.
+    `),
+  image_url: z.string().url().optional().describe(`
+          ---
+          property_group_key: hardware
+          ---
+          Image URL for the device.
+          `),
+  image_alt_text: z.string().optional().describe(`
+          ---
+          property_group_key: hardware
+          ---
+          Alt text for the device image.
+          `),
+  serial_number: z.string().optional().describe(`
+          ---
+          property_group_key: hardware
+          ---
+          Serial number of the device.
+          `),
 
   online_access_codes_enabled: z
     .boolean()
     .describe(
-      'Indicates whether it is currently possible to use online access codes for the device.',
+      `
+          ---
+          property_group_key: access_codes
+          ---
+          Indicates whether it is currently possible to use online access codes for the device.
+          `,
     )
     .optional(),
   offline_access_codes_enabled: z
     .boolean()
     .describe(
-      'Indicates whether it is currently possible to use offline access codes for the device.',
+      `
+          ---
+          property_group_key: access_codes
+          ---
+          Indicates whether it is currently possible to use offline access codes for the device.
+          `,
     )
     .optional(),
 
@@ -516,6 +546,7 @@ export const common_device_properties = z.object({
       `
       ---
       deprecated: use device.properties.model.can_connect_accessory_keypad
+      property_group_key: access_codes
       ---
       `,
     )
@@ -526,6 +557,7 @@ export const common_device_properties = z.object({
       `
       ---
       deprecated: use offline_access_codes_enabled
+      property_group_key: access_codes
       ---
       `,
     )
@@ -533,12 +565,24 @@ export const common_device_properties = z.object({
   noise_level_decibels: z
     .number()
     .describe(
-      'Indicates current noise level in decibels, if the device supports noise detection.',
+      `
+          ---
+          property_group_key: noise_sensors
+          ---
+          Indicates current noise level in decibels, if the device supports noise detection.
+          `,
     )
     .optional(),
   currently_triggering_noise_threshold_ids: z
     .array(z.string())
-    .describe('Array of noise threshold IDs that are currently triggering.')
+    .describe(
+      `
+          ---
+          property_group_key: noise_sensors
+          ---
+          Array of noise threshold IDs that are currently triggering.
+          `,
+    )
     .optional(),
 })
 
@@ -569,30 +613,48 @@ export const device = z
       .describe(
         'Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
       ),
-    capabilities_supported: z
-      .array(capabilities)
-      .describe(
-        'Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health.',
-      ),
+    capabilities_supported: z.array(capabilities).describe(`
+        Collection of capabilities that the device supports when connected to Seam. Values are \`access_code\`, which indicates that the device can manage and utilize digital PIN codes for secure access; \`lock\`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; \`noise_detection\`, which indicates that the device supports monitoring and responding to ambient noise levels; \`thermostat\`, which indicates that the device can regulate and adjust indoor temperatures; \`battery\`, which indicates that the device can manage battery life and health; and \`phone\`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities#capability-flags).
+        `),
     properties: common_device_properties
       .and(phone_specific_properties.partial())
       .and(device_metadata)
-      .and(capability_properties)
-      .describe('Properties of the device.'),
+      .and(capability_properties).describe(`
+    ---
+    property_groups:
+      locks:
+        name: Locks
+      access_codes:
+        name: Access Codes
+      thermostats:
+        name: Thermostats
+      hardware:
+        name: Hardware
+      noise_sensors:
+        name: Noise Sensors
+      phones:
+        name: Phones
+      provider_metadata:
+        name: Provider Metadata
+    ---
+    Properties of the device.
+  `),
     location: z
       // todo: optional instead of nullable
       .object({
-        location_name: z
-          .string()
-          .optional()
-          .describe('Name of the device location.'),
-        timezone: z
-          .string()
-          .optional()
-          .describe('Time zone of the device location.'),
+        location_name: z.string().optional()
+          .describe(`Name of the device location.
+          `),
+        timezone: z.string().optional()
+          .describe(`Time zone of the device location.
+          `),
       })
-      .nullable()
-      .describe('Location information for the device.'),
+      .nullable().describe(`
+          ---
+          property_group_key: hardware
+          ---
+          Location information for the device.
+          `),
     connected_account_id: z
       .string()
       .uuid()
@@ -639,6 +701,21 @@ export const device = z
   .merge(device_capability_flags).describe(`
     ---
     route_path: /devices
+    property_groups:
+      locks:
+        name: Locks
+      access_codes:
+        name: Access Codes
+      thermostats:
+        name: Thermostats
+      hardware:
+        name: Hardware
+      noise_sensors:
+        name: Noise Sensors
+      phones:
+        name: Phones
+      provider_metadata:
+        name: Provider Metadata
     ---
     Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that has been connected to Seam.
   `)
