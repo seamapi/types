@@ -40,7 +40,8 @@ export const LOCK_DEVICE_TYPE_LIST = Object.values(
 
 export const lock_device_type = z.enum(
   Object.values(LOCK_DEVICE_TYPE) as [LockDeviceTypeFromMapping],
-)
+).describe(`Device type for smartlocks.
+          `)
 
 export type LockDeviceType = z.infer<typeof lock_device_type>
 
@@ -59,7 +60,8 @@ export const NOISE_SENSOR_DEVICE_TYPE_LIST = Object.values(
 
 export const noise_sensor_device_type = z.enum(
   Object.values(NOISE_SENSOR_DEVICE_TYPE) as [NoiseSensorDeviceTypeFromMapping],
-)
+).describe(`Device type for noise sensors.
+          `)
 
 export type NoiseSensorDeviceType = z.infer<typeof noise_sensor_device_type>
 
@@ -82,7 +84,8 @@ export const THERMOSTAT_DEVICE_TYPE_LIST = Object.values(
 
 export const thermostat_device_type = z.enum(
   Object.values(THERMOSTAT_DEVICE_TYPE) as [ThermostatDeviceTypeFromMapping],
-)
+).describe(`Device type for thermostats.
+          `)
 
 export type ThermostatDeviceType = z.infer<typeof thermostat_device_type>
 
@@ -99,9 +102,10 @@ export const PHONE_DEVICE_TYPE_LIST = Object.values(
   PHONE_DEVICE_TYPE,
 ) as PhoneDeviceTypeFromMapping[]
 
-export const phone_device_type = z
-  .enum(Object.values(PHONE_DEVICE_TYPE_LIST) as [PhoneDeviceTypeFromMapping])
-  .describe('Type of phone.')
+export const phone_device_type = z.enum(
+  Object.values(PHONE_DEVICE_TYPE_LIST) as [PhoneDeviceTypeFromMapping],
+).describe(`Device type for phones.
+          `)
 
 export type PhoneDeviceType = z.infer<typeof phone_device_type>
 
