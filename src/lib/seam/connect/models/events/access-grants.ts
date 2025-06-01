@@ -3,7 +3,10 @@ import { z } from 'zod'
 import { common_event } from './common.js'
 
 const access_grant_event = common_event.extend({
-  access_grant_id: z.string().uuid().describe('ID of the access grant.'),
+  access_grant_id: z
+    .string()
+    .uuid()
+    .describe('ID of the affected access grant.'),
 })
 
 export const access_grant_created_event = access_grant_event.extend({
@@ -48,7 +51,7 @@ const acs_entrance_id = z
   .string()
   .uuid()
   .describe(
-    'ID of the door, an [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details).',
+    'ID of the affected [entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details).',
   )
 
 export const access_grant_access_granted_to_door_event =

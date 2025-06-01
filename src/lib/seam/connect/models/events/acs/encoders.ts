@@ -3,12 +3,7 @@ import { z } from 'zod'
 import { common_acs_event } from './common.js'
 
 const acs_encoder_event = common_acs_event.extend({
-  acs_encoder_id: z
-    .string()
-    .uuid()
-    .describe(
-      'ID of the [ACS encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
-    ),
+  acs_encoder_id: z.string().uuid().describe('ID of the affected encoder.'),
 })
 
 export const acs_encoder_added_event = acs_encoder_event.extend({

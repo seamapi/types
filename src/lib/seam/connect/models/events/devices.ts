@@ -4,13 +4,11 @@ import { climate_setting } from '../thermostats/climate-preset.js'
 import { common_event } from './common.js'
 
 const device_event = common_event.extend({
-  device_id: z.string().uuid().describe('ID of the device.'),
+  device_id: z.string().uuid().describe('ID of the affected device.'),
   connected_account_id: z
     .string()
     .uuid()
-    .describe(
-      'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
-    ),
+    .describe('ID of the connected account associated with the event.'),
 })
 
 const battery_level = z
@@ -18,13 +16,13 @@ const battery_level = z
   .min(0)
   .max(1)
   .describe(
-    'Number in the range 0 to 1.0 indicating the amount of battery in the device, as reported by the device.',
+    'Number in the range 0 to 1.0 indicating the amount of battery in the affected device, as reported by the device.',
   )
 
 const device_battery_status = z
   .enum(['critical', 'low', 'good', 'full'])
   .describe(
-    'Battery status of the device, calculated from the numeric `battery_level` value.',
+    'Battery status of the affected device, calculated from the numeric `battery_level` value.',
   )
 
 const disconnection_error_code = z
@@ -34,7 +32,7 @@ const disconnection_error_code = z
 export const lock_method = z
   .enum(['keycode', 'manual', 'automatic', 'unknown', 'seamapi'])
   .describe(
-    'Method by which a [lock device](https://docs.seam.co/latest/capability-guides/smart-locks) was locked or unlocked. When the method is `keycode`, the `access_code_id` indicates the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used, if reported by the device.',
+    'Method by which the affected lock device was locked or unlocked. When the method is `keycode`, the `access_code_id` indicates the access code that was used, if reported by the device.',
   )
 export type LockMethod = z.infer<typeof lock_method>
 
@@ -333,15 +331,11 @@ export const noise_sensor_noise_threshold_triggered_event = device_event.extend(
       .string()
       .uuid()
       .optional()
-      .describe(
-        'ID of the [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors#what-is-a-threshold) that was triggered.',
-      ),
+      .describe('ID of the noise threshold that was triggered.'),
     noise_threshold_name: z
       .string()
       .optional()
-      .describe(
-        'Name of the [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors#what-is-a-threshold) that was triggered.',
-      ),
+      .describe('Name of the noise threshold that was triggered.'),
     // TODO: remove metadata from this event
     noiseaware_metadata: z
       .record(z.unknown())
@@ -369,18 +363,14 @@ export const lock_locked_event = device_event.extend({
     .string()
     .uuid()
     .optional()
-    .describe(
-      'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used to lock the device.',
-    ),
+    .describe('ID of the access code that was used to lock the device.'),
   action_attempt_id: z
     .string()
     .uuid()
     .optional()
-    .describe(
-      'ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) associated with the lock action.',
-    ),
+    .describe('ID of the action attempt associated with the lock action.'),
   method: lock_method.describe(
-    'Method by which a [lock device](https://docs.seam.co/latest/capability-guides/smart-locks) was locked. When the method is `keycode`, the `access_code_id` indicates the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used, if reported by the device.',
+    'Method by which the affected lock device was locked. When the method is `keycode`, the `access_code_id` indicates the access code that was used, if reported by the device.',
   ),
 }).describe(`
   ---
@@ -398,17 +388,15 @@ export const lock_unlocked_event = device_event.extend({
     .uuid()
     .optional()
     .describe(
-      'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used to unlock the device.',
+      'ID of the access code that was used to unlock the affected device.',
     ),
   action_attempt_id: z
     .string()
     .uuid()
     .optional()
-    .describe(
-      'ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) associated with the unlock action.',
-    ),
+    .describe('ID of the action attempt associated with the unlock action.'),
   method: lock_method.describe(
-    'Method by which a [lock device](https://docs.seam.co/latest/capability-guides/smart-locks) was unlocked. When the method is `keycode`, the `access_code_id` indicates the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used, if reported by the device.',
+    'Method by which the affected lock device was unlocked. When the method is `keycode`, the `access_code_id` indicates the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used, if reported by the device.',
   ),
 }).describe(`
   ---
@@ -425,9 +413,7 @@ export const lock_access_denied_event = device_event.extend({
     .string()
     .uuid()
     .optional()
-    .describe(
-      'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used in the unlock attempts.',
-    ),
+    .describe('ID of the access code that was used in the unlock attempts.'),
 }).describe(`
   ---
   route_path: /locks
@@ -444,17 +430,15 @@ export const thermostat_climate_preset_activated_event = device_event.extend({
     .uuid()
     .nullable()
     .describe(
-      'ID of the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that prompted the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to be activated.',
+      'ID of the thermostat schedule that prompted the affected climate preset to be activated.',
     ),
   climate_preset_key: z
     .string()
-    .describe(
-      'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) that was activated.',
-    ),
+    .describe('Key of the climate preset that was activated.'),
   is_fallback_climate_preset: z
     .boolean()
     .describe(
-      'Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) that was activated is the [fallback climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) for the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+      'Indicates whether the climate preset that was activated is the fallback climate preset for the thermostat.',
     ),
 }).describe(`
   ---
@@ -470,7 +454,7 @@ export type ThermostatClimatePresetActivatedEvent = z.infer<
 export const thermostat_manually_adjusted_method = z
   .enum(['seam', 'external'])
   .describe(
-    'Method used to adjust the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) manually. `seam` indicates that the Seam API, Seam CLI, or Seam Console was used to adjust the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+    'Method used to adjust the affected thermostat manually. `seam` indicates that the Seam API, Seam CLI, or Seam Console was used to adjust the thermostat.',
   )
 
 export const thermostat_manually_adjusted_event = device_event
@@ -502,38 +486,26 @@ export const temperature_threshold_exceeded_event = device_event.extend({
   event_type: z.literal('thermostat.temperature_threshold_exceeded'),
   temperature_celsius: z
     .number()
-    .describe(
-      'Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
-    ),
+    .describe('Temperature, in °C, reported by the affected thermostat.'),
   temperature_fahrenheit: z
     .number()
-    .describe(
-      'Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
-    ),
+    .describe('Temperature, in °F, reported by the affected thermostat.'),
   upper_limit_celsius: z
     .number()
     .nullable()
-    .describe(
-      'Upper temperature limit, in °C, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).',
-    ),
+    .describe('Upper temperature limit, in °C, defined by the set threshold.'),
   upper_limit_fahrenheit: z
     .number()
     .nullable()
-    .describe(
-      'Upper temperature limit, in °F, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).',
-    ),
+    .describe('Upper temperature limit, in °F, defined by the set threshold.'),
   lower_limit_celsius: z
     .number()
     .nullable()
-    .describe(
-      'Lower temperature limit, in °C, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).',
-    ),
+    .describe('Lower temperature limit, in °C, defined by the set threshold.'),
   lower_limit_fahrenheit: z
     .number()
     .nullable()
-    .describe(
-      'Lower temperature limit, in °F, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).',
-    ),
+    .describe('Lower temperature limit, in °F, defined by the set threshold.'),
 }).describe(`
   ---
   route_path: /thermostats
@@ -552,37 +524,33 @@ export const temperature_threshold_no_longer_exceeded_event =
     ),
     temperature_celsius: z
       .number()
-      .describe(
-        'Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
-      ),
+      .describe('Temperature, in °C, reported by the affected thermostat.'),
     temperature_fahrenheit: z
       .number()
-      .describe(
-        'Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
-      ),
+      .describe('Temperature, in °F, reported by the affected thermostat.'),
     upper_limit_celsius: z
       .number()
       .nullable()
       .describe(
-        'Upper temperature limit, in °C, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).',
+        'Upper temperature limit, in °C, defined by the set threshold.',
       ),
     upper_limit_fahrenheit: z
       .number()
       .nullable()
       .describe(
-        'Upper temperature limit, in °F, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).',
+        'Upper temperature limit, in °F, defined by the set threshold.',
       ),
     lower_limit_celsius: z
       .number()
       .nullable()
       .describe(
-        'Lower temperature limit, in °C, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).',
+        'Lower temperature limit, in °C, defined by the set threshold.',
       ),
     lower_limit_fahrenheit: z
       .number()
       .nullable()
       .describe(
-        'Lower temperature limit, in °F, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).',
+        'Lower temperature limit, in °F, defined by the set threshold.',
       ),
   }).describe(`
     ---
@@ -599,25 +567,21 @@ export const temperature_reached_set_point_event = device_event.extend({
   event_type: z.literal('thermostat.temperature_reached_set_point'),
   temperature_celsius: z
     .number()
-    .describe(
-      'Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
-    ),
+    .describe('Temperature, in °C, reported by the affected thermostat.'),
   temperature_fahrenheit: z
     .number()
-    .describe(
-      'Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
-    ),
+    .describe('Temperature, in °F, reported by the affected thermostat.'),
   desired_temperature_celsius: z
     .number()
     .optional()
     .describe(
-      "Desired temperature, in °C, defined by the [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) cooling or heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).",
+      "Desired temperature, in °C, defined by the affected thermostat's cooling or heating set point.",
     ),
   desired_temperature_fahrenheit: z
     .number()
     .optional()
     .describe(
-      "Desired temperature, in °F, defined by the [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) cooling or heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).",
+      "Desired temperature, in °F, defined by the affected thermostat's cooling or heating set point.",
     ),
 }).describe(`
   ---
@@ -634,14 +598,10 @@ export const temperature_changed_event = device_event.extend({
   event_type: z.literal('thermostat.temperature_changed'),
   temperature_celsius: z
     .number()
-    .describe(
-      'Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
-    ),
+    .describe('Temperature, in °C, reported by the affected thermostat.'),
   temperature_fahrenheit: z
     .number()
-    .describe(
-      'Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
-    ),
+    .describe('Temperature, in °F, reported by the affected thermostat.'),
 }).describe(`
   ---
   route_path: /thermostats
@@ -653,7 +613,7 @@ export type TemperatureChangedEvent = z.infer<typeof temperature_changed_event>
 
 export const device_name_changed_event = device_event.extend({
   event_type: z.literal('device.name_changed'),
-  device_name: z.string().describe('The new name of the device.'),
+  device_name: z.string().describe('The new name of the affected device.'),
 }).describe(`
   ---
   route_path: /devices

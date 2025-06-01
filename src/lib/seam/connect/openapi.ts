@@ -11019,14 +11019,13 @@ export default {
               'An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was created.',
             properties: {
               access_code_id: {
-                description:
-                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+                description: 'ID of the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the affected access codes.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11037,7 +11036,7 @@ export default {
               },
               device_id: {
                 description:
-                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
+                  'ID of the device associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11053,8 +11052,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11077,14 +11075,13 @@ export default {
               'An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was changed.',
             properties: {
               access_code_id: {
-                description:
-                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+                description: 'ID of the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the affected access codes.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11095,7 +11092,7 @@ export default {
               },
               device_id: {
                 description:
-                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
+                  'ID of the device associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11111,8 +11108,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11135,19 +11131,17 @@ export default {
               'An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was [scheduled natively](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#native-scheduling) on a device.',
             properties: {
               access_code_id: {
-                description:
-                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+                description: 'ID of the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
               code: {
-                description:
-                  'Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+                description: 'Code for the affected access code.',
                 type: 'string',
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the affected access codes.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11158,7 +11152,7 @@ export default {
               },
               device_id: {
                 description:
-                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
+                  'ID of the device associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11177,8 +11171,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11202,19 +11195,17 @@ export default {
               'An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was set on a device.',
             properties: {
               access_code_id: {
-                description:
-                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+                description: 'ID of the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
               code: {
-                description:
-                  'Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+                description: 'Code for the affected access code.',
                 type: 'string',
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the affected access codes.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11225,7 +11216,7 @@ export default {
               },
               device_id: {
                 description:
-                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
+                  'ID of the device associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11244,8 +11235,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11269,14 +11259,13 @@ export default {
               'An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was removed from a device.',
             properties: {
               access_code_id: {
-                description:
-                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+                description: 'ID of the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the affected access codes.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11287,7 +11276,7 @@ export default {
               },
               device_id: {
                 description:
-                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
+                  'ID of the device associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11306,8 +11295,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11330,14 +11318,13 @@ export default {
               'There was an unusually long delay in setting an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) on a device.',
             properties: {
               access_code_id: {
-                description:
-                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+                description: 'ID of the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the affected access codes.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11348,7 +11335,7 @@ export default {
               },
               device_id: {
                 description:
-                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
+                  'ID of the device associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11367,8 +11354,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11391,14 +11377,13 @@ export default {
               'An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) failed to be set on a device.',
             properties: {
               access_code_id: {
-                description:
-                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+                description: 'ID of the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the affected access codes.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11409,7 +11394,7 @@ export default {
               },
               device_id: {
                 description:
-                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
+                  'ID of the device associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11428,8 +11413,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11452,20 +11436,18 @@ export default {
               'An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was deleted.',
             properties: {
               access_code_id: {
-                description:
-                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+                description: 'ID of the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
               code: {
-                description:
-                  'Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+                description: 'Code for the affected access code.',
                 nullable: true,
                 type: 'string',
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the affected access codes.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11476,7 +11458,7 @@ export default {
               },
               device_id: {
                 description:
-                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
+                  'ID of the device associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11492,8 +11474,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11517,14 +11498,13 @@ export default {
               'There was an unusually long delay in removing an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) from a device.',
             properties: {
               access_code_id: {
-                description:
-                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+                description: 'ID of the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the affected access codes.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11535,7 +11515,7 @@ export default {
               },
               device_id: {
                 description:
-                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
+                  'ID of the device associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11554,8 +11534,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11578,14 +11557,13 @@ export default {
               'An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) failed to be removed from a device.',
             properties: {
               access_code_id: {
-                description:
-                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+                description: 'ID of the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the affected access codes.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11596,7 +11574,7 @@ export default {
               },
               device_id: {
                 description:
-                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
+                  'ID of the device associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11615,8 +11593,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11639,14 +11616,13 @@ export default {
               'An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was modified outside of Seam.',
             properties: {
               access_code_id: {
-                description:
-                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+                description: 'ID of the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the affected access codes.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11657,7 +11633,7 @@ export default {
               },
               device_id: {
                 description:
-                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
+                  'ID of the device associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11676,8 +11652,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11700,14 +11675,13 @@ export default {
               'An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was deleted outside of Seam.',
             properties: {
               access_code_id: {
-                description:
-                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+                description: 'ID of the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the affected access codes.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11718,7 +11692,7 @@ export default {
               },
               device_id: {
                 description:
-                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
+                  'ID of the device associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11737,8 +11711,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11761,15 +11734,14 @@ export default {
               'A [backup access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) was pulled from the backup access code pool and set on a device.',
             properties: {
               access_code_id: {
-                description:
-                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+                description: 'ID of the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
               backup_access_code_id: { type: 'string' },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the affected access codes.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11780,7 +11752,7 @@ export default {
               },
               device_id: {
                 description:
-                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
+                  'ID of the device associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11799,8 +11771,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11824,14 +11795,13 @@ export default {
               'An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) was converted successfully to a managed access code.',
             properties: {
               access_code_id: {
-                description:
-                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+                description: 'ID of the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the affected access codes.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11842,7 +11812,7 @@ export default {
               },
               device_id: {
                 description:
-                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
+                  'ID of the device associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11861,8 +11831,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11885,14 +11854,13 @@ export default {
               'An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) failed to be converted to a managed access code.',
             properties: {
               access_code_id: {
-                description:
-                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+                description: 'ID of the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the affected access codes.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11903,7 +11871,7 @@ export default {
               },
               device_id: {
                 description:
-                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
+                  'ID of the device associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11922,8 +11890,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11946,14 +11913,13 @@ export default {
               'An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) was created on a device.',
             properties: {
               access_code_id: {
-                description:
-                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+                description: 'ID of the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the affected access codes.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11964,7 +11930,7 @@ export default {
               },
               device_id: {
                 description:
-                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
+                  'ID of the device associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11983,8 +11949,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12007,14 +11972,13 @@ export default {
               'An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) was removed from a device.',
             properties: {
               access_code_id: {
-                description:
-                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+                description: 'ID of the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the affected access codes.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12025,7 +11989,7 @@ export default {
               },
               device_id: {
                 description:
-                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
+                  'ID of the device associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12044,8 +12008,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12067,7 +12030,7 @@ export default {
             description: 'An access grant was created.',
             properties: {
               access_grant_id: {
-                description: 'ID of the access grant.',
+                description: 'ID of the affected access grant.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12088,8 +12051,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12109,7 +12071,7 @@ export default {
             description: 'An access grant was deleted.',
             properties: {
               access_grant_id: {
-                description: 'ID of the access grant.',
+                description: 'ID of the affected access grant.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12130,8 +12092,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12152,7 +12113,7 @@ export default {
               'All access requested for an access grant was successfully granted.',
             properties: {
               access_grant_id: {
-                description: 'ID of the access grant.',
+                description: 'ID of the affected access grant.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12176,8 +12137,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12198,13 +12158,13 @@ export default {
               'Access requested as part of an access grant to a particular door was successfully granted.',
             properties: {
               access_grant_id: {
-                description: 'ID of the access grant.',
+                description: 'ID of the affected access grant.',
                 format: 'uuid',
                 type: 'string',
               },
               acs_entrance_id: {
                 description:
-                  'ID of the door, an [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details).',
+                  'ID of the affected [entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details).',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12228,8 +12188,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12251,13 +12210,13 @@ export default {
               'Access to a particular door that was requested as part of an access grant was lost.',
             properties: {
               access_grant_id: {
-                description: 'ID of the access grant.',
+                description: 'ID of the affected access grant.',
                 format: 'uuid',
                 type: 'string',
               },
               acs_entrance_id: {
                 description:
-                  'ID of the door, an [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details).',
+                  'ID of the affected [entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details).',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12281,8 +12240,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12303,7 +12261,7 @@ export default {
             description: 'An access method was issued.',
             properties: {
               access_method_id: {
-                description: 'ID of the access method.',
+                description: 'ID of the affected access method.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12324,8 +12282,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12345,7 +12302,7 @@ export default {
             description: 'An access method was revoked.',
             properties: {
               access_method_id: {
-                description: 'ID of the access method.',
+                description: 'ID of the affected access method.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12366,8 +12323,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12388,7 +12344,7 @@ export default {
               'An access method representing a physical card requires encoding.',
             properties: {
               access_method_id: {
-                description: 'ID of the access method.',
+                description: 'ID of the affected access method.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12412,8 +12368,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12431,17 +12386,15 @@ export default {
           },
           {
             description:
-              'An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) was connected.',
+              'An [access system](https://docs.seam.co/latest/capability-guides/access-systems) was connected.',
             properties: {
               acs_system_id: {
-                description:
-                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
+                description: 'ID of the access system.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
-                description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                description: 'ID of the connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12462,8 +12415,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12481,17 +12433,15 @@ export default {
           },
           {
             description:
-              'An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) was added.',
+              'An [access system](https://docs.seam.co/latest/capability-guides/access-systems) was added.',
             properties: {
               acs_system_id: {
-                description:
-                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
+                description: 'ID of the access system.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
-                description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                description: 'ID of the connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12512,8 +12462,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12531,17 +12480,15 @@ export default {
           },
           {
             description:
-              'An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) was disconnected.',
+              'An [access system](https://docs.seam.co/latest/capability-guides/access-systems) was disconnected.',
             properties: {
               acs_system_id: {
-                description:
-                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
+                description: 'ID of the access system.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
-                description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                description: 'ID of the connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12562,8 +12509,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12583,16 +12529,18 @@ export default {
             description:
               'An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was deleted.',
             properties: {
-              acs_credential_id: { format: 'uuid', type: 'string' },
+              acs_credential_id: {
+                description: 'ID of the affected credential.',
+                format: 'uuid',
+                type: 'string',
+              },
               acs_system_id: {
-                description:
-                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
+                description: 'ID of the access system.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
-                description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                description: 'ID of the connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12613,8 +12561,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12635,16 +12582,18 @@ export default {
             description:
               'An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was issued.',
             properties: {
-              acs_credential_id: { format: 'uuid', type: 'string' },
+              acs_credential_id: {
+                description: 'ID of the affected credential.',
+                format: 'uuid',
+                type: 'string',
+              },
               acs_system_id: {
-                description:
-                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
+                description: 'ID of the access system.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
-                description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                description: 'ID of the connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12665,8 +12614,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12687,16 +12635,18 @@ export default {
             description:
               'An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was reissued.',
             properties: {
-              acs_credential_id: { format: 'uuid', type: 'string' },
+              acs_credential_id: {
+                description: 'ID of the affected credential.',
+                format: 'uuid',
+                type: 'string',
+              },
               acs_system_id: {
-                description:
-                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
+                description: 'ID of the access system.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
-                description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                description: 'ID of the connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12717,8 +12667,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12739,16 +12688,18 @@ export default {
             description:
               'An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was invalidated. That is, the credential cannot be used anymore.',
             properties: {
-              acs_credential_id: { format: 'uuid', type: 'string' },
+              acs_credential_id: {
+                description: 'ID of the affected credential.',
+                format: 'uuid',
+                type: 'string',
+              },
               acs_system_id: {
-                description:
-                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
+                description: 'ID of the access system.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
-                description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                description: 'ID of the connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12772,8 +12723,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12792,18 +12742,16 @@ export default {
           },
           {
             description:
-              'An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created.',
+              'An [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created.',
             properties: {
               acs_system_id: {
-                description:
-                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
+                description: 'ID of the access system.',
                 format: 'uuid',
                 type: 'string',
               },
               acs_user_id: { format: 'uuid', type: 'string' },
               connected_account_id: {
-                description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                description: 'ID of the connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12824,8 +12772,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12844,18 +12791,16 @@ export default {
           },
           {
             description:
-              'An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted.',
+              'An [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted.',
             properties: {
               acs_system_id: {
-                description:
-                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
+                description: 'ID of the access system.',
                 format: 'uuid',
                 type: 'string',
               },
               acs_user_id: { format: 'uuid', type: 'string' },
               connected_account_id: {
-                description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                description: 'ID of the connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12876,8 +12821,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12899,20 +12843,17 @@ export default {
               'An [ACS encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) was added.',
             properties: {
               acs_encoder_id: {
-                description:
-                  'ID of the [ACS encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
+                description: 'ID of the affected encoder.',
                 format: 'uuid',
                 type: 'string',
               },
               acs_system_id: {
-                description:
-                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
+                description: 'ID of the access system.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
-                description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                description: 'ID of the connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12933,8 +12874,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12956,20 +12896,17 @@ export default {
               'An [ACS encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) was removed.',
             properties: {
               acs_encoder_id: {
-                description:
-                  'ID of the [ACS encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
+                description: 'ID of the affected encoder.',
                 format: 'uuid',
                 type: 'string',
               },
               acs_system_id: {
-                description:
-                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
+                description: 'ID of the access system.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
-                description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                description: 'ID of the connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12990,8 +12927,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13011,16 +12947,18 @@ export default {
           {
             description: 'An ACS access group was deleted.',
             properties: {
-              acs_access_group_id: { format: 'uuid', type: 'string' },
+              acs_access_group_id: {
+                description: 'ID of the affected access group.',
+                format: 'uuid',
+                type: 'string',
+              },
               acs_system_id: {
-                description:
-                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
+                description: 'ID of the access system.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
-                description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                description: 'ID of the connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13044,8 +12982,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13068,14 +13005,12 @@ export default {
             properties: {
               acs_entrance_id: { format: 'uuid', type: 'string' },
               acs_system_id: {
-                description:
-                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
+                description: 'ID of the access system.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
-                description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                description: 'ID of the connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13096,8 +13031,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13120,14 +13054,12 @@ export default {
             properties: {
               acs_entrance_id: { format: 'uuid', type: 'string' },
               acs_system_id: {
-                description:
-                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
+                description: 'ID of the access system.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
-                description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                description: 'ID of the connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13148,8 +13080,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13171,8 +13102,7 @@ export default {
               'A [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens) was deleted.',
             properties: {
               client_session_id: {
-                description:
-                  'ID of the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
+                description: 'ID of the affected client session.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13193,8 +13123,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13216,13 +13145,12 @@ export default {
             properties: {
               connect_webview_id: {
                 description:
-                  'ID of the [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).',
+                  'ID of the Connect Webview associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
-                description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                description: 'ID of the affected connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13246,8 +13174,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13270,13 +13197,12 @@ export default {
             properties: {
               connect_webview_id: {
                 description:
-                  'ID of the [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).',
+                  'ID of the Connect Webview associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
-                description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                description: 'ID of the affected connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13300,8 +13226,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13325,13 +13250,12 @@ export default {
             properties: {
               connect_webview_id: {
                 description:
-                  'ID of the [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).',
+                  'ID of the Connect Webview associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
-                description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                description: 'ID of the affected connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13355,8 +13279,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13379,8 +13302,7 @@ export default {
               'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was disconnected.',
             properties: {
               connected_account_id: {
-                description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                description: 'ID of the affected connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13404,8 +13326,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13426,8 +13347,7 @@ export default {
               'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) completed the first sync with Seam, and the corresponding devices or systems are now available.',
             properties: {
               connected_account_id: {
-                description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                description: 'ID of the affected connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13451,8 +13371,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13473,8 +13392,7 @@ export default {
               'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was deleted.',
             properties: {
               connected_account_id: {
-                description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                description: 'ID of the affected connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13498,8 +13416,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13520,8 +13437,7 @@ export default {
               'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) completed the first sync after reconnection with Seam, and the corresponding devices or systems are now available.',
             properties: {
               connected_account_id: {
-                description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                description: 'ID of the affected connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13547,8 +13463,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13569,12 +13484,14 @@ export default {
               'A lock door [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) succeeded.',
             properties: {
               action_attempt_id: {
-                description:
-                  'ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts).',
+                description: 'ID of the affected action attempt.',
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { description: 'Type of action.', type: 'string' },
+              action_type: {
+                description: 'Type of the action.',
+                type: 'string',
+              },
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
@@ -13596,8 +13513,7 @@ export default {
               },
               status: { description: 'Status of the action.', type: 'string' },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13620,12 +13536,14 @@ export default {
               'A lock door [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) failed.',
             properties: {
               action_attempt_id: {
-                description:
-                  'ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts).',
+                description: 'ID of the affected action attempt.',
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { description: 'Type of action.', type: 'string' },
+              action_type: {
+                description: 'Type of the action.',
+                type: 'string',
+              },
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
@@ -13647,8 +13565,7 @@ export default {
               },
               status: { description: 'Status of the action.', type: 'string' },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13671,12 +13588,14 @@ export default {
               'An unlock door [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) succeeded.',
             properties: {
               action_attempt_id: {
-                description:
-                  'ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts).',
+                description: 'ID of the affected action attempt.',
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { description: 'Type of action.', type: 'string' },
+              action_type: {
+                description: 'Type of the action.',
+                type: 'string',
+              },
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
@@ -13698,8 +13617,7 @@ export default {
               },
               status: { description: 'Status of the action.', type: 'string' },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13722,12 +13640,14 @@ export default {
               'An unlock door [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) failed.',
             properties: {
               action_attempt_id: {
-                description:
-                  'ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts).',
+                description: 'ID of the affected action attempt.',
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { description: 'Type of action.', type: 'string' },
+              action_type: {
+                description: 'Type of the action.',
+                type: 'string',
+              },
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
@@ -13749,8 +13669,7 @@ export default {
               },
               status: { description: 'Status of the action.', type: 'string' },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13773,14 +13692,13 @@ export default {
               'A [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) login succeeded.',
             properties: {
               connect_webview_id: {
-                description:
-                  'ID of the [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).',
+                description: 'ID of the affected Connect Webview.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13804,8 +13722,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13827,8 +13744,7 @@ export default {
               'A [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) login failed.',
             properties: {
               connect_webview_id: {
-                description:
-                  'ID of the [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).',
+                description: 'ID of the affected Connect Webview.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13852,8 +13768,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13875,7 +13790,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13885,7 +13800,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13901,8 +13816,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13925,7 +13839,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13935,7 +13849,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13951,8 +13865,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13975,7 +13888,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13985,7 +13898,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14004,8 +13917,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14028,7 +13940,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14038,7 +13950,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14057,8 +13969,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14081,7 +13992,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14091,7 +14002,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14110,8 +14021,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14134,7 +14044,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14144,7 +14054,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14170,8 +14080,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14195,7 +14104,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14205,7 +14114,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14234,8 +14143,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14259,7 +14167,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14269,7 +14177,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14285,8 +14193,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14309,7 +14216,7 @@ export default {
             properties: {
               battery_level: {
                 description:
-                  'Number in the range 0 to 1.0 indicating the amount of battery in the device, as reported by the device.',
+                  'Number in the range 0 to 1.0 indicating the amount of battery in the affected device, as reported by the device.',
                 format: 'float',
                 maximum: 1,
                 minimum: 0,
@@ -14317,7 +14224,7 @@ export default {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14327,7 +14234,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14343,8 +14250,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14368,7 +14274,7 @@ export default {
             properties: {
               battery_level: {
                 description:
-                  'Number in the range 0 to 1.0 indicating the amount of battery in the device, as reported by the device.',
+                  'Number in the range 0 to 1.0 indicating the amount of battery in the affected device, as reported by the device.',
                 format: 'float',
                 maximum: 1,
                 minimum: 0,
@@ -14376,13 +14282,13 @@ export default {
               },
               battery_status: {
                 description:
-                  'Battery status of the device, calculated from the numeric `battery_level` value.',
+                  'Battery status of the affected device, calculated from the numeric `battery_level` value.',
                 enum: ['critical', 'low', 'good', 'full'],
                 type: 'string',
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14392,7 +14298,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14411,8 +14317,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14437,7 +14342,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14447,7 +14352,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14463,8 +14368,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14487,7 +14391,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14497,7 +14401,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14513,8 +14417,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14537,7 +14440,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14547,7 +14450,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14566,8 +14469,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14590,7 +14492,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14600,7 +14502,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14619,8 +14521,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14643,7 +14544,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14653,7 +14554,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14672,8 +14573,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14696,7 +14596,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14706,7 +14606,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14725,8 +14625,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14749,7 +14648,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14759,7 +14658,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14778,8 +14677,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14802,7 +14700,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14812,7 +14710,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14831,8 +14729,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14855,7 +14752,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14865,7 +14762,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14884,8 +14781,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14908,7 +14804,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14918,7 +14814,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14937,8 +14833,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14961,7 +14856,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14971,7 +14866,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14990,8 +14885,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15014,7 +14908,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15024,7 +14918,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15043,8 +14937,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15067,7 +14960,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15077,7 +14970,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15107,14 +15000,12 @@ export default {
                 type: 'number',
               },
               noise_threshold_id: {
-                description:
-                  'ID of the [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors#what-is-a-threshold) that was triggered.',
+                description: 'ID of the noise threshold that was triggered.',
                 format: 'uuid',
                 type: 'string',
               },
               noise_threshold_name: {
-                description:
-                  'Name of the [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors#what-is-a-threshold) that was triggered.',
+                description: 'Name of the noise threshold that was triggered.',
                 type: 'string',
               },
               noiseaware_metadata: {
@@ -15128,8 +15019,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15152,19 +15042,19 @@ export default {
             properties: {
               access_code_id: {
                 description:
-                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used to lock the device.',
+                  'ID of the access code that was used to lock the device.',
                 format: 'uuid',
                 type: 'string',
               },
               action_attempt_id: {
                 description:
-                  'ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) associated with the lock action.',
+                  'ID of the action attempt associated with the lock action.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15174,7 +15064,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15186,7 +15076,7 @@ export default {
               event_type: { enum: ['lock.locked'], type: 'string' },
               method: {
                 description:
-                  'Method by which a [lock device](https://docs.seam.co/latest/capability-guides/smart-locks) was locked. When the method is `keycode`, the `access_code_id` indicates the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used, if reported by the device.',
+                  'Method by which the affected lock device was locked. When the method is `keycode`, the `access_code_id` indicates the access code that was used, if reported by the device.',
                 enum: ['keycode', 'manual', 'automatic', 'unknown', 'seamapi'],
                 type: 'string',
               },
@@ -15196,8 +15086,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15221,19 +15110,19 @@ export default {
             properties: {
               access_code_id: {
                 description:
-                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used to unlock the device.',
+                  'ID of the access code that was used to unlock the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
               action_attempt_id: {
                 description:
-                  'ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) associated with the unlock action.',
+                  'ID of the action attempt associated with the unlock action.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15243,7 +15132,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15255,7 +15144,7 @@ export default {
               event_type: { enum: ['lock.unlocked'], type: 'string' },
               method: {
                 description:
-                  'Method by which a [lock device](https://docs.seam.co/latest/capability-guides/smart-locks) was unlocked. When the method is `keycode`, the `access_code_id` indicates the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used, if reported by the device.',
+                  'Method by which the affected lock device was unlocked. When the method is `keycode`, the `access_code_id` indicates the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used, if reported by the device.',
                 enum: ['keycode', 'manual', 'automatic', 'unknown', 'seamapi'],
                 type: 'string',
               },
@@ -15265,8 +15154,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15290,13 +15178,13 @@ export default {
             properties: {
               access_code_id: {
                 description:
-                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used in the unlock attempts.',
+                  'ID of the access code that was used in the unlock attempts.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15306,7 +15194,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15322,8 +15210,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15345,13 +15232,12 @@ export default {
               'A thermostat [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) was activated.',
             properties: {
               climate_preset_key: {
-                description:
-                  'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) that was activated.',
+                description: 'Key of the climate preset that was activated.',
                 type: 'string',
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15361,7 +15247,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15376,7 +15262,7 @@ export default {
               },
               is_fallback_climate_preset: {
                 description:
-                  'Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) that was activated is the [fallback climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) for the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+                  'Indicates whether the climate preset that was activated is the fallback climate preset for the thermostat.',
                 type: 'boolean',
               },
               occurred_at: {
@@ -15386,14 +15272,13 @@ export default {
               },
               thermostat_schedule_id: {
                 description:
-                  'ID of the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that prompted the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to be activated.',
+                  'ID of the thermostat schedule that prompted the affected climate preset to be activated.',
                 format: 'uuid',
                 nullable: true,
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15419,7 +15304,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15441,7 +15326,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15480,7 +15365,7 @@ export default {
               },
               method: {
                 description:
-                  'Method used to adjust the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) manually. `seam` indicates that the Seam API, Seam CLI, or Seam Console was used to adjust the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+                  'Method used to adjust the affected thermostat manually. `seam` indicates that the Seam API, Seam CLI, or Seam Console was used to adjust the thermostat.',
                 enum: ['seam', 'external'],
                 type: 'string',
               },
@@ -15490,8 +15375,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15515,7 +15399,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15525,7 +15409,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15540,14 +15424,14 @@ export default {
               },
               lower_limit_celsius: {
                 description:
-                  'Lower temperature limit, in °C, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).',
+                  'Lower temperature limit, in °C, defined by the set threshold.',
                 format: 'float',
                 nullable: true,
                 type: 'number',
               },
               lower_limit_fahrenheit: {
                 description:
-                  'Lower temperature limit, in °F, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).',
+                  'Lower temperature limit, in °F, defined by the set threshold.',
                 format: 'float',
                 nullable: true,
                 type: 'number',
@@ -15559,33 +15443,32 @@ export default {
               },
               temperature_celsius: {
                 description:
-                  'Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+                  'Temperature, in °C, reported by the affected thermostat.',
                 format: 'float',
                 type: 'number',
               },
               temperature_fahrenheit: {
                 description:
-                  'Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+                  'Temperature, in °F, reported by the affected thermostat.',
                 format: 'float',
                 type: 'number',
               },
               upper_limit_celsius: {
                 description:
-                  'Upper temperature limit, in °C, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).',
+                  'Upper temperature limit, in °C, defined by the set threshold.',
                 format: 'float',
                 nullable: true,
                 type: 'number',
               },
               upper_limit_fahrenheit: {
                 description:
-                  'Upper temperature limit, in °F, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).',
+                  'Upper temperature limit, in °F, defined by the set threshold.',
                 format: 'float',
                 nullable: true,
                 type: 'number',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15614,7 +15497,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15624,7 +15507,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15639,14 +15522,14 @@ export default {
               },
               lower_limit_celsius: {
                 description:
-                  'Lower temperature limit, in °C, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).',
+                  'Lower temperature limit, in °C, defined by the set threshold.',
                 format: 'float',
                 nullable: true,
                 type: 'number',
               },
               lower_limit_fahrenheit: {
                 description:
-                  'Lower temperature limit, in °F, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).',
+                  'Lower temperature limit, in °F, defined by the set threshold.',
                 format: 'float',
                 nullable: true,
                 type: 'number',
@@ -15658,33 +15541,32 @@ export default {
               },
               temperature_celsius: {
                 description:
-                  'Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+                  'Temperature, in °C, reported by the affected thermostat.',
                 format: 'float',
                 type: 'number',
               },
               temperature_fahrenheit: {
                 description:
-                  'Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+                  'Temperature, in °F, reported by the affected thermostat.',
                 format: 'float',
                 type: 'number',
               },
               upper_limit_celsius: {
                 description:
-                  'Upper temperature limit, in °C, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).',
+                  'Upper temperature limit, in °C, defined by the set threshold.',
                 format: 'float',
                 nullable: true,
                 type: 'number',
               },
               upper_limit_fahrenheit: {
                 description:
-                  'Upper temperature limit, in °F, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).',
+                  'Upper temperature limit, in °F, defined by the set threshold.',
                 format: 'float',
                 nullable: true,
                 type: 'number',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15713,7 +15595,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15724,18 +15606,18 @@ export default {
               },
               desired_temperature_celsius: {
                 description:
-                  "Desired temperature, in °C, defined by the [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) cooling or heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).",
+                  "Desired temperature, in °C, defined by the affected thermostat's cooling or heating set point.",
                 format: 'float',
                 type: 'number',
               },
               desired_temperature_fahrenheit: {
                 description:
-                  "Desired temperature, in °F, defined by the [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) cooling or heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).",
+                  "Desired temperature, in °F, defined by the affected thermostat's cooling or heating set point.",
                 format: 'float',
                 type: 'number',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15755,19 +15637,18 @@ export default {
               },
               temperature_celsius: {
                 description:
-                  'Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+                  'Temperature, in °C, reported by the affected thermostat.',
                 format: 'float',
                 type: 'number',
               },
               temperature_fahrenheit: {
                 description:
-                  'Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+                  'Temperature, in °F, reported by the affected thermostat.',
                 format: 'float',
                 type: 'number',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15792,7 +15673,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15802,7 +15683,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15822,19 +15703,18 @@ export default {
               },
               temperature_celsius: {
                 description:
-                  'Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+                  'Temperature, in °C, reported by the affected thermostat.',
                 format: 'float',
                 type: 'number',
               },
               temperature_fahrenheit: {
                 description:
-                  'Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+                  'Temperature, in °F, reported by the affected thermostat.',
                 format: 'float',
                 type: 'number',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15859,7 +15739,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15869,12 +15749,12 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description: 'ID of the affected device.',
                 format: 'uuid',
                 type: 'string',
               },
               device_name: {
-                description: 'The new name of the device.',
+                description: 'The new name of the affected device.',
                 type: 'string',
               },
               event_id: {
@@ -15889,8 +15769,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15918,8 +15797,7 @@ export default {
                 type: 'string',
               },
               enrollment_automation_id: {
-                description:
-                  'ID of the [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut).',
+                description: 'ID of the affected enrollment automation.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15938,8 +15816,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15964,8 +15841,7 @@ export default {
                 type: 'string',
               },
               device_id: {
-                description:
-                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
+                description: 'ID of the affected phone device.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15981,8 +15857,7 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -29705,9 +29580,22 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
-                  event_id: { format: 'uuid', type: 'string' },
-                  event_type: { type: 'string' },
+                  device_id: {
+                    description:
+                      'Unique identifier for the device that triggered the event that you want to get.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  event_id: {
+                    description:
+                      'Unique identifier for the event that you want to get.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  event_type: {
+                    description: 'Type of the event that you want to get.',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -29759,17 +29647,33 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  access_code_id: { format: 'uuid', type: 'string' },
+                  access_code_id: {
+                    description:
+                      'ID of the access code for which you want to list events.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   access_code_ids: {
+                    description:
+                      'IDs of the access codes for which you want to list events.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
-                  acs_system_id: { format: 'uuid', type: 'string' },
+                  acs_system_id: {
+                    description:
+                      'ID of the access system for which you want to list events.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   acs_system_ids: {
+                    description:
+                      'IDs of the access systems for which you want to list events.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
                   between: {
+                    description:
+                      'Lower and upper timestamps to define an exclusive interval containing the events that you want to list. You must include `since` or `between`.',
                     items: {
                       oneOf: [
                         { type: 'string' },
@@ -29780,22 +29684,43 @@ export default {
                     minItems: 2,
                     type: 'array',
                   },
-                  connect_webview_id: { format: 'uuid', type: 'string' },
-                  connected_account_id: { format: 'uuid', type: 'string' },
+                  connect_webview_id: {
+                    description:
+                      'IDs of the connected accounts for which you want to list events.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  connected_account_id: {
+                    description:
+                      'ID of the connected account for which you want to list events.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   customer_ids: {
+                    description:
+                      'IDs of the customers for which you want to list events.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
-                  device_id: { format: 'uuid', type: 'string' },
+                  device_id: {
+                    description:
+                      'ID of the device for which you want to list events.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   device_ids: {
+                    description:
+                      'IDs of the devices for which you want to list events.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
                   event_ids: {
+                    description: 'IDs of the events that you want to list.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
                   event_type: {
+                    description: 'Type of the events that you want to list.',
                     enum: [
                       'access_code.created',
                       'access_code.changed',
@@ -29889,6 +29814,7 @@ export default {
                     type: 'string',
                   },
                   event_types: {
+                    description: 'Types of the events that you want to list.',
                     items: {
                       enum: [
                         'access_code.created',
@@ -29984,9 +29910,23 @@ export default {
                     },
                     type: 'array',
                   },
-                  limit: { default: 500, format: 'float', type: 'number' },
-                  since: { type: 'string' },
-                  unstable_offset: { format: 'float', type: 'number' },
+                  limit: {
+                    default: 500,
+                    description:
+                      'Numerical limit on the number of events to return.',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  since: {
+                    description:
+                      'Timestamp to indicate the beginning generation time for the events that you want to list. You must include `since` or `between`.',
+                    type: 'string',
+                  },
+                  unstable_offset: {
+                    description: 'Offset for the events that you want to list.',
+                    format: 'float',
+                    type: 'number',
+                  },
                 },
                 type: 'object',
               },

@@ -6,9 +6,7 @@ const client_session_event = common_event.extend({
   client_session_id: z
     .string()
     .uuid()
-    .describe(
-      'ID of the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
-    ),
+    .describe('ID of the affected client session.'),
 })
 
 export const client_session_deleted_event = client_session_event.extend({
