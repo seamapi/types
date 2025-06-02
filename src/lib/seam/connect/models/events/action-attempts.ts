@@ -6,10 +6,8 @@ const action_attempt_event = common_event.extend({
   action_attempt_id: z
     .string()
     .uuid()
-    .describe(
-      'ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts).',
-    ),
-  action_type: z.string().describe('Type of action.'),
+    .describe('ID of the affected action attempt.'),
+  action_type: z.string().describe('Type of the action.'),
   status: z.string().describe('Status of the action.'),
 })
 

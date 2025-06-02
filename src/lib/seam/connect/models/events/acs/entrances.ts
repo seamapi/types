@@ -6,9 +6,7 @@ const acs_entrance_event = common_acs_event
   .extend({
     acs_entrance_id: z.string().uuid(),
   })
-  .describe(
-    'ID of the [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details).',
-  )
+  .describe('ID of the affected entrance.')
 
 export const acs_entrance_added_event = acs_entrance_event.extend({
   event_type: z.literal('acs_entrance.added'),

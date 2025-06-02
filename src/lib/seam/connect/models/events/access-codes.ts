@@ -3,31 +3,20 @@ import { z } from 'zod'
 import { common_event } from './common.js'
 
 const access_code_event = common_event.extend({
-  access_code_id: z
-    .string()
-    .uuid()
-    .describe(
-      'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
-    ),
+  access_code_id: z.string().uuid().describe('ID of the affected access code.'),
   device_id: z
     .string()
     .uuid()
-    .describe(
-      'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
-    ),
+    .describe('ID of the device associated with the affected access code.'),
   connected_account_id: z
     .string()
     .uuid()
     .describe(
-      'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+      'ID of the connected account associated with the affected access codes.',
     ),
 })
 
-const code = z
-  .string()
-  .describe(
-    'Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
-  )
+const code = z.string().describe('Code for the affected access code.')
 
 export const access_code_created_event = access_code_event.extend({
   event_type: z.literal('access_code.created'),

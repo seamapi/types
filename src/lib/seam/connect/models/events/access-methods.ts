@@ -3,7 +3,10 @@ import { z } from 'zod'
 import { common_event } from './common.js'
 
 const access_method_event = common_event.extend({
-  access_method_id: z.string().uuid().describe('ID of the access method.'),
+  access_method_id: z
+    .string()
+    .uuid()
+    .describe('ID of the affected access method.'),
 })
 
 export const access_method_issued_event = access_method_event.extend({

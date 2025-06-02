@@ -26752,8 +26752,11 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** Unique identifier for the event that you want to get. */
       event_id?: string | undefined
+      /** Type of the event that you want to get. */
       event_type?: string | undefined
+      /** Unique identifier for the device that triggered the event that you want to get. */
       device_id?: string | undefined
     }
     formData: {}
@@ -26766,227 +26769,227 @@ export interface Routes {
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+                /** ID of the affected access code. */
                 access_code_id: string
-                /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+                /** ID of the device associated with the affected access code. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the affected access codes. */
                 connected_account_id: string
                 event_type: 'access_code.created'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+                /** ID of the affected access code. */
                 access_code_id: string
-                /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+                /** ID of the device associated with the affected access code. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the affected access codes. */
                 connected_account_id: string
                 event_type: 'access_code.changed'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+                /** ID of the affected access code. */
                 access_code_id: string
-                /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+                /** ID of the device associated with the affected access code. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the affected access codes. */
                 connected_account_id: string
                 event_type: 'access_code.scheduled_on_device'
-                /** Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+                /** Code for the affected access code. */
                 code: string
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+                /** ID of the affected access code. */
                 access_code_id: string
-                /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+                /** ID of the device associated with the affected access code. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the affected access codes. */
                 connected_account_id: string
                 event_type: 'access_code.set_on_device'
-                /** Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+                /** Code for the affected access code. */
                 code: string
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+                /** ID of the affected access code. */
                 access_code_id: string
-                /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+                /** ID of the device associated with the affected access code. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the affected access codes. */
                 connected_account_id: string
                 event_type: 'access_code.removed_from_device'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+                /** ID of the affected access code. */
                 access_code_id: string
-                /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+                /** ID of the device associated with the affected access code. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the affected access codes. */
                 connected_account_id: string
                 event_type: 'access_code.delay_in_setting_on_device'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+                /** ID of the affected access code. */
                 access_code_id: string
-                /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+                /** ID of the device associated with the affected access code. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the affected access codes. */
                 connected_account_id: string
                 event_type: 'access_code.failed_to_set_on_device'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+                /** ID of the affected access code. */
                 access_code_id: string
-                /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+                /** ID of the device associated with the affected access code. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the affected access codes. */
                 connected_account_id: string
                 event_type: 'access_code.deleted'
-                /** Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+                /** Code for the affected access code. */
                 code: string | null
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+                /** ID of the affected access code. */
                 access_code_id: string
-                /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+                /** ID of the device associated with the affected access code. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the affected access codes. */
                 connected_account_id: string
                 event_type: 'access_code.delay_in_removing_from_device'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+                /** ID of the affected access code. */
                 access_code_id: string
-                /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+                /** ID of the device associated with the affected access code. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the affected access codes. */
                 connected_account_id: string
                 event_type: 'access_code.failed_to_remove_from_device'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+                /** ID of the affected access code. */
                 access_code_id: string
-                /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+                /** ID of the device associated with the affected access code. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the affected access codes. */
                 connected_account_id: string
                 event_type: 'access_code.modified_external_to_seam'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+                /** ID of the affected access code. */
                 access_code_id: string
-                /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+                /** ID of the device associated with the affected access code. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the affected access codes. */
                 connected_account_id: string
                 event_type: 'access_code.deleted_external_to_seam'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+                /** ID of the affected access code. */
                 access_code_id: string
-                /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+                /** ID of the device associated with the affected access code. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the affected access codes. */
                 connected_account_id: string
                 event_type: 'access_code.backup_access_code_pulled'
                 backup_access_code_id: string
@@ -26994,300 +26997,304 @@ export interface Routes {
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+                /** ID of the affected access code. */
                 access_code_id: string
-                /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+                /** ID of the device associated with the affected access code. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the affected access codes. */
                 connected_account_id: string
                 event_type: 'access_code.unmanaged.converted_to_managed'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+                /** ID of the affected access code. */
                 access_code_id: string
-                /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+                /** ID of the device associated with the affected access code. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the affected access codes. */
                 connected_account_id: string
                 event_type: 'access_code.unmanaged.failed_to_convert_to_managed'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+                /** ID of the affected access code. */
                 access_code_id: string
-                /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+                /** ID of the device associated with the affected access code. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the affected access codes. */
                 connected_account_id: string
                 event_type: 'access_code.unmanaged.created'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+                /** ID of the affected access code. */
                 access_code_id: string
-                /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+                /** ID of the device associated with the affected access code. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the affected access codes. */
                 connected_account_id: string
                 event_type: 'access_code.unmanaged.removed'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the access grant. */
+                /** ID of the affected access grant. */
                 access_grant_id: string
                 event_type: 'access_grant.created'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the access grant. */
+                /** ID of the affected access grant. */
                 access_grant_id: string
                 event_type: 'access_grant.deleted'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the access grant. */
+                /** ID of the affected access grant. */
                 access_grant_id: string
                 event_type: 'access_grant.access_granted_to_all_doors'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the access grant. */
+                /** ID of the affected access grant. */
                 access_grant_id: string
                 event_type: 'access_grant.access_granted_to_door'
-                /** ID of the door, an [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details). */
+                /** ID of the affected [entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details). */
                 acs_entrance_id: string
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the access grant. */
+                /** ID of the affected access grant. */
                 access_grant_id: string
                 event_type: 'access_grant.access_to_door_lost'
-                /** ID of the door, an [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details). */
+                /** ID of the affected [entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details). */
                 acs_entrance_id: string
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the access method. */
+                /** ID of the affected access method. */
                 access_method_id: string
                 event_type: 'access_method.issued'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the access method. */
+                /** ID of the affected access method. */
                 access_method_id: string
                 event_type: 'access_method.revoked'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the access method. */
+                /** ID of the affected access method. */
                 access_method_id: string
                 event_type: 'access_method.card_encoding_required'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account. */
                 connected_account_id?: string | undefined
-                /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+                /** ID of the access system. */
                 acs_system_id: string
                 event_type: 'acs_system.connected'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account. */
                 connected_account_id?: string | undefined
-                /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+                /** ID of the access system. */
                 acs_system_id: string
                 event_type: 'acs_system.added'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account. */
                 connected_account_id?: string | undefined
-                /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+                /** ID of the access system. */
                 acs_system_id: string
                 event_type: 'acs_system.disconnected'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account. */
                 connected_account_id?: string | undefined
-                /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+                /** ID of the access system. */
                 acs_system_id: string
+                /** ID of the affected credential. */
                 acs_credential_id: string
                 event_type: 'acs_credential.deleted'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account. */
                 connected_account_id?: string | undefined
-                /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+                /** ID of the access system. */
                 acs_system_id: string
+                /** ID of the affected credential. */
                 acs_credential_id: string
                 event_type: 'acs_credential.issued'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account. */
                 connected_account_id?: string | undefined
-                /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+                /** ID of the access system. */
                 acs_system_id: string
+                /** ID of the affected credential. */
                 acs_credential_id: string
                 event_type: 'acs_credential.reissued'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account. */
                 connected_account_id?: string | undefined
-                /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+                /** ID of the access system. */
                 acs_system_id: string
+                /** ID of the affected credential. */
                 acs_credential_id: string
                 event_type: 'acs_credential.invalidated'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account. */
                 connected_account_id?: string | undefined
-                /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+                /** ID of the access system. */
                 acs_system_id: string
                 acs_user_id: string
                 event_type: 'acs_user.created'
@@ -27295,15 +27302,15 @@ export interface Routes {
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account. */
                 connected_account_id?: string | undefined
-                /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+                /** ID of the access system. */
                 acs_system_id: string
                 acs_user_id: string
                 event_type: 'acs_user.deleted'
@@ -27311,65 +27318,66 @@ export interface Routes {
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account. */
                 connected_account_id?: string | undefined
-                /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+                /** ID of the access system. */
                 acs_system_id: string
-                /** ID of the [ACS encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
+                /** ID of the affected encoder. */
                 acs_encoder_id: string
                 event_type: 'acs_encoder.added'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account. */
                 connected_account_id?: string | undefined
-                /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+                /** ID of the access system. */
                 acs_system_id: string
-                /** ID of the [ACS encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
+                /** ID of the affected encoder. */
                 acs_encoder_id: string
                 event_type: 'acs_encoder.removed'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account. */
                 connected_account_id?: string | undefined
-                /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+                /** ID of the access system. */
                 acs_system_id: string
+                /** ID of the affected access group. */
                 acs_access_group_id: string
                 event_type: 'acs_access_group.deleted'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account. */
                 connected_account_id?: string | undefined
-                /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+                /** ID of the access system. */
                 acs_system_id: string
                 acs_entrance_id: string
                 event_type: 'acs_entrance.added'
@@ -27377,15 +27385,15 @@ export interface Routes {
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account. */
                 connected_account_id?: string | undefined
-                /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+                /** ID of the access system. */
                 acs_system_id: string
                 acs_entrance_id: string
                 event_type: 'acs_entrance.removed'
@@ -27393,125 +27401,125 @@ export interface Routes {
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens). */
+                /** ID of the affected client session. */
                 client_session_id: string
                 event_type: 'client_session.deleted'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the affected connected account. */
                 connected_account_id: string
                 event_type: 'connected_account.connected'
-                /** ID of the [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews). */
+                /** ID of the Connect Webview associated with the event. */
                 connect_webview_id: string
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the affected connected account. */
                 connected_account_id: string
                 event_type: 'connected_account.created'
-                /** ID of the [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews). */
+                /** ID of the Connect Webview associated with the event. */
                 connect_webview_id: string
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the affected connected account. */
                 connected_account_id: string
                 event_type: 'connected_account.successful_login'
-                /** ID of the [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews). */
+                /** ID of the Connect Webview associated with the event. */
                 connect_webview_id: string
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the affected connected account. */
                 connected_account_id: string
                 event_type: 'connected_account.disconnected'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the affected connected account. */
                 connected_account_id: string
                 event_type: 'connected_account.completed_first_sync'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the affected connected account. */
                 connected_account_id: string
                 event_type: 'connected_account.deleted'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the affected connected account. */
                 connected_account_id: string
                 event_type: 'connected_account.completed_first_sync_after_reconnection'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts). */
+                /** ID of the affected action attempt. */
                 action_attempt_id: string
-                /** Type of action. */
+                /** Type of the action. */
                 action_type: string
                 /** Status of the action. */
                 status: string
@@ -27520,15 +27528,15 @@ export interface Routes {
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts). */
+                /** ID of the affected action attempt. */
                 action_attempt_id: string
-                /** Type of action. */
+                /** Type of the action. */
                 action_type: string
                 /** Status of the action. */
                 status: string
@@ -27537,15 +27545,15 @@ export interface Routes {
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts). */
+                /** ID of the affected action attempt. */
                 action_attempt_id: string
-                /** Type of action. */
+                /** Type of the action. */
                 action_type: string
                 /** Status of the action. */
                 status: string
@@ -27554,15 +27562,15 @@ export interface Routes {
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts). */
+                /** ID of the affected action attempt. */
                 action_attempt_id: string
-                /** Type of action. */
+                /** Type of the action. */
                 action_type: string
                 /** Status of the action. */
                 status: string
@@ -27571,118 +27579,118 @@ export interface Routes {
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews). */
+                /** ID of the affected Connect Webview. */
                 connect_webview_id: string
                 event_type: 'connect_webview.login_succeeded'
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews). */
+                /** ID of the affected Connect Webview. */
                 connect_webview_id: string
                 event_type: 'connect_webview.login_failed'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'device.connected'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'device.added'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'device.converted_to_unmanaged'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'device.unmanaged.converted_to_managed'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'device.unmanaged.connected'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'device.disconnected'
                 /** Error code associated with the disconnection event, if any. */
@@ -27694,15 +27702,15 @@ export interface Routes {
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'device.unmanaged.disconnected'
                 /** Error code associated with the disconnection event, if any. */
@@ -27714,255 +27722,255 @@ export interface Routes {
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'device.tampered'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'device.low_battery'
-                /** Number in the range 0 to 1.0 indicating the amount of battery in the device, as reported by the device. */
+                /** Number in the range 0 to 1.0 indicating the amount of battery in the affected device, as reported by the device. */
                 battery_level: number
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'device.battery_status_changed'
-                /** Battery status of the device, calculated from the numeric `battery_level` value. */
+                /** Battery status of the affected device, calculated from the numeric `battery_level` value. */
                 battery_status: 'critical' | 'low' | 'good' | 'full'
-                /** Number in the range 0 to 1.0 indicating the amount of battery in the device, as reported by the device. */
+                /** Number in the range 0 to 1.0 indicating the amount of battery in the affected device, as reported by the device. */
                 battery_level: number
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'device.removed'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'device.deleted'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'device.third_party_integration_detected'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'device.third_party_integration_no_longer_detected'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'device.salto.privacy_mode_activated'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'device.salto.privacy_mode_deactivated'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'device.connection_became_flaky'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'device.connection_stabilized'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'device.error.subscription_required'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'device.error.subscription_required.resolved'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'device.accessory_keypad_connected'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'device.accessory_keypad_disconnected'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'noise_sensor.noise_threshold_triggered'
                 /** Detected noise level in decibels. */
                 noise_level_decibels?: number | undefined
                 /** Detected noise level in Noiseaware Noise Risk Score (NRS). */
                 noise_level_nrs?: number | undefined
-                /** ID of the [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors#what-is-a-threshold) that was triggered. */
+                /** ID of the noise threshold that was triggered. */
                 noise_threshold_id?: string | undefined
-                /** Name of the [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors#what-is-a-threshold) that was triggered. */
+                /** Name of the noise threshold that was triggered. */
                 noise_threshold_name?: string | undefined
                 /** Metadata from Noiseaware. */
                 noiseaware_metadata?: Record<string, unknown> | undefined
@@ -27972,22 +27980,22 @@ export interface Routes {
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'lock.locked'
-                /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used to lock the device. */
+                /** ID of the access code that was used to lock the device. */
                 access_code_id?: string | undefined
-                /** ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) associated with the lock action. */
+                /** ID of the action attempt associated with the lock action. */
                 action_attempt_id?: string | undefined
-                /** Method by which a [lock device](https://docs.seam.co/latest/capability-guides/smart-locks) was locked. When the method is `keycode`, the `access_code_id` indicates the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used, if reported by the device. */
+                /** Method by which the affected lock device was locked. When the method is `keycode`, the `access_code_id` indicates the access code that was used, if reported by the device. */
                 method:
                   | 'keycode'
                   | 'manual'
@@ -27998,22 +28006,22 @@ export interface Routes {
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'lock.unlocked'
-                /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used to unlock the device. */
+                /** ID of the access code that was used to unlock the affected device. */
                 access_code_id?: string | undefined
-                /** ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) associated with the unlock action. */
+                /** ID of the action attempt associated with the unlock action. */
                 action_attempt_id?: string | undefined
-                /** Method by which a [lock device](https://docs.seam.co/latest/capability-guides/smart-locks) was unlocked. When the method is `keycode`, the `access_code_id` indicates the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used, if reported by the device. */
+                /** Method by which the affected lock device was unlocked. When the method is `keycode`, the `access_code_id` indicates the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used, if reported by the device. */
                 method:
                   | 'keycode'
                   | 'manual'
@@ -28024,56 +28032,56 @@ export interface Routes {
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'lock.access_denied'
-                /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used in the unlock attempts. */
+                /** ID of the access code that was used in the unlock attempts. */
                 access_code_id?: string | undefined
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'thermostat.climate_preset_activated'
-                /** ID of the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that prompted the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to be activated. */
+                /** ID of the thermostat schedule that prompted the affected climate preset to be activated. */
                 thermostat_schedule_id: string | null
-                /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) that was activated. */
+                /** Key of the climate preset that was activated. */
                 climate_preset_key: string
-                /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) that was activated is the [fallback climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) for the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+                /** Indicates whether the climate preset that was activated is the fallback climate preset for the thermostat. */
                 is_fallback_climate_preset: boolean
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'thermostat.manually_adjusted'
-                /** Method used to adjust the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) manually. `seam` indicates that the Seam API, Seam CLI, or Seam Console was used to adjust the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+                /** Method used to adjust the affected thermostat manually. `seam` indicates that the Seam API, Seam CLI, or Seam Console was used to adjust the thermostat. */
                 method: 'seam' | 'external'
                 /** Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`. */
                 fan_mode_setting?:
@@ -28095,139 +28103,139 @@ export interface Routes {
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'thermostat.temperature_threshold_exceeded'
-                /** Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+                /** Temperature, in °C, reported by the affected thermostat. */
                 temperature_celsius: number
-                /** Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+                /** Temperature, in °F, reported by the affected thermostat. */
                 temperature_fahrenheit: number
-                /** Upper temperature limit, in °C, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds). */
+                /** Upper temperature limit, in °C, defined by the set threshold. */
                 upper_limit_celsius: number | null
-                /** Upper temperature limit, in °F, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds). */
+                /** Upper temperature limit, in °F, defined by the set threshold. */
                 upper_limit_fahrenheit: number | null
-                /** Lower temperature limit, in °C, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds). */
+                /** Lower temperature limit, in °C, defined by the set threshold. */
                 lower_limit_celsius: number | null
-                /** Lower temperature limit, in °F, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds). */
+                /** Lower temperature limit, in °F, defined by the set threshold. */
                 lower_limit_fahrenheit: number | null
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'thermostat.temperature_threshold_no_longer_exceeded'
-                /** Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+                /** Temperature, in °C, reported by the affected thermostat. */
                 temperature_celsius: number
-                /** Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+                /** Temperature, in °F, reported by the affected thermostat. */
                 temperature_fahrenheit: number
-                /** Upper temperature limit, in °C, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds). */
+                /** Upper temperature limit, in °C, defined by the set threshold. */
                 upper_limit_celsius: number | null
-                /** Upper temperature limit, in °F, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds). */
+                /** Upper temperature limit, in °F, defined by the set threshold. */
                 upper_limit_fahrenheit: number | null
-                /** Lower temperature limit, in °C, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds). */
+                /** Lower temperature limit, in °C, defined by the set threshold. */
                 lower_limit_celsius: number | null
-                /** Lower temperature limit, in °F, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds). */
+                /** Lower temperature limit, in °F, defined by the set threshold. */
                 lower_limit_fahrenheit: number | null
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'thermostat.temperature_reached_set_point'
-                /** Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+                /** Temperature, in °C, reported by the affected thermostat. */
                 temperature_celsius: number
-                /** Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+                /** Temperature, in °F, reported by the affected thermostat. */
                 temperature_fahrenheit: number
-                /** Desired temperature, in °C, defined by the [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) cooling or heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
+                /** Desired temperature, in °C, defined by the affected thermostat's cooling or heating set point. */
                 desired_temperature_celsius?: number | undefined
-                /** Desired temperature, in °F, defined by the [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) cooling or heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
+                /** Desired temperature, in °F, defined by the affected thermostat's cooling or heating set point. */
                 desired_temperature_fahrenheit?: number | undefined
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'thermostat.temperature_changed'
-                /** Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+                /** Temperature, in °C, reported by the affected thermostat. */
                 temperature_celsius: number
-                /** Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+                /** Temperature, in °F, reported by the affected thermostat. */
                 temperature_fahrenheit: number
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the device. */
+                /** ID of the affected device. */
                 device_id: string
-                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                /** ID of the connected account associated with the event. */
                 connected_account_id: string
                 event_type: 'device.name_changed'
-                /** The new name of the device. */
+                /** The new name of the affected device. */
                 device_name: string
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut). */
+                /** ID of the affected enrollment automation. */
                 enrollment_automation_id: string
                 event_type: 'enrollment_automation.deleted'
               }
             | {
                 /** ID of the event. */
                 event_id: string
-                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                /** ID of the workspace associated with the event. */
                 workspace_id: string
                 /** Date and time at which the event was created. */
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
-                /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+                /** ID of the affected phone device. */
                 device_id: string
                 event_type: 'phone.deactivated'
               }
@@ -28242,15 +28250,25 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** Offset for the events that you want to list. */
       unstable_offset?: number | undefined
+      /** Timestamp to indicate the beginning generation time for the events that you want to list. You must include `since` or `between`. */
       since?: string | undefined
+      /** Lower and upper timestamps to define an exclusive interval containing the events that you want to list. You must include `since` or `between`. */
       between?: Array<string | Date> | undefined
+      /** ID of the device for which you want to list events. */
       device_id?: string | undefined
+      /** IDs of the devices for which you want to list events. */
       device_ids?: string[] | undefined
+      /** ID of the access system for which you want to list events. */
       acs_system_id?: string | undefined
+      /** IDs of the access systems for which you want to list events. */
       acs_system_ids?: string[] | undefined
+      /** ID of the access code for which you want to list events. */
       access_code_id?: string | undefined
+      /** IDs of the access codes for which you want to list events. */
       access_code_ids?: string[] | undefined
+      /** Type of the events that you want to list. */
       event_type?:
         | (
             | 'access_code.created'
@@ -28343,6 +28361,7 @@ export interface Routes {
             | 'phone.deactivated'
           )
         | undefined
+      /** Types of the events that you want to list. */
       event_types?:
         | Array<
             | 'access_code.created'
@@ -28435,10 +28454,15 @@ export interface Routes {
             | 'phone.deactivated'
           >
         | undefined
+      /** ID of the connected account for which you want to list events. */
       connected_account_id?: string | undefined
+      /** IDs of the connected accounts for which you want to list events. */
       connect_webview_id?: string | undefined
+      /** Numerical limit on the number of events to return. */
       limit?: number
+      /** IDs of the events that you want to list. */
       event_ids?: string[] | undefined
+      /** IDs of the customers for which you want to list events. */
       customer_ids?: string[] | undefined
     }
     formData: {}
@@ -28447,227 +28471,227 @@ export interface Routes {
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+            /** ID of the affected access code. */
             access_code_id: string
-            /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+            /** ID of the device associated with the affected access code. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the affected access codes. */
             connected_account_id: string
             event_type: 'access_code.created'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+            /** ID of the affected access code. */
             access_code_id: string
-            /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+            /** ID of the device associated with the affected access code. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the affected access codes. */
             connected_account_id: string
             event_type: 'access_code.changed'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+            /** ID of the affected access code. */
             access_code_id: string
-            /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+            /** ID of the device associated with the affected access code. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the affected access codes. */
             connected_account_id: string
             event_type: 'access_code.scheduled_on_device'
-            /** Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+            /** Code for the affected access code. */
             code: string
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+            /** ID of the affected access code. */
             access_code_id: string
-            /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+            /** ID of the device associated with the affected access code. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the affected access codes. */
             connected_account_id: string
             event_type: 'access_code.set_on_device'
-            /** Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+            /** Code for the affected access code. */
             code: string
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+            /** ID of the affected access code. */
             access_code_id: string
-            /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+            /** ID of the device associated with the affected access code. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the affected access codes. */
             connected_account_id: string
             event_type: 'access_code.removed_from_device'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+            /** ID of the affected access code. */
             access_code_id: string
-            /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+            /** ID of the device associated with the affected access code. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the affected access codes. */
             connected_account_id: string
             event_type: 'access_code.delay_in_setting_on_device'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+            /** ID of the affected access code. */
             access_code_id: string
-            /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+            /** ID of the device associated with the affected access code. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the affected access codes. */
             connected_account_id: string
             event_type: 'access_code.failed_to_set_on_device'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+            /** ID of the affected access code. */
             access_code_id: string
-            /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+            /** ID of the device associated with the affected access code. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the affected access codes. */
             connected_account_id: string
             event_type: 'access_code.deleted'
-            /** Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+            /** Code for the affected access code. */
             code: string | null
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+            /** ID of the affected access code. */
             access_code_id: string
-            /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+            /** ID of the device associated with the affected access code. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the affected access codes. */
             connected_account_id: string
             event_type: 'access_code.delay_in_removing_from_device'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+            /** ID of the affected access code. */
             access_code_id: string
-            /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+            /** ID of the device associated with the affected access code. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the affected access codes. */
             connected_account_id: string
             event_type: 'access_code.failed_to_remove_from_device'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+            /** ID of the affected access code. */
             access_code_id: string
-            /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+            /** ID of the device associated with the affected access code. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the affected access codes. */
             connected_account_id: string
             event_type: 'access_code.modified_external_to_seam'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+            /** ID of the affected access code. */
             access_code_id: string
-            /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+            /** ID of the device associated with the affected access code. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the affected access codes. */
             connected_account_id: string
             event_type: 'access_code.deleted_external_to_seam'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+            /** ID of the affected access code. */
             access_code_id: string
-            /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+            /** ID of the device associated with the affected access code. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the affected access codes. */
             connected_account_id: string
             event_type: 'access_code.backup_access_code_pulled'
             backup_access_code_id: string
@@ -28675,300 +28699,304 @@ export interface Routes {
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+            /** ID of the affected access code. */
             access_code_id: string
-            /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+            /** ID of the device associated with the affected access code. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the affected access codes. */
             connected_account_id: string
             event_type: 'access_code.unmanaged.converted_to_managed'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+            /** ID of the affected access code. */
             access_code_id: string
-            /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+            /** ID of the device associated with the affected access code. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the affected access codes. */
             connected_account_id: string
             event_type: 'access_code.unmanaged.failed_to_convert_to_managed'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+            /** ID of the affected access code. */
             access_code_id: string
-            /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+            /** ID of the device associated with the affected access code. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the affected access codes. */
             connected_account_id: string
             event_type: 'access_code.unmanaged.created'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes). */
+            /** ID of the affected access code. */
             access_code_id: string
-            /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+            /** ID of the device associated with the affected access code. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the affected access codes. */
             connected_account_id: string
             event_type: 'access_code.unmanaged.removed'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the access grant. */
+            /** ID of the affected access grant. */
             access_grant_id: string
             event_type: 'access_grant.created'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the access grant. */
+            /** ID of the affected access grant. */
             access_grant_id: string
             event_type: 'access_grant.deleted'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the access grant. */
+            /** ID of the affected access grant. */
             access_grant_id: string
             event_type: 'access_grant.access_granted_to_all_doors'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the access grant. */
+            /** ID of the affected access grant. */
             access_grant_id: string
             event_type: 'access_grant.access_granted_to_door'
-            /** ID of the door, an [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details). */
+            /** ID of the affected [entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details). */
             acs_entrance_id: string
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the access grant. */
+            /** ID of the affected access grant. */
             access_grant_id: string
             event_type: 'access_grant.access_to_door_lost'
-            /** ID of the door, an [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details). */
+            /** ID of the affected [entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details). */
             acs_entrance_id: string
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the access method. */
+            /** ID of the affected access method. */
             access_method_id: string
             event_type: 'access_method.issued'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the access method. */
+            /** ID of the affected access method. */
             access_method_id: string
             event_type: 'access_method.revoked'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the access method. */
+            /** ID of the affected access method. */
             access_method_id: string
             event_type: 'access_method.card_encoding_required'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account. */
             connected_account_id?: string | undefined
-            /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+            /** ID of the access system. */
             acs_system_id: string
             event_type: 'acs_system.connected'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account. */
             connected_account_id?: string | undefined
-            /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+            /** ID of the access system. */
             acs_system_id: string
             event_type: 'acs_system.added'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account. */
             connected_account_id?: string | undefined
-            /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+            /** ID of the access system. */
             acs_system_id: string
             event_type: 'acs_system.disconnected'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account. */
             connected_account_id?: string | undefined
-            /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+            /** ID of the access system. */
             acs_system_id: string
+            /** ID of the affected credential. */
             acs_credential_id: string
             event_type: 'acs_credential.deleted'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account. */
             connected_account_id?: string | undefined
-            /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+            /** ID of the access system. */
             acs_system_id: string
+            /** ID of the affected credential. */
             acs_credential_id: string
             event_type: 'acs_credential.issued'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account. */
             connected_account_id?: string | undefined
-            /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+            /** ID of the access system. */
             acs_system_id: string
+            /** ID of the affected credential. */
             acs_credential_id: string
             event_type: 'acs_credential.reissued'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account. */
             connected_account_id?: string | undefined
-            /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+            /** ID of the access system. */
             acs_system_id: string
+            /** ID of the affected credential. */
             acs_credential_id: string
             event_type: 'acs_credential.invalidated'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account. */
             connected_account_id?: string | undefined
-            /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+            /** ID of the access system. */
             acs_system_id: string
             acs_user_id: string
             event_type: 'acs_user.created'
@@ -28976,15 +29004,15 @@ export interface Routes {
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account. */
             connected_account_id?: string | undefined
-            /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+            /** ID of the access system. */
             acs_system_id: string
             acs_user_id: string
             event_type: 'acs_user.deleted'
@@ -28992,65 +29020,66 @@ export interface Routes {
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account. */
             connected_account_id?: string | undefined
-            /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+            /** ID of the access system. */
             acs_system_id: string
-            /** ID of the [ACS encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
+            /** ID of the affected encoder. */
             acs_encoder_id: string
             event_type: 'acs_encoder.added'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account. */
             connected_account_id?: string | undefined
-            /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+            /** ID of the access system. */
             acs_system_id: string
-            /** ID of the [ACS encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
+            /** ID of the affected encoder. */
             acs_encoder_id: string
             event_type: 'acs_encoder.removed'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account. */
             connected_account_id?: string | undefined
-            /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+            /** ID of the access system. */
             acs_system_id: string
+            /** ID of the affected access group. */
             acs_access_group_id: string
             event_type: 'acs_access_group.deleted'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account. */
             connected_account_id?: string | undefined
-            /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+            /** ID of the access system. */
             acs_system_id: string
             acs_entrance_id: string
             event_type: 'acs_entrance.added'
@@ -29058,15 +29087,15 @@ export interface Routes {
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account. */
             connected_account_id?: string | undefined
-            /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+            /** ID of the access system. */
             acs_system_id: string
             acs_entrance_id: string
             event_type: 'acs_entrance.removed'
@@ -29074,125 +29103,125 @@ export interface Routes {
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens). */
+            /** ID of the affected client session. */
             client_session_id: string
             event_type: 'client_session.deleted'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the affected connected account. */
             connected_account_id: string
             event_type: 'connected_account.connected'
-            /** ID of the [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews). */
+            /** ID of the Connect Webview associated with the event. */
             connect_webview_id: string
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the affected connected account. */
             connected_account_id: string
             event_type: 'connected_account.created'
-            /** ID of the [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews). */
+            /** ID of the Connect Webview associated with the event. */
             connect_webview_id: string
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the affected connected account. */
             connected_account_id: string
             event_type: 'connected_account.successful_login'
-            /** ID of the [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews). */
+            /** ID of the Connect Webview associated with the event. */
             connect_webview_id: string
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the affected connected account. */
             connected_account_id: string
             event_type: 'connected_account.disconnected'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the affected connected account. */
             connected_account_id: string
             event_type: 'connected_account.completed_first_sync'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the affected connected account. */
             connected_account_id: string
             event_type: 'connected_account.deleted'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the affected connected account. */
             connected_account_id: string
             event_type: 'connected_account.completed_first_sync_after_reconnection'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts). */
+            /** ID of the affected action attempt. */
             action_attempt_id: string
-            /** Type of action. */
+            /** Type of the action. */
             action_type: string
             /** Status of the action. */
             status: string
@@ -29201,15 +29230,15 @@ export interface Routes {
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts). */
+            /** ID of the affected action attempt. */
             action_attempt_id: string
-            /** Type of action. */
+            /** Type of the action. */
             action_type: string
             /** Status of the action. */
             status: string
@@ -29218,15 +29247,15 @@ export interface Routes {
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts). */
+            /** ID of the affected action attempt. */
             action_attempt_id: string
-            /** Type of action. */
+            /** Type of the action. */
             action_type: string
             /** Status of the action. */
             status: string
@@ -29235,15 +29264,15 @@ export interface Routes {
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts). */
+            /** ID of the affected action attempt. */
             action_attempt_id: string
-            /** Type of action. */
+            /** Type of the action. */
             action_type: string
             /** Status of the action. */
             status: string
@@ -29252,118 +29281,118 @@ export interface Routes {
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews). */
+            /** ID of the affected Connect Webview. */
             connect_webview_id: string
             event_type: 'connect_webview.login_succeeded'
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews). */
+            /** ID of the affected Connect Webview. */
             connect_webview_id: string
             event_type: 'connect_webview.login_failed'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'device.connected'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'device.added'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'device.converted_to_unmanaged'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'device.unmanaged.converted_to_managed'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'device.unmanaged.connected'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'device.disconnected'
             /** Error code associated with the disconnection event, if any. */
@@ -29375,15 +29404,15 @@ export interface Routes {
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'device.unmanaged.disconnected'
             /** Error code associated with the disconnection event, if any. */
@@ -29395,255 +29424,255 @@ export interface Routes {
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'device.tampered'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'device.low_battery'
-            /** Number in the range 0 to 1.0 indicating the amount of battery in the device, as reported by the device. */
+            /** Number in the range 0 to 1.0 indicating the amount of battery in the affected device, as reported by the device. */
             battery_level: number
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'device.battery_status_changed'
-            /** Battery status of the device, calculated from the numeric `battery_level` value. */
+            /** Battery status of the affected device, calculated from the numeric `battery_level` value. */
             battery_status: 'critical' | 'low' | 'good' | 'full'
-            /** Number in the range 0 to 1.0 indicating the amount of battery in the device, as reported by the device. */
+            /** Number in the range 0 to 1.0 indicating the amount of battery in the affected device, as reported by the device. */
             battery_level: number
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'device.removed'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'device.deleted'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'device.third_party_integration_detected'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'device.third_party_integration_no_longer_detected'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'device.salto.privacy_mode_activated'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'device.salto.privacy_mode_deactivated'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'device.connection_became_flaky'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'device.connection_stabilized'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'device.error.subscription_required'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'device.error.subscription_required.resolved'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'device.accessory_keypad_connected'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'device.accessory_keypad_disconnected'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'noise_sensor.noise_threshold_triggered'
             /** Detected noise level in decibels. */
             noise_level_decibels?: number | undefined
             /** Detected noise level in Noiseaware Noise Risk Score (NRS). */
             noise_level_nrs?: number | undefined
-            /** ID of the [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors#what-is-a-threshold) that was triggered. */
+            /** ID of the noise threshold that was triggered. */
             noise_threshold_id?: string | undefined
-            /** Name of the [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors#what-is-a-threshold) that was triggered. */
+            /** Name of the noise threshold that was triggered. */
             noise_threshold_name?: string | undefined
             /** Metadata from Noiseaware. */
             noiseaware_metadata?: Record<string, unknown> | undefined
@@ -29653,98 +29682,98 @@ export interface Routes {
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'lock.locked'
-            /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used to lock the device. */
+            /** ID of the access code that was used to lock the device. */
             access_code_id?: string | undefined
-            /** ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) associated with the lock action. */
+            /** ID of the action attempt associated with the lock action. */
             action_attempt_id?: string | undefined
-            /** Method by which a [lock device](https://docs.seam.co/latest/capability-guides/smart-locks) was locked. When the method is `keycode`, the `access_code_id` indicates the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used, if reported by the device. */
+            /** Method by which the affected lock device was locked. When the method is `keycode`, the `access_code_id` indicates the access code that was used, if reported by the device. */
             method: 'keycode' | 'manual' | 'automatic' | 'unknown' | 'seamapi'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'lock.unlocked'
-            /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used to unlock the device. */
+            /** ID of the access code that was used to unlock the affected device. */
             access_code_id?: string | undefined
-            /** ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) associated with the unlock action. */
+            /** ID of the action attempt associated with the unlock action. */
             action_attempt_id?: string | undefined
-            /** Method by which a [lock device](https://docs.seam.co/latest/capability-guides/smart-locks) was unlocked. When the method is `keycode`, the `access_code_id` indicates the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used, if reported by the device. */
+            /** Method by which the affected lock device was unlocked. When the method is `keycode`, the `access_code_id` indicates the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used, if reported by the device. */
             method: 'keycode' | 'manual' | 'automatic' | 'unknown' | 'seamapi'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'lock.access_denied'
-            /** ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used in the unlock attempts. */
+            /** ID of the access code that was used in the unlock attempts. */
             access_code_id?: string | undefined
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'thermostat.climate_preset_activated'
-            /** ID of the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that prompted the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to be activated. */
+            /** ID of the thermostat schedule that prompted the affected climate preset to be activated. */
             thermostat_schedule_id: string | null
-            /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) that was activated. */
+            /** Key of the climate preset that was activated. */
             climate_preset_key: string
-            /** Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) that was activated is the [fallback climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) for the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+            /** Indicates whether the climate preset that was activated is the fallback climate preset for the thermostat. */
             is_fallback_climate_preset: boolean
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'thermostat.manually_adjusted'
-            /** Method used to adjust the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) manually. `seam` indicates that the Seam API, Seam CLI, or Seam Console was used to adjust the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+            /** Method used to adjust the affected thermostat manually. `seam` indicates that the Seam API, Seam CLI, or Seam Console was used to adjust the thermostat. */
             method: 'seam' | 'external'
             /** Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`. */
             fan_mode_setting?:
@@ -29766,139 +29795,139 @@ export interface Routes {
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'thermostat.temperature_threshold_exceeded'
-            /** Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+            /** Temperature, in °C, reported by the affected thermostat. */
             temperature_celsius: number
-            /** Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+            /** Temperature, in °F, reported by the affected thermostat. */
             temperature_fahrenheit: number
-            /** Upper temperature limit, in °C, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds). */
+            /** Upper temperature limit, in °C, defined by the set threshold. */
             upper_limit_celsius: number | null
-            /** Upper temperature limit, in °F, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds). */
+            /** Upper temperature limit, in °F, defined by the set threshold. */
             upper_limit_fahrenheit: number | null
-            /** Lower temperature limit, in °C, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds). */
+            /** Lower temperature limit, in °C, defined by the set threshold. */
             lower_limit_celsius: number | null
-            /** Lower temperature limit, in °F, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds). */
+            /** Lower temperature limit, in °F, defined by the set threshold. */
             lower_limit_fahrenheit: number | null
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'thermostat.temperature_threshold_no_longer_exceeded'
-            /** Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+            /** Temperature, in °C, reported by the affected thermostat. */
             temperature_celsius: number
-            /** Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+            /** Temperature, in °F, reported by the affected thermostat. */
             temperature_fahrenheit: number
-            /** Upper temperature limit, in °C, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds). */
+            /** Upper temperature limit, in °C, defined by the set threshold. */
             upper_limit_celsius: number | null
-            /** Upper temperature limit, in °F, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds). */
+            /** Upper temperature limit, in °F, defined by the set threshold. */
             upper_limit_fahrenheit: number | null
-            /** Lower temperature limit, in °C, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds). */
+            /** Lower temperature limit, in °C, defined by the set threshold. */
             lower_limit_celsius: number | null
-            /** Lower temperature limit, in °F, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds). */
+            /** Lower temperature limit, in °F, defined by the set threshold. */
             lower_limit_fahrenheit: number | null
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'thermostat.temperature_reached_set_point'
-            /** Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+            /** Temperature, in °C, reported by the affected thermostat. */
             temperature_celsius: number
-            /** Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+            /** Temperature, in °F, reported by the affected thermostat. */
             temperature_fahrenheit: number
-            /** Desired temperature, in °C, defined by the [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) cooling or heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
+            /** Desired temperature, in °C, defined by the affected thermostat's cooling or heating set point. */
             desired_temperature_celsius?: number | undefined
-            /** Desired temperature, in °F, defined by the [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) cooling or heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
+            /** Desired temperature, in °F, defined by the affected thermostat's cooling or heating set point. */
             desired_temperature_fahrenheit?: number | undefined
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'thermostat.temperature_changed'
-            /** Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+            /** Temperature, in °C, reported by the affected thermostat. */
             temperature_celsius: number
-            /** Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+            /** Temperature, in °F, reported by the affected thermostat. */
             temperature_fahrenheit: number
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the device. */
+            /** ID of the affected device. */
             device_id: string
-            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            /** ID of the connected account associated with the event. */
             connected_account_id: string
             event_type: 'device.name_changed'
-            /** The new name of the device. */
+            /** The new name of the affected device. */
             device_name: string
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut). */
+            /** ID of the affected enrollment automation. */
             enrollment_automation_id: string
             event_type: 'enrollment_automation.deleted'
           }
         | {
             /** ID of the event. */
             event_id: string
-            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            /** ID of the workspace associated with the event. */
             workspace_id: string
             /** Date and time at which the event was created. */
             created_at: string
             /** Date and time at which the event occurred. */
             occurred_at: string
-            /** ID of the [device](https://docs.seam.co/latest/core-concepts/devices). */
+            /** ID of the affected phone device. */
             device_id: string
             event_type: 'phone.deactivated'
           }

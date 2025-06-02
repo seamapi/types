@@ -3,7 +3,10 @@ import { z } from 'zod'
 import { common_acs_event } from './common.js'
 
 const acs_access_group_event = common_acs_event.extend({
-  acs_access_group_id: z.string().uuid(),
+  acs_access_group_id: z
+    .string()
+    .uuid()
+    .describe('ID of the affected access group.'),
 })
 
 export const acs_access_group_deleted_event = acs_access_group_event.extend({

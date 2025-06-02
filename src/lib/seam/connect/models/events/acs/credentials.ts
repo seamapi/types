@@ -3,7 +3,10 @@ import { z } from 'zod'
 import { common_acs_event } from './common.js'
 
 const acs_credential_event = common_acs_event.extend({
-  acs_credential_id: z.string().uuid(),
+  acs_credential_id: z
+    .string()
+    .uuid()
+    .describe('ID of the affected credential.'),
 })
 
 export const acs_credential_deleted_event = acs_credential_event.extend({

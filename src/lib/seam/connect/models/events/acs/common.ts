@@ -7,13 +7,6 @@ export const common_acs_event = common_event.extend({
     .string()
     .uuid()
     .optional()
-    .describe(
-      'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
-    ),
-  acs_system_id: z
-    .string()
-    .uuid()
-    .describe(
-      'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
-    ),
+    .describe('ID of the connected account.'),
+  acs_system_id: z.string().uuid().describe('ID of the access system.'),
 })

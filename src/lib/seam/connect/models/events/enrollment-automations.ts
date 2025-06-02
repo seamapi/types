@@ -6,9 +6,7 @@ const enrollment_automation_event = common_event.extend({
   enrollment_automation_id: z
     .string()
     .uuid()
-    .describe(
-      'ID of the [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut).',
-    ),
+    .describe('ID of the affected enrollment automation.'),
 })
 
 export const enrollment_automation_deleted_event =
