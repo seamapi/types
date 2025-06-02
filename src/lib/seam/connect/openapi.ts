@@ -37560,6 +37560,7 @@ export default {
         'x-fern-sdk-return-value': 'bridge_client_session',
         'x-response-key': 'bridge_client_session',
         'x-title': 'Generate a building block magic link',
+        'x-undocumented': 'Experimental partner building blocks.',
       },
     },
     '/unstable_partner/resources/push': {
