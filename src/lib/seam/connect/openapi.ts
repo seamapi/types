@@ -29979,14 +29979,23 @@ export default {
     },
     '/locks/get': {
       post: {
+        description:
+          'Returns a specified [lock](https://docs.seam.co/latest/capability-guides/smart-locks). **Use `/devices/get` instead.**',
         operationId: 'locksGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
-                  name: { type: 'string' },
+                  device_id: {
+                    description: 'ID of the lock that you want to get.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  name: {
+                    description: 'Name of the lock that you want to get.',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -30026,10 +30035,13 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'device',
         'x-response-key': 'device',
+        'x-title': 'Get a Lock',
       },
     },
     '/locks/list': {
       post: {
+        description:
+          'Returns a list of all [locks](https://docs.seam.co/latest/capability-guides/smart-locks).',
         operationId: 'locksListPost',
         requestBody: {
           content: {
@@ -30079,7 +30091,8 @@ export default {
                     type: 'array',
                   },
                   device_type: {
-                    description: 'Device type by which to filter devices.',
+                    description:
+                      'Device type of the locks that you want to list.',
                     enum: [
                       'akuvox_lock',
                       'august_lock',
@@ -30113,7 +30126,7 @@ export default {
                   },
                   device_types: {
                     description:
-                      'Array of device types by which to filter devices.',
+                      'Device types of the locks that you want to list.',
                     items: {
                       description: 'Device type for smartlocks.\n          ',
                       enum: [
@@ -30197,7 +30210,8 @@ export default {
                     type: 'number',
                   },
                   manufacturer: {
-                    description: 'Manufacturer by which to filter devices.',
+                    description:
+                      'Manufacturer of the locks that you want to list.',
                     enum: [
                       'akuvox',
                       'august',
@@ -30293,18 +30307,29 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'devices',
         'x-response-key': 'devices',
+        'x-title': 'List Locks',
       },
     },
     '/locks/lock_door': {
       post: {
+        description:
+          'Locks a [lock](https://docs.seam.co/latest/capability-guides/smart-locks). See also [Locking and Unlocking Smart Locks](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock).',
         operationId: 'locksLockDoorPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
-                  sync: { default: false, type: 'boolean' },
+                  device_id: {
+                    description: 'ID of the lock that you want to lock.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
                 },
                 required: ['device_id'],
                 type: 'object',
@@ -30346,18 +30371,30 @@ export default {
         'x-fern-sdk-method-name': 'lock_door',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
+        'x-title': 'Lock a Lock',
       },
     },
     '/locks/simulate/keypad_code_entry': {
       post: {
+        description:
+          'Simulates the entry of a code on a keypad. You can only perform this action for [August](https://docs.seam.co/latest/device-and-system-integration-guides/august-locks) devices within [sandbox workspaces](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).',
         operationId: 'locksSimulateKeypadCodeEntryPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  code: { type: 'string' },
-                  device_id: { format: 'uuid', type: 'string' },
+                  code: {
+                    description:
+                      'Code that you want to simulate entering on a keypad.',
+                    type: 'string',
+                  },
+                  device_id: {
+                    description:
+                      'ID of the device for which you want to simulate a keypad code entry.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['device_id', 'code'],
                 type: 'object',
@@ -30403,12 +30440,21 @@ export default {
     },
     '/locks/simulate/manual_lock_via_keypad': {
       post: {
+        description:
+          'Simulates a manual lock action using a keypad. You can only perform this action for [August](https://docs.seam.co/latest/device-and-system-integration-guides/august-locks) devices within [sandbox workspaces](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).',
         operationId: 'locksSimulateManualLockViaKeypadPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
-                properties: { device_id: { format: 'uuid', type: 'string' } },
+                properties: {
+                  device_id: {
+                    description:
+                      'ID of the device for which you want to simulate a manual lock action using a keypad.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
                 required: ['device_id'],
                 type: 'object',
               },
@@ -30453,14 +30499,24 @@ export default {
     },
     '/locks/unlock_door': {
       post: {
+        description:
+          'Unlocks a [lock](https://docs.seam.co/latest/capability-guides/smart-locks). See also [Locking and Unlocking Smart Locks](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock).',
         operationId: 'locksUnlockDoorPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
-                  sync: { default: false, type: 'boolean' },
+                  device_id: {
+                    description: 'ID of the lock that you want to unlock.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
                 },
                 required: ['device_id'],
                 type: 'object',
@@ -30502,6 +30558,7 @@ export default {
         'x-fern-sdk-method-name': 'unlock_door',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
+        'x-title': 'Unlock a Lock',
       },
     },
     '/networks/get': {

@@ -29940,7 +29940,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the lock that you want to get. */
       device_id?: string | undefined
+      /** Name of the lock that you want to get. */
       name?: string | undefined
     }
     formData: {}
@@ -32838,7 +32840,7 @@ export interface Routes {
       connected_account_ids?: string[] | undefined
       /** ID of the Connect Webview for which you want to list devices. */
       connect_webview_id?: string | undefined
-      /** Device type by which to filter devices. */
+      /** Device type of the locks that you want to list. */
       device_type?:
         | (
             | 'akuvox_lock'
@@ -32870,7 +32872,7 @@ export interface Routes {
             | 'akiles_lock'
           )
         | undefined
-      /** Array of device types by which to filter devices. */
+      /** Device types of the locks that you want to list. */
       device_types?:
         | Array<
             | 'akuvox_lock'
@@ -32902,7 +32904,7 @@ export interface Routes {
             | 'akiles_lock'
           >
         | undefined
-      /** Manufacturer by which to filter devices. */
+      /** Manufacturer of the locks that you want to list. */
       manufacturer?:
         | (
             | 'akuvox'
@@ -35867,7 +35869,9 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the lock that you want to lock. */
       device_id: string
+      /**  */
       sync?: boolean
     }
     commonParams: {}
@@ -37172,7 +37176,9 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the device for which you want to simulate a keypad code entry. */
       device_id: string
+      /** Code that you want to simulate entering on a keypad. */
       code: string
     }
     commonParams: {}
@@ -38477,6 +38483,7 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the device for which you want to simulate a manual lock action using a keypad. */
       device_id: string
     }
     commonParams: {}
@@ -39781,7 +39788,9 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the lock that you want to unlock. */
       device_id: string
+      /**  */
       sync?: boolean
     }
     commonParams: {}
