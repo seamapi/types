@@ -23466,6 +23466,7 @@ export default {
                         description:
                           "Indicates whether to update the user's existing card. See also [Programming Salto Space Card-based Credentials](https://docs.seam.co/latest/device-and-system-integration-guides/salto-proaccess-space-access-system/programming-salto-space-card-based-credentials).",
                         type: 'boolean',
+                        'x-undocumented': 'Not used. Will be deprecated.',
                       },
                     },
                     type: 'object',
