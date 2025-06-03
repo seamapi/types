@@ -21538,6 +21538,7 @@ export interface Routes {
         token: string
         user_identifier_key: string | null
         device_count: number
+        customer_id?: string | undefined
         connected_account_ids: string[]
         connect_webview_ids: string[]
         user_identity_ids: string[]
@@ -21586,6 +21587,7 @@ export interface Routes {
         token: string
         user_identifier_key: string | null
         device_count: number
+        customer_id?: string | undefined
         connected_account_ids: string[]
         connect_webview_ids: string[]
         user_identity_ids: string[]
@@ -21628,6 +21630,7 @@ export interface Routes {
         token: string
         user_identifier_key: string | null
         device_count: number
+        customer_id?: string | undefined
         connected_account_ids: string[]
         connect_webview_ids: string[]
         user_identity_ids: string[]
@@ -21670,6 +21673,7 @@ export interface Routes {
         token: string
         user_identifier_key: string | null
         device_count: number
+        customer_id?: string | undefined
         connected_account_ids: string[]
         connect_webview_ids: string[]
         user_identity_ids: string[]
@@ -21703,6 +21707,7 @@ export interface Routes {
         token: string
         user_identifier_key: string | null
         device_count: number
+        customer_id?: string | undefined
         connected_account_ids: string[]
         connect_webview_ids: string[]
         user_identity_ids: string[]
@@ -21946,7 +21951,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      customer_id?: string | undefined
+      customer_ids?: string[] | undefined
       /** Your user ID for the user by which you want to filter Connect Webviews. */
       user_identifier_key?: string | undefined
       /** Custom metadata pairs by which you want to [filter Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata). Returns Connect Webviews with `custom_metadata` that contains all of the provided key:value pairs. */
@@ -48589,6 +48594,7 @@ export interface Routes {
         token: string
         user_identifier_key: string | null
         device_count: number
+        customer_id?: string | undefined
         connected_account_ids: string[]
         connect_webview_ids: string[]
         user_identity_ids: string[]
