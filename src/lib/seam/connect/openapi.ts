@@ -37432,22 +37432,20 @@ export default {
     },
     '/unstable_partner/building_blocks/generate_link': {
       post: {
-        description: 'Creates a new bridge client session.',
+        description: 'Creates a new building block magic link.',
         operationId: 'unstablePartnerBuildingBlocksGenerateLinkPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  bridge_client_machine_identifier_key: { type: 'string' },
-                  bridge_client_name: { type: 'string' },
-                  bridge_client_time_zone: { type: 'string' },
+                  block_type: {
+                    enum: ['connect_account', 'manage_devices'],
+                    type: 'string',
+                  },
+                  customer_key: { type: 'string' },
                 },
-                required: [
-                  'bridge_client_name',
-                  'bridge_client_time_zone',
-                  'bridge_client_machine_identifier_key',
-                ],
+                required: ['block_type', 'customer_key'],
                 type: 'object',
               },
             },
@@ -37459,152 +37457,12 @@ export default {
               'application/json': {
                 schema: {
                   properties: {
-                    bridge_client_session: {
-                      properties: {
-                        bridge_client_machine_identifier_key: {
-                          type: 'string',
-                        },
-                        bridge_client_name: { type: 'string' },
-                        bridge_client_session_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        bridge_client_session_token: { type: 'string' },
-                        bridge_client_time_zone: { type: 'string' },
-                        created_at: { format: 'date-time', type: 'string' },
-                        errors: {
-                          items: {
-                            description:
-                              'Error associated with the `bridge_client_session`.',
-                            discriminator: { propertyName: 'error_code' },
-                            oneOf: [
-                              {
-                                description:
-                                  "Seam cannot reach the bridge's LAN",
-                                properties: {
-                                  can_tailscale_proxy_reach_bridge: {
-                                    description:
-                                      'Tailscale proxy cannot reach the bridge',
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  can_tailscale_proxy_reach_tailscale_network: {
-                                    description:
-                                      'Tailscale proxy cannot reach the Tailscale network',
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  created_at: {
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  error_code: {
-                                    description:
-                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                    enum: ['bridge_lan_unreachable'],
-                                    type: 'string',
-                                  },
-                                  is_bridge_socks_server_healthy: {
-                                    description:
-                                      "Bridge's SOCKS server is unhealthy",
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  is_tailscale_proxy_reachable: {
-                                    description:
-                                      'Seam cannot reach the tailscale proxy',
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  is_tailscale_proxy_socks_server_healthy: {
-                                    description:
-                                      "Tailscale proxy's SOCKS server is unhealthy",
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  message: { type: 'string' },
-                                },
-                                required: [
-                                  'message',
-                                  'created_at',
-                                  'error_code',
-                                  'is_tailscale_proxy_reachable',
-                                  'is_tailscale_proxy_socks_server_healthy',
-                                  'can_tailscale_proxy_reach_tailscale_network',
-                                  'can_tailscale_proxy_reach_bridge',
-                                  'is_bridge_socks_server_healthy',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Bridge has stopped communicating with Seam',
-                                properties: {
-                                  created_at: {
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  error_code: {
-                                    description:
-                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                    enum: ['no_communication_from_bridge'],
-                                    type: 'string',
-                                  },
-                                  message: { type: 'string' },
-                                },
-                                required: [
-                                  'message',
-                                  'created_at',
-                                  'error_code',
-                                ],
-                                type: 'object',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        pairing_code: {
-                          maxLength: 6,
-                          minLength: 6,
-                          type: 'string',
-                        },
-                        pairing_code_expires_at: {
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        tailscale_auth_key: { nullable: true, type: 'string' },
-                        tailscale_hostname: { type: 'string' },
-                        telemetry_token: { nullable: true, type: 'string' },
-                        telemetry_token_expires_at: {
-                          format: 'date-time',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        telemetry_url: { nullable: true, type: 'string' },
-                      },
-                      required: [
-                        'created_at',
-                        'bridge_client_session_id',
-                        'bridge_client_session_token',
-                        'pairing_code',
-                        'pairing_code_expires_at',
-                        'tailscale_hostname',
-                        'tailscale_auth_key',
-                        'bridge_client_name',
-                        'bridge_client_time_zone',
-                        'bridge_client_machine_identifier_key',
-                        'errors',
-                        'telemetry_token',
-                        'telemetry_token_expires_at',
-                        'telemetry_url',
-                      ],
-                      type: 'object',
-                      'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
-                      'x-undocumented': 'Seam Bridge Client only.',
+                    magic_link: {
+                      $ref: '#/components/schemas/connect_webview',
                     },
                     ok: { type: 'boolean' },
                   },
-                  required: ['bridge_client_session', 'ok'],
+                  required: ['magic_link', 'ok'],
                   type: 'object',
                 },
               },
@@ -37614,13 +37472,13 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [{ certified_client: [] }],
+        security: [{ api_key: [] }],
         summary: '/unstable_partner/building_blocks/generate_link',
         tags: [],
         'x-fern-sdk-group-name': ['unstable_partner', 'building_blocks'],
         'x-fern-sdk-method-name': 'generate_link',
-        'x-fern-sdk-return-value': 'bridge_client_session',
-        'x-response-key': 'bridge_client_session',
+        'x-fern-sdk-return-value': 'magic_link',
+        'x-response-key': 'magic_link',
         'x-title': 'Generate a building block magic link',
         'x-undocumented': 'Experimental partner building blocks.',
       },
