@@ -20593,7 +20593,7 @@ export default {
                 properties: {
                   allow_external_modification: {
                     description:
-                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                      'Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
                     type: 'boolean',
                   },
                   attempt_for_offline_device: {
@@ -20625,7 +20625,7 @@ export default {
                   },
                   is_external_modification_allowed: {
                     description:
-                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                      'Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
                     type: 'boolean',
                   },
                   is_offline_access_code: {
@@ -20673,7 +20673,7 @@ export default {
                   },
                   use_backup_access_code_pool: {
                     description:
-                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code).',
+                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).',
                     type: 'boolean',
                   },
                   use_offline_access_code: { type: 'boolean' },
@@ -20734,7 +20734,7 @@ export default {
                 properties: {
                   allow_external_modification: {
                     description:
-                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                      'Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
                     type: 'boolean',
                   },
                   attempt_for_offline_device: {
@@ -20768,7 +20768,7 @@ export default {
                   },
                   is_external_modification_allowed: {
                     description:
-                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                      'Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
                     type: 'boolean',
                   },
                   is_offline_access_code: {
@@ -20811,7 +20811,7 @@ export default {
                   },
                   use_backup_access_code_pool: {
                     description:
-                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code).',
+                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).',
                     type: 'boolean',
                   },
                   use_offline_access_code: { type: 'boolean' },
@@ -20869,7 +20869,7 @@ export default {
                 properties: {
                   allow_external_modification: {
                     description:
-                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                      'Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
                     type: 'boolean',
                   },
                   attempt_for_offline_device: {
@@ -20903,7 +20903,7 @@ export default {
                   },
                   is_external_modification_allowed: {
                     description:
-                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                      'Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
                     type: 'boolean',
                   },
                   is_offline_access_code: {
@@ -20946,7 +20946,7 @@ export default {
                   },
                   use_backup_access_code_pool: {
                     description:
-                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code).',
+                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).',
                     type: 'boolean',
                   },
                   use_offline_access_code: { type: 'boolean' },
@@ -21974,7 +21974,7 @@ export default {
                   },
                   allow_external_modification: {
                     description:
-                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                      'Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
                     type: 'boolean',
                   },
                   attempt_for_offline_device: {
@@ -22001,7 +22001,7 @@ export default {
                   },
                   is_external_modification_allowed: {
                     description:
-                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                      'Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
                     type: 'boolean',
                   },
                   is_managed: {
@@ -22060,7 +22060,7 @@ export default {
                   },
                   use_backup_access_code_pool: {
                     description:
-                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code).',
+                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).',
                     type: 'boolean',
                   },
                   use_offline_access_code: { type: 'boolean' },
@@ -22122,7 +22122,7 @@ export default {
                   },
                   allow_external_modification: {
                     description:
-                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                      'Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
                     type: 'boolean',
                   },
                   attempt_for_offline_device: {
@@ -22149,7 +22149,7 @@ export default {
                   },
                   is_external_modification_allowed: {
                     description:
-                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                      'Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
                     type: 'boolean',
                   },
                   is_managed: {
@@ -22208,7 +22208,7 @@ export default {
                   },
                   use_backup_access_code_pool: {
                     description:
-                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code).',
+                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).',
                     type: 'boolean',
                   },
                   use_offline_access_code: { type: 'boolean' },
@@ -22271,7 +22271,7 @@ export default {
                   },
                   allow_external_modification: {
                     description:
-                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                      'Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
                     type: 'boolean',
                   },
                   attempt_for_offline_device: {
@@ -22298,7 +22298,7 @@ export default {
                   },
                   is_external_modification_allowed: {
                     description:
-                      'Indicates whether [external modification](https://docs.seam.co/latest/api/access_codes#external-modification) of the code is allowed. Default: `false`.',
+                      'Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
                     type: 'boolean',
                   },
                   is_managed: {
@@ -22357,7 +22357,7 @@ export default {
                   },
                   use_backup_access_code_pool: {
                     description:
-                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api-clients/access_codes/pull_backup_access_code).',
+                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).',
                     type: 'boolean',
                   },
                   use_offline_access_code: { type: 'boolean' },
