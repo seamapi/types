@@ -2093,6 +2093,12 @@ export default {
             format: 'uuid',
             type: 'string',
           },
+          connected_account_id: {
+            description:
+              'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
+            format: 'uuid',
+            type: 'string',
+          },
           created_at: {
             description:
               'Date and time at which the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) was created.',
@@ -2143,6 +2149,7 @@ export default {
         required: [
           'acs_encoder_id',
           'acs_system_id',
+          'connected_account_id',
           'workspace_id',
           'errors',
           'created_at',
@@ -15938,14 +15945,42 @@ export default {
         'x-route-path': '/networks',
       },
       noise_threshold: {
+        description:
+          'Represents a [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors). Thresholds represent the limits of noise tolerated at a property, which can be customized for each hour of the day. Each device has its own default thresholds, but you can use the Seam API to modify them.',
         properties: {
-          device_id: { format: 'uuid', type: 'string' },
-          ends_daily_at: { type: 'string' },
-          name: { type: 'string' },
-          noise_threshold_decibels: { format: 'float', type: 'number' },
-          noise_threshold_id: { format: 'uuid', type: 'string' },
-          noise_threshold_nrs: { format: 'float', type: 'number' },
-          starts_daily_at: { type: 'string' },
+          device_id: {
+            description:
+              'Unique identifier for the device that contains the noise threshold.',
+            format: 'uuid',
+            type: 'string',
+          },
+          ends_daily_at: {
+            description:
+              'Time at which the noise threshold should become inactive daily.',
+            type: 'string',
+          },
+          name: { description: 'Name of the noise threshold.', type: 'string' },
+          noise_threshold_decibels: {
+            description: 'Noise level in decibels for the noise threshold.',
+            format: 'float',
+            type: 'number',
+          },
+          noise_threshold_id: {
+            description: 'Unique identifier for the noise threshold.',
+            format: 'uuid',
+            type: 'string',
+          },
+          noise_threshold_nrs: {
+            description:
+              'Noise level in Noiseaware Noise Risk Score (NRS) for the noise threshold. This parameter is only relevant for [Noiseaware sensors](https://docs.seam.co/latest/device-and-system-integration-guides/noiseaware-sensors).',
+            format: 'float',
+            type: 'number',
+          },
+          starts_daily_at: {
+            description:
+              'Time at which the noise threshold should become active daily.',
+            type: 'string',
+          },
         },
         required: [
           'noise_threshold_id',
@@ -30683,6 +30718,8 @@ export default {
     },
     '/noise_sensors/list': {
       post: {
+        description:
+          'Returns a list of all [noise sensors](https://docs.seam.co/latest/capability-guides/noise-sensors).',
         operationId: 'noiseSensorsListPost',
         requestBody: {
           content: {
@@ -30732,13 +30769,14 @@ export default {
                     type: 'array',
                   },
                   device_type: {
-                    description: 'Device type by which to filter devices.',
+                    description:
+                      'Device type of the noise sensors that you want to list.',
                     enum: ['noiseaware_activity_zone', 'minut_sensor'],
                     type: 'string',
                   },
                   device_types: {
                     description:
-                      'Array of device types by which to filter devices.',
+                      'Device types of the noise sensors that you want to list.',
                     items: {
                       description: 'Device type for noise sensors.\n          ',
                       enum: ['noiseaware_activity_zone', 'minut_sensor'],
@@ -30794,7 +30832,8 @@ export default {
                     type: 'number',
                   },
                   manufacturer: {
-                    description: 'Manufacturer by which to filter devices.',
+                    description:
+                      'Manufacturers of the noise sensors that you want to list.',
                     enum: ['minut', 'noiseaware'],
                     type: 'string',
                   },
@@ -30861,23 +30900,56 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'devices',
         'x-response-key': 'devices',
+        'x-title': 'List Noise Sensors',
       },
     },
     '/noise_sensors/noise_thresholds/create': {
       post: {
+        description:
+          'Creates a new [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors). Thresholds represent the limits of noise tolerated at a property, which can be customized for each hour of the day. Each device has its own default thresholds, but you can use the Seam API to modify them.',
         operationId: 'noiseSensorsNoiseThresholdsCreatePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
-                  ends_daily_at: { type: 'string' },
-                  name: { type: 'string' },
-                  noise_threshold_decibels: { format: 'float', type: 'number' },
-                  noise_threshold_nrs: { format: 'float', type: 'number' },
-                  starts_daily_at: { type: 'string' },
-                  sync: { default: false, type: 'boolean' },
+                  device_id: {
+                    description:
+                      'ID of the device for which you want to create a noise threshold.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  ends_daily_at: {
+                    description:
+                      'Time at which the new noise threshold should become inactive daily.',
+                    type: 'string',
+                  },
+                  name: {
+                    description: 'Name of the new noise threshold.',
+                    type: 'string',
+                  },
+                  noise_threshold_decibels: {
+                    description:
+                      'Noise level in decibels for the new noise threshold.',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  noise_threshold_nrs: {
+                    description:
+                      'Noise level in Noiseaware Noise Risk Score (NRS) for the new noise threshold. This parameter is only relevant for [Noiseaware sensors](https://docs.seam.co/latest/device-and-system-integration-guides/noiseaware-sensors).',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  starts_daily_at: {
+                    description:
+                      'Time at which the new noise threshold should become active daily.',
+                    type: 'string',
+                  },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
                 },
                 required: ['device_id', 'starts_daily_at', 'ends_daily_at'],
                 type: 'object',
@@ -30921,19 +30993,36 @@ export default {
         'x-fern-sdk-method-name': 'create',
         'x-fern-sdk-return-value': 'noise_threshold',
         'x-response-key': 'noise_threshold',
+        'x-title': 'Create a Noise Threshold',
       },
     },
     '/noise_sensors/noise_thresholds/delete': {
       post: {
+        description:
+          'Deletes a [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) from a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors).',
         operationId: 'noiseSensorsNoiseThresholdsDeletePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
-                  noise_threshold_id: { format: 'uuid', type: 'string' },
-                  sync: { default: false, type: 'boolean' },
+                  device_id: {
+                    description:
+                      'ID of the device that contains the noise threshold that you want to delete.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  noise_threshold_id: {
+                    description:
+                      'ID of the noise threshold that you want to delete.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
                 },
                 required: ['noise_threshold_id', 'device_id'],
                 type: 'object',
@@ -30973,17 +31062,25 @@ export default {
         'x-fern-sdk-group-name': ['noise_sensors', 'noise_thresholds'],
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
+        'x-title': 'Delete a Noise Threshold',
       },
     },
     '/noise_sensors/noise_thresholds/get': {
       post: {
+        description:
+          'Returns a specified [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors).',
         operationId: 'noiseSensorsNoiseThresholdsGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  noise_threshold_id: { format: 'uuid', type: 'string' },
+                  noise_threshold_id: {
+                    description:
+                      'ID of the noise threshold that you want to get.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['noise_threshold_id'],
                 type: 'object',
@@ -31023,18 +31120,32 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'noise_threshold',
         'x-response-key': 'noise_threshold',
+        'x-title': 'Get a Noise Threshold',
       },
     },
     '/noise_sensors/noise_thresholds/list': {
       post: {
+        description:
+          'Returns a list of all [noise thresholds](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors).',
         operationId: 'noiseSensorsNoiseThresholdsListPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
-                  is_programmed: { type: 'boolean' },
+                  device_id: {
+                    description:
+                      'ID of the device for which you want to list noise thresholds.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  is_programmed: {
+                    description:
+                      'Enables you to limit the returned noise thresholds by whether they are programmed on the noise sensor. To list only noise thresholds that are programmed on the noise sensor, set this parameter to `true`. To list only noise thresholds that are not programmed on the noise sensor, se this parameter to `false`.',
+                    type: 'boolean',
+                    'x-undocumented':
+                      'Not sure if this parameter is supported or what it does.',
+                  },
                 },
                 required: ['device_id'],
                 type: 'object',
@@ -31076,24 +31187,63 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'noise_thresholds',
         'x-response-key': 'noise_thresholds',
+        'x-title': 'List Noise Thresholds',
       },
     },
     '/noise_sensors/noise_thresholds/update': {
       patch: {
+        description:
+          'Updates a [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors).',
         operationId: 'noiseSensorsNoiseThresholdsUpdatePatch',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
-                  ends_daily_at: { type: 'string' },
-                  name: { type: 'string' },
-                  noise_threshold_decibels: { format: 'float', type: 'number' },
-                  noise_threshold_id: { format: 'uuid', type: 'string' },
-                  noise_threshold_nrs: { format: 'float', type: 'number' },
-                  starts_daily_at: { type: 'string' },
-                  sync: { default: false, type: 'boolean' },
+                  device_id: {
+                    description:
+                      'ID of the device that contains the noise threshold that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  ends_daily_at: {
+                    description:
+                      'Time at which the noise threshold should become inactive daily.',
+                    type: 'string',
+                  },
+                  name: {
+                    description:
+                      'Name of the noise threshold that you want to update.',
+                    type: 'string',
+                  },
+                  noise_threshold_decibels: {
+                    description:
+                      'Noise level in decibels for the noise threshold.',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  noise_threshold_id: {
+                    description:
+                      'ID of the noise threshold that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  noise_threshold_nrs: {
+                    description:
+                      'Noise level in Noiseaware Noise Risk Score (NRS) for the noise threshold. This parameter is only relevant for [Noiseaware sensors](https://docs.seam.co/latest/device-and-system-integration-guides/noiseaware-sensors).',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  starts_daily_at: {
+                    description:
+                      'Time at which the noise threshold should become active daily.',
+                    type: 'string',
+                  },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
                 },
                 required: ['noise_threshold_id', 'device_id'],
                 type: 'object',
@@ -31132,22 +31282,61 @@ export default {
         'x-action-attempt-type': 'UPDATE_NOISE_THRESHOLD',
         'x-fern-ignore': true,
         'x-response-key': null,
+        'x-title': 'Update a Noise Threshold',
       },
       post: {
+        description:
+          'Updates a [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors).',
         operationId: 'noiseSensorsNoiseThresholdsUpdatePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
-                  ends_daily_at: { type: 'string' },
-                  name: { type: 'string' },
-                  noise_threshold_decibels: { format: 'float', type: 'number' },
-                  noise_threshold_id: { format: 'uuid', type: 'string' },
-                  noise_threshold_nrs: { format: 'float', type: 'number' },
-                  starts_daily_at: { type: 'string' },
-                  sync: { default: false, type: 'boolean' },
+                  device_id: {
+                    description:
+                      'ID of the device that contains the noise threshold that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  ends_daily_at: {
+                    description:
+                      'Time at which the noise threshold should become inactive daily.',
+                    type: 'string',
+                  },
+                  name: {
+                    description:
+                      'Name of the noise threshold that you want to update.',
+                    type: 'string',
+                  },
+                  noise_threshold_decibels: {
+                    description:
+                      'Noise level in decibels for the noise threshold.',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  noise_threshold_id: {
+                    description:
+                      'ID of the noise threshold that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  noise_threshold_nrs: {
+                    description:
+                      'Noise level in Noiseaware Noise Risk Score (NRS) for the noise threshold. This parameter is only relevant for [Noiseaware sensors](https://docs.seam.co/latest/device-and-system-integration-guides/noiseaware-sensors).',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  starts_daily_at: {
+                    description:
+                      'Time at which the noise threshold should become active daily.',
+                    type: 'string',
+                  },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
                 },
                 required: ['noise_threshold_id', 'device_id'],
                 type: 'object',
@@ -31187,22 +31376,61 @@ export default {
         'x-fern-sdk-group-name': ['noise_sensors', 'noise_thresholds'],
         'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
+        'x-title': 'Update a Noise Threshold',
       },
       put: {
+        description:
+          'Updates a [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors).',
         operationId: 'noiseSensorsNoiseThresholdsUpdatePut',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
-                  ends_daily_at: { type: 'string' },
-                  name: { type: 'string' },
-                  noise_threshold_decibels: { format: 'float', type: 'number' },
-                  noise_threshold_id: { format: 'uuid', type: 'string' },
-                  noise_threshold_nrs: { format: 'float', type: 'number' },
-                  starts_daily_at: { type: 'string' },
-                  sync: { default: false, type: 'boolean' },
+                  device_id: {
+                    description:
+                      'ID of the device that contains the noise threshold that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  ends_daily_at: {
+                    description:
+                      'Time at which the noise threshold should become inactive daily.',
+                    type: 'string',
+                  },
+                  name: {
+                    description:
+                      'Name of the noise threshold that you want to update.',
+                    type: 'string',
+                  },
+                  noise_threshold_decibels: {
+                    description:
+                      'Noise level in decibels for the noise threshold.',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  noise_threshold_id: {
+                    description:
+                      'ID of the noise threshold that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  noise_threshold_nrs: {
+                    description:
+                      'Noise level in Noiseaware Noise Risk Score (NRS) for the noise threshold. This parameter is only relevant for [Noiseaware sensors](https://docs.seam.co/latest/device-and-system-integration-guides/noiseaware-sensors).',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  starts_daily_at: {
+                    description:
+                      'Time at which the noise threshold should become active daily.',
+                    type: 'string',
+                  },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
                 },
                 required: ['noise_threshold_id', 'device_id'],
                 type: 'object',
@@ -31241,16 +31469,26 @@ export default {
         'x-action-attempt-type': 'UPDATE_NOISE_THRESHOLD',
         'x-fern-ignore': true,
         'x-response-key': null,
+        'x-title': 'Update a Noise Threshold',
       },
     },
     '/noise_sensors/simulate/trigger_noise_threshold': {
       post: {
+        description:
+          'Simulates the triggering of a [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors) in a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).',
         operationId: 'noiseSensorsSimulateTriggerNoiseThresholdPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
-                properties: { device_id: { format: 'uuid', type: 'string' } },
+                properties: {
+                  device_id: {
+                    description:
+                      'ID of the device for which you want to simulate the triggering of a noise threshold.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
                 required: ['device_id'],
                 type: 'object',
               },
@@ -31283,6 +31521,7 @@ export default {
         'x-fern-sdk-group-name': ['noise_sensors', 'simulate'],
         'x-fern-sdk-method-name': 'trigger_noise_threshold',
         'x-response-key': null,
+        'x-title': 'Simulate Triggering a Noise Threshold',
       },
     },
     '/phones/deactivate': {
