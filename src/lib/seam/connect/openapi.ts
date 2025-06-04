@@ -1594,6 +1594,12 @@ export default {
             format: 'uuid',
             type: 'string',
           },
+          connected_account_id: {
+            description:
+              'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that contains the access group.',
+            format: 'uuid',
+            type: 'string',
+          },
           created_at: {
             description: 'Date and time at which the access group was created.',
             format: 'date-time',
@@ -1659,6 +1665,7 @@ export default {
           'acs_access_group_id',
           'acs_system_id',
           'workspace_id',
+          'connected_account_id',
           'name',
           'access_group_type',
           'access_group_type_display_name',
@@ -18417,6 +18424,12 @@ export default {
             format: 'uuid',
             type: 'string',
           },
+          connected_account_id: {
+            description:
+              'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that contains the access group.',
+            format: 'uuid',
+            type: 'string',
+          },
           created_at: {
             description: 'Date and time at which the access group was created.',
             format: 'date-time',
@@ -18482,6 +18495,7 @@ export default {
           'acs_access_group_id',
           'acs_system_id',
           'workspace_id',
+          'connected_account_id',
           'name',
           'access_group_type',
           'access_group_type_display_name',
