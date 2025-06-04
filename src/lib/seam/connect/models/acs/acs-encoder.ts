@@ -46,6 +46,12 @@ export const acs_encoder = z.object({
     .describe(
       'ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
     ),
+  connected_account_id: z
+    .string()
+    .uuid()
+    .describe(
+      'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
+    ),
   workspace_id: z
     .string()
     .uuid()
