@@ -15900,6 +15900,32 @@ export default {
         'x-route-path': '/user_identities',
         'x-undocumented': 'Unreleased.',
       },
+      magic_link: {
+        properties: {
+          building_block_type: {
+            enum: ['connect_account', 'manage_devices'],
+            type: 'string',
+          },
+          created_at: { format: 'date-time', type: 'string' },
+          customer_id: { format: 'uuid', type: 'string' },
+          customer_key: { type: 'string' },
+          expires_at: { format: 'date-time', type: 'string' },
+          url: { format: 'uri', type: 'string' },
+          workspace_id: { format: 'uuid', type: 'string' },
+        },
+        required: [
+          'url',
+          'building_block_type',
+          'customer_id',
+          'customer_key',
+          'expires_at',
+          'workspace_id',
+          'created_at',
+        ],
+        type: 'object',
+        'x-route-path': '/unstable_partner/building_blocks',
+        'x-undocumented': 'Unreleased.',
+      },
       network: {
         properties: {
           created_at: { format: 'date-time', type: 'string' },
@@ -32904,6 +32930,8 @@ export default {
                           'customer_key',
                         ],
                         type: 'object',
+                        'x-route-path': '/unstable_partner/resources',
+                        'x-undocumented': 'Unreleased.',
                       },
                       type: 'array',
                     },
@@ -37430,22 +37458,22 @@ export default {
         'x-undocumented': 'Experimental locations.',
       },
     },
-    '/unstable_partner/building_blocks/generate_link': {
+    '/unstable_partner/building_blocks/generate_magic_link': {
       post: {
         description: 'Creates a new building block magic link.',
-        operationId: 'unstablePartnerBuildingBlocksGenerateLinkPost',
+        operationId: 'unstablePartnerBuildingBlocksGenerateMagicLinkPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  block_type: {
+                  building_block_type: {
                     enum: ['connect_account', 'manage_devices'],
                     type: 'string',
                   },
                   customer_key: { type: 'string' },
                 },
-                required: ['block_type', 'customer_key'],
+                required: ['building_block_type', 'customer_key'],
                 type: 'object',
               },
             },
@@ -37457,9 +37485,7 @@ export default {
               'application/json': {
                 schema: {
                   properties: {
-                    magic_link: {
-                      $ref: '#/components/schemas/connect_webview',
-                    },
+                    magic_link: { $ref: '#/components/schemas/magic_link' },
                     ok: { type: 'boolean' },
                   },
                   required: ['magic_link', 'ok'],
@@ -37473,10 +37499,10 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [{ api_key: [] }],
-        summary: '/unstable_partner/building_blocks/generate_link',
+        summary: '/unstable_partner/building_blocks/generate_magic_link',
         tags: [],
         'x-fern-sdk-group-name': ['unstable_partner', 'building_blocks'],
-        'x-fern-sdk-method-name': 'generate_link',
+        'x-fern-sdk-method-name': 'generate_magic_link',
         'x-fern-sdk-return-value': 'magic_link',
         'x-response-key': 'magic_link',
         'x-title': 'Generate a building block magic link',
@@ -37515,6 +37541,8 @@ export default {
                         user_identity_key: { type: 'string' },
                       },
                       type: 'object',
+                      'x-route-path': '/unstable_partner/resources',
+                      'x-undocumented': 'Unreleased.',
                     },
                     type: 'array',
                   },
@@ -37540,6 +37568,8 @@ export default {
                       user_identity_key: { type: 'string' },
                     },
                     type: 'object',
+                    'x-route-path': '/unstable_partner/resources',
+                    'x-undocumented': 'Unreleased.',
                   },
                 ],
               },
