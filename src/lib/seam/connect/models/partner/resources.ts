@@ -19,6 +19,11 @@ export const partner_resource = z.object({
   name: z.string().optional(),
   description: z.string().optional(),
   custom_metadata: z.record(z.string(), z.string()).optional(),
-})
+}).describe(`
+  ---
+  undocumented: Unreleased.
+  route_path: /unstable_partner/resources
+  ---
+  `)
 
 export type PartnerResource = z.infer<typeof partner_resource>

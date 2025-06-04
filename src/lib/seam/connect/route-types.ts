@@ -66159,19 +66159,26 @@ export interface Routes {
       }
     }
   }
-  '/unstable_partner/building_blocks/generate_link': {
-    route: '/unstable_partner/building_blocks/generate_link'
-    method: 'POST'
+  '/unstable_partner/building_blocks/generate_magic_link': {
+    route: '/unstable_partner/building_blocks/generate_magic_link'
+    method: 'POST' | 'GET'
     queryParams: {}
-    jsonBody: {
-      block_type: 'connect_account' | 'manage_devices'
+    jsonBody: {}
+    commonParams: {
+      building_block_type: 'connect_account' | 'manage_devices'
       customer_key: string
     }
-    commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       magic_link: {
         url: string
+        building_block_type: 'connect_account' | 'manage_devices'
+        customer_id: string
+        customer_key: string
+        expires_at: string
+        workspace_id: string
+        created_at: string
       }
     }
   }
