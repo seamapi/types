@@ -2093,6 +2093,12 @@ export default {
             format: 'uuid',
             type: 'string',
           },
+          connected_account_id: {
+            description:
+              'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
+            format: 'uuid',
+            type: 'string',
+          },
           created_at: {
             description:
               'Date and time at which the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) was created.',
@@ -2143,6 +2149,7 @@ export default {
         required: [
           'acs_encoder_id',
           'acs_system_id',
+          'connected_account_id',
           'workspace_id',
           'errors',
           'created_at',
@@ -15907,7 +15914,6 @@ export default {
             type: 'string',
           },
           created_at: { format: 'date-time', type: 'string' },
-          customer_id: { format: 'uuid', type: 'string' },
           customer_key: { type: 'string' },
           expires_at: { format: 'date-time', type: 'string' },
           url: { format: 'uri', type: 'string' },
@@ -15916,7 +15922,6 @@ export default {
         required: [
           'url',
           'building_block_type',
-          'customer_id',
           'customer_key',
           'expires_at',
           'workspace_id',
@@ -20762,6 +20767,7 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [
+          { client_session_with_customer: [] },
           { client_session: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
@@ -21104,6 +21110,7 @@ export default {
         },
         security: [
           { client_session: [] },
+          { client_session_with_customer: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
@@ -21233,6 +21240,7 @@ export default {
           { access_token: [] },
           { console_session_with_workspace: [] },
           { client_session: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/access_codes/get',
         tags: ['/access_codes'],
@@ -21256,6 +21264,10 @@ export default {
                   access_code_ids: {
                     description:
                       'IDs of the access codes that you want to retrieve. Specify either `device_id` or `access_code_ids`.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                  customer_ids: {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
@@ -21314,6 +21326,7 @@ export default {
         },
         security: [
           { client_session: [] },
+          { client_session_with_customer: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
@@ -30415,6 +30428,7 @@ export default {
         },
         security: [
           { client_session: [] },
+          { client_session_with_customer: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
@@ -30602,6 +30616,7 @@ export default {
         },
         security: [
           { client_session: [] },
+          { client_session_with_customer: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
