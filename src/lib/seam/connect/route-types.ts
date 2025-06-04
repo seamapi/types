@@ -4265,6 +4265,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      customer_ids?: string[] | undefined
       /** ID of the device for which you want to list access codes. Specify either `device_id` or `access_code_ids`. */
       device_id?: string | undefined
       /** IDs of the access codes that you want to retrieve. Specify either `device_id` or `access_code_ids`. */
@@ -15031,6 +15032,8 @@ export interface Routes {
         acs_encoder_id: string
         /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
         acs_system_id: string
+        /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
+        connected_account_id: string
         /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
         workspace_id: string
         /** Errors associated with the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
@@ -15080,6 +15083,8 @@ export interface Routes {
         acs_encoder_id: string
         /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
         acs_system_id: string
+        /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
+        connected_account_id: string
         /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
         workspace_id: string
         /** Errors associated with the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
@@ -66217,7 +66222,6 @@ export interface Routes {
       magic_link: {
         url: string
         building_block_type: 'connect_account' | 'manage_devices'
-        customer_id: string
         customer_key: string
         expires_at: string
         workspace_id: string
