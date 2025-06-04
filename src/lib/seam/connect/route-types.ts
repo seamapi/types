@@ -4265,6 +4265,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      customer_ids?: string[] | undefined
       /** ID of the device for which you want to list access codes. Specify either `device_id` or `access_code_ids`. */
       device_id?: string | undefined
       /** IDs of the access codes that you want to retrieve. Specify either `device_id` or `access_code_ids`. */
@@ -15031,6 +15032,8 @@ export interface Routes {
         acs_encoder_id: string
         /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
         acs_system_id: string
+        /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
+        connected_account_id: string
         /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
         workspace_id: string
         /** Errors associated with the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
@@ -15080,6 +15083,8 @@ export interface Routes {
         acs_encoder_id: string
         /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
         acs_system_id: string
+        /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
+        connected_account_id: string
         /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
         workspace_id: string
         /** Errors associated with the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
@@ -41143,13 +41148,13 @@ export interface Routes {
       connected_account_ids?: string[] | undefined
       /** ID of the Connect Webview for which you want to list devices. */
       connect_webview_id?: string | undefined
-      /** Device type by which to filter devices. */
+      /** Device type of the noise sensors that you want to list. */
       device_type?: ('noiseaware_activity_zone' | 'minut_sensor') | undefined
-      /** Array of device types by which to filter devices. */
+      /** Device types of the noise sensors that you want to list. */
       device_types?:
         | Array<'noiseaware_activity_zone' | 'minut_sensor'>
         | undefined
-      /** Manufacturer by which to filter devices. */
+      /** Manufacturers of the noise sensors that you want to list. */
       manufacturer?: ('minut' | 'noiseaware') | undefined
       /** Array of device IDs for which you want to list devices. */
       device_ids?: string[] | undefined
@@ -44083,12 +44088,19 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the device for which you want to create a noise threshold. */
       device_id: string
+      /**  */
       sync?: boolean
+      /** Name of the new noise threshold. */
       name?: string | undefined
+      /** Time at which the new noise threshold should become active daily. */
       starts_daily_at: string
+      /** Time at which the new noise threshold should become inactive daily. */
       ends_daily_at: string
+      /** Noise level in decibels for the new noise threshold. */
       noise_threshold_decibels?: number | undefined
+      /** Noise level in Noiseaware Noise Risk Score (NRS) for the new noise threshold. This parameter is only relevant for [Noiseaware sensors](https://docs.seam.co/latest/device-and-system-integration-guides/noiseaware-sensors). */
       noise_threshold_nrs?: number | undefined
     }
     commonParams: {}
@@ -45386,14 +45398,21 @@ export interface Routes {
               message: string
             }
           }
-      /**  */
+      /** Represents a [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors). Thresholds represent the limits of noise tolerated at a property, which can be customized for each hour of the day. Each device has its own default thresholds, but you can use the Seam API to modify them. */
       noise_threshold: {
+        /** Unique identifier for the noise threshold. */
         noise_threshold_id: string
+        /** Unique identifier for the device that contains the noise threshold. */
         device_id: string
+        /** Name of the noise threshold. */
         name: string
+        /** Noise level in Noiseaware Noise Risk Score (NRS) for the noise threshold. This parameter is only relevant for [Noiseaware sensors](https://docs.seam.co/latest/device-and-system-integration-guides/noiseaware-sensors). */
         noise_threshold_nrs?: number | undefined
+        /** Time at which the noise threshold should become active daily. */
         starts_daily_at: string
+        /** Time at which the noise threshold should become inactive daily. */
         ends_daily_at: string
+        /** Noise level in decibels for the noise threshold. */
         noise_threshold_decibels: number
       }
     }
@@ -45403,8 +45422,11 @@ export interface Routes {
     method: 'DELETE' | 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the noise threshold that you want to delete. */
       noise_threshold_id: string
+      /** ID of the device that contains the noise threshold that you want to delete. */
       device_id: string
+      /**  */
       sync?: boolean
     }
     commonParams: {}
@@ -46710,18 +46732,26 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the noise threshold that you want to get. */
       noise_threshold_id: string
     }
     formData: {}
     jsonResponse: {
-      /**  */
+      /** Represents a [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors). Thresholds represent the limits of noise tolerated at a property, which can be customized for each hour of the day. Each device has its own default thresholds, but you can use the Seam API to modify them. */
       noise_threshold: {
+        /** Unique identifier for the noise threshold. */
         noise_threshold_id: string
+        /** Unique identifier for the device that contains the noise threshold. */
         device_id: string
+        /** Name of the noise threshold. */
         name: string
+        /** Noise level in Noiseaware Noise Risk Score (NRS) for the noise threshold. This parameter is only relevant for [Noiseaware sensors](https://docs.seam.co/latest/device-and-system-integration-guides/noiseaware-sensors). */
         noise_threshold_nrs?: number | undefined
+        /** Time at which the noise threshold should become active daily. */
         starts_daily_at: string
+        /** Time at which the noise threshold should become inactive daily. */
         ends_daily_at: string
+        /** Noise level in decibels for the noise threshold. */
         noise_threshold_decibels: number
       }
     }
@@ -46732,18 +46762,27 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the device for which you want to list noise thresholds. */
       device_id: string
+      /** Enables you to limit the returned noise thresholds by whether they are programmed on the noise sensor. To list only noise thresholds that are programmed on the noise sensor, set this parameter to `true`. To list only noise thresholds that are not programmed on the noise sensor, se this parameter to `false`. */
       is_programmed?: boolean | undefined
     }
     formData: {}
     jsonResponse: {
       noise_thresholds: Array<{
+        /** Unique identifier for the noise threshold. */
         noise_threshold_id: string
+        /** Unique identifier for the device that contains the noise threshold. */
         device_id: string
+        /** Name of the noise threshold. */
         name: string
+        /** Noise level in Noiseaware Noise Risk Score (NRS) for the noise threshold. This parameter is only relevant for [Noiseaware sensors](https://docs.seam.co/latest/device-and-system-integration-guides/noiseaware-sensors). */
         noise_threshold_nrs?: number | undefined
+        /** Time at which the noise threshold should become active daily. */
         starts_daily_at: string
+        /** Time at which the noise threshold should become inactive daily. */
         ends_daily_at: string
+        /** Noise level in decibels for the noise threshold. */
         noise_threshold_decibels: number
       }>
     }
@@ -46753,13 +46792,21 @@ export interface Routes {
     method: 'PATCH' | 'POST' | 'PUT'
     queryParams: {}
     jsonBody: {
+      /** ID of the noise threshold that you want to update. */
       noise_threshold_id: string
+      /** ID of the device that contains the noise threshold that you want to update. */
       device_id: string
+      /**  */
       sync?: boolean
+      /** Name of the noise threshold that you want to update. */
       name?: string | undefined
+      /** Time at which the noise threshold should become active daily. */
       starts_daily_at?: string | undefined
+      /** Time at which the noise threshold should become inactive daily. */
       ends_daily_at?: string | undefined
+      /** Noise level in decibels for the noise threshold. */
       noise_threshold_decibels?: number | undefined
+      /** Noise level in Noiseaware Noise Risk Score (NRS) for the noise threshold. This parameter is only relevant for [Noiseaware sensors](https://docs.seam.co/latest/device-and-system-integration-guides/noiseaware-sensors). */
       noise_threshold_nrs?: number | undefined
     }
     commonParams: {}
@@ -48064,6 +48111,7 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the device for which you want to simulate the triggering of a noise threshold. */
       device_id: string
     }
     commonParams: {}
@@ -66174,7 +66222,6 @@ export interface Routes {
       magic_link: {
         url: string
         building_block_type: 'connect_account' | 'manage_devices'
-        customer_id: string
         customer_key: string
         expires_at: string
         workspace_id: string
