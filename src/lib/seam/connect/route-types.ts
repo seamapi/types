@@ -10148,6 +10148,8 @@ export interface Routes {
         acs_system_id: string
         /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the access group. */
         workspace_id: string
+        /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that contains the access group. */
+        connected_account_id: string
         /** Name of the access group. */
         name: string
         /**
@@ -10210,6 +10212,8 @@ export interface Routes {
         acs_system_id: string
         /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the access group. */
         workspace_id: string
+        /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that contains the access group. */
+        connected_account_id: string
         /** Name of the access group. */
         name: string
         /**
@@ -10615,6 +10619,8 @@ export interface Routes {
         acs_system_id: string
         /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the access group. */
         workspace_id: string
+        /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that contains the access group. */
+        connected_account_id: string
         /** Name of the access group. */
         name: string
         /**
@@ -10675,6 +10681,8 @@ export interface Routes {
         acs_system_id: string
         /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the access group. */
         workspace_id: string
+        /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that contains the access group. */
+        connected_account_id: string
         /** Name of the access group. */
         name: string
         /**
