@@ -66241,6 +66241,30 @@ export interface Routes {
       }
     }
   }
+  '/unstable_partner/building_blocks/connect_accounts': {
+    route: '/unstable_partner/building_blocks/connect_accounts'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      customer_key: string
+    }
+    formData: {}
+    jsonResponse: {
+      /**  */
+      magic_link: {
+        url: string
+        building_block_type:
+          | 'connect_accounts'
+          | 'manage_devices'
+          | 'organize_spaces'
+        customer_key: string
+        expires_at: string
+        workspace_id: string
+        created_at: string
+      }
+    }
+  }
   '/unstable_partner/building_blocks/generate_magic_link': {
     route: '/unstable_partner/building_blocks/generate_magic_link'
     method: 'POST' | 'GET'
@@ -66248,7 +66272,7 @@ export interface Routes {
     jsonBody: {}
     commonParams:
       | {
-          building_block_type: 'connect_account'
+          building_block_type: 'connect_accounts'
           customer_key: string
         }
       | {
@@ -66258,12 +66282,7 @@ export interface Routes {
       | {
           building_block_type: 'organize_spaces'
           customer_key: string
-          partner_resources: Array<{
-            partner_resource_key: string
-            name: string
-            description?: string | undefined
-            custom_metadata?: Record<string, string> | undefined
-          }>
+          collection_key: string
         }
     formData: {}
     jsonResponse: {
@@ -66271,7 +66290,61 @@ export interface Routes {
       magic_link: {
         url: string
         building_block_type:
-          | 'connect_account'
+          | 'connect_accounts'
+          | 'manage_devices'
+          | 'organize_spaces'
+        customer_key: string
+        expires_at: string
+        workspace_id: string
+        created_at: string
+      }
+    }
+  }
+  '/unstable_partner/building_blocks/manage_devices': {
+    route: '/unstable_partner/building_blocks/manage_devices'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      customer_key: string
+    }
+    formData: {}
+    jsonResponse: {
+      /**  */
+      magic_link: {
+        url: string
+        building_block_type:
+          | 'connect_accounts'
+          | 'manage_devices'
+          | 'organize_spaces'
+        customer_key: string
+        expires_at: string
+        workspace_id: string
+        created_at: string
+      }
+    }
+  }
+  '/unstable_partner/building_blocks/organize_spaces': {
+    route: '/unstable_partner/building_blocks/organize_spaces'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      customer_key: string
+      partner_resources: Array<{
+        partner_resource_key: string
+        name: string
+        description?: string | undefined
+        custom_metadata?: Record<string, string> | undefined
+      }>
+    }
+    formData: {}
+    jsonResponse: {
+      /**  */
+      magic_link: {
+        url: string
+        building_block_type:
+          | 'connect_accounts'
           | 'manage_devices'
           | 'organize_spaces'
         customer_key: string

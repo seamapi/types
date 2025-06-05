@@ -1,12 +1,16 @@
 import { z } from 'zod'
 
+export const building_block_type = z.enum([
+  'connect_accounts',
+  'manage_devices',
+  'organize_spaces',
+])
+
+export type BuildingBlockType = z.infer<typeof building_block_type>
+
 export const magic_link = z.object({
   url: z.string().url(),
-  building_block_type: z.enum([
-    'connect_account',
-    'manage_devices',
-    'organize_spaces',
-  ]),
+  building_block_type,
   customer_key: z.string(),
   expires_at: z.string().datetime(),
   workspace_id: z.string().uuid(),
