@@ -15917,7 +15917,7 @@ export default {
       magic_link: {
         properties: {
           building_block_type: {
-            enum: ['connect_account', 'manage_devices', 'organize_spaces'],
+            enum: ['connect_accounts', 'manage_devices', 'organize_spaces'],
             type: 'string',
           },
           created_at: { format: 'date-time', type: 'string' },
@@ -37813,6 +37813,56 @@ export default {
         'x-undocumented': 'Experimental locations.',
       },
     },
+    '/unstable_partner/building_blocks/connect_accounts': {
+      post: {
+        description:
+          'Creates a new building block magic link to connect accounts.',
+        operationId: 'unstablePartnerBuildingBlocksConnectAccountsPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { customer_key: { type: 'string' } },
+                required: ['customer_key'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    magic_link: { $ref: '#/components/schemas/magic_link' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['magic_link', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_partner/building_blocks/connect_accounts',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_partner', 'building_blocks'],
+        'x-fern-sdk-method-name': 'connect_accounts',
+        'x-fern-sdk-return-value': 'magic_link',
+        'x-response-key': 'magic_link',
+        'x-title': 'Connect Accounts',
+        'x-undocumented': 'Experimental partner building blocks.',
+      },
+    },
     '/unstable_partner/building_blocks/generate_magic_link': {
       post: {
         description: 'Creates a new building block magic link.',
@@ -37821,12 +37871,11 @@ export default {
           content: {
             'application/json': {
               schema: {
-                discriminator: { propertyName: 'building_block_type' },
                 oneOf: [
                   {
                     properties: {
                       building_block_type: {
-                        enum: ['connect_account'],
+                        enum: ['connect_accounts'],
                         type: 'string',
                       },
                       customer_key: { type: 'string' },
@@ -37851,30 +37900,13 @@ export default {
                         enum: ['organize_spaces'],
                         type: 'string',
                       },
+                      collection_key: { type: 'string' },
                       customer_key: { type: 'string' },
-                      partner_resources: {
-                        items: {
-                          properties: {
-                            custom_metadata: {
-                              additionalProperties: { type: 'string' },
-                              type: 'object',
-                            },
-                            description: { type: 'string' },
-                            name: { type: 'string' },
-                            partner_resource_key: { type: 'string' },
-                          },
-                          required: ['partner_resource_key', 'name'],
-                          type: 'object',
-                          'x-route-path': '/unstable_partner/resources',
-                          'x-undocumented': 'Unreleased.',
-                        },
-                        type: 'array',
-                      },
                     },
                     required: [
                       'building_block_type',
                       'customer_key',
-                      'partner_resources',
+                      'collection_key',
                     ],
                     type: 'object',
                   },
@@ -37902,7 +37934,11 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [{ api_key: [] }],
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
         summary: '/unstable_partner/building_blocks/generate_magic_link',
         tags: [],
         'x-fern-sdk-group-name': ['unstable_partner', 'building_blocks'],
@@ -37910,6 +37946,127 @@ export default {
         'x-fern-sdk-return-value': 'magic_link',
         'x-response-key': 'magic_link',
         'x-title': 'Generate a building block magic link',
+        'x-undocumented': 'Experimental partner building blocks.',
+      },
+    },
+    '/unstable_partner/building_blocks/manage_devices': {
+      post: {
+        description:
+          'Creates a new building block magic link to manage devices.',
+        operationId: 'unstablePartnerBuildingBlocksManageDevicesPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { customer_key: { type: 'string' } },
+                required: ['customer_key'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    magic_link: { $ref: '#/components/schemas/magic_link' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['magic_link', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_partner/building_blocks/manage_devices',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_partner', 'building_blocks'],
+        'x-fern-sdk-method-name': 'manage_devices',
+        'x-fern-sdk-return-value': 'magic_link',
+        'x-response-key': 'magic_link',
+        'x-title': 'Manage Devices',
+        'x-undocumented': 'Experimental partner building blocks.',
+      },
+    },
+    '/unstable_partner/building_blocks/organize_spaces': {
+      post: {
+        description:
+          'Creates a new building block magic link to organize spaces.',
+        operationId: 'unstablePartnerBuildingBlocksOrganizeSpacesPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  customer_key: { type: 'string' },
+                  partner_resources: {
+                    items: {
+                      properties: {
+                        custom_metadata: {
+                          additionalProperties: { type: 'string' },
+                          type: 'object',
+                        },
+                        description: { type: 'string' },
+                        name: { type: 'string' },
+                        partner_resource_key: { type: 'string' },
+                      },
+                      required: ['partner_resource_key', 'name'],
+                      type: 'object',
+                      'x-route-path': '/unstable_partner/resources',
+                      'x-undocumented': 'Unreleased.',
+                    },
+                    minItems: 1,
+                    type: 'array',
+                  },
+                },
+                required: ['customer_key', 'partner_resources'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    magic_link: { $ref: '#/components/schemas/magic_link' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['magic_link', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_partner/building_blocks/organize_spaces',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_partner', 'building_blocks'],
+        'x-fern-sdk-method-name': 'organize_spaces',
+        'x-fern-sdk-return-value': 'magic_link',
+        'x-response-key': 'magic_link',
+        'x-title': 'Organize Spaces',
         'x-undocumented': 'Experimental partner building blocks.',
       },
     },
