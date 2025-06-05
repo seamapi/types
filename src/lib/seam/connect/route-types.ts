@@ -49065,6 +49065,32 @@ export interface Routes {
       }
     }
   }
+  '/seam/partner/v1/building_blocks/spaces/auto_map': {
+    route: '/seam/partner/v1/building_blocks/spaces/auto_map'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      collection_key: string
+    }
+    formData: {}
+    jsonResponse: {
+      spaces: Array<{
+        name: string
+        partner_resource_key: string
+        devices: Array<{
+          device_id: string
+          device_type: 'lock' | 'thermostat' | 'sensor'
+          name: string
+        }>
+        acs_entrances: Array<{
+          acs_entrance_id: string
+          name: string
+        }>
+        needs_review?: boolean | undefined
+      }>
+    }
+  }
   '/seam/partner/v1/resources/list': {
     route: '/seam/partner/v1/resources/list'
     method: 'GET' | 'POST'
@@ -66220,16 +66246,34 @@ export interface Routes {
     method: 'POST' | 'GET'
     queryParams: {}
     jsonBody: {}
-    commonParams: {
-      building_block_type: 'connect_account' | 'manage_devices'
-      customer_key: string
-    }
+    commonParams:
+      | {
+          building_block_type: 'connect_account'
+          customer_key: string
+        }
+      | {
+          building_block_type: 'manage_devices'
+          customer_key: string
+        }
+      | {
+          building_block_type: 'organize_spaces'
+          customer_key: string
+          partner_resources: Array<{
+            partner_resource_key: string
+            name: string
+            description?: string | undefined
+            custom_metadata?: Record<string, string> | undefined
+          }>
+        }
     formData: {}
     jsonResponse: {
       /**  */
       magic_link: {
         url: string
-        building_block_type: 'connect_account' | 'manage_devices'
+        building_block_type:
+          | 'connect_account'
+          | 'manage_devices'
+          | 'organize_spaces'
         customer_key: string
         expires_at: string
         workspace_id: string
