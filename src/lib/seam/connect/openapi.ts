@@ -15917,7 +15917,7 @@ export default {
       magic_link: {
         properties: {
           building_block_type: {
-            enum: ['connect_account', 'manage_devices'],
+            enum: ['connect_account', 'manage_devices', 'organize_spaces'],
             type: 'string',
           },
           created_at: { format: 'date-time', type: 'string' },
@@ -28185,7 +28185,7 @@ export default {
     '/connected_accounts/sync': {
       post: {
         description:
-          'Request a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) sync attempt for the specified connected_account_id.',
+          'Request a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) sync attempt for the specified `connected_account_id`.',
         operationId: 'connectedAccountsSyncPost',
         requestBody: {
           content: {
@@ -33137,6 +33137,100 @@ export default {
         'x-undocumented': 'Mobile SDK only.',
       },
     },
+    '/seam/partner/v1/building_blocks/spaces/auto_map': {
+      post: {
+        description:
+          'Auto map partner resources that have been pushed to Seam.',
+        operationId: 'seamPartnerV1BuildingBlocksSpacesAutoMapPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { collection_key: { type: 'string' } },
+                required: ['collection_key'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    spaces: {
+                      items: {
+                        properties: {
+                          acs_entrances: {
+                            items: {
+                              properties: {
+                                acs_entrance_id: { type: 'string' },
+                                name: { type: 'string' },
+                              },
+                              required: ['acs_entrance_id', 'name'],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
+                          devices: {
+                            items: {
+                              properties: {
+                                device_id: { type: 'string' },
+                                device_type: {
+                                  enum: ['lock', 'thermostat', 'sensor'],
+                                  type: 'string',
+                                },
+                                name: { type: 'string' },
+                              },
+                              required: ['device_id', 'device_type', 'name'],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
+                          name: { type: 'string' },
+                          needs_review: { type: 'boolean' },
+                          partner_resource_key: { type: 'string' },
+                        },
+                        required: [
+                          'name',
+                          'partner_resource_key',
+                          'devices',
+                          'acs_entrances',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['spaces', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/partner/v1/building_blocks/spaces/auto_map',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'partner',
+          'v1',
+          'building_blocks',
+          'spaces',
+        ],
+        'x-fern-sdk-method-name': 'auto_map',
+        'x-fern-sdk-return-value': 'spaces',
+        'x-response-key': 'spaces',
+        'x-title': 'Do auto mapping for partner resources that map to spaces',
+        'x-undocumented': 'Partner building blocks/UI only.',
+      },
+    },
     '/seam/partner/v1/resources/list': {
       post: {
         description: 'List partner resources that have been pushed to Seam.',
@@ -37727,15 +37821,64 @@ export default {
           content: {
             'application/json': {
               schema: {
-                properties: {
-                  building_block_type: {
-                    enum: ['connect_account', 'manage_devices'],
-                    type: 'string',
+                discriminator: { propertyName: 'building_block_type' },
+                oneOf: [
+                  {
+                    properties: {
+                      building_block_type: {
+                        enum: ['connect_account'],
+                        type: 'string',
+                      },
+                      customer_key: { type: 'string' },
+                    },
+                    required: ['building_block_type', 'customer_key'],
+                    type: 'object',
                   },
-                  customer_key: { type: 'string' },
-                },
-                required: ['building_block_type', 'customer_key'],
-                type: 'object',
+                  {
+                    properties: {
+                      building_block_type: {
+                        enum: ['manage_devices'],
+                        type: 'string',
+                      },
+                      customer_key: { type: 'string' },
+                    },
+                    required: ['building_block_type', 'customer_key'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      building_block_type: {
+                        enum: ['organize_spaces'],
+                        type: 'string',
+                      },
+                      customer_key: { type: 'string' },
+                      partner_resources: {
+                        items: {
+                          properties: {
+                            custom_metadata: {
+                              additionalProperties: { type: 'string' },
+                              type: 'object',
+                            },
+                            description: { type: 'string' },
+                            name: { type: 'string' },
+                            partner_resource_key: { type: 'string' },
+                          },
+                          required: ['partner_resource_key', 'name'],
+                          type: 'object',
+                          'x-route-path': '/unstable_partner/resources',
+                          'x-undocumented': 'Unreleased.',
+                        },
+                        type: 'array',
+                      },
+                    },
+                    required: [
+                      'building_block_type',
+                      'customer_key',
+                      'partner_resources',
+                    ],
+                    type: 'object',
+                  },
+                ],
               },
             },
           },

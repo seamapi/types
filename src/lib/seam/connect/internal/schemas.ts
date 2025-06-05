@@ -55,6 +55,7 @@ export {
   thermostat_capability_properties,
   thermostat_device_type,
   thermostat_schedule,
+  typed_partner_resource,
   unmanaged_access_code,
   unmanaged_device,
   user_identity,
