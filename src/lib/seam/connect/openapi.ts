@@ -28185,7 +28185,7 @@ export default {
     '/connected_accounts/sync': {
       post: {
         description:
-          'Request a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) sync attempt for the specified connected_account_id.',
+          'Request a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) sync attempt for the specified `connected_account_id`.',
         operationId: 'connectedAccountsSyncPost',
         requestBody: {
           content: {
