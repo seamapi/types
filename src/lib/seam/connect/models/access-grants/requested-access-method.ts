@@ -18,10 +18,6 @@ export const requested_access_method = z.object({
     .describe(
       'IDs of the access methods that were created for this requested access method.',
     ),
-}).describe(`
-  ---
-  undocumented: Unreleased.
-  ---
-  `)
+})
 
 export type RequestedAccessMethod = z.infer<typeof requested_access_method>

@@ -35,7 +35,8 @@ export const access_method = z.object({
     ),
 }).describe(`
   ---
-  undocumented: Unreleased.
+  draft: Early access.
+  route_path: /access_methods
   ---
   `)
 

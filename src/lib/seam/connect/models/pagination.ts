@@ -21,3 +21,5 @@ export const pagination = z
       .describe('URL to get the next page of results.'),
   })
   .describe('Information about the current page of results.')
+
+export type Pagination = z.infer<typeof pagination>

@@ -15979,17 +15979,6 @@ export default {
         'x-route-path': '/unstable_partner/building_blocks',
         'x-undocumented': 'Unreleased.',
       },
-      network: {
-        properties: {
-          created_at: { format: 'date-time', type: 'string' },
-          display_name: { type: 'string' },
-          network_id: { format: 'uuid', type: 'string' },
-          workspace_id: { format: 'uuid', type: 'string' },
-        },
-        required: ['network_id', 'workspace_id', 'display_name', 'created_at'],
-        type: 'object',
-        'x-route-path': '/networks',
-      },
       noise_threshold: {
         description:
           'Represents a [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors). Thresholds represent the limits of noise tolerated at a property, which can be customized for each hour of the day. Each device has its own default thresholds, but you can use the Seam API to modify them.',
@@ -16825,6 +16814,41 @@ export default {
         type: 'object',
         'x-route-path': '/seam/mobile_sdk/v1/phone_sessions',
         'x-undocumented': 'Seam Mobile SDK only.',
+      },
+      space: {
+        properties: {
+          created_at: {
+            description: 'Date and time at which the space object was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          display_name: {
+            description: 'Display name of the space.',
+            type: 'string',
+          },
+          name: { description: 'Name of the space.', type: 'string' },
+          space_id: {
+            description: 'Unique identifier for the space.',
+            format: 'uuid',
+            type: 'string',
+          },
+          workspace_id: {
+            description:
+              'Unique identifier for the Seam workspace associated with the space.',
+            format: 'uuid',
+            type: 'string',
+          },
+        },
+        required: [
+          'space_id',
+          'workspace_id',
+          'name',
+          'display_name',
+          'created_at',
+        ],
+        type: 'object',
+        'x-draft': 'Early access.',
+        'x-route-path': '/spaces',
       },
       thermostat_schedule: {
         description:
@@ -22875,7 +22899,6 @@ export default {
                               'created_access_method_ids',
                             ],
                             type: 'object',
-                            'x-undocumented': 'Unreleased.',
                           },
                           type: 'array',
                         },
@@ -22910,7 +22933,8 @@ export default {
                         'created_at',
                       ],
                       type: 'object',
-                      'x-undocumented': 'Unreleased.',
+                      'x-draft': 'Early access.',
+                      'x-route-path': '/access_grants',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -23084,7 +23108,6 @@ export default {
                               'created_access_method_ids',
                             ],
                             type: 'object',
-                            'x-undocumented': 'Unreleased.',
                           },
                           type: 'array',
                         },
@@ -23119,7 +23142,8 @@ export default {
                         'created_at',
                       ],
                       type: 'object',
-                      'x-undocumented': 'Unreleased.',
+                      'x-draft': 'Early access.',
+                      'x-route-path': '/access_grants',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -23266,7 +23290,6 @@ export default {
                                 'created_access_method_ids',
                               ],
                               type: 'object',
-                              'x-undocumented': 'Unreleased.',
                             },
                             type: 'array',
                           },
@@ -23301,7 +23324,8 @@ export default {
                           'created_at',
                         ],
                         type: 'object',
-                        'x-undocumented': 'Unreleased.',
+                        'x-draft': 'Early access.',
+                        'x-route-path': '/access_grants',
                       },
                       type: 'array',
                     },
@@ -23465,7 +23489,8 @@ export default {
                         'created_at',
                       ],
                       type: 'object',
-                      'x-undocumented': 'Unreleased.',
+                      'x-draft': 'Early access.',
+                      'x-route-path': '/access_methods',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -23578,7 +23603,8 @@ export default {
                           'created_at',
                         ],
                         type: 'object',
-                        'x-undocumented': 'Unreleased.',
+                        'x-draft': 'Early access.',
+                        'x-route-path': '/access_methods',
                       },
                       type: 'array',
                     },
@@ -31680,7 +31706,22 @@ export default {
               'application/json': {
                 schema: {
                   properties: {
-                    network: { $ref: '#/components/schemas/network' },
+                    network: {
+                      properties: {
+                        created_at: { format: 'date-time', type: 'string' },
+                        display_name: { type: 'string' },
+                        network_id: { format: 'uuid', type: 'string' },
+                        workspace_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: [
+                        'network_id',
+                        'workspace_id',
+                        'display_name',
+                        'created_at',
+                      ],
+                      type: 'object',
+                      'x-route-path': '/networks',
+                    },
                     ok: { type: 'boolean' },
                   },
                   required: ['network', 'ok'],
@@ -31723,7 +31764,22 @@ export default {
                 schema: {
                   properties: {
                     networks: {
-                      items: { $ref: '#/components/schemas/network' },
+                      items: {
+                        properties: {
+                          created_at: { format: 'date-time', type: 'string' },
+                          display_name: { type: 'string' },
+                          network_id: { format: 'uuid', type: 'string' },
+                          workspace_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: [
+                          'network_id',
+                          'workspace_id',
+                          'display_name',
+                          'created_at',
+                        ],
+                        type: 'object',
+                        'x-route-path': '/networks',
+                      },
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
@@ -34562,43 +34618,7 @@ export default {
                 schema: {
                   properties: {
                     ok: { type: 'boolean' },
-                    space: {
-                      properties: {
-                        created_at: {
-                          description:
-                            'Date and time at which the space object was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        display_name: {
-                          description: 'Display name of the space.',
-                          type: 'string',
-                        },
-                        name: {
-                          description: 'Name of the space.',
-                          type: 'string',
-                        },
-                        space_id: {
-                          description: 'Unique identifier for the space.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        workspace_id: {
-                          description:
-                            'Unique identifier for the Seam workspace associated with the space.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'space_id',
-                        'workspace_id',
-                        'name',
-                        'display_name',
-                        'created_at',
-                      ],
-                      type: 'object',
-                    },
+                    space: { $ref: '#/components/schemas/space' },
                   },
                   required: ['space', 'ok'],
                   type: 'object',
@@ -34690,43 +34710,7 @@ export default {
                 schema: {
                   properties: {
                     ok: { type: 'boolean' },
-                    space: {
-                      properties: {
-                        created_at: {
-                          description:
-                            'Date and time at which the space object was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        display_name: {
-                          description: 'Display name of the space.',
-                          type: 'string',
-                        },
-                        name: {
-                          description: 'Name of the space.',
-                          type: 'string',
-                        },
-                        space_id: {
-                          description: 'Unique identifier for the space.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        workspace_id: {
-                          description:
-                            'Unique identifier for the Seam workspace associated with the space.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'space_id',
-                        'workspace_id',
-                        'name',
-                        'display_name',
-                        'created_at',
-                      ],
-                      type: 'object',
-                    },
+                    space: { $ref: '#/components/schemas/space' },
                   },
                   required: ['space', 'ok'],
                   type: 'object',
@@ -34764,43 +34748,7 @@ export default {
                   properties: {
                     ok: { type: 'boolean' },
                     spaces: {
-                      items: {
-                        properties: {
-                          created_at: {
-                            description:
-                              'Date and time at which the space object was created.',
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          display_name: {
-                            description: 'Display name of the space.',
-                            type: 'string',
-                          },
-                          name: {
-                            description: 'Name of the space.',
-                            type: 'string',
-                          },
-                          space_id: {
-                            description: 'Unique identifier for the space.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          workspace_id: {
-                            description:
-                              'Unique identifier for the Seam workspace associated with the space.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: [
-                          'space_id',
-                          'workspace_id',
-                          'name',
-                          'display_name',
-                          'created_at',
-                        ],
-                        type: 'object',
-                      },
+                      items: { $ref: '#/components/schemas/space' },
                       type: 'array',
                     },
                   },
@@ -34836,43 +34784,7 @@ export default {
                   properties: {
                     ok: { type: 'boolean' },
                     spaces: {
-                      items: {
-                        properties: {
-                          created_at: {
-                            description:
-                              'Date and time at which the space object was created.',
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          display_name: {
-                            description: 'Display name of the space.',
-                            type: 'string',
-                          },
-                          name: {
-                            description: 'Name of the space.',
-                            type: 'string',
-                          },
-                          space_id: {
-                            description: 'Unique identifier for the space.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          workspace_id: {
-                            description:
-                              'Unique identifier for the Seam workspace associated with the space.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: [
-                          'space_id',
-                          'workspace_id',
-                          'name',
-                          'display_name',
-                          'created_at',
-                        ],
-                        type: 'object',
-                      },
+                      items: { $ref: '#/components/schemas/space' },
                       type: 'array',
                     },
                   },
@@ -35025,43 +34937,7 @@ export default {
                 schema: {
                   properties: {
                     ok: { type: 'boolean' },
-                    space: {
-                      properties: {
-                        created_at: {
-                          description:
-                            'Date and time at which the space object was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        display_name: {
-                          description: 'Display name of the space.',
-                          type: 'string',
-                        },
-                        name: {
-                          description: 'Name of the space.',
-                          type: 'string',
-                        },
-                        space_id: {
-                          description: 'Unique identifier for the space.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        workspace_id: {
-                          description:
-                            'Unique identifier for the Seam workspace associated with the space.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'space_id',
-                        'workspace_id',
-                        'name',
-                        'display_name',
-                        'created_at',
-                      ],
-                      type: 'object',
-                    },
+                    space: { $ref: '#/components/schemas/space' },
                   },
                   required: ['space', 'ok'],
                   type: 'object',
@@ -35108,43 +34984,7 @@ export default {
                 schema: {
                   properties: {
                     ok: { type: 'boolean' },
-                    space: {
-                      properties: {
-                        created_at: {
-                          description:
-                            'Date and time at which the space object was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        display_name: {
-                          description: 'Display name of the space.',
-                          type: 'string',
-                        },
-                        name: {
-                          description: 'Name of the space.',
-                          type: 'string',
-                        },
-                        space_id: {
-                          description: 'Unique identifier for the space.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        workspace_id: {
-                          description:
-                            'Unique identifier for the Seam workspace associated with the space.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'space_id',
-                        'workspace_id',
-                        'name',
-                        'display_name',
-                        'created_at',
-                      ],
-                      type: 'object',
-                    },
+                    space: { $ref: '#/components/schemas/space' },
                   },
                   required: ['space', 'ok'],
                   type: 'object',
@@ -38033,7 +37873,6 @@ export default {
                               'created_access_method_ids',
                             ],
                             type: 'object',
-                            'x-undocumented': 'Unreleased.',
                           },
                           type: 'array',
                         },
@@ -38068,7 +37907,8 @@ export default {
                         'created_at',
                       ],
                       type: 'object',
-                      'x-undocumented': 'Unreleased.',
+                      'x-draft': 'Early access.',
+                      'x-route-path': '/access_grants',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -38242,7 +38082,6 @@ export default {
                               'created_access_method_ids',
                             ],
                             type: 'object',
-                            'x-undocumented': 'Unreleased.',
                           },
                           type: 'array',
                         },
@@ -38277,7 +38116,8 @@ export default {
                         'created_at',
                       ],
                       type: 'object',
-                      'x-undocumented': 'Unreleased.',
+                      'x-draft': 'Early access.',
+                      'x-route-path': '/access_grants',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -38424,7 +38264,6 @@ export default {
                                 'created_access_method_ids',
                               ],
                               type: 'object',
-                              'x-undocumented': 'Unreleased.',
                             },
                             type: 'array',
                           },
@@ -38459,7 +38298,8 @@ export default {
                           'created_at',
                         ],
                         type: 'object',
-                        'x-undocumented': 'Unreleased.',
+                        'x-draft': 'Early access.',
+                        'x-route-path': '/access_grants',
                       },
                       type: 'array',
                     },
@@ -38623,7 +38463,8 @@ export default {
                         'created_at',
                       ],
                       type: 'object',
-                      'x-undocumented': 'Unreleased.',
+                      'x-draft': 'Early access.',
+                      'x-route-path': '/access_methods',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -38736,7 +38577,8 @@ export default {
                           'created_at',
                         ],
                         type: 'object',
-                        'x-undocumented': 'Unreleased.',
+                        'x-draft': 'Early access.',
+                        'x-route-path': '/access_methods',
                       },
                       type: 'array',
                     },
