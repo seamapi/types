@@ -27197,6 +27197,19 @@ export interface Routes {
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
+                /** ID of the affected access method. */
+                access_method_id: string
+                event_type: 'access_method.deleted'
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the workspace associated with the event. */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
                 /** ID of the connected account. */
                 connected_account_id?: string | undefined
                 /** ID of the access system. */
@@ -28314,6 +28327,7 @@ export interface Routes {
             | 'access_method.issued'
             | 'access_method.revoked'
             | 'access_method.card_encoding_required'
+            | 'access_method.deleted'
             | 'acs_system.connected'
             | 'acs_system.added'
             | 'acs_system.disconnected'
@@ -28407,6 +28421,7 @@ export interface Routes {
             | 'access_method.issued'
             | 'access_method.revoked'
             | 'access_method.card_encoding_required'
+            | 'access_method.deleted'
             | 'acs_system.connected'
             | 'acs_system.added'
             | 'acs_system.disconnected'
@@ -28889,6 +28904,19 @@ export interface Routes {
             /** ID of the affected access method. */
             access_method_id: string
             event_type: 'access_method.card_encoding_required'
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** ID of the affected access method. */
+            access_method_id: string
+            event_type: 'access_method.deleted'
           }
         | {
             /** ID of the event. */
