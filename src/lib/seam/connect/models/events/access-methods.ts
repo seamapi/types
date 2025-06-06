@@ -43,6 +43,15 @@ export const access_method_revoked_event = access_method_event.extend({
     An access method was revoked.
   `)
 
+export const access_method_deleted_event = access_method_event.extend({
+  event_type: z.literal('access_method.deleted'),
+}).describe(`
+    ---
+    route_path: /unstable_access_methods
+    ---
+    An access method was deleted.
+  `)
+
 export type AccessMethodRevokedEvent = z.infer<
   typeof access_method_revoked_event
 >
@@ -51,4 +60,5 @@ export const access_method_events = [
   access_method_issued_event,
   access_method_revoked_event,
   access_method_card_encoding_required_event,
+  access_method_deleted_event,
 ] as const
