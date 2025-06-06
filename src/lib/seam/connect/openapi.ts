@@ -12400,6 +12400,47 @@ export default {
             'x-route-path': '/unstable_access_methods',
           },
           {
+            description: 'An access method was deleted.',
+            properties: {
+              access_method_id: {
+                description: 'ID of the affected access method.',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: { enum: ['access_method.deleted'], type: 'string' },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description: 'ID of the workspace associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'access_method_id',
+              'event_type',
+            ],
+            type: 'object',
+            'x-route-path': '/unstable_access_methods',
+          },
+          {
             description:
               'An [access system](https://docs.seam.co/latest/capability-guides/access-systems) was connected.',
             properties: {
@@ -29835,6 +29876,7 @@ export default {
                       'access_method.issued',
                       'access_method.revoked',
                       'access_method.card_encoding_required',
+                      'access_method.deleted',
                       'acs_system.connected',
                       'acs_system.added',
                       'acs_system.disconnected',
@@ -29930,6 +29972,7 @@ export default {
                         'access_method.issued',
                         'access_method.revoked',
                         'access_method.card_encoding_required',
+                        'access_method.deleted',
                         'acs_system.connected',
                         'acs_system.added',
                         'acs_system.disconnected',
