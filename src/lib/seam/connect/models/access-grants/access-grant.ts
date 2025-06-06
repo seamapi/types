@@ -37,7 +37,8 @@ export const access_grant = z.object({
     .describe('Date and time at which the access grant was created.'),
 }).describe(`
   ---
-  undocumented: Unreleased.
+  draft: Early access.
+  route_path: /access_grants
   ---
   `)
 

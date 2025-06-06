@@ -14,6 +14,11 @@ export const space = z.object({
     .string()
     .datetime()
     .describe('Date and time at which the space object was created.'),
-})
+}).describe(`
+  ---
+  draft: Early access.
+  route_path: /spaces
+  ---
+  `)
 
 export type Space = z.infer<typeof space>

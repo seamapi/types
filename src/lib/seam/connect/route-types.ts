@@ -49467,6 +49467,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       space: {
         /** Unique identifier for the space. */
         space_id: string
@@ -49502,6 +49503,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /**  */
       space: {
         /** Unique identifier for the space. */
         space_id: string
@@ -49573,6 +49575,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       space: {
         /** Unique identifier for the space. */
         space_id: string
