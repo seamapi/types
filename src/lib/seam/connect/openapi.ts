@@ -22657,6 +22657,958 @@ export default {
         'x-title': 'Update Multiple Linked Access Codes',
       },
     },
+    '/access_grants/create': {
+      post: {
+        description: 'Creates a new access grant.',
+        operationId: 'accessGrantsCreatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                allOf: [
+                  {
+                    oneOf: [
+                      {
+                        properties: {
+                          user_identity_id: {
+                            description:
+                              'ID of user identity for whom access is being granted.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: ['user_identity_id'],
+                        type: 'object',
+                      },
+                      {
+                        properties: {
+                          user_identity: {
+                            description:
+                              'When used, creates a new user identity with the given details, and grants them access.',
+                            properties: {
+                              email_address: {
+                                description:
+                                  'Unique email address for the user identity.',
+                                format: 'email',
+                                nullable: true,
+                                type: 'string',
+                              },
+                              full_name: {
+                                minLength: 1,
+                                nullable: true,
+                                type: 'string',
+                              },
+                              phone_number: {
+                                description:
+                                  'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
+                                nullable: true,
+                                type: 'string',
+                              },
+                            },
+                            type: 'object',
+                          },
+                        },
+                        required: ['user_identity'],
+                        type: 'object',
+                      },
+                    ],
+                  },
+                  {
+                    properties: {
+                      acs_entrance_ids: {
+                        default: [],
+                        description:
+                          'Set of IDs of the [entrances](https://docs.seam.co/latest/api/acs/systems/list) to which access is being granted.',
+                        items: { format: 'uuid', type: 'string' },
+                        type: 'array',
+                      },
+                      device_ids: {
+                        default: [],
+                        description:
+                          'Set of IDs of the [devices](https://docs.seam.co/latest/api/devices/list) to which access is being granted.',
+                        items: { format: 'uuid', type: 'string' },
+                        type: 'array',
+                      },
+                      ends_at: {
+                        description:
+                          'Date and time at which the validity of the new grant ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                        format: 'date-time',
+                        type: 'string',
+                      },
+                      location: {
+                        description:
+                          'When used, creates a new location with the given entrances and devices, and gives the user access to this location.',
+                        properties: {
+                          acs_entrance_ids: {
+                            default: [],
+                            deprecated: true,
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                            'x-deprecated':
+                              'Use `acs_entrance_ids` at the top level.',
+                          },
+                          device_ids: {
+                            default: [],
+                            deprecated: true,
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                            'x-deprecated':
+                              'Use `device_ids` at the top level.',
+                          },
+                          name: {
+                            description: 'Name of the location.',
+                            type: 'string',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      location_ids: {
+                        deprecated: true,
+                        items: { format: 'uuid', type: 'string' },
+                        type: 'array',
+                        'x-deprecated': 'Use `space_ids`.',
+                      },
+                      requested_access_methods: {
+                        items: {
+                          properties: {
+                            mode: {
+                              description:
+                                'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                              enum: ['code', 'card', 'mobile_key'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['mode'],
+                          type: 'object',
+                        },
+                        type: 'array',
+                      },
+                      space_ids: {
+                        description:
+                          'Set of IDs of existing spaces to which access is being granted.',
+                        items: { format: 'uuid', type: 'string' },
+                        type: 'array',
+                      },
+                      starts_at: {
+                        description:
+                          'Date and time at which the validity of the new grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                        format: 'date-time',
+                        type: 'string',
+                      },
+                    },
+                    required: ['requested_access_methods'],
+                    type: 'object',
+                  },
+                ],
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_grant: {
+                      properties: {
+                        access_grant_id: {
+                          description: 'ID of the access grant.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        access_method_ids: {
+                          description:
+                            'IDs of the access methods that were created for this access grant.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                        created_at: {
+                          description:
+                            'Date and time at which the access grant was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        display_name: {
+                          description: 'Display name of the access grant.',
+                          type: 'string',
+                        },
+                        location_ids: {
+                          deprecated: true,
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                          'x-deprecated': 'Use `space_ids`.',
+                        },
+                        requested_access_methods: {
+                          description:
+                            'Access methods that the user requested for this access grant.',
+                          items: {
+                            properties: {
+                              created_access_method_ids: {
+                                description:
+                                  'IDs of the access methods that were created for this requested access method.',
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
+                              created_at: {
+                                description:
+                                  'Date and time at which the requested access method was added to this access grant.',
+                                format: 'date-time',
+                                type: 'string',
+                              },
+                              display_name: {
+                                description:
+                                  'Display name of the access method.',
+                                type: 'string',
+                              },
+                              mode: {
+                                description:
+                                  'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                                enum: ['code', 'card', 'mobile_key'],
+                                type: 'string',
+                              },
+                            },
+                            required: [
+                              'display_name',
+                              'mode',
+                              'created_at',
+                              'created_access_method_ids',
+                            ],
+                            type: 'object',
+                            'x-undocumented': 'Unreleased.',
+                          },
+                          type: 'array',
+                        },
+                        space_ids: {
+                          description:
+                            'IDs of the spaces to which access is being given.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                        user_identity_id: {
+                          description:
+                            'ID of user identity to which access is being granted.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        workspace_id: {
+                          description:
+                            'Unique identifier for the Seam workspace associated with the access grant.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'workspace_id',
+                        'access_grant_id',
+                        'user_identity_id',
+                        'location_ids',
+                        'space_ids',
+                        'requested_access_methods',
+                        'access_method_ids',
+                        'display_name',
+                        'created_at',
+                      ],
+                      type: 'object',
+                      'x-undocumented': 'Unreleased.',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_grant', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/access_grants/create',
+        tags: [],
+        'x-fern-sdk-group-name': ['access_grants'],
+        'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'access_grant',
+        'x-response-key': 'access_grant',
+        'x-title': 'Create an Access Grant',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
+    '/access_grants/delete': {
+      post: {
+        description: 'Delete an access grant.',
+        operationId: 'accessGrantsDeletePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_grant_id: {
+                    description: 'ID of access grant to delete.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['access_grant_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/access_grants/delete',
+        tags: [],
+        'x-fern-sdk-group-name': ['access_grants'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete an Access Grant',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
+    '/access_grants/get': {
+      post: {
+        description: 'Get an access grant.',
+        operationId: 'accessGrantsGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_grant_id: {
+                    description: 'ID of access grant to get.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['access_grant_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_grant: {
+                      properties: {
+                        access_grant_id: {
+                          description: 'ID of the access grant.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        access_method_ids: {
+                          description:
+                            'IDs of the access methods that were created for this access grant.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                        created_at: {
+                          description:
+                            'Date and time at which the access grant was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        display_name: {
+                          description: 'Display name of the access grant.',
+                          type: 'string',
+                        },
+                        location_ids: {
+                          deprecated: true,
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                          'x-deprecated': 'Use `space_ids`.',
+                        },
+                        requested_access_methods: {
+                          description:
+                            'Access methods that the user requested for this access grant.',
+                          items: {
+                            properties: {
+                              created_access_method_ids: {
+                                description:
+                                  'IDs of the access methods that were created for this requested access method.',
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
+                              created_at: {
+                                description:
+                                  'Date and time at which the requested access method was added to this access grant.',
+                                format: 'date-time',
+                                type: 'string',
+                              },
+                              display_name: {
+                                description:
+                                  'Display name of the access method.',
+                                type: 'string',
+                              },
+                              mode: {
+                                description:
+                                  'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                                enum: ['code', 'card', 'mobile_key'],
+                                type: 'string',
+                              },
+                            },
+                            required: [
+                              'display_name',
+                              'mode',
+                              'created_at',
+                              'created_access_method_ids',
+                            ],
+                            type: 'object',
+                            'x-undocumented': 'Unreleased.',
+                          },
+                          type: 'array',
+                        },
+                        space_ids: {
+                          description:
+                            'IDs of the spaces to which access is being given.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                        user_identity_id: {
+                          description:
+                            'ID of user identity to which access is being granted.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        workspace_id: {
+                          description:
+                            'Unique identifier for the Seam workspace associated with the access grant.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'workspace_id',
+                        'access_grant_id',
+                        'user_identity_id',
+                        'location_ids',
+                        'space_ids',
+                        'requested_access_methods',
+                        'access_method_ids',
+                        'display_name',
+                        'created_at',
+                      ],
+                      type: 'object',
+                      'x-undocumented': 'Unreleased.',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_grant', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/access_grants/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['access_grants'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'access_grant',
+        'x-response-key': 'access_grant',
+        'x-title': 'Get an Access Grant',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
+    '/access_grants/list': {
+      post: {
+        description: 'Get an access grant.',
+        operationId: 'accessGrantsListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_entrance_id: {
+                    description:
+                      'ID of entrance to filter list of access grants by.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_system_id: {
+                    description:
+                      'ID of system to filter list of access grants by.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  location_id: {
+                    deprecated: true,
+                    format: 'uuid',
+                    type: 'string',
+                    'x-deprecated': 'Use `space_id`.',
+                  },
+                  space_id: {
+                    description:
+                      'ID of space to filter list of access grants by.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of user identity to filter list of access grants by.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_grants: {
+                      items: {
+                        properties: {
+                          access_grant_id: {
+                            description: 'ID of the access grant.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          access_method_ids: {
+                            description:
+                              'IDs of the access methods that were created for this access grant.',
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                          created_at: {
+                            description:
+                              'Date and time at which the access grant was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          display_name: {
+                            description: 'Display name of the access grant.',
+                            type: 'string',
+                          },
+                          location_ids: {
+                            deprecated: true,
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                            'x-deprecated': 'Use `space_ids`.',
+                          },
+                          requested_access_methods: {
+                            description:
+                              'Access methods that the user requested for this access grant.',
+                            items: {
+                              properties: {
+                                created_access_method_ids: {
+                                  description:
+                                    'IDs of the access methods that were created for this requested access method.',
+                                  items: { format: 'uuid', type: 'string' },
+                                  type: 'array',
+                                },
+                                created_at: {
+                                  description:
+                                    'Date and time at which the requested access method was added to this access grant.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                display_name: {
+                                  description:
+                                    'Display name of the access method.',
+                                  type: 'string',
+                                },
+                                mode: {
+                                  description:
+                                    'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                                  enum: ['code', 'card', 'mobile_key'],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'display_name',
+                                'mode',
+                                'created_at',
+                                'created_access_method_ids',
+                              ],
+                              type: 'object',
+                              'x-undocumented': 'Unreleased.',
+                            },
+                            type: 'array',
+                          },
+                          space_ids: {
+                            description:
+                              'IDs of the spaces to which access is being given.',
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                          user_identity_id: {
+                            description:
+                              'ID of user identity to which access is being granted.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          workspace_id: {
+                            description:
+                              'Unique identifier for the Seam workspace associated with the access grant.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'workspace_id',
+                          'access_grant_id',
+                          'user_identity_id',
+                          'location_ids',
+                          'space_ids',
+                          'requested_access_methods',
+                          'access_method_ids',
+                          'display_name',
+                          'created_at',
+                        ],
+                        type: 'object',
+                        'x-undocumented': 'Unreleased.',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_grants', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/access_grants/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['access_grants'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'access_grants',
+        'x-response-key': 'access_grants',
+        'x-title': 'List Access Grants',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
+    '/access_methods/delete': {
+      post: {
+        description: 'Delete an access method.',
+        operationId: 'accessMethodsDeletePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_method_id: {
+                    description: 'ID of access method to get.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['access_method_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_methods/delete',
+        tags: [],
+        'x-fern-sdk-group-name': ['access_methods'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete an Access Method',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
+    '/access_methods/get': {
+      post: {
+        description: 'Get an access method.',
+        operationId: 'accessMethodsGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_method_id: {
+                    description: 'ID of access method to get.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['access_method_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_method: {
+                      properties: {
+                        access_method_id: {
+                          description: 'ID of the access method.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        created_at: {
+                          description:
+                            'Date and time at which the access method was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        display_name: {
+                          description: 'Display name of the access method.',
+                          type: 'string',
+                        },
+                        instant_key_url: {
+                          description:
+                            'URL of instant key for mobile key access methods.',
+                          type: 'string',
+                        },
+                        is_card_encoding_required: {
+                          description:
+                            'Whether card encoding is required for plastic card access methods.',
+                          type: 'boolean',
+                        },
+                        issued_at: {
+                          description:
+                            'Date and time at which the access method was issued.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        mode: {
+                          description:
+                            'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                          enum: ['code', 'card', 'mobile_key'],
+                          type: 'string',
+                        },
+                        workspace_id: {
+                          description:
+                            'Unique identifier for the Seam workspace associated with the access grant.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'workspace_id',
+                        'access_method_id',
+                        'display_name',
+                        'mode',
+                        'created_at',
+                      ],
+                      type: 'object',
+                      'x-undocumented': 'Unreleased.',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_method', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_methods/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['access_methods'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'access_method',
+        'x-response-key': 'access_method',
+        'x-title': 'Get an Access Method',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
+    '/access_methods/list': {
+      post: {
+        description:
+          'List all access methods, usually filtered by access grant.',
+        operationId: 'accessMethodsListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_grant_id: {
+                    description:
+                      'ID of access grant to list access methods for.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['access_grant_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_methods: {
+                      items: {
+                        properties: {
+                          access_method_id: {
+                            description: 'ID of the access method.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          created_at: {
+                            description:
+                              'Date and time at which the access method was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          display_name: {
+                            description: 'Display name of the access method.',
+                            type: 'string',
+                          },
+                          instant_key_url: {
+                            description:
+                              'URL of instant key for mobile key access methods.',
+                            type: 'string',
+                          },
+                          is_card_encoding_required: {
+                            description:
+                              'Whether card encoding is required for plastic card access methods.',
+                            type: 'boolean',
+                          },
+                          issued_at: {
+                            description:
+                              'Date and time at which the access method was issued.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          mode: {
+                            description:
+                              'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                            enum: ['code', 'card', 'mobile_key'],
+                            type: 'string',
+                          },
+                          workspace_id: {
+                            description:
+                              'Unique identifier for the Seam workspace associated with the access grant.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'workspace_id',
+                          'access_method_id',
+                          'display_name',
+                          'mode',
+                          'created_at',
+                        ],
+                        type: 'object',
+                        'x-undocumented': 'Unreleased.',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_methods', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_methods/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['access_methods'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'access_methods',
+        'x-response-key': 'access_methods',
+        'x-title': 'List Access Methods',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
     '/acs/access_groups/add_user': {
       post: {
         description:
@@ -25340,12 +26292,17 @@ export default {
                     type: 'string',
                   },
                   location_id: {
-                    description:
-                      'ID of the location for which you want to retrieve all entrances.',
+                    deprecated: true,
                     format: 'uuid',
                     nullable: true,
                     type: 'string',
-                    'x-undocumented': 'Experimental locations.',
+                    'x-deprecated': 'Use `space_id`.',
+                  },
+                  space_id: {
+                    description:
+                      'ID of the space for which you want to list entrances.',
+                    format: 'uuid',
+                    type: 'string',
                   },
                 },
                 type: 'object',
@@ -28744,13 +29701,18 @@ export default {
                     nullable: true,
                     type: 'string',
                   },
-                  unstable_location_id: {
+                  space_id: {
                     description:
-                      'ID of the location for which you want to list devices.',
+                      'ID of the space for which you want to list devices.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  unstable_location_id: {
+                    deprecated: true,
                     format: 'uuid',
                     nullable: true,
                     type: 'string',
-                    'x-undocumented': 'Experimental locations.',
+                    'x-deprecated': 'Use `space_id`.',
                   },
                   user_identifier_key: {
                     description:
@@ -29364,13 +30326,18 @@ export default {
                     nullable: true,
                     type: 'string',
                   },
-                  unstable_location_id: {
+                  space_id: {
                     description:
-                      'ID of the location for which you want to list devices.',
+                      'ID of the space for which you want to list devices.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  unstable_location_id: {
+                    deprecated: true,
                     format: 'uuid',
                     nullable: true,
                     type: 'string',
-                    'x-undocumented': 'Experimental locations.',
+                    'x-deprecated': 'Use `space_id`.',
                   },
                   user_identifier_key: {
                     description:
@@ -30375,13 +31342,18 @@ export default {
                     nullable: true,
                     type: 'string',
                   },
-                  unstable_location_id: {
+                  space_id: {
                     description:
-                      'ID of the location for which you want to list devices.',
+                      'ID of the space for which you want to list devices.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  unstable_location_id: {
+                    deprecated: true,
                     format: 'uuid',
                     nullable: true,
                     type: 'string',
-                    'x-undocumented': 'Experimental locations.',
+                    'x-deprecated': 'Use `space_id`.',
                   },
                   user_identifier_key: {
                     description:
@@ -30908,13 +31880,18 @@ export default {
                     nullable: true,
                     type: 'string',
                   },
-                  unstable_location_id: {
+                  space_id: {
                     description:
-                      'ID of the location for which you want to list devices.',
+                      'ID of the space for which you want to list devices.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  unstable_location_id: {
+                    deprecated: true,
                     format: 'uuid',
                     nullable: true,
                     type: 'string',
-                    'x-undocumented': 'Experimental locations.',
+                    'x-deprecated': 'Use `space_id`.',
                   },
                   user_identifier_key: {
                     description:
@@ -33355,6 +34332,844 @@ export default {
         'x-undocumented': 'Partner building blocks/UI only.',
       },
     },
+    '/spaces/add_acs_entrances': {
+      post: {
+        description: 'Add entrances to a specific space.',
+        operationId: 'spacesAddAcsEntrancesPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_entrance_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    minItems: 1,
+                    type: 'array',
+                  },
+                  space_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['space_id', 'acs_entrance_ids'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/spaces/add_acs_entrances',
+        tags: [],
+        'x-fern-sdk-group-name': ['spaces'],
+        'x-fern-sdk-method-name': 'add_acs_entrances',
+        'x-response-key': null,
+        'x-title': 'Add ACS Entrances',
+      },
+      put: {
+        description: 'Add entrances to a specific space.',
+        operationId: 'spacesAddAcsEntrancesPut',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_entrance_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    minItems: 1,
+                    type: 'array',
+                  },
+                  space_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['space_id', 'acs_entrance_ids'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/spaces/add_acs_entrances',
+        tags: [],
+        'x-fern-ignore': true,
+        'x-response-key': null,
+        'x-title': 'Add ACS Entrances',
+      },
+    },
+    '/spaces/add_devices': {
+      post: {
+        description: 'Add devices to a specific space.',
+        operationId: 'spacesAddDevicesPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    minItems: 1,
+                    type: 'array',
+                  },
+                  space_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['space_id', 'device_ids'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/spaces/add_devices',
+        tags: [],
+        'x-fern-sdk-group-name': ['spaces'],
+        'x-fern-sdk-method-name': 'add_devices',
+        'x-response-key': null,
+        'x-title': 'Add Space Devices',
+      },
+      put: {
+        description: 'Add devices to a specific space.',
+        operationId: 'spacesAddDevicesPut',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    minItems: 1,
+                    type: 'array',
+                  },
+                  space_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['space_id', 'device_ids'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/spaces/add_devices',
+        tags: [],
+        'x-fern-ignore': true,
+        'x-response-key': null,
+        'x-title': 'Add Space Devices',
+      },
+    },
+    '/spaces/create': {
+      post: {
+        description: 'Create a new space.',
+        operationId: 'spacesCreatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_entrance_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                  device_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                  name: { type: 'string' },
+                },
+                required: ['name'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    space: {
+                      properties: {
+                        created_at: {
+                          description:
+                            'Date and time at which the space object was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        display_name: {
+                          description: 'Display name of the space.',
+                          type: 'string',
+                        },
+                        name: {
+                          description: 'Name of the space.',
+                          type: 'string',
+                        },
+                        space_id: {
+                          description: 'Unique identifier for the space.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        workspace_id: {
+                          description:
+                            'Unique identifier for the Seam workspace associated with the space.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'space_id',
+                        'workspace_id',
+                        'name',
+                        'display_name',
+                        'created_at',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['space', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/spaces/create',
+        tags: [],
+        'x-fern-sdk-group-name': ['spaces'],
+        'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'space',
+        'x-response-key': 'space',
+        'x-title': 'Create Space',
+      },
+    },
+    '/spaces/delete': {
+      post: {
+        description: 'Delete a space.',
+        operationId: 'spacesDeletePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { space_id: { format: 'uuid', type: 'string' } },
+                required: ['space_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/spaces/delete',
+        tags: [],
+        'x-fern-sdk-group-name': ['spaces'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete Space',
+      },
+    },
+    '/spaces/get': {
+      post: {
+        description: 'Get a space.',
+        operationId: 'spacesGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { space_id: { format: 'uuid', type: 'string' } },
+                required: ['space_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    space: {
+                      properties: {
+                        created_at: {
+                          description:
+                            'Date and time at which the space object was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        display_name: {
+                          description: 'Display name of the space.',
+                          type: 'string',
+                        },
+                        name: {
+                          description: 'Name of the space.',
+                          type: 'string',
+                        },
+                        space_id: {
+                          description: 'Unique identifier for the space.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        workspace_id: {
+                          description:
+                            'Unique identifier for the Seam workspace associated with the space.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'space_id',
+                        'workspace_id',
+                        'name',
+                        'display_name',
+                        'created_at',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['space', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/spaces/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['spaces'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'space',
+        'x-response-key': 'space',
+        'x-title': 'Get Space',
+      },
+    },
+    '/spaces/list': {
+      get: {
+        description: 'Returns a list of all spaces.',
+        operationId: 'spacesListGet',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    spaces: {
+                      items: {
+                        properties: {
+                          created_at: {
+                            description:
+                              'Date and time at which the space object was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          display_name: {
+                            description: 'Display name of the space.',
+                            type: 'string',
+                          },
+                          name: {
+                            description: 'Name of the space.',
+                            type: 'string',
+                          },
+                          space_id: {
+                            description: 'Unique identifier for the space.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          workspace_id: {
+                            description:
+                              'Unique identifier for the Seam workspace associated with the space.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'space_id',
+                          'workspace_id',
+                          'name',
+                          'display_name',
+                          'created_at',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['spaces', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/spaces/list',
+        tags: [],
+        'x-fern-ignore': true,
+        'x-response-key': 'spaces',
+        'x-title': 'List Spaces',
+      },
+      post: {
+        description: 'Returns a list of all spaces.',
+        operationId: 'spacesListPost',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    spaces: {
+                      items: {
+                        properties: {
+                          created_at: {
+                            description:
+                              'Date and time at which the space object was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          display_name: {
+                            description: 'Display name of the space.',
+                            type: 'string',
+                          },
+                          name: {
+                            description: 'Name of the space.',
+                            type: 'string',
+                          },
+                          space_id: {
+                            description: 'Unique identifier for the space.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          workspace_id: {
+                            description:
+                              'Unique identifier for the Seam workspace associated with the space.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'space_id',
+                          'workspace_id',
+                          'name',
+                          'display_name',
+                          'created_at',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['spaces', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/spaces/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['spaces'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'spaces',
+        'x-response-key': 'spaces',
+        'x-title': 'List Spaces',
+      },
+    },
+    '/spaces/remove_acs_entrances': {
+      post: {
+        description: 'Remove entrances from a specific space.',
+        operationId: 'spacesRemoveAcsEntrancesPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_entrance_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                  space_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['space_id', 'acs_entrance_ids'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/spaces/remove_acs_entrances',
+        tags: [],
+        'x-fern-sdk-group-name': ['spaces'],
+        'x-fern-sdk-method-name': 'remove_acs_entrances',
+        'x-response-key': null,
+        'x-title': 'Remove ACS Entrances',
+      },
+    },
+    '/spaces/remove_devices': {
+      post: {
+        description: 'Remove devices from a specific space.',
+        operationId: 'spacesRemoveDevicesPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                  space_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['space_id', 'device_ids'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/spaces/remove_devices',
+        tags: [],
+        'x-fern-sdk-group-name': ['spaces'],
+        'x-fern-sdk-method-name': 'remove_devices',
+        'x-response-key': null,
+        'x-title': 'Remove Space Devices',
+      },
+    },
+    '/spaces/update': {
+      patch: {
+        description: 'Update an existing space.',
+        operationId: 'spacesUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  name: { type: 'string' },
+                  space_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['space_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    space: {
+                      properties: {
+                        created_at: {
+                          description:
+                            'Date and time at which the space object was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        display_name: {
+                          description: 'Display name of the space.',
+                          type: 'string',
+                        },
+                        name: {
+                          description: 'Name of the space.',
+                          type: 'string',
+                        },
+                        space_id: {
+                          description: 'Unique identifier for the space.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        workspace_id: {
+                          description:
+                            'Unique identifier for the Seam workspace associated with the space.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'space_id',
+                        'workspace_id',
+                        'name',
+                        'display_name',
+                        'created_at',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['space', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/spaces/update',
+        tags: [],
+        'x-fern-ignore': true,
+        'x-response-key': 'space',
+        'x-title': 'Update Space',
+      },
+      post: {
+        description: 'Update an existing space.',
+        operationId: 'spacesUpdatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  name: { type: 'string' },
+                  space_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['space_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    space: {
+                      properties: {
+                        created_at: {
+                          description:
+                            'Date and time at which the space object was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        display_name: {
+                          description: 'Display name of the space.',
+                          type: 'string',
+                        },
+                        name: {
+                          description: 'Name of the space.',
+                          type: 'string',
+                        },
+                        space_id: {
+                          description: 'Unique identifier for the space.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        workspace_id: {
+                          description:
+                            'Unique identifier for the Seam workspace associated with the space.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'space_id',
+                        'workspace_id',
+                        'name',
+                        'display_name',
+                        'created_at',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['space', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/spaces/update',
+        tags: [],
+        'x-fern-sdk-group-name': ['spaces'],
+        'x-fern-sdk-method-name': 'update',
+        'x-fern-sdk-return-value': 'space',
+        'x-response-key': 'space',
+        'x-title': 'Update Space',
+      },
+    },
     '/thermostats/activate_climate_preset': {
       post: {
         description:
@@ -34421,13 +36236,18 @@ export default {
                     nullable: true,
                     type: 'string',
                   },
-                  unstable_location_id: {
+                  space_id: {
                     description:
-                      'ID of the location for which you want to list devices.',
+                      'ID of the space for which you want to list devices.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  unstable_location_id: {
+                    deprecated: true,
                     format: 'uuid',
                     nullable: true,
                     type: 'string',
-                    'x-undocumented': 'Experimental locations.',
+                    'x-deprecated': 'Use `space_id`.',
                   },
                   user_identifier_key: {
                     description:
@@ -36053,6 +37873,20 @@ export default {
                   },
                   {
                     properties: {
+                      acs_entrance_ids: {
+                        default: [],
+                        description:
+                          'Set of IDs of the [entrances](https://docs.seam.co/latest/api/acs/systems/list) to which access is being granted.',
+                        items: { format: 'uuid', type: 'string' },
+                        type: 'array',
+                      },
+                      device_ids: {
+                        default: [],
+                        description:
+                          'Set of IDs of the [devices](https://docs.seam.co/latest/api/devices/list) to which access is being granted.',
+                        items: { format: 'uuid', type: 'string' },
+                        type: 'array',
+                      },
                       ends_at: {
                         description:
                           'Date and time at which the validity of the new grant ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
@@ -36065,17 +37899,19 @@ export default {
                         properties: {
                           acs_entrance_ids: {
                             default: [],
-                            description:
-                              'Set of IDs of the [entrances](https://docs.seam.co/latest/api/acs/systems/list) to add to the location to which access is being granted.',
+                            deprecated: true,
                             items: { format: 'uuid', type: 'string' },
                             type: 'array',
+                            'x-deprecated':
+                              'Use `acs_entrance_ids` at the top level.',
                           },
                           device_ids: {
                             default: [],
-                            description:
-                              'Set of IDs of the [devices](https://docs.seam.co/latest/api/devices/list) to add to the location to which access is being granted.',
+                            deprecated: true,
                             items: { format: 'uuid', type: 'string' },
                             type: 'array',
+                            'x-deprecated':
+                              'Use `device_ids` at the top level.',
                           },
                           name: {
                             description: 'Name of the location.',
@@ -36085,10 +37921,10 @@ export default {
                         type: 'object',
                       },
                       location_ids: {
-                        description:
-                          'Set of IDs of existing locations to which access is being granted.',
+                        deprecated: true,
                         items: { format: 'uuid', type: 'string' },
                         type: 'array',
+                        'x-deprecated': 'Use `space_ids`.',
                       },
                       requested_access_methods: {
                         items: {
@@ -36103,6 +37939,12 @@ export default {
                           required: ['mode'],
                           type: 'object',
                         },
+                        type: 'array',
+                      },
+                      space_ids: {
+                        description:
+                          'Set of IDs of existing spaces to which access is being granted.',
+                        items: { format: 'uuid', type: 'string' },
                         type: 'array',
                       },
                       starts_at: {
@@ -36150,10 +37992,10 @@ export default {
                           type: 'string',
                         },
                         location_ids: {
-                          description:
-                            'IDs of the locations to which access is being given.',
+                          deprecated: true,
                           items: { format: 'uuid', type: 'string' },
                           type: 'array',
+                          'x-deprecated': 'Use `space_ids`.',
                         },
                         requested_access_methods: {
                           description:
@@ -36195,6 +38037,12 @@ export default {
                           },
                           type: 'array',
                         },
+                        space_ids: {
+                          description:
+                            'IDs of the spaces to which access is being given.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
                         user_identity_id: {
                           description:
                             'ID of user identity to which access is being granted.',
@@ -36213,6 +38061,7 @@ export default {
                         'access_grant_id',
                         'user_identity_id',
                         'location_ids',
+                        'space_ids',
                         'requested_access_methods',
                         'access_method_ids',
                         'display_name',
@@ -36352,10 +38201,10 @@ export default {
                           type: 'string',
                         },
                         location_ids: {
-                          description:
-                            'IDs of the locations to which access is being given.',
+                          deprecated: true,
                           items: { format: 'uuid', type: 'string' },
                           type: 'array',
+                          'x-deprecated': 'Use `space_ids`.',
                         },
                         requested_access_methods: {
                           description:
@@ -36397,6 +38246,12 @@ export default {
                           },
                           type: 'array',
                         },
+                        space_ids: {
+                          description:
+                            'IDs of the spaces to which access is being given.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
                         user_identity_id: {
                           description:
                             'ID of user identity to which access is being granted.',
@@ -36415,6 +38270,7 @@ export default {
                         'access_grant_id',
                         'user_identity_id',
                         'location_ids',
+                        'space_ids',
                         'requested_access_methods',
                         'access_method_ids',
                         'display_name',
@@ -36473,8 +38329,14 @@ export default {
                     type: 'string',
                   },
                   location_id: {
+                    deprecated: true,
+                    format: 'uuid',
+                    type: 'string',
+                    'x-deprecated': 'Use `space_id`.',
+                  },
+                  space_id: {
                     description:
-                      'ID of location to filter list of access grants by.',
+                      'ID of space to filter list of access grants by.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -36521,10 +38383,10 @@ export default {
                             type: 'string',
                           },
                           location_ids: {
-                            description:
-                              'IDs of the locations to which access is being given.',
+                            deprecated: true,
                             items: { format: 'uuid', type: 'string' },
                             type: 'array',
+                            'x-deprecated': 'Use `space_ids`.',
                           },
                           requested_access_methods: {
                             description:
@@ -36566,6 +38428,12 @@ export default {
                             },
                             type: 'array',
                           },
+                          space_ids: {
+                            description:
+                              'IDs of the spaces to which access is being given.',
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
                           user_identity_id: {
                             description:
                               'ID of user identity to which access is being granted.',
@@ -36584,6 +38452,7 @@ export default {
                           'access_grant_id',
                           'user_identity_id',
                           'location_ids',
+                          'space_ids',
                           'requested_access_methods',
                           'access_method_ids',
                           'display_name',

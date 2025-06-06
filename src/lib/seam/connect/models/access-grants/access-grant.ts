@@ -14,9 +14,14 @@ export const access_grant = z.object({
     .string()
     .uuid()
     .describe('ID of user identity to which access is being granted.'),
-  location_ids: z
+  location_ids: z.array(z.string().uuid()).describe(`
+    ---
+    deprecated: Use \`space_ids\`.
+    ---
+  `),
+  space_ids: z
     .array(z.string().uuid())
-    .describe('IDs of the locations to which access is being given.'),
+    .describe('IDs of the spaces to which access is being given.'),
   requested_access_methods: z
     .array(requested_access_method)
     .describe('Access methods that the user requested for this access grant.'),

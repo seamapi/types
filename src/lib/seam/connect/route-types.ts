@@ -10109,6 +10109,276 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
+  '/access_grants/create': {
+    route: '/access_grants/create'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: (
+      | {
+          /** ID of user identity for whom access is being granted. */
+          user_identity_id: string
+        }
+      | {
+          /** When used, creates a new user identity with the given details, and grants them access. */
+          user_identity: {
+            /** Unique email address for the user identity. */
+            email_address?: (string | null) | undefined
+            /** Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100). */
+            phone_number?: (string | null) | undefined
+            full_name?: (string | null) | undefined
+          }
+        }
+    ) & {
+      /**
+       * @deprecated Use `space_ids`. */
+      location_ids?: string[] | undefined
+      /** Set of IDs of existing spaces to which access is being granted. */
+      space_ids?: string[] | undefined
+      /** When used, creates a new location with the given entrances and devices, and gives the user access to this location. */
+      location?:
+        | {
+            /** Name of the location. */
+            name?: string | undefined
+            /**
+             * @deprecated Use `acs_entrance_ids` at the top level. */
+            acs_entrance_ids?: string[]
+            /**
+             * @deprecated Use `device_ids` at the top level. */
+            device_ids?: string[]
+          }
+        | undefined
+      /** Set of IDs of the [entrances](https://docs.seam.co/latest/api/acs/systems/list) to which access is being granted. */
+      acs_entrance_ids?: string[]
+      /** Set of IDs of the [devices](https://docs.seam.co/latest/api/devices/list) to which access is being granted. */
+      device_ids?: string[]
+      requested_access_methods: Array<{
+        /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+        mode: 'code' | 'card' | 'mobile_key'
+      }>
+      /** Date and time at which the validity of the new grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+      starts_at?: string | undefined
+      /** Date and time at which the validity of the new grant ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+      ends_at?: string | undefined
+    }
+    formData: {}
+    jsonResponse: {
+      /**  */
+      access_grant: {
+        /** Unique identifier for the Seam workspace associated with the access grant. */
+        workspace_id: string
+        /** ID of the access grant. */
+        access_grant_id: string
+        /** ID of user identity to which access is being granted. */
+        user_identity_id: string
+        /**
+         * @deprecated Use `space_ids`. */
+        location_ids: string[]
+        /** IDs of the spaces to which access is being given. */
+        space_ids: string[]
+        /** Access methods that the user requested for this access grant. */
+        requested_access_methods: Array<{
+          /** Display name of the access method. */
+          display_name: string
+          /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+          mode: 'code' | 'card' | 'mobile_key'
+          /** Date and time at which the requested access method was added to this access grant. */
+          created_at: string
+          /** IDs of the access methods that were created for this requested access method. */
+          created_access_method_ids: string[]
+        }>
+        /** IDs of the access methods that were created for this access grant. */
+        access_method_ids: string[]
+        /** Display name of the access grant. */
+        display_name: string
+        /** Date and time at which the access grant was created. */
+        created_at: string
+      }
+    }
+  }
+  '/access_grants/delete': {
+    route: '/access_grants/delete'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** ID of access grant to delete. */
+      access_grant_id: string
+    }
+    formData: {}
+    jsonResponse: {}
+  }
+  '/access_grants/get': {
+    route: '/access_grants/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** ID of access grant to get. */
+      access_grant_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      /**  */
+      access_grant: {
+        /** Unique identifier for the Seam workspace associated with the access grant. */
+        workspace_id: string
+        /** ID of the access grant. */
+        access_grant_id: string
+        /** ID of user identity to which access is being granted. */
+        user_identity_id: string
+        /**
+         * @deprecated Use `space_ids`. */
+        location_ids: string[]
+        /** IDs of the spaces to which access is being given. */
+        space_ids: string[]
+        /** Access methods that the user requested for this access grant. */
+        requested_access_methods: Array<{
+          /** Display name of the access method. */
+          display_name: string
+          /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+          mode: 'code' | 'card' | 'mobile_key'
+          /** Date and time at which the requested access method was added to this access grant. */
+          created_at: string
+          /** IDs of the access methods that were created for this requested access method. */
+          created_access_method_ids: string[]
+        }>
+        /** IDs of the access methods that were created for this access grant. */
+        access_method_ids: string[]
+        /** Display name of the access grant. */
+        display_name: string
+        /** Date and time at which the access grant was created. */
+        created_at: string
+      }
+    }
+  }
+  '/access_grants/list': {
+    route: '/access_grants/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** ID of user identity to filter list of access grants by. */
+      user_identity_id?: string | undefined
+      /** ID of system to filter list of access grants by. */
+      acs_system_id?: string | undefined
+      /** ID of entrance to filter list of access grants by. */
+      acs_entrance_id?: string | undefined
+      /**
+       * @deprecated Use `space_id`. */
+      location_id?: string | undefined
+      /** ID of space to filter list of access grants by. */
+      space_id?: string | undefined
+    }
+    formData: {}
+    jsonResponse: {
+      access_grants: Array<{
+        /** Unique identifier for the Seam workspace associated with the access grant. */
+        workspace_id: string
+        /** ID of the access grant. */
+        access_grant_id: string
+        /** ID of user identity to which access is being granted. */
+        user_identity_id: string
+        /**
+         * @deprecated Use `space_ids`. */
+        location_ids: string[]
+        /** IDs of the spaces to which access is being given. */
+        space_ids: string[]
+        /** Access methods that the user requested for this access grant. */
+        requested_access_methods: Array<{
+          /** Display name of the access method. */
+          display_name: string
+          /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+          mode: 'code' | 'card' | 'mobile_key'
+          /** Date and time at which the requested access method was added to this access grant. */
+          created_at: string
+          /** IDs of the access methods that were created for this requested access method. */
+          created_access_method_ids: string[]
+        }>
+        /** IDs of the access methods that were created for this access grant. */
+        access_method_ids: string[]
+        /** Display name of the access grant. */
+        display_name: string
+        /** Date and time at which the access grant was created. */
+        created_at: string
+      }>
+    }
+  }
+  '/access_methods/delete': {
+    route: '/access_methods/delete'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** ID of access method to get. */
+      access_method_id: string
+    }
+    formData: {}
+    jsonResponse: {}
+  }
+  '/access_methods/get': {
+    route: '/access_methods/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** ID of access method to get. */
+      access_method_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      /**  */
+      access_method: {
+        /** Unique identifier for the Seam workspace associated with the access grant. */
+        workspace_id: string
+        /** ID of the access method. */
+        access_method_id: string
+        /** Display name of the access method. */
+        display_name: string
+        /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+        mode: 'code' | 'card' | 'mobile_key'
+        /** Date and time at which the access method was created. */
+        created_at: string
+        /** Date and time at which the access method was issued. */
+        issued_at?: string | undefined
+        /** URL of instant key for mobile key access methods. */
+        instant_key_url?: string | undefined
+        /** Whether card encoding is required for plastic card access methods. */
+        is_card_encoding_required?: boolean | undefined
+      }
+    }
+  }
+  '/access_methods/list': {
+    route: '/access_methods/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** ID of access grant to list access methods for. */
+      access_grant_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      access_methods: Array<{
+        /** Unique identifier for the Seam workspace associated with the access grant. */
+        workspace_id: string
+        /** ID of the access method. */
+        access_method_id: string
+        /** Display name of the access method. */
+        display_name: string
+        /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+        mode: 'code' | 'card' | 'mobile_key'
+        /** Date and time at which the access method was created. */
+        created_at: string
+        /** Date and time at which the access method was issued. */
+        issued_at?: string | undefined
+        /** URL of instant key for mobile key access methods. */
+        instant_key_url?: string | undefined
+        /** Whether card encoding is required for plastic card access methods. */
+        is_card_encoding_required?: boolean | undefined
+      }>
+    }
+  }
   '/acs/access_groups/add_user': {
     route: '/acs/access_groups/add_user'
     method: 'PUT' | 'POST'
@@ -16631,8 +16901,11 @@ export interface Routes {
       acs_system_id?: string | undefined
       /** ID of the credential for which you want to retrieve all entrances. */
       acs_credential_id?: string | undefined
-      /** ID of the location for which you want to retrieve all entrances. */
+      /**
+       * @deprecated Use `space_id`. */
       location_id?: (string | null) | undefined
+      /** ID of the space for which you want to list entrances. */
+      space_id?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -24169,8 +24442,11 @@ export interface Routes {
             | 'can_simulate_disconnection'
           >
         | undefined
-      /** ID of the location for which you want to list devices. */
+      /**
+       * @deprecated Use `space_id`. */
       unstable_location_id?: (string | null) | undefined
+      /** ID of the space for which you want to list devices. */
+      space_id?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -26337,8 +26613,11 @@ export interface Routes {
             | 'can_simulate_disconnection'
           >
         | undefined
-      /** ID of the location for which you want to list devices. */
+      /**
+       * @deprecated Use `space_id`. */
       unstable_location_id?: (string | null) | undefined
+      /** ID of the space for which you want to list devices. */
+      space_id?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -33027,8 +33306,11 @@ export interface Routes {
             | 'can_simulate_disconnection'
           >
         | undefined
-      /** ID of the location for which you want to list devices. */
+      /**
+       * @deprecated Use `space_id`. */
       unstable_location_id?: (string | null) | undefined
+      /** ID of the space for which you want to list devices. */
+      space_id?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -41236,8 +41518,11 @@ export interface Routes {
             | 'can_simulate_disconnection'
           >
         | undefined
-      /** ID of the location for which you want to list devices. */
+      /**
+       * @deprecated Use `space_id`. */
       unstable_location_id?: (string | null) | undefined
+      /** ID of the space for which you want to list devices. */
+      space_id?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -49144,6 +49429,162 @@ export interface Routes {
         description?: string | undefined
         custom_metadata?: Record<string, string> | undefined
       }>
+    }
+  }
+  '/spaces/add_acs_entrances': {
+    route: '/spaces/add_acs_entrances'
+    method: 'POST' | 'PUT'
+    queryParams: {}
+    jsonBody: {
+      space_id: string
+      acs_entrance_ids: string[]
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
+  '/spaces/add_devices': {
+    route: '/spaces/add_devices'
+    method: 'POST' | 'PUT'
+    queryParams: {}
+    jsonBody: {
+      space_id: string
+      device_ids: string[]
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
+  '/spaces/create': {
+    route: '/spaces/create'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      name: string
+      device_ids?: string[] | undefined
+      acs_entrance_ids?: string[] | undefined
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      space: {
+        /** Unique identifier for the space. */
+        space_id: string
+        /** Unique identifier for the Seam workspace associated with the space. */
+        workspace_id: string
+        /** Name of the space. */
+        name: string
+        /** Display name of the space. */
+        display_name: string
+        /** Date and time at which the space object was created. */
+        created_at: string
+      }
+    }
+  }
+  '/spaces/delete': {
+    route: '/spaces/delete'
+    method: 'DELETE' | 'POST'
+    queryParams: {}
+    jsonBody: {
+      space_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
+  '/spaces/get': {
+    route: '/spaces/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      space_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      space: {
+        /** Unique identifier for the space. */
+        space_id: string
+        /** Unique identifier for the Seam workspace associated with the space. */
+        workspace_id: string
+        /** Name of the space. */
+        name: string
+        /** Display name of the space. */
+        display_name: string
+        /** Date and time at which the space object was created. */
+        created_at: string
+      }
+    }
+  }
+  '/spaces/list': {
+    route: '/spaces/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      spaces: Array<{
+        /** Unique identifier for the space. */
+        space_id: string
+        /** Unique identifier for the Seam workspace associated with the space. */
+        workspace_id: string
+        /** Name of the space. */
+        name: string
+        /** Display name of the space. */
+        display_name: string
+        /** Date and time at which the space object was created. */
+        created_at: string
+      }>
+    }
+  }
+  '/spaces/remove_acs_entrances': {
+    route: '/spaces/remove_acs_entrances'
+    method: 'POST' | 'DELETE'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      space_id: string
+      acs_entrance_ids: string[]
+    }
+    formData: {}
+    jsonResponse: {}
+  }
+  '/spaces/remove_devices': {
+    route: '/spaces/remove_devices'
+    method: 'POST' | 'DELETE'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      space_id: string
+      device_ids: string[]
+    }
+    formData: {}
+    jsonResponse: {}
+  }
+  '/spaces/update': {
+    route: '/spaces/update'
+    method: 'POST' | 'PATCH'
+    queryParams: {}
+    jsonBody: {
+      space_id: string
+      name?: string | undefined
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      space: {
+        /** Unique identifier for the space. */
+        space_id: string
+        /** Unique identifier for the Seam workspace associated with the space. */
+        workspace_id: string
+        /** Name of the space. */
+        name: string
+        /** Display name of the space. */
+        display_name: string
+        /** Date and time at which the space object was created. */
+        created_at: string
+      }
     }
   }
   '/thermostats/activate_climate_preset': {
@@ -57347,8 +57788,11 @@ export interface Routes {
             | 'can_simulate_disconnection'
           >
         | undefined
-      /** ID of the location for which you want to list devices. */
+      /**
+       * @deprecated Use `space_id`. */
       unstable_location_id?: (string | null) | undefined
+      /** ID of the space for which you want to list devices. */
+      space_id?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -65835,19 +66279,28 @@ export interface Routes {
           }
         }
     ) & {
-      /** Set of IDs of existing locations to which access is being granted. */
+      /**
+       * @deprecated Use `space_ids`. */
       location_ids?: string[] | undefined
+      /** Set of IDs of existing spaces to which access is being granted. */
+      space_ids?: string[] | undefined
       /** When used, creates a new location with the given entrances and devices, and gives the user access to this location. */
       location?:
         | {
             /** Name of the location. */
             name?: string | undefined
-            /** Set of IDs of the [entrances](https://docs.seam.co/latest/api/acs/systems/list) to add to the location to which access is being granted. */
+            /**
+             * @deprecated Use `acs_entrance_ids` at the top level. */
             acs_entrance_ids?: string[]
-            /** Set of IDs of the [devices](https://docs.seam.co/latest/api/devices/list) to add to the location to which access is being granted. */
+            /**
+             * @deprecated Use `device_ids` at the top level. */
             device_ids?: string[]
           }
         | undefined
+      /** Set of IDs of the [entrances](https://docs.seam.co/latest/api/acs/systems/list) to which access is being granted. */
+      acs_entrance_ids?: string[]
+      /** Set of IDs of the [devices](https://docs.seam.co/latest/api/devices/list) to which access is being granted. */
+      device_ids?: string[]
       requested_access_methods: Array<{
         /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
         mode: 'code' | 'card' | 'mobile_key'
@@ -65867,8 +66320,11 @@ export interface Routes {
         access_grant_id: string
         /** ID of user identity to which access is being granted. */
         user_identity_id: string
-        /** IDs of the locations to which access is being given. */
+        /**
+         * @deprecated Use `space_ids`. */
         location_ids: string[]
+        /** IDs of the spaces to which access is being given. */
+        space_ids: string[]
         /** Access methods that the user requested for this access grant. */
         requested_access_methods: Array<{
           /** Display name of the access method. */
@@ -65920,8 +66376,11 @@ export interface Routes {
         access_grant_id: string
         /** ID of user identity to which access is being granted. */
         user_identity_id: string
-        /** IDs of the locations to which access is being given. */
+        /**
+         * @deprecated Use `space_ids`. */
         location_ids: string[]
+        /** IDs of the spaces to which access is being given. */
+        space_ids: string[]
         /** Access methods that the user requested for this access grant. */
         requested_access_methods: Array<{
           /** Display name of the access method. */
@@ -65954,8 +66413,11 @@ export interface Routes {
       acs_system_id?: string | undefined
       /** ID of entrance to filter list of access grants by. */
       acs_entrance_id?: string | undefined
-      /** ID of location to filter list of access grants by. */
+      /**
+       * @deprecated Use `space_id`. */
       location_id?: string | undefined
+      /** ID of space to filter list of access grants by. */
+      space_id?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -65966,8 +66428,11 @@ export interface Routes {
         access_grant_id: string
         /** ID of user identity to which access is being granted. */
         user_identity_id: string
-        /** IDs of the locations to which access is being given. */
+        /**
+         * @deprecated Use `space_ids`. */
         location_ids: string[]
+        /** IDs of the spaces to which access is being given. */
+        space_ids: string[]
         /** Access methods that the user requested for this access grant. */
         requested_access_methods: Array<{
           /** Display name of the access method. */
