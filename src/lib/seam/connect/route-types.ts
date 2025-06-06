@@ -66778,7 +66778,15 @@ export interface Routes {
       | {
           building_block_type: 'organize_spaces'
           customer_key: string
-          collection_key: string
+          /** Optional list of partner resources to include in the magic link. */
+          partner_resources?:
+            | Array<{
+                partner_resource_key: string
+                name: string
+                description?: string | undefined
+                custom_metadata?: Record<string, string> | undefined
+              }>
+            | undefined
         }
     formData: {}
     jsonResponse: {
@@ -66827,12 +66835,14 @@ export interface Routes {
     jsonBody: {}
     commonParams: {
       customer_key: string
-      partner_resources: Array<{
-        partner_resource_key: string
-        name: string
-        description?: string | undefined
-        custom_metadata?: Record<string, string> | undefined
-      }>
+      partner_resources?:
+        | Array<{
+            partner_resource_key: string
+            name: string
+            description?: string | undefined
+            custom_metadata?: Record<string, string> | undefined
+          }>
+        | undefined
     }
     formData: {}
     jsonResponse: {
