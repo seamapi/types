@@ -40,3 +40,5 @@ export const typed_partner_resource = z.object({
   route_path: /unstable_partner/resources
   ---
   `)
+
+export type TypedPartnerResource = z.infer<typeof typed_partner_resource>
