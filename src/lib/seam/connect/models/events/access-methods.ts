@@ -13,7 +13,7 @@ export const access_method_issued_event = access_method_event.extend({
   event_type: z.literal('access_method.issued'),
 }).describe(`
     ---
-    route_path: /unstable_access_methods
+    route_path: /access_methods
     ---
     An access method was issued.
   `)
@@ -25,7 +25,7 @@ export const access_method_card_encoding_required_event =
     event_type: z.literal('access_method.card_encoding_required'),
   }).describe(`
     ---
-    route_path: /unstable_access_methods
+    route_path: /access_methods
     ---
     An access method representing a physical card requires encoding.
   `)
@@ -38,7 +38,7 @@ export const access_method_revoked_event = access_method_event.extend({
   event_type: z.literal('access_method.revoked'),
 }).describe(`
     ---
-    route_path: /unstable_access_methods
+    route_path: /access_methods
     ---
     An access method was revoked.
   `)
@@ -47,7 +47,7 @@ export const access_method_deleted_event = access_method_event.extend({
   event_type: z.literal('access_method.deleted'),
 }).describe(`
     ---
-    route_path: /unstable_access_methods
+    route_path: /access_methods
     ---
     An access method was deleted.
   `)
