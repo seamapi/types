@@ -8,6 +8,20 @@ export const connect_webview_device_selection_mode = z.enum([
   'multiple',
 ])
 
+export const connect_webview_accepted_capabilities = z.enum([
+  'lock',
+  'thermostat',
+  'noise_sensor',
+  'access_control',
+]).describe(`
+  High-level device capabilities that can be restricted in connect webviews.
+  These represent the main device categories that customers can opt into.
+`)
+
+export type ConnectWebviewAcceptedCapabilities = z.infer<
+  typeof connect_webview_accepted_capabilities
+>
+
 export const connect_webview = z.object({
   connect_webview_id: z.string().uuid().describe('ID of the Connect Webview.'),
   workspace_id: z
@@ -40,6 +54,12 @@ export const connect_webview = z.object({
     .array(z.string())
     .describe(
       'List of accepted [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).',
+    ),
+
+  accepted_capabilities: z
+    .array(connect_webview_accepted_capabilities)
+    .describe(
+      'List of accepted device capabilities that restrict the types of devices that can be connected through the Connect Webview.',
     ),
 
   accepted_devices: z.array(z.string()).describe(

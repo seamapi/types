@@ -7186,6 +7186,17 @@ export default {
         description:
           'Represents a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).\n\nConnect Webviews are fully-embedded client-side components that you add to your app. Your users interact with your embedded Connect Webviews to link their IoT device or system accounts to Seam. That is, Connect Webviews walk your users through the process of logging in to their device or system accounts. Seam handles all the authentication steps, and—once your user has completed the authorization through your app—you can access and control their devices or systems using the Seam API.\n\nConnect Webviews perform credential validation, multifactor authentication (when applicable), and error handling for each brand that Seam supports. Further, Connect Webviews work across all modern browsers and platforms, including Chrome, Safari, and Firefox.\n\nTo enable a user to connect their device or system account to Seam through your app, first create a `connect_webview`. Once created, this `connect_webview` includes a URL that you can use to open an [iframe](https://www.w3schools.com/html/html_iframe.asp) or new window containing the Connect Webview for your user.\n\nWhen you create a Connect Webview, specify the desired provider category key in the `provider_category` parameter. Alternately, to specify a list of providers explicitly, use the `accepted_providers` parameter with a list of device provider keys.\n\nTo list all providers within a category, use `/devices/list_device_providers` with the desired `provider_category` filter. To list all provider keys, use `/devices/list_device_providers` with no filters.',
         properties: {
+          accepted_capabilities: {
+            description:
+              'List of accepted device capabilities that restrict the types of devices that can be connected through the Connect Webview.',
+            items: {
+              description:
+                '\n  High-level device capabilities that can be restricted in connect webviews.\n  These represent the main device categories that customers can opt into.\n',
+              enum: ['lock', 'thermostat', 'noise_sensor', 'access_control'],
+              type: 'string',
+            },
+            type: 'array',
+          },
           accepted_devices: {
             deprecated: true,
             items: { type: 'string' },
@@ -7308,6 +7319,7 @@ export default {
           'url',
           'device_selection_mode',
           'accepted_providers',
+          'accepted_capabilities',
           'accepted_devices',
           'any_device_allowed',
           'any_provider_allowed',
@@ -28645,6 +28657,22 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  accepted_capabilities: {
+                    description:
+                      'List of accepted device capabilities that restrict the types of devices that can be connected through the Connect Webview. If not provided, defaults will be determined based on the accepted providers.',
+                    items: {
+                      description:
+                        '\n  High-level device capabilities that can be restricted in connect webviews.\n  These represent the main device categories that customers can opt into.\n',
+                      enum: [
+                        'lock',
+                        'thermostat',
+                        'noise_sensor',
+                        'access_control',
+                      ],
+                      type: 'string',
+                    },
+                    type: 'array',
+                  },
                   accepted_providers: {
                     description:
                       'Accepted device provider keys as an alternative to `provider_category`. Use this parameter to specify accepted providers explicitly. See [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). To list all provider keys, use [`/devices/list_device_providers`](https://docs.seam.co/latest/api/devices/list_device_providers) with no filters.',
