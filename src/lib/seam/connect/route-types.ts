@@ -64952,7 +64952,7 @@ export interface Routes {
       heating_set_point_fahrenheit?: number | undefined
       /** Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
        * @deprecated Use 'thermostat_schedule.is_override_allowed' */
-      manual_override_allowed: boolean
+      manual_override_allowed?: boolean | undefined
     }
     commonParams: {}
     formData: {}
