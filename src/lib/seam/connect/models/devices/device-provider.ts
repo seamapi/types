@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+import type { ConnectWebviewAcceptedCapabilities } from '../connect-webviews/index.js'
 import { device_capability_flags } from './device.js'
 
 export const DEVICE_PROVIDERS = {
@@ -145,3 +146,15 @@ export const device_provider = z
   `)
 
 export type DeviceProvider = z.infer<typeof device_provider>
+
+export const PROVIDER_CATEGORY_CAPABILITY_MAP: Record<
+  ProviderCategory,
+  ConnectWebviewAcceptedCapabilities[]
+> = {
+  stable: ['lock', 'thermostat', 'noise_sensor', 'access_control'],
+  consumer_smartlocks: ['lock'],
+  thermostats: ['thermostat'],
+  noise_sensors: ['noise_sensor'],
+  access_control_systems: ['access_control'],
+  internal_beta: ['lock', 'thermostat', 'noise_sensor', 'access_control'],
+}

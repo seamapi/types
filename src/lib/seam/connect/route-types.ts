@@ -22096,6 +22096,10 @@ export interface Routes {
       automatically_manage_new_devices?: boolean
       /** Indicates whether Seam should finish syncing all devices in a newly-connected account before completing the associated Connect Webview. See also: [Customize the Behavior Settings of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-behavior-settings-of-your-connect-webviews). */
       wait_for_device_creation?: boolean
+      /** List of accepted device capabilities that restrict the types of devices that can be connected through the Connect Webview. If not provided, defaults will be determined based on the accepted providers. */
+      accepted_capabilities?:
+        | Array<'lock' | 'thermostat' | 'noise_sensor' | 'access_control'>
+        | undefined
     }
     commonParams: {}
     formData: {}
@@ -22125,6 +22129,10 @@ export interface Routes {
         device_selection_mode: 'none' | 'single' | 'multiple'
         /** List of accepted [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). */
         accepted_providers: string[]
+        /** List of accepted device capabilities that restrict the types of devices that can be connected through the Connect Webview. */
+        accepted_capabilities: Array<
+          'lock' | 'thermostat' | 'noise_sensor' | 'access_control'
+        >
         /**
          * @deprecated Unused. Will be removed. */
         accepted_devices: string[]
@@ -22202,6 +22210,10 @@ export interface Routes {
         device_selection_mode: 'none' | 'single' | 'multiple'
         /** List of accepted [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). */
         accepted_providers: string[]
+        /** List of accepted device capabilities that restrict the types of devices that can be connected through the Connect Webview. */
+        accepted_capabilities: Array<
+          'lock' | 'thermostat' | 'noise_sensor' | 'access_control'
+        >
         /**
          * @deprecated Unused. Will be removed. */
         accepted_devices: string[]
@@ -22261,6 +22273,10 @@ export interface Routes {
         device_selection_mode: 'none' | 'single' | 'multiple'
         /** List of accepted [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). */
         accepted_providers: string[]
+        /** List of accepted device capabilities that restrict the types of devices that can be connected through the Connect Webview. */
+        accepted_capabilities: Array<
+          'lock' | 'thermostat' | 'noise_sensor' | 'access_control'
+        >
         /**
          * @deprecated Unused. Will be removed. */
         accepted_devices: string[]
