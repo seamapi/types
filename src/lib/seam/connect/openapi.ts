@@ -32671,7 +32671,8 @@ export default {
               schema: {
                 properties: {
                   device_id: {
-                    description: 'Device ID of the desired phone.',
+                    description:
+                      'Device ID of the phone that you want to deactivate.',
                     type: 'string',
                   },
                 },
@@ -32714,7 +32715,7 @@ export default {
     '/phones/get': {
       post: {
         description:
-          'Returns a single phone entry matching the provided `device_id`.',
+          'Returns a specified [phone](https://docs.seam.co/latest/capability-guides/mobile-access/managing-phones-for-a-user-identity).',
         operationId: 'phonesGetPost',
         requestBody: {
           content: {
@@ -32722,7 +32723,7 @@ export default {
               schema: {
                 properties: {
                   device_id: {
-                    description: 'Device ID of the desired phone.',
+                    description: 'Device ID of the phone that you want to get.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -32763,13 +32764,13 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'phone',
         'x-response-key': 'phone',
-        'x-title': 'Get Phone',
+        'x-title': 'Get a Phone',
       },
     },
     '/phones/list': {
       post: {
         description:
-          'Returns a list of all phones. To filter the list of returned phones by a specific owner user identity or credential, include the `owner_user_identity_id` or `acs_credential_id`, respectively, in the request body.',
+          'Returns a list of all [phones](https://docs.seam.co/latest/capability-guides/mobile-access/managing-phones-for-a-user-identity). To filter the list of returned phones by a specific owner user identity or credential, include the `owner_user_identity_id` or `acs_credential_id`, respectively, in the request body.',
         operationId: 'phonesListPost',
         requestBody: {
           content: {
@@ -32778,13 +32779,13 @@ export default {
                 properties: {
                   acs_credential_id: {
                     description:
-                      'ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) by which to filter the list of returned phones.',
+                      'ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) by which you want to filter the list of returned phones.',
                     format: 'uuid',
                     type: 'string',
                   },
                   owner_user_identity_id: {
                     description:
-                      'ID of the user identity that represents the owner by which to filter the list of returned phones.',
+                      'ID of the user identity that represents the owner by which you want to filter the list of returned phones.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -32833,7 +32834,7 @@ export default {
     '/phones/simulate/create_sandbox_phone': {
       post: {
         description:
-          'Creates a new simulated phone in a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). For more information, see [Creating a Simulated Phone for a User Identity](https://docs.seam.co/latest/capability-guides/mobile-access/developing-in-a-sandbox-workspace#creating-a-simulated-phone-for-a-user-identity).',
+          'Creates a new simulated phone in a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). See also [Creating a Simulated Phone for a User Identity](https://docs.seam.co/latest/capability-guides/mobile-access/developing-in-a-sandbox-workspace#creating-a-simulated-phone-for-a-user-identity).',
         operationId: 'phonesSimulateCreateSandboxPhonePost',
         requestBody: {
           content: {
@@ -32843,7 +32844,7 @@ export default {
                   assa_abloy_metadata: {
                     default: {},
                     description:
-                      'ASSA ABLOY metadata to associate with the simulated phone.',
+                      'ASSA ABLOY metadata that you want to associate with the simulated phone.',
                     properties: {
                       application_version: {
                         default: '1.0.0',
@@ -32887,13 +32888,13 @@ export default {
                   },
                   custom_sdk_installation_id: {
                     description:
-                      'ID of the custom SDK installation to use for the simulated phone.',
+                      'ID of the custom SDK installation that you want to use for the simulated phone.',
                     type: 'string',
                   },
                   phone_metadata: {
                     default: {},
                     description:
-                      'Metadata to associate with the simulated phone.',
+                      'Metadata that you want to associate with the simulated phone.',
                     properties: {
                       device_manufacturer: {
                         default: 'Samsung',
@@ -32925,7 +32926,7 @@ export default {
                   },
                   user_identity_id: {
                     description:
-                      'ID of the user identity to associate with the simulated phone.',
+                      'ID of the user identity that you want to associate with the simulated phone.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -32971,16 +32972,29 @@ export default {
     },
     '/seam/bridge/v1/bridge_client_sessions/create': {
       post: {
-        description: 'Creates a new bridge client session.',
+        description:
+          'Creates a new [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) client session.',
         operationId: 'seamBridgeV1BridgeClientSessionsCreatePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  bridge_client_machine_identifier_key: { type: 'string' },
-                  bridge_client_name: { type: 'string' },
-                  bridge_client_time_zone: { type: 'string' },
+                  bridge_client_machine_identifier_key: {
+                    description:
+                      'Identifier key of the client machine for the Seam Bridge client that you want to create.',
+                    type: 'string',
+                  },
+                  bridge_client_name: {
+                    description:
+                      'Name of the Seam Bridge client that you want to create.',
+                    type: 'string',
+                  },
+                  bridge_client_time_zone: {
+                    description:
+                      'Time zone for the Seam Bridge that you want to create.',
+                    type: 'string',
+                  },
                 },
                 required: [
                   'bridge_client_name',
@@ -33166,13 +33180,13 @@ export default {
         'x-fern-sdk-return-value': 'bridge_client_session',
         'x-response-key': 'bridge_client_session',
         'x-title': 'Create a Bridge Client Session',
-        'x-undocumented': 'Seam Bridge Client only.',
+        'x-undocumented': 'Seam Bridge client only.',
       },
     },
     '/seam/bridge/v1/bridge_client_sessions/get': {
       get: {
         description:
-          'Returns the bridge client session associated with the session token used.',
+          'Returns the [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) client session associated with the client session token used for authentication.',
         operationId: 'seamBridgeV1BridgeClientSessionsGetGet',
         responses: {
           200: {
@@ -33340,12 +33354,12 @@ export default {
         tags: [],
         'x-fern-ignore': true,
         'x-response-key': 'bridge_client_session',
-        'x-title': 'Get a Bridge Client Session',
+        'x-title': 'Get a Seam Bridge Client Session',
         'x-undocumented': 'Seam Bridge Client only.',
       },
       post: {
         description:
-          'Returns the bridge client session associated with the session token used.',
+          'Returns the [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) client session associated with the client session token used for authentication.',
         operationId: 'seamBridgeV1BridgeClientSessionsGetPost',
         responses: {
           200: {
@@ -33520,14 +33534,14 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'bridge_client_session',
         'x-response-key': 'bridge_client_session',
-        'x-title': 'Get a Bridge Client Session',
+        'x-title': 'Get a Seam Bridge Client Session',
         'x-undocumented': 'Seam Bridge Client only.',
       },
     },
     '/seam/bridge/v1/bridge_client_sessions/refresh_telemetry_token': {
       post: {
         description:
-          'Returns the bridge client session associated with the session token and refreshed telemetry token.',
+          'Returns the [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) client session associated with the client session token used for authentication and refreshed telemetry token.',
         operationId:
           'seamBridgeV1BridgeClientSessionsRefreshTelemetryTokenPost',
         responses: {
@@ -33704,14 +33718,15 @@ export default {
         'x-fern-sdk-method-name': 'refresh_telemetry_token',
         'x-fern-sdk-return-value': 'bridge_client_session',
         'x-response-key': 'bridge_client_session',
-        'x-title': 'Refresh telemetry token for bridge client session',
+        'x-title':
+          'Refresh the Telemetry Token for a Seam Bridge Client Session',
         'x-undocumented': 'Seam Bridge Client only.',
       },
     },
     '/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code': {
       post: {
         description:
-          'Generate a new pairing code and return the updated bridge client session.',
+          'Generate a new pairing code and return the updated [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) client session.',
         operationId:
           'seamBridgeV1BridgeClientSessionsRegeneratePairingCodePost',
         responses: {
@@ -33888,21 +33903,30 @@ export default {
         'x-fern-sdk-method-name': 'regenerate_pairing_code',
         'x-fern-sdk-return-value': 'bridge_client_session',
         'x-response-key': 'bridge_client_session',
-        'x-title': 'Regenerate a Bridge Client Session Pairing Code',
+        'x-title': 'Regenerate a Seam Bridge Client Session Pairing Code',
         'x-undocumented': 'Seam Bridge Client only.',
       },
     },
     '/seam/bridge/v1/bridge_client_sessions/report_status': {
       post: {
-        description: "Report a Seam Bridge Bridge client's status.",
+        description:
+          'Report the status of a [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) client.',
         operationId: 'seamBridgeV1BridgeClientSessionsReportStatusPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  is_tailscale_connected: { nullable: true, type: 'boolean' },
-                  tailscale_ip_v4: { nullable: true, type: 'string' },
+                  is_tailscale_connected: {
+                    description: 'Indicates whether Tailscale is connected.',
+                    nullable: true,
+                    type: 'boolean',
+                  },
+                  tailscale_ip_v4: {
+                    description: 'Tailscale IPv4 address.',
+                    nullable: true,
+                    type: 'string',
+                  },
                 },
                 required: ['is_tailscale_connected', 'tailscale_ip_v4'],
                 type: 'object',
@@ -33937,14 +33961,14 @@ export default {
         ],
         'x-fern-sdk-method-name': 'report_status',
         'x-response-key': null,
-        'x-title': "Report a Bridge Client's Status",
+        'x-title': 'Report the Status of a Seam Bridge Client',
         'x-undocumented': 'Seam Bridge Client only.',
       },
     },
     '/seam/bridge/v1/bridge_connected_systems/list': {
       get: {
         description:
-          'Returns the bridge connected systems associated with the session token used.',
+          'Returns the [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge)-connected systems associated with the client session token used for authentication.',
         operationId: 'seamBridgeV1BridgeConnectedSystemsListGet',
         responses: {
           200: {
@@ -34007,12 +34031,12 @@ export default {
         tags: [],
         'x-fern-ignore': true,
         'x-response-key': 'bridge_connected_systems',
-        'x-title': 'List Bridge Connected Systems',
+        'x-title': 'List Bridge-Connected Systems',
         'x-undocumented': 'Seam Bridge Client only.',
       },
       post: {
         description:
-          'Returns the bridge connected systems associated with the session token used.',
+          'Returns the [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge)-connected systems associated with the client session token used for authentication.',
         operationId: 'seamBridgeV1BridgeConnectedSystemsListPost',
         responses: {
           200: {
@@ -34082,14 +34106,14 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'bridge_connected_systems',
         'x-response-key': 'bridge_connected_systems',
-        'x-title': 'List Bridge Connected Systems',
+        'x-title': 'List Bridge-Connected Systems',
         'x-undocumented': 'Seam Bridge Client only.',
       },
     },
     '/seam/instant_key/v1/client_sessions/exchange_short_code': {
       post: {
         description:
-          'Exchanges a short code for a Client Session Token (CST).\nThis endpoint is used by mobile apps to securely retrieve a client session token\nusing a short code obtained from an instant key URL.',
+          'Exchanges a short code for a client session token. Mobile apps use this endpoint to retrieve a client session token securely using a short code obtained from an Instant Key URL.',
         operationId: 'seamInstantKeyV1ClientSessionsExchangeShortCodePost',
         requestBody: {
           content: {
@@ -34098,7 +34122,7 @@ export default {
                 properties: {
                   short_code: {
                     description:
-                      'The short code to exchange for a client session token',
+                      'Short code that you want to exchange for a client session token.',
                     type: 'string',
                   },
                 },
@@ -34147,7 +34171,8 @@ export default {
     },
     '/seam/mobile_sdk/v1/acs/credentials/list': {
       post: {
-        description: 'Returns a list of all ACS credentials.',
+        description:
+          'Returns a list of all [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
         operationId: 'seamMobileSdkV1AcsCredentialsListPost',
         requestBody: {
           content: {
@@ -34195,15 +34220,21 @@ export default {
     },
     '/seam/mobile_sdk/v1/phone_sessions/get_or_create': {
       post: {
-        description: 'Get or create a session for a mobile SDK phone.',
+        description: 'Gets or creates a session for a mobile SDK phone.',
         operationId: 'seamMobileSdkV1PhoneSessionsGetOrCreatePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  custom_sdk_installation_id: { type: 'string' },
+                  custom_sdk_installation_id: {
+                    description:
+                      'ID of the custom SDK installation that you want to use for the new session.',
+                    type: 'string',
+                  },
                   phone_device_metadata: {
+                    description:
+                      'Phone device metadata that you want to use for the new session.',
                     properties: {
                       manufacturer: { type: 'string' },
                       model: { type: 'string' },
@@ -34211,7 +34242,12 @@ export default {
                     },
                     type: 'object',
                   },
-                  phone_os: { enum: ['ios', 'android'], type: 'string' },
+                  phone_os: {
+                    description:
+                      'Phone operating system that you want to use for the new session.',
+                    enum: ['ios', 'android'],
+                    type: 'string',
+                  },
                 },
                 required: ['custom_sdk_installation_id', 'phone_os'],
                 type: 'object',
@@ -34254,13 +34290,18 @@ export default {
     '/seam/partner/v1/building_blocks/spaces/auto_map': {
       post: {
         description:
-          'Auto map partner resources that have been pushed to Seam.',
+          'Auto-maps partner resources that have been pushed to Seam.',
         operationId: 'seamPartnerV1BuildingBlocksSpacesAutoMapPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
-                properties: { collection_key: { type: 'string' } },
+                properties: {
+                  collection_key: {
+                    description: 'Collection key.',
+                    type: 'string',
+                  },
+                },
                 required: ['collection_key'],
                 type: 'object',
               },
@@ -34341,13 +34382,13 @@ export default {
         'x-fern-sdk-method-name': 'auto_map',
         'x-fern-sdk-return-value': 'spaces',
         'x-response-key': 'spaces',
-        'x-title': 'Do auto mapping for partner resources that map to spaces',
+        'x-title': 'Do Auto-Mapping for Partner Resources that Map to Spaces',
         'x-undocumented': 'Partner building blocks/UI only.',
       },
     },
     '/seam/partner/v1/resources/list': {
       post: {
-        description: 'List partner resources that have been pushed to Seam.',
+        description: 'Lists partner resources that have been pushed to Seam.',
         operationId: 'seamPartnerV1ResourcesListPost',
         requestBody: {
           content: {
@@ -34355,7 +34396,8 @@ export default {
               schema: {
                 properties: {
                   resource_type_alias: {
-                    description: 'Filter by resource type alias.',
+                    description:
+                      'Resource type alias by which you want to filter partner resources.',
                     type: 'string',
                   },
                 },
@@ -34422,13 +34464,14 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'partner_resources',
         'x-response-key': 'partner_resources',
-        'x-title': 'List partner resources at Seam',
+        'x-title': 'List Partner Resources at Seam',
         'x-undocumented': 'Partner building blocks/UI only.',
       },
     },
     '/spaces/add_acs_entrances': {
       post: {
-        description: 'Add entrances to a specific space.',
+        description:
+          'Adds [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) to a specific space.',
         operationId: 'spacesAddAcsEntrancesPost',
         requestBody: {
           content: {
@@ -34436,11 +34479,18 @@ export default {
               schema: {
                 properties: {
                   acs_entrance_ids: {
+                    description:
+                      'IDs of the entrances that you want to add to the space.',
                     items: { format: 'uuid', type: 'string' },
                     minItems: 1,
                     type: 'array',
                   },
-                  space_id: { format: 'uuid', type: 'string' },
+                  space_id: {
+                    description:
+                      'ID of the space to which you want to add entrances.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['space_id', 'acs_entrance_ids'],
                 type: 'object',
@@ -34475,10 +34525,11 @@ export default {
         'x-fern-sdk-group-name': ['spaces'],
         'x-fern-sdk-method-name': 'add_acs_entrances',
         'x-response-key': null,
-        'x-title': 'Add ACS Entrances',
+        'x-title': 'Add Entrances to a Space',
       },
       put: {
-        description: 'Add entrances to a specific space.',
+        description:
+          'Adds [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) to a specific space.',
         operationId: 'spacesAddAcsEntrancesPut',
         requestBody: {
           content: {
@@ -34486,11 +34537,18 @@ export default {
               schema: {
                 properties: {
                   acs_entrance_ids: {
+                    description:
+                      'IDs of the entrances that you want to add to the space.',
                     items: { format: 'uuid', type: 'string' },
                     minItems: 1,
                     type: 'array',
                   },
-                  space_id: { format: 'uuid', type: 'string' },
+                  space_id: {
+                    description:
+                      'ID of the space to which you want to add entrances.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['space_id', 'acs_entrance_ids'],
                 type: 'object',
@@ -34524,12 +34582,12 @@ export default {
         'x-draft': 'Early access.',
         'x-fern-ignore': true,
         'x-response-key': null,
-        'x-title': 'Add ACS Entrances',
+        'x-title': 'Add Entrances to a Space',
       },
     },
     '/spaces/add_devices': {
       post: {
-        description: 'Add devices to a specific space.',
+        description: 'Adds devices to a specific space.',
         operationId: 'spacesAddDevicesPost',
         requestBody: {
           content: {
@@ -34537,11 +34595,18 @@ export default {
               schema: {
                 properties: {
                   device_ids: {
+                    description:
+                      'IDs of the devices that you want to add to the space.',
                     items: { format: 'uuid', type: 'string' },
                     minItems: 1,
                     type: 'array',
                   },
-                  space_id: { format: 'uuid', type: 'string' },
+                  space_id: {
+                    description:
+                      'ID of the space to which you want to add devices.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['space_id', 'device_ids'],
                 type: 'object',
@@ -34576,10 +34641,10 @@ export default {
         'x-fern-sdk-group-name': ['spaces'],
         'x-fern-sdk-method-name': 'add_devices',
         'x-response-key': null,
-        'x-title': 'Add Space Devices',
+        'x-title': 'Add Devices to a Space',
       },
       put: {
-        description: 'Add devices to a specific space.',
+        description: 'Adds devices to a specific space.',
         operationId: 'spacesAddDevicesPut',
         requestBody: {
           content: {
@@ -34587,11 +34652,18 @@ export default {
               schema: {
                 properties: {
                   device_ids: {
+                    description:
+                      'IDs of the devices that you want to add to the space.',
                     items: { format: 'uuid', type: 'string' },
                     minItems: 1,
                     type: 'array',
                   },
-                  space_id: { format: 'uuid', type: 'string' },
+                  space_id: {
+                    description:
+                      'ID of the space to which you want to add devices.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['space_id', 'device_ids'],
                 type: 'object',
@@ -34625,12 +34697,12 @@ export default {
         'x-draft': 'Early access.',
         'x-fern-ignore': true,
         'x-response-key': null,
-        'x-title': 'Add Space Devices',
+        'x-title': 'Add Devices to a Space',
       },
     },
     '/spaces/create': {
       post: {
-        description: 'Create a new space.',
+        description: 'Creates a new space.',
         operationId: 'spacesCreatePost',
         requestBody: {
           content: {
@@ -34638,14 +34710,21 @@ export default {
               schema: {
                 properties: {
                   acs_entrance_ids: {
+                    description:
+                      'IDs of the entrances that you want to add to the new space.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
                   device_ids: {
+                    description:
+                      'IDs of the devices that you want to add to the new space.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
-                  name: { type: 'string' },
+                  name: {
+                    description: 'Name of the space that you want to create.',
+                    type: 'string',
+                  },
                 },
                 required: ['name'],
                 type: 'object',
@@ -34684,18 +34763,24 @@ export default {
         'x-fern-sdk-method-name': 'create',
         'x-fern-sdk-return-value': 'space',
         'x-response-key': 'space',
-        'x-title': 'Create Space',
+        'x-title': 'Create a Space',
       },
     },
     '/spaces/delete': {
       post: {
-        description: 'Delete a space.',
+        description: 'Deletes a space.',
         operationId: 'spacesDeletePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
-                properties: { space_id: { format: 'uuid', type: 'string' } },
+                properties: {
+                  space_id: {
+                    description: 'ID of the space that you want to delete.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
                 required: ['space_id'],
                 type: 'object',
               },
@@ -34725,21 +34810,28 @@ export default {
         ],
         summary: '/spaces/delete',
         tags: [],
+        'x-draft': 'Early access.',
         'x-fern-sdk-group-name': ['spaces'],
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
-        'x-title': 'Delete Space',
+        'x-title': 'Delete a Space',
       },
     },
     '/spaces/get': {
       post: {
-        description: 'Get a space.',
+        description: 'Gets a space.',
         operationId: 'spacesGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
-                properties: { space_id: { format: 'uuid', type: 'string' } },
+                properties: {
+                  space_id: {
+                    description: 'ID of the space that you want to get.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
                 required: ['space_id'],
                 type: 'object',
               },
@@ -34772,11 +34864,12 @@ export default {
         ],
         summary: '/spaces/get',
         tags: [],
+        'x-draft': 'Early access.',
         'x-fern-sdk-group-name': ['spaces'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'space',
         'x-response-key': 'space',
-        'x-title': 'Get Space',
+        'x-title': 'Get a Space',
       },
     },
     '/spaces/list': {
@@ -34859,7 +34952,8 @@ export default {
     },
     '/spaces/remove_acs_entrances': {
       post: {
-        description: 'Remove entrances from a specific space.',
+        description:
+          'Removes [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) from a specific space.',
         operationId: 'spacesRemoveAcsEntrancesPost',
         requestBody: {
           content: {
@@ -34867,10 +34961,17 @@ export default {
               schema: {
                 properties: {
                   acs_entrance_ids: {
+                    description:
+                      'IDs of the entrances that you want to remove from the space.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
-                  space_id: { format: 'uuid', type: 'string' },
+                  space_id: {
+                    description:
+                      'ID of the space from which you want to remove entrances.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['space_id', 'acs_entrance_ids'],
                 type: 'object',
@@ -34905,12 +35006,12 @@ export default {
         'x-fern-sdk-group-name': ['spaces'],
         'x-fern-sdk-method-name': 'remove_acs_entrances',
         'x-response-key': null,
-        'x-title': 'Remove ACS Entrances',
+        'x-title': 'Remove Entrances from a Space',
       },
     },
     '/spaces/remove_devices': {
       post: {
-        description: 'Remove devices from a specific space.',
+        description: 'Removes devices from a specific space.',
         operationId: 'spacesRemoveDevicesPost',
         requestBody: {
           content: {
@@ -34918,10 +35019,17 @@ export default {
               schema: {
                 properties: {
                   device_ids: {
+                    description:
+                      'IDs of the devices that you want to remove from the space.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
-                  space_id: { format: 'uuid', type: 'string' },
+                  space_id: {
+                    description:
+                      'ID of the space from which you want to remove devices.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['space_id', 'device_ids'],
                 type: 'object',
@@ -34956,20 +35064,24 @@ export default {
         'x-fern-sdk-group-name': ['spaces'],
         'x-fern-sdk-method-name': 'remove_devices',
         'x-response-key': null,
-        'x-title': 'Remove Space Devices',
+        'x-title': 'Remove Devices from a Space',
       },
     },
     '/spaces/update': {
       patch: {
-        description: 'Update an existing space.',
+        description: 'Updates an existing space.',
         operationId: 'spacesUpdatePatch',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  name: { type: 'string' },
-                  space_id: { format: 'uuid', type: 'string' },
+                  name: { description: 'Name of the space.', type: 'string' },
+                  space_id: {
+                    description: 'ID of the space that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['space_id'],
                 type: 'object',
@@ -35006,18 +35118,22 @@ export default {
         'x-draft': 'Early access.',
         'x-fern-ignore': true,
         'x-response-key': 'space',
-        'x-title': 'Update Space',
+        'x-title': 'Update a Space',
       },
       post: {
-        description: 'Update an existing space.',
+        description: 'Updates an existing space.',
         operationId: 'spacesUpdatePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  name: { type: 'string' },
-                  space_id: { format: 'uuid', type: 'string' },
+                  name: { description: 'Name of the space.', type: 'string' },
+                  space_id: {
+                    description: 'ID of the space that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['space_id'],
                 type: 'object',
@@ -35056,7 +35172,7 @@ export default {
         'x-fern-sdk-method-name': 'update',
         'x-fern-sdk-return-value': 'space',
         'x-response-key': 'space',
-        'x-title': 'Update Space',
+        'x-title': 'Update a Space',
       },
     },
     '/thermostats/activate_climate_preset': {
@@ -35135,13 +35251,13 @@ export default {
                 properties: {
                   cooling_set_point_celsius: {
                     description:
-                      'Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `cooling_set_point` parameters.',
+                      '[Cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
                   cooling_set_point_fahrenheit: {
                     description:
-                      'Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `cooling_set_point` parameters.',
+                      '[Cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
@@ -35313,7 +35429,7 @@ export default {
     '/thermostats/daily_programs/create': {
       post: {
         description:
-          'Creates a thermostat daily program. A daily program consists of a set of periods, where each period includes a start time and the key of a configured climate preset. Once you have defined a daily program, you can assign it to one or more days within a weekly program.',
+          'Creates a new thermostat daily program. A daily program consists of a set of periods, where each period includes a start time and the key of a configured climate preset. Once you have defined a daily program, you can assign it to one or more days within a weekly program.',
         operationId: 'thermostatsDailyProgramsCreatePost',
         requestBody: {
           content: {
@@ -35327,8 +35443,7 @@ export default {
                     type: 'string',
                   },
                   name: {
-                    description:
-                      'User-friendly name to identify the thermostat daily program.',
+                    description: 'Name of the thermostat daily program.',
                     type: 'string',
                   },
                   periods: {
@@ -35528,7 +35643,7 @@ export default {
                 properties: {
                   name: {
                     description:
-                      'User-friendly name to identify the thermostat daily program that you want to update.',
+                      'Name of the thermostat daily program that you want to update.',
                     type: 'string',
                   },
                   periods: {
@@ -35613,7 +35728,7 @@ export default {
                 properties: {
                   name: {
                     description:
-                      'User-friendly name to identify the thermostat daily program that you want to update.',
+                      'Name of the thermostat daily program that you want to update.',
                     type: 'string',
                   },
                   periods: {
@@ -35751,7 +35866,7 @@ export default {
     '/thermostats/get': {
       post: {
         description:
-          'Returns a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+          'Returns a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). **Deprecated:** Will be removed. Use `/devices/get` instead.',
         operationId: 'thermostatsGetPost',
         requestBody: {
           content: {
@@ -35760,13 +35875,13 @@ export default {
                 properties: {
                   device_id: {
                     description:
-                      'ID of the thermostat device that you want to retrieve.',
+                      'ID of the thermostat device that you want to get.',
                     format: 'uuid',
                     type: 'string',
                   },
                   name: {
                     description:
-                      'User-friendly name of the thermostat device that you want to retrieve.',
+                      'Name of the thermostat device that you want to retrieve.',
                     type: 'string',
                   },
                 },
@@ -35829,13 +35944,13 @@ export default {
                   },
                   heating_set_point_celsius: {
                     description:
-                      'Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `heating_set_point` parameters.',
+                      '[Heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
                   heating_set_point_fahrenheit: {
                     description:
-                      'Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `heating_set_point` parameters.',
+                      '[Heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
@@ -35900,13 +36015,13 @@ export default {
                 properties: {
                   cooling_set_point_celsius: {
                     description:
-                      'Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `cooling_set_point` parameters.',
+                      '[Cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
                   cooling_set_point_fahrenheit: {
                     description:
-                      'Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `cooling_set_point` parameters.',
+                      '[Cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
@@ -35918,13 +36033,13 @@ export default {
                   },
                   heating_set_point_celsius: {
                     description:
-                      'Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `heating_set_point` parameters.',
+                      '[Heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
                   heating_set_point_fahrenheit: {
                     description:
-                      'Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `heating_set_point` parameters.',
+                      '[Heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
@@ -36031,7 +36146,7 @@ export default {
                   },
                   device_type: {
                     description:
-                      'Device type by which to filter thermostat devices.',
+                      'Device type by which you want to filter thermostat devices.',
                     enum: [
                       'ecobee_thermostat',
                       'nest_thermostat',
@@ -36044,7 +36159,7 @@ export default {
                   },
                   device_types: {
                     description:
-                      'Array of device types by which to filter thermostat devices.',
+                      'Array of device types by which you want to filter thermostat devices.',
                     items: {
                       description: 'Device type for thermostats.\n          ',
                       enum: [
@@ -36108,7 +36223,7 @@ export default {
                   },
                   manufacturer: {
                     description:
-                      'Manufacturer by which to filter thermostat devices.',
+                      'Manufacturer by which you want to filter thermostat devices.',
                     enum: [
                       'ecobee',
                       'honeywell_resideo',
@@ -36258,7 +36373,7 @@ export default {
     '/thermostats/schedules/create': {
       post: {
         description:
-          'Creates a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+          'Creates a new [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
         operationId: 'thermostatsSchedulesCreatePost',
         requestBody: {
           content: {
@@ -36267,21 +36382,22 @@ export default {
                 properties: {
                   climate_preset_key: {
                     description:
-                      'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule.',
+                      'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the new thermostat schedule.',
                     type: 'string',
                   },
                   device_id: {
-                    description: 'ID of the desired thermostat device.',
+                    description:
+                      'ID of the thermostat device for which you want to create a schedule.',
                     type: 'string',
                   },
                   ends_at: {
                     description:
-                      'Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                      'Date and time at which the new thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
                   },
                   is_override_allowed: {
                     description:
-                      "Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the schedule is active. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
+                      "Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the new schedule is active. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
                     type: 'boolean',
                   },
                   max_override_period_minutes: {
@@ -36293,13 +36409,12 @@ export default {
                     type: 'integer',
                   },
                   name: {
-                    description:
-                      'User-friendly name to identify the thermostat schedule.',
+                    description: 'Name of the thermostat schedule.',
                     type: 'string',
                   },
                   starts_at: {
                     description:
-                      'Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                      'Date and time at which the new thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
                   },
                 },
@@ -36361,7 +36476,8 @@ export default {
               schema: {
                 properties: {
                   thermostat_schedule_id: {
-                    description: 'ID of the desired thermostat schedule.',
+                    description:
+                      'ID of the thermostat schedule that you want to delete.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -36413,7 +36529,8 @@ export default {
               schema: {
                 properties: {
                   thermostat_schedule_id: {
-                    description: 'ID of the desired thermostat schedule.',
+                    description:
+                      'ID of the thermostat schedule that you want to get.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -36471,7 +36588,8 @@ export default {
               schema: {
                 properties: {
                   device_id: {
-                    description: 'ID of the desired thermostat device.',
+                    description:
+                      'ID of the thermostat device for which you want to list schedules.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -36560,8 +36678,7 @@ export default {
                     type: 'integer',
                   },
                   name: {
-                    description:
-                      'User-friendly name to identify the thermostat schedule.',
+                    description: 'Name of the thermostat schedule.',
                     type: 'string',
                   },
                   starts_at: {
@@ -36570,7 +36687,8 @@ export default {
                     type: 'string',
                   },
                   thermostat_schedule_id: {
-                    description: 'ID of the desired thermostat schedule.',
+                    description:
+                      'ID of the thermostat schedule that you want to update.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -36642,8 +36760,7 @@ export default {
                     type: 'integer',
                   },
                   name: {
-                    description:
-                      'User-friendly name to identify the thermostat schedule.',
+                    description: 'Name of the thermostat schedule.',
                     type: 'string',
                   },
                   starts_at: {
@@ -36652,7 +36769,8 @@ export default {
                     type: 'string',
                   },
                   thermostat_schedule_id: {
-                    description: 'ID of the desired thermostat schedule.',
+                    description:
+                      'ID of the thermostat schedule that you want to update.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -36774,7 +36892,7 @@ export default {
                   },
                   fan_mode_setting: {
                     description:
-                      'Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for the thermostat.',
+                      '[Fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) that you want to set for the thermostat.',
                     enum: ['auto', 'on', 'circulate'],
                     type: 'string',
                   },
@@ -36855,13 +36973,13 @@ export default {
                     properties: {
                       cooling_set_point_celsius: {
                         description:
-                          'Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `cooling_set_point` parameters.',
+                          '[Cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
                         format: 'float',
                         type: 'number',
                       },
                       cooling_set_point_fahrenheit: {
                         description:
-                          'Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `cooling_set_point` parameters.',
+                          '[Cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
                         format: 'float',
                         type: 'number',
                       },
@@ -36886,13 +37004,13 @@ export default {
                       },
                       heating_set_point_celsius: {
                         description:
-                          'Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `heating_set_point` parameters.',
+                          '[Heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
                         format: 'float',
                         type: 'number',
                       },
                       heating_set_point_fahrenheit: {
                         description:
-                          'Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `heating_set_point` parameters.',
+                          '[Heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
                         format: 'float',
                         type: 'number',
                       },
@@ -36905,13 +37023,13 @@ export default {
                     properties: {
                       cooling_set_point_celsius: {
                         description:
-                          'Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `cooling_set_point` parameters.',
+                          '[Cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
                         format: 'float',
                         type: 'number',
                       },
                       cooling_set_point_fahrenheit: {
                         description:
-                          'Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `cooling_set_point` parameters.',
+                          '[Cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
                         format: 'float',
                         type: 'number',
                       },
@@ -36923,13 +37041,13 @@ export default {
                       },
                       heating_set_point_celsius: {
                         description:
-                          'Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `heating_set_point` parameters.',
+                          '[Heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
                         format: 'float',
                         type: 'number',
                       },
                       heating_set_point_fahrenheit: {
                         description:
-                          'Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `heating_set_point` parameters.',
+                          '[Heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
                         format: 'float',
                         type: 'number',
                       },
@@ -37162,13 +37280,13 @@ export default {
                   {
                     properties: {
                       device_id: {
-                        description: 'ID of the desired thermostat device.',
+                        description:
+                          'ID of the thermostat device for which you want to simulate having adjusted the HVAC mode.',
                         format: 'uuid',
                         type: 'string',
                       },
                       hvac_mode: {
-                        description:
-                          'Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) to simulate.',
+                        description: 'HVAC mode that you want to simulate.',
                         enum: ['off'],
                         type: 'string',
                       },
@@ -37180,24 +37298,24 @@ export default {
                     properties: {
                       cooling_set_point_celsius: {
                         description:
-                          'Desired simulated cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`.',
+                          'Cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to simulate. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`.',
                         format: 'float',
                         type: 'number',
                       },
                       cooling_set_point_fahrenheit: {
                         description:
-                          'Desired simulated cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`.',
+                          'Cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to simulate. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`.',
                         format: 'float',
                         type: 'number',
                       },
                       device_id: {
-                        description: 'ID of the desired thermostat device.',
+                        description:
+                          'ID of the thermostat device for which you want to simulate having adjusted the HVAC mode.',
                         format: 'uuid',
                         type: 'string',
                       },
                       hvac_mode: {
-                        description:
-                          'Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) to simulate.',
+                        description: 'HVAC mode that you want to simulate.',
                         enum: ['cool'],
                         type: 'string',
                       },
@@ -37208,25 +37326,25 @@ export default {
                   {
                     properties: {
                       device_id: {
-                        description: 'ID of the desired thermostat device.',
+                        description:
+                          'ID of the thermostat device for which you want to simulate having adjusted the HVAC mode.',
                         format: 'uuid',
                         type: 'string',
                       },
                       heating_set_point_celsius: {
                         description:
-                          'Desired simulated heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`.',
+                          'Heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to simulate. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`.',
                         format: 'float',
                         type: 'number',
                       },
                       heating_set_point_fahrenheit: {
                         description:
-                          'Desired simulated heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`.',
+                          'Heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to simulate. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`.',
                         format: 'float',
                         type: 'number',
                       },
                       hvac_mode: {
-                        description:
-                          'Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) to simulate.',
+                        description: 'HVAC mode that you want to simulate.',
                         enum: ['heat'],
                         type: 'string',
                       },
@@ -37238,36 +37356,36 @@ export default {
                     properties: {
                       cooling_set_point_celsius: {
                         description:
-                          'Desired simulated cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`.',
+                          'Cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to simulate. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`.',
                         format: 'float',
                         type: 'number',
                       },
                       cooling_set_point_fahrenheit: {
                         description:
-                          'Desired simulated cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`.',
+                          'Cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to simulate. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`.',
                         format: 'float',
                         type: 'number',
                       },
                       device_id: {
-                        description: 'ID of the desired thermostat device.',
+                        description:
+                          'ID of the thermostat device for which you want to simulate having adjusted the HVAC mode.',
                         format: 'uuid',
                         type: 'string',
                       },
                       heating_set_point_celsius: {
                         description:
-                          'Desired simulated heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`.',
+                          'Heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to simulate. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`.',
                         format: 'float',
                         type: 'number',
                       },
                       heating_set_point_fahrenheit: {
                         description:
-                          'Desired simulated heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`.',
+                          'Heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to simulate. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`.',
                         format: 'float',
                         type: 'number',
                       },
                       hvac_mode: {
-                        description:
-                          'Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) to simulate.',
+                        description: 'HVAC mode that you want to simulate.',
                         enum: ['heat_cool'],
                         type: 'string',
                       },
@@ -37320,19 +37438,20 @@ export default {
               schema: {
                 properties: {
                   device_id: {
-                    description: 'ID of the desired thermostat device.',
+                    description:
+                      'ID of the thermostat device that you want to simulate reaching a specified temperature.',
                     format: 'uuid',
                     type: 'string',
                   },
                   temperature_celsius: {
                     description:
-                      'Desired simulated temperature in °C. You must set `temperature_celsius` or `temperature_fahrenheit`.',
+                      'Temperature in °C that you want simulate the thermostat reaching. You must set `temperature_celsius` or `temperature_fahrenheit`.',
                     format: 'float',
                     type: 'number',
                   },
                   temperature_fahrenheit: {
                     description:
-                      'Desired simulated temperature in °F. You must set `temperature_fahrenheit` or `temperature_celsius`.',
+                      'Temperature in °F that you want simulate the thermostat reaching. You must set `temperature_fahrenheit` or `temperature_celsius`.',
                     format: 'float',
                     type: 'number',
                   },
@@ -37711,7 +37830,7 @@ export default {
                         properties: {
                           user_identity_id: {
                             description:
-                              'ID of user identity for whom access is being granted.',
+                              'ID of user identity for whom you want to grant access.',
                             format: 'uuid',
                             type: 'string',
                           },
@@ -37723,7 +37842,7 @@ export default {
                         properties: {
                           user_identity: {
                             description:
-                              'When used, creates a new user identity with the given details, and grants them access.',
+                              'User identity. When used, creates a new user identity with the specified details and grants them access.',
                             properties: {
                               email_address: {
                                 description:
@@ -37757,14 +37876,14 @@ export default {
                       acs_entrance_ids: {
                         default: [],
                         description:
-                          'Set of IDs of the [entrances](https://docs.seam.co/latest/api/acs/systems/list) to which access is being granted.',
+                          'IDs of the [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) to which you want to grant access.',
                         items: { format: 'uuid', type: 'string' },
                         type: 'array',
                       },
                       device_ids: {
                         default: [],
                         description:
-                          'Set of IDs of the [devices](https://docs.seam.co/latest/api/devices/list) to which access is being granted.',
+                          'IDs of the devices to which you want to grant access.',
                         items: { format: 'uuid', type: 'string' },
                         type: 'array',
                       },
@@ -37776,7 +37895,7 @@ export default {
                       },
                       location: {
                         description:
-                          'When used, creates a new location with the given entrances and devices, and gives the user access to this location.',
+                          'Location. When used, creates a new location with the specified entrances and devices, and gives the user access to this location.',
                         properties: {
                           acs_entrance_ids: {
                             default: [],
@@ -37811,8 +37930,7 @@ export default {
                         items: {
                           properties: {
                             mode: {
-                              description:
-                                'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                              description: 'Access method mode.',
                               enum: ['code', 'card', 'mobile_key'],
                               type: 'string',
                             },
@@ -37824,7 +37942,7 @@ export default {
                       },
                       space_ids: {
                         description:
-                          'Set of IDs of existing spaces to which access is being granted.',
+                          'IDs of the existing spaces to which you want to grant access.',
                         items: { format: 'uuid', type: 'string' },
                         type: 'array',
                       },
@@ -37981,7 +38099,7 @@ export default {
     },
     '/unstable_access_grants/delete': {
       post: {
-        description: 'Delete an access grant.',
+        description: 'Deletes an access grant.',
         operationId: 'unstableAccessGrantsDeletePost',
         requestBody: {
           content: {
@@ -37989,7 +38107,7 @@ export default {
               schema: {
                 properties: {
                   access_grant_id: {
-                    description: 'ID of access grant to delete.',
+                    description: 'ID of access grant that you want to delete.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -38033,7 +38151,7 @@ export default {
     },
     '/unstable_access_grants/get': {
       post: {
-        description: 'Get an access grant.',
+        description: 'Gets an access grant.',
         operationId: 'unstableAccessGrantsGetPost',
         requestBody: {
           content: {
@@ -38041,7 +38159,7 @@ export default {
               schema: {
                 properties: {
                   access_grant_id: {
-                    description: 'ID of access grant to get.',
+                    description: 'ID of access grant that you want to get.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -38190,7 +38308,7 @@ export default {
     },
     '/unstable_access_grants/list': {
       post: {
-        description: 'Get an access grant.',
+        description: 'Returns a list of all access grants.',
         operationId: 'unstableAccessGrantsListPost',
         requestBody: {
           content: {
@@ -38199,13 +38317,13 @@ export default {
                 properties: {
                   acs_entrance_id: {
                     description:
-                      'ID of entrance to filter list of access grants by.',
+                      'ID of the entrance by which you want to filter the list of access grants.',
                     format: 'uuid',
                     type: 'string',
                   },
                   acs_system_id: {
                     description:
-                      'ID of system to filter list of access grants by.',
+                      'ID of the access system by which you want to filter the list of access grants.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -38217,13 +38335,13 @@ export default {
                   },
                   space_id: {
                     description:
-                      'ID of space to filter list of access grants by.',
+                      'ID of the space by which you want to filter the list of access grants.',
                     format: 'uuid',
                     type: 'string',
                   },
                   user_identity_id: {
                     description:
-                      'ID of user identity to filter list of access grants by.',
+                      'ID of the user identity by which you want to filter the list of access grants.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -38374,7 +38492,7 @@ export default {
     },
     '/unstable_access_methods/delete': {
       post: {
-        description: 'Delete an access method.',
+        description: 'Deletes an access method.',
         operationId: 'unstableAccessMethodsDeletePost',
         requestBody: {
           content: {
@@ -38382,7 +38500,8 @@ export default {
               schema: {
                 properties: {
                   access_method_id: {
-                    description: 'ID of access method to get.',
+                    description:
+                      'ID of the access method that you want to delete.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -38425,7 +38544,7 @@ export default {
     },
     '/unstable_access_methods/get': {
       post: {
-        description: 'Get an access method.',
+        description: 'Gets an access method.',
         operationId: 'unstableAccessMethodsGetPost',
         requestBody: {
           content: {
@@ -38433,7 +38552,8 @@ export default {
               schema: {
                 properties: {
                   access_method_id: {
-                    description: 'ID of access method to get.',
+                    description:
+                      'ID of the access method that you want to get.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -38537,7 +38657,7 @@ export default {
     '/unstable_access_methods/list': {
       post: {
         description:
-          'List all access methods, usually filtered by access grant.',
+          'Lists all access methods, usually filtered by access grant.',
         operationId: 'unstableAccessMethodsListPost',
         requestBody: {
           content: {
@@ -38546,7 +38666,7 @@ export default {
                 properties: {
                   access_grant_id: {
                     description:
-                      'ID of access grant to list access methods for.',
+                      'ID of the access grant by which to filter the list of access methods.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -38652,7 +38772,8 @@ export default {
     },
     '/unstable_locations/add_acs_entrances': {
       post: {
-        description: 'Add entrances to a specific location.',
+        description:
+          'Adds [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) to a specific location.',
         operationId: 'unstableLocationsAddAcsEntrancesPost',
         requestBody: {
           content: {
@@ -38660,11 +38781,18 @@ export default {
               schema: {
                 properties: {
                   acs_entrance_ids: {
+                    description:
+                      'IDs of the entrances that you want to add to the location.',
                     items: { format: 'uuid', type: 'string' },
                     minItems: 1,
                     type: 'array',
                   },
-                  location_id: { format: 'uuid', type: 'string' },
+                  location_id: {
+                    description:
+                      'ID of the location to which you want to add entrances.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['location_id', 'acs_entrance_ids'],
                 type: 'object',
@@ -38698,11 +38826,12 @@ export default {
         'x-fern-sdk-group-name': ['unstable_locations'],
         'x-fern-sdk-method-name': 'add_acs_entrances',
         'x-response-key': null,
-        'x-title': 'Add ACS Entrances',
+        'x-title': 'Add Entrances to a Location',
         'x-undocumented': 'Experimental locations.',
       },
       put: {
-        description: 'Add entrances to a specific location.',
+        description:
+          'Adds [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) to a specific location.',
         operationId: 'unstableLocationsAddAcsEntrancesPut',
         requestBody: {
           content: {
@@ -38710,11 +38839,18 @@ export default {
               schema: {
                 properties: {
                   acs_entrance_ids: {
+                    description:
+                      'IDs of the entrances that you want to add to the location.',
                     items: { format: 'uuid', type: 'string' },
                     minItems: 1,
                     type: 'array',
                   },
-                  location_id: { format: 'uuid', type: 'string' },
+                  location_id: {
+                    description:
+                      'ID of the location to which you want to add entrances.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['location_id', 'acs_entrance_ids'],
                 type: 'object',
@@ -38747,13 +38883,13 @@ export default {
         tags: [],
         'x-fern-ignore': true,
         'x-response-key': null,
-        'x-title': 'Add ACS Entrances',
+        'x-title': 'Add Entrances to a Location',
         'x-undocumented': 'Experimental locations.',
       },
     },
     '/unstable_locations/add_devices': {
       post: {
-        description: 'Add devices to a specific location.',
+        description: 'Adds devices to a specific location.',
         operationId: 'unstableLocationsAddDevicesPost',
         requestBody: {
           content: {
@@ -38761,11 +38897,18 @@ export default {
               schema: {
                 properties: {
                   device_ids: {
+                    description:
+                      'IDs of the devices that you want to add to the location.',
                     items: { format: 'uuid', type: 'string' },
                     minItems: 1,
                     type: 'array',
                   },
-                  location_id: { format: 'uuid', type: 'string' },
+                  location_id: {
+                    description:
+                      'ID of the location to which you want to add devices.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['location_id', 'device_ids'],
                 type: 'object',
@@ -38799,11 +38942,11 @@ export default {
         'x-fern-sdk-group-name': ['unstable_locations'],
         'x-fern-sdk-method-name': 'add_devices',
         'x-response-key': null,
-        'x-title': 'Add Location Devices',
+        'x-title': 'Add Devices to a Location',
         'x-undocumented': 'Experimental locations.',
       },
       put: {
-        description: 'Add devices to a specific location.',
+        description: 'Adds devices to a specific location.',
         operationId: 'unstableLocationsAddDevicesPut',
         requestBody: {
           content: {
@@ -38811,11 +38954,18 @@ export default {
               schema: {
                 properties: {
                   device_ids: {
+                    description:
+                      'IDs of the devices that you want to add to the location.',
                     items: { format: 'uuid', type: 'string' },
                     minItems: 1,
                     type: 'array',
                   },
-                  location_id: { format: 'uuid', type: 'string' },
+                  location_id: {
+                    description:
+                      'ID of the location to which you want to add devices.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['location_id', 'device_ids'],
                 type: 'object',
@@ -38848,13 +38998,13 @@ export default {
         tags: [],
         'x-fern-ignore': true,
         'x-response-key': null,
-        'x-title': 'Add Location Devices',
+        'x-title': 'Add Devices to a Location',
         'x-undocumented': 'Experimental locations.',
       },
     },
     '/unstable_locations/create': {
       post: {
-        description: 'Create a new location.',
+        description: 'Creates a new location.',
         operationId: 'unstableLocationsCreatePost',
         requestBody: {
           content: {
@@ -38862,14 +39012,19 @@ export default {
               schema: {
                 properties: {
                   acs_entrance_ids: {
+                    description:
+                      'IDs of the entrances that you want to add to the new location.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
                   device_ids: {
+                    description:
+                      'IDs of the devices that you want to add to the new location.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
                   geolocation: {
+                    description: 'Geolocation of the new location.',
                     properties: {
                       latitude: { format: 'float', type: 'number' },
                       longitude: { format: 'float', type: 'number' },
@@ -38877,8 +39032,14 @@ export default {
                     required: ['latitude', 'longitude'],
                     type: 'object',
                   },
-                  name: { type: 'string' },
-                  time_zone: { type: 'string' },
+                  name: {
+                    description: 'Name of the new location.',
+                    type: 'string',
+                  },
+                  time_zone: {
+                    description: 'Time zone of the new location.',
+                    type: 'string',
+                  },
                 },
                 required: ['name'],
                 type: 'object',
@@ -38965,19 +39126,25 @@ export default {
         'x-fern-sdk-method-name': 'create',
         'x-fern-sdk-return-value': 'location',
         'x-response-key': 'location',
-        'x-title': 'Create Location',
+        'x-title': 'Create a Location',
         'x-undocumented': 'Experimental locations.',
       },
     },
     '/unstable_locations/delete': {
       post: {
-        description: 'Delete a location.',
+        description: 'Deletes a location.',
         operationId: 'unstableLocationsDeletePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
-                properties: { location_id: { format: 'uuid', type: 'string' } },
+                properties: {
+                  location_id: {
+                    description: 'ID of the location that you want to delete.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
                 required: ['location_id'],
                 type: 'object',
               },
@@ -39010,19 +39177,25 @@ export default {
         'x-fern-sdk-group-name': ['unstable_locations'],
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
-        'x-title': 'Delete Location',
+        'x-title': 'Delete a Location',
         'x-undocumented': 'Experimental locations.',
       },
     },
     '/unstable_locations/get': {
       post: {
-        description: 'Get a location.',
+        description: 'Gets a location.',
         operationId: 'unstableLocationsGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
-                properties: { location_id: { format: 'uuid', type: 'string' } },
+                properties: {
+                  location_id: {
+                    description: 'ID of the location that you want to get.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
                 required: ['location_id'],
                 type: 'object',
               },
@@ -39108,7 +39281,7 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'location',
         'x-response-key': 'location',
-        'x-title': 'Get Location',
+        'x-title': 'Get a Location',
         'x-undocumented': 'Experimental locations.',
       },
     },
@@ -39292,7 +39465,7 @@ export default {
     },
     '/unstable_locations/remove_acs_entrances': {
       post: {
-        description: 'Remove entrances from a specific location.',
+        description: 'Removes entrances from a specific location.',
         operationId: 'unstableLocationsRemoveAcsEntrancesPost',
         requestBody: {
           content: {
@@ -39300,10 +39473,17 @@ export default {
               schema: {
                 properties: {
                   acs_entrance_ids: {
+                    description:
+                      'IDs of the entrances that you want to remove from the location.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
-                  location_id: { format: 'uuid', type: 'string' },
+                  location_id: {
+                    description:
+                      'ID of the location from which you want to remove entrances.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['location_id', 'acs_entrance_ids'],
                 type: 'object',
@@ -39337,13 +39517,13 @@ export default {
         'x-fern-sdk-group-name': ['unstable_locations'],
         'x-fern-sdk-method-name': 'remove_acs_entrances',
         'x-response-key': null,
-        'x-title': 'Remove ACS Entrances',
+        'x-title': 'Remove Entrances from a Location',
         'x-undocumented': 'Experimental locations.',
       },
     },
     '/unstable_locations/remove_devices': {
       post: {
-        description: 'Remove devices from a specific location.',
+        description: 'Removes devices from a specific location.',
         operationId: 'unstableLocationsRemoveDevicesPost',
         requestBody: {
           content: {
@@ -39351,10 +39531,17 @@ export default {
               schema: {
                 properties: {
                   device_ids: {
+                    description:
+                      'IDs of the devices that you want to remove from the location.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
-                  location_id: { format: 'uuid', type: 'string' },
+                  location_id: {
+                    description:
+                      'ID of the location from which you want to remove devices.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['location_id', 'device_ids'],
                 type: 'object',
@@ -39388,13 +39575,13 @@ export default {
         'x-fern-sdk-group-name': ['unstable_locations'],
         'x-fern-sdk-method-name': 'remove_devices',
         'x-response-key': null,
-        'x-title': 'Remove Location Devices',
+        'x-title': 'Remove Devices from a Location',
         'x-undocumented': 'Experimental locations.',
       },
     },
     '/unstable_locations/update': {
       patch: {
-        description: 'Update an existing location.',
+        description: 'Updates a location.',
         operationId: 'unstableLocationsUpdatePatch',
         requestBody: {
           content: {
@@ -39402,6 +39589,7 @@ export default {
               schema: {
                 properties: {
                   geolocation: {
+                    description: 'Geolocation of the location.',
                     properties: {
                       latitude: { format: 'float', type: 'number' },
                       longitude: { format: 'float', type: 'number' },
@@ -39409,9 +39597,19 @@ export default {
                     required: ['latitude', 'longitude'],
                     type: 'object',
                   },
-                  location_id: { format: 'uuid', type: 'string' },
-                  name: { type: 'string' },
-                  time_zone: { type: 'string' },
+                  location_id: {
+                    description: 'ID of the location that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  name: {
+                    description: 'Name of the location.',
+                    type: 'string',
+                  },
+                  time_zone: {
+                    description: 'Time zone of the the location.',
+                    type: 'string',
+                  },
                 },
                 required: ['location_id'],
                 type: 'object',
@@ -39496,11 +39694,11 @@ export default {
         tags: [],
         'x-fern-ignore': true,
         'x-response-key': 'location',
-        'x-title': 'Update Location',
+        'x-title': 'Update a Location',
         'x-undocumented': 'Experimental locations.',
       },
       post: {
-        description: 'Update an existing location.',
+        description: 'Updates a location.',
         operationId: 'unstableLocationsUpdatePost',
         requestBody: {
           content: {
@@ -39508,6 +39706,7 @@ export default {
               schema: {
                 properties: {
                   geolocation: {
+                    description: 'Geolocation of the location.',
                     properties: {
                       latitude: { format: 'float', type: 'number' },
                       longitude: { format: 'float', type: 'number' },
@@ -39515,9 +39714,19 @@ export default {
                     required: ['latitude', 'longitude'],
                     type: 'object',
                   },
-                  location_id: { format: 'uuid', type: 'string' },
-                  name: { type: 'string' },
-                  time_zone: { type: 'string' },
+                  location_id: {
+                    description: 'ID of the location that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  name: {
+                    description: 'Name of the location.',
+                    type: 'string',
+                  },
+                  time_zone: {
+                    description: 'Time zone of the the location.',
+                    type: 'string',
+                  },
                 },
                 required: ['location_id'],
                 type: 'object',
@@ -39604,7 +39813,7 @@ export default {
         'x-fern-sdk-method-name': 'update',
         'x-fern-sdk-return-value': 'location',
         'x-response-key': 'location',
-        'x-title': 'Update Location',
+        'x-title': 'Update a Location',
         'x-undocumented': 'Experimental locations.',
       },
     },
@@ -39617,7 +39826,13 @@ export default {
           content: {
             'application/json': {
               schema: {
-                properties: { customer_key: { type: 'string' } },
+                properties: {
+                  customer_key: {
+                    description:
+                      'Customer key for which you want to connect accounts.',
+                    type: 'string',
+                  },
+                },
                 required: ['customer_key'],
                 type: 'object',
               },
@@ -39654,7 +39869,7 @@ export default {
         'x-fern-sdk-method-name': 'connect_accounts',
         'x-fern-sdk-return-value': 'magic_link',
         'x-response-key': 'magic_link',
-        'x-title': 'Connect Accounts',
+        'x-title': 'Generate a Connect Accounts Building Block Magic Link',
         'x-undocumented': 'Experimental partner building blocks.',
       },
     },
@@ -39670,10 +39885,15 @@ export default {
                   {
                     properties: {
                       building_block_type: {
+                        description: '`connect_accounts` building block type.',
                         enum: ['connect_accounts'],
                         type: 'string',
                       },
-                      customer_key: { type: 'string' },
+                      customer_key: {
+                        description:
+                          'Customer key for which you want to create a new building block magic link.',
+                        type: 'string',
+                      },
                     },
                     required: ['building_block_type', 'customer_key'],
                     type: 'object',
@@ -39681,10 +39901,15 @@ export default {
                   {
                     properties: {
                       building_block_type: {
+                        description: '`manage_devices` building block type.',
                         enum: ['manage_devices'],
                         type: 'string',
                       },
-                      customer_key: { type: 'string' },
+                      customer_key: {
+                        description:
+                          'Customer key for which you want to create a new building block magic link.',
+                        type: 'string',
+                      },
                     },
                     required: ['building_block_type', 'customer_key'],
                     type: 'object',
@@ -39692,13 +39917,18 @@ export default {
                   {
                     properties: {
                       building_block_type: {
+                        description: '`organize_spaces` building block type.',
                         enum: ['organize_spaces'],
                         type: 'string',
                       },
-                      customer_key: { type: 'string' },
+                      customer_key: {
+                        description:
+                          'Customer key for which you want to create a new building block magic link.',
+                        type: 'string',
+                      },
                       partner_resources: {
                         description:
-                          'Optional list of partner resources to include in the magic link.',
+                          'Optional list of partner resources that you want to include in the new building block magic link.',
                         items: {
                           properties: {
                             custom_metadata: {
@@ -39755,7 +39985,7 @@ export default {
         'x-fern-sdk-method-name': 'generate_magic_link',
         'x-fern-sdk-return-value': 'magic_link',
         'x-response-key': 'magic_link',
-        'x-title': 'Generate a building block magic link',
+        'x-title': 'Generate a Building Block Magic Link',
         'x-undocumented': 'Experimental partner building blocks.',
       },
     },
@@ -39768,7 +39998,13 @@ export default {
           content: {
             'application/json': {
               schema: {
-                properties: { customer_key: { type: 'string' } },
+                properties: {
+                  customer_key: {
+                    description:
+                      'Customer key for which you want to manage devices.',
+                    type: 'string',
+                  },
+                },
                 required: ['customer_key'],
                 type: 'object',
               },
@@ -39805,7 +40041,7 @@ export default {
         'x-fern-sdk-method-name': 'manage_devices',
         'x-fern-sdk-return-value': 'magic_link',
         'x-response-key': 'magic_link',
-        'x-title': 'Manage Devices',
+        'x-title': 'Generate a Manage Devices Building Block Magic Link',
         'x-undocumented': 'Experimental partner building blocks.',
       },
     },
@@ -39819,8 +40055,14 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  customer_key: { type: 'string' },
+                  customer_key: {
+                    description:
+                      'Customer key for which you want to organize spaces.',
+                    type: 'string',
+                  },
                   partner_resources: {
+                    description:
+                      'Optional list of partner resources that you want to include in the new building block magic link.',
                     items: {
                       properties: {
                         custom_metadata: {
@@ -39875,13 +40117,13 @@ export default {
         'x-fern-sdk-method-name': 'organize_spaces',
         'x-fern-sdk-return-value': 'magic_link',
         'x-response-key': 'magic_link',
-        'x-title': 'Organize Spaces',
+        'x-title': 'Generate an Organize Spaces Building Block Magic Link',
         'x-undocumented': 'Experimental partner building blocks.',
       },
     },
     '/unstable_partner/resources/push': {
       post: {
-        description: 'Send Seam some of your resources.',
+        description: 'Sends Seam some of your resources.',
         operationId: 'unstablePartnerResourcesPushPost',
         requestBody: {
           content: {
@@ -39895,7 +40137,11 @@ export default {
                           additionalProperties: { type: 'string' },
                           type: 'object',
                         },
-                        customer_key: { type: 'string' },
+                        customer_key: {
+                          description:
+                            'Customer key associated with the resource that you want to push to Seam.',
+                          type: 'string',
+                        },
                         description: { type: 'string' },
                         email_address: { type: 'string' },
                         ends_at: { type: 'string' },
@@ -39904,8 +40150,16 @@ export default {
                           type: 'array',
                         },
                         name: { type: 'string' },
-                        partner_resource_key: { type: 'string' },
-                        partner_resource_type: { type: 'string' },
+                        partner_resource_key: {
+                          description:
+                            'Key of the resource that you want to push to Seam.',
+                          type: 'string',
+                        },
+                        partner_resource_type: {
+                          description:
+                            'Type of the resource that you want to push to Seam.',
+                          type: 'string',
+                        },
                         phone_number: { type: 'string' },
                         starts_at: { type: 'string' },
                         user_identity_key: { type: 'string' },
@@ -39922,7 +40176,11 @@ export default {
                         additionalProperties: { type: 'string' },
                         type: 'object',
                       },
-                      customer_key: { type: 'string' },
+                      customer_key: {
+                        description:
+                          'Customer key associated with the resource that you want to push to Seam.',
+                        type: 'string',
+                      },
                       description: { type: 'string' },
                       email_address: { type: 'string' },
                       ends_at: { type: 'string' },
@@ -39931,8 +40189,16 @@ export default {
                         type: 'array',
                       },
                       name: { type: 'string' },
-                      partner_resource_key: { type: 'string' },
-                      partner_resource_type: { type: 'string' },
+                      partner_resource_key: {
+                        description:
+                          'Key of the resource that you want to push to Seam.',
+                        type: 'string',
+                      },
+                      partner_resource_type: {
+                        description:
+                          'Type of the resource that you want to push to Seam.',
+                        type: 'string',
+                      },
                       phone_number: { type: 'string' },
                       starts_at: { type: 'string' },
                       user_identity_key: { type: 'string' },
@@ -39972,14 +40238,14 @@ export default {
         'x-fern-sdk-group-name': ['unstable_partner', 'resources'],
         'x-fern-sdk-method-name': 'push',
         'x-response-key': null,
-        'x-title': 'Push partner resources at Seam',
+        'x-title': 'Push Partner Resources at Seam',
         'x-undocumented': 'Experimental partner resources.',
       },
     },
     '/user_identities/add_acs_user': {
       post: {
         description:
-          'Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesAddAcsUserPost',
         requestBody: {
           content: {
@@ -39987,12 +40253,14 @@ export default {
               schema: {
                 properties: {
                   acs_user_id: {
-                    description: 'ID of the desired ACS user.',
+                    description:
+                      'ID of the access system user that you want to add to the user identity.',
                     format: 'uuid',
                     type: 'string',
                   },
                   user_identity_id: {
-                    description: 'ID of the desired user identity.',
+                    description:
+                      'ID of the user identity to which you want to add an access system user.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -40033,7 +40301,7 @@ export default {
       },
       put: {
         description:
-          'Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesAddAcsUserPut',
         requestBody: {
           content: {
@@ -40041,12 +40309,14 @@ export default {
               schema: {
                 properties: {
                   acs_user_id: {
-                    description: 'ID of the desired ACS user.',
+                    description:
+                      'ID of the access system user that you want to add to the user identity.',
                     format: 'uuid',
                     type: 'string',
                   },
                   user_identity_id: {
-                    description: 'ID of the desired user identity.',
+                    description:
+                      'ID of the user identity to which you want to add an access system user.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -40097,31 +40367,32 @@ export default {
                 properties: {
                   acs_system_ids: {
                     description:
-                      "List of ACS system IDs to associate with the user identity through ACS users. If there's no user with the same email address or phone number in the specified ACS systems, a new ACS user is created. If there is an existing user with the same email or phone number in the specified ACS systems, the user is linked to the user identity.",
+                      "List of access system IDs to associate with the new user identity through access system users. If there's no user with the same email address or phone number in the specified access systems, a new access system user is created. If there is an existing user with the same email or phone number in the specified access systems, the user is linked to the user identity.",
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
                   email_address: {
-                    description: 'Unique email address for the user identity.',
+                    description:
+                      'Unique email address for the new user identity.',
                     format: 'email',
                     nullable: true,
                     type: 'string',
                   },
                   full_name: {
                     description:
-                      'Full name of the user associated with the user identity.',
+                      'Full name of the user associated with the new user identity.',
                     minLength: 1,
                     nullable: true,
                     type: 'string',
                   },
                   phone_number: {
                     description:
-                      'Unique phone number for the user identity in E.164 format (for example, +15555550100).',
+                      'Unique phone number for the new user identity in E.164 format (for example, +15555550100).',
                     nullable: true,
                     type: 'string',
                   },
                   user_identity_key: {
-                    description: 'Unique key for the user identity.',
+                    description: 'Unique key for the new user identity.',
                     minLength: 1,
                     nullable: true,
                     type: 'string',
@@ -40178,7 +40449,8 @@ export default {
               schema: {
                 properties: {
                   user_identity_id: {
-                    description: 'ID of the desired user identity.',
+                    description:
+                      'ID of the user identity that you want to delete.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -40229,7 +40501,8 @@ export default {
               schema: {
                 properties: {
                   enrollment_automation_id: {
-                    description: 'ID of the desired enrollment automation.',
+                    description:
+                      'ID of the enrollment automation that you want to delete.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -40280,7 +40553,8 @@ export default {
               schema: {
                 properties: {
                   enrollment_automation_id: {
-                    description: 'ID of the desired enrollment automation.',
+                    description:
+                      'ID of the enrollment automation that you want to get.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -40339,7 +40613,7 @@ export default {
                 properties: {
                   acs_credential_pool_id: {
                     description:
-                      'ID of the ACS credential pool from which to obtain credentials for the user identity.',
+                      'ID of the credential pool from which to obtain credentials for the user identity.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -40350,18 +40624,19 @@ export default {
                   },
                   credential_manager_acs_system_id: {
                     description:
-                      'ID of the desired ACS system that serves as the credential manager.',
+                      'ID of the desired access system that serves as the credential manager for the enrollment automation.',
                     format: 'uuid',
                     type: 'string',
                   },
                   credential_manager_acs_user_id: {
                     description:
-                      'ID of the associated ACS user within the credential manager. If you specify a `credential_manager_acs_user_id`, you cannot set `create_credential_manager_user` to `true`.',
+                      'ID of the associated access system user within the credential manager. If you specify a `credential_manager_acs_user_id`, you cannot set `create_credential_manager_user` to `true`.',
                     format: 'uuid',
                     type: 'string',
                   },
                   user_identity_id: {
-                    description: 'ID of the desired user identity.',
+                    description:
+                      'ID of the user identity for which you want to launch an enrollment automation.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -40447,7 +40722,7 @@ export default {
                 properties: {
                   user_identity_id: {
                     description:
-                      'ID of the user identity for which you want to retrieve all enrollment automations.',
+                      'ID of the user identity for which you want to retrieve enrollment automations.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -40510,7 +40785,7 @@ export default {
                   max_use_count: {
                     default: 1,
                     description:
-                      'The maximum number of times the instant key can be used. Defaults to 1.',
+                      'Maximum number of times the instant key can be used. Default: 1.',
                     format: 'float',
                     type: 'number',
                   },
@@ -40573,7 +40848,8 @@ export default {
                   {
                     properties: {
                       user_identity_id: {
-                        description: 'ID of the desired user identity.',
+                        description:
+                          'ID of the user identity that you want to get.',
                         format: 'uuid',
                         type: 'string',
                       },
@@ -40637,12 +40913,14 @@ export default {
               schema: {
                 properties: {
                   device_id: {
-                    description: 'ID of the desired managed device.',
+                    description:
+                      'ID of the managed device to which you want to grant access to the user identity.',
                     format: 'uuid',
                     type: 'string',
                   },
                   user_identity_id: {
-                    description: 'ID of the desired user identity.',
+                    description:
+                      'ID of the user identity that you want to grant access to a device.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -40691,12 +40969,14 @@ export default {
               schema: {
                 properties: {
                   device_id: {
-                    description: 'ID of the desired managed device.',
+                    description:
+                      'ID of the managed device to which you want to grant access to the user identity.',
                     format: 'uuid',
                     type: 'string',
                   },
                   user_identity_id: {
-                    description: 'ID of the desired user identity.',
+                    description:
+                      'ID of the user identity that you want to grant access to a device.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -40746,6 +41026,8 @@ export default {
               schema: {
                 properties: {
                   credential_manager_acs_system_id: {
+                    description:
+                      '`acs_system_id` of the credential manager by which you want to filter the list of user identities.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -40825,7 +41107,7 @@ export default {
                       deprecated: true,
                       items: { $ref: '#/components/schemas/device' },
                       type: 'array',
-                      'x-deprecated': 'use devices.',
+                      'x-deprecated': 'Use devices.',
                     },
                     devices: {
                       items: { $ref: '#/components/schemas/device' },
@@ -40860,7 +41142,7 @@ export default {
     '/user_identities/list_acs_systems': {
       post: {
         description:
-          'Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Returns a list of all [access systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesListAcsSystemsPost',
         requestBody: {
           content: {
@@ -40869,7 +41151,7 @@ export default {
                 properties: {
                   user_identity_id: {
                     description:
-                      'ID of the user identity for which you want to retrieve all access control systems.',
+                      'ID of the user identity for which you want to retrieve all access systems.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -40920,7 +41202,7 @@ export default {
     '/user_identities/list_acs_users': {
       post: {
         description:
-          'Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesListAcsUsersPost',
         requestBody: {
           content: {
@@ -40929,7 +41211,7 @@ export default {
                 properties: {
                   user_identity_id: {
                     description:
-                      'ID of the user identity for which you want to retrieve all ACS users.',
+                      'ID of the user identity for which you want to retrieve all access system users.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -40979,7 +41261,7 @@ export default {
     '/user_identities/remove_acs_user': {
       post: {
         description:
-          'Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesRemoveAcsUserPost',
         requestBody: {
           content: {
@@ -40987,12 +41269,14 @@ export default {
               schema: {
                 properties: {
                   acs_user_id: {
-                    description: 'ID of the ACS user.',
+                    description:
+                      'ID of the access system user that you want to remove from the user identity..',
                     format: 'uuid',
                     type: 'string',
                   },
                   user_identity_id: {
-                    description: 'ID of the desired user identity.',
+                    description:
+                      'ID of the user identity from which you want to remove an access system user.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -41043,12 +41327,14 @@ export default {
               schema: {
                 properties: {
                   device_id: {
-                    description: 'ID of the desired managed device.',
+                    description:
+                      'ID of the managed device to which you want to revoke access from the user identity.',
                     format: 'uuid',
                     type: 'string',
                   },
                   user_identity_id: {
-                    description: 'ID of the desired user identity.',
+                    description:
+                      'ID of the user identity from which you want to revoke access to a device.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -41090,6 +41376,8 @@ export default {
     },
     '/user_identities/update': {
       patch: {
+        description:
+          'Updates a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesUpdatePatch',
         requestBody: {
           content: {
@@ -41102,15 +41390,21 @@ export default {
                     nullable: true,
                     type: 'string',
                   },
-                  full_name: { minLength: 1, nullable: true, type: 'string' },
-                  phone_number: {
+                  full_name: {
                     description:
-                      'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
+                      'Full name of the user associated with the user identity.',
+                    minLength: 1,
+                    nullable: true,
+                    type: 'string',
+                  },
+                  phone_number: {
+                    description: 'Unique phone number for the user identity.',
                     nullable: true,
                     type: 'string',
                   },
                   user_identity_id: {
-                    description: 'ID of the user identity.',
+                    description:
+                      'ID of the user identity that you want to update.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -41155,6 +41449,8 @@ export default {
         'x-title': 'Update a User Identity',
       },
       post: {
+        description:
+          'Updates a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesUpdatePost',
         requestBody: {
           content: {
@@ -41167,15 +41463,21 @@ export default {
                     nullable: true,
                     type: 'string',
                   },
-                  full_name: { minLength: 1, nullable: true, type: 'string' },
-                  phone_number: {
+                  full_name: {
                     description:
-                      'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
+                      'Full name of the user associated with the user identity.',
+                    minLength: 1,
+                    nullable: true,
+                    type: 'string',
+                  },
+                  phone_number: {
+                    description: 'Unique phone number for the user identity.',
                     nullable: true,
                     type: 'string',
                   },
                   user_identity_id: {
-                    description: 'ID of the user identity.',
+                    description:
+                      'ID of the user identity that you want to update.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -41223,6 +41525,8 @@ export default {
     },
     '/webhooks/create': {
       post: {
+        description:
+          'Creates a new [webhook](https://docs.seam.co/latest/developer-tools/webhooks).',
         operationId: 'webhooksCreatePost',
         requestBody: {
           content: {
@@ -41231,10 +41535,16 @@ export default {
                 properties: {
                   event_types: {
                     default: ['*'],
+                    description:
+                      'Types of events that you want the new webhook to receive.',
                     items: { type: 'string' },
                     type: 'array',
                   },
-                  url: { format: 'uri', type: 'string' },
+                  url: {
+                    description: 'URL for the new webhook.',
+                    format: 'uri',
+                    type: 'string',
+                  },
                 },
                 required: ['url'],
                 type: 'object',
@@ -41272,16 +41582,24 @@ export default {
         'x-fern-sdk-method-name': 'create',
         'x-fern-sdk-return-value': 'webhook',
         'x-response-key': 'webhook',
+        'x-title': 'Create a Webhook',
       },
     },
     '/webhooks/delete': {
       post: {
+        description:
+          'Deletes a specified [webhook](https://docs.seam.co/latest/developer-tools/webhooks).',
         operationId: 'webhooksDeletePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
-                properties: { webhook_id: { type: 'string' } },
+                properties: {
+                  webhook_id: {
+                    description: 'ID of the webhook that you want to delete.',
+                    type: 'string',
+                  },
+                },
                 required: ['webhook_id'],
                 type: 'object',
               },
@@ -41314,16 +41632,24 @@ export default {
         'x-fern-sdk-group-name': ['webhooks'],
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
+        'x-title': 'Delete a Webhook',
       },
     },
     '/webhooks/get': {
       post: {
+        description:
+          'Gets a specified [webhook](https://docs.seam.co/latest/developer-tools/webhooks).',
         operationId: 'webhooksGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
-                properties: { webhook_id: { type: 'string' } },
+                properties: {
+                  webhook_id: {
+                    description: 'ID of the webhook that you want to get.',
+                    type: 'string',
+                  },
+                },
                 required: ['webhook_id'],
                 type: 'object',
               },
@@ -41360,10 +41686,13 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'webhook',
         'x-response-key': 'webhook',
+        'x-title': 'Get a Webhook',
       },
     },
     '/webhooks/list': {
       get: {
+        description:
+          'Returns a list of all [webhooks](https://docs.seam.co/latest/developer-tools/webhooks).',
         operationId: 'webhooksListGet',
         responses: {
           200: {
@@ -41396,8 +41725,11 @@ export default {
         tags: ['/webhooks'],
         'x-fern-ignore': true,
         'x-response-key': 'webhooks',
+        'x-title': 'List Webhooks',
       },
       post: {
+        description:
+          'Returns a list of all [webhooks](https://docs.seam.co/latest/developer-tools/webhooks).',
         operationId: 'webhooksListPost',
         responses: {
           200: {
@@ -41432,18 +41764,29 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'webhooks',
         'x-response-key': 'webhooks',
+        'x-title': 'List Webhooks',
       },
     },
     '/webhooks/update': {
       post: {
+        description:
+          'Updates a specified [webhook](https://docs.seam.co/latest/developer-tools/webhooks).',
         operationId: 'webhooksUpdatePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  event_types: { items: { type: 'string' }, type: 'array' },
-                  webhook_id: { type: 'string' },
+                  event_types: {
+                    description:
+                      'Types of events that you want the webhook to receive.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                  webhook_id: {
+                    description: 'ID of the webhook that you want to update.',
+                    type: 'string',
+                  },
                 },
                 required: ['webhook_id', 'event_types'],
                 type: 'object',
@@ -41477,16 +41820,27 @@ export default {
         'x-fern-sdk-group-name': ['webhooks'],
         'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
+        'x-title': 'Update a Webhook',
       },
       put: {
+        description:
+          'Updates a specified [webhook](https://docs.seam.co/latest/developer-tools/webhooks).',
         operationId: 'webhooksUpdatePut',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  event_types: { items: { type: 'string' }, type: 'array' },
-                  webhook_id: { type: 'string' },
+                  event_types: {
+                    description:
+                      'Types of events that you want the webhook to receive.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                  webhook_id: {
+                    description: 'ID of the webhook that you want to update.',
+                    type: 'string',
+                  },
                 },
                 required: ['webhook_id', 'event_types'],
                 type: 'object',
@@ -41519,41 +41873,72 @@ export default {
         tags: ['/webhooks'],
         'x-fern-ignore': true,
         'x-response-key': null,
+        'x-title': 'Update a Webhook',
       },
     },
     '/workspaces/create': {
       post: {
+        description:
+          'Creates a new [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
         operationId: 'workspacesCreatePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  company_name: { type: 'string' },
+                  company_name: {
+                    description: 'Company name for the new workspace.',
+                    type: 'string',
+                  },
                   connect_partner_name: {
                     deprecated: true,
+                    description: 'Connect partner name for the new workspace.',
                     nullable: true,
                     type: 'string',
                     'x-deprecated': 'use company_name',
                   },
                   connect_webview_customization: {
+                    description:
+                      '[Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) customizations for the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                     properties: {
                       logo_shape: {
+                        description:
+                          'Logo shape for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                         enum: ['circle', 'square'],
                         nullable: true,
                         type: 'string',
                       },
-                      primary_button_color: { nullable: true, type: 'string' },
-                      primary_button_text_color: {
+                      primary_button_color: {
+                        description:
+                          'Primary button color for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                         nullable: true,
                         type: 'string',
                       },
-                      success_message: { nullable: true, type: 'string' },
+                      primary_button_text_color: {
+                        description:
+                          'Primary button text color for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                        nullable: true,
+                        type: 'string',
+                      },
+                      success_message: {
+                        description:
+                          'Success message for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                        nullable: true,
+                        type: 'string',
+                      },
                     },
                     type: 'object',
                   },
-                  is_sandbox: { default: false, type: 'boolean' },
-                  name: { type: 'string' },
+                  is_sandbox: {
+                    default: false,
+                    description:
+                      'Indicates whether the new workspace is a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).',
+                    type: 'boolean',
+                  },
+                  name: {
+                    description: 'Name of the new workspace.',
+                    type: 'string',
+                  },
                   webview_logo_shape: {
                     deprecated: true,
                     enum: ['circle', 'square'],
@@ -41616,10 +42001,13 @@ export default {
         'x-fern-sdk-method-name': 'create',
         'x-fern-sdk-return-value': 'workspace',
         'x-response-key': 'workspace',
+        'x-title': 'Create a Workspace',
       },
     },
     '/workspaces/get': {
       get: {
+        description:
+          'Returns the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the authentication value.',
         operationId: 'workspacesGetGet',
         responses: {
           200: {
@@ -41651,8 +42039,11 @@ export default {
         tags: ['/workspaces'],
         'x-fern-ignore': true,
         'x-response-key': 'workspace',
+        'x-title': 'Get a Workspace',
       },
       post: {
+        description:
+          'Returns the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the authentication value.',
         operationId: 'workspacesGetPost',
         responses: {
           200: {
@@ -41686,10 +42077,13 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'workspace',
         'x-response-key': 'workspace',
+        'x-title': 'Get a Workspace',
       },
     },
     '/workspaces/list': {
       get: {
+        description:
+          'Returns a list of [workspaces](https://docs.seam.co/latest/core-concepts/workspaces) associated with the authentication value.',
         operationId: 'workspacesListGet',
         responses: {
           200: {
@@ -41725,8 +42119,11 @@ export default {
         tags: ['/workspaces'],
         'x-fern-ignore': true,
         'x-response-key': 'workspaces',
+        'x-title': 'List Workspaces',
       },
       post: {
+        description:
+          'Returns a list of [workspaces](https://docs.seam.co/latest/core-concepts/workspaces) associated with the authentication value.',
         operationId: 'workspacesListPost',
         responses: {
           200: {
@@ -41764,12 +42161,13 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'workspaces',
         'x-response-key': 'workspaces',
+        'x-title': 'List Workspaces',
       },
     },
     '/workspaces/reset_sandbox': {
       post: {
         description:
-          'Resets a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). Note that this endpoint is only available for sandbox workspaces.',
+          'Resets the [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces) associated with the authentication value. Note that this endpoint is only available for sandbox workspaces.',
         operationId: 'workspacesResetSandboxPost',
         responses: {
           200: {
@@ -41804,35 +42202,64 @@ export default {
         'x-fern-sdk-method-name': 'reset_sandbox',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
+        'x-title': 'Reset a Sandbox Workspace',
       },
     },
     '/workspaces/update': {
       patch: {
+        description:
+          'Updates the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the authentication value.',
         operationId: 'workspacesUpdatePatch',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  connect_partner_name: { type: 'string' },
+                  connect_partner_name: {
+                    description: 'Connect partner name for the workspace.',
+                    type: 'string',
+                  },
                   connect_webview_customization: {
+                    description:
+                      '[Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) customizations for the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                     properties: {
                       logo_shape: {
+                        description:
+                          'Logo shape for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                         enum: ['circle', 'square'],
                         nullable: true,
                         type: 'string',
                       },
-                      primary_button_color: { nullable: true, type: 'string' },
-                      primary_button_text_color: {
+                      primary_button_color: {
+                        description:
+                          'Primary button color for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                         nullable: true,
                         type: 'string',
                       },
-                      success_message: { nullable: true, type: 'string' },
+                      primary_button_text_color: {
+                        description:
+                          'Primary button text color for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                        nullable: true,
+                        type: 'string',
+                      },
+                      success_message: {
+                        description:
+                          'Success message for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                        nullable: true,
+                        type: 'string',
+                      },
                     },
                     type: 'object',
                   },
-                  is_suspended: { type: 'boolean' },
-                  name: { type: 'string' },
+                  is_suspended: {
+                    description:
+                      'Indicates whether the workspace is suspended.',
+                    type: 'boolean',
+                  },
+                  name: {
+                    description: 'Name of the workspace.',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -41853,33 +42280,62 @@ export default {
         tags: ['/workspaces'],
         'x-fern-ignore': true,
         'x-response-key': null,
+        'x-title': 'Udpate a Workspace',
       },
       post: {
+        description:
+          'Updates the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the authentication value.',
         operationId: 'workspacesUpdatePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  connect_partner_name: { type: 'string' },
+                  connect_partner_name: {
+                    description: 'Connect partner name for the workspace.',
+                    type: 'string',
+                  },
                   connect_webview_customization: {
+                    description:
+                      '[Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) customizations for the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                     properties: {
                       logo_shape: {
+                        description:
+                          'Logo shape for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                         enum: ['circle', 'square'],
                         nullable: true,
                         type: 'string',
                       },
-                      primary_button_color: { nullable: true, type: 'string' },
-                      primary_button_text_color: {
+                      primary_button_color: {
+                        description:
+                          'Primary button color for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                         nullable: true,
                         type: 'string',
                       },
-                      success_message: { nullable: true, type: 'string' },
+                      primary_button_text_color: {
+                        description:
+                          'Primary button text color for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                        nullable: true,
+                        type: 'string',
+                      },
+                      success_message: {
+                        description:
+                          'Success message for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                        nullable: true,
+                        type: 'string',
+                      },
                     },
                     type: 'object',
                   },
-                  is_suspended: { type: 'boolean' },
-                  name: { type: 'string' },
+                  is_suspended: {
+                    description:
+                      'Indicates whether the workspace is suspended.',
+                    type: 'boolean',
+                  },
+                  name: {
+                    description: 'Name of the workspace.',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -41901,6 +42357,7 @@ export default {
         'x-fern-sdk-group-name': ['workspaces'],
         'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
+        'x-title': 'Udpate a Workspace',
       },
     },
   },
