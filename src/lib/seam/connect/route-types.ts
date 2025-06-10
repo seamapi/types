@@ -48460,7 +48460,7 @@ export interface Routes {
     method: 'DELETE' | 'POST'
     queryParams: {}
     jsonBody: {
-      /** Device ID of the desired phone. */
+      /** Device ID of the phone that you want to deactivate. */
       device_id: string
     }
     commonParams: {}
@@ -48473,7 +48473,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** Device ID of the desired phone. */
+      /** Device ID of the phone that you want to get. */
       device_id: string
     }
     formData: {}
@@ -48546,9 +48546,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the user identity that represents the owner by which to filter the list of returned phones. */
+      /** ID of the user identity that represents the owner by which you want to filter the list of returned phones. */
       owner_user_identity_id?: string | undefined
-      /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) by which to filter the list of returned phones. */
+      /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) by which you want to filter the list of returned phones. */
       acs_credential_id?: string | undefined
     }
     formData: {}
@@ -48619,11 +48619,11 @@ export interface Routes {
     method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the custom SDK installation to use for the simulated phone. */
+      /** ID of the custom SDK installation that you want to use for the simulated phone. */
       custom_sdk_installation_id?: string | undefined
-      /** ID of the user identity to associate with the simulated phone. */
+      /** ID of the user identity that you want to associate with the simulated phone. */
       user_identity_id: string
-      /** Metadata to associate with the simulated phone. */
+      /** Metadata that you want to associate with the simulated phone. */
       phone_metadata?: {
         /** Mobile operating system that you want to use for the simulated phone. */
         operating_system?: 'android' | 'ios'
@@ -48634,7 +48634,7 @@ export interface Routes {
         /** Device model that you want to use for the simulated phone. */
         device_model?: string
       }
-      /** ASSA ABLOY metadata to associate with the simulated phone. */
+      /** ASSA ABLOY metadata that you want to associate with the simulated phone. */
       assa_abloy_metadata?: {
         /** Indicates whether the simulated phone should have Bluetooth low energy (BLE) capability. */
         ble_capability?: boolean
@@ -48720,8 +48720,11 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** Name of the Seam Bridge client that you want to create. */
       bridge_client_name: string
+      /** Time zone for the Seam Bridge that you want to create. */
       bridge_client_time_zone: string
+      /** Identifier key of the client machine for the Seam Bridge client that you want to create. */
       bridge_client_machine_identifier_key: string
     }
     commonParams: {}
@@ -48924,7 +48927,9 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** Indicates whether Tailscale is connected. */
       is_tailscale_connected: boolean | null
+      /** Tailscale IPv4 address. */
       tailscale_ip_v4: string | null
     }
     commonParams: {}
@@ -48956,7 +48961,7 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** The short code to exchange for a client session token */
+      /** Short code that you want to exchange for a client session token. */
       short_code: string
     }
     commonParams: {}
@@ -49140,8 +49145,11 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the custom SDK installation that you want to use for the new session. */
       custom_sdk_installation_id: string
+      /** Phone operating system that you want to use for the new session. */
       phone_os: 'ios' | 'android'
+      /** Phone device metadata that you want to use for the new session. */
       phone_device_metadata?:
         | {
             os_version?: string | undefined
@@ -49400,6 +49408,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** Collection key. */
       collection_key: string
     }
     formData: {}
@@ -49426,7 +49435,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** Filter by resource type alias. */
+      /** Resource type alias by which you want to filter partner resources. */
       resource_type_alias?: string | undefined
     }
     formData: {}
@@ -49452,7 +49461,9 @@ export interface Routes {
     method: 'POST' | 'PUT'
     queryParams: {}
     jsonBody: {
+      /** ID of the space to which you want to add entrances. */
       space_id: string
+      /** IDs of the entrances that you want to add to the space. */
       acs_entrance_ids: string[]
     }
     commonParams: {}
@@ -49464,7 +49475,9 @@ export interface Routes {
     method: 'POST' | 'PUT'
     queryParams: {}
     jsonBody: {
+      /** ID of the space to which you want to add devices. */
       space_id: string
+      /** IDs of the devices that you want to add to the space. */
       device_ids: string[]
     }
     commonParams: {}
@@ -49476,8 +49489,11 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** Name of the space that you want to create. */
       name: string
+      /** IDs of the devices that you want to add to the new space. */
       device_ids?: string[] | undefined
+      /** IDs of the entrances that you want to add to the new space. */
       acs_entrance_ids?: string[] | undefined
     }
     commonParams: {}
@@ -49503,6 +49519,7 @@ export interface Routes {
     method: 'DELETE' | 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the space that you want to delete. */
       space_id: string
     }
     commonParams: {}
@@ -49515,6 +49532,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the space that you want to get. */
       space_id: string
     }
     formData: {}
@@ -49562,7 +49580,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the space from which you want to remove entrances. */
       space_id: string
+      /** IDs of the entrances that you want to remove from the space. */
       acs_entrance_ids: string[]
     }
     formData: {}
@@ -49574,7 +49594,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the space from which you want to remove devices. */
       space_id: string
+      /** IDs of the devices that you want to remove from the space. */
       device_ids: string[]
     }
     formData: {}
@@ -49585,7 +49607,9 @@ export interface Routes {
     method: 'POST' | 'PATCH'
     queryParams: {}
     jsonBody: {
+      /** ID of the space that you want to update. */
       space_id: string
+      /** Name of the space. */
       name?: string | undefined
     }
     commonParams: {}
@@ -50920,9 +50944,9 @@ export interface Routes {
     jsonBody: {
       /** ID of the thermostat device that you want to set to cool mode. */
       device_id: string
-      /** Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `cooling_set_point` parameters. */
+      /** [Cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters. */
       cooling_set_point_celsius?: number | undefined
-      /** Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `cooling_set_point` parameters. */
+      /** [Cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters. */
       cooling_set_point_fahrenheit?: number | undefined
       /**  */
       sync?: boolean
@@ -52262,7 +52286,7 @@ export interface Routes {
     jsonBody: {
       /** ID of the thermostat device for which you want to create a daily program. */
       device_id: string
-      /** User-friendly name to identify the thermostat daily program. */
+      /** Name of the thermostat daily program. */
       name: string
       /** Array of thermostat daily program periods. */
       periods: Array<{
@@ -52316,7 +52340,7 @@ export interface Routes {
     jsonBody: {
       /** ID of the thermostat daily program that you want to update. */
       thermostat_daily_program_id: string
-      /** User-friendly name to identify the thermostat daily program that you want to update. */
+      /** Name of the thermostat daily program that you want to update. */
       name: string
       /** Array of thermostat daily program periods. The periods that you specify overwrite any existing periods for the daily program. */
       periods: Array<{
@@ -53643,9 +53667,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the thermostat device that you want to retrieve. */
+      /** ID of the thermostat device that you want to get. */
       device_id?: string | undefined
-      /** User-friendly name of the thermostat device that you want to retrieve. */
+      /** Name of the thermostat device that you want to retrieve. */
       name?: string | undefined
     }
     formData: {}
@@ -55098,9 +55122,9 @@ export interface Routes {
     jsonBody: {
       /** ID of the thermostat device that you want to set to heat mode. */
       device_id: string
-      /** Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `heating_set_point` parameters. */
+      /** [Heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `heating_set_point` parameters. */
       heating_set_point_celsius?: number | undefined
-      /** Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `heating_set_point` parameters. */
+      /** [Heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters. */
       heating_set_point_fahrenheit?: number | undefined
       /**  */
       sync?: boolean
@@ -56409,13 +56433,13 @@ export interface Routes {
     jsonBody: {
       /** ID of the thermostat device that you want to set to heat-cool mode. */
       device_id: string
-      /** Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `heating_set_point` parameters. */
+      /** [Heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `heating_set_point` parameters. */
       heating_set_point_celsius?: number | undefined
-      /** Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `heating_set_point` parameters. */
+      /** [Heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters. */
       heating_set_point_fahrenheit?: number | undefined
-      /** Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `cooling_set_point` parameters. */
+      /** [Cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters. */
       cooling_set_point_celsius?: number | undefined
-      /** Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `cooling_set_point` parameters. */
+      /** [Cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters. */
       cooling_set_point_fahrenheit?: number | undefined
       /**  */
       sync?: boolean
@@ -57730,7 +57754,7 @@ export interface Routes {
       connected_account_ids?: string[] | undefined
       /** ID of the Connect Webview for which you want to list devices. */
       connect_webview_id?: string | undefined
-      /** Device type by which to filter thermostat devices. */
+      /** Device type by which you want to filter thermostat devices. */
       device_type?:
         | (
             | 'ecobee_thermostat'
@@ -57741,7 +57765,7 @@ export interface Routes {
             | 'smartthings_thermostat'
           )
         | undefined
-      /** Array of device types by which to filter thermostat devices. */
+      /** Array of device types by which you want to filter thermostat devices. */
       device_types?:
         | Array<
             | 'ecobee_thermostat'
@@ -57752,7 +57776,7 @@ export interface Routes {
             | 'smartthings_thermostat'
           >
         | undefined
-      /** Manufacturer by which to filter thermostat devices. */
+      /** Manufacturer by which you want to filter thermostat devices. */
       manufacturer?:
         | (
             | 'ecobee'
@@ -62005,19 +62029,19 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the desired thermostat device. */
+      /** ID of the thermostat device for which you want to create a schedule. */
       device_id: string
-      /** User-friendly name to identify the thermostat schedule. */
+      /** Name of the thermostat schedule. */
       name?: string | undefined
-      /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule. */
+      /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the new thermostat schedule. */
       climate_preset_key: string
       /** Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
       max_override_period_minutes?: (number | null) | undefined
-      /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+      /** Date and time at which the new thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       starts_at: string
-      /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+      /** Date and time at which the new thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       ends_at: string
-      /** Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the schedule is active. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
+      /** Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the new schedule is active. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
       is_override_allowed?: boolean | undefined
     }
     commonParams: {}
@@ -62061,7 +62085,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired thermostat schedule. */
+      /** ID of the thermostat schedule that you want to delete. */
       thermostat_schedule_id: string
     }
     formData: {}
@@ -62073,7 +62097,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired thermostat schedule. */
+      /** ID of the thermostat schedule that you want to get. */
       thermostat_schedule_id: string
     }
     formData: {}
@@ -62116,7 +62140,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired thermostat device. */
+      /** ID of the thermostat device for which you want to list schedules. */
       device_id: string
       /** User identifier key by which to filter the list of returned thermostat schedules. */
       user_identifier_key?: string | undefined
@@ -62159,9 +62183,9 @@ export interface Routes {
     method: 'PATCH' | 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the desired thermostat schedule. */
+      /** ID of the thermostat schedule that you want to update. */
       thermostat_schedule_id: string
-      /** User-friendly name to identify the thermostat schedule. */
+      /** Name of the thermostat schedule. */
       name?: string | undefined
       /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule. */
       climate_preset_key?: string | undefined
@@ -62202,7 +62226,7 @@ export interface Routes {
       /**
        * @deprecated Use `fan_mode_setting` instead. */
       fan_mode?: ('auto' | 'on' | 'circulate') | undefined
-      /** Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for the thermostat. */
+      /** [Fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) that you want to set for the thermostat. */
       fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
       /**  */
       sync?: boolean
@@ -63518,31 +63542,31 @@ export interface Routes {
           hvac_mode_setting: 'cool'
           /** ID of the thermostat device for which you want to set the HVAC mode. */
           device_id: string
-          /** Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `cooling_set_point` parameters. */
+          /** [Cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters. */
           cooling_set_point_celsius?: number | undefined
-          /** Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `cooling_set_point` parameters. */
+          /** [Cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters. */
           cooling_set_point_fahrenheit?: number | undefined
         }
       | {
           hvac_mode_setting: 'heat'
           /** ID of the thermostat device for which you want to set the HVAC mode. */
           device_id: string
-          /** Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `heating_set_point` parameters. */
+          /** [Heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `heating_set_point` parameters. */
           heating_set_point_celsius?: number | undefined
-          /** Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `heating_set_point` parameters. */
+          /** [Heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters. */
           heating_set_point_fahrenheit?: number | undefined
         }
       | {
           hvac_mode_setting: 'heat_cool'
           /** ID of the thermostat device for which you want to set the HVAC mode. */
           device_id: string
-          /** Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `cooling_set_point` parameters. */
+          /** [Cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters. */
           cooling_set_point_celsius?: number | undefined
-          /** Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `cooling_set_point` parameters. */
+          /** [Cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters. */
           cooling_set_point_fahrenheit?: number | undefined
-          /** Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `heating_set_point` parameters. */
+          /** [Heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `heating_set_point` parameters. */
           heating_set_point_celsius?: number | undefined
-          /** Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `heating_set_point` parameters. */
+          /** [Heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters. */
           heating_set_point_fahrenheit?: number | undefined
         }
     commonParams: {}
@@ -64868,43 +64892,43 @@ export interface Routes {
     queryParams: {}
     jsonBody:
       | {
-          /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) to simulate. */
+          /** HVAC mode that you want to simulate. */
           hvac_mode: 'off'
-          /** ID of the desired thermostat device. */
+          /** ID of the thermostat device for which you want to simulate having adjusted the HVAC mode. */
           device_id: string
         }
       | {
-          /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) to simulate. */
+          /** HVAC mode that you want to simulate. */
           hvac_mode: 'cool'
-          /** ID of the desired thermostat device. */
+          /** ID of the thermostat device for which you want to simulate having adjusted the HVAC mode. */
           device_id: string
-          /** Desired simulated cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`. */
+          /** Cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to simulate. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`. */
           cooling_set_point_celsius?: number | undefined
-          /** Desired simulated cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`. */
+          /** Cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to simulate. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`. */
           cooling_set_point_fahrenheit?: number | undefined
         }
       | {
-          /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) to simulate. */
+          /** HVAC mode that you want to simulate. */
           hvac_mode: 'heat'
-          /** ID of the desired thermostat device. */
+          /** ID of the thermostat device for which you want to simulate having adjusted the HVAC mode. */
           device_id: string
-          /** Desired simulated heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`. */
+          /** Heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to simulate. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`. */
           heating_set_point_celsius?: number | undefined
-          /** Desired simulated heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`. */
+          /** Heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to simulate. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`. */
           heating_set_point_fahrenheit?: number | undefined
         }
       | {
-          /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) to simulate. */
+          /** HVAC mode that you want to simulate. */
           hvac_mode: 'heat_cool'
-          /** ID of the desired thermostat device. */
+          /** ID of the thermostat device for which you want to simulate having adjusted the HVAC mode. */
           device_id: string
-          /** Desired simulated cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`. */
+          /** Cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to simulate. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`. */
           cooling_set_point_celsius?: number | undefined
-          /** Desired simulated cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`. */
+          /** Cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to simulate. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`. */
           cooling_set_point_fahrenheit?: number | undefined
-          /** Desired simulated heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`. */
+          /** Heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to simulate. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`. */
           heating_set_point_celsius?: number | undefined
-          /** Desired simulated heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`. */
+          /** Heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to simulate. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`. */
           heating_set_point_fahrenheit?: number | undefined
         }
     commonParams: {}
@@ -64916,11 +64940,11 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the desired thermostat device. */
+      /** ID of the thermostat device that you want to simulate reaching a specified temperature. */
       device_id: string
-      /** Desired simulated temperature in °C. You must set `temperature_celsius` or `temperature_fahrenheit`. */
+      /** Temperature in °C that you want simulate the thermostat reaching. You must set `temperature_celsius` or `temperature_fahrenheit`. */
       temperature_celsius?: number | undefined
-      /** Desired simulated temperature in °F. You must set `temperature_fahrenheit` or `temperature_celsius`. */
+      /** Temperature in °F that you want simulate the thermostat reaching. You must set `temperature_fahrenheit` or `temperature_celsius`. */
       temperature_fahrenheit?: number | undefined
     }
     commonParams: {}
@@ -66284,11 +66308,11 @@ export interface Routes {
     jsonBody: {}
     commonParams: (
       | {
-          /** ID of user identity for whom access is being granted. */
+          /** ID of user identity for whom you want to grant access. */
           user_identity_id: string
         }
       | {
-          /** When used, creates a new user identity with the given details, and grants them access. */
+          /** User identity. When used, creates a new user identity with the specified details and grants them access. */
           user_identity: {
             /** Unique email address for the user identity. */
             email_address?: (string | null) | undefined
@@ -66301,9 +66325,9 @@ export interface Routes {
       /**
        * @deprecated Use `space_ids`. */
       location_ids?: string[] | undefined
-      /** Set of IDs of existing spaces to which access is being granted. */
+      /** IDs of the existing spaces to which you want to grant access. */
       space_ids?: string[] | undefined
-      /** When used, creates a new location with the given entrances and devices, and gives the user access to this location. */
+      /** Location. When used, creates a new location with the specified entrances and devices, and gives the user access to this location. */
       location?:
         | {
             /** Name of the location. */
@@ -66316,12 +66340,12 @@ export interface Routes {
             device_ids?: string[]
           }
         | undefined
-      /** Set of IDs of the [entrances](https://docs.seam.co/latest/api/acs/systems/list) to which access is being granted. */
+      /** IDs of the [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) to which you want to grant access. */
       acs_entrance_ids?: string[]
-      /** Set of IDs of the [devices](https://docs.seam.co/latest/api/devices/list) to which access is being granted. */
+      /** IDs of the devices to which you want to grant access. */
       device_ids?: string[]
       requested_access_methods: Array<{
-        /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+        /** Access method mode. */
         mode: 'code' | 'card' | 'mobile_key'
       }>
       /** Date and time at which the validity of the new grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
@@ -66370,7 +66394,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of access grant to delete. */
+      /** ID of access grant that you want to delete. */
       access_grant_id: string
     }
     formData: {}
@@ -66382,7 +66406,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of access grant to get. */
+      /** ID of access grant that you want to get. */
       access_grant_id: string
     }
     formData: {}
@@ -66426,16 +66450,16 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of user identity to filter list of access grants by. */
+      /** ID of the user identity by which you want to filter the list of access grants. */
       user_identity_id?: string | undefined
-      /** ID of system to filter list of access grants by. */
+      /** ID of the access system by which you want to filter the list of access grants. */
       acs_system_id?: string | undefined
-      /** ID of entrance to filter list of access grants by. */
+      /** ID of the entrance by which you want to filter the list of access grants. */
       acs_entrance_id?: string | undefined
       /**
        * @deprecated Use `space_id`. */
       location_id?: string | undefined
-      /** ID of space to filter list of access grants by. */
+      /** ID of the space by which you want to filter the list of access grants. */
       space_id?: string | undefined
     }
     formData: {}
@@ -66478,7 +66502,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of access method to get. */
+      /** ID of the access method that you want to delete. */
       access_method_id: string
     }
     formData: {}
@@ -66490,7 +66514,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of access method to get. */
+      /** ID of the access method that you want to get. */
       access_method_id: string
     }
     formData: {}
@@ -66522,7 +66546,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of access grant to list access methods for. */
+      /** ID of the access grant by which to filter the list of access methods. */
       access_grant_id: string
     }
     formData: {}
@@ -66552,7 +66576,9 @@ export interface Routes {
     method: 'POST' | 'PUT'
     queryParams: {}
     jsonBody: {
+      /** ID of the location to which you want to add entrances. */
       location_id: string
+      /** IDs of the entrances that you want to add to the location. */
       acs_entrance_ids: string[]
     }
     commonParams: {}
@@ -66564,7 +66590,9 @@ export interface Routes {
     method: 'POST' | 'PUT'
     queryParams: {}
     jsonBody: {
+      /** ID of the location to which you want to add devices. */
       location_id: string
+      /** IDs of the devices that you want to add to the location. */
       device_ids: string[]
     }
     commonParams: {}
@@ -66576,15 +66604,20 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** Name of the new location. */
       name: string
+      /** Geolocation of the new location. */
       geolocation?:
         | {
             latitude: number
             longitude: number
           }
         | undefined
+      /** Time zone of the new location. */
       time_zone?: string | undefined
+      /** IDs of the devices that you want to add to the new location. */
       device_ids?: string[] | undefined
+      /** IDs of the entrances that you want to add to the new location. */
       acs_entrance_ids?: string[] | undefined
     }
     commonParams: {}
@@ -66618,6 +66651,7 @@ export interface Routes {
     method: 'DELETE' | 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the location that you want to delete. */
       location_id: string
     }
     commonParams: {}
@@ -66630,6 +66664,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the location that you want to get. */
       location_id: string
     }
     formData: {}
@@ -66694,7 +66729,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the location from which you want to remove entrances. */
       location_id: string
+      /** IDs of the entrances that you want to remove from the location. */
       acs_entrance_ids: string[]
     }
     formData: {}
@@ -66706,7 +66743,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the location from which you want to remove devices. */
       location_id: string
+      /** IDs of the devices that you want to remove from the location. */
       device_ids: string[]
     }
     formData: {}
@@ -66717,14 +66756,18 @@ export interface Routes {
     method: 'POST' | 'PATCH'
     queryParams: {}
     jsonBody: {
+      /** ID of the location that you want to update. */
       location_id: string
+      /** Name of the location. */
       name?: string | undefined
+      /** Geolocation of the location. */
       geolocation?:
         | {
             latitude: number
             longitude: number
           }
         | undefined
+      /** Time zone of the the location. */
       time_zone?: string | undefined
     }
     commonParams: {}
@@ -66759,6 +66802,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** Customer key for which you want to connect accounts. */
       customer_key: string
     }
     formData: {}
@@ -66784,17 +66828,23 @@ export interface Routes {
     jsonBody: {}
     commonParams:
       | {
+          /** `connect_accounts` building block type. */
           building_block_type: 'connect_accounts'
+          /** Customer key for which you want to create a new building block magic link. */
           customer_key: string
         }
       | {
+          /** `manage_devices` building block type. */
           building_block_type: 'manage_devices'
+          /** Customer key for which you want to create a new building block magic link. */
           customer_key: string
         }
       | {
+          /** `organize_spaces` building block type. */
           building_block_type: 'organize_spaces'
+          /** Customer key for which you want to create a new building block magic link. */
           customer_key: string
-          /** Optional list of partner resources to include in the magic link. */
+          /** Optional list of partner resources that you want to include in the new building block magic link. */
           partner_resources?:
             | Array<{
                 partner_resource_key: string
@@ -66826,6 +66876,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** Customer key for which you want to manage devices. */
       customer_key: string
     }
     formData: {}
@@ -66850,7 +66901,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** Customer key for which you want to organize spaces. */
       customer_key: string
+      /** Optional list of partner resources that you want to include in the new building block magic link. */
       partner_resources?:
         | Array<{
             partner_resource_key: string
@@ -66882,8 +66935,11 @@ export interface Routes {
     queryParams: {}
     jsonBody:
       | Array<{
+          /** Type of the resource that you want to push to Seam. */
           partner_resource_type?: string | undefined
+          /** Key of the resource that you want to push to Seam. */
           partner_resource_key?: string | undefined
+          /** Customer key associated with the resource that you want to push to Seam. */
           customer_key?: string | undefined
           email_address?: string | undefined
           phone_number?: string | undefined
@@ -66896,8 +66952,11 @@ export interface Routes {
           custom_metadata?: Record<string, string> | undefined
         }>
       | {
+          /** Type of the resource that you want to push to Seam. */
           partner_resource_type?: string | undefined
+          /** Key of the resource that you want to push to Seam. */
           partner_resource_key?: string | undefined
+          /** Customer key associated with the resource that you want to push to Seam. */
           customer_key?: string | undefined
           email_address?: string | undefined
           phone_number?: string | undefined
@@ -66919,9 +66978,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired user identity. */
+      /** ID of the user identity to which you want to add an access system user. */
       user_identity_id: string
-      /** ID of the desired ACS user. */
+      /** ID of the access system user that you want to add to the user identity. */
       acs_user_id: string
     }
     formData: {}
@@ -66933,15 +66992,15 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** Unique key for the user identity. */
+      /** Unique key for the new user identity. */
       user_identity_key?: (string | null) | undefined
-      /** Unique email address for the user identity. */
+      /** Unique email address for the new user identity. */
       email_address?: (string | null) | undefined
-      /** Unique phone number for the user identity in E.164 format (for example, +15555550100). */
+      /** Unique phone number for the new user identity in E.164 format (for example, +15555550100). */
       phone_number?: (string | null) | undefined
-      /** Full name of the user associated with the user identity. */
+      /** Full name of the user associated with the new user identity. */
       full_name?: (string | null) | undefined
-      /** List of ACS system IDs to associate with the user identity through ACS users. If there's no user with the same email address or phone number in the specified ACS systems, a new ACS user is created. If there is an existing user with the same email or phone number in the specified ACS systems, the user is linked to the user identity. */
+      /** List of access system IDs to associate with the new user identity through access system users. If there's no user with the same email address or phone number in the specified access systems, a new access system user is created. If there is an existing user with the same email or phone number in the specified access systems, the user is linked to the user identity. */
       acs_system_ids?: string[] | undefined
     }
     formData: {}
@@ -66971,7 +67030,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired user identity. */
+      /** ID of the user identity that you want to delete. */
       user_identity_id: string
     }
     formData: {}
@@ -66983,7 +67042,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired enrollment automation. */
+      /** ID of the enrollment automation that you want to delete. */
       enrollment_automation_id: string
     }
     formData: {}
@@ -66995,7 +67054,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired enrollment automation. */
+      /** ID of the enrollment automation that you want to get. */
       enrollment_automation_id: string
     }
     formData: {}
@@ -67021,15 +67080,15 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired user identity. */
+      /** ID of the user identity for which you want to launch an enrollment automation. */
       user_identity_id: string
-      /** ID of the desired ACS system that serves as the credential manager. */
+      /** ID of the desired access system that serves as the credential manager for the enrollment automation. */
       credential_manager_acs_system_id: string
-      /** ID of the ACS credential pool from which to obtain credentials for the user identity. */
+      /** ID of the credential pool from which to obtain credentials for the user identity. */
       acs_credential_pool_id?: string | undefined
       /** Indicates whether to create an associated credential manager user. If you set `create_credential_manager_user` to `true`, you cannot specify a `credential_manager_acs_user_id`. */
       create_credential_manager_user?: boolean | undefined
-      /** ID of the associated ACS user within the credential manager. If you specify a `credential_manager_acs_user_id`, you cannot set `create_credential_manager_user` to `true`. */
+      /** ID of the associated access system user within the credential manager. If you specify a `credential_manager_acs_user_id`, you cannot set `create_credential_manager_user` to `true`. */
       credential_manager_acs_user_id?: string | undefined
     }
     formData: {}
@@ -67050,7 +67109,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the user identity for which you want to retrieve all enrollment automations. */
+      /** ID of the user identity for which you want to retrieve enrollment automations. */
       user_identity_id: string
     }
     formData: {}
@@ -67077,7 +67136,7 @@ export interface Routes {
     commonParams: {
       /** ID of the user identity for which you want to generate an instant key. */
       user_identity_id: string
-      /** The maximum number of times the instant key can be used. Defaults to 1. */
+      /** Maximum number of times the instant key can be used. Default: 1. */
       max_use_count?: number
     }
     formData: {}
@@ -67101,7 +67160,7 @@ export interface Routes {
     jsonBody: {}
     commonParams:
       | {
-          /** ID of the desired user identity. */
+          /** ID of the user identity that you want to get. */
           user_identity_id: string
         }
       | {
@@ -67134,9 +67193,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired user identity. */
+      /** ID of the user identity that you want to grant access to a device. */
       user_identity_id: string
-      /** ID of the desired managed device. */
+      /** ID of the managed device to which you want to grant access to the user identity. */
       device_id: string
     }
     formData: {}
@@ -67148,6 +67207,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** `acs_system_id` of the credential manager by which you want to filter the list of user identities. */
       credential_manager_acs_system_id?: string | undefined
     }
     formData: {}
@@ -68620,7 +68680,7 @@ export interface Routes {
         can_simulate_disconnection?: boolean | undefined
       }>
       /**
-       * @deprecated use devices. */
+       * @deprecated Use devices. */
       accessible_devices: Array<{
         /** Unique identifier for the device. */
         device_id: string
@@ -70067,7 +70127,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the user identity for which you want to retrieve all access control systems. */
+      /** ID of the user identity for which you want to retrieve all access systems. */
       user_identity_id: string
     }
     formData: {}
@@ -70243,7 +70303,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the user identity for which you want to retrieve all ACS users. */
+      /** ID of the user identity for which you want to retrieve all access system users. */
       user_identity_id: string
     }
     formData: {}
@@ -70475,9 +70535,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired user identity. */
+      /** ID of the user identity from which you want to remove an access system user. */
       user_identity_id: string
-      /** ID of the ACS user. */
+      /** ID of the access system user that you want to remove from the user identity.. */
       acs_user_id: string
     }
     formData: {}
@@ -70489,9 +70549,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired user identity. */
+      /** ID of the user identity from which you want to revoke access to a device. */
       user_identity_id: string
-      /** ID of the desired managed device. */
+      /** ID of the managed device to which you want to revoke access from the user identity. */
       device_id: string
     }
     formData: {}
@@ -70502,14 +70562,15 @@ export interface Routes {
     method: 'PATCH' | 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the user identity. */
+      /** ID of the user identity that you want to update. */
       user_identity_id: string
       /** Unique key for the user identity. */
       user_identity_key?: (string | null) | undefined
       /** Unique email address for the user identity. */
       email_address?: (string | null) | undefined
-      /** Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100). */
+      /** Unique phone number for the user identity. */
       phone_number?: (string | null) | undefined
+      /** Full name of the user associated with the user identity. */
       full_name?: (string | null) | undefined
     }
     commonParams: {}
@@ -70521,7 +70582,9 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** URL for the new webhook. */
       url: string
+      /** Types of events that you want the new webhook to receive. */
       event_types?: string[]
     }
     commonParams: {}
@@ -70542,6 +70605,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the webhook that you want to delete. */
       webhook_id: string
     }
     formData: {}
@@ -70553,6 +70617,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the webhook that you want to get. */
       webhook_id: string
     }
     formData: {}
@@ -70587,7 +70652,9 @@ export interface Routes {
     method: 'PUT' | 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the webhook that you want to update. */
       webhook_id: string
+      /** Types of events that you want the webhook to receive. */
       event_types: string[]
     }
     commonParams: {}
@@ -70599,11 +70666,13 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** Name of the new workspace. */
       name: string
+      /** Company name for the new workspace. */
       company_name?: string | undefined
-      /**
-       * @deprecated use company_name */
+      /** Connect partner name for the new workspace. */
       connect_partner_name?: ((string | null) | null) | undefined
+      /** Indicates whether the new workspace is a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). */
       is_sandbox?: boolean
       /**
        * @deprecated Use `connect_webview_customization.webview_primary_button_color` instead. */
@@ -70617,11 +70686,16 @@ export interface Routes {
       /**
        * @deprecated Use `connect_webview_customization.webview_success_message` instead. */
       webview_success_message?: string | undefined
+      /** [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) customizations for the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews). */
       connect_webview_customization?:
         | {
+            /** Primary button color for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews). */
             primary_button_color?: (string | null) | undefined
+            /** Primary button text color for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews). */
             primary_button_text_color?: (string | null) | undefined
+            /** Success message for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews). */
             success_message?: (string | null) | undefined
+            /** Logo shape for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews). */
             logo_shape?: (('circle' | 'square') | null) | undefined
           }
         | undefined
@@ -72014,16 +72088,24 @@ export interface Routes {
     method: 'POST' | 'PATCH'
     queryParams: {}
     jsonBody: {
+      /** Name of the workspace. */
       name?: string | undefined
+      /** Connect partner name for the workspace. */
       connect_partner_name?: string | undefined
+      /** [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) customizations for the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews). */
       connect_webview_customization?:
         | {
+            /** Primary button color for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews). */
             primary_button_color?: (string | null) | undefined
+            /** Primary button text color for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews). */
             primary_button_text_color?: (string | null) | undefined
+            /** Success message for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews). */
             success_message?: (string | null) | undefined
+            /** Logo shape for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews). */
             logo_shape?: (('circle' | 'square') | null) | undefined
           }
         | undefined
+      /** Indicates whether the workspace is suspended. */
       is_suspended?: boolean | undefined
     }
     commonParams: {}
