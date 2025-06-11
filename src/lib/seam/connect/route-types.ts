@@ -1704,6 +1704,13 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
+            }
+          | {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -2252,6 +2259,13 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -4113,6 +4127,13 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
+            }
+          | {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -4642,6 +4663,13 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -5182,6 +5210,13 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
+            }
+          | {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -5696,6 +5731,13 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -6245,6 +6287,13 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -8093,6 +8142,13 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
+            }
+          | {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -8597,6 +8653,13 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -24120,6 +24183,13 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
+            }
+          | {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -25757,6 +25827,13 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
+            }
+          | {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -26218,6 +26295,13 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -26799,6 +26883,13 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -31580,6 +31671,13 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
+            }
+          | {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -33017,6 +33115,13 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -34621,6 +34726,13 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
+            }
+          | {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -36057,6 +36169,13 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -42833,6 +42952,13 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
+            }
+          | {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -44269,6 +44395,13 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -54966,6 +55099,13 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
+            }
+          | {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -59130,6 +59270,13 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
+            }
+          | {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -60566,6 +60713,13 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -68527,6 +68681,13 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
+            }
+          | {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -69965,6 +70126,13 @@ export interface Routes {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_device_error: true
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'lockly_missing_wifi_bridge'
             }
           | {
               /** Date and time at which Seam created the error. */
