@@ -66814,6 +66814,7 @@ export interface Routes {
           | 'connect_accounts'
           | 'manage_devices'
           | 'organize_spaces'
+          | 'console'
         customer_key: string
         expires_at: string
         workspace_id: string
@@ -66826,34 +66827,25 @@ export interface Routes {
     method: 'POST' | 'GET'
     queryParams: {}
     jsonBody: {}
-    commonParams:
-      | {
-          /** `connect_accounts` building block type. */
-          building_block_type: 'connect_accounts'
-          /** Customer key for which you want to create a new building block magic link. */
-          customer_key: string
-        }
-      | {
-          /** `manage_devices` building block type. */
-          building_block_type: 'manage_devices'
-          /** Customer key for which you want to create a new building block magic link. */
-          customer_key: string
-        }
-      | {
-          /** `organize_spaces` building block type. */
-          building_block_type: 'organize_spaces'
-          /** Customer key for which you want to create a new building block magic link. */
-          customer_key: string
-          /** Optional list of partner resources that you want to include in the new building block magic link. */
-          partner_resources?:
-            | Array<{
-                partner_resource_key: string
-                name: string
-                description?: string | undefined
-                custom_metadata?: Record<string, string> | undefined
-              }>
-            | undefined
-        }
+    commonParams: {
+      /** Type of building block to create a magic link for. */
+      building_block_type:
+        | 'connect_accounts'
+        | 'organize_spaces'
+        | 'console'
+        | 'manage_devices'
+      /** Customer key for which you want to create a new building block magic link. */
+      customer_key: string
+      /** Optional list of spaces that you want to include in the new building block magic link. */
+      spaces?:
+        | Array<{
+            space_key: string
+            name: string
+            description?: string | undefined
+            custom_metadata?: Record<string, string> | undefined
+          }>
+        | undefined
+    }
     formData: {}
     jsonResponse: {
       /**  */
@@ -66863,6 +66855,7 @@ export interface Routes {
           | 'connect_accounts'
           | 'manage_devices'
           | 'organize_spaces'
+          | 'console'
         customer_key: string
         expires_at: string
         workspace_id: string
@@ -66888,6 +66881,7 @@ export interface Routes {
           | 'connect_accounts'
           | 'manage_devices'
           | 'organize_spaces'
+          | 'console'
         customer_key: string
         expires_at: string
         workspace_id: string
@@ -66903,10 +66897,10 @@ export interface Routes {
     commonParams: {
       /** Customer key for which you want to organize spaces. */
       customer_key: string
-      /** Optional list of partner resources that you want to include in the new building block magic link. */
-      partner_resources?:
+      /** Optional list of spaces that you want to include in the new building block magic link. */
+      spaces?:
         | Array<{
-            partner_resource_key: string
+            space_key: string
             name: string
             description?: string | undefined
             custom_metadata?: Record<string, string> | undefined
@@ -66922,6 +66916,7 @@ export interface Routes {
           | 'connect_accounts'
           | 'manage_devices'
           | 'organize_spaces'
+          | 'console'
         customer_key: string
         expires_at: string
         workspace_id: string

@@ -4,6 +4,7 @@ export const building_block_type = z.enum([
   'connect_accounts',
   'manage_devices',
   'organize_spaces',
+  'console',
 ])
 
 export type BuildingBlockType = z.infer<typeof building_block_type>

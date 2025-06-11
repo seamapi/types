@@ -54,6 +54,7 @@ export {
   phone_registration,
   phone_session,
   space,
+  space_resource,
   thermostat_capability_properties,
   thermostat_device_type,
   thermostat_schedule,

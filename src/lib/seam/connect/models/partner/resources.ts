@@ -42,3 +42,18 @@ export const typed_partner_resource = z.object({
   `)
 
 export type TypedPartnerResource = z.infer<typeof typed_partner_resource>
+
+export const space_resource = z.object({
+  space_key: z.string(),
+
+  name: z.string(),
+  description: z.string().optional(),
+  custom_metadata: z.record(z.string(), z.string()).optional(),
+}).describe(`
+  ---
+  undocumented: Unreleased.
+  route_path: /unstable_partner/resources
+  ---
+  `)
+
+export type SpaceResource = z.infer<typeof space_resource>
