@@ -1091,6 +1091,28 @@ export default {
                   type: 'object',
                 },
                 {
+                  description:
+                    'Lockly lock is not connected to a Wi-Fi bridge.',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['lockly_missing_wifi_bridge'],
+                      type: 'string',
+                    },
+                    is_device_error: { enum: [true], type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
                   description: 'Credentials provided were invalid.',
                   properties: {
                     created_at: {
@@ -8306,6 +8328,28 @@ export default {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['subscription_required'],
+                      type: 'string',
+                    },
+                    is_device_error: { enum: [true], type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Lockly lock is not connected to a Wi-Fi bridge.',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['lockly_missing_wifi_bridge'],
                       type: 'string',
                     },
                     is_device_error: { enum: [true], type: 'boolean' },
@@ -18205,6 +18249,28 @@ export default {
                   type: 'object',
                 },
                 {
+                  description:
+                    'Lockly lock is not connected to a Wi-Fi bridge.',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['lockly_missing_wifi_bridge'],
+                      type: 'string',
+                    },
+                    is_device_error: { enum: [true], type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
                   description: 'Credentials provided were invalid.',
                   properties: {
                     created_at: {
@@ -20150,6 +20216,28 @@ export default {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['subscription_required'],
+                      type: 'string',
+                    },
+                    is_device_error: { enum: [true], type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Lockly lock is not connected to a Wi-Fi bridge.',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['lockly_missing_wifi_bridge'],
                       type: 'string',
                     },
                     is_device_error: { enum: [true], type: 'boolean' },
