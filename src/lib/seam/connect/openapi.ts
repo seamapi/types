@@ -1561,6 +1561,160 @@ export default {
         type: 'object',
         'x-route-path': '/access_codes',
       },
+      access_grant: {
+        properties: {
+          access_grant_id: {
+            description: 'ID of the access grant.',
+            format: 'uuid',
+            type: 'string',
+          },
+          access_method_ids: {
+            description:
+              'IDs of the access methods that were created for this access grant.',
+            items: { format: 'uuid', type: 'string' },
+            type: 'array',
+          },
+          created_at: {
+            description: 'Date and time at which the access grant was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          display_name: {
+            description: 'Display name of the access grant.',
+            type: 'string',
+          },
+          location_ids: {
+            deprecated: true,
+            items: { format: 'uuid', type: 'string' },
+            type: 'array',
+            'x-deprecated': 'Use `space_ids`.',
+          },
+          requested_access_methods: {
+            description:
+              'Access methods that the user requested for this access grant.',
+            items: {
+              properties: {
+                created_access_method_ids: {
+                  description:
+                    'IDs of the access methods that were created for this requested access method.',
+                  items: { format: 'uuid', type: 'string' },
+                  type: 'array',
+                },
+                created_at: {
+                  description:
+                    'Date and time at which the requested access method was added to this access grant.',
+                  format: 'date-time',
+                  type: 'string',
+                },
+                display_name: {
+                  description: 'Display name of the access method.',
+                  type: 'string',
+                },
+                mode: {
+                  description:
+                    'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                  enum: ['code', 'card', 'mobile_key'],
+                  type: 'string',
+                },
+              },
+              required: [
+                'display_name',
+                'mode',
+                'created_at',
+                'created_access_method_ids',
+              ],
+              type: 'object',
+            },
+            type: 'array',
+          },
+          space_ids: {
+            description: 'IDs of the spaces to which access is being given.',
+            items: { format: 'uuid', type: 'string' },
+            type: 'array',
+          },
+          user_identity_id: {
+            description:
+              'ID of user identity to which access is being granted.',
+            format: 'uuid',
+            type: 'string',
+          },
+          workspace_id: {
+            description:
+              'Unique identifier for the Seam workspace associated with the access grant.',
+            format: 'uuid',
+            type: 'string',
+          },
+        },
+        required: [
+          'workspace_id',
+          'access_grant_id',
+          'user_identity_id',
+          'location_ids',
+          'space_ids',
+          'requested_access_methods',
+          'access_method_ids',
+          'display_name',
+          'created_at',
+        ],
+        type: 'object',
+        'x-draft': 'Early access.',
+        'x-route-path': '/access_grants',
+      },
+      access_method: {
+        properties: {
+          access_method_id: {
+            description: 'ID of the access method.',
+            format: 'uuid',
+            type: 'string',
+          },
+          created_at: {
+            description:
+              'Date and time at which the access method was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          display_name: {
+            description: 'Display name of the access method.',
+            type: 'string',
+          },
+          instant_key_url: {
+            description: 'URL of instant key for mobile key access methods.',
+            type: 'string',
+          },
+          is_card_encoding_required: {
+            description:
+              'Whether card encoding is required for plastic card access methods.',
+            type: 'boolean',
+          },
+          issued_at: {
+            description: 'Date and time at which the access method was issued.',
+            format: 'date-time',
+            type: 'string',
+          },
+          mode: {
+            description:
+              'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+            enum: ['code', 'card', 'mobile_key'],
+            type: 'string',
+          },
+          workspace_id: {
+            description:
+              'Unique identifier for the Seam workspace associated with the access grant.',
+            format: 'uuid',
+            type: 'string',
+          },
+        },
+        required: [
+          'workspace_id',
+          'access_method_id',
+          'display_name',
+          'mode',
+          'created_at',
+        ],
+        type: 'object',
+        'x-draft': 'Early access.',
+        'x-route-path': '/access_methods',
+      },
       acs_access_group: {
         description:
           'Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.\n\nSome access control systems use [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups), which are sets of users, combined with sets of permissions. These permissions include both the set of areas or assets that the users can access and the schedule during which the users can access these areas or assets. Instead of assigning access rights individually to each access control system user, which can be time-consuming and error-prone, administrators can assign users to an access group, thereby ensuring that the users inherit all the permissions associated with the access group. Using access groups streamlines the process of managing large numbers of access control system users, especially in bigger organizations or complexes.\n\nTo learn whether your access control system supports access groups, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides/overview#access-control-systems).',
@@ -22854,108 +23008,7 @@ export default {
               'application/json': {
                 schema: {
                   properties: {
-                    access_grant: {
-                      properties: {
-                        access_grant_id: {
-                          description: 'ID of the access grant.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        access_method_ids: {
-                          description:
-                            'IDs of the access methods that were created for this access grant.',
-                          items: { format: 'uuid', type: 'string' },
-                          type: 'array',
-                        },
-                        created_at: {
-                          description:
-                            'Date and time at which the access grant was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        display_name: {
-                          description: 'Display name of the access grant.',
-                          type: 'string',
-                        },
-                        location_ids: {
-                          deprecated: true,
-                          items: { format: 'uuid', type: 'string' },
-                          type: 'array',
-                          'x-deprecated': 'Use `space_ids`.',
-                        },
-                        requested_access_methods: {
-                          description:
-                            'Access methods that the user requested for this access grant.',
-                          items: {
-                            properties: {
-                              created_access_method_ids: {
-                                description:
-                                  'IDs of the access methods that were created for this requested access method.',
-                                items: { format: 'uuid', type: 'string' },
-                                type: 'array',
-                              },
-                              created_at: {
-                                description:
-                                  'Date and time at which the requested access method was added to this access grant.',
-                                format: 'date-time',
-                                type: 'string',
-                              },
-                              display_name: {
-                                description:
-                                  'Display name of the access method.',
-                                type: 'string',
-                              },
-                              mode: {
-                                description:
-                                  'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                                enum: ['code', 'card', 'mobile_key'],
-                                type: 'string',
-                              },
-                            },
-                            required: [
-                              'display_name',
-                              'mode',
-                              'created_at',
-                              'created_access_method_ids',
-                            ],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        space_ids: {
-                          description:
-                            'IDs of the spaces to which access is being given.',
-                          items: { format: 'uuid', type: 'string' },
-                          type: 'array',
-                        },
-                        user_identity_id: {
-                          description:
-                            'ID of user identity to which access is being granted.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        workspace_id: {
-                          description:
-                            'Unique identifier for the Seam workspace associated with the access grant.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'workspace_id',
-                        'access_grant_id',
-                        'user_identity_id',
-                        'location_ids',
-                        'space_ids',
-                        'requested_access_methods',
-                        'access_method_ids',
-                        'display_name',
-                        'created_at',
-                      ],
-                      type: 'object',
-                      'x-draft': 'Early access.',
-                      'x-route-path': '/access_grants',
-                    },
+                    access_grant: { $ref: '#/components/schemas/access_grant' },
                     ok: { type: 'boolean' },
                   },
                   required: ['access_grant', 'ok'],
@@ -23063,108 +23116,7 @@ export default {
               'application/json': {
                 schema: {
                   properties: {
-                    access_grant: {
-                      properties: {
-                        access_grant_id: {
-                          description: 'ID of the access grant.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        access_method_ids: {
-                          description:
-                            'IDs of the access methods that were created for this access grant.',
-                          items: { format: 'uuid', type: 'string' },
-                          type: 'array',
-                        },
-                        created_at: {
-                          description:
-                            'Date and time at which the access grant was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        display_name: {
-                          description: 'Display name of the access grant.',
-                          type: 'string',
-                        },
-                        location_ids: {
-                          deprecated: true,
-                          items: { format: 'uuid', type: 'string' },
-                          type: 'array',
-                          'x-deprecated': 'Use `space_ids`.',
-                        },
-                        requested_access_methods: {
-                          description:
-                            'Access methods that the user requested for this access grant.',
-                          items: {
-                            properties: {
-                              created_access_method_ids: {
-                                description:
-                                  'IDs of the access methods that were created for this requested access method.',
-                                items: { format: 'uuid', type: 'string' },
-                                type: 'array',
-                              },
-                              created_at: {
-                                description:
-                                  'Date and time at which the requested access method was added to this access grant.',
-                                format: 'date-time',
-                                type: 'string',
-                              },
-                              display_name: {
-                                description:
-                                  'Display name of the access method.',
-                                type: 'string',
-                              },
-                              mode: {
-                                description:
-                                  'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                                enum: ['code', 'card', 'mobile_key'],
-                                type: 'string',
-                              },
-                            },
-                            required: [
-                              'display_name',
-                              'mode',
-                              'created_at',
-                              'created_access_method_ids',
-                            ],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        space_ids: {
-                          description:
-                            'IDs of the spaces to which access is being given.',
-                          items: { format: 'uuid', type: 'string' },
-                          type: 'array',
-                        },
-                        user_identity_id: {
-                          description:
-                            'ID of user identity to which access is being granted.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        workspace_id: {
-                          description:
-                            'Unique identifier for the Seam workspace associated with the access grant.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'workspace_id',
-                        'access_grant_id',
-                        'user_identity_id',
-                        'location_ids',
-                        'space_ids',
-                        'requested_access_methods',
-                        'access_method_ids',
-                        'display_name',
-                        'created_at',
-                      ],
-                      type: 'object',
-                      'x-draft': 'Early access.',
-                      'x-route-path': '/access_grants',
-                    },
+                    access_grant: { $ref: '#/components/schemas/access_grant' },
                     ok: { type: 'boolean' },
                   },
                   required: ['access_grant', 'ok'],
@@ -23245,108 +23197,7 @@ export default {
                 schema: {
                   properties: {
                     access_grants: {
-                      items: {
-                        properties: {
-                          access_grant_id: {
-                            description: 'ID of the access grant.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          access_method_ids: {
-                            description:
-                              'IDs of the access methods that were created for this access grant.',
-                            items: { format: 'uuid', type: 'string' },
-                            type: 'array',
-                          },
-                          created_at: {
-                            description:
-                              'Date and time at which the access grant was created.',
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          display_name: {
-                            description: 'Display name of the access grant.',
-                            type: 'string',
-                          },
-                          location_ids: {
-                            deprecated: true,
-                            items: { format: 'uuid', type: 'string' },
-                            type: 'array',
-                            'x-deprecated': 'Use `space_ids`.',
-                          },
-                          requested_access_methods: {
-                            description:
-                              'Access methods that the user requested for this access grant.',
-                            items: {
-                              properties: {
-                                created_access_method_ids: {
-                                  description:
-                                    'IDs of the access methods that were created for this requested access method.',
-                                  items: { format: 'uuid', type: 'string' },
-                                  type: 'array',
-                                },
-                                created_at: {
-                                  description:
-                                    'Date and time at which the requested access method was added to this access grant.',
-                                  format: 'date-time',
-                                  type: 'string',
-                                },
-                                display_name: {
-                                  description:
-                                    'Display name of the access method.',
-                                  type: 'string',
-                                },
-                                mode: {
-                                  description:
-                                    'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                                  enum: ['code', 'card', 'mobile_key'],
-                                  type: 'string',
-                                },
-                              },
-                              required: [
-                                'display_name',
-                                'mode',
-                                'created_at',
-                                'created_access_method_ids',
-                              ],
-                              type: 'object',
-                            },
-                            type: 'array',
-                          },
-                          space_ids: {
-                            description:
-                              'IDs of the spaces to which access is being given.',
-                            items: { format: 'uuid', type: 'string' },
-                            type: 'array',
-                          },
-                          user_identity_id: {
-                            description:
-                              'ID of user identity to which access is being granted.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          workspace_id: {
-                            description:
-                              'Unique identifier for the Seam workspace associated with the access grant.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: [
-                          'workspace_id',
-                          'access_grant_id',
-                          'user_identity_id',
-                          'location_ids',
-                          'space_ids',
-                          'requested_access_methods',
-                          'access_method_ids',
-                          'display_name',
-                          'created_at',
-                        ],
-                        type: 'object',
-                        'x-draft': 'Early access.',
-                        'x-route-path': '/access_grants',
-                      },
+                      items: { $ref: '#/components/schemas/access_grant' },
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
@@ -23456,61 +23307,7 @@ export default {
                 schema: {
                   properties: {
                     access_method: {
-                      properties: {
-                        access_method_id: {
-                          description: 'ID of the access method.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        created_at: {
-                          description:
-                            'Date and time at which the access method was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        display_name: {
-                          description: 'Display name of the access method.',
-                          type: 'string',
-                        },
-                        instant_key_url: {
-                          description:
-                            'URL of instant key for mobile key access methods.',
-                          type: 'string',
-                        },
-                        is_card_encoding_required: {
-                          description:
-                            'Whether card encoding is required for plastic card access methods.',
-                          type: 'boolean',
-                        },
-                        issued_at: {
-                          description:
-                            'Date and time at which the access method was issued.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        mode: {
-                          description:
-                            'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                          enum: ['code', 'card', 'mobile_key'],
-                          type: 'string',
-                        },
-                        workspace_id: {
-                          description:
-                            'Unique identifier for the Seam workspace associated with the access grant.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'workspace_id',
-                        'access_method_id',
-                        'display_name',
-                        'mode',
-                        'created_at',
-                      ],
-                      type: 'object',
-                      'x-draft': 'Early access.',
-                      'x-route-path': '/access_methods',
+                      $ref: '#/components/schemas/access_method',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -23569,63 +23366,7 @@ export default {
                 schema: {
                   properties: {
                     access_methods: {
-                      items: {
-                        properties: {
-                          access_method_id: {
-                            description: 'ID of the access method.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          created_at: {
-                            description:
-                              'Date and time at which the access method was created.',
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          display_name: {
-                            description: 'Display name of the access method.',
-                            type: 'string',
-                          },
-                          instant_key_url: {
-                            description:
-                              'URL of instant key for mobile key access methods.',
-                            type: 'string',
-                          },
-                          is_card_encoding_required: {
-                            description:
-                              'Whether card encoding is required for plastic card access methods.',
-                            type: 'boolean',
-                          },
-                          issued_at: {
-                            description:
-                              'Date and time at which the access method was issued.',
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          mode: {
-                            description:
-                              'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                            enum: ['code', 'card', 'mobile_key'],
-                            type: 'string',
-                          },
-                          workspace_id: {
-                            description:
-                              'Unique identifier for the Seam workspace associated with the access grant.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: [
-                          'workspace_id',
-                          'access_method_id',
-                          'display_name',
-                          'mode',
-                          'created_at',
-                        ],
-                        type: 'object',
-                        'x-draft': 'Early access.',
-                        'x-route-path': '/access_methods',
-                      },
+                      items: { $ref: '#/components/schemas/access_method' },
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
@@ -37972,108 +37713,7 @@ export default {
               'application/json': {
                 schema: {
                   properties: {
-                    access_grant: {
-                      properties: {
-                        access_grant_id: {
-                          description: 'ID of the access grant.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        access_method_ids: {
-                          description:
-                            'IDs of the access methods that were created for this access grant.',
-                          items: { format: 'uuid', type: 'string' },
-                          type: 'array',
-                        },
-                        created_at: {
-                          description:
-                            'Date and time at which the access grant was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        display_name: {
-                          description: 'Display name of the access grant.',
-                          type: 'string',
-                        },
-                        location_ids: {
-                          deprecated: true,
-                          items: { format: 'uuid', type: 'string' },
-                          type: 'array',
-                          'x-deprecated': 'Use `space_ids`.',
-                        },
-                        requested_access_methods: {
-                          description:
-                            'Access methods that the user requested for this access grant.',
-                          items: {
-                            properties: {
-                              created_access_method_ids: {
-                                description:
-                                  'IDs of the access methods that were created for this requested access method.',
-                                items: { format: 'uuid', type: 'string' },
-                                type: 'array',
-                              },
-                              created_at: {
-                                description:
-                                  'Date and time at which the requested access method was added to this access grant.',
-                                format: 'date-time',
-                                type: 'string',
-                              },
-                              display_name: {
-                                description:
-                                  'Display name of the access method.',
-                                type: 'string',
-                              },
-                              mode: {
-                                description:
-                                  'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                                enum: ['code', 'card', 'mobile_key'],
-                                type: 'string',
-                              },
-                            },
-                            required: [
-                              'display_name',
-                              'mode',
-                              'created_at',
-                              'created_access_method_ids',
-                            ],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        space_ids: {
-                          description:
-                            'IDs of the spaces to which access is being given.',
-                          items: { format: 'uuid', type: 'string' },
-                          type: 'array',
-                        },
-                        user_identity_id: {
-                          description:
-                            'ID of user identity to which access is being granted.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        workspace_id: {
-                          description:
-                            'Unique identifier for the Seam workspace associated with the access grant.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'workspace_id',
-                        'access_grant_id',
-                        'user_identity_id',
-                        'location_ids',
-                        'space_ids',
-                        'requested_access_methods',
-                        'access_method_ids',
-                        'display_name',
-                        'created_at',
-                      ],
-                      type: 'object',
-                      'x-draft': 'Early access.',
-                      'x-route-path': '/access_grants',
-                    },
+                    access_grant: { $ref: '#/components/schemas/access_grant' },
                     ok: { type: 'boolean' },
                   },
                   required: ['access_grant', 'ok'],
@@ -38181,108 +37821,7 @@ export default {
               'application/json': {
                 schema: {
                   properties: {
-                    access_grant: {
-                      properties: {
-                        access_grant_id: {
-                          description: 'ID of the access grant.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        access_method_ids: {
-                          description:
-                            'IDs of the access methods that were created for this access grant.',
-                          items: { format: 'uuid', type: 'string' },
-                          type: 'array',
-                        },
-                        created_at: {
-                          description:
-                            'Date and time at which the access grant was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        display_name: {
-                          description: 'Display name of the access grant.',
-                          type: 'string',
-                        },
-                        location_ids: {
-                          deprecated: true,
-                          items: { format: 'uuid', type: 'string' },
-                          type: 'array',
-                          'x-deprecated': 'Use `space_ids`.',
-                        },
-                        requested_access_methods: {
-                          description:
-                            'Access methods that the user requested for this access grant.',
-                          items: {
-                            properties: {
-                              created_access_method_ids: {
-                                description:
-                                  'IDs of the access methods that were created for this requested access method.',
-                                items: { format: 'uuid', type: 'string' },
-                                type: 'array',
-                              },
-                              created_at: {
-                                description:
-                                  'Date and time at which the requested access method was added to this access grant.',
-                                format: 'date-time',
-                                type: 'string',
-                              },
-                              display_name: {
-                                description:
-                                  'Display name of the access method.',
-                                type: 'string',
-                              },
-                              mode: {
-                                description:
-                                  'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                                enum: ['code', 'card', 'mobile_key'],
-                                type: 'string',
-                              },
-                            },
-                            required: [
-                              'display_name',
-                              'mode',
-                              'created_at',
-                              'created_access_method_ids',
-                            ],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        space_ids: {
-                          description:
-                            'IDs of the spaces to which access is being given.',
-                          items: { format: 'uuid', type: 'string' },
-                          type: 'array',
-                        },
-                        user_identity_id: {
-                          description:
-                            'ID of user identity to which access is being granted.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        workspace_id: {
-                          description:
-                            'Unique identifier for the Seam workspace associated with the access grant.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'workspace_id',
-                        'access_grant_id',
-                        'user_identity_id',
-                        'location_ids',
-                        'space_ids',
-                        'requested_access_methods',
-                        'access_method_ids',
-                        'display_name',
-                        'created_at',
-                      ],
-                      type: 'object',
-                      'x-draft': 'Early access.',
-                      'x-route-path': '/access_grants',
-                    },
+                    access_grant: { $ref: '#/components/schemas/access_grant' },
                     ok: { type: 'boolean' },
                   },
                   required: ['access_grant', 'ok'],
@@ -38363,108 +37902,7 @@ export default {
                 schema: {
                   properties: {
                     access_grants: {
-                      items: {
-                        properties: {
-                          access_grant_id: {
-                            description: 'ID of the access grant.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          access_method_ids: {
-                            description:
-                              'IDs of the access methods that were created for this access grant.',
-                            items: { format: 'uuid', type: 'string' },
-                            type: 'array',
-                          },
-                          created_at: {
-                            description:
-                              'Date and time at which the access grant was created.',
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          display_name: {
-                            description: 'Display name of the access grant.',
-                            type: 'string',
-                          },
-                          location_ids: {
-                            deprecated: true,
-                            items: { format: 'uuid', type: 'string' },
-                            type: 'array',
-                            'x-deprecated': 'Use `space_ids`.',
-                          },
-                          requested_access_methods: {
-                            description:
-                              'Access methods that the user requested for this access grant.',
-                            items: {
-                              properties: {
-                                created_access_method_ids: {
-                                  description:
-                                    'IDs of the access methods that were created for this requested access method.',
-                                  items: { format: 'uuid', type: 'string' },
-                                  type: 'array',
-                                },
-                                created_at: {
-                                  description:
-                                    'Date and time at which the requested access method was added to this access grant.',
-                                  format: 'date-time',
-                                  type: 'string',
-                                },
-                                display_name: {
-                                  description:
-                                    'Display name of the access method.',
-                                  type: 'string',
-                                },
-                                mode: {
-                                  description:
-                                    'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                                  enum: ['code', 'card', 'mobile_key'],
-                                  type: 'string',
-                                },
-                              },
-                              required: [
-                                'display_name',
-                                'mode',
-                                'created_at',
-                                'created_access_method_ids',
-                              ],
-                              type: 'object',
-                            },
-                            type: 'array',
-                          },
-                          space_ids: {
-                            description:
-                              'IDs of the spaces to which access is being given.',
-                            items: { format: 'uuid', type: 'string' },
-                            type: 'array',
-                          },
-                          user_identity_id: {
-                            description:
-                              'ID of user identity to which access is being granted.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          workspace_id: {
-                            description:
-                              'Unique identifier for the Seam workspace associated with the access grant.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: [
-                          'workspace_id',
-                          'access_grant_id',
-                          'user_identity_id',
-                          'location_ids',
-                          'space_ids',
-                          'requested_access_methods',
-                          'access_method_ids',
-                          'display_name',
-                          'created_at',
-                        ],
-                        type: 'object',
-                        'x-draft': 'Early access.',
-                        'x-route-path': '/access_grants',
-                      },
+                      items: { $ref: '#/components/schemas/access_grant' },
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
@@ -38576,61 +38014,7 @@ export default {
                 schema: {
                   properties: {
                     access_method: {
-                      properties: {
-                        access_method_id: {
-                          description: 'ID of the access method.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        created_at: {
-                          description:
-                            'Date and time at which the access method was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        display_name: {
-                          description: 'Display name of the access method.',
-                          type: 'string',
-                        },
-                        instant_key_url: {
-                          description:
-                            'URL of instant key for mobile key access methods.',
-                          type: 'string',
-                        },
-                        is_card_encoding_required: {
-                          description:
-                            'Whether card encoding is required for plastic card access methods.',
-                          type: 'boolean',
-                        },
-                        issued_at: {
-                          description:
-                            'Date and time at which the access method was issued.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        mode: {
-                          description:
-                            'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                          enum: ['code', 'card', 'mobile_key'],
-                          type: 'string',
-                        },
-                        workspace_id: {
-                          description:
-                            'Unique identifier for the Seam workspace associated with the access grant.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'workspace_id',
-                        'access_method_id',
-                        'display_name',
-                        'mode',
-                        'created_at',
-                      ],
-                      type: 'object',
-                      'x-draft': 'Early access.',
-                      'x-route-path': '/access_methods',
+                      $ref: '#/components/schemas/access_method',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -38689,63 +38073,7 @@ export default {
                 schema: {
                   properties: {
                     access_methods: {
-                      items: {
-                        properties: {
-                          access_method_id: {
-                            description: 'ID of the access method.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          created_at: {
-                            description:
-                              'Date and time at which the access method was created.',
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          display_name: {
-                            description: 'Display name of the access method.',
-                            type: 'string',
-                          },
-                          instant_key_url: {
-                            description:
-                              'URL of instant key for mobile key access methods.',
-                            type: 'string',
-                          },
-                          is_card_encoding_required: {
-                            description:
-                              'Whether card encoding is required for plastic card access methods.',
-                            type: 'boolean',
-                          },
-                          issued_at: {
-                            description:
-                              'Date and time at which the access method was issued.',
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          mode: {
-                            description:
-                              'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                            enum: ['code', 'card', 'mobile_key'],
-                            type: 'string',
-                          },
-                          workspace_id: {
-                            description:
-                              'Unique identifier for the Seam workspace associated with the access grant.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: [
-                          'workspace_id',
-                          'access_method_id',
-                          'display_name',
-                          'mode',
-                          'created_at',
-                        ],
-                        type: 'object',
-                        'x-draft': 'Early access.',
-                        'x-route-path': '/access_methods',
-                      },
+                      items: { $ref: '#/components/schemas/access_method' },
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
