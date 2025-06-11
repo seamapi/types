@@ -15970,7 +15970,12 @@ export default {
       magic_link: {
         properties: {
           building_block_type: {
-            enum: ['connect_accounts', 'manage_devices', 'organize_spaces'],
+            enum: [
+              'connect_accounts',
+              'manage_devices',
+              'organize_spaces',
+              'console',
+            ],
             type: 'string',
           },
           created_at: { format: 'date-time', type: 'string' },
@@ -39881,76 +39886,46 @@ export default {
           content: {
             'application/json': {
               schema: {
-                oneOf: [
-                  {
-                    properties: {
-                      building_block_type: {
-                        description: '`connect_accounts` building block type.',
-                        enum: ['connect_accounts'],
-                        type: 'string',
-                      },
-                      customer_key: {
-                        description:
-                          'Customer key for which you want to create a new building block magic link.',
-                        type: 'string',
-                      },
-                    },
-                    required: ['building_block_type', 'customer_key'],
-                    type: 'object',
+                properties: {
+                  building_block_type: {
+                    description:
+                      'Type of building block to create a magic link for.',
+                    enum: [
+                      'connect_accounts',
+                      'organize_spaces',
+                      'console',
+                      'manage_devices',
+                    ],
+                    type: 'string',
                   },
-                  {
-                    properties: {
-                      building_block_type: {
-                        description: '`manage_devices` building block type.',
-                        enum: ['manage_devices'],
-                        type: 'string',
-                      },
-                      customer_key: {
-                        description:
-                          'Customer key for which you want to create a new building block magic link.',
-                        type: 'string',
-                      },
-                    },
-                    required: ['building_block_type', 'customer_key'],
-                    type: 'object',
+                  customer_key: {
+                    description:
+                      'Customer key for which you want to create a new building block magic link.',
+                    type: 'string',
                   },
-                  {
-                    properties: {
-                      building_block_type: {
-                        description: '`organize_spaces` building block type.',
-                        enum: ['organize_spaces'],
-                        type: 'string',
-                      },
-                      customer_key: {
-                        description:
-                          'Customer key for which you want to create a new building block magic link.',
-                        type: 'string',
-                      },
-                      partner_resources: {
-                        description:
-                          'Optional list of partner resources that you want to include in the new building block magic link.',
-                        items: {
-                          properties: {
-                            custom_metadata: {
-                              additionalProperties: { type: 'string' },
-                              type: 'object',
-                            },
-                            description: { type: 'string' },
-                            name: { type: 'string' },
-                            partner_resource_key: { type: 'string' },
-                          },
-                          required: ['partner_resource_key', 'name'],
+                  spaces: {
+                    description:
+                      'Optional list of spaces that you want to include in the new building block magic link.',
+                    items: {
+                      properties: {
+                        custom_metadata: {
+                          additionalProperties: { type: 'string' },
                           type: 'object',
-                          'x-route-path': '/unstable_partner/resources',
-                          'x-undocumented': 'Unreleased.',
                         },
-                        type: 'array',
+                        description: { type: 'string' },
+                        name: { type: 'string' },
+                        space_key: { type: 'string' },
                       },
+                      required: ['space_key', 'name'],
+                      type: 'object',
+                      'x-route-path': '/unstable_partner/resources',
+                      'x-undocumented': 'Unreleased.',
                     },
-                    required: ['building_block_type', 'customer_key'],
-                    type: 'object',
+                    type: 'array',
                   },
-                ],
+                },
+                required: ['building_block_type', 'customer_key'],
+                type: 'object',
               },
             },
           },
@@ -40060,9 +40035,9 @@ export default {
                       'Customer key for which you want to organize spaces.',
                     type: 'string',
                   },
-                  partner_resources: {
+                  spaces: {
                     description:
-                      'Optional list of partner resources that you want to include in the new building block magic link.',
+                      'Optional list of spaces that you want to include in the new building block magic link.',
                     items: {
                       properties: {
                         custom_metadata: {
@@ -40071,9 +40046,9 @@ export default {
                         },
                         description: { type: 'string' },
                         name: { type: 'string' },
-                        partner_resource_key: { type: 'string' },
+                        space_key: { type: 'string' },
                       },
-                      required: ['partner_resource_key', 'name'],
+                      required: ['space_key', 'name'],
                       type: 'object',
                       'x-route-path': '/unstable_partner/resources',
                       'x-undocumented': 'Unreleased.',
