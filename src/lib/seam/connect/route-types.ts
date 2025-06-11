@@ -16969,6 +16969,10 @@ export interface Routes {
       location_id?: (string | null) | undefined
       /** ID of the space for which you want to list entrances. */
       space_id?: string | undefined
+      /** ID of the access grant for which you want to retrieve all entrances. */
+      access_grant_id?: string | undefined
+      /** ID of the access method for which you want to retrieve all entrances. */
+      access_method_id?: string | undefined
     }
     formData: {}
     jsonResponse: {

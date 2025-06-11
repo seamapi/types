@@ -26156,6 +26156,18 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  access_grant_id: {
+                    description:
+                      'ID of the access grant for which you want to retrieve all entrances.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  access_method_id: {
+                    description:
+                      'ID of the access method for which you want to retrieve all entrances.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   acs_credential_id: {
                     description:
                       'ID of the credential for which you want to retrieve all entrances.',
