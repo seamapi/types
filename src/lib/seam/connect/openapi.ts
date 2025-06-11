@@ -7337,7 +7337,9 @@ export default {
           expires_at: { format: 'date-time', type: 'string' },
           token: { type: 'string' },
           user_identifier_key: { nullable: true, type: 'string' },
+          user_identity_id: { format: 'uuid', type: 'string' },
           user_identity_ids: {
+            description: 'deprecated: Use `user_identity_id`.',
             items: { format: 'uuid', type: 'string' },
             type: 'array',
           },
@@ -27878,11 +27880,20 @@ export default {
                     minLength: 1,
                     type: 'string',
                   },
-                  user_identity_ids: {
+                  user_identity_id: {
                     description:
-                      'IDs of the [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to create a client session.',
+                      'ID of the [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to create a client session.',
+                    type: 'string',
+                  },
+                  user_identity_ids: {
+                    deprecated: true,
+                    description:
+                      'IDs of the [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session.',
                     items: { type: 'string' },
+                    maxItems: 1,
+                    minItems: 1,
                     type: 'array',
+                    'x-deprecated': 'Use `user_identity_id`.',
                   },
                 },
                 type: 'object',
@@ -27960,11 +27971,20 @@ export default {
                     minLength: 1,
                     type: 'string',
                   },
-                  user_identity_ids: {
+                  user_identity_id: {
                     description:
-                      'IDs of the [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to create a client session.',
+                      'ID of the [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to create a client session.',
+                    type: 'string',
+                  },
+                  user_identity_ids: {
+                    deprecated: true,
+                    description:
+                      'IDs of the [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session.',
                     items: { type: 'string' },
+                    maxItems: 1,
+                    minItems: 1,
                     type: 'array',
+                    'x-deprecated': 'Use `user_identity_id`.',
                   },
                 },
                 type: 'object',
@@ -28154,11 +28174,20 @@ export default {
                     minLength: 1,
                     type: 'string',
                   },
-                  user_identity_ids: {
+                  user_identity_id: {
                     description:
-                      'IDs of the [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session (or that are already associated with the existing client session).',
+                      'ID of the [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session (or that are already associated with the existing client session).',
+                    type: 'string',
+                  },
+                  user_identity_ids: {
+                    deprecated: true,
+                    description:
+                      'IDs of the [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session.',
                     items: { type: 'string' },
+                    maxItems: 1,
+                    minItems: 1,
                     type: 'array',
+                    'x-deprecated': 'Use `user_identity_id`.',
                   },
                 },
                 type: 'object',
@@ -28234,11 +28263,20 @@ export default {
                       'Your user ID for the user that you want to associate with the client session.',
                     type: 'string',
                   },
+                  user_identity_id: {
+                    description:
+                      'ID of the [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session.',
+                    type: 'string',
+                  },
                   user_identity_ids: {
+                    deprecated: true,
                     description:
                       'IDs of the [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session.',
                     items: { type: 'string' },
+                    maxItems: 1,
+                    minItems: 1,
                     type: 'array',
+                    'x-deprecated': 'Use `user_identity_id`.',
                   },
                 },
                 type: 'object',
@@ -28309,11 +28347,20 @@ export default {
                       'Your user ID for the user that you want to associate with the client session.',
                     type: 'string',
                   },
+                  user_identity_id: {
+                    description:
+                      'ID of the [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session.',
+                    type: 'string',
+                  },
                   user_identity_ids: {
+                    deprecated: true,
                     description:
                       'IDs of the [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session.',
                     items: { type: 'string' },
+                    maxItems: 1,
+                    minItems: 1,
                     type: 'array',
+                    'x-deprecated': 'Use `user_identity_id`.',
                   },
                 },
                 type: 'object',
