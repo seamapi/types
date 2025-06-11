@@ -11,7 +11,10 @@ export const client_session = z.object({
   customer_id: z.string().uuid().optional(),
   connected_account_ids: z.array(z.string().uuid()),
   connect_webview_ids: z.array(z.string().uuid()),
-  user_identity_ids: z.array(z.string().uuid()),
+  user_identity_ids: z
+    .array(z.string().uuid())
+    .describe('deprecated: Use `user_identity_id`.'),
+  user_identity_id: z.string().uuid().optional(),
 }).describe(`
   ---
   route_path: /client_sessions
