@@ -134,6 +134,14 @@ const subscription_required = common_device_error
   })
   .describe('Subscription required to connect.')
 
+const lockly_missing_wifi_bridge = common_device_error
+  .extend({
+    error_code: z
+      .literal('lockly_missing_wifi_bridge')
+      .describe(error_code_description),
+  })
+  .describe('Lockly lock is not connected to a Wi-Fi bridge.')
+
 export const device_error = z
   .discriminatedUnion('error_code', [
     account_disconnected,
@@ -149,6 +157,7 @@ export const device_error = z
     missing_device_credentials,
     auxiliary_heat_running,
     subscription_required,
+    lockly_missing_wifi_bridge,
   ])
   .describe('Error associated with the `device`.')
 
@@ -174,6 +183,7 @@ const device_error_map = z.object({
   missing_device_credentials: missing_device_credentials.optional().nullable(),
   auxiliary_heat_running: auxiliary_heat_running.optional().nullable(),
   subscription_required: subscription_required.optional().nullable(),
+  lockly_missing_wifi_bridge: lockly_missing_wifi_bridge.optional().nullable(),
 })
 
 export type DeviceErrorMap = z.infer<typeof device_error_map>
