@@ -49330,8 +49330,6 @@ export interface Routes {
             is_being_activated: boolean
           }
           acs_credentials: Array<{
-            /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
-            acs_credential_id: string
             /** ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs. */
             acs_user_id?: string | undefined
             acs_credential_pool_id?: string | undefined
@@ -49467,6 +49465,7 @@ export interface Routes {
                 }
               | undefined
             is_managed: true
+            acs_credential_id?: string | undefined
             acs_entrances: Array<{
               /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). */
               acs_system_id: string
