@@ -20815,6 +20815,27 @@ export default {
             nullable: true,
             type: 'string',
           },
+          errors: {
+            description:
+              'Array of errors associated with the user identity. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
+            items: {
+              properties: {
+                created_at: {
+                  description: 'Date and time at which Seam created the error.',
+                  format: 'date-time',
+                  type: 'string',
+                },
+                message: {
+                  description:
+                    'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                  type: 'string',
+                },
+              },
+              required: ['created_at', 'message'],
+              type: 'object',
+            },
+            type: 'array',
+          },
           full_name: { minLength: 1, nullable: true, type: 'string' },
           phone_number: {
             description:
@@ -20833,6 +20854,42 @@ export default {
             nullable: true,
             type: 'string',
           },
+          warnings: {
+            description:
+              'Array of warnings associated with the user identity. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
+            items: {
+              description: 'Warnings associated with the user identity.',
+              discriminator: { propertyName: 'warning_code' },
+              oneOf: [
+                {
+                  description:
+                    'Indicates that the user identity is currently being deleted.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['being_deleted'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
           workspace_id: {
             description:
               'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the user identity.',
@@ -20849,6 +20906,8 @@ export default {
           'full_name',
           'created_at',
           'workspace_id',
+          'errors',
+          'warnings',
         ],
         type: 'object',
         'x-route-path': '/user_identities',
@@ -39885,7 +39944,7 @@ export default {
     '/user_identities/delete': {
       post: {
         description:
-          'Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). To delete a user identity, you must first delete any [credentials](https://docs.seam.co/latest/api/access-control-systems/credentials) and [enrollment automations](https://docs.seam.co/latest/api/user_identities/enrollment_automations/delete) associated with the user identity. You must also deactivate any associated phones.',
+          'Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://docs.seam.co/latest/api/access-control-systems/credentials), [acs users](https://docs.seam.co/latest/api/access-control-systems/users) and [client sessions](https://docs.seam.co/latest/api/client_sessions).',
         operationId: 'userIdentitiesDeletePost',
         requestBody: {
           content: {
