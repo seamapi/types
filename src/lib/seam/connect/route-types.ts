@@ -49465,7 +49465,7 @@ export interface Routes {
                 }
               | undefined
             is_managed: true
-            acs_credential_id?: (string | undefined) | null
+            acs_credential_id: string | null
             acs_entrances: Array<{
               /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). */
               acs_system_id: string

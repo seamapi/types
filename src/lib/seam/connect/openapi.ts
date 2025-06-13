@@ -17206,6 +17206,7 @@ export default {
                       'errors',
                       'warnings',
                       'is_managed',
+                      'acs_credential_id',
                       'acs_entrances',
                     ],
                     type: 'object',
