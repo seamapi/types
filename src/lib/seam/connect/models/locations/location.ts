@@ -26,6 +26,11 @@ export const location = z.object({
     .string()
     .datetime()
     .describe('Date and time at which the location object was created.'),
-})
+}).describe(`
+  ---
+  undocumented: Will be removed.
+  route_path: /unstable_locations
+  ---
+  `)
 
 export type Location = z.infer<typeof location>

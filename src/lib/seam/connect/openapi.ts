@@ -7318,6 +7318,146 @@ export default {
         ],
         'x-route-path': '/action_attempts',
       },
+      bridge_client_session: {
+        properties: {
+          bridge_client_machine_identifier_key: { type: 'string' },
+          bridge_client_name: { type: 'string' },
+          bridge_client_session_id: { format: 'uuid', type: 'string' },
+          bridge_client_session_token: { type: 'string' },
+          bridge_client_time_zone: { type: 'string' },
+          created_at: { format: 'date-time', type: 'string' },
+          errors: {
+            items: {
+              description: 'Error associated with the `bridge_client_session`.',
+              discriminator: { propertyName: 'error_code' },
+              oneOf: [
+                {
+                  description: "Seam cannot reach the bridge's LAN",
+                  properties: {
+                    can_tailscale_proxy_reach_bridge: {
+                      description: 'Tailscale proxy cannot reach the bridge',
+                      nullable: true,
+                      type: 'boolean',
+                    },
+                    can_tailscale_proxy_reach_tailscale_network: {
+                      description:
+                        'Tailscale proxy cannot reach the Tailscale network',
+                      nullable: true,
+                      type: 'boolean',
+                    },
+                    created_at: { format: 'date-time', type: 'string' },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['bridge_lan_unreachable'],
+                      type: 'string',
+                    },
+                    is_bridge_socks_server_healthy: {
+                      description: "Bridge's SOCKS server is unhealthy",
+                      nullable: true,
+                      type: 'boolean',
+                    },
+                    is_tailscale_proxy_reachable: {
+                      description: 'Seam cannot reach the tailscale proxy',
+                      nullable: true,
+                      type: 'boolean',
+                    },
+                    is_tailscale_proxy_socks_server_healthy: {
+                      description:
+                        "Tailscale proxy's SOCKS server is unhealthy",
+                      nullable: true,
+                      type: 'boolean',
+                    },
+                    message: { type: 'string' },
+                  },
+                  required: [
+                    'message',
+                    'created_at',
+                    'error_code',
+                    'is_tailscale_proxy_reachable',
+                    'is_tailscale_proxy_socks_server_healthy',
+                    'can_tailscale_proxy_reach_tailscale_network',
+                    'can_tailscale_proxy_reach_bridge',
+                    'is_bridge_socks_server_healthy',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description: 'Bridge has stopped communicating with Seam',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['no_communication_from_bridge'],
+                      type: 'string',
+                    },
+                    message: { type: 'string' },
+                  },
+                  required: ['message', 'created_at', 'error_code'],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
+          pairing_code: { maxLength: 6, minLength: 6, type: 'string' },
+          pairing_code_expires_at: { format: 'date-time', type: 'string' },
+          tailscale_auth_key: { nullable: true, type: 'string' },
+          tailscale_hostname: { type: 'string' },
+          telemetry_token: { nullable: true, type: 'string' },
+          telemetry_token_expires_at: {
+            format: 'date-time',
+            nullable: true,
+            type: 'string',
+          },
+          telemetry_url: { nullable: true, type: 'string' },
+        },
+        required: [
+          'created_at',
+          'bridge_client_session_id',
+          'bridge_client_session_token',
+          'pairing_code',
+          'pairing_code_expires_at',
+          'tailscale_hostname',
+          'tailscale_auth_key',
+          'bridge_client_name',
+          'bridge_client_time_zone',
+          'bridge_client_machine_identifier_key',
+          'errors',
+          'telemetry_token',
+          'telemetry_token_expires_at',
+          'telemetry_url',
+        ],
+        type: 'object',
+        'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
+        'x-undocumented': 'Seam Bridge Client only.',
+      },
+      bridge_connected_systems: {
+        properties: {
+          acs_system_display_name: { type: 'string' },
+          acs_system_id: { format: 'uuid', type: 'string' },
+          bridge_created_at: { format: 'date-time', type: 'string' },
+          bridge_id: { format: 'uuid', type: 'string' },
+          connected_account_created_at: { format: 'date-time', type: 'string' },
+          connected_account_id: { format: 'uuid', type: 'string' },
+          workspace_display_name: { type: 'string' },
+          workspace_id: { format: 'uuid', type: 'string' },
+        },
+        required: [
+          'bridge_id',
+          'bridge_created_at',
+          'connected_account_id',
+          'connected_account_created_at',
+          'acs_system_id',
+          'acs_system_display_name',
+          'workspace_id',
+          'workspace_display_name',
+        ],
+        type: 'object',
+        'x-route-path': '/seam/bridge/v1/bridge_connected_systems',
+        'x-undocumented': 'Seam Bridge Client only.',
+      },
       client_session: {
         description:
           "Represents a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens). If you want to restrict your users' access to their own devices, use client sessions.\n\nYou create each client session with a custom `user_identifier_key`. Normally, the `user_identifier_key` is a user ID that your application provides.\n\nWhen calling the Seam API from your backend using an API key, you can pass the `user_identifier_key` as a parameter to limit results to the associated client session. For example, `/devices/list?user_identifier_key=123` only returns devices associated with the client session created with the `user_identifier_key` `123`.\n\nA client session has a token that you can use with the Seam JavaScript SDK to make requests from the client (browser) directly to the Seam API. The token restricts the user's access to only the devices that they own.\n\nSee also [Get Started with React](https://docs.seam.co/latest/ui-components/overview/getting-started-with-seam-components/get-started-with-react-components-and-client-session-tokens).",
@@ -10700,8 +10840,7 @@ export default {
                             'created_at',
                           ],
                           type: 'object',
-                          'x-route-path':
-                            '/thermostats/thermostat_daily_programs',
+                          'x-route-path': '/thermostats/daily_programs',
                         },
                         type: 'array',
                         'x-property-group-key': 'thermostats',
@@ -16167,6 +16306,55 @@ export default {
         'x-route-path': '/user_identities',
         'x-undocumented': 'Unreleased.',
       },
+      location: {
+        properties: {
+          created_at: {
+            description:
+              'Date and time at which the location object was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          display_name: {
+            description: 'Display name of the location.',
+            type: 'string',
+          },
+          geolocation: {
+            description: 'Geographical location of the location.',
+            properties: {
+              latitude: { format: 'float', type: 'number' },
+              longitude: { format: 'float', type: 'number' },
+            },
+            required: ['latitude', 'longitude'],
+            type: 'object',
+          },
+          location_id: {
+            description: 'Unique identifier for the location.',
+            format: 'uuid',
+            type: 'string',
+          },
+          name: { description: 'Name of the location.', type: 'string' },
+          time_zone: {
+            description: 'Time zone of the location.',
+            type: 'string',
+          },
+          workspace_id: {
+            description:
+              'Unique identifier for the Seam workspace associated with the location.',
+            format: 'uuid',
+            type: 'string',
+          },
+        },
+        required: [
+          'location_id',
+          'workspace_id',
+          'name',
+          'display_name',
+          'created_at',
+        ],
+        type: 'object',
+        'x-route-path': '/unstable_locations',
+        'x-undocumented': 'Will be removed.',
+      },
       magic_link: {
         properties: {
           building_block_type: {
@@ -16268,6 +16456,33 @@ export default {
         },
         required: ['next_page_cursor', 'has_next_page', 'next_page_url'],
         type: 'object',
+      },
+      partner_resource: {
+        properties: {
+          custom_metadata: {
+            additionalProperties: { type: 'string' },
+            type: 'object',
+          },
+          customer_key: { type: 'string' },
+          description: { type: 'string' },
+          email_address: { type: 'string' },
+          ends_at: { type: 'string' },
+          location_keys: { items: { type: 'string' }, type: 'array' },
+          name: { type: 'string' },
+          partner_resource_key: { type: 'string' },
+          partner_resource_type: { type: 'string' },
+          phone_number: { type: 'string' },
+          starts_at: { type: 'string' },
+          user_identity_key: { type: 'string' },
+        },
+        required: [
+          'partner_resource_type',
+          'partner_resource_key',
+          'customer_key',
+        ],
+        type: 'object',
+        'x-route-path': '/unstable_partner/resources',
+        'x-undocumented': 'Unreleased.',
       },
       phone: {
         description: "Represents an app user's mobile phone.",
@@ -17060,6 +17275,74 @@ export default {
         type: 'object',
         'x-draft': 'Early access.',
         'x-route-path': '/spaces',
+      },
+      thermostat_daily_program: {
+        description:
+          'Represents a thermostat daily program, consisting of a set of periods, each of which has a starting time and the key that identifies the climate preset to apply at the starting time.',
+        properties: {
+          created_at: {
+            description:
+              'Date and time at which the thermostat daily program was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          device_id: {
+            description:
+              'ID of the thermostat device on which the thermostat daily program is configured.',
+            format: 'uuid',
+            type: 'string',
+          },
+          name: {
+            description:
+              'User-friendly name to identify the thermostat daily program.',
+            nullable: true,
+            type: 'string',
+          },
+          periods: {
+            description: 'Array of thermostat daily program periods.',
+            items: {
+              description:
+                'Period for a thermostat daily program. Consists of a starts at time and the key that identifies the configured climate preset to apply at the starting time.',
+              properties: {
+                climate_preset_key: {
+                  description:
+                    'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.',
+                  type: 'string',
+                },
+                starts_at_time: {
+                  description:
+                    'Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                  pattern: '^([01]\\d|2[0-3]):([0-5]\\d):([0-5]\\d)$',
+                  type: 'string',
+                },
+              },
+              required: ['starts_at_time', 'climate_preset_key'],
+              type: 'object',
+            },
+            type: 'array',
+          },
+          thermostat_daily_program_id: {
+            description: 'ID of the thermostat daily program.',
+            format: 'uuid',
+            type: 'string',
+          },
+          workspace_id: {
+            description:
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program.',
+            format: 'uuid',
+            type: 'string',
+          },
+        },
+        required: [
+          'thermostat_daily_program_id',
+          'device_id',
+          'name',
+          'periods',
+          'workspace_id',
+          'created_at',
+        ],
+        type: 'object',
+        'x-route-path': '/thermostats/daily_programs',
       },
       thermostat_schedule: {
         description:
@@ -32959,147 +33242,7 @@ export default {
                 schema: {
                   properties: {
                     bridge_client_session: {
-                      properties: {
-                        bridge_client_machine_identifier_key: {
-                          type: 'string',
-                        },
-                        bridge_client_name: { type: 'string' },
-                        bridge_client_session_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        bridge_client_session_token: { type: 'string' },
-                        bridge_client_time_zone: { type: 'string' },
-                        created_at: { format: 'date-time', type: 'string' },
-                        errors: {
-                          items: {
-                            description:
-                              'Error associated with the `bridge_client_session`.',
-                            discriminator: { propertyName: 'error_code' },
-                            oneOf: [
-                              {
-                                description:
-                                  "Seam cannot reach the bridge's LAN",
-                                properties: {
-                                  can_tailscale_proxy_reach_bridge: {
-                                    description:
-                                      'Tailscale proxy cannot reach the bridge',
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  can_tailscale_proxy_reach_tailscale_network: {
-                                    description:
-                                      'Tailscale proxy cannot reach the Tailscale network',
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  created_at: {
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  error_code: {
-                                    description:
-                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                    enum: ['bridge_lan_unreachable'],
-                                    type: 'string',
-                                  },
-                                  is_bridge_socks_server_healthy: {
-                                    description:
-                                      "Bridge's SOCKS server is unhealthy",
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  is_tailscale_proxy_reachable: {
-                                    description:
-                                      'Seam cannot reach the tailscale proxy',
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  is_tailscale_proxy_socks_server_healthy: {
-                                    description:
-                                      "Tailscale proxy's SOCKS server is unhealthy",
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  message: { type: 'string' },
-                                },
-                                required: [
-                                  'message',
-                                  'created_at',
-                                  'error_code',
-                                  'is_tailscale_proxy_reachable',
-                                  'is_tailscale_proxy_socks_server_healthy',
-                                  'can_tailscale_proxy_reach_tailscale_network',
-                                  'can_tailscale_proxy_reach_bridge',
-                                  'is_bridge_socks_server_healthy',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Bridge has stopped communicating with Seam',
-                                properties: {
-                                  created_at: {
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  error_code: {
-                                    description:
-                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                    enum: ['no_communication_from_bridge'],
-                                    type: 'string',
-                                  },
-                                  message: { type: 'string' },
-                                },
-                                required: [
-                                  'message',
-                                  'created_at',
-                                  'error_code',
-                                ],
-                                type: 'object',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        pairing_code: {
-                          maxLength: 6,
-                          minLength: 6,
-                          type: 'string',
-                        },
-                        pairing_code_expires_at: {
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        tailscale_auth_key: { nullable: true, type: 'string' },
-                        tailscale_hostname: { type: 'string' },
-                        telemetry_token: { nullable: true, type: 'string' },
-                        telemetry_token_expires_at: {
-                          format: 'date-time',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        telemetry_url: { nullable: true, type: 'string' },
-                      },
-                      required: [
-                        'created_at',
-                        'bridge_client_session_id',
-                        'bridge_client_session_token',
-                        'pairing_code',
-                        'pairing_code_expires_at',
-                        'tailscale_hostname',
-                        'tailscale_auth_key',
-                        'bridge_client_name',
-                        'bridge_client_time_zone',
-                        'bridge_client_machine_identifier_key',
-                        'errors',
-                        'telemetry_token',
-                        'telemetry_token_expires_at',
-                        'telemetry_url',
-                      ],
-                      type: 'object',
-                      'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
-                      'x-undocumented': 'Seam Bridge Client only.',
+                      $ref: '#/components/schemas/bridge_client_session',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -33141,147 +33284,7 @@ export default {
                 schema: {
                   properties: {
                     bridge_client_session: {
-                      properties: {
-                        bridge_client_machine_identifier_key: {
-                          type: 'string',
-                        },
-                        bridge_client_name: { type: 'string' },
-                        bridge_client_session_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        bridge_client_session_token: { type: 'string' },
-                        bridge_client_time_zone: { type: 'string' },
-                        created_at: { format: 'date-time', type: 'string' },
-                        errors: {
-                          items: {
-                            description:
-                              'Error associated with the `bridge_client_session`.',
-                            discriminator: { propertyName: 'error_code' },
-                            oneOf: [
-                              {
-                                description:
-                                  "Seam cannot reach the bridge's LAN",
-                                properties: {
-                                  can_tailscale_proxy_reach_bridge: {
-                                    description:
-                                      'Tailscale proxy cannot reach the bridge',
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  can_tailscale_proxy_reach_tailscale_network: {
-                                    description:
-                                      'Tailscale proxy cannot reach the Tailscale network',
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  created_at: {
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  error_code: {
-                                    description:
-                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                    enum: ['bridge_lan_unreachable'],
-                                    type: 'string',
-                                  },
-                                  is_bridge_socks_server_healthy: {
-                                    description:
-                                      "Bridge's SOCKS server is unhealthy",
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  is_tailscale_proxy_reachable: {
-                                    description:
-                                      'Seam cannot reach the tailscale proxy',
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  is_tailscale_proxy_socks_server_healthy: {
-                                    description:
-                                      "Tailscale proxy's SOCKS server is unhealthy",
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  message: { type: 'string' },
-                                },
-                                required: [
-                                  'message',
-                                  'created_at',
-                                  'error_code',
-                                  'is_tailscale_proxy_reachable',
-                                  'is_tailscale_proxy_socks_server_healthy',
-                                  'can_tailscale_proxy_reach_tailscale_network',
-                                  'can_tailscale_proxy_reach_bridge',
-                                  'is_bridge_socks_server_healthy',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Bridge has stopped communicating with Seam',
-                                properties: {
-                                  created_at: {
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  error_code: {
-                                    description:
-                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                    enum: ['no_communication_from_bridge'],
-                                    type: 'string',
-                                  },
-                                  message: { type: 'string' },
-                                },
-                                required: [
-                                  'message',
-                                  'created_at',
-                                  'error_code',
-                                ],
-                                type: 'object',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        pairing_code: {
-                          maxLength: 6,
-                          minLength: 6,
-                          type: 'string',
-                        },
-                        pairing_code_expires_at: {
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        tailscale_auth_key: { nullable: true, type: 'string' },
-                        tailscale_hostname: { type: 'string' },
-                        telemetry_token: { nullable: true, type: 'string' },
-                        telemetry_token_expires_at: {
-                          format: 'date-time',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        telemetry_url: { nullable: true, type: 'string' },
-                      },
-                      required: [
-                        'created_at',
-                        'bridge_client_session_id',
-                        'bridge_client_session_token',
-                        'pairing_code',
-                        'pairing_code_expires_at',
-                        'tailscale_hostname',
-                        'tailscale_auth_key',
-                        'bridge_client_name',
-                        'bridge_client_time_zone',
-                        'bridge_client_machine_identifier_key',
-                        'errors',
-                        'telemetry_token',
-                        'telemetry_token_expires_at',
-                        'telemetry_url',
-                      ],
-                      type: 'object',
-                      'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
-                      'x-undocumented': 'Seam Bridge Client only.',
+                      $ref: '#/components/schemas/bridge_client_session',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -33314,147 +33317,7 @@ export default {
                 schema: {
                   properties: {
                     bridge_client_session: {
-                      properties: {
-                        bridge_client_machine_identifier_key: {
-                          type: 'string',
-                        },
-                        bridge_client_name: { type: 'string' },
-                        bridge_client_session_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        bridge_client_session_token: { type: 'string' },
-                        bridge_client_time_zone: { type: 'string' },
-                        created_at: { format: 'date-time', type: 'string' },
-                        errors: {
-                          items: {
-                            description:
-                              'Error associated with the `bridge_client_session`.',
-                            discriminator: { propertyName: 'error_code' },
-                            oneOf: [
-                              {
-                                description:
-                                  "Seam cannot reach the bridge's LAN",
-                                properties: {
-                                  can_tailscale_proxy_reach_bridge: {
-                                    description:
-                                      'Tailscale proxy cannot reach the bridge',
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  can_tailscale_proxy_reach_tailscale_network: {
-                                    description:
-                                      'Tailscale proxy cannot reach the Tailscale network',
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  created_at: {
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  error_code: {
-                                    description:
-                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                    enum: ['bridge_lan_unreachable'],
-                                    type: 'string',
-                                  },
-                                  is_bridge_socks_server_healthy: {
-                                    description:
-                                      "Bridge's SOCKS server is unhealthy",
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  is_tailscale_proxy_reachable: {
-                                    description:
-                                      'Seam cannot reach the tailscale proxy',
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  is_tailscale_proxy_socks_server_healthy: {
-                                    description:
-                                      "Tailscale proxy's SOCKS server is unhealthy",
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  message: { type: 'string' },
-                                },
-                                required: [
-                                  'message',
-                                  'created_at',
-                                  'error_code',
-                                  'is_tailscale_proxy_reachable',
-                                  'is_tailscale_proxy_socks_server_healthy',
-                                  'can_tailscale_proxy_reach_tailscale_network',
-                                  'can_tailscale_proxy_reach_bridge',
-                                  'is_bridge_socks_server_healthy',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Bridge has stopped communicating with Seam',
-                                properties: {
-                                  created_at: {
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  error_code: {
-                                    description:
-                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                    enum: ['no_communication_from_bridge'],
-                                    type: 'string',
-                                  },
-                                  message: { type: 'string' },
-                                },
-                                required: [
-                                  'message',
-                                  'created_at',
-                                  'error_code',
-                                ],
-                                type: 'object',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        pairing_code: {
-                          maxLength: 6,
-                          minLength: 6,
-                          type: 'string',
-                        },
-                        pairing_code_expires_at: {
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        tailscale_auth_key: { nullable: true, type: 'string' },
-                        tailscale_hostname: { type: 'string' },
-                        telemetry_token: { nullable: true, type: 'string' },
-                        telemetry_token_expires_at: {
-                          format: 'date-time',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        telemetry_url: { nullable: true, type: 'string' },
-                      },
-                      required: [
-                        'created_at',
-                        'bridge_client_session_id',
-                        'bridge_client_session_token',
-                        'pairing_code',
-                        'pairing_code_expires_at',
-                        'tailscale_hostname',
-                        'tailscale_auth_key',
-                        'bridge_client_name',
-                        'bridge_client_time_zone',
-                        'bridge_client_machine_identifier_key',
-                        'errors',
-                        'telemetry_token',
-                        'telemetry_token_expires_at',
-                        'telemetry_url',
-                      ],
-                      type: 'object',
-                      'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
-                      'x-undocumented': 'Seam Bridge Client only.',
+                      $ref: '#/components/schemas/bridge_client_session',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -33497,147 +33360,7 @@ export default {
                 schema: {
                   properties: {
                     bridge_client_session: {
-                      properties: {
-                        bridge_client_machine_identifier_key: {
-                          type: 'string',
-                        },
-                        bridge_client_name: { type: 'string' },
-                        bridge_client_session_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        bridge_client_session_token: { type: 'string' },
-                        bridge_client_time_zone: { type: 'string' },
-                        created_at: { format: 'date-time', type: 'string' },
-                        errors: {
-                          items: {
-                            description:
-                              'Error associated with the `bridge_client_session`.',
-                            discriminator: { propertyName: 'error_code' },
-                            oneOf: [
-                              {
-                                description:
-                                  "Seam cannot reach the bridge's LAN",
-                                properties: {
-                                  can_tailscale_proxy_reach_bridge: {
-                                    description:
-                                      'Tailscale proxy cannot reach the bridge',
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  can_tailscale_proxy_reach_tailscale_network: {
-                                    description:
-                                      'Tailscale proxy cannot reach the Tailscale network',
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  created_at: {
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  error_code: {
-                                    description:
-                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                    enum: ['bridge_lan_unreachable'],
-                                    type: 'string',
-                                  },
-                                  is_bridge_socks_server_healthy: {
-                                    description:
-                                      "Bridge's SOCKS server is unhealthy",
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  is_tailscale_proxy_reachable: {
-                                    description:
-                                      'Seam cannot reach the tailscale proxy',
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  is_tailscale_proxy_socks_server_healthy: {
-                                    description:
-                                      "Tailscale proxy's SOCKS server is unhealthy",
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  message: { type: 'string' },
-                                },
-                                required: [
-                                  'message',
-                                  'created_at',
-                                  'error_code',
-                                  'is_tailscale_proxy_reachable',
-                                  'is_tailscale_proxy_socks_server_healthy',
-                                  'can_tailscale_proxy_reach_tailscale_network',
-                                  'can_tailscale_proxy_reach_bridge',
-                                  'is_bridge_socks_server_healthy',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Bridge has stopped communicating with Seam',
-                                properties: {
-                                  created_at: {
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  error_code: {
-                                    description:
-                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                    enum: ['no_communication_from_bridge'],
-                                    type: 'string',
-                                  },
-                                  message: { type: 'string' },
-                                },
-                                required: [
-                                  'message',
-                                  'created_at',
-                                  'error_code',
-                                ],
-                                type: 'object',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        pairing_code: {
-                          maxLength: 6,
-                          minLength: 6,
-                          type: 'string',
-                        },
-                        pairing_code_expires_at: {
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        tailscale_auth_key: { nullable: true, type: 'string' },
-                        tailscale_hostname: { type: 'string' },
-                        telemetry_token: { nullable: true, type: 'string' },
-                        telemetry_token_expires_at: {
-                          format: 'date-time',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        telemetry_url: { nullable: true, type: 'string' },
-                      },
-                      required: [
-                        'created_at',
-                        'bridge_client_session_id',
-                        'bridge_client_session_token',
-                        'pairing_code',
-                        'pairing_code_expires_at',
-                        'tailscale_hostname',
-                        'tailscale_auth_key',
-                        'bridge_client_name',
-                        'bridge_client_time_zone',
-                        'bridge_client_machine_identifier_key',
-                        'errors',
-                        'telemetry_token',
-                        'telemetry_token_expires_at',
-                        'telemetry_url',
-                      ],
-                      type: 'object',
-                      'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
-                      'x-undocumented': 'Seam Bridge Client only.',
+                      $ref: '#/components/schemas/bridge_client_session',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -33682,147 +33405,7 @@ export default {
                 schema: {
                   properties: {
                     bridge_client_session: {
-                      properties: {
-                        bridge_client_machine_identifier_key: {
-                          type: 'string',
-                        },
-                        bridge_client_name: { type: 'string' },
-                        bridge_client_session_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        bridge_client_session_token: { type: 'string' },
-                        bridge_client_time_zone: { type: 'string' },
-                        created_at: { format: 'date-time', type: 'string' },
-                        errors: {
-                          items: {
-                            description:
-                              'Error associated with the `bridge_client_session`.',
-                            discriminator: { propertyName: 'error_code' },
-                            oneOf: [
-                              {
-                                description:
-                                  "Seam cannot reach the bridge's LAN",
-                                properties: {
-                                  can_tailscale_proxy_reach_bridge: {
-                                    description:
-                                      'Tailscale proxy cannot reach the bridge',
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  can_tailscale_proxy_reach_tailscale_network: {
-                                    description:
-                                      'Tailscale proxy cannot reach the Tailscale network',
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  created_at: {
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  error_code: {
-                                    description:
-                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                    enum: ['bridge_lan_unreachable'],
-                                    type: 'string',
-                                  },
-                                  is_bridge_socks_server_healthy: {
-                                    description:
-                                      "Bridge's SOCKS server is unhealthy",
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  is_tailscale_proxy_reachable: {
-                                    description:
-                                      'Seam cannot reach the tailscale proxy',
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  is_tailscale_proxy_socks_server_healthy: {
-                                    description:
-                                      "Tailscale proxy's SOCKS server is unhealthy",
-                                    nullable: true,
-                                    type: 'boolean',
-                                  },
-                                  message: { type: 'string' },
-                                },
-                                required: [
-                                  'message',
-                                  'created_at',
-                                  'error_code',
-                                  'is_tailscale_proxy_reachable',
-                                  'is_tailscale_proxy_socks_server_healthy',
-                                  'can_tailscale_proxy_reach_tailscale_network',
-                                  'can_tailscale_proxy_reach_bridge',
-                                  'is_bridge_socks_server_healthy',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Bridge has stopped communicating with Seam',
-                                properties: {
-                                  created_at: {
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  error_code: {
-                                    description:
-                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                    enum: ['no_communication_from_bridge'],
-                                    type: 'string',
-                                  },
-                                  message: { type: 'string' },
-                                },
-                                required: [
-                                  'message',
-                                  'created_at',
-                                  'error_code',
-                                ],
-                                type: 'object',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        pairing_code: {
-                          maxLength: 6,
-                          minLength: 6,
-                          type: 'string',
-                        },
-                        pairing_code_expires_at: {
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        tailscale_auth_key: { nullable: true, type: 'string' },
-                        tailscale_hostname: { type: 'string' },
-                        telemetry_token: { nullable: true, type: 'string' },
-                        telemetry_token_expires_at: {
-                          format: 'date-time',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        telemetry_url: { nullable: true, type: 'string' },
-                      },
-                      required: [
-                        'created_at',
-                        'bridge_client_session_id',
-                        'bridge_client_session_token',
-                        'pairing_code',
-                        'pairing_code_expires_at',
-                        'tailscale_hostname',
-                        'tailscale_auth_key',
-                        'bridge_client_name',
-                        'bridge_client_time_zone',
-                        'bridge_client_machine_identifier_key',
-                        'errors',
-                        'telemetry_token',
-                        'telemetry_token_expires_at',
-                        'telemetry_url',
-                      ],
-                      type: 'object',
-                      'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
-                      'x-undocumented': 'Seam Bridge Client only.',
+                      $ref: '#/components/schemas/bridge_client_session',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -33924,39 +33507,7 @@ export default {
                   properties: {
                     bridge_connected_systems: {
                       items: {
-                        properties: {
-                          acs_system_display_name: { type: 'string' },
-                          acs_system_id: { format: 'uuid', type: 'string' },
-                          bridge_created_at: {
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          bridge_id: { format: 'uuid', type: 'string' },
-                          connected_account_created_at: {
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          connected_account_id: {
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          workspace_display_name: { type: 'string' },
-                          workspace_id: { format: 'uuid', type: 'string' },
-                        },
-                        required: [
-                          'bridge_id',
-                          'bridge_created_at',
-                          'connected_account_id',
-                          'connected_account_created_at',
-                          'acs_system_id',
-                          'acs_system_display_name',
-                          'workspace_id',
-                          'workspace_display_name',
-                        ],
-                        type: 'object',
-                        'x-route-path':
-                          '/seam/bridge/v1/bridge_connected_systems',
-                        'x-undocumented': 'Seam Bridge Client only.',
+                        $ref: '#/components/schemas/bridge_connected_systems',
                       },
                       type: 'array',
                     },
@@ -33992,39 +33543,7 @@ export default {
                   properties: {
                     bridge_connected_systems: {
                       items: {
-                        properties: {
-                          acs_system_display_name: { type: 'string' },
-                          acs_system_id: { format: 'uuid', type: 'string' },
-                          bridge_created_at: {
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          bridge_id: { format: 'uuid', type: 'string' },
-                          connected_account_created_at: {
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          connected_account_id: {
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          workspace_display_name: { type: 'string' },
-                          workspace_id: { format: 'uuid', type: 'string' },
-                        },
-                        required: [
-                          'bridge_id',
-                          'bridge_created_at',
-                          'connected_account_id',
-                          'connected_account_created_at',
-                          'acs_system_id',
-                          'acs_system_display_name',
-                          'workspace_id',
-                          'workspace_display_name',
-                        ],
-                        type: 'object',
-                        'x-route-path':
-                          '/seam/bridge/v1/bridge_connected_systems',
-                        'x-undocumented': 'Seam Bridge Client only.',
+                        $ref: '#/components/schemas/bridge_connected_systems',
                       },
                       type: 'array',
                     },
@@ -34360,36 +33879,7 @@ export default {
                   properties: {
                     ok: { type: 'boolean' },
                     partner_resources: {
-                      items: {
-                        properties: {
-                          custom_metadata: {
-                            additionalProperties: { type: 'string' },
-                            type: 'object',
-                          },
-                          customer_key: { type: 'string' },
-                          description: { type: 'string' },
-                          email_address: { type: 'string' },
-                          ends_at: { type: 'string' },
-                          location_keys: {
-                            items: { type: 'string' },
-                            type: 'array',
-                          },
-                          name: { type: 'string' },
-                          partner_resource_key: { type: 'string' },
-                          partner_resource_type: { type: 'string' },
-                          phone_number: { type: 'string' },
-                          starts_at: { type: 'string' },
-                          user_identity_key: { type: 'string' },
-                        },
-                        required: [
-                          'partner_resource_type',
-                          'partner_resource_key',
-                          'customer_key',
-                        ],
-                        type: 'object',
-                        'x-route-path': '/unstable_partner/resources',
-                        'x-undocumented': 'Unreleased.',
-                      },
+                      items: { $ref: '#/components/schemas/partner_resource' },
                       type: 'array',
                     },
                   },
@@ -35430,74 +34920,7 @@ export default {
                   properties: {
                     ok: { type: 'boolean' },
                     thermostat_daily_program: {
-                      description:
-                        'Represents a thermostat daily program, consisting of a set of periods, each of which has a starting time and the key that identifies the climate preset to apply at the starting time.',
-                      properties: {
-                        created_at: {
-                          description:
-                            'Date and time at which the thermostat daily program was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        device_id: {
-                          description:
-                            'ID of the thermostat device on which the thermostat daily program is configured.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        name: {
-                          description:
-                            'User-friendly name to identify the thermostat daily program.',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        periods: {
-                          description:
-                            'Array of thermostat daily program periods.',
-                          items: {
-                            description:
-                              'Period for a thermostat daily program. Consists of a starts at time and the key that identifies the configured climate preset to apply at the starting time.',
-                            properties: {
-                              climate_preset_key: {
-                                description:
-                                  'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.',
-                                type: 'string',
-                              },
-                              starts_at_time: {
-                                description:
-                                  'Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
-                                pattern:
-                                  '^([01]\\d|2[0-3]):([0-5]\\d):([0-5]\\d)$',
-                                type: 'string',
-                              },
-                            },
-                            required: ['starts_at_time', 'climate_preset_key'],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        thermostat_daily_program_id: {
-                          description: 'ID of the thermostat daily program.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        workspace_id: {
-                          description:
-                            'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'thermostat_daily_program_id',
-                        'device_id',
-                        'name',
-                        'periods',
-                        'workspace_id',
-                        'created_at',
-                      ],
-                      type: 'object',
-                      'x-route-path': '/thermostats/thermostat_daily_programs',
+                      $ref: '#/components/schemas/thermostat_daily_program',
                     },
                   },
                   required: ['thermostat_daily_program', 'ok'],
@@ -38586,56 +38009,7 @@ export default {
               'application/json': {
                 schema: {
                   properties: {
-                    location: {
-                      properties: {
-                        created_at: {
-                          description:
-                            'Date and time at which the location object was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        display_name: {
-                          description: 'Display name of the location.',
-                          type: 'string',
-                        },
-                        geolocation: {
-                          description: 'Geographical location of the location.',
-                          properties: {
-                            latitude: { format: 'float', type: 'number' },
-                            longitude: { format: 'float', type: 'number' },
-                          },
-                          required: ['latitude', 'longitude'],
-                          type: 'object',
-                        },
-                        location_id: {
-                          description: 'Unique identifier for the location.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        name: {
-                          description: 'Name of the location.',
-                          type: 'string',
-                        },
-                        time_zone: {
-                          description: 'Time zone of the location.',
-                          type: 'string',
-                        },
-                        workspace_id: {
-                          description:
-                            'Unique identifier for the Seam workspace associated with the location.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'location_id',
-                        'workspace_id',
-                        'name',
-                        'display_name',
-                        'created_at',
-                      ],
-                      type: 'object',
-                    },
+                    location: { $ref: '#/components/schemas/location' },
                     ok: { type: 'boolean' },
                   },
                   required: ['location', 'ok'],
@@ -38741,56 +38115,7 @@ export default {
               'application/json': {
                 schema: {
                   properties: {
-                    location: {
-                      properties: {
-                        created_at: {
-                          description:
-                            'Date and time at which the location object was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        display_name: {
-                          description: 'Display name of the location.',
-                          type: 'string',
-                        },
-                        geolocation: {
-                          description: 'Geographical location of the location.',
-                          properties: {
-                            latitude: { format: 'float', type: 'number' },
-                            longitude: { format: 'float', type: 'number' },
-                          },
-                          required: ['latitude', 'longitude'],
-                          type: 'object',
-                        },
-                        location_id: {
-                          description: 'Unique identifier for the location.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        name: {
-                          description: 'Name of the location.',
-                          type: 'string',
-                        },
-                        time_zone: {
-                          description: 'Time zone of the location.',
-                          type: 'string',
-                        },
-                        workspace_id: {
-                          description:
-                            'Unique identifier for the Seam workspace associated with the location.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'location_id',
-                        'workspace_id',
-                        'name',
-                        'display_name',
-                        'created_at',
-                      ],
-                      type: 'object',
-                    },
+                    location: { $ref: '#/components/schemas/location' },
                     ok: { type: 'boolean' },
                   },
                   required: ['location', 'ok'],
@@ -38829,57 +38154,7 @@ export default {
                 schema: {
                   properties: {
                     locations: {
-                      items: {
-                        properties: {
-                          created_at: {
-                            description:
-                              'Date and time at which the location object was created.',
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          display_name: {
-                            description: 'Display name of the location.',
-                            type: 'string',
-                          },
-                          geolocation: {
-                            description:
-                              'Geographical location of the location.',
-                            properties: {
-                              latitude: { format: 'float', type: 'number' },
-                              longitude: { format: 'float', type: 'number' },
-                            },
-                            required: ['latitude', 'longitude'],
-                            type: 'object',
-                          },
-                          location_id: {
-                            description: 'Unique identifier for the location.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          name: {
-                            description: 'Name of the location.',
-                            type: 'string',
-                          },
-                          time_zone: {
-                            description: 'Time zone of the location.',
-                            type: 'string',
-                          },
-                          workspace_id: {
-                            description:
-                              'Unique identifier for the Seam workspace associated with the location.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: [
-                          'location_id',
-                          'workspace_id',
-                          'name',
-                          'display_name',
-                          'created_at',
-                        ],
-                        type: 'object',
-                      },
+                      items: { $ref: '#/components/schemas/location' },
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
@@ -38916,57 +38191,7 @@ export default {
                 schema: {
                   properties: {
                     locations: {
-                      items: {
-                        properties: {
-                          created_at: {
-                            description:
-                              'Date and time at which the location object was created.',
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          display_name: {
-                            description: 'Display name of the location.',
-                            type: 'string',
-                          },
-                          geolocation: {
-                            description:
-                              'Geographical location of the location.',
-                            properties: {
-                              latitude: { format: 'float', type: 'number' },
-                              longitude: { format: 'float', type: 'number' },
-                            },
-                            required: ['latitude', 'longitude'],
-                            type: 'object',
-                          },
-                          location_id: {
-                            description: 'Unique identifier for the location.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          name: {
-                            description: 'Name of the location.',
-                            type: 'string',
-                          },
-                          time_zone: {
-                            description: 'Time zone of the location.',
-                            type: 'string',
-                          },
-                          workspace_id: {
-                            description:
-                              'Unique identifier for the Seam workspace associated with the location.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: [
-                          'location_id',
-                          'workspace_id',
-                          'name',
-                          'display_name',
-                          'created_at',
-                        ],
-                        type: 'object',
-                      },
+                      items: { $ref: '#/components/schemas/location' },
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
@@ -39156,56 +38381,7 @@ export default {
               'application/json': {
                 schema: {
                   properties: {
-                    location: {
-                      properties: {
-                        created_at: {
-                          description:
-                            'Date and time at which the location object was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        display_name: {
-                          description: 'Display name of the location.',
-                          type: 'string',
-                        },
-                        geolocation: {
-                          description: 'Geographical location of the location.',
-                          properties: {
-                            latitude: { format: 'float', type: 'number' },
-                            longitude: { format: 'float', type: 'number' },
-                          },
-                          required: ['latitude', 'longitude'],
-                          type: 'object',
-                        },
-                        location_id: {
-                          description: 'Unique identifier for the location.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        name: {
-                          description: 'Name of the location.',
-                          type: 'string',
-                        },
-                        time_zone: {
-                          description: 'Time zone of the location.',
-                          type: 'string',
-                        },
-                        workspace_id: {
-                          description:
-                            'Unique identifier for the Seam workspace associated with the location.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'location_id',
-                        'workspace_id',
-                        'name',
-                        'display_name',
-                        'created_at',
-                      ],
-                      type: 'object',
-                    },
+                    location: { $ref: '#/components/schemas/location' },
                     ok: { type: 'boolean' },
                   },
                   required: ['location', 'ok'],
@@ -39273,56 +38449,7 @@ export default {
               'application/json': {
                 schema: {
                   properties: {
-                    location: {
-                      properties: {
-                        created_at: {
-                          description:
-                            'Date and time at which the location object was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        display_name: {
-                          description: 'Display name of the location.',
-                          type: 'string',
-                        },
-                        geolocation: {
-                          description: 'Geographical location of the location.',
-                          properties: {
-                            latitude: { format: 'float', type: 'number' },
-                            longitude: { format: 'float', type: 'number' },
-                          },
-                          required: ['latitude', 'longitude'],
-                          type: 'object',
-                        },
-                        location_id: {
-                          description: 'Unique identifier for the location.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        name: {
-                          description: 'Name of the location.',
-                          type: 'string',
-                        },
-                        time_zone: {
-                          description: 'Time zone of the location.',
-                          type: 'string',
-                        },
-                        workspace_id: {
-                          description:
-                            'Unique identifier for the Seam workspace associated with the location.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'location_id',
-                        'workspace_id',
-                        'name',
-                        'display_name',
-                        'created_at',
-                      ],
-                      type: 'object',
-                    },
+                    location: { $ref: '#/components/schemas/location' },
                     ok: { type: 'boolean' },
                   },
                   required: ['location', 'ok'],
@@ -40160,32 +39287,7 @@ export default {
                 schema: {
                   properties: {
                     enrollment_automation: {
-                      properties: {
-                        acs_credential_provisioning_automation_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        created_at: { format: 'date-time', type: 'string' },
-                        credential_manager_acs_system_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        enrollment_automation_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        user_identity_id: { format: 'uuid', type: 'string' },
-                        workspace_id: { format: 'uuid', type: 'string' },
-                      },
-                      required: [
-                        'acs_credential_provisioning_automation_id',
-                        'credential_manager_acs_system_id',
-                        'user_identity_id',
-                        'created_at',
-                        'workspace_id',
-                        'enrollment_automation_id',
-                      ],
-                      type: 'object',
+                      $ref: '#/components/schemas/enrollment_automation',
                     },
                     ok: { type: 'boolean' },
                   },
