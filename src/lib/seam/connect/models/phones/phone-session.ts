@@ -7,7 +7,11 @@ import { phone_registration } from './phone-registration.js'
 const phone_provider_session = z.object({
   phone_registration,
   acs_credentials: acs_credential
+    .omit({
+      acs_credential_id: true,
+    })
     .extend({
+      acs_credential_id: z.string().optional(),
       acs_entrances: acs_entrance.array(),
     })
     .array(),

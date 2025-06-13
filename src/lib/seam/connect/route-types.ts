@@ -49330,8 +49330,6 @@ export interface Routes {
             is_being_activated: boolean
           }
           acs_credentials: Array<{
-            /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
-            acs_credential_id: string
             /** ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs. */
             acs_user_id?: string | undefined
             acs_credential_pool_id?: string | undefined
@@ -49467,6 +49465,7 @@ export interface Routes {
                 }
               | undefined
             is_managed: true
+            acs_credential_id?: string | undefined
             acs_entrances: Array<{
               /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). */
               acs_system_id: string
@@ -67195,6 +67194,22 @@ export interface Routes {
         created_at: string
         /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the user identity. */
         workspace_id: string
+        /** Array of errors associated with the user identity. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+        errors: Array<{
+          /** Date and time at which Seam created the error. */
+          created_at: string
+          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+        }>
+        /** Array of warnings associated with the user identity. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
+        warnings: Array<{
+          /** Date and time at which Seam created the warning. */
+          created_at: string
+          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+          warning_code: 'being_deleted'
+        }>
       }
     }
   }
@@ -67358,6 +67373,22 @@ export interface Routes {
         created_at: string
         /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the user identity. */
         workspace_id: string
+        /** Array of errors associated with the user identity. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+        errors: Array<{
+          /** Date and time at which Seam created the error. */
+          created_at: string
+          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+        }>
+        /** Array of warnings associated with the user identity. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
+        warnings: Array<{
+          /** Date and time at which Seam created the warning. */
+          created_at: string
+          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+          warning_code: 'being_deleted'
+        }>
       }
     }
   }
@@ -67401,6 +67432,22 @@ export interface Routes {
         created_at: string
         /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the user identity. */
         workspace_id: string
+        /** Array of errors associated with the user identity. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+        errors: Array<{
+          /** Date and time at which Seam created the error. */
+          created_at: string
+          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+        }>
+        /** Array of warnings associated with the user identity. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
+        warnings: Array<{
+          /** Date and time at which Seam created the warning. */
+          created_at: string
+          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+          warning_code: 'being_deleted'
+        }>
       }>
     }
   }
