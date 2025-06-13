@@ -66801,6 +66801,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       location: {
         /** Unique identifier for the location. */
         location_id: string
@@ -66847,6 +66848,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /**  */
       location: {
         /** Unique identifier for the location. */
         location_id: string
@@ -66951,6 +66953,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       location: {
         /** Unique identifier for the location. */
         location_id: string
@@ -67282,13 +67285,18 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /** Represents an [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) within the [Seam mobile access solution](https://docs.seam.co/latest/capability-guides/mobile-access-in-development). */
       enrollment_automation: {
-        acs_credential_provisioning_automation_id: string
-        credential_manager_acs_system_id: string
-        user_identity_id: string
-        created_at: string
-        workspace_id: string
+        /** ID of the enrollment automation. */
         enrollment_automation_id: string
+        /** ID of the associated [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) that serves as the credential manager. */
+        credential_manager_acs_system_id: string
+        /** ID of the associated [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). */
+        user_identity_id: string
+        /** Date and time at which the enrollment automation was created. */
+        created_at: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the enrollment automation. */
+        workspace_id: string
       }
     }
   }
