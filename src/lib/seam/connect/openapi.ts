@@ -16434,12 +16434,7 @@ export default {
                         enum: ['code', 'card', 'mobile_key'],
                         type: 'string',
                       },
-                      acs_credential_id: {
-                        description:
-                          'ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
-                        format: 'uuid',
-                        type: 'string',
-                      },
+                      acs_credential_id: { type: 'string' },
                       acs_credential_pool_id: {
                         format: 'uuid',
                         type: 'string',
@@ -16988,7 +16983,6 @@ export default {
                       },
                     },
                     required: [
-                      'acs_credential_id',
                       'acs_system_id',
                       'display_name',
                       'access_method',
