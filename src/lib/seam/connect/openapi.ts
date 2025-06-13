@@ -16434,7 +16434,7 @@ export default {
                         enum: ['code', 'card', 'mobile_key'],
                         type: 'string',
                       },
-                      acs_credential_id: { type: 'string' },
+                      acs_credential_id: { nullable: true, type: 'string' },
                       acs_credential_pool_id: {
                         format: 'uuid',
                         type: 'string',
