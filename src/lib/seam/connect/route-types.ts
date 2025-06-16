@@ -22342,6 +22342,8 @@ export interface Routes {
       custom_metadata_has?: Record<string, string | boolean> | undefined
       /** Maximum number of records to return per page. */
       limit?: number
+      /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
+      page_cursor?: (string | undefined) | null
     }
     formData: {}
     jsonResponse: {
@@ -22390,6 +22392,15 @@ export interface Routes {
         /** Selected provider of the Connect Webview, one of the [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). */
         selected_provider: string | null
       }>
+      /** Information about the current page of results. */
+      pagination: {
+        /** Opaque value that can be used to select the next page of results via the `page_cursor` parameter. */
+        next_page_cursor: string | null
+        /** Indicates whether there is another page of results after this one. */
+        has_next_page: boolean
+        /** URL to get the next page of results. */
+        next_page_url: string | null
+      }
     }
   }
   '/connected_accounts/delete': {
@@ -22557,6 +22568,8 @@ export interface Routes {
         custom_metadata: Record<string, string | boolean>
         /** Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API. */
         automatically_manage_new_devices: boolean
+        /** Your unique key for the customer associated with this connected account. */
+        customer_key?: string | undefined
       }
     }
   }
@@ -22712,6 +22725,8 @@ export interface Routes {
         custom_metadata: Record<string, string | boolean>
         /** Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API. */
         automatically_manage_new_devices: boolean
+        /** Your unique key for the customer associated with this connected account. */
+        customer_key?: string | undefined
       }>
       /** Information about the current page of results. */
       pagination: {
@@ -22886,6 +22901,8 @@ export interface Routes {
         custom_metadata: Record<string, string | boolean>
         /** Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API. */
         automatically_manage_new_devices: boolean
+        /** Your unique key for the customer associated with this connected account. */
+        customer_key?: string | undefined
       }
     }
   }
