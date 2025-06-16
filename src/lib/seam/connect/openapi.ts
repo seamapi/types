@@ -29200,6 +29200,12 @@ export default {
                     format: 'float',
                     type: 'number',
                   },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    nullable: true,
+                    type: 'string',
+                  },
                   user_identifier_key: {
                     description:
                       'Your user ID for the user by which you want to filter Connect Webviews.',
@@ -29222,8 +29228,9 @@ export default {
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                   },
-                  required: ['connect_webviews', 'ok'],
+                  required: ['connect_webviews', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
