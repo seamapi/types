@@ -7690,6 +7690,11 @@ export default {
               'Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application.',
             type: 'object',
           },
+          customer_key: {
+            description:
+              'Your unique key for the customer associated with this connected account.',
+            type: 'string',
+          },
           errors: {
             description: 'Errors associated with the connected account.',
             items: {

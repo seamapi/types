@@ -302,6 +302,12 @@ export const connected_account = z.object({
     .describe(
       'Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API.',
     ),
+  customer_key: z
+    .string()
+    .optional()
+    .describe(
+      'Your unique key for the customer associated with this connected account.',
+    ),
 }).describe(`
   ---
   route_path: /connected_accounts
