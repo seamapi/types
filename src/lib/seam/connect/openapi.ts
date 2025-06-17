@@ -808,9 +808,14 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Account is disconnected',
+                  description: 'Indicates that the account is disconnected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -818,11 +823,22 @@ export default {
                       type: 'string',
                     },
                     is_connected_account_error: {
+                      description:
+                        'Indicates that the error is a [connected account](https://docs.seam.co/latest/api/connected_accounts) error.',
                       enum: [true],
                       type: 'boolean',
                     },
-                    is_device_error: { enum: [false], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is not a device error.',
+                      enum: [false],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -834,9 +850,15 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Salto site user limit reached.',
+                  description:
+                    'Indicates that the Salto site user limit has been reached.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -844,11 +866,22 @@ export default {
                       type: 'string',
                     },
                     is_connected_account_error: {
+                      description:
+                        'Indicates that the error is a [connected account](https://docs.seam.co/latest/api/connected_accounts) error.',
                       enum: [true],
                       type: 'boolean',
                     },
-                    is_device_error: { enum: [false], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is not a device error.',
+                      enum: [false],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -860,17 +893,31 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Device is offline',
+                  description: 'Indicates that the device is offline.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['device_offline'],
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -881,17 +928,31 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Device has been removed',
+                  description: 'Indicates that the device has been removed.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['device_removed'],
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -902,17 +963,31 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Hub is disconnected',
+                  description: 'Indicates that the hub is disconnected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['hub_disconnected'],
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -923,164 +998,31 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Device is disconnected',
+                  description: 'Indicates that the device is disconnected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['device_disconnected'],
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'The backup access code pool is empty.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
+                    is_device_error: {
                       description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['empty_backup_access_code_pool'],
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'User is not authorized to use the August Lock.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_lock_not_authorized'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'Lock is not connected to the Seam Bridge.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_lock_missing_bridge'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'Lock is not paired with a Gateway.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['ttlock_lock_not_paired_to_gateway'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'Missing device credentials.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['missing_device_credentials'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'The auxiliary heat is running.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['auxiliary_heat_running'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'Subscription required to connect.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['subscription_required'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
                   },
                   required: [
                     'message',
@@ -1092,17 +1034,31 @@ export default {
                 },
                 {
                   description:
-                    'Lockly lock is not connected to a Wi-Fi bridge.',
+                    'Indicates that the [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['lockly_missing_wifi_bridge'],
+                      enum: ['empty_backup_access_code_pool'],
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -1113,7 +1069,258 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Credentials provided were invalid.',
+                  description:
+                    'Indicates that the user is not authorized to use the August lock.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['august_lock_not_authorized'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the lock is not connected to a bridge.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['august_lock_missing_bridge'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the lock is not paired with a gateway.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['ttlock_lock_not_paired_to_gateway'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description: 'Indicates that device credentials are missing.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['missing_device_credentials'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description: 'Indicates that the auxiliary heat is running.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['auxiliary_heat_running'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that a subscription is required to connect.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['subscription_required'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the Lockly lock is not connected to a Wi-Fi bridge.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['lockly_missing_wifi_bridge'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the credentials provided were invalid.',
                   properties: {
                     created_at: {
                       description:
@@ -1129,7 +1336,7 @@ export default {
                     },
                     is_bridge_error: {
                       description:
-                        'Indicates whether the error is related to Seam Bridge.',
+                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
                       type: 'boolean',
                     },
                     is_connected_account_error: {
@@ -1148,7 +1355,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -1164,7 +1371,7 @@ export default {
                     },
                     is_bridge_error: {
                       description:
-                        'Indicates whether the error is related to Seam Bridge.',
+                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
                       type: 'boolean',
                     },
                     is_connected_account_error: {
@@ -1252,7 +1459,7 @@ export default {
           },
           type: {
             description:
-              'Nature of the access code. Values are `ongoing` for access codes that are active continuously until deactivated manually or `time_bound` for access codes that have a specific duration.',
+              'Type of the access code. `ongoing` access codes are active continuously until deactivated manually. `time_bound` access codes have a specific duration.',
             enum: ['time_bound', 'ongoing'],
             type: 'string',
           },
@@ -1584,6 +1791,8 @@ export default {
         'x-route-path': '/access_codes',
       },
       access_grant: {
+        description:
+          'Represents an access grant. Access grants enable you to grant a user identity access to spaces, entrances, and devices through one or more access methods, such as mobile keys, plastic cards, and PIN codes. You can create an access grant for an existing user identity, or you can create a new user identity *while* creating the new access grant.',
         properties: {
           access_grant_id: {
             description: 'ID of the access grant.',
@@ -1592,7 +1801,7 @@ export default {
           },
           access_method_ids: {
             description:
-              'IDs of the access methods that were created for this access grant.',
+              'IDs of the access methods created for the access grant.',
             items: { format: 'uuid', type: 'string' },
             type: 'array',
           },
@@ -1613,18 +1822,18 @@ export default {
           },
           requested_access_methods: {
             description:
-              'Access methods that the user requested for this access grant.',
+              'Access methods that the user requested for the access grant.',
             items: {
               properties: {
                 created_access_method_ids: {
                   description:
-                    'IDs of the access methods that were created for this requested access method.',
+                    'IDs of the access methods created for the requested access method.',
                   items: { format: 'uuid', type: 'string' },
                   type: 'array',
                 },
                 created_at: {
                   description:
-                    'Date and time at which the requested access method was added to this access grant.',
+                    'Date and time at which the requested access method was added to the access grant.',
                   format: 'date-time',
                   type: 'string',
                 },
@@ -1650,19 +1859,20 @@ export default {
             type: 'array',
           },
           space_ids: {
-            description: 'IDs of the spaces to which access is being given.',
+            description:
+              'IDs of the spaces to which the access grant gives access.',
             items: { format: 'uuid', type: 'string' },
             type: 'array',
           },
           user_identity_id: {
             description:
-              'ID of user identity to which access is being granted.',
+              'ID of user identity to which the access grant gives access.',
             format: 'uuid',
             type: 'string',
           },
           workspace_id: {
             description:
-              'Unique identifier for the Seam workspace associated with the access grant.',
+              'ID of the Seam workspace associated with the access grant.',
             format: 'uuid',
             type: 'string',
           },
@@ -1683,6 +1893,8 @@ export default {
         'x-route-path': '/access_grants',
       },
       access_method: {
+        description:
+          'Represents an access method for an access grant. Access methods describe the modes of access, such as PIN codes, plastic cards, and mobile keys. For a mobile key, the access method also stores the URL for the associated Instant Key.',
         properties: {
           access_method_id: {
             description: 'ID of the access method.',
@@ -1700,12 +1912,13 @@ export default {
             type: 'string',
           },
           instant_key_url: {
-            description: 'URL of instant key for mobile key access methods.',
+            description:
+              'URL of the Instant Key for mobile key access methods.',
             type: 'string',
           },
           is_card_encoding_required: {
             description:
-              'Whether card encoding is required for plastic card access methods.',
+              'Indicates whether card encoding is required for plastic card access methods.',
             type: 'boolean',
           },
           issued_at: {
@@ -1721,7 +1934,7 @@ export default {
           },
           workspace_id: {
             description:
-              'Unique identifier for the Seam workspace associated with the access grant.',
+              'ID of the Seam workspace associated with the access method.',
             format: 'uuid',
             type: 'string',
           },
@@ -1888,12 +2101,33 @@ export default {
             description:
               'Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
             properties: {
-              auto_join: { type: 'boolean' },
-              door_names: { items: { type: 'string' }, type: 'array' },
-              endpoint_id: { type: 'string' },
-              key_id: { type: 'string' },
-              key_issuing_request_id: { type: 'string' },
+              auto_join: {
+                description:
+                  'Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors.',
+                type: 'boolean',
+              },
+              door_names: {
+                description:
+                  'Names of the doors to which to grant access in the Vostio access system.',
+                items: { type: 'string' },
+                type: 'array',
+              },
+              endpoint_id: {
+                description: 'Endpoint ID in the Vostio access system.',
+                type: 'string',
+              },
+              key_id: {
+                description: 'Key ID in the Vostio access system.',
+                type: 'string',
+              },
+              key_issuing_request_id: {
+                description:
+                  'Key issuing request ID in the Vostio access system.',
+                type: 'string',
+              },
               override_guest_acs_entrance_ids: {
+                description:
+                  'IDs of the guest entrances to override in the Vostio access system.',
                 items: { type: 'string' },
                 type: 'array',
               },
@@ -2013,20 +2247,45 @@ export default {
             description:
               'Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
             properties: {
-              auto_join: { type: 'boolean' },
-              card_function_type: { enum: ['guest', 'staff'], type: 'string' },
-              card_id: { type: 'string' },
+              auto_join: {
+                description:
+                  'Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors.',
+                type: 'boolean',
+              },
+              card_function_type: {
+                description:
+                  'Card function type in the Visionline access system.',
+                enum: ['guest', 'staff'],
+                type: 'string',
+              },
+              card_id: {
+                description: 'ID of the card in the Visionline access system.',
+                type: 'string',
+              },
               common_acs_entrance_ids: {
+                description:
+                  'Common entrance IDs in the Visionline access system.',
                 items: { format: 'uuid', type: 'string' },
                 type: 'array',
               },
-              credential_id: { type: 'string' },
+              credential_id: {
+                description:
+                  'ID of the credential in the Visionline access system.',
+                type: 'string',
+              },
               guest_acs_entrance_ids: {
+                description:
+                  'Guest entrance IDs in the Visionline access system.',
                 items: { format: 'uuid', type: 'string' },
                 type: 'array',
               },
-              is_valid: { type: 'boolean' },
+              is_valid: {
+                description: 'Indicates whether the credential is valid.',
+                type: 'boolean',
+              },
               joiner_acs_credential_ids: {
+                description:
+                  'IDs of the credentials to which you want to join.',
                 items: { format: 'uuid', type: 'string' },
                 type: 'array',
               },
@@ -2218,6 +2477,7 @@ export default {
         'x-route-path': '/acs/credentials',
       },
       acs_credential_pool: {
+        deprecated: true,
         properties: {
           acs_credential_pool_id: { format: 'uuid', type: 'string' },
           acs_system_id: { format: 'uuid', type: 'string' },
@@ -2237,10 +2497,12 @@ export default {
           'workspace_id',
         ],
         type: 'object',
+        'x-deprecated': 'Not used.',
         'x-route-path': '/acs/credential_pools',
-        'x-undocumented': 'Will be removed.',
+        'x-undocumented': 'Deprecated. Will be removed.',
       },
       acs_credential_provisioning_automation: {
+        deprecated: true,
         properties: {
           acs_credential_provisioning_automation_id: {
             format: 'uuid',
@@ -2259,8 +2521,9 @@ export default {
           'workspace_id',
         ],
         type: 'object',
+        'x-deprecated': 'Not used.',
         'x-route-path': '/acs/credential_provisioning_automations',
-        'x-undocumented': 'Will be removed.',
+        'x-undocumented': 'Deprecated. Will be removed.',
       },
       acs_encoder: {
         description:
@@ -2363,14 +2626,29 @@ export default {
             description:
               'ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
             properties: {
-              door_name: { type: 'string' },
-              door_number: { format: 'float', type: 'number' },
+              door_name: {
+                description: 'Name of the door in the Vostio access system.',
+                type: 'string',
+              },
+              door_number: {
+                description: 'Number of the door in the Vostio access system.',
+                format: 'float',
+                type: 'number',
+              },
               door_type: {
+                description: 'Type of the door in the Vostio access system.',
                 enum: ['CommonDoor', 'EntranceDoor', 'GuestDoor', 'Elevator'],
                 type: 'string',
               },
-              pms_id: { type: 'string' },
-              stand_open: { type: 'boolean' },
+              pms_id: {
+                description: 'PMS ID of the door in the Vostio access system.',
+                type: 'string',
+              },
+              stand_open: {
+                description:
+                  'Indicates whether keys are allowed to set the door in stand open mode in the Vostio access system.',
+                type: 'boolean',
+              },
             },
             required: ['door_type', 'door_name'],
             type: 'object',
@@ -2389,7 +2667,13 @@ export default {
           dormakaba_community_metadata: {
             description:
               'dormakaba Community-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
-            properties: { access_point_name: { type: 'string' } },
+            properties: {
+              access_point_name: {
+                description:
+                  'Name of the access point in the dormakaba Community access system.',
+                type: 'string',
+              },
+            },
             required: ['access_point_name'],
             type: 'object',
           },
@@ -2418,10 +2702,22 @@ export default {
             description:
               'Latch-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
             properties: {
-              accessibility_type: { type: 'string' },
-              door_name: { type: 'string' },
-              door_type: { type: 'string' },
-              is_connected: { type: 'boolean' },
+              accessibility_type: {
+                description: 'Accessibility type in the Latch access system.',
+                type: 'string',
+              },
+              door_name: {
+                description: 'Name of the door in the Latch access system.',
+                type: 'string',
+              },
+              door_type: {
+                description: 'Type of the door in the Latch access system.',
+                type: 'string',
+              },
+              is_connected: {
+                description: 'Indicates whether the entrance is connected.',
+                type: 'boolean',
+              },
             },
             required: [
               'accessibility_type',
@@ -2435,14 +2731,42 @@ export default {
             description:
               'Salto KS-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
             properties: {
-              battery_level: { type: 'string' },
-              door_name: { type: 'string' },
-              intrusion_alarm: { type: 'boolean' },
-              left_open_alarm: { type: 'boolean' },
-              lock_type: { type: 'string' },
-              locked_state: { type: 'string' },
-              online: { type: 'boolean' },
-              privacy_mode: { type: 'boolean' },
+              battery_level: {
+                description: 'Battery level of the door access device.',
+                type: 'string',
+              },
+              door_name: {
+                description: 'Name of the door in the Salto KS access system.',
+                type: 'string',
+              },
+              intrusion_alarm: {
+                description:
+                  'Indicates whether an intrusion alarm is active on the door.',
+                type: 'boolean',
+              },
+              left_open_alarm: {
+                description: 'Indicates whether the door is left open.',
+                type: 'boolean',
+              },
+              lock_type: {
+                description: 'Type of the lock in the Salto KS access system.',
+                type: 'string',
+              },
+              locked_state: {
+                description:
+                  'Locked state of the door in the Salto KS access system.',
+                type: 'string',
+              },
+              online: {
+                description:
+                  'Indicates whether the door access device is online.',
+                type: 'boolean',
+              },
+              privacy_mode: {
+                description:
+                  'Indicates whether privacy mode is enabled for the lock.',
+                type: 'boolean',
+              },
             },
             required: [
               'door_name',
@@ -2456,9 +2780,21 @@ export default {
             description:
               'Salto Space-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
             properties: {
-              door_description: { type: 'string' },
-              door_name: { type: 'string' },
-              ext_door_id: { type: 'string' },
+              door_description: {
+                description:
+                  'Description of the door in the Salto Space access system.',
+                type: 'string',
+              },
+              door_name: {
+                description:
+                  'Name of the door in the Salto Space access system.',
+                type: 'string',
+              },
+              ext_door_id: {
+                description:
+                  'External door ID in the Salto Space access system.',
+                type: 'string',
+              },
             },
             required: ['door_name', 'ext_door_id'],
             type: 'object',
@@ -2468,6 +2804,8 @@ export default {
               'Visionline-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
             properties: {
               door_category: {
+                description:
+                  'Category of the door in the Visionline access system.',
                 enum: [
                   'entrance',
                   'guest',
@@ -2477,12 +2815,24 @@ export default {
                 ],
                 type: 'string',
               },
-              door_name: { type: 'string' },
+              door_name: {
+                description:
+                  'Name of the door in the Visionline access system.',
+                type: 'string',
+              },
               profiles: {
+                description:
+                  'Profile for the door in the Visionline access system.',
                 items: {
                   properties: {
-                    visionline_door_profile_id: { type: 'string' },
+                    visionline_door_profile_id: {
+                      description:
+                        'Door profile ID in the Visionline access system.',
+                      type: 'string',
+                    },
                     visionline_door_profile_type: {
+                      description:
+                        'Door profile type in the Visionline access system.',
                       enum: ['BLE', 'commonDoor', 'touch'],
                       type: 'string',
                     },
@@ -2934,11 +3284,11 @@ export default {
       },
       acs_user: {
         description:
-          'Represents a [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).\n\nAn `acs_user` typically refers to an individual who requires access, like an employee or resident. Each user can possess multiple credentials that serve as their keys or identifiers for access. The type of credential can vary widely. For example, in the Salto system, a user can have a PIN code, a mobile app account, and a fob. In other platforms, it is not uncommon for a user to have more than one of the same credential type, such as multiple key cards. Additionally, these credentials can have a schedule or validity period.\n\nFor details about how to configure `acs_user`s in your access control system, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides/overview#access-control-systems).',
+          'Represents a [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access system](https://docs.seam.co/latest/capability-guides/access-systems).\n\nAn access system user typically refers to an individual who requires access, like an employee or resident. Each user can possess multiple credentials that serve as their keys or identifiers for access. The type of credential can vary widely. For example, in the Salto system, a user can have a PIN code, a mobile app account, and a fob. In other platforms, it is not uncommon for a user to have more than one of the same credential type, such as multiple key cards. Additionally, these credentials can have a schedule or validity period.\n\nFor details about how to configure users in your access system, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides/overview#access-control-systems).',
         properties: {
           access_schedule: {
             description:
-              "`starts_at` and `ends_at` timestamps for the [ACS user's](https://docs.seam.co/latest/capability-guides/access-systems/user-management) access.",
+              "`starts_at` and `ends_at` timestamps for the [access system user's](https://docs.seam.co/latest/capability-guides/access-systems/user-management) access.",
             properties: {
               ends_at: {
                 description:
@@ -2959,31 +3309,31 @@ export default {
           },
           acs_system_id: {
             description:
-              'ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+              'ID of the [access system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
             format: 'uuid',
             type: 'string',
           },
           acs_user_id: {
             description:
-              'ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+              'ID of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
             format: 'uuid',
             type: 'string',
           },
           connected_account_id: {
             description:
-              '\n      The ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that is associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).\n    ',
+              '\n      The ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that is associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).\n    ',
             format: 'uuid',
             type: 'string',
           },
           created_at: {
             description:
-              'Date and time at which the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created.',
+              'Date and time at which the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created.',
             format: 'date-time',
             type: 'string',
           },
           display_name: {
             description:
-              'Display name for the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+              'Display name for the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
             type: 'string',
           },
           email: {
@@ -2994,21 +3344,21 @@ export default {
           },
           email_address: {
             description:
-              'Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+              'Email address of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
             format: 'email',
             type: 'string',
           },
           errors: {
             description:
-              'Errors associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+              'Errors associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
             items: {
               description:
-                'Errors associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+                'Errors associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
               discriminator: { propertyName: 'error_code' },
               oneOf: [
                 {
                   description:
-                    'Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted from the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) outside of Seam.',
+                    'Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted from the [access system](https://docs.seam.co/latest/capability-guides/access-systems) outside of Seam.',
                   properties: {
                     created_at: {
                       description:
@@ -3031,7 +3381,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.',
+                    'Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.',
                   properties: {
                     created_at: {
                       description:
@@ -3054,7 +3404,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not created on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
+                    'Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not created on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
                   properties: {
                     created_at: {
                       description:
@@ -3077,7 +3427,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not updated on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
+                    'Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not updated on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
                   properties: {
                     created_at: {
                       description:
@@ -3100,7 +3450,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not deleted on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
+                    'Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not deleted on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
                   properties: {
                     created_at: {
                       description:
@@ -3123,7 +3473,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).',
+                    'Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).',
                   properties: {
                     created_at: {
                       description:
@@ -3150,7 +3500,7 @@ export default {
           },
           external_type: {
             description:
-              'Brand-specific terminology for the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) type.',
+              'Brand-specific terminology for the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) type.',
             enum: [
               'pti_user',
               'brivo_user',
@@ -3164,12 +3514,12 @@ export default {
           },
           external_type_display_name: {
             description:
-              'Display name that corresponds to the brand-specific terminology for the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) type.',
+              'Display name that corresponds to the brand-specific terminology for the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) type.',
             type: 'string',
           },
           full_name: {
             description:
-              'Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+              'Full name of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
             minLength: 1,
             type: 'string',
           },
@@ -3177,12 +3527,12 @@ export default {
           is_managed: { enum: [true], type: 'boolean' },
           is_suspended: {
             description:
-              'Indicates whether the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users).',
+              'Indicates whether the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users).',
             type: 'boolean',
           },
           last_successful_sync_at: {
             description:
-              'The last time an internal sync job completed for this ACS user.',
+              'The last time an internal sync job completed for this access system user.',
             format: 'date-time',
             nullable: true,
             type: 'string',
@@ -3190,7 +3540,7 @@ export default {
           },
           pending_mutations: {
             description:
-              'Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system.',
+              'Pending mutations associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system.',
             items: {
               discriminator: { propertyName: 'mutation_code' },
               oneOf: [
@@ -3208,7 +3558,12 @@ export default {
                       description: 'Detailed description of the mutation.',
                       type: 'string',
                     },
-                    mutation_code: { enum: ['creating'], type: 'string' },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing a user creation to the integrated access system.',
+                      enum: ['creating'],
+                      type: 'string',
+                    },
                   },
                   required: ['created_at', 'message', 'mutation_code'],
                   type: 'object',
@@ -3227,7 +3582,12 @@ export default {
                       description: 'Detailed description of the mutation.',
                       type: 'string',
                     },
-                    mutation_code: { enum: ['deleting'], type: 'string' },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing a user deletion to the integrated access system.',
+                      enum: ['deleting'],
+                      type: 'string',
+                    },
                   },
                   required: ['created_at', 'message', 'mutation_code'],
                   type: 'object',
@@ -3241,14 +3601,26 @@ export default {
                       type: 'string',
                     },
                     from: {
+                      description: 'Old access system user information.',
                       properties: {
                         email_address: {
+                          description:
+                            'Email address of the access system user.',
                           format: 'email',
                           nullable: true,
                           type: 'string',
                         },
-                        full_name: { nullable: true, type: 'string' },
-                        phone_number: { nullable: true, type: 'string' },
+                        full_name: {
+                          description: 'Full name of the access system user.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        phone_number: {
+                          description:
+                            'Phone number of the access system user.',
+                          nullable: true,
+                          type: 'string',
+                        },
                       },
                       type: 'object',
                     },
@@ -3257,18 +3629,32 @@ export default {
                       type: 'string',
                     },
                     mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing updated user information to the integrated access system.',
                       enum: ['updating_user_information'],
                       type: 'string',
                     },
                     to: {
+                      description: 'New access system user information.',
                       properties: {
                         email_address: {
+                          description:
+                            'Email address of the access system user.',
                           format: 'email',
                           nullable: true,
                           type: 'string',
                         },
-                        full_name: { nullable: true, type: 'string' },
-                        phone_number: { nullable: true, type: 'string' },
+                        full_name: {
+                          description: 'Full name of the access system user.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        phone_number: {
+                          description:
+                            'Phone number of the access system user.',
+                          nullable: true,
+                          type: 'string',
+                        },
                       },
                       type: 'object',
                     },
@@ -3293,13 +3679,16 @@ export default {
                       type: 'string',
                     },
                     from: {
+                      description: 'Old access schedule information.',
                       properties: {
                         ends_at: {
+                          description: 'Starting time for the access schedule.',
                           format: 'date-time',
                           nullable: true,
                           type: 'string',
                         },
                         starts_at: {
+                          description: 'Starting time for the access schedule.',
                           format: 'date-time',
                           nullable: true,
                           type: 'string',
@@ -3313,17 +3702,22 @@ export default {
                       type: 'string',
                     },
                     mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing updated access schedule information to the integrated access system.',
                       enum: ['updating_access_schedule'],
                       type: 'string',
                     },
                     to: {
+                      description: 'New access schedule information.',
                       properties: {
                         ends_at: {
+                          description: 'Starting time for the access schedule.',
                           format: 'date-time',
                           nullable: true,
                           type: 'string',
                         },
                         starts_at: {
+                          description: 'Starting time for the access schedule.',
                           format: 'date-time',
                           nullable: true,
                           type: 'string',
@@ -3353,6 +3747,7 @@ export default {
                       type: 'string',
                     },
                     from: {
+                      description: 'Old user suspension state information.',
                       properties: { is_suspended: { type: 'boolean' } },
                       required: ['is_suspended'],
                       type: 'object',
@@ -3362,10 +3757,13 @@ export default {
                       type: 'string',
                     },
                     mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing updated user suspension state information to the integrated access system.',
                       enum: ['updating_suspension_state'],
                       type: 'string',
                     },
                     to: {
+                      description: 'New user suspension state information.',
                       properties: { is_suspended: { type: 'boolean' } },
                       required: ['is_suspended'],
                       type: 'object',
@@ -3408,6 +3806,8 @@ export default {
                       type: 'string',
                     },
                     mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing updated access group membership information to the integrated access system.',
                       enum: ['updating_group_membership'],
                       type: 'string',
                     },
@@ -3440,43 +3840,43 @@ export default {
           },
           phone_number: {
             description:
-              'Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
+              'Phone number of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
             type: 'string',
           },
           user_identity_email_address: {
             description:
-              'Email address of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+              'Email address of the user identity associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
             nullable: true,
             type: 'string',
           },
           user_identity_full_name: {
             description:
-              'Full name of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+              'Full name of the user identity associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
             nullable: true,
             type: 'string',
           },
           user_identity_id: {
             description:
-              'ID of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+              'ID of the user identity associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
             type: 'string',
           },
           user_identity_phone_number: {
             description:
-              'Phone number of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
+              'Phone number of the user identity associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
             nullable: true,
             type: 'string',
           },
           warnings: {
             description:
-              'Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+              'Warnings associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
             items: {
               description:
-                'Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+                'Warnings associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
               discriminator: { propertyName: 'warning_code' },
               oneOf: [
                 {
                   description:
-                    'Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is being deleted from the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is a temporary state, and the ACS user will be deleted shortly.',
+                    'Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is being deleted from the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is a temporary state, and the access system user will be deleted shortly.',
                   properties: {
                     created_at: {
                       description:
@@ -3496,7 +3896,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is not subscribed on Salto KS, so they cannot unlock doors or perform any actions. This occurs when the their access schedule hasn’t started yet, if their access schedule has ended, if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.',
+                    'Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is not subscribed on Salto KS, so they cannot unlock doors or perform any actions. This occurs when the their access schedule hasn’t started yet, if their access schedule has ended, if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.',
                   properties: {
                     created_at: {
                       description:
@@ -3519,7 +3919,7 @@ export default {
                 },
                 {
                   description:
-                    'An unknown issue occurred while syncing the state of this [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user.',
+                    'An unknown issue occurred while syncing the state of this [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user.',
                   properties: {
                     created_at: {
                       description:
@@ -3542,7 +3942,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created on Latch Mission Control. Please use the Latch Mission Control to manage this user.',
+                    'Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created on Latch Mission Control. Please use the Latch Mission Control to manage this user.',
                   properties: {
                     created_at: {
                       description:
@@ -3569,7 +3969,7 @@ export default {
           },
           workspace_id: {
             description:
-              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
             format: 'uuid',
             type: 'string',
           },
@@ -3590,16 +3990,23 @@ export default {
         'x-route-path': '/acs/users',
       },
       action_attempt: {
+        description:
+          'Represents an action attempt that enables you to keep track of the progress of your action that affects a physical device or system.actions against a device. Action attempts are useful because the physical world is intrinsically asynchronous.\n\nWhen you request for a device to perform an action, the Seam API immediately returns an action attempt object. In the background, the Seam API performs the action.\n\nSee also [Action Attempts](https://docs.seam.co/latest/core-concepts/action-attempts).',
         oneOf: [
           {
-            description: 'Locking door.',
+            description: 'Locking a door is pending.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['LOCK_DOOR'], type: 'string' },
+              action_type: {
+                description:
+                  'Action attempt to track the status of locking a door.',
+                enum: ['LOCK_DOOR'],
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -3622,20 +4029,29 @@ export default {
             type: 'object',
           },
           {
-            description: 'Locking door succeeded.',
+            description: 'Locking a door succeeded.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['LOCK_DOOR'], type: 'string' },
+              action_type: {
+                description:
+                  'Action attempt to track the status of locking a door.',
+                enum: ['LOCK_DOOR'],
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
                 nullable: true,
               },
-              result: { properties: {}, type: 'object' },
+              result: {
+                description: 'Result of the action.',
+                properties: {},
+                type: 'object',
+              },
               status: { enum: ['success'], type: 'string' },
             },
             required: [
@@ -3648,18 +4064,28 @@ export default {
             type: 'object',
           },
           {
-            description: 'Locking door failed.',
+            description: 'Locking a door failed.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['LOCK_DOOR'], type: 'string' },
+              action_type: {
+                description:
+                  'Action attempt to track the status of locking a door.',
+                enum: ['LOCK_DOOR'],
+                type: 'string',
+              },
               error: {
+                description: 'Error associated with the action.',
                 properties: {
-                  message: { type: 'string' },
-                  type: { type: 'string' },
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
                 },
                 required: ['type', 'message'],
                 type: 'object',
@@ -3681,14 +4107,19 @@ export default {
             type: 'object',
           },
           {
-            description: 'Unlocking door.',
+            description: 'Unlocking a door is pending.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['UNLOCK_DOOR'], type: 'string' },
+              action_type: {
+                description:
+                  'Action attempt to track the status of unlocking a door.',
+                enum: ['UNLOCK_DOOR'],
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -3711,20 +4142,29 @@ export default {
             type: 'object',
           },
           {
-            description: 'Unlocking door succeeded.',
+            description: 'Unlocking a door succeeded.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['UNLOCK_DOOR'], type: 'string' },
+              action_type: {
+                description:
+                  'Action attempt to track the status of unlocking a door.',
+                enum: ['UNLOCK_DOOR'],
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
                 nullable: true,
               },
-              result: { properties: {}, type: 'object' },
+              result: {
+                description: 'Result of the action.',
+                properties: {},
+                type: 'object',
+              },
               status: { enum: ['success'], type: 'string' },
             },
             required: [
@@ -3737,18 +4177,28 @@ export default {
             type: 'object',
           },
           {
-            description: 'Unlocking door failed.',
+            description: 'Unlocking a door failed.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['UNLOCK_DOOR'], type: 'string' },
+              action_type: {
+                description:
+                  'Action attempt to track the status of unlocking a door.',
+                enum: ['UNLOCK_DOOR'],
+                type: 'string',
+              },
               error: {
+                description: 'Error associated with the action.',
                 properties: {
-                  message: { type: 'string' },
-                  type: { type: 'string' },
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
                 },
                 required: ['type', 'message'],
                 type: 'object',
@@ -3770,14 +4220,20 @@ export default {
             type: 'object',
           },
           {
-            description: 'Reading credential data from physical encoder.',
+            description:
+              'Reading credential data from the physical encoder is pending.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['SCAN_CREDENTIAL'], type: 'string' },
+              action_type: {
+                description:
+                  'Action attempt to track the status of scanning a credential.',
+                enum: ['SCAN_CREDENTIAL'],
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -3808,17 +4264,24 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['SCAN_CREDENTIAL'], type: 'string' },
+              action_type: {
+                description:
+                  'Action attempt to track the status of scanning a credential.',
+                enum: ['SCAN_CREDENTIAL'],
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
                 nullable: true,
               },
               result: {
+                description:
+                  'Result of scanning a card. If the attempt was successful, includes a snapshot of credential data read from the physical encoder, the corresponding data stored on Seam and the access system, and any associated warnings.',
                 properties: {
                   acs_credential_on_encoder: {
                     description:
-                      'Snapshot of credential data read from physical encoder.',
+                      'Snapshot of credential data read from the physical encoder.',
                     nullable: true,
                     properties: {
                       card_number: {
@@ -3942,7 +4405,7 @@ export default {
                   },
                   acs_credential_on_seam: {
                     description:
-                      'Matching acs_credential currently encoded on this card.',
+                      'Corresponding credential data as stored on Seam and the access system.',
                     nullable: true,
                     oneOf: [
                       {
@@ -3981,15 +4444,35 @@ export default {
                             description:
                               'Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
                             properties: {
-                              auto_join: { type: 'boolean' },
+                              auto_join: {
+                                description:
+                                  'Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors.',
+                                type: 'boolean',
+                              },
                               door_names: {
+                                description:
+                                  'Names of the doors to which to grant access in the Vostio access system.',
                                 items: { type: 'string' },
                                 type: 'array',
                               },
-                              endpoint_id: { type: 'string' },
-                              key_id: { type: 'string' },
-                              key_issuing_request_id: { type: 'string' },
+                              endpoint_id: {
+                                description:
+                                  'Endpoint ID in the Vostio access system.',
+                                type: 'string',
+                              },
+                              key_id: {
+                                description:
+                                  'Key ID in the Vostio access system.',
+                                type: 'string',
+                              },
+                              key_issuing_request_id: {
+                                description:
+                                  'Key issuing request ID in the Vostio access system.',
+                                type: 'string',
+                              },
                               override_guest_acs_entrance_ids: {
+                                description:
+                                  'IDs of the guest entrances to override in the Vostio access system.',
                                 items: { type: 'string' },
                                 type: 'array',
                               },
@@ -4109,23 +4592,47 @@ export default {
                             description:
                               'Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
                             properties: {
-                              auto_join: { type: 'boolean' },
+                              auto_join: {
+                                description:
+                                  'Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors.',
+                                type: 'boolean',
+                              },
                               card_function_type: {
+                                description:
+                                  'Card function type in the Visionline access system.',
                                 enum: ['guest', 'staff'],
                                 type: 'string',
                               },
-                              card_id: { type: 'string' },
+                              card_id: {
+                                description:
+                                  'ID of the card in the Visionline access system.',
+                                type: 'string',
+                              },
                               common_acs_entrance_ids: {
+                                description:
+                                  'Common entrance IDs in the Visionline access system.',
                                 items: { format: 'uuid', type: 'string' },
                                 type: 'array',
                               },
-                              credential_id: { type: 'string' },
+                              credential_id: {
+                                description:
+                                  'ID of the credential in the Visionline access system.',
+                                type: 'string',
+                              },
                               guest_acs_entrance_ids: {
+                                description:
+                                  'Guest entrance IDs in the Visionline access system.',
                                 items: { format: 'uuid', type: 'string' },
                                 type: 'array',
                               },
-                              is_valid: { type: 'boolean' },
+                              is_valid: {
+                                description:
+                                  'Indicates whether the credential is valid.',
+                                type: 'boolean',
+                              },
                               joiner_acs_credential_ids: {
+                                description:
+                                  'IDs of the credentials to which you want to join.',
                                 items: { format: 'uuid', type: 'string' },
                                 type: 'array',
                               },
@@ -4378,15 +4885,35 @@ export default {
                             description:
                               'Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
                             properties: {
-                              auto_join: { type: 'boolean' },
+                              auto_join: {
+                                description:
+                                  'Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors.',
+                                type: 'boolean',
+                              },
                               door_names: {
+                                description:
+                                  'Names of the doors to which to grant access in the Vostio access system.',
                                 items: { type: 'string' },
                                 type: 'array',
                               },
-                              endpoint_id: { type: 'string' },
-                              key_id: { type: 'string' },
-                              key_issuing_request_id: { type: 'string' },
+                              endpoint_id: {
+                                description:
+                                  'Endpoint ID in the Vostio access system.',
+                                type: 'string',
+                              },
+                              key_id: {
+                                description:
+                                  'Key ID in the Vostio access system.',
+                                type: 'string',
+                              },
+                              key_issuing_request_id: {
+                                description:
+                                  'Key issuing request ID in the Vostio access system.',
+                                type: 'string',
+                              },
                               override_guest_acs_entrance_ids: {
+                                description:
+                                  'IDs of the guest entrances to override in the Vostio access system.',
                                 items: { type: 'string' },
                                 type: 'array',
                               },
@@ -4506,23 +5033,47 @@ export default {
                             description:
                               'Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
                             properties: {
-                              auto_join: { type: 'boolean' },
+                              auto_join: {
+                                description:
+                                  'Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors.',
+                                type: 'boolean',
+                              },
                               card_function_type: {
+                                description:
+                                  'Card function type in the Visionline access system.',
                                 enum: ['guest', 'staff'],
                                 type: 'string',
                               },
-                              card_id: { type: 'string' },
+                              card_id: {
+                                description:
+                                  'ID of the card in the Visionline access system.',
+                                type: 'string',
+                              },
                               common_acs_entrance_ids: {
+                                description:
+                                  'Common entrance IDs in the Visionline access system.',
                                 items: { format: 'uuid', type: 'string' },
                                 type: 'array',
                               },
-                              credential_id: { type: 'string' },
+                              credential_id: {
+                                description:
+                                  'ID of the credential in the Visionline access system.',
+                                type: 'string',
+                              },
                               guest_acs_entrance_ids: {
+                                description:
+                                  'Guest entrance IDs in the Visionline access system.',
                                 items: { format: 'uuid', type: 'string' },
                                 type: 'array',
                               },
-                              is_valid: { type: 'boolean' },
+                              is_valid: {
+                                description:
+                                  'Indicates whether the credential is valid.',
+                                type: 'boolean',
+                              },
                               joiner_acs_credential_ids: {
+                                description:
+                                  'IDs of the credentials to which you want to join.',
                                 items: { format: 'uuid', type: 'string' },
                                 type: 'array',
                               },
@@ -4744,16 +5295,25 @@ export default {
                     'x-route-path': '/acs/credentials',
                   },
                   warnings: {
+                    description:
+                      'Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system.',
                     items: {
+                      description: 'Warning related to scanning a credential.',
                       properties: {
                         warning_code: {
+                          description:
+                            'Indicates a warning related to scanning a credential.',
                           enum: [
                             'acs_credential_on_encoder_out_of_sync',
                             'acs_credential_on_seam_not_found',
                           ],
                           type: 'string',
                         },
-                        warning_message: { type: 'string' },
+                        warning_message: {
+                          description:
+                            'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                          type: 'string',
+                        },
                       },
                       required: ['warning_code', 'warning_message'],
                       type: 'object',
@@ -4788,7 +5348,12 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['SCAN_CREDENTIAL'], type: 'string' },
+              action_type: {
+                description:
+                  'Action attempt to track the status of scanning a credential.',
+                enum: ['SCAN_CREDENTIAL'],
+                type: 'string',
+              },
               error: {
                 oneOf: [
                   {
@@ -4829,9 +5394,17 @@ export default {
                     type: 'object',
                   },
                   {
+                    description:
+                      'Error to indicate that there is no credential on the encoder.',
                     properties: {
-                      message: { type: 'string' },
+                      message: {
+                        description:
+                          'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                        type: 'string',
+                      },
                       type: {
+                        description:
+                          'Error type to indicate that there is no credential on the encoder.',
                         enum: ['no_credential_on_encoder'],
                         type: 'string',
                       },
@@ -4859,7 +5432,7 @@ export default {
           },
           {
             description:
-              'Action attempt to track encoding credential data from the physical encoder onto a card.',
+              'Encoding access method data from the physical encoder onto a card is pending.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -4867,7 +5440,8 @@ export default {
                 type: 'string',
               },
               action_type: {
-                description: 'Type of action that the action attempt tracks.',
+                description:
+                  'Action attempt to track the status of encoding an access method from the physical encoder onto a card.',
                 enum: ['ENCODE_ACCESS_METHOD'],
                 type: 'string',
               },
@@ -4894,7 +5468,7 @@ export default {
           },
           {
             description:
-              'Action attempt to indicate that encoding access method data from the physical encoder onto a card succeeded.',
+              'Encoding access method data from the physical encoder onto a card succeeded.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -4902,7 +5476,8 @@ export default {
                 type: 'string',
               },
               action_type: {
-                description: 'Type of action that the action attempt tracks.',
+                description:
+                  'Action attempt to track the status of encoding an access method from the physical encoder onto a card.',
                 enum: ['ENCODE_ACCESS_METHOD'],
                 type: 'string',
               },
@@ -4913,7 +5488,7 @@ export default {
               },
               result: {
                 description:
-                  'If an encoding attempt was successful, includes the `access_method` data that was encoded onto the card.',
+                  'Result of an encoding attempt. If the attempt was successful, includes the access method data that was encoded onto the card.',
                 properties: {
                   access_method_id: {
                     description: 'ID of the access method.',
@@ -4932,12 +5507,12 @@ export default {
                   },
                   instant_key_url: {
                     description:
-                      'URL of instant key for mobile key access methods.',
+                      'URL of the Instant Key for mobile key access methods.',
                     type: 'string',
                   },
                   is_card_encoding_required: {
                     description:
-                      'Whether card encoding is required for plastic card access methods.',
+                      'Indicates whether card encoding is required for plastic card access methods.',
                     type: 'boolean',
                   },
                   issued_at: {
@@ -4954,7 +5529,7 @@ export default {
                   },
                   workspace_id: {
                     description:
-                      'Unique identifier for the Seam workspace associated with the access grant.',
+                      'ID of the Seam workspace associated with the access method.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -4981,7 +5556,7 @@ export default {
           },
           {
             description:
-              'Action attempt to indicate that encoding access method data from the physical encoder onto a card failed.',
+              'Encoding access method data from the physical encoder onto a card failed.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -4989,7 +5564,8 @@ export default {
                 type: 'string',
               },
               action_type: {
-                description: 'Type of action that the action attempt tracks.',
+                description:
+                  'Action attempt to track the status of encoding an access method from the physical encoder onto a card.',
                 enum: ['ENCODE_ACCESS_METHOD'],
                 type: 'string',
               },
@@ -5033,9 +5609,17 @@ export default {
                     type: 'object',
                   },
                   {
+                    description:
+                      'Error to indicate that there is no credential on the encoder.',
                     properties: {
-                      message: { type: 'string' },
+                      message: {
+                        description:
+                          'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                        type: 'string',
+                      },
                       type: {
+                        description:
+                          'Error type to indicate that there is no credential on the encoder.',
                         enum: ['no_credential_on_encoder'],
                         type: 'string',
                       },
@@ -5044,9 +5628,17 @@ export default {
                     type: 'object',
                   },
                   {
+                    description:
+                      'Error to indicate an incompatible card format.',
                     properties: {
-                      message: { type: 'string' },
+                      message: {
+                        description:
+                          'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                        type: 'string',
+                      },
                       type: {
+                        description:
+                          'Error type to indicate an incompatible card format.',
                         enum: ['incompatible_card_format'],
                         type: 'string',
                       },
@@ -5055,9 +5647,17 @@ export default {
                     type: 'object',
                   },
                   {
+                    description:
+                      'Error to indicate that the affected credential cannot be reissued.',
                     properties: {
-                      message: { type: 'string' },
+                      message: {
+                        description:
+                          'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                        type: 'string',
+                      },
                       type: {
+                        description:
+                          'Error type to indicate that the affected credential cannot be reissued.',
                         enum: ['credential_cannot_be_reissued'],
                         type: 'string',
                       },
@@ -5085,7 +5685,7 @@ export default {
           },
           {
             description:
-              'Action attempt to track encoding credential data from the physical encoder onto a card.',
+              'Encoding credential data from the physical encoder onto a card is pending.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -5093,7 +5693,8 @@ export default {
                 type: 'string',
               },
               action_type: {
-                description: 'Type of action that the action attempt tracks.',
+                description:
+                  'Action attempt to track the status of encoding credential data from the physical encoder onto a card.',
                 enum: ['ENCODE_CREDENTIAL'],
                 type: 'string',
               },
@@ -5120,7 +5721,7 @@ export default {
           },
           {
             description:
-              'Action attempt to indicate that encoding credential data from the physical encoder onto a card succeeded.',
+              'Encoding credential data from the physical encoder onto a card succeeded.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -5128,7 +5729,8 @@ export default {
                 type: 'string',
               },
               action_type: {
-                description: 'Type of action that the action attempt tracks.',
+                description:
+                  'Action attempt to track the status of encoding credential data from the physical encoder onto a card.',
                 enum: ['ENCODE_CREDENTIAL'],
                 type: 'string',
               },
@@ -5139,7 +5741,7 @@ export default {
               },
               result: {
                 description:
-                  'If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card.',
+                  'Result of an encoding attempt. If the attempt was successful, includes the credential data that was encoded onto the card.',
                 oneOf: [
                   {
                     description:
@@ -5177,15 +5779,34 @@ export default {
                         description:
                           'Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
                         properties: {
-                          auto_join: { type: 'boolean' },
+                          auto_join: {
+                            description:
+                              'Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors.',
+                            type: 'boolean',
+                          },
                           door_names: {
+                            description:
+                              'Names of the doors to which to grant access in the Vostio access system.',
                             items: { type: 'string' },
                             type: 'array',
                           },
-                          endpoint_id: { type: 'string' },
-                          key_id: { type: 'string' },
-                          key_issuing_request_id: { type: 'string' },
+                          endpoint_id: {
+                            description:
+                              'Endpoint ID in the Vostio access system.',
+                            type: 'string',
+                          },
+                          key_id: {
+                            description: 'Key ID in the Vostio access system.',
+                            type: 'string',
+                          },
+                          key_issuing_request_id: {
+                            description:
+                              'Key issuing request ID in the Vostio access system.',
+                            type: 'string',
+                          },
                           override_guest_acs_entrance_ids: {
+                            description:
+                              'IDs of the guest entrances to override in the Vostio access system.',
                             items: { type: 'string' },
                             type: 'array',
                           },
@@ -5305,23 +5926,47 @@ export default {
                         description:
                           'Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
                         properties: {
-                          auto_join: { type: 'boolean' },
+                          auto_join: {
+                            description:
+                              'Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors.',
+                            type: 'boolean',
+                          },
                           card_function_type: {
+                            description:
+                              'Card function type in the Visionline access system.',
                             enum: ['guest', 'staff'],
                             type: 'string',
                           },
-                          card_id: { type: 'string' },
+                          card_id: {
+                            description:
+                              'ID of the card in the Visionline access system.',
+                            type: 'string',
+                          },
                           common_acs_entrance_ids: {
+                            description:
+                              'Common entrance IDs in the Visionline access system.',
                             items: { format: 'uuid', type: 'string' },
                             type: 'array',
                           },
-                          credential_id: { type: 'string' },
+                          credential_id: {
+                            description:
+                              'ID of the credential in the Visionline access system.',
+                            type: 'string',
+                          },
                           guest_acs_entrance_ids: {
+                            description:
+                              'Guest entrance IDs in the Visionline access system.',
                             items: { format: 'uuid', type: 'string' },
                             type: 'array',
                           },
-                          is_valid: { type: 'boolean' },
+                          is_valid: {
+                            description:
+                              'Indicates whether the credential is valid.',
+                            type: 'boolean',
+                          },
                           joiner_acs_credential_ids: {
+                            description:
+                              'IDs of the credentials to which you want to join.',
                             items: { format: 'uuid', type: 'string' },
                             type: 'array',
                           },
@@ -5572,15 +6217,34 @@ export default {
                         description:
                           'Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
                         properties: {
-                          auto_join: { type: 'boolean' },
+                          auto_join: {
+                            description:
+                              'Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors.',
+                            type: 'boolean',
+                          },
                           door_names: {
+                            description:
+                              'Names of the doors to which to grant access in the Vostio access system.',
                             items: { type: 'string' },
                             type: 'array',
                           },
-                          endpoint_id: { type: 'string' },
-                          key_id: { type: 'string' },
-                          key_issuing_request_id: { type: 'string' },
+                          endpoint_id: {
+                            description:
+                              'Endpoint ID in the Vostio access system.',
+                            type: 'string',
+                          },
+                          key_id: {
+                            description: 'Key ID in the Vostio access system.',
+                            type: 'string',
+                          },
+                          key_issuing_request_id: {
+                            description:
+                              'Key issuing request ID in the Vostio access system.',
+                            type: 'string',
+                          },
                           override_guest_acs_entrance_ids: {
+                            description:
+                              'IDs of the guest entrances to override in the Vostio access system.',
                             items: { type: 'string' },
                             type: 'array',
                           },
@@ -5700,23 +6364,47 @@ export default {
                         description:
                           'Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
                         properties: {
-                          auto_join: { type: 'boolean' },
+                          auto_join: {
+                            description:
+                              'Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors.',
+                            type: 'boolean',
+                          },
                           card_function_type: {
+                            description:
+                              'Card function type in the Visionline access system.',
                             enum: ['guest', 'staff'],
                             type: 'string',
                           },
-                          card_id: { type: 'string' },
+                          card_id: {
+                            description:
+                              'ID of the card in the Visionline access system.',
+                            type: 'string',
+                          },
                           common_acs_entrance_ids: {
+                            description:
+                              'Common entrance IDs in the Visionline access system.',
                             items: { format: 'uuid', type: 'string' },
                             type: 'array',
                           },
-                          credential_id: { type: 'string' },
+                          credential_id: {
+                            description:
+                              'ID of the credential in the Visionline access system.',
+                            type: 'string',
+                          },
                           guest_acs_entrance_ids: {
+                            description:
+                              'Guest entrance IDs in the Visionline access system.',
                             items: { format: 'uuid', type: 'string' },
                             type: 'array',
                           },
-                          is_valid: { type: 'boolean' },
+                          is_valid: {
+                            description:
+                              'Indicates whether the credential is valid.',
+                            type: 'boolean',
+                          },
                           joiner_acs_credential_ids: {
+                            description:
+                              'IDs of the credentials to which you want to join.',
                             items: { format: 'uuid', type: 'string' },
                             type: 'array',
                           },
@@ -5947,7 +6635,7 @@ export default {
           },
           {
             description:
-              'Action attempt to indicate that encoding credential data from the physical encoder onto a card failed.',
+              'Encoding credential data from the physical encoder onto a card failed.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -5955,7 +6643,8 @@ export default {
                 type: 'string',
               },
               action_type: {
-                description: 'Type of action that the action attempt tracks.',
+                description:
+                  'Action attempt to track the status of encoding credential data from the physical encoder onto a card.',
                 enum: ['ENCODE_CREDENTIAL'],
                 type: 'string',
               },
@@ -5999,9 +6688,17 @@ export default {
                     type: 'object',
                   },
                   {
+                    description:
+                      'Error to indicate that there is no credential on the encoder.',
                     properties: {
-                      message: { type: 'string' },
+                      message: {
+                        description:
+                          'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                        type: 'string',
+                      },
                       type: {
+                        description:
+                          'Error type to indicate that there is no credential on the encoder.',
                         enum: ['no_credential_on_encoder'],
                         type: 'string',
                       },
@@ -6010,9 +6707,17 @@ export default {
                     type: 'object',
                   },
                   {
+                    description:
+                      'Error to indicate an incompatible card format.',
                     properties: {
-                      message: { type: 'string' },
+                      message: {
+                        description:
+                          'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                        type: 'string',
+                      },
                       type: {
+                        description:
+                          'Error type to indicate an incompatible card format.',
                         enum: ['incompatible_card_format'],
                         type: 'string',
                       },
@@ -6021,9 +6726,17 @@ export default {
                     type: 'object',
                   },
                   {
+                    description:
+                      'Error to indicate that the affected credential cannot be reissued.',
                     properties: {
-                      message: { type: 'string' },
+                      message: {
+                        description:
+                          'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                        type: 'string',
+                      },
                       type: {
+                        description:
+                          'Error type to indicate that the affected credential cannot be reissued.',
                         enum: ['credential_cannot_be_reissued'],
                         type: 'string',
                       },
@@ -6050,7 +6763,7 @@ export default {
             type: 'object',
           },
           {
-            description: 'Resetting sandbox workspace.',
+            description: 'Resetting a sandbox workspace is pending.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -6058,6 +6771,8 @@ export default {
                 type: 'string',
               },
               action_type: {
+                description:
+                  'Action attempt to track the status of resetting a sandbox workspace.',
                 enum: ['RESET_SANDBOX_WORKSPACE'],
                 type: 'string',
               },
@@ -6083,7 +6798,7 @@ export default {
             type: 'object',
           },
           {
-            description: 'Resetting sandbox workspace succeeded.',
+            description: 'Resetting a sandbox workspace succeeded.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -6091,6 +6806,8 @@ export default {
                 type: 'string',
               },
               action_type: {
+                description:
+                  'Action attempt to track the status of resetting a sandbox workspace.',
                 enum: ['RESET_SANDBOX_WORKSPACE'],
                 type: 'string',
               },
@@ -6099,7 +6816,11 @@ export default {
                   'Errors associated with the action attempt. Null for successful action attempts.',
                 nullable: true,
               },
-              result: { properties: {}, type: 'object' },
+              result: {
+                description: 'Result of the action.',
+                properties: {},
+                type: 'object',
+              },
               status: { enum: ['success'], type: 'string' },
             },
             required: [
@@ -6112,7 +6833,7 @@ export default {
             type: 'object',
           },
           {
-            description: 'Resetting sandbox workspace failed.',
+            description: 'Resetting a sandbox workspace failed.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -6120,13 +6841,20 @@ export default {
                 type: 'string',
               },
               action_type: {
+                description:
+                  'Action attempt to track the status of resetting a sandbox workspace.',
                 enum: ['RESET_SANDBOX_WORKSPACE'],
                 type: 'string',
               },
               error: {
+                description: 'Error associated with the action.',
                 properties: {
-                  message: { type: 'string' },
-                  type: { type: 'string' },
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
                 },
                 required: ['type', 'message'],
                 type: 'object',
@@ -6148,185 +6876,7 @@ export default {
             type: 'object',
           },
           {
-            description: 'Setting fan mode.',
-            properties: {
-              action_attempt_id: {
-                description: 'ID of the action attempt.',
-                format: 'uuid',
-                type: 'string',
-              },
-              action_type: { enum: ['SET_FAN_MODE'], type: 'string' },
-              error: {
-                description:
-                  'Errors associated with the action attempt. Null for pending action attempts.',
-                nullable: true,
-              },
-              result: {
-                description:
-                  'Result of the action attempt. Null for pending action attempts.',
-                nullable: true,
-              },
-              status: { enum: ['pending'], type: 'string' },
-            },
-            required: [
-              'action_attempt_id',
-              'status',
-              'result',
-              'error',
-              'action_type',
-            ],
-            type: 'object',
-          },
-          {
-            description: 'Setting fan mode succeeded.',
-            properties: {
-              action_attempt_id: {
-                description: 'ID of the action attempt.',
-                format: 'uuid',
-                type: 'string',
-              },
-              action_type: { enum: ['SET_FAN_MODE'], type: 'string' },
-              error: {
-                description:
-                  'Errors associated with the action attempt. Null for successful action attempts.',
-                nullable: true,
-              },
-              result: { properties: {}, type: 'object' },
-              status: { enum: ['success'], type: 'string' },
-            },
-            required: [
-              'action_attempt_id',
-              'status',
-              'error',
-              'action_type',
-              'result',
-            ],
-            type: 'object',
-          },
-          {
-            description: 'Setting fan mode failed.',
-            properties: {
-              action_attempt_id: {
-                description: 'ID of the action attempt.',
-                format: 'uuid',
-                type: 'string',
-              },
-              action_type: { enum: ['SET_FAN_MODE'], type: 'string' },
-              error: {
-                properties: {
-                  message: { type: 'string' },
-                  type: { type: 'string' },
-                },
-                required: ['type', 'message'],
-                type: 'object',
-              },
-              result: {
-                description:
-                  'Result of the action attempt. Null for failed action attempts.',
-                nullable: true,
-              },
-              status: { enum: ['error'], type: 'string' },
-            },
-            required: [
-              'action_attempt_id',
-              'status',
-              'result',
-              'action_type',
-              'error',
-            ],
-            type: 'object',
-          },
-          {
-            description: 'Setting HVAC mode.',
-            properties: {
-              action_attempt_id: {
-                description: 'ID of the action attempt.',
-                format: 'uuid',
-                type: 'string',
-              },
-              action_type: { enum: ['SET_HVAC_MODE'], type: 'string' },
-              error: {
-                description:
-                  'Errors associated with the action attempt. Null for pending action attempts.',
-                nullable: true,
-              },
-              result: {
-                description:
-                  'Result of the action attempt. Null for pending action attempts.',
-                nullable: true,
-              },
-              status: { enum: ['pending'], type: 'string' },
-            },
-            required: [
-              'action_attempt_id',
-              'status',
-              'result',
-              'error',
-              'action_type',
-            ],
-            type: 'object',
-          },
-          {
-            description: 'Setting HVAC mode succeeded.',
-            properties: {
-              action_attempt_id: {
-                description: 'ID of the action attempt.',
-                format: 'uuid',
-                type: 'string',
-              },
-              action_type: { enum: ['SET_HVAC_MODE'], type: 'string' },
-              error: {
-                description:
-                  'Errors associated with the action attempt. Null for successful action attempts.',
-                nullable: true,
-              },
-              result: { properties: {}, type: 'object' },
-              status: { enum: ['success'], type: 'string' },
-            },
-            required: [
-              'action_attempt_id',
-              'status',
-              'error',
-              'action_type',
-              'result',
-            ],
-            type: 'object',
-          },
-          {
-            description: 'Setting HVAC mode failed.',
-            properties: {
-              action_attempt_id: {
-                description: 'ID of the action attempt.',
-                format: 'uuid',
-                type: 'string',
-              },
-              action_type: { enum: ['SET_HVAC_MODE'], type: 'string' },
-              error: {
-                properties: {
-                  message: { type: 'string' },
-                  type: { type: 'string' },
-                },
-                required: ['type', 'message'],
-                type: 'object',
-              },
-              result: {
-                description:
-                  'Result of the action attempt. Null for failed action attempts.',
-                nullable: true,
-              },
-              status: { enum: ['error'], type: 'string' },
-            },
-            required: [
-              'action_attempt_id',
-              'status',
-              'result',
-              'action_type',
-              'error',
-            ],
-            type: 'object',
-          },
-          {
-            description: 'Activating climate preset.',
+            description: 'Setting the fan mode is pending.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -6334,6 +6884,234 @@ export default {
                 type: 'string',
               },
               action_type: {
+                description:
+                  'Action attempt to track the status of setting the fan mode on a thermostat.',
+                enum: ['SET_FAN_MODE'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Setting the fan mode succeeded.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of setting the fan mode on a thermostat.',
+                enum: ['SET_FAN_MODE'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
+              result: {
+                description: 'Result of the action.',
+                properties: {},
+                type: 'object',
+              },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Setting the fan mode failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of setting the fan mode on a thermostat.',
+                enum: ['SET_FAN_MODE'],
+                type: 'string',
+              },
+              error: {
+                description: 'Error associated with the action.',
+                properties: {
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Setting the HVAC mode is pending.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of setting the HVAC mode on a thermostat.',
+                enum: ['SET_HVAC_MODE'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Setting the HVAC mode succeeded.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of setting the HVAC mode on a thermostat.',
+                enum: ['SET_HVAC_MODE'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
+              result: {
+                description: 'Result of the action.',
+                properties: {},
+                type: 'object',
+              },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Setting the HVAC mode failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of setting the HVAC mode on a thermostat.',
+                enum: ['SET_HVAC_MODE'],
+                type: 'string',
+              },
+              error: {
+                description: 'Error associated with the action.',
+                properties: {
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Activating a climate preset is pending.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of a climate preset activation.',
                 enum: ['ACTIVATE_CLIMATE_PRESET'],
                 type: 'string',
               },
@@ -6359,7 +7137,7 @@ export default {
             type: 'object',
           },
           {
-            description: 'Activating climate preset succeeded.',
+            description: 'Activating a climate preset succeeded.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -6367,6 +7145,8 @@ export default {
                 type: 'string',
               },
               action_type: {
+                description:
+                  'Action attempt to track the status of a climate preset activation.',
                 enum: ['ACTIVATE_CLIMATE_PRESET'],
                 type: 'string',
               },
@@ -6375,7 +7155,11 @@ export default {
                   'Errors associated with the action attempt. Null for successful action attempts.',
                 nullable: true,
               },
-              result: { properties: {}, type: 'object' },
+              result: {
+                description: 'Result of the action.',
+                properties: {},
+                type: 'object',
+              },
               status: { enum: ['success'], type: 'string' },
             },
             required: [
@@ -6388,7 +7172,7 @@ export default {
             type: 'object',
           },
           {
-            description: 'Activating climate preset failed.',
+            description: 'Activating a climate preset failed.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -6396,13 +7180,20 @@ export default {
                 type: 'string',
               },
               action_type: {
+                description:
+                  'Action attempt to track the status of a climate preset activation.',
                 enum: ['ACTIVATE_CLIMATE_PRESET'],
                 type: 'string',
               },
               error: {
+                description: 'Error associated with the action.',
                 properties: {
-                  message: { type: 'string' },
-                  type: { type: 'string' },
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
                 },
                 required: ['type', 'message'],
                 type: 'object',
@@ -6424,7 +7215,7 @@ export default {
             type: 'object',
           },
           {
-            description: 'Simulating keypad code entry.',
+            description: 'Simulating a keypad code entry is pending.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -6432,6 +7223,8 @@ export default {
                 type: 'string',
               },
               action_type: {
+                description:
+                  'Action attempt to track the status of simulating a keypad code entry.',
                 enum: ['SIMULATE_KEYPAD_CODE_ENTRY'],
                 type: 'string',
               },
@@ -6457,7 +7250,7 @@ export default {
             type: 'object',
           },
           {
-            description: 'Simulating keypad code entry succeeded.',
+            description: 'Simulating a keypad code entry succeeded.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -6465,6 +7258,8 @@ export default {
                 type: 'string',
               },
               action_type: {
+                description:
+                  'Action attempt to track the status of simulating a keypad code entry.',
                 enum: ['SIMULATE_KEYPAD_CODE_ENTRY'],
                 type: 'string',
               },
@@ -6473,7 +7268,11 @@ export default {
                   'Errors associated with the action attempt. Null for successful action attempts.',
                 nullable: true,
               },
-              result: { properties: {}, type: 'object' },
+              result: {
+                description: 'Result of the action.',
+                properties: {},
+                type: 'object',
+              },
               status: { enum: ['success'], type: 'string' },
             },
             required: [
@@ -6486,7 +7285,7 @@ export default {
             type: 'object',
           },
           {
-            description: 'Simulating keypad code entry failed.',
+            description: 'Simulating a keypad code entry failed.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -6494,13 +7293,20 @@ export default {
                 type: 'string',
               },
               action_type: {
+                description:
+                  'Action attempt to track the status of simulating a keypad code entry.',
                 enum: ['SIMULATE_KEYPAD_CODE_ENTRY'],
                 type: 'string',
               },
               error: {
+                description: 'Error associated with the action.',
                 properties: {
-                  message: { type: 'string' },
-                  type: { type: 'string' },
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
                 },
                 required: ['type', 'message'],
                 type: 'object',
@@ -6522,7 +7328,8 @@ export default {
             type: 'object',
           },
           {
-            description: 'Simulating manual lock via keypad.',
+            description:
+              'Simulating a manual lock action using a keypad is pending.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -6530,6 +7337,8 @@ export default {
                 type: 'string',
               },
               action_type: {
+                description:
+                  'Action attempt to track the status of simulating a manual lock action using a keypad.',
                 enum: ['SIMULATE_MANUAL_LOCK_VIA_KEYPAD'],
                 type: 'string',
               },
@@ -6555,7 +7364,8 @@ export default {
             type: 'object',
           },
           {
-            description: 'Simulating manual lock via keypad succeeded.',
+            description:
+              'Simulating a manual lock action using a keypad succeeded.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -6563,6 +7373,8 @@ export default {
                 type: 'string',
               },
               action_type: {
+                description:
+                  'Action attempt to track the status of simulating a manual lock action using a keypad.',
                 enum: ['SIMULATE_MANUAL_LOCK_VIA_KEYPAD'],
                 type: 'string',
               },
@@ -6571,7 +7383,11 @@ export default {
                   'Errors associated with the action attempt. Null for successful action attempts.',
                 nullable: true,
               },
-              result: { properties: {}, type: 'object' },
+              result: {
+                description: 'Result of the action.',
+                properties: {},
+                type: 'object',
+              },
               status: { enum: ['success'], type: 'string' },
             },
             required: [
@@ -6584,7 +7400,8 @@ export default {
             type: 'object',
           },
           {
-            description: 'Simulating manual lock via keypad failed.',
+            description:
+              'Simulating a manual lock action using a keypad failed.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -6592,13 +7409,20 @@ export default {
                 type: 'string',
               },
               action_type: {
+                description:
+                  'Action attempt to track the status of simulating a manual lock action using a keypad.',
                 enum: ['SIMULATE_MANUAL_LOCK_VIA_KEYPAD'],
                 type: 'string',
               },
               error: {
+                description: 'Error associated with the action.',
                 properties: {
-                  message: { type: 'string' },
-                  type: { type: 'string' },
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
                 },
                 required: ['type', 'message'],
                 type: 'object',
@@ -6620,7 +7444,7 @@ export default {
             type: 'object',
           },
           {
-            description: 'Pushing thermostat weekly programs.',
+            description: 'Pushing thermostat weekly programs is pending.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -6628,6 +7452,8 @@ export default {
                 type: 'string',
               },
               action_type: {
+                description:
+                  'Action attempt to track the status of pushing thermostat programs.',
                 enum: ['PUSH_THERMOSTAT_PROGRAMS'],
                 type: 'string',
               },
@@ -6661,6 +7487,8 @@ export default {
                 type: 'string',
               },
               action_type: {
+                description:
+                  'Action attempt to track the status of pushing thermostat programs.',
                 enum: ['PUSH_THERMOSTAT_PROGRAMS'],
                 type: 'string',
               },
@@ -6669,7 +7497,11 @@ export default {
                   'Errors associated with the action attempt. Null for successful action attempts.',
                 nullable: true,
               },
-              result: { properties: {}, type: 'object' },
+              result: {
+                description: 'Result of the action.',
+                properties: {},
+                type: 'object',
+              },
               status: { enum: ['success'], type: 'string' },
             },
             required: [
@@ -6690,13 +7522,20 @@ export default {
                 type: 'string',
               },
               action_type: {
+                description:
+                  'Action attempt to track the status of pushing thermostat programs.',
                 enum: ['PUSH_THERMOSTAT_PROGRAMS'],
                 type: 'string',
               },
               error: {
+                description: 'Error associated with the action.',
                 properties: {
-                  message: { type: 'string' },
-                  type: { type: 'string' },
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
                 },
                 required: ['type', 'message'],
                 type: 'object',
@@ -6724,7 +7563,11 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['SYNC_ACCESS_CODES'], type: 'string' },
+              action_type: {
+                description: 'Syncing access codes is pending.',
+                enum: ['SYNC_ACCESS_CODES'],
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -6753,13 +7596,21 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['SYNC_ACCESS_CODES'], type: 'string' },
+              action_type: {
+                description: 'Syncing access codes succeeded.',
+                enum: ['SYNC_ACCESS_CODES'],
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
                 nullable: true,
               },
-              result: { properties: {}, type: 'object' },
+              result: {
+                description: 'Result of the action.',
+                properties: {},
+                type: 'object',
+              },
               status: { enum: ['success'], type: 'string' },
             },
             required: [
@@ -6778,11 +7629,20 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['SYNC_ACCESS_CODES'], type: 'string' },
+              action_type: {
+                description: 'Syncing access codes failed.',
+                enum: ['SYNC_ACCESS_CODES'],
+                type: 'string',
+              },
               error: {
+                description: 'Error associated with the action.',
                 properties: {
-                  message: { type: 'string' },
-                  type: { type: 'string' },
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
                 },
                 required: ['type', 'message'],
                 type: 'object',
@@ -6810,7 +7670,11 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['CREATE_ACCESS_CODE'], type: 'string' },
+              action_type: {
+                description: 'Creating an access code is pending.',
+                enum: ['CREATE_ACCESS_CODE'],
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -6839,13 +7703,23 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['CREATE_ACCESS_CODE'], type: 'string' },
+              action_type: {
+                description: 'Creating an access code succeeded.',
+                enum: ['CREATE_ACCESS_CODE'],
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
                 nullable: true,
               },
-              result: { properties: { access_code: {} }, type: 'object' },
+              result: {
+                description: 'Result of the action.',
+                properties: {
+                  access_code: { description: 'Created access code.' },
+                },
+                type: 'object',
+              },
               status: { enum: ['success'], type: 'string' },
             },
             required: [
@@ -6864,11 +7738,20 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['CREATE_ACCESS_CODE'], type: 'string' },
+              action_type: {
+                description: 'Creating an access code failed.',
+                enum: ['CREATE_ACCESS_CODE'],
+                type: 'string',
+              },
               error: {
+                description: 'Error associated with the action.',
                 properties: {
-                  message: { type: 'string' },
-                  type: { type: 'string' },
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
                 },
                 required: ['type', 'message'],
                 type: 'object',
@@ -6896,7 +7779,11 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['DELETE_ACCESS_CODE'], type: 'string' },
+              action_type: {
+                description: 'Deleting an access code is pending.',
+                enum: ['DELETE_ACCESS_CODE'],
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -6925,13 +7812,21 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['DELETE_ACCESS_CODE'], type: 'string' },
+              action_type: {
+                description: 'Deleting an access code succeeded.',
+                enum: ['DELETE_ACCESS_CODE'],
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
                 nullable: true,
               },
-              result: { properties: {}, type: 'object' },
+              result: {
+                description: 'Result of the action.',
+                properties: {},
+                type: 'object',
+              },
               status: { enum: ['success'], type: 'string' },
             },
             required: [
@@ -6950,11 +7845,20 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['DELETE_ACCESS_CODE'], type: 'string' },
+              action_type: {
+                description: 'Deleting an access code failed.',
+                enum: ['DELETE_ACCESS_CODE'],
+                type: 'string',
+              },
               error: {
+                description: 'Error associated with the action.',
                 properties: {
-                  message: { type: 'string' },
-                  type: { type: 'string' },
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
                 },
                 required: ['type', 'message'],
                 type: 'object',
@@ -6982,7 +7886,11 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['UPDATE_ACCESS_CODE'], type: 'string' },
+              action_type: {
+                description: 'Updating an access code is pending.',
+                enum: ['UPDATE_ACCESS_CODE'],
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -7011,13 +7919,23 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['UPDATE_ACCESS_CODE'], type: 'string' },
+              action_type: {
+                description: 'Updating an access code succeeded.',
+                enum: ['UPDATE_ACCESS_CODE'],
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
                 nullable: true,
               },
-              result: { properties: { access_code: {} }, type: 'object' },
+              result: {
+                description: 'Result of the action.',
+                properties: {
+                  access_code: { description: 'Updated access code.' },
+                },
+                type: 'object',
+              },
               status: { enum: ['success'], type: 'string' },
             },
             required: [
@@ -7036,11 +7954,20 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['UPDATE_ACCESS_CODE'], type: 'string' },
+              action_type: {
+                description: 'Updating an access code failed.',
+                enum: ['UPDATE_ACCESS_CODE'],
+                type: 'string',
+              },
               error: {
+                description: 'Error associated with the action.',
                 properties: {
-                  message: { type: 'string' },
-                  type: { type: 'string' },
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
                 },
                 required: ['type', 'message'],
                 type: 'object',
@@ -7068,7 +7995,11 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['CREATE_NOISE_THRESHOLD'], type: 'string' },
+              action_type: {
+                description: 'Creating a noise threshold is pending.',
+                enum: ['CREATE_NOISE_THRESHOLD'],
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -7097,13 +8028,23 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['CREATE_NOISE_THRESHOLD'], type: 'string' },
+              action_type: {
+                description: 'Creating a noise threshold succeeded.',
+                enum: ['CREATE_NOISE_THRESHOLD'],
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
                 nullable: true,
               },
-              result: { properties: { noise_threshold: {} }, type: 'object' },
+              result: {
+                description: 'Result of the action.',
+                properties: {
+                  noise_threshold: { description: 'Created noise threshold.' },
+                },
+                type: 'object',
+              },
               status: { enum: ['success'], type: 'string' },
             },
             required: [
@@ -7122,11 +8063,20 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['CREATE_NOISE_THRESHOLD'], type: 'string' },
+              action_type: {
+                description: 'Creating a noise threshold failed.',
+                enum: ['CREATE_NOISE_THRESHOLD'],
+                type: 'string',
+              },
               error: {
+                description: 'Error associated with the action.',
                 properties: {
-                  message: { type: 'string' },
-                  type: { type: 'string' },
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
                 },
                 required: ['type', 'message'],
                 type: 'object',
@@ -7154,7 +8104,11 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['DELETE_NOISE_THRESHOLD'], type: 'string' },
+              action_type: {
+                description: 'Deleting a noise threshold is pending.',
+                enum: ['DELETE_NOISE_THRESHOLD'],
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -7183,13 +8137,21 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['DELETE_NOISE_THRESHOLD'], type: 'string' },
+              action_type: {
+                description: 'Deleting a noise threshold succeeded.',
+                enum: ['DELETE_NOISE_THRESHOLD'],
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
                 nullable: true,
               },
-              result: { properties: {}, type: 'object' },
+              result: {
+                description: 'Result of the action.',
+                properties: {},
+                type: 'object',
+              },
               status: { enum: ['success'], type: 'string' },
             },
             required: [
@@ -7208,11 +8170,20 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['DELETE_NOISE_THRESHOLD'], type: 'string' },
+              action_type: {
+                description: 'Deleting a noise threshold failed.',
+                enum: ['DELETE_NOISE_THRESHOLD'],
+                type: 'string',
+              },
               error: {
+                description: 'Error associated with the action.',
                 properties: {
-                  message: { type: 'string' },
-                  type: { type: 'string' },
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
                 },
                 required: ['type', 'message'],
                 type: 'object',
@@ -7240,7 +8211,11 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['UPDATE_NOISE_THRESHOLD'], type: 'string' },
+              action_type: {
+                description: 'Updating a noise threshold is pending.',
+                enum: ['UPDATE_NOISE_THRESHOLD'],
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -7269,13 +8244,23 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['UPDATE_NOISE_THRESHOLD'], type: 'string' },
+              action_type: {
+                description: 'Updating a noise threshold succeeded.',
+                enum: ['UPDATE_NOISE_THRESHOLD'],
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
                 nullable: true,
               },
-              result: { properties: { noise_threshold: {} }, type: 'object' },
+              result: {
+                description: 'Result of the action.',
+                properties: {
+                  noise_threshold: { description: 'Updated noise threshold.' },
+                },
+                type: 'object',
+              },
               status: { enum: ['success'], type: 'string' },
             },
             required: [
@@ -7294,11 +8279,20 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
-              action_type: { enum: ['UPDATE_NOISE_THRESHOLD'], type: 'string' },
+              action_type: {
+                description: 'Updating a noise threshold failed.',
+                enum: ['UPDATE_NOISE_THRESHOLD'],
+                type: 'string',
+              },
               error: {
+                description: 'Error associated with the action.',
                 properties: {
-                  message: { type: 'string' },
-                  type: { type: 'string' },
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
                 },
                 required: ['type', 'message'],
                 type: 'object',
@@ -7323,33 +8317,68 @@ export default {
         'x-route-path': '/action_attempts',
       },
       bridge_client_session: {
+        description:
+          'Represents a [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) client session.',
         properties: {
-          bridge_client_machine_identifier_key: { type: 'string' },
-          bridge_client_name: { type: 'string' },
-          bridge_client_session_id: { format: 'uuid', type: 'string' },
-          bridge_client_session_token: { type: 'string' },
-          bridge_client_time_zone: { type: 'string' },
-          created_at: { format: 'date-time', type: 'string' },
+          bridge_client_machine_identifier_key: {
+            description:
+              'Identifier key of the client machine for the Seam Bridge client.',
+            type: 'string',
+          },
+          bridge_client_name: {
+            description: 'Name of the Seam Bridge client.',
+            type: 'string',
+          },
+          bridge_client_session_id: {
+            description: 'ID of the Seam Bridge client session.',
+            format: 'uuid',
+            type: 'string',
+          },
+          bridge_client_session_token: {
+            description:
+              'Client session token associated with the Seam Bridge client session.',
+            type: 'string',
+          },
+          bridge_client_time_zone: {
+            description: 'Time zone for the Seam Bridge client.',
+            type: 'string',
+          },
+          created_at: {
+            description:
+              'Date and time at which the Seam Bridge client session was created.',
+            format: 'date-time',
+            type: 'string',
+          },
           errors: {
+            description:
+              'Errors associated with the Seam Bridge client session.',
             items: {
-              description: 'Error associated with the `bridge_client_session`.',
+              description:
+                'Indicates an error associated with the Seam Bridge client session.',
               discriminator: { propertyName: 'error_code' },
               oneOf: [
                 {
-                  description: "Seam cannot reach the bridge's LAN",
+                  description:
+                    "Indicates that Seam cannot reach Seam Bridge's LAN.",
                   properties: {
                     can_tailscale_proxy_reach_bridge: {
-                      description: 'Tailscale proxy cannot reach the bridge',
+                      description:
+                        'Indicates whether the Tailscale proxy can reach Seam Bridge.',
                       nullable: true,
                       type: 'boolean',
                     },
                     can_tailscale_proxy_reach_tailscale_network: {
                       description:
-                        'Tailscale proxy cannot reach the Tailscale network',
+                        'Indicates whether the Tailscale proxy can reach the Tailscale network.',
                       nullable: true,
                       type: 'boolean',
                     },
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -7357,22 +8386,28 @@ export default {
                       type: 'string',
                     },
                     is_bridge_socks_server_healthy: {
-                      description: "Bridge's SOCKS server is unhealthy",
+                      description:
+                        "Indicates whether Seam Bridge's SOCKS server is healthy.",
                       nullable: true,
                       type: 'boolean',
                     },
                     is_tailscale_proxy_reachable: {
-                      description: 'Seam cannot reach the tailscale proxy',
+                      description:
+                        'Indicates whether Seam can reach the Tailscale proxy.',
                       nullable: true,
                       type: 'boolean',
                     },
                     is_tailscale_proxy_socks_server_healthy: {
                       description:
-                        "Tailscale proxy's SOCKS server is unhealthy",
+                        "Indicates whether the Tailscale proxy's SOCKS server is healthy.",
                       nullable: true,
                       type: 'boolean',
                     },
-                    message: { type: 'string' },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -7387,16 +8422,26 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Bridge has stopped communicating with Seam',
+                  description:
+                    'Indicates that Seam Bridge has stopped communicating with Seam.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['no_communication_from_bridge'],
                       type: 'string',
                     },
-                    message: { type: 'string' },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'created_at', 'error_code'],
                   type: 'object',
@@ -7405,17 +8450,44 @@ export default {
             },
             type: 'array',
           },
-          pairing_code: { maxLength: 6, minLength: 6, type: 'string' },
-          pairing_code_expires_at: { format: 'date-time', type: 'string' },
-          tailscale_auth_key: { nullable: true, type: 'string' },
-          tailscale_hostname: { type: 'string' },
-          telemetry_token: { nullable: true, type: 'string' },
+          pairing_code: {
+            description:
+              'Pairing code for Seam Bridge. Use this code to pair Seam Bridge with your workspace.',
+            maxLength: 6,
+            minLength: 6,
+            type: 'string',
+          },
+          pairing_code_expires_at: {
+            description: 'Date and time at which the pairing code expires.',
+            format: 'date-time',
+            type: 'string',
+          },
+          tailscale_auth_key: {
+            description: 'Tailscale authorization key for Seam Bridge.',
+            nullable: true,
+            type: 'string',
+          },
+          tailscale_hostname: {
+            description: 'Tailscale hostname for Seam Bridge.',
+            type: 'string',
+          },
+          telemetry_token: {
+            description: 'Telemetry token for the Seam Bridge client session.',
+            nullable: true,
+            type: 'string',
+          },
           telemetry_token_expires_at: {
+            description:
+              'Date and time at which the telemetry token for the Seam Bridge client session expires.',
             format: 'date-time',
             nullable: true,
             type: 'string',
           },
-          telemetry_url: { nullable: true, type: 'string' },
+          telemetry_url: {
+            description: 'Telemetry URL for the Seam Bridge client session.',
+            nullable: true,
+            type: 'string',
+          },
         },
         required: [
           'created_at',
@@ -7435,18 +8507,56 @@ export default {
         ],
         type: 'object',
         'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
-        'x-undocumented': 'Seam Bridge Client only.',
+        'x-undocumented': 'Seam Bridge client only.',
       },
       bridge_connected_systems: {
+        description:
+          'Represents an access system connected to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
         properties: {
-          acs_system_display_name: { type: 'string' },
-          acs_system_id: { format: 'uuid', type: 'string' },
-          bridge_created_at: { format: 'date-time', type: 'string' },
-          bridge_id: { format: 'uuid', type: 'string' },
-          connected_account_created_at: { format: 'date-time', type: 'string' },
-          connected_account_id: { format: 'uuid', type: 'string' },
-          workspace_display_name: { type: 'string' },
-          workspace_id: { format: 'uuid', type: 'string' },
+          acs_system_display_name: {
+            description:
+              'Display name for the [access system](https://docs.seam.co/latest/capability-guides/access-systems) associated with Seam Bridge.',
+            type: 'string',
+          },
+          acs_system_id: {
+            description:
+              'ID of the [access system](https://docs.seam.co/latest/capability-guides/access-systems) associated with Seam Bridge.',
+            format: 'uuid',
+            type: 'string',
+          },
+          bridge_created_at: {
+            description: 'Date and time at which Seam Bridge was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          bridge_id: {
+            description: 'ID of Seam Bridge connected to the access system.',
+            format: 'uuid',
+            type: 'string',
+          },
+          connected_account_created_at: {
+            description:
+              'Date and time at which the connected account associated with Seam Bridge was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          connected_account_id: {
+            description:
+              'ID of the connected account associated with Seam Bridge.',
+            format: 'uuid',
+            type: 'string',
+          },
+          workspace_display_name: {
+            description:
+              'Display name for the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) with which Seam Bridge is paired.',
+            type: 'string',
+          },
+          workspace_id: {
+            description:
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) with which Seam Bridge is paired.',
+            format: 'uuid',
+            type: 'string',
+          },
         },
         required: [
           'bridge_id',
@@ -7460,34 +8570,85 @@ export default {
         ],
         type: 'object',
         'x-route-path': '/seam/bridge/v1/bridge_connected_systems',
-        'x-undocumented': 'Seam Bridge Client only.',
+        'x-undocumented': 'Seam Bridge client only.',
       },
       client_session: {
         description:
           "Represents a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens). If you want to restrict your users' access to their own devices, use client sessions.\n\nYou create each client session with a custom `user_identifier_key`. Normally, the `user_identifier_key` is a user ID that your application provides.\n\nWhen calling the Seam API from your backend using an API key, you can pass the `user_identifier_key` as a parameter to limit results to the associated client session. For example, `/devices/list?user_identifier_key=123` only returns devices associated with the client session created with the `user_identifier_key` `123`.\n\nA client session has a token that you can use with the Seam JavaScript SDK to make requests from the client (browser) directly to the Seam API. The token restricts the user's access to only the devices that they own.\n\nSee also [Get Started with React](https://docs.seam.co/latest/ui-components/overview/getting-started-with-seam-components/get-started-with-react-components-and-client-session-tokens).",
         properties: {
-          client_session_id: { format: 'uuid', type: 'string' },
+          client_session_id: {
+            description:
+              'ID of the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
+            format: 'uuid',
+            type: 'string',
+          },
           connect_webview_ids: {
+            description:
+              'IDs of the [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) associated with the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
             items: { format: 'uuid', type: 'string' },
             type: 'array',
           },
           connected_account_ids: {
+            description:
+              'IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
             items: { format: 'uuid', type: 'string' },
             type: 'array',
           },
-          created_at: { format: 'date-time', type: 'string' },
-          customer_id: { format: 'uuid', type: 'string' },
-          device_count: { format: 'float', type: 'number' },
-          expires_at: { format: 'date-time', type: 'string' },
-          token: { type: 'string' },
-          user_identifier_key: { nullable: true, type: 'string' },
-          user_identity_id: { format: 'uuid', type: 'string' },
+          created_at: {
+            description:
+              'Date and time at which the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens) was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          customer_id: {
+            description:
+              'Customer ID associated with the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
+            format: 'uuid',
+            type: 'string',
+          },
+          device_count: {
+            description:
+              'Number of devices associated with the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
+            format: 'float',
+            type: 'number',
+          },
+          expires_at: {
+            description:
+              'Date and time at which the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens) expires.',
+            format: 'date-time',
+            type: 'string',
+          },
+          token: {
+            description:
+              'Client session token associated with the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
+            type: 'string',
+          },
+          user_identifier_key: {
+            description:
+              'Your user ID for the user associated with the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
+            nullable: true,
+            type: 'string',
+          },
+          user_identity_id: {
+            description:
+              'ID of the [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with the client session.',
+            format: 'uuid',
+            type: 'string',
+          },
           user_identity_ids: {
-            description: 'deprecated: Use `user_identity_id`.',
+            deprecated: true,
+            description:
+              'IDs of the [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with the client session.',
             items: { format: 'uuid', type: 'string' },
             type: 'array',
+            'x-deprecated': 'Use `user_identity_id` instead.',
           },
-          workspace_id: { format: 'uuid', type: 'string' },
+          workspace_id: {
+            description:
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
+            format: 'uuid',
+            type: 'string',
+          },
         },
         required: [
           'client_session_id',
@@ -7510,10 +8671,10 @@ export default {
         properties: {
           accepted_capabilities: {
             description:
-              'List of accepted device capabilities that restrict the types of devices that can be connected through the Connect Webview.',
+              'High-level device capabilities that the Connect Webview can accept. When creating a Connect Webview, you can specify the types of devices that it can connect to Seam. If you do not set custom `accepted_capabilities`, Seam uses a default set of `accepted_capabilities` for each provider. For example, if you create a Connect Webview that accepts SmartThing devices, without specifying `accepted_capabilities`, Seam accepts only SmartThings locks. To connect SmartThings thermostats and locks to Seam, create a Connect Webview and include both `thermostat` and `lock` in the `accepted_capabilities`.',
             items: {
               description:
-                '\n  High-level device capabilities that can be restricted in connect webviews.\n  These represent the main device categories that customers can opt into.\n',
+                'High-level device capabilities that the Connect Webview can accept.',
               enum: ['lock', 'thermostat', 'noise_sensor', 'access_control'],
               type: 'string',
             },
@@ -7597,6 +8758,7 @@ export default {
           device_selection_mode: {
             enum: ['none', 'single', 'multiple'],
             type: 'string',
+            'x-undocumented': 'Not implemented.',
           },
           login_successful: {
             description:
@@ -7672,11 +8834,11 @@ export default {
           },
           automatically_manage_new_devices: {
             description:
-              'Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API.',
+              'Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for management by the Seam API.',
             type: 'boolean',
           },
           connected_account_id: {
-            description: 'Unique identifier for the connected account.',
+            description: 'ID of the connected account.',
             format: 'uuid',
             type: 'string',
           },
@@ -7705,7 +8867,7 @@ export default {
               discriminator: { propertyName: 'error_code' },
               oneOf: [
                 {
-                  description: 'Account is disconnected.',
+                  description: 'Indicates that the account is disconnected.',
                   properties: {
                     created_at: {
                       description:
@@ -7721,41 +8883,7 @@ export default {
                     },
                     is_bridge_error: {
                       description:
-                        'Indicates whether the error is related to Seam Bridge.',
-                      type: 'boolean',
-                    },
-                    is_connected_account_error: {
-                      description:
-                        'Indicates whether the error is related specifically to the connected account.',
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['created_at', 'message', 'error_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'Credentials provided were invalid.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['invalid_credentials'],
-                      type: 'string',
-                    },
-                    is_bridge_error: {
-                      description:
-                        'Indicates whether the error is related to Seam Bridge.',
+                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
                       type: 'boolean',
                     },
                     is_connected_account_error: {
@@ -7774,7 +8902,42 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                    'Indicates that the credentials provided were invalid.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['invalid_credentials'],
+                      type: 'string',
+                    },
+                    is_bridge_error: {
+                      description:
+                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
+                      type: 'boolean',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates whether the error is related specifically to the connected account.',
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -7790,7 +8953,7 @@ export default {
                     },
                     is_bridge_error: {
                       description:
-                        'Indicates whether the error is related to Seam Bridge.',
+                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
                       type: 'boolean',
                     },
                     is_connected_account_error: {
@@ -7825,7 +8988,7 @@ export default {
                     },
                     is_bridge_error: {
                       description:
-                        'Indicates whether the error is related to Seam Bridge.',
+                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
                       type: 'boolean',
                     },
                     is_connected_account_error: {
@@ -7939,7 +9102,7 @@ export default {
               oneOf: [
                 {
                   description:
-                    'Scheduled downtime planned for the connected account.',
+                    'Indicates that scheduled downtime is planned for the connected account.',
                   properties: {
                     created_at: {
                       description:
@@ -7964,7 +9127,7 @@ export default {
                 },
                 {
                   description:
-                    'An unknown issue occurred while syncing the state of the connected account with the provider. This issue may affect the proper functioning of one or more resources in the account.',
+                    'Indicates that an unknown issue occurred while syncing the state of the connected account with the provider. This issue may affect the proper functioning of one or more resources in the account.',
                   properties: {
                     created_at: {
                       description:
@@ -8134,7 +9297,7 @@ export default {
             type: 'object',
           },
           device_id: {
-            description: 'Unique identifier for the device.',
+            description: 'ID of the device.',
             format: 'uuid',
             type: 'string',
           },
@@ -8200,19 +9363,24 @@ export default {
           },
           display_name: {
             description:
-              'Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
+              'Display name of the device, defaults to nickname (if it is set) or `properties.appearance.name`, otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
             type: 'string',
           },
           errors: {
             description:
-              'Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
+              'Array of errors associated with the device. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
             items: {
               discriminator: { propertyName: 'error_code' },
               oneOf: [
                 {
-                  description: 'Account is disconnected',
+                  description: 'Indicates that the account is disconnected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -8220,11 +9388,22 @@ export default {
                       type: 'string',
                     },
                     is_connected_account_error: {
+                      description:
+                        'Indicates that the error is a [connected account](https://docs.seam.co/latest/api/connected_accounts) error.',
                       enum: [true],
                       type: 'boolean',
                     },
-                    is_device_error: { enum: [false], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is not a device error.',
+                      enum: [false],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -8236,9 +9415,15 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Salto site user limit reached.',
+                  description:
+                    'Indicates that the Salto site user limit has been reached.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -8246,11 +9431,22 @@ export default {
                       type: 'string',
                     },
                     is_connected_account_error: {
+                      description:
+                        'Indicates that the error is a [connected account](https://docs.seam.co/latest/api/connected_accounts) error.',
                       enum: [true],
                       type: 'boolean',
                     },
-                    is_device_error: { enum: [false], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is not a device error.',
+                      enum: [false],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -8262,17 +9458,31 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Device is offline',
+                  description: 'Indicates that the device is offline.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['device_offline'],
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -8283,17 +9493,31 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Device has been removed',
+                  description: 'Indicates that the device has been removed.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['device_removed'],
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -8304,17 +9528,31 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Hub is disconnected',
+                  description: 'Indicates that the hub is disconnected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['hub_disconnected'],
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -8325,164 +9563,31 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Device is disconnected',
+                  description: 'Indicates that the device is disconnected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['device_disconnected'],
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'The backup access code pool is empty.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
+                    is_device_error: {
                       description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['empty_backup_access_code_pool'],
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'User is not authorized to use the August Lock.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_lock_not_authorized'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'Lock is not connected to the Seam Bridge.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_lock_missing_bridge'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'Lock is not paired with a Gateway.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['ttlock_lock_not_paired_to_gateway'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'Missing device credentials.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['missing_device_credentials'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'The auxiliary heat is running.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['auxiliary_heat_running'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'Subscription required to connect.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['subscription_required'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
                   },
                   required: [
                     'message',
@@ -8494,17 +9599,31 @@ export default {
                 },
                 {
                   description:
-                    'Lockly lock is not connected to a Wi-Fi bridge.',
+                    'Indicates that the [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['lockly_missing_wifi_bridge'],
+                      enum: ['empty_backup_access_code_pool'],
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -8515,7 +9634,258 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Credentials provided were invalid.',
+                  description:
+                    'Indicates that the user is not authorized to use the August lock.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['august_lock_not_authorized'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the lock is not connected to a bridge.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['august_lock_missing_bridge'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the lock is not paired with a gateway.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['ttlock_lock_not_paired_to_gateway'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description: 'Indicates that device credentials are missing.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['missing_device_credentials'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description: 'Indicates that the auxiliary heat is running.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['auxiliary_heat_running'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that a subscription is required to connect.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['subscription_required'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the Lockly lock is not connected to a Wi-Fi bridge.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['lockly_missing_wifi_bridge'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the credentials provided were invalid.',
                   properties: {
                     created_at: {
                       description:
@@ -8531,7 +9901,7 @@ export default {
                     },
                     is_bridge_error: {
                       description:
-                        'Indicates whether the error is related to Seam Bridge.',
+                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
                       type: 'boolean',
                     },
                     is_connected_account_error: {
@@ -8550,7 +9920,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -8566,7 +9936,7 @@ export default {
                     },
                     is_bridge_error: {
                       description:
-                        'Indicates whether the error is related to Seam Bridge.',
+                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
                       type: 'boolean',
                     },
                     is_connected_account_error: {
@@ -8588,7 +9958,8 @@ export default {
             type: 'array',
           },
           is_managed: {
-            description: 'Indicates whether Seam manages the device.',
+            description:
+              'Indicates whether Seam manages the device. See also [Managed and Unmanaged Devices](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).',
             enum: [true],
             type: 'boolean',
           },
@@ -8610,7 +9981,7 @@ export default {
           },
           nickname: {
             description:
-              'Optional nickname to describe the device, settable through Seam',
+              'Optional nickname to describe the device, settable through Seam.',
             type: 'string',
           },
           properties: {
@@ -8885,27 +10256,23 @@ export default {
                     description: 'Provider-specific metadata.',
                     properties: {
                       akiles_metadata: {
-                        description:
-                          'Metadata for an Akiles device.\n          ',
+                        description: 'Metadata for an Akiles device.',
                         properties: {
                           _member_group_id: {
                             description:
-                              'Group ID to which to add users for an Akiles device.\n          ',
+                              'Group ID to which to add users for an Akiles device.',
                             type: 'string',
                           },
                           gadget_id: {
-                            description:
-                              'Gadget ID for an Akiles device.\n          ',
+                            description: 'Gadget ID for an Akiles device.',
                             type: 'string',
                           },
                           gadget_name: {
-                            description:
-                              'Gadget name for an Akiles device.\n          ',
+                            description: 'Gadget name for an Akiles device.',
                             type: 'string',
                           },
                           product_name: {
-                            description:
-                              'Product name for an Akiles device.\n          ',
+                            description: 'Product name for an Akiles device.',
                             type: 'string',
                           },
                         },
@@ -8914,11 +10281,11 @@ export default {
                       },
                       assa_abloy_vostio_metadata: {
                         description:
-                          'Metadata for an ASSA ABLOY Vostio system.\n          ',
+                          'Metadata for an ASSA ABLOY Vostio system.',
                         properties: {
                           encoder_name: {
                             description:
-                              'Encoder name for an ASSA ABLOY Vostio system.\n          ',
+                              'Encoder name for an ASSA ABLOY Vostio system.',
                             type: 'string',
                           },
                         },
@@ -8926,42 +10293,36 @@ export default {
                         type: 'object',
                       },
                       august_metadata: {
-                        description:
-                          'Metadata for an August device.\n          ',
+                        description: 'Metadata for an August device.',
                         properties: {
                           has_keypad: {
                             description:
-                              'Indicates whether an August device has a keypad.\n          ',
+                              'Indicates whether an August device has a keypad.',
                             type: 'boolean',
                           },
                           house_id: {
-                            description:
-                              'House ID for an August device.\n          ',
+                            description: 'House ID for an August device.',
                             type: 'string',
                           },
                           house_name: {
-                            description:
-                              'House name for an August device.\n          ',
+                            description: 'House name for an August device.',
                             type: 'string',
                           },
                           keypad_battery_level: {
                             description:
-                              'Keypad battery level for an August device.\n          ',
+                              'Keypad battery level for an August device.',
                             type: 'string',
                           },
                           lock_id: {
-                            description:
-                              'Lock ID for an August device.\n          ',
+                            description: 'Lock ID for an August device.',
                             type: 'string',
                           },
                           lock_name: {
-                            description:
-                              'Lock name for an August device.\n          ',
+                            description: 'Lock name for an August device.',
                             type: 'string',
                           },
                           model: {
-                            description:
-                              'Model for an August device.\n          ',
+                            description: 'Model for an August device.',
                             type: 'string',
                           },
                         },
@@ -8974,45 +10335,42 @@ export default {
                         type: 'object',
                       },
                       avigilon_alta_metadata: {
-                        description:
-                          'Metadata for an Avigilon Alta system.\n          ',
+                        description: 'Metadata for an Avigilon Alta system.',
                         properties: {
                           entry_name: {
                             description:
-                              'Entry name for an Avigilon Alta system.\n          ',
+                              'Entry name for an Avigilon Alta system.',
                             type: 'string',
                           },
                           entry_relays_total_count: {
                             description:
-                              'Total count of entry relays for an Avigilon Alta system.\n          ',
+                              'Total count of entry relays for an Avigilon Alta system.',
                             format: 'float',
                             type: 'number',
                           },
                           org_name: {
                             description:
-                              'Organization name for an Avigilon Alta system.\n          ',
+                              'Organization name for an Avigilon Alta system.',
                             type: 'string',
                           },
                           site_id: {
-                            description:
-                              'Site ID for an Avigilon Alta system.\n          ',
+                            description: 'Site ID for an Avigilon Alta system.',
                             format: 'float',
                             type: 'number',
                           },
                           site_name: {
                             description:
-                              'Site name for an Avigilon Alta system.\n          ',
+                              'Site name for an Avigilon Alta system.',
                             type: 'string',
                           },
                           zone_id: {
-                            description:
-                              'Zone ID for an Avigilon Alta system.\n          ',
+                            description: 'Zone ID for an Avigilon Alta system.',
                             format: 'float',
                             type: 'number',
                           },
                           zone_name: {
                             description:
-                              'Zone name for an Avigilon Alta system.\n          ',
+                              'Zone name for an Avigilon Alta system.',
                             type: 'string',
                           },
                         },
@@ -9028,11 +10386,10 @@ export default {
                         type: 'object',
                       },
                       brivo_metadata: {
-                        description: 'Metadata for a Brivo device.\n          ',
+                        description: 'Metadata for a Brivo device.',
                         properties: {
                           device_name: {
-                            description:
-                              'Device name for a Brivo device.\n          ',
+                            description: 'Device name for a Brivo device.',
                             type: 'string',
                           },
                         },
@@ -9040,22 +10397,20 @@ export default {
                         type: 'object',
                       },
                       controlbyweb_metadata: {
-                        description:
-                          'Metadata for a ControlByWeb device.\n          ',
+                        description: 'Metadata for a ControlByWeb device.',
                         properties: {
                           device_id: {
-                            description:
-                              'Device ID for a ControlByWeb device.\n          ',
+                            description: 'Device ID for a ControlByWeb device.',
                             type: 'string',
                           },
                           device_name: {
                             description:
-                              'Device name for a ControlByWeb device.\n          ',
+                              'Device name for a ControlByWeb device.',
                             type: 'string',
                           },
                           relay_name: {
                             description:
-                              'Relay name for a ControlByWeb device.\n          ',
+                              'Relay name for a ControlByWeb device.',
                             nullable: true,
                             type: 'string',
                           },
@@ -9064,12 +10419,11 @@ export default {
                         type: 'object',
                       },
                       dormakaba_oracode_metadata: {
-                        description:
-                          'Metadata for a dormakaba Oracode device.\n          ',
+                        description: 'Metadata for a dormakaba Oracode device.',
                         properties: {
                           device_id: {
                             description:
-                              'Device ID for a dormakaba Oracode device.\n          ',
+                              'Device ID for a dormakaba Oracode device.',
                             oneOf: [
                               { format: 'float', type: 'number' },
                               { type: 'string' },
@@ -9077,82 +10431,82 @@ export default {
                           },
                           door_id: {
                             description:
-                              'Door ID for a dormakaba Oracode device.\n          ',
+                              'Door ID for a dormakaba Oracode device.',
                             format: 'float',
                             type: 'number',
                           },
                           door_is_wireless: {
                             description:
-                              'Indicates whether a door is wireless for a dormakaba Oracode device.\n          ',
+                              'Indicates whether a door is wireless for a dormakaba Oracode device.',
                             type: 'boolean',
                           },
                           door_name: {
                             description:
-                              'Door name for a dormakaba Oracode device.\n          ',
+                              'Door name for a dormakaba Oracode device.',
                             type: 'string',
                           },
                           iana_timezone: {
                             description:
-                              'IANA time zone for a dormakaba Oracode device.\n          ',
+                              'IANA time zone for a dormakaba Oracode device.',
                             type: 'string',
                           },
                           predefined_time_slots: {
                             description:
-                              'Predefined time slots for a dormakaba Oracode device.\n          ',
+                              'Predefined time slots for a dormakaba Oracode device.',
                             items: {
                               description:
-                                'Time slot for a dormakaba Oracode device.\n          ',
+                                'Time slot for a dormakaba Oracode device.',
                               properties: {
                                 check_in_time: {
                                   description:
-                                    'Check in time for a time slot for a dormakaba Oracode device.\n          ',
+                                    'Check in time for a time slot for a dormakaba Oracode device.',
                                   type: 'string',
                                 },
                                 check_out_time: {
                                   description:
-                                    'Checkout time for a time slot for a dormakaba Oracode device.\n          ',
+                                    'Checkout time for a time slot for a dormakaba Oracode device.',
                                   type: 'string',
                                 },
                                 dormakaba_oracode_user_level_id: {
                                   description:
-                                    'ID of a user level for a dormakaba Oracode device.\n          ',
+                                    'ID of a user level for a dormakaba Oracode device.',
                                   format: 'uuid',
                                   type: 'string',
                                 },
                                 ext_dormakaba_oracode_user_level_prefix: {
                                   description:
-                                    'Prefix for a user level for a dormakaba Oracode device.\n          ',
+                                    'Prefix for a user level for a dormakaba Oracode device.',
                                   format: 'float',
                                   type: 'number',
                                 },
                                 is_24_hour: {
                                   description:
-                                    'Indicates whether a time slot for a dormakaba Oracode device is a 24-hour time slot.\n          ',
+                                    'Indicates whether a time slot for a dormakaba Oracode device is a 24-hour time slot.',
                                   type: 'boolean',
                                 },
                                 is_biweekly_mode: {
                                   description:
-                                    'Indicates whether a time slot for a dormakaba Oracode device is in biweekly mode.\n          ',
+                                    'Indicates whether a time slot for a dormakaba Oracode device is in biweekly mode.',
                                   type: 'boolean',
                                 },
                                 is_master: {
                                   description:
-                                    'Indicates whether a time slot for a dormakaba Oracode device is a master time slot.\n          ',
+                                    'Indicates whether a time slot for a dormakaba Oracode device is a master time slot.',
                                   type: 'boolean',
                                 },
                                 is_one_shot: {
                                   description:
-                                    'Indicates whether a time slot for a dormakaba Oracode device is a one-shot time slot.\n          ',
+                                    'Indicates whether a time slot for a dormakaba Oracode device is a one-shot time slot.',
                                   type: 'boolean',
                                 },
                                 name: {
                                   description:
-                                    'Name of a time slot for a dormakaba Oracode device.\n          ',
+                                    'Name of a time slot for a dormakaba Oracode device.',
                                   type: 'string',
                                 },
                                 prefix: {
                                   description:
-                                    'Prefix for a time slot for a dormakaba Oracode device.\n          ',
+                                    'Prefix for a time slot for a dormakaba Oracode device.',
                                   format: 'float',
                                   type: 'number',
                                 },
@@ -9185,7 +10539,7 @@ export default {
                           },
                           site_name: {
                             description:
-                              'Site name for a dormakaba Oracode device.\n          ',
+                              'Site name for a dormakaba Oracode device.',
                             type: 'string',
                           },
                         },
@@ -9198,17 +10552,14 @@ export default {
                         type: 'object',
                       },
                       ecobee_metadata: {
-                        description:
-                          'Metadata for an ecobee device.\n          ',
+                        description: 'Metadata for an ecobee device.',
                         properties: {
                           device_name: {
-                            description:
-                              'Device name for an ecobee device.\n          ',
+                            description: 'Device name for an ecobee device.',
                             type: 'string',
                           },
                           ecobee_device_id: {
-                            description:
-                              'Device ID for an ecobee device.\n          ',
+                            description: 'Device ID for an ecobee device.',
                             type: 'string',
                           },
                         },
@@ -9216,23 +10567,20 @@ export default {
                         type: 'object',
                       },
                       four_suites_metadata: {
-                        description:
-                          'Metadata for a 4SUITES device.\n          ',
+                        description: 'Metadata for a 4SUITES device.',
                         properties: {
                           device_id: {
-                            description:
-                              'Device ID for a 4SUITES device.\n          ',
+                            description: 'Device ID for a 4SUITES device.',
                             format: 'float',
                             type: 'number',
                           },
                           device_name: {
-                            description:
-                              'Device name for a 4SUITES device.\n          ',
+                            description: 'Device name for a 4SUITES device.',
                             type: 'string',
                           },
                           reclose_delay_in_seconds: {
                             description:
-                              'Reclose delay, in seconds, for a 4SUITES device.\n          ',
+                              'Reclose delay, in seconds, for a 4SUITES device.',
                             format: 'float',
                             type: 'number',
                           },
@@ -9245,16 +10593,14 @@ export default {
                         type: 'object',
                       },
                       genie_metadata: {
-                        description: 'Metadata for a Genie device.\n          ',
+                        description: 'Metadata for a Genie device.',
                         properties: {
                           device_name: {
-                            description:
-                              'Lock name for a Genie device.\n          ',
+                            description: 'Lock name for a Genie device.',
                             type: 'string',
                           },
                           door_name: {
-                            description:
-                              'Door name for a Genie device.\n          ',
+                            description: 'Door name for a Genie device.',
                             type: 'string',
                           },
                         },
@@ -9262,17 +10608,16 @@ export default {
                         type: 'object',
                       },
                       honeywell_resideo_metadata: {
-                        description:
-                          'Metadata for a Honeywell Resideo device.\n          ',
+                        description: 'Metadata for a Honeywell Resideo device.',
                         properties: {
                           device_name: {
                             description:
-                              'Device name for a Honeywell Resideo device.\n          ',
+                              'Device name for a Honeywell Resideo device.',
                             type: 'string',
                           },
                           honeywell_resideo_device_id: {
                             description:
-                              'Device ID for a Honeywell Resideo device.\n          ',
+                              'Device ID for a Honeywell Resideo device.',
                             type: 'string',
                           },
                         },
@@ -9283,22 +10628,18 @@ export default {
                         type: 'object',
                       },
                       hubitat_metadata: {
-                        description:
-                          'Metadata for a Hubitat device.\n          ',
+                        description: 'Metadata for a Hubitat device.',
                         properties: {
                           device_id: {
-                            description:
-                              'Device ID for a Hubitat device.\n          ',
+                            description: 'Device ID for a Hubitat device.',
                             type: 'string',
                           },
                           device_label: {
-                            description:
-                              'Device label for a Hubitat device.\n          ',
+                            description: 'Device label for a Hubitat device.',
                             type: 'string',
                           },
                           device_name: {
-                            description:
-                              'Device name for a Hubitat device.\n          ',
+                            description: 'Device name for a Hubitat device.',
                             type: 'string',
                           },
                         },
@@ -9306,22 +10647,18 @@ export default {
                         type: 'object',
                       },
                       igloo_metadata: {
-                        description:
-                          'Metadata for an igloo device.\n          ',
+                        description: 'Metadata for an igloo device.',
                         properties: {
                           bridge_id: {
-                            description:
-                              'Bridge ID for an igloo device.\n          ',
+                            description: 'Bridge ID for an igloo device.',
                             type: 'string',
                           },
                           device_id: {
-                            description:
-                              'Device ID for an igloo device.\n          ',
+                            description: 'Device ID for an igloo device.',
                             type: 'string',
                           },
                           model: {
-                            description:
-                              'Model for an igloo device.\n          ',
+                            description: 'Model for an igloo device.',
                             type: 'string',
                           },
                         },
@@ -9329,32 +10666,26 @@ export default {
                         type: 'object',
                       },
                       igloohome_metadata: {
-                        description:
-                          'Metadata for an igloohome device.\n          ',
+                        description: 'Metadata for an igloohome device.',
                         properties: {
                           bridge_id: {
-                            description:
-                              'Bridge ID for an igloohome device.\n          ',
+                            description: 'Bridge ID for an igloohome device.',
                             type: 'string',
                           },
                           bridge_name: {
-                            description:
-                              'Bridge name for an igloohome device.\n          ',
+                            description: 'Bridge name for an igloohome device.',
                             type: 'string',
                           },
                           device_id: {
-                            description:
-                              'Device ID for an igloohome device.\n          ',
+                            description: 'Device ID for an igloohome device.',
                             type: 'string',
                           },
                           device_name: {
-                            description:
-                              'Device name for an igloohome device.\n          ',
+                            description: 'Device name for an igloohome device.',
                             type: 'string',
                           },
                           keypad_id: {
-                            description:
-                              'Keypad ID for an igloohome device.\n          ',
+                            description: 'Keypad ID for an igloohome device.',
                             type: 'string',
                           },
                         },
@@ -9362,22 +10693,18 @@ export default {
                         type: 'object',
                       },
                       kwikset_metadata: {
-                        description:
-                          'Metadata for a Kwikset device.\n          ',
+                        description: 'Metadata for a Kwikset device.',
                         properties: {
                           device_id: {
-                            description:
-                              'Device ID for a Kwikset device.\n          ',
+                            description: 'Device ID for a Kwikset device.',
                             type: 'string',
                           },
                           device_name: {
-                            description:
-                              'Device name for a Kwikset device.\n          ',
+                            description: 'Device name for a Kwikset device.',
                             type: 'string',
                           },
                           model_number: {
-                            description:
-                              'Model number for a Kwikset device.\n          ',
+                            description: 'Model number for a Kwikset device.',
                             type: 'string',
                           },
                         },
@@ -9385,22 +10712,18 @@ export default {
                         type: 'object',
                       },
                       lockly_metadata: {
-                        description:
-                          'Metadata for a Lockly device.\n          ',
+                        description: 'Metadata for a Lockly device.',
                         properties: {
                           device_id: {
-                            description:
-                              'Device ID for a Lockly device.\n          ',
+                            description: 'Device ID for a Lockly device.',
                             type: 'string',
                           },
                           device_name: {
-                            description:
-                              'Device name for a Lockly device.\n          ',
+                            description: 'Device name for a Lockly device.',
                             type: 'string',
                           },
                           model: {
-                            description:
-                              'Model for a Lockly device.\n          ',
+                            description: 'Model for a Lockly device.',
                             type: 'string',
                           },
                         },
@@ -9408,34 +10731,32 @@ export default {
                         type: 'object',
                       },
                       minut_metadata: {
-                        description: 'Metadata for a Minut device.\n          ',
+                        description: 'Metadata for a Minut device.',
                         properties: {
                           device_id: {
-                            description:
-                              'Device ID for a Minut device.\n          ',
+                            description: 'Device ID for a Minut device.',
                             type: 'string',
                           },
                           device_name: {
-                            description:
-                              'Device name for a Minut device.\n          ',
+                            description: 'Device name for a Minut device.',
                             type: 'string',
                           },
                           latest_sensor_values: {
                             description:
-                              'Latest sensor values for a Minut device.\n          ',
+                              'Latest sensor values for a Minut device.',
                             properties: {
                               accelerometer_z: {
                                 description:
-                                  'Latest accelerometer Z-axis reading for a Minut device.\n          ',
+                                  'Latest accelerometer Z-axis reading for a Minut device.',
                                 properties: {
                                   time: {
                                     description:
-                                      'Time of latest accelerometer Z-axis reading for a Minut device.\n          ',
+                                      'Time of latest accelerometer Z-axis reading for a Minut device.',
                                     type: 'string',
                                   },
                                   value: {
                                     description:
-                                      'Value of latest accelerometer Z-axis reading for a Minut device.\n          ',
+                                      'Value of latest accelerometer Z-axis reading for a Minut device.',
                                     format: 'float',
                                     type: 'number',
                                   },
@@ -9445,16 +10766,16 @@ export default {
                               },
                               humidity: {
                                 description:
-                                  'Latest humidity reading for a Minut device.\n          ',
+                                  'Latest humidity reading for a Minut device.',
                                 properties: {
                                   time: {
                                     description:
-                                      'Time of latest humidity reading for a Minut device.\n          ',
+                                      'Time of latest humidity reading for a Minut device.',
                                     type: 'string',
                                   },
                                   value: {
                                     description:
-                                      'Value of latest humidity reading for a Minut device.\n          ',
+                                      'Value of latest humidity reading for a Minut device.',
                                     format: 'float',
                                     type: 'number',
                                   },
@@ -9464,16 +10785,16 @@ export default {
                               },
                               pressure: {
                                 description:
-                                  'Latest pressure reading for a Minut device.\n          ',
+                                  'Latest pressure reading for a Minut device.',
                                 properties: {
                                   time: {
                                     description:
-                                      'Time of latest pressure reading for a Minut device.\n          ',
+                                      'Time of latest pressure reading for a Minut device.',
                                     type: 'string',
                                   },
                                   value: {
                                     description:
-                                      'Value of latest pressure reading for a Minut device.\n          ',
+                                      'Value of latest pressure reading for a Minut device.',
                                     format: 'float',
                                     type: 'number',
                                   },
@@ -9483,16 +10804,16 @@ export default {
                               },
                               sound: {
                                 description:
-                                  'Latest sound reading for a Minut device.\n          ',
+                                  'Latest sound reading for a Minut device.',
                                 properties: {
                                   time: {
                                     description:
-                                      'Time of latest sound reading for a Minut device.\n          ',
+                                      'Time of latest sound reading for a Minut device.',
                                     type: 'string',
                                   },
                                   value: {
                                     description:
-                                      'Value of latest sound reading for a Minut device.\n          ',
+                                      'Value of latest sound reading for a Minut device.',
                                     format: 'float',
                                     type: 'number',
                                   },
@@ -9502,16 +10823,16 @@ export default {
                               },
                               temperature: {
                                 description:
-                                  'Latest temperature reading for a Minut device.\n          ',
+                                  'Latest temperature reading for a Minut device.',
                                 properties: {
                                   time: {
                                     description:
-                                      'Time of latest temperature reading for a Minut device.\n          ',
+                                      'Time of latest temperature reading for a Minut device.',
                                     type: 'string',
                                   },
                                   value: {
                                     description:
-                                      'Value of latest temperature reading for a Minut device.\n          ',
+                                      'Value of latest temperature reading for a Minut device.',
                                     format: 'float',
                                     type: 'number',
                                   },
@@ -9538,27 +10859,25 @@ export default {
                         type: 'object',
                       },
                       nest_metadata: {
-                        description:
-                          'Metadata for a Google Nest device.\n          ',
+                        description: 'Metadata for a Google Nest device.',
                         properties: {
                           device_custom_name: {
                             description:
-                              'Custom device name for a Google Nest device. The device owner sets this value.\n          ',
+                              'Custom device name for a Google Nest device. The device owner sets this value.',
                             type: 'string',
                           },
                           device_name: {
                             description:
-                              'Device name for a Google Nest device. Google sets this value.\n          ',
+                              'Device name for a Google Nest device. Google sets this value.',
                             type: 'string',
                           },
                           display_name: {
                             description:
-                              'Display name for a Google Nest device.\n          ',
+                              'Display name for a Google Nest device.',
                             type: 'string',
                           },
                           nest_device_id: {
-                            description:
-                              'Device ID for a Google Nest device.\n          ',
+                            description: 'Device ID for a Google Nest device.',
                             type: 'string',
                           },
                         },
@@ -9570,34 +10889,31 @@ export default {
                         type: 'object',
                       },
                       noiseaware_metadata: {
-                        description:
-                          'Metadata for a NoiseAware device.\n          ',
+                        description: 'Metadata for a NoiseAware device.',
                         properties: {
                           device_id: {
-                            description:
-                              'Device ID for a NoiseAware device.\n          ',
+                            description: 'Device ID for a NoiseAware device.',
                             type: 'string',
                           },
                           device_model: {
                             description:
-                              'Device model for a NoiseAware device.\n          ',
+                              'Device model for a NoiseAware device.',
                             enum: ['indoor', 'outdoor'],
                             type: 'string',
                           },
                           device_name: {
-                            description:
-                              'Device name for a NoiseAware device.\n          ',
+                            description: 'Device name for a NoiseAware device.',
                             type: 'string',
                           },
                           noise_level_decibel: {
                             description:
-                              'Noise level, in decibels, for a NoiseAware device.\n          ',
+                              'Noise level, in decibels, for a NoiseAware device.',
                             format: 'float',
                             type: 'number',
                           },
                           noise_level_nrs: {
                             description:
-                              'Noise level, expressed as a Noise Risk Score (NRS), for a NoiseAware device.\n          ',
+                              'Noise level, expressed as a Noise Risk Score (NRS), for a NoiseAware device.',
                             format: 'float',
                             type: 'number',
                           },
@@ -9612,31 +10928,29 @@ export default {
                         type: 'object',
                       },
                       nuki_metadata: {
-                        description: 'Metadata for a Nuki device.\n          ',
+                        description: 'Metadata for a Nuki device.',
                         properties: {
                           device_id: {
-                            description:
-                              'Device ID for a Nuki device.\n          ',
+                            description: 'Device ID for a Nuki device.',
                             type: 'string',
                           },
                           device_name: {
-                            description:
-                              'Device name for a Nuki device.\n          ',
+                            description: 'Device name for a Nuki device.',
                             type: 'string',
                           },
                           keypad_2_paired: {
                             description:
-                              'Indicates whether keypad 2 is paired for a Nuki device.\n          ',
+                              'Indicates whether keypad 2 is paired for a Nuki device.',
                             type: 'boolean',
                           },
                           keypad_battery_critical: {
                             description:
-                              'Indicates whether the keypad battery is in a critical state for a Nuki device.\n          ',
+                              'Indicates whether the keypad battery is in a critical state for a Nuki device.',
                             type: 'boolean',
                           },
                           keypad_paired: {
                             description:
-                              'Indicates whether the keypad is paired for a Nuki device.\n          ',
+                              'Indicates whether the keypad is paired for a Nuki device.',
                             type: 'boolean',
                           },
                         },
@@ -9644,37 +10958,31 @@ export default {
                         type: 'object',
                       },
                       salto_ks_metadata: {
-                        description:
-                          'Metadata for a Salto KS device.\n          ',
+                        description: 'Metadata for a Salto KS device.',
                         properties: {
                           battery_level: {
-                            description:
-                              'Battery level for a Salto KS device.\n          ',
+                            description: 'Battery level for a Salto KS device.',
                             type: 'string',
                           },
                           customer_reference: {
                             description:
-                              'Customer reference for a Salto KS device.\n          ',
+                              'Customer reference for a Salto KS device.',
                             type: 'string',
                           },
                           lock_id: {
-                            description:
-                              'Lock ID for a Salto KS device.\n          ',
+                            description: 'Lock ID for a Salto KS device.',
                             type: 'string',
                           },
                           lock_type: {
-                            description:
-                              'Lock type for a Salto KS device.\n          ',
+                            description: 'Lock type for a Salto KS device.',
                             type: 'string',
                           },
                           locked_state: {
-                            description:
-                              'Locked state for a Salto KS device.\n          ',
+                            description: 'Locked state for a Salto KS device.',
                             type: 'string',
                           },
                           model: {
-                            description:
-                              'Model for a Salto KS device.\n          ',
+                            description: 'Model for a Salto KS device.',
                             type: 'string',
                           },
                         },
@@ -9692,33 +11000,28 @@ export default {
                         description: 'Metada for a Salto device.',
                         properties: {
                           battery_level: {
-                            description:
-                              'Battery level for a Salto device.\n          ',
+                            description: 'Battery level for a Salto device.',
                             type: 'string',
                           },
                           customer_reference: {
                             description:
-                              'Customer reference for a Salto device.\n          ',
+                              'Customer reference for a Salto device.',
                             type: 'string',
                           },
                           lock_id: {
-                            description:
-                              'Lock ID for a Salto device.\n          ',
+                            description: 'Lock ID for a Salto device.',
                             type: 'string',
                           },
                           lock_type: {
-                            description:
-                              'Lock type for a Salto device.\n          ',
+                            description: 'Lock type for a Salto device.',
                             type: 'string',
                           },
                           locked_state: {
-                            description:
-                              'Locked state for a Salto device.\n          ',
+                            description: 'Locked state for a Salto device.',
                             type: 'string',
                           },
                           model: {
-                            description:
-                              'Model for a Salto device.\n          ',
+                            description: 'Model for a Salto device.',
                             type: 'string',
                           },
                         },
@@ -9733,22 +11036,18 @@ export default {
                         'x-deprecated': 'Use `salto_ks_metadata ` instead.',
                       },
                       schlage_metadata: {
-                        description:
-                          'Metadata for a Schlage device.\n          ',
+                        description: 'Metadata for a Schlage device.',
                         properties: {
                           device_id: {
-                            description:
-                              'Device ID for a Schlage device.\n          ',
+                            description: 'Device ID for a Schlage device.',
                             type: 'string',
                           },
                           device_name: {
-                            description:
-                              'Device name for a Schlage device.\n          ',
+                            description: 'Device name for a Schlage device.',
                             type: 'string',
                           },
                           model: {
-                            description:
-                              'Model for a Schlage device.\n          ',
+                            description: 'Model for a Schlage device.',
                             type: 'string',
                           },
                         },
@@ -9756,21 +11055,19 @@ export default {
                         type: 'object',
                       },
                       seam_bridge_metadata: {
-                        description: 'Metadata for Seam Bridge.\n          ',
+                        description: 'Metadata for Seam Bridge.',
                         properties: {
                           device_num: {
-                            description:
-                              'Device number for Seam Bridge.\n          ',
+                            description: 'Device number for Seam Bridge.',
                             format: 'float',
                             type: 'number',
                           },
                           name: {
-                            description: 'Name for Seam Bridge.\n          ',
+                            description: 'Name for Seam Bridge.',
                             type: 'string',
                           },
                           unlock_method: {
-                            description:
-                              'Unlock method for Seam Bridge.\n          ',
+                            description: 'Unlock method for Seam Bridge.',
                             enum: ['bridge', 'doorking'],
                             type: 'string',
                           },
@@ -9779,21 +11076,18 @@ export default {
                         type: 'object',
                       },
                       sensi_metadata: {
-                        description: 'Metadata for a Sensi device.\n          ',
+                        description: 'Metadata for a Sensi device.',
                         properties: {
                           device_id: {
-                            description:
-                              'Device ID for a Sensi device.\n          ',
+                            description: 'Device ID for a Sensi device.',
                             type: 'string',
                           },
                           device_name: {
-                            description:
-                              'Device name for a Sensi device.\n          ',
+                            description: 'Device name for a Sensi device.',
                             type: 'string',
                           },
                           product_type: {
-                            description:
-                              'Product type for a Sensi device.\n          ',
+                            description: 'Product type for a Sensi device.',
                             type: 'string',
                           },
                         },
@@ -9801,27 +11095,24 @@ export default {
                         type: 'object',
                       },
                       smartthings_metadata: {
-                        description:
-                          'Metadata for a SmartThings device.\n          ',
+                        description: 'Metadata for a SmartThings device.',
                         properties: {
                           device_id: {
-                            description:
-                              'Device ID for a SmartThings device.\n          ',
+                            description: 'Device ID for a SmartThings device.',
                             type: 'string',
                           },
                           device_name: {
                             description:
-                              'Device name for a SmartThings device.\n          ',
+                              'Device name for a SmartThings device.',
                             type: 'string',
                           },
                           location_id: {
                             description:
-                              'Location ID for a SmartThings device.\n          ',
+                              'Location ID for a SmartThings device.',
                             type: 'string',
                           },
                           model: {
-                            description:
-                              'Model for a SmartThings device.\n          ',
+                            description: 'Model for a SmartThings device.',
                             type: 'string',
                           },
                         },
@@ -9829,16 +11120,14 @@ export default {
                         type: 'object',
                       },
                       tado_metadata: {
-                        description: 'Metadata for a tado° device.\n          ',
+                        description: 'Metadata for a tado° device.',
                         properties: {
                           device_type: {
-                            description:
-                              'Device type for a tado° device.\n          ',
+                            description: 'Device type for a tado° device.',
                             type: 'string',
                           },
                           serial_no: {
-                            description:
-                              'Serial number for a tado° device.\n          ',
+                            description: 'Serial number for a tado° device.',
                             type: 'string',
                           },
                         },
@@ -9846,44 +11135,37 @@ export default {
                         type: 'object',
                       },
                       tedee_metadata: {
-                        description: 'Metadata for a Tedee device.\n          ',
+                        description: 'Metadata for a Tedee device.',
                         properties: {
                           bridge_id: {
-                            description:
-                              'Bridge ID for a Tedee device.\n          ',
+                            description: 'Bridge ID for a Tedee device.',
                             format: 'float',
                             type: 'number',
                           },
                           bridge_name: {
-                            description:
-                              'Bridge name for a Tedee device.\n          ',
+                            description: 'Bridge name for a Tedee device.',
                             type: 'string',
                           },
                           device_id: {
-                            description:
-                              'Device ID for a Tedee device.\n          ',
+                            description: 'Device ID for a Tedee device.',
                             format: 'float',
                             type: 'number',
                           },
                           device_model: {
-                            description:
-                              'Device model for a Tedee device.\n          ',
+                            description: 'Device model for a Tedee device.',
                             type: 'string',
                           },
                           device_name: {
-                            description:
-                              'Device name for a Tedee device.\n          ',
+                            description: 'Device name for a Tedee device.',
                             type: 'string',
                           },
                           keypad_id: {
-                            description:
-                              'Keypad ID for a Tedee device.\n          ',
+                            description: 'Keypad ID for a Tedee device.',
                             format: 'float',
                             type: 'number',
                           },
                           serial_number: {
-                            description:
-                              'Serial number for a Tedee device.\n          ',
+                            description: 'Serial number for a Tedee device.',
                             type: 'string',
                           },
                         },
@@ -9898,46 +11180,43 @@ export default {
                         type: 'object',
                       },
                       ttlock_metadata: {
-                        description:
-                          'Metadata for a TTLock device.\n          ',
+                        description: 'Metadata for a TTLock device.',
                         properties: {
                           feature_value: {
-                            description:
-                              'Feature value for a TTLock device.\n          ',
+                            description: 'Feature value for a TTLock device.',
                             type: 'string',
                           },
                           features: {
-                            description:
-                              'Features for a TTLock device.\n          ',
+                            description: 'Features for a TTLock device.',
                             properties: {
                               incomplete_keyboard_passcode: {
                                 description:
-                                  'Indicates whether a TTLock device supports an incomplete keyboard passcode.\n          ',
+                                  'Indicates whether a TTLock device supports an incomplete keyboard passcode.',
                                 type: 'boolean',
                               },
                               lock_command: {
                                 description:
-                                  'Indicates whether a TTLock device supports the lock command.\n          ',
+                                  'Indicates whether a TTLock device supports the lock command.',
                                 type: 'boolean',
                               },
                               passcode: {
                                 description:
-                                  'Indicates whether a TTLock device supports a passcode.\n          ',
+                                  'Indicates whether a TTLock device supports a passcode.',
                                 type: 'boolean',
                               },
                               passcode_management: {
                                 description:
-                                  'Indicates whether a TTLock device supports passcode management.\n          ',
+                                  'Indicates whether a TTLock device supports passcode management.',
                                 type: 'boolean',
                               },
                               unlock_via_gateway: {
                                 description:
-                                  'Indicates whether a TTLock device supports unlock via gateway.\n          ',
+                                  'Indicates whether a TTLock device supports unlock via gateway.',
                                 type: 'boolean',
                               },
                               wifi: {
                                 description:
-                                  'Indicates whether a TTLock device supports Wi-Fi.\n          ',
+                                  'Indicates whether a TTLock device supports Wi-Fi.',
                                 type: 'boolean',
                               },
                             },
@@ -9953,34 +11232,32 @@ export default {
                           },
                           has_gateway: {
                             description:
-                              'Indicates whether a TTLock device has a gateway.\n          ',
+                              'Indicates whether a TTLock device has a gateway.',
                             type: 'boolean',
                           },
                           lock_alias: {
-                            description:
-                              'Lock alias for a TTLock device.\n          ',
+                            description: 'Lock alias for a TTLock device.',
                             type: 'string',
                           },
                           lock_id: {
-                            description:
-                              'Lock ID for a TTLock device.\n          ',
+                            description: 'Lock ID for a TTLock device.',
                             format: 'float',
                             type: 'number',
                           },
                           wireless_keypads: {
                             description:
-                              'Wireless keypads for a TTLock device.\n          ',
+                              'Wireless keypads for a TTLock device.',
                             items: {
                               properties: {
                                 wireless_keypad_id: {
                                   description:
-                                    'ID for a wireless keypad for a TTLock device.\n          ',
+                                    'ID for a wireless keypad for a TTLock device.',
                                   format: 'float',
                                   type: 'number',
                                 },
                                 wireless_keypad_name: {
                                   description:
-                                    'Name for a wireless keypad for a TTLock device.\n          ',
+                                    'Name for a wireless keypad for a TTLock device.',
                                   type: 'string',
                                 },
                               },
@@ -10002,17 +11279,15 @@ export default {
                         type: 'object',
                       },
                       two_n_metadata: {
-                        description: 'Metadata for a 2N device.\n          ',
+                        description: 'Metadata for a 2N device.',
                         properties: {
                           device_id: {
-                            description:
-                              'Device ID for a 2N device.\n          ',
+                            description: 'Device ID for a 2N device.',
                             format: 'float',
                             type: 'number',
                           },
                           device_name: {
-                            description:
-                              'Device name for a 2N device.\n          ',
+                            description: 'Device name for a 2N device.',
                             type: 'string',
                           },
                         },
@@ -10021,11 +11296,11 @@ export default {
                       },
                       visionline_metadata: {
                         description:
-                          'Metadata for an ASSA ABLOY Visionline system.\n          ',
+                          'Metadata for an ASSA ABLOY Visionline system.',
                         properties: {
                           encoder_id: {
                             description:
-                              'Encoder ID for an ASSA ABLOY Visionline system.\n          ',
+                              'Encoder ID for an ASSA ABLOY Visionline system.',
                             type: 'string',
                           },
                         },
@@ -10033,47 +11308,41 @@ export default {
                         type: 'object',
                       },
                       wyze_metadata: {
-                        description: 'Metadata for a Wyze device.\n          ',
+                        description: 'Metadata for a Wyze device.',
                         properties: {
                           device_id: {
-                            description:
-                              'Device ID for a Wyze device.\n          ',
+                            description: 'Device ID for a Wyze device.',
                             type: 'string',
                           },
                           device_info_model: {
                             description:
-                              'Device information model for a Wyze device.\n          ',
+                              'Device information model for a Wyze device.',
                             type: 'string',
                           },
                           device_name: {
-                            description:
-                              'Device name for a Wyze device.\n          ',
+                            description: 'Device name for a Wyze device.',
                             type: 'string',
                           },
                           keypad_uuid: {
-                            description:
-                              'Keypad UUID for a Wyze device.\n          ',
+                            description: 'Keypad UUID for a Wyze device.',
                             type: 'string',
                           },
                           locker_status_hardlock: {
                             description:
-                              'Locker status (hardlock) for a Wyze device.\n          ',
+                              'Locker status (hardlock) for a Wyze device.',
                             format: 'float',
                             type: 'number',
                           },
                           product_model: {
-                            description:
-                              'Product model for a Wyze device.\n          ',
+                            description: 'Product model for a Wyze device.',
                             type: 'string',
                           },
                           product_name: {
-                            description:
-                              'Product name for a Wyze device.\n          ',
+                            description: 'Product name for a Wyze device.',
                             type: 'string',
                           },
                           product_type: {
-                            description:
-                              'Product type for a Wyze device.\n          ',
+                            description: 'Product type for a Wyze device.',
                             type: 'string',
                           },
                         },
@@ -10176,7 +11445,7 @@ export default {
                         properties: {
                           level: {
                             description:
-                              'Keypad battery charge level.\n          ',
+                              '\n          Keypad battery charge level.\n          ',
                             format: 'float',
                             type: 'number',
                           },
@@ -10947,15 +12216,25 @@ export default {
           },
           warnings: {
             description:
-              'Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
+              'Array of warnings associated with the device. Each warning object within the array contains two fields: `warning_code` and `message`. `warning_code` is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
             items: {
               discriminator: { propertyName: 'warning_code' },
               oneOf: [
                 {
-                  description: 'Backup access code unhealthy.',
+                  description:
+                    'Indicates that the backup access code is unhealthy.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -10967,10 +12246,20 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Too many backup codes.',
+                  description:
+                    'Indicates that there are too many backup codes.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -10982,10 +12271,20 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Wyze Lock is not connected to a gateway.',
+                  description:
+                    'Indicates that the Wyze Lock is not connected to a gateway.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -10998,10 +12297,19 @@ export default {
                 },
                 {
                   description:
-                    'Device is offline, but has some functionality available.',
+                    'Indicates that the device is offline but has some functionality available.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -11013,10 +12321,20 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Third-party integration detected.',
+                  description:
+                    'Indicates that a third-party integration has been detected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -11028,10 +12346,20 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Nest thermostat in manual eco mode.',
+                  description:
+                    'Indicates that the Nest thermostat is in manual eco mode.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -11043,10 +12371,20 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Remote Unlock feature not enabled in settings.',
+                  description:
+                    'Indicates that the Remote Unlock feature is not enabled in the settings.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -11058,10 +12396,19 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Gateway signal is weak.',
+                  description: 'Indicates that the gateway signal is weak.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -11073,10 +12420,20 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Temperature threshold exceeded.',
+                  description:
+                    'Indicates that the temperature threshold has been exceeded.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -11088,10 +12445,20 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Device appears to be unresponsive.',
+                  description:
+                    'Indicates that the device appears to be unresponsive.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -11103,10 +12470,20 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Scheduled maintenance window detected.',
+                  description:
+                    'Indicates that a scheduled maintenance window has been detected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -11118,10 +12495,20 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Device has flaky connection.',
+                  description:
+                    'Indicates that the device has a flaky connection.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -11134,10 +12521,19 @@ export default {
                 },
                 {
                   description:
-                    'Lock is in Office Mode. Access Codes will not unlock doors.',
+                    'Indicates that the Salto KS lock is in Office Mode. Access Codes will not unlock doors.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -11150,10 +12546,19 @@ export default {
                 },
                 {
                   description:
-                    'Lock is in Privacy Mode. Access Codes will not unlock doors.',
+                    'Indicates that the Salto KS lock is in Privacy Mode. Access Codes will not unlock doors.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -11166,10 +12571,19 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this.',
+                    'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -11182,10 +12596,19 @@ export default {
                 },
                 {
                   description:
-                    'An unknown issue occurred while syncing the state of this phone with the provider. This issue may affect the proper functioning of this phone.',
+                    'Indicates that an unknown issue occurred while syncing the state of the phone with the provider. This issue may affect the proper functioning of the phone.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -11198,10 +12621,19 @@ export default {
                 },
                 {
                   description:
-                    'We detected that this device does not have a time zone configured. Time bound codes may not work as expected.',
+                    'Indicates that Seam detected that the Lockly device does not have a time zone configured. Time-bound codes may not work as expected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -11400,7 +12832,7 @@ export default {
               },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the affected access codes.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11427,7 +12859,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11456,7 +12889,7 @@ export default {
               },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the affected access codes.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11483,7 +12916,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11516,7 +12950,7 @@ export default {
               },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the affected access codes.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11546,7 +12980,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11580,7 +13015,7 @@ export default {
               },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the affected access codes.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11610,7 +13045,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11640,7 +13076,7 @@ export default {
               },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the affected access codes.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11670,7 +13106,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11699,7 +13136,7 @@ export default {
               },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the affected access codes.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11729,7 +13166,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11758,7 +13196,7 @@ export default {
               },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the affected access codes.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11788,7 +13226,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11822,7 +13261,7 @@ export default {
               },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the affected access codes.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11849,7 +13288,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11879,7 +13319,7 @@ export default {
               },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the affected access codes.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11909,7 +13349,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11938,7 +13379,7 @@ export default {
               },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the affected access codes.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11968,7 +13409,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -11997,7 +13439,7 @@ export default {
               },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the affected access codes.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12027,7 +13469,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12056,7 +13499,7 @@ export default {
               },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the affected access codes.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12086,7 +13529,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12116,7 +13560,7 @@ export default {
               backup_access_code_id: { type: 'string' },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the affected access codes.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12146,7 +13590,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12176,7 +13621,7 @@ export default {
               },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the affected access codes.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12206,7 +13651,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12235,7 +13681,7 @@ export default {
               },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the affected access codes.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12265,7 +13711,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12294,7 +13741,7 @@ export default {
               },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the affected access codes.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12324,7 +13771,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12353,7 +13801,7 @@ export default {
               },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the affected access codes.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12383,7 +13831,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12426,7 +13875,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12467,7 +13917,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12512,7 +13963,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12563,7 +14015,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12615,7 +14068,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12657,7 +14111,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12698,7 +14153,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12743,7 +14199,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12784,7 +14241,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12831,7 +14289,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12878,7 +14337,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12925,7 +14385,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12943,7 +14404,7 @@ export default {
           },
           {
             description:
-              'An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was deleted.',
+              'An [access system credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was deleted.',
             properties: {
               acs_credential_id: {
                 description: 'ID of the affected credential.',
@@ -12977,7 +14438,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -12996,7 +14458,7 @@ export default {
           },
           {
             description:
-              'An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was issued.',
+              'An [access system credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was issued.',
             properties: {
               acs_credential_id: {
                 description: 'ID of the affected credential.',
@@ -13030,7 +14492,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13049,7 +14512,7 @@ export default {
           },
           {
             description:
-              'An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was reissued.',
+              'An [access system credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was reissued.',
             properties: {
               acs_credential_id: {
                 description: 'ID of the affected credential.',
@@ -13083,7 +14546,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13102,7 +14566,7 @@ export default {
           },
           {
             description:
-              'An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was invalidated. That is, the credential cannot be used anymore.',
+              'An [access system credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was invalidated. That is, the credential cannot be used anymore.',
             properties: {
               acs_credential_id: {
                 description: 'ID of the affected credential.',
@@ -13139,7 +14603,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13188,7 +14653,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13237,7 +14703,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13256,7 +14723,7 @@ export default {
           },
           {
             description:
-              'An [ACS encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) was added.',
+              'An [access system encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) was added.',
             properties: {
               acs_encoder_id: {
                 description: 'ID of the affected encoder.',
@@ -13290,7 +14757,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13309,7 +14777,7 @@ export default {
           },
           {
             description:
-              'An [ACS encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) was removed.',
+              'An [access system encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) was removed.',
             properties: {
               acs_encoder_id: {
                 description: 'ID of the affected encoder.',
@@ -13343,7 +14811,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13398,7 +14867,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13417,7 +14887,7 @@ export default {
           },
           {
             description:
-              'An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was added.',
+              'An [access system entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was added.',
             properties: {
               acs_entrance_id: { format: 'uuid', type: 'string' },
               acs_system_id: {
@@ -13447,7 +14917,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13466,7 +14937,7 @@ export default {
           },
           {
             description:
-              'An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was removed.',
+              'An [access system entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was removed.',
             properties: {
               acs_entrance_id: { format: 'uuid', type: 'string' },
               acs_system_id: {
@@ -13496,7 +14967,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13539,7 +15011,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13561,12 +15034,13 @@ export default {
             properties: {
               connect_webview_id: {
                 description:
-                  'ID of the Connect Webview associated with the event.',
+                  'ID of the [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
-                description: 'ID of the affected connected account.',
+                description:
+                  'ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13590,7 +15064,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13613,12 +15088,13 @@ export default {
             properties: {
               connect_webview_id: {
                 description:
-                  'ID of the Connect Webview associated with the event.',
+                  'ID of the [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
-                description: 'ID of the affected connected account.',
+                description:
+                  'ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13642,7 +15118,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13666,12 +15143,13 @@ export default {
             properties: {
               connect_webview_id: {
                 description:
-                  'ID of the Connect Webview associated with the event.',
+                  'ID of the [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
-                description: 'ID of the affected connected account.',
+                description:
+                  'ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13695,7 +15173,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13718,7 +15197,8 @@ export default {
               'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was disconnected.',
             properties: {
               connected_account_id: {
-                description: 'ID of the affected connected account.',
+                description:
+                  'ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13742,7 +15222,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13763,7 +15244,8 @@ export default {
               'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) completed the first sync with Seam, and the corresponding devices or systems are now available.',
             properties: {
               connected_account_id: {
-                description: 'ID of the affected connected account.',
+                description:
+                  'ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13787,7 +15269,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13808,7 +15291,8 @@ export default {
               'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was deleted.',
             properties: {
               connected_account_id: {
-                description: 'ID of the affected connected account.',
+                description:
+                  'ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13832,7 +15316,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13853,7 +15338,8 @@ export default {
               'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) completed the first sync after reconnection with Seam, and the corresponding devices or systems are now available.',
             properties: {
               connected_account_id: {
-                description: 'ID of the affected connected account.',
+                description:
+                  'ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13879,7 +15365,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13929,7 +15416,8 @@ export default {
               },
               status: { description: 'Status of the action.', type: 'string' },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -13981,7 +15469,8 @@ export default {
               },
               status: { description: 'Status of the action.', type: 'string' },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14033,7 +15522,8 @@ export default {
               },
               status: { description: 'Status of the action.', type: 'string' },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14085,7 +15575,8 @@ export default {
               },
               status: { description: 'Status of the action.', type: 'string' },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14108,13 +15599,14 @@ export default {
               'A [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) login succeeded.',
             properties: {
               connect_webview_id: {
-                description: 'ID of the affected Connect Webview.',
+                description:
+                  'ID of the affected [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).',
                 format: 'uuid',
                 type: 'string',
               },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14138,7 +15630,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14160,7 +15653,8 @@ export default {
               'A [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) login failed.',
             properties: {
               connect_webview_id: {
-                description: 'ID of the affected Connect Webview.',
+                description:
+                  'ID of the affected [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14184,7 +15678,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14206,7 +15701,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14232,7 +15727,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14255,7 +15751,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14281,7 +15777,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14304,7 +15801,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14333,7 +15830,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14356,7 +15854,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14385,7 +15883,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14408,7 +15907,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14437,7 +15936,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14460,7 +15960,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14496,7 +15996,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14520,7 +16021,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14559,7 +16060,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14583,7 +16085,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14609,7 +16111,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14640,7 +16143,7 @@ export default {
               },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14666,7 +16169,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14704,7 +16208,7 @@ export default {
               },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14733,7 +16237,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14758,7 +16263,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14784,7 +16289,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14807,7 +16313,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14833,7 +16339,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14856,7 +16363,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14885,7 +16392,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14908,7 +16416,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14937,7 +16445,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14960,7 +16469,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14989,7 +16498,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15012,7 +16522,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15041,7 +16551,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15064,7 +16575,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15093,7 +16604,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15116,7 +16628,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15145,7 +16657,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15168,7 +16681,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15197,7 +16710,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15220,7 +16734,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15249,7 +16763,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15272,7 +16787,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15301,7 +16816,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15324,7 +16840,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15353,7 +16869,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15376,7 +16893,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15435,7 +16952,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15470,7 +16988,7 @@ export default {
               },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15502,7 +17020,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15538,7 +17057,7 @@ export default {
               },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15570,7 +17089,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15600,7 +17120,7 @@ export default {
               },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15626,7 +17146,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15653,7 +17174,7 @@ export default {
               },
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15694,7 +17215,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15720,7 +17242,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15791,7 +17313,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15815,7 +17338,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15884,7 +17407,8 @@ export default {
                 type: 'number',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15913,7 +17437,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -15982,7 +17506,8 @@ export default {
                 type: 'number',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -16011,7 +17536,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -16064,7 +17589,8 @@ export default {
                 type: 'number',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -16089,7 +17615,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -16130,7 +17656,8 @@ export default {
                 type: 'number',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -16155,7 +17682,7 @@ export default {
             properties: {
               connected_account_id: {
                 description:
-                  'ID of the connected account associated with the event.',
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -16185,7 +17712,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -16232,7 +17760,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -16273,7 +17802,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -16293,14 +17823,48 @@ export default {
         'x-route-path': '/events',
       },
       instant_key: {
+        description:
+          'Represents a Seam Instant Key. For issuing Bluetooth mobile keys, Instant Keys are the fastest way to share access. With a single API call, you can create a mobile key and send it through text or email or embed it in your own app.\n\nThere’s no app to install, nor account to create. Your user just taps a link and gets a lightweight, native-feeling experience using iOS App Clip or Instant Apps on Android. Further, Instant Keys work offline, so even in areas with poor cellular or Wi-Fi, like elevator banks or concrete-walled hallways, the Instant Keys still work.',
         properties: {
-          client_session_id: { format: 'uuid', type: 'string' },
-          created_at: { format: 'date-time', type: 'string' },
-          expires_at: { format: 'date-time', type: 'string' },
-          instant_key_id: { format: 'uuid', type: 'string' },
-          instant_key_url: { format: 'uri', type: 'string' },
-          user_identity_id: { format: 'uuid', type: 'string' },
-          workspace_id: { format: 'uuid', type: 'string' },
+          client_session_id: {
+            description:
+              'ID of the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens) associated with the Instant Key.',
+            format: 'uuid',
+            type: 'string',
+          },
+          created_at: {
+            description: 'Date and time at which the Instant Key was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          expires_at: {
+            description: 'Date and time at which the Instant Key expires.',
+            format: 'date-time',
+            type: 'string',
+          },
+          instant_key_id: {
+            description: 'ID of the Instant Key.',
+            format: 'uuid',
+            type: 'string',
+          },
+          instant_key_url: {
+            description:
+              'Shareable URL for the Instant Key. Use the URL to deliver the Instant Key to your user through a link in a text message or email or by embedding it in your web app.',
+            format: 'uri',
+            type: 'string',
+          },
+          user_identity_id: {
+            description:
+              'ID of the user identity associated with the Instant Key.',
+            format: 'uuid',
+            type: 'string',
+          },
+          workspace_id: {
+            description:
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the Instant Key.',
+            format: 'uuid',
+            type: 'string',
+          },
         },
         required: [
           'instant_key_id',
@@ -16365,8 +17929,11 @@ export default {
         'x-undocumented': 'Will be removed.',
       },
       magic_link: {
+        description:
+          "Represents a Customer Portal. Customer Portal is a hosted, customizable interface for managing device access. It enables you to embed secure, pre-authenticated access flows into your product—either by sharing a link with users or embedding a view in an iframe.\n\nWith Customer Portal, you no longer need to build out frontend experiences for physical access, thermostats, and sensors. Instead, you can ship enterprise-grade access control experiences in a fraction of the time, while maintaining your product's branding and user experience.\n\nSeam hosts these flows, handling everything from account connection and device mapping to full-featured device control.",
         properties: {
           building_block_type: {
+            description: 'Type of partner building block.',
             enum: [
               'connect_accounts',
               'manage_devices',
@@ -16375,11 +17942,31 @@ export default {
             ],
             type: 'string',
           },
-          created_at: { format: 'date-time', type: 'string' },
-          customer_key: { type: 'string' },
-          expires_at: { format: 'date-time', type: 'string' },
-          url: { format: 'uri', type: 'string' },
-          workspace_id: { format: 'uuid', type: 'string' },
+          created_at: {
+            description: 'Date and time at which the magic link was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          customer_key: {
+            description: 'Customer key for the magic link.',
+            type: 'string',
+          },
+          expires_at: {
+            description: 'Date and time at which the magic link expires.',
+            format: 'date-time',
+            type: 'string',
+          },
+          url: {
+            description: 'URL for the magic link.',
+            format: 'uri',
+            type: 'string',
+          },
+          workspace_id: {
+            description:
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the magic link.',
+            format: 'uuid',
+            type: 'string',
+          },
         },
         required: [
           'url',
@@ -16467,22 +18054,66 @@ export default {
         type: 'object',
       },
       partner_resource: {
+        description:
+          'Represents a partner resource that enables you to send your user identity and access grant resources to Seam.',
         properties: {
           custom_metadata: {
             additionalProperties: { type: 'string' },
+            description:
+              'Custom metadata associated with the partner resource.',
             type: 'object',
           },
-          customer_key: { type: 'string' },
-          description: { type: 'string' },
-          email_address: { type: 'string' },
-          ends_at: { type: 'string' },
-          location_keys: { items: { type: 'string' }, type: 'array' },
-          name: { type: 'string' },
-          partner_resource_key: { type: 'string' },
-          partner_resource_type: { type: 'string' },
-          phone_number: { type: 'string' },
-          starts_at: { type: 'string' },
-          user_identity_key: { type: 'string' },
+          customer_key: {
+            description: 'Customer key associated with the partner resource.',
+            type: 'string',
+          },
+          description: {
+            description: 'Description of the partner resource.',
+            type: 'string',
+          },
+          email_address: {
+            description:
+              'Email address associated with the user identity partner resource.',
+            type: 'string',
+          },
+          ends_at: {
+            description:
+              'Ending date and time associated with the access grant partner resource.',
+            type: 'string',
+          },
+          location_keys: {
+            description:
+              'Location keys associated with the access grant partner resource.',
+            items: { type: 'string' },
+            type: 'array',
+          },
+          name: {
+            description: 'Name of the partner resource.',
+            type: 'string',
+          },
+          partner_resource_key: {
+            description: 'Key of the partner resource.',
+            type: 'string',
+          },
+          partner_resource_type: {
+            description: 'Type of the partner resource.',
+            type: 'string',
+          },
+          phone_number: {
+            description:
+              'Phone number associated with the user identity partner resource.',
+            type: 'string',
+          },
+          starts_at: {
+            description:
+              'Starting date and time associated with the access grant partner resource.',
+            type: 'string',
+          },
+          user_identity_key: {
+            description:
+              'User identity key associated with the access grant partner resource.',
+            type: 'string',
+          },
         },
         required: [
           'partner_resource_type',
@@ -16521,7 +18152,7 @@ export default {
           },
           display_name: {
             description:
-              'Display name of the phone. Defaults to `nickname` (if it is set) or `properties.appearance.name` otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.\n  ',
+              'Display name of the phone. Defaults to `nickname` (if it is set) or `properties.appearance.name`, otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.\n  ',
             type: 'string',
           },
           errors: {
@@ -16627,11 +18258,22 @@ export default {
         'x-route-path': '/phones',
       },
       phone_registration: {
+        description: 'Represents a mobile phone registration.',
         properties: {
-          is_being_activated: { type: 'boolean' },
-          phone_registration_id: { type: 'string' },
-          provider_name: { nullable: true, type: 'string' },
-          provider_state: {},
+          is_being_activated: {
+            description: 'Indicates whether the phone is being activated.',
+            type: 'boolean',
+          },
+          phone_registration_id: {
+            description: 'Registration ID for the phone.',
+            type: 'string',
+          },
+          provider_name: {
+            description: 'Provider name for the phone.',
+            nullable: true,
+            type: 'string',
+          },
+          provider_state: { description: 'Provider state for the phone.' },
         },
         required: [
           'phone_registration_id',
@@ -16643,11 +18285,16 @@ export default {
         'x-undocumented': 'Seam Mobile SDK only.',
       },
       phone_session: {
+        description: 'Represents a mobile phone session.',
         properties: {
           provider_sessions: {
+            description: 'Phone provider sessions.',
             items: {
+              description: 'Phone provider session.',
               properties: {
                 acs_credentials: {
+                  description:
+                    'Access system credentials associated with the phone provider session.',
                   items: {
                     description:
                       'Means by which an [access control system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).\n\nAn access control system generally uses digital means of access to authorize a user trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.\n\nFor each `acs_credential`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type.',
@@ -16684,12 +18331,20 @@ export default {
                               description:
                                 'ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
                               properties: {
-                                door_name: { type: 'string' },
+                                door_name: {
+                                  description:
+                                    'Name of the door in the Vostio access system.',
+                                  type: 'string',
+                                },
                                 door_number: {
+                                  description:
+                                    'Number of the door in the Vostio access system.',
                                   format: 'float',
                                   type: 'number',
                                 },
                                 door_type: {
+                                  description:
+                                    'Type of the door in the Vostio access system.',
                                   enum: [
                                     'CommonDoor',
                                     'EntranceDoor',
@@ -16698,8 +18353,16 @@ export default {
                                   ],
                                   type: 'string',
                                 },
-                                pms_id: { type: 'string' },
-                                stand_open: { type: 'boolean' },
+                                pms_id: {
+                                  description:
+                                    'PMS ID of the door in the Vostio access system.',
+                                  type: 'string',
+                                },
+                                stand_open: {
+                                  description:
+                                    'Indicates whether keys are allowed to set the door in stand open mode in the Vostio access system.',
+                                  type: 'boolean',
+                                },
                               },
                               required: ['door_type', 'door_name'],
                               type: 'object',
@@ -16719,7 +18382,11 @@ export default {
                               description:
                                 'dormakaba Community-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
                               properties: {
-                                access_point_name: { type: 'string' },
+                                access_point_name: {
+                                  description:
+                                    'Name of the access point in the dormakaba Community access system.',
+                                  type: 'string',
+                                },
                               },
                               required: ['access_point_name'],
                               type: 'object',
@@ -16749,10 +18416,26 @@ export default {
                               description:
                                 'Latch-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
                               properties: {
-                                accessibility_type: { type: 'string' },
-                                door_name: { type: 'string' },
-                                door_type: { type: 'string' },
-                                is_connected: { type: 'boolean' },
+                                accessibility_type: {
+                                  description:
+                                    'Accessibility type in the Latch access system.',
+                                  type: 'string',
+                                },
+                                door_name: {
+                                  description:
+                                    'Name of the door in the Latch access system.',
+                                  type: 'string',
+                                },
+                                door_type: {
+                                  description:
+                                    'Type of the door in the Latch access system.',
+                                  type: 'string',
+                                },
+                                is_connected: {
+                                  description:
+                                    'Indicates whether the entrance is connected.',
+                                  type: 'boolean',
+                                },
                               },
                               required: [
                                 'accessibility_type',
@@ -16766,14 +18449,46 @@ export default {
                               description:
                                 'Salto KS-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
                               properties: {
-                                battery_level: { type: 'string' },
-                                door_name: { type: 'string' },
-                                intrusion_alarm: { type: 'boolean' },
-                                left_open_alarm: { type: 'boolean' },
-                                lock_type: { type: 'string' },
-                                locked_state: { type: 'string' },
-                                online: { type: 'boolean' },
-                                privacy_mode: { type: 'boolean' },
+                                battery_level: {
+                                  description:
+                                    'Battery level of the door access device.',
+                                  type: 'string',
+                                },
+                                door_name: {
+                                  description:
+                                    'Name of the door in the Salto KS access system.',
+                                  type: 'string',
+                                },
+                                intrusion_alarm: {
+                                  description:
+                                    'Indicates whether an intrusion alarm is active on the door.',
+                                  type: 'boolean',
+                                },
+                                left_open_alarm: {
+                                  description:
+                                    'Indicates whether the door is left open.',
+                                  type: 'boolean',
+                                },
+                                lock_type: {
+                                  description:
+                                    'Type of the lock in the Salto KS access system.',
+                                  type: 'string',
+                                },
+                                locked_state: {
+                                  description:
+                                    'Locked state of the door in the Salto KS access system.',
+                                  type: 'string',
+                                },
+                                online: {
+                                  description:
+                                    'Indicates whether the door access device is online.',
+                                  type: 'boolean',
+                                },
+                                privacy_mode: {
+                                  description:
+                                    'Indicates whether privacy mode is enabled for the lock.',
+                                  type: 'boolean',
+                                },
                               },
                               required: [
                                 'door_name',
@@ -16787,9 +18502,21 @@ export default {
                               description:
                                 'Salto Space-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
                               properties: {
-                                door_description: { type: 'string' },
-                                door_name: { type: 'string' },
-                                ext_door_id: { type: 'string' },
+                                door_description: {
+                                  description:
+                                    'Description of the door in the Salto Space access system.',
+                                  type: 'string',
+                                },
+                                door_name: {
+                                  description:
+                                    'Name of the door in the Salto Space access system.',
+                                  type: 'string',
+                                },
+                                ext_door_id: {
+                                  description:
+                                    'External door ID in the Salto Space access system.',
+                                  type: 'string',
+                                },
                               },
                               required: ['door_name', 'ext_door_id'],
                               type: 'object',
@@ -16799,6 +18526,8 @@ export default {
                                 'Visionline-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
                               properties: {
                                 door_category: {
+                                  description:
+                                    'Category of the door in the Visionline access system.',
                                   enum: [
                                     'entrance',
                                     'guest',
@@ -16808,14 +18537,24 @@ export default {
                                   ],
                                   type: 'string',
                                 },
-                                door_name: { type: 'string' },
+                                door_name: {
+                                  description:
+                                    'Name of the door in the Visionline access system.',
+                                  type: 'string',
+                                },
                                 profiles: {
+                                  description:
+                                    'Profile for the door in the Visionline access system.',
                                   items: {
                                     properties: {
                                       visionline_door_profile_id: {
+                                        description:
+                                          'Door profile ID in the Visionline access system.',
                                         type: 'string',
                                       },
                                       visionline_door_profile_type: {
+                                        description:
+                                          'Door profile type in the Visionline access system.',
                                         enum: ['BLE', 'commonDoor', 'touch'],
                                         type: 'string',
                                       },
@@ -16861,15 +18600,34 @@ export default {
                         description:
                           'Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
                         properties: {
-                          auto_join: { type: 'boolean' },
+                          auto_join: {
+                            description:
+                              'Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors.',
+                            type: 'boolean',
+                          },
                           door_names: {
+                            description:
+                              'Names of the doors to which to grant access in the Vostio access system.',
                             items: { type: 'string' },
                             type: 'array',
                           },
-                          endpoint_id: { type: 'string' },
-                          key_id: { type: 'string' },
-                          key_issuing_request_id: { type: 'string' },
+                          endpoint_id: {
+                            description:
+                              'Endpoint ID in the Vostio access system.',
+                            type: 'string',
+                          },
+                          key_id: {
+                            description: 'Key ID in the Vostio access system.',
+                            type: 'string',
+                          },
+                          key_issuing_request_id: {
+                            description:
+                              'Key issuing request ID in the Vostio access system.',
+                            type: 'string',
+                          },
                           override_guest_acs_entrance_ids: {
+                            description:
+                              'IDs of the guest entrances to override in the Vostio access system.',
                             items: { type: 'string' },
                             type: 'array',
                           },
@@ -16989,23 +18747,47 @@ export default {
                         description:
                           'Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
                         properties: {
-                          auto_join: { type: 'boolean' },
+                          auto_join: {
+                            description:
+                              'Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors.',
+                            type: 'boolean',
+                          },
                           card_function_type: {
+                            description:
+                              'Card function type in the Visionline access system.',
                             enum: ['guest', 'staff'],
                             type: 'string',
                           },
-                          card_id: { type: 'string' },
+                          card_id: {
+                            description:
+                              'ID of the card in the Visionline access system.',
+                            type: 'string',
+                          },
                           common_acs_entrance_ids: {
+                            description:
+                              'Common entrance IDs in the Visionline access system.',
                             items: { format: 'uuid', type: 'string' },
                             type: 'array',
                           },
-                          credential_id: { type: 'string' },
+                          credential_id: {
+                            description:
+                              'ID of the credential in the Visionline access system.',
+                            type: 'string',
+                          },
                           guest_acs_entrance_ids: {
+                            description:
+                              'Guest entrance IDs in the Visionline access system.',
                             items: { format: 'uuid', type: 'string' },
                             type: 'array',
                           },
-                          is_valid: { type: 'boolean' },
+                          is_valid: {
+                            description:
+                              'Indicates whether the credential is valid.',
+                            type: 'boolean',
+                          },
                           joiner_acs_credential_ids: {
+                            description:
+                              'IDs of the credentials to which you want to join.',
                             items: { format: 'uuid', type: 'string' },
                             type: 'array',
                           },
@@ -17224,11 +19006,25 @@ export default {
                   type: 'array',
                 },
                 phone_registration: {
+                  description: 'Represents a mobile phone registration.',
                   properties: {
-                    is_being_activated: { type: 'boolean' },
-                    phone_registration_id: { type: 'string' },
-                    provider_name: { nullable: true, type: 'string' },
-                    provider_state: {},
+                    is_being_activated: {
+                      description:
+                        'Indicates whether the phone is being activated.',
+                      type: 'boolean',
+                    },
+                    phone_registration_id: {
+                      description: 'Registration ID for the phone.',
+                      type: 'string',
+                    },
+                    provider_name: {
+                      description: 'Provider name for the phone.',
+                      nullable: true,
+                      type: 'string',
+                    },
+                    provider_state: {
+                      description: 'Provider state for the phone.',
+                    },
                   },
                   required: [
                     'phone_registration_id',
@@ -17252,25 +19048,27 @@ export default {
         'x-undocumented': 'Seam Mobile SDK only.',
       },
       space: {
+        description:
+          'Represents a space that is a logical grouping of devices and entrances. You can assign access to an entire space, thereby making granting access more efficient.',
         properties: {
           created_at: {
-            description: 'Date and time at which the space object was created.',
+            description: 'Date and time at which the space was created.',
             format: 'date-time',
             type: 'string',
           },
           display_name: {
-            description: 'Display name of the space.',
+            description: 'Display name for the space.',
             type: 'string',
           },
           name: { description: 'Name of the space.', type: 'string' },
           space_id: {
-            description: 'Unique identifier for the space.',
+            description: 'ID of the space.',
             format: 'uuid',
             type: 'string',
           },
           workspace_id: {
             description:
-              'Unique identifier for the Seam workspace associated with the space.',
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the space.',
             format: 'uuid',
             type: 'string',
           },
@@ -18255,9 +20053,14 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Account is disconnected',
+                  description: 'Indicates that the account is disconnected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -18265,11 +20068,22 @@ export default {
                       type: 'string',
                     },
                     is_connected_account_error: {
+                      description:
+                        'Indicates that the error is a [connected account](https://docs.seam.co/latest/api/connected_accounts) error.',
                       enum: [true],
                       type: 'boolean',
                     },
-                    is_device_error: { enum: [false], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is not a device error.',
+                      enum: [false],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -18281,9 +20095,15 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Salto site user limit reached.',
+                  description:
+                    'Indicates that the Salto site user limit has been reached.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -18291,11 +20111,22 @@ export default {
                       type: 'string',
                     },
                     is_connected_account_error: {
+                      description:
+                        'Indicates that the error is a [connected account](https://docs.seam.co/latest/api/connected_accounts) error.',
                       enum: [true],
                       type: 'boolean',
                     },
-                    is_device_error: { enum: [false], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is not a device error.',
+                      enum: [false],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -18307,17 +20138,31 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Device is offline',
+                  description: 'Indicates that the device is offline.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['device_offline'],
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -18328,17 +20173,31 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Device has been removed',
+                  description: 'Indicates that the device has been removed.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['device_removed'],
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -18349,17 +20208,31 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Hub is disconnected',
+                  description: 'Indicates that the hub is disconnected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['hub_disconnected'],
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -18370,164 +20243,31 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Device is disconnected',
+                  description: 'Indicates that the device is disconnected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['device_disconnected'],
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'The backup access code pool is empty.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
+                    is_device_error: {
                       description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['empty_backup_access_code_pool'],
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'User is not authorized to use the August Lock.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_lock_not_authorized'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'Lock is not connected to the Seam Bridge.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_lock_missing_bridge'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'Lock is not paired with a Gateway.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['ttlock_lock_not_paired_to_gateway'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'Missing device credentials.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['missing_device_credentials'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'The auxiliary heat is running.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['auxiliary_heat_running'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'Subscription required to connect.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['subscription_required'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
                   },
                   required: [
                     'message',
@@ -18539,17 +20279,31 @@ export default {
                 },
                 {
                   description:
-                    'Lockly lock is not connected to a Wi-Fi bridge.',
+                    'Indicates that the [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['lockly_missing_wifi_bridge'],
+                      enum: ['empty_backup_access_code_pool'],
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -18560,7 +20314,258 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Credentials provided were invalid.',
+                  description:
+                    'Indicates that the user is not authorized to use the August lock.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['august_lock_not_authorized'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the lock is not connected to a bridge.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['august_lock_missing_bridge'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the lock is not paired with a gateway.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['ttlock_lock_not_paired_to_gateway'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description: 'Indicates that device credentials are missing.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['missing_device_credentials'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description: 'Indicates that the auxiliary heat is running.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['auxiliary_heat_running'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that a subscription is required to connect.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['subscription_required'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the Lockly lock is not connected to a Wi-Fi bridge.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['lockly_missing_wifi_bridge'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the credentials provided were invalid.',
                   properties: {
                     created_at: {
                       description:
@@ -18576,7 +20581,7 @@ export default {
                     },
                     is_bridge_error: {
                       description:
-                        'Indicates whether the error is related to Seam Bridge.',
+                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
                       type: 'boolean',
                     },
                     is_connected_account_error: {
@@ -18595,7 +20600,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -18611,7 +20616,7 @@ export default {
                     },
                     is_bridge_error: {
                       description:
-                        'Indicates whether the error is related to Seam Bridge.',
+                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
                       type: 'boolean',
                     },
                     is_connected_account_error: {
@@ -18658,7 +20663,7 @@ export default {
           },
           type: {
             description:
-              'Nature of the access code. Values are `ongoing` for access codes that are active continuously until deactivated manually or `time_bound` for access codes that have a specific duration.',
+              'Type of the access code. `ongoing` access codes are active continuously until deactivated manually. `time_bound` access codes have a specific duration.',
             enum: ['time_bound', 'ongoing'],
             type: 'string',
           },
@@ -19134,12 +21139,33 @@ export default {
             description:
               'Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
             properties: {
-              auto_join: { type: 'boolean' },
-              door_names: { items: { type: 'string' }, type: 'array' },
-              endpoint_id: { type: 'string' },
-              key_id: { type: 'string' },
-              key_issuing_request_id: { type: 'string' },
+              auto_join: {
+                description:
+                  'Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors.',
+                type: 'boolean',
+              },
+              door_names: {
+                description:
+                  'Names of the doors to which to grant access in the Vostio access system.',
+                items: { type: 'string' },
+                type: 'array',
+              },
+              endpoint_id: {
+                description: 'Endpoint ID in the Vostio access system.',
+                type: 'string',
+              },
+              key_id: {
+                description: 'Key ID in the Vostio access system.',
+                type: 'string',
+              },
+              key_issuing_request_id: {
+                description:
+                  'Key issuing request ID in the Vostio access system.',
+                type: 'string',
+              },
               override_guest_acs_entrance_ids: {
+                description:
+                  'IDs of the guest entrances to override in the Vostio access system.',
                 items: { type: 'string' },
                 type: 'array',
               },
@@ -19259,20 +21285,45 @@ export default {
             description:
               'Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
             properties: {
-              auto_join: { type: 'boolean' },
-              card_function_type: { enum: ['guest', 'staff'], type: 'string' },
-              card_id: { type: 'string' },
+              auto_join: {
+                description:
+                  'Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors.',
+                type: 'boolean',
+              },
+              card_function_type: {
+                description:
+                  'Card function type in the Visionline access system.',
+                enum: ['guest', 'staff'],
+                type: 'string',
+              },
+              card_id: {
+                description: 'ID of the card in the Visionline access system.',
+                type: 'string',
+              },
               common_acs_entrance_ids: {
+                description:
+                  'Common entrance IDs in the Visionline access system.',
                 items: { format: 'uuid', type: 'string' },
                 type: 'array',
               },
-              credential_id: { type: 'string' },
+              credential_id: {
+                description:
+                  'ID of the credential in the Visionline access system.',
+                type: 'string',
+              },
               guest_acs_entrance_ids: {
+                description:
+                  'Guest entrance IDs in the Visionline access system.',
                 items: { format: 'uuid', type: 'string' },
                 type: 'array',
               },
-              is_valid: { type: 'boolean' },
+              is_valid: {
+                description: 'Indicates whether the credential is valid.',
+                type: 'boolean',
+              },
               joiner_acs_credential_ids: {
+                description:
+                  'IDs of the credentials to which you want to join.',
                 items: { format: 'uuid', type: 'string' },
                 type: 'array',
               },
@@ -19466,11 +21517,11 @@ export default {
       },
       unmanaged_acs_user: {
         description:
-          'Represents an unmanaged [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
+          'Represents an unmanaged [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access system](https://docs.seam.co/latest/capability-guides/access-systems).',
         properties: {
           access_schedule: {
             description:
-              "`starts_at` and `ends_at` timestamps for the [ACS user's](https://docs.seam.co/latest/capability-guides/access-systems/user-management) access.",
+              "`starts_at` and `ends_at` timestamps for the [access system user's](https://docs.seam.co/latest/capability-guides/access-systems/user-management) access.",
             properties: {
               ends_at: {
                 description:
@@ -19491,31 +21542,31 @@ export default {
           },
           acs_system_id: {
             description:
-              'ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+              'ID of the [access system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
             format: 'uuid',
             type: 'string',
           },
           acs_user_id: {
             description:
-              'ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+              'ID of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
             format: 'uuid',
             type: 'string',
           },
           connected_account_id: {
             description:
-              '\n      The ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that is associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).\n    ',
+              '\n      The ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that is associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).\n    ',
             format: 'uuid',
             type: 'string',
           },
           created_at: {
             description:
-              'Date and time at which the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created.',
+              'Date and time at which the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created.',
             format: 'date-time',
             type: 'string',
           },
           display_name: {
             description:
-              'Display name for the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+              'Display name for the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
             type: 'string',
           },
           email: {
@@ -19526,21 +21577,21 @@ export default {
           },
           email_address: {
             description:
-              'Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+              'Email address of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
             format: 'email',
             type: 'string',
           },
           errors: {
             description:
-              'Errors associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+              'Errors associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
             items: {
               description:
-                'Errors associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+                'Errors associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
               discriminator: { propertyName: 'error_code' },
               oneOf: [
                 {
                   description:
-                    'Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted from the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) outside of Seam.',
+                    'Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted from the [access system](https://docs.seam.co/latest/capability-guides/access-systems) outside of Seam.',
                   properties: {
                     created_at: {
                       description:
@@ -19563,7 +21614,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.',
+                    'Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.',
                   properties: {
                     created_at: {
                       description:
@@ -19586,7 +21637,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not created on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
+                    'Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not created on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
                   properties: {
                     created_at: {
                       description:
@@ -19609,7 +21660,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not updated on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
+                    'Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not updated on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
                   properties: {
                     created_at: {
                       description:
@@ -19632,7 +21683,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not deleted on the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
+                    'Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was not deleted on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
                   properties: {
                     created_at: {
                       description:
@@ -19655,7 +21706,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).',
+                    'Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).',
                   properties: {
                     created_at: {
                       description:
@@ -19682,7 +21733,7 @@ export default {
           },
           external_type: {
             description:
-              'Brand-specific terminology for the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) type.',
+              'Brand-specific terminology for the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) type.',
             enum: [
               'pti_user',
               'brivo_user',
@@ -19696,12 +21747,12 @@ export default {
           },
           external_type_display_name: {
             description:
-              'Display name that corresponds to the brand-specific terminology for the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) type.',
+              'Display name that corresponds to the brand-specific terminology for the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) type.',
             type: 'string',
           },
           full_name: {
             description:
-              'Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+              'Full name of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
             minLength: 1,
             type: 'string',
           },
@@ -19709,12 +21760,12 @@ export default {
           is_managed: { enum: [false], type: 'boolean' },
           is_suspended: {
             description:
-              'Indicates whether the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users).',
+              'Indicates whether the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users).',
             type: 'boolean',
           },
           last_successful_sync_at: {
             description:
-              'The last time an internal sync job completed for this ACS user.',
+              'The last time an internal sync job completed for this access system user.',
             format: 'date-time',
             nullable: true,
             type: 'string',
@@ -19722,7 +21773,7 @@ export default {
           },
           pending_mutations: {
             description:
-              'Pending mutations associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system.',
+              'Pending mutations associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system.',
             items: {
               discriminator: { propertyName: 'mutation_code' },
               oneOf: [
@@ -19740,7 +21791,12 @@ export default {
                       description: 'Detailed description of the mutation.',
                       type: 'string',
                     },
-                    mutation_code: { enum: ['creating'], type: 'string' },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing a user creation to the integrated access system.',
+                      enum: ['creating'],
+                      type: 'string',
+                    },
                   },
                   required: ['created_at', 'message', 'mutation_code'],
                   type: 'object',
@@ -19759,7 +21815,12 @@ export default {
                       description: 'Detailed description of the mutation.',
                       type: 'string',
                     },
-                    mutation_code: { enum: ['deleting'], type: 'string' },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing a user deletion to the integrated access system.',
+                      enum: ['deleting'],
+                      type: 'string',
+                    },
                   },
                   required: ['created_at', 'message', 'mutation_code'],
                   type: 'object',
@@ -19773,14 +21834,26 @@ export default {
                       type: 'string',
                     },
                     from: {
+                      description: 'Old access system user information.',
                       properties: {
                         email_address: {
+                          description:
+                            'Email address of the access system user.',
                           format: 'email',
                           nullable: true,
                           type: 'string',
                         },
-                        full_name: { nullable: true, type: 'string' },
-                        phone_number: { nullable: true, type: 'string' },
+                        full_name: {
+                          description: 'Full name of the access system user.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        phone_number: {
+                          description:
+                            'Phone number of the access system user.',
+                          nullable: true,
+                          type: 'string',
+                        },
                       },
                       type: 'object',
                     },
@@ -19789,18 +21862,32 @@ export default {
                       type: 'string',
                     },
                     mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing updated user information to the integrated access system.',
                       enum: ['updating_user_information'],
                       type: 'string',
                     },
                     to: {
+                      description: 'New access system user information.',
                       properties: {
                         email_address: {
+                          description:
+                            'Email address of the access system user.',
                           format: 'email',
                           nullable: true,
                           type: 'string',
                         },
-                        full_name: { nullable: true, type: 'string' },
-                        phone_number: { nullable: true, type: 'string' },
+                        full_name: {
+                          description: 'Full name of the access system user.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        phone_number: {
+                          description:
+                            'Phone number of the access system user.',
+                          nullable: true,
+                          type: 'string',
+                        },
                       },
                       type: 'object',
                     },
@@ -19825,13 +21912,16 @@ export default {
                       type: 'string',
                     },
                     from: {
+                      description: 'Old access schedule information.',
                       properties: {
                         ends_at: {
+                          description: 'Starting time for the access schedule.',
                           format: 'date-time',
                           nullable: true,
                           type: 'string',
                         },
                         starts_at: {
+                          description: 'Starting time for the access schedule.',
                           format: 'date-time',
                           nullable: true,
                           type: 'string',
@@ -19845,17 +21935,22 @@ export default {
                       type: 'string',
                     },
                     mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing updated access schedule information to the integrated access system.',
                       enum: ['updating_access_schedule'],
                       type: 'string',
                     },
                     to: {
+                      description: 'New access schedule information.',
                       properties: {
                         ends_at: {
+                          description: 'Starting time for the access schedule.',
                           format: 'date-time',
                           nullable: true,
                           type: 'string',
                         },
                         starts_at: {
+                          description: 'Starting time for the access schedule.',
                           format: 'date-time',
                           nullable: true,
                           type: 'string',
@@ -19885,6 +21980,7 @@ export default {
                       type: 'string',
                     },
                     from: {
+                      description: 'Old user suspension state information.',
                       properties: { is_suspended: { type: 'boolean' } },
                       required: ['is_suspended'],
                       type: 'object',
@@ -19894,10 +21990,13 @@ export default {
                       type: 'string',
                     },
                     mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing updated user suspension state information to the integrated access system.',
                       enum: ['updating_suspension_state'],
                       type: 'string',
                     },
                     to: {
+                      description: 'New user suspension state information.',
                       properties: { is_suspended: { type: 'boolean' } },
                       required: ['is_suspended'],
                       type: 'object',
@@ -19940,6 +22039,8 @@ export default {
                       type: 'string',
                     },
                     mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing updated access group membership information to the integrated access system.',
                       enum: ['updating_group_membership'],
                       type: 'string',
                     },
@@ -19972,43 +22073,43 @@ export default {
           },
           phone_number: {
             description:
-              'Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
+              'Phone number of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
             type: 'string',
           },
           user_identity_email_address: {
             description:
-              'Email address of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+              'Email address of the user identity associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
             nullable: true,
             type: 'string',
           },
           user_identity_full_name: {
             description:
-              'Full name of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+              'Full name of the user identity associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
             nullable: true,
             type: 'string',
           },
           user_identity_id: {
             description:
-              'ID of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+              'ID of the user identity associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
             type: 'string',
           },
           user_identity_phone_number: {
             description:
-              'Phone number of the user identity associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
+              'Phone number of the user identity associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
             nullable: true,
             type: 'string',
           },
           warnings: {
             description:
-              'Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+              'Warnings associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
             items: {
               description:
-                'Warnings associated with the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+                'Warnings associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
               discriminator: { propertyName: 'warning_code' },
               oneOf: [
                 {
                   description:
-                    'Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is being deleted from the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). This is a temporary state, and the ACS user will be deleted shortly.',
+                    'Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is being deleted from the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is a temporary state, and the access system user will be deleted shortly.',
                   properties: {
                     created_at: {
                       description:
@@ -20028,7 +22129,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is not subscribed on Salto KS, so they cannot unlock doors or perform any actions. This occurs when the their access schedule hasn’t started yet, if their access schedule has ended, if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.',
+                    'Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is not subscribed on Salto KS, so they cannot unlock doors or perform any actions. This occurs when the their access schedule hasn’t started yet, if their access schedule has ended, if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.',
                   properties: {
                     created_at: {
                       description:
@@ -20051,7 +22152,7 @@ export default {
                 },
                 {
                   description:
-                    'An unknown issue occurred while syncing the state of this [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user.',
+                    'An unknown issue occurred while syncing the state of this [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user.',
                   properties: {
                     created_at: {
                       description:
@@ -20074,7 +22175,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created on Latch Mission Control. Please use the Latch Mission Control to manage this user.',
+                    'Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created on Latch Mission Control. Please use the Latch Mission Control to manage this user.',
                   properties: {
                     created_at: {
                       description:
@@ -20101,7 +22202,7 @@ export default {
           },
           workspace_id: {
             description:
-              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
             format: 'uuid',
             type: 'string',
           },
@@ -20168,7 +22269,7 @@ export default {
             type: 'string',
           },
           device_id: {
-            description: 'Unique identifier for the device.',
+            description: 'ID of the device.',
             format: 'uuid',
             type: 'string',
           },
@@ -20234,14 +22335,19 @@ export default {
           },
           errors: {
             description:
-              'Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
+              'Array of errors associated with the device. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
             items: {
               discriminator: { propertyName: 'error_code' },
               oneOf: [
                 {
-                  description: 'Account is disconnected',
+                  description: 'Indicates that the account is disconnected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -20249,11 +22355,22 @@ export default {
                       type: 'string',
                     },
                     is_connected_account_error: {
+                      description:
+                        'Indicates that the error is a [connected account](https://docs.seam.co/latest/api/connected_accounts) error.',
                       enum: [true],
                       type: 'boolean',
                     },
-                    is_device_error: { enum: [false], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is not a device error.',
+                      enum: [false],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -20265,9 +22382,15 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Salto site user limit reached.',
+                  description:
+                    'Indicates that the Salto site user limit has been reached.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -20275,11 +22398,22 @@ export default {
                       type: 'string',
                     },
                     is_connected_account_error: {
+                      description:
+                        'Indicates that the error is a [connected account](https://docs.seam.co/latest/api/connected_accounts) error.',
                       enum: [true],
                       type: 'boolean',
                     },
-                    is_device_error: { enum: [false], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is not a device error.',
+                      enum: [false],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -20291,17 +22425,31 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Device is offline',
+                  description: 'Indicates that the device is offline.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['device_offline'],
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -20312,17 +22460,31 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Device has been removed',
+                  description: 'Indicates that the device has been removed.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['device_removed'],
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -20333,17 +22495,31 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Hub is disconnected',
+                  description: 'Indicates that the hub is disconnected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['hub_disconnected'],
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -20354,164 +22530,31 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Device is disconnected',
+                  description: 'Indicates that the device is disconnected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['device_disconnected'],
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'The backup access code pool is empty.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
+                    is_device_error: {
                       description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['empty_backup_access_code_pool'],
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'User is not authorized to use the August Lock.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_lock_not_authorized'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'Lock is not connected to the Seam Bridge.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_lock_missing_bridge'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'Lock is not paired with a Gateway.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['ttlock_lock_not_paired_to_gateway'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'Missing device credentials.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['missing_device_credentials'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'The auxiliary heat is running.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['auxiliary_heat_running'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'Subscription required to connect.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['subscription_required'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
                   },
                   required: [
                     'message',
@@ -20523,17 +22566,31 @@ export default {
                 },
                 {
                   description:
-                    'Lockly lock is not connected to a Wi-Fi bridge.',
+                    'Indicates that the [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['lockly_missing_wifi_bridge'],
+                      enum: ['empty_backup_access_code_pool'],
                       type: 'string',
                     },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: [
                     'message',
@@ -20544,7 +22601,258 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Credentials provided were invalid.',
+                  description:
+                    'Indicates that the user is not authorized to use the August lock.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['august_lock_not_authorized'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the lock is not connected to a bridge.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['august_lock_missing_bridge'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the lock is not paired with a gateway.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['ttlock_lock_not_paired_to_gateway'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description: 'Indicates that device credentials are missing.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['missing_device_credentials'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description: 'Indicates that the auxiliary heat is running.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['auxiliary_heat_running'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that a subscription is required to connect.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['subscription_required'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the Lockly lock is not connected to a Wi-Fi bridge.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['lockly_missing_wifi_bridge'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the credentials provided were invalid.',
                   properties: {
                     created_at: {
                       description:
@@ -20560,7 +22868,7 @@ export default {
                     },
                     is_bridge_error: {
                       description:
-                        'Indicates whether the error is related to Seam Bridge.',
+                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
                       type: 'boolean',
                     },
                     is_connected_account_error: {
@@ -20579,7 +22887,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -20595,7 +22903,7 @@ export default {
                     },
                     is_bridge_error: {
                       description:
-                        'Indicates whether the error is related to Seam Bridge.',
+                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
                       type: 'boolean',
                     },
                     is_connected_account_error: {
@@ -20793,15 +23101,25 @@ export default {
           },
           warnings: {
             description:
-              'Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
+              'Array of warnings associated with the device. Each warning object within the array contains two fields: `warning_code` and `message`. `warning_code` is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
             items: {
               discriminator: { propertyName: 'warning_code' },
               oneOf: [
                 {
-                  description: 'Backup access code unhealthy.',
+                  description:
+                    'Indicates that the backup access code is unhealthy.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -20813,10 +23131,20 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Too many backup codes.',
+                  description:
+                    'Indicates that there are too many backup codes.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -20828,10 +23156,20 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Wyze Lock is not connected to a gateway.',
+                  description:
+                    'Indicates that the Wyze Lock is not connected to a gateway.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -20844,10 +23182,19 @@ export default {
                 },
                 {
                   description:
-                    'Device is offline, but has some functionality available.',
+                    'Indicates that the device is offline but has some functionality available.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -20859,10 +23206,20 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Third-party integration detected.',
+                  description:
+                    'Indicates that a third-party integration has been detected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -20874,10 +23231,20 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Nest thermostat in manual eco mode.',
+                  description:
+                    'Indicates that the Nest thermostat is in manual eco mode.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -20889,10 +23256,20 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Remote Unlock feature not enabled in settings.',
+                  description:
+                    'Indicates that the Remote Unlock feature is not enabled in the settings.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -20904,10 +23281,19 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Gateway signal is weak.',
+                  description: 'Indicates that the gateway signal is weak.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -20919,10 +23305,20 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Temperature threshold exceeded.',
+                  description:
+                    'Indicates that the temperature threshold has been exceeded.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -20934,10 +23330,20 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Device appears to be unresponsive.',
+                  description:
+                    'Indicates that the device appears to be unresponsive.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -20949,10 +23355,20 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Scheduled maintenance window detected.',
+                  description:
+                    'Indicates that a scheduled maintenance window has been detected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -20964,10 +23380,20 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Device has flaky connection.',
+                  description:
+                    'Indicates that the device has a flaky connection.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -20980,10 +23406,19 @@ export default {
                 },
                 {
                   description:
-                    'Lock is in Office Mode. Access Codes will not unlock doors.',
+                    'Indicates that the Salto KS lock is in Office Mode. Access Codes will not unlock doors.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -20996,10 +23431,19 @@ export default {
                 },
                 {
                   description:
-                    'Lock is in Privacy Mode. Access Codes will not unlock doors.',
+                    'Indicates that the Salto KS lock is in Privacy Mode. Access Codes will not unlock doors.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -21012,10 +23456,19 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this.',
+                    'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -21028,10 +23481,19 @@ export default {
                 },
                 {
                   description:
-                    'An unknown issue occurred while syncing the state of this phone with the provider. This issue may affect the proper functioning of this phone.',
+                    'Indicates that an unknown issue occurred while syncing the state of the phone with the provider. This issue may affect the proper functioning of the phone.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -21044,10 +23506,19 @@ export default {
                 },
                 {
                   description:
-                    'We detected that this device does not have a time zone configured. Time bound codes may not work as expected.',
+                    'Indicates that Seam detected that the Lockly device does not have a time zone configured. Time-bound codes may not work as expected.',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
@@ -21209,11 +23680,30 @@ export default {
         'x-route-path': '/user_identities',
       },
       webhook: {
+        description:
+          'Represents a [webhook](https://docs.seam.co/latest/developer-tools/webhooks) that enables you to receive notifications of events. When you create a webhook, specify the endpoint URL at which you want to receive events and the set of event types that you want to receive.',
         properties: {
-          event_types: { items: { type: 'string' }, type: 'array' },
-          secret: { type: 'string' },
-          url: { type: 'string' },
-          webhook_id: { type: 'string' },
+          event_types: {
+            description:
+              'Types of events that the [webhook](https://docs.seam.co/latest/developer-tools/webhooks) should receive.',
+            items: { type: 'string' },
+            type: 'array',
+          },
+          secret: {
+            description:
+              'Secret associated with the [webhook](https://docs.seam.co/latest/developer-tools/webhooks).',
+            type: 'string',
+          },
+          url: {
+            description:
+              'URL for the [webhook](https://docs.seam.co/latest/developer-tools/webhooks).',
+            type: 'string',
+          },
+          webhook_id: {
+            description:
+              'ID of the [webhook](https://docs.seam.co/latest/developer-tools/webhooks).',
+            type: 'string',
+          },
         },
         required: ['webhook_id', 'url'],
         type: 'object',
@@ -21223,31 +23713,69 @@ export default {
         description:
           'Represents a Seam [workspace](https://docs.seam.co/latest/core-concepts/workspaces). A workspace is a top-level entity that encompasses all other resources below it, such as devices, connected accounts, and Connect Webviews. Seam provides two types of workspaces. A [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces) is a special type of workspace designed for testing code. Sandbox workspaces offer test device accounts and virtual devices that you can connect and control. This ability to work with virtual devices is quite handy because it removes the need to own physical devices from multiple brands. To connect real devices and systems to Seam, use a [production workspace](https://docs.seam.co/latest/core-concepts/workspaces#production-workspaces).',
         properties: {
-          company_name: { type: 'string' },
+          company_name: {
+            description:
+              'Company name associated with the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+            type: 'string',
+          },
           connect_partner_name: {
             deprecated: true,
             nullable: true,
             type: 'string',
-            'x-deprecated': 'use company_name',
+            'x-deprecated': 'Use `company_name` instead.',
           },
           connect_webview_customization: {
             properties: {
-              inviter_logo_url: { type: 'string' },
-              logo_shape: { enum: ['circle', 'square'], type: 'string' },
-              primary_button_color: { type: 'string' },
-              primary_button_text_color: { type: 'string' },
-              success_message: { type: 'string' },
+              inviter_logo_url: {
+                description:
+                  'URL of the inviter logo for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                type: 'string',
+              },
+              logo_shape: {
+                description:
+                  'Logo shape for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                enum: ['circle', 'square'],
+                type: 'string',
+              },
+              primary_button_color: {
+                description:
+                  'Primary button color for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                type: 'string',
+              },
+              primary_button_text_color: {
+                description:
+                  'Primary button text color for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                type: 'string',
+              },
+              success_message: {
+                description:
+                  'Success message for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                type: 'string',
+              },
             },
             type: 'object',
           },
-          is_sandbox: { type: 'boolean' },
-          is_suspended: {
+          is_sandbox: {
             description:
-              'True if a sandbox workspace has not been accessed in 14 days',
+              'Indicates whether the workspace is a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).',
             type: 'boolean',
           },
-          name: { type: 'string' },
-          workspace_id: { format: 'uuid', type: 'string' },
+          is_suspended: {
+            description:
+              'Indicates whether the [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces) is suspended. Seam suspends sandbox workspaces that have not been accessed in 14 days.',
+            type: 'boolean',
+          },
+          name: {
+            description:
+              'Name of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+            type: 'string',
+          },
+          workspace_id: {
+            description:
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+            format: 'uuid',
+            type: 'string',
+          },
         },
         required: [
           'workspace_id',
@@ -26993,7 +29521,7 @@ export default {
                   },
                   email_address: {
                     description:
-                      'Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+                      'Email address of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
                     format: 'email',
                     type: 'string',
                   },
@@ -27003,7 +29531,7 @@ export default {
                   },
                   phone_number: {
                     description:
-                      'Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
+                      'Phone number of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
                     type: 'string',
                   },
                   user_identity_id: {
@@ -27802,20 +30330,20 @@ export default {
                   },
                   email_address: {
                     description:
-                      'Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+                      'Email address of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
                     format: 'email',
                     type: 'string',
                   },
                   full_name: {
                     description:
-                      'Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+                      'Full name of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
                     minLength: 1,
                     type: 'string',
                   },
                   hid_acs_system_id: { format: 'uuid', type: 'string' },
                   phone_number: {
                     description:
-                      'Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
+                      'Phone number of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
                     type: 'string',
                   },
                   user_identity_id: {
@@ -27907,20 +30435,20 @@ export default {
                   },
                   email_address: {
                     description:
-                      'Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+                      'Email address of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
                     format: 'email',
                     type: 'string',
                   },
                   full_name: {
                     description:
-                      'Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+                      'Full name of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
                     minLength: 1,
                     type: 'string',
                   },
                   hid_acs_system_id: { format: 'uuid', type: 'string' },
                   phone_number: {
                     description:
-                      'Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
+                      'Phone number of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
                     type: 'string',
                   },
                   user_identity_id: {
@@ -28111,10 +30639,26 @@ export default {
                 schema: {
                   properties: {
                     bridge: {
+                      description:
+                        'Represents [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
                       properties: {
-                        bridge_id: { format: 'uuid', type: 'string' },
-                        created_at: { format: 'date-time', type: 'string' },
-                        workspace_id: { format: 'uuid', type: 'string' },
+                        bridge_id: {
+                          description: 'ID of Seam Bridge.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        created_at: {
+                          description:
+                            'Date and time at which Seam Bridge was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        workspace_id: {
+                          description:
+                            'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains Seam Bridge.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
                       },
                       required: ['bridge_id', 'workspace_id', 'created_at'],
                       type: 'object',
@@ -28166,10 +30710,26 @@ export default {
                   properties: {
                     bridges: {
                       items: {
+                        description:
+                          'Represents [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
                         properties: {
-                          bridge_id: { format: 'uuid', type: 'string' },
-                          created_at: { format: 'date-time', type: 'string' },
-                          workspace_id: { format: 'uuid', type: 'string' },
+                          bridge_id: {
+                            description: 'ID of Seam Bridge.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          created_at: {
+                            description:
+                              'Date and time at which Seam Bridge was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          workspace_id: {
+                            description:
+                              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains Seam Bridge.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
                         },
                         required: ['bridge_id', 'workspace_id', 'created_at'],
                         type: 'object',
@@ -28227,8 +30787,16 @@ export default {
                     items: { type: 'string' },
                     type: 'array',
                   },
-                  customer_id: { type: 'string' },
-                  customer_key: { type: 'string' },
+                  customer_id: {
+                    description:
+                      'Customer ID that you want to associate with the new client session.',
+                    type: 'string',
+                  },
+                  customer_key: {
+                    description:
+                      'Customer key that you want to associate with the new client session.',
+                    type: 'string',
+                  },
                   expires_at: {
                     description:
                       'Date and time at which the client session should expire, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
@@ -28254,7 +30822,7 @@ export default {
                     maxItems: 1,
                     minItems: 1,
                     type: 'array',
-                    'x-deprecated': 'Use `user_identity_id`.',
+                    'x-deprecated': 'Use `user_identity_id` instead.',
                   },
                 },
                 type: 'object',
@@ -28318,8 +30886,16 @@ export default {
                     items: { type: 'string' },
                     type: 'array',
                   },
-                  customer_id: { type: 'string' },
-                  customer_key: { type: 'string' },
+                  customer_id: {
+                    description:
+                      'Customer ID that you want to associate with the new client session.',
+                    type: 'string',
+                  },
+                  customer_key: {
+                    description:
+                      'Customer key that you want to associate with the new client session.',
+                    type: 'string',
+                  },
                   expires_at: {
                     description:
                       'Date and time at which the client session should expire, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
@@ -28345,7 +30921,7 @@ export default {
                     maxItems: 1,
                     minItems: 1,
                     type: 'array',
-                    'x-deprecated': 'Use `user_identity_id`.',
+                    'x-deprecated': 'Use `user_identity_id` instead.',
                   },
                 },
                 type: 'object',
@@ -28907,7 +31483,7 @@ export default {
                       'List of accepted device capabilities that restrict the types of devices that can be connected through the Connect Webview. If not provided, defaults will be determined based on the accepted providers.',
                     items: {
                       description:
-                        '\n  High-level device capabilities that can be restricted in connect webviews.\n  These represent the main device categories that customers can opt into.\n',
+                        'High-level device capabilities that the Connect Webview can accept.',
                       enum: [
                         'lock',
                         'thermostat',
@@ -33241,7 +35817,7 @@ export default {
                   },
                   bridge_client_time_zone: {
                     description:
-                      'Time zone for the Seam Bridge that you want to create.',
+                      'Time zone for the Seam Bridge client that you want to create.',
                     type: 'string',
                   },
                 },
@@ -38564,7 +41140,7 @@ export default {
                 properties: {
                   building_block_type: {
                     description:
-                      'Type of building block to create a magic link for.',
+                      'Type of building block for which you want to create a magic link.',
                     enum: [
                       'connect_accounts',
                       'organize_spaces',
@@ -38582,14 +41158,27 @@ export default {
                     description:
                       'Optional list of spaces that you want to include in the new building block magic link.',
                     items: {
+                      description:
+                        'Represents a partner resource that enables you to send your space resources to Seam.',
                       properties: {
                         custom_metadata: {
                           additionalProperties: { type: 'string' },
+                          description:
+                            'Custom metadata associated with the space resource.',
                           type: 'object',
                         },
-                        description: { type: 'string' },
-                        name: { type: 'string' },
-                        space_key: { type: 'string' },
+                        description: {
+                          description: 'Description of the space resource.',
+                          type: 'string',
+                        },
+                        name: {
+                          description: 'Name of the space resource.',
+                          type: 'string',
+                        },
+                        space_key: {
+                          description: 'Key of the space for the resource.',
+                          type: 'string',
+                        },
                       },
                       required: ['space_key', 'name'],
                       type: 'object',
@@ -38714,14 +41303,27 @@ export default {
                     description:
                       'Optional list of spaces that you want to include in the new building block magic link.',
                     items: {
+                      description:
+                        'Represents a partner resource that enables you to send your space resources to Seam.',
                       properties: {
                         custom_metadata: {
                           additionalProperties: { type: 'string' },
+                          description:
+                            'Custom metadata associated with the space resource.',
                           type: 'object',
                         },
-                        description: { type: 'string' },
-                        name: { type: 'string' },
-                        space_key: { type: 'string' },
+                        description: {
+                          description: 'Description of the space resource.',
+                          type: 'string',
+                        },
+                        name: {
+                          description: 'Name of the space resource.',
+                          type: 'string',
+                        },
+                        space_key: {
+                          description: 'Key of the space for the resource.',
+                          type: 'string',
+                        },
                       },
                       required: ['space_key', 'name'],
                       type: 'object',
@@ -38782,9 +41384,13 @@ export default {
                 oneOf: [
                   {
                     items: {
+                      description:
+                        'Represents a partner resource that enables you to send your user identity and access grant resources to Seam.',
                       properties: {
                         custom_metadata: {
                           additionalProperties: { type: 'string' },
+                          description:
+                            'Custom metadata associated with the partner resource.',
                           type: 'object',
                         },
                         customer_key: {
@@ -38792,14 +41398,30 @@ export default {
                             'Customer key associated with the resource that you want to push to Seam.',
                           type: 'string',
                         },
-                        description: { type: 'string' },
-                        email_address: { type: 'string' },
-                        ends_at: { type: 'string' },
+                        description: {
+                          description: 'Description of the partner resource.',
+                          type: 'string',
+                        },
+                        email_address: {
+                          description:
+                            'Email address associated with the user identity partner resource.',
+                          type: 'string',
+                        },
+                        ends_at: {
+                          description:
+                            'Ending date and time associated with the access grant partner resource.',
+                          type: 'string',
+                        },
                         location_keys: {
+                          description:
+                            'Location keys associated with the access grant partner resource.',
                           items: { type: 'string' },
                           type: 'array',
                         },
-                        name: { type: 'string' },
+                        name: {
+                          description: 'Name of the partner resource.',
+                          type: 'string',
+                        },
                         partner_resource_key: {
                           description:
                             'Key of the resource that you want to push to Seam.',
@@ -38810,9 +41432,21 @@ export default {
                             'Type of the resource that you want to push to Seam.',
                           type: 'string',
                         },
-                        phone_number: { type: 'string' },
-                        starts_at: { type: 'string' },
-                        user_identity_key: { type: 'string' },
+                        phone_number: {
+                          description:
+                            'Phone number associated with the user identity partner resource.',
+                          type: 'string',
+                        },
+                        starts_at: {
+                          description:
+                            'Starting date and time associated with the access grant partner resource.',
+                          type: 'string',
+                        },
+                        user_identity_key: {
+                          description:
+                            'User identity key associated with the access grant partner resource.',
+                          type: 'string',
+                        },
                       },
                       type: 'object',
                       'x-route-path': '/unstable_partner/resources',
@@ -38821,9 +41455,13 @@ export default {
                     type: 'array',
                   },
                   {
+                    description:
+                      'Represents a partner resource that enables you to send your user identity and access grant resources to Seam.',
                     properties: {
                       custom_metadata: {
                         additionalProperties: { type: 'string' },
+                        description:
+                          'Custom metadata associated with the partner resource.',
                         type: 'object',
                       },
                       customer_key: {
@@ -38831,14 +41469,30 @@ export default {
                           'Customer key associated with the resource that you want to push to Seam.',
                         type: 'string',
                       },
-                      description: { type: 'string' },
-                      email_address: { type: 'string' },
-                      ends_at: { type: 'string' },
+                      description: {
+                        description: 'Description of the partner resource.',
+                        type: 'string',
+                      },
+                      email_address: {
+                        description:
+                          'Email address associated with the user identity partner resource.',
+                        type: 'string',
+                      },
+                      ends_at: {
+                        description:
+                          'Ending date and time associated with the access grant partner resource.',
+                        type: 'string',
+                      },
                       location_keys: {
+                        description:
+                          'Location keys associated with the access grant partner resource.',
                         items: { type: 'string' },
                         type: 'array',
                       },
-                      name: { type: 'string' },
+                      name: {
+                        description: 'Name of the partner resource.',
+                        type: 'string',
+                      },
                       partner_resource_key: {
                         description:
                           'Key of the resource that you want to push to Seam.',
@@ -38849,9 +41503,21 @@ export default {
                           'Type of the resource that you want to push to Seam.',
                         type: 'string',
                       },
-                      phone_number: { type: 'string' },
-                      starts_at: { type: 'string' },
-                      user_identity_key: { type: 'string' },
+                      phone_number: {
+                        description:
+                          'Phone number associated with the user identity partner resource.',
+                        type: 'string',
+                      },
+                      starts_at: {
+                        description:
+                          'Starting date and time associated with the access grant partner resource.',
+                        type: 'string',
+                      },
+                      user_identity_key: {
+                        description:
+                          'User identity key associated with the access grant partner resource.',
+                        type: 'string',
+                      },
                     },
                     type: 'object',
                     'x-route-path': '/unstable_partner/resources',
@@ -40520,7 +43186,7 @@ export default {
                     description: 'Connect partner name for the new workspace.',
                     nullable: true,
                     type: 'string',
-                    'x-deprecated': 'use company_name',
+                    'x-deprecated': 'Use `company_name` instead.',
                   },
                   connect_webview_customization: {
                     description:

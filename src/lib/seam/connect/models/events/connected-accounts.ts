@@ -6,13 +6,17 @@ const connected_account_event = common_event.extend({
   connected_account_id: z
     .string()
     .uuid()
-    .describe('ID of the affected connected account.'),
+    .describe(
+      'ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+    ),
 })
 
 const connect_webview_id = z
   .string()
   .uuid()
-  .describe('ID of the Connect Webview associated with the event.')
+  .describe(
+    'ID of the [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) associated with the event.',
+  )
 
 export const connected_account_connected_event = connected_account_event.extend(
   {

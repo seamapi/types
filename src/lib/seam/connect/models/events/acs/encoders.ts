@@ -12,7 +12,7 @@ export const acs_encoder_added_event = acs_encoder_event.extend({
     ---
     route_path: /acs/encoders
     ---
-    An [ACS encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) was added.
+    An [access system encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) was added.
   `)
 
 export type AcsEncoderAddedEvent = z.infer<typeof acs_encoder_added_event>
@@ -23,7 +23,7 @@ export const acs_encoder_removed_event = acs_encoder_event.extend({
     ---
     route_path: /acs/encoders
     ---
-    An [ACS encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) was removed.
+    An [access system encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) was removed.
   `)
 
 export type AcsEncoderRemovedEvent = z.infer<typeof acs_encoder_removed_event>

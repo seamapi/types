@@ -510,7 +510,7 @@ export const access_code = z.object({
   type: z
     .enum(['time_bound', 'ongoing'])
     .describe(
-      'Nature of the access code. Values are `ongoing` for access codes that are active continuously until deactivated manually or `time_bound` for access codes that have a specific duration.',
+      'Type of the access code. `ongoing` access codes are active continuously until deactivated manually. `time_bound` access codes have a specific duration.',
     ),
   is_waiting_for_code_assignment: z
     .boolean()

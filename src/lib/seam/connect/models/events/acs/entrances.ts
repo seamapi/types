@@ -14,7 +14,7 @@ export const acs_entrance_added_event = acs_entrance_event.extend({
     ---
     route_path: /acs/entrances
     ---
-    An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was added.
+    An [access system entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was added.
   `)
 
 export const acs_entrance_removed_event = acs_entrance_event.extend({
@@ -23,7 +23,7 @@ export const acs_entrance_removed_event = acs_entrance_event.extend({
     ---
     route_path: /acs/entrances
     ---
-    An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was removed.
+    An [access system entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was removed.
   `)
 
 export type AcsUserDeletedEvent = z.infer<typeof acs_entrance_removed_event>

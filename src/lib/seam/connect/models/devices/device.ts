@@ -24,9 +24,18 @@ export const battery_status = z.enum(['critical', 'low', 'good', 'full'])
 export type BatteryStatus = z.infer<typeof battery_status>
 
 const common_device_error = z.object({
-  message: z.string(),
-  is_device_error: z.literal(true),
-  created_at: z.string().datetime(),
+  message: z
+    .string()
+    .describe(
+      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+    ),
+  is_device_error: z
+    .literal(true)
+    .describe('Indicates that the error is a device error.'),
+  created_at: z
+    .string()
+    .datetime()
+    .describe('Date and time at which Seam created the error.'),
 })
 
 const error_code_description =
@@ -36,19 +45,19 @@ const device_offline = common_device_error
   .extend({
     error_code: z.literal('device_offline').describe(error_code_description),
   })
-  .describe('Device is offline')
+  .describe('Indicates that the device is offline.')
 
 const device_removed = common_device_error
   .extend({
     error_code: z.literal('device_removed').describe(error_code_description),
   })
-  .describe('Device has been removed')
+  .describe('Indicates that the device has been removed.')
 
 const hub_disconnected = common_device_error
   .extend({
     error_code: z.literal('hub_disconnected').describe(error_code_description),
   })
-  .describe('Hub is disconnected')
+  .describe('Indicates that the hub is disconnected.')
 
 const device_disconnected = common_device_error
   .extend({
@@ -56,17 +65,23 @@ const device_disconnected = common_device_error
       .literal('device_disconnected')
       .describe(error_code_description),
   })
-  .describe('Device is disconnected')
+  .describe('Indicates that the device is disconnected.')
 
 const account_disconnected = common_device_error
   .extend({
     error_code: z
       .literal('account_disconnected')
       .describe(error_code_description),
-    is_connected_account_error: z.literal(true),
-    is_device_error: z.literal(false),
+    is_connected_account_error: z
+      .literal(true)
+      .describe(
+        'Indicates that the error is a [connected account](https://docs.seam.co/latest/api/connected_accounts) error.',
+      ),
+    is_device_error: z
+      .literal(false)
+      .describe('Indicates that the error is not a device error.'),
   })
-  .describe('Account is disconnected')
+  .describe('Indicates that the account is disconnected.')
 
 const empty_backup_access_code_pool = common_device_error
   .extend({
@@ -74,7 +89,9 @@ const empty_backup_access_code_pool = common_device_error
       .literal('empty_backup_access_code_pool')
       .describe(error_code_description),
   })
-  .describe('The backup access code pool is empty.')
+  .describe(
+    'Indicates that the [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.',
+  )
 
 const august_lock_not_authorized = common_device_error
   .extend({
@@ -82,7 +99,7 @@ const august_lock_not_authorized = common_device_error
       .literal('august_lock_not_authorized')
       .describe(error_code_description),
   })
-  .describe('User is not authorized to use the August Lock.')
+  .describe('Indicates that the user is not authorized to use the August lock.')
 
 const august_lock_missing_bridge = common_device_error
   .extend({
@@ -90,17 +107,23 @@ const august_lock_missing_bridge = common_device_error
       .literal('august_lock_missing_bridge')
       .describe(error_code_description),
   })
-  .describe('Lock is not connected to the Seam Bridge.')
+  .describe('Indicates that the lock is not connected to a bridge.')
 
 const salto_ks_subscription_limit_exceeded = common_device_error
   .extend({
     error_code: z
       .literal('salto_ks_subscription_limit_exceeded')
       .describe(error_code_description),
-    is_connected_account_error: z.literal(true),
-    is_device_error: z.literal(false),
+    is_connected_account_error: z
+      .literal(true)
+      .describe(
+        'Indicates that the error is a [connected account](https://docs.seam.co/latest/api/connected_accounts) error.',
+      ),
+    is_device_error: z
+      .literal(false)
+      .describe('Indicates that the error is not a device error.'),
   })
-  .describe('Salto site user limit reached.')
+  .describe('Indicates that the Salto site user limit has been reached.')
 
 const ttlock_lock_not_paired_to_gateway = common_device_error
   .extend({
@@ -108,7 +131,7 @@ const ttlock_lock_not_paired_to_gateway = common_device_error
       .literal('ttlock_lock_not_paired_to_gateway')
       .describe(error_code_description),
   })
-  .describe('Lock is not paired with a Gateway.')
+  .describe('Indicates that the lock is not paired with a gateway.')
 
 const missing_device_credentials = common_device_error
   .extend({
@@ -116,7 +139,7 @@ const missing_device_credentials = common_device_error
       .literal('missing_device_credentials')
       .describe(error_code_description),
   })
-  .describe('Missing device credentials.')
+  .describe('Indicates that device credentials are missing.')
 
 const auxiliary_heat_running = common_device_error
   .extend({
@@ -124,7 +147,7 @@ const auxiliary_heat_running = common_device_error
       .literal('auxiliary_heat_running')
       .describe(error_code_description),
   })
-  .describe('The auxiliary heat is running.')
+  .describe('Indicates that the auxiliary heat is running.')
 
 const subscription_required = common_device_error
   .extend({
@@ -132,7 +155,7 @@ const subscription_required = common_device_error
       .literal('subscription_required')
       .describe(error_code_description),
   })
-  .describe('Subscription required to connect.')
+  .describe('Indicates that a subscription is required to connect.')
 
 const lockly_missing_wifi_bridge = common_device_error
   .extend({
@@ -140,7 +163,9 @@ const lockly_missing_wifi_bridge = common_device_error
       .literal('lockly_missing_wifi_bridge')
       .describe(error_code_description),
   })
-  .describe('Lockly lock is not connected to a Wi-Fi bridge.')
+  .describe(
+    'Indicates that the Lockly lock is not connected to a Wi-Fi bridge.',
+  )
 
 export const device_error = z
   .discriminatedUnion('error_code', [
@@ -159,7 +184,7 @@ export const device_error = z
     subscription_required,
     lockly_missing_wifi_bridge,
   ])
-  .describe('Error associated with the `device`.')
+  .describe('Error associated with the device.')
 
 export type DeviceError = z.infer<typeof device_error>
 
@@ -192,8 +217,15 @@ const warning_code_description =
   'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
 
 const common_device_warning = z.object({
-  message: z.string(),
-  created_at: z.string().datetime(),
+  message: z
+    .string()
+    .describe(
+      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+    ),
+  created_at: z
+    .string()
+    .datetime()
+    .describe('Date and time at which Seam created the warning.'),
 })
 
 const partial_backup_access_code_pool = common_device_warning
@@ -202,7 +234,7 @@ const partial_backup_access_code_pool = common_device_warning
       .literal('partial_backup_access_code_pool')
       .describe(warning_code_description),
   })
-  .describe('Backup access code unhealthy.')
+  .describe('Indicates that the backup access code is unhealthy.')
 
 const many_active_backup_codes = common_device_warning
   .extend({
@@ -210,7 +242,7 @@ const many_active_backup_codes = common_device_warning
       .literal('many_active_backup_codes')
       .describe(warning_code_description),
   })
-  .describe('Too many backup codes.')
+  .describe('Indicates that there are too many backup codes.')
 
 const salto_ks_office_mode = common_device_warning
   .extend({
@@ -218,7 +250,9 @@ const salto_ks_office_mode = common_device_warning
       .literal('salto_ks_office_mode')
       .describe(warning_code_description),
   })
-  .describe('Lock is in Office Mode. Access Codes will not unlock doors.')
+  .describe(
+    'Indicates that the Salto KS lock is in Office Mode. Access Codes will not unlock doors.',
+  )
 
 const salto_ks_privacy_mode = common_device_warning
   .extend({
@@ -226,7 +260,9 @@ const salto_ks_privacy_mode = common_device_warning
       .literal('salto_ks_privacy_mode')
       .describe(warning_code_description),
   })
-  .describe('Lock is in Privacy Mode. Access Codes will not unlock doors.')
+  .describe(
+    'Indicates that the Salto KS lock is in Privacy Mode. Access Codes will not unlock doors.',
+  )
 
 const salto_ks_subscription_limit_almost_reached = common_device_warning
   .extend({
@@ -235,7 +271,7 @@ const salto_ks_subscription_limit_almost_reached = common_device_warning
       .describe(warning_code_description),
   })
   .describe(
-    'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this.',
+    'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site.',
   )
 
 const wyze_device_missing_gateway = common_device_warning
@@ -244,7 +280,7 @@ const wyze_device_missing_gateway = common_device_warning
       .literal('wyze_device_missing_gateway')
       .describe(warning_code_description),
   })
-  .describe('Wyze Lock is not connected to a gateway.')
+  .describe('Indicates that the Wyze Lock is not connected to a gateway.')
 
 const functional_offline_device = common_device_warning
   .extend({
@@ -252,7 +288,9 @@ const functional_offline_device = common_device_warning
       .literal('functional_offline_device')
       .describe(warning_code_description),
   })
-  .describe('Device is offline, but has some functionality available.')
+  .describe(
+    'Indicates that the device is offline but has some functionality available.',
+  )
 
 const third_party_integration_detected = common_device_warning
   .extend({
@@ -260,7 +298,7 @@ const third_party_integration_detected = common_device_warning
       .literal('third_party_integration_detected')
       .describe(warning_code_description),
   })
-  .describe('Third-party integration detected.')
+  .describe('Indicates that a third-party integration has been detected.')
 
 const nest_thermostat_in_manual_eco_mode = common_device_warning
   .extend({
@@ -268,7 +306,7 @@ const nest_thermostat_in_manual_eco_mode = common_device_warning
       .literal('nest_thermostat_in_manual_eco_mode')
       .describe(warning_code_description),
   })
-  .describe('Nest thermostat in manual eco mode.')
+  .describe('Indicates that the Nest thermostat is in manual eco mode.')
 
 const ttlock_lock_gateway_unlocking_not_enabled = common_device_warning
   .extend({
@@ -276,7 +314,9 @@ const ttlock_lock_gateway_unlocking_not_enabled = common_device_warning
       .literal('ttlock_lock_gateway_unlocking_not_enabled')
       .describe(warning_code_description),
   })
-  .describe('Remote Unlock feature not enabled in settings.')
+  .describe(
+    'Indicates that the Remote Unlock feature is not enabled in the settings.',
+  )
 
 const ttlock_weak_gateway_signal = common_device_warning
   .extend({
@@ -284,7 +324,7 @@ const ttlock_weak_gateway_signal = common_device_warning
       .literal('ttlock_weak_gateway_signal')
       .describe(warning_code_description),
   })
-  .describe('Gateway signal is weak.')
+  .describe('Indicates that the gateway signal is weak.')
 
 const temperature_threshold_exceeded = common_device_warning
   .extend({
@@ -292,7 +332,7 @@ const temperature_threshold_exceeded = common_device_warning
       .literal('temperature_threshold_exceeded')
       .describe(warning_code_description),
   })
-  .describe('Temperature threshold exceeded.')
+  .describe('Indicates that the temperature threshold has been exceeded.')
 
 const device_communication_degraded = common_device_warning
   .extend({
@@ -300,7 +340,7 @@ const device_communication_degraded = common_device_warning
       .literal('device_communication_degraded')
       .describe(warning_code_description),
   })
-  .describe('Device appears to be unresponsive.')
+  .describe('Indicates that the device appears to be unresponsive.')
 
 const scheduled_maintenance_window = common_device_warning
   .extend({
@@ -308,7 +348,7 @@ const scheduled_maintenance_window = common_device_warning
       .literal('scheduled_maintenance_window')
       .describe(warning_code_description),
   })
-  .describe('Scheduled maintenance window detected.')
+  .describe('Indicates that a scheduled maintenance window has been detected.')
 
 const device_has_flaky_connection = common_device_warning
   .extend({
@@ -316,7 +356,7 @@ const device_has_flaky_connection = common_device_warning
       .literal('device_has_flaky_connection')
       .describe(warning_code_description),
   })
-  .describe('Device has flaky connection.')
+  .describe('Indicates that the device has a flaky connection.')
 
 const lockly_time_zone_not_configured = common_device_warning
   .extend({
@@ -325,7 +365,7 @@ const lockly_time_zone_not_configured = common_device_warning
       .describe(warning_code_description),
   })
   .describe(
-    'We detected that this device does not have a time zone configured. Time bound codes may not work as expected.',
+    'Indicates that Seam detected that the Lockly device does not have a time zone configured. Time-bound codes may not work as expected.',
   )
 
 export const unknown_issue_with_phone = common_device_warning
@@ -335,7 +375,7 @@ export const unknown_issue_with_phone = common_device_warning
       .describe(warning_code_description),
   })
   .describe(
-    'An unknown issue occurred while syncing the state of this phone with the provider. This issue may affect the proper functioning of this phone.',
+    'Indicates that an unknown issue occurred while syncing the state of the phone with the provider. This issue may affect the proper functioning of the phone.',
   )
 
 const device_warning = z.discriminatedUnion('warning_code', [
@@ -610,18 +650,18 @@ export const device_and_connected_account_error_options = [
 
 export const device = z
   .object({
-    device_id: z.string().uuid().describe('Unique identifier for the device.'),
+    device_id: z.string().uuid().describe('ID of the device.'),
     device_type: any_device_type.describe('Type of the device.'),
     nickname: z
       .string()
       .optional()
       .describe(
-        'Optional nickname to describe the device, settable through Seam',
+        'Optional nickname to describe the device, settable through Seam.',
       ),
     display_name: z
       .string()
       .describe(
-        'Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
+        'Display name of the device, defaults to nickname (if it is set) or `properties.appearance.name`, otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
       ),
     capabilities_supported: z.array(capabilities).describe(`
         Collection of capabilities that the device supports when connected to Seam. Values are \`access_code\`, which indicates that the device can manage and utilize digital PIN codes for secure access; \`lock\`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; \`noise_detection\`, which indicates that the device supports monitoring and responding to ambient noise levels; \`thermostat\`, which indicates that the device can regulate and adjust indoor temperatures; \`battery\`, which indicates that the device can manage battery life and health; and \`phone\`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities#capability-flags).
@@ -692,12 +732,12 @@ export const device = z
         ]),
       )
       .describe(
-        'Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
+        'Array of errors associated with the device. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
       ),
     warnings: z
       .array(device_warning)
       .describe(
-        'Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
+        'Array of warnings associated with the device. Each warning object within the array contains two fields: `warning_code` and `message`. `warning_code` is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
       ),
     created_at: z
       .string()
@@ -705,7 +745,9 @@ export const device = z
       .describe('Date and time at which the device object was created.'),
     is_managed: z
       .literal(true)
-      .describe('Indicates whether Seam manages the device.'),
+      .describe(
+        'Indicates whether Seam manages the device. See also [Managed and Unmanaged Devices](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).',
+      ),
     custom_metadata,
   })
   .merge(device_capability_flags).describe(`

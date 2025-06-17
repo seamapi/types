@@ -11,12 +11,12 @@ export const requested_access_method = z.object({
     .string()
     .datetime()
     .describe(
-      'Date and time at which the requested access method was added to this access grant.',
+      'Date and time at which the requested access method was added to the access grant.',
     ),
   created_access_method_ids: z
     .array(z.string().uuid())
     .describe(
-      'IDs of the access methods that were created for this requested access method.',
+      'IDs of the access methods created for the requested access method.',
     ),
 })
 
