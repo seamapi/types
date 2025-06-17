@@ -304,6 +304,7 @@ export const unmanaged_acs_credential = common_acs_credential.merge(
 ).describe(`
   ---
   route_path: /acs/credentials/unmanaged
+  undocumented: Unreleased.
   ---
   Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The \`unmanaged_acs_credential\` object, which is not managed by Seam, represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each \`acs_credential\` object, you define the access method. You can also specify additional properties, such as a PIN code.
 `)

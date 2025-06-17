@@ -336,6 +336,7 @@ export const unmanaged_acs_user = common_acs_user.merge(
 ).describe(`
   ---
   route_path: /acs/users/unmanaged
+  undocumented: Unreleased.
   ---
   Represents an unmanaged [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 `)
