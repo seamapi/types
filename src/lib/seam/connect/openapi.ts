@@ -2653,6 +2653,12 @@ export default {
             required: ['door_type', 'door_name'],
             type: 'object',
           },
+          connected_account_id: {
+            description:
+              'ID of the [connected account](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+            format: 'uuid',
+            type: 'string',
+          },
           created_at: {
             description:
               'Date and time at which the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) was created.',
@@ -2855,6 +2861,7 @@ export default {
           'acs_entrance_id',
           'created_at',
           'display_name',
+          'connected_account_id',
           'errors',
         ],
         type: 'object',
@@ -18367,6 +18374,12 @@ export default {
                               required: ['door_type', 'door_name'],
                               type: 'object',
                             },
+                            connected_account_id: {
+                              description:
+                                'ID of the [connected account](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+                              format: 'uuid',
+                              type: 'string',
+                            },
                             created_at: {
                               description:
                                 'Date and time at which the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) was created.',
@@ -18577,6 +18590,7 @@ export default {
                             'acs_entrance_id',
                             'created_at',
                             'display_name',
+                            'connected_account_id',
                             'errors',
                           ],
                           type: 'object',
