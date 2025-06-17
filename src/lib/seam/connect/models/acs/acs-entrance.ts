@@ -33,6 +33,12 @@ export const acs_entrance = z.object({
     .describe(
       'Display name for the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
     ),
+  connected_account_id: z
+    .string()
+    .uuid()
+    .describe(
+      'ID of the [connected account](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+    ),
   errors: z
     .array(
       z.object({
