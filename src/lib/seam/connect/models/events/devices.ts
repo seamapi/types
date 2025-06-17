@@ -8,7 +8,9 @@ const device_event = common_event.extend({
   connected_account_id: z
     .string()
     .uuid()
-    .describe('ID of the connected account associated with the event.'),
+    .describe(
+      'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
+    ),
 })
 
 const battery_level = z

@@ -3,27 +3,69 @@ import { z } from 'zod'
 import { hex_color_code } from '../colors.js'
 
 export const workspace = z.object({
-  workspace_id: z.string().uuid(),
-  name: z.string(),
-  company_name: z.string(),
-  is_sandbox: z.boolean(),
+  workspace_id: z
+    .string()
+    .uuid()
+    .describe(
+      'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+    ),
+  name: z
+    .string()
+    .describe(
+      'Name of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+    ),
+  company_name: z
+    .string()
+    .describe(
+      'Company name associated with the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+    ),
+  is_sandbox: z
+    .boolean()
+    .describe(
+      'Indicates whether the workspace is a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).',
+    ),
   connect_webview_customization: z.object({
-    primary_button_color: hex_color_code.optional(),
-    primary_button_text_color: hex_color_code.optional(),
-    success_message: z.string().optional(),
-    logo_shape: z.enum(['circle', 'square']).optional(),
-    inviter_logo_url: z.string().optional(),
+    primary_button_color: hex_color_code
+      .optional()
+      .describe(
+        'Primary button color for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+      ),
+    primary_button_text_color: hex_color_code
+      .optional()
+      .describe(
+        'Primary button text color for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+      ),
+    success_message: z
+      .string()
+      .optional()
+      .describe(
+        'Success message for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+      ),
+    logo_shape: z
+      .enum(['circle', 'square'])
+      .optional()
+      .describe(
+        'Logo shape for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+      ),
+    inviter_logo_url: z
+      .string()
+      .optional()
+      .describe(
+        'URL of the inviter logo for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+      ),
   }),
   is_suspended: z
     .boolean()
-    .describe('True if a sandbox workspace has not been accessed in 14 days'),
+    .describe(
+      'Indicates whether the [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces) is suspended. Seam suspends sandbox workspaces that have not been accessed in 14 days.',
+    ),
   connect_partner_name: z
     .string()
     .nullable()
     .describe(
       `
     ---
-    deprecated: use company_name
+    deprecated: Use \`company_name\` instead.
     ---
   `,
     )

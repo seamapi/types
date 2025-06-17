@@ -22,7 +22,7 @@ export const phone = z.object({
     .describe(`Optional nickname to describe the phone, settable through Seam.
   `),
   display_name: basePhoneDeviceSchema.shape.display_name
-    .describe(`Display name of the phone. Defaults to \`nickname\` (if it is set) or \`properties.appearance.name\` otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.
+    .describe(`Display name of the phone. Defaults to \`nickname\` (if it is set) or \`properties.appearance.name\`, otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.
   `),
   workspace_id: basePhoneDeviceSchema.shape.workspace_id
     .describe(`ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the phone.

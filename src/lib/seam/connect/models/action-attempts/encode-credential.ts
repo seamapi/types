@@ -13,22 +13,54 @@ import {
 
 const action_type = z
   .literal('ENCODE_CREDENTIAL')
-  .describe('Type of action that the action attempt tracks.')
+  .describe(
+    'Action attempt to track the status of encoding credential data from the physical encoder onto a card.',
+  )
 
-const no_credential_on_encoder_error = z.object({
-  type: z.literal('no_credential_on_encoder'),
-  message: z.string(),
-})
+const no_credential_on_encoder_error = z
+  .object({
+    type: z
+      .literal('no_credential_on_encoder')
+      .describe(
+        'Error type to indicate that there is no credential on the encoder.',
+      ),
+    message: z
+      .string()
+      .describe(
+        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+      ),
+  })
+  .describe('Error to indicate that there is no credential on the encoder.')
 
-const incompatible_card_format_error = z.object({
-  type: z.literal('incompatible_card_format'),
-  message: z.string(),
-})
+const incompatible_card_format_error = z
+  .object({
+    type: z
+      .literal('incompatible_card_format')
+      .describe('Error type to indicate an incompatible card format.'),
+    message: z
+      .string()
+      .describe(
+        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+      ),
+  })
+  .describe('Error to indicate an incompatible card format.')
 
-const credential_cannot_be_reissued = z.object({
-  type: z.literal('credential_cannot_be_reissued'),
-  message: z.string(),
-})
+const credential_cannot_be_reissued = z
+  .object({
+    type: z
+      .literal('credential_cannot_be_reissued')
+      .describe(
+        'Error type to indicate that the affected credential cannot be reissued.',
+      ),
+    message: z
+      .string()
+      .describe(
+        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+      ),
+  })
+  .describe(
+    'Error to indicate that the affected credential cannot be reissued.',
+  )
 
 const error = z.union([
   ...common_action_attempt_errors,
@@ -40,16 +72,15 @@ const error = z.union([
 const result = acs_credential
   .or(unmanaged_acs_credential)
   .describe(
-    'If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card.',
+    'Result of an encoding attempt. If the attempt was successful, includes the credential data that was encoded onto the card.',
   )
-
 export const encode_credential_action_attempt = z.discriminatedUnion('status', [
   common_pending_action_attempt
     .extend({
       action_type,
     })
     .describe(
-      'Action attempt to track encoding credential data from the physical encoder onto a card.',
+      'Encoding credential data from the physical encoder onto a card is pending.',
     ),
   common_succeeded_action_attempt
     .extend({
@@ -57,12 +88,12 @@ export const encode_credential_action_attempt = z.discriminatedUnion('status', [
       result,
     })
     .describe(
-      'Action attempt to indicate that encoding credential data from the physical encoder onto a card succeeded.',
+      'Encoding credential data from the physical encoder onto a card succeeded.',
     ),
   common_failed_action_attempt
     .extend({ action_type, error })
     .describe(
-      'Action attempt to indicate that encoding credential data from the physical encoder onto a card failed.',
+      'Encoding credential data from the physical encoder onto a card failed.',
     ),
 ])
 

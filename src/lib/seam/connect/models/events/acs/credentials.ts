@@ -15,7 +15,7 @@ export const acs_credential_deleted_event = acs_credential_event.extend({
     ---
     route_path: /acs/credentials
     ---
-    An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was deleted.
+    An [access system credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was deleted.
   `)
 
 export type AcsCredentialDeletedEvent = z.infer<
@@ -28,7 +28,7 @@ export const acs_credential_issued = acs_credential_event.extend({
     ---
     route_path: /acs/credentials
     ---
-    An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was issued.
+    An [access system credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was issued.
   `)
 
 export const acs_credential_reissued = acs_credential_event.extend({
@@ -37,7 +37,7 @@ export const acs_credential_reissued = acs_credential_event.extend({
   ---
   route_path: /acs/credentials
   ---
-  An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was reissued.
+  An [access system credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was reissued.
 `)
 
 export const acs_credential_invalidated = acs_credential_event.extend({
@@ -46,7 +46,7 @@ export const acs_credential_invalidated = acs_credential_event.extend({
   ---
   route_path: /acs/credentials
   ---
-  An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was invalidated. That is, the credential cannot be used anymore.
+  An [access system credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was invalidated. That is, the credential cannot be used anymore.
 
 `)
 

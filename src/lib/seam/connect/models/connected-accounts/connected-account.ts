@@ -21,7 +21,9 @@ const common_connected_account_error = z.object({
   is_bridge_error: z
     .boolean()
     .optional()
-    .describe('Indicates whether the error is related to Seam Bridge.'),
+    .describe(
+      'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
+    ),
 })
 
 const error_code_description =
@@ -48,7 +50,7 @@ export const account_disconnected = common_connected_account_error
       .literal('account_disconnected')
       .describe(error_code_description),
   })
-  .describe('Account is disconnected.')
+  .describe('Indicates that the account is disconnected.')
 
 export const invalid_credentials = common_connected_account_error
   .extend({
@@ -56,7 +58,7 @@ export const invalid_credentials = common_connected_account_error
       .literal('invalid_credentials')
       .describe(error_code_description),
   })
-  .describe('Credentials provided were invalid.')
+  .describe('Indicates that the credentials provided were invalid.')
 
 export const bridge_disconnected = common_connected_account_error
   .extend({
@@ -65,7 +67,7 @@ export const bridge_disconnected = common_connected_account_error
       .describe(error_code_description),
   })
   .describe(
-    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
   )
 
 export const salto_ks_subscription_limit_exceeded =
@@ -153,7 +155,7 @@ export const unknown_issue_with_connected_account =
         .describe(warning_code_description),
     })
     .describe(
-      'An unknown issue occurred while syncing the state of the connected account with the provider. This issue may affect the proper functioning of one or more resources in the account.',
+      'Indicates that an unknown issue occurred while syncing the state of the connected account with the provider. This issue may affect the proper functioning of one or more resources in the account.',
     )
 
 const scheduled_maintenance_window = common_connected_account_warning
@@ -162,7 +164,9 @@ const scheduled_maintenance_window = common_connected_account_warning
       .literal('scheduled_maintenance_window')
       .describe(warning_code_description),
   })
-  .describe('Scheduled downtime planned for the connected account.')
+  .describe(
+    'Indicates that scheduled downtime is planned for the connected account.',
+  )
 
 const salto_ks_subscription_limit_almost_reached =
   common_connected_account_warning
@@ -245,7 +249,7 @@ export const connected_account = z.object({
     .string()
     .uuid()
     .optional()
-    .describe('Unique identifier for the connected account.'),
+    .describe('ID of the connected account.'),
   created_at: z
     .string()
     .datetime()
@@ -300,7 +304,7 @@ export const connected_account = z.object({
   automatically_manage_new_devices: z
     .boolean()
     .describe(
-      'Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API.',
+      'Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for management by the Seam API.',
     ),
   customer_key: z
     .string()

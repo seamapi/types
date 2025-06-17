@@ -32,6 +32,11 @@ export const action_attempt = z.union([
   ---
   route_path: /action_attempts
   ---
+  Represents an action attempt that enables you to keep track of the progress of your action that affects a physical device or system.actions against a device. Action attempts are useful because the physical world is intrinsically asynchronous.
+  
+  When you request for a device to perform an action, the Seam API immediately returns an action attempt object. In the background, the Seam API performs the action.
+
+  See also [Action Attempts](https://docs.seam.co/latest/core-concepts/action-attempts).
 `)
 
 export type ActionAttempt = z.infer<typeof action_attempt>

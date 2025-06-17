@@ -9,7 +9,8 @@ export const lock_capability_properties = z.object({
           `),
   keypad_battery: z
     .object({
-      level: z.number().describe(`Keypad battery charge level.
+      level: z.number().describe(`
+          Keypad battery charge level.
           `),
     })
     .optional().describe(`

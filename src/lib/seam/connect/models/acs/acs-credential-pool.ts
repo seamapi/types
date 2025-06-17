@@ -17,7 +17,8 @@ export const acs_credential_pool = z.object({
 }).describe(`
   ---
   route_path: /acs/credential_pools
-  undocumented: Will be removed.
+  deprecated: Not used.
+  undocumented: Deprecated. Will be removed.
   ---
 `)
 

@@ -12,7 +12,11 @@ const common_pending_mutation = z.object({
 
 const creating = common_pending_mutation
   .extend({
-    mutation_code: z.literal('creating'),
+    mutation_code: z
+      .literal('creating')
+      .describe(
+        'Mutation code to indicate that Seam is in the process of pushing a user creation to the integrated access system.',
+      ),
   })
   .describe(
     'Seam is in the process of pushing a user creation to the integrated access system.',
@@ -20,35 +24,69 @@ const creating = common_pending_mutation
 
 const deleting = common_pending_mutation
   .extend({
-    mutation_code: z.literal('deleting'),
+    mutation_code: z
+      .literal('deleting')
+      .describe(
+        'Mutation code to indicate that Seam is in the process of pushing a user deletion to the integrated access system.',
+      ),
   })
   .describe(
     'Seam is in the process of pushing a user deletion to the integrated access system.',
   )
 
 const acs_user_info = z.object({
-  email_address: z.string().email().nullable(),
-  full_name: z.string().nullable(),
-  phone_number: phone_number.optional().nullable(),
+  email_address: z
+    .string()
+    .email()
+    .nullable()
+    .describe('Email address of the access system user.'),
+  full_name: z
+    .string()
+    .nullable()
+    .describe('Full name of the access system user.'),
+  phone_number: phone_number
+    .optional()
+    .nullable()
+    .describe('Phone number of the access system user.'),
 })
 
 export const updating_user_information_mutation =
   common_pending_mutation.extend({
-    mutation_code: z.literal('updating_user_information'),
-    from: acs_user_info.partial(),
-    to: acs_user_info.partial(),
+    mutation_code: z
+      .literal('updating_user_information')
+      .describe(
+        'Mutation code to indicate that Seam is in the process of pushing updated user information to the integrated access system.',
+      ),
+    from: acs_user_info
+      .partial()
+      .describe('Old access system user information.'),
+    to: acs_user_info.partial().describe('New access system user information.'),
   })
 
-const access_schedule = z.object({
-  starts_at: z.string().datetime().nullable(),
-  ends_at: z.string().datetime().nullable(),
-})
+const access_schedule = z
+  .object({
+    starts_at: z
+      .string()
+      .datetime()
+      .nullable()
+      .describe('Starting time for the access schedule.'),
+    ends_at: z
+      .string()
+      .datetime()
+      .nullable()
+      .describe('Starting time for the access schedule.'),
+  })
+  .describe('Access schedule involved in the mutation.')
 
 const updating_access_schedule_mutation = common_pending_mutation
   .extend({
-    mutation_code: z.literal('updating_access_schedule'),
-    from: access_schedule,
-    to: access_schedule,
+    mutation_code: z
+      .literal('updating_access_schedule')
+      .describe(
+        'Mutation code to indicate that Seam is in the process of pushing updated access schedule information to the integrated access system.',
+      ),
+    from: access_schedule.describe('Old access schedule information.'),
+    to: access_schedule.describe('New access schedule information.'),
   })
   .describe(
     'Seam is in the process of pushing an access schedule update to the integrated access system.',
@@ -56,9 +94,17 @@ const updating_access_schedule_mutation = common_pending_mutation
 
 const updating_suspension_state_mutation = common_pending_mutation
   .extend({
-    mutation_code: z.literal('updating_suspension_state'),
-    from: z.object({ is_suspended: z.boolean() }),
-    to: z.object({ is_suspended: z.boolean() }),
+    mutation_code: z
+      .literal('updating_suspension_state')
+      .describe(
+        'Mutation code to indicate that Seam is in the process of pushing updated user suspension state information to the integrated access system.',
+      ),
+    from: z
+      .object({ is_suspended: z.boolean() })
+      .describe('Old user suspension state information.'),
+    to: z
+      .object({ is_suspended: z.boolean() })
+      .describe('New user suspension state information.'),
   })
   .describe(
     'Seam is in the process of pushing a suspension state update to the integrated access system.',
@@ -66,7 +112,11 @@ const updating_suspension_state_mutation = common_pending_mutation
 
 const updating_group_membership_mutation = common_pending_mutation
   .extend({
-    mutation_code: z.literal('updating_group_membership'),
+    mutation_code: z
+      .literal('updating_group_membership')
+      .describe(
+        'Mutation code to indicate that Seam is in the process of pushing updated access group membership information to the integrated access system.',
+      ),
     from: z
       .object({
         acs_access_group_id: z
