@@ -120,6 +120,7 @@ export const unmanaged_acs_access_group = common_acs_access_group.extend({
 }).describe(`
   ---
   route_path: /acs/access_groups/unmanaged
+  undocumented: Unreleased.
   ---
 `)
 

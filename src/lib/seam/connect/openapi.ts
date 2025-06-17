@@ -2238,6 +2238,7 @@ export default {
         ],
         type: 'object',
         'x-route-path': '/acs/credential_pools',
+        'x-undocumented': 'Will be removed.',
       },
       acs_credential_provisioning_automation: {
         properties: {
@@ -2259,6 +2260,7 @@ export default {
         ],
         type: 'object',
         'x-route-path': '/acs/credential_provisioning_automations',
+        'x-undocumented': 'Will be removed.',
       },
       acs_encoder: {
         description:
@@ -4736,6 +4738,7 @@ export default {
                         ],
                         type: 'object',
                         'x-route-path': '/acs/credentials/unmanaged',
+                        'x-undocumented': 'Unreleased.',
                       },
                     ],
                     'x-route-path': '/acs/credentials',
@@ -5927,6 +5930,7 @@ export default {
                     ],
                     type: 'object',
                     'x-route-path': '/acs/credentials/unmanaged',
+                    'x-undocumented': 'Unreleased.',
                   },
                 ],
               },
@@ -19095,6 +19099,7 @@ export default {
         ],
         type: 'object',
         'x-route-path': '/acs/access_groups/unmanaged',
+        'x-undocumented': 'Unreleased.',
       },
       unmanaged_acs_credential: {
         description:
@@ -19457,6 +19462,7 @@ export default {
         ],
         type: 'object',
         'x-route-path': '/acs/credentials/unmanaged',
+        'x-undocumented': 'Unreleased.',
       },
       unmanaged_acs_user: {
         description:
@@ -20114,6 +20120,7 @@ export default {
         ],
         type: 'object',
         'x-route-path': '/acs/users/unmanaged',
+        'x-undocumented': 'Unreleased.',
       },
       unmanaged_device: {
         description:
