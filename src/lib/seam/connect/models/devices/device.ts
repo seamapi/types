@@ -344,6 +344,17 @@ const ttlock_weak_gateway_signal = common_device_warning.extend({
     Indicates that the gateway signal is weak.
     `)
 
+const power_saving_mode = common_device_warning.extend({
+  warning_code: z
+    .literal('power_saving_mode')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: locks
+    ---
+    Indicates that the device is in power saving mode and may have limited functionality.
+    `)
+
 const temperature_threshold_exceeded = common_device_warning.extend({
   warning_code: z
     .literal('temperature_threshold_exceeded')
@@ -409,6 +420,7 @@ const device_warning = z.discriminatedUnion('warning_code', [
   nest_thermostat_in_manual_eco_mode,
   ttlock_lock_gateway_unlocking_not_enabled,
   ttlock_weak_gateway_signal,
+  power_saving_mode,
   temperature_threshold_exceeded,
   device_communication_degraded,
   scheduled_maintenance_window,
@@ -447,6 +459,7 @@ export const device_warning_map = z.object({
   ttlock_lock_gateway_unlocking_not_enabled:
     ttlock_lock_gateway_unlocking_not_enabled.optional().nullable(),
   ttlock_weak_gateway_signal: ttlock_weak_gateway_signal.optional().nullable(),
+  power_saving_mode: power_saving_mode.optional().nullable(),
   temperature_threshold_exceeded: temperature_threshold_exceeded
     .optional()
     .nullable(),
