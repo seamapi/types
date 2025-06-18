@@ -544,21 +544,51 @@ export const access_code = z.object({
     .string()
     .datetime()
     .describe('Date and time at which the access code was created.'),
-  errors: z
-    .array(
-      z.discriminatedUnion('error_code', [
-        ...access_code_error.options,
-        ...device_and_connected_account_error_options,
-      ]),
-    )
-    .describe(
-      'Errors associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
-    ),
-  warnings: z
-    .array(access_code_warning)
-    .describe(
-      'Warnings associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
-    ),
+  errors: z.array(
+    z.discriminatedUnion('error_code', [
+      ...access_code_error.options,
+      ...device_and_connected_account_error_options,
+    ]),
+  ).describe(`
+        ---
+        variant_groups:
+          locks:
+            name: Locks
+          access_codes:
+            name: Access Codes
+          thermostats:
+            name: Thermostats
+          hardware:
+            name: Hardware
+          noise_sensors:
+            name: Noise Sensors
+          phones:
+            name: Phones
+          provider_metadata:
+            name: Provider Metadata
+        ---
+        Errors associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+      `),
+  warnings: z.array(access_code_warning).describe(`
+        ---
+        variant_groups:
+          locks:
+            name: Locks
+          access_codes:
+            name: Access Codes
+          thermostats:
+            name: Thermostats
+          hardware:
+            name: Hardware
+          noise_sensors:
+            name: Noise Sensors
+          phones:
+            name: Phones
+          provider_metadata:
+            name: Provider Metadata
+        ---
+        Warnings associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+      `),
   is_managed: z
     .literal(true)
     .describe('Indicates whether Seam manages the access code.'),
