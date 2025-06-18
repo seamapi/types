@@ -1396,6 +1396,15 @@ export default {
               ],
             },
             type: 'array',
+            'x-variant-groups': {
+              access_codes: { name: 'Access Codes' },
+              hardware: { name: 'Hardware' },
+              locks: { name: 'Locks' },
+              noise_sensors: { name: 'Noise Sensors' },
+              phones: { name: 'Phones' },
+              provider_metadata: { name: 'Provider Metadata' },
+              thermostats: { name: 'Thermostats' },
+            },
           },
           is_backup: {
             description: 'Indicates whether the access code is a backup code.',
@@ -1773,6 +1782,15 @@ export default {
               ],
             },
             type: 'array',
+            'x-variant-groups': {
+              access_codes: { name: 'Access Codes' },
+              hardware: { name: 'Hardware' },
+              locks: { name: 'Locks' },
+              noise_sensors: { name: 'Noise Sensors' },
+              phones: { name: 'Phones' },
+              provider_metadata: { name: 'Provider Metadata' },
+              thermostats: { name: 'Thermostats' },
+            },
           },
         },
         required: [
@@ -20690,6 +20708,15 @@ export default {
               ],
             },
             type: 'array',
+            'x-variant-groups': {
+              access_codes: { name: 'Access Codes' },
+              hardware: { name: 'Hardware' },
+              locks: { name: 'Locks' },
+              noise_sensors: { name: 'Noise Sensors' },
+              phones: { name: 'Phones' },
+              provider_metadata: { name: 'Provider Metadata' },
+              thermostats: { name: 'Thermostats' },
+            },
           },
           is_managed: {
             description: 'Indicates that Seam does not manage the access code.',
@@ -21026,6 +21053,15 @@ export default {
               ],
             },
             type: 'array',
+            'x-variant-groups': {
+              access_codes: { name: 'Access Codes' },
+              hardware: { name: 'Hardware' },
+              locks: { name: 'Locks' },
+              noise_sensors: { name: 'Noise Sensors' },
+              phones: { name: 'Phones' },
+              provider_metadata: { name: 'Provider Metadata' },
+              thermostats: { name: 'Thermostats' },
+            },
           },
         },
         required: [
