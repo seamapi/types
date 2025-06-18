@@ -1837,6 +1837,11 @@ export default {
             description: 'Display name of the access grant.',
             type: 'string',
           },
+          ends_at: {
+            description: 'Date and time at which the access grant ends.',
+            format: 'date-time',
+            type: 'string',
+          },
           location_ids: {
             deprecated: true,
             items: { format: 'uuid', type: 'string' },
@@ -1886,6 +1891,11 @@ export default {
               'IDs of the spaces to which the access grant gives access.',
             items: { format: 'uuid', type: 'string' },
             type: 'array',
+          },
+          starts_at: {
+            description: 'Date and time at which the access grant starts.',
+            format: 'date-time',
+            type: 'string',
           },
           user_identity_id: {
             description:
@@ -12470,6 +12480,32 @@ export default {
                 },
                 {
                   description:
+                    'Indicates that the device is in power saving mode and may have limited functionality.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['power_saving_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
                     'Indicates that the temperature threshold has been exceeded.',
                   properties: {
                     created_at: {
@@ -14295,6 +14331,49 @@ export default {
                 type: 'string',
               },
               event_type: { enum: ['access_method.deleted'], type: 'string' },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'access_method_id',
+              'event_type',
+            ],
+            type: 'object',
+            'x-route-path': '/access_methods',
+          },
+          {
+            description:
+              'An access method was reissued due to an access grant update.',
+            properties: {
+              access_method_id: {
+                description: 'ID of the affected access method.',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: { enum: ['access_method.reissued'], type: 'string' },
               occurred_at: {
                 description: 'Date and time at which the event occurred.',
                 format: 'date-time',
@@ -23415,6 +23494,32 @@ export default {
                 },
                 {
                   description:
+                    'Indicates that the device is in power saving mode and may have limited functionality.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['power_saving_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
                     'Indicates that the temperature threshold has been exceeded.',
                   properties: {
                     created_at: {
@@ -26313,6 +26418,135 @@ export default {
         'x-fern-sdk-return-value': 'access_grants',
         'x-response-key': 'access_grants',
         'x-title': 'List Access Grants',
+      },
+    },
+    '/access_grants/update': {
+      patch: {
+        description: "Updates an existing access grant's time window.",
+        operationId: 'accessGrantsUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_grant_id: {
+                    description: 'ID of the access grant to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  ends_at: {
+                    description:
+                      'Date and time at which the validity of the grant ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                    format: 'date-time',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  starts_at: {
+                    description:
+                      'Date and time at which the validity of the grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                    format: 'date-time',
+                    nullable: true,
+                    type: 'string',
+                  },
+                },
+                required: ['access_grant_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/access_grants/update',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-ignore': true,
+        'x-response-key': null,
+        'x-title': 'Update an Access Grant',
+      },
+      post: {
+        description: "Updates an existing access grant's time window.",
+        operationId: 'accessGrantsUpdatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_grant_id: {
+                    description: 'ID of the access grant to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  ends_at: {
+                    description:
+                      'Date and time at which the validity of the grant ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                    format: 'date-time',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  starts_at: {
+                    description:
+                      'Date and time at which the validity of the grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                    format: 'date-time',
+                    nullable: true,
+                    type: 'string',
+                  },
+                },
+                required: ['access_grant_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/access_grants/update',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['access_grants'],
+        'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
+        'x-title': 'Update an Access Grant',
       },
     },
     '/access_methods/delete': {
@@ -33853,6 +34087,7 @@ export default {
                       'access_method.revoked',
                       'access_method.card_encoding_required',
                       'access_method.deleted',
+                      'access_method.reissued',
                       'acs_system.connected',
                       'acs_system.added',
                       'acs_system.disconnected',
@@ -33949,6 +34184,7 @@ export default {
                         'access_method.revoked',
                         'access_method.card_encoding_required',
                         'access_method.deleted',
+                        'access_method.reissued',
                         'acs_system.connected',
                         'acs_system.added',
                         'acs_system.disconnected',
