@@ -18,8 +18,6 @@ export const access_grant_created_event = access_grant_event.extend({
     An access grant was created.
   `)
 
-export type AccessGrantCreatedEvent = z.infer<typeof access_grant_created_event>
-
 export const access_grant_deleted_event = access_grant_event.extend({
   event_type: z.literal('access_grant.deleted'),
 }).describe(`
@@ -28,10 +26,6 @@ export const access_grant_deleted_event = access_grant_event.extend({
     ---
     An access grant was deleted.
   `)
-
-export type AccessGrantDeleteddEvent = z.infer<
-  typeof access_grant_deleted_event
->
 
 export const access_grant_access_granted_to_all_doors_event =
   access_grant_event.extend({
