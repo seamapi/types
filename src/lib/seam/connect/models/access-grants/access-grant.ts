@@ -31,6 +31,16 @@ export const access_grant = z.object({
     .string()
     .datetime()
     .describe('Date and time at which the access grant was created.'),
+  starts_at: z
+    .string()
+    .datetime()
+    .optional()
+    .describe('Date and time at which the access grant starts.'),
+  ends_at: z
+    .string()
+    .datetime()
+    .optional()
+    .describe('Date and time at which the access grant ends.'),
 }).describe(`
   ---
   draft: Early access.
