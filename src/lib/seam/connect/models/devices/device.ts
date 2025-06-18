@@ -83,55 +83,65 @@ const account_disconnected = common_device_error
   })
   .describe('Indicates that the account is disconnected.')
 
-const empty_backup_access_code_pool = common_device_error
-  .extend({
-    error_code: z
-      .literal('empty_backup_access_code_pool')
-      .describe(error_code_description),
-  })
-  .describe(
-    'Indicates that the [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.',
-  )
+const empty_backup_access_code_pool = common_device_error.extend({
+  error_code: z
+    .literal('empty_backup_access_code_pool')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    variant_group_key: access_codes
+    ---
+    Indicates that the [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
+    `)
 
-const august_lock_not_authorized = common_device_error
-  .extend({
-    error_code: z
-      .literal('august_lock_not_authorized')
-      .describe(error_code_description),
-  })
-  .describe('Indicates that the user is not authorized to use the August lock.')
+const august_lock_not_authorized = common_device_error.extend({
+  error_code: z
+    .literal('august_lock_not_authorized')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    variant_group_key: locks
+    ---
+    Indicates that the user is not authorized to use the August lock.
+    `)
 
-const august_lock_missing_bridge = common_device_error
-  .extend({
-    error_code: z
-      .literal('august_lock_missing_bridge')
-      .describe(error_code_description),
-  })
-  .describe('Indicates that the lock is not connected to a bridge.')
+const august_lock_missing_bridge = common_device_error.extend({
+  error_code: z
+    .literal('august_lock_missing_bridge')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    variant_group_key: locks
+    ---
+    Indicates that the lock is not connected to a bridge.
+    `)
 
-const salto_ks_subscription_limit_exceeded = common_device_error
-  .extend({
-    error_code: z
-      .literal('salto_ks_subscription_limit_exceeded')
-      .describe(error_code_description),
-    is_connected_account_error: z
-      .literal(true)
-      .describe(
-        'Indicates that the error is a [connected account](https://docs.seam.co/latest/api/connected_accounts) error.',
-      ),
-    is_device_error: z
-      .literal(false)
-      .describe('Indicates that the error is not a device error.'),
-  })
-  .describe('Indicates that the Salto site user limit has been reached.')
+const salto_ks_subscription_limit_exceeded = common_device_error.extend({
+  error_code: z
+    .literal('salto_ks_subscription_limit_exceeded')
+    .describe(error_code_description),
+  is_connected_account_error: z
+    .literal(true)
+    .describe(
+      'Indicates that the error is a [connected account](https://docs.seam.co/latest/api/connected_accounts) error.',
+    ),
+  is_device_error: z
+    .literal(false)
+    .describe('Indicates that the error is not a device error.'),
+}).describe(`
+    ---
+    variant_group_key: locks
+    ---
+    Indicates that the Salto site user limit has been reached.
+    `)
 
-const ttlock_lock_not_paired_to_gateway = common_device_error
-  .extend({
-    error_code: z
-      .literal('ttlock_lock_not_paired_to_gateway')
-      .describe(error_code_description),
-  })
-  .describe('Indicates that the lock is not paired with a gateway.')
+const ttlock_lock_not_paired_to_gateway = common_device_error.extend({
+  error_code: z
+    .literal('ttlock_lock_not_paired_to_gateway')
+    .describe(error_code_description),
+}).describe(`
+    Indicates that the lock is not paired with a gateway.
+    `)
 
 const missing_device_credentials = common_device_error
   .extend({
@@ -141,13 +151,13 @@ const missing_device_credentials = common_device_error
   })
   .describe('Indicates that device credentials are missing.')
 
-const auxiliary_heat_running = common_device_error
-  .extend({
-    error_code: z
-      .literal('auxiliary_heat_running')
-      .describe(error_code_description),
-  })
-  .describe('Indicates that the auxiliary heat is running.')
+const auxiliary_heat_running = common_device_error.extend({
+  error_code: z
+    .literal('auxiliary_heat_running')
+    .describe(error_code_description),
+}).describe(`
+    Indicates that the auxiliary heat is running.
+    `)
 
 const subscription_required = common_device_error
   .extend({
@@ -157,15 +167,13 @@ const subscription_required = common_device_error
   })
   .describe('Indicates that a subscription is required to connect.')
 
-const lockly_missing_wifi_bridge = common_device_error
-  .extend({
-    error_code: z
-      .literal('lockly_missing_wifi_bridge')
-      .describe(error_code_description),
-  })
-  .describe(
-    'Indicates that the Lockly lock is not connected to a Wi-Fi bridge.',
-  )
+const lockly_missing_wifi_bridge = common_device_error.extend({
+  error_code: z
+    .literal('lockly_missing_wifi_bridge')
+    .describe(error_code_description),
+}).describe(`
+    Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
+    `)
 
 export const device_error = z
   .discriminatedUnion('error_code', [
@@ -228,21 +236,27 @@ const common_device_warning = z.object({
     .describe('Date and time at which Seam created the warning.'),
 })
 
-const partial_backup_access_code_pool = common_device_warning
-  .extend({
-    warning_code: z
-      .literal('partial_backup_access_code_pool')
-      .describe(warning_code_description),
-  })
-  .describe('Indicates that the backup access code is unhealthy.')
+const partial_backup_access_code_pool = common_device_warning.extend({
+  warning_code: z
+    .literal('partial_backup_access_code_pool')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: access_codes
+    ---
+    Indicates that the backup access code is unhealthy.
+    `)
 
-const many_active_backup_codes = common_device_warning
-  .extend({
-    warning_code: z
-      .literal('many_active_backup_codes')
-      .describe(warning_code_description),
-  })
-  .describe('Indicates that there are too many backup codes.')
+const many_active_backup_codes = common_device_warning.extend({
+  warning_code: z
+    .literal('many_active_backup_codes')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: access_codes
+    ---
+    Indicates that there are too many backup codes.
+    `)
 
 const salto_ks_office_mode = common_device_warning
   .extend({
@@ -274,13 +288,13 @@ const salto_ks_subscription_limit_almost_reached = common_device_warning
     'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site.',
   )
 
-const wyze_device_missing_gateway = common_device_warning
-  .extend({
-    warning_code: z
-      .literal('wyze_device_missing_gateway')
-      .describe(warning_code_description),
-  })
-  .describe('Indicates that the Wyze Lock is not connected to a gateway.')
+const wyze_device_missing_gateway = common_device_warning.extend({
+  warning_code: z
+    .literal('wyze_device_missing_gateway')
+    .describe(warning_code_description),
+}).describe(`
+    Indicates that the Wyze Lock is not connected to a gateway.
+    `)
 
 const functional_offline_device = common_device_warning
   .extend({
@@ -300,39 +314,46 @@ const third_party_integration_detected = common_device_warning
   })
   .describe('Indicates that a third-party integration has been detected.')
 
-const nest_thermostat_in_manual_eco_mode = common_device_warning
-  .extend({
-    warning_code: z
-      .literal('nest_thermostat_in_manual_eco_mode')
-      .describe(warning_code_description),
-  })
-  .describe('Indicates that the Nest thermostat is in manual eco mode.')
+const nest_thermostat_in_manual_eco_mode = common_device_warning.extend({
+  warning_code: z
+    .literal('nest_thermostat_in_manual_eco_mode')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: thermostats
+    ---
+    Indicates that the Nest thermostat is in manual eco mode.
+    `)
 
-const ttlock_lock_gateway_unlocking_not_enabled = common_device_warning
-  .extend({
-    warning_code: z
-      .literal('ttlock_lock_gateway_unlocking_not_enabled')
-      .describe(warning_code_description),
-  })
-  .describe(
-    'Indicates that the Remote Unlock feature is not enabled in the settings.',
-  )
+const ttlock_lock_gateway_unlocking_not_enabled = common_device_warning.extend({
+  warning_code: z
+    .literal('ttlock_lock_gateway_unlocking_not_enabled')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: locks
+    ---
+    Indicates that the Remote Unlock feature is not enabled in the settings."
+    `)
 
-const ttlock_weak_gateway_signal = common_device_warning
-  .extend({
-    warning_code: z
-      .literal('ttlock_weak_gateway_signal')
-      .describe(warning_code_description),
-  })
-  .describe('Indicates that the gateway signal is weak.')
+const ttlock_weak_gateway_signal = common_device_warning.extend({
+  warning_code: z
+    .literal('ttlock_weak_gateway_signal')
+    .describe(warning_code_description),
+}).describe(`
+    Indicates that the gateway signal is weak.
+    `)
 
-const temperature_threshold_exceeded = common_device_warning
-  .extend({
-    warning_code: z
-      .literal('temperature_threshold_exceeded')
-      .describe(warning_code_description),
-  })
-  .describe('Indicates that the temperature threshold has been exceeded.')
+const temperature_threshold_exceeded = common_device_warning.extend({
+  warning_code: z
+    .literal('temperature_threshold_exceeded')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: thermostats
+    ---
+    Indicates that the temperature threshold has been exceeded.
+    `)
 
 const device_communication_degraded = common_device_warning
   .extend({
@@ -368,15 +389,16 @@ const lockly_time_zone_not_configured = common_device_warning
     'Indicates that Seam detected that the Lockly device does not have a time zone configured. Time-bound codes may not work as expected.',
   )
 
-export const unknown_issue_with_phone = common_device_warning
-  .extend({
-    warning_code: z
-      .literal('unknown_issue_with_phone')
-      .describe(warning_code_description),
-  })
-  .describe(
-    'Indicates that an unknown issue occurred while syncing the state of the phone with the provider. This issue may affect the proper functioning of the phone.',
-  )
+export const unknown_issue_with_phone = common_device_warning.extend({
+  warning_code: z
+    .literal('unknown_issue_with_phone')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: phones
+    ---
+    Indicates that an unknown issue occurred while syncing the state of the phone with the provider. This issue may affect the proper functioning of the phone.
+    `)
 
 const device_warning = z.discriminatedUnion('warning_code', [
   partial_backup_access_code_pool,
@@ -717,28 +739,58 @@ export const device = z
       .describe(
         'Unique identifier for the Seam workspace associated with the device.',
       ),
-    errors: z
-      .array(
-        z.discriminatedUnion('error_code', [
-          ...device_error.options,
-          ...connected_account_error.options.filter(
-            (_connected_account_error) =>
-              !device_error.options.some(
-                (_device_error) =>
-                  _device_error.shape.error_code.value ===
-                  _connected_account_error.shape.error_code.value,
-              ),
-          ),
-        ]),
-      )
-      .describe(
-        'Array of errors associated with the device. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
-      ),
-    warnings: z
-      .array(device_warning)
-      .describe(
-        'Array of warnings associated with the device. Each warning object within the array contains two fields: `warning_code` and `message`. `warning_code` is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
-      ),
+    errors: z.array(
+      z.discriminatedUnion('error_code', [
+        ...device_error.options,
+        ...connected_account_error.options.filter(
+          (_connected_account_error) =>
+            !device_error.options.some(
+              (_device_error) =>
+                _device_error.shape.error_code.value ===
+                _connected_account_error.shape.error_code.value,
+            ),
+        ),
+      ]),
+    ).describe(`
+        ---
+        variant_groups:
+          locks:
+            name: Locks
+          access_codes:
+            name: Access Codes
+          thermostats:
+            name: Thermostats
+          hardware:
+            name: Hardware
+          noise_sensors:
+            name: Noise Sensors
+          phones:
+            name: Phones
+          provider_metadata:
+            name: Provider Metadata
+        ---
+        Array of errors associated with the device. Each error object within the array contains two fields: \`error_code\` and \`message\`. \`error_code\` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. \`message\` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.
+      `),
+    warnings: z.array(device_warning).describe(`
+        ---
+        variant_groups:
+          locks:
+            name: Locks
+          access_codes:
+            name: Access Codes
+          thermostats:
+            name: Thermostats
+          hardware:
+            name: Hardware
+          noise_sensors:
+            name: Noise Sensors
+          phones:
+            name: Phones
+          provider_metadata:
+            name: Provider Metadata
+        ---
+        Array of warnings associated with the device. Each warning object within the array contains two fields: \`warning_code\` and \`message\`. \`warning_code\` is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. \`message\` provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.
+      `),
     created_at: z
       .string()
       .datetime()
