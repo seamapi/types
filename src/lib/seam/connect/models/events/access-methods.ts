@@ -52,6 +52,15 @@ export const access_method_deleted_event = access_method_event.extend({
     An access method was deleted.
   `)
 
+export const access_method_reissued_event = access_method_event.extend({
+  event_type: z.literal('access_method.reissued'),
+}).describe(`
+    ---
+    route_path: /access_methods
+    ---
+    An access method was reissued due to an access grant update.
+  `)
+
 export type AccessMethodRevokedEvent = z.infer<
   typeof access_method_revoked_event
 >
@@ -61,4 +70,5 @@ export const access_method_events = [
   access_method_revoked_event,
   access_method_card_encoding_required_event,
   access_method_deleted_event,
+  access_method_reissued_event,
 ] as const
