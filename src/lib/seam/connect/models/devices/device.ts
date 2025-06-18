@@ -156,6 +156,9 @@ const auxiliary_heat_running = common_device_error.extend({
     .literal('auxiliary_heat_running')
     .describe(error_code_description),
 }).describe(`
+    ---
+    variant_group_key: thermostats
+    ---
     Indicates that the auxiliary heat is running.
     `)
 
