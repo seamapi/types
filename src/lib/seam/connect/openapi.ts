@@ -1216,8 +1216,7 @@ export default {
                   type: 'object',
                 },
                 {
-                  description:
-                    '\n    Indicates that the auxiliary heat is running.\n    ',
+                  description: 'Indicates that the auxiliary heat is running.',
                   properties: {
                     created_at: {
                       description:
@@ -1250,6 +1249,7 @@ export default {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-variant-group-key': 'thermostats',
                 },
                 {
                   description:
@@ -9821,8 +9821,7 @@ export default {
                   type: 'object',
                 },
                 {
-                  description:
-                    '\n    Indicates that the auxiliary heat is running.\n    ',
+                  description: 'Indicates that the auxiliary heat is running.',
                   properties: {
                     created_at: {
                       description:
@@ -9855,6 +9854,7 @@ export default {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-variant-group-key': 'thermostats',
                 },
                 {
                   description:
@@ -14380,7 +14380,8 @@ export default {
                 type: 'string',
               },
               workspace_id: {
-                description: 'ID of the workspace associated with the event.',
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -20606,8 +20607,7 @@ export default {
                   type: 'object',
                 },
                 {
-                  description:
-                    '\n    Indicates that the auxiliary heat is running.\n    ',
+                  description: 'Indicates that the auxiliary heat is running.',
                   properties: {
                     created_at: {
                       description:
@@ -20640,6 +20640,7 @@ export default {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-variant-group-key': 'thermostats',
                 },
                 {
                   description:
@@ -22916,8 +22917,7 @@ export default {
                   type: 'object',
                 },
                 {
-                  description:
-                    '\n    Indicates that the auxiliary heat is running.\n    ',
+                  description: 'Indicates that the auxiliary heat is running.',
                   properties: {
                     created_at: {
                       description:
@@ -22950,6 +22950,7 @@ export default {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-variant-group-key': 'thermostats',
                 },
                 {
                   description:
