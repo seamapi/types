@@ -891,6 +891,7 @@ export default {
                     'is_connected_account_error',
                   ],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description: 'Indicates that the device is offline.',
@@ -1067,6 +1068,7 @@ export default {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-variant-group-key': 'access_codes',
                 },
                 {
                   description:
@@ -1103,6 +1105,7 @@ export default {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -1139,10 +1142,11 @@ export default {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
-                    'Indicates that the lock is not paired with a gateway.',
+                    '\n    Indicates that the lock is not paired with a gateway.\n    ',
                   properties: {
                     created_at: {
                       description:
@@ -1212,7 +1216,8 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Indicates that the auxiliary heat is running.',
+                  description:
+                    '\n    Indicates that the auxiliary heat is running.\n    ',
                   properties: {
                     created_at: {
                       description:
@@ -1284,7 +1289,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the Lockly lock is not connected to a Wi-Fi bridge.',
+                    '\n    Indicates that the Lockly lock is not connected to a Wi-Fi bridge.\n    ',
                   properties: {
                     created_at: {
                       description:
@@ -9463,6 +9468,7 @@ export default {
                     'is_connected_account_error',
                   ],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description: 'Indicates that the device is offline.',
@@ -9639,6 +9645,7 @@ export default {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-variant-group-key': 'access_codes',
                 },
                 {
                   description:
@@ -9675,6 +9682,7 @@ export default {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -9711,10 +9719,11 @@ export default {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
-                    'Indicates that the lock is not paired with a gateway.',
+                    '\n    Indicates that the lock is not paired with a gateway.\n    ',
                   properties: {
                     created_at: {
                       description:
@@ -9784,7 +9793,8 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Indicates that the auxiliary heat is running.',
+                  description:
+                    '\n    Indicates that the auxiliary heat is running.\n    ',
                   properties: {
                     created_at: {
                       description:
@@ -9856,7 +9866,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the Lockly lock is not connected to a Wi-Fi bridge.',
+                    '\n    Indicates that the Lockly lock is not connected to a Wi-Fi bridge.\n    ',
                   properties: {
                     created_at: {
                       description:
@@ -9963,6 +9973,15 @@ export default {
               ],
             },
             type: 'array',
+            'x-variant-groups': {
+              access_codes: { name: 'Access Codes' },
+              hardware: { name: 'Hardware' },
+              locks: { name: 'Locks' },
+              noise_sensors: { name: 'Noise Sensors' },
+              phones: { name: 'Phones' },
+              provider_metadata: { name: 'Provider Metadata' },
+              thermostats: { name: 'Thermostats' },
+            },
           },
           is_managed: {
             description:
@@ -12251,6 +12270,7 @@ export default {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'access_codes',
                 },
                 {
                   description:
@@ -12276,10 +12296,11 @@ export default {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'access_codes',
                 },
                 {
                   description:
-                    'Indicates that the Wyze Lock is not connected to a gateway.',
+                    '\n    Indicates that the Wyze Lock is not connected to a gateway.\n    ',
                   properties: {
                     created_at: {
                       description:
@@ -12376,10 +12397,11 @@ export default {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'thermostats',
                 },
                 {
                   description:
-                    'Indicates that the Remote Unlock feature is not enabled in the settings.',
+                    'Indicates that the Remote Unlock feature is not enabled in the settings."',
                   properties: {
                     created_at: {
                       description:
@@ -12401,9 +12423,11 @@ export default {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
-                  description: 'Indicates that the gateway signal is weak.',
+                  description:
+                    '\n    Indicates that the gateway signal is weak.\n    ',
                   properties: {
                     created_at: {
                       description:
@@ -12450,6 +12474,7 @@ export default {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'thermostats',
                 },
                 {
                   description:
@@ -12625,6 +12650,7 @@ export default {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'phones',
                 },
                 {
                   description:
@@ -12654,6 +12680,15 @@ export default {
               ],
             },
             type: 'array',
+            'x-variant-groups': {
+              access_codes: { name: 'Access Codes' },
+              hardware: { name: 'Hardware' },
+              locks: { name: 'Locks' },
+              noise_sensors: { name: 'Noise Sensors' },
+              phones: { name: 'Phones' },
+              provider_metadata: { name: 'Provider Metadata' },
+              thermostats: { name: 'Thermostats' },
+            },
           },
           workspace_id: {
             description:
@@ -20150,6 +20185,7 @@ export default {
                     'is_connected_account_error',
                   ],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description: 'Indicates that the device is offline.',
@@ -20326,6 +20362,7 @@ export default {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-variant-group-key': 'access_codes',
                 },
                 {
                   description:
@@ -20362,6 +20399,7 @@ export default {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -20398,10 +20436,11 @@ export default {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
-                    'Indicates that the lock is not paired with a gateway.',
+                    '\n    Indicates that the lock is not paired with a gateway.\n    ',
                   properties: {
                     created_at: {
                       description:
@@ -20471,7 +20510,8 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Indicates that the auxiliary heat is running.',
+                  description:
+                    '\n    Indicates that the auxiliary heat is running.\n    ',
                   properties: {
                     created_at: {
                       description:
@@ -20543,7 +20583,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the Lockly lock is not connected to a Wi-Fi bridge.',
+                    '\n    Indicates that the Lockly lock is not connected to a Wi-Fi bridge.\n    ',
                   properties: {
                     created_at: {
                       description:
@@ -22437,6 +22477,7 @@ export default {
                     'is_connected_account_error',
                   ],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description: 'Indicates that the device is offline.',
@@ -22613,6 +22654,7 @@ export default {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-variant-group-key': 'access_codes',
                 },
                 {
                   description:
@@ -22649,6 +22691,7 @@ export default {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -22685,10 +22728,11 @@ export default {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
-                    'Indicates that the lock is not paired with a gateway.',
+                    '\n    Indicates that the lock is not paired with a gateway.\n    ',
                   properties: {
                     created_at: {
                       description:
@@ -22758,7 +22802,8 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'Indicates that the auxiliary heat is running.',
+                  description:
+                    '\n    Indicates that the auxiliary heat is running.\n    ',
                   properties: {
                     created_at: {
                       description:
@@ -22830,7 +22875,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the Lockly lock is not connected to a Wi-Fi bridge.',
+                    '\n    Indicates that the Lockly lock is not connected to a Wi-Fi bridge.\n    ',
                   properties: {
                     created_at: {
                       description:
@@ -22937,6 +22982,15 @@ export default {
               ],
             },
             type: 'array',
+            'x-variant-groups': {
+              access_codes: { name: 'Access Codes' },
+              hardware: { name: 'Hardware' },
+              locks: { name: 'Locks' },
+              noise_sensors: { name: 'Noise Sensors' },
+              phones: { name: 'Phones' },
+              provider_metadata: { name: 'Provider Metadata' },
+              thermostats: { name: 'Thermostats' },
+            },
           },
           is_managed: { enum: [false], type: 'boolean' },
           location: {
@@ -23143,6 +23197,7 @@ export default {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'access_codes',
                 },
                 {
                   description:
@@ -23168,10 +23223,11 @@ export default {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'access_codes',
                 },
                 {
                   description:
-                    'Indicates that the Wyze Lock is not connected to a gateway.',
+                    '\n    Indicates that the Wyze Lock is not connected to a gateway.\n    ',
                   properties: {
                     created_at: {
                       description:
@@ -23268,10 +23324,11 @@ export default {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'thermostats',
                 },
                 {
                   description:
-                    'Indicates that the Remote Unlock feature is not enabled in the settings.',
+                    'Indicates that the Remote Unlock feature is not enabled in the settings."',
                   properties: {
                     created_at: {
                       description:
@@ -23293,9 +23350,11 @@ export default {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
-                  description: 'Indicates that the gateway signal is weak.',
+                  description:
+                    '\n    Indicates that the gateway signal is weak.\n    ',
                   properties: {
                     created_at: {
                       description:
@@ -23342,6 +23401,7 @@ export default {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'thermostats',
                 },
                 {
                   description:
@@ -23517,6 +23577,7 @@ export default {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'phones',
                 },
                 {
                   description:
@@ -23546,6 +23607,15 @@ export default {
               ],
             },
             type: 'array',
+            'x-variant-groups': {
+              access_codes: { name: 'Access Codes' },
+              hardware: { name: 'Hardware' },
+              locks: { name: 'Locks' },
+              noise_sensors: { name: 'Noise Sensors' },
+              phones: { name: 'Phones' },
+              provider_metadata: { name: 'Provider Metadata' },
+              thermostats: { name: 'Thermostats' },
+            },
           },
           workspace_id: {
             description:
