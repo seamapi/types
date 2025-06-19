@@ -42907,7 +42907,6 @@ export default {
           {
             in: 'query',
             name: 'collection_key',
-            required: true,
             schema: { description: 'Collection key.', type: 'string' },
           },
         ],
@@ -43002,7 +43001,6 @@ export default {
                     type: 'string',
                   },
                 },
-                required: ['collection_key'],
                 type: 'object',
               },
             },
