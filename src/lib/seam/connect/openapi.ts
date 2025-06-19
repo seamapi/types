@@ -24490,12 +24490,87 @@ export default {
         ],
         summary: '/access_codes/create_multiple',
         tags: ['/access_codes'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['access_codes'],
+        'x-fern-sdk-method-name': 'create_multiple',
+        'x-fern-sdk-return-value': 'access_codes',
         'x-response-key': 'access_codes',
         'x-title': 'Create Multiple Linked Access Codes',
       },
     },
     '/access_codes/delete': {
+      delete: {
+        description:
+          'Deletes an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+        operationId: 'accessCodesDeleteDelete',
+        parameters: [
+          {
+            in: 'query',
+            name: 'device_id',
+            required: false,
+            schema: {
+              description:
+                'ID of the device for which you want to delete the access code.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'access_code_id',
+            required: true,
+            schema: {
+              description: 'ID of the access code that you want to delete.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'sync',
+            required: false,
+            schema: {
+              default: false,
+              type: 'boolean',
+              'x-undocumented': 'Only used internally.',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { client_session_with_customer: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_codes/delete',
+        tags: ['/access_codes'],
+        'x-action-attempt-type': 'DELETE_ACCESS_CODE',
+        'x-fern-sdk-group-name': ['access_codes'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete an Access Code',
+      },
       post: {
         description:
           'Deletes an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
@@ -24567,6 +24642,58 @@ export default {
       },
     },
     '/access_codes/generate_code': {
+      get: {
+        description:
+          'Generates a code for an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes), given a device ID.',
+        operationId: 'accessCodesGenerateCodeGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'device_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the device for which you want to generate a code.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    generated_code: {
+                      $ref: '#/components/schemas/access_code',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['generated_code', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_codes/generate_code',
+        tags: ['/access_codes'],
+        'x-fern-sdk-group-name': ['access_codes'],
+        'x-fern-sdk-method-name': 'generate_code',
+        'x-fern-sdk-return-value': 'generated_code',
+        'x-response-key': 'generated_code',
+        'x-title': 'Generate a Code',
+      },
       post: {
         description:
           'Generates a code for an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes), given a device ID.',
@@ -24626,6 +24753,75 @@ export default {
       },
     },
     '/access_codes/get': {
+      get: {
+        description:
+          'Returns a specified [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nYou must specify either `access_code_id` or both `device_id` and `code`.',
+        operationId: 'accessCodesGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'device_id',
+            schema: {
+              description:
+                'ID of the device containing the access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'access_code_id',
+            schema: {
+              description:
+                'ID of the access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'code',
+            schema: {
+              description:
+                'Code of the access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_code: { $ref: '#/components/schemas/access_code' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_code', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { access_token: [] },
+          { console_session_with_workspace: [] },
+          { client_session: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/access_codes/get',
+        tags: ['/access_codes'],
+        'x-fern-sdk-group-name': ['access_codes'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'access_code',
+        'x-response-key': 'access_code',
+        'x-title': 'Get an Access Code',
+      },
       post: {
         description:
           'Returns a specified [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nYou must specify either `access_code_id` or both `device_id` and `code`.',
@@ -24694,6 +24890,108 @@ export default {
       },
     },
     '/access_codes/list': {
+      get: {
+        description:
+          'Returns a list of all [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nSpecify either `device_id` or `access_code_ids`.',
+        operationId: 'accessCodesListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'customer_ids',
+            schema: {
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_id',
+            schema: {
+              description:
+                'ID of the device for which you want to list access codes. Specify either `device_id` or `access_code_ids`.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'access_code_ids',
+            schema: {
+              description:
+                'IDs of the access codes that you want to retrieve. Specify either `device_id` or `access_code_ids`.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identifier_key',
+            schema: {
+              description:
+                'Your user ID for the user by which to filter access codes.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 55_000,
+              description:
+                'Numerical limit on the number of access codes to return.',
+              format: 'float',
+              type: 'number',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              nullable: true,
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_codes: {
+                      items: { $ref: '#/components/schemas/access_code' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
+                  },
+                  required: ['access_codes', 'pagination', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { client_session_with_customer: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_codes/list',
+        tags: ['/access_codes'],
+        'x-fern-sdk-group-name': ['access_codes'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'access_codes',
+        'x-response-key': 'access_codes',
+        'x-title': 'List Access Codes',
+      },
       post: {
         description:
           'Returns a list of all [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nSpecify either `device_id` or `access_code_ids`.',
@@ -25054,7 +25352,8 @@ export default {
         summary: '/access_codes/unmanaged/convert_to_managed',
         tags: ['/access_codes'],
         'x-action-attempt-type': 'CONVERT_ACCESS_CODE_TO_MANAGED',
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['access_codes', 'unmanaged'],
+        'x-fern-sdk-method-name': 'convert_to_managed',
         'x-response-key': null,
         'x-title': 'Convert an Unmanaged Access Code',
       },
@@ -25132,6 +25431,68 @@ export default {
       },
     },
     '/access_codes/unmanaged/delete': {
+      delete: {
+        description:
+          'Deletes an [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).',
+        operationId: 'accessCodesUnmanagedDeleteDelete',
+        parameters: [
+          {
+            in: 'query',
+            name: 'access_code_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the unmanaged access code that you want to delete.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'sync',
+            required: false,
+            schema: {
+              default: false,
+              type: 'boolean',
+              'x-undocumented': 'Only used internally.',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_codes/unmanaged/delete',
+        tags: ['/access_codes'],
+        'x-action-attempt-type': 'DELETE_ACCESS_CODE',
+        'x-fern-sdk-group-name': ['access_codes', 'unmanaged'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete an Unmanaged Access Code',
+      },
       post: {
         description:
           'Deletes an [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).',
@@ -25196,6 +25557,76 @@ export default {
       },
     },
     '/access_codes/unmanaged/get': {
+      get: {
+        description:
+          'Returns a specified [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).\n\nYou must specify either `access_code_id` or both `device_id` and `code`.',
+        operationId: 'accessCodesUnmanagedGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'device_id',
+            schema: {
+              description:
+                'ID of the device containing the unmanaged access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'access_code_id',
+            schema: {
+              description:
+                'ID of the unmanaged access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'code',
+            schema: {
+              description:
+                'Code of the unmanaged access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_code: {
+                      $ref: '#/components/schemas/unmanaged_access_code',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_code', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_codes/unmanaged/get',
+        tags: ['/access_codes'],
+        'x-fern-sdk-group-name': ['access_codes', 'unmanaged'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'access_code',
+        'x-response-key': 'access_code',
+        'x-title': 'Get an Unmanaged Access Code',
+      },
       post: {
         description:
           'Returns a specified [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).\n\nYou must specify either `access_code_id` or both `device_id` and `code`.',
@@ -25265,6 +25696,71 @@ export default {
       },
     },
     '/access_codes/unmanaged/list': {
+      get: {
+        description:
+          'Returns a list of all [unmanaged access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).',
+        operationId: 'accessCodesUnmanagedListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'device_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the device for which you want to list unmanaged access codes.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identifier_key',
+            required: false,
+            schema: {
+              description:
+                'Your user ID for the user by which to filter unmanaged access codes.',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_codes: {
+                      items: {
+                        $ref: '#/components/schemas/unmanaged_access_code',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_codes', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_codes/unmanaged/list',
+        tags: ['/access_codes'],
+        'x-fern-sdk-group-name': ['access_codes', 'unmanaged'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'access_codes',
+        'x-response-key': 'access_codes',
+        'x-title': 'List Unmanaged Access Codes',
+      },
       post: {
         description:
           'Returns a list of all [unmanaged access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).',
@@ -25394,7 +25890,8 @@ export default {
         ],
         summary: '/access_codes/unmanaged/update',
         tags: ['/access_codes'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['access_codes', 'unmanaged'],
+        'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
         'x-title': 'Update an Unmanaged Access Code',
       },
@@ -25612,7 +26109,8 @@ export default {
         summary: '/access_codes/update',
         tags: ['/access_codes'],
         'x-action-attempt-type': 'UPDATE_ACCESS_CODE',
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['access_codes'],
+        'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
         'x-title': 'Update an Access Code',
       },
@@ -25911,7 +26409,8 @@ export default {
         summary: '/access_codes/update',
         tags: ['/access_codes'],
         'x-action-attempt-type': 'UPDATE_ACCESS_CODE',
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['access_codes'],
+        'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
         'x-title': 'Update an Access Code',
       },
@@ -25977,7 +26476,8 @@ export default {
         ],
         summary: '/access_codes/update_multiple',
         tags: ['/access_codes'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['access_codes'],
+        'x-fern-sdk-method-name': 'update_multiple',
         'x-response-key': null,
         'x-title': 'Update Multiple Linked Access Codes',
       },
@@ -26230,6 +26730,51 @@ export default {
       },
     },
     '/access_grants/delete': {
+      get: {
+        description: 'Delete an access grant.',
+        operationId: 'accessGrantsDeleteGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'access_grant_id',
+            required: true,
+            schema: {
+              description: 'ID of access grant to delete.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/access_grants/delete',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['access_grants'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete an Access Grant',
+      },
       post: {
         description: 'Delete an access grant.',
         operationId: 'accessGrantsDeletePost',
@@ -26282,6 +26827,55 @@ export default {
       },
     },
     '/access_grants/get': {
+      get: {
+        description: 'Get an access grant.',
+        operationId: 'accessGrantsGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'access_grant_id',
+            required: true,
+            schema: {
+              description: 'ID of access grant to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_grant: { $ref: '#/components/schemas/access_grant' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_grant', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/access_grants/get',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['access_grants'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'access_grant',
+        'x-response-key': 'access_grant',
+        'x-title': 'Get an Access Grant',
+      },
       post: {
         description: 'Get an access grant.',
         operationId: 'accessGrantsGetPost',
@@ -26338,6 +26932,95 @@ export default {
       },
     },
     '/access_grants/list': {
+      get: {
+        description: 'Get an access grant.',
+        operationId: 'accessGrantsListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            schema: {
+              description:
+                'ID of user identity to filter list of access grants by.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_system_id',
+            schema: {
+              description: 'ID of system to filter list of access grants by.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_entrance_id',
+            schema: {
+              description: 'ID of entrance to filter list of access grants by.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'location_id',
+            schema: {
+              deprecated: true,
+              format: 'uuid',
+              type: 'string',
+              'x-deprecated': 'Use `space_id`.',
+            },
+          },
+          {
+            in: 'query',
+            name: 'space_id',
+            schema: {
+              description: 'ID of space to filter list of access grants by.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_grants: {
+                      items: { $ref: '#/components/schemas/access_grant' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_grants', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/access_grants/list',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['access_grants'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'access_grants',
+        'x-response-key': 'access_grants',
+        'x-title': 'List Access Grants',
+      },
       post: {
         description: 'Get an access grant.',
         operationId: 'accessGrantsListPost',
@@ -26480,7 +27163,8 @@ export default {
         summary: '/access_grants/update',
         tags: [],
         'x-draft': 'Early access.',
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['access_grants'],
+        'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
         'x-title': 'Update an Access Grant',
       },
@@ -26550,6 +27234,50 @@ export default {
       },
     },
     '/access_methods/delete': {
+      get: {
+        description: 'Delete an access method.',
+        operationId: 'accessMethodsDeleteGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'access_method_id',
+            required: true,
+            schema: {
+              description: 'ID of access method to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_methods/delete',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['access_methods'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete an Access Method',
+      },
       post: {
         description: 'Delete an access method.',
         operationId: 'accessMethodsDeletePost',
@@ -26601,6 +27329,56 @@ export default {
       },
     },
     '/access_methods/get': {
+      get: {
+        description: 'Get an access method.',
+        operationId: 'accessMethodsGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'access_method_id',
+            required: true,
+            schema: {
+              description: 'ID of access method to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_method: {
+                      $ref: '#/components/schemas/access_method',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_method', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_methods/get',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['access_methods'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'access_method',
+        'x-response-key': 'access_method',
+        'x-title': 'Get an Access Method',
+      },
       post: {
         description: 'Get an access method.',
         operationId: 'accessMethodsGetPost',
@@ -26658,6 +27436,58 @@ export default {
       },
     },
     '/access_methods/list': {
+      get: {
+        description:
+          'List all access methods, usually filtered by access grant.',
+        operationId: 'accessMethodsListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'access_grant_id',
+            required: true,
+            schema: {
+              description: 'ID of access grant to list access methods for.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_methods: {
+                      items: { $ref: '#/components/schemas/access_method' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_methods', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_methods/list',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['access_methods'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'access_methods',
+        'x-response-key': 'access_methods',
+        'x-title': 'List Access Methods',
+      },
       post: {
         description:
           'List all access methods, usually filtered by access grant.',
@@ -26837,12 +27667,63 @@ export default {
         ],
         summary: '/acs/access_groups/add_user',
         tags: ['/acs'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['acs', 'access_groups'],
+        'x-fern-sdk-method-name': 'add_user',
         'x-response-key': null,
         'x-title': 'Add an ACS User to an Access Group',
       },
     },
     '/acs/access_groups/get': {
+      get: {
+        description:
+          'Returns a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+        operationId: 'acsAccessGroupsGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_access_group_id',
+            required: true,
+            schema: {
+              description: 'ID of the access group that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_access_group: {
+                      $ref: '#/components/schemas/acs_access_group',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_access_group', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/access_groups/get',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'access_groups'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'acs_access_group',
+        'x-response-key': 'acs_access_group',
+        'x-title': 'Get an Access Group',
+      },
       post: {
         description:
           'Returns a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
@@ -26900,6 +27781,77 @@ export default {
       },
     },
     '/acs/access_groups/list': {
+      get: {
+        description:
+          'Returns a list of all [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+        operationId: 'acsAccessGroupsListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_system_id',
+            schema: {
+              description:
+                'ID of the access system for which you want to retrieve all access groups.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_user_id',
+            schema: {
+              description:
+                'ID of the access system user for which you want to retrieve all access groups.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            schema: {
+              description:
+                'ID of the user identity for which you want to retrieve all access groups.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_access_groups: {
+                      items: { $ref: '#/components/schemas/acs_access_group' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_access_groups', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/access_groups/list',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'access_groups'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'acs_access_groups',
+        'x-response-key': 'acs_access_groups',
+        'x-title': 'List Access Groups',
+      },
       post: {
         description:
           'Returns a list of all [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
@@ -26970,6 +27922,58 @@ export default {
       },
     },
     '/acs/access_groups/list_accessible_entrances': {
+      get: {
+        description:
+          'Returns a list of all accessible entrances for a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+        operationId: 'acsAccessGroupsListAccessibleEntrancesGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_access_group_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the access group for which you want to retrieve all accessible entrances.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_entrances: {
+                      items: { $ref: '#/components/schemas/acs_entrance' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_entrances', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/acs/access_groups/list_accessible_entrances',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'access_groups'],
+        'x-fern-sdk-method-name': 'list_accessible_entrances',
+        'x-fern-sdk-return-value': 'acs_entrances',
+        'x-response-key': 'acs_entrances',
+        'x-title': 'List Entrances Accessible to an Access Group',
+      },
       post: {
         description:
           'Returns a list of all accessible entrances for a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
@@ -27029,6 +28033,58 @@ export default {
       },
     },
     '/acs/access_groups/list_users': {
+      get: {
+        description:
+          'Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+        operationId: 'acsAccessGroupsListUsersGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_access_group_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the access group for which you want to retrieve all access system users.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_users: {
+                      items: { $ref: '#/components/schemas/acs_user' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_users', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/access_groups/list_users',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'access_groups'],
+        'x-fern-sdk-method-name': 'list_users',
+        'x-fern-sdk-return-value': 'acs_users',
+        'x-response-key': 'acs_users',
+        'x-title': 'List ACS Users in an Access Group',
+      },
       post: {
         description:
           'Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
@@ -27088,6 +28144,73 @@ export default {
       },
     },
     '/acs/access_groups/remove_user': {
+      delete: {
+        description:
+          'Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+        operationId: 'acsAccessGroupsRemoveUserDelete',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_access_group_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the access group from which you want to remove an access system user.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_user_id',
+            required: false,
+            schema: {
+              description:
+                'ID of the access system user that you want to remove from an access group.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            required: false,
+            schema: {
+              description:
+                'ID of the user identity associated with the user that you want to remove from an access group.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/access_groups/remove_user',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'access_groups'],
+        'x-fern-sdk-method-name': 'remove_user',
+        'x-response-key': null,
+        'x-title': 'Remove an ACS User from an Access Group',
+      },
       post: {
         description:
           'Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
@@ -27152,6 +28275,59 @@ export default {
       },
     },
     '/acs/access_groups/unmanaged/get': {
+      get: {
+        description:
+          'Returns a specified unmanaged [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+        operationId: 'acsAccessGroupsUnmanagedGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_access_group_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the unmanaged access group that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_access_group: {
+                      $ref: '#/components/schemas/unmanaged_acs_access_group',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_access_group', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/access_groups/unmanaged/get',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'access_groups', 'unmanaged'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'acs_access_group',
+        'x-response-key': 'acs_access_group',
+        'x-title': 'Get an Unmanaged Access Group',
+        'x-undocumented':
+          'No unmanaged access groups are currently implemented.',
+      },
       post: {
         description:
           'Returns a specified unmanaged [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
@@ -27212,6 +28388,71 @@ export default {
       },
     },
     '/acs/access_groups/unmanaged/list': {
+      get: {
+        description:
+          'Returns a list of all unmanaged [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+        operationId: 'acsAccessGroupsUnmanagedListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_system_id',
+            schema: {
+              description:
+                'ID of the access system for which you want to retrieve all unmanaged access groups.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_user_id',
+            schema: {
+              description:
+                'ID of the access system user for which you want to retrieve all unmanaged access groups.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_access_groups: {
+                      items: {
+                        $ref: '#/components/schemas/unmanaged_acs_access_group',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_access_groups', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/access_groups/unmanaged/list',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'access_groups', 'unmanaged'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'acs_access_groups',
+        'x-response-key': 'acs_access_groups',
+        'x-title': 'List Unmanaged Access Groups',
+        'x-undocumented':
+          'No unmanaged access groups are currently implemented.',
+      },
       post: {
         description:
           'Returns a list of all unmanaged [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
@@ -27280,6 +28521,62 @@ export default {
       },
     },
     '/acs/credential_pools/list': {
+      get: {
+        description: 'Returns a list of all credential pools.',
+        operationId: 'acsCredentialPoolsListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_system_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the access system for which you want to list credential pools.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_credential_pools: {
+                      items: {
+                        $ref: '#/components/schemas/acs_credential_pool',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_credential_pools', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/credential_pools/list',
+        tags: ['/acs'],
+        'x-deprecated':
+          'Use `/user_identities/enrollment_automations/list` instead.',
+        'x-fern-sdk-group-name': ['acs', 'credential_pools'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'acs_credential_pools',
+        'x-response-key': 'acs_credential_pools',
+        'x-title': 'List Credential Pools',
+        'x-undocumented': 'Replaced by enrollment automations.',
+      },
       post: {
         description: 'Returns a list of all credential pools.',
         operationId: 'acsCredentialPoolsListPost',
@@ -27491,7 +28788,8 @@ export default {
         ],
         summary: '/acs/credentials/assign',
         tags: ['/acs'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['acs', 'credentials'],
+        'x-fern-sdk-method-name': 'assign',
         'x-response-key': null,
         'x-title': 'Assign a Credential to an ACS User',
       },
@@ -27829,6 +29127,50 @@ export default {
       },
     },
     '/acs/credentials/delete': {
+      delete: {
+        description:
+          'Deletes a specified [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+        operationId: 'acsCredentialsDeleteDelete',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_credential_id',
+            required: true,
+            schema: {
+              description: 'ID of the credential that you want to delete.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/credentials/delete',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'credentials'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete a Credential',
+      },
       post: {
         description:
           'Deletes a specified [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
@@ -27881,6 +29223,56 @@ export default {
       },
     },
     '/acs/credentials/get': {
+      get: {
+        description:
+          'Returns a specified [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+        operationId: 'acsCredentialsGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_credential_id',
+            required: true,
+            schema: {
+              description: 'ID of the credential that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_credential: {
+                      $ref: '#/components/schemas/acs_credential',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_credential', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/credentials/get',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'credentials'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'acs_credential',
+        'x-response-key': 'acs_credential',
+        'x-title': 'Get a Credential',
+      },
       post: {
         description:
           'Returns a specified [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
@@ -27938,6 +29330,46 @@ export default {
       },
     },
     '/acs/credentials/list': {
+      get: {
+        description:
+          'Returns a list of all [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+        operationId: 'acsCredentialsListGet',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_credentials: {
+                      items: { $ref: '#/components/schemas/acs_credential' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_credentials', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/acs/credentials/list',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'credentials'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'acs_credentials',
+        'x-response-key': 'acs_credentials',
+        'x-title': 'List Credentials',
+      },
       post: {
         description:
           'Returns a list of all [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
@@ -28071,6 +29503,58 @@ export default {
       },
     },
     '/acs/credentials/list_accessible_entrances': {
+      get: {
+        description:
+          'Returns a list of all [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a [credential](https://docs.seam.co/latest/api/acs/credentials) grants access.',
+        operationId: 'acsCredentialsListAccessibleEntrancesGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_credential_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the credential for which you want to retrieve all entrances to which the credential grants access.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_entrances: {
+                      items: { $ref: '#/components/schemas/acs_entrance' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_entrances', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/acs/credentials/list_accessible_entrances',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'credentials'],
+        'x-fern-sdk-method-name': 'list_accessible_entrances',
+        'x-fern-sdk-return-value': 'acs_entrances',
+        'x-response-key': 'acs_entrances',
+        'x-title': 'List Accessible Entrances',
+      },
       post: {
         description:
           'Returns a list of all [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a [credential](https://docs.seam.co/latest/api/acs/credentials) grants access.',
@@ -28192,7 +29676,8 @@ export default {
         ],
         summary: '/acs/credentials/unassign',
         tags: ['/acs'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['acs', 'credentials'],
+        'x-fern-sdk-method-name': 'unassign',
         'x-response-key': null,
         'x-title': 'Unassign a Credential from an ACS User',
       },
@@ -28265,6 +29750,58 @@ export default {
       },
     },
     '/acs/credentials/unmanaged/get': {
+      get: {
+        description:
+          'Returns a specified unmanaged [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+        operationId: 'acsCredentialsUnmanagedGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_credential_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the unmanaged credential that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_credential: {
+                      $ref: '#/components/schemas/unmanaged_acs_credential',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_credential', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/credentials/unmanaged/get',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'credentials', 'unmanaged'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'acs_credential',
+        'x-response-key': 'acs_credential',
+        'x-title': 'Get an Unmanaged Credential',
+        'x-undocumented': 'No unmanaged credentials are currently implemented.',
+      },
       post: {
         description:
           'Returns a specified unmanaged [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
@@ -28324,6 +29861,48 @@ export default {
       },
     },
     '/acs/credentials/unmanaged/list': {
+      get: {
+        description:
+          'Returns a list of all unmanaged [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+        operationId: 'acsCredentialsUnmanagedListGet',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_credentials: {
+                      items: {
+                        $ref: '#/components/schemas/unmanaged_acs_credential',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_credentials', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/acs/credentials/unmanaged/list',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'credentials', 'unmanaged'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'acs_credentials',
+        'x-response-key': 'acs_credentials',
+        'x-title': 'List Unmanaged Credentials',
+        'x-undocumented': 'No unmanaged credentials are currently implemented.',
+      },
       post: {
         description:
           'Returns a list of all unmanaged [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
@@ -28501,7 +30080,8 @@ export default {
         ],
         summary: '/acs/credentials/update',
         tags: ['/acs'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['acs', 'credentials'],
+        'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
         'x-title': 'Update a Credential',
       },
@@ -28703,6 +30283,54 @@ export default {
       },
     },
     '/acs/encoders/get': {
+      get: {
+        description:
+          'Returns a specified [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
+        operationId: 'acsEncodersGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_encoder_id',
+            required: true,
+            schema: {
+              description: 'ID of the encoder that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_encoder: { $ref: '#/components/schemas/acs_encoder' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_encoder', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/encoders/get',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'encoders'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'acs_encoder',
+        'x-response-key': 'acs_encoder',
+        'x-title': 'Get an Encoder',
+      },
       post: {
         description:
           'Returns a specified [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
@@ -28758,6 +30386,45 @@ export default {
       },
     },
     '/acs/encoders/list': {
+      get: {
+        description:
+          'Returns a list of all [encoders](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
+        operationId: 'acsEncodersListGet',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_encoders: {
+                      items: { $ref: '#/components/schemas/acs_encoder' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_encoders', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/encoders/list',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'encoders'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'acs_encoders',
+        'x-response-key': 'acs_encoders',
+        'x-title': 'List Encoders',
+      },
       post: {
         description:
           'Returns a list of all [encoders](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
@@ -29258,6 +30925,55 @@ export default {
       },
     },
     '/acs/entrances/get': {
+      get: {
+        description:
+          'Returns a specified [access system entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+        operationId: 'acsEntrancesGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_entrance_id',
+            required: true,
+            schema: {
+              description: 'ID of the entrance that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_entrance: { $ref: '#/components/schemas/acs_entrance' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_entrance', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { access_token: [] },
+          { console_session_with_workspace: [] },
+          { client_session: [] },
+        ],
+        summary: '/acs/entrances/get',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'entrances'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'acs_entrance',
+        'x-response-key': 'acs_entrance',
+        'x-title': 'Get an Entrance',
+      },
       post: {
         description:
           'Returns a specified [access system entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
@@ -29378,6 +31094,109 @@ export default {
       },
     },
     '/acs/entrances/list': {
+      get: {
+        description:
+          'Returns a list of all [access system entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+        operationId: 'acsEntrancesListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_system_id',
+            schema: {
+              description:
+                'ID of the access system for which you want to retrieve all entrances.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_credential_id',
+            schema: {
+              description:
+                'ID of the credential for which you want to retrieve all entrances.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'location_id',
+            schema: {
+              deprecated: true,
+              format: 'uuid',
+              nullable: true,
+              type: 'string',
+              'x-deprecated': 'Use `space_id`.',
+            },
+          },
+          {
+            in: 'query',
+            name: 'space_id',
+            schema: {
+              description:
+                'ID of the space for which you want to list entrances.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'access_grant_id',
+            schema: {
+              description:
+                'ID of the access grant for which you want to retrieve all entrances.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'access_method_id',
+            schema: {
+              description:
+                'ID of the access method for which you want to retrieve all entrances.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_entrances: {
+                      items: { $ref: '#/components/schemas/acs_entrance' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_entrances', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/acs/entrances/list',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'entrances'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'acs_entrances',
+        'x-response-key': 'acs_entrances',
+        'x-title': 'List Entrances',
+      },
       post: {
         description:
           'Returns a list of all [access system entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
@@ -29468,6 +31287,70 @@ export default {
       },
     },
     '/acs/entrances/list_credentials_with_access': {
+      get: {
+        description:
+          'Returns a list of all [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) with access to a specified [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+        operationId: 'acsEntrancesListCredentialsWithAccessGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_entrance_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the entrance for which you want to list all credentials that grant access.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'include_if',
+            required: false,
+            schema: {
+              description:
+                'Conditions that credentials must meet to be included in the returned list.',
+              items: { enum: ['visionline_metadata.is_valid'], type: 'string' },
+              type: 'array',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_credentials: {
+                      items: { $ref: '#/components/schemas/acs_credential' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_credentials', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/entrances/list_credentials_with_access',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'entrances'],
+        'x-fern-sdk-method-name': 'list_credentials_with_access',
+        'x-fern-sdk-return-value': 'acs_credentials',
+        'x-response-key': 'acs_credentials',
+        'x-title': 'List Credentials with Access to an Entrance',
+      },
       post: {
         description:
           'Returns a list of all [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) with access to a specified [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
@@ -29537,6 +31420,54 @@ export default {
       },
     },
     '/acs/systems/get': {
+      get: {
+        description:
+          'Returns a specified [access system](https://docs.seam.co/latest/capability-guides/access-systems).',
+        operationId: 'acsSystemsGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_system_id',
+            required: true,
+            schema: {
+              description: 'ID of the access system that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_system: { $ref: '#/components/schemas/acs_system' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_system', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/systems/get',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'systems'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'acs_system',
+        'x-response-key': 'acs_system',
+        'x-title': 'Get an ACS System',
+      },
       post: {
         description:
           'Returns a specified [access system](https://docs.seam.co/latest/capability-guides/access-systems).',
@@ -29593,6 +31524,58 @@ export default {
       },
     },
     '/acs/systems/list': {
+      get: {
+        description:
+          'Returns a list of all [access systems](https://docs.seam.co/latest/capability-guides/access-systems).\n\nTo filter the list of returned access systems by a specific connected account ID, include the `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the response includes all access systems connected to your workspace.',
+        operationId: 'acsSystemsListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'connected_account_id',
+            schema: {
+              description:
+                'ID of the connected account by which you want to filter the list of access systems.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_systems: {
+                      items: { $ref: '#/components/schemas/acs_system' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_systems', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/systems/list',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'systems'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'acs_systems',
+        'x-response-key': 'acs_systems',
+        'x-title': 'List ACS Systems',
+      },
       post: {
         description:
           'Returns a list of all [access systems](https://docs.seam.co/latest/capability-guides/access-systems).\n\nTo filter the list of returned access systems by a specific connected account ID, include the `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the response includes all access systems connected to your workspace.',
@@ -29652,6 +31635,59 @@ export default {
       },
     },
     '/acs/systems/list_compatible_credential_manager_acs_systems': {
+      get: {
+        description:
+          'Returns a list of all credential manager systems that are compatible with a specified [access system](https://docs.seam.co/latest/capability-guides/access-systems).\n\nSpecify the access system for which you want to retrieve all compatible credential manager systems by including the corresponding `acs_system_id` in the request body.',
+        operationId: 'acsSystemsListCompatibleCredentialManagerAcsSystemsGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_system_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the access system for which you want to retrieve all compatible credential manager systems.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_systems: {
+                      items: { $ref: '#/components/schemas/acs_system' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_systems', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/systems/list_compatible_credential_manager_acs_systems',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'systems'],
+        'x-fern-sdk-method-name':
+          'list_compatible_credential_manager_acs_systems',
+        'x-fern-sdk-return-value': 'acs_systems',
+        'x-response-key': 'acs_systems',
+        'x-title': 'List Compatible Credential Manager ACS Systems',
+      },
       post: {
         description:
           'Returns a list of all credential manager systems that are compatible with a specified [access system](https://docs.seam.co/latest/capability-guides/access-systems).\n\nSpecify the access system for which you want to retrieve all compatible credential manager systems by including the corresponding `acs_system_id` in the request body.',
@@ -29819,7 +31855,8 @@ export default {
         ],
         summary: '/acs/users/add_to_access_group',
         tags: ['/acs'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['acs', 'users'],
+        'x-fern-sdk-method-name': 'add_to_access_group',
         'x-response-key': null,
         'x-title': 'Add an ACS User to an Access Group',
       },
@@ -29935,6 +31972,70 @@ export default {
       },
     },
     '/acs/users/delete': {
+      delete: {
+        description:
+          "Deletes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the access system user's [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).",
+        operationId: 'acsUsersDeleteDelete',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_user_id',
+            schema: {
+              description:
+                'ID of the access system user that you want to delete. You must provide either acs_user_id or user_identity_id',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            schema: {
+              description:
+                'ID of the user identity that you want to delete. You must provide either acs_user_id or user_identity_id. If you provide user_identity_id, you must also provide acs_system_id.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_system_id',
+            schema: {
+              description:
+                'ID of the access system that you want to delete. You must provide acs_system_id with user_identity_id.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/users/delete',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'users'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete an ACS User',
+      },
       post: {
         description:
           "Deletes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the access system user's [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).",
@@ -29998,6 +32099,74 @@ export default {
       },
     },
     '/acs/users/get': {
+      get: {
+        description:
+          'Returns a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+        operationId: 'acsUsersGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_user_id',
+            schema: {
+              description:
+                'ID of the access system user that you want to get. You can only provide acs_user_id or user_identity_id.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            schema: {
+              description:
+                'ID of the user identity that you want to get. You can only provide acs_user_id or user_identity_id.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_system_id',
+            schema: {
+              description:
+                'ID of the access system that you want to get. You can only provide acs_user_id or user_identity_id.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_user: { $ref: '#/components/schemas/acs_user' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_user', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/users/get',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'users'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'acs_user',
+        'x-response-key': 'acs_user',
+        'x-title': 'Get an ACS User',
+      },
       post: {
         description:
           'Returns a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
@@ -30065,6 +32234,128 @@ export default {
       },
     },
     '/acs/users/list': {
+      get: {
+        description:
+          'Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+        operationId: 'acsUsersListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            schema: {
+              description:
+                'ID of the user identity for which you want to retrieve all access system users.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identity_phone_number',
+            schema: {
+              description:
+                'Phone number of the user identity for which you want to retrieve all access system users, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`).',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identity_email_address',
+            schema: {
+              description:
+                'Email address of the user identity for which you want to retrieve all access system users.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_system_id',
+            schema: {
+              description:
+                'ID of the `acs_system` for which you want to retrieve all access system users.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned access system users to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address`, `acs_user_id`, `user_identity_id`, `user_identity_full_name` or `user_identity_phone_number`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 500,
+              description: 'Maximum number of records to return per page.',
+              exclusiveMinimum: true,
+              minimum: 0,
+              type: 'integer',
+            },
+          },
+          {
+            in: 'query',
+            name: 'created_before',
+            schema: {
+              description:
+                'Timestamp by which to limit returned access system users. Returns users created before this timestamp.',
+              format: 'date-time',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              nullable: true,
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_users: {
+                      items: { $ref: '#/components/schemas/acs_user' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
+                  },
+                  required: ['acs_users', 'pagination', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/users/list',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'users'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'acs_users',
+        'x-response-key': 'acs_users',
+        'x-title': 'List ACS Users',
+      },
       post: {
         description:
           'Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
@@ -30167,6 +32458,78 @@ export default {
       },
     },
     '/acs/users/list_accessible_entrances': {
+      get: {
+        description:
+          'Lists the [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) has access.',
+        operationId: 'acsUsersListAccessibleEntrancesGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_user_id',
+            schema: {
+              description:
+                'ID of the access system user for whom you want to list accessible entrances. You can only provide acs_user_id or user_identity_id.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            schema: {
+              description:
+                'ID of the user identity for whom you want to list accessible entrances. You can only provide acs_user_id or user_identity_id.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_system_id',
+            schema: {
+              description:
+                'ID of the access system for which you want to list accessible entrances. You can only provide acs_system_id with user_identity_id.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_entrances: {
+                      items: { $ref: '#/components/schemas/acs_entrance' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_entrances', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/users/list_accessible_entrances',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'users'],
+        'x-fern-sdk-method-name': 'list_accessible_entrances',
+        'x-fern-sdk-return-value': 'acs_entrances',
+        'x-response-key': 'acs_entrances',
+        'x-title': 'List ACS User-Accessible Entrances',
+      },
       post: {
         description:
           'Lists the [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) has access.',
@@ -30238,6 +32601,73 @@ export default {
       },
     },
     '/acs/users/remove_from_access_group': {
+      delete: {
+        description:
+          'Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+        operationId: 'acsUsersRemoveFromAccessGroupDelete',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_user_id',
+            required: false,
+            schema: {
+              description:
+                'ID of the access system user that you want to remove from an access group. You can only provide acs_user_id or user_identity_id.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            required: false,
+            schema: {
+              description:
+                'ID of the user identity that you want to remove from an access group. You can only provide acs_user_id or user_identity_id.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_access_group_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the access group from which you want to remove an access system user.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/users/remove_from_access_group',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'users'],
+        'x-fern-sdk-method-name': 'remove_from_access_group',
+        'x-response-key': null,
+        'x-title': 'Remove an ACS User from an Access Group',
+      },
       post: {
         description:
           'Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
@@ -30428,6 +32858,58 @@ export default {
       },
     },
     '/acs/users/unmanaged/get': {
+      get: {
+        description:
+          'Returns a specified unmanaged [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+        operationId: 'acsUsersUnmanagedGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_user_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the unmanaged access system user that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_user: {
+                      $ref: '#/components/schemas/unmanaged_acs_user',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_user', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/users/unmanaged/get',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'users', 'unmanaged'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'acs_user',
+        'x-response-key': 'acs_user',
+        'x-title': 'Get an Unmanaged ACS User',
+        'x-undocumented': 'No unmanaged users are currently implemented.',
+      },
       post: {
         description:
           'Returns a specified unmanaged [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
@@ -30487,6 +32969,98 @@ export default {
       },
     },
     '/acs/users/unmanaged/list': {
+      get: {
+        description:
+          'Returns a list of all unmanaged [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+        operationId: 'acsUsersUnmanagedListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            schema: {
+              description:
+                'ID of the user identity for which you want to retrieve all unmanaged access system users.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identity_phone_number',
+            schema: {
+              description:
+                'Phone number of the user identity for which you want to retrieve all unmanaged access system users.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identity_email_address',
+            schema: {
+              description:
+                'Email address of the user identity for which you want to retrieve all unmanaged access system users.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_system_id',
+            schema: {
+              description:
+                'ID of the access system for which you want to retrieve all unmanaged access system users.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 500,
+              description: 'Number of unmanaged access system users to return.',
+              format: 'float',
+              type: 'number',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_users: {
+                      items: {
+                        $ref: '#/components/schemas/unmanaged_acs_user',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_users', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/users/unmanaged/list',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'users', 'unmanaged'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'acs_users',
+        'x-response-key': 'acs_users',
+        'x-title': 'List Unmanaged ACS Users',
+        'x-undocumented': 'No unmanaged users are currently implemented.',
+      },
       post: {
         description:
           'Returns a list of all unmanaged [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
@@ -30735,7 +33309,8 @@ export default {
         ],
         summary: '/acs/users/update',
         tags: ['/acs'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['acs', 'users'],
+        'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
         'x-title': 'Update an ACS User',
       },
@@ -30847,6 +33422,57 @@ export default {
       },
     },
     '/action_attempts/get': {
+      get: {
+        description:
+          'Returns a specified [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts).',
+        operationId: 'actionAttemptsGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'action_attempt_id',
+            required: true,
+            schema: {
+              description: 'ID of the action attempt that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/action_attempts/get',
+        tags: ['/action_attempts'],
+        'x-fern-sdk-group-name': ['action_attempts'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
+        'x-title': 'Get an Action Attempt',
+      },
       post: {
         description:
           'Returns a specified [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts).',
@@ -30906,6 +33532,58 @@ export default {
       },
     },
     '/action_attempts/list': {
+      get: {
+        description:
+          'Returns a list of the [action attempts](https://docs.seam.co/latest/core-concepts/action-attempts) that you specify as an array of `action_attempt_id`s.',
+        operationId: 'actionAttemptsListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'action_attempt_ids',
+            required: true,
+            schema: {
+              description:
+                'IDs of the action attempts that you want to retrieve.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempts: {
+                      items: { $ref: '#/components/schemas/action_attempt' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempts', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/action_attempts/list',
+        tags: ['/action_attempts'],
+        'x-fern-sdk-group-name': ['action_attempts'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'action_attempts',
+        'x-response-key': 'action_attempts',
+        'x-title': 'List Action Attempts',
+      },
       post: {
         description:
           'Returns a list of the [action attempts](https://docs.seam.co/latest/core-concepts/action-attempts) that you specify as an array of `action_attempt_id`s.',
@@ -30965,6 +33643,81 @@ export default {
       },
     },
     '/bridges/get': {
+      get: {
+        description:
+          'Returns a specified [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
+        operationId: 'bridgesGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'bridge_id',
+            required: true,
+            schema: {
+              description: 'ID of the Seam Bridge that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    bridge: {
+                      description:
+                        'Represents [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
+                      properties: {
+                        bridge_id: {
+                          description: 'ID of Seam Bridge.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        created_at: {
+                          description:
+                            'Date and time at which Seam Bridge was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        workspace_id: {
+                          description:
+                            'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains Seam Bridge.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                      },
+                      required: ['bridge_id', 'workspace_id', 'created_at'],
+                      type: 'object',
+                      'x-route-path': '/bridges',
+                      'x-undocumented': 'Unreleased.',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['bridge', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/bridges/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['bridges'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'bridge',
+        'x-response-key': 'bridge',
+        'x-title': 'Get a Seam Bridge',
+        'x-undocumented': 'Not yet for customer use.',
+      },
       post: {
         description:
           'Returns a specified [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
@@ -31047,6 +33800,73 @@ export default {
       },
     },
     '/bridges/list': {
+      get: {
+        description:
+          'Returns a list of all [Seam Bridges](https://docs.seam.co/latest/capability-guides/seam-bridge).',
+        operationId: 'bridgesListGet',
+        parameters: [],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    bridges: {
+                      items: {
+                        description:
+                          'Represents [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
+                        properties: {
+                          bridge_id: {
+                            description: 'ID of Seam Bridge.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          created_at: {
+                            description:
+                              'Date and time at which Seam Bridge was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          workspace_id: {
+                            description:
+                              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains Seam Bridge.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: ['bridge_id', 'workspace_id', 'created_at'],
+                        type: 'object',
+                        'x-route-path': '/bridges',
+                        'x-undocumented': 'Unreleased.',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['bridges', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/bridges/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['bridges'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'bridges',
+        'x-response-key': 'bridges',
+        'x-title': 'List Seam Bridges',
+        'x-undocumented': 'Not yet for customer use.',
+      },
       post: {
         description:
           'Returns a list of all [Seam Bridges](https://docs.seam.co/latest/capability-guides/seam-bridge).',
@@ -31312,12 +34132,58 @@ export default {
         ],
         summary: '/client_sessions/create',
         tags: ['/client_sessions'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['client_sessions'],
+        'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'client_session',
         'x-response-key': 'client_session',
         'x-title': 'Create a Client Session',
       },
     },
     '/client_sessions/delete': {
+      delete: {
+        description:
+          'Deletes a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
+        operationId: 'clientSessionsDeleteDelete',
+        parameters: [
+          {
+            in: 'query',
+            name: 'client_session_id',
+            required: true,
+            schema: {
+              description: 'ID of the client session that you want to delete.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/client_sessions/delete',
+        tags: ['/client_sessions'],
+        'x-fern-sdk-group-name': ['client_sessions'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete a Client Session',
+      },
       post: {
         description:
           'Deletes a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
@@ -31370,6 +34236,64 @@ export default {
       },
     },
     '/client_sessions/get': {
+      get: {
+        description:
+          'Returns a specified [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
+        operationId: 'clientSessionsGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'client_session_id',
+            schema: {
+              description: 'ID of the client session that you want to get.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identifier_key',
+            schema: {
+              description:
+                'User identifier key associated with the client session that you want to get.',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    client_session: {
+                      $ref: '#/components/schemas/client_session',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['client_session', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/client_sessions/get',
+        tags: ['/client_sessions'],
+        'x-fern-sdk-group-name': ['client_sessions'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'client_session',
+        'x-response-key': 'client_session',
+        'x-title': 'Get a Client Session',
+      },
       post: {
         description:
           'Returns a specified [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
@@ -31603,7 +34527,8 @@ export default {
         ],
         summary: '/client_sessions/grant_access',
         tags: ['/client_sessions'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['client_sessions'],
+        'x-fern-sdk-method-name': 'grant_access',
         'x-response-key': null,
         'x-title': 'Grant Access to a Client Session',
       },
@@ -31694,6 +34619,92 @@ export default {
       },
     },
     '/client_sessions/list': {
+      get: {
+        description:
+          'Returns a list of all [client sessions](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
+        operationId: 'clientSessionsListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'client_session_id',
+            schema: {
+              description:
+                'ID of the client session that you want to retrieve.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identifier_key',
+            schema: {
+              description:
+                'Your user ID for the user by which you want to filter client sessions.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'connect_webview_id',
+            schema: {
+              description:
+                'ID of the [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) for which you want to retrieve client sessions.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'without_user_identifier_key',
+            schema: {
+              description:
+                'Indicates whether to retrieve only client sessions without associated user identifier keys.',
+              type: 'boolean',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            schema: {
+              description:
+                'ID of the [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to retrieve client sessions.',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    client_sessions: {
+                      items: { $ref: '#/components/schemas/client_session' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['client_sessions', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/client_sessions/list',
+        tags: ['/client_sessions'],
+        'x-fern-sdk-group-name': ['client_sessions'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'client_sessions',
+        'x-response-key': 'client_sessions',
+        'x-title': 'List Client Sessions',
+      },
       post: {
         description:
           'Returns a list of all [client sessions](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
@@ -32005,6 +35016,56 @@ export default {
       },
     },
     '/connect_webviews/delete': {
+      delete: {
+        description:
+          'Deletes a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).\n\nYou do not need to delete a Connect Webview once a user completes it. Instead, you can simply ignore completed Connect Webviews.',
+        operationId: 'connectWebviewsDeleteDelete',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connect_webview_id: {
+                    description:
+                      'ID of the Connect Webview that you want to delete.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['connect_webview_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/connect_webviews/delete',
+        tags: ['/connect_webviews'],
+        'x-fern-sdk-group-name': ['connect_webviews'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete a Connect Webview',
+      },
       post: {
         description:
           'Deletes a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).\n\nYou do not need to delete a Connect Webview once a user completes it. Instead, you can simply ignore completed Connect Webviews.',
@@ -32057,6 +35118,58 @@ export default {
       },
     },
     '/connect_webviews/get': {
+      get: {
+        description:
+          "Returns a specified [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).\n\nUnless you're using a `custom_redirect_url`, you should poll a newly-created `connect_webview` to find out if the user has signed in or to get details about what devices they've connected.",
+        operationId: 'connectWebviewsGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'connect_webview_id',
+            required: true,
+            schema: {
+              description: 'ID of the Connect Webview that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    connect_webview: {
+                      $ref: '#/components/schemas/connect_webview',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['connect_webview', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { client_session_with_customer: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/connect_webviews/get',
+        tags: ['/connect_webviews'],
+        'x-fern-sdk-group-name': ['connect_webviews'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'connect_webview',
+        'x-response-key': 'connect_webview',
+        'x-title': 'Get a Connect Webview',
+      },
       post: {
         description:
           "Returns a specified [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).\n\nUnless you're using a `custom_redirect_url`, you should poll a newly-created `connect_webview` to find out if the user has signed in or to get details about what devices they've connected.",
@@ -32117,6 +35230,96 @@ export default {
       },
     },
     '/connect_webviews/list': {
+      get: {
+        description:
+          'Returns a list of all [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews).',
+        operationId: 'connectWebviewsListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'customer_ids',
+            schema: { items: { type: 'string' }, type: 'array' },
+          },
+          {
+            in: 'query',
+            name: 'user_identifier_key',
+            schema: {
+              description:
+                'Your user ID for the user by which you want to filter Connect Webviews.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'custom_metadata_has',
+            schema: {
+              additionalProperties: {
+                oneOf: [{ type: 'string' }, { type: 'boolean' }],
+              },
+              description:
+                'Custom metadata pairs by which you want to [filter Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata). Returns Connect Webviews with `custom_metadata` that contains all of the provided key:value pairs.',
+              type: 'object',
+            },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 500,
+              description: 'Maximum number of records to return per page.',
+              format: 'float',
+              type: 'number',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              nullable: true,
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    connect_webviews: {
+                      items: { $ref: '#/components/schemas/connect_webview' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
+                  },
+                  required: ['connect_webviews', 'pagination', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { client_session_with_customer: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/connect_webviews/list',
+        tags: ['/connect_webviews'],
+        'x-fern-sdk-group-name': ['connect_webviews'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'connect_webviews',
+        'x-response-key': 'connect_webviews',
+        'x-title': 'List Connect Webviews',
+      },
       post: {
         description:
           'Returns a list of all [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews).',
@@ -32199,6 +35402,62 @@ export default {
       },
     },
     '/connected_accounts/delete': {
+      delete: {
+        description:
+          'Deletes a specified [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).\n\nDeleting a connected account triggers a `connected_account.deleted` event and removes the connected account and all data associated with the connected account from Seam, including devices, events, access codes, and so on. For every deleted resource, Seam sends a corresponding deleted event, but the resource is not deleted from the provider.\n\nFor example, if you delete a connected account with a device that has an access code, Seam sends a `connected_account.deleted` event, a `device.deleted` event, and an `access_code.deleted` event, but Seam does not remove the access code from the device.',
+        operationId: 'connectedAccountsDeleteDelete',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connected_account_id: {
+                    description:
+                      'ID of the connected account that you want to delete.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
+                },
+                required: ['connected_account_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/connected_accounts/delete',
+        tags: ['/connected_accounts'],
+        'x-fern-sdk-group-name': ['connected_accounts'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete a Connected Account',
+      },
       post: {
         description:
           'Deletes a specified [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).\n\nDeleting a connected account triggers a `connected_account.deleted` event and removes the connected account and all data associated with the connected account from Seam, including devices, events, access codes, and so on. For every deleted resource, Seam sends a corresponding deleted event, but the resource is not deleted from the provider.\n\nFor example, if you delete a connected account with a device that has an access code, Seam sends a `connected_account.deleted` event, a `device.deleted` event, and an `access_code.deleted` event, but Seam does not remove the access code from the device.',
@@ -32257,6 +35516,46 @@ export default {
       },
     },
     '/connected_accounts/get': {
+      get: {
+        description:
+          'Returns a specified [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+        operationId: 'connectedAccountsGetGet',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    connected_account: {
+                      $ref: '#/components/schemas/connected_account',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['connected_account', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { client_session_with_customer: [] },
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/connected_accounts/get',
+        tags: ['/connected_accounts'],
+        'x-fern-sdk-group-name': ['connected_accounts'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'connected_account',
+        'x-response-key': 'connected_account',
+        'x-title': 'Get a Connected Account',
+      },
       post: {
         description:
           'Returns a specified [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
@@ -32333,6 +35632,99 @@ export default {
       },
     },
     '/connected_accounts/list': {
+      get: {
+        description:
+          'Returns a list of all [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+        operationId: 'connectedAccountsListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'user_identifier_key',
+            schema: {
+              description:
+                'Your user ID for the user by which you want to filter connected accounts.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'custom_metadata_has',
+            schema: {
+              additionalProperties: {
+                oneOf: [{ type: 'string' }, { type: 'boolean' }],
+              },
+              description:
+                'Custom metadata pairs by which you want to filter connected accounts. Returns connected accounts with `custom_metadata` that contains all of the provided key:value pairs.',
+              type: 'object',
+            },
+          },
+          {
+            in: 'query',
+            name: 'customer_ids',
+            schema: {
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 11_000,
+              description: 'Maximum number of records to return per page.',
+              exclusiveMinimum: true,
+              minimum: 0,
+              type: 'integer',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              nullable: true,
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    connected_accounts: {
+                      items: { $ref: '#/components/schemas/connected_account' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
+                  },
+                  required: ['connected_accounts', 'pagination', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/connected_accounts/list',
+        tags: ['/connected_accounts'],
+        'x-fern-sdk-group-name': ['connected_accounts'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'connected_accounts',
+        'x-response-key': 'connected_accounts',
+        'x-title': 'List Connected Accounts',
+      },
       post: {
         description:
           'Returns a list of all [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts).',
@@ -32544,6 +35936,54 @@ export default {
       },
     },
     '/devices/delete': {
+      delete: {
+        description:
+          'Deletes a specified [device](https://docs.seam.co/latest/core-concepts/devices).',
+        operationId: 'devicesDeleteDelete',
+        parameters: [
+          {
+            in: 'query',
+            name: 'device_id',
+            required: true,
+            schema: {
+              description: 'ID of the device that you want to delete.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/devices/delete',
+        tags: ['/devices'],
+        'x-deprecated':
+          'Deleting a device is no longer supported and will be removed.',
+        'x-fern-sdk-group-name': ['devices'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete a Device',
+        'x-undocumented':
+          'Deleting a device is no longer supported and will be removed.',
+      },
       post: {
         description:
           'Deletes a specified [device](https://docs.seam.co/latest/core-concepts/devices).',
@@ -32599,6 +36039,63 @@ export default {
       },
     },
     '/devices/get': {
+      get: {
+        description:
+          'Returns a specified [device](https://docs.seam.co/latest/core-concepts/devices).\n\nYou must specify either `device_id` or `name`.',
+        operationId: 'devicesGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'device_id',
+            schema: {
+              description: 'ID of the device that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'name',
+            schema: {
+              description: 'Name of the device that you want to get.',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    device: { $ref: '#/components/schemas/device' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['device', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { client_session_with_customer: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/devices/get',
+        tags: ['/devices'],
+        'x-fern-sdk-group-name': ['devices'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'device',
+        'x-response-key': 'device',
+        'x-title': 'Get a Device',
+      },
       post: {
         description:
           'Returns a specified [device](https://docs.seam.co/latest/core-concepts/devices).\n\nYou must specify either `device_id` or `name`.',
@@ -32659,6 +36156,400 @@ export default {
       },
     },
     '/devices/list': {
+      get: {
+        description:
+          'Returns a list of all [devices](https://docs.seam.co/latest/core-concepts/devices).',
+        operationId: 'devicesListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'customer_ids',
+            schema: {
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'connected_account_id',
+            schema: {
+              description:
+                'ID of the connected account for which you want to list devices.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'connected_account_ids',
+            schema: {
+              description:
+                'Array of IDs of the connected accounts for which you want to list devices.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'connect_webview_id',
+            schema: {
+              description:
+                'ID of the Connect Webview for which you want to list devices.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_type',
+            schema: {
+              description: 'Device type for which you want to list devices.',
+              oneOf: [
+                {
+                  description: 'Device type for smartlocks.\n          ',
+                  enum: [
+                    'akuvox_lock',
+                    'august_lock',
+                    'brivo_access_point',
+                    'butterflymx_panel',
+                    'avigilon_alta_entry',
+                    'doorking_lock',
+                    'genie_door',
+                    'igloo_lock',
+                    'linear_lock',
+                    'lockly_lock',
+                    'kwikset_lock',
+                    'nuki_lock',
+                    'salto_lock',
+                    'schlage_lock',
+                    'seam_relay',
+                    'smartthings_lock',
+                    'wyze_lock',
+                    'yale_lock',
+                    'two_n_intercom',
+                    'controlbyweb_device',
+                    'ttlock_lock',
+                    'igloohome_lock',
+                    'hubitat_lock',
+                    'four_suites_door',
+                    'dormakaba_oracode_door',
+                    'tedee_lock',
+                    'akiles_lock',
+                  ],
+                  type: 'string',
+                },
+                {
+                  description: 'Device type for noise sensors.\n          ',
+                  enum: ['noiseaware_activity_zone', 'minut_sensor'],
+                  type: 'string',
+                },
+                {
+                  description: 'Device type for thermostats.\n          ',
+                  enum: [
+                    'ecobee_thermostat',
+                    'nest_thermostat',
+                    'honeywell_resideo_thermostat',
+                    'tado_thermostat',
+                    'sensi_thermostat',
+                    'smartthings_thermostat',
+                  ],
+                  type: 'string',
+                },
+                {
+                  description: 'Device type for phones.\n          ',
+                  enum: ['ios_phone', 'android_phone'],
+                  type: 'string',
+                },
+              ],
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_types',
+            schema: {
+              description:
+                'Array of device types for which you want to list devices.',
+              items: {
+                oneOf: [
+                  {
+                    description: 'Device type for smartlocks.\n          ',
+                    enum: [
+                      'akuvox_lock',
+                      'august_lock',
+                      'brivo_access_point',
+                      'butterflymx_panel',
+                      'avigilon_alta_entry',
+                      'doorking_lock',
+                      'genie_door',
+                      'igloo_lock',
+                      'linear_lock',
+                      'lockly_lock',
+                      'kwikset_lock',
+                      'nuki_lock',
+                      'salto_lock',
+                      'schlage_lock',
+                      'seam_relay',
+                      'smartthings_lock',
+                      'wyze_lock',
+                      'yale_lock',
+                      'two_n_intercom',
+                      'controlbyweb_device',
+                      'ttlock_lock',
+                      'igloohome_lock',
+                      'hubitat_lock',
+                      'four_suites_door',
+                      'dormakaba_oracode_door',
+                      'tedee_lock',
+                      'akiles_lock',
+                    ],
+                    type: 'string',
+                  },
+                  {
+                    description: 'Device type for noise sensors.\n          ',
+                    enum: ['noiseaware_activity_zone', 'minut_sensor'],
+                    type: 'string',
+                  },
+                  {
+                    description: 'Device type for thermostats.\n          ',
+                    enum: [
+                      'ecobee_thermostat',
+                      'nest_thermostat',
+                      'honeywell_resideo_thermostat',
+                      'tado_thermostat',
+                      'sensi_thermostat',
+                      'smartthings_thermostat',
+                    ],
+                    type: 'string',
+                  },
+                  {
+                    description: 'Device type for phones.\n          ',
+                    enum: ['ios_phone', 'android_phone'],
+                    type: 'string',
+                  },
+                ],
+              },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'manufacturer',
+            schema: {
+              description: 'Manufacturer for which you want to list devices.',
+              enum: [
+                'akuvox',
+                'august',
+                'avigilon_alta',
+                'brivo',
+                'butterflymx',
+                'doorking',
+                'four_suites',
+                'genie',
+                'igloo',
+                'keywe',
+                'kwikset',
+                'linear',
+                'lockly',
+                'nuki',
+                'philia',
+                'salto',
+                'samsung',
+                'schlage',
+                'seam',
+                'unknown',
+                'wyze',
+                'yale',
+                'two_n',
+                'ttlock',
+                'igloohome',
+                'hubitat',
+                'controlbyweb',
+                'dormakaba_oracode',
+                'tedee',
+                'akiles',
+                'ecobee',
+                'honeywell_resideo',
+                'kwikset2',
+                'minut',
+                'nest',
+                'noiseaware',
+                'tado',
+                'sensi',
+                'smartthings',
+              ],
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_ids',
+            schema: {
+              description:
+                'Array of device IDs for which you want to list devices.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 500,
+              description:
+                'Numerical limit on the number of devices to return.',
+              format: 'float',
+              type: 'number',
+            },
+          },
+          {
+            in: 'query',
+            name: 'created_before',
+            schema: {
+              description:
+                'Timestamp by which to limit returned devices. Returns devices created before this timestamp.',
+              format: 'date-time',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identifier_key',
+            schema: {
+              description:
+                'Your own internal user ID for the user for which you want to list devices.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'custom_metadata_has',
+            schema: {
+              additionalProperties: {
+                oneOf: [{ type: 'string' }, { type: 'boolean' }],
+              },
+              description:
+                'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.',
+              type: 'object',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              nullable: true,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'include_if',
+            schema: {
+              items: {
+                enum: [
+                  'can_remotely_unlock',
+                  'can_remotely_lock',
+                  'can_program_offline_access_codes',
+                  'can_program_online_access_codes',
+                  'can_hvac_heat',
+                  'can_hvac_cool',
+                  'can_hvac_heat_cool',
+                  'can_turn_off_hvac',
+                  'can_simulate_removal',
+                  'can_simulate_connection',
+                  'can_simulate_disconnection',
+                ],
+                type: 'string',
+              },
+              type: 'array',
+              'x-undocumented': 'Only used internally.',
+            },
+          },
+          {
+            in: 'query',
+            name: 'exclude_if',
+            schema: {
+              items: {
+                enum: [
+                  'can_remotely_unlock',
+                  'can_remotely_lock',
+                  'can_program_offline_access_codes',
+                  'can_program_online_access_codes',
+                  'can_hvac_heat',
+                  'can_hvac_cool',
+                  'can_hvac_heat_cool',
+                  'can_turn_off_hvac',
+                  'can_simulate_removal',
+                  'can_simulate_connection',
+                  'can_simulate_disconnection',
+                ],
+                type: 'string',
+              },
+              type: 'array',
+              'x-undocumented': 'Only used internally.',
+            },
+          },
+          {
+            in: 'query',
+            name: 'unstable_location_id',
+            schema: {
+              deprecated: true,
+              format: 'uuid',
+              nullable: true,
+              type: 'string',
+              'x-deprecated': 'Use `space_id`.',
+            },
+          },
+          {
+            in: 'query',
+            name: 'space_id',
+            schema: {
+              description:
+                'ID of the space for which you want to list devices.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    devices: {
+                      items: { $ref: '#/components/schemas/device' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
+                  },
+                  required: ['devices', 'pagination', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session_with_customer: [] },
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/devices/list',
+        tags: ['/devices'],
+        'x-fern-sdk-group-name': ['devices'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'devices',
+        'x-response-key': 'devices',
+        'x-title': 'List Devices',
+      },
       post: {
         description:
           'Returns a list of all [devices](https://docs.seam.co/latest/core-concepts/devices).',
@@ -33002,6 +36893,63 @@ export default {
       },
     },
     '/devices/list_device_providers': {
+      get: {
+        description:
+          'Returns a list of all device providers.\n\nThe information that this endpoint returns for each provider includes a set of [capability flags](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities#capability-flags), such as `device_provider.can_remotely_unlock`. If at least one supported device from a provider has a specific capability, the corresponding capability flag is `true`.\n\nWhen you create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews), you can customize the providers—that is, the brands—that it displays. In the `/connect_webviews/create` request, include the desired set of device provider keys in the `accepted_providers` parameter. See also [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).',
+        operationId: 'devicesListDeviceProvidersGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'provider_category',
+            schema: {
+              description: 'Category for which you want to list providers.',
+              enum: [
+                'stable',
+                'consumer_smartlocks',
+                'thermostats',
+                'noise_sensors',
+                'access_control_systems',
+              ],
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    device_providers: {
+                      items: { $ref: '#/components/schemas/device_provider' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['device_providers', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/devices/list_device_providers',
+        tags: ['/devices'],
+        'x-fern-sdk-group-name': ['devices'],
+        'x-fern-sdk-method-name': 'list_device_providers',
+        'x-fern-sdk-return-value': 'device_providers',
+        'x-response-key': 'device_providers',
+        'x-title': 'List Device Providers',
+      },
       post: {
         description:
           'Returns a list of all device providers.\n\nThe information that this endpoint returns for each provider includes a set of [capability flags](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities#capability-flags), such as `device_provider.can_remotely_unlock`. If at least one supported device from a provider has a specific capability, the corresponding capability flag is `true`.\n\nWhen you create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews), you can customize the providers—that is, the brands—that it displays. In the `/connect_webviews/create` request, include the desired set of device provider keys in the `accepted_providers` parameter. See also [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).',
@@ -33173,6 +37121,57 @@ export default {
       },
     },
     '/devices/simulate/remove': {
+      delete: {
+        description:
+          'Simulates removing a device from Seam. Only applicable for [sandbox devices](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](https://docs.seam.co/latest/core-concepts/devices/testing-your-app-against-device-disconnection-and-removal).',
+        operationId: 'devicesSimulateRemoveDelete',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: {
+                    description:
+                      'ID of the device that you want to simulate removing from Seam.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/devices/simulate/remove',
+        tags: ['/devices'],
+        'x-fern-sdk-group-name': ['devices', 'simulate'],
+        'x-fern-sdk-method-name': 'remove',
+        'x-response-key': null,
+        'x-title': 'Simulate Device Removal',
+      },
       post: {
         description:
           'Simulates removing a device from Seam. Only applicable for [sandbox devices](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](https://docs.seam.co/latest/core-concepts/devices/testing-your-app-against-device-disconnection-and-removal).',
@@ -33226,6 +37225,62 @@ export default {
       },
     },
     '/devices/unmanaged/get': {
+      get: {
+        description:
+          'Returns a specified [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).\n\nAn unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).\n\nYou must specify either `device_id` or `name`.',
+        operationId: 'devicesUnmanagedGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'device_id',
+            schema: {
+              description: 'ID of the unmanaged device that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'name',
+            schema: {
+              description: 'Name of the unmanaged device that you want to get.',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    device: { $ref: '#/components/schemas/unmanaged_device' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['device', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/devices/unmanaged/get',
+        tags: ['/devices'],
+        'x-fern-sdk-group-name': ['devices', 'unmanaged'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'device',
+        'x-response-key': 'device',
+        'x-title': 'Get an Unmanaged Device',
+      },
       post: {
         description:
           'Returns a specified [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).\n\nAn unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).\n\nYou must specify either `device_id` or `name`.',
@@ -33287,6 +37342,397 @@ export default {
       },
     },
     '/devices/unmanaged/list': {
+      get: {
+        description:
+          'Returns a list of all [unmanaged devices](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).\n\nAn unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).',
+        operationId: 'devicesUnmanagedListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'customer_ids',
+            schema: {
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'connected_account_id',
+            schema: {
+              description:
+                'ID of the connected account for which you want to list devices.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'connected_account_ids',
+            schema: {
+              description:
+                'Array of IDs of the connected accounts for which you want to list devices.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'connect_webview_id',
+            schema: {
+              description:
+                'ID of the Connect Webview for which you want to list devices.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_type',
+            schema: {
+              description: 'Device type for which you want to list devices.',
+              oneOf: [
+                {
+                  description: 'Device type for smartlocks.\n          ',
+                  enum: [
+                    'akuvox_lock',
+                    'august_lock',
+                    'brivo_access_point',
+                    'butterflymx_panel',
+                    'avigilon_alta_entry',
+                    'doorking_lock',
+                    'genie_door',
+                    'igloo_lock',
+                    'linear_lock',
+                    'lockly_lock',
+                    'kwikset_lock',
+                    'nuki_lock',
+                    'salto_lock',
+                    'schlage_lock',
+                    'seam_relay',
+                    'smartthings_lock',
+                    'wyze_lock',
+                    'yale_lock',
+                    'two_n_intercom',
+                    'controlbyweb_device',
+                    'ttlock_lock',
+                    'igloohome_lock',
+                    'hubitat_lock',
+                    'four_suites_door',
+                    'dormakaba_oracode_door',
+                    'tedee_lock',
+                    'akiles_lock',
+                  ],
+                  type: 'string',
+                },
+                {
+                  description: 'Device type for noise sensors.\n          ',
+                  enum: ['noiseaware_activity_zone', 'minut_sensor'],
+                  type: 'string',
+                },
+                {
+                  description: 'Device type for thermostats.\n          ',
+                  enum: [
+                    'ecobee_thermostat',
+                    'nest_thermostat',
+                    'honeywell_resideo_thermostat',
+                    'tado_thermostat',
+                    'sensi_thermostat',
+                    'smartthings_thermostat',
+                  ],
+                  type: 'string',
+                },
+                {
+                  description: 'Device type for phones.\n          ',
+                  enum: ['ios_phone', 'android_phone'],
+                  type: 'string',
+                },
+              ],
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_types',
+            schema: {
+              description:
+                'Array of device types for which you want to list devices.',
+              items: {
+                oneOf: [
+                  {
+                    description: 'Device type for smartlocks.\n          ',
+                    enum: [
+                      'akuvox_lock',
+                      'august_lock',
+                      'brivo_access_point',
+                      'butterflymx_panel',
+                      'avigilon_alta_entry',
+                      'doorking_lock',
+                      'genie_door',
+                      'igloo_lock',
+                      'linear_lock',
+                      'lockly_lock',
+                      'kwikset_lock',
+                      'nuki_lock',
+                      'salto_lock',
+                      'schlage_lock',
+                      'seam_relay',
+                      'smartthings_lock',
+                      'wyze_lock',
+                      'yale_lock',
+                      'two_n_intercom',
+                      'controlbyweb_device',
+                      'ttlock_lock',
+                      'igloohome_lock',
+                      'hubitat_lock',
+                      'four_suites_door',
+                      'dormakaba_oracode_door',
+                      'tedee_lock',
+                      'akiles_lock',
+                    ],
+                    type: 'string',
+                  },
+                  {
+                    description: 'Device type for noise sensors.\n          ',
+                    enum: ['noiseaware_activity_zone', 'minut_sensor'],
+                    type: 'string',
+                  },
+                  {
+                    description: 'Device type for thermostats.\n          ',
+                    enum: [
+                      'ecobee_thermostat',
+                      'nest_thermostat',
+                      'honeywell_resideo_thermostat',
+                      'tado_thermostat',
+                      'sensi_thermostat',
+                      'smartthings_thermostat',
+                    ],
+                    type: 'string',
+                  },
+                  {
+                    description: 'Device type for phones.\n          ',
+                    enum: ['ios_phone', 'android_phone'],
+                    type: 'string',
+                  },
+                ],
+              },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'manufacturer',
+            schema: {
+              description: 'Manufacturer for which you want to list devices.',
+              enum: [
+                'akuvox',
+                'august',
+                'avigilon_alta',
+                'brivo',
+                'butterflymx',
+                'doorking',
+                'four_suites',
+                'genie',
+                'igloo',
+                'keywe',
+                'kwikset',
+                'linear',
+                'lockly',
+                'nuki',
+                'philia',
+                'salto',
+                'samsung',
+                'schlage',
+                'seam',
+                'unknown',
+                'wyze',
+                'yale',
+                'two_n',
+                'ttlock',
+                'igloohome',
+                'hubitat',
+                'controlbyweb',
+                'dormakaba_oracode',
+                'tedee',
+                'akiles',
+                'ecobee',
+                'honeywell_resideo',
+                'kwikset2',
+                'minut',
+                'nest',
+                'noiseaware',
+                'tado',
+                'sensi',
+                'smartthings',
+              ],
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_ids',
+            schema: {
+              description:
+                'Array of device IDs for which you want to list devices.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 500,
+              description:
+                'Numerical limit on the number of devices to return.',
+              format: 'float',
+              type: 'number',
+            },
+          },
+          {
+            in: 'query',
+            name: 'created_before',
+            schema: {
+              description:
+                'Timestamp by which to limit returned devices. Returns devices created before this timestamp.',
+              format: 'date-time',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identifier_key',
+            schema: {
+              description:
+                'Your own internal user ID for the user for which you want to list devices.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'custom_metadata_has',
+            schema: {
+              additionalProperties: {
+                oneOf: [{ type: 'string' }, { type: 'boolean' }],
+              },
+              description:
+                'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.',
+              type: 'object',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              nullable: true,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'include_if',
+            schema: {
+              items: {
+                enum: [
+                  'can_remotely_unlock',
+                  'can_remotely_lock',
+                  'can_program_offline_access_codes',
+                  'can_program_online_access_codes',
+                  'can_hvac_heat',
+                  'can_hvac_cool',
+                  'can_hvac_heat_cool',
+                  'can_turn_off_hvac',
+                  'can_simulate_removal',
+                  'can_simulate_connection',
+                  'can_simulate_disconnection',
+                ],
+                type: 'string',
+              },
+              type: 'array',
+              'x-undocumented': 'Only used internally.',
+            },
+          },
+          {
+            in: 'query',
+            name: 'exclude_if',
+            schema: {
+              items: {
+                enum: [
+                  'can_remotely_unlock',
+                  'can_remotely_lock',
+                  'can_program_offline_access_codes',
+                  'can_program_online_access_codes',
+                  'can_hvac_heat',
+                  'can_hvac_cool',
+                  'can_hvac_heat_cool',
+                  'can_turn_off_hvac',
+                  'can_simulate_removal',
+                  'can_simulate_connection',
+                  'can_simulate_disconnection',
+                ],
+                type: 'string',
+              },
+              type: 'array',
+              'x-undocumented': 'Only used internally.',
+            },
+          },
+          {
+            in: 'query',
+            name: 'unstable_location_id',
+            schema: {
+              deprecated: true,
+              format: 'uuid',
+              nullable: true,
+              type: 'string',
+              'x-deprecated': 'Use `space_id`.',
+            },
+          },
+          {
+            in: 'query',
+            name: 'space_id',
+            schema: {
+              description:
+                'ID of the space for which you want to list devices.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    devices: {
+                      items: { $ref: '#/components/schemas/unmanaged_device' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['devices', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/devices/unmanaged/list',
+        tags: ['/devices'],
+        'x-fern-sdk-group-name': ['devices', 'unmanaged'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'devices',
+        'x-response-key': 'devices',
+        'x-title': 'List Unmanaged Devices',
+      },
       post: {
         description:
           'Returns a list of all [unmanaged devices](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).\n\nAn unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).',
@@ -33678,7 +38124,8 @@ export default {
         ],
         summary: '/devices/unmanaged/update',
         tags: ['/devices'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['devices', 'unmanaged'],
+        'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
         'x-title': 'Update an Unmanaged Device',
       },
@@ -33819,7 +38266,8 @@ export default {
         ],
         summary: '/devices/update',
         tags: ['/devices'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['devices'],
+        'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
         'x-title': 'Update a Device',
       },
@@ -33909,6 +38357,75 @@ export default {
       },
     },
     '/events/get': {
+      get: {
+        description:
+          'Returns a specified event. This endpoint returns the same event that would be sent to a [webhook](https://docs.seam.co/latest/developer-tools/webhooks), but it enables you to retrieve an event that already took place.',
+        operationId: 'eventsGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'event_id',
+            schema: {
+              description:
+                'Unique identifier for the event that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'event_type',
+            schema: {
+              description: 'Type of the event that you want to get.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_id',
+            schema: {
+              description:
+                'Unique identifier for the device that triggered the event that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    event: { $ref: '#/components/schemas/event' },
+                    message: { type: 'string' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/events/get',
+        tags: ['/events'],
+        'x-fern-sdk-group-name': ['events'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'event',
+        'x-response-key': 'event',
+        'x-title': 'Get an Event',
+      },
       post: {
         description:
           'Returns a specified event. This endpoint returns the same event that would be sent to a [webhook](https://docs.seam.co/latest/developer-tools/webhooks), but it enables you to retrieve an event that already took place.',
@@ -33977,6 +38494,396 @@ export default {
       },
     },
     '/events/list': {
+      get: {
+        description:
+          'Returns a list of all events. This endpoint returns the same events that would be sent to a [webhook](https://docs.seam.co/latest/developer-tools/webhooks), but it enables you to filter or see events that already took place.',
+        operationId: 'eventsListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'unstable_offset',
+            schema: {
+              description: 'Offset for the events that you want to list.',
+              format: 'float',
+              type: 'number',
+            },
+          },
+          {
+            in: 'query',
+            name: 'since',
+            schema: {
+              description:
+                'Timestamp to indicate the beginning generation time for the events that you want to list. You must include `since` or `between`.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'between',
+            schema: {
+              description:
+                'Lower and upper timestamps to define an exclusive interval containing the events that you want to list. You must include `since` or `between`.',
+              items: {
+                oneOf: [
+                  { type: 'string' },
+                  { format: 'date-time', type: 'string' },
+                ],
+              },
+              maxItems: 2,
+              minItems: 2,
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_id',
+            schema: {
+              description:
+                'ID of the device for which you want to list events.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_ids',
+            schema: {
+              description:
+                'IDs of the devices for which you want to list events.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_system_id',
+            schema: {
+              description:
+                'ID of the access system for which you want to list events.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_system_ids',
+            schema: {
+              description:
+                'IDs of the access systems for which you want to list events.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'access_code_id',
+            schema: {
+              description:
+                'ID of the access code for which you want to list events.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'access_code_ids',
+            schema: {
+              description:
+                'IDs of the access codes for which you want to list events.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'event_type',
+            schema: {
+              description: 'Type of the events that you want to list.',
+              enum: [
+                'access_code.created',
+                'access_code.changed',
+                'access_code.scheduled_on_device',
+                'access_code.set_on_device',
+                'access_code.removed_from_device',
+                'access_code.delay_in_setting_on_device',
+                'access_code.failed_to_set_on_device',
+                'access_code.deleted',
+                'access_code.delay_in_removing_from_device',
+                'access_code.failed_to_remove_from_device',
+                'access_code.modified_external_to_seam',
+                'access_code.deleted_external_to_seam',
+                'access_code.backup_access_code_pulled',
+                'access_code.unmanaged.converted_to_managed',
+                'access_code.unmanaged.failed_to_convert_to_managed',
+                'access_code.unmanaged.created',
+                'access_code.unmanaged.removed',
+                'access_grant.created',
+                'access_grant.deleted',
+                'access_grant.access_granted_to_all_doors',
+                'access_grant.access_granted_to_door',
+                'access_grant.access_to_door_lost',
+                'access_method.issued',
+                'access_method.revoked',
+                'access_method.card_encoding_required',
+                'access_method.deleted',
+                'access_method.reissued',
+                'acs_system.connected',
+                'acs_system.added',
+                'acs_system.disconnected',
+                'acs_credential.deleted',
+                'acs_credential.issued',
+                'acs_credential.reissued',
+                'acs_credential.invalidated',
+                'acs_user.created',
+                'acs_user.deleted',
+                'acs_encoder.added',
+                'acs_encoder.removed',
+                'acs_access_group.deleted',
+                'acs_entrance.added',
+                'acs_entrance.removed',
+                'client_session.deleted',
+                'connected_account.connected',
+                'connected_account.created',
+                'connected_account.successful_login',
+                'connected_account.disconnected',
+                'connected_account.completed_first_sync',
+                'connected_account.deleted',
+                'connected_account.completed_first_sync_after_reconnection',
+                'action_attempt.lock_door.succeeded',
+                'action_attempt.lock_door.failed',
+                'action_attempt.unlock_door.succeeded',
+                'action_attempt.unlock_door.failed',
+                'connect_webview.login_succeeded',
+                'connect_webview.login_failed',
+                'device.connected',
+                'device.added',
+                'device.converted_to_unmanaged',
+                'device.unmanaged.converted_to_managed',
+                'device.unmanaged.connected',
+                'device.disconnected',
+                'device.unmanaged.disconnected',
+                'device.tampered',
+                'device.low_battery',
+                'device.battery_status_changed',
+                'device.removed',
+                'device.deleted',
+                'device.third_party_integration_detected',
+                'device.third_party_integration_no_longer_detected',
+                'device.salto.privacy_mode_activated',
+                'device.salto.privacy_mode_deactivated',
+                'device.connection_became_flaky',
+                'device.connection_stabilized',
+                'device.error.subscription_required',
+                'device.error.subscription_required.resolved',
+                'device.accessory_keypad_connected',
+                'device.accessory_keypad_disconnected',
+                'noise_sensor.noise_threshold_triggered',
+                'lock.locked',
+                'lock.unlocked',
+                'lock.access_denied',
+                'thermostat.climate_preset_activated',
+                'thermostat.manually_adjusted',
+                'thermostat.temperature_threshold_exceeded',
+                'thermostat.temperature_threshold_no_longer_exceeded',
+                'thermostat.temperature_reached_set_point',
+                'thermostat.temperature_changed',
+                'device.name_changed',
+                'enrollment_automation.deleted',
+                'phone.deactivated',
+              ],
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'event_types',
+            schema: {
+              description: 'Types of the events that you want to list.',
+              items: {
+                enum: [
+                  'access_code.created',
+                  'access_code.changed',
+                  'access_code.scheduled_on_device',
+                  'access_code.set_on_device',
+                  'access_code.removed_from_device',
+                  'access_code.delay_in_setting_on_device',
+                  'access_code.failed_to_set_on_device',
+                  'access_code.deleted',
+                  'access_code.delay_in_removing_from_device',
+                  'access_code.failed_to_remove_from_device',
+                  'access_code.modified_external_to_seam',
+                  'access_code.deleted_external_to_seam',
+                  'access_code.backup_access_code_pulled',
+                  'access_code.unmanaged.converted_to_managed',
+                  'access_code.unmanaged.failed_to_convert_to_managed',
+                  'access_code.unmanaged.created',
+                  'access_code.unmanaged.removed',
+                  'access_grant.created',
+                  'access_grant.deleted',
+                  'access_grant.access_granted_to_all_doors',
+                  'access_grant.access_granted_to_door',
+                  'access_grant.access_to_door_lost',
+                  'access_method.issued',
+                  'access_method.revoked',
+                  'access_method.card_encoding_required',
+                  'access_method.deleted',
+                  'access_method.reissued',
+                  'acs_system.connected',
+                  'acs_system.added',
+                  'acs_system.disconnected',
+                  'acs_credential.deleted',
+                  'acs_credential.issued',
+                  'acs_credential.reissued',
+                  'acs_credential.invalidated',
+                  'acs_user.created',
+                  'acs_user.deleted',
+                  'acs_encoder.added',
+                  'acs_encoder.removed',
+                  'acs_access_group.deleted',
+                  'acs_entrance.added',
+                  'acs_entrance.removed',
+                  'client_session.deleted',
+                  'connected_account.connected',
+                  'connected_account.created',
+                  'connected_account.successful_login',
+                  'connected_account.disconnected',
+                  'connected_account.completed_first_sync',
+                  'connected_account.deleted',
+                  'connected_account.completed_first_sync_after_reconnection',
+                  'action_attempt.lock_door.succeeded',
+                  'action_attempt.lock_door.failed',
+                  'action_attempt.unlock_door.succeeded',
+                  'action_attempt.unlock_door.failed',
+                  'connect_webview.login_succeeded',
+                  'connect_webview.login_failed',
+                  'device.connected',
+                  'device.added',
+                  'device.converted_to_unmanaged',
+                  'device.unmanaged.converted_to_managed',
+                  'device.unmanaged.connected',
+                  'device.disconnected',
+                  'device.unmanaged.disconnected',
+                  'device.tampered',
+                  'device.low_battery',
+                  'device.battery_status_changed',
+                  'device.removed',
+                  'device.deleted',
+                  'device.third_party_integration_detected',
+                  'device.third_party_integration_no_longer_detected',
+                  'device.salto.privacy_mode_activated',
+                  'device.salto.privacy_mode_deactivated',
+                  'device.connection_became_flaky',
+                  'device.connection_stabilized',
+                  'device.error.subscription_required',
+                  'device.error.subscription_required.resolved',
+                  'device.accessory_keypad_connected',
+                  'device.accessory_keypad_disconnected',
+                  'noise_sensor.noise_threshold_triggered',
+                  'lock.locked',
+                  'lock.unlocked',
+                  'lock.access_denied',
+                  'thermostat.climate_preset_activated',
+                  'thermostat.manually_adjusted',
+                  'thermostat.temperature_threshold_exceeded',
+                  'thermostat.temperature_threshold_no_longer_exceeded',
+                  'thermostat.temperature_reached_set_point',
+                  'thermostat.temperature_changed',
+                  'device.name_changed',
+                  'enrollment_automation.deleted',
+                  'phone.deactivated',
+                ],
+                type: 'string',
+              },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'connected_account_id',
+            schema: {
+              description:
+                'ID of the connected account for which you want to list events.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'connect_webview_id',
+            schema: {
+              description:
+                'IDs of the connected accounts for which you want to list events.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 500,
+              description: 'Numerical limit on the number of events to return.',
+              format: 'float',
+              type: 'number',
+            },
+          },
+          {
+            in: 'query',
+            name: 'event_ids',
+            schema: {
+              description: 'IDs of the events that you want to list.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'customer_ids',
+            schema: {
+              description:
+                'IDs of the customers for which you want to list events.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    events: {
+                      items: { $ref: '#/components/schemas/event' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['events', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/events/list',
+        tags: ['/events'],
+        'x-fern-sdk-group-name': ['events'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'events',
+        'x-response-key': 'events',
+        'x-title': 'List Events',
+      },
       post: {
         description:
           'Returns a list of all events. This endpoint returns the same events that would be sent to a [webhook](https://docs.seam.co/latest/developer-tools/webhooks), but it enables you to filter or see events that already took place.',
@@ -34315,6 +39222,64 @@ export default {
       },
     },
     '/locks/get': {
+      get: {
+        description:
+          'Returns a specified [lock](https://docs.seam.co/latest/capability-guides/smart-locks). **Use `/devices/get` instead.**',
+        operationId: 'locksGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'device_id',
+            schema: {
+              description: 'ID of the lock that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'name',
+            schema: {
+              description: 'Name of the lock that you want to get.',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    device: { $ref: '#/components/schemas/device' },
+                    lock: { $ref: '#/components/schemas/device' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['lock', 'device', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/locks/get',
+        tags: ['/locks'],
+        'x-deprecated': 'Use `/devices/get` instead.',
+        'x-fern-sdk-group-name': ['locks'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'device',
+        'x-response-key': 'device',
+        'x-title': 'Get a Lock',
+      },
       post: {
         description:
           'Returns a specified [lock](https://docs.seam.co/latest/capability-guides/smart-locks). **Use `/devices/get` instead.**',
@@ -34376,6 +39341,337 @@ export default {
       },
     },
     '/locks/list': {
+      get: {
+        description:
+          'Returns a list of all [locks](https://docs.seam.co/latest/capability-guides/smart-locks).',
+        operationId: 'locksListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'customer_ids',
+            schema: {
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'connected_account_id',
+            schema: {
+              description:
+                'ID of the connected account for which you want to list devices.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'connected_account_ids',
+            schema: {
+              description:
+                'Array of IDs of the connected accounts for which you want to list devices.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'connect_webview_id',
+            schema: {
+              description:
+                'ID of the Connect Webview for which you want to list devices.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_type',
+            schema: {
+              description: 'Device type of the locks that you want to list.',
+              enum: [
+                'akuvox_lock',
+                'august_lock',
+                'brivo_access_point',
+                'butterflymx_panel',
+                'avigilon_alta_entry',
+                'doorking_lock',
+                'genie_door',
+                'igloo_lock',
+                'linear_lock',
+                'lockly_lock',
+                'kwikset_lock',
+                'nuki_lock',
+                'salto_lock',
+                'schlage_lock',
+                'seam_relay',
+                'smartthings_lock',
+                'wyze_lock',
+                'yale_lock',
+                'two_n_intercom',
+                'controlbyweb_device',
+                'ttlock_lock',
+                'igloohome_lock',
+                'hubitat_lock',
+                'four_suites_door',
+                'dormakaba_oracode_door',
+                'tedee_lock',
+                'akiles_lock',
+              ],
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_types',
+            schema: {
+              description: 'Device types of the locks that you want to list.',
+              items: {
+                description: 'Device type for smartlocks.\n          ',
+                enum: [
+                  'akuvox_lock',
+                  'august_lock',
+                  'brivo_access_point',
+                  'butterflymx_panel',
+                  'avigilon_alta_entry',
+                  'doorking_lock',
+                  'genie_door',
+                  'igloo_lock',
+                  'linear_lock',
+                  'lockly_lock',
+                  'kwikset_lock',
+                  'nuki_lock',
+                  'salto_lock',
+                  'schlage_lock',
+                  'seam_relay',
+                  'smartthings_lock',
+                  'wyze_lock',
+                  'yale_lock',
+                  'two_n_intercom',
+                  'controlbyweb_device',
+                  'ttlock_lock',
+                  'igloohome_lock',
+                  'hubitat_lock',
+                  'four_suites_door',
+                  'dormakaba_oracode_door',
+                  'tedee_lock',
+                  'akiles_lock',
+                ],
+                type: 'string',
+              },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'manufacturer',
+            schema: {
+              description: 'Manufacturer of the locks that you want to list.',
+              enum: [
+                'akuvox',
+                'august',
+                'brivo',
+                'butterflymx',
+                'avigilon_alta',
+                'doorking',
+                'genie',
+                'igloo',
+                'linear',
+                'lockly',
+                'kwikset',
+                'nuki',
+                'salto',
+                'schlage',
+                'seam',
+                'wyze',
+                'yale',
+                'two_n',
+                'controlbyweb',
+                'ttlock',
+                'igloohome',
+                'hubitat',
+                'four_suites',
+                'dormakaba_oracode',
+                'tedee',
+                'akiles',
+                'kwikset2',
+                'smartthings',
+              ],
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_ids',
+            schema: {
+              description:
+                'Array of device IDs for which you want to list devices.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 500,
+              description:
+                'Numerical limit on the number of devices to return.',
+              format: 'float',
+              type: 'number',
+            },
+          },
+          {
+            in: 'query',
+            name: 'created_before',
+            schema: {
+              description:
+                'Timestamp by which to limit returned devices. Returns devices created before this timestamp.',
+              format: 'date-time',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identifier_key',
+            schema: {
+              description:
+                'Your own internal user ID for the user for which you want to list devices.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'custom_metadata_has',
+            schema: {
+              additionalProperties: {
+                oneOf: [{ type: 'string' }, { type: 'boolean' }],
+              },
+              description:
+                'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.',
+              type: 'object',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              nullable: true,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'include_if',
+            schema: {
+              items: {
+                enum: [
+                  'can_remotely_unlock',
+                  'can_remotely_lock',
+                  'can_program_offline_access_codes',
+                  'can_program_online_access_codes',
+                  'can_hvac_heat',
+                  'can_hvac_cool',
+                  'can_hvac_heat_cool',
+                  'can_turn_off_hvac',
+                  'can_simulate_removal',
+                  'can_simulate_connection',
+                  'can_simulate_disconnection',
+                ],
+                type: 'string',
+              },
+              type: 'array',
+              'x-undocumented': 'Only used internally.',
+            },
+          },
+          {
+            in: 'query',
+            name: 'exclude_if',
+            schema: {
+              items: {
+                enum: [
+                  'can_remotely_unlock',
+                  'can_remotely_lock',
+                  'can_program_offline_access_codes',
+                  'can_program_online_access_codes',
+                  'can_hvac_heat',
+                  'can_hvac_cool',
+                  'can_hvac_heat_cool',
+                  'can_turn_off_hvac',
+                  'can_simulate_removal',
+                  'can_simulate_connection',
+                  'can_simulate_disconnection',
+                ],
+                type: 'string',
+              },
+              type: 'array',
+              'x-undocumented': 'Only used internally.',
+            },
+          },
+          {
+            in: 'query',
+            name: 'unstable_location_id',
+            schema: {
+              deprecated: true,
+              format: 'uuid',
+              nullable: true,
+              type: 'string',
+              'x-deprecated': 'Use `space_id`.',
+            },
+          },
+          {
+            in: 'query',
+            name: 'space_id',
+            schema: {
+              description:
+                'ID of the space for which you want to list devices.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    devices: {
+                      items: { $ref: '#/components/schemas/device' },
+                      type: 'array',
+                    },
+                    locks: {
+                      items: { $ref: '#/components/schemas/device' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['locks', 'devices', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/locks/list',
+        tags: ['/locks'],
+        'x-fern-sdk-group-name': ['locks'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'devices',
+        'x-response-key': 'devices',
+        'x-title': 'List Locks',
+      },
       post: {
         description:
           'Returns a list of all [locks](https://docs.seam.co/latest/capability-guides/smart-locks).',
@@ -34906,6 +40202,64 @@ export default {
       },
     },
     '/networks/get': {
+      get: {
+        operationId: 'networksGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'network_id',
+            required: true,
+            schema: { format: 'uuid', type: 'string' },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    network: {
+                      properties: {
+                        created_at: { format: 'date-time', type: 'string' },
+                        display_name: { type: 'string' },
+                        network_id: { format: 'uuid', type: 'string' },
+                        workspace_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: [
+                        'network_id',
+                        'workspace_id',
+                        'display_name',
+                        'created_at',
+                      ],
+                      type: 'object',
+                      'x-route-path': '/networks',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['network', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/networks/get',
+        tags: ['/networks'],
+        'x-deprecated': 'Will be removed.',
+        'x-fern-sdk-group-name': ['networks'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'network',
+        'x-response-key': 'network',
+        'x-undocumented': 'Deprecated.',
+      },
       post: {
         operationId: 'networksGetPost',
         requestBody: {
@@ -34969,6 +40323,60 @@ export default {
       },
     },
     '/networks/list': {
+      get: {
+        operationId: 'networksListGet',
+        parameters: [],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    networks: {
+                      items: {
+                        properties: {
+                          created_at: { format: 'date-time', type: 'string' },
+                          display_name: { type: 'string' },
+                          network_id: { format: 'uuid', type: 'string' },
+                          workspace_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: [
+                          'network_id',
+                          'workspace_id',
+                          'display_name',
+                          'created_at',
+                        ],
+                        type: 'object',
+                        'x-route-path': '/networks',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['networks', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/networks/list',
+        tags: ['/networks'],
+        'x-deprecated': 'Will be removed.',
+        'x-fern-sdk-group-name': ['networks'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'networks',
+        'x-response-key': 'networks',
+        'x-undocumented': 'Deprecated.',
+      },
       post: {
         operationId: 'networksListPost',
         requestBody: {
@@ -35029,6 +40437,255 @@ export default {
       },
     },
     '/noise_sensors/list': {
+      get: {
+        description:
+          'Returns a list of all [noise sensors](https://docs.seam.co/latest/capability-guides/noise-sensors).',
+        operationId: 'noiseSensorsListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'customer_ids',
+            schema: {
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'connected_account_id',
+            schema: {
+              description:
+                'ID of the connected account for which you want to list devices.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'connected_account_ids',
+            schema: {
+              description:
+                'Array of IDs of the connected accounts for which you want to list devices.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'connect_webview_id',
+            schema: {
+              description:
+                'ID of the Connect Webview for which you want to list devices.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_type',
+            schema: {
+              description:
+                'Device type of the noise sensors that you want to list.',
+              enum: ['noiseaware_activity_zone', 'minut_sensor'],
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_types',
+            schema: {
+              description:
+                'Device types of the noise sensors that you want to list.',
+              items: {
+                description: 'Device type for noise sensors.\n          ',
+                enum: ['noiseaware_activity_zone', 'minut_sensor'],
+                type: 'string',
+              },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'manufacturer',
+            schema: {
+              description:
+                'Manufacturers of the noise sensors that you want to list.',
+              enum: ['minut', 'noiseaware'],
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_ids',
+            schema: {
+              description:
+                'Array of device IDs for which you want to list devices.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 500,
+              description:
+                'Numerical limit on the number of devices to return.',
+              format: 'float',
+              type: 'number',
+            },
+          },
+          {
+            in: 'query',
+            name: 'created_before',
+            schema: {
+              description:
+                'Timestamp by which to limit returned devices. Returns devices created before this timestamp.',
+              format: 'date-time',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identifier_key',
+            schema: {
+              description:
+                'Your own internal user ID for the user for which you want to list devices.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'custom_metadata_has',
+            schema: {
+              additionalProperties: {
+                oneOf: [{ type: 'string' }, { type: 'boolean' }],
+              },
+              description:
+                'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.',
+              type: 'object',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              nullable: true,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'include_if',
+            schema: {
+              items: {
+                enum: [
+                  'can_remotely_unlock',
+                  'can_remotely_lock',
+                  'can_program_offline_access_codes',
+                  'can_program_online_access_codes',
+                  'can_hvac_heat',
+                  'can_hvac_cool',
+                  'can_hvac_heat_cool',
+                  'can_turn_off_hvac',
+                  'can_simulate_removal',
+                  'can_simulate_connection',
+                  'can_simulate_disconnection',
+                ],
+                type: 'string',
+              },
+              type: 'array',
+              'x-undocumented': 'Only used internally.',
+            },
+          },
+          {
+            in: 'query',
+            name: 'exclude_if',
+            schema: {
+              items: {
+                enum: [
+                  'can_remotely_unlock',
+                  'can_remotely_lock',
+                  'can_program_offline_access_codes',
+                  'can_program_online_access_codes',
+                  'can_hvac_heat',
+                  'can_hvac_cool',
+                  'can_hvac_heat_cool',
+                  'can_turn_off_hvac',
+                  'can_simulate_removal',
+                  'can_simulate_connection',
+                  'can_simulate_disconnection',
+                ],
+                type: 'string',
+              },
+              type: 'array',
+              'x-undocumented': 'Only used internally.',
+            },
+          },
+          {
+            in: 'query',
+            name: 'unstable_location_id',
+            schema: {
+              deprecated: true,
+              format: 'uuid',
+              nullable: true,
+              type: 'string',
+              'x-deprecated': 'Use `space_id`.',
+            },
+          },
+          {
+            in: 'query',
+            name: 'space_id',
+            schema: {
+              description:
+                'ID of the space for which you want to list devices.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    devices: {
+                      items: { $ref: '#/components/schemas/device' },
+                      type: 'array',
+                    },
+                    noise_sensors: {
+                      items: { $ref: '#/components/schemas/device' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['noise_sensors', 'devices', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/noise_sensors/list',
+        tags: ['/noise_sensors'],
+        'x-fern-sdk-group-name': ['noise_sensors'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'devices',
+        'x-response-key': 'devices',
+        'x-title': 'List Noise Sensors',
+      },
       post: {
         description:
           'Returns a list of all [noise sensors](https://docs.seam.co/latest/capability-guides/noise-sensors).',
@@ -35314,6 +40971,73 @@ export default {
       },
     },
     '/noise_sensors/noise_thresholds/delete': {
+      delete: {
+        description:
+          'Deletes a [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) from a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors).',
+        operationId: 'noiseSensorsNoiseThresholdsDeleteDelete',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: {
+                    description:
+                      'ID of the device that contains the noise threshold that you want to delete.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  noise_threshold_id: {
+                    description:
+                      'ID of the noise threshold that you want to delete.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
+                },
+                required: ['noise_threshold_id', 'device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/noise_sensors/noise_thresholds/delete',
+        tags: ['/noise_sensors'],
+        'x-action-attempt-type': 'DELETE_NOISE_THRESHOLD',
+        'x-fern-sdk-group-name': ['noise_sensors', 'noise_thresholds'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete a Noise Threshold',
+      },
       post: {
         description:
           'Deletes a [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) from a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors).',
@@ -35383,6 +41107,56 @@ export default {
       },
     },
     '/noise_sensors/noise_thresholds/get': {
+      get: {
+        description:
+          'Returns a specified [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors).',
+        operationId: 'noiseSensorsNoiseThresholdsGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'noise_threshold_id',
+            required: true,
+            schema: {
+              description: 'ID of the noise threshold that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    noise_threshold: {
+                      $ref: '#/components/schemas/noise_threshold',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['noise_threshold', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/noise_sensors/noise_thresholds/get',
+        tags: ['/noise_sensors'],
+        'x-fern-sdk-group-name': ['noise_sensors', 'noise_thresholds'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'noise_threshold',
+        'x-response-key': 'noise_threshold',
+        'x-title': 'Get a Noise Threshold',
+      },
       post: {
         description:
           'Returns a specified [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors).',
@@ -35441,6 +41215,71 @@ export default {
       },
     },
     '/noise_sensors/noise_thresholds/list': {
+      get: {
+        description:
+          'Returns a list of all [noise thresholds](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors).',
+        operationId: 'noiseSensorsNoiseThresholdsListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'device_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the device for which you want to list noise thresholds.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'is_programmed',
+            required: false,
+            schema: {
+              description:
+                'Enables you to limit the returned noise thresholds by whether they are programmed on the noise sensor. To list only noise thresholds that are programmed on the noise sensor, set this parameter to `true`. To list only noise thresholds that are not programmed on the noise sensor, se this parameter to `false`.',
+              type: 'boolean',
+              'x-undocumented':
+                'Not sure if this parameter is supported or what it does.',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    noise_thresholds: {
+                      items: { $ref: '#/components/schemas/noise_threshold' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['noise_thresholds', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/noise_sensors/noise_thresholds/list',
+        tags: ['/noise_sensors'],
+        'x-fern-sdk-group-name': ['noise_sensors', 'noise_thresholds'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'noise_thresholds',
+        'x-response-key': 'noise_thresholds',
+        'x-title': 'List Noise Thresholds',
+      },
       post: {
         description:
           'Returns a list of all [noise thresholds](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors).',
@@ -35597,7 +41436,8 @@ export default {
         summary: '/noise_sensors/noise_thresholds/update',
         tags: ['/noise_sensors'],
         'x-action-attempt-type': 'UPDATE_NOISE_THRESHOLD',
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['noise_sensors', 'noise_thresholds'],
+        'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
         'x-title': 'Update a Noise Threshold',
       },
@@ -35784,7 +41624,8 @@ export default {
         summary: '/noise_sensors/noise_thresholds/update',
         tags: ['/noise_sensors'],
         'x-action-attempt-type': 'UPDATE_NOISE_THRESHOLD',
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['noise_sensors', 'noise_thresholds'],
+        'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
         'x-title': 'Update a Noise Threshold',
       },
@@ -35842,6 +41683,56 @@ export default {
       },
     },
     '/phones/deactivate': {
+      delete: {
+        description:
+          'Deactivates a phone, which is useful, for example, if a user has lost their phone. For more information, see [App User Lost Phone Process](https://docs.seam.co/latest/capability-guides/mobile-access/managing-phones-for-a-user-identity#app-user-lost-phone-process).',
+        operationId: 'phonesDeactivateDelete',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: {
+                    description:
+                      'Device ID of the phone that you want to deactivate.',
+                    type: 'string',
+                  },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/phones/deactivate',
+        tags: ['/phones'],
+        'x-fern-sdk-group-name': ['phones'],
+        'x-fern-sdk-method-name': 'deactivate',
+        'x-response-key': null,
+        'x-title': 'Deactivate a Phone',
+      },
       post: {
         description:
           'Deactivates a phone, which is useful, for example, if a user has lost their phone. For more information, see [App User Lost Phone Process](https://docs.seam.co/latest/capability-guides/mobile-access/managing-phones-for-a-user-identity#app-user-lost-phone-process).',
@@ -35894,6 +41785,54 @@ export default {
       },
     },
     '/phones/get': {
+      get: {
+        description:
+          'Returns a specified [phone](https://docs.seam.co/latest/capability-guides/mobile-access/managing-phones-for-a-user-identity).',
+        operationId: 'phonesGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'device_id',
+            required: true,
+            schema: {
+              description: 'Device ID of the phone that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    phone: { $ref: '#/components/schemas/phone' },
+                  },
+                  required: ['phone', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/phones/get',
+        tags: ['/phones'],
+        'x-fern-sdk-group-name': ['phones'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'phone',
+        'x-response-key': 'phone',
+        'x-title': 'Get a Phone',
+      },
       post: {
         description:
           'Returns a specified [phone](https://docs.seam.co/latest/capability-guides/mobile-access/managing-phones-for-a-user-identity).',
@@ -35949,6 +41888,67 @@ export default {
       },
     },
     '/phones/list': {
+      get: {
+        description:
+          'Returns a list of all [phones](https://docs.seam.co/latest/capability-guides/mobile-access/managing-phones-for-a-user-identity). To filter the list of returned phones by a specific owner user identity or credential, include the `owner_user_identity_id` or `acs_credential_id`, respectively, in the request body.',
+        operationId: 'phonesListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'owner_user_identity_id',
+            schema: {
+              description:
+                'ID of the user identity that represents the owner by which you want to filter the list of returned phones.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_credential_id',
+            schema: {
+              description:
+                'ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) by which you want to filter the list of returned phones.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    phones: {
+                      items: { $ref: '#/components/schemas/phone' },
+                      type: 'array',
+                    },
+                  },
+                  required: ['phones', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/phones/list',
+        tags: ['/phones'],
+        'x-fern-sdk-group-name': ['phones'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'phones',
+        'x-response-key': 'phones',
+        'x-title': 'List Phones',
+      },
       post: {
         description:
           'Returns a list of all [phones](https://docs.seam.co/latest/capability-guides/mobile-access/managing-phones-for-a-user-identity). To filter the list of returned phones by a specific owner user identity or credential, include the `owner_user_identity_id` or `acs_credential_id`, respectively, in the request body.',
@@ -36013,6 +42013,143 @@ export default {
       },
     },
     '/phones/simulate/create_sandbox_phone': {
+      get: {
+        description:
+          'Creates a new simulated phone in a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). See also [Creating a Simulated Phone for a User Identity](https://docs.seam.co/latest/capability-guides/mobile-access/developing-in-a-sandbox-workspace#creating-a-simulated-phone-for-a-user-identity).',
+        operationId: 'phonesSimulateCreateSandboxPhoneGet',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  assa_abloy_metadata: {
+                    default: {},
+                    description:
+                      'ASSA ABLOY metadata that you want to associate with the simulated phone.',
+                    properties: {
+                      application_version: {
+                        default: '1.0.0',
+                        description:
+                          'Application version that you want to use for the simulated phone.',
+                        type: 'string',
+                      },
+                      ble_capability: {
+                        default: true,
+                        description:
+                          'Indicates whether the simulated phone should have Bluetooth low energy (BLE) capability.',
+                        type: 'boolean',
+                      },
+                      hce_capability: {
+                        default: false,
+                        description:
+                          'Indicates whether the simulated phone should have host card emulation (HCE) capability.',
+                        type: 'boolean',
+                      },
+                      nfc_capability: {
+                        default: false,
+                        description:
+                          'Indicates whether the simulated phone should have near-field communication (NFC) capability.',
+                        type: 'boolean',
+                      },
+                      seos_applet_version: {
+                        default: '1.0.0',
+                        description:
+                          'SEOS applet version that you want to use for the simulated phone.',
+                        type: 'string',
+                      },
+                      seos_tsm_endpoint_id: {
+                        default: 1,
+                        description:
+                          'ID of the SEOS trusted service manager (TSM) endpoint that you want to use for the simulated phone.',
+                        format: 'float',
+                        type: 'number',
+                      },
+                    },
+                    type: 'object',
+                  },
+                  custom_sdk_installation_id: {
+                    description:
+                      'ID of the custom SDK installation that you want to use for the simulated phone.',
+                    type: 'string',
+                  },
+                  phone_metadata: {
+                    default: {},
+                    description:
+                      'Metadata that you want to associate with the simulated phone.',
+                    properties: {
+                      device_manufacturer: {
+                        default: 'Samsung',
+                        description:
+                          'Manufacturer that you want to use for the simulated phone.',
+                        type: 'string',
+                      },
+                      device_model: {
+                        default: 'Samsung Galaxy S10',
+                        description:
+                          'Device model that you want to use for the simulated phone.',
+                        type: 'string',
+                      },
+                      operating_system: {
+                        default: 'android',
+                        description:
+                          'Mobile operating system that you want to use for the simulated phone.',
+                        enum: ['android', 'ios'],
+                        type: 'string',
+                      },
+                      os_version: {
+                        default: '10',
+                        description:
+                          'Mobile operating system version that you want to use for the simulated phone.',
+                        type: 'string',
+                      },
+                    },
+                    type: 'object',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity that you want to associate with the simulated phone.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['user_identity_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    phone: { $ref: '#/components/schemas/phone' },
+                  },
+                  required: ['phone', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/phones/simulate/create_sandbox_phone',
+        tags: ['/phones'],
+        'x-fern-sdk-group-name': ['phones', 'simulate'],
+        'x-fern-sdk-method-name': 'create_sandbox_phone',
+        'x-fern-sdk-return-value': 'phone',
+        'x-response-key': 'phone',
+        'x-title': 'Create a Sandbox Phone',
+      },
       post: {
         description:
           'Creates a new simulated phone in a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). See also [Creating a Simulated Phone for a User Identity](https://docs.seam.co/latest/capability-guides/mobile-access/developing-in-a-sandbox-workspace#creating-a-simulated-phone-for-a-user-identity).',
@@ -36253,7 +42390,14 @@ export default {
         security: [{ bridge_client_session: [] }],
         summary: '/seam/bridge/v1/bridge_client_sessions/get',
         tags: [],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': [
+          'seam',
+          'bridge',
+          'v1',
+          'bridge_client_sessions',
+        ],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'bridge_client_session',
         'x-response-key': 'bridge_client_session',
         'x-title': 'Get a Seam Bridge Client Session',
         'x-undocumented': 'Seam Bridge Client only.',
@@ -36478,7 +42622,14 @@ export default {
         security: [{ bridge_client_session: [] }],
         summary: '/seam/bridge/v1/bridge_connected_systems/list',
         tags: [],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': [
+          'seam',
+          'bridge',
+          'v1',
+          'bridge_connected_systems',
+        ],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'bridge_connected_systems',
         'x-response-key': 'bridge_connected_systems',
         'x-title': 'List Bridge-Connected Systems',
         'x-undocumented': 'Seam Bridge Client only.',
@@ -36587,6 +42738,49 @@ export default {
       },
     },
     '/seam/mobile_sdk/v1/acs/credentials/list': {
+      get: {
+        description:
+          'Returns a list of all [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+        operationId: 'seamMobileSdkV1AcsCredentialsListGet',
+        parameters: [],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_credentials: {
+                      items: { $ref: '#/components/schemas/acs_credential' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_credentials', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session: [] }],
+        summary: '/seam/mobile_sdk/v1/acs/credentials/list',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'mobile_sdk',
+          'v1',
+          'acs',
+          'credentials',
+        ],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'acs_credentials',
+        'x-response-key': 'acs_credentials',
+        'x-title': 'List Credentials',
+        'x-undocumented': 'Mobile SDK only.',
+      },
       post: {
         description:
           'Returns a list of all [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
@@ -36705,6 +42899,95 @@ export default {
       },
     },
     '/seam/partner/v1/building_blocks/spaces/auto_map': {
+      get: {
+        description:
+          'Auto-maps partner resources that have been pushed to Seam.',
+        operationId: 'seamPartnerV1BuildingBlocksSpacesAutoMapGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'collection_key',
+            required: true,
+            schema: { description: 'Collection key.', type: 'string' },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    spaces: {
+                      items: {
+                        properties: {
+                          acs_entrances: {
+                            items: {
+                              properties: {
+                                acs_entrance_id: { type: 'string' },
+                                name: { type: 'string' },
+                              },
+                              required: ['acs_entrance_id', 'name'],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
+                          devices: {
+                            items: {
+                              properties: {
+                                device_id: { type: 'string' },
+                                device_type: {
+                                  enum: ['lock', 'thermostat', 'sensor'],
+                                  type: 'string',
+                                },
+                                name: { type: 'string' },
+                              },
+                              required: ['device_id', 'device_type', 'name'],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
+                          name: { type: 'string' },
+                          needs_review: { type: 'boolean' },
+                          partner_resource_key: { type: 'string' },
+                        },
+                        required: [
+                          'name',
+                          'partner_resource_key',
+                          'devices',
+                          'acs_entrances',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['spaces', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/partner/v1/building_blocks/spaces/auto_map',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'partner',
+          'v1',
+          'building_blocks',
+          'spaces',
+        ],
+        'x-fern-sdk-method-name': 'auto_map',
+        'x-fern-sdk-return-value': 'spaces',
+        'x-response-key': 'spaces',
+        'x-title': 'Do Auto-Mapping for Partner Resources that Map to Spaces',
+        'x-undocumented': 'Partner building blocks/UI only.',
+      },
       post: {
         description:
           'Auto-maps partner resources that have been pushed to Seam.',
@@ -36804,6 +43087,52 @@ export default {
       },
     },
     '/seam/partner/v1/resources/list': {
+      get: {
+        description: 'Lists partner resources that have been pushed to Seam.',
+        operationId: 'seamPartnerV1ResourcesListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'resource_type_alias',
+            schema: {
+              description:
+                'Resource type alias by which you want to filter partner resources.',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    partner_resources: {
+                      items: { $ref: '#/components/schemas/partner_resource' },
+                      type: 'array',
+                    },
+                  },
+                  required: ['partner_resources', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/partner/v1/resources/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'partner', 'v1', 'resources'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'partner_resources',
+        'x-response-key': 'partner_resources',
+        'x-title': 'List Partner Resources at Seam',
+        'x-undocumented': 'Partner building blocks/UI only.',
+      },
       post: {
         description: 'Lists partner resources that have been pushed to Seam.',
         operationId: 'seamPartnerV1ResourcesListPost',
@@ -36968,7 +43297,8 @@ export default {
         summary: '/spaces/add_acs_entrances',
         tags: [],
         'x-draft': 'Early access.',
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['spaces'],
+        'x-fern-sdk-method-name': 'add_acs_entrances',
         'x-response-key': null,
         'x-title': 'Add Entrances to a Space',
       },
@@ -37083,7 +43413,8 @@ export default {
         summary: '/spaces/add_devices',
         tags: [],
         'x-draft': 'Early access.',
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['spaces'],
+        'x-fern-sdk-method-name': 'add_devices',
         'x-response-key': null,
         'x-title': 'Add Devices to a Space',
       },
@@ -37155,6 +43486,55 @@ export default {
       },
     },
     '/spaces/delete': {
+      delete: {
+        description: 'Deletes a space.',
+        operationId: 'spacesDeleteDelete',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  space_id: {
+                    description: 'ID of the space that you want to delete.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['space_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/spaces/delete',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['spaces'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete a Space',
+      },
       post: {
         description: 'Deletes a space.',
         operationId: 'spacesDeletePost',
@@ -37206,6 +43586,54 @@ export default {
       },
     },
     '/spaces/get': {
+      get: {
+        description: 'Gets a space.',
+        operationId: 'spacesGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'space_id',
+            required: true,
+            schema: {
+              description: 'ID of the space that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    space: { $ref: '#/components/schemas/space' },
+                  },
+                  required: ['space', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/spaces/get',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['spaces'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'space',
+        'x-response-key': 'space',
+        'x-title': 'Get a Space',
+      },
       post: {
         description: 'Gets a space.',
         operationId: 'spacesGetPost',
@@ -37294,7 +43722,9 @@ export default {
         summary: '/spaces/list',
         tags: [],
         'x-draft': 'Early access.',
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['spaces'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'spaces',
         'x-response-key': 'spaces',
         'x-title': 'List Spaces',
       },
@@ -37339,6 +43769,63 @@ export default {
       },
     },
     '/spaces/remove_acs_entrances': {
+      delete: {
+        description:
+          'Removes [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) from a specific space.',
+        operationId: 'spacesRemoveAcsEntrancesDelete',
+        parameters: [
+          {
+            in: 'query',
+            name: 'space_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the space from which you want to remove entrances.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_entrance_ids',
+            required: true,
+            schema: {
+              description:
+                'IDs of the entrances that you want to remove from the space.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/spaces/remove_acs_entrances',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['spaces'],
+        'x-fern-sdk-method-name': 'remove_acs_entrances',
+        'x-response-key': null,
+        'x-title': 'Remove Entrances from a Space',
+      },
       post: {
         description:
           'Removes [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) from a specific space.',
@@ -37398,6 +43885,62 @@ export default {
       },
     },
     '/spaces/remove_devices': {
+      delete: {
+        description: 'Removes devices from a specific space.',
+        operationId: 'spacesRemoveDevicesDelete',
+        parameters: [
+          {
+            in: 'query',
+            name: 'space_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the space from which you want to remove devices.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_ids',
+            required: true,
+            schema: {
+              description:
+                'IDs of the devices that you want to remove from the space.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/spaces/remove_devices',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['spaces'],
+        'x-fern-sdk-method-name': 'remove_devices',
+        'x-response-key': null,
+        'x-title': 'Remove Devices from a Space',
+      },
       post: {
         description: 'Removes devices from a specific space.',
         operationId: 'spacesRemoveDevicesPost',
@@ -37504,7 +44047,9 @@ export default {
         summary: '/spaces/update',
         tags: [],
         'x-draft': 'Early access.',
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['spaces'],
+        'x-fern-sdk-method-name': 'update',
+        'x-fern-sdk-return-value': 'space',
         'x-response-key': 'space',
         'x-title': 'Update a Space',
       },
@@ -37901,6 +44446,51 @@ export default {
       },
     },
     '/thermostats/daily_programs/delete': {
+      delete: {
+        description: 'Deletes a thermostat daily program.',
+        operationId: 'thermostatsDailyProgramsDeleteDelete',
+        parameters: [
+          {
+            in: 'query',
+            name: 'thermostat_daily_program_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the thermostat daily program that you want to delete.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/thermostats/daily_programs/delete',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats', 'daily_programs'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete a Thermostat Daily Program',
+      },
       post: {
         description: 'Deletes a thermostat daily program.',
         operationId: 'thermostatsDailyProgramsDeletePost',
@@ -38034,7 +44624,9 @@ export default {
         summary: '/thermostats/daily_programs/update',
         tags: ['/thermostats'],
         'x-action-attempt-type': 'PUSH_THERMOSTAT_PROGRAMS',
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['thermostats', 'daily_programs'],
+        'x-fern-sdk-method-name': 'update',
+        'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
         'x-title': 'Update a Thermostat Daily Program',
       },
@@ -38127,6 +44719,62 @@ export default {
       },
     },
     '/thermostats/delete_climate_preset': {
+      delete: {
+        description:
+          'Deletes a specified [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+        operationId: 'thermostatsDeleteClimatePresetDelete',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  climate_preset_key: {
+                    description:
+                      'Climate preset key of the climate preset that you want to delete.',
+                    type: 'string',
+                  },
+                  device_id: {
+                    description:
+                      'ID of the thermostat device for which you want to delete a climate preset.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['device_id', 'climate_preset_key'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/thermostats/delete_climate_preset',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats'],
+        'x-fern-sdk-method-name': 'delete_climate_preset',
+        'x-response-key': null,
+        'x-title': 'Delete a Climate Preset',
+      },
       post: {
         description:
           'Deletes a specified [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
@@ -38185,6 +44833,65 @@ export default {
       },
     },
     '/thermostats/get': {
+      get: {
+        description:
+          'Returns a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). **Deprecated:** Will be removed. Use `/devices/get` instead.',
+        operationId: 'thermostatsGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'device_id',
+            schema: {
+              description: 'ID of the thermostat device that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'name',
+            schema: {
+              description:
+                'Name of the thermostat device that you want to retrieve.',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    thermostat: { $ref: '#/components/schemas/device' },
+                  },
+                  required: ['thermostat', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/thermostats/get',
+        tags: ['/thermostats'],
+        'x-deprecated': 'Use `/devices/get` instead.',
+        'x-fern-sdk-group-name': ['thermostats'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'thermostat',
+        'x-response-key': 'thermostat',
+        'x-title': 'Get a Thermostat',
+        'x-undocumented': 'Will be removed.',
+      },
       post: {
         description:
           'Returns a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). **Deprecated:** Will be removed. Use `/devices/get` instead.',
@@ -38414,6 +45121,276 @@ export default {
       },
     },
     '/thermostats/list': {
+      get: {
+        description:
+          'Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guides/thermostats).',
+        operationId: 'thermostatsListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'customer_ids',
+            schema: {
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'connected_account_id',
+            schema: {
+              description:
+                'ID of the connected account for which you want to list devices.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'connected_account_ids',
+            schema: {
+              description:
+                'Array of IDs of the connected accounts for which you want to list devices.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'connect_webview_id',
+            schema: {
+              description:
+                'ID of the Connect Webview for which you want to list devices.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_type',
+            schema: {
+              description:
+                'Device type by which you want to filter thermostat devices.',
+              enum: [
+                'ecobee_thermostat',
+                'nest_thermostat',
+                'honeywell_resideo_thermostat',
+                'tado_thermostat',
+                'sensi_thermostat',
+                'smartthings_thermostat',
+              ],
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_types',
+            schema: {
+              description:
+                'Array of device types by which you want to filter thermostat devices.',
+              items: {
+                description: 'Device type for thermostats.\n          ',
+                enum: [
+                  'ecobee_thermostat',
+                  'nest_thermostat',
+                  'honeywell_resideo_thermostat',
+                  'tado_thermostat',
+                  'sensi_thermostat',
+                  'smartthings_thermostat',
+                ],
+                type: 'string',
+              },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'manufacturer',
+            schema: {
+              description:
+                'Manufacturer by which you want to filter thermostat devices.',
+              enum: [
+                'ecobee',
+                'honeywell_resideo',
+                'nest',
+                'tado',
+                'sensi',
+                'smartthings',
+              ],
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_ids',
+            schema: {
+              description:
+                'Array of device IDs for which you want to list devices.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 500,
+              description:
+                'Numerical limit on the number of devices to return.',
+              format: 'float',
+              type: 'number',
+            },
+          },
+          {
+            in: 'query',
+            name: 'created_before',
+            schema: {
+              description:
+                'Timestamp by which to limit returned devices. Returns devices created before this timestamp.',
+              format: 'date-time',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identifier_key',
+            schema: {
+              description:
+                'Your own internal user ID for the user for which you want to list devices.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'custom_metadata_has',
+            schema: {
+              additionalProperties: {
+                oneOf: [{ type: 'string' }, { type: 'boolean' }],
+              },
+              description:
+                'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.',
+              type: 'object',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              nullable: true,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'include_if',
+            schema: {
+              items: {
+                enum: [
+                  'can_remotely_unlock',
+                  'can_remotely_lock',
+                  'can_program_offline_access_codes',
+                  'can_program_online_access_codes',
+                  'can_hvac_heat',
+                  'can_hvac_cool',
+                  'can_hvac_heat_cool',
+                  'can_turn_off_hvac',
+                  'can_simulate_removal',
+                  'can_simulate_connection',
+                  'can_simulate_disconnection',
+                ],
+                type: 'string',
+              },
+              type: 'array',
+              'x-undocumented': 'Only used internally.',
+            },
+          },
+          {
+            in: 'query',
+            name: 'exclude_if',
+            schema: {
+              items: {
+                enum: [
+                  'can_remotely_unlock',
+                  'can_remotely_lock',
+                  'can_program_offline_access_codes',
+                  'can_program_online_access_codes',
+                  'can_hvac_heat',
+                  'can_hvac_cool',
+                  'can_hvac_heat_cool',
+                  'can_turn_off_hvac',
+                  'can_simulate_removal',
+                  'can_simulate_connection',
+                  'can_simulate_disconnection',
+                ],
+                type: 'string',
+              },
+              type: 'array',
+              'x-undocumented': 'Only used internally.',
+            },
+          },
+          {
+            in: 'query',
+            name: 'unstable_location_id',
+            schema: {
+              deprecated: true,
+              format: 'uuid',
+              nullable: true,
+              type: 'string',
+              'x-deprecated': 'Use `space_id`.',
+            },
+          },
+          {
+            in: 'query',
+            name: 'space_id',
+            schema: {
+              description:
+                'ID of the space for which you want to list devices.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    devices: {
+                      items: { $ref: '#/components/schemas/device' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                    thermostats: {
+                      items: { $ref: '#/components/schemas/device' },
+                      type: 'array',
+                    },
+                  },
+                  required: ['thermostats', 'devices', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { client_session: [] },
+        ],
+        summary: '/thermostats/list',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'devices',
+        'x-response-key': 'devices',
+        'x-title': 'List Thermostats',
+      },
       post: {
         description:
           'Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guides/thermostats).',
@@ -38787,6 +45764,52 @@ export default {
       },
     },
     '/thermostats/schedules/delete': {
+      delete: {
+        description:
+          'Deletes a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+        operationId: 'thermostatsSchedulesDeleteDelete',
+        parameters: [
+          {
+            in: 'query',
+            name: 'thermostat_schedule_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the thermostat schedule that you want to delete.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/thermostats/schedules/delete',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats', 'schedules'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete a Thermostat Schedule',
+      },
       post: {
         description:
           'Deletes a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
@@ -38840,6 +45863,58 @@ export default {
       },
     },
     '/thermostats/schedules/get': {
+      get: {
+        description:
+          'Returns a specified [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+        operationId: 'thermostatsSchedulesGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'thermostat_schedule_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the thermostat schedule that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    thermostat_schedule: {
+                      $ref: '#/components/schemas/thermostat_schedule',
+                    },
+                  },
+                  required: ['thermostat_schedule', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/thermostats/schedules/get',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats', 'schedules'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'thermostat_schedule',
+        'x-response-key': 'thermostat_schedule',
+        'x-title': 'Get a Thermostat Schedule',
+      },
       post: {
         description:
           'Returns a specified [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
@@ -38899,6 +45974,71 @@ export default {
       },
     },
     '/thermostats/schedules/list': {
+      get: {
+        description:
+          'Returns a list of all [thermostat schedules](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+        operationId: 'thermostatsSchedulesListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'device_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the thermostat device for which you want to list schedules.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identifier_key',
+            required: false,
+            schema: {
+              description:
+                'User identifier key by which to filter the list of returned thermostat schedules.',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    thermostat_schedules: {
+                      items: {
+                        $ref: '#/components/schemas/thermostat_schedule',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['thermostat_schedules', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/thermostats/schedules/list',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats', 'schedules'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'thermostat_schedules',
+        'x-response-key': 'thermostat_schedules',
+        'x-title': 'List Thermostat Schedules',
+      },
       post: {
         description:
           'Returns a list of all [thermostat schedules](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
@@ -39044,7 +46184,8 @@ export default {
         ],
         summary: '/thermostats/schedules/update',
         tags: ['/thermostats'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['thermostats', 'schedules'],
+        'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
         'x-title': 'Update a Thermostat Schedule',
       },
@@ -39500,7 +46641,8 @@ export default {
         ],
         summary: '/thermostats/set_temperature_threshold',
         tags: ['/thermostats'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['thermostats'],
+        'x-fern-sdk-method-name': 'set_temperature_threshold',
         'x-response-key': null,
         'x-title': 'Set a Temperature Threshold',
       },
@@ -39915,7 +47057,8 @@ export default {
         ],
         summary: '/thermostats/update_climate_preset',
         tags: ['/thermostats'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['thermostats'],
+        'x-fern-sdk-method-name': 'update_climate_preset',
         'x-response-key': null,
         'x-title': 'Update a Climate Preset',
       },
@@ -40318,6 +47461,51 @@ export default {
       },
     },
     '/unstable_access_grants/delete': {
+      get: {
+        description: 'Deletes an access grant.',
+        operationId: 'unstableAccessGrantsDeleteGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'access_grant_id',
+            required: true,
+            schema: {
+              description: 'ID of access grant that you want to delete.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/unstable_access_grants/delete',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_access_grants'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete an Access Grant',
+        'x-undocumented': 'Unreleased.',
+      },
       post: {
         description: 'Deletes an access grant.',
         operationId: 'unstableAccessGrantsDeletePost',
@@ -40370,6 +47558,55 @@ export default {
       },
     },
     '/unstable_access_grants/get': {
+      get: {
+        description: 'Gets an access grant.',
+        operationId: 'unstableAccessGrantsGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'access_grant_id',
+            required: true,
+            schema: {
+              description: 'ID of access grant that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_grant: { $ref: '#/components/schemas/access_grant' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_grant', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/unstable_access_grants/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_access_grants'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'access_grant',
+        'x-response-key': 'access_grant',
+        'x-title': 'Get an Access Grant',
+        'x-undocumented': 'Unreleased.',
+      },
       post: {
         description: 'Gets an access grant.',
         operationId: 'unstableAccessGrantsGetPost',
@@ -40426,6 +47663,98 @@ export default {
       },
     },
     '/unstable_access_grants/list': {
+      get: {
+        description: 'Returns a list of all access grants.',
+        operationId: 'unstableAccessGrantsListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            schema: {
+              description:
+                'ID of the user identity by which you want to filter the list of access grants.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_system_id',
+            schema: {
+              description:
+                'ID of the access system by which you want to filter the list of access grants.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_entrance_id',
+            schema: {
+              description:
+                'ID of the entrance by which you want to filter the list of access grants.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'location_id',
+            schema: {
+              deprecated: true,
+              format: 'uuid',
+              type: 'string',
+              'x-deprecated': 'Use `space_id`.',
+            },
+          },
+          {
+            in: 'query',
+            name: 'space_id',
+            schema: {
+              description:
+                'ID of the space by which you want to filter the list of access grants.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_grants: {
+                      items: { $ref: '#/components/schemas/access_grant' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_grants', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/unstable_access_grants/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_access_grants'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'access_grants',
+        'x-response-key': 'access_grants',
+        'x-title': 'List Access Grants',
+        'x-undocumented': 'Unreleased.',
+      },
       post: {
         description: 'Returns a list of all access grants.',
         operationId: 'unstableAccessGrantsListPost',
@@ -40509,6 +47838,50 @@ export default {
       },
     },
     '/unstable_access_methods/delete': {
+      get: {
+        description: 'Deletes an access method.',
+        operationId: 'unstableAccessMethodsDeleteGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'access_method_id',
+            required: true,
+            schema: {
+              description: 'ID of the access method that you want to delete.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_access_methods/delete',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_access_methods'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete an Access Method',
+        'x-undocumented': 'Unreleased.',
+      },
       post: {
         description: 'Deletes an access method.',
         operationId: 'unstableAccessMethodsDeletePost',
@@ -40561,6 +47934,56 @@ export default {
       },
     },
     '/unstable_access_methods/get': {
+      get: {
+        description: 'Gets an access method.',
+        operationId: 'unstableAccessMethodsGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'access_method_id',
+            required: true,
+            schema: {
+              description: 'ID of the access method that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_method: {
+                      $ref: '#/components/schemas/access_method',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_method', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_access_methods/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_access_methods'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'access_method',
+        'x-response-key': 'access_method',
+        'x-title': 'Get an Access Method',
+        'x-undocumented': 'Unreleased.',
+      },
       post: {
         description: 'Gets an access method.',
         operationId: 'unstableAccessMethodsGetPost',
@@ -40619,6 +48042,59 @@ export default {
       },
     },
     '/unstable_access_methods/list': {
+      get: {
+        description:
+          'Lists all access methods, usually filtered by access grant.',
+        operationId: 'unstableAccessMethodsListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'access_grant_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the access grant by which to filter the list of access methods.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_methods: {
+                      items: { $ref: '#/components/schemas/access_method' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_methods', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_access_methods/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_access_methods'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'access_methods',
+        'x-response-key': 'access_methods',
+        'x-title': 'List Access Methods',
+        'x-undocumented': 'Unreleased.',
+      },
       post: {
         description:
           'Lists all access methods, usually filtered by access grant.',
@@ -40789,7 +48265,8 @@ export default {
         ],
         summary: '/unstable_locations/add_acs_entrances',
         tags: [],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['unstable_locations'],
+        'x-fern-sdk-method-name': 'add_acs_entrances',
         'x-response-key': null,
         'x-title': 'Add Entrances to a Location',
         'x-undocumented': 'Experimental locations.',
@@ -40904,7 +48381,8 @@ export default {
         ],
         summary: '/unstable_locations/add_devices',
         tags: [],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['unstable_locations'],
+        'x-fern-sdk-method-name': 'add_devices',
         'x-response-key': null,
         'x-title': 'Add Devices to a Location',
         'x-undocumented': 'Experimental locations.',
@@ -40990,6 +48468,55 @@ export default {
       },
     },
     '/unstable_locations/delete': {
+      delete: {
+        description: 'Deletes a location.',
+        operationId: 'unstableLocationsDeleteDelete',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  location_id: {
+                    description: 'ID of the location that you want to delete.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['location_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_locations/delete',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_locations'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete a Location',
+        'x-undocumented': 'Experimental locations.',
+      },
       post: {
         description: 'Deletes a location.',
         operationId: 'unstableLocationsDeletePost',
@@ -41041,6 +48568,54 @@ export default {
       },
     },
     '/unstable_locations/get': {
+      get: {
+        description: 'Gets a location.',
+        operationId: 'unstableLocationsGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'location_id',
+            required: true,
+            schema: {
+              description: 'ID of the location that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    location: { $ref: '#/components/schemas/location' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['location', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_locations/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_locations'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'location',
+        'x-response-key': 'location',
+        'x-title': 'Get a Location',
+        'x-undocumented': 'Experimental locations.',
+      },
       post: {
         description: 'Gets a location.',
         operationId: 'unstableLocationsGetPost',
@@ -41128,7 +48703,9 @@ export default {
         ],
         summary: '/unstable_locations/list',
         tags: [],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['unstable_locations'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'locations',
         'x-response-key': 'locations',
         'x-title': 'List Locations',
         'x-undocumented': 'Experimental locations.',
@@ -41174,6 +48751,62 @@ export default {
       },
     },
     '/unstable_locations/remove_acs_entrances': {
+      delete: {
+        description: 'Removes entrances from a specific location.',
+        operationId: 'unstableLocationsRemoveAcsEntrancesDelete',
+        parameters: [
+          {
+            in: 'query',
+            name: 'location_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the location from which you want to remove entrances.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_entrance_ids',
+            required: true,
+            schema: {
+              description:
+                'IDs of the entrances that you want to remove from the location.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_locations/remove_acs_entrances',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_locations'],
+        'x-fern-sdk-method-name': 'remove_acs_entrances',
+        'x-response-key': null,
+        'x-title': 'Remove Entrances from a Location',
+        'x-undocumented': 'Experimental locations.',
+      },
       post: {
         description: 'Removes entrances from a specific location.',
         operationId: 'unstableLocationsRemoveAcsEntrancesPost',
@@ -41232,6 +48865,62 @@ export default {
       },
     },
     '/unstable_locations/remove_devices': {
+      delete: {
+        description: 'Removes devices from a specific location.',
+        operationId: 'unstableLocationsRemoveDevicesDelete',
+        parameters: [
+          {
+            in: 'query',
+            name: 'location_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the location from which you want to remove devices.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_ids',
+            required: true,
+            schema: {
+              description:
+                'IDs of the devices that you want to remove from the location.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_locations/remove_devices',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_locations'],
+        'x-fern-sdk-method-name': 'remove_devices',
+        'x-response-key': null,
+        'x-title': 'Remove Devices from a Location',
+        'x-undocumented': 'Experimental locations.',
+      },
       post: {
         description: 'Removes devices from a specific location.',
         operationId: 'unstableLocationsRemoveDevicesPost',
@@ -41353,7 +49042,9 @@ export default {
         ],
         summary: '/unstable_locations/update',
         tags: [],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['unstable_locations'],
+        'x-fern-sdk-method-name': 'update',
+        'x-fern-sdk-return-value': 'location',
         'x-response-key': 'location',
         'x-title': 'Update a Location',
         'x-undocumented': 'Experimental locations.',
@@ -41486,6 +49177,108 @@ export default {
       },
     },
     '/unstable_partner/building_blocks/generate_magic_link': {
+      get: {
+        description: 'Creates a new building block magic link.',
+        operationId: 'unstablePartnerBuildingBlocksGenerateMagicLinkGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'building_block_type',
+            required: true,
+            schema: {
+              description:
+                'Type of building block for which you want to create a magic link.',
+              enum: [
+                'connect_accounts',
+                'organize_spaces',
+                'console',
+                'manage_devices',
+              ],
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'customer_key',
+            required: true,
+            schema: {
+              description:
+                'Customer key for which you want to create a new building block magic link.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'spaces',
+            required: false,
+            schema: {
+              description:
+                'Optional list of spaces that you want to include in the new building block magic link.',
+              items: {
+                description:
+                  'Represents a partner resource that enables you to send your space resources to Seam.',
+                properties: {
+                  custom_metadata: {
+                    additionalProperties: { type: 'string' },
+                    description:
+                      'Custom metadata associated with the space resource.',
+                    type: 'object',
+                  },
+                  description: {
+                    description: 'Description of the space resource.',
+                    type: 'string',
+                  },
+                  name: {
+                    description: 'Name of the space resource.',
+                    type: 'string',
+                  },
+                  space_key: {
+                    description: 'Key of the space for the resource.',
+                    type: 'string',
+                  },
+                },
+                required: ['space_key', 'name'],
+                type: 'object',
+                'x-route-path': '/unstable_partner/resources',
+                'x-undocumented': 'Unreleased.',
+              },
+              type: 'array',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    magic_link: { $ref: '#/components/schemas/magic_link' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['magic_link', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_partner/building_blocks/generate_magic_link',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_partner', 'building_blocks'],
+        'x-fern-sdk-method-name': 'generate_magic_link',
+        'x-fern-sdk-return-value': 'magic_link',
+        'x-response-key': 'magic_link',
+        'x-title': 'Generate a Building Block Magic Link',
+        'x-undocumented': 'Experimental partner building blocks.',
+      },
       post: {
         description: 'Creates a new building block magic link.',
         operationId: 'unstablePartnerBuildingBlocksGenerateMagicLinkPost',
@@ -42022,7 +49815,8 @@ export default {
         ],
         summary: '/user_identities/add_acs_user',
         tags: ['/user_identities'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'add_acs_user',
         'x-response-key': null,
         'x-title': 'Add an ACS User to a User Identity',
       },
@@ -42111,6 +49905,50 @@ export default {
       },
     },
     '/user_identities/delete': {
+      delete: {
+        description:
+          'Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://docs.seam.co/latest/api/access-control-systems/credentials), [acs users](https://docs.seam.co/latest/api/access-control-systems/users) and [client sessions](https://docs.seam.co/latest/api/client_sessions).',
+        operationId: 'userIdentitiesDeleteDelete',
+        parameters: [
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            required: true,
+            schema: {
+              description: 'ID of the user identity that you want to delete.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/user_identities/delete',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete a User Identity',
+      },
       post: {
         description:
           'Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://docs.seam.co/latest/api/access-control-systems/credentials), [acs users](https://docs.seam.co/latest/api/access-control-systems/users) and [client sessions](https://docs.seam.co/latest/api/client_sessions).',
@@ -42163,6 +50001,51 @@ export default {
       },
     },
     '/user_identities/enrollment_automations/delete': {
+      delete: {
+        description:
+          'Deletes a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system). You must delete all enrollment automations associated with a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) before [deleting the user identity](https://docs.seam.co/latest/api/user_identities/delete).',
+        operationId: 'userIdentitiesEnrollmentAutomationsDeleteDelete',
+        parameters: [
+          {
+            in: 'query',
+            name: 'enrollment_automation_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the enrollment automation that you want to delete.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/user_identities/enrollment_automations/delete',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete an Enrollment Automation',
+      },
       post: {
         description:
           'Deletes a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system). You must delete all enrollment automations associated with a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) before [deleting the user identity](https://docs.seam.co/latest/api/user_identities/delete).',
@@ -42215,6 +50098,58 @@ export default {
       },
     },
     '/user_identities/enrollment_automations/get': {
+      get: {
+        description:
+          'Returns a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).',
+        operationId: 'userIdentitiesEnrollmentAutomationsGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'enrollment_automation_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the enrollment automation that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    enrollment_automation: {
+                      $ref: '#/components/schemas/enrollment_automation',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['enrollment_automation', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/user_identities/enrollment_automations/get',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'enrollment_automation',
+        'x-response-key': 'enrollment_automation',
+        'x-title': 'Get an Enrollment Automation',
+      },
       post: {
         description:
           'Returns a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).',
@@ -42358,6 +50293,61 @@ export default {
       },
     },
     '/user_identities/enrollment_automations/list': {
+      get: {
+        description:
+          'Returns a list of all [enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+        operationId: 'userIdentitiesEnrollmentAutomationsListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the user identity for which you want to retrieve enrollment automations.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    enrollment_automations: {
+                      items: {
+                        $ref: '#/components/schemas/enrollment_automation',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['enrollment_automations', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/user_identities/enrollment_automations/list',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'enrollment_automations',
+        'x-response-key': 'enrollment_automations',
+        'x-title': 'List Enrollment Automations',
+      },
       post: {
         description:
           'Returns a list of all [enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
@@ -42483,6 +50473,44 @@ export default {
       },
     },
     '/user_identities/get': {
+      get: {
+        description:
+          'Returns a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+        operationId: 'userIdentitiesGetGet',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    user_identity: {
+                      $ref: '#/components/schemas/user_identity',
+                    },
+                  },
+                  required: ['user_identity', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/user_identities/get',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'user_identity',
+        'x-response-key': 'user_identity',
+        'x-title': 'Get a User Identity',
+      },
       post: {
         description:
           'Returns a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
@@ -42657,12 +50685,65 @@ export default {
         ],
         summary: '/user_identities/grant_access_to_device',
         tags: ['/user_identities'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'grant_access_to_device',
         'x-response-key': null,
         'x-title': 'Grant a User Identity Access to a Device',
       },
     },
     '/user_identities/list': {
+      get: {
+        description:
+          'Returns a list of all [user identities](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+        operationId: 'userIdentitiesListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'credential_manager_acs_system_id',
+            schema: {
+              description:
+                '`acs_system_id` of the credential manager by which you want to filter the list of user identities.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    user_identities: {
+                      items: { $ref: '#/components/schemas/user_identity' },
+                      type: 'array',
+                    },
+                  },
+                  required: ['user_identities', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/user_identities/list',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'user_identities',
+        'x-response-key': 'user_identities',
+        'x-title': 'List User Identities',
+      },
       post: {
         description:
           'Returns a list of all [user identities](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
@@ -42722,6 +50803,64 @@ export default {
       },
     },
     '/user_identities/list_accessible_devices': {
+      get: {
+        description:
+          'Returns a list of all [devices](https://docs.seam.co/latest/core-concepts/devices) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+        operationId: 'userIdentitiesListAccessibleDevicesGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the user identity for which you want to retrieve all accessible devices.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    accessible_devices: {
+                      deprecated: true,
+                      items: { $ref: '#/components/schemas/device' },
+                      type: 'array',
+                      'x-deprecated': 'Use devices.',
+                    },
+                    devices: {
+                      items: { $ref: '#/components/schemas/device' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['devices', 'accessible_devices', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/user_identities/list_accessible_devices',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'list_accessible_devices',
+        'x-fern-sdk-return-value': 'devices',
+        'x-response-key': 'devices',
+        'x-title': 'List Accessible Devices for a User Identity',
+      },
       post: {
         description:
           'Returns a list of all [devices](https://docs.seam.co/latest/core-concepts/devices) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
@@ -42787,6 +50926,59 @@ export default {
       },
     },
     '/user_identities/list_acs_systems': {
+      get: {
+        description:
+          'Returns a list of all [access systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+        operationId: 'userIdentitiesListAcsSystemsGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the user identity for which you want to retrieve all access systems.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_systems: {
+                      items: { $ref: '#/components/schemas/acs_system' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_systems', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/user_identities/list_acs_systems',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'list_acs_systems',
+        'x-fern-sdk-return-value': 'acs_systems',
+        'x-response-key': 'acs_systems',
+        'x-title': 'List ACS Systems Associated with a User Identity',
+      },
       post: {
         description:
           'Returns a list of all [access systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
@@ -42847,6 +51039,58 @@ export default {
       },
     },
     '/user_identities/list_acs_users': {
+      get: {
+        description:
+          'Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+        operationId: 'userIdentitiesListAcsUsersGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the user identity for which you want to retrieve all access system users.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_users: {
+                      items: { $ref: '#/components/schemas/acs_user' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_users', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/user_identities/list_acs_users',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'list_acs_users',
+        'x-fern-sdk-return-value': 'acs_users',
+        'x-response-key': 'acs_users',
+        'x-title': 'List ACS Users Associated with a User Identity',
+      },
       post: {
         description:
           'Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
@@ -42906,6 +51150,62 @@ export default {
       },
     },
     '/user_identities/remove_acs_user': {
+      delete: {
+        description:
+          'Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+        operationId: 'userIdentitiesRemoveAcsUserDelete',
+        parameters: [
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the user identity from which you want to remove an access system user.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_user_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the access system user that you want to remove from the user identity..',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/user_identities/remove_acs_user',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'remove_acs_user',
+        'x-response-key': null,
+        'x-title': 'Remove an ACS User from a User Identity',
+      },
       post: {
         description:
           'Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
@@ -42964,6 +51264,62 @@ export default {
       },
     },
     '/user_identities/revoke_access_to_device': {
+      delete: {
+        description:
+          'Revokes access to a specified [device](https://docs.seam.co/latest/core-concepts/devices/) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+        operationId: 'userIdentitiesRevokeAccessToDeviceDelete',
+        parameters: [
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the user identity from which you want to revoke access to a device.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the managed device to which you want to revoke access from the user identity.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/user_identities/revoke_access_to_device',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'revoke_access_to_device',
+        'x-response-key': null,
+        'x-title': 'Revoke Access to a Device from a User Identity',
+      },
       post: {
         description:
           'Revokes access to a specified [device](https://docs.seam.co/latest/core-concepts/devices/) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
@@ -43091,7 +51447,8 @@ export default {
         ],
         summary: '/user_identities/update',
         tags: ['/user_identities'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
         'x-title': 'Update a User Identity',
       },
@@ -43233,6 +51590,49 @@ export default {
       },
     },
     '/webhooks/delete': {
+      delete: {
+        description:
+          'Deletes a specified [webhook](https://docs.seam.co/latest/developer-tools/webhooks).',
+        operationId: 'webhooksDeleteDelete',
+        parameters: [
+          {
+            in: 'query',
+            name: 'webhook_id',
+            required: true,
+            schema: {
+              description: 'ID of the webhook that you want to delete.',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/webhooks/delete',
+        tags: ['/webhooks'],
+        'x-fern-sdk-group-name': ['webhooks'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete a Webhook',
+      },
       post: {
         description:
           'Deletes a specified [webhook](https://docs.seam.co/latest/developer-tools/webhooks).',
@@ -43283,6 +51683,53 @@ export default {
       },
     },
     '/webhooks/get': {
+      get: {
+        description:
+          'Gets a specified [webhook](https://docs.seam.co/latest/developer-tools/webhooks).',
+        operationId: 'webhooksGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'webhook_id',
+            required: true,
+            schema: {
+              description: 'ID of the webhook that you want to get.',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    webhook: { $ref: '#/components/schemas/webhook' },
+                  },
+                  required: ['webhook', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/webhooks/get',
+        tags: ['/webhooks'],
+        'x-fern-sdk-group-name': ['webhooks'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'webhook',
+        'x-response-key': 'webhook',
+        'x-title': 'Get a Webhook',
+      },
       post: {
         description:
           'Gets a specified [webhook](https://docs.seam.co/latest/developer-tools/webhooks).',
@@ -43370,7 +51817,9 @@ export default {
         ],
         summary: '/webhooks/list',
         tags: ['/webhooks'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['webhooks'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'webhooks',
         'x-response-key': 'webhooks',
         'x-title': 'List Webhooks',
       },
@@ -43518,7 +51967,8 @@ export default {
         ],
         summary: '/webhooks/update',
         tags: ['/webhooks'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['webhooks'],
+        'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
         'x-title': 'Update a Webhook',
       },
@@ -43684,7 +52134,9 @@ export default {
         ],
         summary: '/workspaces/get',
         tags: ['/workspaces'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['workspaces'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'workspace',
         'x-response-key': 'workspace',
         'x-title': 'Get a Workspace',
       },
@@ -43764,7 +52216,9 @@ export default {
         ],
         summary: '/workspaces/list',
         tags: ['/workspaces'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['workspaces'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'workspaces',
         'x-response-key': 'workspaces',
         'x-title': 'List Workspaces',
       },
@@ -43925,7 +52379,8 @@ export default {
         ],
         summary: '/workspaces/update',
         tags: ['/workspaces'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['workspaces'],
+        'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
         'x-title': 'Udpate a Workspace',
       },
