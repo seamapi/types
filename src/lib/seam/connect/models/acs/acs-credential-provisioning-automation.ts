@@ -44,6 +44,7 @@ export const enrollment_automation = z.object({
 }).describe(`
   ---
   route_path: /user_identities/enrollment_automations
+  deprecated: Will be removed. Instead, link the \`user_identity\` to the \`acs_user\` in the access system in which you want to issue credentials.
   ---
   Represents an [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) within the [Seam mobile access solution](https://docs.seam.co/latest/capability-guides/mobile-access-in-development).
 `)
