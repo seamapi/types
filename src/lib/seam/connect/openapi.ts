@@ -12869,6 +12869,7 @@ export default {
         'x-route-path': '/devices',
       },
       enrollment_automation: {
+        deprecated: true,
         description:
           'Represents an [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) within the [Seam mobile access solution](https://docs.seam.co/latest/capability-guides/mobile-access-in-development).',
         properties: {
@@ -12910,6 +12911,8 @@ export default {
           'workspace_id',
         ],
         type: 'object',
+        'x-deprecated':
+          'Will be removed. Instead, link the `user_identity` to the `acs_user` in the access system in which you want to issue credentials.',
         'x-route-path': '/user_identities/enrollment_automations',
       },
       event: {
@@ -50089,6 +50092,8 @@ export default {
         ],
         summary: '/user_identities/enrollment_automations/delete',
         tags: ['/user_identities'],
+        'x-deprecated':
+          'Will be removed. Instead, link the `user_identity` to the `acs_user` in the access system in which you want to issue credentials.',
         'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
@@ -50199,6 +50204,8 @@ export default {
         ],
         summary: '/user_identities/enrollment_automations/get',
         tags: ['/user_identities'],
+        'x-deprecated':
+          'Will be removed. Instead, link the `user_identity` to the `acs_user` in the access system in which you want to issue credentials.',
         'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'enrollment_automation',
@@ -50283,6 +50290,8 @@ export default {
         ],
         summary: '/user_identities/enrollment_automations/launch',
         tags: ['/user_identities'],
+        'x-deprecated':
+          'Will be removed. Instead, link the `user_identity` to the `acs_user` in the access system in which you want to issue credentials.',
         'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
         'x-fern-sdk-method-name': 'launch',
         'x-fern-sdk-return-value': 'enrollment_automation',
@@ -50400,6 +50409,8 @@ export default {
         ],
         summary: '/user_identities/enrollment_automations/list',
         tags: ['/user_identities'],
+        'x-deprecated':
+          'Will be removed. Instead, link the `user_identity` to the `acs_user` in the access system in which you want to issue credentials.',
         'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'enrollment_automations',
