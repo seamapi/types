@@ -43910,8 +43910,90 @@ export default {
         tags: [],
         'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'portals'],
         'x-fern-sdk-method-name': 'get',
-        'x-fern-sdk-return-value': 'portal_configuration',
-        'x-response-key': 'portal_configuration',
+        'x-fern-sdk-return-value': 'customer_portal',
+        'x-response-key': 'customer_portal',
+        'x-title': 'Get Customer Portal Configuration',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+      post: {
+        description:
+          'Retrieves the configuration for a customer portal identified by customer_portal_id.',
+        operationId: 'seamCustomerV1PortalsGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  customer_portal_id: {
+                    description: 'Customer portal ID.',
+                    type: 'string',
+                  },
+                },
+                required: ['customer_portal_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    customer_portal: {
+                      properties: {
+                        business_vertical: {
+                          description:
+                            'Business vertical of the customer portal.',
+                          enum: [
+                            'short_term_rental',
+                            'hospitality',
+                            'multi_family',
+                            'gym_management',
+                            'property_tours',
+                          ],
+                          type: 'string',
+                        },
+                        features: {
+                          properties: {
+                            connect: {
+                              properties: { exclude: { type: 'boolean' } },
+                              type: 'object',
+                            },
+                            manage_devices: {
+                              properties: { exclude: { type: 'boolean' } },
+                              type: 'object',
+                            },
+                            organize: {
+                              properties: { exclude: { type: 'boolean' } },
+                              type: 'object',
+                            },
+                          },
+                          type: 'object',
+                        },
+                      },
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['customer_portal', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/portals/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'portals'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'customer_portal',
+        'x-response-key': 'customer_portal',
         'x-title': 'Get Customer Portal Configuration',
         'x-undocumented': 'Internal endpoint for customer portals.',
       },
