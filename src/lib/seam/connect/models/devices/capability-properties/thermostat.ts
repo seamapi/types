@@ -98,19 +98,24 @@ export const thermostat_capability_properties = z
           ---
           Available [climate presets](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) for the thermostat.
           `),
-    fallback_climate_preset_key: z.string().min(1).nullable().default(null)
-      .describe(`
+    fallback_climate_preset_key: z.string().min(1).nullable().describe(`
           ---
           property_group_key: thermostats
           ---
           Key of the [fallback climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) for the thermostat.
           `),
-    active_thermostat_schedule: thermostat_schedule.nullable().default(null)
-      .describe(`
+    active_thermostat_schedule: thermostat_schedule.nullable().describe(`
+          ---
+          property_group_key: thermostats
+          deprecated: Use \`active_thermostat_schedule_id\` with \`/thermostats/schedules/get\` instead.
+          ---
+          Active [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
+          `),
+    active_thermostat_schedule_id: z.string().uuid().nullable().describe(`
           ---
           property_group_key: thermostats
           ---
-          Active [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
+          ID of the active [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
           `),
     thermostat_daily_programs: z.array(thermostat_daily_program).optional()
       .describe(`

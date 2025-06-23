@@ -11538,7 +11538,7 @@ export default {
                   {
                     properties: {
                       active_thermostat_schedule: {
-                        default: null,
+                        deprecated: true,
                         description:
                           'Active [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
                         nullable: true,
@@ -11637,8 +11637,18 @@ export default {
                           'errors',
                         ],
                         type: 'object',
+                        'x-deprecated':
+                          'Use `active_thermostat_schedule_id` with `/thermostats/schedules/get` instead.',
                         'x-property-group-key': 'thermostats',
                         'x-route-path': '/thermostats/schedules',
+                      },
+                      active_thermostat_schedule_id: {
+                        description:
+                          'ID of the active [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+                        format: 'uuid',
+                        nullable: true,
+                        type: 'string',
+                        'x-property-group-key': 'thermostats',
                       },
                       available_climate_presets: {
                         description:
@@ -11924,7 +11934,6 @@ export default {
                         'x-property-group-key': 'thermostats',
                       },
                       fallback_climate_preset_key: {
-                        default: null,
                         description:
                           'Key of the [fallback climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) for the thermostat.',
                         minLength: 1,
