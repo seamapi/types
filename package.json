@@ -92,7 +92,7 @@
     "zod": "^3.24.0"
   },
   "devDependencies": {
-    "@seamapi/blueprint": "^0.50.1",
+    "@seamapi/blueprint": "^0.50.2",
     "@types/node": "^20.8.10",
     "concurrently": "^8.2.0",
     "del-cli": "^5.0.0",
