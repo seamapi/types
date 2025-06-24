@@ -40158,7 +40158,7 @@ export default {
             name: 'connect_webview_id',
             schema: {
               description:
-                'IDs of the connected accounts for which you want to list events.',
+                'ID of the Connect Webview for which you want to list events.',
               format: 'uuid',
               type: 'string',
             },
@@ -40278,7 +40278,7 @@ export default {
                   },
                   connect_webview_id: {
                     description:
-                      'IDs of the connected accounts for which you want to list events.',
+                      'ID of the Connect Webview for which you want to list events.',
                     format: 'uuid',
                     type: 'string',
                   },
