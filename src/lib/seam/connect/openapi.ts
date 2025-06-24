@@ -35893,6 +35893,7 @@ export default {
                         manage_devices: { exclude: false },
                         organize: { exclude: false },
                       },
+                      is_embedded: false,
                     },
                     description: 'Configuration for a customer portal',
                     properties: {
@@ -35943,6 +35944,12 @@ export default {
                           },
                         },
                         type: 'object',
+                      },
+                      is_embedded: {
+                        default: false,
+                        description:
+                          'Whether the portal is embedded in another application.',
+                        type: 'boolean',
                       },
                     },
                     type: 'object',
@@ -36289,6 +36296,26 @@ export default {
                                 },
                               },
                               required: ['name', 'property_key'],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
+                          property_listings: {
+                            description: 'List of property listings.',
+                            items: {
+                              properties: {
+                                name: {
+                                  description:
+                                    'Your display name for this location resource.',
+                                  type: 'string',
+                                },
+                                property_listing_key: {
+                                  description:
+                                    'Your unique identifier for the property listing.',
+                                  type: 'string',
+                                },
+                              },
+                              required: ['name', 'property_listing_key'],
                               type: 'object',
                             },
                             type: 'array',
@@ -36967,6 +36994,26 @@ export default {
                         },
                       },
                       required: ['name', 'property_key'],
+                      type: 'object',
+                    },
+                    type: 'array',
+                  },
+                  property_listings: {
+                    description: 'List of property listings.',
+                    items: {
+                      properties: {
+                        name: {
+                          description:
+                            'Your display name for this location resource.',
+                          type: 'string',
+                        },
+                        property_listing_key: {
+                          description:
+                            'Your unique identifier for the property listing.',
+                          type: 'string',
+                        },
+                      },
+                      required: ['name', 'property_listing_key'],
                       type: 'object',
                     },
                     type: 'array',
@@ -43890,6 +43937,7 @@ export default {
                           },
                           type: 'object',
                         },
+                        is_embedded: { type: 'boolean' },
                       },
                       type: 'object',
                     },
@@ -43972,6 +44020,7 @@ export default {
                           },
                           type: 'object',
                         },
+                        is_embedded: { type: 'boolean' },
                       },
                       type: 'object',
                     },

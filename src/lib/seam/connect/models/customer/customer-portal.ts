@@ -26,6 +26,10 @@ const base_features = z.object({
 export const portal_configuration = z
   .object({
     features: base_features.default({}),
+    is_embedded: z
+      .boolean()
+      .default(false)
+      .describe('Whether the portal is embedded in another application.'),
   })
   .default({
     features: {
@@ -33,6 +37,7 @@ export const portal_configuration = z
       organize: { exclude: false },
       manage_devices: { exclude: false },
     },
+    is_embedded: false,
   })
   .describe(`Configuration for a customer portal`)
 
