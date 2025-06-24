@@ -40,6 +40,12 @@ export const listing_resource = base_location_resource.extend({
   listing_key: z.string().describe('Your unique identifier for the listing.'),
 })
 
+export const property_listing_resource = base_location_resource.extend({
+  property_listing_key: z
+    .string()
+    .describe('Your unique identifier for the property listing.'),
+})
+
 // Union of all location resource types
 export const location_resource = z.union([
   neutral_resource,
@@ -50,6 +56,7 @@ export const location_resource = z.union([
   facility_resource,
   building_resource,
   listing_resource,
+  property_listing_resource,
 ])
 
 // All location key aliases for use in references
@@ -62,6 +69,7 @@ export const location_key_aliases = z.union([
   z.object({ facility_key: z.string() }),
   z.object({ building_key: z.string() }),
   z.object({ listing_key: z.string() }),
+  z.object({ property_listing_key: z.string() }),
 ])
 
 // Export types
@@ -73,5 +81,6 @@ export type UnitResource = z.infer<typeof unit_resource>
 export type FacilityResource = z.infer<typeof facility_resource>
 export type BuildingResource = z.infer<typeof building_resource>
 export type ListingResource = z.infer<typeof listing_resource>
+export type PropertyListingResource = z.infer<typeof property_listing_resource>
 export type LocationResource = z.infer<typeof location_resource>
 export type LocationKeyAliases = z.infer<typeof location_key_aliases>

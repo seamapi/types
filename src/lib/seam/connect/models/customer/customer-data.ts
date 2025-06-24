@@ -11,6 +11,7 @@ import {
   facility_resource,
   listing_resource,
   neutral_resource,
+  property_listing_resource,
   property_resource,
   room_resource,
   unit_resource,
@@ -57,6 +58,10 @@ export const customer_data = z.object({
     .describe('List of buildings.'),
   listings: z
     .array(listing_resource)
+    .optional()
+    .describe('List of property listings.'),
+  property_listings: z
+    .array(property_listing_resource)
     .optional()
     .describe('List of property listings.'),
 
