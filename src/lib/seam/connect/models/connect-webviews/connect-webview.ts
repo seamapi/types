@@ -1,26 +1,13 @@
 import { z } from 'zod'
 
 import { custom_metadata } from '../custom-metadata.js'
+import { provider_capability } from '../provider-capability.js'
 
 export const connect_webview_device_selection_mode = z.enum([
   'none',
   'single',
   'multiple',
-]).describe(`
-  ---
-  undocumented: Not implemented.
-  ---
-`)
-
-export const connect_webview_accepted_capabilities = z
-  .enum(['lock', 'thermostat', 'noise_sensor', 'access_control'])
-  .describe(
-    'High-level device capabilities that the Connect Webview can accept.',
-  )
-
-export type ConnectWebviewAcceptedCapabilities = z.infer<
-  typeof connect_webview_accepted_capabilities
->
+])
 
 export const connect_webview = z.object({
   connect_webview_id: z.string().uuid().describe('ID of the Connect Webview.'),
@@ -57,7 +44,7 @@ export const connect_webview = z.object({
     ),
 
   accepted_capabilities: z
-    .array(connect_webview_accepted_capabilities)
+    .array(provider_capability)
     .describe(
       'High-level device capabilities that the Connect Webview can accept. When creating a Connect Webview, you can specify the types of devices that it can connect to Seam. If you do not set custom `accepted_capabilities`, Seam uses a default set of `accepted_capabilities` for each provider. For example, if you create a Connect Webview that accepts SmartThing devices, without specifying `accepted_capabilities`, Seam accepts only SmartThings locks. To connect SmartThings thermostats and locks to Seam, create a Connect Webview and include both `thermostat` and `lock` in the `accepted_capabilities`.',
     ),
