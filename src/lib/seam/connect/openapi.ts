@@ -26574,7 +26574,6 @@ export default {
                       ends_at: {
                         description:
                           'Date and time at which the validity of the new grant ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
-                        format: 'date-time',
                         type: 'string',
                       },
                       location: {
@@ -26634,7 +26633,6 @@ export default {
                       starts_at: {
                         description:
                           'Date and time at which the validity of the new grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
-                        format: 'date-time',
                         type: 'string',
                       },
                     },
