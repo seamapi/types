@@ -1,6 +1,7 @@
 import { z } from 'zod'
 
 import { custom_metadata } from '../custom-metadata.js'
+import { provider_capability } from '../provider-capability.js'
 
 const common_connected_account_error = z.object({
   created_at: z
@@ -311,6 +312,11 @@ export const connected_account = z.object({
     .optional()
     .describe(
       'Your unique key for the customer associated with this connected account.',
+    ),
+  accepted_capabilities: z
+    .array(provider_capability)
+    .describe(
+      'List of capabilities that were accepted during the account connection process.',
     ),
 }).describe(`
   ---

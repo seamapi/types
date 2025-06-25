@@ -8714,7 +8714,7 @@ export default {
               'High-level device capabilities that the Connect Webview can accept. When creating a Connect Webview, you can specify the types of devices that it can connect to Seam. If you do not set custom `accepted_capabilities`, Seam uses a default set of `accepted_capabilities` for each provider. For example, if you create a Connect Webview that accepts SmartThing devices, without specifying `accepted_capabilities`, Seam accepts only SmartThings locks. To connect SmartThings thermostats and locks to Seam, create a Connect Webview and include both `thermostat` and `lock` in the `accepted_capabilities`.',
             items: {
               description:
-                'High-level device capabilities that the Connect Webview can accept.',
+                '\n  High-level device capabilities that can be restricted in connect webviews.\n  These represent the main device categories that customers can opt into.\n',
               enum: ['lock', 'thermostat', 'noise_sensor', 'access_control'],
               type: 'string',
             },
@@ -8798,7 +8798,6 @@ export default {
           device_selection_mode: {
             enum: ['none', 'single', 'multiple'],
             type: 'string',
-            'x-undocumented': 'Not implemented.',
           },
           login_successful: {
             description:
@@ -8864,6 +8863,17 @@ export default {
         description:
           'Represents a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). A connected account is an external third-party account to which your user has authorized Seam to get access, for example, an August account with a list of door locks.',
         properties: {
+          accepted_capabilities: {
+            description:
+              'List of capabilities that were accepted during the account connection process.',
+            items: {
+              description:
+                '\n  High-level device capabilities that can be restricted in connect webviews.\n  These represent the main device categories that customers can opt into.\n',
+              enum: ['lock', 'thermostat', 'noise_sensor', 'access_control'],
+              type: 'string',
+            },
+            type: 'array',
+          },
           account_type: {
             description: 'Type of connected account.',
             type: 'string',
@@ -9279,6 +9289,7 @@ export default {
           'warnings',
           'custom_metadata',
           'automatically_manage_new_devices',
+          'accepted_capabilities',
         ],
         type: 'object',
         'x-route-path': '/connected_accounts',
@@ -34789,7 +34800,7 @@ export default {
                       'List of accepted device capabilities that restrict the types of devices that can be connected through the Connect Webview. If not provided, defaults will be determined based on the accepted providers.',
                     items: {
                       description:
-                        'High-level device capabilities that the Connect Webview can accept.',
+                        '\n  High-level device capabilities that can be restricted in connect webviews.\n  These represent the main device categories that customers can opt into.\n',
                       enum: [
                         'lock',
                         'thermostat',
