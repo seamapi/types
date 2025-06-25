@@ -65,6 +65,7 @@ export {
   phone_session,
   portal_configuration,
   property_resource,
+  provider_capability,
   reservation_resource,
   resident_resource,
   room_resource,
