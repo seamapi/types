@@ -14,6 +14,7 @@ export {
   acs_credential_pool_external_type,
   acs_credential_provisioning_automation,
   acs_entrance,
+  acs_entrance_capability_flags,
   acs_system,
   acs_system_capability_flags,
   acs_system_external_type,
