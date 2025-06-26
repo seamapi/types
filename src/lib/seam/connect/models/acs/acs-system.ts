@@ -1,6 +1,21 @@
 import { z } from 'zod'
 
-export const acs_system_capability_flags = z.object({})
+export const acs_system_capability_flags = z.object({
+  can_issue_mobile_keys: z
+    .boolean()
+    .optional()
+    .describe(
+      'Indicates whether the ACS system can issue mobile key credentials.',
+    ),
+  can_issue_codes: z
+    .boolean()
+    .optional()
+    .describe('Indicates whether the ACS system can issue PIN codes.'),
+  can_issue_cards: z
+    .boolean()
+    .optional()
+    .describe('Indicates whether the ACS system can issue plastic cards.'),
+})
 
 export const acs_location = z.object({
   time_zone: z
