@@ -142,6 +142,12 @@ const common_acs_credential = z.object({
     .describe(
       'ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs.',
     ),
+  connected_account_id: z
+    .string()
+    .uuid()
+    .describe(
+      'ID of the [connected account](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials#connected-accounts) to which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs.',
+    ),
   acs_credential_pool_id: z.string().uuid().optional(),
   acs_system_id: z
     .string()
