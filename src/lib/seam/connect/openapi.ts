@@ -2686,6 +2686,21 @@ export default {
             required: ['door_type', 'door_name'],
             type: 'object',
           },
+          can_unlock_with_card: {
+            description:
+              'Indicates whether the ACS entrance can be unlocked with card credentials.',
+            type: 'boolean',
+          },
+          can_unlock_with_code: {
+            description:
+              'Indicates whether the ACS entrance can be unlocked with pin codes.',
+            type: 'boolean',
+          },
+          can_unlock_with_mobile_key: {
+            description:
+              'Indicates whether the ACS entrance can be unlocked with mobile key credentials.',
+            type: 'boolean',
+          },
           connected_account_id: {
             description:
               'ID of the [connected account](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
@@ -2912,6 +2927,21 @@ export default {
             type: 'string',
           },
           acs_user_count: { format: 'float', type: 'number' },
+          can_issue_cards: {
+            description:
+              'Indicates whether the ACS system can issue plastic cards.',
+            type: 'boolean',
+          },
+          can_issue_codes: {
+            description:
+              'Indicates whether the ACS system can issue PIN codes.',
+            type: 'boolean',
+          },
+          can_issue_mobile_keys: {
+            description:
+              'Indicates whether the ACS system can issue mobile key credentials.',
+            type: 'boolean',
+          },
           connected_account_id: {
             description:
               'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
@@ -18457,6 +18487,21 @@ export default {
                               },
                               required: ['door_type', 'door_name'],
                               type: 'object',
+                            },
+                            can_unlock_with_card: {
+                              description:
+                                'Indicates whether the ACS entrance can be unlocked with card credentials.',
+                              type: 'boolean',
+                            },
+                            can_unlock_with_code: {
+                              description:
+                                'Indicates whether the ACS entrance can be unlocked with pin codes.',
+                              type: 'boolean',
+                            },
+                            can_unlock_with_mobile_key: {
+                              description:
+                                'Indicates whether the ACS entrance can be unlocked with mobile key credentials.',
+                              type: 'boolean',
                             },
                             connected_account_id: {
                               description:
@@ -37941,6 +37986,16 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -38257,6 +38312,12 @@ export default {
                     description:
                       "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
                     nullable: true,
+                    type: 'string',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+                    minLength: 1,
                     type: 'string',
                   },
                   space_id: {
@@ -39076,6 +39137,16 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -39389,6 +39460,12 @@ export default {
                     description:
                       "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
                     nullable: true,
+                    type: 'string',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+                    minLength: 1,
                     type: 'string',
                   },
                   space_id: {
@@ -41010,6 +41087,16 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -41260,6 +41347,12 @@ export default {
                     description:
                       "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
                     nullable: true,
+                    type: 'string',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+                    minLength: 1,
                     type: 'string',
                   },
                   space_id: {
@@ -42024,6 +42117,16 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -42189,6 +42292,12 @@ export default {
                     description:
                       "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
                     nullable: true,
+                    type: 'string',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+                    minLength: 1,
                     type: 'string',
                   },
                   space_id: {
@@ -46753,6 +46862,16 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -46939,6 +47058,12 @@ export default {
                     description:
                       "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
                     nullable: true,
+                    type: 'string',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+                    minLength: 1,
                     type: 'string',
                   },
                   space_id: {
