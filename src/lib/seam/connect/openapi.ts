@@ -2912,6 +2912,21 @@ export default {
             type: 'string',
           },
           acs_user_count: { format: 'float', type: 'number' },
+          can_issue_cards: {
+            description:
+              'Indicates whether the ACS system can issue plastic cards.',
+            type: 'boolean',
+          },
+          can_issue_codes: {
+            description:
+              'Indicates whether the ACS system can issue PIN codes.',
+            type: 'boolean',
+          },
+          can_issue_mobile_keys: {
+            description:
+              'Indicates whether the ACS system can issue mobile key credentials.',
+            type: 'boolean',
+          },
           connected_account_id: {
             description:
               'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
