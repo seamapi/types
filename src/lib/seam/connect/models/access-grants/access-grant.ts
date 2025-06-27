@@ -27,6 +27,13 @@ export const access_grant = z.object({
     .array(z.string().uuid())
     .describe('IDs of the access methods created for the access grant.'),
   display_name: z.string().describe('Display name of the access grant.'),
+  instant_key_url: z
+    .string()
+    .url()
+    .optional()
+    .describe(
+      'Instant Key URL. Only returned if the access grant has a single mobile_key access_method. ',
+    ),
   created_at: z
     .string()
     .datetime()
