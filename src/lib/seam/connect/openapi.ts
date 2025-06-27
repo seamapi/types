@@ -43858,6 +43858,695 @@ export default {
         'x-undocumented': 'Seam Bridge Client only.',
       },
     },
+    '/seam/customer/v1/automation_runs/list': {
+      get: {
+        description:
+          'Returns a list of all automation runs for a workspace or customer.',
+        operationId: 'seamCustomerV1AutomationRunsListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'automation_id',
+            schema: {
+              description:
+                'ID of the automation for which you want to retrieve all automation runs.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'partner_resource_id',
+            schema: {
+              description:
+                'ID of the partner resource for which you want to retrieve all automation runs.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'rule',
+            schema: {
+              description:
+                'Filter automation runs by the specific rule that was executed.',
+              enum: [
+                'reservation_created',
+                'reservation_time_updated',
+                'reservation_deleted',
+              ],
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'success',
+            schema: {
+              description: 'Filter automation runs by success status.',
+              type: 'boolean',
+            },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 500,
+              description: 'Maximum number of records to return per page.',
+              exclusiveMinimum: true,
+              minimum: 0,
+              type: 'integer',
+            },
+          },
+          {
+            in: 'query',
+            name: 'created_before',
+            schema: {
+              description:
+                'Timestamp by which to limit returned automation runs. Returns runs created before this timestamp.',
+              format: 'date-time',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              nullable: true,
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    automation_runs: {
+                      items: {
+                        properties: {
+                          automation_id: { format: 'uuid', type: 'string' },
+                          automation_result: {
+                            properties: {
+                              actions: {
+                                items: {
+                                  properties: {
+                                    access_grant_id: {
+                                      format: 'uuid',
+                                      type: 'string',
+                                    },
+                                    action_type: {
+                                      enum: ['create', 'update', 'delete'],
+                                      type: 'string',
+                                    },
+                                    resource_type: { type: 'string' },
+                                  },
+                                  required: [
+                                    'action_type',
+                                    'resource_type',
+                                    'access_grant_id',
+                                  ],
+                                  type: 'object',
+                                },
+                                type: 'array',
+                              },
+                              error: { type: 'string' },
+                              rule: {
+                                enum: [
+                                  'reservation_created',
+                                  'reservation_time_updated',
+                                  'reservation_deleted',
+                                ],
+                                type: 'string',
+                              },
+                              success: { type: 'boolean' },
+                            },
+                            required: ['success', 'rule', 'actions'],
+                            type: 'object',
+                          },
+                          automation_run_id: { format: 'uuid', type: 'string' },
+                          created_at: { type: 'string' },
+                          partner_resource_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          workspace_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: [
+                          'automation_run_id',
+                          'workspace_id',
+                          'automation_id',
+                          'partner_resource_id',
+                          'created_at',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
+                  },
+                  required: ['automation_runs', 'pagination', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/seam/customer/v1/automation_runs/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'automation_runs'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'automation_runs',
+        'x-response-key': 'automation_runs',
+        'x-title': 'List Automation Runs',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+      post: {
+        description:
+          'Returns a list of all automation runs for a workspace or customer.',
+        operationId: 'seamCustomerV1AutomationRunsListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  automation_id: {
+                    description:
+                      'ID of the automation for which you want to retrieve all automation runs.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  created_before: {
+                    description:
+                      'Timestamp by which to limit returned automation runs. Returns runs created before this timestamp.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
+                  limit: {
+                    default: 500,
+                    description:
+                      'Maximum number of records to return per page.',
+                    exclusiveMinimum: true,
+                    minimum: 0,
+                    type: 'integer',
+                  },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    nullable: true,
+                    type: 'string',
+                  },
+                  partner_resource_id: {
+                    description:
+                      'ID of the partner resource for which you want to retrieve all automation runs.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  rule: {
+                    description:
+                      'Filter automation runs by the specific rule that was executed.',
+                    enum: [
+                      'reservation_created',
+                      'reservation_time_updated',
+                      'reservation_deleted',
+                    ],
+                    type: 'string',
+                  },
+                  success: {
+                    description: 'Filter automation runs by success status.',
+                    type: 'boolean',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    automation_runs: {
+                      items: {
+                        properties: {
+                          automation_id: { format: 'uuid', type: 'string' },
+                          automation_result: {
+                            properties: {
+                              actions: {
+                                items: {
+                                  properties: {
+                                    access_grant_id: {
+                                      format: 'uuid',
+                                      type: 'string',
+                                    },
+                                    action_type: {
+                                      enum: ['create', 'update', 'delete'],
+                                      type: 'string',
+                                    },
+                                    resource_type: { type: 'string' },
+                                  },
+                                  required: [
+                                    'action_type',
+                                    'resource_type',
+                                    'access_grant_id',
+                                  ],
+                                  type: 'object',
+                                },
+                                type: 'array',
+                              },
+                              error: { type: 'string' },
+                              rule: {
+                                enum: [
+                                  'reservation_created',
+                                  'reservation_time_updated',
+                                  'reservation_deleted',
+                                ],
+                                type: 'string',
+                              },
+                              success: { type: 'boolean' },
+                            },
+                            required: ['success', 'rule', 'actions'],
+                            type: 'object',
+                          },
+                          automation_run_id: { format: 'uuid', type: 'string' },
+                          created_at: { type: 'string' },
+                          partner_resource_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          workspace_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: [
+                          'automation_run_id',
+                          'workspace_id',
+                          'automation_id',
+                          'partner_resource_id',
+                          'created_at',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
+                  },
+                  required: ['automation_runs', 'pagination', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/seam/customer/v1/automation_runs/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'automation_runs'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'automation_runs',
+        'x-response-key': 'automation_runs',
+        'x-title': 'List Automation Runs',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
+    '/seam/customer/v1/automations/delete': {
+      delete: {
+        description:
+          'Deletes the automation configuration for a customer portal workspace.\nSupports both console session and customer client session authentication.',
+        operationId: 'seamCustomerV1AutomationsDeleteDelete',
+        requestBody: {
+          content: {
+            'application/json': { schema: { properties: {}, type: 'object' } },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/seam/customer/v1/automations/delete',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'automations'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete Customer Portal Automation Configuration',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
+    '/seam/customer/v1/automations/get': {
+      get: {
+        description:
+          'Gets the current automation configuration for a customer portal workspace.\nFor customer client sessions, returns customer-specific config if available,\notherwise falls back to workspace-level config.',
+        operationId: 'seamCustomerV1AutomationsGetGet',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_rules: {
+                      properties: {
+                        reservation_created: {
+                          properties: {
+                            config: {
+                              properties: {
+                                access_methods: {
+                                  items: {
+                                    enum: ['card', 'mobile_key', 'code'],
+                                    type: 'string',
+                                  },
+                                  minItems: 1,
+                                  type: 'array',
+                                },
+                                method_issuance_strategy: {
+                                  enum: [
+                                    'first_available',
+                                    'first_two_available',
+                                    'all_available',
+                                  ],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'access_methods',
+                                'method_issuance_strategy',
+                              ],
+                              type: 'object',
+                            },
+                            rule: {
+                              enum: ['reservation_created'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['rule', 'config'],
+                          type: 'object',
+                        },
+                        reservation_deleted: {
+                          properties: {
+                            config: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            rule: {
+                              enum: ['reservation_deleted'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['rule', 'config'],
+                          type: 'object',
+                        },
+                        reservation_time_updated: {
+                          properties: {
+                            config: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            rule: {
+                              enum: ['reservation_time_updated'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['rule', 'config'],
+                          type: 'object',
+                        },
+                      },
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/seam/customer/v1/automations/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'automations'],
+        'x-fern-sdk-method-name': 'get',
+        'x-response-key': null,
+        'x-title': 'Get Customer Portal Automation Configuration',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
+    '/seam/customer/v1/automations/update': {
+      patch: {
+        description:
+          'Updates the automation configuration for a customer portal workspace.\nSupports both console session and customer client session authentication.',
+        operationId: 'seamCustomerV1AutomationsUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_rules: {
+                    description: 'Access automation rules configuration.',
+                    properties: {
+                      reservation_created: {
+                        properties: {
+                          config: {
+                            properties: {
+                              access_methods: {
+                                items: {
+                                  enum: ['card', 'mobile_key', 'code'],
+                                  type: 'string',
+                                },
+                                minItems: 1,
+                                type: 'array',
+                              },
+                              method_issuance_strategy: {
+                                enum: [
+                                  'first_available',
+                                  'first_two_available',
+                                  'all_available',
+                                ],
+                                type: 'string',
+                              },
+                            },
+                            required: [
+                              'access_methods',
+                              'method_issuance_strategy',
+                            ],
+                            type: 'object',
+                          },
+                          rule: {
+                            enum: ['reservation_created'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule', 'config'],
+                        type: 'object',
+                      },
+                      reservation_deleted: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['reservation_deleted'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule', 'config'],
+                        type: 'object',
+                      },
+                      reservation_time_updated: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['reservation_time_updated'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule', 'config'],
+                        type: 'object',
+                      },
+                    },
+                    type: 'object',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/seam/customer/v1/automations/update',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'automations'],
+        'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
+        'x-title': 'Update Customer Portal Automation Configuration',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+      post: {
+        description:
+          'Updates the automation configuration for a customer portal workspace.\nSupports both console session and customer client session authentication.',
+        operationId: 'seamCustomerV1AutomationsUpdatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_rules: {
+                    description: 'Access automation rules configuration.',
+                    properties: {
+                      reservation_created: {
+                        properties: {
+                          config: {
+                            properties: {
+                              access_methods: {
+                                items: {
+                                  enum: ['card', 'mobile_key', 'code'],
+                                  type: 'string',
+                                },
+                                minItems: 1,
+                                type: 'array',
+                              },
+                              method_issuance_strategy: {
+                                enum: [
+                                  'first_available',
+                                  'first_two_available',
+                                  'all_available',
+                                ],
+                                type: 'string',
+                              },
+                            },
+                            required: [
+                              'access_methods',
+                              'method_issuance_strategy',
+                            ],
+                            type: 'object',
+                          },
+                          rule: {
+                            enum: ['reservation_created'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule', 'config'],
+                        type: 'object',
+                      },
+                      reservation_deleted: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['reservation_deleted'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule', 'config'],
+                        type: 'object',
+                      },
+                      reservation_time_updated: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['reservation_time_updated'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule', 'config'],
+                        type: 'object',
+                      },
+                    },
+                    type: 'object',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/seam/customer/v1/automations/update',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'automations'],
+        'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
+        'x-title': 'Update Customer Portal Automation Configuration',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
     '/seam/customer/v1/portals/get': {
       get: {
         description:
