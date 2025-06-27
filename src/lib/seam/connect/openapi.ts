@@ -1956,9 +1956,9 @@ export default {
             format: 'uri',
             type: 'string',
           },
-          is_card_encoding_required: {
+          is_encoding_required: {
             description:
-              'Indicates whether card encoding is required for plastic card access methods.',
+              'Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.',
             type: 'boolean',
           },
           issued_at: {
@@ -5489,260 +5489,6 @@ export default {
                         description:
                           'Error type to indicate that there is no credential on the encoder.',
                         enum: ['no_credential_on_encoder'],
-                        type: 'string',
-                      },
-                    },
-                    required: ['type', 'message'],
-                    type: 'object',
-                  },
-                ],
-              },
-              result: {
-                description:
-                  'Result of the action attempt. Null for failed action attempts.',
-                nullable: true,
-              },
-              status: { enum: ['error'], type: 'string' },
-            },
-            required: [
-              'action_attempt_id',
-              'status',
-              'result',
-              'action_type',
-              'error',
-            ],
-            type: 'object',
-          },
-          {
-            description:
-              'Encoding access method data from the physical encoder onto a card is pending.',
-            properties: {
-              action_attempt_id: {
-                description: 'ID of the action attempt.',
-                format: 'uuid',
-                type: 'string',
-              },
-              action_type: {
-                description:
-                  'Action attempt to track the status of encoding an access method from the physical encoder onto a card.',
-                enum: ['ENCODE_ACCESS_METHOD'],
-                type: 'string',
-              },
-              error: {
-                description:
-                  'Errors associated with the action attempt. Null for pending action attempts.',
-                nullable: true,
-              },
-              result: {
-                description:
-                  'Result of the action attempt. Null for pending action attempts.',
-                nullable: true,
-              },
-              status: { enum: ['pending'], type: 'string' },
-            },
-            required: [
-              'action_attempt_id',
-              'status',
-              'result',
-              'error',
-              'action_type',
-            ],
-            type: 'object',
-          },
-          {
-            description:
-              'Encoding access method data from the physical encoder onto a card succeeded.',
-            properties: {
-              action_attempt_id: {
-                description: 'ID of the action attempt.',
-                format: 'uuid',
-                type: 'string',
-              },
-              action_type: {
-                description:
-                  'Action attempt to track the status of encoding an access method from the physical encoder onto a card.',
-                enum: ['ENCODE_ACCESS_METHOD'],
-                type: 'string',
-              },
-              error: {
-                description:
-                  'Errors associated with the action attempt. Null for successful action attempts.',
-                nullable: true,
-              },
-              result: {
-                description:
-                  'Result of an encoding attempt. If the attempt was successful, includes the access method data that was encoded onto the card.',
-                properties: {
-                  access_method_id: {
-                    description: 'ID of the access method.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
-                  created_at: {
-                    description:
-                      'Date and time at which the access method was created.',
-                    format: 'date-time',
-                    type: 'string',
-                  },
-                  display_name: {
-                    description: 'Display name of the access method.',
-                    type: 'string',
-                  },
-                  instant_key_url: {
-                    description:
-                      'URL of the Instant Key for mobile key access methods.',
-                    format: 'uri',
-                    type: 'string',
-                  },
-                  is_card_encoding_required: {
-                    description:
-                      'Indicates whether card encoding is required for plastic card access methods.',
-                    type: 'boolean',
-                  },
-                  issued_at: {
-                    description:
-                      'Date and time at which the access method was issued.',
-                    format: 'date-time',
-                    type: 'string',
-                  },
-                  mode: {
-                    description:
-                      'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                    enum: ['code', 'card', 'mobile_key'],
-                    type: 'string',
-                  },
-                  workspace_id: {
-                    description:
-                      'ID of the Seam workspace associated with the access method.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
-                },
-                required: [
-                  'workspace_id',
-                  'access_method_id',
-                  'display_name',
-                  'mode',
-                  'created_at',
-                ],
-                type: 'object',
-              },
-              status: { enum: ['success'], type: 'string' },
-            },
-            required: [
-              'action_attempt_id',
-              'status',
-              'error',
-              'action_type',
-              'result',
-            ],
-            type: 'object',
-          },
-          {
-            description:
-              'Encoding access method data from the physical encoder onto a card failed.',
-            properties: {
-              action_attempt_id: {
-                description: 'ID of the action attempt.',
-                format: 'uuid',
-                type: 'string',
-              },
-              action_type: {
-                description:
-                  'Action attempt to track the status of encoding an access method from the physical encoder onto a card.',
-                enum: ['ENCODE_ACCESS_METHOD'],
-                type: 'string',
-              },
-              error: {
-                oneOf: [
-                  {
-                    description:
-                      "Error that doesn't fit into other specific error categories.",
-                    properties: {
-                      message: {
-                        description:
-                          'Message for the error associated with the action attempt.',
-                        type: 'string',
-                      },
-                      type: {
-                        description:
-                          'Type of the error associated with the action attempt.',
-                        enum: ['uncategorized_error'],
-                        type: 'string',
-                      },
-                    },
-                    required: ['type', 'message'],
-                    type: 'object',
-                  },
-                  {
-                    description: 'Error to indicate an expired action attempt.',
-                    properties: {
-                      message: {
-                        description:
-                          'Message for the error associated with the action attempt.',
-                        type: 'string',
-                      },
-                      type: {
-                        description:
-                          'Type of the error associated with the action attempt.',
-                        enum: ['action_attempt_expired'],
-                        type: 'string',
-                      },
-                    },
-                    required: ['type', 'message'],
-                    type: 'object',
-                  },
-                  {
-                    description:
-                      'Error to indicate that there is no credential on the encoder.',
-                    properties: {
-                      message: {
-                        description:
-                          'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                        type: 'string',
-                      },
-                      type: {
-                        description:
-                          'Error type to indicate that there is no credential on the encoder.',
-                        enum: ['no_credential_on_encoder'],
-                        type: 'string',
-                      },
-                    },
-                    required: ['type', 'message'],
-                    type: 'object',
-                  },
-                  {
-                    description:
-                      'Error to indicate an incompatible card format.',
-                    properties: {
-                      message: {
-                        description:
-                          'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                        type: 'string',
-                      },
-                      type: {
-                        description:
-                          'Error type to indicate an incompatible card format.',
-                        enum: ['incompatible_card_format'],
-                        type: 'string',
-                      },
-                    },
-                    required: ['type', 'message'],
-                    type: 'object',
-                  },
-                  {
-                    description:
-                      'Error to indicate that the affected credential cannot be reissued.',
-                    properties: {
-                      message: {
-                        description:
-                          'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                        type: 'string',
-                      },
-                      type: {
-                        description:
-                          'Error type to indicate that the affected credential cannot be reissued.',
-                        enum: ['credential_cannot_be_reissued'],
                         type: 'string',
                       },
                     },
@@ -27392,6 +27138,71 @@ export default {
         'x-title': 'Delete an Access Method',
       },
     },
+    '/access_methods/encode': {
+      post: {
+        description:
+          'Encodes an existing [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) onto a plastic card placed on the specified [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
+        operationId: 'accessMethodsEncodePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_method_id: {
+                    description:
+                      'ID of the `access_method` to encode onto a card.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_encoder_id: {
+                    description:
+                      'ID of the `acs_encoder` to use to encode the `acs_credential`.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['acs_encoder_id', 'access_method_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_methods/encode',
+        tags: [],
+        'x-action-attempt-type': 'ENCODE_CREDENTIAL',
+        'x-fern-sdk-group-name': ['access_methods'],
+        'x-fern-sdk-method-name': 'encode',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
+        'x-title': 'Encode an Access Method',
+      },
+    },
     '/access_methods/get': {
       get: {
         description: 'Get an access method.',
@@ -30216,11 +30027,11 @@ export default {
         'x-title': 'Update a Credential',
       },
     },
-    '/acs/encoders/encode_access_method': {
+    '/acs/encoders/encode_credential': {
       post: {
         description:
-          'Encodes an existing access method onto a plastic card placed on the specified [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
-        operationId: 'acsEncodersEncodeAccessMethodPost',
+          'Encodes an existing [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) onto a plastic card placed on the specified [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). Either provide an `acs_credential_id` or an `access_method_id`',
+        operationId: 'acsEncodersEncodeCredentialPost',
         requestBody: {
           content: {
             'application/json': {
@@ -30232,65 +30043,6 @@ export default {
                     format: 'uuid',
                     type: 'string',
                   },
-                  acs_encoder_id: {
-                    description:
-                      'ID of the `acs_encoder` to use to encode the `access_method`.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
-                },
-                required: ['acs_encoder_id', 'access_method_id'],
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    action_attempt: {
-                      $ref: '#/components/schemas/action_attempt',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['action_attempt', 'ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { pat_with_workspace: [] },
-          { console_session_with_workspace: [] },
-          { api_key: [] },
-        ],
-        summary: '/acs/encoders/encode_access_method',
-        tags: ['/acs'],
-        'x-action-attempt-type': 'ENCODE_ACCESS_METHOD',
-        'x-fern-sdk-group-name': ['acs', 'encoders'],
-        'x-fern-sdk-method-name': 'encode_access_method',
-        'x-fern-sdk-return-value': 'action_attempt',
-        'x-response-key': 'action_attempt',
-        'x-title': 'Encode an Access Method',
-      },
-    },
-    '/acs/encoders/encode_credential': {
-      post: {
-        description:
-          'Encodes an existing [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) onto a plastic card placed on the specified [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
-        operationId: 'acsEncodersEncodeCredentialPost',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
                   acs_credential_id: {
                     description:
                       'ID of the `acs_credential` to encode onto a card.',
@@ -30304,7 +30056,7 @@ export default {
                     type: 'string',
                   },
                 },
-                required: ['acs_encoder_id', 'acs_credential_id'],
+                required: ['acs_encoder_id'],
                 type: 'object',
               },
             },
