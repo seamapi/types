@@ -35724,6 +35724,16 @@ export default {
           },
           {
             in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned connected accounts to include all records that satisfy a partial match using `connected_account_id`, `account_type`, `customer_key`, `custom_metadata`, `user_identifier.username`, `user_identifier.email` or `user_identifier.phone`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'limit',
             schema: {
               default: 11_000,
@@ -35814,6 +35824,12 @@ export default {
                     description:
                       "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
                     nullable: true,
+                    type: 'string',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned connected accounts to include all records that satisfy a partial match using `connected_account_id`, `account_type`, `customer_key`, `custom_metadata`, `user_identifier.username`, `user_identifier.email` or `user_identifier.phone`.',
+                    minLength: 1,
                     type: 'string',
                   },
                   user_identifier_key: {
