@@ -15,6 +15,7 @@ export const device_capability_flags =
     can_simulate_removal: z.boolean().optional(),
     can_simulate_connection: z.boolean().optional(),
     can_simulate_disconnection: z.boolean().optional(),
+    can_unlock_with_code: z.boolean().optional(),
   })
 
 export const battery_status = z.enum(['critical', 'low', 'good', 'full'])
