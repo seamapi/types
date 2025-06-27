@@ -2179,6 +2179,12 @@ export default {
             nullable: true,
             type: 'string',
           },
+          connected_account_id: {
+            description:
+              'ID of the [connected account](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials#connected-accounts) to which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs.',
+            format: 'uuid',
+            type: 'string',
+          },
           created_at: {
             description:
               'Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created.',
@@ -2497,6 +2503,7 @@ export default {
         },
         required: [
           'acs_credential_id',
+          'connected_account_id',
           'acs_system_id',
           'display_name',
           'access_method',
@@ -2685,6 +2692,21 @@ export default {
             },
             required: ['door_type', 'door_name'],
             type: 'object',
+          },
+          can_unlock_with_card: {
+            description:
+              'Indicates whether the ACS entrance can be unlocked with card credentials.',
+            type: 'boolean',
+          },
+          can_unlock_with_code: {
+            description:
+              'Indicates whether the ACS entrance can be unlocked with pin codes.',
+            type: 'boolean',
+          },
+          can_unlock_with_mobile_key: {
+            description:
+              'Indicates whether the ACS entrance can be unlocked with mobile key credentials.',
+            type: 'boolean',
           },
           connected_account_id: {
             description:
@@ -4531,6 +4553,12 @@ export default {
                             nullable: true,
                             type: 'string',
                           },
+                          connected_account_id: {
+                            description:
+                              'ID of the [connected account](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials#connected-accounts) to which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
                           created_at: {
                             description:
                               'Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created.',
@@ -4877,6 +4905,7 @@ export default {
                         },
                         required: [
                           'acs_credential_id',
+                          'connected_account_id',
                           'acs_system_id',
                           'display_name',
                           'access_method',
@@ -4970,6 +4999,12 @@ export default {
                             description:
                               'Access (PIN) code for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
                             nullable: true,
+                            type: 'string',
+                          },
+                          connected_account_id: {
+                            description:
+                              'ID of the [connected account](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials#connected-accounts) to which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs.',
+                            format: 'uuid',
                             type: 'string',
                           },
                           created_at: {
@@ -5318,6 +5353,7 @@ export default {
                         },
                         required: [
                           'acs_credential_id',
+                          'connected_account_id',
                           'acs_system_id',
                           'display_name',
                           'access_method',
@@ -5865,6 +5901,12 @@ export default {
                         nullable: true,
                         type: 'string',
                       },
+                      connected_account_id: {
+                        description:
+                          'ID of the [connected account](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials#connected-accounts) to which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                       created_at: {
                         description:
                           'Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created.',
@@ -6209,6 +6251,7 @@ export default {
                     },
                     required: [
                       'acs_credential_id',
+                      'connected_account_id',
                       'acs_system_id',
                       'display_name',
                       'access_method',
@@ -6301,6 +6344,12 @@ export default {
                         description:
                           'Access (PIN) code for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
                         nullable: true,
+                        type: 'string',
+                      },
+                      connected_account_id: {
+                        description:
+                          'ID of the [connected account](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials#connected-accounts) to which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs.',
+                        format: 'uuid',
                         type: 'string',
                       },
                       created_at: {
@@ -6647,6 +6696,7 @@ export default {
                     },
                     required: [
                       'acs_credential_id',
+                      'connected_account_id',
                       'acs_system_id',
                       'display_name',
                       'access_method',
@@ -18458,6 +18508,21 @@ export default {
                               required: ['door_type', 'door_name'],
                               type: 'object',
                             },
+                            can_unlock_with_card: {
+                              description:
+                                'Indicates whether the ACS entrance can be unlocked with card credentials.',
+                              type: 'boolean',
+                            },
+                            can_unlock_with_code: {
+                              description:
+                                'Indicates whether the ACS entrance can be unlocked with pin codes.',
+                              type: 'boolean',
+                            },
+                            can_unlock_with_mobile_key: {
+                              description:
+                                'Indicates whether the ACS entrance can be unlocked with mobile key credentials.',
+                              type: 'boolean',
+                            },
                             connected_account_id: {
                               description:
                                 'ID of the [connected account](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
@@ -18742,6 +18807,12 @@ export default {
                         description:
                           'Access (PIN) code for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
                         nullable: true,
+                        type: 'string',
+                      },
+                      connected_account_id: {
+                        description:
+                          'ID of the [connected account](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials#connected-accounts) to which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs.',
+                        format: 'uuid',
                         type: 'string',
                       },
                       created_at: {
@@ -19087,6 +19158,7 @@ export default {
                       },
                     },
                     required: [
+                      'connected_account_id',
                       'acs_system_id',
                       'display_name',
                       'access_method',
@@ -21305,6 +21377,12 @@ export default {
             nullable: true,
             type: 'string',
           },
+          connected_account_id: {
+            description:
+              'ID of the [connected account](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials#connected-accounts) to which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs.',
+            format: 'uuid',
+            type: 'string',
+          },
           created_at: {
             description:
               'Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created.',
@@ -21623,6 +21701,7 @@ export default {
         },
         required: [
           'acs_credential_id',
+          'connected_account_id',
           'acs_system_id',
           'display_name',
           'access_method',
@@ -37941,6 +38020,16 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -38257,6 +38346,12 @@ export default {
                     description:
                       "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
                     nullable: true,
+                    type: 'string',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+                    minLength: 1,
                     type: 'string',
                   },
                   space_id: {
@@ -39076,6 +39171,16 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -39389,6 +39494,12 @@ export default {
                     description:
                       "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
                     nullable: true,
+                    type: 'string',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+                    minLength: 1,
                     type: 'string',
                   },
                   space_id: {
@@ -41010,6 +41121,16 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -41260,6 +41381,12 @@ export default {
                     description:
                       "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
                     nullable: true,
+                    type: 'string',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+                    minLength: 1,
                     type: 'string',
                   },
                   space_id: {
@@ -42024,6 +42151,16 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -42189,6 +42326,12 @@ export default {
                     description:
                       "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
                     nullable: true,
+                    type: 'string',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+                    minLength: 1,
                     type: 'string',
                   },
                   space_id: {
@@ -46753,6 +46896,16 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -46939,6 +47092,12 @@ export default {
                     description:
                       "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
                     nullable: true,
+                    type: 'string',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+                    minLength: 1,
                     type: 'string',
                   },
                   space_id: {
@@ -51892,6 +52051,15 @@ export default {
         parameters: [
           {
             in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned user identities to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address` or `user_identity_id`.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'credential_manager_acs_system_id',
             schema: {
               description:
@@ -51950,6 +52118,11 @@ export default {
                     description:
                       '`acs_system_id` of the credential manager by which you want to filter the list of user identities.',
                     format: 'uuid',
+                    type: 'string',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned user identities to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address` or `user_identity_id`.',
                     type: 'string',
                   },
                 },

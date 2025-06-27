@@ -9,85 +9,108 @@ import {
 } from './metadata/index.js'
 import { acs_entrance_salto_space_metadata } from './metadata/salto-space.js'
 
-export const acs_entrance = z.object({
-  acs_system_id: z
-    .string()
-    .uuid()
-    .describe(
-      'ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
-    ),
-  acs_entrance_id: z
-    .string()
-    .uuid()
-    .describe(
-      'ID of the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
-    ),
-  created_at: z
-    .string()
-    .datetime()
-    .describe(
-      'Date and time at which the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) was created.',
-    ),
-  display_name: z
-    .string()
-    .describe(
-      'Display name for the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
-    ),
-  connected_account_id: z
-    .string()
-    .uuid()
-    .describe(
-      'ID of the [connected account](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
-    ),
-  errors: z
-    .array(
-      z.object({
-        error_code: z
-          .string()
-          .describe(
-            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-          ),
-        message: z
-          .string()
-          .describe(
-            'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-          ),
-      }),
-    )
-    .describe(
-      'Errors associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
-    ),
-  latch_metadata: acs_entrance_latch_metadata
+export const acs_entrance_capability_flags = z.object({
+  can_unlock_with_mobile_key: z
+    .boolean()
     .optional()
     .describe(
-      'Latch-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+      'Indicates whether the ACS entrance can be unlocked with mobile key credentials.',
     ),
-  visionline_metadata: acs_entrance_visionline_metadata
+  can_unlock_with_card: z
+    .boolean()
     .optional()
     .describe(
-      'Visionline-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+      'Indicates whether the ACS entrance can be unlocked with card credentials.',
     ),
-  salto_ks_metadata: acs_entrance_salto_ks_metadata
+  can_unlock_with_code: z
+    .boolean()
     .optional()
     .describe(
-      'Salto KS-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+      'Indicates whether the ACS entrance can be unlocked with pin codes.',
     ),
-  dormakaba_community_metadata: acs_entrance_dormakaba_community_metadata
-    .optional()
-    .describe(
-      'dormakaba Community-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
-    ),
-  assa_abloy_vostio_metadata: acs_entrance_assa_abloy_vostio_metadata
-    .optional()
-    .describe(
-      'ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
-    ),
-  salto_space_metadata: acs_entrance_salto_space_metadata
-    .optional()
-    .describe(
-      'Salto Space-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
-    ),
-}).describe(`
+})
+
+export const acs_entrance = z
+  .object({
+    acs_system_id: z
+      .string()
+      .uuid()
+      .describe(
+        'ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+      ),
+    acs_entrance_id: z
+      .string()
+      .uuid()
+      .describe(
+        'ID of the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+      ),
+    created_at: z
+      .string()
+      .datetime()
+      .describe(
+        'Date and time at which the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) was created.',
+      ),
+    display_name: z
+      .string()
+      .describe(
+        'Display name for the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+      ),
+    connected_account_id: z
+      .string()
+      .uuid()
+      .describe(
+        'ID of the [connected account](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+      ),
+    errors: z
+      .array(
+        z.object({
+          error_code: z
+            .string()
+            .describe(
+              'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+            ),
+          message: z
+            .string()
+            .describe(
+              'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+            ),
+        }),
+      )
+      .describe(
+        'Errors associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+      ),
+    latch_metadata: acs_entrance_latch_metadata
+      .optional()
+      .describe(
+        'Latch-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+      ),
+    visionline_metadata: acs_entrance_visionline_metadata
+      .optional()
+      .describe(
+        'Visionline-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+      ),
+    salto_ks_metadata: acs_entrance_salto_ks_metadata
+      .optional()
+      .describe(
+        'Salto KS-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+      ),
+    dormakaba_community_metadata: acs_entrance_dormakaba_community_metadata
+      .optional()
+      .describe(
+        'dormakaba Community-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+      ),
+    assa_abloy_vostio_metadata: acs_entrance_assa_abloy_vostio_metadata
+      .optional()
+      .describe(
+        'ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+      ),
+    salto_space_metadata: acs_entrance_salto_space_metadata
+      .optional()
+      .describe(
+        'Salto Space-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+      ),
+  })
+  .merge(acs_entrance_capability_flags).describe(`
   ---
   route_path: /acs/entrances
   ---
