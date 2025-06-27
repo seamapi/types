@@ -2,7 +2,6 @@ import { z } from 'zod'
 
 import { activate_climate_preset_action_attempt } from './activate-climate-preset.js'
 import { deprecated_action_attempts } from './deprecated.js'
-import { encode_access_method_action_attempt } from './encode-access-method.js'
 import { encode_credential_action_attempt } from './encode-credential.js'
 import { lock_door_action_attempt } from './lock-door.js'
 import { push_thermostat_programs_action_attempt } from './push-thermostat-programs.js'
@@ -18,7 +17,6 @@ export const action_attempt = z.union([
   ...lock_door_action_attempt.options,
   ...unlock_door_action_attempt.options,
   ...scan_credential_action_attempt.options,
-  ...encode_access_method_action_attempt.options,
   ...encode_credential_action_attempt.options,
   ...reset_sandbox_workspace_action_attempt.options,
   ...set_fan_mode_action_attempt.options,
@@ -33,7 +31,7 @@ export const action_attempt = z.union([
   route_path: /action_attempts
   ---
   Represents an action attempt that enables you to keep track of the progress of your action that affects a physical device or system.actions against a device. Action attempts are useful because the physical world is intrinsically asynchronous.
-  
+
   When you request for a device to perform an action, the Seam API immediately returns an action attempt object. In the background, the Seam API performs the action.
 
   See also [Action Attempts](https://docs.seam.co/latest/core-concepts/action-attempts).
