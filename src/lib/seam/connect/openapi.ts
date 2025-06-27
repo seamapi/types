@@ -26540,9 +26540,9 @@ export default {
       },
     },
     '/access_grants/delete': {
-      get: {
+      delete: {
         description: 'Delete an access grant.',
-        operationId: 'accessGrantsDeleteGet',
+        operationId: 'accessGrantsDeleteDelete',
         parameters: [
           {
             in: 'query',
@@ -27044,9 +27044,9 @@ export default {
       },
     },
     '/access_methods/delete': {
-      get: {
+      delete: {
         description: 'Delete an access method.',
-        operationId: 'accessMethodsDeleteGet',
+        operationId: 'accessMethodsDeleteDelete',
         parameters: [
           {
             in: 'query',
@@ -44227,12 +44227,151 @@ export default {
         'x-title': 'Delete Customer Portal Automation Configuration',
         'x-undocumented': 'Internal endpoint for customer portals.',
       },
+      post: {
+        description:
+          'Deletes the automation configuration for a customer portal workspace.\nSupports both console session and customer client session authentication.',
+        operationId: 'seamCustomerV1AutomationsDeletePost',
+        requestBody: {
+          content: {
+            'application/json': { schema: { properties: {}, type: 'object' } },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/seam/customer/v1/automations/delete',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'automations'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete Customer Portal Automation Configuration',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
     },
     '/seam/customer/v1/automations/get': {
       get: {
         description:
           'Gets the current automation configuration for a customer portal workspace.\nFor customer client sessions, returns customer-specific config if available,\notherwise falls back to workspace-level config.',
         operationId: 'seamCustomerV1AutomationsGetGet',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_rules: {
+                      properties: {
+                        reservation_created: {
+                          properties: {
+                            config: {
+                              properties: {
+                                access_methods: {
+                                  items: {
+                                    enum: ['card', 'mobile_key', 'code'],
+                                    type: 'string',
+                                  },
+                                  minItems: 1,
+                                  type: 'array',
+                                },
+                                method_issuance_strategy: {
+                                  enum: [
+                                    'first_available',
+                                    'first_two_available',
+                                    'all_available',
+                                  ],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'access_methods',
+                                'method_issuance_strategy',
+                              ],
+                              type: 'object',
+                            },
+                            rule: {
+                              enum: ['reservation_created'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['rule', 'config'],
+                          type: 'object',
+                        },
+                        reservation_deleted: {
+                          properties: {
+                            config: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            rule: {
+                              enum: ['reservation_deleted'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['rule', 'config'],
+                          type: 'object',
+                        },
+                        reservation_time_updated: {
+                          properties: {
+                            config: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            rule: {
+                              enum: ['reservation_time_updated'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['rule', 'config'],
+                          type: 'object',
+                        },
+                      },
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/seam/customer/v1/automations/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'automations'],
+        'x-fern-sdk-method-name': 'get',
+        'x-response-key': null,
+        'x-title': 'Get Customer Portal Automation Configuration',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+      post: {
+        description:
+          'Gets the current automation configuration for a customer portal workspace.\nFor customer client sessions, returns customer-specific config if available,\notherwise falls back to workspace-level config.',
+        operationId: 'seamCustomerV1AutomationsGetPost',
         responses: {
           200: {
             content: {
@@ -49511,9 +49650,9 @@ export default {
       },
     },
     '/unstable_access_grants/delete': {
-      get: {
+      delete: {
         description: 'Deletes an access grant.',
-        operationId: 'unstableAccessGrantsDeleteGet',
+        operationId: 'unstableAccessGrantsDeleteDelete',
         parameters: [
           {
             in: 'query',
@@ -49888,9 +50027,9 @@ export default {
       },
     },
     '/unstable_access_methods/delete': {
-      get: {
+      delete: {
         description: 'Deletes an access method.',
-        operationId: 'unstableAccessMethodsDeleteGet',
+        operationId: 'unstableAccessMethodsDeleteDelete',
         parameters: [
           {
             in: 'query',
