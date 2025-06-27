@@ -1,6 +1,9 @@
 import { z } from 'zod'
 
-export const acs_system_capability_flags = z.object({})
+export const acs_system_capability_flags = z.object({
+  // Access method type capability flags are not publicly exposed for ACS systems
+  // They are only available for ACS entrances
+})
 
 export const acs_location = z.object({
   time_zone: z
