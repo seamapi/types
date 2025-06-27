@@ -1842,6 +1842,12 @@ export default {
             format: 'date-time',
             type: 'string',
           },
+          instant_key_url: {
+            description:
+              'Instant Key URL. Only returned if the access grant has a single mobile_key access_method. ',
+            format: 'uri',
+            type: 'string',
+          },
           location_ids: {
             deprecated: true,
             items: { format: 'uuid', type: 'string' },
@@ -1947,6 +1953,7 @@ export default {
           instant_key_url: {
             description:
               'URL of the Instant Key for mobile key access methods.',
+            format: 'uri',
             type: 'string',
           },
           is_card_encoding_required: {
@@ -5584,6 +5591,7 @@ export default {
                   instant_key_url: {
                     description:
                       'URL of the Instant Key for mobile key access methods.',
+                    format: 'uri',
                     type: 'string',
                   },
                   is_card_encoding_required: {
