@@ -2289,6 +2289,12 @@ export default {
               'Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
             type: 'string',
           },
+          user_identity_id: {
+            description:
+              'ID of the [user identity](https://docs.seam.co/latest/api/user_identities) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs.',
+            format: 'uuid',
+            type: 'string',
+          },
           visionline_metadata: {
             description:
               'Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
@@ -4663,6 +4669,12 @@ export default {
                               'Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                             type: 'string',
                           },
+                          user_identity_id: {
+                            description:
+                              'ID of the [user identity](https://docs.seam.co/latest/api/user_identities) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
                           visionline_metadata: {
                             description:
                               'Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
@@ -5109,6 +5121,12 @@ export default {
                           starts_at: {
                             description:
                               'Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                            type: 'string',
+                          },
+                          user_identity_id: {
+                            description:
+                              'ID of the [user identity](https://docs.seam.co/latest/api/user_identities) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs.',
+                            format: 'uuid',
                             type: 'string',
                           },
                           visionline_metadata: {
@@ -5758,6 +5776,12 @@ export default {
                           'Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                         type: 'string',
                       },
+                      user_identity_id: {
+                        description:
+                          'ID of the [user identity](https://docs.seam.co/latest/api/user_identities) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                       visionline_metadata: {
                         description:
                           'Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
@@ -6201,6 +6225,12 @@ export default {
                       starts_at: {
                         description:
                           'Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                        type: 'string',
+                      },
+                      user_identity_id: {
+                        description:
+                          'ID of the [user identity](https://docs.seam.co/latest/api/user_identities) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs.',
+                        format: 'uuid',
                         type: 'string',
                       },
                       visionline_metadata: {
@@ -18725,6 +18755,12 @@ export default {
                           'Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                         type: 'string',
                       },
+                      user_identity_id: {
+                        description:
+                          'ID of the [user identity](https://docs.seam.co/latest/api/user_identities) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                       visionline_metadata: {
                         description:
                           'Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
@@ -21291,6 +21327,12 @@ export default {
           starts_at: {
             description:
               'Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+            type: 'string',
+          },
+          user_identity_id: {
+            description:
+              'ID of the [user identity](https://docs.seam.co/latest/api/user_identities) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs.',
+            format: 'uuid',
             type: 'string',
           },
           visionline_metadata: {
