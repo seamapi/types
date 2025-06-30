@@ -13,3 +13,14 @@ export const available_fan_mode_settings = z.array(fan_mode_setting)
 export type AvailableFanModeSettings = z.infer<
   typeof available_fan_mode_settings
 >
+
+export const climate_preset_mode = z.enum([
+  'home',
+  'away',
+  'wake',
+  'sleep',
+  'occupied',
+  'unoccupied',
+])
+
+export type ClimatePresetMode = z.infer<typeof climate_preset_mode>

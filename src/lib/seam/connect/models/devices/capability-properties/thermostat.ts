@@ -2,6 +2,7 @@ import { z } from 'zod'
 
 import {
   climate_preset,
+  climate_preset_mode,
   climate_setting,
   fan_mode_setting,
   hvac_mode_setting,
@@ -41,6 +42,13 @@ export const thermostat_capability_properties = z
           property_group_key: thermostats
           ---
           Fan mode settings that the thermostat supports.
+          `),
+    available_climate_preset_modes: z.array(climate_preset_mode).describe(`
+          ---
+          property_group_key: thermostats
+          draft: Needs review.
+          ---
+          Climate preset modes that the thermostat supports, such as "home", "away", "wake", "sleep", "occupied", and "unoccupied".
           `),
     is_heating: z.boolean().describe(`
           ---
