@@ -11466,6 +11466,24 @@ export default {
                         type: 'string',
                         'x-property-group-key': 'thermostats',
                       },
+                      available_climate_preset_modes: {
+                        description:
+                          'Climate preset modes that the thermostat supports, such as "home", "away", "wake", "sleep", "occupied", and "unoccupied".',
+                        items: {
+                          enum: [
+                            'home',
+                            'away',
+                            'wake',
+                            'sleep',
+                            'occupied',
+                            'unoccupied',
+                          ],
+                          type: 'string',
+                        },
+                        type: 'array',
+                        'x-draft': 'Needs review.',
+                        'x-property-group-key': 'thermostats',
+                      },
                       available_climate_presets: {
                         description:
                           'Available [climate presets](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) for the thermostat.',
@@ -11489,6 +11507,19 @@ export default {
                             climate_preset_key: {
                               description:
                                 'Unique key to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).',
+                              type: 'string',
+                            },
+                            climate_preset_mode: {
+                              description:
+                                '\n    The climate preset mode for the thermostat, based on the available climate preset modes reported by the device.\n  ',
+                              enum: [
+                                'home',
+                                'away',
+                                'wake',
+                                'sleep',
+                                'occupied',
+                                'unoccupied',
+                              ],
                               type: 'string',
                             },
                             cooling_set_point_celsius: {
@@ -11604,6 +11635,19 @@ export default {
                               'Unique key to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).',
                             type: 'string',
                           },
+                          climate_preset_mode: {
+                            description:
+                              '\n    The climate preset mode for the thermostat, based on the available climate preset modes reported by the device.\n  ',
+                            enum: [
+                              'home',
+                              'away',
+                              'wake',
+                              'sleep',
+                              'occupied',
+                              'unoccupied',
+                            ],
+                            type: 'string',
+                          },
                           cooling_set_point_celsius: {
                             description:
                               'Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
@@ -11685,6 +11729,19 @@ export default {
                           climate_preset_key: {
                             description:
                               'Unique key to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).',
+                            type: 'string',
+                          },
+                          climate_preset_mode: {
+                            description:
+                              '\n    The climate preset mode for the thermostat, based on the available climate preset modes reported by the device.\n  ',
+                            enum: [
+                              'home',
+                              'away',
+                              'wake',
+                              'sleep',
+                              'occupied',
+                              'unoccupied',
+                            ],
                             type: 'string',
                           },
                           cooling_set_point_celsius: {
@@ -46433,6 +46490,19 @@ export default {
                       'Unique key to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).',
                     type: 'string',
                   },
+                  climate_preset_mode: {
+                    description:
+                      '\n    The climate preset mode for the thermostat, based on the available climate preset modes reported by the device.\n  ',
+                    enum: [
+                      'home',
+                      'away',
+                      'wake',
+                      'sleep',
+                      'occupied',
+                      'unoccupied',
+                    ],
+                    type: 'string',
+                  },
                   cooling_set_point_celsius: {
                     description:
                       'Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
@@ -49158,6 +49228,19 @@ export default {
                       'Unique key to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).',
                     type: 'string',
                   },
+                  climate_preset_mode: {
+                    description:
+                      '\n    The climate preset mode for the thermostat, based on the available climate preset modes reported by the device.\n  ',
+                    enum: [
+                      'home',
+                      'away',
+                      'wake',
+                      'sleep',
+                      'occupied',
+                      'unoccupied',
+                    ],
+                    type: 'string',
+                  },
                   cooling_set_point_celsius: {
                     description:
                       'Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
@@ -49263,6 +49346,19 @@ export default {
                   climate_preset_key: {
                     description:
                       'Unique key to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).',
+                    type: 'string',
+                  },
+                  climate_preset_mode: {
+                    description:
+                      '\n    The climate preset mode for the thermostat, based on the available climate preset modes reported by the device.\n  ',
+                    enum: [
+                      'home',
+                      'away',
+                      'wake',
+                      'sleep',
+                      'occupied',
+                      'unoccupied',
+                    ],
                     type: 'string',
                   },
                   cooling_set_point_celsius: {

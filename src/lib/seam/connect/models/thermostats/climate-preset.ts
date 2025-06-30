@@ -1,6 +1,10 @@
 import { z } from 'zod'
 
-import { fan_mode_setting, hvac_mode_setting } from './modes.js'
+import {
+  climate_preset_mode,
+  fan_mode_setting,
+  hvac_mode_setting,
+} from './modes.js'
 
 export const climate_preset = z.object({
   climate_preset_key: z
@@ -36,6 +40,9 @@ export const climate_preset = z.object({
     .describe(
       'Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).',
     ),
+  climate_preset_mode: climate_preset_mode.optional().describe(`
+    The climate preset mode for the thermostat, based on the available climate preset modes reported by the device.
+  `),
   fan_mode_setting: fan_mode_setting
     .optional()
     .describe(
