@@ -12541,6 +12541,7 @@ export default {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'access_codes',
                 },
                 {
                   description:
@@ -12566,6 +12567,7 @@ export default {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'access_codes',
                 },
                 {
                   description:
@@ -23530,6 +23532,7 @@ export default {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'access_codes',
                 },
                 {
                   description:
@@ -23555,6 +23558,7 @@ export default {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'access_codes',
                 },
                 {
                   description:
