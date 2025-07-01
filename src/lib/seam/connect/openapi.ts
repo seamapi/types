@@ -31108,6 +31108,16 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'connected_account_id',
+            schema: {
+              description:
+                'ID of the connected account for which you want to retrieve all entrances.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -31175,6 +31185,12 @@ export default {
                   acs_system_id: {
                     description:
                       'ID of the access system for which you want to retrieve all entrances.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  connected_account_id: {
+                    description:
+                      'ID of the connected account for which you want to retrieve all entrances.',
                     format: 'uuid',
                     type: 'string',
                   },
