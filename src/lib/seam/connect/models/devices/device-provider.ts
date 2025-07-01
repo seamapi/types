@@ -66,7 +66,6 @@ export type ProviderCategory = keyof typeof PROVIDER_CATEGORY_MAP
 export const PROVIDER_CATEGORY_MAP = {
   stable: [
     'august',
-    'avigilon_alta',
     'brivo',
     'schlage',
     'smartthings',
@@ -74,7 +73,6 @@ export const PROVIDER_CATEGORY_MAP = {
     'nuki',
     'salto',
     'salto_space',
-    'controlbyweb',
     'minut',
     'my_2n',
     'kwikset',
@@ -82,7 +80,6 @@ export const PROVIDER_CATEGORY_MAP = {
     'noiseaware',
     'igloohome',
     'ecobee',
-    'four_suites',
     'lockly',
     'wyze',
     'nest',
