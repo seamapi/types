@@ -23696,22 +23696,55 @@ export default {
           },
           errors: {
             description:
-              'Array of errors associated with the user identity. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
+              'Array of errors associated with the user identity. Each error object within the array contains fields like "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
             items: {
-              properties: {
-                created_at: {
-                  description: 'Date and time at which Seam created the error.',
-                  format: 'date-time',
-                  type: 'string',
-                },
-                message: {
+              description: 'Errors associated with the user identity.',
+              discriminator: { propertyName: 'error_code' },
+              oneOf: [
+                {
                   description:
-                    'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                  type: 'string',
+                    'Indicates that there is an issue with an access system user associated with this user identity.',
+                  properties: {
+                    acs_system_id: {
+                      description:
+                        'ID of the access system that the user identity is associated with.',
+                      format: 'uuid',
+                      type: 'string',
+                    },
+                    acs_user_id: {
+                      description:
+                        'ID of the access system user that has an issue.',
+                      format: 'uuid',
+                      type: 'string',
+                    },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['issue_with_acs_user'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'error_code',
+                    'acs_user_id',
+                    'acs_system_id',
+                  ],
+                  type: 'object',
                 },
-              },
-              required: ['created_at', 'message'],
-              type: 'object',
+              ],
             },
             type: 'array',
           },
