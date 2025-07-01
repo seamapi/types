@@ -2256,7 +2256,7 @@ export default {
           is_managed: { enum: [true], type: 'boolean' },
           is_multi_phone_sync_credential: {
             description:
-              'Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+              'Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
             type: 'boolean',
           },
           is_one_time_use: {
@@ -4636,7 +4636,7 @@ export default {
                           is_managed: { enum: [true], type: 'boolean' },
                           is_multi_phone_sync_credential: {
                             description:
-                              'Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                              'Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
                             type: 'boolean',
                           },
                           is_one_time_use: {
@@ -5090,7 +5090,7 @@ export default {
                           is_managed: { enum: [false], type: 'boolean' },
                           is_multi_phone_sync_credential: {
                             description:
-                              'Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                              'Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
                             type: 'boolean',
                           },
                           is_one_time_use: {
@@ -5743,7 +5743,7 @@ export default {
                       is_managed: { enum: [true], type: 'boolean' },
                       is_multi_phone_sync_credential: {
                         description:
-                          'Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                          'Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
                         type: 'boolean',
                       },
                       is_one_time_use: {
@@ -6194,7 +6194,7 @@ export default {
                       is_managed: { enum: [false], type: 'boolean' },
                       is_multi_phone_sync_credential: {
                         description:
-                          'Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                          'Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
                         type: 'boolean',
                       },
                       is_one_time_use: {
@@ -12784,7 +12784,7 @@ export default {
       enrollment_automation: {
         deprecated: true,
         description:
-          'Represents an [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) within the [Seam mobile access solution](https://docs.seam.co/latest/capability-guides/mobile-access-in-development).',
+          'Represents an [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) within the [Seam mobile access solution](https://docs.seam.co/latest/capability-guides/mobile-access/).',
         properties: {
           created_at: {
             description:
@@ -12805,7 +12805,7 @@ export default {
           },
           user_identity_id: {
             description:
-              'ID of the associated [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+              'ID of the associated [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
             format: 'uuid',
             type: 'string',
           },
@@ -18722,7 +18722,7 @@ export default {
                       is_managed: { enum: [true], type: 'boolean' },
                       is_multi_phone_sync_credential: {
                         description:
-                          'Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                          'Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
                         type: 'boolean',
                       },
                       is_one_time_use: {
@@ -21296,7 +21296,7 @@ export default {
           is_managed: { enum: [false], type: 'boolean' },
           is_multi_phone_sync_credential: {
             description:
-              'Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+              'Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
             type: 'boolean',
           },
           is_one_time_use: {
@@ -28905,7 +28905,7 @@ export default {
                   is_multi_phone_sync_credential: {
                     default: false,
                     description:
-                      'Indicates whether the new credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                      'Indicates whether the new credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
                     type: 'boolean',
                   },
                   salto_space_metadata: {
@@ -51813,7 +51813,7 @@ export default {
     '/user_identities/add_acs_user': {
       post: {
         description:
-          'Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesAddAcsUserPost',
         requestBody: {
           content: {
@@ -51869,7 +51869,7 @@ export default {
       },
       put: {
         description:
-          'Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesAddAcsUserPut',
         requestBody: {
           content: {
@@ -51927,7 +51927,7 @@ export default {
     '/user_identities/create': {
       post: {
         description:
-          'Creates a new [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Creates a new [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesCreatePost',
         requestBody: {
           content: {
@@ -52010,7 +52010,7 @@ export default {
     '/user_identities/delete': {
       delete: {
         description:
-          'Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://docs.seam.co/latest/api/access-control-systems/credentials), [acs users](https://docs.seam.co/latest/api/access-control-systems/users) and [client sessions](https://docs.seam.co/latest/api/client_sessions).',
+          'Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://docs.seam.co/latest/api/access-control-systems/credentials), [acs users](https://docs.seam.co/latest/api/access-control-systems/users) and [client sessions](https://docs.seam.co/latest/api/client_sessions).',
         operationId: 'userIdentitiesDeleteDelete',
         parameters: [
           {
@@ -52054,7 +52054,7 @@ export default {
       },
       post: {
         description:
-          'Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://docs.seam.co/latest/api/access-control-systems/credentials), [acs users](https://docs.seam.co/latest/api/access-control-systems/users) and [client sessions](https://docs.seam.co/latest/api/client_sessions).',
+          'Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://docs.seam.co/latest/api/access-control-systems/credentials), [acs users](https://docs.seam.co/latest/api/access-control-systems/users) and [client sessions](https://docs.seam.co/latest/api/client_sessions).',
         operationId: 'userIdentitiesDeletePost',
         requestBody: {
           content: {
@@ -52106,7 +52106,7 @@ export default {
     '/user_identities/enrollment_automations/delete': {
       delete: {
         description:
-          'Deletes a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system). You must delete all enrollment automations associated with a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) before [deleting the user identity](https://docs.seam.co/latest/api/user_identities/delete).',
+          'Deletes a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system). You must delete all enrollment automations associated with a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) before [deleting the user identity](https://docs.seam.co/latest/api/user_identities/delete).',
         operationId: 'userIdentitiesEnrollmentAutomationsDeleteDelete',
         parameters: [
           {
@@ -52153,7 +52153,7 @@ export default {
       },
       post: {
         description:
-          'Deletes a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system). You must delete all enrollment automations associated with a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) before [deleting the user identity](https://docs.seam.co/latest/api/user_identities/delete).',
+          'Deletes a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system). You must delete all enrollment automations associated with a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) before [deleting the user identity](https://docs.seam.co/latest/api/user_identities/delete).',
         operationId: 'userIdentitiesEnrollmentAutomationsDeletePost',
         requestBody: {
           content: {
@@ -52207,7 +52207,7 @@ export default {
     '/user_identities/enrollment_automations/get': {
       get: {
         description:
-          'Returns a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).',
+          'Returns a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system/).',
         operationId: 'userIdentitiesEnrollmentAutomationsGetGet',
         parameters: [
           {
@@ -52261,7 +52261,7 @@ export default {
       },
       post: {
         description:
-          'Returns a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).',
+          'Returns a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system/).',
         operationId: 'userIdentitiesEnrollmentAutomationsGetPost',
         requestBody: {
           content: {
@@ -52322,7 +52322,7 @@ export default {
     '/user_identities/enrollment_automations/launch': {
       post: {
         description:
-          'Sets up a new [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) with a specified [credential manager](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).',
+          'Sets up a new [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) with a specified [credential manager](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system).',
         operationId: 'userIdentitiesEnrollmentAutomationsLaunchPost',
         requestBody: {
           content: {
@@ -52408,7 +52408,7 @@ export default {
     '/user_identities/enrollment_automations/list': {
       get: {
         description:
-          'Returns a list of all [enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Returns a list of all [enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesEnrollmentAutomationsListGet',
         parameters: [
           {
@@ -52465,7 +52465,7 @@ export default {
       },
       post: {
         description:
-          'Returns a list of all [enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Returns a list of all [enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesEnrollmentAutomationsListPost',
         requestBody: {
           content: {
@@ -52529,7 +52529,7 @@ export default {
     '/user_identities/generate_instant_key': {
       post: {
         description:
-          'Generates a new [instant key](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/instant-keys) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Generates a new [instant key](https://docs.seam.co/latest/capability-guides/mobile-access/instant-keys) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesGenerateInstantKeyPost',
         requestBody: {
           content: {
@@ -52592,7 +52592,7 @@ export default {
     '/user_identities/get': {
       get: {
         description:
-          'Returns a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Returns a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesGetGet',
         responses: {
           200: {
@@ -52630,7 +52630,7 @@ export default {
       },
       post: {
         description:
-          'Returns a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Returns a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesGetPost',
         requestBody: {
           content: {
@@ -52697,7 +52697,7 @@ export default {
     '/user_identities/grant_access_to_device': {
       post: {
         description:
-          'Grants a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) access to a specified [device](https://docs.seam.co/latest/core-concepts/devices/).',
+          'Grants a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) access to a specified [device](https://docs.seam.co/latest/core-concepts/devices/).',
         operationId: 'userIdentitiesGrantAccessToDevicePost',
         requestBody: {
           content: {
@@ -52753,7 +52753,7 @@ export default {
       },
       put: {
         description:
-          'Grants a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) access to a specified [device](https://docs.seam.co/latest/core-concepts/devices/).',
+          'Grants a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) access to a specified [device](https://docs.seam.co/latest/core-concepts/devices/).',
         operationId: 'userIdentitiesGrantAccessToDevicePut',
         requestBody: {
           content: {
@@ -52811,7 +52811,7 @@ export default {
     '/user_identities/list': {
       get: {
         description:
-          'Returns a list of all [user identities](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Returns a list of all [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesListGet',
         parameters: [
           {
@@ -52872,7 +52872,7 @@ export default {
       },
       post: {
         description:
-          'Returns a list of all [user identities](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Returns a list of all [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesListPost',
         requestBody: {
           content: {
@@ -52936,7 +52936,7 @@ export default {
     '/user_identities/list_accessible_devices': {
       get: {
         description:
-          'Returns a list of all [devices](https://docs.seam.co/latest/core-concepts/devices) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Returns a list of all [devices](https://docs.seam.co/latest/core-concepts/devices) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesListAccessibleDevicesGet',
         parameters: [
           {
@@ -52994,7 +52994,7 @@ export default {
       },
       post: {
         description:
-          'Returns a list of all [devices](https://docs.seam.co/latest/core-concepts/devices) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Returns a list of all [devices](https://docs.seam.co/latest/core-concepts/devices) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesListAccessibleDevicesPost',
         requestBody: {
           content: {
@@ -53059,7 +53059,7 @@ export default {
     '/user_identities/list_acs_systems': {
       get: {
         description:
-          'Returns a list of all [access systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Returns a list of all [access systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesListAcsSystemsGet',
         parameters: [
           {
@@ -53112,7 +53112,7 @@ export default {
       },
       post: {
         description:
-          'Returns a list of all [access systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Returns a list of all [access systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesListAcsSystemsPost',
         requestBody: {
           content: {
@@ -53172,7 +53172,7 @@ export default {
     '/user_identities/list_acs_users': {
       get: {
         description:
-          'Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesListAcsUsersGet',
         parameters: [
           {
@@ -53224,7 +53224,7 @@ export default {
       },
       post: {
         description:
-          'Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesListAcsUsersPost',
         requestBody: {
           content: {
@@ -53283,7 +53283,7 @@ export default {
     '/user_identities/remove_acs_user': {
       delete: {
         description:
-          'Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesRemoveAcsUserDelete',
         parameters: [
           {
@@ -53339,7 +53339,7 @@ export default {
       },
       post: {
         description:
-          'Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesRemoveAcsUserPost',
         requestBody: {
           content: {
@@ -53397,7 +53397,7 @@ export default {
     '/user_identities/revoke_access_to_device': {
       delete: {
         description:
-          'Revokes access to a specified [device](https://docs.seam.co/latest/core-concepts/devices/) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Revokes access to a specified [device](https://docs.seam.co/latest/core-concepts/devices/) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesRevokeAccessToDeviceDelete',
         parameters: [
           {
@@ -53453,7 +53453,7 @@ export default {
       },
       post: {
         description:
-          'Revokes access to a specified [device](https://docs.seam.co/latest/core-concepts/devices/) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Revokes access to a specified [device](https://docs.seam.co/latest/core-concepts/devices/) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesRevokeAccessToDevicePost',
         requestBody: {
           content: {
@@ -53511,7 +53511,7 @@ export default {
     '/user_identities/update': {
       patch: {
         description:
-          'Updates a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Updates a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesUpdatePatch',
         requestBody: {
           content: {
@@ -53585,7 +53585,7 @@ export default {
       },
       post: {
         description:
-          'Updates a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Updates a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesUpdatePost',
         requestBody: {
           content: {
