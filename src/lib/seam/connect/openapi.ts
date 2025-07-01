@@ -4404,7 +4404,7 @@ export default {
                           },
                           card_holder: {
                             description:
-                              'Holden of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+                              'Holder of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
                             type: 'string',
                           },
                           card_id: {
