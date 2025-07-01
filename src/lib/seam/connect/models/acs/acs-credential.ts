@@ -405,7 +405,7 @@ export const acs_credential_on_encoder = z.object({
         .string()
         .optional()
         .describe(
-          'Holden of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+          'Holder of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
         ),
 
       number_of_issued_cards: z
