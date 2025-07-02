@@ -36,6 +36,19 @@ const user_identity_being_deleted = common_user_identity_warning
   })
   .describe('Indicates that the user identity is currently being deleted.')
 
+const acs_user_profile_does_not_match_user_identity =
+  common_user_identity_warning
+    .extend({
+      warning_code: z
+        .literal('acs_user_profile_does_not_match_user_identity')
+        .describe(
+          'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+        ),
+    })
+    .describe(
+      "Indicates that the ACS user's profile does not match the user identity's profile",
+    )
+
 const user_identity_issue_with_acs_user = common_user_identity_error
   .extend({
     error_code: z
@@ -71,13 +84,18 @@ export const user_identity_error_map = z.object({
 export type UserIdentityErrorMap = z.infer<typeof user_identity_error_map>
 
 const user_identity_warnings = z
-  .discriminatedUnion('warning_code', [user_identity_being_deleted])
+  .discriminatedUnion('warning_code', [
+    user_identity_being_deleted,
+    acs_user_profile_does_not_match_user_identity,
+  ])
   .describe('Warnings associated with the user identity.')
 
 export const user_identity_warning_map = z.object({
   user_identity_being_deleted: user_identity_being_deleted
     .optional()
     .nullable(),
+  acs_user_profile_does_not_match_user_identity:
+    acs_user_profile_does_not_match_user_identity.optional().nullable(),
 })
 
 export type UserIdentityWarningMap = z.infer<typeof user_identity_warning_map>
