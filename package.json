@@ -1,6 +1,6 @@
 {
   "name": "@seamapi/types",
-  "version": "1.431.0",
+  "version": "1.434.0",
   "description": "TypeScript types for the Seam API.",
   "type": "module",
   "main": "index.js",
@@ -92,7 +92,7 @@
     "zod": "^3.24.0"
   },
   "devDependencies": {
-    "@seamapi/blueprint": "^0.50.6",
+    "@seamapi/blueprint": "^0.51.1",
     "@types/node": "^20.8.10",
     "concurrently": "^8.2.0",
     "del-cli": "^5.0.0",

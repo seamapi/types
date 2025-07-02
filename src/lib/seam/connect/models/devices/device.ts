@@ -262,25 +262,27 @@ const many_active_backup_codes = common_device_warning.extend({
     Indicates that there are too many backup codes.
     `)
 
-const salto_ks_office_mode = common_device_warning
-  .extend({
-    warning_code: z
-      .literal('salto_ks_office_mode')
-      .describe(warning_code_description),
-  })
-  .describe(
-    'Indicates that the Salto KS lock is in Office Mode. Access Codes will not unlock doors.',
-  )
+const salto_ks_office_mode = common_device_warning.extend({
+  warning_code: z
+    .literal('salto_ks_office_mode')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: access_codes
+    ---
+    Indicates that the Salto KS lock is in Office Mode. Access Codes will not unlock doors.
+  `)
 
-const salto_ks_privacy_mode = common_device_warning
-  .extend({
-    warning_code: z
-      .literal('salto_ks_privacy_mode')
-      .describe(warning_code_description),
-  })
-  .describe(
-    'Indicates that the Salto KS lock is in Privacy Mode. Access Codes will not unlock doors.',
-  )
+const salto_ks_privacy_mode = common_device_warning.extend({
+  warning_code: z
+    .literal('salto_ks_privacy_mode')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: access_codes
+    ---
+    Indicates that the Salto KS lock is in Privacy Mode. Access Codes will not unlock doors.
+  `)
 
 const salto_ks_subscription_limit_almost_reached = common_device_warning
   .extend({
