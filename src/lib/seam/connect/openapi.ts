@@ -12541,6 +12541,7 @@ export default {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'access_codes',
                 },
                 {
                   description:
@@ -12566,6 +12567,7 @@ export default {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'access_codes',
                 },
                 {
                   description:
@@ -23530,6 +23532,7 @@ export default {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'access_codes',
                 },
                 {
                   description:
@@ -23555,6 +23558,7 @@ export default {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'access_codes',
                 },
                 {
                   description:
@@ -23792,6 +23796,31 @@ export default {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['being_deleted'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    "Indicates that the ACS user's profile does not match the user identity's profile",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['acs_user_profile_does_not_match_user_identity'],
                       type: 'string',
                     },
                   },
@@ -31108,6 +31137,16 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'connected_account_id',
+            schema: {
+              description:
+                'ID of the connected account for which you want to retrieve all entrances.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -31175,6 +31214,12 @@ export default {
                   acs_system_id: {
                     description:
                       'ID of the access system for which you want to retrieve all entrances.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  connected_account_id: {
+                    description:
+                      'ID of the connected account for which you want to retrieve all entrances.',
                     format: 'uuid',
                     type: 'string',
                   },
