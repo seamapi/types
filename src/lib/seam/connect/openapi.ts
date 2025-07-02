@@ -10584,6 +10584,11 @@ export default {
                             description: 'Device name for an igloohome device.',
                             type: 'string',
                           },
+                          is_keypad_linked_to_bridge: {
+                            description:
+                              'Indicates whether a keypad is linked to a bridge for an igloohome device.',
+                            type: 'boolean',
+                          },
                           keypad_id: {
                             description: 'Keypad ID for an igloohome device.',
                             type: 'string',

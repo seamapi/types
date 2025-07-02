@@ -430,6 +430,12 @@ export const device_metadata = z
           .string()
           .optional()
           .describe(`Keypad ID for an igloohome device.`),
+        is_keypad_linked_to_bridge: z
+          .boolean()
+          .optional()
+          .describe(
+            `Indicates whether a keypad is linked to a bridge for an igloohome device.`,
+          ),
       })
       .describe(`Metadata for an igloohome device.`),
 
