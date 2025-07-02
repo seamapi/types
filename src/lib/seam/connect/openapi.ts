@@ -11569,6 +11569,34 @@ export default {
                                 'Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).',
                               type: 'string',
                             },
+                            ecobee_metadata: {
+                              description:
+                                '\n    Metadata specific to the Ecobee climate, if applicable.\n  ',
+                              properties: {
+                                climate_ref: {
+                                  description:
+                                    'Reference to the Ecobee climate, if applicable.',
+                                  type: 'string',
+                                },
+                                is_optimized: {
+                                  description:
+                                    'Indicates if the climate preset is optimized by Ecobee.',
+                                  type: 'boolean',
+                                },
+                                owner: {
+                                  description:
+                                    'Indicates whether the climate preset is owned by the user or the system.',
+                                  enum: ['user', 'system'],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'climate_ref',
+                                'is_optimized',
+                                'owner',
+                              ],
+                              type: 'object',
+                            },
                             fan_mode_setting: {
                               description:
                                 'Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.',
@@ -11695,6 +11723,30 @@ export default {
                               'Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).',
                             type: 'string',
                           },
+                          ecobee_metadata: {
+                            description:
+                              '\n    Metadata specific to the Ecobee climate, if applicable.\n  ',
+                            properties: {
+                              climate_ref: {
+                                description:
+                                  'Reference to the Ecobee climate, if applicable.',
+                                type: 'string',
+                              },
+                              is_optimized: {
+                                description:
+                                  'Indicates if the climate preset is optimized by Ecobee.',
+                                type: 'boolean',
+                              },
+                              owner: {
+                                description:
+                                  'Indicates whether the climate preset is owned by the user or the system.',
+                                enum: ['user', 'system'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['climate_ref', 'is_optimized', 'owner'],
+                            type: 'object',
+                          },
                           fan_mode_setting: {
                             description:
                               'Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.',
@@ -11790,6 +11842,30 @@ export default {
                             description:
                               'Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).',
                             type: 'string',
+                          },
+                          ecobee_metadata: {
+                            description:
+                              '\n    Metadata specific to the Ecobee climate, if applicable.\n  ',
+                            properties: {
+                              climate_ref: {
+                                description:
+                                  'Reference to the Ecobee climate, if applicable.',
+                                type: 'string',
+                              },
+                              is_optimized: {
+                                description:
+                                  'Indicates if the climate preset is optimized by Ecobee.',
+                                type: 'boolean',
+                              },
+                              owner: {
+                                description:
+                                  'Indicates whether the climate preset is owned by the user or the system.',
+                                enum: ['user', 'system'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['climate_ref', 'is_optimized', 'owner'],
+                            type: 'object',
                           },
                           fan_mode_setting: {
                             description:
@@ -46641,6 +46717,30 @@ export default {
                     format: 'uuid',
                     type: 'string',
                   },
+                  ecobee_metadata: {
+                    description:
+                      '\n    Metadata specific to the Ecobee climate, if applicable.\n  ',
+                    properties: {
+                      climate_ref: {
+                        description:
+                          'Reference to the Ecobee climate, if applicable.',
+                        type: 'string',
+                      },
+                      is_optimized: {
+                        description:
+                          'Indicates if the climate preset is optimized by Ecobee.',
+                        type: 'boolean',
+                      },
+                      owner: {
+                        description:
+                          'Indicates whether the climate preset is owned by the user or the system.',
+                        enum: ['user', 'system'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['climate_ref', 'is_optimized', 'owner'],
+                    type: 'object',
+                  },
                   fan_mode_setting: {
                     description:
                       'Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.',
@@ -49379,6 +49479,30 @@ export default {
                     format: 'uuid',
                     type: 'string',
                   },
+                  ecobee_metadata: {
+                    description:
+                      '\n    Metadata specific to the Ecobee climate, if applicable.\n  ',
+                    properties: {
+                      climate_ref: {
+                        description:
+                          'Reference to the Ecobee climate, if applicable.',
+                        type: 'string',
+                      },
+                      is_optimized: {
+                        description:
+                          'Indicates if the climate preset is optimized by Ecobee.',
+                        type: 'boolean',
+                      },
+                      owner: {
+                        description:
+                          'Indicates whether the climate preset is owned by the user or the system.',
+                        enum: ['user', 'system'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['climate_ref', 'is_optimized', 'owner'],
+                    type: 'object',
+                  },
                   fan_mode_setting: {
                     description:
                       'Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.',
@@ -49498,6 +49622,30 @@ export default {
                       'ID of the thermostat device for which you want to update a climate preset.',
                     format: 'uuid',
                     type: 'string',
+                  },
+                  ecobee_metadata: {
+                    description:
+                      '\n    Metadata specific to the Ecobee climate, if applicable.\n  ',
+                    properties: {
+                      climate_ref: {
+                        description:
+                          'Reference to the Ecobee climate, if applicable.',
+                        type: 'string',
+                      },
+                      is_optimized: {
+                        description:
+                          'Indicates if the climate preset is optimized by Ecobee.',
+                        type: 'boolean',
+                      },
+                      owner: {
+                        description:
+                          'Indicates whether the climate preset is owned by the user or the system.',
+                        enum: ['user', 'system'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['climate_ref', 'is_optimized', 'owner'],
+                    type: 'object',
                   },
                   fan_mode_setting: {
                     description:

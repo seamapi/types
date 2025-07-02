@@ -84,6 +84,23 @@ export const climate_preset = z.object({
       ---
       Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).`,
   ),
+  ecobee_metadata: z
+    .object({
+      climate_ref: z
+        .string()
+        .describe(`Reference to the Ecobee climate, if applicable.`),
+      is_optimized: z
+        .boolean()
+        .describe(`Indicates if the climate preset is optimized by Ecobee.`),
+      owner: z
+        .enum(['user', 'system'])
+        .describe(
+          `Indicates whether the climate preset is owned by the user or the system.`,
+        ),
+    })
+    .optional().describe(`
+    Metadata specific to the Ecobee climate, if applicable.
+  `),
 })
 
 export type ClimatePreset = z.infer<typeof climate_preset>
