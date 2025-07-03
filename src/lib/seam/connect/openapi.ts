@@ -41629,6 +41629,7 @@ export default {
         'x-fern-sdk-method-name': 'keypad_code_entry',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
+        'x-title': 'Simulate a Keypad Code Entry',
       },
     },
     '/locks/simulate/manual_lock_via_keypad': {
@@ -41687,6 +41688,7 @@ export default {
         'x-fern-sdk-method-name': 'manual_lock_via_keypad',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
+        'x-title': 'Simulate a Manual Lock Action Using a Keypad',
       },
     },
     '/locks/unlock_door': {
