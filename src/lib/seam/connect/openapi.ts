@@ -38633,6 +38633,59 @@ export default {
         'x-title': 'Simulate Device Connection',
       },
     },
+    '/devices/simulate/connect_to_hub': {
+      post: {
+        description:
+          'Simulates bringing the Wi-Fi hub (bridge) back online for a device.  \nOnly applicable for [sandbox workspaces](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces) and August locks today, but designed so we can extend to other providers later.  \nThis will clear the `hub_disconnected` error on the device.',
+        operationId: 'devicesSimulateConnectToHubPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: {
+                    description:
+                      'ID of the device whose hub you want to reconnect.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/devices/simulate/connect_to_hub',
+        tags: ['/devices'],
+        'x-fern-sdk-group-name': ['devices', 'simulate'],
+        'x-fern-sdk-method-name': 'connect_to_hub',
+        'x-response-key': null,
+        'x-title': 'Simulate Hub Connection',
+      },
+    },
     '/devices/simulate/disconnect': {
       post: {
         description:
@@ -38684,6 +38737,59 @@ export default {
         'x-fern-sdk-method-name': 'disconnect',
         'x-response-key': null,
         'x-title': 'Simulate Device Disconnection',
+      },
+    },
+    '/devices/simulate/disconnect_from_hub': {
+      post: {
+        description:
+          'Simulates taking the Wi-Fi hub (bridge) offline for a device.  \nOnly applicable for [sandbox workspaces](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces) and August locks today, but designed so we can extend to other providers later.  \nThis will set the `hub_disconnected` error on the device.',
+        operationId: 'devicesSimulateDisconnectFromHubPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: {
+                    description:
+                      'ID of the device whose hub you want to disconnect.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/devices/simulate/disconnect_from_hub',
+        tags: ['/devices'],
+        'x-fern-sdk-group-name': ['devices', 'simulate'],
+        'x-fern-sdk-method-name': 'disconnect_from_hub',
+        'x-response-key': null,
+        'x-title': 'Simulate Hub Disconnection',
       },
     },
     '/devices/simulate/remove': {
@@ -41629,6 +41735,7 @@ export default {
         'x-fern-sdk-method-name': 'keypad_code_entry',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
+        'x-title': 'Simulate a Keypad Code Entry',
       },
     },
     '/locks/simulate/manual_lock_via_keypad': {
@@ -41687,6 +41794,7 @@ export default {
         'x-fern-sdk-method-name': 'manual_lock_via_keypad',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
+        'x-title': 'Simulate a Manual Lock Action Using a Keypad',
       },
     },
     '/locks/unlock_door': {
