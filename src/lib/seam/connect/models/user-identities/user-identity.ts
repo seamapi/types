@@ -143,6 +143,11 @@ export const user_identity = z.object({
     .describe(
       'Array of warnings associated with the user identity. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
     ),
+  acs_user_ids: z
+    .array(z.string().uuid())
+    .describe(
+      'Array of access system user IDs associated with the user identity.',
+    ),
 }).describe(`
   ---
   route_path: /user_identities
