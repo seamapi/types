@@ -12925,6 +12925,14 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
@@ -12935,6 +12943,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description:
@@ -12982,6 +12998,14 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
@@ -12992,6 +13016,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description:
@@ -13043,6 +13075,14 @@ export default {
                 description: 'Code for the affected access code.',
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
@@ -13053,6 +13093,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description:
@@ -13108,6 +13156,14 @@ export default {
                 description: 'Code for the affected access code.',
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
@@ -13118,6 +13174,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description:
@@ -13169,6 +13233,14 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
@@ -13179,6 +13251,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description:
@@ -13229,6 +13309,14 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
@@ -13239,6 +13327,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description:
@@ -13289,6 +13385,14 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
@@ -13299,6 +13403,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description:
@@ -13354,6 +13466,14 @@ export default {
                 nullable: true,
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
@@ -13364,6 +13484,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description:
@@ -13412,6 +13540,14 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
@@ -13422,6 +13558,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description:
@@ -13472,6 +13616,14 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
@@ -13482,6 +13634,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description:
@@ -13532,6 +13692,14 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
@@ -13542,6 +13710,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description:
@@ -13592,6 +13768,14 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
@@ -13602,6 +13786,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description:
@@ -13653,6 +13845,14 @@ export default {
                 type: 'string',
               },
               backup_access_code_id: { type: 'string' },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
@@ -13663,6 +13863,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description:
@@ -13714,6 +13922,14 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
@@ -13724,6 +13940,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description:
@@ -13774,6 +13998,14 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
@@ -13784,6 +14016,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description:
@@ -13834,6 +14074,14 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
@@ -13844,6 +14092,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description:
@@ -13894,6 +14150,14 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
@@ -13904,6 +14168,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description:
@@ -15176,6 +15448,14 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
@@ -15229,6 +15509,14 @@ export default {
                   'ID of the [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) associated with the event.',
                 format: 'uuid',
                 type: 'string',
+              },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
               },
               connected_account_id: {
                 description:
@@ -15285,6 +15573,14 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
@@ -15334,6 +15630,14 @@ export default {
             description:
               'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was disconnected.',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
@@ -15381,6 +15685,14 @@ export default {
             description:
               'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) completed the first sync with Seam, and the corresponding devices or systems are now available.',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
@@ -15428,6 +15740,14 @@ export default {
             description:
               'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was deleted.',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
@@ -15475,6 +15795,14 @@ export default {
             description:
               'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) completed the first sync after reconnection with Seam, and the corresponding devices or systems are now available.',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
@@ -15742,6 +16070,14 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account; present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -15837,6 +16173,14 @@ export default {
             description:
               'The status of a [device](https://docs.seam.co/latest/core-concepts/devices) changed from offline to online. That is, the `device.properties.online` property changed from `false` to `true`. Note that some devices operate entirely in offline mode, so Seam never emits a `device.connected` event for these devices.',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -15847,6 +16191,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -15887,6 +16239,14 @@ export default {
             description:
               'A [device](https://docs.seam.co/latest/core-concepts/devices) was added to Seam or was re-added to Seam after having been removed.',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -15897,6 +16257,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -15937,6 +16305,14 @@ export default {
             description:
               'A managed device was successfully converted to an [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -15947,6 +16323,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -15990,6 +16374,14 @@ export default {
             description:
               'An [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices) was successfully converted to a managed device.',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -16000,6 +16392,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -16043,6 +16443,14 @@ export default {
             description:
               'The status of an [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices) changed from offline to online. That is, the `device.properties.online` property changed from `false` to `true`.',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -16053,6 +16461,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -16096,6 +16512,14 @@ export default {
             description:
               'The status of a [device](https://docs.seam.co/latest/core-concepts/devices) changed from online to offline. That is, the `device.properties.online` property changed from `true` to `false`.',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -16106,6 +16530,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -16157,6 +16589,14 @@ export default {
             description:
               'The status of an [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices) changed from online to offline. That is, the `device.properties.online` property changed from `true` to `false`.',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -16167,6 +16607,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -16221,6 +16669,14 @@ export default {
             description:
               'A [device](https://docs.seam.co/latest/core-concepts/devices) detected that it was tampered with, for example, opened or moved.',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -16231,6 +16687,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -16279,6 +16743,14 @@ export default {
                 minimum: 0,
                 type: 'number',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -16289,6 +16761,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -16344,6 +16824,14 @@ export default {
                 enum: ['critical', 'low', 'good', 'full'],
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -16354,6 +16842,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -16399,6 +16895,14 @@ export default {
             description:
               'A [device](https://docs.seam.co/latest/core-concepts/devices) was removed externally from the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -16409,6 +16913,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -16449,6 +16961,14 @@ export default {
             description:
               'A [device](https://docs.seam.co/latest/core-concepts/devices) was deleted.',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -16459,6 +16979,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -16499,6 +17027,14 @@ export default {
             description:
               'Seam detected that a [device](https://docs.seam.co/latest/core-concepts/devices) is using a third-party integration that will interfere with Seam device management.',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -16509,6 +17045,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -16552,6 +17096,14 @@ export default {
             description:
               'Seam detected that a [device](https://docs.seam.co/latest/core-concepts/devices) is no longer using a third-party integration that was interfering with Seam device management.',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -16562,6 +17114,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -16605,6 +17165,14 @@ export default {
             description:
               'A [Salto device](https://docs.seam.co/latest/device-and-system-integration-guides/salto-locks) activated privacy mode.',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -16615,6 +17183,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -16658,6 +17234,14 @@ export default {
             description:
               'A [Salto device](https://docs.seam.co/latest/device-and-system-integration-guides/salto-locks) deactivated privacy mode.',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -16668,6 +17252,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -16711,6 +17303,14 @@ export default {
             description:
               'Seam detected a flaky [device](https://docs.seam.co/latest/core-concepts/devices) connection.',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -16721,6 +17321,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -16764,6 +17372,14 @@ export default {
             description:
               'Seam detected that a previously-flaky [device](https://docs.seam.co/latest/core-concepts/devices) connection stabilized.',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -16774,6 +17390,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -16817,6 +17441,14 @@ export default {
             description:
               'A third-party subscription is required to use all [device](https://docs.seam.co/latest/core-concepts/devices) features.',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -16827,6 +17459,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -16870,6 +17510,14 @@ export default {
             description:
               'A third-party subscription is active or no longer required to use all [device](https://docs.seam.co/latest/core-concepts/devices) features.',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -16880,6 +17528,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -16923,6 +17579,14 @@ export default {
             description:
               'An accessory keypad was connected to a [device](https://docs.seam.co/latest/core-concepts/devices).',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -16933,6 +17597,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -16976,6 +17648,14 @@ export default {
             description:
               'An accessory keypad was disconnected from a [device](https://docs.seam.co/latest/core-concepts/devices).',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -16986,6 +17666,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -17029,6 +17717,14 @@ export default {
             description:
               'Extended periods of noise or noise exceeding a [threshold](https://docs.seam.co/latest/capability-guides/noise-sensors#what-is-a-threshold) were detected.',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -17039,6 +17735,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -17124,6 +17828,14 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -17134,6 +17846,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -17193,6 +17913,14 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -17203,6 +17931,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -17256,6 +17992,14 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -17266,6 +18010,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -17310,6 +18062,14 @@ export default {
                 description: 'Key of the climate preset that was activated.',
                 type: 'string',
               },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -17320,6 +18080,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -17378,6 +18146,14 @@ export default {
             description:
               'A [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) was adjusted manually.',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -17400,6 +18176,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -17474,6 +18258,14 @@ export default {
             description:
               "A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temperature reading exceeded the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).",
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -17484,6 +18276,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -17573,6 +18373,14 @@ export default {
             description:
               "A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temperature reading no longer exceeds the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).",
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -17583,6 +18391,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -17672,6 +18488,14 @@ export default {
             description:
               "A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temperature reading is within 1 °C of the configured cooling or heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).",
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -17694,6 +18518,14 @@ export default {
                   "Desired temperature, in °F, defined by the affected thermostat's cooling or heating set point.",
                 format: 'float',
                 type: 'number',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -17751,6 +18583,14 @@ export default {
             description:
               "A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) reported temperature changed by at least 1 °C.",
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -17761,6 +18601,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -17818,6 +18666,14 @@ export default {
             description:
               'The name of a [device](https://docs.seam.co/latest/core-concepts/devices) was changed.',
             properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
               connected_account_id: {
                 description:
                   'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
@@ -17828,6 +18684,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected device.',
@@ -17922,6 +18786,14 @@ export default {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device; present when device_id is provided.',
+                type: 'object',
               },
               device_id: {
                 description: 'ID of the affected phone device.',

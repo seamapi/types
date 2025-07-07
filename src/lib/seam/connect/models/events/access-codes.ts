@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+import { custom_metadata } from '../custom-metadata.js'
 import { common_event } from './common.js'
 
 const access_code_event = common_event.extend({
@@ -13,6 +14,16 @@ const access_code_event = common_event.extend({
     .uuid()
     .describe(
       'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.',
+    ),
+  device_custom_metadata: custom_metadata
+    .optional()
+    .describe(
+      'Custom metadata of the device, present when device_id is provided.',
+    ),
+  connected_account_custom_metadata: custom_metadata
+    .optional()
+    .describe(
+      'Custom metadata of the connected account, present when connected_account_id is provided.',
     ),
 })
 
