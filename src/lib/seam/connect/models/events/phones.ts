@@ -1,9 +1,15 @@
 import { z } from 'zod'
 
+import { custom_metadata } from '../custom-metadata.js'
 import { common_event } from './common.js'
 
 const phone_event = common_event.extend({
   device_id: z.string().uuid().describe('ID of the affected phone device.'),
+  device_custom_metadata: custom_metadata
+    .optional()
+    .describe(
+      'Custom metadata of the device; present when device_id is provided.',
+    ),
 })
 
 export const phone_deactivated_event = phone_event.extend({
