@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+import { custom_metadata } from '../custom-metadata.js'
 import { common_event } from './common.js'
 
 const connect_webview_event = common_event.extend({
@@ -18,10 +19,17 @@ const connected_account_id = z
     'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
   )
 
+const connected_account_custom_metadata = custom_metadata
+  .optional()
+  .describe(
+    'Custom metadata of the connected account; present when connected_account_id is provided.',
+  )
+
 export const connect_webview_login_succeeded_event =
   connect_webview_event.extend({
     event_type: z.literal('connect_webview.login_succeeded'),
     connected_account_id,
+    connected_account_custom_metadata,
   }).describe(`
     ---
     route_path: /connect_webviews
