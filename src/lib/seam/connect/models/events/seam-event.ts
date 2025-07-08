@@ -29,7 +29,7 @@ export const seam_event = z.discriminatedUnion('event_type', [
   route_path: /events
   ---
   Represents an event. Events let you know when something interesting happens in your workspace. For example, when a lock is unlocked, Seam creates a \`lock.unlocked\` event. When a device's battery level is low, Seam creates a \`device.battery_low\` event.
-  
+
   As with other API resources, you can retrieve an individual event or a list of events. Seam also provides a separate [webhook](https://docs.seam.co/latest/developer-tools/webhooks) system for sending the event objects directly to an endpoint on your sever. Manage webhooks through [Seam Console](https://console.seam.co). You can also use the webhooks sandbox in Seam Console to see the different payloads for each event and test them against your own endpoints.
 `)
 

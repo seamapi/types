@@ -47116,6 +47116,191 @@ export default {
         'x-title': 'Get a Space',
       },
     },
+    '/spaces/get_related': {
+      get: {
+        description: 'Gets all related resources for one or more Spaces.',
+        operationId: 'spacesGetRelatedGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'space_ids',
+            required: true,
+            schema: {
+              description:
+                'IDs of the spaces that you want to get along with their related resources.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'include',
+            required: false,
+            schema: {
+              items: {
+                enum: ['spaces', 'devices', 'acs_entrances'],
+                type: 'string',
+              },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'exclude',
+            required: false,
+            schema: {
+              items: {
+                enum: ['spaces', 'devices', 'acs_entrances'],
+                type: 'string',
+              },
+              type: 'array',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    batch: {
+                      description: 'Represents a resource batch.',
+                      properties: {
+                        acs_entrances: {
+                          items: { $ref: '#/components/schemas/acs_entrance' },
+                          type: 'array',
+                        },
+                        batch_type: { enum: ['spaces'], type: 'string' },
+                        devices: {
+                          items: { $ref: '#/components/schemas/device' },
+                          type: 'array',
+                        },
+                        spaces: {
+                          items: { $ref: '#/components/schemas/space' },
+                          type: 'array',
+                        },
+                      },
+                      required: ['batch_type'],
+                      type: 'object',
+                      'x-route-path': '/',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['batch', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/spaces/get_related',
+        tags: [],
+        'x-batch-type': 'spaces',
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['spaces'],
+        'x-fern-sdk-method-name': 'get_related',
+        'x-fern-sdk-return-value': 'batch',
+        'x-response-key': 'batch',
+        'x-title': 'Get related Space resources',
+      },
+      post: {
+        description: 'Gets all related resources for one or more Spaces.',
+        operationId: 'spacesGetRelatedPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  exclude: {
+                    items: {
+                      enum: ['spaces', 'devices', 'acs_entrances'],
+                      type: 'string',
+                    },
+                    type: 'array',
+                  },
+                  include: {
+                    items: {
+                      enum: ['spaces', 'devices', 'acs_entrances'],
+                      type: 'string',
+                    },
+                    type: 'array',
+                  },
+                  space_ids: {
+                    description:
+                      'IDs of the spaces that you want to get along with their related resources.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                },
+                required: ['space_ids'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    batch: {
+                      description: 'Represents a resource batch.',
+                      properties: {
+                        acs_entrances: {
+                          items: { $ref: '#/components/schemas/acs_entrance' },
+                          type: 'array',
+                        },
+                        batch_type: { enum: ['spaces'], type: 'string' },
+                        devices: {
+                          items: { $ref: '#/components/schemas/device' },
+                          type: 'array',
+                        },
+                        spaces: {
+                          items: { $ref: '#/components/schemas/space' },
+                          type: 'array',
+                        },
+                      },
+                      required: ['batch_type'],
+                      type: 'object',
+                      'x-route-path': '/',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['batch', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/spaces/get_related',
+        tags: [],
+        'x-batch-type': 'spaces',
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['spaces'],
+        'x-fern-sdk-method-name': 'get_related',
+        'x-fern-sdk-return-value': 'batch',
+        'x-response-key': 'batch',
+        'x-title': 'Get related Space resources',
+      },
+    },
     '/spaces/list': {
       get: {
         description: 'Returns a list of all spaces.',
