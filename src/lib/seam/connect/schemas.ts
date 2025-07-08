@@ -7,6 +7,7 @@ export {
   acs_system,
   acs_user,
   action_attempt,
+  batch,
   bridge,
   bridge_client_session,
   building_block_type,

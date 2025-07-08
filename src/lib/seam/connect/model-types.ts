@@ -13,6 +13,7 @@ export type {
   ActionAttempt,
   Bridge,
   BuildingBlockType,
+  Bundle,
   ClientSession,
   ConnectedAccount,
   ConnectedAccountError,

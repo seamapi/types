@@ -72,6 +72,7 @@ export {
   room_resource,
   space,
   neutral_resource as space_resource,
+  spaces_batch,
   tenant_resource,
   thermostat_capability_properties,
   thermostat_device_type,
