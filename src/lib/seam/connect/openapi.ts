@@ -32121,6 +32121,16 @@ export default {
               type: 'array',
             },
           },
+          {
+            in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned entrances to include all records that satisfy a partial match using `display_name`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -32209,6 +32219,12 @@ export default {
                     nullable: true,
                     type: 'string',
                     'x-deprecated': 'Use `space_id`.',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned entrances to include all records that satisfy a partial match using `display_name`.',
+                    minLength: 1,
+                    type: 'string',
                   },
                   space_id: {
                     description:
@@ -47309,6 +47325,18 @@ export default {
       get: {
         description: 'Returns a list of all spaces.',
         operationId: 'spacesListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned spaces to include all records that satisfy a partial match using `name`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+        ],
         responses: {
           200: {
             content: {
@@ -47348,6 +47376,23 @@ export default {
       post: {
         description: 'Returns a list of all spaces.',
         operationId: 'spacesListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  search: {
+                    description:
+                      'String for which to search. Filters returned spaces to include all records that satisfy a partial match using `name`.',
+                    minLength: 1,
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
         responses: {
           200: {
             content: {
