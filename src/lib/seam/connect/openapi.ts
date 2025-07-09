@@ -1940,6 +1940,10 @@ export default {
             format: 'uuid',
             type: 'string',
           },
+          code: {
+            description: 'The actual PIN code for code access methods.',
+            type: 'string',
+          },
           created_at: {
             description:
               'Date and time at which the access method was created.',

@@ -32,6 +32,10 @@ export const access_method = z.object({
     .describe(
       'Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.',
     ),
+  code: z
+    .string()
+    .optional()
+    .describe('The actual PIN code for code access methods.'),
 }).describe(`
   ---
   draft: Early access.
