@@ -10,6 +10,5 @@
     "outDir": "./"
   },
   "files": ["src/index.ts", "src/connect.ts", "src/devicedb.ts"],
-  "include": ["src/**/*"],
-  "exclude": ["tsup.config.ts", "blueprint.ts"]
+  "include": ["src/**/*"]
 }
