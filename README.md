@@ -15,7 +15,8 @@ have a single source of truth that stays up to date with the API.
 
 ### Structure
 
-The main entrypoint for this module is empty: there is dedicated entrypoint for each Seam API namespace.
+There is dedicated entrypoint for each Seam API namespace.
+The main entrypoint for this module is re-exports the connect namespace.
 
 Each directory under `src/lib/seam/*` is owned by an upstream Seam repository.
 These files should not be edited manually as they will be overridden by automation.

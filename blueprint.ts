@@ -3,7 +3,7 @@ import { join } from 'node:path'
 
 import { createBlueprint, TypesModuleSchema } from '@seamapi/blueprint'
 
-import * as types from '@seamapi/types/connect'
+import * as types from '@seamapi/types'
 
 const typesModule = TypesModuleSchema.parse(types)
 
