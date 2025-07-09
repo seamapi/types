@@ -14,6 +14,8 @@ export const space = z.object({
     .string()
     .datetime()
     .describe('Date and time at which the space was created.'),
+  device_count: z.number().describe('Number of devices in the space.'),
+  acs_entrance_count: z.number().describe('Number of entrances in the space.'),
 }).describe(`
   ---
   draft: Early access.
