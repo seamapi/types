@@ -20029,10 +20029,20 @@ export default {
         description:
           'Represents a space that is a logical grouping of devices and entrances. You can assign access to an entire space, thereby making granting access more efficient.',
         properties: {
+          acs_entrance_count: {
+            description: 'Number of entrances in the space.',
+            format: 'float',
+            type: 'number',
+          },
           created_at: {
             description: 'Date and time at which the space was created.',
             format: 'date-time',
             type: 'string',
+          },
+          device_count: {
+            description: 'Number of devices in the space.',
+            format: 'float',
+            type: 'number',
           },
           display_name: {
             description: 'Display name for the space.',
@@ -20057,6 +20067,8 @@ export default {
           'name',
           'display_name',
           'created_at',
+          'device_count',
+          'acs_entrance_count',
         ],
         type: 'object',
         'x-draft': 'Early access.',
