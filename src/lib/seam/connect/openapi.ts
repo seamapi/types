@@ -28463,6 +28463,39 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'device_id',
+            required: false,
+            schema: {
+              description:
+                'ID of the device for which you want to retrieve all access methods.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_entrance_id',
+            required: false,
+            schema: {
+              description:
+                'ID of the entrance for which you want to retrieve all access methods.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'space_id',
+            required: false,
+            schema: {
+              description:
+                'ID of the space for which you want to retrieve all access methods.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -28512,6 +28545,24 @@ export default {
                   access_grant_id: {
                     description:
                       'ID of access grant to list access methods for.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_entrance_id: {
+                    description:
+                      'ID of the entrance for which you want to retrieve all access methods.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  device_id: {
+                    description:
+                      'ID of the device for which you want to retrieve all access methods.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  space_id: {
+                    description:
+                      'ID of the space for which you want to retrieve all access methods.',
                     format: 'uuid',
                     type: 'string',
                   },
