@@ -11,7 +11,7 @@ export const requested_access_method = z.object({
     .string()
     .datetime()
     .describe(
-      'Date and time at which the requested access method was added to the access grant.',
+      'Date and time at which the requested access method was added to the Access Grant.',
     ),
   created_access_method_ids: z
     .array(z.string().uuid())

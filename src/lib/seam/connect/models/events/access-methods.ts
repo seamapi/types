@@ -58,7 +58,7 @@ export const access_method_reissued_event = access_method_event.extend({
     ---
     route_path: /access_methods
     ---
-    An access method was reissued due to an access grant update.
+    An access method was reissued due to an Access Grant update.
   `)
 
 export type AccessMethodRevokedEvent = z.infer<

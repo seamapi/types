@@ -1815,36 +1815,36 @@ export default {
       },
       access_grant: {
         description:
-          'Represents an access grant. Access grants enable you to grant a user identity access to spaces, entrances, and devices through one or more access methods, such as mobile keys, plastic cards, and PIN codes. You can create an access grant for an existing user identity, or you can create a new user identity *while* creating the new access grant.',
+          'Represents an Access Grant. Access Grants enable you to grant a user identity access to spaces, entrances, and devices through one or more access methods, such as mobile keys, plastic cards, and PIN codes. You can create an Access Grant for an existing user identity, or you can create a new user identity *while* creating the new Access Grant.',
         properties: {
           access_grant_id: {
-            description: 'ID of the access grant.',
+            description: 'ID of the Access Grant.',
             format: 'uuid',
             type: 'string',
           },
           access_method_ids: {
             description:
-              'IDs of the access methods created for the access grant.',
+              'IDs of the access methods created for the Access Grant.',
             items: { format: 'uuid', type: 'string' },
             type: 'array',
           },
           created_at: {
-            description: 'Date and time at which the access grant was created.',
+            description: 'Date and time at which the Access Grant was created.',
             format: 'date-time',
             type: 'string',
           },
           display_name: {
-            description: 'Display name of the access grant.',
+            description: 'Display name of the Access Grant.',
             type: 'string',
           },
           ends_at: {
-            description: 'Date and time at which the access grant ends.',
+            description: 'Date and time at which the Access Grant ends.',
             format: 'date-time',
             type: 'string',
           },
           instant_key_url: {
             description:
-              'Instant Key URL. Only returned if the access grant has a single mobile_key access_method. ',
+              'Instant Key URL. Only returned if the Access Grant has a single mobile_key access_method. ',
             format: 'uri',
             type: 'string',
           },
@@ -1856,7 +1856,7 @@ export default {
           },
           requested_access_methods: {
             description:
-              'Access methods that the user requested for the access grant.',
+              'Access methods that the user requested for the Access Grant.',
             items: {
               properties: {
                 created_access_method_ids: {
@@ -1867,7 +1867,7 @@ export default {
                 },
                 created_at: {
                   description:
-                    'Date and time at which the requested access method was added to the access grant.',
+                    'Date and time at which the requested access method was added to the Access Grant.',
                   format: 'date-time',
                   type: 'string',
                 },
@@ -1894,24 +1894,24 @@ export default {
           },
           space_ids: {
             description:
-              'IDs of the spaces to which the access grant gives access.',
+              'IDs of the spaces to which the Access Grant gives access.',
             items: { format: 'uuid', type: 'string' },
             type: 'array',
           },
           starts_at: {
-            description: 'Date and time at which the access grant starts.',
+            description: 'Date and time at which the Access Grant starts.',
             format: 'date-time',
             type: 'string',
           },
           user_identity_id: {
             description:
-              'ID of user identity to which the access grant gives access.',
+              'ID of user identity to which the Access Grant gives access.',
             format: 'uuid',
             type: 'string',
           },
           workspace_id: {
             description:
-              'ID of the Seam workspace associated with the access grant.',
+              'ID of the Seam workspace associated with the Access Grant.',
             format: 'uuid',
             type: 'string',
           },
@@ -1933,7 +1933,7 @@ export default {
       },
       access_method: {
         description:
-          'Represents an access method for an access grant. Access methods describe the modes of access, such as PIN codes, plastic cards, and mobile keys. For a mobile key, the access method also stores the URL for the associated Instant Key.',
+          'Represents an access method for an Access Grant. Access methods describe the modes of access, such as PIN codes, plastic cards, and mobile keys. For a mobile key, the access method also stores the URL for the associated Instant Key.',
         properties: {
           access_method_id: {
             description: 'ID of the access method.',
@@ -14227,10 +14227,10 @@ export default {
             'x-route-path': '/access_codes/unmanaged',
           },
           {
-            description: 'An access grant was created.',
+            description: 'An Access Grant was created.',
             properties: {
               access_grant_id: {
-                description: 'ID of the affected access grant.',
+                description: 'ID of the affected Access Grant.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14269,10 +14269,10 @@ export default {
             'x-route-path': '/access_grants',
           },
           {
-            description: 'An access grant was deleted.',
+            description: 'An Access Grant was deleted.',
             properties: {
               access_grant_id: {
-                description: 'ID of the affected access grant.',
+                description: 'ID of the affected Access Grant.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14312,10 +14312,10 @@ export default {
           },
           {
             description:
-              'All access requested for an access grant was successfully granted.',
+              'All access requested for an Access Grant was successfully granted.',
             properties: {
               access_grant_id: {
-                description: 'ID of the affected access grant.',
+                description: 'ID of the affected Access Grant.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14358,10 +14358,10 @@ export default {
           },
           {
             description:
-              'Access requested as part of an access grant to a particular door was successfully granted.',
+              'Access requested as part of an Access Grant to a particular door was successfully granted.',
             properties: {
               access_grant_id: {
-                description: 'ID of the affected access grant.',
+                description: 'ID of the affected Access Grant.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14411,10 +14411,10 @@ export default {
           },
           {
             description:
-              'Access to a particular door that was requested as part of an access grant was lost.',
+              'Access to a particular door that was requested as part of an Access Grant was lost.',
             properties: {
               access_grant_id: {
-                description: 'ID of the affected access grant.',
+                description: 'ID of the affected Access Grant.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -14636,7 +14636,7 @@ export default {
           },
           {
             description:
-              'An access method was reissued due to an access grant update.',
+              'An access method was reissued due to an Access Grant update.',
             properties: {
               access_method_id: {
                 description: 'ID of the affected access method.',
@@ -27503,7 +27503,7 @@ export default {
     },
     '/access_grants/create': {
       post: {
-        description: 'Creates a new access grant.',
+        description: 'Creates a new Access Grant.',
         operationId: 'accessGrantsCreatePost',
         requestBody: {
           content: {
@@ -27683,7 +27683,7 @@ export default {
     },
     '/access_grants/delete': {
       delete: {
-        description: 'Delete an access grant.',
+        description: 'Delete an Access Grant.',
         operationId: 'accessGrantsDeleteDelete',
         parameters: [
           {
@@ -27691,7 +27691,7 @@ export default {
             name: 'access_grant_id',
             required: true,
             schema: {
-              description: 'ID of access grant to delete.',
+              description: 'ID of Access Grant to delete.',
               format: 'uuid',
               type: 'string',
             },
@@ -27728,7 +27728,7 @@ export default {
         'x-title': 'Delete an Access Grant',
       },
       post: {
-        description: 'Delete an access grant.',
+        description: 'Delete an Access Grant.',
         operationId: 'accessGrantsDeletePost',
         requestBody: {
           content: {
@@ -27736,7 +27736,7 @@ export default {
               schema: {
                 properties: {
                   access_grant_id: {
-                    description: 'ID of access grant to delete.',
+                    description: 'ID of Access Grant to delete.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -27780,7 +27780,7 @@ export default {
     },
     '/access_grants/get': {
       get: {
-        description: 'Get an access grant.',
+        description: 'Get an Access Grant.',
         operationId: 'accessGrantsGetGet',
         parameters: [
           {
@@ -27788,7 +27788,7 @@ export default {
             name: 'access_grant_id',
             required: true,
             schema: {
-              description: 'ID of access grant to get.',
+              description: 'ID of Access Grant to get.',
               format: 'uuid',
               type: 'string',
             },
@@ -27829,7 +27829,7 @@ export default {
         'x-title': 'Get an Access Grant',
       },
       post: {
-        description: 'Get an access grant.',
+        description: 'Get an Access Grant.',
         operationId: 'accessGrantsGetPost',
         requestBody: {
           content: {
@@ -27837,7 +27837,7 @@ export default {
               schema: {
                 properties: {
                   access_grant_id: {
-                    description: 'ID of access grant to get.',
+                    description: 'ID of Access Grant to get.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -27885,7 +27885,7 @@ export default {
     },
     '/access_grants/list': {
       get: {
-        description: 'Get an access grant.',
+        description: 'Gets an Access Grant.',
         operationId: 'accessGrantsListGet',
         parameters: [
           {
@@ -27893,7 +27893,7 @@ export default {
             name: 'user_identity_id',
             schema: {
               description:
-                'ID of user identity to filter list of access grants by.',
+                'ID of user identity by which you want to filter the list of Access Grants.',
               format: 'uuid',
               type: 'string',
             },
@@ -27902,7 +27902,8 @@ export default {
             in: 'query',
             name: 'acs_system_id',
             schema: {
-              description: 'ID of system to filter list of access grants by.',
+              description:
+                'ID of the access system by which you want to filter the list of Access Grants.',
               format: 'uuid',
               type: 'string',
             },
@@ -27911,7 +27912,8 @@ export default {
             in: 'query',
             name: 'acs_entrance_id',
             schema: {
-              description: 'ID of entrance to filter list of access grants by.',
+              description:
+                'ID of the entrance by which you want to filter the list of Access Grants.',
               format: 'uuid',
               type: 'string',
             },
@@ -27930,7 +27932,8 @@ export default {
             in: 'query',
             name: 'space_id',
             schema: {
-              description: 'ID of space to filter list of access grants by.',
+              description:
+                'ID of the space by which you want to filter the list of Access Grants.',
               format: 'uuid',
               type: 'string',
             },
@@ -27974,7 +27977,7 @@ export default {
         'x-title': 'List Access Grants',
       },
       post: {
-        description: 'Get an access grant.',
+        description: 'Gets an Access Grant.',
         operationId: 'accessGrantsListPost',
         requestBody: {
           content: {
@@ -27983,13 +27986,13 @@ export default {
                 properties: {
                   acs_entrance_id: {
                     description:
-                      'ID of entrance to filter list of access grants by.',
+                      'ID of the entrance by which you want to filter the list of Access Grants.',
                     format: 'uuid',
                     type: 'string',
                   },
                   acs_system_id: {
                     description:
-                      'ID of system to filter list of access grants by.',
+                      'ID of the access system by which you want to filter the list of Access Grants.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -28001,13 +28004,13 @@ export default {
                   },
                   space_id: {
                     description:
-                      'ID of space to filter list of access grants by.',
+                      'ID of the space by which you want to filter the list of Access Grants.',
                     format: 'uuid',
                     type: 'string',
                   },
                   user_identity_id: {
                     description:
-                      'ID of user identity to filter list of access grants by.',
+                      'ID of user identity by which you want to filter the list of Access Grants.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -28057,7 +28060,7 @@ export default {
     },
     '/access_grants/update': {
       patch: {
-        description: "Updates an existing access grant's time window.",
+        description: "Updates an existing Access Grant's time window.",
         operationId: 'accessGrantsUpdatePatch',
         requestBody: {
           content: {
@@ -28065,7 +28068,7 @@ export default {
               schema: {
                 properties: {
                   access_grant_id: {
-                    description: 'ID of the access grant to update.',
+                    description: 'ID of the Access Grant to update.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -28121,7 +28124,7 @@ export default {
         'x-title': 'Update an Access Grant',
       },
       post: {
-        description: "Updates an existing access grant's time window.",
+        description: "Updates an existing Access Grant's time window.",
         operationId: 'accessGrantsUpdatePost',
         requestBody: {
           content: {
@@ -28129,7 +28132,7 @@ export default {
               schema: {
                 properties: {
                   access_grant_id: {
-                    description: 'ID of the access grant to update.',
+                    description: 'ID of the Access Grant to update.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -28187,7 +28190,7 @@ export default {
     },
     '/access_methods/delete': {
       delete: {
-        description: 'Delete an access method.',
+        description: 'Deletes an access method.',
         operationId: 'accessMethodsDeleteDelete',
         parameters: [
           {
@@ -28231,7 +28234,7 @@ export default {
         'x-title': 'Delete an Access Method',
       },
       post: {
-        description: 'Delete an access method.',
+        description: 'Deletes an access method.',
         operationId: 'accessMethodsDeletePost',
         requestBody: {
           content: {
@@ -28283,7 +28286,7 @@ export default {
     '/access_methods/encode': {
       post: {
         description:
-          'Encodes an existing [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) onto a plastic card placed on the specified [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
+          'Encodes an existing access method onto a plastic card placed on the specified [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
         operationId: 'accessMethodsEncodePost',
         requestBody: {
           content: {
@@ -28298,7 +28301,7 @@ export default {
                   },
                   acs_encoder_id: {
                     description:
-                      'ID of the `acs_encoder` to use to encode the `acs_credential`.',
+                      'ID of the `acs_encoder` to use to encode the `access_method`.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -28347,7 +28350,7 @@ export default {
     },
     '/access_methods/get': {
       get: {
-        description: 'Get an access method.',
+        description: 'Gets an access method.',
         operationId: 'accessMethodsGetGet',
         parameters: [
           {
@@ -28397,7 +28400,7 @@ export default {
         'x-title': 'Get an Access Method',
       },
       post: {
-        description: 'Get an access method.',
+        description: 'Gets an access method.',
         operationId: 'accessMethodsGetPost',
         requestBody: {
           content: {
@@ -28455,7 +28458,7 @@ export default {
     '/access_methods/list': {
       get: {
         description:
-          'List all access methods, usually filtered by access grant.',
+          'Lists all access methods, usually filtered by Access Grant.',
         operationId: 'accessMethodsListGet',
         parameters: [
           {
@@ -28463,7 +28466,7 @@ export default {
             name: 'access_grant_id',
             required: true,
             schema: {
-              description: 'ID of access grant to list access methods for.',
+              description: 'ID of Access Grant to list access methods for.',
               format: 'uuid',
               type: 'string',
             },
@@ -28540,7 +28543,7 @@ export default {
       },
       post: {
         description:
-          'List all access methods, usually filtered by access grant.',
+          'Lists all access methods, usually filtered by Access Grant.',
         operationId: 'accessMethodsListPost',
         requestBody: {
           content: {
@@ -28549,7 +28552,7 @@ export default {
                 properties: {
                   access_grant_id: {
                     description:
-                      'ID of access grant to list access methods for.',
+                      'ID of Access Grant to list access methods for.',
                     format: 'uuid',
                     type: 'string',
                   },
