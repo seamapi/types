@@ -6,7 +6,7 @@ const access_grant_event = common_event.extend({
   access_grant_id: z
     .string()
     .uuid()
-    .describe('ID of the affected access grant.'),
+    .describe('ID of the affected Access Grant.'),
 })
 
 export const access_grant_created_event = access_grant_event.extend({
@@ -15,7 +15,7 @@ export const access_grant_created_event = access_grant_event.extend({
     ---
     route_path: /access_grants
     ---
-    An access grant was created.
+    An Access Grant was created.
   `)
 
 export const access_grant_deleted_event = access_grant_event.extend({
@@ -24,7 +24,7 @@ export const access_grant_deleted_event = access_grant_event.extend({
     ---
     route_path: /access_grants
     ---
-    An access grant was deleted.
+    An Access Grant was deleted.
   `)
 
 export const access_grant_access_granted_to_all_doors_event =
@@ -34,7 +34,7 @@ export const access_grant_access_granted_to_all_doors_event =
     ---
     route_path: /access_grants
     ---
-    All access requested for an access grant was successfully granted.
+    All access requested for an Access Grant was successfully granted.
   `)
 
 export type AccessGrantAccessGrantedToAllDoorsEvent = z.infer<
@@ -56,7 +56,7 @@ export const access_grant_access_granted_to_door_event =
     ---
     route_path: /access_grants
     ---
-    Access requested as part of an access grant to a particular door was successfully granted.
+    Access requested as part of an Access Grant to a particular door was successfully granted.
   `)
 
 export type AccessGrantAccessGrantedToDoorEvent = z.infer<
@@ -72,7 +72,7 @@ export const access_grant_access_to_door_lost_event = access_grant_event.extend(
     ---
     route_path: /access_grants
     ---
-    Access to a particular door that was requested as part of an access grant was lost.
+    Access to a particular door that was requested as part of an Access Grant was lost.
   `)
 
 export type AccessGrantAccessToDoorLostEvent = z.infer<
