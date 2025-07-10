@@ -117,6 +117,10 @@ export const connect_webview = z.object({
     .describe(
       'Selected provider of the Connect Webview, one of the [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).',
     ),
+  customer_key: z
+    .string()
+    .optional()
+    .describe('The customer key associated with this webview, if any.'),
 }).describe(`
   ---
   route_path: /connect_webviews
