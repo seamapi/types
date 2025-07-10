@@ -1822,6 +1822,11 @@ export default {
             format: 'uuid',
             type: 'string',
           },
+          access_grant_key: {
+            description:
+              'Unique key for the access grant within the workspace.',
+            type: 'string',
+          },
           access_method_ids: {
             description:
               'IDs of the access methods created for the Access Grant.',
@@ -20059,6 +20064,10 @@ export default {
             format: 'uuid',
             type: 'string',
           },
+          space_key: {
+            description: 'Unique key for the space within the workspace.',
+            type: 'string',
+          },
           workspace_id: {
             description:
               'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the space.',
@@ -27559,6 +27568,11 @@ export default {
                   },
                   {
                     properties: {
+                      access_grant_key: {
+                        description:
+                          'Unique key for the access grant within the workspace.',
+                        type: 'string',
+                      },
                       acs_entrance_ids: {
                         default: [],
                         description:
@@ -27782,18 +27796,6 @@ export default {
       get: {
         description: 'Get an Access Grant.',
         operationId: 'accessGrantsGetGet',
-        parameters: [
-          {
-            in: 'query',
-            name: 'access_grant_id',
-            required: true,
-            schema: {
-              description: 'ID of Access Grant to get.',
-              format: 'uuid',
-              type: 'string',
-            },
-          },
-        ],
         responses: {
           200: {
             content: {
@@ -27835,15 +27837,29 @@ export default {
           content: {
             'application/json': {
               schema: {
-                properties: {
-                  access_grant_id: {
-                    description: 'ID of Access Grant to get.',
-                    format: 'uuid',
-                    type: 'string',
+                oneOf: [
+                  {
+                    properties: {
+                      access_grant_id: {
+                        description: 'ID of Access Grant to get.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                    },
+                    required: ['access_grant_id'],
+                    type: 'object',
                   },
-                },
-                required: ['access_grant_id'],
-                type: 'object',
+                  {
+                    properties: {
+                      access_grant_key: {
+                        description: 'Unique key of Access Grant to get.',
+                        type: 'string',
+                      },
+                    },
+                    required: ['access_grant_key'],
+                    type: 'object',
+                  },
+                ],
               },
             },
           },
@@ -27938,6 +27954,14 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'access_grant_key',
+            schema: {
+              description: 'Filter Access Grants by access_grant_key.',
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -27984,6 +28008,10 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  access_grant_key: {
+                    description: 'Filter Access Grants by access_grant_key.',
+                    type: 'string',
+                  },
                   acs_entrance_id: {
                     description:
                       'ID of the entrance by which you want to filter the list of Access Grants.',
@@ -47025,6 +47053,11 @@ export default {
                     description: 'Name of the space that you want to create.',
                     type: 'string',
                   },
+                  space_key: {
+                    description:
+                      'Unique key for the space within the workspace.',
+                    type: 'string',
+                  },
                 },
                 required: ['name'],
                 type: 'object',
@@ -47170,18 +47203,6 @@ export default {
       get: {
         description: 'Gets a space.',
         operationId: 'spacesGetGet',
-        parameters: [
-          {
-            in: 'query',
-            name: 'space_id',
-            required: true,
-            schema: {
-              description: 'ID of the space that you want to get.',
-              format: 'uuid',
-              type: 'string',
-            },
-          },
-        ],
         responses: {
           200: {
             content: {
@@ -47222,15 +47243,30 @@ export default {
           content: {
             'application/json': {
               schema: {
-                properties: {
-                  space_id: {
-                    description: 'ID of the space that you want to get.',
-                    format: 'uuid',
-                    type: 'string',
+                oneOf: [
+                  {
+                    properties: {
+                      space_id: {
+                        description: 'ID of the space that you want to get.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                    },
+                    required: ['space_id'],
+                    type: 'object',
                   },
-                },
-                required: ['space_id'],
-                type: 'object',
+                  {
+                    properties: {
+                      space_key: {
+                        description:
+                          'Unique key of the space that you want to get.',
+                        type: 'string',
+                      },
+                    },
+                    required: ['space_key'],
+                    type: 'object',
+                  },
+                ],
               },
             },
           },
@@ -47469,6 +47505,14 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'space_key',
+            schema: {
+              description: 'Filter spaces by space_key.',
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -47518,6 +47562,10 @@ export default {
                     description:
                       'String for which to search. Filters returned spaces to include all records that satisfy a partial match using `name`.',
                     minLength: 1,
+                    type: 'string',
+                  },
+                  space_key: {
+                    description: 'Filter spaces by space_key.',
                     type: 'string',
                   },
                 },

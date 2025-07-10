@@ -8,6 +8,10 @@ export const space = z.object({
     .describe(
       'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the space.',
     ),
+  space_key: z
+    .string()
+    .optional()
+    .describe('Unique key for the space within the workspace.'),
   name: z.string().describe('Name of the space.'),
   display_name: z.string().describe('Display name for the space.'),
   created_at: z

@@ -8,6 +8,10 @@ export const access_grant = z.object({
     .uuid()
     .describe('ID of the Seam workspace associated with the Access Grant.'),
   access_grant_id: z.string().uuid().describe('ID of the Access Grant.'),
+  access_grant_key: z
+    .string()
+    .optional()
+    .describe('Unique key for the access grant within the workspace.'),
   user_identity_id: z
     .string()
     .uuid()
