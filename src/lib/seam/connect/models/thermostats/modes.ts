@@ -1,6 +1,12 @@
 import { z } from 'zod'
 
-export const hvac_mode_setting = z.enum(['off', 'heat', 'cool', 'heat_cool'])
+export const hvac_mode_setting = z.enum([
+  'off',
+  'heat',
+  'cool',
+  'heat_cool',
+  'eco',
+])
 
 export type HvacModeSetting = z.infer<typeof hvac_mode_setting>
 
