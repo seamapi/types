@@ -47526,6 +47526,18 @@ export default {
           },
           {
             in: 'query',
+            name: 'connected_account_id',
+            schema: {
+              description:
+                'Filter spaces to only include those that contain devices or access control systems belonging to the specified connected account.',
+              format: 'uuid',
+              type: 'string',
+              'x-draft': 'Needs review.',
+              'x-undocumented': 'Only used internally.',
+            },
+          },
+          {
+            in: 'query',
             name: 'space_key',
             schema: {
               description: 'Filter spaces by space_key.',
@@ -47578,6 +47590,14 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  connected_account_id: {
+                    description:
+                      'Filter spaces to only include those that contain devices or access control systems belonging to the specified connected account.',
+                    format: 'uuid',
+                    type: 'string',
+                    'x-draft': 'Needs review.',
+                    'x-undocumented': 'Only used internally.',
+                  },
                   search: {
                     description:
                       'String for which to search. Filters returned spaces to include all records that satisfy a partial match using `name`.',
