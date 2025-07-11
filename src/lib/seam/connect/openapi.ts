@@ -11637,7 +11637,7 @@ export default {
                             hvac_mode_setting: {
                               description:
                                 'Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
-                              enum: ['off', 'heat', 'cool', 'heat_cool'],
+                              enum: ['off', 'heat', 'cool', 'heat_cool', 'eco'],
                               type: 'string',
                             },
                             manual_override_allowed: {
@@ -11683,7 +11683,7 @@ export default {
                         description:
                           'HVAC mode settings that the thermostat supports.',
                         items: {
-                          enum: ['off', 'heat', 'cool', 'heat_cool'],
+                          enum: ['off', 'heat', 'cool', 'heat_cool', 'eco'],
                           type: 'string',
                         },
                         type: 'array',
@@ -11787,7 +11787,7 @@ export default {
                           hvac_mode_setting: {
                             description:
                               'Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
-                            enum: ['off', 'heat', 'cool', 'heat_cool'],
+                            enum: ['off', 'heat', 'cool', 'heat_cool', 'eco'],
                             type: 'string',
                           },
                           manual_override_allowed: {
@@ -11907,7 +11907,7 @@ export default {
                           hvac_mode_setting: {
                             description:
                               'Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
-                            enum: ['off', 'heat', 'cool', 'heat_cool'],
+                            enum: ['off', 'heat', 'cool', 'heat_cool', 'eco'],
                             type: 'string',
                           },
                           manual_override_allowed: {
@@ -18234,7 +18234,7 @@ export default {
               hvac_mode_setting: {
                 description:
                   'Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
-                enum: ['off', 'heat', 'cool', 'heat_cool'],
+                enum: ['off', 'heat', 'cool', 'heat_cool', 'eco'],
                 type: 'string',
               },
               method: {
@@ -36746,10 +36746,11 @@ export default {
           },
           {
             in: 'query',
-            name: 'customer_ids',
+            name: 'customer_key',
             schema: {
-              items: { format: 'uuid', type: 'string' },
-              type: 'array',
+              description:
+                'Customer key by which you want to filter connected accounts.',
+              type: 'string',
             },
           },
           {
@@ -36838,9 +36839,10 @@ export default {
                       'Custom metadata pairs by which you want to filter connected accounts. Returns connected accounts with `custom_metadata` that contains all of the provided key:value pairs.',
                     type: 'object',
                   },
-                  customer_ids: {
-                    items: { format: 'uuid', type: 'string' },
-                    type: 'array',
+                  customer_key: {
+                    description:
+                      'Customer key by which you want to filter connected accounts.',
+                    type: 'string',
                   },
                   limit: {
                     default: 11_000,
@@ -48183,7 +48185,7 @@ export default {
                   hvac_mode_setting: {
                     description:
                       'Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
-                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                    enum: ['off', 'heat', 'cool', 'heat_cool', 'eco'],
                     type: 'string',
                   },
                   manual_override_allowed: {
@@ -50961,7 +50963,7 @@ export default {
                   hvac_mode_setting: {
                     description:
                       'Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
-                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                    enum: ['off', 'heat', 'cool', 'heat_cool', 'eco'],
                     type: 'string',
                   },
                   manual_override_allowed: {
@@ -51105,7 +51107,7 @@ export default {
                   hvac_mode_setting: {
                     description:
                       'Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
-                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                    enum: ['off', 'heat', 'cool', 'heat_cool', 'eco'],
                     type: 'string',
                   },
                   manual_override_allowed: {
