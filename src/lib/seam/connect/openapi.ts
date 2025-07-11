@@ -36746,10 +36746,11 @@ export default {
           },
           {
             in: 'query',
-            name: 'customer_ids',
+            name: 'customer_key',
             schema: {
-              items: { format: 'uuid', type: 'string' },
-              type: 'array',
+              description:
+                'Customer key by which you want to filter connected accounts.',
+              type: 'string',
             },
           },
           {
@@ -36838,9 +36839,10 @@ export default {
                       'Custom metadata pairs by which you want to filter connected accounts. Returns connected accounts with `custom_metadata` that contains all of the provided key:value pairs.',
                     type: 'object',
                   },
-                  customer_ids: {
-                    items: { format: 'uuid', type: 'string' },
-                    type: 'array',
+                  customer_key: {
+                    description:
+                      'Customer key by which you want to filter connected accounts.',
+                    type: 'string',
                   },
                   limit: {
                     default: 11_000,
