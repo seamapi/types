@@ -36975,6 +36975,22 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  accepted_capabilities: {
+                    description:
+                      'List of accepted device capabilities that restrict the types of devices that can be connected through this connected account. Valid values are `lock`, `thermostat`, `noise_sensor`, and `access_control`.',
+                    items: {
+                      description:
+                        '\n  High-level device capabilities that can be restricted in connect webviews.\n  These represent the main device categories that customers can opt into.\n',
+                      enum: [
+                        'lock',
+                        'thermostat',
+                        'noise_sensor',
+                        'access_control',
+                      ],
+                      type: 'string',
+                    },
+                    type: 'array',
+                  },
                   automatically_manage_new_devices: {
                     description:
                       'Indicates whether newly-added devices should appear as [managed devices](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).',
@@ -47090,6 +47106,7 @@ export default {
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/spaces/create',
         tags: [],
@@ -47542,6 +47559,7 @@ export default {
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/spaces/list',
         tags: [],
@@ -47602,6 +47620,7 @@ export default {
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/spaces/list',
         tags: [],
