@@ -1950,6 +1950,11 @@ export default {
             format: 'uuid',
             type: 'string',
           },
+          client_session_token: {
+            description:
+              'Token of the client session associated with the access method.',
+            type: 'string',
+          },
           code: {
             description: 'The actual PIN code for code access methods.',
             type: 'string',

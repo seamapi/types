@@ -26,6 +26,10 @@ export const access_method = z.object({
     .url()
     .optional()
     .describe('URL of the Instant Key for mobile key access methods.'),
+  client_session_token: z
+    .string()
+    .optional()
+    .describe('Token of the client session associated with the access method.'),
   is_encoding_required: z
     .boolean()
     .optional()
