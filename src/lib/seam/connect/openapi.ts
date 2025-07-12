@@ -1833,6 +1833,11 @@ export default {
             items: { format: 'uuid', type: 'string' },
             type: 'array',
           },
+          client_session_token: {
+            description:
+              'Client Session Token. Only returned if the Access Grant has a mobile_key access method.',
+            type: 'string',
+          },
           created_at: {
             description: 'Date and time at which the Access Grant was created.',
             format: 'date-time',
@@ -46674,6 +46679,7 @@ export default {
                             },
                             type: 'array',
                           },
+                          is_draft: { type: 'boolean' },
                           name: { type: 'string' },
                           needs_review: { type: 'boolean' },
                           partner_resource_key: { type: 'string' },
@@ -46770,6 +46776,7 @@ export default {
                             },
                             type: 'array',
                           },
+                          is_draft: { type: 'boolean' },
                           name: { type: 'string' },
                           needs_review: { type: 'boolean' },
                           partner_resource_key: { type: 'string' },
@@ -46862,6 +46869,7 @@ export default {
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/spaces/add_acs_entrances',
         tags: [],
@@ -46920,6 +46928,7 @@ export default {
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/spaces/add_acs_entrances',
         tags: [],
@@ -46979,6 +46988,7 @@ export default {
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/spaces/add_devices',
         tags: [],
@@ -47036,6 +47046,7 @@ export default {
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/spaces/add_devices',
         tags: [],
@@ -47526,6 +47537,18 @@ export default {
           },
           {
             in: 'query',
+            name: 'connected_account_id',
+            schema: {
+              description:
+                'Filter spaces to only include those that contain devices or access control systems belonging to the specified connected account.',
+              format: 'uuid',
+              type: 'string',
+              'x-draft': 'Needs review.',
+              'x-undocumented': 'Only used internally.',
+            },
+          },
+          {
+            in: 'query',
             name: 'space_key',
             schema: {
               description: 'Filter spaces by space_key.',
@@ -47578,6 +47601,14 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  connected_account_id: {
+                    description:
+                      'Filter spaces to only include those that contain devices or access control systems belonging to the specified connected account.',
+                    format: 'uuid',
+                    type: 'string',
+                    'x-draft': 'Needs review.',
+                    'x-undocumented': 'Only used internally.',
+                  },
                   search: {
                     description:
                       'String for which to search. Filters returned spaces to include all records that satisfy a partial match using `name`.',
