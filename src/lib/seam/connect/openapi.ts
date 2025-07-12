@@ -1833,6 +1833,11 @@ export default {
             items: { format: 'uuid', type: 'string' },
             type: 'array',
           },
+          client_session_token: {
+            description:
+              'Client Session Token. Only returned if the Access Grant has a mobile_key access method.',
+            type: 'string',
+          },
           created_at: {
             description: 'Date and time at which the Access Grant was created.',
             format: 'date-time',

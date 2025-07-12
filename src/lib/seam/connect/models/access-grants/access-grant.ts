@@ -30,6 +30,12 @@ export const access_grant = z.object({
   access_method_ids: z
     .array(z.string().uuid())
     .describe('IDs of the access methods created for the Access Grant.'),
+  client_session_token: z
+    .string()
+    .optional()
+    .describe(
+      'Client Session Token. Only returned if the Access Grant has a mobile_key access method.',
+    ),
   display_name: z.string().describe('Display name of the Access Grant.'),
   instant_key_url: z
     .string()
