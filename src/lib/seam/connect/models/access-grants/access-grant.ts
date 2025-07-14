@@ -36,6 +36,12 @@ export const access_grant = z.object({
     .describe(
       'Client Session Token. Only returned if the Access Grant has a mobile_key access method.',
     ),
+  name: z
+    .string()
+    .nullable()
+    .describe(
+      'Name of the Access Grant. If not provided, the display name will be computed.',
+    ),
   display_name: z.string().describe('Display name of the Access Grant.'),
   instant_key_url: z
     .string()

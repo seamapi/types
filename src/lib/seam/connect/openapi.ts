@@ -1864,6 +1864,12 @@ export default {
             type: 'array',
             'x-deprecated': 'Use `space_ids`.',
           },
+          name: {
+            description:
+              'Name of the Access Grant. If not provided, the display name will be computed.',
+            nullable: true,
+            type: 'string',
+          },
           requested_access_methods: {
             description:
               'Access methods that the user requested for the Access Grant.',
@@ -1934,6 +1940,7 @@ export default {
           'space_ids',
           'requested_access_methods',
           'access_method_ids',
+          'name',
           'display_name',
           'created_at',
         ],
@@ -27635,6 +27642,11 @@ export default {
                         type: 'array',
                         'x-deprecated': 'Use `space_ids`.',
                       },
+                      name: {
+                        description: 'Name for the access grant.',
+                        nullable: true,
+                        type: 'string',
+                      },
                       requested_access_methods: {
                         items: {
                           properties: {
@@ -28117,6 +28129,11 @@ export default {
                     nullable: true,
                     type: 'string',
                   },
+                  name: {
+                    description: 'Display name for the access grant.',
+                    nullable: true,
+                    type: 'string',
+                  },
                   starts_at: {
                     description:
                       'Date and time at which the validity of the grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
@@ -28178,6 +28195,11 @@ export default {
                     description:
                       'Date and time at which the validity of the grant ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
                     format: 'date-time',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  name: {
+                    description: 'Display name for the access grant.',
                     nullable: true,
                     type: 'string',
                   },
@@ -47931,8 +47953,12 @@ export default {
                     format: 'uuid',
                     type: 'string',
                   },
+                  space_key: {
+                    description:
+                      'Unique key of the space that you want to update.',
+                    type: 'string',
+                  },
                 },
-                required: ['space_id'],
                 type: 'object',
               },
             },
@@ -47998,8 +48024,12 @@ export default {
                     format: 'uuid',
                     type: 'string',
                   },
+                  space_key: {
+                    description:
+                      'Unique key of the space that you want to update.',
+                    type: 'string',
+                  },
                 },
-                required: ['space_id'],
                 type: 'object',
               },
             },
