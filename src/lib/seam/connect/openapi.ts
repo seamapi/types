@@ -47931,8 +47931,12 @@ export default {
                     format: 'uuid',
                     type: 'string',
                   },
+                  space_key: {
+                    description:
+                      'Unique key of the space that you want to update.',
+                    type: 'string',
+                  },
                 },
-                required: ['space_id'],
                 type: 'object',
               },
             },
@@ -47998,8 +48002,12 @@ export default {
                     format: 'uuid',
                     type: 'string',
                   },
+                  space_key: {
+                    description:
+                      'Unique key of the space that you want to update.',
+                    type: 'string',
+                  },
                 },
-                required: ['space_id'],
                 type: 'object',
               },
             },
