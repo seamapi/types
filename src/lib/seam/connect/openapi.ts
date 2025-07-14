@@ -32268,6 +32268,7 @@ export default {
           { client_session: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/acs/entrances/list',
         tags: ['/acs'],
@@ -32374,6 +32375,7 @@ export default {
           { client_session: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/acs/entrances/list',
         tags: ['/acs'],
@@ -47717,6 +47719,7 @@ export default {
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/spaces/remove_acs_entrances',
         tags: [],
@@ -47774,6 +47777,7 @@ export default {
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/spaces/remove_acs_entrances',
         tags: [],
@@ -47832,6 +47836,7 @@ export default {
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/spaces/remove_devices',
         tags: [],
@@ -47888,6 +47893,7 @@ export default {
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/spaces/remove_devices',
         tags: [],
@@ -47907,6 +47913,18 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  acs_entrance_ids: {
+                    description:
+                      'IDs of the entrances that you want to set for the space. If specified, this will replace all existing entrances.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                  device_ids: {
+                    description:
+                      'IDs of the devices that you want to set for the space. If specified, this will replace all existing devices.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
                   name: { description: 'Name of the space.', type: 'string' },
                   space_id: {
                     description: 'ID of the space that you want to update.',
@@ -47943,6 +47961,7 @@ export default {
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/spaces/update',
         tags: [],
@@ -47961,6 +47980,18 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  acs_entrance_ids: {
+                    description:
+                      'IDs of the entrances that you want to set for the space. If specified, this will replace all existing entrances.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                  device_ids: {
+                    description:
+                      'IDs of the devices that you want to set for the space. If specified, this will replace all existing devices.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
                   name: { description: 'Name of the space.', type: 'string' },
                   space_id: {
                     description: 'ID of the space that you want to update.',
@@ -47997,6 +48028,7 @@ export default {
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/spaces/update',
         tags: [],
