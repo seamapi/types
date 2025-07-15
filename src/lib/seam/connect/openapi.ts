@@ -27959,6 +27959,255 @@ export default {
         'x-title': 'Get an Access Grant',
       },
     },
+    '/access_grants/get_related': {
+      get: {
+        description:
+          'Gets all related resources for one or more Access Grants.',
+        operationId: 'accessGrantsGetRelatedGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'access_grant_ids',
+            required: true,
+            schema: {
+              description:
+                'IDs of the access grants that you want to get along with their related resources.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'include',
+            required: false,
+            schema: {
+              items: {
+                enum: ['spaces', 'devices', 'acs_entrances'],
+                type: 'string',
+              },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'exclude',
+            required: false,
+            schema: {
+              items: {
+                enum: ['spaces', 'devices', 'acs_entrances'],
+                type: 'string',
+              },
+              type: 'array',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    batch: {
+                      description: 'Represents a resource batch.',
+                      oneOf: [
+                        {
+                          description: 'ID of the affected access system user.',
+                          properties: {
+                            acs_entrances: {
+                              items: {
+                                $ref: '#/components/schemas/acs_entrance',
+                              },
+                              type: 'array',
+                            },
+                            batch_type: { enum: ['spaces'], type: 'string' },
+                            devices: {
+                              items: { $ref: '#/components/schemas/device' },
+                              type: 'array',
+                            },
+                            spaces: {
+                              items: { $ref: '#/components/schemas/space' },
+                              type: 'array',
+                            },
+                          },
+                          required: ['batch_type'],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            acs_entrances: {
+                              items: {
+                                $ref: '#/components/schemas/acs_entrance',
+                              },
+                              type: 'array',
+                            },
+                            batch_type: {
+                              enum: ['access_grants'],
+                              type: 'string',
+                            },
+                            devices: {
+                              items: { $ref: '#/components/schemas/device' },
+                              type: 'array',
+                            },
+                            spaces: {
+                              items: { $ref: '#/components/schemas/space' },
+                              type: 'array',
+                            },
+                          },
+                          required: ['batch_type'],
+                          type: 'object',
+                        },
+                      ],
+                      'x-route-path': '/',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['batch', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_grants/get_related',
+        tags: [],
+        'x-batch-type': 'access_grants',
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['access_grants'],
+        'x-fern-sdk-method-name': 'get_related',
+        'x-fern-sdk-return-value': 'batch',
+        'x-response-key': 'batch',
+        'x-title': 'Get related Access Grant resources',
+      },
+      post: {
+        description:
+          'Gets all related resources for one or more Access Grants.',
+        operationId: 'accessGrantsGetRelatedPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_grant_ids: {
+                    description:
+                      'IDs of the access grants that you want to get along with their related resources.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                  exclude: {
+                    items: {
+                      enum: ['spaces', 'devices', 'acs_entrances'],
+                      type: 'string',
+                    },
+                    type: 'array',
+                  },
+                  include: {
+                    items: {
+                      enum: ['spaces', 'devices', 'acs_entrances'],
+                      type: 'string',
+                    },
+                    type: 'array',
+                  },
+                },
+                required: ['access_grant_ids'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    batch: {
+                      description: 'Represents a resource batch.',
+                      oneOf: [
+                        {
+                          description: 'ID of the affected access system user.',
+                          properties: {
+                            acs_entrances: {
+                              items: {
+                                $ref: '#/components/schemas/acs_entrance',
+                              },
+                              type: 'array',
+                            },
+                            batch_type: { enum: ['spaces'], type: 'string' },
+                            devices: {
+                              items: { $ref: '#/components/schemas/device' },
+                              type: 'array',
+                            },
+                            spaces: {
+                              items: { $ref: '#/components/schemas/space' },
+                              type: 'array',
+                            },
+                          },
+                          required: ['batch_type'],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            acs_entrances: {
+                              items: {
+                                $ref: '#/components/schemas/acs_entrance',
+                              },
+                              type: 'array',
+                            },
+                            batch_type: {
+                              enum: ['access_grants'],
+                              type: 'string',
+                            },
+                            devices: {
+                              items: { $ref: '#/components/schemas/device' },
+                              type: 'array',
+                            },
+                            spaces: {
+                              items: { $ref: '#/components/schemas/space' },
+                              type: 'array',
+                            },
+                          },
+                          required: ['batch_type'],
+                          type: 'object',
+                        },
+                      ],
+                      'x-route-path': '/',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['batch', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_grants/get_related',
+        tags: [],
+        'x-batch-type': 'access_grants',
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['access_grants'],
+        'x-fern-sdk-method-name': 'get_related',
+        'x-fern-sdk-return-value': 'batch',
+        'x-response-key': 'batch',
+        'x-title': 'Get related Access Grant resources',
+      },
+    },
     '/access_grants/list': {
       get: {
         description: 'Gets an Access Grant.',
@@ -47451,23 +47700,54 @@ export default {
                   properties: {
                     batch: {
                       description: 'Represents a resource batch.',
-                      properties: {
-                        acs_entrances: {
-                          items: { $ref: '#/components/schemas/acs_entrance' },
-                          type: 'array',
+                      oneOf: [
+                        {
+                          description: 'ID of the affected access system user.',
+                          properties: {
+                            acs_entrances: {
+                              items: {
+                                $ref: '#/components/schemas/acs_entrance',
+                              },
+                              type: 'array',
+                            },
+                            batch_type: { enum: ['spaces'], type: 'string' },
+                            devices: {
+                              items: { $ref: '#/components/schemas/device' },
+                              type: 'array',
+                            },
+                            spaces: {
+                              items: { $ref: '#/components/schemas/space' },
+                              type: 'array',
+                            },
+                          },
+                          required: ['batch_type'],
+                          type: 'object',
                         },
-                        batch_type: { enum: ['spaces'], type: 'string' },
-                        devices: {
-                          items: { $ref: '#/components/schemas/device' },
-                          type: 'array',
+                        {
+                          properties: {
+                            acs_entrances: {
+                              items: {
+                                $ref: '#/components/schemas/acs_entrance',
+                              },
+                              type: 'array',
+                            },
+                            batch_type: {
+                              enum: ['access_grants'],
+                              type: 'string',
+                            },
+                            devices: {
+                              items: { $ref: '#/components/schemas/device' },
+                              type: 'array',
+                            },
+                            spaces: {
+                              items: { $ref: '#/components/schemas/space' },
+                              type: 'array',
+                            },
+                          },
+                          required: ['batch_type'],
+                          type: 'object',
                         },
-                        spaces: {
-                          items: { $ref: '#/components/schemas/space' },
-                          type: 'array',
-                        },
-                      },
-                      required: ['batch_type'],
-                      type: 'object',
+                      ],
                       'x-route-path': '/',
                     },
                     ok: { type: 'boolean' },
@@ -47540,23 +47820,54 @@ export default {
                   properties: {
                     batch: {
                       description: 'Represents a resource batch.',
-                      properties: {
-                        acs_entrances: {
-                          items: { $ref: '#/components/schemas/acs_entrance' },
-                          type: 'array',
+                      oneOf: [
+                        {
+                          description: 'ID of the affected access system user.',
+                          properties: {
+                            acs_entrances: {
+                              items: {
+                                $ref: '#/components/schemas/acs_entrance',
+                              },
+                              type: 'array',
+                            },
+                            batch_type: { enum: ['spaces'], type: 'string' },
+                            devices: {
+                              items: { $ref: '#/components/schemas/device' },
+                              type: 'array',
+                            },
+                            spaces: {
+                              items: { $ref: '#/components/schemas/space' },
+                              type: 'array',
+                            },
+                          },
+                          required: ['batch_type'],
+                          type: 'object',
                         },
-                        batch_type: { enum: ['spaces'], type: 'string' },
-                        devices: {
-                          items: { $ref: '#/components/schemas/device' },
-                          type: 'array',
+                        {
+                          properties: {
+                            acs_entrances: {
+                              items: {
+                                $ref: '#/components/schemas/acs_entrance',
+                              },
+                              type: 'array',
+                            },
+                            batch_type: {
+                              enum: ['access_grants'],
+                              type: 'string',
+                            },
+                            devices: {
+                              items: { $ref: '#/components/schemas/device' },
+                              type: 'array',
+                            },
+                            spaces: {
+                              items: { $ref: '#/components/schemas/space' },
+                              type: 'array',
+                            },
+                          },
+                          required: ['batch_type'],
+                          type: 'object',
                         },
-                        spaces: {
-                          items: { $ref: '#/components/schemas/space' },
-                          type: 'array',
-                        },
-                      },
-                      required: ['batch_type'],
-                      type: 'object',
+                      ],
                       'x-route-path': '/',
                     },
                     ok: { type: 'boolean' },

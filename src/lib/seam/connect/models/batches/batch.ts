@@ -1,8 +1,9 @@
-import type { z } from 'zod'
+import { z } from 'zod'
 
+import { access_grants_batch } from './access_grants.js'
 import { spaces_batch } from './spaces.js'
 
-export const batch = spaces_batch.describe(`
+export const batch = z.union([spaces_batch, access_grants_batch]).describe(`
   ---
   route_path: /
   ---
