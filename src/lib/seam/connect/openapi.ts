@@ -1987,9 +1987,14 @@ export default {
               'Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.',
             type: 'boolean',
           },
+          is_issued: {
+            description: 'Indicates whether the access method has been issued.',
+            type: 'boolean',
+          },
           issued_at: {
             description: 'Date and time at which the access method was issued.',
             format: 'date-time',
+            nullable: true,
             type: 'string',
           },
           mode: {
@@ -2011,6 +2016,8 @@ export default {
           'display_name',
           'mode',
           'created_at',
+          'issued_at',
+          'is_issued',
         ],
         type: 'object',
         'x-draft': 'Early access.',

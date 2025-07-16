@@ -19,8 +19,11 @@ export const access_method = z.object({
   issued_at: z
     .string()
     .datetime()
-    .optional()
+    .nullable()
     .describe('Date and time at which the access method was issued.'),
+  is_issued: z
+    .boolean()
+    .describe('Indicates whether the access method has been issued.'),
   instant_key_url: z
     .string()
     .url()
