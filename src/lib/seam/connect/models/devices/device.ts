@@ -1,7 +1,5 @@
 import { z } from 'zod'
 
-import { schemas as devicedb_schemas } from '@seamapi/types/devicedb'
-
 import { connected_account_error } from '../connected-accounts/index.js'
 import { custom_metadata } from '../custom-metadata.js'
 import { capabilities } from './capabilities-supported.js'
@@ -10,13 +8,22 @@ import { device_metadata } from './device-metadata.js'
 import { any_device_type } from './device-type.js'
 import { phone_specific_properties } from './phone-properties.js'
 
-export const device_capability_flags =
-  devicedb_schemas.device_capability_flags.extend({
-    can_simulate_removal: z.boolean().optional(),
-    can_simulate_connection: z.boolean().optional(),
-    can_simulate_disconnection: z.boolean().optional(),
-    can_unlock_with_code: z.boolean().optional(),
+export const device_capability_flags = z
+  .object({
+    can_remotely_unlock: z.boolean(),
+    can_remotely_lock: z.boolean(),
+    can_program_offline_access_codes: z.boolean(),
+    can_program_online_access_codes: z.boolean(),
+    can_hvac_heat: z.boolean(),
+    can_hvac_cool: z.boolean(),
+    can_hvac_heat_cool: z.boolean(),
+    can_turn_off_hvac: z.boolean(),
+    can_simulate_removal: z.boolean(),
+    can_simulate_connection: z.boolean(),
+    can_simulate_disconnection: z.boolean(),
+    can_unlock_with_code: z.boolean(),
   })
+  .partial()
 
 export const battery_status = z.enum(['critical', 'low', 'good', 'full'])
   .describe(`Represents the current status of the battery charge level. Values are \`critical\`, which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; \`low\`, which signifies that the battery is under the preferred threshold and should be charged soon; \`good\`, which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and \`full\`, which represents a battery that is fully charged, providing the maximum duration of usage.
