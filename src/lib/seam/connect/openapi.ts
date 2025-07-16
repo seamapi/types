@@ -50905,6 +50905,19 @@ export default {
                     required: ['hvac_mode_setting', 'device_id'],
                     type: 'object',
                   },
+                  {
+                    properties: {
+                      device_id: {
+                        description:
+                          'ID of the thermostat device for which you want to set the HVAC mode.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      hvac_mode_setting: { enum: ['eco'], type: 'string' },
+                    },
+                    required: ['hvac_mode_setting', 'device_id'],
+                    type: 'object',
+                  },
                 ],
               },
             },
