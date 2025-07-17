@@ -40355,7 +40355,7 @@ export default {
     '/devices/simulate/connect_to_hub': {
       post: {
         description:
-          'Simulates bringing the Wi-Fi hub (bridge) back online for a device.  \nOnly applicable for [sandbox workspaces](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces) and August locks today, but designed so we can extend to other providers later.  \nThis will clear the `hub_disconnected` error on the device.',
+          'Simulates bringing the Wi‑Fi hub (bridge) back online for a device.\nOnly applicable for sandbox workspaces and currently\nimplemented for August and TTLock locks.\nThis will clear the corresponding `hub_disconnected` or\n`ttlock_lock_not_paired_to_gateway` error on the device.',
         operationId: 'devicesSimulateConnectToHubPost',
         requestBody: {
           content: {
