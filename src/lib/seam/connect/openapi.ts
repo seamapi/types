@@ -2892,18 +2892,31 @@ export default {
                   'Description of the door in the Salto Space access system.',
                 type: 'string',
               },
+              door_id: {
+                description: 'Door ID in the Salto Space access system.',
+                type: 'string',
+              },
               door_name: {
                 description:
                   'Name of the door in the Salto Space access system.',
                 type: 'string',
               },
               ext_door_id: {
+                deprecated: true,
+                type: 'string',
+                'x-deprecated': 'use door_id.',
+              },
+              room_description: {
                 description:
-                  'External door ID in the Salto Space access system.',
+                  'Description of the room in the Salto Space access system.',
+                type: 'string',
+              },
+              room_name: {
+                description:
+                  'Name of the room in the Salto Space access system.',
                 type: 'string',
               },
             },
-            required: ['door_name', 'ext_door_id'],
             type: 'object',
           },
           visionline_metadata: {
@@ -19505,18 +19518,32 @@ export default {
                                     'Description of the door in the Salto Space access system.',
                                   type: 'string',
                                 },
+                                door_id: {
+                                  description:
+                                    'Door ID in the Salto Space access system.',
+                                  type: 'string',
+                                },
                                 door_name: {
                                   description:
                                     'Name of the door in the Salto Space access system.',
                                   type: 'string',
                                 },
                                 ext_door_id: {
+                                  deprecated: true,
+                                  type: 'string',
+                                  'x-deprecated': 'use door_id.',
+                                },
+                                room_description: {
                                   description:
-                                    'External door ID in the Salto Space access system.',
+                                    'Description of the room in the Salto Space access system.',
+                                  type: 'string',
+                                },
+                                room_name: {
+                                  description:
+                                    'Name of the room in the Salto Space access system.',
                                   type: 'string',
                                 },
                               },
-                              required: ['door_name', 'ext_door_id'],
                               type: 'object',
                             },
                             visionline_metadata: {
