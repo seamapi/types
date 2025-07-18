@@ -50,6 +50,7 @@ export const DEVICE_PROVIDERS = {
   SALTO_SPACE: 'salto_space',
   SENSI: 'sensi',
   KWIKSET2: 'kwikset2',
+  KEYNEST: 'keynest',
 } as const
 
 export type DeviceProviderName =
