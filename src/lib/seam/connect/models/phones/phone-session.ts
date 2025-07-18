@@ -2,6 +2,7 @@ import { z } from 'zod'
 
 import { acs_credential } from '../acs/acs-credential.js'
 import { acs_entrance } from '../acs/acs-entrance.js'
+import { user_identity } from '../user-identities/user-identity.js'
 import { phone_registration } from './phone-registration.js'
 
 const phone_provider_session = z
@@ -26,6 +27,10 @@ export const phone_session = z.object({
   provider_sessions: phone_provider_session
     .array()
     .describe('Phone provider sessions.'),
+
+  user_identity: user_identity.describe('User identity.'),
+
+  workspace_id: z.string().describe('Workspace ID.'),
 }).describe(`
   ---
   route_path: /seam/mobile_sdk/v1/phone_sessions
