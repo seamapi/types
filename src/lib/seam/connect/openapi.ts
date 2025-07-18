@@ -10648,6 +10648,140 @@ export default {
                         required: ['device_id', 'device_name'],
                         type: 'object',
                       },
+                      keynest_metadata: {
+                        description: 'Metadata for a KeyNest device.',
+                        properties: {
+                          address: {
+                            description: 'Address for a KeyNest device.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          current_or_last_store_id: {
+                            description:
+                              'Current or last store ID for a KeyNest device.',
+                            format: 'float',
+                            type: 'number',
+                          },
+                          current_status: {
+                            description: 'Current status for a KeyNest device.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          current_user_company: {
+                            description:
+                              'Current user company for a KeyNest device.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          current_user_email: {
+                            description:
+                              'Current user email for a KeyNest device.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          current_user_name: {
+                            description:
+                              'Current user name for a KeyNest device.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          current_user_phone_number: {
+                            description:
+                              'Current user phone number for a KeyNest device.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          default_office_id: {
+                            description:
+                              'Default office ID for a KeyNest device.',
+                            format: 'float',
+                            type: 'number',
+                          },
+                          device_name: {
+                            description: 'Device name for a KeyNest device.',
+                            type: 'string',
+                          },
+                          fob_id: {
+                            description: 'Fob ID for a KeyNest device.',
+                            format: 'float',
+                            type: 'number',
+                          },
+                          handover_method: {
+                            description:
+                              'Handover method for a KeyNest device.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          has_photo: {
+                            description:
+                              'Whether the KeyNest device has a photo.',
+                            type: 'boolean',
+                          },
+                          key_id: {
+                            description: 'Key ID for a KeyNest device.',
+                            type: 'string',
+                          },
+                          key_notes: {
+                            description: 'Key notes for a KeyNest device.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          keynest_app_user: {
+                            description:
+                              'KeyNest app user for a KeyNest device.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          last_movement: {
+                            description:
+                              'Last movement timestamp for a KeyNest device.',
+                            type: 'string',
+                          },
+                          property_id: {
+                            description: 'Property ID for a KeyNest device.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          property_postcode: {
+                            description:
+                              'Property postcode for a KeyNest device.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          status_type: {
+                            description: 'Status type for a KeyNest device.',
+                            type: 'string',
+                          },
+                          subscription_plan: {
+                            description:
+                              'Subscription plan for a KeyNest device.',
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'key_id',
+                          'device_name',
+                          'property_id',
+                          'property_postcode',
+                          'key_notes',
+                          'subscription_plan',
+                          'status_type',
+                          'current_or_last_store_id',
+                          'last_movement',
+                          'address',
+                          'current_status',
+                          'current_user_name',
+                          'current_user_email',
+                          'current_user_phone_number',
+                          'current_user_company',
+                          'handover_method',
+                          'keynest_app_user',
+                          'default_office_id',
+                          'fob_id',
+                          'has_photo',
+                        ],
+                        type: 'object',
+                      },
                       kwikset_metadata: {
                         description: 'Metadata for a Kwikset device.',
                         properties: {
@@ -12886,6 +13020,7 @@ export default {
               'salto_space',
               'sensi',
               'kwikset2',
+              'keynest',
             ],
             type: 'string',
           },
@@ -36541,6 +36676,7 @@ export default {
                         'salto_space',
                         'sensi',
                         'kwikset2',
+                        'keynest',
                         'yale_access',
                         'hid_cm',
                         'google_nest',
@@ -39494,6 +39630,7 @@ export default {
                 'tado',
                 'sensi',
                 'smartthings',
+                'keynest',
               ],
               type: 'string',
             },
@@ -39968,6 +40105,7 @@ export default {
                       'tado',
                       'sensi',
                       'smartthings',
+                      'keynest',
                     ],
                     type: 'string',
                   },
@@ -40330,7 +40468,7 @@ export default {
     '/devices/simulate/disconnect_from_hub': {
       post: {
         description:
-          'Simulates taking the Wi-Fi hub (bridge) offline for a device.  \nOnly applicable for [sandbox workspaces](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces) and August locks today, but designed so we can extend to other providers later.  \nThis will set the `hub_disconnected` error on the device.',
+          'Simulates taking the Wi‑Fi hub (bridge) offline for a device.\nOnly applicable for sandbox workspaces and currently\nimplemented for August and TTLock locks.\nThis will set the corresponding `hub_disconnected` or\n`ttlock_lock_not_paired_to_gateway` error on the device.',
         operationId: 'devicesSimulateDisconnectFromHubPost',
         requestBody: {
           content: {
@@ -40771,6 +40909,7 @@ export default {
                 'tado',
                 'sensi',
                 'smartthings',
+                'keynest',
               ],
               type: 'string',
             },
@@ -41242,6 +41381,7 @@ export default {
                       'tado',
                       'sensi',
                       'smartthings',
+                      'keynest',
                     ],
                     type: 'string',
                   },
