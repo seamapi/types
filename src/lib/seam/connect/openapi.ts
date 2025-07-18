@@ -20214,8 +20214,188 @@ export default {
             },
             type: 'array',
           },
+          user_identity: {
+            description: 'User identity.',
+            properties: {
+              acs_user_ids: {
+                description:
+                  'Array of access system user IDs associated with the user identity.',
+                items: { format: 'uuid', type: 'string' },
+                type: 'array',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the user identity was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              display_name: { minLength: 1, type: 'string' },
+              email_address: {
+                description: 'Unique email address for the user identity.',
+                format: 'email',
+                nullable: true,
+                type: 'string',
+              },
+              errors: {
+                description:
+                  'Array of errors associated with the user identity. Each error object within the array contains fields like "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
+                items: {
+                  description: 'Errors associated with the user identity.',
+                  discriminator: { propertyName: 'error_code' },
+                  oneOf: [
+                    {
+                      description:
+                        'Indicates that there is an issue with an access system user associated with this user identity.',
+                      properties: {
+                        acs_system_id: {
+                          description:
+                            'ID of the access system that the user identity is associated with.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        acs_user_id: {
+                          description:
+                            'ID of the access system user that has an issue.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        created_at: {
+                          description:
+                            'Date and time at which Seam created the error.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['issue_with_acs_user'],
+                          type: 'string',
+                        },
+                        message: {
+                          description:
+                            'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'created_at',
+                        'message',
+                        'error_code',
+                        'acs_user_id',
+                        'acs_system_id',
+                      ],
+                      type: 'object',
+                    },
+                  ],
+                },
+                type: 'array',
+              },
+              full_name: { minLength: 1, nullable: true, type: 'string' },
+              phone_number: {
+                description:
+                  'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
+                nullable: true,
+                type: 'string',
+              },
+              user_identity_id: {
+                description: 'ID of the user identity.',
+                format: 'uuid',
+                type: 'string',
+              },
+              user_identity_key: {
+                description: 'Unique key for the user identity.',
+                minLength: 1,
+                nullable: true,
+                type: 'string',
+              },
+              warnings: {
+                description:
+                  'Array of warnings associated with the user identity. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
+                items: {
+                  description: 'Warnings associated with the user identity.',
+                  discriminator: { propertyName: 'warning_code' },
+                  oneOf: [
+                    {
+                      description:
+                        'Indicates that the user identity is currently being deleted.',
+                      properties: {
+                        created_at: {
+                          description:
+                            'Date and time at which Seam created the warning.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        message: {
+                          description:
+                            'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                          type: 'string',
+                        },
+                        warning_code: {
+                          description:
+                            'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                          enum: ['being_deleted'],
+                          type: 'string',
+                        },
+                      },
+                      required: ['created_at', 'message', 'warning_code'],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        "Indicates that the ACS user's profile does not match the user identity's profile",
+                      properties: {
+                        created_at: {
+                          description:
+                            'Date and time at which Seam created the warning.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        message: {
+                          description:
+                            'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                          type: 'string',
+                        },
+                        warning_code: {
+                          description:
+                            'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                          enum: [
+                            'acs_user_profile_does_not_match_user_identity',
+                          ],
+                          type: 'string',
+                        },
+                      },
+                      required: ['created_at', 'message', 'warning_code'],
+                      type: 'object',
+                    },
+                  ],
+                },
+                type: 'array',
+              },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the user identity.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'user_identity_id',
+              'user_identity_key',
+              'email_address',
+              'phone_number',
+              'display_name',
+              'full_name',
+              'created_at',
+              'workspace_id',
+              'errors',
+              'warnings',
+              'acs_user_ids',
+            ],
+            type: 'object',
+          },
+          workspace_id: { description: 'Workspace ID.', type: 'string' },
         },
-        required: ['provider_sessions'],
+        required: ['provider_sessions', 'user_identity', 'workspace_id'],
         type: 'object',
         'x-route-path': '/seam/mobile_sdk/v1/phone_sessions',
         'x-undocumented': 'Seam Mobile SDK only.',
@@ -28150,7 +28330,14 @@ export default {
             required: false,
             schema: {
               items: {
-                enum: ['spaces', 'devices', 'acs_entrances'],
+                enum: [
+                  'spaces',
+                  'devices',
+                  'acs_entrances',
+                  'connected_accounts',
+                  'acs_systems',
+                  'user_identity',
+                ],
                 type: 'string',
               },
               type: 'array',
@@ -28162,7 +28349,14 @@ export default {
             required: false,
             schema: {
               items: {
-                enum: ['spaces', 'devices', 'acs_entrances'],
+                enum: [
+                  'spaces',
+                  'devices',
+                  'acs_entrances',
+                  'connected_accounts',
+                  'acs_systems',
+                  'user_identity',
+                ],
                 type: 'string',
               },
               type: 'array',
@@ -28176,20 +28370,21 @@ export default {
                 schema: {
                   properties: {
                     batch: {
-                      description: 'Represents a resource batch.',
                       properties: {
                         acs_entrances: {
                           items: { $ref: '#/components/schemas/acs_entrance' },
                           type: 'array',
                         },
-                        batch_type: {
-                          enum: [
-                            'workspaces',
-                            'access_grants',
-                            'access_methods',
-                            'spaces',
-                          ],
-                          type: 'string',
+                        acs_systems: {
+                          items: { $ref: '#/components/schemas/acs_system' },
+                          type: 'array',
+                        },
+                        batch_type: { enum: ['access_grants'], type: 'string' },
+                        connected_accounts: {
+                          items: {
+                            $ref: '#/components/schemas/connected_account',
+                          },
+                          type: 'array',
                         },
                         devices: {
                           items: { $ref: '#/components/schemas/device' },
@@ -28203,14 +28398,9 @@ export default {
                           items: { $ref: '#/components/schemas/user_identity' },
                           type: 'array',
                         },
-                        workspaces: {
-                          items: { $ref: '#/components/schemas/workspace' },
-                          type: 'array',
-                        },
                       },
                       required: ['batch_type'],
                       type: 'object',
-                      'x-route-path': '/',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -28256,14 +28446,28 @@ export default {
                   },
                   exclude: {
                     items: {
-                      enum: ['spaces', 'devices', 'acs_entrances'],
+                      enum: [
+                        'spaces',
+                        'devices',
+                        'acs_entrances',
+                        'connected_accounts',
+                        'acs_systems',
+                        'user_identity',
+                      ],
                       type: 'string',
                     },
                     type: 'array',
                   },
                   include: {
                     items: {
-                      enum: ['spaces', 'devices', 'acs_entrances'],
+                      enum: [
+                        'spaces',
+                        'devices',
+                        'acs_entrances',
+                        'connected_accounts',
+                        'acs_systems',
+                        'user_identity',
+                      ],
                       type: 'string',
                     },
                     type: 'array',
@@ -28282,20 +28486,21 @@ export default {
                 schema: {
                   properties: {
                     batch: {
-                      description: 'Represents a resource batch.',
                       properties: {
                         acs_entrances: {
                           items: { $ref: '#/components/schemas/acs_entrance' },
                           type: 'array',
                         },
-                        batch_type: {
-                          enum: [
-                            'workspaces',
-                            'access_grants',
-                            'access_methods',
-                            'spaces',
-                          ],
-                          type: 'string',
+                        acs_systems: {
+                          items: { $ref: '#/components/schemas/acs_system' },
+                          type: 'array',
+                        },
+                        batch_type: { enum: ['access_grants'], type: 'string' },
+                        connected_accounts: {
+                          items: {
+                            $ref: '#/components/schemas/connected_account',
+                          },
+                          type: 'array',
                         },
                         devices: {
                           items: { $ref: '#/components/schemas/device' },
@@ -28309,14 +28514,9 @@ export default {
                           items: { $ref: '#/components/schemas/user_identity' },
                           type: 'array',
                         },
-                        workspaces: {
-                          items: { $ref: '#/components/schemas/workspace' },
-                          type: 'array',
-                        },
                       },
                       required: ['batch_type'],
                       type: 'object',
-                      'x-route-path': '/',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -40468,7 +40668,7 @@ export default {
     '/devices/simulate/disconnect_from_hub': {
       post: {
         description:
-          'Simulates taking the Wi-Fi hub (bridge) offline for a device.  \nOnly applicable for [sandbox workspaces](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces) and August locks today, but designed so we can extend to other providers later.  \nThis will set the `hub_disconnected` error on the device.',
+          'Simulates taking the Wi‑Fi hub (bridge) offline for a device.\nOnly applicable for sandbox workspaces and currently\nimplemented for August and TTLock locks.\nThis will set the corresponding `hub_disconnected` or\n`ttlock_lock_not_paired_to_gateway` error on the device.',
         operationId: 'devicesSimulateDisconnectFromHubPost',
         requestBody: {
           content: {
@@ -45763,10 +45963,11 @@ export default {
         'x-undocumented': 'Seam Bridge Client only.',
       },
     },
-    '/seam/console/v1/get_resource_type': {
+    '/seam/console/v1/get_resource_locator': {
       get: {
-        description: 'Returns the type of a resource given its UUID.',
-        operationId: 'seamConsoleV1GetResourceTypeGet',
+        description:
+          'Returns the type and system information of a resource given its UUID.',
+        operationId: 'seamConsoleV1GetResourceLocatorGet',
         parameters: [
           {
             in: 'query',
@@ -45782,9 +45983,17 @@ export default {
                 schema: {
                   properties: {
                     ok: { type: 'boolean' },
-                    resource_type: { type: 'string' },
+                    resource_locator: {
+                      properties: {
+                        acs_system_id: { format: 'uuid', type: 'string' },
+                        device_id: { format: 'uuid', type: 'string' },
+                        resource_type: { type: 'string' },
+                      },
+                      required: ['resource_type'],
+                      type: 'object',
+                    },
                   },
-                  required: ['resource_type', 'ok'],
+                  required: ['resource_locator', 'ok'],
                   type: 'object',
                 },
               },
@@ -45800,18 +46009,19 @@ export default {
           { console_session_with_workspace: [] },
           { api_key: [] },
         ],
-        summary: '/seam/console/v1/get_resource_type',
+        summary: '/seam/console/v1/get_resource_locator',
         tags: [],
         'x-fern-sdk-group-name': ['seam', 'console', 'v1'],
-        'x-fern-sdk-method-name': 'get_resource_type',
-        'x-fern-sdk-return-value': 'resource_type',
-        'x-response-key': 'resource_type',
-        'x-title': 'Get Resource Type',
+        'x-fern-sdk-method-name': 'get_resource_locator',
+        'x-fern-sdk-return-value': 'resource_locator',
+        'x-response-key': 'resource_locator',
+        'x-title': 'Get Resource Locator',
         'x-undocumented': 'Internal endpoint for Console',
       },
       post: {
-        description: 'Returns the type of a resource given its UUID.',
-        operationId: 'seamConsoleV1GetResourceTypePost',
+        description:
+          'Returns the type and system information of a resource given its UUID.',
+        operationId: 'seamConsoleV1GetResourceLocatorPost',
         parameters: [
           {
             in: 'query',
@@ -45827,9 +46037,17 @@ export default {
                 schema: {
                   properties: {
                     ok: { type: 'boolean' },
-                    resource_type: { type: 'string' },
+                    resource_locator: {
+                      properties: {
+                        acs_system_id: { format: 'uuid', type: 'string' },
+                        device_id: { format: 'uuid', type: 'string' },
+                        resource_type: { type: 'string' },
+                      },
+                      required: ['resource_type'],
+                      type: 'object',
+                    },
                   },
-                  required: ['resource_type', 'ok'],
+                  required: ['resource_locator', 'ok'],
                   type: 'object',
                 },
               },
@@ -45845,13 +46063,13 @@ export default {
           { console_session_with_workspace: [] },
           { api_key: [] },
         ],
-        summary: '/seam/console/v1/get_resource_type',
+        summary: '/seam/console/v1/get_resource_locator',
         tags: [],
         'x-fern-sdk-group-name': ['seam', 'console', 'v1'],
-        'x-fern-sdk-method-name': 'get_resource_type',
-        'x-fern-sdk-return-value': 'resource_type',
-        'x-response-key': 'resource_type',
-        'x-title': 'Get Resource Type',
+        'x-fern-sdk-method-name': 'get_resource_locator',
+        'x-fern-sdk-return-value': 'resource_locator',
+        'x-response-key': 'resource_locator',
+        'x-title': 'Get Resource Locator',
         'x-undocumented': 'Internal endpoint for Console',
       },
     },
