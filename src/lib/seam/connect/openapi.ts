@@ -12876,7 +12876,6 @@ export default {
               'seam_passport',
               'visionline',
               'assa_abloy_credential_service',
-              'seam_bridge',
               'tedee',
               'honeywell_resideo',
               'latch',
@@ -36688,7 +36687,6 @@ export default {
                         'seam_passport',
                         'visionline',
                         'assa_abloy_credential_service',
-                        'seam_bridge',
                         'tedee',
                         'honeywell_resideo',
                         'latch',
@@ -43640,241 +43638,6 @@ export default {
         'x-title': 'Unlock a Lock',
       },
     },
-    '/networks/get': {
-      get: {
-        operationId: 'networksGetGet',
-        parameters: [
-          {
-            in: 'query',
-            name: 'network_id',
-            required: true,
-            schema: { format: 'uuid', type: 'string' },
-          },
-        ],
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    network: {
-                      properties: {
-                        created_at: { format: 'date-time', type: 'string' },
-                        display_name: { type: 'string' },
-                        network_id: { format: 'uuid', type: 'string' },
-                        workspace_id: { format: 'uuid', type: 'string' },
-                      },
-                      required: [
-                        'network_id',
-                        'workspace_id',
-                        'display_name',
-                        'created_at',
-                      ],
-                      type: 'object',
-                      'x-route-path': '/networks',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['network', 'ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { pat_with_workspace: [] },
-          { console_session_with_workspace: [] },
-          { api_key: [] },
-        ],
-        summary: '/networks/get',
-        tags: ['/networks'],
-        'x-deprecated': 'Will be removed.',
-        'x-fern-sdk-group-name': ['networks'],
-        'x-fern-sdk-method-name': 'get',
-        'x-fern-sdk-return-value': 'network',
-        'x-response-key': 'network',
-        'x-undocumented': 'Deprecated.',
-      },
-      post: {
-        operationId: 'networksGetPost',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: { network_id: { format: 'uuid', type: 'string' } },
-                required: ['network_id'],
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    network: {
-                      properties: {
-                        created_at: { format: 'date-time', type: 'string' },
-                        display_name: { type: 'string' },
-                        network_id: { format: 'uuid', type: 'string' },
-                        workspace_id: { format: 'uuid', type: 'string' },
-                      },
-                      required: [
-                        'network_id',
-                        'workspace_id',
-                        'display_name',
-                        'created_at',
-                      ],
-                      type: 'object',
-                      'x-route-path': '/networks',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['network', 'ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { pat_with_workspace: [] },
-          { console_session_with_workspace: [] },
-          { api_key: [] },
-        ],
-        summary: '/networks/get',
-        tags: ['/networks'],
-        'x-deprecated': 'Will be removed.',
-        'x-fern-sdk-group-name': ['networks'],
-        'x-fern-sdk-method-name': 'get',
-        'x-fern-sdk-return-value': 'network',
-        'x-response-key': 'network',
-        'x-undocumented': 'Deprecated.',
-      },
-    },
-    '/networks/list': {
-      get: {
-        operationId: 'networksListGet',
-        parameters: [],
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    networks: {
-                      items: {
-                        properties: {
-                          created_at: { format: 'date-time', type: 'string' },
-                          display_name: { type: 'string' },
-                          network_id: { format: 'uuid', type: 'string' },
-                          workspace_id: { format: 'uuid', type: 'string' },
-                        },
-                        required: [
-                          'network_id',
-                          'workspace_id',
-                          'display_name',
-                          'created_at',
-                        ],
-                        type: 'object',
-                        'x-route-path': '/networks',
-                      },
-                      type: 'array',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['networks', 'ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { pat_with_workspace: [] },
-          { console_session_with_workspace: [] },
-          { api_key: [] },
-        ],
-        summary: '/networks/list',
-        tags: ['/networks'],
-        'x-deprecated': 'Will be removed.',
-        'x-fern-sdk-group-name': ['networks'],
-        'x-fern-sdk-method-name': 'list',
-        'x-fern-sdk-return-value': 'networks',
-        'x-response-key': 'networks',
-        'x-undocumented': 'Deprecated.',
-      },
-      post: {
-        operationId: 'networksListPost',
-        requestBody: {
-          content: {
-            'application/json': { schema: { properties: {}, type: 'object' } },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    networks: {
-                      items: {
-                        properties: {
-                          created_at: { format: 'date-time', type: 'string' },
-                          display_name: { type: 'string' },
-                          network_id: { format: 'uuid', type: 'string' },
-                          workspace_id: { format: 'uuid', type: 'string' },
-                        },
-                        required: [
-                          'network_id',
-                          'workspace_id',
-                          'display_name',
-                          'created_at',
-                        ],
-                        type: 'object',
-                        'x-route-path': '/networks',
-                      },
-                      type: 'array',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['networks', 'ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { pat_with_workspace: [] },
-          { console_session_with_workspace: [] },
-          { api_key: [] },
-        ],
-        summary: '/networks/list',
-        tags: ['/networks'],
-        'x-deprecated': 'Will be removed.',
-        'x-fern-sdk-group-name': ['networks'],
-        'x-fern-sdk-method-name': 'list',
-        'x-fern-sdk-return-value': 'networks',
-        'x-response-key': 'networks',
-        'x-undocumented': 'Deprecated.',
-      },
-    },
     '/noise_sensors/list': {
       get: {
         description:
@@ -46016,6 +45779,98 @@ export default {
         'x-undocumented': 'Seam Bridge Client only.',
       },
     },
+    '/seam/console/v1/get_resource_type': {
+      get: {
+        description: 'Returns the type of a resource given its UUID.',
+        operationId: 'seamConsoleV1GetResourceTypeGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'uuid',
+            required: true,
+            schema: { format: 'uuid', type: 'string' },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    resource_type: { type: 'string' },
+                  },
+                  required: ['resource_type', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/seam/console/v1/get_resource_type',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1'],
+        'x-fern-sdk-method-name': 'get_resource_type',
+        'x-fern-sdk-return-value': 'resource_type',
+        'x-response-key': 'resource_type',
+        'x-title': 'Get Resource Type',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+      post: {
+        description: 'Returns the type of a resource given its UUID.',
+        operationId: 'seamConsoleV1GetResourceTypePost',
+        parameters: [
+          {
+            in: 'query',
+            name: 'uuid',
+            required: true,
+            schema: { format: 'uuid', type: 'string' },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    resource_type: { type: 'string' },
+                  },
+                  required: ['resource_type', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/seam/console/v1/get_resource_type',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1'],
+        'x-fern-sdk-method-name': 'get_resource_type',
+        'x-fern-sdk-return-value': 'resource_type',
+        'x-response-key': 'resource_type',
+        'x-title': 'Get Resource Type',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
     '/seam/customer/v1/automation_runs/list': {
       get: {
         description:
@@ -47865,6 +47720,7 @@ export default {
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/spaces/delete',
         tags: [],
@@ -47914,6 +47770,7 @@ export default {
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/spaces/delete',
         tags: [],
