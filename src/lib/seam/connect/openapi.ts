@@ -28150,7 +28150,14 @@ export default {
             required: false,
             schema: {
               items: {
-                enum: ['spaces', 'devices', 'acs_entrances'],
+                enum: [
+                  'spaces',
+                  'devices',
+                  'acs_entrances',
+                  'connected_accounts',
+                  'acs_systems',
+                  'user_identity',
+                ],
                 type: 'string',
               },
               type: 'array',
@@ -28162,7 +28169,14 @@ export default {
             required: false,
             schema: {
               items: {
-                enum: ['spaces', 'devices', 'acs_entrances'],
+                enum: [
+                  'spaces',
+                  'devices',
+                  'acs_entrances',
+                  'connected_accounts',
+                  'acs_systems',
+                  'user_identity',
+                ],
                 type: 'string',
               },
               type: 'array',
@@ -28176,20 +28190,21 @@ export default {
                 schema: {
                   properties: {
                     batch: {
-                      description: 'Represents a resource batch.',
                       properties: {
                         acs_entrances: {
                           items: { $ref: '#/components/schemas/acs_entrance' },
                           type: 'array',
                         },
-                        batch_type: {
-                          enum: [
-                            'workspaces',
-                            'access_grants',
-                            'access_methods',
-                            'spaces',
-                          ],
-                          type: 'string',
+                        acs_systems: {
+                          items: { $ref: '#/components/schemas/acs_system' },
+                          type: 'array',
+                        },
+                        batch_type: { enum: ['access_grants'], type: 'string' },
+                        connected_accounts: {
+                          items: {
+                            $ref: '#/components/schemas/connected_account',
+                          },
+                          type: 'array',
                         },
                         devices: {
                           items: { $ref: '#/components/schemas/device' },
@@ -28203,14 +28218,9 @@ export default {
                           items: { $ref: '#/components/schemas/user_identity' },
                           type: 'array',
                         },
-                        workspaces: {
-                          items: { $ref: '#/components/schemas/workspace' },
-                          type: 'array',
-                        },
                       },
                       required: ['batch_type'],
                       type: 'object',
-                      'x-route-path': '/',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -28256,14 +28266,28 @@ export default {
                   },
                   exclude: {
                     items: {
-                      enum: ['spaces', 'devices', 'acs_entrances'],
+                      enum: [
+                        'spaces',
+                        'devices',
+                        'acs_entrances',
+                        'connected_accounts',
+                        'acs_systems',
+                        'user_identity',
+                      ],
                       type: 'string',
                     },
                     type: 'array',
                   },
                   include: {
                     items: {
-                      enum: ['spaces', 'devices', 'acs_entrances'],
+                      enum: [
+                        'spaces',
+                        'devices',
+                        'acs_entrances',
+                        'connected_accounts',
+                        'acs_systems',
+                        'user_identity',
+                      ],
                       type: 'string',
                     },
                     type: 'array',
@@ -28282,20 +28306,21 @@ export default {
                 schema: {
                   properties: {
                     batch: {
-                      description: 'Represents a resource batch.',
                       properties: {
                         acs_entrances: {
                           items: { $ref: '#/components/schemas/acs_entrance' },
                           type: 'array',
                         },
-                        batch_type: {
-                          enum: [
-                            'workspaces',
-                            'access_grants',
-                            'access_methods',
-                            'spaces',
-                          ],
-                          type: 'string',
+                        acs_systems: {
+                          items: { $ref: '#/components/schemas/acs_system' },
+                          type: 'array',
+                        },
+                        batch_type: { enum: ['access_grants'], type: 'string' },
+                        connected_accounts: {
+                          items: {
+                            $ref: '#/components/schemas/connected_account',
+                          },
+                          type: 'array',
                         },
                         devices: {
                           items: { $ref: '#/components/schemas/device' },
@@ -28309,14 +28334,9 @@ export default {
                           items: { $ref: '#/components/schemas/user_identity' },
                           type: 'array',
                         },
-                        workspaces: {
-                          items: { $ref: '#/components/schemas/workspace' },
-                          type: 'array',
-                        },
                       },
                       required: ['batch_type'],
                       type: 'object',
-                      'x-route-path': '/',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -40468,7 +40488,7 @@ export default {
     '/devices/simulate/disconnect_from_hub': {
       post: {
         description:
-          'Simulates taking the Wi-Fi hub (bridge) offline for a device.  \nOnly applicable for [sandbox workspaces](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces) and August locks today, but designed so we can extend to other providers later.  \nThis will set the `hub_disconnected` error on the device.',
+          'Simulates taking the Wi‑Fi hub (bridge) offline for a device.\nOnly applicable for sandbox workspaces and currently\nimplemented for August and TTLock locks.\nThis will set the corresponding `hub_disconnected` or\n`ttlock_lock_not_paired_to_gateway` error on the device.',
         operationId: 'devicesSimulateDisconnectFromHubPost',
         requestBody: {
           content: {
@@ -45763,10 +45783,11 @@ export default {
         'x-undocumented': 'Seam Bridge Client only.',
       },
     },
-    '/seam/console/v1/get_resource_type': {
+    '/seam/console/v1/get_resource_locator': {
       get: {
-        description: 'Returns the type of a resource given its UUID.',
-        operationId: 'seamConsoleV1GetResourceTypeGet',
+        description:
+          'Returns the type and system information of a resource given its UUID.',
+        operationId: 'seamConsoleV1GetResourceLocatorGet',
         parameters: [
           {
             in: 'query',
@@ -45782,9 +45803,17 @@ export default {
                 schema: {
                   properties: {
                     ok: { type: 'boolean' },
-                    resource_type: { type: 'string' },
+                    resource_locator: {
+                      properties: {
+                        acs_system_id: { format: 'uuid', type: 'string' },
+                        device_id: { format: 'uuid', type: 'string' },
+                        resource_type: { type: 'string' },
+                      },
+                      required: ['resource_type'],
+                      type: 'object',
+                    },
                   },
-                  required: ['resource_type', 'ok'],
+                  required: ['resource_locator', 'ok'],
                   type: 'object',
                 },
               },
@@ -45800,18 +45829,19 @@ export default {
           { console_session_with_workspace: [] },
           { api_key: [] },
         ],
-        summary: '/seam/console/v1/get_resource_type',
+        summary: '/seam/console/v1/get_resource_locator',
         tags: [],
         'x-fern-sdk-group-name': ['seam', 'console', 'v1'],
-        'x-fern-sdk-method-name': 'get_resource_type',
-        'x-fern-sdk-return-value': 'resource_type',
-        'x-response-key': 'resource_type',
-        'x-title': 'Get Resource Type',
+        'x-fern-sdk-method-name': 'get_resource_locator',
+        'x-fern-sdk-return-value': 'resource_locator',
+        'x-response-key': 'resource_locator',
+        'x-title': 'Get Resource Locator',
         'x-undocumented': 'Internal endpoint for Console',
       },
       post: {
-        description: 'Returns the type of a resource given its UUID.',
-        operationId: 'seamConsoleV1GetResourceTypePost',
+        description:
+          'Returns the type and system information of a resource given its UUID.',
+        operationId: 'seamConsoleV1GetResourceLocatorPost',
         parameters: [
           {
             in: 'query',
@@ -45827,9 +45857,17 @@ export default {
                 schema: {
                   properties: {
                     ok: { type: 'boolean' },
-                    resource_type: { type: 'string' },
+                    resource_locator: {
+                      properties: {
+                        acs_system_id: { format: 'uuid', type: 'string' },
+                        device_id: { format: 'uuid', type: 'string' },
+                        resource_type: { type: 'string' },
+                      },
+                      required: ['resource_type'],
+                      type: 'object',
+                    },
                   },
-                  required: ['resource_type', 'ok'],
+                  required: ['resource_locator', 'ok'],
                   type: 'object',
                 },
               },
@@ -45845,13 +45883,13 @@ export default {
           { console_session_with_workspace: [] },
           { api_key: [] },
         ],
-        summary: '/seam/console/v1/get_resource_type',
+        summary: '/seam/console/v1/get_resource_locator',
         tags: [],
         'x-fern-sdk-group-name': ['seam', 'console', 'v1'],
-        'x-fern-sdk-method-name': 'get_resource_type',
-        'x-fern-sdk-return-value': 'resource_type',
-        'x-response-key': 'resource_type',
-        'x-title': 'Get Resource Type',
+        'x-fern-sdk-method-name': 'get_resource_locator',
+        'x-fern-sdk-return-value': 'resource_locator',
+        'x-response-key': 'resource_locator',
+        'x-title': 'Get Resource Locator',
         'x-undocumented': 'Internal endpoint for Console',
       },
     },
