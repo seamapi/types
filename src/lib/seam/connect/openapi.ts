@@ -20214,8 +20214,188 @@ export default {
             },
             type: 'array',
           },
+          user_identity: {
+            description: 'User identity.',
+            properties: {
+              acs_user_ids: {
+                description:
+                  'Array of access system user IDs associated with the user identity.',
+                items: { format: 'uuid', type: 'string' },
+                type: 'array',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the user identity was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              display_name: { minLength: 1, type: 'string' },
+              email_address: {
+                description: 'Unique email address for the user identity.',
+                format: 'email',
+                nullable: true,
+                type: 'string',
+              },
+              errors: {
+                description:
+                  'Array of errors associated with the user identity. Each error object within the array contains fields like "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
+                items: {
+                  description: 'Errors associated with the user identity.',
+                  discriminator: { propertyName: 'error_code' },
+                  oneOf: [
+                    {
+                      description:
+                        'Indicates that there is an issue with an access system user associated with this user identity.',
+                      properties: {
+                        acs_system_id: {
+                          description:
+                            'ID of the access system that the user identity is associated with.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        acs_user_id: {
+                          description:
+                            'ID of the access system user that has an issue.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        created_at: {
+                          description:
+                            'Date and time at which Seam created the error.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['issue_with_acs_user'],
+                          type: 'string',
+                        },
+                        message: {
+                          description:
+                            'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'created_at',
+                        'message',
+                        'error_code',
+                        'acs_user_id',
+                        'acs_system_id',
+                      ],
+                      type: 'object',
+                    },
+                  ],
+                },
+                type: 'array',
+              },
+              full_name: { minLength: 1, nullable: true, type: 'string' },
+              phone_number: {
+                description:
+                  'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
+                nullable: true,
+                type: 'string',
+              },
+              user_identity_id: {
+                description: 'ID of the user identity.',
+                format: 'uuid',
+                type: 'string',
+              },
+              user_identity_key: {
+                description: 'Unique key for the user identity.',
+                minLength: 1,
+                nullable: true,
+                type: 'string',
+              },
+              warnings: {
+                description:
+                  'Array of warnings associated with the user identity. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
+                items: {
+                  description: 'Warnings associated with the user identity.',
+                  discriminator: { propertyName: 'warning_code' },
+                  oneOf: [
+                    {
+                      description:
+                        'Indicates that the user identity is currently being deleted.',
+                      properties: {
+                        created_at: {
+                          description:
+                            'Date and time at which Seam created the warning.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        message: {
+                          description:
+                            'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                          type: 'string',
+                        },
+                        warning_code: {
+                          description:
+                            'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                          enum: ['being_deleted'],
+                          type: 'string',
+                        },
+                      },
+                      required: ['created_at', 'message', 'warning_code'],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        "Indicates that the ACS user's profile does not match the user identity's profile",
+                      properties: {
+                        created_at: {
+                          description:
+                            'Date and time at which Seam created the warning.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        message: {
+                          description:
+                            'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                          type: 'string',
+                        },
+                        warning_code: {
+                          description:
+                            'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                          enum: [
+                            'acs_user_profile_does_not_match_user_identity',
+                          ],
+                          type: 'string',
+                        },
+                      },
+                      required: ['created_at', 'message', 'warning_code'],
+                      type: 'object',
+                    },
+                  ],
+                },
+                type: 'array',
+              },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the user identity.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'user_identity_id',
+              'user_identity_key',
+              'email_address',
+              'phone_number',
+              'display_name',
+              'full_name',
+              'created_at',
+              'workspace_id',
+              'errors',
+              'warnings',
+              'acs_user_ids',
+            ],
+            type: 'object',
+          },
+          workspace_id: { description: 'Workspace ID.', type: 'string' },
         },
-        required: ['provider_sessions'],
+        required: ['provider_sessions', 'user_identity', 'workspace_id'],
         type: 'object',
         'x-route-path': '/seam/mobile_sdk/v1/phone_sessions',
         'x-undocumented': 'Seam Mobile SDK only.',
