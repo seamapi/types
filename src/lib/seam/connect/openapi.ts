@@ -48111,7 +48111,13 @@ export default {
             required: false,
             schema: {
               items: {
-                enum: ['spaces', 'devices', 'acs_entrances'],
+                enum: [
+                  'spaces',
+                  'devices',
+                  'acs_entrances',
+                  'connected_accounts',
+                  'acs_systems',
+                ],
                 type: 'string',
               },
               type: 'array',
@@ -48123,7 +48129,13 @@ export default {
             required: false,
             schema: {
               items: {
-                enum: ['spaces', 'devices', 'acs_entrances'],
+                enum: [
+                  'spaces',
+                  'devices',
+                  'acs_entrances',
+                  'connected_accounts',
+                  'acs_systems',
+                ],
                 type: 'string',
               },
               type: 'array',
@@ -48137,20 +48149,22 @@ export default {
                 schema: {
                   properties: {
                     batch: {
-                      description: 'Represents a resource batch.',
+                      description: 'ID of the affected access system user.',
                       properties: {
                         acs_entrances: {
                           items: { $ref: '#/components/schemas/acs_entrance' },
                           type: 'array',
                         },
-                        batch_type: {
-                          enum: [
-                            'workspaces',
-                            'access_grants',
-                            'access_methods',
-                            'spaces',
-                          ],
-                          type: 'string',
+                        acs_systems: {
+                          items: { $ref: '#/components/schemas/acs_system' },
+                          type: 'array',
+                        },
+                        batch_type: { enum: ['spaces'], type: 'string' },
+                        connected_accounts: {
+                          items: {
+                            $ref: '#/components/schemas/connected_account',
+                          },
+                          type: 'array',
                         },
                         devices: {
                           items: { $ref: '#/components/schemas/device' },
@@ -48160,18 +48174,9 @@ export default {
                           items: { $ref: '#/components/schemas/space' },
                           type: 'array',
                         },
-                        user_identities: {
-                          items: { $ref: '#/components/schemas/user_identity' },
-                          type: 'array',
-                        },
-                        workspaces: {
-                          items: { $ref: '#/components/schemas/workspace' },
-                          type: 'array',
-                        },
                       },
                       required: ['batch_type'],
                       type: 'object',
-                      'x-route-path': '/',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -48210,14 +48215,26 @@ export default {
                 properties: {
                   exclude: {
                     items: {
-                      enum: ['spaces', 'devices', 'acs_entrances'],
+                      enum: [
+                        'spaces',
+                        'devices',
+                        'acs_entrances',
+                        'connected_accounts',
+                        'acs_systems',
+                      ],
                       type: 'string',
                     },
                     type: 'array',
                   },
                   include: {
                     items: {
-                      enum: ['spaces', 'devices', 'acs_entrances'],
+                      enum: [
+                        'spaces',
+                        'devices',
+                        'acs_entrances',
+                        'connected_accounts',
+                        'acs_systems',
+                      ],
                       type: 'string',
                     },
                     type: 'array',
@@ -48242,20 +48259,22 @@ export default {
                 schema: {
                   properties: {
                     batch: {
-                      description: 'Represents a resource batch.',
+                      description: 'ID of the affected access system user.',
                       properties: {
                         acs_entrances: {
                           items: { $ref: '#/components/schemas/acs_entrance' },
                           type: 'array',
                         },
-                        batch_type: {
-                          enum: [
-                            'workspaces',
-                            'access_grants',
-                            'access_methods',
-                            'spaces',
-                          ],
-                          type: 'string',
+                        acs_systems: {
+                          items: { $ref: '#/components/schemas/acs_system' },
+                          type: 'array',
+                        },
+                        batch_type: { enum: ['spaces'], type: 'string' },
+                        connected_accounts: {
+                          items: {
+                            $ref: '#/components/schemas/connected_account',
+                          },
+                          type: 'array',
                         },
                         devices: {
                           items: { $ref: '#/components/schemas/device' },
@@ -48265,18 +48284,9 @@ export default {
                           items: { $ref: '#/components/schemas/space' },
                           type: 'array',
                         },
-                        user_identities: {
-                          items: { $ref: '#/components/schemas/user_identity' },
-                          type: 'array',
-                        },
-                        workspaces: {
-                          items: { $ref: '#/components/schemas/workspace' },
-                          type: 'array',
-                        },
                       },
                       required: ['batch_type'],
                       type: 'object',
-                      'x-route-path': '/',
                     },
                     ok: { type: 'boolean' },
                   },

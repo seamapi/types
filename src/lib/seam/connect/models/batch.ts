@@ -14,6 +14,8 @@ export const spaces_batch = z
     spaces: space.array().optional(),
     devices: device.array().optional(),
     acs_entrances: acs_entrance.array().optional(),
+    connected_accounts: connected_account.array().optional(),
+    acs_systems: acs_system.array().optional(),
   })
   .describe('ID of the affected access system user.')
 
