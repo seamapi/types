@@ -21,6 +21,7 @@ export {
   acs_user,
   acs_user_external_type,
   any_device_type,
+  batch,
   battery_status,
   booking_resource,
   bridge,
