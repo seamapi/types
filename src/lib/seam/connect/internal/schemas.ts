@@ -4,6 +4,7 @@ export {
   access_grant_key_aliases,
   access_grant_resource,
   access_grant_resource_union,
+  access_grants_batch,
   access_method,
   acs_access_group,
   acs_access_group_external_type,

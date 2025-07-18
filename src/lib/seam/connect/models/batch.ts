@@ -1,6 +1,8 @@
 import { z } from 'zod'
 
+import { acs_system } from './acs/acs-system.js'
 import { acs_entrance } from './acs/index.js'
+import { connected_account } from './connected-accounts/index.js'
 import { device } from './devices/index.js'
 import { space } from './spaces/index.js'
 import { user_identity } from './user-identities/index.js'
@@ -12,6 +14,8 @@ export const spaces_batch = z
     spaces: space.array().optional(),
     devices: device.array().optional(),
     acs_entrances: acs_entrance.array().optional(),
+    connected_accounts: connected_account.array().optional(),
+    acs_systems: acs_system.array().optional(),
   })
   .describe('ID of the affected access system user.')
 
@@ -20,6 +24,9 @@ export const access_grants_batch = z.object({
   spaces: space.array().optional(),
   devices: device.array().optional(),
   acs_entrances: acs_entrance.array().optional(),
+  user_identities: user_identity.array().optional(),
+  connected_accounts: connected_account.array().optional(),
+  acs_systems: acs_system.array().optional(),
 })
 
 export const access_methods_batch = z.object({
