@@ -28054,6 +28054,12 @@ export default {
                         items: { format: 'uuid', type: 'string' },
                         type: 'array',
                       },
+                      space_keys: {
+                        description:
+                          'Set of keys of existing spaces to which access is being granted.',
+                        items: { type: 'string' },
+                        type: 'array',
+                      },
                       starts_at: {
                         description:
                           'Date and time at which the validity of the new grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
@@ -29191,8 +29197,22 @@ export default {
                     batch: {
                       description: 'Represents a resource batch.',
                       properties: {
+                        acs_access_groups: {
+                          items: {
+                            $ref: '#/components/schemas/acs_access_group',
+                          },
+                          type: 'array',
+                        },
                         acs_entrances: {
                           items: { $ref: '#/components/schemas/acs_entrance' },
+                          type: 'array',
+                        },
+                        acs_systems: {
+                          items: { $ref: '#/components/schemas/acs_system' },
+                          type: 'array',
+                        },
+                        acs_users: {
+                          items: { $ref: '#/components/schemas/acs_user' },
                           type: 'array',
                         },
                         batch_type: {
@@ -29297,8 +29317,22 @@ export default {
                     batch: {
                       description: 'Represents a resource batch.',
                       properties: {
+                        acs_access_groups: {
+                          items: {
+                            $ref: '#/components/schemas/acs_access_group',
+                          },
+                          type: 'array',
+                        },
                         acs_entrances: {
                           items: { $ref: '#/components/schemas/acs_entrance' },
+                          type: 'array',
+                        },
+                        acs_systems: {
+                          items: { $ref: '#/components/schemas/acs_system' },
+                          type: 'array',
+                        },
+                        acs_users: {
+                          items: { $ref: '#/components/schemas/acs_user' },
                           type: 'array',
                         },
                         batch_type: {
@@ -42804,6 +42838,115 @@ export default {
         'x-fern-sdk-return-value': 'events',
         'x-response-key': 'events',
         'x-title': 'List Events',
+      },
+    },
+    '/instant_keys/list': {
+      get: {
+        description:
+          'Returns a list of all [instant keys](https://docs.seam.co/latest/capability-guides/mobile-access/instant-keys).',
+        operationId: 'instantKeysListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            schema: {
+              description:
+                'ID of the user identity by which you want to filter the list of Instant Keys.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    instant_keys: {
+                      items: { $ref: '#/components/schemas/instant_key' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['instant_keys', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/instant_keys/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['instant_keys'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'instant_keys',
+        'x-response-key': 'instant_keys',
+        'x-title': 'List Instant Keys',
+      },
+      post: {
+        description:
+          'Returns a list of all [instant keys](https://docs.seam.co/latest/capability-guides/mobile-access/instant-keys).',
+        operationId: 'instantKeysListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity by which you want to filter the list of Instant Keys.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    instant_keys: {
+                      items: { $ref: '#/components/schemas/instant_key' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['instant_keys', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/instant_keys/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['instant_keys'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'instant_keys',
+        'x-response-key': 'instant_keys',
+        'x-title': 'List Instant Keys',
       },
     },
     '/locks/get': {
@@ -56815,8 +56958,22 @@ export default {
                     batch: {
                       description: 'Represents a resource batch.',
                       properties: {
+                        acs_access_groups: {
+                          items: {
+                            $ref: '#/components/schemas/acs_access_group',
+                          },
+                          type: 'array',
+                        },
                         acs_entrances: {
                           items: { $ref: '#/components/schemas/acs_entrance' },
+                          type: 'array',
+                        },
+                        acs_systems: {
+                          items: { $ref: '#/components/schemas/acs_system' },
+                          type: 'array',
+                        },
+                        acs_users: {
+                          items: { $ref: '#/components/schemas/acs_user' },
                           type: 'array',
                         },
                         batch_type: {
@@ -56896,8 +57053,22 @@ export default {
                     batch: {
                       description: 'Represents a resource batch.',
                       properties: {
+                        acs_access_groups: {
+                          items: {
+                            $ref: '#/components/schemas/acs_access_group',
+                          },
+                          type: 'array',
+                        },
                         acs_entrances: {
                           items: { $ref: '#/components/schemas/acs_entrance' },
+                          type: 'array',
+                        },
+                        acs_systems: {
+                          items: { $ref: '#/components/schemas/acs_system' },
+                          type: 'array',
+                        },
+                        acs_users: {
+                          items: { $ref: '#/components/schemas/acs_user' },
                           type: 'array',
                         },
                         batch_type: {
