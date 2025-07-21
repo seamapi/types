@@ -29197,8 +29197,22 @@ export default {
                     batch: {
                       description: 'Represents a resource batch.',
                       properties: {
+                        acs_access_groups: {
+                          items: {
+                            $ref: '#/components/schemas/acs_access_group',
+                          },
+                          type: 'array',
+                        },
                         acs_entrances: {
                           items: { $ref: '#/components/schemas/acs_entrance' },
+                          type: 'array',
+                        },
+                        acs_systems: {
+                          items: { $ref: '#/components/schemas/acs_system' },
+                          type: 'array',
+                        },
+                        acs_users: {
+                          items: { $ref: '#/components/schemas/acs_user' },
                           type: 'array',
                         },
                         batch_type: {
@@ -29303,8 +29317,22 @@ export default {
                     batch: {
                       description: 'Represents a resource batch.',
                       properties: {
+                        acs_access_groups: {
+                          items: {
+                            $ref: '#/components/schemas/acs_access_group',
+                          },
+                          type: 'array',
+                        },
                         acs_entrances: {
                           items: { $ref: '#/components/schemas/acs_entrance' },
+                          type: 'array',
+                        },
+                        acs_systems: {
+                          items: { $ref: '#/components/schemas/acs_system' },
+                          type: 'array',
+                        },
+                        acs_users: {
+                          items: { $ref: '#/components/schemas/acs_user' },
                           type: 'array',
                         },
                         batch_type: {
@@ -56930,8 +56958,22 @@ export default {
                     batch: {
                       description: 'Represents a resource batch.',
                       properties: {
+                        acs_access_groups: {
+                          items: {
+                            $ref: '#/components/schemas/acs_access_group',
+                          },
+                          type: 'array',
+                        },
                         acs_entrances: {
                           items: { $ref: '#/components/schemas/acs_entrance' },
+                          type: 'array',
+                        },
+                        acs_systems: {
+                          items: { $ref: '#/components/schemas/acs_system' },
+                          type: 'array',
+                        },
+                        acs_users: {
+                          items: { $ref: '#/components/schemas/acs_user' },
                           type: 'array',
                         },
                         batch_type: {
@@ -57011,8 +57053,22 @@ export default {
                     batch: {
                       description: 'Represents a resource batch.',
                       properties: {
+                        acs_access_groups: {
+                          items: {
+                            $ref: '#/components/schemas/acs_access_group',
+                          },
+                          type: 'array',
+                        },
                         acs_entrances: {
                           items: { $ref: '#/components/schemas/acs_entrance' },
+                          type: 'array',
+                        },
+                        acs_systems: {
+                          items: { $ref: '#/components/schemas/acs_system' },
+                          type: 'array',
+                        },
+                        acs_users: {
+                          items: { $ref: '#/components/schemas/acs_user' },
                           type: 'array',
                         },
                         batch_type: {

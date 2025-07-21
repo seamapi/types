@@ -1,7 +1,8 @@
 import { z } from 'zod'
 
-import { acs_system } from './acs/acs-system.js'
-import { acs_entrance } from './acs/index.js'
+import { acs_access_group } from './acs/acs-access-group.js'
+import { acs_user } from './acs/acs-users/acs-user.js'
+import { acs_entrance, acs_system } from './acs/index.js'
 import { connected_account } from './connected-accounts/index.js'
 import { device } from './devices/index.js'
 import { space } from './spaces/index.js'
@@ -44,6 +45,9 @@ export const workspaces_batch = z
     spaces: space.array().optional(),
     devices: device.array().optional(),
     acs_entrances: acs_entrance.array().optional(),
+    acs_systems: acs_system.array().optional(),
+    acs_users: acs_user.array().optional(),
+    acs_access_groups: acs_access_group.array().optional(),
   })
   .describe('A batch of workspace-related resources.')
 
@@ -59,6 +63,9 @@ export const batch = z.object({
   spaces: space.array().optional(),
   devices: device.array().optional(),
   acs_entrances: acs_entrance.array().optional(),
+  acs_systems: acs_system.array().optional(),
+  acs_users: acs_user.array().optional(),
+  acs_access_groups: acs_access_group.array().optional(),
 }).describe(`
   ---
   route_path: /
