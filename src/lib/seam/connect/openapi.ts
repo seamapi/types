@@ -28054,6 +28054,12 @@ export default {
                         items: { format: 'uuid', type: 'string' },
                         type: 'array',
                       },
+                      space_keys: {
+                        description:
+                          'Set of keys of existing spaces to which access is being granted.',
+                        items: { type: 'string' },
+                        type: 'array',
+                      },
                       starts_at: {
                         description:
                           'Date and time at which the validity of the new grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
