@@ -91,6 +91,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'akiles',
     'sensi',
     'assa_abloy_vostio',
+    'avigilon_alta',
   ],
 
   consumer_smartlocks: [
