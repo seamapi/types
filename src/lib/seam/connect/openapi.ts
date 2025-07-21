@@ -38060,7 +38060,7 @@ export default {
                                 },
                                 name: {
                                   description:
-                                    'Your display name for this access grant resource.',
+                                    'Your name for this access grant resource.',
                                   type: 'string',
                                 },
                                 property_keys: {
@@ -38113,7 +38113,7 @@ export default {
                                   type: 'string',
                                 },
                               },
-                              required: ['name', 'access_grant_key'],
+                              required: ['access_grant_key'],
                               type: 'object',
                             },
                             type: 'array',
@@ -38163,7 +38163,7 @@ export default {
                                 },
                                 name: {
                                   description:
-                                    'Your display name for this access grant resource.',
+                                    'Your name for this access grant resource.',
                                   type: 'string',
                                 },
                                 property_keys: {
@@ -38216,7 +38216,7 @@ export default {
                                   type: 'string',
                                 },
                               },
-                              required: ['name', 'booking_key'],
+                              required: ['booking_key'],
                               type: 'object',
                             },
                             type: 'array',
@@ -38417,7 +38417,7 @@ export default {
                                 },
                                 name: {
                                   description:
-                                    'Your display name for this access grant resource.',
+                                    'Your name for this access grant resource.',
                                   type: 'string',
                                 },
                                 property_keys: {
@@ -38475,7 +38475,7 @@ export default {
                                   type: 'string',
                                 },
                               },
-                              required: ['name', 'reservation_key'],
+                              required: ['reservation_key'],
                               type: 'object',
                             },
                             type: 'array',
@@ -38761,7 +38761,7 @@ export default {
                         },
                         name: {
                           description:
-                            'Your display name for this access grant resource.',
+                            'Your name for this access grant resource.',
                           type: 'string',
                         },
                         property_keys: {
@@ -38814,7 +38814,7 @@ export default {
                           type: 'string',
                         },
                       },
-                      required: ['name', 'access_grant_key'],
+                      required: ['access_grant_key'],
                       type: 'object',
                     },
                     type: 'array',
@@ -38864,7 +38864,7 @@ export default {
                         },
                         name: {
                           description:
-                            'Your display name for this access grant resource.',
+                            'Your name for this access grant resource.',
                           type: 'string',
                         },
                         property_keys: {
@@ -38917,7 +38917,7 @@ export default {
                           type: 'string',
                         },
                       },
-                      required: ['name', 'booking_key'],
+                      required: ['booking_key'],
                       type: 'object',
                     },
                     type: 'array',
@@ -39115,7 +39115,7 @@ export default {
                         },
                         name: {
                           description:
-                            'Your display name for this access grant resource.',
+                            'Your name for this access grant resource.',
                           type: 'string',
                         },
                         property_keys: {
@@ -39173,7 +39173,7 @@ export default {
                           type: 'string',
                         },
                       },
-                      required: ['name', 'reservation_key'],
+                      required: ['reservation_key'],
                       type: 'object',
                     },
                     type: 'array',
@@ -46539,7 +46539,7 @@ export default {
                               type: 'string',
                             },
                           },
-                          required: ['rule', 'config'],
+                          required: ['rule'],
                           type: 'object',
                         },
                         reservation_time_updated: {
@@ -46552,7 +46552,7 @@ export default {
                               type: 'string',
                             },
                           },
-                          required: ['rule', 'config'],
+                          required: ['rule'],
                           type: 'object',
                         },
                       },
@@ -46640,7 +46640,7 @@ export default {
                               type: 'string',
                             },
                           },
-                          required: ['rule', 'config'],
+                          required: ['rule'],
                           type: 'object',
                         },
                         reservation_time_updated: {
@@ -46653,7 +46653,7 @@ export default {
                               type: 'string',
                             },
                           },
-                          required: ['rule', 'config'],
+                          required: ['rule'],
                           type: 'object',
                         },
                       },
@@ -46741,7 +46741,7 @@ export default {
                             type: 'string',
                           },
                         },
-                        required: ['rule', 'config'],
+                        required: ['rule'],
                         type: 'object',
                       },
                       reservation_time_updated: {
@@ -46752,7 +46752,7 @@ export default {
                             type: 'string',
                           },
                         },
-                        required: ['rule', 'config'],
+                        required: ['rule'],
                         type: 'object',
                       },
                     },
@@ -46848,7 +46848,7 @@ export default {
                             type: 'string',
                           },
                         },
-                        required: ['rule', 'config'],
+                        required: ['rule'],
                         type: 'object',
                       },
                       reservation_time_updated: {
@@ -46859,7 +46859,7 @@ export default {
                             type: 'string',
                           },
                         },
-                        required: ['rule', 'config'],
+                        required: ['rule'],
                         type: 'object',
                       },
                     },
