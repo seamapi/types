@@ -42812,6 +42812,115 @@ export default {
         'x-title': 'List Events',
       },
     },
+    '/instant_keys/list': {
+      get: {
+        description:
+          'Returns a list of all [instant keys](https://docs.seam.co/latest/capability-guides/mobile-access/instant-keys).',
+        operationId: 'instantKeysListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            schema: {
+              description:
+                'ID of the user identity by which you want to filter the list of Instant Keys.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    instant_keys: {
+                      items: { $ref: '#/components/schemas/instant_key' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['instant_keys', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/instant_keys/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['instant_keys'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'instant_keys',
+        'x-response-key': 'instant_keys',
+        'x-title': 'List Instant Keys',
+      },
+      post: {
+        description:
+          'Returns a list of all [instant keys](https://docs.seam.co/latest/capability-guides/mobile-access/instant-keys).',
+        operationId: 'instantKeysListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity by which you want to filter the list of Instant Keys.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    instant_keys: {
+                      items: { $ref: '#/components/schemas/instant_key' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['instant_keys', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/instant_keys/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['instant_keys'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'instant_keys',
+        'x-response-key': 'instant_keys',
+        'x-title': 'List Instant Keys',
+      },
+    },
     '/locks/get': {
       get: {
         description:
