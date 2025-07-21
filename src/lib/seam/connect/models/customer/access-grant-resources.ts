@@ -4,7 +4,8 @@ import { z } from 'zod'
 const base_access_grant_resource = z.object({
   name: z
     .string()
-    .describe('Your display name for this access grant resource.'),
+    .optional()
+    .describe('Your name for this access grant resource.'),
   starts_at: z
     .string()
     .optional()
