@@ -27960,6 +27960,13 @@ export default {
                                 nullable: true,
                                 type: 'string',
                               },
+                              user_identity_key: {
+                                description:
+                                  'Unique key for the user identity.',
+                                minLength: 1,
+                                nullable: true,
+                                type: 'string',
+                              },
                             },
                             type: 'object',
                           },
