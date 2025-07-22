@@ -1,10 +1,17 @@
 import { z } from 'zod'
 
-import { acs_access_group } from './acs/acs-access-group.js'
-import { acs_user } from './acs/acs-users/acs-user.js'
+import {
+  acs_access_group,
+  unmanaged_acs_access_group,
+} from './acs/acs-access-group.js'
+import { acs_encoder } from './acs/acs-encoder.js'
+import { acs_user, unmanaged_acs_user } from './acs/acs-users/acs-user.js'
 import { acs_entrance, acs_system } from './acs/index.js'
+import { action_attempt } from './action-attempts/action-attempt.js'
+import { client_session } from './client-sessions/client-session.js'
 import { connected_account } from './connected-accounts/index.js'
 import { device } from './devices/index.js'
+import { unmanaged_device } from './devices/unmanaged-device.js'
 import { space } from './spaces/index.js'
 import { user_identity } from './user-identities/index.js'
 import { workspace } from './workspaces/index.js'
@@ -48,30 +55,39 @@ export const workspaces_batch = z
     acs_systems: acs_system.array().optional(),
     acs_users: acs_user.array().optional(),
     acs_access_groups: acs_access_group.array().optional(),
+    acs_encoders: acs_encoder.array().optional(),
+    action_attempts: action_attempt.array().optional(),
+    client_sessions: client_session.array().optional(),
+    unmanaged_acs_users: unmanaged_acs_user.array().optional(),
+    unmanaged_acs_access_groups: unmanaged_acs_access_group.array().optional(),
+    unmanaged_devices: unmanaged_device.array().optional(),
   })
-  .describe('A batch of workspace-related resources.')
+  .describe('A batch of workspace resources.')
 
-export const batch = z.object({
-  batch_type: z.enum([
-    'workspaces',
-    'access_grants',
-    'access_methods',
-    'spaces',
-  ]),
-  user_identities: user_identity.array().optional(),
-  workspaces: workspace.array().optional(),
-  spaces: space.array().optional(),
-  devices: device.array().optional(),
-  acs_entrances: acs_entrance.array().optional(),
-  acs_systems: acs_system.array().optional(),
-  acs_users: acs_user.array().optional(),
-  acs_access_groups: acs_access_group.array().optional(),
-}).describe(`
-  ---
-  route_path: /
-  ---
-  Represents a resource batch.
-`)
+export const batch = z
+  .object({
+    batch_type: z.enum([
+      'workspaces',
+      'spaces',
+      'access_grants',
+      'access_methods',
+    ]),
+    user_identities: user_identity.array().optional(),
+    workspaces: workspace.array().optional(),
+    spaces: space.array().optional(),
+    devices: device.array().optional(),
+    acs_entrances: acs_entrance.array().optional(),
+    acs_systems: acs_system.array().optional(),
+    acs_users: acs_user.array().optional(),
+    acs_access_groups: acs_access_group.array().optional(),
+    acs_encoders: acs_encoder.array().optional(),
+    action_attempts: action_attempt.array().optional(),
+    client_sessions: client_session.array().optional(),
+    unmanaged_acs_users: unmanaged_acs_user.array().optional(),
+    unmanaged_acs_access_groups: unmanaged_acs_access_group.array().optional(),
+    unmanaged_devices: unmanaged_device.array().optional(),
+  })
+  .describe('A batch of workspace resources.')
 
 // TODO: Resolve type issues blocking this approach.
 // export const batch = z.discriminatedUnion("batch_type", [
