@@ -42913,6 +42913,109 @@ export default {
         'x-title': 'List Events',
       },
     },
+    '/instant_keys/get': {
+      get: {
+        description:
+          'Gets an [instant key](https://docs.seam.co/latest/capability-guides/mobile-access/instant-keys).',
+        operationId: 'instantKeysGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'instant_key_id',
+            required: true,
+            schema: {
+              description: 'ID of the instant key to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    instant_key: { $ref: '#/components/schemas/instant_key' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['instant_key', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/instant_keys/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['instant_keys'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'instant_key',
+        'x-response-key': 'instant_key',
+        'x-title': 'Get an Instant Key',
+      },
+      post: {
+        description:
+          'Gets an [instant key](https://docs.seam.co/latest/capability-guides/mobile-access/instant-keys).',
+        operationId: 'instantKeysGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  instant_key_id: {
+                    description: 'ID of the instant key to get.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['instant_key_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    instant_key: { $ref: '#/components/schemas/instant_key' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['instant_key', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/instant_keys/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['instant_keys'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'instant_key',
+        'x-response-key': 'instant_key',
+        'x-title': 'Get an Instant Key',
+      },
+    },
     '/instant_keys/list': {
       get: {
         description:
