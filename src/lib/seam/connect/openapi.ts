@@ -28776,7 +28776,6 @@ export default {
                     description:
                       'Date and time at which the validity of the grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     format: 'date-time',
-                    nullable: true,
                     type: 'string',
                   },
                 },
@@ -28845,7 +28844,6 @@ export default {
                     description:
                       'Date and time at which the validity of the grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     format: 'date-time',
-                    nullable: true,
                     type: 'string',
                   },
                 },
