@@ -16,12 +16,18 @@ on:
       registry_token:
         description: The package registry token.
         required: true
+    outputs:
+      version:
+        description: Version of the package.
+        value: ${{ jobs.publish.outputs.version }}
 
 jobs:
   publish:
     name: Publish package
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    outputs:
+      version: ${{ steps.publish.outputs.version }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,6 +44,7 @@ jobs:
         id: meta
         run: echo "tgz=$(ls *.tgz | head -n1)" >> $GITHUB_OUTPUT
       - name: Publish
+        id: publish
         uses: JS-DevTools/npm-publish@v3
         with:
           access: public

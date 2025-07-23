@@ -64,3 +64,47 @@ jobs:
       registry_url: https://npm.pkg.github.com
     secrets:
       registry_token: ${{ secrets.GITHUB_TOKEN }}
+  pr:
+    name: Open PR on seamapi/javascript-http
+    timeout-minutes: 30
+    needs: npm
+    steps:
+      - name: Checkout seamapi/javascript-http
+        uses: actions/checkout@v4
+        with:
+          repository: seamapi/javascript-http
+          token: ${{ secrets.GH_TOKEN }}
+      - name: Import GPG key
+        uses: crazy-max/ghaction-import-gpg@v5
+        with:
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+          git_committer_name: ${{ secrets.GIT_USER_NAME }}
+          git_committer_email: ${{ secrets.GIT_USER_EMAIL }}
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: npm
+          node-version-file: .nvmrc
+      - name: Install dependencies
+        run: npm ci
+      - name: Update @seamapi/types
+        run: npm install --save-dev --save-exact @seamapi/types@${{ jobs.npm.outputs.version }}
+      - name: Commit to seamapi/javascript-http
+        id: commit
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          branch: seamapi/types/${{ jobs.npm.outputs.version }}
+          create_branch: true
+          commit_message: 'feat: Update to @seamapi/types@${{ jobs.npm.outputs.version }}'
+          commit_user_name: ${{ secrets.GIT_USER_NAME }}
+          commit_user_email: ${{ secrets.GIT_USER_EMAIL }}
+          commit_author: ${{ secrets.GIT_USER_NAME }} <${{ secrets.GIT_USER_EMAIL }}>
+      - name: Open pull request
+        if: steps.commit.outputs.changes_detected == 'true'
+        run: gh pr create --fill
+        working-directory: remote
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
