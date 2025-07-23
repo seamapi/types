@@ -44,14 +44,14 @@ const acs_access_group_warning = unknown_issue_with_acs_access_group.describe(
   'Warning associated with the `acs_access_group`.',
 )
 
-const acs_access_group_warning_map = z.object({
+const _acs_access_group_warning_map = z.object({
   unknown_issue_with_acs_access_group: unknown_issue_with_acs_access_group
     .optional()
     .nullable(),
 })
 
 export type AcsAccessGroupWarningMap = z.infer<
-  typeof acs_access_group_warning_map
+  typeof _acs_access_group_warning_map
 >
 
 const common_acs_access_group = z.object({

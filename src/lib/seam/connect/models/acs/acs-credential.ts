@@ -113,7 +113,7 @@ const acs_credential_warning = z
     'Warning associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
   )
 
-const acs_credential_warning_map = z.object({
+const _acs_credential_warning_map = z.object({
   waiting_to_be_issued: waiting_to_be_issued.optional().nullable(),
   schedule_externally_modified: schedule_externally_modified
     .optional()
@@ -126,7 +126,9 @@ const acs_credential_warning_map = z.object({
   needs_to_be_reissued: needs_to_be_reissued.optional().nullable(),
 })
 
-export type AcsCredentialWarningMap = z.infer<typeof acs_credential_warning_map>
+export type AcsCredentialWarningMap = z.infer<
+  typeof _acs_credential_warning_map
+>
 
 const common_acs_credential = z.object({
   acs_credential_id: z

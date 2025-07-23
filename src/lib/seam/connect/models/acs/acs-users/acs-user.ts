@@ -89,7 +89,7 @@ const acs_user_errors = z
     'Errors associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
   )
 
-export const acs_users_error_map = z.object({
+const _acs_users_error_map = z.object({
   deleted_externally: acs_users_deleted_externally.optional().nullable(),
   salto_ks_subscription_limit_exceeded:
     acs_users_salto_ks_subscription_limit_exceeded.optional().nullable(),
@@ -107,7 +107,7 @@ export const acs_users_error_map = z.object({
     .nullable(),
 })
 
-export type AcsUsersErrorMap = z.infer<typeof acs_users_error_map>
+export type AcsUsersErrorMap = z.infer<typeof _acs_users_error_map>
 
 const common_acs_user_warning = z.object({
   created_at: z
@@ -153,7 +153,7 @@ export const latch_resident_user = common_acs_user_warning
     'Indicates that the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created on Latch Mission Control. Please use the Latch Mission Control to manage this user.',
   )
 
-export const acs_users_warning_map = z.object({
+const _acs_users_warning_map = z.object({
   being_deleted: acs_users_being_deleted.optional().nullable(),
   salto_ks_user_not_subscribed: acs_users_salto_ks_user_not_subscribed
     .optional()
@@ -175,7 +175,7 @@ export const acs_users_warnings = z
     'Warnings associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
   )
 
-export type AcsUsersWarningMap = z.infer<typeof acs_users_warning_map>
+export type AcsUsersWarningMap = z.infer<typeof _acs_users_warning_map>
 
 const user_fields = z.object({
   full_name: z

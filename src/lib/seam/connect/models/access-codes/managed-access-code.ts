@@ -261,7 +261,7 @@ const access_code_error = z
 
 export type AccessCodeError = z.infer<typeof access_code_error>
 
-const access_code_error_map = z.object({
+const _access_code_error_map = z.object({
   smartthings_failed_to_set_access_code:
     smartthings_failed_to_set_access_code_error.optional().nullable(),
   smartthings_failed_to_set_after_multiple_retries:
@@ -324,7 +324,7 @@ const access_code_error_map = z.object({
     .nullable(),
 })
 
-export type AccessCodeErrorMap = z.infer<typeof access_code_error_map>
+export type AccessCodeErrorMap = z.infer<typeof _access_code_error_map>
 
 const common_access_code_warning = z.object({
   message: z
@@ -463,7 +463,7 @@ const access_code_warning = z
 
 export type AccessCodeWarning = z.infer<typeof access_code_warning>
 
-const access_code_warning_map = z.object({
+const _access_code_warning_map = z.object({
   smartthings_failed_to_set_access_code:
     smartthings_failed_to_set_access_code_warning.optional().nullable(),
   schlage_detected_duplicate: schlage_detected_duplicate.optional().nullable(),
@@ -492,7 +492,7 @@ const access_code_warning_map = z.object({
     .nullable(),
 })
 
-export type AccessCodeWarningMap = z.infer<typeof access_code_warning_map>
+export type AccessCodeWarningMap = z.infer<typeof _access_code_warning_map>
 
 export const access_code = z.object({
   common_code_key: z

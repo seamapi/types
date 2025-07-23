@@ -71,7 +71,7 @@ const user_identity_issue_with_acs_user = common_user_identity_error
     'Indicates that there is an issue with an access system user associated with this user identity.',
   )
 
-export const user_identity_error_map = z.object({
+const _user_identity_error_map = z.object({
   issue_with_acs_user: z
     .record(z.string().uuid(), user_identity_issue_with_acs_user)
     .optional()
@@ -81,7 +81,7 @@ export const user_identity_error_map = z.object({
     ),
 })
 
-export type UserIdentityErrorMap = z.infer<typeof user_identity_error_map>
+export type UserIdentityErrorMap = z.infer<typeof _user_identity_error_map>
 
 const user_identity_warnings = z
   .discriminatedUnion('warning_code', [
@@ -90,7 +90,7 @@ const user_identity_warnings = z
   ])
   .describe('Warnings associated with the user identity.')
 
-export const user_identity_warning_map = z.object({
+const _user_identity_warning_map = z.object({
   user_identity_being_deleted: user_identity_being_deleted
     .optional()
     .nullable(),
@@ -98,7 +98,7 @@ export const user_identity_warning_map = z.object({
     acs_user_profile_does_not_match_user_identity.optional().nullable(),
 })
 
-export type UserIdentityWarningMap = z.infer<typeof user_identity_warning_map>
+export type UserIdentityWarningMap = z.infer<typeof _user_identity_warning_map>
 
 const user_identity_errors = z
   .discriminatedUnion('error_code', [user_identity_issue_with_acs_user])

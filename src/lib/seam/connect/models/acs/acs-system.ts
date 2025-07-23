@@ -129,7 +129,7 @@ const acs_system_error = z
     'Error associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
   )
 
-export const acs_system_error_map = z.object({
+const _acs_system_error_map = z.object({
   seam_bridge_disconnected: seam_bridge_disconnected.optional().nullable(),
   bridge_disconnected: bridge_disconnected.optional().nullable(),
   visionline_instance_unreachable: visionline_instance_unreachable
@@ -145,7 +145,7 @@ export const acs_system_error_map = z.object({
     .nullable(),
 })
 
-export type AcsSystemErrorMap = z.infer<typeof acs_system_error_map>
+export type AcsSystemErrorMap = z.infer<typeof _acs_system_error_map>
 
 const common_acs_system_warning = z.object({
   created_at: z
@@ -198,7 +198,7 @@ const acs_system_warning = z
     'Warning associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
   )
 
-export const acs_system_warning_map = z.object({
+const _acs_system_warning_map = z.object({
   salto_ks_subscription_limit_almost_reached:
     salto_ks_subscription_limit_almost_reached.optional().nullable(),
   time_zone_does_not_match_location: time_zone_does_not_match_location
@@ -206,7 +206,7 @@ export const acs_system_warning_map = z.object({
     .nullable(),
 })
 
-export type AcsSystemWarningMap = z.infer<typeof acs_system_warning_map>
+export type AcsSystemWarningMap = z.infer<typeof _acs_system_warning_map>
 
 export const acs_system = z
   .object({
