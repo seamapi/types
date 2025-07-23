@@ -27,11 +27,11 @@ const acs_encoder_error =
       'Error associated with the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
     )
 
-const acs_encoder_error_map = z.object({
+const _acs_encoder_error_map = z.object({
   acs_encoder_removed: acs_encoder_removed.optional().nullable(),
 })
 
-export type AcsEncoderErrorMap = z.infer<typeof acs_encoder_error_map>
+export type AcsEncoderErrorMap = z.infer<typeof _acs_encoder_error_map>
 
 export const acs_encoder = z.object({
   acs_encoder_id: z

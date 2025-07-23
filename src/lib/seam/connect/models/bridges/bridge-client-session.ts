@@ -68,7 +68,7 @@ export type BridgeClientSessionError = z.infer<
   typeof bridge_client_session_error
 >
 
-const bridge_client_session_error_map = z.object({
+const _bridge_client_session_error_map = z.object({
   bridge_lan_unreachable: bridge_lan_unreachable.optional().nullable(),
   no_communication_from_bridge: no_communication_from_bridge
     .optional()
@@ -76,7 +76,7 @@ const bridge_client_session_error_map = z.object({
 })
 
 export type BridgeClientSessionErrorMap = z.infer<
-  typeof bridge_client_session_error_map
+  typeof _bridge_client_session_error_map
 >
 
 export const bridge_client_session = z.object({

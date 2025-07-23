@@ -154,7 +154,7 @@ export const acs_user_pending_mutations = z.discriminatedUnion(
 
 export type AcsUserPendingMutation = z.infer<typeof acs_user_pending_mutations>
 
-export const acs_user_pending_mutations_map = z.object({
+const _acs_user_pending_mutations_map = z.object({
   creating: creating.optional().nullable(),
   deleting: deleting.optional().nullable(),
   updating_access_schedule: updating_access_schedule_mutation
@@ -206,5 +206,5 @@ export const acs_user_pending_mutations_map = z.object({
 })
 
 export type AcsUserPendingMutationsMap = z.infer<
-  typeof acs_user_pending_mutations_map
+  typeof _acs_user_pending_mutations_map
 >
