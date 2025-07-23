@@ -91,14 +91,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Update @seamapi/types
-        run: npm install --save-dev --save-exact @seamapi/types@${{ jobs.npm.outputs.version }}
+        run: npm install --save-dev --save-exact @seamapi/types@${{ needs.npm.outputs.version }}
       - name: Commit to seamapi/javascript-http
         id: commit
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          branch: seamapi/types/${{ jobs.npm.outputs.version }}
+          branch: seamapi/types/${{ needs.npm.outputs.version }}
           create_branch: true
-          commit_message: 'feat: Update to @seamapi/types@${{ jobs.npm.outputs.version }}'
+          commit_message: 'feat: Update to @seamapi/types@${{ needs.npm.outputs.version }}'
           commit_user_name: ${{ secrets.GIT_USER_NAME }}
           commit_user_email: ${{ secrets.GIT_USER_EMAIL }}
           commit_author: ${{ secrets.GIT_USER_NAME }} <${{ secrets.GIT_USER_EMAIL }}>
