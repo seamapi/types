@@ -1,5 +1,6 @@
 import { globalIgnores } from 'eslint/config'
 import importPlugin from 'eslint-plugin-import'
+import nodePlugin from 'eslint-plugin-n'
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
 import unusedImports from 'eslint-plugin-unused-imports'
 import neostandard, { resolveIgnoresFromGitignore } from 'neostandard'
@@ -14,6 +15,16 @@ export default [
     rules: {
       'no-console': 'error',
       '@typescript-eslint/no-non-null-assertion': 'error',
+    },
+  },
+  {
+    plugins: {
+      node: nodePlugin,
+    },
+    files: ['src/lib/seam/**/*.{ts,tsx}'],
+    rules: {
+      camelcase: 'off',
+      'n/file-extension-in-import': 'error',
     },
   },
   {

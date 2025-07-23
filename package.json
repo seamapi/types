@@ -81,7 +81,7 @@
     "postlint": "prettier --check --ignore-path .gitignore .",
     "postversion": "git push --follow-tags",
     "format": "prettier --write --ignore-path .gitignore .",
-    "preformat": "patch-package && eslint --fix ."
+    "preformat": "eslint --fix ."
   },
   "engines": {
     "node": ">=20.9.0",
@@ -98,12 +98,12 @@
     "del-cli": "^6.0.0",
     "eslint": "^9.31.0",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-n": "^17.21.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-unused-imports": "^4.1.4",
     "jiti": "^2.4.2",
-    "neostandard": "^0.12.2",
     "mkdirp": "^3.0.1",
+    "neostandard": "^0.12.2",
     "patch-package": "^8.0.0",
     "prettier": "^3.0.0",
     "tsc-alias": "^1.8.2",
