@@ -42911,6 +42911,102 @@ export default {
         'x-title': 'List Events',
       },
     },
+    '/instant_keys/delete': {
+      delete: {
+        description:
+          'Deletes a specified [Instant Key](https://docs.seam.co/latest/capability-guides/instant-keys).',
+        operationId: 'instantKeysDeleteDelete',
+        parameters: [
+          {
+            in: 'query',
+            name: 'instant_key_id',
+            required: true,
+            schema: {
+              description: 'ID of the Instant Key that you want to delete.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/instant_keys/delete',
+        tags: [],
+        'x-fern-sdk-group-name': ['instant_keys'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete an Instant Key',
+      },
+      post: {
+        description:
+          'Deletes a specified [Instant Key](https://docs.seam.co/latest/capability-guides/instant-keys).',
+        operationId: 'instantKeysDeletePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  instant_key_id: {
+                    description:
+                      'ID of the Instant Key that you want to delete.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['instant_key_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/instant_keys/delete',
+        tags: [],
+        'x-fern-sdk-group-name': ['instant_keys'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete an Instant Key',
+      },
+    },
     '/instant_keys/get': {
       get: {
         description:
