@@ -51,6 +51,7 @@ export const DEVICE_PROVIDERS = {
   SENSI: 'sensi',
   KWIKSET2: 'kwikset2',
   KEYNEST: 'keynest',
+  DORMAKABA_AMBIANCE: 'dormakaba_ambiance',
 } as const
 
 export type DeviceProviderName =
@@ -118,6 +119,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'salto_ks',
     'assa_abloy_vostio',
     'salto_space',
+    'dormakaba_ambiance',
   ],
 
   internal_beta: ALL_DEVICE_PROVIDERS,
