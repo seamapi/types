@@ -327,17 +327,6 @@ const third_party_integration_detected = common_device_warning
   })
   .describe('Indicates that a third-party integration has been detected.')
 
-const nest_thermostat_in_manual_eco_mode = common_device_warning.extend({
-  warning_code: z
-    .literal('nest_thermostat_in_manual_eco_mode')
-    .describe(warning_code_description),
-}).describe(`
-    ---
-    variant_group_key: thermostats
-    ---
-    Indicates that the Nest thermostat is in manual eco mode.
-    `)
-
 const ttlock_lock_gateway_unlocking_not_enabled = common_device_warning.extend({
   warning_code: z
     .literal('ttlock_lock_gateway_unlocking_not_enabled')
@@ -430,7 +419,6 @@ const device_warning = z.discriminatedUnion('warning_code', [
   wyze_device_missing_gateway,
   functional_offline_device,
   third_party_integration_detected,
-  nest_thermostat_in_manual_eco_mode,
   ttlock_lock_gateway_unlocking_not_enabled,
   ttlock_weak_gateway_signal,
   power_saving_mode,
@@ -464,9 +452,6 @@ export const device_warning_map = z.object({
     .nullable(),
   functional_offline_device: functional_offline_device.optional().nullable(),
   third_party_integration_detected: third_party_integration_detected
-    .optional()
-    .nullable(),
-  nest_thermostat_in_manual_eco_mode: nest_thermostat_in_manual_eco_mode
     .optional()
     .nullable(),
   ttlock_lock_gateway_unlocking_not_enabled:

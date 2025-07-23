@@ -12586,32 +12586,6 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the Nest thermostat is in manual eco mode.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['nest_thermostat_in_manual_eco_mode'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'created_at', 'warning_code'],
-                  type: 'object',
-                  'x-variant-group-key': 'thermostats',
-                },
-                {
-                  description:
                     'Indicates that the Remote Unlock feature is not enabled in the settings."',
                   properties: {
                     created_at: {
@@ -24657,32 +24631,6 @@ export default {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
-                },
-                {
-                  description:
-                    'Indicates that the Nest thermostat is in manual eco mode.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['nest_thermostat_in_manual_eco_mode'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'created_at', 'warning_code'],
-                  type: 'object',
-                  'x-variant-group-key': 'thermostats',
                 },
                 {
                   description:
