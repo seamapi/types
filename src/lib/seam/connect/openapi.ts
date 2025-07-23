@@ -1850,6 +1850,7 @@ export default {
           ends_at: {
             description: 'Date and time at which the Access Grant ends.',
             format: 'date-time',
+            nullable: true,
             type: 'string',
           },
           instant_key_url: {
@@ -1943,6 +1944,8 @@ export default {
           'name',
           'display_name',
           'created_at',
+          'starts_at',
+          'ends_at',
         ],
         type: 'object',
         'x-draft': 'Early access.',
@@ -28001,8 +28004,10 @@ export default {
                         type: 'array',
                       },
                       ends_at: {
+                        default: null,
                         description:
                           'Date and time at which the validity of the new grant ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                        nullable: true,
                         type: 'string',
                       },
                       location: {
@@ -38067,6 +38072,11 @@ export default {
                   {
                     default: {
                       features: {
+                        configure: {
+                          allow_access_automation_rule_customization: false,
+                          allow_instant_key_customization: false,
+                          exclude: false,
+                        },
                         connect: { exclude: false },
                         manage_devices: { exclude: false },
                         organize: { exclude: false },
@@ -38078,6 +38088,32 @@ export default {
                       features: {
                         default: {},
                         properties: {
+                          configure: {
+                            default: {},
+                            description:
+                              'Configuration for the configure feature.',
+                            properties: {
+                              allow_access_automation_rule_customization: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can customize the access automation rules for their properties.',
+                                type: 'boolean',
+                              },
+                              allow_instant_key_customization: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can customize the Instant Key profile for their properties.',
+                                type: 'boolean',
+                              },
+                              exclude: {
+                                default: false,
+                                description:
+                                  'Whether to exclude this feature from the portal.',
+                                type: 'boolean',
+                              },
+                            },
+                            type: 'object',
+                          },
                           connect: {
                             default: {},
                             description:
@@ -47269,6 +47305,18 @@ export default {
                         },
                         features: {
                           properties: {
+                            configure: {
+                              properties: {
+                                allow_access_automation_rule_customization: {
+                                  type: 'boolean',
+                                },
+                                allow_instant_key_customization: {
+                                  type: 'boolean',
+                                },
+                                exclude: { type: 'boolean' },
+                              },
+                              type: 'object',
+                            },
                             connect: {
                               properties: { exclude: { type: 'boolean' } },
                               type: 'object',
@@ -47352,6 +47400,18 @@ export default {
                         },
                         features: {
                           properties: {
+                            configure: {
+                              properties: {
+                                allow_access_automation_rule_customization: {
+                                  type: 'boolean',
+                                },
+                                allow_instant_key_customization: {
+                                  type: 'boolean',
+                                },
+                                exclude: { type: 'boolean' },
+                              },
+                              type: 'object',
+                            },
                             connect: {
                               properties: { exclude: { type: 'boolean' } },
                               type: 'object',
