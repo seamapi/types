@@ -3222,6 +3222,7 @@ export default {
               'assa_abloy_credential_service',
               'latch_building',
               'dormakaba_community_site',
+              'dormakaba_ambiance_site',
               'legic_connect_credential_service',
               'assa_abloy_vostio',
               'assa_abloy_vostio_credential_service',
@@ -3278,6 +3279,7 @@ export default {
               'assa_abloy_credential_service',
               'latch_building',
               'dormakaba_community_site',
+              'dormakaba_ambiance_site',
               'legic_connect_credential_service',
               'assa_abloy_vostio',
               'assa_abloy_vostio_credential_service',
@@ -13021,6 +13023,7 @@ export default {
               'sensi',
               'kwikset2',
               'keynest',
+              'dormakaba_ambiance',
             ],
             type: 'string',
           },
@@ -36994,6 +36997,7 @@ export default {
                         'sensi',
                         'kwikset2',
                         'keynest',
+                        'dormakaba_ambiance',
                         'yale_access',
                         'hid_cm',
                         'google_nest',
@@ -38063,6 +38067,11 @@ export default {
                   {
                     default: {
                       features: {
+                        configure: {
+                          allow_access_automation_rule_customization: false,
+                          allow_instant_key_customization: false,
+                          exclude: false,
+                        },
                         connect: { exclude: false },
                         manage_devices: { exclude: false },
                         organize: { exclude: false },
@@ -38074,6 +38083,32 @@ export default {
                       features: {
                         default: {},
                         properties: {
+                          configure: {
+                            default: {},
+                            description:
+                              'Configuration for the configure feature.',
+                            properties: {
+                              allow_access_automation_rule_customization: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can customize the access automation rules for their properties.',
+                                type: 'boolean',
+                              },
+                              allow_instant_key_customization: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can customize the Instant Key profile for their properties.',
+                                type: 'boolean',
+                              },
+                              exclude: {
+                                default: false,
+                                description:
+                                  'Whether to exclude this feature from the portal.',
+                                type: 'boolean',
+                              },
+                            },
+                            type: 'object',
+                          },
                           connect: {
                             default: {},
                             description:
@@ -47265,6 +47300,18 @@ export default {
                         },
                         features: {
                           properties: {
+                            configure: {
+                              properties: {
+                                allow_access_automation_rule_customization: {
+                                  type: 'boolean',
+                                },
+                                allow_instant_key_customization: {
+                                  type: 'boolean',
+                                },
+                                exclude: { type: 'boolean' },
+                              },
+                              type: 'object',
+                            },
                             connect: {
                               properties: { exclude: { type: 'boolean' } },
                               type: 'object',
@@ -47348,6 +47395,18 @@ export default {
                         },
                         features: {
                           properties: {
+                            configure: {
+                              properties: {
+                                allow_access_automation_rule_customization: {
+                                  type: 'boolean',
+                                },
+                                allow_instant_key_customization: {
+                                  type: 'boolean',
+                                },
+                                exclude: { type: 'boolean' },
+                              },
+                              type: 'object',
+                            },
                             connect: {
                               properties: { exclude: { type: 'boolean' } },
                               type: 'object',
