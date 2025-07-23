@@ -26,6 +26,7 @@ export const acs_system_external_type = z.enum([
   'assa_abloy_credential_service',
   'latch_building',
   'dormakaba_community_site',
+  'dormakaba_ambiance_site',
   'legic_connect_credential_service',
   'assa_abloy_vostio',
   'assa_abloy_vostio_credential_service',
