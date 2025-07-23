@@ -9,6 +9,7 @@ import { acs_user, unmanaged_acs_user } from './acs/acs-users/acs-user.js'
 import { acs_entrance, acs_system } from './acs/index.js'
 import { action_attempt } from './action-attempts/action-attempt.js'
 import { client_session } from './client-sessions/client-session.js'
+import { connect_webview } from './connect-webviews/connect-webview.js'
 import { connected_account } from './connected-accounts/index.js'
 import { device } from './devices/index.js'
 import { unmanaged_device } from './devices/unmanaged-device.js'
@@ -61,6 +62,7 @@ export const workspaces_batch = z
     unmanaged_acs_users: unmanaged_acs_user.array().optional(),
     unmanaged_acs_access_groups: unmanaged_acs_access_group.array().optional(),
     unmanaged_devices: unmanaged_device.array().optional(),
+    connect_webviews: connect_webview.array().optional(),
   })
   .describe('A batch of workspace resources.')
 
@@ -86,6 +88,7 @@ export const batch = z
     unmanaged_acs_users: unmanaged_acs_user.array().optional(),
     unmanaged_acs_access_groups: unmanaged_acs_access_group.array().optional(),
     unmanaged_devices: unmanaged_device.array().optional(),
+    connect_webviews: connect_webview.array().optional(),
   })
   .describe('A batch of workspace resources.')
 

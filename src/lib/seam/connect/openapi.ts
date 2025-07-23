@@ -29245,6 +29245,12 @@ export default {
                           },
                           type: 'array',
                         },
+                        connect_webviews: {
+                          items: {
+                            $ref: '#/components/schemas/connect_webview',
+                          },
+                          type: 'array',
+                        },
                         devices: {
                           items: { $ref: '#/components/schemas/device' },
                           type: 'array',
@@ -29395,6 +29401,12 @@ export default {
                         client_sessions: {
                           items: {
                             $ref: '#/components/schemas/client_session',
+                          },
+                          type: 'array',
+                        },
+                        connect_webviews: {
+                          items: {
+                            $ref: '#/components/schemas/connect_webview',
                           },
                           type: 'array',
                         },
@@ -57175,6 +57187,12 @@ export default {
                           },
                           type: 'array',
                         },
+                        connect_webviews: {
+                          items: {
+                            $ref: '#/components/schemas/connect_webview',
+                          },
+                          type: 'array',
+                        },
                         devices: {
                           items: { $ref: '#/components/schemas/device' },
                           type: 'array',
@@ -57300,6 +57318,12 @@ export default {
                         client_sessions: {
                           items: {
                             $ref: '#/components/schemas/client_session',
+                          },
+                          type: 'array',
+                        },
+                        connect_webviews: {
+                          items: {
+                            $ref: '#/components/schemas/connect_webview',
                           },
                           type: 'array',
                         },
