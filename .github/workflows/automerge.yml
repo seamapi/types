@@ -11,7 +11,7 @@ jobs:
     name: Merge
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    if: (github.actor == 'dependabot[bot]') || (github.event.pull_request.user.login == 'seambot')
+    if: github.actor == 'dependabot[bot]' || github.event.pull_request.user.login == 'seambot'
     steps:
       - name: Approve pull request
         if: github.actor == 'dependabot[bot]'
