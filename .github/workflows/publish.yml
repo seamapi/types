@@ -106,6 +106,5 @@ jobs:
       - name: Open pull request
         if: steps.commit.outputs.changes_detected == 'true'
         run: gh pr create --fill
-        working-directory: remote
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
