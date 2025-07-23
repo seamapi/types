@@ -28776,7 +28776,6 @@ export default {
                     description:
                       'Date and time at which the validity of the grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     format: 'date-time',
-                    nullable: true,
                     type: 'string',
                   },
                 },
@@ -28845,7 +28844,6 @@ export default {
                     description:
                       'Date and time at which the validity of the grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     format: 'date-time',
-                    nullable: true,
                     type: 'string',
                   },
                 },
@@ -29247,6 +29245,12 @@ export default {
                           },
                           type: 'array',
                         },
+                        connect_webviews: {
+                          items: {
+                            $ref: '#/components/schemas/connect_webview',
+                          },
+                          type: 'array',
+                        },
                         devices: {
                           items: { $ref: '#/components/schemas/device' },
                           type: 'array',
@@ -29397,6 +29401,12 @@ export default {
                         client_sessions: {
                           items: {
                             $ref: '#/components/schemas/client_session',
+                          },
+                          type: 'array',
+                        },
+                        connect_webviews: {
+                          items: {
+                            $ref: '#/components/schemas/connect_webview',
                           },
                           type: 'array',
                         },
@@ -57177,6 +57187,12 @@ export default {
                           },
                           type: 'array',
                         },
+                        connect_webviews: {
+                          items: {
+                            $ref: '#/components/schemas/connect_webview',
+                          },
+                          type: 'array',
+                        },
                         devices: {
                           items: { $ref: '#/components/schemas/device' },
                           type: 'array',
@@ -57302,6 +57318,12 @@ export default {
                         client_sessions: {
                           items: {
                             $ref: '#/components/schemas/client_session',
+                          },
+                          type: 'array',
+                        },
+                        connect_webviews: {
+                          items: {
+                            $ref: '#/components/schemas/connect_webview',
                           },
                           type: 'array',
                         },
