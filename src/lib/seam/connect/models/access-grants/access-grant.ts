@@ -57,12 +57,11 @@ export const access_grant = z.object({
   starts_at: z
     .string()
     .datetime()
-    .optional()
     .describe('Date and time at which the Access Grant starts.'),
   ends_at: z
     .string()
     .datetime()
-    .optional()
+    .nullable()
     .describe('Date and time at which the Access Grant ends.'),
 }).describe(`
   ---

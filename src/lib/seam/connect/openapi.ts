@@ -1850,6 +1850,7 @@ export default {
           ends_at: {
             description: 'Date and time at which the Access Grant ends.',
             format: 'date-time',
+            nullable: true,
             type: 'string',
           },
           instant_key_url: {
@@ -1943,6 +1944,8 @@ export default {
           'name',
           'display_name',
           'created_at',
+          'starts_at',
+          'ends_at',
         ],
         type: 'object',
         'x-draft': 'Early access.',
@@ -28001,8 +28004,10 @@ export default {
                         type: 'array',
                       },
                       ends_at: {
+                        default: null,
                         description:
                           'Date and time at which the validity of the new grant ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                        nullable: true,
                         type: 'string',
                       },
                       location: {
