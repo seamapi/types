@@ -222,5 +222,19 @@ export const thermostat_capability_properties = z
           ---
           Current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
           `),
+    thermostat_daily_program_period_precision_minutes: z.number().optional()
+      .describe(`
+            ---
+            property_group_key: thermostats
+            ---
+            Precision of the thermostat's period in minutes. For example, if the thermostat supports 15-minute periods, this value is 15. All values are relative to the top of the hour, so for 15 minutes, the periods would be 0, 15, 30, and 45 minutes past the hour.
+      `),
+    max_thermostat_daily_program_periods_per_day: z.number().optional()
+      .describe(`
+            ---
+            property_group_key: thermostats
+            ---
+            Maximum number of periods that the thermostat can support per day. For example, if the thermostat supports 4 periods per day, this value is 4.
+      `),
   })
   .partial()

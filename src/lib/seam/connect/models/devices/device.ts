@@ -22,6 +22,7 @@ export const device_capability_flags = z
     can_simulate_connection: z.boolean(),
     can_simulate_disconnection: z.boolean(),
     can_unlock_with_code: z.boolean(),
+    can_run_thermostat_programs: z.boolean(),
   })
   .partial()
 
