@@ -93,6 +93,8 @@ jobs:
         run: npm ci
       - name: Update @seamapi/types
         run: npm install --save-dev --save-exact @seamapi/types@${{ needs.npm.outputs.version }}
+      - name: Generate code
+        run: npm run generate
       - name: Commit to seamapi/javascript-http
         id: commit
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -137,8 +139,6 @@ jobs:
         run: npm ci
       - name: Update @seamapi/types
         run: npm install --save-dev --save-exact @seamapi/types@${{ needs.npm.outputs.version }}
-      - name: Generate code
-        run: npm run generate
       - name: Commit to seamapi/docs
         id: commit
         uses: stefanzweifel/git-auto-commit-action@v4
