@@ -12356,9 +12356,11 @@ export default {
                           ],
                           type: 'object',
                           'x-route-path': '/thermostats/daily_programs',
+                          'x-undocumented': 'Unreleased.',
                         },
                         type: 'array',
                         'x-property-group-key': 'thermostats',
+                        'x-undocumented': 'Unreleased.',
                       },
                       thermostat_weekly_program: {
                         description:
@@ -12433,6 +12435,7 @@ export default {
                         ],
                         type: 'object',
                         'x-property-group-key': 'thermostats',
+                        'x-undocumented': 'Unreleased.',
                       },
                     },
                     type: 'object',
@@ -13030,7 +13033,6 @@ export default {
         'x-route-path': '/devices',
       },
       enrollment_automation: {
-        deprecated: true,
         description:
           'Represents an [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) within the [Seam mobile access solution](https://docs.seam.co/latest/capability-guides/mobile-access/).',
         properties: {
@@ -13072,9 +13074,8 @@ export default {
           'workspace_id',
         ],
         type: 'object',
-        'x-deprecated':
-          'Will be removed. Instead, link the `user_identity` to the `acs_user` in the access system in which you want to issue credentials.',
         'x-route-path': '/user_identities/enrollment_automations',
+        'x-undocumented': 'Will be removed.',
       },
       event: {
         description:
@@ -20500,6 +20501,7 @@ export default {
         ],
         type: 'object',
         'x-route-path': '/thermostats/daily_programs',
+        'x-undocumented': 'Unreleased.',
       },
       thermostat_schedule: {
         description:
@@ -49646,6 +49648,7 @@ export default {
         'x-fern-sdk-return-value': 'thermostat_daily_program',
         'x-response-key': 'thermostat_daily_program',
         'x-title': 'Create a Thermostat Daily Program',
+        'x-undocumented': 'Unreleased.',
       },
     },
     '/thermostats/daily_programs/delete': {
@@ -49693,6 +49696,7 @@ export default {
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
         'x-title': 'Delete a Thermostat Daily Program',
+        'x-undocumented': 'Unreleased.',
       },
       post: {
         description: 'Deletes a thermostat daily program.',
@@ -49743,6 +49747,7 @@ export default {
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
         'x-title': 'Delete a Thermostat Daily Program',
+        'x-undocumented': 'Unreleased.',
       },
     },
     '/thermostats/daily_programs/update': {
@@ -49832,6 +49837,7 @@ export default {
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
         'x-title': 'Update a Thermostat Daily Program',
+        'x-undocumented': 'Unreleased.',
       },
       post: {
         description:
@@ -49919,6 +49925,7 @@ export default {
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
         'x-title': 'Update a Thermostat Daily Program',
+        'x-undocumented': 'Unreleased.',
       },
     },
     '/thermostats/delete_climate_preset': {
@@ -52603,6 +52610,7 @@ export default {
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
         'x-title': 'Update the Thermostat Weekly Program',
+        'x-undocumented': 'Unreleased.',
       },
     },
     '/unstable_access_grants/create': {
@@ -55143,12 +55151,11 @@ export default {
         ],
         summary: '/user_identities/enrollment_automations/delete',
         tags: ['/user_identities'],
-        'x-deprecated':
-          'Will be removed. Instead, link the `user_identity` to the `acs_user` in the access system in which you want to issue credentials.',
         'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
         'x-title': 'Delete an Enrollment Automation',
+        'x-undocumented': 'Will be removed.',
       },
       post: {
         description:
@@ -55195,12 +55202,11 @@ export default {
         ],
         summary: '/user_identities/enrollment_automations/delete',
         tags: ['/user_identities'],
-        'x-deprecated':
-          'Will be removed. Instead, link the `user_identity` to the `acs_user` in the access system in which you want to issue credentials.',
         'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
         'x-title': 'Delete an Enrollment Automation',
+        'x-undocumented': 'Will be removed.',
       },
     },
     '/user_identities/enrollment_automations/get': {
@@ -55250,13 +55256,12 @@ export default {
         ],
         summary: '/user_identities/enrollment_automations/get',
         tags: ['/user_identities'],
-        'x-deprecated':
-          'Will be removed. Instead, link the `user_identity` to the `acs_user` in the access system in which you want to issue credentials.',
         'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'enrollment_automation',
         'x-response-key': 'enrollment_automation',
         'x-title': 'Get an Enrollment Automation',
+        'x-undocumented': 'Will be removed.',
       },
       post: {
         description:
@@ -55309,13 +55314,12 @@ export default {
         ],
         summary: '/user_identities/enrollment_automations/get',
         tags: ['/user_identities'],
-        'x-deprecated':
-          'Will be removed. Instead, link the `user_identity` to the `acs_user` in the access system in which you want to issue credentials.',
         'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'enrollment_automation',
         'x-response-key': 'enrollment_automation',
         'x-title': 'Get an Enrollment Automation',
+        'x-undocumented': 'Will be removed.',
       },
     },
     '/user_identities/enrollment_automations/launch': {
@@ -55395,13 +55399,12 @@ export default {
         ],
         summary: '/user_identities/enrollment_automations/launch',
         tags: ['/user_identities'],
-        'x-deprecated':
-          'Will be removed. Instead, link the `user_identity` to the `acs_user` in the access system in which you want to issue credentials.',
         'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
         'x-fern-sdk-method-name': 'launch',
         'x-fern-sdk-return-value': 'enrollment_automation',
         'x-response-key': 'enrollment_automation',
         'x-title': 'Launch an Enrollment Automation',
+        'x-undocumented': 'Will be removed.',
       },
     },
     '/user_identities/enrollment_automations/list': {
@@ -55454,13 +55457,12 @@ export default {
         ],
         summary: '/user_identities/enrollment_automations/list',
         tags: ['/user_identities'],
-        'x-deprecated':
-          'Will be removed. Instead, link the `user_identity` to the `acs_user` in the access system in which you want to issue credentials.',
         'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'enrollment_automations',
         'x-response-key': 'enrollment_automations',
         'x-title': 'List Enrollment Automations',
+        'x-undocumented': 'Will be removed.',
       },
       post: {
         description:
@@ -55516,13 +55518,12 @@ export default {
         ],
         summary: '/user_identities/enrollment_automations/list',
         tags: ['/user_identities'],
-        'x-deprecated':
-          'Will be removed. Instead, link the `user_identity` to the `acs_user` in the access system in which you want to issue credentials.',
         'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'enrollment_automations',
         'x-response-key': 'enrollment_automations',
         'x-title': 'List Enrollment Automations',
+        'x-undocumented': 'Will be removed.',
       },
     },
     '/user_identities/generate_instant_key': {
