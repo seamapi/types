@@ -12371,11 +12371,9 @@ export default {
                           ],
                           type: 'object',
                           'x-route-path': '/thermostats/daily_programs',
-                          'x-undocumented': 'Unreleased.',
                         },
                         type: 'array',
                         'x-property-group-key': 'thermostats',
-                        'x-undocumented': 'Unreleased.',
                       },
                       thermostat_weekly_program: {
                         description:
@@ -12450,7 +12448,6 @@ export default {
                         ],
                         type: 'object',
                         'x-property-group-key': 'thermostats',
-                        'x-undocumented': 'Unreleased.',
                       },
                     },
                     type: 'object',
@@ -20517,7 +20514,6 @@ export default {
         ],
         type: 'object',
         'x-route-path': '/thermostats/daily_programs',
-        'x-undocumented': 'Unreleased.',
       },
       thermostat_schedule: {
         description:
@@ -50335,7 +50331,6 @@ export default {
         'x-fern-sdk-return-value': 'thermostat_daily_program',
         'x-response-key': 'thermostat_daily_program',
         'x-title': 'Create a Thermostat Daily Program',
-        'x-undocumented': 'Unreleased.',
       },
     },
     '/thermostats/daily_programs/delete': {
@@ -50383,7 +50378,6 @@ export default {
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
         'x-title': 'Delete a Thermostat Daily Program',
-        'x-undocumented': 'Unreleased.',
       },
       post: {
         description: 'Deletes a thermostat daily program.',
@@ -50434,7 +50428,6 @@ export default {
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
         'x-title': 'Delete a Thermostat Daily Program',
-        'x-undocumented': 'Unreleased.',
       },
     },
     '/thermostats/daily_programs/update': {
@@ -50524,7 +50517,6 @@ export default {
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
         'x-title': 'Update a Thermostat Daily Program',
-        'x-undocumented': 'Unreleased.',
       },
       post: {
         description:
@@ -50612,7 +50604,6 @@ export default {
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
         'x-title': 'Update a Thermostat Daily Program',
-        'x-undocumented': 'Unreleased.',
       },
     },
     '/thermostats/delete_climate_preset': {
@@ -53301,7 +53292,6 @@ export default {
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
         'x-title': 'Update the Thermostat Weekly Program',
-        'x-undocumented': 'Unreleased.',
       },
     },
     '/unstable_access_grants/create': {

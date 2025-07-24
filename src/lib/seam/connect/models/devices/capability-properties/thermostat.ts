@@ -129,7 +129,6 @@ export const thermostat_capability_properties = z
       .describe(`
           ---
           property_group_key: thermostats
-          undocumented: Unreleased.
           ---
           Configured [daily programs](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.
           `),
@@ -137,7 +136,6 @@ export const thermostat_capability_properties = z
       .describe(`
           ---
           property_group_key: thermostats
-          undocumented: Unreleased.
           ---
           Current [weekly program](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.
           `),

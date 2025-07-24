@@ -51,7 +51,6 @@ export const thermostat_daily_program = z.object({
 }).describe(`
   ---
   route_path: /thermostats/daily_programs
-  undocumented: Unreleased.
   ---
   Represents a thermostat daily program, consisting of a set of periods, each of which has a starting time and the key that identifies the climate preset to apply at the starting time.
 `)
