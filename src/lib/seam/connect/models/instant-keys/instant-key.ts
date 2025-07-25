@@ -34,8 +34,7 @@ export const instant_key = z.object({
     .describe('Date and time at which the Instant Key expires.'),
 }).describe(`
   ---
-  route_path: /user_identities
-  undocumented: Unreleased.
+  route_path: /instant_keys
   ---
   Represents a Seam Instant Key. For issuing Bluetooth mobile keys, Instant Keys are the fastest way to share access. With a single API call, you can create a mobile key and send it through text or email or embed it in your own app.
 
