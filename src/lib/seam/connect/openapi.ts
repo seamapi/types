@@ -19065,8 +19065,7 @@ export default {
           'expires_at',
         ],
         type: 'object',
-        'x-route-path': '/user_identities',
-        'x-undocumented': 'Unreleased.',
+        'x-route-path': '/instant_keys',
       },
       location: {
         properties: {
