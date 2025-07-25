@@ -2774,6 +2774,19 @@ export default {
               'Display name for the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
             type: 'string',
           },
+          dormakaba_ambiance_metadata: {
+            description:
+              'dormakaba Ambiance-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+            properties: {
+              access_point_name: {
+                description:
+                  'Name of the access point in the dormakaba Ambiance access system.',
+                type: 'string',
+              },
+            },
+            required: ['access_point_name'],
+            type: 'object',
+          },
           dormakaba_community_metadata: {
             description:
               'dormakaba Community-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
@@ -19515,6 +19528,19 @@ export default {
                               description:
                                 'Display name for the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
                               type: 'string',
+                            },
+                            dormakaba_ambiance_metadata: {
+                              description:
+                                'dormakaba Ambiance-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+                              properties: {
+                                access_point_name: {
+                                  description:
+                                    'Name of the access point in the dormakaba Ambiance access system.',
+                                  type: 'string',
+                                },
+                              },
+                              required: ['access_point_name'],
+                              type: 'object',
                             },
                             dormakaba_community_metadata: {
                               description:

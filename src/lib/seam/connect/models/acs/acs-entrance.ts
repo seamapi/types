@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+import { acs_entrance_dormakaba_ambiance_metadata } from './metadata/dormakaba-ambiance.js'
 import {
   acs_entrance_assa_abloy_vostio_metadata,
   acs_entrance_dormakaba_community_metadata,
@@ -108,6 +109,11 @@ export const acs_entrance = z
       .optional()
       .describe(
         'Salto Space-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+      ),
+    dormakaba_ambiance_metadata: acs_entrance_dormakaba_ambiance_metadata
+      .optional()
+      .describe(
+        'dormakaba Ambiance-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
       ),
   })
   .merge(acs_entrance_capability_flags).describe(`
