@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+import { access_method } from './access-grants/access-method.js'
 import {
   acs_access_group,
   unmanaged_acs_access_group,
@@ -63,6 +64,7 @@ export const workspaces_batch = z
     unmanaged_acs_access_groups: unmanaged_acs_access_group.array().optional(),
     unmanaged_devices: unmanaged_device.array().optional(),
     connect_webviews: connect_webview.array().optional(),
+    access_methods: access_method.array().optional(),
   })
   .describe('A batch of workspace resources.')
 
@@ -89,6 +91,7 @@ export const batch = z
     unmanaged_acs_access_groups: unmanaged_acs_access_group.array().optional(),
     unmanaged_devices: unmanaged_device.array().optional(),
     connect_webviews: connect_webview.array().optional(),
+    access_methods: access_method.array().optional(),
   })
   .describe('A batch of workspace resources.')
 
