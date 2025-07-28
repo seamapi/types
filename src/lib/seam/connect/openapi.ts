@@ -11503,6 +11503,7 @@ export default {
                                     'at_least_three_unique_digits',
                                     'cannot_contain_089',
                                     'cannot_contain_0789',
+                                    'unique_first_four_digits',
                                   ],
                                   type: 'string',
                                 },

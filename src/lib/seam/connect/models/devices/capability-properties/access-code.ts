@@ -14,6 +14,7 @@ export const access_code_code_constraint = z
         'at_least_three_unique_digits', // Tedee
         'cannot_contain_089', // TTLock
         'cannot_contain_0789', // TTLock (for some cylinder devices only)
+        'unique_first_four_digits', // Schlage
       ])
       .describe(`Code constraint type for access codes.`),
   })
