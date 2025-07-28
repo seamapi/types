@@ -56056,6 +56056,389 @@ export default {
         'x-title': 'Create a Workspace',
       },
     },
+    '/workspaces/customization_profiles/create': {
+      post: {
+        description: 'Updates the customization profile for the workspace.',
+        operationId: 'workspacesCustomizationProfilesCreatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  primary_color: { type: 'string' },
+                  secondary_color: { type: 'string' },
+                },
+                required: ['primary_color', 'secondary_color'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    customization_profile: {
+                      properties: {
+                        customization_profile_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        logo_url: { type: 'string' },
+                        primary_color: { type: 'string' },
+                        secondary_color: { type: 'string' },
+                        workspace_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: ['workspace_id', 'customization_profile_id'],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['customization_profile', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/workspaces/customization_profiles/create',
+        tags: ['/workspaces'],
+        'x-fern-sdk-group-name': ['workspaces', 'customization_profiles'],
+        'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'customization_profile',
+        'x-response-key': 'customization_profile',
+        'x-title': 'Update Customization Profile',
+      },
+    },
+    '/workspaces/customization_profiles/get': {
+      get: {
+        description: 'Retrieves the customization profile for the workspace.',
+        operationId: 'workspacesCustomizationProfilesGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'customization_profile_id',
+            required: true,
+            schema: { format: 'uuid', type: 'string' },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    customization_profile: {
+                      properties: {
+                        customization_profile_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        logo_url: { type: 'string' },
+                        primary_color: { type: 'string' },
+                        secondary_color: { type: 'string' },
+                        workspace_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: ['workspace_id', 'customization_profile_id'],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['customization_profile', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/workspaces/customization_profiles/get',
+        tags: ['/workspaces'],
+        'x-fern-sdk-group-name': ['workspaces', 'customization_profiles'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'customization_profile',
+        'x-response-key': 'customization_profile',
+        'x-title': 'Get Customization Profile',
+      },
+      post: {
+        description: 'Retrieves the customization profile for the workspace.',
+        operationId: 'workspacesCustomizationProfilesGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  customization_profile_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['customization_profile_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    customization_profile: {
+                      properties: {
+                        customization_profile_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        logo_url: { type: 'string' },
+                        primary_color: { type: 'string' },
+                        secondary_color: { type: 'string' },
+                        workspace_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: ['workspace_id', 'customization_profile_id'],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['customization_profile', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/workspaces/customization_profiles/get',
+        tags: ['/workspaces'],
+        'x-fern-sdk-group-name': ['workspaces', 'customization_profiles'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'customization_profile',
+        'x-response-key': 'customization_profile',
+        'x-title': 'Get Customization Profile',
+      },
+    },
+    '/workspaces/customization_profiles/list': {
+      get: {
+        description: 'Retrieves the customization profile for the workspace.',
+        operationId: 'workspacesCustomizationProfilesListGet',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    customization_profiles: {
+                      items: {
+                        properties: {
+                          customization_profile_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          logo_url: { type: 'string' },
+                          primary_color: { type: 'string' },
+                          secondary_color: { type: 'string' },
+                          workspace_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: ['workspace_id', 'customization_profile_id'],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['customization_profiles', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/workspaces/customization_profiles/list',
+        tags: ['/workspaces'],
+        'x-fern-sdk-group-name': ['workspaces', 'customization_profiles'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'customization_profiles',
+        'x-response-key': 'customization_profiles',
+        'x-title': 'Get Customization Profile',
+      },
+      post: {
+        description: 'Retrieves the customization profile for the workspace.',
+        operationId: 'workspacesCustomizationProfilesListPost',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    customization_profiles: {
+                      items: {
+                        properties: {
+                          customization_profile_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          logo_url: { type: 'string' },
+                          primary_color: { type: 'string' },
+                          secondary_color: { type: 'string' },
+                          workspace_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: ['workspace_id', 'customization_profile_id'],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['customization_profiles', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/workspaces/customization_profiles/list',
+        tags: ['/workspaces'],
+        'x-fern-sdk-group-name': ['workspaces', 'customization_profiles'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'customization_profiles',
+        'x-response-key': 'customization_profiles',
+        'x-title': 'Get Customization Profile',
+      },
+    },
+    '/workspaces/customization_profiles/update': {
+      patch: {
+        description: 'Updates the customization profile for the workspace.',
+        operationId: 'workspacesCustomizationProfilesUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  customization_profile_id: { format: 'uuid', type: 'string' },
+                  primary_color: { type: 'string' },
+                  secondary_color: { type: 'string' },
+                },
+                required: ['customization_profile_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/workspaces/customization_profiles/update',
+        tags: ['/workspaces'],
+        'x-fern-sdk-group-name': ['workspaces', 'customization_profiles'],
+        'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
+        'x-title': 'Update Customization Profile',
+      },
+      post: {
+        description: 'Updates the customization profile for the workspace.',
+        operationId: 'workspacesCustomizationProfilesUpdatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  customization_profile_id: { format: 'uuid', type: 'string' },
+                  primary_color: { type: 'string' },
+                  secondary_color: { type: 'string' },
+                },
+                required: ['customization_profile_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/workspaces/customization_profiles/update',
+        tags: ['/workspaces'],
+        'x-fern-sdk-group-name': ['workspaces', 'customization_profiles'],
+        'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
+        'x-title': 'Update Customization Profile',
+      },
+    },
+    '/workspaces/customization_profiles/upload_images': {
+      post: {
+        description: 'Uploads a logo for the customization profile.',
+        operationId: 'workspacesCustomizationProfilesUploadImagesPost',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/workspaces/customization_profiles/upload_images',
+        tags: ['/workspaces'],
+        'x-fern-sdk-group-name': ['workspaces', 'customization_profiles'],
+        'x-fern-sdk-method-name': 'upload_images',
+        'x-response-key': null,
+        'x-title': 'Upload Customization Profile Logo',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
     '/workspaces/find_resources': {
       get: {
         description: 'Search for resources inside a workspace.',
