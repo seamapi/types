@@ -56082,18 +56082,27 @@ export default {
                 schema: {
                   properties: {
                     customization_profile: {
+                      description: 'A customization profile.',
                       properties: {
+                        created_at: { format: 'date-time', type: 'string' },
                         customization_profile_id: {
                           format: 'uuid',
                           type: 'string',
                         },
-                        logo_url: { type: 'string' },
+                        logo_url: { format: 'uri', type: 'string' },
                         primary_color: { type: 'string' },
                         secondary_color: { type: 'string' },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
-                      required: ['workspace_id', 'customization_profile_id'],
+                      required: [
+                        'customization_profile_id',
+                        'workspace_id',
+                        'created_at',
+                      ],
                       type: 'object',
+                      'x-route-path': '/workspaces/customization_profiles',
+                      'x-title': 'Customization Profile',
+                      'x-undocumented': 'Unreleased.',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -56115,6 +56124,7 @@ export default {
         'x-fern-sdk-return-value': 'customization_profile',
         'x-response-key': 'customization_profile',
         'x-title': 'Update Customization Profile',
+        'x-undocumented': 'Unreleased.',
       },
     },
     '/workspaces/customization_profiles/get': {
@@ -56136,18 +56146,27 @@ export default {
                 schema: {
                   properties: {
                     customization_profile: {
+                      description: 'A customization profile.',
                       properties: {
+                        created_at: { format: 'date-time', type: 'string' },
                         customization_profile_id: {
                           format: 'uuid',
                           type: 'string',
                         },
-                        logo_url: { type: 'string' },
+                        logo_url: { format: 'uri', type: 'string' },
                         primary_color: { type: 'string' },
                         secondary_color: { type: 'string' },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
-                      required: ['workspace_id', 'customization_profile_id'],
+                      required: [
+                        'customization_profile_id',
+                        'workspace_id',
+                        'created_at',
+                      ],
                       type: 'object',
+                      'x-route-path': '/workspaces/customization_profiles',
+                      'x-title': 'Customization Profile',
+                      'x-undocumented': 'Unreleased.',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -56169,6 +56188,7 @@ export default {
         'x-fern-sdk-return-value': 'customization_profile',
         'x-response-key': 'customization_profile',
         'x-title': 'Get Customization Profile',
+        'x-undocumented': 'Unreleased.',
       },
       post: {
         description: 'Retrieves the customization profile for the workspace.',
@@ -56193,18 +56213,27 @@ export default {
                 schema: {
                   properties: {
                     customization_profile: {
+                      description: 'A customization profile.',
                       properties: {
+                        created_at: { format: 'date-time', type: 'string' },
                         customization_profile_id: {
                           format: 'uuid',
                           type: 'string',
                         },
-                        logo_url: { type: 'string' },
+                        logo_url: { format: 'uri', type: 'string' },
                         primary_color: { type: 'string' },
                         secondary_color: { type: 'string' },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
-                      required: ['workspace_id', 'customization_profile_id'],
+                      required: [
+                        'customization_profile_id',
+                        'workspace_id',
+                        'created_at',
+                      ],
                       type: 'object',
+                      'x-route-path': '/workspaces/customization_profiles',
+                      'x-title': 'Customization Profile',
+                      'x-undocumented': 'Unreleased.',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -56226,6 +56255,7 @@ export default {
         'x-fern-sdk-return-value': 'customization_profile',
         'x-response-key': 'customization_profile',
         'x-title': 'Get Customization Profile',
+        'x-undocumented': 'Unreleased.',
       },
     },
     '/workspaces/customization_profiles/list': {
@@ -56240,18 +56270,27 @@ export default {
                   properties: {
                     customization_profiles: {
                       items: {
+                        description: 'A customization profile.',
                         properties: {
+                          created_at: { format: 'date-time', type: 'string' },
                           customization_profile_id: {
                             format: 'uuid',
                             type: 'string',
                           },
-                          logo_url: { type: 'string' },
+                          logo_url: { format: 'uri', type: 'string' },
                           primary_color: { type: 'string' },
                           secondary_color: { type: 'string' },
                           workspace_id: { format: 'uuid', type: 'string' },
                         },
-                        required: ['workspace_id', 'customization_profile_id'],
+                        required: [
+                          'customization_profile_id',
+                          'workspace_id',
+                          'created_at',
+                        ],
                         type: 'object',
+                        'x-route-path': '/workspaces/customization_profiles',
+                        'x-title': 'Customization Profile',
+                        'x-undocumented': 'Unreleased.',
                       },
                       type: 'array',
                     },
@@ -56275,6 +56314,7 @@ export default {
         'x-fern-sdk-return-value': 'customization_profiles',
         'x-response-key': 'customization_profiles',
         'x-title': 'Get Customization Profile',
+        'x-undocumented': 'Unreleased.',
       },
       post: {
         description: 'Retrieves the customization profile for the workspace.',
@@ -56287,18 +56327,27 @@ export default {
                   properties: {
                     customization_profiles: {
                       items: {
+                        description: 'A customization profile.',
                         properties: {
+                          created_at: { format: 'date-time', type: 'string' },
                           customization_profile_id: {
                             format: 'uuid',
                             type: 'string',
                           },
-                          logo_url: { type: 'string' },
+                          logo_url: { format: 'uri', type: 'string' },
                           primary_color: { type: 'string' },
                           secondary_color: { type: 'string' },
                           workspace_id: { format: 'uuid', type: 'string' },
                         },
-                        required: ['workspace_id', 'customization_profile_id'],
+                        required: [
+                          'customization_profile_id',
+                          'workspace_id',
+                          'created_at',
+                        ],
                         type: 'object',
+                        'x-route-path': '/workspaces/customization_profiles',
+                        'x-title': 'Customization Profile',
+                        'x-undocumented': 'Unreleased.',
                       },
                       type: 'array',
                     },
@@ -56322,6 +56371,7 @@ export default {
         'x-fern-sdk-return-value': 'customization_profiles',
         'x-response-key': 'customization_profiles',
         'x-title': 'Get Customization Profile',
+        'x-undocumented': 'Unreleased.',
       },
     },
     '/workspaces/customization_profiles/update': {
@@ -56366,6 +56416,7 @@ export default {
         'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
         'x-title': 'Update Customization Profile',
+        'x-undocumented': 'Unreleased.',
       },
       post: {
         description: 'Updates the customization profile for the workspace.',
@@ -56408,6 +56459,7 @@ export default {
         'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
         'x-title': 'Update Customization Profile',
+        'x-undocumented': 'Unreleased.',
       },
     },
     '/workspaces/customization_profiles/upload_images': {
@@ -56437,7 +56489,8 @@ export default {
         'x-fern-sdk-method-name': 'upload_images',
         'x-response-key': null,
         'x-title': 'Upload Customization Profile Logo',
-        'x-undocumented': 'Internal endpoint for customer portals.',
+        'x-undocumented':
+          'Internal form-data endpoint for Console and Customer Portal.',
       },
     },
     '/workspaces/find_resources': {
