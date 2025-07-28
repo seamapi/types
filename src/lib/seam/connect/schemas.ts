@@ -18,6 +18,7 @@ export {
   connect_webview,
   connected_account,
   custom_metadata,
+  customization_profile,
   device,
   device_provider,
   instant_key,
