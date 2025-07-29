@@ -29150,6 +29150,10 @@ export default {
                     batch: {
                       description: 'A batch of workspace resources.',
                       properties: {
+                        access_grants: {
+                          items: { $ref: '#/components/schemas/access_grant' },
+                          type: 'array',
+                        },
                         access_methods: {
                           items: { $ref: '#/components/schemas/access_method' },
                           type: 'array',
@@ -29313,6 +29317,10 @@ export default {
                     batch: {
                       description: 'A batch of workspace resources.',
                       properties: {
+                        access_grants: {
+                          items: { $ref: '#/components/schemas/access_grant' },
+                          type: 'array',
+                        },
                         access_methods: {
                           items: { $ref: '#/components/schemas/access_method' },
                           type: 'array',
@@ -56514,6 +56522,10 @@ export default {
                     batch: {
                       description: 'A batch of workspace resources.',
                       properties: {
+                        access_grants: {
+                          items: { $ref: '#/components/schemas/access_grant' },
+                          type: 'array',
+                        },
                         access_methods: {
                           items: { $ref: '#/components/schemas/access_method' },
                           type: 'array',
@@ -56652,6 +56664,10 @@ export default {
                     batch: {
                       description: 'A batch of workspace resources.',
                       properties: {
+                        access_grants: {
+                          items: { $ref: '#/components/schemas/access_grant' },
+                          type: 'array',
+                        },
                         access_methods: {
                           items: { $ref: '#/components/schemas/access_method' },
                           type: 'array',
