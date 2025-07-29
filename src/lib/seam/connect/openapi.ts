@@ -56128,7 +56128,6 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [
-          { client_session: [] },
           { client_session_with_customer: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
@@ -56200,7 +56199,6 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [
-          { client_session: [] },
           { client_session_with_customer: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
@@ -56275,7 +56273,6 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [
-          { client_session: [] },
           { client_session_with_customer: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
@@ -56342,7 +56339,6 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [
-          { client_session: [] },
           { client_session_with_customer: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
@@ -56407,7 +56403,6 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [
-          { client_session: [] },
           { client_session_with_customer: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
@@ -56460,7 +56455,6 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [
-          { client_session: [] },
           { client_session_with_customer: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
@@ -56510,7 +56504,6 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [
-          { client_session: [] },
           { client_session_with_customer: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
@@ -56546,7 +56539,6 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [
-          { client_session: [] },
           { client_session_with_customer: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
