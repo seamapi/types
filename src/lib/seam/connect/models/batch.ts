@@ -64,6 +64,7 @@ export const workspaces_batch = z
     unmanaged_acs_users: unmanaged_acs_user.array().optional(),
     unmanaged_acs_access_groups: unmanaged_acs_access_group.array().optional(),
     unmanaged_devices: unmanaged_device.array().optional(),
+    connected_accounts: connected_account.array().optional(),
     connect_webviews: connect_webview.array().optional(),
     access_methods: access_method.array().optional(),
     access_grants: access_grant.array().optional(),
