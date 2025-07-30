@@ -15,6 +15,7 @@ import { connect_webview } from './connect-webviews/connect-webview.js'
 import { connected_account } from './connected-accounts/index.js'
 import { device } from './devices/index.js'
 import { unmanaged_device } from './devices/unmanaged-device.js'
+import { seam_event } from './events/seam-event.js'
 import { space } from './spaces/index.js'
 import { user_identity } from './user-identities/index.js'
 import { workspace } from './workspaces/index.js'
@@ -68,6 +69,7 @@ export const workspaces_batch = z
     connect_webviews: connect_webview.array().optional(),
     access_methods: access_method.array().optional(),
     access_grants: access_grant.array().optional(),
+    events: seam_event.array().optional(),
   })
   .describe('A batch of workspace resources.')
 
@@ -96,6 +98,7 @@ export const batch = z
     connect_webviews: connect_webview.array().optional(),
     access_methods: access_method.array().optional(),
     access_grants: access_grant.array().optional(),
+    events: seam_event.array().optional(),
   })
   .describe('A batch of workspace resources.')
 
