@@ -36033,13 +36033,14 @@ export default {
                   user_identity_id: {
                     description:
                       'ID of the [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to create a client session.',
+                    format: 'uuid',
                     type: 'string',
                   },
                   user_identity_ids: {
                     deprecated: true,
                     description:
                       'IDs of the [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session.',
-                    items: { type: 'string' },
+                    items: { format: 'uuid', type: 'string' },
                     maxItems: 1,
                     minItems: 1,
                     type: 'array',
@@ -36132,13 +36133,14 @@ export default {
                   user_identity_id: {
                     description:
                       'ID of the [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to create a client session.',
+                    format: 'uuid',
                     type: 'string',
                   },
                   user_identity_ids: {
                     deprecated: true,
                     description:
                       'IDs of the [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session.',
-                    items: { type: 'string' },
+                    items: { format: 'uuid', type: 'string' },
                     maxItems: 1,
                     minItems: 1,
                     type: 'array',
@@ -36293,6 +36295,7 @@ export default {
             name: 'client_session_id',
             schema: {
               description: 'ID of the client session that you want to get.',
+              format: 'uuid',
               type: 'string',
             },
           },
@@ -36353,6 +36356,7 @@ export default {
                   client_session_id: {
                     description:
                       'ID of the client session that you want to get.',
+                    format: 'uuid',
                     type: 'string',
                   },
                   user_identifier_key: {
@@ -36439,13 +36443,14 @@ export default {
                   user_identity_id: {
                     description:
                       'ID of the [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session (or that are already associated with the existing client session).',
+                    format: 'uuid',
                     type: 'string',
                   },
                   user_identity_ids: {
                     deprecated: true,
                     description:
                       'IDs of the [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session.',
-                    items: { type: 'string' },
+                    items: { format: 'uuid', type: 'string' },
                     maxItems: 1,
                     minItems: 1,
                     type: 'array',
@@ -47916,7 +47921,11 @@ export default {
             in: 'query',
             name: 'customer_portal_id',
             required: true,
-            schema: { description: 'Customer portal ID.', type: 'string' },
+            schema: {
+              description: 'Customer portal ID.',
+              format: 'uuid',
+              type: 'string',
+            },
           },
         ],
         responses: {
@@ -48005,6 +48014,7 @@ export default {
                 properties: {
                   customer_portal_id: {
                     description: 'Customer portal ID.',
+                    format: 'uuid',
                     type: 'string',
                   },
                 },
@@ -48523,7 +48533,10 @@ export default {
                           acs_entrances: {
                             items: {
                               properties: {
-                                acs_entrance_id: { type: 'string' },
+                                acs_entrance_id: {
+                                  format: 'uuid',
+                                  type: 'string',
+                                },
                                 name: { type: 'string' },
                               },
                               required: ['acs_entrance_id', 'name'],
@@ -48534,7 +48547,7 @@ export default {
                           devices: {
                             items: {
                               properties: {
-                                device_id: { type: 'string' },
+                                device_id: { format: 'uuid', type: 'string' },
                                 device_type: {
                                   enum: ['lock', 'thermostat', 'sensor'],
                                   type: 'string',
@@ -48620,7 +48633,10 @@ export default {
                           acs_entrances: {
                             items: {
                               properties: {
-                                acs_entrance_id: { type: 'string' },
+                                acs_entrance_id: {
+                                  format: 'uuid',
+                                  type: 'string',
+                                },
                                 name: { type: 'string' },
                               },
                               required: ['acs_entrance_id', 'name'],
@@ -48631,7 +48647,7 @@ export default {
                           devices: {
                             items: {
                               properties: {
-                                device_id: { type: 'string' },
+                                device_id: { format: 'uuid', type: 'string' },
                                 device_type: {
                                   enum: ['lock', 'thermostat', 'sensor'],
                                   type: 'string',
