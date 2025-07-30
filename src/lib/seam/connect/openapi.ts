@@ -29212,6 +29212,10 @@ export default {
                           items: { $ref: '#/components/schemas/device' },
                           type: 'array',
                         },
+                        events: {
+                          items: { $ref: '#/components/schemas/event' },
+                          type: 'array',
+                        },
                         spaces: {
                           items: { $ref: '#/components/schemas/space' },
                           type: 'array',
@@ -29377,6 +29381,10 @@ export default {
                         },
                         devices: {
                           items: { $ref: '#/components/schemas/device' },
+                          type: 'array',
+                        },
+                        events: {
+                          items: { $ref: '#/components/schemas/event' },
                           type: 'array',
                         },
                         spaces: {
@@ -56663,6 +56671,10 @@ export default {
                           items: { $ref: '#/components/schemas/device' },
                           type: 'array',
                         },
+                        events: {
+                          items: { $ref: '#/components/schemas/event' },
+                          type: 'array',
+                        },
                         spaces: {
                           items: { $ref: '#/components/schemas/space' },
                           type: 'array',
@@ -56803,6 +56815,10 @@ export default {
                         },
                         devices: {
                           items: { $ref: '#/components/schemas/device' },
+                          type: 'array',
+                        },
+                        events: {
+                          items: { $ref: '#/components/schemas/event' },
                           type: 'array',
                         },
                         spaces: {
