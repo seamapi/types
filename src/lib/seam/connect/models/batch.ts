@@ -16,6 +16,7 @@ import { connected_account } from './connected-accounts/index.js'
 import { device } from './devices/index.js'
 import { unmanaged_device } from './devices/unmanaged-device.js'
 import { seam_event } from './events/seam-event.js'
+import { instant_key } from './instant-keys/instant-key.js'
 import { space } from './spaces/index.js'
 import { user_identity } from './user-identities/index.js'
 import { workspace } from './workspaces/index.js'
@@ -70,6 +71,7 @@ export const workspaces_batch = z
     access_methods: access_method.array().optional(),
     access_grants: access_grant.array().optional(),
     events: seam_event.array().optional(),
+    instant_keys: instant_key.array().optional(),
   })
   .describe('A batch of workspace resources.')
 
@@ -99,6 +101,7 @@ export const batch = z
     access_methods: access_method.array().optional(),
     access_grants: access_grant.array().optional(),
     events: seam_event.array().optional(),
+    instant_keys: instant_key.array().optional(),
   })
   .describe('A batch of workspace resources.')
 
