@@ -9187,6 +9187,7 @@ export default {
           },
         },
         required: [
+          'connected_account_id',
           'account_type_display_name',
           'errors',
           'warnings',

@@ -249,7 +249,6 @@ export const connected_account = z.object({
   connected_account_id: z
     .string()
     .uuid()
-    .optional()
     .describe('ID of the connected account.'),
   created_at: z
     .string()
