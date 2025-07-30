@@ -29216,6 +29216,10 @@ export default {
                           items: { $ref: '#/components/schemas/event' },
                           type: 'array',
                         },
+                        instant_keys: {
+                          items: { $ref: '#/components/schemas/instant_key' },
+                          type: 'array',
+                        },
                         spaces: {
                           items: { $ref: '#/components/schemas/space' },
                           type: 'array',
@@ -29385,6 +29389,10 @@ export default {
                         },
                         events: {
                           items: { $ref: '#/components/schemas/event' },
+                          type: 'array',
+                        },
+                        instant_keys: {
+                          items: { $ref: '#/components/schemas/instant_key' },
                           type: 'array',
                         },
                         spaces: {
@@ -56675,6 +56683,10 @@ export default {
                           items: { $ref: '#/components/schemas/event' },
                           type: 'array',
                         },
+                        instant_keys: {
+                          items: { $ref: '#/components/schemas/instant_key' },
+                          type: 'array',
+                        },
                         spaces: {
                           items: { $ref: '#/components/schemas/space' },
                           type: 'array',
@@ -56819,6 +56831,10 @@ export default {
                         },
                         events: {
                           items: { $ref: '#/components/schemas/event' },
+                          type: 'array',
+                        },
+                        instant_keys: {
+                          items: { $ref: '#/components/schemas/instant_key' },
                           type: 'array',
                         },
                         spaces: {
