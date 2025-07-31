@@ -39,24 +39,24 @@ export const instant_key = z.object({
     .describe(
       'ID of the customization profile associated with the Instant Key.',
     ),
-  customization_profile: z
+  customization: z
     .object({
       primary_color: z
         .string()
         .optional()
-        .describe('Primary color of the customization profile.'),
+        .describe('Primary color used in the Instant Key UI.'),
       secondary_color: z
         .string()
         .optional()
-        .describe('Secondary color of the customization profile.'),
+        .describe('Secondary color used in the Instant Key UI.'),
       logo_url: z
         .string()
         .url()
         .optional()
-        .describe('URL of the logo associated with the customization profile.'),
+        .describe('URL of the logo displayed on the Instant Key.'),
     })
     .optional()
-    .describe('Customization profile associated with the Instant Key.'),
+    .describe('Customization applied to the Instant Key UI.'),
 }).describe(`
   ---
   route_path: /instant_keys
