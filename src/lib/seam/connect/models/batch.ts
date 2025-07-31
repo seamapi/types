@@ -6,6 +6,10 @@ import {
   acs_access_group,
   unmanaged_acs_access_group,
 } from './acs/acs-access-group.js'
+import {
+  acs_credential,
+  unmanaged_acs_credential,
+} from './acs/acs-credential.js'
 import { acs_encoder } from './acs/acs-encoder.js'
 import { acs_user, unmanaged_acs_user } from './acs/acs-users/acs-user.js'
 import { acs_entrance, acs_system } from './acs/index.js'
@@ -61,6 +65,8 @@ export const workspaces_batch = z
     acs_users: acs_user.array().optional(),
     acs_access_groups: acs_access_group.array().optional(),
     acs_encoders: acs_encoder.array().optional(),
+    acs_credentials: acs_credential.array().optional(),
+    unmanaged_acs_credentials: unmanaged_acs_credential.array().optional(),
     action_attempts: action_attempt.array().optional(),
     client_sessions: client_session.array().optional(),
     unmanaged_acs_users: unmanaged_acs_user.array().optional(),
@@ -92,6 +98,8 @@ export const batch = z
     acs_users: acs_user.array().optional(),
     acs_access_groups: acs_access_group.array().optional(),
     acs_encoders: acs_encoder.array().optional(),
+    acs_credentials: acs_credential.array().optional(),
+    unmanaged_acs_credentials: unmanaged_acs_credential.array().optional(),
     action_attempts: action_attempt.array().optional(),
     client_sessions: client_session.array().optional(),
     unmanaged_acs_users: unmanaged_acs_user.array().optional(),
