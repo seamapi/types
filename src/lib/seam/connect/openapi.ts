@@ -19043,22 +19043,20 @@ export default {
             format: 'date-time',
             type: 'string',
           },
-          customization_profile: {
-            description:
-              'Customization profile associated with the Instant Key.',
+          customization: {
+            description: 'Customization applied to the Instant Key UI.',
             properties: {
               logo_url: {
-                description:
-                  'URL of the logo associated with the customization profile.',
+                description: 'URL of the logo displayed on the Instant Key.',
                 format: 'uri',
                 type: 'string',
               },
               primary_color: {
-                description: 'Primary color of the customization profile.',
+                description: 'Primary color used in the Instant Key UI.',
                 type: 'string',
               },
               secondary_color: {
-                description: 'Secondary color of the customization profile.',
+                description: 'Secondary color used in the Instant Key UI.',
                 type: 'string',
               },
             },
