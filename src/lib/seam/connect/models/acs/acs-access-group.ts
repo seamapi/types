@@ -8,6 +8,7 @@ export const acs_access_group_external_type = z.enum([
   'brivo_group',
   'salto_space_group',
   'dormakaba_community_access_group',
+  'dormakaba_ambiance_access_group',
 ])
 
 export type AcsAccessGroupExternalType = z.infer<
