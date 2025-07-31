@@ -29165,6 +29165,12 @@ export default {
                           },
                           type: 'array',
                         },
+                        acs_credentials: {
+                          items: {
+                            $ref: '#/components/schemas/acs_credential',
+                          },
+                          type: 'array',
+                        },
                         acs_encoders: {
                           items: { $ref: '#/components/schemas/acs_encoder' },
                           type: 'array',
@@ -29227,6 +29233,12 @@ export default {
                         unmanaged_acs_access_groups: {
                           items: {
                             $ref: '#/components/schemas/unmanaged_acs_access_group',
+                          },
+                          type: 'array',
+                        },
+                        unmanaged_acs_credentials: {
+                          items: {
+                            $ref: '#/components/schemas/unmanaged_acs_credential',
                           },
                           type: 'array',
                         },
@@ -29340,6 +29352,12 @@ export default {
                           },
                           type: 'array',
                         },
+                        acs_credentials: {
+                          items: {
+                            $ref: '#/components/schemas/acs_credential',
+                          },
+                          type: 'array',
+                        },
                         acs_encoders: {
                           items: { $ref: '#/components/schemas/acs_encoder' },
                           type: 'array',
@@ -29402,6 +29420,12 @@ export default {
                         unmanaged_acs_access_groups: {
                           items: {
                             $ref: '#/components/schemas/unmanaged_acs_access_group',
+                          },
+                          type: 'array',
+                        },
+                        unmanaged_acs_credentials: {
+                          items: {
+                            $ref: '#/components/schemas/unmanaged_acs_credential',
                           },
                           type: 'array',
                         },
@@ -56632,6 +56656,12 @@ export default {
                           },
                           type: 'array',
                         },
+                        acs_credentials: {
+                          items: {
+                            $ref: '#/components/schemas/acs_credential',
+                          },
+                          type: 'array',
+                        },
                         acs_encoders: {
                           items: { $ref: '#/components/schemas/acs_encoder' },
                           type: 'array',
@@ -56694,6 +56724,12 @@ export default {
                         unmanaged_acs_access_groups: {
                           items: {
                             $ref: '#/components/schemas/unmanaged_acs_access_group',
+                          },
+                          type: 'array',
+                        },
+                        unmanaged_acs_credentials: {
+                          items: {
+                            $ref: '#/components/schemas/unmanaged_acs_credential',
                           },
                           type: 'array',
                         },
@@ -56782,6 +56818,12 @@ export default {
                           },
                           type: 'array',
                         },
+                        acs_credentials: {
+                          items: {
+                            $ref: '#/components/schemas/acs_credential',
+                          },
+                          type: 'array',
+                        },
                         acs_encoders: {
                           items: { $ref: '#/components/schemas/acs_encoder' },
                           type: 'array',
@@ -56844,6 +56886,12 @@ export default {
                         unmanaged_acs_access_groups: {
                           items: {
                             $ref: '#/components/schemas/unmanaged_acs_access_group',
+                          },
+                          type: 'array',
+                        },
+                        unmanaged_acs_credentials: {
+                          items: {
+                            $ref: '#/components/schemas/unmanaged_acs_credential',
                           },
                           type: 'array',
                         },
