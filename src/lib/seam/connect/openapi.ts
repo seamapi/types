@@ -28299,6 +28299,7 @@ export default {
                   'connected_accounts',
                   'acs_systems',
                   'user_identity',
+                  'acs_access_groups',
                 ],
                 type: 'string',
               },
@@ -28318,6 +28319,7 @@ export default {
                   'connected_accounts',
                   'acs_systems',
                   'user_identity',
+                  'acs_access_groups',
                 ],
                 type: 'string',
               },
@@ -28333,6 +28335,12 @@ export default {
                   properties: {
                     batch: {
                       properties: {
+                        acs_access_groups: {
+                          items: {
+                            $ref: '#/components/schemas/acs_access_group',
+                          },
+                          type: 'array',
+                        },
                         acs_entrances: {
                           items: { $ref: '#/components/schemas/acs_entrance' },
                           type: 'array',
@@ -28415,6 +28423,7 @@ export default {
                         'connected_accounts',
                         'acs_systems',
                         'user_identity',
+                        'acs_access_groups',
                       ],
                       type: 'string',
                     },
@@ -28429,6 +28438,7 @@ export default {
                         'connected_accounts',
                         'acs_systems',
                         'user_identity',
+                        'acs_access_groups',
                       ],
                       type: 'string',
                     },
@@ -28449,6 +28459,12 @@ export default {
                   properties: {
                     batch: {
                       properties: {
+                        acs_access_groups: {
+                          items: {
+                            $ref: '#/components/schemas/acs_access_group',
+                          },
+                          type: 'array',
+                        },
                         acs_entrances: {
                           items: { $ref: '#/components/schemas/acs_entrance' },
                           type: 'array',

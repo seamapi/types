@@ -44,6 +44,7 @@ export const access_grants_batch = z.object({
   user_identities: user_identity.array().optional(),
   connected_accounts: connected_account.array().optional(),
   acs_systems: acs_system.array().optional(),
+  acs_access_groups: acs_access_group.array().optional(),
 })
 
 export const access_methods_batch = z.object({
