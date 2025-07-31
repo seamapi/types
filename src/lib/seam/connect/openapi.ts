@@ -29194,6 +29194,10 @@ export default {
                     batch: {
                       description: 'A batch of workspace resources.',
                       properties: {
+                        access_codes: {
+                          items: { $ref: '#/components/schemas/access_code' },
+                          type: 'array',
+                        },
                         access_grants: {
                           items: { $ref: '#/components/schemas/access_grant' },
                           type: 'array',
@@ -29271,6 +29275,12 @@ export default {
                         },
                         spaces: {
                           items: { $ref: '#/components/schemas/space' },
+                          type: 'array',
+                        },
+                        unmanaged_access_codes: {
+                          items: {
+                            $ref: '#/components/schemas/unmanaged_access_code',
+                          },
                           type: 'array',
                         },
                         unmanaged_acs_access_groups: {
@@ -29381,6 +29391,10 @@ export default {
                     batch: {
                       description: 'A batch of workspace resources.',
                       properties: {
+                        access_codes: {
+                          items: { $ref: '#/components/schemas/access_code' },
+                          type: 'array',
+                        },
                         access_grants: {
                           items: { $ref: '#/components/schemas/access_grant' },
                           type: 'array',
@@ -29458,6 +29472,12 @@ export default {
                         },
                         spaces: {
                           items: { $ref: '#/components/schemas/space' },
+                          type: 'array',
+                        },
+                        unmanaged_access_codes: {
+                          items: {
+                            $ref: '#/components/schemas/unmanaged_access_code',
+                          },
                           type: 'array',
                         },
                         unmanaged_acs_access_groups: {
@@ -56686,6 +56706,10 @@ export default {
                     batch: {
                       description: 'A batch of workspace resources.',
                       properties: {
+                        access_codes: {
+                          items: { $ref: '#/components/schemas/access_code' },
+                          type: 'array',
+                        },
                         access_grants: {
                           items: { $ref: '#/components/schemas/access_grant' },
                           type: 'array',
@@ -56763,6 +56787,12 @@ export default {
                         },
                         spaces: {
                           items: { $ref: '#/components/schemas/space' },
+                          type: 'array',
+                        },
+                        unmanaged_access_codes: {
+                          items: {
+                            $ref: '#/components/schemas/unmanaged_access_code',
+                          },
                           type: 'array',
                         },
                         unmanaged_acs_access_groups: {
@@ -56848,6 +56878,10 @@ export default {
                     batch: {
                       description: 'A batch of workspace resources.',
                       properties: {
+                        access_codes: {
+                          items: { $ref: '#/components/schemas/access_code' },
+                          type: 'array',
+                        },
                         access_grants: {
                           items: { $ref: '#/components/schemas/access_grant' },
                           type: 'array',
@@ -56925,6 +56959,12 @@ export default {
                         },
                         spaces: {
                           items: { $ref: '#/components/schemas/space' },
+                          type: 'array',
+                        },
+                        unmanaged_access_codes: {
+                          items: {
+                            $ref: '#/components/schemas/unmanaged_access_code',
+                          },
                           type: 'array',
                         },
                         unmanaged_acs_access_groups: {
