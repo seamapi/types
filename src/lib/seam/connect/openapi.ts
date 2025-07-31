@@ -56637,10 +56637,10 @@ export default {
           'Internal form-data endpoint for Console and Customer Portal.',
       },
     },
-    '/workspaces/find_resources': {
+    '/workspaces/find_anything': {
       get: {
         description: 'Search for resources inside a workspace.',
-        operationId: 'workspacesFindResourcesGet',
+        operationId: 'workspacesFindAnythingGet',
         parameters: [
           {
             in: 'query',
@@ -56790,11 +56790,11 @@ export default {
           { console_session_with_workspace: [] },
           { api_key: [] },
         ],
-        summary: '/workspaces/find_resources',
+        summary: '/workspaces/find_anything',
         tags: ['/workspaces'],
         'x-batch-type': 'workspaces',
         'x-fern-sdk-group-name': ['workspaces'],
-        'x-fern-sdk-method-name': 'find_resources',
+        'x-fern-sdk-method-name': 'find_anything',
         'x-fern-sdk-return-value': 'batch',
         'x-response-key': 'batch',
         'x-title': 'Find Resources',
@@ -56802,7 +56802,7 @@ export default {
       },
       post: {
         description: 'Search for resources inside a workspace.',
-        operationId: 'workspacesFindResourcesPost',
+        operationId: 'workspacesFindAnythingPost',
         parameters: [
           {
             in: 'query',
@@ -56952,11 +56952,11 @@ export default {
           { console_session_with_workspace: [] },
           { api_key: [] },
         ],
-        summary: '/workspaces/find_resources',
+        summary: '/workspaces/find_anything',
         tags: ['/workspaces'],
         'x-batch-type': 'workspaces',
         'x-fern-sdk-group-name': ['workspaces'],
-        'x-fern-sdk-method-name': 'find_resources',
+        'x-fern-sdk-method-name': 'find_anything',
         'x-fern-sdk-return-value': 'batch',
         'x-response-key': 'batch',
         'x-title': 'Find Resources',
