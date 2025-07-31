@@ -32,6 +32,31 @@ export const instant_key = z.object({
     .string()
     .datetime()
     .describe('Date and time at which the Instant Key expires.'),
+  customization_profile_id: z
+    .string()
+    .uuid()
+    .optional()
+    .describe(
+      'ID of the customization profile associated with the Instant Key.',
+    ),
+  customization_profile: z
+    .object({
+      primary_color: z
+        .string()
+        .optional()
+        .describe('Primary color of the customization profile.'),
+      secondary_color: z
+        .string()
+        .optional()
+        .describe('Secondary color of the customization profile.'),
+      logo_url: z
+        .string()
+        .url()
+        .optional()
+        .describe('URL of the logo associated with the customization profile.'),
+    })
+    .optional()
+    .describe('Customization profile associated with the Instant Key.'),
 }).describe(`
   ---
   route_path: /instant_keys

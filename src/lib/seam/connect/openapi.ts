@@ -19041,6 +19041,33 @@ export default {
             format: 'date-time',
             type: 'string',
           },
+          customization_profile: {
+            description:
+              'Customization profile associated with the Instant Key.',
+            properties: {
+              logo_url: {
+                description:
+                  'URL of the logo associated with the customization profile.',
+                format: 'uri',
+                type: 'string',
+              },
+              primary_color: {
+                description: 'Primary color of the customization profile.',
+                type: 'string',
+              },
+              secondary_color: {
+                description: 'Secondary color of the customization profile.',
+                type: 'string',
+              },
+            },
+            type: 'object',
+          },
+          customization_profile_id: {
+            description:
+              'ID of the customization profile associated with the Instant Key.',
+            format: 'uuid',
+            type: 'string',
+          },
           expires_at: {
             description: 'Date and time at which the Instant Key expires.',
             format: 'date-time',
@@ -54452,6 +54479,7 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  customization_profile_id: { format: 'uuid', type: 'string' },
                   max_use_count: {
                     default: 1,
                     description:
