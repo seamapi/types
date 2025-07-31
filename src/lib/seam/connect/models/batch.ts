@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+import { access_code, unmanaged_access_code } from './access-codes/index.js'
 import { access_grant } from './access-grants/access-grant.js'
 import { access_method } from './access-grants/access-method.js'
 import {
@@ -79,6 +80,8 @@ export const workspaces_batch = z
     access_grants: access_grant.array().optional(),
     events: seam_event.array().optional(),
     instant_keys: instant_key.array().optional(),
+    access_codes: access_code.array().optional(),
+    unmanaged_access_codes: unmanaged_access_code.array().optional(),
   })
   .describe('A batch of workspace resources.')
 
@@ -111,6 +114,8 @@ export const batch = z
     access_grants: access_grant.array().optional(),
     events: seam_event.array().optional(),
     instant_keys: instant_key.array().optional(),
+    access_codes: access_code.array().optional(),
+    unmanaged_access_codes: unmanaged_access_code.array().optional(),
   })
   .describe('A batch of workspace resources.')
 
