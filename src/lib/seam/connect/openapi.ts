@@ -33333,6 +33333,27 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 900,
+              description: 'Maximum number of records to return per page.',
+              exclusiveMinimum: true,
+              minimum: 0,
+              type: 'integer',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              nullable: true,
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -33345,8 +33366,9 @@ export default {
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                   },
-                  required: ['acs_entrances', 'ok'],
+                  required: ['acs_entrances', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
@@ -33416,12 +33438,26 @@ export default {
                     format: 'uuid',
                     type: 'string',
                   },
+                  limit: {
+                    default: 900,
+                    description:
+                      'Maximum number of records to return per page.',
+                    exclusiveMinimum: true,
+                    minimum: 0,
+                    type: 'integer',
+                  },
                   location_id: {
                     deprecated: true,
                     format: 'uuid',
                     nullable: true,
                     type: 'string',
                     'x-deprecated': 'Use `space_id`.',
+                  },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    nullable: true,
+                    type: 'string',
                   },
                   search: {
                     description:
@@ -33452,8 +33488,9 @@ export default {
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                   },
-                  required: ['acs_entrances', 'ok'],
+                  required: ['acs_entrances', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
