@@ -56863,14 +56863,17 @@ export default {
       post: {
         description: 'Search for resources inside a workspace.',
         operationId: 'workspacesFindAnythingPost',
-        parameters: [
-          {
-            in: 'query',
-            name: 'search',
-            required: true,
-            schema: { format: 'uuid', type: 'string' },
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { search: { format: 'uuid', type: 'string' } },
+                required: ['search'],
+                type: 'object',
+              },
+            },
           },
-        ],
+        },
         responses: {
           200: {
             content: {
