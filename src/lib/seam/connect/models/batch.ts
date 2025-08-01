@@ -23,6 +23,10 @@ import { unmanaged_device } from './devices/unmanaged-device.js'
 import { seam_event } from './events/seam-event.js'
 import { instant_key } from './instant-keys/instant-key.js'
 import { space } from './spaces/index.js'
+import {
+  thermostat_daily_program,
+  thermostat_schedule,
+} from './thermostats/index.js'
 import { user_identity } from './user-identities/index.js'
 import { workspace } from './workspaces/index.js'
 
@@ -82,6 +86,8 @@ export const workspaces_batch = z
     instant_keys: instant_key.array().optional(),
     access_codes: access_code.array().optional(),
     unmanaged_access_codes: unmanaged_access_code.array().optional(),
+    thermostat_daily_programs: thermostat_daily_program.array().optional(),
+    thermostat_schedules: thermostat_schedule.array().optional(),
   })
   .describe('A batch of workspace resources.')
 
@@ -116,6 +122,8 @@ export const batch = z
     instant_keys: instant_key.array().optional(),
     access_codes: access_code.array().optional(),
     unmanaged_access_codes: unmanaged_access_code.array().optional(),
+    thermostat_daily_programs: thermostat_daily_program.array().optional(),
+    thermostat_schedules: thermostat_schedule.array().optional(),
   })
   .describe('A batch of workspace resources.')
 

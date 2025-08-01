@@ -29279,6 +29279,18 @@ export default {
                           items: { $ref: '#/components/schemas/space' },
                           type: 'array',
                         },
+                        thermostat_daily_programs: {
+                          items: {
+                            $ref: '#/components/schemas/thermostat_daily_program',
+                          },
+                          type: 'array',
+                        },
+                        thermostat_schedules: {
+                          items: {
+                            $ref: '#/components/schemas/thermostat_schedule',
+                          },
+                          type: 'array',
+                        },
                         unmanaged_access_codes: {
                           items: {
                             $ref: '#/components/schemas/unmanaged_access_code',
@@ -29474,6 +29486,18 @@ export default {
                         },
                         spaces: {
                           items: { $ref: '#/components/schemas/space' },
+                          type: 'array',
+                        },
+                        thermostat_daily_programs: {
+                          items: {
+                            $ref: '#/components/schemas/thermostat_daily_program',
+                          },
+                          type: 'array',
+                        },
+                        thermostat_schedules: {
+                          items: {
+                            $ref: '#/components/schemas/thermostat_schedule',
+                          },
                           type: 'array',
                         },
                         unmanaged_access_codes: {
@@ -56791,6 +56815,18 @@ export default {
                           items: { $ref: '#/components/schemas/space' },
                           type: 'array',
                         },
+                        thermostat_daily_programs: {
+                          items: {
+                            $ref: '#/components/schemas/thermostat_daily_program',
+                          },
+                          type: 'array',
+                        },
+                        thermostat_schedules: {
+                          items: {
+                            $ref: '#/components/schemas/thermostat_schedule',
+                          },
+                          type: 'array',
+                        },
                         unmanaged_access_codes: {
                           items: {
                             $ref: '#/components/schemas/unmanaged_access_code',
@@ -56964,6 +57000,18 @@ export default {
                         },
                         spaces: {
                           items: { $ref: '#/components/schemas/space' },
+                          type: 'array',
+                        },
+                        thermostat_daily_programs: {
+                          items: {
+                            $ref: '#/components/schemas/thermostat_daily_program',
+                          },
+                          type: 'array',
+                        },
+                        thermostat_schedules: {
+                          items: {
+                            $ref: '#/components/schemas/thermostat_schedule',
+                          },
                           type: 'array',
                         },
                         unmanaged_access_codes: {
