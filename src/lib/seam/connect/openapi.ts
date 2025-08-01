@@ -9200,6 +9200,28 @@ export default {
         type: 'object',
         'x-route-path': '/connected_accounts',
       },
+      customization_profile: {
+        description: 'A customization profile.',
+        properties: {
+          created_at: { format: 'date-time', type: 'string' },
+          customization_profile_id: { format: 'uuid', type: 'string' },
+          logo_url: { format: 'uri', type: 'string' },
+          name: { nullable: true, type: 'string' },
+          primary_color: { type: 'string' },
+          secondary_color: { type: 'string' },
+          workspace_id: { format: 'uuid', type: 'string' },
+        },
+        required: [
+          'workspace_id',
+          'name',
+          'customization_profile_id',
+          'created_at',
+        ],
+        type: 'object',
+        'x-route-path': '/workspaces/customization_profiles',
+        'x-title': 'Customization Profile',
+        'x-undocumented': 'Unreleased.',
+      },
       device: {
         description:
           'Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that has been connected to Seam.',
@@ -56343,29 +56365,7 @@ export default {
                 schema: {
                   properties: {
                     customization_profile: {
-                      description: 'A customization profile.',
-                      properties: {
-                        created_at: { format: 'date-time', type: 'string' },
-                        customization_profile_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        logo_url: { format: 'uri', type: 'string' },
-                        name: { nullable: true, type: 'string' },
-                        primary_color: { type: 'string' },
-                        secondary_color: { type: 'string' },
-                        workspace_id: { format: 'uuid', type: 'string' },
-                      },
-                      required: [
-                        'workspace_id',
-                        'name',
-                        'customization_profile_id',
-                        'created_at',
-                      ],
-                      type: 'object',
-                      'x-route-path': '/workspaces/customization_profiles',
-                      'x-title': 'Customization Profile',
-                      'x-undocumented': 'Unreleased.',
+                      $ref: '#/components/schemas/customization_profile',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -56414,29 +56414,7 @@ export default {
                 schema: {
                   properties: {
                     customization_profile: {
-                      description: 'A customization profile.',
-                      properties: {
-                        created_at: { format: 'date-time', type: 'string' },
-                        customization_profile_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        logo_url: { format: 'uri', type: 'string' },
-                        name: { nullable: true, type: 'string' },
-                        primary_color: { type: 'string' },
-                        secondary_color: { type: 'string' },
-                        workspace_id: { format: 'uuid', type: 'string' },
-                      },
-                      required: [
-                        'workspace_id',
-                        'name',
-                        'customization_profile_id',
-                        'created_at',
-                      ],
-                      type: 'object',
-                      'x-route-path': '/workspaces/customization_profiles',
-                      'x-title': 'Customization Profile',
-                      'x-undocumented': 'Unreleased.',
+                      $ref: '#/components/schemas/customization_profile',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -56488,29 +56466,7 @@ export default {
                 schema: {
                   properties: {
                     customization_profile: {
-                      description: 'A customization profile.',
-                      properties: {
-                        created_at: { format: 'date-time', type: 'string' },
-                        customization_profile_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        logo_url: { format: 'uri', type: 'string' },
-                        name: { nullable: true, type: 'string' },
-                        primary_color: { type: 'string' },
-                        secondary_color: { type: 'string' },
-                        workspace_id: { format: 'uuid', type: 'string' },
-                      },
-                      required: [
-                        'workspace_id',
-                        'name',
-                        'customization_profile_id',
-                        'created_at',
-                      ],
-                      type: 'object',
-                      'x-route-path': '/workspaces/customization_profiles',
-                      'x-title': 'Customization Profile',
-                      'x-undocumented': 'Unreleased.',
+                      $ref: '#/components/schemas/customization_profile',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -56552,29 +56508,7 @@ export default {
                   properties: {
                     customization_profiles: {
                       items: {
-                        description: 'A customization profile.',
-                        properties: {
-                          created_at: { format: 'date-time', type: 'string' },
-                          customization_profile_id: {
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          logo_url: { format: 'uri', type: 'string' },
-                          name: { nullable: true, type: 'string' },
-                          primary_color: { type: 'string' },
-                          secondary_color: { type: 'string' },
-                          workspace_id: { format: 'uuid', type: 'string' },
-                        },
-                        required: [
-                          'workspace_id',
-                          'name',
-                          'customization_profile_id',
-                          'created_at',
-                        ],
-                        type: 'object',
-                        'x-route-path': '/workspaces/customization_profiles',
-                        'x-title': 'Customization Profile',
-                        'x-undocumented': 'Unreleased.',
+                        $ref: '#/components/schemas/customization_profile',
                       },
                       type: 'array',
                     },
@@ -56616,29 +56550,7 @@ export default {
                   properties: {
                     customization_profiles: {
                       items: {
-                        description: 'A customization profile.',
-                        properties: {
-                          created_at: { format: 'date-time', type: 'string' },
-                          customization_profile_id: {
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          logo_url: { format: 'uri', type: 'string' },
-                          name: { nullable: true, type: 'string' },
-                          primary_color: { type: 'string' },
-                          secondary_color: { type: 'string' },
-                          workspace_id: { format: 'uuid', type: 'string' },
-                        },
-                        required: [
-                          'workspace_id',
-                          'name',
-                          'customization_profile_id',
-                          'created_at',
-                        ],
-                        type: 'object',
-                        'x-route-path': '/workspaces/customization_profiles',
-                        'x-title': 'Customization Profile',
-                        'x-undocumented': 'Unreleased.',
+                        $ref: '#/components/schemas/customization_profile',
                       },
                       type: 'array',
                     },
