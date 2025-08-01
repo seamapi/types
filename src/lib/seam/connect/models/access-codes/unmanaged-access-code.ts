@@ -4,6 +4,7 @@ import { access_code } from './managed-access-code.js'
 
 export const unmanaged_access_code = access_code
   .pick({
+    workspace_id: true,
     type: true,
     access_code_id: true,
     device_id: true,

@@ -495,6 +495,12 @@ const _access_code_warning_map = z.object({
 export type AccessCodeWarningMap = z.infer<typeof _access_code_warning_map>
 
 export const access_code = z.object({
+  workspace_id: z
+    .string()
+    .uuid()
+    .describe(
+      'Unique identifier for the Seam workspace associated with the access code.',
+    ),
   common_code_key: z
     .string()
     .nullable()

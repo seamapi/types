@@ -1792,8 +1792,15 @@ export default {
               thermostats: { name: 'Thermostats' },
             },
           },
+          workspace_id: {
+            description:
+              'Unique identifier for the Seam workspace associated with the access code.',
+            format: 'uuid',
+            type: 'string',
+          },
         },
         required: [
+          'workspace_id',
           'common_code_key',
           'type',
           'access_code_id',
@@ -22266,8 +22273,15 @@ export default {
               thermostats: { name: 'Thermostats' },
             },
           },
+          workspace_id: {
+            description:
+              'Unique identifier for the Seam workspace associated with the access code.',
+            format: 'uuid',
+            type: 'string',
+          },
         },
         required: [
+          'workspace_id',
           'type',
           'access_code_id',
           'device_id',
