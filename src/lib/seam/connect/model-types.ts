@@ -20,6 +20,7 @@ export type {
   ConnectedAccountError,
   ConnectedAccountWarning,
   ConnectWebview,
+  CustomizationProfile,
   CustomMetadata,
   Device,
   DeviceError,

@@ -18,6 +18,7 @@ import { action_attempt } from './action-attempts/action-attempt.js'
 import { client_session } from './client-sessions/client-session.js'
 import { connect_webview } from './connect-webviews/connect-webview.js'
 import { connected_account } from './connected-accounts/index.js'
+import { customization_profile } from './customization-profiles/index.js'
 import { device } from './devices/index.js'
 import { unmanaged_device } from './devices/unmanaged-device.js'
 import { seam_event } from './events/seam-event.js'
@@ -90,6 +91,7 @@ export const workspaces_batch = z
     thermostat_daily_programs: thermostat_daily_program.array().optional(),
     thermostat_schedules: thermostat_schedule.array().optional(),
     noise_thresholds: noise_threshold.array().optional(),
+    customization_profiles: customization_profile.array().optional(),
   })
   .describe('A batch of workspace resources.')
 
@@ -127,6 +129,7 @@ export const batch = z
     thermostat_daily_programs: thermostat_daily_program.array().optional(),
     thermostat_schedules: thermostat_schedule.array().optional(),
     noise_thresholds: noise_threshold.array().optional(),
+    customization_profiles: customization_profile.array().optional(),
   })
   .describe('A batch of workspace resources.')
 

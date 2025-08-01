@@ -29291,6 +29291,12 @@ export default {
                           },
                           type: 'array',
                         },
+                        customization_profiles: {
+                          items: {
+                            $ref: '#/components/schemas/customization_profile',
+                          },
+                          type: 'array',
+                        },
                         devices: {
                           items: { $ref: '#/components/schemas/device' },
                           type: 'array',
@@ -29503,6 +29509,12 @@ export default {
                         connect_webviews: {
                           items: {
                             $ref: '#/components/schemas/connect_webview',
+                          },
+                          type: 'array',
+                        },
+                        customization_profiles: {
+                          items: {
+                            $ref: '#/components/schemas/customization_profile',
                           },
                           type: 'array',
                         },
@@ -56806,6 +56818,12 @@ export default {
                           },
                           type: 'array',
                         },
+                        customization_profiles: {
+                          items: {
+                            $ref: '#/components/schemas/customization_profile',
+                          },
+                          type: 'array',
+                        },
                         devices: {
                           items: { $ref: '#/components/schemas/device' },
                           type: 'array',
@@ -56996,6 +57014,12 @@ export default {
                         connect_webviews: {
                           items: {
                             $ref: '#/components/schemas/connect_webview',
+                          },
+                          type: 'array',
+                        },
+                        customization_profiles: {
+                          items: {
+                            $ref: '#/components/schemas/customization_profile',
                           },
                           type: 'array',
                         },
