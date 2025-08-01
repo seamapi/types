@@ -29281,6 +29281,12 @@ export default {
                           items: { $ref: '#/components/schemas/instant_key' },
                           type: 'array',
                         },
+                        noise_thresholds: {
+                          items: {
+                            $ref: '#/components/schemas/noise_threshold',
+                          },
+                          type: 'array',
+                        },
                         spaces: {
                           items: { $ref: '#/components/schemas/space' },
                           type: 'array',
@@ -29488,6 +29494,12 @@ export default {
                         },
                         instant_keys: {
                           items: { $ref: '#/components/schemas/instant_key' },
+                          type: 'array',
+                        },
+                        noise_thresholds: {
+                          items: {
+                            $ref: '#/components/schemas/noise_threshold',
+                          },
                           type: 'array',
                         },
                         spaces: {
@@ -56894,6 +56906,12 @@ export default {
                           items: { $ref: '#/components/schemas/instant_key' },
                           type: 'array',
                         },
+                        noise_thresholds: {
+                          items: {
+                            $ref: '#/components/schemas/noise_threshold',
+                          },
+                          type: 'array',
+                        },
                         spaces: {
                           items: { $ref: '#/components/schemas/space' },
                           type: 'array',
@@ -57079,6 +57097,12 @@ export default {
                         },
                         instant_keys: {
                           items: { $ref: '#/components/schemas/instant_key' },
+                          type: 'array',
+                        },
+                        noise_thresholds: {
+                          items: {
+                            $ref: '#/components/schemas/noise_threshold',
+                          },
                           type: 'array',
                         },
                         spaces: {

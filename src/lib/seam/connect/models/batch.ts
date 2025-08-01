@@ -22,6 +22,7 @@ import { device } from './devices/index.js'
 import { unmanaged_device } from './devices/unmanaged-device.js'
 import { seam_event } from './events/seam-event.js'
 import { instant_key } from './instant-keys/instant-key.js'
+import { noise_threshold } from './noise-sensors/noise-threshold.js'
 import { space } from './spaces/index.js'
 import {
   thermostat_daily_program,
@@ -88,6 +89,7 @@ export const workspaces_batch = z
     unmanaged_access_codes: unmanaged_access_code.array().optional(),
     thermostat_daily_programs: thermostat_daily_program.array().optional(),
     thermostat_schedules: thermostat_schedule.array().optional(),
+    noise_thresholds: noise_threshold.array().optional(),
   })
   .describe('A batch of workspace resources.')
 
@@ -124,6 +126,7 @@ export const batch = z
     unmanaged_access_codes: unmanaged_access_code.array().optional(),
     thermostat_daily_programs: thermostat_daily_program.array().optional(),
     thermostat_schedules: thermostat_schedule.array().optional(),
+    noise_thresholds: noise_threshold.array().optional(),
   })
   .describe('A batch of workspace resources.')
 
