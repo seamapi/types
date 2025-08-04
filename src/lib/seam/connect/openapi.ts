@@ -49696,7 +49696,6 @@ export default {
           {
             in: 'query',
             name: 'space_ids',
-            required: true,
             schema: {
               description:
                 'IDs of the spaces that you want to get along with their related resources.',
@@ -49706,8 +49705,17 @@ export default {
           },
           {
             in: 'query',
+            name: 'space_keys',
+            schema: {
+              description:
+                'Keys of the spaces that you want to get along with their related resources.',
+              items: { type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
             name: 'include',
-            required: false,
             schema: {
               items: {
                 enum: [
@@ -49725,7 +49733,6 @@ export default {
           {
             in: 'query',
             name: 'exclude',
-            required: false,
             schema: {
               items: {
                 enum: [
@@ -49844,8 +49851,13 @@ export default {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
+                  space_keys: {
+                    description:
+                      'Keys of the spaces that you want to get along with their related resources.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
                 },
-                required: ['space_ids'],
                 type: 'object',
               },
             },
