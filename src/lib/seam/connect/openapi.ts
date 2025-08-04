@@ -38943,6 +38943,323 @@ export default {
         'x-title': 'Create Customer Portal',
       },
     },
+    '/customers/delete_data': {
+      delete: {
+        description:
+          'Deletes customer data including resources like spaces, properties, rooms, users, etc.\nThis will delete the partner resources and any related Seam resources (user identities, access grants, spaces).',
+        operationId: 'customersDeleteDataDelete',
+        parameters: [
+          {
+            in: 'query',
+            name: 'space_keys',
+            schema: {
+              description: 'List of space keys to delete.',
+              items: { type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'property_keys',
+            schema: {
+              description: 'List of property keys to delete.',
+              items: { type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'room_keys',
+            schema: {
+              description: 'List of room keys to delete.',
+              items: { type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'common_area_keys',
+            schema: {
+              description: 'List of common area keys to delete.',
+              items: { type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'unit_keys',
+            schema: {
+              description: 'List of unit keys to delete.',
+              items: { type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'facility_keys',
+            schema: {
+              description: 'List of facility keys to delete.',
+              items: { type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'building_keys',
+            schema: {
+              description: 'List of building keys to delete.',
+              items: { type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'listing_keys',
+            schema: {
+              description: 'List of listing keys to delete.',
+              items: { type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'property_listing_keys',
+            schema: {
+              description: 'List of property listing keys to delete.',
+              items: { type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'guest_keys',
+            schema: {
+              description: 'List of guest keys to delete.',
+              items: { type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'tenant_keys',
+            schema: {
+              description: 'List of tenant keys to delete.',
+              items: { type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'resident_keys',
+            schema: {
+              description: 'List of resident keys to delete.',
+              items: { type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_keys',
+            schema: {
+              description: 'List of user keys to delete.',
+              items: { type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identity_keys',
+            schema: {
+              description: 'List of user identity keys to delete.',
+              items: { type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'reservation_keys',
+            schema: {
+              description: 'List of reservation keys to delete.',
+              items: { type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'booking_keys',
+            schema: {
+              description: 'List of booking keys to delete.',
+              items: { type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'access_grant_keys',
+            schema: {
+              description: 'List of access grant keys to delete.',
+              items: { type: 'string' },
+              type: 'array',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/customers/delete_data',
+        tags: [],
+        'x-fern-sdk-group-name': ['customers'],
+        'x-fern-sdk-method-name': 'delete_data',
+        'x-response-key': null,
+        'x-title': 'Delete Customer Data',
+      },
+      post: {
+        description:
+          'Deletes customer data including resources like spaces, properties, rooms, users, etc.\nThis will delete the partner resources and any related Seam resources (user identities, access grants, spaces).',
+        operationId: 'customersDeleteDataPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_grant_keys: {
+                    description: 'List of access grant keys to delete.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                  booking_keys: {
+                    description: 'List of booking keys to delete.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                  building_keys: {
+                    description: 'List of building keys to delete.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                  common_area_keys: {
+                    description: 'List of common area keys to delete.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                  facility_keys: {
+                    description: 'List of facility keys to delete.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                  guest_keys: {
+                    description: 'List of guest keys to delete.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                  listing_keys: {
+                    description: 'List of listing keys to delete.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                  property_keys: {
+                    description: 'List of property keys to delete.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                  property_listing_keys: {
+                    description: 'List of property listing keys to delete.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                  reservation_keys: {
+                    description: 'List of reservation keys to delete.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                  resident_keys: {
+                    description: 'List of resident keys to delete.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                  room_keys: {
+                    description: 'List of room keys to delete.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                  space_keys: {
+                    description: 'List of space keys to delete.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                  tenant_keys: {
+                    description: 'List of tenant keys to delete.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                  unit_keys: {
+                    description: 'List of unit keys to delete.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                  user_identity_keys: {
+                    description: 'List of user identity keys to delete.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                  user_keys: {
+                    description: 'List of user keys to delete.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/customers/delete_data',
+        tags: [],
+        'x-fern-sdk-group-name': ['customers'],
+        'x-fern-sdk-method-name': 'delete_data',
+        'x-response-key': null,
+        'x-title': 'Delete Customer Data',
+      },
+    },
     '/customers/push_data': {
       post: {
         description:
