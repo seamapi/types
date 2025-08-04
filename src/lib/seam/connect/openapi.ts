@@ -57615,7 +57615,7 @@ export default {
         'x-fern-sdk-group-name': ['workspaces'],
         'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
-        'x-title': 'Udpate a Workspace',
+        'x-title': 'Update a Workspace',
       },
       post: {
         description:
@@ -57692,7 +57692,7 @@ export default {
         'x-fern-sdk-group-name': ['workspaces'],
         'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
-        'x-title': 'Udpate a Workspace',
+        'x-title': 'Update a Workspace',
       },
     },
   },
