@@ -608,6 +608,7 @@ export const common_device_properties = z.object({
       `
           ---
           property_group_key: access_codes
+          deprecated: use device.can_program_online_access_codes
           ---
           Indicates whether it is currently possible to use online access codes for the device.
           `,
@@ -619,6 +620,7 @@ export const common_device_properties = z.object({
       `
           ---
           property_group_key: access_codes
+          deprecated: use device.can_program_offline_access_codes
           ---
           Indicates whether it is currently possible to use offline access codes for the device.
           `,
