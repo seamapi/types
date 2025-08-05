@@ -1850,6 +1850,12 @@ export default {
             format: 'date-time',
             type: 'string',
           },
+          customization_profile_id: {
+            description:
+              'ID of the customization profile associated with the Access Grant.',
+            format: 'uuid',
+            type: 'string',
+          },
           display_name: {
             description: 'Display name of the Access Grant.',
             type: 'string',
@@ -1980,6 +1986,12 @@ export default {
             description:
               'Date and time at which the access method was created.',
             format: 'date-time',
+            type: 'string',
+          },
+          customization_profile_id: {
+            description:
+              'ID of the customization profile associated with the access method.',
+            format: 'uuid',
             type: 'string',
           },
           display_name: {
@@ -27894,6 +27906,12 @@ export default {
                         items: { format: 'uuid', type: 'string' },
                         type: 'array',
                       },
+                      customization_profile_id: {
+                        description:
+                          'ID of the customization profile to apply to the Access Grant and its access methods.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                       device_ids: {
                         default: [],
                         description:
@@ -37450,6 +37468,15 @@ export default {
         parameters: [
           {
             in: 'query',
+            name: 'customer_key',
+            schema: {
+              description:
+                'Customer key for which you want to list connect webviews.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'user_identifier_key',
             schema: {
               description:
@@ -37544,6 +37571,11 @@ export default {
                     description:
                       'Custom metadata pairs by which you want to [filter Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata). Returns Connect Webviews with `custom_metadata` that contains all of the provided key:value pairs.',
                     type: 'object',
+                  },
+                  customer_key: {
+                    description:
+                      'Customer key for which you want to list connect webviews.',
+                    type: 'string',
                   },
                   limit: {
                     default: 500,

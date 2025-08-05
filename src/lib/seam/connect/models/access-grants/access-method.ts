@@ -43,6 +43,13 @@ export const access_method = z.object({
     .string()
     .optional()
     .describe('The actual PIN code for code access methods.'),
+  customization_profile_id: z
+    .string()
+    .uuid()
+    .optional()
+    .describe(
+      'ID of the customization profile associated with the access method.',
+    ),
 }).describe(`
   ---
   draft: Early access.
