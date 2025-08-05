@@ -41234,7 +41234,7 @@ export default {
     '/devices/simulate/disconnect_from_hub': {
       post: {
         description:
-          'Simulates taking the Wi‑Fi hub (bridge) offline for a device.\nOnly applicable for sandbox workspaces and currently\nimplemented for August and TTLock locks.\nThis will set the corresponding `hub_disconnected` or\n`ttlock_lock_not_paired_to_gateway` error on the device.',
+          'Simulates taking the Wi‑Fi hub (bridge) offline for a device.\nOnly applicable for sandbox workspaces and currently\nimplemented for August, TTLock, and IglooHome devices.\nThis will set the corresponding `hub_disconnected` or\n`ttlock_lock_not_paired_to_gateway` error on the device, or mark the\nIglooHome bridge offline in sandbox.',
         operationId: 'devicesSimulateDisconnectFromHubPost',
         requestBody: {
           content: {
