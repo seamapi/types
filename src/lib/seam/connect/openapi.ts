@@ -33190,6 +33190,14 @@ export default {
         parameters: [
           {
             in: 'query',
+            name: 'customer_key',
+            schema: {
+              description: 'Customer key for which you want to list entrances.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'acs_system_id',
             schema: {
               description:
@@ -33382,6 +33390,11 @@ export default {
                     description:
                       'ID of the connected account for which you want to retrieve all entrances.',
                     format: 'uuid',
+                    type: 'string',
+                  },
+                  customer_key: {
+                    description:
+                      'Customer key for which you want to list entrances.',
                     type: 'string',
                   },
                   limit: {
@@ -33707,6 +33720,15 @@ export default {
         parameters: [
           {
             in: 'query',
+            name: 'customer_key',
+            schema: {
+              description:
+                'Customer key for which you want to list access systems.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'connected_account_id',
             schema: {
               description:
@@ -33765,6 +33787,11 @@ export default {
                     description:
                       'ID of the connected account by which you want to filter the list of access systems.',
                     format: 'uuid',
+                    type: 'string',
+                  },
+                  customer_key: {
+                    description:
+                      'Customer key for which you want to list access systems.',
                     type: 'string',
                   },
                 },
