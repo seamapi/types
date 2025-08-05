@@ -37450,6 +37450,15 @@ export default {
         parameters: [
           {
             in: 'query',
+            name: 'customer_key',
+            schema: {
+              description:
+                'Customer key for which you want to list connect webviews.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'user_identifier_key',
             schema: {
               description:
@@ -37544,6 +37553,11 @@ export default {
                     description:
                       'Custom metadata pairs by which you want to [filter Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata). Returns Connect Webviews with `custom_metadata` that contains all of the provided key:value pairs.',
                     type: 'object',
+                  },
+                  customer_key: {
+                    description:
+                      'Customer key for which you want to list connect webviews.',
+                    type: 'string',
                   },
                   limit: {
                     default: 500,
@@ -40216,6 +40230,14 @@ export default {
           },
           {
             in: 'query',
+            name: 'customer_key',
+            schema: {
+              description: 'Customer key for which you want to list devices.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'connected_account_id',
             schema: {
               description:
@@ -40674,6 +40696,11 @@ export default {
                   customer_ids: {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
+                  },
+                  customer_key: {
+                    description:
+                      'Customer key for which you want to list devices.',
+                    type: 'string',
                   },
                   device_ids: {
                     description:
@@ -41507,6 +41534,14 @@ export default {
           },
           {
             in: 'query',
+            name: 'customer_key',
+            schema: {
+              description: 'Customer key for which you want to list devices.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'connected_account_id',
             schema: {
               description:
@@ -41962,6 +41997,11 @@ export default {
                   customer_ids: {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
+                  },
+                  customer_key: {
+                    description:
+                      'Customer key for which you want to list devices.',
+                    type: 'string',
                   },
                   device_ids: {
                     description:
@@ -43864,6 +43904,14 @@ export default {
           },
           {
             in: 'query',
+            name: 'customer_key',
+            schema: {
+              description: 'Customer key for which you want to list devices.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'connected_account_id',
             schema: {
               description:
@@ -44258,6 +44306,11 @@ export default {
                   customer_ids: {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
+                  },
+                  customer_key: {
+                    description:
+                      'Customer key for which you want to list devices.',
+                    type: 'string',
                   },
                   device_ids: {
                     description:
@@ -44773,6 +44826,14 @@ export default {
           },
           {
             in: 'query',
+            name: 'customer_key',
+            schema: {
+              description: 'Customer key for which you want to list devices.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'connected_account_id',
             schema: {
               description:
@@ -45085,6 +45146,11 @@ export default {
                   customer_ids: {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
+                  },
+                  customer_key: {
+                    description:
+                      'Customer key for which you want to list devices.',
+                    type: 'string',
                   },
                   device_ids: {
                     description:
@@ -51550,6 +51616,14 @@ export default {
           },
           {
             in: 'query',
+            name: 'customer_key',
+            schema: {
+              description: 'Customer key for which you want to list devices.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'connected_account_id',
             schema: {
               description:
@@ -51883,6 +51957,11 @@ export default {
                   customer_ids: {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
+                  },
+                  customer_key: {
+                    description:
+                      'Customer key for which you want to list devices.',
+                    type: 'string',
                   },
                   device_ids: {
                     description:
