@@ -10162,9 +10162,12 @@ export default {
                             'x-property-group-key': 'noise_sensors',
                           },
                           offline_access_codes_enabled: {
+                            deprecated: true,
                             description:
                               'Indicates whether it is currently possible to use offline access codes for the device.',
                             type: 'boolean',
+                            'x-deprecated':
+                              'use device.can_program_offline_access_codes',
                             'x-property-group-key': 'access_codes',
                           },
                           online: {
@@ -10173,9 +10176,12 @@ export default {
                             type: 'boolean',
                           },
                           online_access_codes_enabled: {
+                            deprecated: true,
                             description:
                               'Indicates whether it is currently possible to use online access codes for the device.',
                             type: 'boolean',
+                            'x-deprecated':
+                              'use device.can_program_online_access_codes',
                             'x-property-group-key': 'access_codes',
                           },
                           serial_number: {
@@ -24411,9 +24417,11 @@ export default {
                 'x-deprecated': 'use device.display_name instead',
               },
               offline_access_codes_enabled: {
+                deprecated: true,
                 description:
                   'Indicates whether it is currently possible to use offline access codes for the device.',
                 type: 'boolean',
+                'x-deprecated': 'use device.can_program_offline_access_codes',
                 'x-property-group-key': 'access_codes',
               },
               online: {
@@ -24421,9 +24429,11 @@ export default {
                 type: 'boolean',
               },
               online_access_codes_enabled: {
+                deprecated: true,
                 description:
                   'Indicates whether it is currently possible to use online access codes for the device.',
                 type: 'boolean',
+                'x-deprecated': 'use device.can_program_online_access_codes',
                 'x-property-group-key': 'access_codes',
               },
             },
