@@ -1850,6 +1850,12 @@ export default {
             format: 'date-time',
             type: 'string',
           },
+          customization_profile_id: {
+            description:
+              'ID of the customization profile associated with the Access Grant.',
+            format: 'uuid',
+            type: 'string',
+          },
           display_name: {
             description: 'Display name of the Access Grant.',
             type: 'string',
@@ -1980,6 +1986,12 @@ export default {
             description:
               'Date and time at which the access method was created.',
             format: 'date-time',
+            type: 'string',
+          },
+          customization_profile_id: {
+            description:
+              'ID of the customization profile associated with the access method.',
+            format: 'uuid',
             type: 'string',
           },
           display_name: {
@@ -27893,6 +27905,12 @@ export default {
                           'Set of IDs of the [entrances](https://docs.seam.co/latest/api/acs/systems/list) to which access is being granted.',
                         items: { format: 'uuid', type: 'string' },
                         type: 'array',
+                      },
+                      customization_profile_id: {
+                        description:
+                          'ID of the customization profile to apply to the Access Grant and its access methods.',
+                        format: 'uuid',
+                        type: 'string',
                       },
                       device_ids: {
                         default: [],

@@ -63,6 +63,13 @@ export const access_grant = z.object({
     .datetime()
     .nullable()
     .describe('Date and time at which the Access Grant ends.'),
+  customization_profile_id: z
+    .string()
+    .uuid()
+    .optional()
+    .describe(
+      'ID of the customization profile associated with the Access Grant.',
+    ),
 }).describe(`
   ---
   draft: Early access.
