@@ -43584,10 +43584,18 @@ export default {
           {
             in: 'query',
             name: 'instant_key_id',
-            required: true,
             schema: {
               description: 'ID of the instant key to get.',
               format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'instant_key_url',
+            schema: {
+              description: 'URL of the instant key to get.',
+              format: 'uri',
               type: 'string',
             },
           },
@@ -43638,8 +43646,12 @@ export default {
                     format: 'uuid',
                     type: 'string',
                   },
+                  instant_key_url: {
+                    description: 'URL of the instant key to get.',
+                    format: 'uri',
+                    type: 'string',
+                  },
                 },
-                required: ['instant_key_id'],
                 type: 'object',
               },
             },
