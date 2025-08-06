@@ -47116,6 +47116,494 @@ export default {
         'x-undocumented': 'Internal endpoint for Console',
       },
     },
+    '/seam/console/v1/timelines/get': {
+      get: {
+        description:
+          'Returns timeline entries for a resource and its child resources, grouped by entry groups.',
+        operationId: 'seamConsoleV1TimelinesGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'resource_id',
+            required: true,
+            schema: {
+              description: 'ID of the resource to get timelines for.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            required: false,
+            schema: {
+              default: 50,
+              description:
+                'Maximum number of timeline entry groups to return per page.',
+              exclusiveMinimum: true,
+              minimum: 0,
+              type: 'integer',
+            },
+          },
+          {
+            in: 'query',
+            name: 'created_before',
+            required: false,
+            schema: {
+              description:
+                'Timestamp by which to limit returned timeline entries. Returns entries created before this timestamp.',
+              format: 'date-time',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            required: false,
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
+                    timeline: {
+                      items: {
+                        properties: {
+                          context: {
+                            oneOf: [
+                              {
+                                properties: {
+                                  context_type: {
+                                    enum: ['request'],
+                                    type: 'string',
+                                  },
+                                  request_id: { type: 'string' },
+                                  request_payload: {
+                                    additionalProperties: {
+                                      $ref: '#/components/schemas/access_code',
+                                    },
+                                    type: 'object',
+                                  },
+                                  response_payload: {
+                                    additionalProperties: {
+                                      $ref: '#/components/schemas/access_code',
+                                    },
+                                    type: 'object',
+                                  },
+                                },
+                                required: [
+                                  'context_type',
+                                  'request_id',
+                                  'request_payload',
+                                  'response_payload',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                properties: {
+                                  context_type: {
+                                    enum: ['job'],
+                                    type: 'string',
+                                  },
+                                  job_id: { type: 'string' },
+                                },
+                                required: ['context_type', 'job_id'],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                          created_at: { type: 'string' },
+                          entries: {
+                            items: {
+                              properties: {
+                                body: {
+                                  oneOf: [
+                                    {
+                                      properties: {
+                                        description: { type: 'string' },
+                                        entry_type: {
+                                          enum: ['resource_created'],
+                                          type: 'string',
+                                        },
+                                      },
+                                      required: ['entry_type', 'description'],
+                                      type: 'object',
+                                    },
+                                    {
+                                      properties: {
+                                        description: { type: 'string' },
+                                        entry_type: {
+                                          enum: ['resource_updated'],
+                                          type: 'string',
+                                        },
+                                        errors: {
+                                          items: { type: 'string' },
+                                          type: 'array',
+                                        },
+                                        properties_updated: {
+                                          additionalProperties: {
+                                            $ref: '#/components/schemas/access_code',
+                                          },
+                                          type: 'object',
+                                        },
+                                        warnings: {
+                                          items: { type: 'string' },
+                                          type: 'array',
+                                        },
+                                      },
+                                      required: ['entry_type', 'description'],
+                                      type: 'object',
+                                    },
+                                    {
+                                      properties: {
+                                        description: { type: 'string' },
+                                        entry_type: {
+                                          enum: ['resource_deleted'],
+                                          type: 'string',
+                                        },
+                                      },
+                                      required: ['entry_type', 'description'],
+                                      type: 'object',
+                                    },
+                                    {
+                                      properties: {
+                                        entry_type: {
+                                          enum: ['event'],
+                                          type: 'string',
+                                        },
+                                        event_id: { type: 'string' },
+                                        event_type: { type: 'string' },
+                                      },
+                                      required: [
+                                        'entry_type',
+                                        'event_type',
+                                        'event_id',
+                                      ],
+                                      type: 'object',
+                                    },
+                                    {
+                                      properties: {
+                                        description: { type: 'string' },
+                                        entry_type: {
+                                          enum: ['provider_call'],
+                                          type: 'string',
+                                        },
+                                        response_body: {
+                                          additionalProperties: {
+                                            $ref: '#/components/schemas/access_code',
+                                          },
+                                          type: 'object',
+                                        },
+                                        response_status_code: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                      },
+                                      required: [
+                                        'entry_type',
+                                        'description',
+                                        'response_status_code',
+                                      ],
+                                      type: 'object',
+                                    },
+                                  ],
+                                },
+                                created_at: { type: 'string' },
+                                entry_type: { type: 'string' },
+                                resource_id: { type: 'string' },
+                                resource_type: { type: 'string' },
+                              },
+                              required: [
+                                'resource_type',
+                                'resource_id',
+                                'entry_type',
+                                'body',
+                                'created_at',
+                              ],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
+                        },
+                        required: ['context', 'entries', 'created_at'],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['timeline', 'pagination', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/seam/console/v1/timelines/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'timelines'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'timeline',
+        'x-response-key': 'timeline',
+        'x-title': 'Get Timeline Entries',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+      post: {
+        description:
+          'Returns timeline entries for a resource and its child resources, grouped by entry groups.',
+        operationId: 'seamConsoleV1TimelinesGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  created_before: {
+                    description:
+                      'Timestamp by which to limit returned timeline entries. Returns entries created before this timestamp.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
+                  limit: {
+                    default: 50,
+                    description:
+                      'Maximum number of timeline entry groups to return per page.',
+                    exclusiveMinimum: true,
+                    minimum: 0,
+                    type: 'integer',
+                  },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    type: 'string',
+                  },
+                  resource_id: {
+                    description: 'ID of the resource to get timelines for.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['resource_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
+                    timeline: {
+                      items: {
+                        properties: {
+                          context: {
+                            oneOf: [
+                              {
+                                properties: {
+                                  context_type: {
+                                    enum: ['request'],
+                                    type: 'string',
+                                  },
+                                  request_id: { type: 'string' },
+                                  request_payload: {
+                                    additionalProperties: {
+                                      $ref: '#/components/schemas/access_code',
+                                    },
+                                    type: 'object',
+                                  },
+                                  response_payload: {
+                                    additionalProperties: {
+                                      $ref: '#/components/schemas/access_code',
+                                    },
+                                    type: 'object',
+                                  },
+                                },
+                                required: [
+                                  'context_type',
+                                  'request_id',
+                                  'request_payload',
+                                  'response_payload',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                properties: {
+                                  context_type: {
+                                    enum: ['job'],
+                                    type: 'string',
+                                  },
+                                  job_id: { type: 'string' },
+                                },
+                                required: ['context_type', 'job_id'],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                          created_at: { type: 'string' },
+                          entries: {
+                            items: {
+                              properties: {
+                                body: {
+                                  oneOf: [
+                                    {
+                                      properties: {
+                                        description: { type: 'string' },
+                                        entry_type: {
+                                          enum: ['resource_created'],
+                                          type: 'string',
+                                        },
+                                      },
+                                      required: ['entry_type', 'description'],
+                                      type: 'object',
+                                    },
+                                    {
+                                      properties: {
+                                        description: { type: 'string' },
+                                        entry_type: {
+                                          enum: ['resource_updated'],
+                                          type: 'string',
+                                        },
+                                        errors: {
+                                          items: { type: 'string' },
+                                          type: 'array',
+                                        },
+                                        properties_updated: {
+                                          additionalProperties: {
+                                            $ref: '#/components/schemas/access_code',
+                                          },
+                                          type: 'object',
+                                        },
+                                        warnings: {
+                                          items: { type: 'string' },
+                                          type: 'array',
+                                        },
+                                      },
+                                      required: ['entry_type', 'description'],
+                                      type: 'object',
+                                    },
+                                    {
+                                      properties: {
+                                        description: { type: 'string' },
+                                        entry_type: {
+                                          enum: ['resource_deleted'],
+                                          type: 'string',
+                                        },
+                                      },
+                                      required: ['entry_type', 'description'],
+                                      type: 'object',
+                                    },
+                                    {
+                                      properties: {
+                                        entry_type: {
+                                          enum: ['event'],
+                                          type: 'string',
+                                        },
+                                        event_id: { type: 'string' },
+                                        event_type: { type: 'string' },
+                                      },
+                                      required: [
+                                        'entry_type',
+                                        'event_type',
+                                        'event_id',
+                                      ],
+                                      type: 'object',
+                                    },
+                                    {
+                                      properties: {
+                                        description: { type: 'string' },
+                                        entry_type: {
+                                          enum: ['provider_call'],
+                                          type: 'string',
+                                        },
+                                        response_body: {
+                                          additionalProperties: {
+                                            $ref: '#/components/schemas/access_code',
+                                          },
+                                          type: 'object',
+                                        },
+                                        response_status_code: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                      },
+                                      required: [
+                                        'entry_type',
+                                        'description',
+                                        'response_status_code',
+                                      ],
+                                      type: 'object',
+                                    },
+                                  ],
+                                },
+                                created_at: { type: 'string' },
+                                entry_type: { type: 'string' },
+                                resource_id: { type: 'string' },
+                                resource_type: { type: 'string' },
+                              },
+                              required: [
+                                'resource_type',
+                                'resource_id',
+                                'entry_type',
+                                'body',
+                                'created_at',
+                              ],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
+                        },
+                        required: ['context', 'entries', 'created_at'],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['timeline', 'pagination', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/seam/console/v1/timelines/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'timelines'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'timeline',
+        'x-response-key': 'timeline',
+        'x-title': 'Get Timeline Entries',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
     '/seam/customer/v1/automation_runs/list': {
       get: {
         description:
