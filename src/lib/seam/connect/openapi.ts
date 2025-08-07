@@ -40249,14 +40249,6 @@ export default {
         parameters: [
           {
             in: 'query',
-            name: 'customer_ids',
-            schema: {
-              items: { format: 'uuid', type: 'string' },
-              type: 'array',
-            },
-          },
-          {
-            in: 'query',
             name: 'customer_key',
             schema: {
               description: 'Customer key for which you want to list devices.',
@@ -40719,10 +40711,6 @@ export default {
                     description:
                       'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.',
                     type: 'object',
-                  },
-                  customer_ids: {
-                    items: { format: 'uuid', type: 'string' },
-                    type: 'array',
                   },
                   customer_key: {
                     description:
@@ -41553,14 +41541,6 @@ export default {
         parameters: [
           {
             in: 'query',
-            name: 'customer_ids',
-            schema: {
-              items: { format: 'uuid', type: 'string' },
-              type: 'array',
-            },
-          },
-          {
-            in: 'query',
             name: 'customer_key',
             schema: {
               description: 'Customer key for which you want to list devices.',
@@ -42020,10 +42000,6 @@ export default {
                     description:
                       'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.',
                     type: 'object',
-                  },
-                  customer_ids: {
-                    items: { format: 'uuid', type: 'string' },
-                    type: 'array',
                   },
                   customer_key: {
                     description:
@@ -43935,14 +43911,6 @@ export default {
         parameters: [
           {
             in: 'query',
-            name: 'customer_ids',
-            schema: {
-              items: { format: 'uuid', type: 'string' },
-              type: 'array',
-            },
-          },
-          {
-            in: 'query',
             name: 'customer_key',
             schema: {
               description: 'Customer key for which you want to list devices.',
@@ -44341,10 +44309,6 @@ export default {
                     description:
                       'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.',
                     type: 'object',
-                  },
-                  customer_ids: {
-                    items: { format: 'uuid', type: 'string' },
-                    type: 'array',
                   },
                   customer_key: {
                     description:
@@ -44857,14 +44821,6 @@ export default {
         parameters: [
           {
             in: 'query',
-            name: 'customer_ids',
-            schema: {
-              items: { format: 'uuid', type: 'string' },
-              type: 'array',
-            },
-          },
-          {
-            in: 'query',
             name: 'customer_key',
             schema: {
               description: 'Customer key for which you want to list devices.',
@@ -45181,10 +45137,6 @@ export default {
                     description:
                       'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.',
                     type: 'object',
-                  },
-                  customer_ids: {
-                    items: { format: 'uuid', type: 'string' },
-                    type: 'array',
                   },
                   customer_key: {
                     description:
@@ -52135,14 +52087,6 @@ export default {
         parameters: [
           {
             in: 'query',
-            name: 'customer_ids',
-            schema: {
-              items: { format: 'uuid', type: 'string' },
-              type: 'array',
-            },
-          },
-          {
-            in: 'query',
             name: 'customer_key',
             schema: {
               description: 'Customer key for which you want to list devices.',
@@ -52480,10 +52424,6 @@ export default {
                     description:
                       'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.',
                     type: 'object',
-                  },
-                  customer_ids: {
-                    items: { format: 'uuid', type: 'string' },
-                    type: 'array',
                   },
                   customer_key: {
                     description:
