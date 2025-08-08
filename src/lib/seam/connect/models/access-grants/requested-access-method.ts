@@ -7,6 +7,15 @@ export const requested_access_method = z.object({
     .describe(
       'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
     ),
+  code: z
+    .string()
+    .min(4)
+    .max(9)
+    .regex(/^\d+$/, 'Must only contain digits')
+    .optional()
+    .describe(
+      "Specific PIN code to use for this access method. Only applicable when mode is 'code'.",
+    ),
   created_at: z
     .string()
     .datetime()

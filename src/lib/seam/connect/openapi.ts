@@ -1889,6 +1889,14 @@ export default {
               'Access methods that the user requested for the Access Grant.',
             items: {
               properties: {
+                code: {
+                  description:
+                    "Specific PIN code to use for this access method. Only applicable when mode is 'code'.",
+                  maxLength: 9,
+                  minLength: 4,
+                  pattern: '^\\d+$',
+                  type: 'string',
+                },
                 created_access_method_ids: {
                   description:
                     'IDs of the access methods created for the requested access method.',
@@ -27974,6 +27982,14 @@ export default {
                       requested_access_methods: {
                         items: {
                           properties: {
+                            code: {
+                              description:
+                                "Specific PIN code to use for this access method. Only applicable when mode is 'code'.",
+                              maxLength: 9,
+                              minLength: 4,
+                              pattern: '^\\d+$',
+                              type: 'string',
+                            },
                             mode: {
                               description:
                                 'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
