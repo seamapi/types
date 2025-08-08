@@ -28529,6 +28529,15 @@ export default {
         parameters: [
           {
             in: 'query',
+            name: 'customer_key',
+            schema: {
+              description:
+                'Customer key for which you want to list access grants.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'user_identity_id',
             schema: {
               description:
@@ -28645,6 +28654,11 @@ export default {
                     description:
                       'ID of the access system by which you want to filter the list of Access Grants.',
                     format: 'uuid',
+                    type: 'string',
+                  },
+                  customer_key: {
+                    description:
+                      'Customer key for which you want to list access grants.',
                     type: 'string',
                   },
                   location_id: {
@@ -42760,6 +42774,14 @@ export default {
         parameters: [
           {
             in: 'query',
+            name: 'customer_key',
+            schema: {
+              description: 'Customer key for which you want to list events.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'unstable_offset',
             schema: {
               description: 'Offset for the events that you want to list.',
@@ -43095,16 +43117,6 @@ export default {
               type: 'array',
             },
           },
-          {
-            in: 'query',
-            name: 'customer_ids',
-            schema: {
-              description:
-                'IDs of the customers for which you want to list events.',
-              items: { format: 'uuid', type: 'string' },
-              type: 'array',
-            },
-          },
         ],
         responses: {
           200: {
@@ -43201,11 +43213,10 @@ export default {
                     format: 'uuid',
                     type: 'string',
                   },
-                  customer_ids: {
+                  customer_key: {
                     description:
-                      'IDs of the customers for which you want to list events.',
-                    items: { format: 'uuid', type: 'string' },
-                    type: 'array',
+                      'Customer key for which you want to list events.',
+                    type: 'string',
                   },
                   device_id: {
                     description:
@@ -50532,6 +50543,14 @@ export default {
         parameters: [
           {
             in: 'query',
+            name: 'customer_key',
+            schema: {
+              description: 'Customer key for which you want to list spaces.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'search',
             schema: {
               description:
@@ -50613,6 +50632,11 @@ export default {
                     type: 'string',
                     'x-draft': 'Needs review.',
                     'x-undocumented': 'Only used internally.',
+                  },
+                  customer_key: {
+                    description:
+                      'Customer key for which you want to list spaces.',
+                    type: 'string',
                   },
                   search: {
                     description:
@@ -57330,6 +57354,17 @@ export default {
       get: {
         description: 'Retrieves the customization profile for the workspace.',
         operationId: 'workspacesCustomizationProfilesListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'customer_key',
+            schema: {
+              description:
+                'Customer key for which you want to list customization profiles.',
+              type: 'string',
+            },
+          },
+        ],
         responses: {
           200: {
             content: {
@@ -57372,6 +57407,22 @@ export default {
       post: {
         description: 'Retrieves the customization profile for the workspace.',
         operationId: 'workspacesCustomizationProfilesListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  customer_key: {
+                    description:
+                      'Customer key for which you want to list customization profiles.',
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
         responses: {
           200: {
             content: {
