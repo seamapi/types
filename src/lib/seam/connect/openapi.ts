@@ -47724,6 +47724,7 @@ export default {
                           created_at: { type: 'string' },
                           partner_resource_id: {
                             format: 'uuid',
+                            nullable: true,
                             type: 'string',
                           },
                           workspace_id: { format: 'uuid', type: 'string' },
@@ -47879,6 +47880,7 @@ export default {
                           created_at: { type: 'string' },
                           partner_resource_id: {
                             format: 'uuid',
+                            nullable: true,
                             type: 'string',
                           },
                           workspace_id: { format: 'uuid', type: 'string' },
