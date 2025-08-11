@@ -32543,8 +32543,9 @@ export default {
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                   },
-                  required: ['acs_encoders', 'ok'],
+                  required: ['acs_encoders', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
@@ -32575,59 +32576,62 @@ export default {
           content: {
             'application/json': {
               schema: {
-                oneOf: [
+                allOf: [
+                  {
+                    oneOf: [
+                      {
+                        properties: {
+                          acs_system_id: {
+                            description:
+                              'ID of the access system for which you want to retrieve all encoders.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: ['acs_system_id'],
+                        type: 'object',
+                      },
+                      {
+                        properties: {
+                          acs_system_ids: {
+                            description:
+                              'IDs of the access systems for which you want to retrieve all encoders.',
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                        },
+                        required: ['acs_system_ids'],
+                        type: 'object',
+                      },
+                      {
+                        properties: {
+                          acs_encoder_ids: {
+                            description:
+                              'IDs of the encoders that you want to retrieve.',
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                        },
+                        required: ['acs_encoder_ids'],
+                        type: 'object',
+                      },
+                    ],
+                  },
                   {
                     properties: {
-                      acs_system_id: {
+                      limit: {
+                        default: 500,
+                        description: 'Number of encoders to return.',
+                        format: 'float',
+                        type: 'number',
+                      },
+                      page_cursor: {
                         description:
-                          'ID of the access system for which you want to retrieve all encoders.',
-                        format: 'uuid',
+                          "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                        nullable: true,
                         type: 'string',
                       },
-                      limit: {
-                        default: 500,
-                        description: 'Number of encoders to return.',
-                        format: 'float',
-                        type: 'number',
-                      },
                     },
-                    required: ['acs_system_id'],
-                    type: 'object',
-                  },
-                  {
-                    properties: {
-                      acs_system_ids: {
-                        description:
-                          'IDs of the access systems for which you want to retrieve all encoders.',
-                        items: { format: 'uuid', type: 'string' },
-                        type: 'array',
-                      },
-                      limit: {
-                        default: 500,
-                        description: 'Number of encoders to return.',
-                        format: 'float',
-                        type: 'number',
-                      },
-                    },
-                    required: ['acs_system_ids'],
-                    type: 'object',
-                  },
-                  {
-                    properties: {
-                      acs_encoder_ids: {
-                        description:
-                          'IDs of the encoders that you want to retrieve.',
-                        items: { format: 'uuid', type: 'string' },
-                        type: 'array',
-                      },
-                      limit: {
-                        default: 500,
-                        description: 'Number of encoders to return.',
-                        format: 'float',
-                        type: 'number',
-                      },
-                    },
-                    required: ['acs_encoder_ids'],
                     type: 'object',
                   },
                 ],
@@ -32646,8 +32650,9 @@ export default {
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                   },
-                  required: ['acs_encoders', 'ok'],
+                  required: ['acs_encoders', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
