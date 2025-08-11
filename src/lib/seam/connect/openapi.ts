@@ -38408,6 +38408,11 @@ export default {
                                     'Your name for this access grant resource.',
                                   type: 'string',
                                 },
+                                preferred_code: {
+                                  description:
+                                    'Preferred PIN code to use when creating access for this reservation.',
+                                  type: 'string',
+                                },
                                 property_keys: {
                                   description:
                                     'Property keys associated with the access grant.',
@@ -38509,6 +38514,11 @@ export default {
                                 name: {
                                   description:
                                     'Your name for this access grant resource.',
+                                  type: 'string',
+                                },
+                                preferred_code: {
+                                  description:
+                                    'Preferred PIN code to use when creating access for this reservation.',
                                   type: 'string',
                                 },
                                 property_keys: {
@@ -38763,6 +38773,11 @@ export default {
                                 name: {
                                   description:
                                     'Your name for this access grant resource.',
+                                  type: 'string',
+                                },
+                                preferred_code: {
+                                  description:
+                                    'Preferred PIN code to use when creating access for this reservation.',
                                   type: 'string',
                                 },
                                 property_keys: {
@@ -39426,6 +39441,11 @@ export default {
                             'Your name for this access grant resource.',
                           type: 'string',
                         },
+                        preferred_code: {
+                          description:
+                            'Preferred PIN code to use when creating access for this reservation.',
+                          type: 'string',
+                        },
                         property_keys: {
                           description:
                             'Property keys associated with the access grant.',
@@ -39527,6 +39547,11 @@ export default {
                         name: {
                           description:
                             'Your name for this access grant resource.',
+                          type: 'string',
+                        },
+                        preferred_code: {
+                          description:
+                            'Preferred PIN code to use when creating access for this reservation.',
                           type: 'string',
                         },
                         property_keys: {
@@ -39778,6 +39803,11 @@ export default {
                         name: {
                           description:
                             'Your name for this access grant resource.',
+                          type: 'string',
+                        },
+                        preferred_code: {
+                          description:
+                            'Preferred PIN code to use when creating access for this reservation.',
                           type: 'string',
                         },
                         property_keys: {

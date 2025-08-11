@@ -14,6 +14,12 @@ const base_access_grant_resource = z.object({
     .string()
     .optional()
     .describe('Ending date and time for the access grant.'),
+  preferred_code: z
+    .string()
+    .optional()
+    .describe(
+      'Preferred PIN code to use when creating access for this reservation.',
+    ),
 })
 
 // User identity key reference - allows any user identity key alias
