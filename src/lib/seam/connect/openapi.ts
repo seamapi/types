@@ -14592,6 +14592,18 @@ export default {
           {
             description: 'An access method was issued.',
             properties: {
+              access_grant_ids: {
+                description:
+                  'IDs of the access grants associated with this access method.',
+                items: { format: 'uuid', type: 'string' },
+                type: 'array',
+              },
+              access_grant_keys: {
+                description:
+                  'Keys of the access grants associated with this access method (if present).',
+                items: { type: 'string' },
+                type: 'array',
+              },
               access_method_id: {
                 description: 'ID of the affected access method.',
                 format: 'uuid',
@@ -14626,6 +14638,7 @@ export default {
               'created_at',
               'occurred_at',
               'access_method_id',
+              'access_grant_ids',
               'event_type',
             ],
             type: 'object',
@@ -14634,6 +14647,18 @@ export default {
           {
             description: 'An access method was revoked.',
             properties: {
+              access_grant_ids: {
+                description:
+                  'IDs of the access grants associated with this access method.',
+                items: { format: 'uuid', type: 'string' },
+                type: 'array',
+              },
+              access_grant_keys: {
+                description:
+                  'Keys of the access grants associated with this access method (if present).',
+                items: { type: 'string' },
+                type: 'array',
+              },
               access_method_id: {
                 description: 'ID of the affected access method.',
                 format: 'uuid',
@@ -14668,6 +14693,7 @@ export default {
               'created_at',
               'occurred_at',
               'access_method_id',
+              'access_grant_ids',
               'event_type',
             ],
             type: 'object',
@@ -14677,6 +14703,18 @@ export default {
             description:
               'An access method representing a physical card requires encoding.',
             properties: {
+              access_grant_ids: {
+                description:
+                  'IDs of the access grants associated with this access method.',
+                items: { format: 'uuid', type: 'string' },
+                type: 'array',
+              },
+              access_grant_keys: {
+                description:
+                  'Keys of the access grants associated with this access method (if present).',
+                items: { type: 'string' },
+                type: 'array',
+              },
               access_method_id: {
                 description: 'ID of the affected access method.',
                 format: 'uuid',
@@ -14714,6 +14752,7 @@ export default {
               'created_at',
               'occurred_at',
               'access_method_id',
+              'access_grant_ids',
               'event_type',
             ],
             type: 'object',
@@ -14722,6 +14761,18 @@ export default {
           {
             description: 'An access method was deleted.',
             properties: {
+              access_grant_ids: {
+                description:
+                  'IDs of the access grants associated with this access method.',
+                items: { format: 'uuid', type: 'string' },
+                type: 'array',
+              },
+              access_grant_keys: {
+                description:
+                  'Keys of the access grants associated with this access method (if present).',
+                items: { type: 'string' },
+                type: 'array',
+              },
               access_method_id: {
                 description: 'ID of the affected access method.',
                 format: 'uuid',
@@ -14756,6 +14807,7 @@ export default {
               'created_at',
               'occurred_at',
               'access_method_id',
+              'access_grant_ids',
               'event_type',
             ],
             type: 'object',
@@ -14765,6 +14817,18 @@ export default {
             description:
               'An access method was reissued due to an Access Grant update.',
             properties: {
+              access_grant_ids: {
+                description:
+                  'IDs of the access grants associated with this access method.',
+                items: { format: 'uuid', type: 'string' },
+                type: 'array',
+              },
+              access_grant_keys: {
+                description:
+                  'Keys of the access grants associated with this access method (if present).',
+                items: { type: 'string' },
+                type: 'array',
+              },
               access_method_id: {
                 description: 'ID of the affected access method.',
                 format: 'uuid',
@@ -14799,6 +14863,7 @@ export default {
               'created_at',
               'occurred_at',
               'access_method_id',
+              'access_grant_ids',
               'event_type',
             ],
             type: 'object',
