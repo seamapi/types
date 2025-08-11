@@ -7,6 +7,15 @@ const access_method_event = common_event.extend({
     .string()
     .uuid()
     .describe('ID of the affected access method.'),
+  access_grant_ids: z
+    .array(z.string().uuid())
+    .describe('IDs of the access grants associated with this access method.'),
+  access_grant_keys: z
+    .array(z.string())
+    .optional()
+    .describe(
+      'Keys of the access grants associated with this access method (if present).',
+    ),
 })
 
 export const access_method_issued_event = access_method_event.extend({
