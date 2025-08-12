@@ -47787,7 +47787,11 @@ export default {
                     automation_runs: {
                       items: {
                         properties: {
-                          automation_id: { format: 'uuid', type: 'string' },
+                          automation_id: {
+                            format: 'uuid',
+                            nullable: true,
+                            type: 'string',
+                          },
                           automation_result: {
                             properties: {
                               actions: {
@@ -47943,7 +47947,11 @@ export default {
                     automation_runs: {
                       items: {
                         properties: {
-                          automation_id: { format: 'uuid', type: 'string' },
+                          automation_id: {
+                            format: 'uuid',
+                            nullable: true,
+                            type: 'string',
+                          },
                           automation_result: {
                             properties: {
                               actions: {
