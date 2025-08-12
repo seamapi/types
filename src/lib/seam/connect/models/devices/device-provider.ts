@@ -120,6 +120,8 @@ export const PROVIDER_CATEGORY_MAP = {
     'assa_abloy_vostio',
     'salto_space',
     'dormakaba_ambiance',
+    'dormakaba_community',
+    'legic_connect',
   ],
 
   internal_beta: ALL_DEVICE_PROVIDERS,
