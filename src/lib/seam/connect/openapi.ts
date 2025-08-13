@@ -10423,12 +10423,16 @@ export default {
                       brivo_metadata: {
                         description: 'Metadata for a Brivo device.',
                         properties: {
+                          activation_enabled: {
+                            description:
+                              'Indicates whether the Brivo access point has activation (remote unlock) enabled.',
+                            type: 'boolean',
+                          },
                           device_name: {
                             description: 'Device name for a Brivo device.',
                             type: 'string',
                           },
                         },
-                        required: ['device_name'],
                         type: 'object',
                       },
                       controlbyweb_metadata: {

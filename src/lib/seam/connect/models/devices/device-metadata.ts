@@ -201,7 +201,13 @@ export const device_metadata = z
     brivo_metadata: z
       .object({
         device_name: z.string().describe(`Device name for a Brivo device.`),
+        activation_enabled: z
+          .boolean()
+          .describe(
+            `Indicates whether the Brivo access point has activation (remote unlock) enabled.`,
+          ),
       })
+      .partial()
       .describe(`Metadata for a Brivo device.`),
 
     igloo_metadata: z
