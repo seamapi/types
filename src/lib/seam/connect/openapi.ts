@@ -39154,6 +39154,15 @@ export default {
         parameters: [
           {
             in: 'query',
+            name: 'customer_keys',
+            schema: {
+              description: 'List of customer keys to delete all data for.',
+              items: { type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
             name: 'space_keys',
             schema: {
               description: 'List of space keys to delete.',
@@ -39360,6 +39369,12 @@ export default {
                   },
                   common_area_keys: {
                     description: 'List of common area keys to delete.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                  customer_keys: {
+                    description:
+                      'List of customer keys to delete all data for.',
                     items: { type: 'string' },
                     type: 'array',
                   },

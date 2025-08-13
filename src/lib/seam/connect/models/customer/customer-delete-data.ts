@@ -1,6 +1,12 @@
 import { z } from 'zod'
 
 export const customer_delete_data = z.object({
+  // Customer keys to delete all data for
+  customer_keys: z
+    .array(z.string())
+    .optional()
+    .describe('List of customer keys to delete all data for.'),
+
   // Location resources to delete
   space_keys: z
     .array(z.string())
