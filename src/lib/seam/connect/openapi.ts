@@ -14615,6 +14615,11 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
+              code: {
+                description:
+                  "The actual PIN code for code access methods (only present when mode is 'code').",
+                type: 'string',
+              },
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
