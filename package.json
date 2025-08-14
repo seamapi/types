@@ -1,6 +1,6 @@
 {
   "name": "@seamapi/types",
-  "version": "1.527.0",
+  "version": "1.528.0",
   "description": "TypeScript types for the Seam API.",
   "type": "module",
   "main": "index.js",
