@@ -25,6 +25,7 @@ export const device_capability_flags = z
     can_run_thermostat_programs: z.boolean(),
     can_simulate_hub_connection: z.boolean(),
     can_simulate_hub_disconnection: z.boolean(),
+    can_simulate_paid_subscription: z.boolean(),
   })
   .partial()
 
