@@ -20,6 +20,12 @@ const access_method_event = common_event.extend({
 
 export const access_method_issued_event = access_method_event.extend({
   event_type: z.literal('access_method.issued'),
+  code: z
+    .string()
+    .optional()
+    .describe(
+      "The actual PIN code for code access methods (only present when mode is 'code').",
+    ),
 }).describe(`
     ---
     route_path: /access_methods
