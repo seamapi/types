@@ -41530,6 +41530,55 @@ export default {
         'x-title': 'Simulate Hub Disconnection',
       },
     },
+    '/devices/simulate/paid_subscription': {
+      post: {
+        description:
+          'Toggle the simulated Nuki Smart Hosting subscription for a device (sandbox only).\nSend `is_expired: true` to simulate an expired subscription, or `false` to simulate an active subscription.\nThe actual device error is created/cleared by the poller after this state change.',
+        operationId: 'devicesSimulatePaidSubscriptionPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: { format: 'uuid', type: 'string' },
+                  is_expired: { type: 'boolean' },
+                },
+                required: ['device_id', 'is_expired'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/devices/simulate/paid_subscription',
+        tags: ['/devices'],
+        'x-fern-sdk-group-name': ['devices', 'simulate'],
+        'x-fern-sdk-method-name': 'paid_subscription',
+        'x-response-key': null,
+        'x-title': 'Simulate Paid Subscription',
+      },
+    },
     '/devices/simulate/remove': {
       post: {
         description:
