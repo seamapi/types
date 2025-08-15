@@ -1,6 +1,7 @@
 export * from './assa-abloy-vostio.js'
 export * from './dormakaba-ambiance.js'
 export * from './dormakaba-community.js'
+export * from './hotek.js'
 export * from './latch.js'
 export * from './salto.js'
 export * from './visionline.js'

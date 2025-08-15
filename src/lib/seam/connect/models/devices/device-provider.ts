@@ -4,6 +4,7 @@ import type { ProviderCapability } from '../provider-capability.js'
 import { device_capability_flags } from './device.js'
 
 export const DEVICE_PROVIDERS = {
+  HOTEK: 'hotek',
   DORMAKABA_COMMUNITY: 'dormakaba_community',
   LEGIC_CONNECT: 'legic_connect',
   AKUVOX: 'akuvox',
@@ -122,6 +123,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'dormakaba_ambiance',
     'dormakaba_community',
     'legic_connect',
+    'hotek',
   ],
 
   internal_beta: ALL_DEVICE_PROVIDERS,
