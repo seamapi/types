@@ -2851,6 +2851,18 @@ export default {
             },
             type: 'array',
           },
+          hotek_metadata: {
+            description:
+              'Hotek-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+            properties: {
+              room_number: {
+                description: 'Room number of the entrance.',
+                type: 'string',
+              },
+            },
+            required: ['room_number'],
+            type: 'object',
+          },
           latch_metadata: {
             description:
               'Latch-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
@@ -12932,6 +12944,7 @@ export default {
           can_unlock_with_code: { type: 'boolean' },
           device_provider_name: {
             enum: [
+              'hotek',
               'dormakaba_community',
               'legic_connect',
               'akuvox',
@@ -19571,6 +19584,18 @@ export default {
                                 type: 'object',
                               },
                               type: 'array',
+                            },
+                            hotek_metadata: {
+                              description:
+                                'Hotek-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+                              properties: {
+                                room_number: {
+                                  description: 'Room number of the entrance.',
+                                  type: 'string',
+                                },
+                              },
+                              required: ['room_number'],
+                              type: 'object',
                             },
                             latch_metadata: {
                               description:
@@ -37226,6 +37251,7 @@ export default {
                       'Accepted device provider keys as an alternative to `provider_category`. Use this parameter to specify accepted providers explicitly. See [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). To list all provider keys, use [`/devices/list_device_providers`](https://docs.seam.co/latest/api/devices/list_device_providers) with no filters.',
                     items: {
                       enum: [
+                        'hotek',
                         'dormakaba_community',
                         'legic_connect',
                         'akuvox',

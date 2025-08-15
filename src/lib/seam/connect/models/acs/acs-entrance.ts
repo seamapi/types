@@ -4,6 +4,7 @@ import { acs_entrance_dormakaba_ambiance_metadata } from './metadata/dormakaba-a
 import {
   acs_entrance_assa_abloy_vostio_metadata,
   acs_entrance_dormakaba_community_metadata,
+  acs_entrance_hotek_metadata,
   acs_entrance_latch_metadata,
   acs_entrance_salto_ks_metadata,
   acs_entrance_visionline_metadata,
@@ -84,6 +85,11 @@ export const acs_entrance = z
       .optional()
       .describe(
         'Latch-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+      ),
+    hotek_metadata: acs_entrance_hotek_metadata
+      .optional()
+      .describe(
+        'Hotek-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
       ),
     visionline_metadata: acs_entrance_visionline_metadata
       .optional()
