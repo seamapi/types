@@ -23704,6 +23704,14 @@ export default {
             format: 'date-time',
             type: 'string',
           },
+          custom_metadata: {
+            additionalProperties: {
+              oneOf: [{ type: 'string' }, { type: 'boolean' }],
+            },
+            description:
+              'Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application.',
+            type: 'object',
+          },
           device_id: {
             description: 'ID of the device.',
             format: 'uuid',
@@ -25022,6 +25030,7 @@ export default {
           'errors',
           'warnings',
           'created_at',
+          'custom_metadata',
           'is_managed',
           'properties',
         ],
@@ -42545,6 +42554,18 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  custom_metadata: {
+                    additionalProperties: {
+                      nullable: true,
+                      oneOf: [
+                        { maxLength: 500, type: 'string' },
+                        { type: 'boolean' },
+                      ],
+                    },
+                    description:
+                      'Custom metadata that you want to associate with the device. Supports up to 50 JSON key:value pairs.',
+                    type: 'object',
+                  },
                   device_id: {
                     description:
                       'ID of the unmanaged device that you want to update.',
@@ -42558,7 +42579,7 @@ export default {
                     type: 'boolean',
                   },
                 },
-                required: ['device_id', 'is_managed'],
+                required: ['device_id'],
                 type: 'object',
               },
             },
@@ -42601,6 +42622,18 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  custom_metadata: {
+                    additionalProperties: {
+                      nullable: true,
+                      oneOf: [
+                        { maxLength: 500, type: 'string' },
+                        { type: 'boolean' },
+                      ],
+                    },
+                    description:
+                      'Custom metadata that you want to associate with the device. Supports up to 50 JSON key:value pairs.',
+                    type: 'object',
+                  },
                   device_id: {
                     description:
                       'ID of the unmanaged device that you want to update.',
@@ -42614,7 +42647,7 @@ export default {
                     type: 'boolean',
                   },
                 },
-                required: ['device_id', 'is_managed'],
+                required: ['device_id'],
                 type: 'object',
               },
             },
