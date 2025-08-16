@@ -69,6 +69,12 @@ export const access_method_deleted_event = access_method_event.extend({
 
 export const access_method_reissued_event = access_method_event.extend({
   event_type: z.literal('access_method.reissued'),
+  code: z
+    .string()
+    .optional()
+    .describe(
+      "The actual PIN code for code access methods (only present when mode is 'code').",
+    ),
 }).describe(`
     ---
     route_path: /access_methods
