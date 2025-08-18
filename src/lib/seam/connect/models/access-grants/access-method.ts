@@ -41,6 +41,7 @@ export const access_method = z.object({
     ),
   code: z
     .string()
+    .nullable()
     .optional()
     .describe('The actual PIN code for code access methods.'),
   customization_profile_id: z

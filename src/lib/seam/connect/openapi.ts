@@ -1988,6 +1988,7 @@ export default {
           },
           code: {
             description: 'The actual PIN code for code access methods.',
+            nullable: true,
             type: 'string',
           },
           created_at: {
