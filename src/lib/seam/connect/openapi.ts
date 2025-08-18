@@ -33422,26 +33422,6 @@ export default {
           },
           {
             in: 'query',
-            name: 'access_grant_id',
-            schema: {
-              description:
-                'ID of the access grant for which you want to retrieve all entrances.',
-              format: 'uuid',
-              type: 'string',
-            },
-          },
-          {
-            in: 'query',
-            name: 'access_method_id',
-            schema: {
-              description:
-                'ID of the access method for which you want to retrieve all entrances.',
-              format: 'uuid',
-              type: 'string',
-            },
-          },
-          {
-            in: 'query',
             name: 'connected_account_id',
             schema: {
               description:
@@ -33539,18 +33519,6 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  access_grant_id: {
-                    description:
-                      'ID of the access grant for which you want to retrieve all entrances.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
-                  access_method_id: {
-                    description:
-                      'ID of the access method for which you want to retrieve all entrances.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
                   acs_credential_id: {
                     description:
                       'ID of the credential for which you want to retrieve all entrances.',
@@ -40822,16 +40790,6 @@ export default {
               type: 'string',
             },
           },
-          {
-            in: 'query',
-            name: 'access_method_id',
-            schema: {
-              description:
-                'ID of the access method for which you want to retrieve all devices.',
-              format: 'uuid',
-              type: 'string',
-            },
-          },
         ],
         responses: {
           200: {
@@ -40880,12 +40838,6 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  access_method_id: {
-                    description:
-                      'ID of the access method for which you want to retrieve all devices.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
                   connect_webview_id: {
                     description:
                       'ID of the Connect Webview for which you want to list devices.',
@@ -42167,16 +42119,6 @@ export default {
               type: 'string',
             },
           },
-          {
-            in: 'query',
-            name: 'access_method_id',
-            schema: {
-              description:
-                'ID of the access method for which you want to retrieve all devices.',
-              format: 'uuid',
-              type: 'string',
-            },
-          },
         ],
         responses: {
           200: {
@@ -42222,12 +42164,6 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  access_method_id: {
-                    description:
-                      'ID of the access method for which you want to retrieve all devices.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
                   connect_webview_id: {
                     description:
                       'ID of the Connect Webview for which you want to list devices.',
@@ -44496,16 +44432,6 @@ export default {
               type: 'string',
             },
           },
-          {
-            in: 'query',
-            name: 'access_method_id',
-            schema: {
-              description:
-                'ID of the access method for which you want to retrieve all devices.',
-              format: 'uuid',
-              type: 'string',
-            },
-          },
         ],
         responses: {
           200: {
@@ -44556,12 +44482,6 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  access_method_id: {
-                    description:
-                      'ID of the access method for which you want to retrieve all devices.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
                   connect_webview_id: {
                     description:
                       'ID of the Connect Webview for which you want to list devices.',
@@ -45328,16 +45248,6 @@ export default {
               type: 'string',
             },
           },
-          {
-            in: 'query',
-            name: 'access_method_id',
-            schema: {
-              description:
-                'ID of the access method for which you want to retrieve all devices.',
-              format: 'uuid',
-              type: 'string',
-            },
-          },
         ],
         responses: {
           200: {
@@ -45388,12 +45298,6 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  access_method_id: {
-                    description:
-                      'ID of the access method for which you want to retrieve all devices.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
                   connect_webview_id: {
                     description:
                       'ID of the Connect Webview for which you want to list devices.',
@@ -52642,16 +52546,6 @@ export default {
               type: 'string',
             },
           },
-          {
-            in: 'query',
-            name: 'access_method_id',
-            schema: {
-              description:
-                'ID of the access method for which you want to retrieve all devices.',
-              format: 'uuid',
-              type: 'string',
-            },
-          },
         ],
         responses: {
           200: {
@@ -52702,12 +52596,6 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  access_method_id: {
-                    description:
-                      'ID of the access method for which you want to retrieve all devices.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
                   connect_webview_id: {
                     description:
                       'ID of the Connect Webview for which you want to list devices.',
