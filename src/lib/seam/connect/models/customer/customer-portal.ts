@@ -1,5 +1,7 @@
 import { z } from 'zod'
 
+import { location_key_aliases } from './location-resources.js'
+
 const base_feature = z.object({
   exclude: z
     .boolean()
@@ -48,6 +50,12 @@ export const portal_configuration = z
       .boolean()
       .default(false)
       .describe('Whether the portal is embedded in another application.'),
+    landing_page: z
+      .object({
+        manage: location_key_aliases.optional(),
+      })
+      .optional()
+      .describe('Configuration for the landing page when the portal loads.'),
   })
   .default({
     features: {

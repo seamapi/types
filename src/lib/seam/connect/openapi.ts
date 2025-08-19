@@ -38450,6 +38450,72 @@ export default {
                           'Whether the portal is embedded in another application.',
                         type: 'boolean',
                       },
+                      landing_page: {
+                        description:
+                          'Configuration for the landing page when the portal loads.',
+                        properties: {
+                          manage: {
+                            oneOf: [
+                              {
+                                properties: { space_key: { type: 'string' } },
+                                required: ['space_key'],
+                                type: 'object',
+                              },
+                              {
+                                properties: {
+                                  property_key: { type: 'string' },
+                                },
+                                required: ['property_key'],
+                                type: 'object',
+                              },
+                              {
+                                properties: { room_key: { type: 'string' } },
+                                required: ['room_key'],
+                                type: 'object',
+                              },
+                              {
+                                properties: {
+                                  common_area_key: { type: 'string' },
+                                },
+                                required: ['common_area_key'],
+                                type: 'object',
+                              },
+                              {
+                                properties: { unit_key: { type: 'string' } },
+                                required: ['unit_key'],
+                                type: 'object',
+                              },
+                              {
+                                properties: {
+                                  facility_key: { type: 'string' },
+                                },
+                                required: ['facility_key'],
+                                type: 'object',
+                              },
+                              {
+                                properties: {
+                                  building_key: { type: 'string' },
+                                },
+                                required: ['building_key'],
+                                type: 'object',
+                              },
+                              {
+                                properties: { listing_key: { type: 'string' } },
+                                required: ['listing_key'],
+                                type: 'object',
+                              },
+                              {
+                                properties: {
+                                  property_listing_key: { type: 'string' },
+                                },
+                                required: ['property_listing_key'],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                        },
+                        type: 'object',
+                      },
                     },
                     type: 'object',
                   },
@@ -49232,6 +49298,72 @@ export default {
                           type: 'object',
                         },
                         is_embedded: { type: 'boolean' },
+                        landing_page: {
+                          properties: {
+                            manage: {
+                              oneOf: [
+                                {
+                                  properties: { space_key: { type: 'string' } },
+                                  required: ['space_key'],
+                                  type: 'object',
+                                },
+                                {
+                                  properties: {
+                                    property_key: { type: 'string' },
+                                  },
+                                  required: ['property_key'],
+                                  type: 'object',
+                                },
+                                {
+                                  properties: { room_key: { type: 'string' } },
+                                  required: ['room_key'],
+                                  type: 'object',
+                                },
+                                {
+                                  properties: {
+                                    common_area_key: { type: 'string' },
+                                  },
+                                  required: ['common_area_key'],
+                                  type: 'object',
+                                },
+                                {
+                                  properties: { unit_key: { type: 'string' } },
+                                  required: ['unit_key'],
+                                  type: 'object',
+                                },
+                                {
+                                  properties: {
+                                    facility_key: { type: 'string' },
+                                  },
+                                  required: ['facility_key'],
+                                  type: 'object',
+                                },
+                                {
+                                  properties: {
+                                    building_key: { type: 'string' },
+                                  },
+                                  required: ['building_key'],
+                                  type: 'object',
+                                },
+                                {
+                                  properties: {
+                                    listing_key: { type: 'string' },
+                                  },
+                                  required: ['listing_key'],
+                                  type: 'object',
+                                },
+                                {
+                                  properties: {
+                                    property_listing_key: { type: 'string' },
+                                  },
+                                  required: ['property_listing_key'],
+                                  type: 'object',
+                                },
+                              ],
+                            },
+                          },
+                          type: 'object',
+                        },
                       },
                       type: 'object',
                     },
@@ -49328,6 +49460,72 @@ export default {
                           type: 'object',
                         },
                         is_embedded: { type: 'boolean' },
+                        landing_page: {
+                          properties: {
+                            manage: {
+                              oneOf: [
+                                {
+                                  properties: { space_key: { type: 'string' } },
+                                  required: ['space_key'],
+                                  type: 'object',
+                                },
+                                {
+                                  properties: {
+                                    property_key: { type: 'string' },
+                                  },
+                                  required: ['property_key'],
+                                  type: 'object',
+                                },
+                                {
+                                  properties: { room_key: { type: 'string' } },
+                                  required: ['room_key'],
+                                  type: 'object',
+                                },
+                                {
+                                  properties: {
+                                    common_area_key: { type: 'string' },
+                                  },
+                                  required: ['common_area_key'],
+                                  type: 'object',
+                                },
+                                {
+                                  properties: { unit_key: { type: 'string' } },
+                                  required: ['unit_key'],
+                                  type: 'object',
+                                },
+                                {
+                                  properties: {
+                                    facility_key: { type: 'string' },
+                                  },
+                                  required: ['facility_key'],
+                                  type: 'object',
+                                },
+                                {
+                                  properties: {
+                                    building_key: { type: 'string' },
+                                  },
+                                  required: ['building_key'],
+                                  type: 'object',
+                                },
+                                {
+                                  properties: {
+                                    listing_key: { type: 'string' },
+                                  },
+                                  required: ['listing_key'],
+                                  type: 'object',
+                                },
+                                {
+                                  properties: {
+                                    property_listing_key: { type: 'string' },
+                                  },
+                                  required: ['property_listing_key'],
+                                  type: 'object',
+                                },
+                              ],
+                            },
+                          },
+                          type: 'object',
+                        },
                       },
                       type: 'object',
                     },
