@@ -26261,10 +26261,11 @@ export default {
         parameters: [
           {
             in: 'query',
-            name: 'customer_ids',
+            name: 'customer_key',
             schema: {
-              items: { format: 'uuid', type: 'string' },
-              type: 'array',
+              description:
+                'Customer key for which you want to list access codes.',
+              type: 'string',
             },
           },
           {
@@ -26371,9 +26372,10 @@ export default {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
-                  customer_ids: {
-                    items: { format: 'uuid', type: 'string' },
-                    type: 'array',
+                  customer_key: {
+                    description:
+                      'Customer key for which you want to list access codes.',
+                    type: 'string',
                   },
                   device_id: {
                     description:
