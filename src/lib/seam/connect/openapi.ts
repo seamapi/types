@@ -49601,6 +49601,284 @@ export default {
         'x-undocumented': 'Seam Instant Key only.',
       },
     },
+    '/seam/instant_key/v1/preview/get': {
+      get: {
+        operationId: 'seamInstantKeyV1PreviewGetGet',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  instant_key_url: {
+                    description:
+                      'The short code of the instant key to preview.',
+                    type: 'string',
+                  },
+                },
+                required: ['instant_key_url'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    instant_key_preview: {
+                      description:
+                        'Represents a preview of an Instant Key with hotel, guest, and access information.',
+                      properties: {
+                        access: {
+                          items: {
+                            properties: {
+                              available: { type: 'boolean' },
+                              hours: { type: 'string' },
+                              icon: { type: 'string' },
+                              location: { type: 'string' },
+                              name: { type: 'string' },
+                            },
+                            required: ['name', 'icon', 'available'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                        created_at: { type: 'string' },
+                        expires_at: { type: 'string' },
+                        guest: {
+                          properties: {
+                            check_in_date: { type: 'string' },
+                            check_out_date: { type: 'string' },
+                            email: { type: 'string' },
+                            first_name: { type: 'string' },
+                            full_name: { type: 'string' },
+                            last_name: { type: 'string' },
+                          },
+                          required: [
+                            'first_name',
+                            'last_name',
+                            'full_name',
+                            'email',
+                            'check_in_date',
+                            'check_out_date',
+                          ],
+                          type: 'object',
+                        },
+                        hotel: {
+                          properties: {
+                            accent_color: { type: 'string' },
+                            hotel_name: { type: 'string' },
+                            logo_url: { type: 'string' },
+                            primary_color: { type: 'string' },
+                            secondary_color: { type: 'string' },
+                            verified: { type: 'boolean' },
+                          },
+                          required: [
+                            'hotel_name',
+                            'primary_color',
+                            'accent_color',
+                            'secondary_color',
+                            'verified',
+                          ],
+                          type: 'object',
+                        },
+                        key_status: {
+                          enum: ['ready', 'expired', 'used'],
+                          type: 'string',
+                        },
+                        room: {
+                          properties: {
+                            floor: { format: 'float', type: 'number' },
+                            room_number: { type: 'string' },
+                            room_type: { type: 'string' },
+                          },
+                          required: ['room_number', 'room_type', 'floor'],
+                          type: 'object',
+                        },
+                        shortcode: { type: 'string' },
+                        support_email: { type: 'string' },
+                        support_phone: { type: 'string' },
+                        updated_at: { type: 'string' },
+                      },
+                      required: [
+                        'shortcode',
+                        'hotel',
+                        'guest',
+                        'room',
+                        'access',
+                        'key_status',
+                        'support_phone',
+                        'support_email',
+                        'created_at',
+                        'updated_at',
+                        'expires_at',
+                      ],
+                      type: 'object',
+                      'x-route-path': '/instant_keys/preview',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['instant_key_preview', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ certified_client: [] }],
+        summary: '/seam/instant_key/v1/preview/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'instant_key', 'v1', 'preview'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'instant_key_preview',
+        'x-response-key': 'instant_key_preview',
+        'x-title': 'Preview Instant Key',
+        'x-undocumented': 'Seam Instant Key only.',
+      },
+      post: {
+        operationId: 'seamInstantKeyV1PreviewGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  instant_key_url: {
+                    description:
+                      'The short code of the instant key to preview.',
+                    type: 'string',
+                  },
+                },
+                required: ['instant_key_url'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    instant_key_preview: {
+                      description:
+                        'Represents a preview of an Instant Key with hotel, guest, and access information.',
+                      properties: {
+                        access: {
+                          items: {
+                            properties: {
+                              available: { type: 'boolean' },
+                              hours: { type: 'string' },
+                              icon: { type: 'string' },
+                              location: { type: 'string' },
+                              name: { type: 'string' },
+                            },
+                            required: ['name', 'icon', 'available'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                        created_at: { type: 'string' },
+                        expires_at: { type: 'string' },
+                        guest: {
+                          properties: {
+                            check_in_date: { type: 'string' },
+                            check_out_date: { type: 'string' },
+                            email: { type: 'string' },
+                            first_name: { type: 'string' },
+                            full_name: { type: 'string' },
+                            last_name: { type: 'string' },
+                          },
+                          required: [
+                            'first_name',
+                            'last_name',
+                            'full_name',
+                            'email',
+                            'check_in_date',
+                            'check_out_date',
+                          ],
+                          type: 'object',
+                        },
+                        hotel: {
+                          properties: {
+                            accent_color: { type: 'string' },
+                            hotel_name: { type: 'string' },
+                            logo_url: { type: 'string' },
+                            primary_color: { type: 'string' },
+                            secondary_color: { type: 'string' },
+                            verified: { type: 'boolean' },
+                          },
+                          required: [
+                            'hotel_name',
+                            'primary_color',
+                            'accent_color',
+                            'secondary_color',
+                            'verified',
+                          ],
+                          type: 'object',
+                        },
+                        key_status: {
+                          enum: ['ready', 'expired', 'used'],
+                          type: 'string',
+                        },
+                        room: {
+                          properties: {
+                            floor: { format: 'float', type: 'number' },
+                            room_number: { type: 'string' },
+                            room_type: { type: 'string' },
+                          },
+                          required: ['room_number', 'room_type', 'floor'],
+                          type: 'object',
+                        },
+                        shortcode: { type: 'string' },
+                        support_email: { type: 'string' },
+                        support_phone: { type: 'string' },
+                        updated_at: { type: 'string' },
+                      },
+                      required: [
+                        'shortcode',
+                        'hotel',
+                        'guest',
+                        'room',
+                        'access',
+                        'key_status',
+                        'support_phone',
+                        'support_email',
+                        'created_at',
+                        'updated_at',
+                        'expires_at',
+                      ],
+                      type: 'object',
+                      'x-route-path': '/instant_keys/preview',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['instant_key_preview', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ certified_client: [] }],
+        summary: '/seam/instant_key/v1/preview/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'instant_key', 'v1', 'preview'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'instant_key_preview',
+        'x-response-key': 'instant_key_preview',
+        'x-title': 'Preview Instant Key',
+        'x-undocumented': 'Seam Instant Key only.',
+      },
+    },
     '/seam/mobile_sdk/v1/acs/credentials/list': {
       get: {
         description:
