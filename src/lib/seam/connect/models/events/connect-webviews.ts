@@ -30,6 +30,12 @@ export const connect_webview_login_succeeded_event =
     event_type: z.literal('connect_webview.login_succeeded'),
     connected_account_id,
     connected_account_custom_metadata,
+    customer_key: z
+      .string()
+      .optional()
+      .describe(
+        'The customer key associated with this connect webview, if any.',
+      ),
   }).describe(`
     ---
     route_path: /connect_webviews

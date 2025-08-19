@@ -15698,6 +15698,11 @@ export default {
                 format: 'date-time',
                 type: 'string',
               },
+              customer_key: {
+                description:
+                  'The customer key associated with this connected account, if any.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -16318,6 +16323,11 @@ export default {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with this connect webview, if any.',
                 type: 'string',
               },
               event_id: {
