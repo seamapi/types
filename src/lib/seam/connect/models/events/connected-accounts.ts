@@ -28,6 +28,12 @@ export const connected_account_connected_event = connected_account_event.extend(
   {
     event_type: z.literal('connected_account.connected'),
     connect_webview_id,
+    customer_key: z
+      .string()
+      .optional()
+      .describe(
+        'The customer key associated with this connected account, if any.',
+      ),
   },
 ).describe(`
   ---
