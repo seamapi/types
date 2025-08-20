@@ -29280,7 +29280,15 @@ export default {
             required: false,
             schema: {
               items: {
-                enum: ['spaces', 'devices', 'acs_entrances'],
+                enum: [
+                  'spaces',
+                  'devices',
+                  'acs_entrances',
+                  'access_grants',
+                  'access_methods',
+                  'instant_keys',
+                  'client_sessions',
+                ],
                 type: 'string',
               },
               type: 'array',
@@ -29292,7 +29300,15 @@ export default {
             required: false,
             schema: {
               items: {
-                enum: ['spaces', 'devices', 'acs_entrances'],
+                enum: [
+                  'spaces',
+                  'devices',
+                  'acs_entrances',
+                  'access_grants',
+                  'access_methods',
+                  'instant_keys',
+                  'client_sessions',
+                ],
                 type: 'string',
               },
               type: 'array',
@@ -29501,14 +29517,30 @@ export default {
                   },
                   exclude: {
                     items: {
-                      enum: ['spaces', 'devices', 'acs_entrances'],
+                      enum: [
+                        'spaces',
+                        'devices',
+                        'acs_entrances',
+                        'access_grants',
+                        'access_methods',
+                        'instant_keys',
+                        'client_sessions',
+                      ],
                       type: 'string',
                     },
                     type: 'array',
                   },
                   include: {
                     items: {
-                      enum: ['spaces', 'devices', 'acs_entrances'],
+                      enum: [
+                        'spaces',
+                        'devices',
+                        'acs_entrances',
+                        'access_grants',
+                        'access_methods',
+                        'instant_keys',
+                        'client_sessions',
+                      ],
                       type: 'string',
                     },
                     type: 'array',
