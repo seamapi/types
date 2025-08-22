@@ -8585,10 +8585,9 @@ export default {
             format: 'date-time',
             type: 'string',
           },
-          customer_id: {
+          customer_key: {
             description:
-              'Customer ID associated with the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
-            format: 'uuid',
+              'Customer key associated with the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
             type: 'string',
           },
           device_count: {
