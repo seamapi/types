@@ -41,12 +41,11 @@ export const client_session = z.object({
     .describe(
       'Number of devices associated with the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
     ),
-  customer_id: z
+  customer_key: z
     .string()
-    .uuid()
     .optional()
     .describe(
-      'Customer ID associated with the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
+      'Customer key associated with the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
     ),
   connected_account_ids: z
     .array(z.string().uuid())
