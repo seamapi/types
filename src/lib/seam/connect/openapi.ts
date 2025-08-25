@@ -47440,168 +47440,185 @@ export default {
                     ok: { type: 'boolean' },
                     pagination: { $ref: '#/components/schemas/pagination' },
                     timeline: {
-                      items: {
-                        properties: {
-                          context: {
-                            oneOf: [
-                              {
-                                properties: {
-                                  context_type: {
-                                    enum: ['request'],
-                                    type: 'string',
-                                  },
-                                  request_id: { type: 'string' },
-                                  request_payload: {
-                                    additionalProperties: {
-                                      $ref: '#/components/schemas/access_code',
+                      properties: {
+                        groups: {
+                          items: {
+                            properties: {
+                              context: {
+                                oneOf: [
+                                  {
+                                    properties: {
+                                      context_type: {
+                                        enum: ['request'],
+                                        type: 'string',
+                                      },
+                                      request_id: { type: 'string' },
+                                      request_payload: {
+                                        additionalProperties: {
+                                          $ref: '#/components/schemas/access_code',
+                                        },
+                                        type: 'object',
+                                      },
+                                      response_payload: {
+                                        additionalProperties: {
+                                          $ref: '#/components/schemas/access_code',
+                                        },
+                                        type: 'object',
+                                      },
                                     },
+                                    required: [
+                                      'context_type',
+                                      'request_id',
+                                      'request_payload',
+                                      'response_payload',
+                                    ],
                                     type: 'object',
                                   },
-                                  response_payload: {
-                                    additionalProperties: {
-                                      $ref: '#/components/schemas/access_code',
+                                  {
+                                    properties: {
+                                      context_type: {
+                                        enum: ['job'],
+                                        type: 'string',
+                                      },
+                                      job_id: { type: 'string' },
                                     },
+                                    required: ['context_type', 'job_id'],
                                     type: 'object',
                                   },
-                                },
-                                required: [
-                                  'context_type',
-                                  'request_id',
-                                  'request_payload',
-                                  'response_payload',
                                 ],
-                                type: 'object',
                               },
-                              {
-                                properties: {
-                                  context_type: {
-                                    enum: ['job'],
-                                    type: 'string',
+                              created_at: { type: 'string' },
+                              entries: {
+                                items: {
+                                  properties: {
+                                    body: {
+                                      oneOf: [
+                                        {
+                                          properties: {
+                                            description: { type: 'string' },
+                                            entry_type: {
+                                              enum: ['resource_created'],
+                                              type: 'string',
+                                            },
+                                          },
+                                          required: [
+                                            'entry_type',
+                                            'description',
+                                          ],
+                                          type: 'object',
+                                        },
+                                        {
+                                          properties: {
+                                            description: { type: 'string' },
+                                            entry_type: {
+                                              enum: ['resource_updated'],
+                                              type: 'string',
+                                            },
+                                            errors: {
+                                              items: { type: 'string' },
+                                              type: 'array',
+                                            },
+                                            properties_updated: {
+                                              additionalProperties: {
+                                                $ref: '#/components/schemas/access_code',
+                                              },
+                                              type: 'object',
+                                            },
+                                            warnings: {
+                                              items: { type: 'string' },
+                                              type: 'array',
+                                            },
+                                          },
+                                          required: [
+                                            'entry_type',
+                                            'description',
+                                          ],
+                                          type: 'object',
+                                        },
+                                        {
+                                          properties: {
+                                            description: { type: 'string' },
+                                            entry_type: {
+                                              enum: ['resource_deleted'],
+                                              type: 'string',
+                                            },
+                                          },
+                                          required: [
+                                            'entry_type',
+                                            'description',
+                                          ],
+                                          type: 'object',
+                                        },
+                                        {
+                                          properties: {
+                                            entry_type: {
+                                              enum: ['event'],
+                                              type: 'string',
+                                            },
+                                            event_id: { type: 'string' },
+                                            event_type: { type: 'string' },
+                                          },
+                                          required: [
+                                            'entry_type',
+                                            'event_type',
+                                            'event_id',
+                                          ],
+                                          type: 'object',
+                                        },
+                                        {
+                                          properties: {
+                                            description: { type: 'string' },
+                                            entry_type: {
+                                              enum: ['provider_call'],
+                                              type: 'string',
+                                            },
+                                            response_body: {
+                                              additionalProperties: {
+                                                $ref: '#/components/schemas/access_code',
+                                              },
+                                              type: 'object',
+                                            },
+                                            response_status_code: {
+                                              format: 'float',
+                                              type: 'number',
+                                            },
+                                          },
+                                          required: [
+                                            'entry_type',
+                                            'description',
+                                            'response_status_code',
+                                          ],
+                                          type: 'object',
+                                        },
+                                      ],
+                                    },
+                                    created_at: { type: 'string' },
+                                    entry_type: { type: 'string' },
+                                    resource_id: { type: 'string' },
+                                    resource_type: { type: 'string' },
                                   },
-                                  job_id: { type: 'string' },
-                                },
-                                required: ['context_type', 'job_id'],
-                                type: 'object',
-                              },
-                            ],
-                          },
-                          created_at: { type: 'string' },
-                          entries: {
-                            items: {
-                              properties: {
-                                body: {
-                                  oneOf: [
-                                    {
-                                      properties: {
-                                        description: { type: 'string' },
-                                        entry_type: {
-                                          enum: ['resource_created'],
-                                          type: 'string',
-                                        },
-                                      },
-                                      required: ['entry_type', 'description'],
-                                      type: 'object',
-                                    },
-                                    {
-                                      properties: {
-                                        description: { type: 'string' },
-                                        entry_type: {
-                                          enum: ['resource_updated'],
-                                          type: 'string',
-                                        },
-                                        errors: {
-                                          items: { type: 'string' },
-                                          type: 'array',
-                                        },
-                                        properties_updated: {
-                                          additionalProperties: {
-                                            $ref: '#/components/schemas/access_code',
-                                          },
-                                          type: 'object',
-                                        },
-                                        warnings: {
-                                          items: { type: 'string' },
-                                          type: 'array',
-                                        },
-                                      },
-                                      required: ['entry_type', 'description'],
-                                      type: 'object',
-                                    },
-                                    {
-                                      properties: {
-                                        description: { type: 'string' },
-                                        entry_type: {
-                                          enum: ['resource_deleted'],
-                                          type: 'string',
-                                        },
-                                      },
-                                      required: ['entry_type', 'description'],
-                                      type: 'object',
-                                    },
-                                    {
-                                      properties: {
-                                        entry_type: {
-                                          enum: ['event'],
-                                          type: 'string',
-                                        },
-                                        event_id: { type: 'string' },
-                                        event_type: { type: 'string' },
-                                      },
-                                      required: [
-                                        'entry_type',
-                                        'event_type',
-                                        'event_id',
-                                      ],
-                                      type: 'object',
-                                    },
-                                    {
-                                      properties: {
-                                        description: { type: 'string' },
-                                        entry_type: {
-                                          enum: ['provider_call'],
-                                          type: 'string',
-                                        },
-                                        response_body: {
-                                          additionalProperties: {
-                                            $ref: '#/components/schemas/access_code',
-                                          },
-                                          type: 'object',
-                                        },
-                                        response_status_code: {
-                                          format: 'float',
-                                          type: 'number',
-                                        },
-                                      },
-                                      required: [
-                                        'entry_type',
-                                        'description',
-                                        'response_status_code',
-                                      ],
-                                      type: 'object',
-                                    },
+                                  required: [
+                                    'resource_type',
+                                    'resource_id',
+                                    'entry_type',
+                                    'body',
+                                    'created_at',
                                   ],
+                                  type: 'object',
                                 },
-                                created_at: { type: 'string' },
-                                entry_type: { type: 'string' },
-                                resource_id: { type: 'string' },
-                                resource_type: { type: 'string' },
+                                type: 'array',
                               },
-                              required: [
-                                'resource_type',
-                                'resource_id',
-                                'entry_type',
-                                'body',
-                                'created_at',
-                              ],
-                              type: 'object',
                             },
-                            type: 'array',
+                            required: ['context', 'entries', 'created_at'],
+                            type: 'object',
                           },
+                          type: 'array',
                         },
-                        required: ['context', 'entries', 'created_at'],
-                        type: 'object',
+                        resource_id: { type: 'string' },
+                        resource_type: { type: 'string' },
                       },
-                      type: 'array',
+                      required: ['resource_type', 'resource_id', 'groups'],
+                      type: 'object',
                     },
                   },
                   required: ['timeline', 'pagination', 'ok'],
@@ -47678,168 +47695,185 @@ export default {
                     ok: { type: 'boolean' },
                     pagination: { $ref: '#/components/schemas/pagination' },
                     timeline: {
-                      items: {
-                        properties: {
-                          context: {
-                            oneOf: [
-                              {
-                                properties: {
-                                  context_type: {
-                                    enum: ['request'],
-                                    type: 'string',
-                                  },
-                                  request_id: { type: 'string' },
-                                  request_payload: {
-                                    additionalProperties: {
-                                      $ref: '#/components/schemas/access_code',
+                      properties: {
+                        groups: {
+                          items: {
+                            properties: {
+                              context: {
+                                oneOf: [
+                                  {
+                                    properties: {
+                                      context_type: {
+                                        enum: ['request'],
+                                        type: 'string',
+                                      },
+                                      request_id: { type: 'string' },
+                                      request_payload: {
+                                        additionalProperties: {
+                                          $ref: '#/components/schemas/access_code',
+                                        },
+                                        type: 'object',
+                                      },
+                                      response_payload: {
+                                        additionalProperties: {
+                                          $ref: '#/components/schemas/access_code',
+                                        },
+                                        type: 'object',
+                                      },
                                     },
+                                    required: [
+                                      'context_type',
+                                      'request_id',
+                                      'request_payload',
+                                      'response_payload',
+                                    ],
                                     type: 'object',
                                   },
-                                  response_payload: {
-                                    additionalProperties: {
-                                      $ref: '#/components/schemas/access_code',
+                                  {
+                                    properties: {
+                                      context_type: {
+                                        enum: ['job'],
+                                        type: 'string',
+                                      },
+                                      job_id: { type: 'string' },
                                     },
+                                    required: ['context_type', 'job_id'],
                                     type: 'object',
                                   },
-                                },
-                                required: [
-                                  'context_type',
-                                  'request_id',
-                                  'request_payload',
-                                  'response_payload',
                                 ],
-                                type: 'object',
                               },
-                              {
-                                properties: {
-                                  context_type: {
-                                    enum: ['job'],
-                                    type: 'string',
+                              created_at: { type: 'string' },
+                              entries: {
+                                items: {
+                                  properties: {
+                                    body: {
+                                      oneOf: [
+                                        {
+                                          properties: {
+                                            description: { type: 'string' },
+                                            entry_type: {
+                                              enum: ['resource_created'],
+                                              type: 'string',
+                                            },
+                                          },
+                                          required: [
+                                            'entry_type',
+                                            'description',
+                                          ],
+                                          type: 'object',
+                                        },
+                                        {
+                                          properties: {
+                                            description: { type: 'string' },
+                                            entry_type: {
+                                              enum: ['resource_updated'],
+                                              type: 'string',
+                                            },
+                                            errors: {
+                                              items: { type: 'string' },
+                                              type: 'array',
+                                            },
+                                            properties_updated: {
+                                              additionalProperties: {
+                                                $ref: '#/components/schemas/access_code',
+                                              },
+                                              type: 'object',
+                                            },
+                                            warnings: {
+                                              items: { type: 'string' },
+                                              type: 'array',
+                                            },
+                                          },
+                                          required: [
+                                            'entry_type',
+                                            'description',
+                                          ],
+                                          type: 'object',
+                                        },
+                                        {
+                                          properties: {
+                                            description: { type: 'string' },
+                                            entry_type: {
+                                              enum: ['resource_deleted'],
+                                              type: 'string',
+                                            },
+                                          },
+                                          required: [
+                                            'entry_type',
+                                            'description',
+                                          ],
+                                          type: 'object',
+                                        },
+                                        {
+                                          properties: {
+                                            entry_type: {
+                                              enum: ['event'],
+                                              type: 'string',
+                                            },
+                                            event_id: { type: 'string' },
+                                            event_type: { type: 'string' },
+                                          },
+                                          required: [
+                                            'entry_type',
+                                            'event_type',
+                                            'event_id',
+                                          ],
+                                          type: 'object',
+                                        },
+                                        {
+                                          properties: {
+                                            description: { type: 'string' },
+                                            entry_type: {
+                                              enum: ['provider_call'],
+                                              type: 'string',
+                                            },
+                                            response_body: {
+                                              additionalProperties: {
+                                                $ref: '#/components/schemas/access_code',
+                                              },
+                                              type: 'object',
+                                            },
+                                            response_status_code: {
+                                              format: 'float',
+                                              type: 'number',
+                                            },
+                                          },
+                                          required: [
+                                            'entry_type',
+                                            'description',
+                                            'response_status_code',
+                                          ],
+                                          type: 'object',
+                                        },
+                                      ],
+                                    },
+                                    created_at: { type: 'string' },
+                                    entry_type: { type: 'string' },
+                                    resource_id: { type: 'string' },
+                                    resource_type: { type: 'string' },
                                   },
-                                  job_id: { type: 'string' },
-                                },
-                                required: ['context_type', 'job_id'],
-                                type: 'object',
-                              },
-                            ],
-                          },
-                          created_at: { type: 'string' },
-                          entries: {
-                            items: {
-                              properties: {
-                                body: {
-                                  oneOf: [
-                                    {
-                                      properties: {
-                                        description: { type: 'string' },
-                                        entry_type: {
-                                          enum: ['resource_created'],
-                                          type: 'string',
-                                        },
-                                      },
-                                      required: ['entry_type', 'description'],
-                                      type: 'object',
-                                    },
-                                    {
-                                      properties: {
-                                        description: { type: 'string' },
-                                        entry_type: {
-                                          enum: ['resource_updated'],
-                                          type: 'string',
-                                        },
-                                        errors: {
-                                          items: { type: 'string' },
-                                          type: 'array',
-                                        },
-                                        properties_updated: {
-                                          additionalProperties: {
-                                            $ref: '#/components/schemas/access_code',
-                                          },
-                                          type: 'object',
-                                        },
-                                        warnings: {
-                                          items: { type: 'string' },
-                                          type: 'array',
-                                        },
-                                      },
-                                      required: ['entry_type', 'description'],
-                                      type: 'object',
-                                    },
-                                    {
-                                      properties: {
-                                        description: { type: 'string' },
-                                        entry_type: {
-                                          enum: ['resource_deleted'],
-                                          type: 'string',
-                                        },
-                                      },
-                                      required: ['entry_type', 'description'],
-                                      type: 'object',
-                                    },
-                                    {
-                                      properties: {
-                                        entry_type: {
-                                          enum: ['event'],
-                                          type: 'string',
-                                        },
-                                        event_id: { type: 'string' },
-                                        event_type: { type: 'string' },
-                                      },
-                                      required: [
-                                        'entry_type',
-                                        'event_type',
-                                        'event_id',
-                                      ],
-                                      type: 'object',
-                                    },
-                                    {
-                                      properties: {
-                                        description: { type: 'string' },
-                                        entry_type: {
-                                          enum: ['provider_call'],
-                                          type: 'string',
-                                        },
-                                        response_body: {
-                                          additionalProperties: {
-                                            $ref: '#/components/schemas/access_code',
-                                          },
-                                          type: 'object',
-                                        },
-                                        response_status_code: {
-                                          format: 'float',
-                                          type: 'number',
-                                        },
-                                      },
-                                      required: [
-                                        'entry_type',
-                                        'description',
-                                        'response_status_code',
-                                      ],
-                                      type: 'object',
-                                    },
+                                  required: [
+                                    'resource_type',
+                                    'resource_id',
+                                    'entry_type',
+                                    'body',
+                                    'created_at',
                                   ],
+                                  type: 'object',
                                 },
-                                created_at: { type: 'string' },
-                                entry_type: { type: 'string' },
-                                resource_id: { type: 'string' },
-                                resource_type: { type: 'string' },
+                                type: 'array',
                               },
-                              required: [
-                                'resource_type',
-                                'resource_id',
-                                'entry_type',
-                                'body',
-                                'created_at',
-                              ],
-                              type: 'object',
                             },
-                            type: 'array',
+                            required: ['context', 'entries', 'created_at'],
+                            type: 'object',
                           },
+                          type: 'array',
                         },
-                        required: ['context', 'entries', 'created_at'],
-                        type: 'object',
+                        resource_id: { type: 'string' },
+                        resource_type: { type: 'string' },
                       },
-                      type: 'array',
+                      required: ['resource_type', 'resource_id', 'groups'],
+                      type: 'object',
                     },
                   },
                   required: ['timeline', 'pagination', 'ok'],
@@ -48002,8 +48036,14 @@ export default {
                           },
                           automation_run_id: { format: 'uuid', type: 'string' },
                           created_at: { type: 'string' },
+                          partner_key: { nullable: true, type: 'string' },
                           partner_resource_id: {
                             format: 'uuid',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          resource_type: { nullable: true, type: 'string' },
+                          resource_type_alias: {
                             nullable: true,
                             type: 'string',
                           },
@@ -48014,6 +48054,9 @@ export default {
                           'workspace_id',
                           'automation_id',
                           'partner_resource_id',
+                          'partner_key',
+                          'resource_type',
+                          'resource_type_alias',
                           'created_at',
                         ],
                         type: 'object',
@@ -48162,8 +48205,14 @@ export default {
                           },
                           automation_run_id: { format: 'uuid', type: 'string' },
                           created_at: { type: 'string' },
+                          partner_key: { nullable: true, type: 'string' },
                           partner_resource_id: {
                             format: 'uuid',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          resource_type: { nullable: true, type: 'string' },
+                          resource_type_alias: {
                             nullable: true,
                             type: 'string',
                           },
@@ -48174,6 +48223,9 @@ export default {
                           'workspace_id',
                           'automation_id',
                           'partner_resource_id',
+                          'partner_key',
+                          'resource_type',
+                          'resource_type_alias',
                           'created_at',
                         ],
                         type: 'object',
