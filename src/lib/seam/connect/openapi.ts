@@ -2827,8 +2827,13 @@ export default {
                   'Name of the access point in the dormakaba Community access system.',
                 type: 'string',
               },
+              access_point_profile: {
+                description:
+                  'Type of access point profile in the dormakaba Community access system.',
+                type: 'string',
+              },
             },
-            required: ['access_point_name'],
+            required: ['access_point_name', 'access_point_profile'],
             type: 'object',
           },
           errors: {
@@ -19577,8 +19582,16 @@ export default {
                                     'Name of the access point in the dormakaba Community access system.',
                                   type: 'string',
                                 },
+                                access_point_profile: {
+                                  description:
+                                    'Type of access point profile in the dormakaba Community access system.',
+                                  type: 'string',
+                                },
                               },
-                              required: ['access_point_name'],
+                              required: [
+                                'access_point_name',
+                                'access_point_profile',
+                              ],
                               type: 'object',
                             },
                             errors: {
