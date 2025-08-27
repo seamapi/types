@@ -73,7 +73,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'smartthings',
     'yale',
     'nuki',
-    'salto',
+    'salto_ks',
     'salto_space',
     'minut',
     'my_2n',
