@@ -2861,12 +2861,21 @@ export default {
             description:
               'Hotek-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
             properties: {
+              display_name: {
+                description: 'Display name of the entrance.',
+                type: 'string',
+              },
+              door_type: {
+                description: 'Type of door.',
+                enum: ['common_area', 'guest'],
+                type: 'string',
+              },
               room_number: {
                 description: 'Room number of the entrance.',
                 type: 'string',
               },
             },
-            required: ['room_number'],
+            required: ['room_number', 'display_name', 'door_type'],
             type: 'object',
           },
           latch_metadata: {
@@ -19619,12 +19628,25 @@ export default {
                               description:
                                 'Hotek-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
                               properties: {
+                                display_name: {
+                                  description: 'Display name of the entrance.',
+                                  type: 'string',
+                                },
+                                door_type: {
+                                  description: 'Type of door.',
+                                  enum: ['common_area', 'guest'],
+                                  type: 'string',
+                                },
                                 room_number: {
                                   description: 'Room number of the entrance.',
                                   type: 'string',
                                 },
                               },
-                              required: ['room_number'],
+                              required: [
+                                'room_number',
+                                'display_name',
+                                'door_type',
+                              ],
                               type: 'object',
                             },
                             latch_metadata: {
