@@ -31325,6 +31325,14 @@ export default {
                     format: 'date-time',
                     type: 'string',
                   },
+                  hotek_metadata: {
+                    properties: {
+                      auto_join: { type: 'boolean' },
+                      override: { type: 'boolean' },
+                    },
+                    type: 'object',
+                    'x-undocumented': 'in development',
+                  },
                   is_multi_phone_sync_credential: {
                     default: false,
                     description:
