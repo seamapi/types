@@ -14665,6 +14665,11 @@ export default {
                 type: 'string',
               },
               event_type: { enum: ['access_method.issued'], type: 'string' },
+              is_backup_code: {
+                description:
+                  "Indicates whether the code is a backup code (only present when mode is 'code' and a backup code was used).",
+                type: 'boolean',
+              },
               occurred_at: {
                 description: 'Date and time at which the event occurred.',
                 format: 'date-time',
@@ -14895,6 +14900,11 @@ export default {
                 type: 'string',
               },
               event_type: { enum: ['access_method.reissued'], type: 'string' },
+              is_backup_code: {
+                description:
+                  "Indicates whether the code is a backup code (only present when mode is 'code' and a backup code was used).",
+                type: 'boolean',
+              },
               occurred_at: {
                 description: 'Date and time at which the event occurred.',
                 format: 'date-time',
