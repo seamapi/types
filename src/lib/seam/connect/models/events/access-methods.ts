@@ -26,6 +26,12 @@ export const access_method_issued_event = access_method_event.extend({
     .describe(
       "The actual PIN code for code access methods (only present when mode is 'code').",
     ),
+  is_backup_code: z
+    .boolean()
+    .optional()
+    .describe(
+      "Indicates whether the code is a backup code (only present when mode is 'code' and a backup code was used).",
+    ),
 }).describe(`
     ---
     route_path: /access_methods
@@ -74,6 +80,12 @@ export const access_method_reissued_event = access_method_event.extend({
     .optional()
     .describe(
       "The actual PIN code for code access methods (only present when mode is 'code').",
+    ),
+  is_backup_code: z
+    .boolean()
+    .optional()
+    .describe(
+      "Indicates whether the code is a backup code (only present when mode is 'code' and a backup code was used).",
     ),
 }).describe(`
     ---
