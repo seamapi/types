@@ -618,7 +618,69 @@ export const device_metadata = z
 
     keynest_metadata: z
       .object({
+        key_id: z.string().describe(`Key ID for a KeyNest device.`),
         device_name: z.string().describe(`Device name for a KeyNest device.`),
+        property_id: z
+          .string()
+          .nullable()
+          .describe(`Property ID for a KeyNest device.`),
+        property_postcode: z
+          .string()
+          .nullable()
+          .describe(`Property postcode for a KeyNest device.`),
+        key_notes: z
+          .string()
+          .nullable()
+          .describe(`Key notes for a KeyNest device.`),
+        subscription_plan: z
+          .string()
+          .describe(`Subscription plan for a KeyNest device.`),
+        status_type: z.string().describe(`Status type for a KeyNest device.`),
+        current_or_last_store_id: z
+          .number()
+          .describe(`Current or last store ID for a KeyNest device.`),
+        last_movement: z
+          .string()
+          .describe(`Last movement timestamp for a KeyNest device.`),
+        address: z
+          .string()
+          .nullable()
+          .describe(`Address for a KeyNest device.`),
+        current_status: z
+          .string()
+          .nullable()
+          .describe(`Current status for a KeyNest device.`),
+        current_user_name: z
+          .string()
+          .nullable()
+          .describe(`Current user name for a KeyNest device.`),
+        current_user_email: z
+          .string()
+          .nullable()
+          .describe(`Current user email for a KeyNest device.`),
+        current_user_phone_number: z
+          .string()
+          .nullable()
+          .describe(`Current user phone number for a KeyNest device.`),
+        current_user_company: z
+          .string()
+          .nullable()
+          .describe(`Current user company for a KeyNest device.`),
+        handover_method: z
+          .string()
+          .nullable()
+          .describe(`Handover method for a KeyNest device.`),
+        keynest_app_user: z
+          .string()
+          .nullable()
+          .describe(`KeyNest app user for a KeyNest device.`),
+        default_office_id: z
+          .number()
+          .describe(`Default office ID for a KeyNest device.`),
+        fob_id: z.number().describe(`Fob ID for a KeyNest device.`),
+        has_photo: z
+          .boolean()
+          .describe(`Whether the KeyNest device has a photo.`),
       })
       .partial()
       .describe(`Metadata for a KeyNest device.`),

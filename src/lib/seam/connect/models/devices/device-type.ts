@@ -45,6 +45,23 @@ export const lock_device_type = z.enum(
 
 export type LockDeviceType = z.infer<typeof lock_device_type>
 
+/** Keys */
+export const KEY_DEVICE_TYPE = {
+  KEYNEST_KEY: 'keynest_key',
+} as const
+
+type KeyDeviceTypeFromMapping =
+  (typeof KEY_DEVICE_TYPE)[keyof typeof KEY_DEVICE_TYPE]
+
+export const KEY_DEVICE_TYPE_LIST = Object.values(KEY_DEVICE_TYPE)
+
+export const key_device_type = z.enum(
+  Object.values(KEY_DEVICE_TYPE) as [KeyDeviceTypeFromMapping],
+).describe(`Device type for keys.
+          `)
+
+export type KeyDeviceType = z.infer<typeof key_device_type>
+
 /** Noise Sensors */
 export const NOISE_SENSOR_DEVICE_TYPE = {
   NOISEAWARE_ACTIVITY_ZONE: 'noiseaware_activity_zone',
@@ -111,6 +128,7 @@ export type PhoneDeviceType = z.infer<typeof phone_device_type>
 
 export const any_device_type = z.union([
   lock_device_type,
+  key_device_type,
   noise_sensor_device_type,
   thermostat_device_type,
   phone_device_type,
