@@ -9387,6 +9387,11 @@ export default {
                 type: 'string',
               },
               {
+                description: 'Device type for keys.\n          ',
+                enum: ['keynest_key'],
+                type: 'string',
+              },
+              {
                 description: 'Device type for noise sensors.\n          ',
                 enum: ['noiseaware_activity_zone', 'minut_sensor'],
                 type: 'string',
@@ -10773,8 +10778,110 @@ export default {
                       keynest_metadata: {
                         description: 'Metadata for a KeyNest device.',
                         properties: {
+                          address: {
+                            description: 'Address for a KeyNest device.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          current_or_last_store_id: {
+                            description:
+                              'Current or last store ID for a KeyNest device.',
+                            format: 'float',
+                            type: 'number',
+                          },
+                          current_status: {
+                            description: 'Current status for a KeyNest device.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          current_user_company: {
+                            description:
+                              'Current user company for a KeyNest device.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          current_user_email: {
+                            description:
+                              'Current user email for a KeyNest device.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          current_user_name: {
+                            description:
+                              'Current user name for a KeyNest device.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          current_user_phone_number: {
+                            description:
+                              'Current user phone number for a KeyNest device.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          default_office_id: {
+                            description:
+                              'Default office ID for a KeyNest device.',
+                            format: 'float',
+                            type: 'number',
+                          },
                           device_name: {
                             description: 'Device name for a KeyNest device.',
+                            type: 'string',
+                          },
+                          fob_id: {
+                            description: 'Fob ID for a KeyNest device.',
+                            format: 'float',
+                            type: 'number',
+                          },
+                          handover_method: {
+                            description:
+                              'Handover method for a KeyNest device.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          has_photo: {
+                            description:
+                              'Whether the KeyNest device has a photo.',
+                            type: 'boolean',
+                          },
+                          key_id: {
+                            description: 'Key ID for a KeyNest device.',
+                            type: 'string',
+                          },
+                          key_notes: {
+                            description: 'Key notes for a KeyNest device.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          keynest_app_user: {
+                            description:
+                              'KeyNest app user for a KeyNest device.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          last_movement: {
+                            description:
+                              'Last movement timestamp for a KeyNest device.',
+                            type: 'string',
+                          },
+                          property_id: {
+                            description: 'Property ID for a KeyNest device.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          property_postcode: {
+                            description:
+                              'Property postcode for a KeyNest device.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          status_type: {
+                            description: 'Status type for a KeyNest device.',
+                            type: 'string',
+                          },
+                          subscription_plan: {
+                            description:
+                              'Subscription plan for a KeyNest device.',
                             type: 'string',
                           },
                         },
@@ -23845,6 +23952,11 @@ export default {
                   'tedee_lock',
                   'akiles_lock',
                 ],
+                type: 'string',
+              },
+              {
+                description: 'Device type for keys.\n          ',
+                enum: ['keynest_key'],
                 type: 'string',
               },
               {
@@ -40668,6 +40780,11 @@ export default {
                   type: 'string',
                 },
                 {
+                  description: 'Device type for keys.\n          ',
+                  enum: ['keynest_key'],
+                  type: 'string',
+                },
+                {
                   description: 'Device type for noise sensors.\n          ',
                   enum: ['noiseaware_activity_zone', 'minut_sensor'],
                   type: 'string',
@@ -40731,6 +40848,11 @@ export default {
                       'tedee_lock',
                       'akiles_lock',
                     ],
+                    type: 'string',
+                  },
+                  {
+                    description: 'Device type for keys.\n          ',
+                    enum: ['keynest_key'],
                     type: 'string',
                   },
                   {
@@ -41090,6 +41212,11 @@ export default {
                         type: 'string',
                       },
                       {
+                        description: 'Device type for keys.\n          ',
+                        enum: ['keynest_key'],
+                        type: 'string',
+                      },
+                      {
                         description:
                           'Device type for noise sensors.\n          ',
                         enum: ['noiseaware_activity_zone', 'minut_sensor'],
@@ -41151,6 +41278,11 @@ export default {
                             'tedee_lock',
                             'akiles_lock',
                           ],
+                          type: 'string',
+                        },
+                        {
+                          description: 'Device type for keys.\n          ',
+                          enum: ['keynest_key'],
                           type: 'string',
                         },
                         {
@@ -41997,6 +42129,11 @@ export default {
                   type: 'string',
                 },
                 {
+                  description: 'Device type for keys.\n          ',
+                  enum: ['keynest_key'],
+                  type: 'string',
+                },
+                {
                   description: 'Device type for noise sensors.\n          ',
                   enum: ['noiseaware_activity_zone', 'minut_sensor'],
                   type: 'string',
@@ -42060,6 +42197,11 @@ export default {
                       'tedee_lock',
                       'akiles_lock',
                     ],
+                    type: 'string',
+                  },
+                  {
+                    description: 'Device type for keys.\n          ',
+                    enum: ['keynest_key'],
                     type: 'string',
                   },
                   {
@@ -42416,6 +42558,11 @@ export default {
                         type: 'string',
                       },
                       {
+                        description: 'Device type for keys.\n          ',
+                        enum: ['keynest_key'],
+                        type: 'string',
+                      },
+                      {
                         description:
                           'Device type for noise sensors.\n          ',
                         enum: ['noiseaware_activity_zone', 'minut_sensor'],
@@ -42477,6 +42624,11 @@ export default {
                             'tedee_lock',
                             'akiles_lock',
                           ],
+                          type: 'string',
+                        },
+                        {
+                          description: 'Device type for keys.\n          ',
+                          enum: ['keynest_key'],
                           type: 'string',
                         },
                         {
