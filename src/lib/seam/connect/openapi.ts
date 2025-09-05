@@ -15104,8 +15104,7 @@ export default {
             'x-route-path': '/access_methods',
           },
           {
-            description:
-              'An access method was reissued due to an Access Grant update.',
+            description: 'An access method was reissued.',
             properties: {
               access_grant_ids: {
                 description:
@@ -15165,70 +15164,6 @@ export default {
               'access_method_id',
               'access_grant_ids',
               'event_type',
-            ],
-            type: 'object',
-            'x-route-path': '/access_methods',
-          },
-          {
-            description: "An access method's PIN code was changed.",
-            properties: {
-              access_grant_ids: {
-                description:
-                  'IDs of the access grants associated with this access method.',
-                items: { format: 'uuid', type: 'string' },
-                type: 'array',
-              },
-              access_grant_keys: {
-                description:
-                  'Keys of the access grants associated with this access method (if present).',
-                items: { type: 'string' },
-                type: 'array',
-              },
-              access_method_id: {
-                description: 'ID of the affected access method.',
-                format: 'uuid',
-                type: 'string',
-              },
-              code: {
-                description:
-                  "The new PIN code for code access methods (only present when mode is 'code').",
-                type: 'string',
-              },
-              created_at: {
-                description: 'Date and time at which the event was created.',
-                format: 'date-time',
-                type: 'string',
-              },
-              event_id: {
-                description: 'ID of the event.',
-                format: 'uuid',
-                type: 'string',
-              },
-              event_type: {
-                enum: ['access_method.code_changed'],
-                type: 'string',
-              },
-              occurred_at: {
-                description: 'Date and time at which the event occurred.',
-                format: 'date-time',
-                type: 'string',
-              },
-              workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
-                format: 'uuid',
-                type: 'string',
-              },
-            },
-            required: [
-              'event_id',
-              'workspace_id',
-              'created_at',
-              'occurred_at',
-              'access_method_id',
-              'access_grant_ids',
-              'event_type',
-              'code',
             ],
             type: 'object',
             'x-route-path': '/access_methods',
@@ -43621,7 +43556,6 @@ export default {
                 'access_method.card_encoding_required',
                 'access_method.deleted',
                 'access_method.reissued',
-                'access_method.code_changed',
                 'acs_system.connected',
                 'acs_system.added',
                 'acs_system.disconnected',
@@ -43724,7 +43658,6 @@ export default {
                   'access_method.card_encoding_required',
                   'access_method.deleted',
                   'access_method.reissued',
-                  'access_method.code_changed',
                   'acs_system.connected',
                   'acs_system.added',
                   'acs_system.disconnected',
@@ -43982,7 +43915,6 @@ export default {
                       'access_method.card_encoding_required',
                       'access_method.deleted',
                       'access_method.reissued',
-                      'access_method.code_changed',
                       'acs_system.connected',
                       'acs_system.added',
                       'acs_system.disconnected',
@@ -44081,7 +44013,6 @@ export default {
                         'access_method.card_encoding_required',
                         'access_method.deleted',
                         'access_method.reissued',
-                        'access_method.code_changed',
                         'acs_system.connected',
                         'acs_system.added',
                         'acs_system.disconnected',
@@ -49257,7 +49188,6 @@ export default {
                 'access_method.card_encoding_required',
                 'access_method.deleted',
                 'access_method.reissued',
-                'access_method.code_changed',
                 'acs_system.connected',
                 'acs_system.added',
                 'acs_system.disconnected',
@@ -49361,7 +49291,6 @@ export default {
                   'access_method.card_encoding_required',
                   'access_method.deleted',
                   'access_method.reissued',
-                  'access_method.code_changed',
                   'acs_system.connected',
                   'acs_system.added',
                   'acs_system.disconnected',
@@ -49528,7 +49457,6 @@ export default {
                       'access_method.card_encoding_required',
                       'access_method.deleted',
                       'access_method.reissued',
-                      'access_method.code_changed',
                       'acs_system.connected',
                       'acs_system.added',
                       'acs_system.disconnected',
@@ -49627,7 +49555,6 @@ export default {
                         'access_method.card_encoding_required',
                         'access_method.deleted',
                         'access_method.reissued',
-                        'access_method.code_changed',
                         'acs_system.connected',
                         'acs_system.added',
                         'acs_system.disconnected',

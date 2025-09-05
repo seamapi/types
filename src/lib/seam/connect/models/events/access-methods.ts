@@ -73,39 +73,13 @@ export const access_method_deleted_event = access_method_event.extend({
     An access method was deleted.
   `)
 
-export const access_method_reissued_event = access_method_event.extend({
+export const access_method_reissued_event = access_method_issued_event.extend({
   event_type: z.literal('access_method.reissued'),
-  code: z
-    .string()
-    .optional()
-    .describe(
-      "The actual PIN code for code access methods (only present when mode is 'code').",
-    ),
-  is_backup_code: z
-    .boolean()
-    .optional()
-    .describe(
-      "Indicates whether the code is a backup code (only present when mode is 'code' and a backup code was used).",
-    ),
 }).describe(`
     ---
     route_path: /access_methods
     ---
-    An access method was reissued due to an Access Grant update.
-  `)
-
-export const access_method_code_changed_event = access_method_event.extend({
-  event_type: z.literal('access_method.code_changed'),
-  code: z
-    .string()
-    .describe(
-      "The new PIN code for code access methods (only present when mode is 'code').",
-    ),
-}).describe(`
-    ---
-    route_path: /access_methods
-    ---
-    An access method's PIN code was changed.
+    An access method was reissued.
   `)
 
 export type AccessMethodRevokedEvent = z.infer<
@@ -118,5 +92,4 @@ export const access_method_events = [
   access_method_card_encoding_required_event,
   access_method_deleted_event,
   access_method_reissued_event,
-  access_method_code_changed_event,
 ] as const
