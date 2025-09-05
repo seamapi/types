@@ -1947,6 +1947,43 @@ export default {
             format: 'uuid',
             type: 'string',
           },
+          warnings: {
+            description:
+              'Warnings associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
+            items: {
+              description:
+                'Warning associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
+              discriminator: { propertyName: 'warning_code' },
+              oneOf: [
+                {
+                  description:
+                    'Indicates that the [access grant](https://docs.seam.co/latest/capability-guides/access-grants) is being deleted.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['being_deleted'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
           workspace_id: {
             description:
               'ID of the Seam workspace associated with the Access Grant.',
@@ -1967,6 +2004,7 @@ export default {
           'created_at',
           'starts_at',
           'ends_at',
+          'warnings',
         ],
         type: 'object',
         'x-draft': 'Early access.',
@@ -2034,6 +2072,43 @@ export default {
             enum: ['code', 'card', 'mobile_key'],
             type: 'string',
           },
+          warnings: {
+            description:
+              'Warnings associated with the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods).',
+            items: {
+              description:
+                'Warning associated with the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods).',
+              discriminator: { propertyName: 'warning_code' },
+              oneOf: [
+                {
+                  description:
+                    'Indicates that the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods) is being deleted.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['being_deleted'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
           workspace_id: {
             description:
               'ID of the Seam workspace associated with the access method.',
@@ -2049,6 +2124,7 @@ export default {
           'created_at',
           'issued_at',
           'is_issued',
+          'warnings',
         ],
         type: 'object',
         'x-draft': 'Early access.',
