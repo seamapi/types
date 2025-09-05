@@ -1,5 +1,40 @@
 import { z } from 'zod'
 
+const common_access_method_warning = z.object({
+  created_at: z
+    .string()
+    .datetime()
+    .describe('Date and time at which Seam created the warning.'),
+  message: z
+    .string()
+    .describe(
+      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+    ),
+})
+
+const warning_code_description =
+  'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
+
+const being_deleted = common_access_method_warning
+  .extend({
+    warning_code: z.literal('being_deleted').describe(warning_code_description),
+  })
+  .describe(
+    'Indicates that the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods) is being deleted.',
+  )
+
+const access_method_warning = z
+  .discriminatedUnion('warning_code', [being_deleted])
+  .describe(
+    'Warning associated with the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods).',
+  )
+
+const _access_method_warning_map = z.object({
+  being_deleted: being_deleted.optional().nullable(),
+})
+
+export type AccessMethodWarningMap = z.infer<typeof _access_method_warning_map>
+
 export const access_method = z.object({
   workspace_id: z
     .string()
@@ -44,6 +79,11 @@ export const access_method = z.object({
     .nullable()
     .optional()
     .describe('The actual PIN code for code access methods.'),
+  warnings: z
+    .array(access_method_warning)
+    .describe(
+      'Warnings associated with the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods).',
+    ),
   customization_profile_id: z
     .string()
     .uuid()

@@ -2,6 +2,41 @@ import { z } from 'zod'
 
 import { requested_access_method } from './requested-access-method.js'
 
+const common_access_grant_warning = z.object({
+  created_at: z
+    .string()
+    .datetime()
+    .describe('Date and time at which Seam created the warning.'),
+  message: z
+    .string()
+    .describe(
+      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+    ),
+})
+
+const warning_code_description =
+  'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
+
+const being_deleted = common_access_grant_warning
+  .extend({
+    warning_code: z.literal('being_deleted').describe(warning_code_description),
+  })
+  .describe(
+    'Indicates that the [access grant](https://docs.seam.co/latest/capability-guides/access-grants) is being deleted.',
+  )
+
+const access_grant_warning = z
+  .discriminatedUnion('warning_code', [being_deleted])
+  .describe(
+    'Warning associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
+  )
+
+const _access_grant_warning_map = z.object({
+  being_deleted: being_deleted.optional().nullable(),
+})
+
+export type AccessGrantWarningMap = z.infer<typeof _access_grant_warning_map>
+
 export const access_grant = z.object({
   workspace_id: z
     .string()
@@ -63,6 +98,11 @@ export const access_grant = z.object({
     .datetime()
     .nullable()
     .describe('Date and time at which the Access Grant ends.'),
+  warnings: z
+    .array(access_grant_warning)
+    .describe(
+      'Warnings associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
+    ),
   customization_profile_id: z
     .string()
     .uuid()
