@@ -79,10 +79,37 @@ export type AccessGrantAccessToDoorLostEvent = z.infer<
   typeof access_grant_access_to_door_lost_event
 >
 
+export const access_grant_access_times_changed_event =
+  access_grant_event.extend({
+    event_type: z.literal('access_grant.access_times_changed'),
+    access_grant_key: z
+      .string()
+      .optional()
+      .describe('Key of the affected Access Grant (if present).'),
+    starts_at: z
+      .string()
+      .optional()
+      .describe('The new start time for the access grant.'),
+    ends_at: z
+      .string()
+      .optional()
+      .describe('The new end time for the access grant.'),
+  }).describe(`
+    ---
+    route_path: /access_grants
+    ---
+    An Access Grant's start or end time was changed.
+  `)
+
+export type AccessGrantAccessTimesChangedEvent = z.infer<
+  typeof access_grant_access_times_changed_event
+>
+
 export const access_grant_events = [
   access_grant_created_event,
   access_grant_deleted_event,
   access_grant_access_granted_to_all_doors_event,
   access_grant_access_granted_to_door_event,
   access_grant_access_to_door_lost_event,
+  access_grant_access_times_changed_event,
 ] as const

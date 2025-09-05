@@ -94,6 +94,20 @@ export const access_method_reissued_event = access_method_event.extend({
     An access method was reissued due to an Access Grant update.
   `)
 
+export const access_method_code_changed_event = access_method_event.extend({
+  event_type: z.literal('access_method.code_changed'),
+  code: z
+    .string()
+    .describe(
+      "The new PIN code for code access methods (only present when mode is 'code').",
+    ),
+}).describe(`
+    ---
+    route_path: /access_methods
+    ---
+    An access method's PIN code was changed.
+  `)
+
 export type AccessMethodRevokedEvent = z.infer<
   typeof access_method_revoked_event
 >
@@ -104,4 +118,5 @@ export const access_method_events = [
   access_method_card_encoding_required_event,
   access_method_deleted_event,
   access_method_reissued_event,
+  access_method_code_changed_event,
 ] as const
