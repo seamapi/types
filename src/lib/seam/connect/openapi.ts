@@ -16000,7 +16000,6 @@ export default {
               'occurred_at',
               'connected_account_id',
               'event_type',
-              'connect_webview_id',
             ],
             type: 'object',
             'x-route-path': '/connected_accounts',
