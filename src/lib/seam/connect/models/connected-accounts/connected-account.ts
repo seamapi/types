@@ -53,14 +53,6 @@ export const account_disconnected = common_connected_account_error
   })
   .describe('Indicates that the account is disconnected.')
 
-export const invalid_credentials = common_connected_account_error
-  .extend({
-    error_code: z
-      .literal('invalid_credentials')
-      .describe(error_code_description),
-  })
-  .describe('Indicates that the credentials provided were invalid.')
-
 export const bridge_disconnected = common_connected_account_error
   .extend({
     error_code: z
@@ -126,7 +118,6 @@ export const salto_ks_subscription_limit_exceeded =
 
 export const connected_account_error = z.discriminatedUnion('error_code', [
   account_disconnected,
-  invalid_credentials,
   bridge_disconnected,
   salto_ks_subscription_limit_exceeded,
 ])
@@ -137,7 +128,6 @@ export type ConnectedAccountWarning = z.infer<typeof connected_account_warning>
 
 const _connected_account_error_map = z.object({
   account_disconnected: account_disconnected.nullable().optional(),
-  invalid_credentials: invalid_credentials.nullable().optional(),
   bridge_disconnected: bridge_disconnected.nullable().optional(),
   salto_ks_subscription_limit_exceeded: salto_ks_subscription_limit_exceeded
     .nullable()

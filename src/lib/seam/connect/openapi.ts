@@ -1325,41 +1325,6 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the credentials provided were invalid.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['invalid_credentials'],
-                      type: 'string',
-                    },
-                    is_bridge_error: {
-                      description:
-                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
-                      type: 'boolean',
-                    },
-                    is_connected_account_error: {
-                      description:
-                        'Indicates whether the error is related specifically to the connected account.',
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['created_at', 'message', 'error_code'],
-                  type: 'object',
-                },
-                {
-                  description:
                     'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
                   properties: {
                     created_at: {
@@ -8998,41 +8963,6 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the credentials provided were invalid.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['invalid_credentials'],
-                      type: 'string',
-                    },
-                    is_bridge_error: {
-                      description:
-                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
-                      type: 'boolean',
-                    },
-                    is_connected_account_error: {
-                      description:
-                        'Indicates whether the error is related specifically to the connected account.',
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['created_at', 'message', 'error_code'],
-                  type: 'object',
-                },
-                {
-                  description:
                     'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
                   properties: {
                     created_at: {
@@ -10016,41 +9946,6 @@ export default {
                     'created_at',
                     'error_code',
                   ],
-                  type: 'object',
-                },
-                {
-                  description:
-                    'Indicates that the credentials provided were invalid.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['invalid_credentials'],
-                      type: 'string',
-                    },
-                    is_bridge_error: {
-                      description:
-                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
-                      type: 'boolean',
-                    },
-                    is_connected_account_error: {
-                      description:
-                        'Indicates whether the error is related specifically to the connected account.',
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['created_at', 'message', 'error_code'],
                   type: 'object',
                 },
                 {
@@ -22286,41 +22181,6 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the credentials provided were invalid.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['invalid_credentials'],
-                      type: 'string',
-                    },
-                    is_bridge_error: {
-                      description:
-                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
-                      type: 'boolean',
-                    },
-                    is_connected_account_error: {
-                      description:
-                        'Indicates whether the error is related specifically to the connected account.',
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['created_at', 'message', 'error_code'],
-                  type: 'object',
-                },
-                {
-                  description:
                     'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
                   properties: {
                     created_at: {
@@ -24634,41 +24494,6 @@ export default {
                     'created_at',
                     'error_code',
                   ],
-                  type: 'object',
-                },
-                {
-                  description:
-                    'Indicates that the credentials provided were invalid.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['invalid_credentials'],
-                      type: 'string',
-                    },
-                    is_bridge_error: {
-                      description:
-                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
-                      type: 'boolean',
-                    },
-                    is_connected_account_error: {
-                      description:
-                        'Indicates whether the error is related specifically to the connected account.',
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['created_at', 'message', 'error_code'],
                   type: 'object',
                 },
                 {
