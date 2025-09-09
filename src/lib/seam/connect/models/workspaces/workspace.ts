@@ -70,6 +70,17 @@ export const workspace = z.object({
   `,
     )
     .nullable(),
+  publishable_key: z
+    .string()
+    .optional()
+    .describe(
+      'Publishable key for the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). This key is used to identify the workspace in client-side applications.',
+    ),
+  is_publishable_key_auth_enabled: z
+    .boolean()
+    .describe(
+      'Indicates whether publishable key authentication is enabled for this workspace.',
+    ),
 }).describe(`
   ---
   route_path: /workspaces

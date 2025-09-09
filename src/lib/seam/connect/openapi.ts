@@ -25639,6 +25639,11 @@ export default {
             },
             type: 'object',
           },
+          is_publishable_key_auth_enabled: {
+            description:
+              'Indicates whether publishable key authentication is enabled for this workspace.',
+            type: 'boolean',
+          },
           is_sandbox: {
             description:
               'Indicates whether the workspace is a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).',
@@ -25652,6 +25657,11 @@ export default {
           name: {
             description:
               'Name of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+            type: 'string',
+          },
+          publishable_key: {
+            description:
+              'Publishable key for the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). This key is used to identify the workspace in client-side applications.',
             type: 'string',
           },
           workspace_id: {
@@ -25669,6 +25679,7 @@ export default {
           'connect_webview_customization',
           'is_suspended',
           'connect_partner_name',
+          'is_publishable_key_auth_enabled',
         ],
         type: 'object',
         'x-route-path': '/workspaces',
@@ -59340,6 +59351,11 @@ export default {
                     },
                     type: 'object',
                   },
+                  is_publishable_key_auth_enabled: {
+                    description:
+                      'Indicates whether publishable key authentication is enabled for this workspace.',
+                    type: 'boolean',
+                  },
                   is_suspended: {
                     description:
                       'Indicates whether the workspace is suspended.',
@@ -59416,6 +59432,11 @@ export default {
                       },
                     },
                     type: 'object',
+                  },
+                  is_publishable_key_auth_enabled: {
+                    description:
+                      'Indicates whether publishable key authentication is enabled for this workspace.',
+                    type: 'boolean',
                   },
                   is_suspended: {
                     description:
