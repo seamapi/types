@@ -134,6 +134,20 @@ export type ConnectedAccountCompletedFirstSyncAfterReconnectionEvent = z.infer<
   typeof connected_account_completed_first_sync_after_reconnection_event
 >
 
+export const connected_account_reauthorization_requested_event =
+  connected_account_event.extend({
+    event_type: z.literal('connected_account.reauthorization_requested'),
+  }).describe(`
+    ---
+    route_path: /connected_accounts
+    ---
+    A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) requires reauthorization using a new Connect Webview. The account is still connected, but cannot access new features. Delaying reauthorization too long will eventually cause the Connected Account to become disconnected.
+  `)
+
+export type ConnectedAccountReauthorizationRequestedEvent = z.infer<
+  typeof connected_account_reauthorization_requested_event
+>
+
 export const connected_account_events = [
   connected_account_connected_event,
   connected_account_created_event,
@@ -142,4 +156,5 @@ export const connected_account_events = [
   connected_account_completed_first_sync_event,
   connected_account_deleted_event,
   connected_account_completed_first_sync_after_reconnection_event,
+  connected_account_reauthorization_requested_event,
 ] as const

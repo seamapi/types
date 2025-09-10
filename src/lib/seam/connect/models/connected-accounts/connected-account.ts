@@ -212,11 +212,22 @@ const salto_ks_subscription_limit_almost_reached =
       'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site.',
     )
 
+const account_reauthorization_requested = common_connected_account_warning
+  .extend({
+    warning_code: z
+      .literal('account_reauthorization_requested')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'Indicates that the Connected Account requires reauthorization using a new Connect Webview. The account is still connected, but cannot access new features. Delaying reauthorization too long will eventually cause the Connected Account to become disconnected.',
+  )
+
 const connected_account_warning = z
   .discriminatedUnion('warning_code', [
     scheduled_maintenance_window,
     unknown_issue_with_connected_account,
     salto_ks_subscription_limit_almost_reached,
+    account_reauthorization_requested,
   ])
   .describe('Warning associated with the connected account.')
 
@@ -229,6 +240,9 @@ const _connected_account_warning_map = z.object({
     .optional(),
   salto_ks_subscription_limit_almost_reached:
     salto_ks_subscription_limit_almost_reached.nullable().optional(),
+  account_reauthorization_requested: account_reauthorization_requested
+    .nullable()
+    .optional(),
 })
 
 export type ConnectedAccountWarningMap = z.infer<
