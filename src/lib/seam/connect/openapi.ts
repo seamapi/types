@@ -49837,6 +49837,179 @@ export default {
         'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
+    '/seam/customer/v1/reservations/get': {
+      get: {
+        description:
+          'Returns a single reservation for a specific customer by reservation ID.',
+        operationId: 'seamCustomerV1ReservationsGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'reservation_id',
+            schema: {
+              description: 'ID of the reservation to retrieve.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'reservation_key',
+            schema: {
+              description: 'Key of the reservation to retrieve.',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    reservation: {
+                      properties: {
+                        access_methods: {
+                          items: { $ref: '#/components/schemas/access_method' },
+                          type: 'array',
+                        },
+                        created_at: { format: 'date-time', type: 'string' },
+                        ends_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        guest_name: { nullable: true, type: 'string' },
+                        name: { nullable: true, type: 'string' },
+                        reservation_id: { format: 'uuid', type: 'string' },
+                        reservation_key: { type: 'string' },
+                        starts_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'reservation_id',
+                        'reservation_key',
+                        'name',
+                        'starts_at',
+                        'ends_at',
+                        'created_at',
+                        'guest_name',
+                        'access_methods',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['reservation', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/reservations/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'reservations'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'reservation',
+        'x-response-key': 'reservation',
+        'x-title': 'Get Reservation for Customer',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+      post: {
+        description:
+          'Returns a single reservation for a specific customer by reservation ID.',
+        operationId: 'seamCustomerV1ReservationsGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  reservation_id: {
+                    description: 'ID of the reservation to retrieve.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  reservation_key: {
+                    description: 'Key of the reservation to retrieve.',
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    reservation: {
+                      properties: {
+                        access_methods: {
+                          items: { $ref: '#/components/schemas/access_method' },
+                          type: 'array',
+                        },
+                        created_at: { format: 'date-time', type: 'string' },
+                        ends_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        guest_name: { nullable: true, type: 'string' },
+                        name: { nullable: true, type: 'string' },
+                        reservation_id: { format: 'uuid', type: 'string' },
+                        reservation_key: { type: 'string' },
+                        starts_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'reservation_id',
+                        'reservation_key',
+                        'name',
+                        'starts_at',
+                        'ends_at',
+                        'created_at',
+                        'guest_name',
+                        'access_methods',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['reservation', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/reservations/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'reservations'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'reservation',
+        'x-response-key': 'reservation',
+        'x-title': 'Get Reservation for Customer',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
     '/seam/customer/v1/reservations/list': {
       get: {
         description:
@@ -49848,6 +50021,15 @@ export default {
             name: 'space_key',
             schema: {
               description: 'Filter reservations by space key.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'space_id',
+            schema: {
+              description: 'Filter reservations by space ID (UUID).',
+              format: 'uuid',
               type: 'string',
             },
           },
@@ -49978,6 +50160,11 @@ export default {
                     description:
                       "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
                     nullable: true,
+                    type: 'string',
+                  },
+                  space_id: {
+                    description: 'Filter reservations by space ID (UUID).',
+                    format: 'uuid',
                     type: 'string',
                   },
                   space_key: {
