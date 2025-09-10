@@ -122,6 +122,16 @@ const kwikset_unable_to_confirm_deletion = common_access_code_error
     'Unable to confirm the deletion of the access code on Kwikset device.',
   )
 
+const kwikset_insufficient_permissions = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('kwikset_insufficient_permissions')
+      .describe(error_code_description),
+  })
+  .describe(
+    'Admin role required—insufficient permissions to manage PINs on this Kwikset device. Please have a Home Admin update your role in the Kwikset app, or ask them to set the PIN.',
+  )
+
 const igloohome_offline_access_code_no_variance_available =
   common_access_code_error
     .extend({
@@ -254,6 +264,7 @@ const access_code_error = z
     wyze_duplicate_code_name,
     wyze_potential_duplicate_code,
     dormakaba_oracode_no_valid_user_level,
+    kwikset_insufficient_permissions,
   ])
   .describe(
     'Errors associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
@@ -290,6 +301,9 @@ const _access_code_error_map = z.object({
     .optional()
     .nullable(),
   kwikset_unable_to_confirm_deletion: kwikset_unable_to_confirm_deletion
+    .optional()
+    .nullable(),
+  kwikset_insufficient_permissions: kwikset_insufficient_permissions
     .optional()
     .nullable(),
   code_modified_external_to_seam_error: code_modified_external_to_seam_error
