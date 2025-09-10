@@ -50021,7 +50021,20 @@ export default {
                     reservation: {
                       properties: {
                         access_methods: {
-                          items: { $ref: '#/components/schemas/access_method' },
+                          items: {
+                            properties: {
+                              access_method_id: {
+                                format: 'uuid',
+                                type: 'string',
+                              },
+                              code: { nullable: true, type: 'string' },
+                              is_card_encoding_required: { type: 'boolean' },
+                              is_issued: { type: 'boolean' },
+                              mode: { type: 'string' },
+                            },
+                            required: ['access_method_id', 'mode', 'is_issued'],
+                            type: 'object',
+                          },
                           type: 'array',
                         },
                         created_at: { format: 'date-time', type: 'string' },
@@ -50034,6 +50047,22 @@ export default {
                         name: { nullable: true, type: 'string' },
                         reservation_id: { format: 'uuid', type: 'string' },
                         reservation_key: { type: 'string' },
+                        spaces: {
+                          items: {
+                            properties: {
+                              name: { nullable: true, type: 'string' },
+                              space_id: {
+                                format: 'uuid',
+                                nullable: true,
+                                type: 'string',
+                              },
+                              space_key: { type: 'string' },
+                            },
+                            required: ['space_id', 'space_key', 'name'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         starts_at: {
                           format: 'date-time',
                           nullable: true,
@@ -50048,6 +50077,7 @@ export default {
                         'ends_at',
                         'created_at',
                         'guest_name',
+                        'spaces',
                         'access_methods',
                       ],
                       type: 'object',
@@ -50107,7 +50137,20 @@ export default {
                     reservation: {
                       properties: {
                         access_methods: {
-                          items: { $ref: '#/components/schemas/access_method' },
+                          items: {
+                            properties: {
+                              access_method_id: {
+                                format: 'uuid',
+                                type: 'string',
+                              },
+                              code: { nullable: true, type: 'string' },
+                              is_card_encoding_required: { type: 'boolean' },
+                              is_issued: { type: 'boolean' },
+                              mode: { type: 'string' },
+                            },
+                            required: ['access_method_id', 'mode', 'is_issued'],
+                            type: 'object',
+                          },
                           type: 'array',
                         },
                         created_at: { format: 'date-time', type: 'string' },
@@ -50120,6 +50163,22 @@ export default {
                         name: { nullable: true, type: 'string' },
                         reservation_id: { format: 'uuid', type: 'string' },
                         reservation_key: { type: 'string' },
+                        spaces: {
+                          items: {
+                            properties: {
+                              name: { nullable: true, type: 'string' },
+                              space_id: {
+                                format: 'uuid',
+                                nullable: true,
+                                type: 'string',
+                              },
+                              space_key: { type: 'string' },
+                            },
+                            required: ['space_id', 'space_key', 'name'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         starts_at: {
                           format: 'date-time',
                           nullable: true,
@@ -50134,6 +50193,7 @@ export default {
                         'ends_at',
                         'created_at',
                         'guest_name',
+                        'spaces',
                         'access_methods',
                       ],
                       type: 'object',
@@ -50242,6 +50302,18 @@ export default {
                           name: { nullable: true, type: 'string' },
                           reservation_id: { format: 'uuid', type: 'string' },
                           reservation_key: { type: 'string' },
+                          spaces: {
+                            items: {
+                              properties: {
+                                name: { nullable: true, type: 'string' },
+                                space_id: { nullable: true, type: 'string' },
+                                space_key: { type: 'string' },
+                              },
+                              required: ['space_id', 'space_key', 'name'],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
                           starts_at: {
                             format: 'date-time',
                             nullable: true,
@@ -50257,6 +50329,7 @@ export default {
                           'created_at',
                           'guest_name',
                           'access_methods',
+                          'spaces',
                         ],
                         type: 'object',
                       },
@@ -50354,6 +50427,18 @@ export default {
                           name: { nullable: true, type: 'string' },
                           reservation_id: { format: 'uuid', type: 'string' },
                           reservation_key: { type: 'string' },
+                          spaces: {
+                            items: {
+                              properties: {
+                                name: { nullable: true, type: 'string' },
+                                space_id: { nullable: true, type: 'string' },
+                                space_key: { type: 'string' },
+                              },
+                              required: ['space_id', 'space_key', 'name'],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
                           starts_at: {
                             format: 'date-time',
                             nullable: true,
@@ -50369,6 +50454,7 @@ export default {
                           'created_at',
                           'guest_name',
                           'access_methods',
+                          'spaces',
                         ],
                         type: 'object',
                       },
