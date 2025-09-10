@@ -49837,6 +49837,228 @@ export default {
         'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
+    '/seam/customer/v1/reservations/list': {
+      get: {
+        description:
+          'Returns a list of reservations for a specific customer. This endpoint is designed for customer portals and supports filtering by space_key.',
+        operationId: 'seamCustomerV1ReservationsListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'space_key',
+            schema: {
+              description: 'Filter reservations by space key.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 500,
+              description: 'Maximum number of records to return per page.',
+              exclusiveMinimum: true,
+              minimum: 0,
+              type: 'integer',
+            },
+          },
+          {
+            in: 'query',
+            name: 'created_before',
+            schema: {
+              description:
+                'Timestamp by which to limit returned reservations. Returns reservations created before this timestamp.',
+              format: 'date-time',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              nullable: true,
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
+                    reservations: {
+                      items: {
+                        properties: {
+                          access_methods: {
+                            items: {
+                              $ref: '#/components/schemas/access_method',
+                            },
+                            type: 'array',
+                          },
+                          created_at: { format: 'date-time', type: 'string' },
+                          ends_at: {
+                            format: 'date-time',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          guest_name: { nullable: true, type: 'string' },
+                          name: { nullable: true, type: 'string' },
+                          reservation_id: { format: 'uuid', type: 'string' },
+                          reservation_key: { type: 'string' },
+                          starts_at: {
+                            format: 'date-time',
+                            nullable: true,
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'reservation_id',
+                          'reservation_key',
+                          'name',
+                          'starts_at',
+                          'ends_at',
+                          'created_at',
+                          'guest_name',
+                          'access_methods',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['reservations', 'pagination', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/reservations/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'reservations'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'reservations',
+        'x-response-key': 'reservations',
+        'x-title': 'List Reservations for Customer Space',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+      post: {
+        description:
+          'Returns a list of reservations for a specific customer. This endpoint is designed for customer portals and supports filtering by space_key.',
+        operationId: 'seamCustomerV1ReservationsListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  created_before: {
+                    description:
+                      'Timestamp by which to limit returned reservations. Returns reservations created before this timestamp.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
+                  limit: {
+                    default: 500,
+                    description:
+                      'Maximum number of records to return per page.',
+                    exclusiveMinimum: true,
+                    minimum: 0,
+                    type: 'integer',
+                  },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    nullable: true,
+                    type: 'string',
+                  },
+                  space_key: {
+                    description: 'Filter reservations by space key.',
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
+                    reservations: {
+                      items: {
+                        properties: {
+                          access_methods: {
+                            items: {
+                              $ref: '#/components/schemas/access_method',
+                            },
+                            type: 'array',
+                          },
+                          created_at: { format: 'date-time', type: 'string' },
+                          ends_at: {
+                            format: 'date-time',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          guest_name: { nullable: true, type: 'string' },
+                          name: { nullable: true, type: 'string' },
+                          reservation_id: { format: 'uuid', type: 'string' },
+                          reservation_key: { type: 'string' },
+                          starts_at: {
+                            format: 'date-time',
+                            nullable: true,
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'reservation_id',
+                          'reservation_key',
+                          'name',
+                          'starts_at',
+                          'ends_at',
+                          'created_at',
+                          'guest_name',
+                          'access_methods',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['reservations', 'pagination', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/reservations/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'reservations'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'reservations',
+        'x-response-key': 'reservations',
+        'x-title': 'List Reservations for Customer Space',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
     '/seam/customer/v1/settings/get': {
       get: {
         description: 'Retrieves the settings for a customer portal workspace.',
