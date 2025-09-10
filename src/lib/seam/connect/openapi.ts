@@ -9285,6 +9285,31 @@ export default {
                   ],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Indicates that the Connected Account requires reauthorization using a new Connect Webview. The account is still connected, but cannot access new features. Delaying reauthorization too long will eventually cause the Connected Account to become disconnected.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['account_reauthorization_requested'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -16253,6 +16278,61 @@ export default {
                 enum: [
                   'connected_account.completed_first_sync_after_reconnection',
                 ],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'connected_account_id',
+              'event_type',
+            ],
+            type: 'object',
+            'x-route-path': '/connected_accounts',
+          },
+          {
+            description:
+              'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) requires reauthorization using a new Connect Webview. The account is still connected, but cannot access new features. Delaying reauthorization too long will eventually cause the Connected Account to become disconnected.',
+            properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: ['connected_account.reauthorization_requested'],
                 type: 'string',
               },
               occurred_at: {
@@ -43475,6 +43555,7 @@ export default {
                 'connected_account.completed_first_sync',
                 'connected_account.deleted',
                 'connected_account.completed_first_sync_after_reconnection',
+                'connected_account.reauthorization_requested',
                 'action_attempt.lock_door.succeeded',
                 'action_attempt.lock_door.failed',
                 'action_attempt.unlock_door.succeeded',
@@ -43577,6 +43658,7 @@ export default {
                   'connected_account.completed_first_sync',
                   'connected_account.deleted',
                   'connected_account.completed_first_sync_after_reconnection',
+                  'connected_account.reauthorization_requested',
                   'action_attempt.lock_door.succeeded',
                   'action_attempt.lock_door.failed',
                   'action_attempt.unlock_door.succeeded',
@@ -43834,6 +43916,7 @@ export default {
                       'connected_account.completed_first_sync',
                       'connected_account.deleted',
                       'connected_account.completed_first_sync_after_reconnection',
+                      'connected_account.reauthorization_requested',
                       'action_attempt.lock_door.succeeded',
                       'action_attempt.lock_door.failed',
                       'action_attempt.unlock_door.succeeded',
@@ -43932,6 +44015,7 @@ export default {
                         'connected_account.completed_first_sync',
                         'connected_account.deleted',
                         'connected_account.completed_first_sync_after_reconnection',
+                        'connected_account.reauthorization_requested',
                         'action_attempt.lock_door.succeeded',
                         'action_attempt.lock_door.failed',
                         'action_attempt.unlock_door.succeeded',
@@ -49107,6 +49191,7 @@ export default {
                 'connected_account.completed_first_sync',
                 'connected_account.deleted',
                 'connected_account.completed_first_sync_after_reconnection',
+                'connected_account.reauthorization_requested',
                 'action_attempt.lock_door.succeeded',
                 'action_attempt.lock_door.failed',
                 'action_attempt.unlock_door.succeeded',
@@ -49210,6 +49295,7 @@ export default {
                   'connected_account.completed_first_sync',
                   'connected_account.deleted',
                   'connected_account.completed_first_sync_after_reconnection',
+                  'connected_account.reauthorization_requested',
                   'action_attempt.lock_door.succeeded',
                   'action_attempt.lock_door.failed',
                   'action_attempt.unlock_door.succeeded',
@@ -49376,6 +49462,7 @@ export default {
                       'connected_account.completed_first_sync',
                       'connected_account.deleted',
                       'connected_account.completed_first_sync_after_reconnection',
+                      'connected_account.reauthorization_requested',
                       'action_attempt.lock_door.succeeded',
                       'action_attempt.lock_door.failed',
                       'action_attempt.unlock_door.succeeded',
@@ -49474,6 +49561,7 @@ export default {
                         'connected_account.completed_first_sync',
                         'connected_account.deleted',
                         'connected_account.completed_first_sync_after_reconnection',
+                        'connected_account.reauthorization_requested',
                         'action_attempt.lock_door.succeeded',
                         'action_attempt.lock_door.failed',
                         'action_attempt.unlock_door.succeeded',
