@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+import { access_grant_key_aliases } from './access-grant-resources.js'
 import { location_key_aliases } from './location-resources.js'
 
 const base_feature = z.object({
@@ -9,7 +10,14 @@ const base_feature = z.object({
     .describe('Whether to exclude this feature from the portal.'),
 })
 
-const base_connect_feature = base_feature
+const base_connect_feature = base_feature.extend({
+  excluded_providers: z
+    .array(z.string())
+    .optional()
+    .describe(
+      'List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account.',
+    ),
+})
 const base_manage_devices_feature = base_feature
 const base_organize_feature = base_feature
 
@@ -52,7 +60,9 @@ export const portal_configuration = z
       .describe('Whether the portal is embedded in another application.'),
     landing_page: z
       .object({
-        manage: location_key_aliases.optional(),
+        manage: z
+          .union([location_key_aliases, access_grant_key_aliases])
+          .optional(),
       })
       .optional()
       .describe('Configuration for the landing page when the portal loads.'),
