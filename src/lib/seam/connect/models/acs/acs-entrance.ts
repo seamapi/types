@@ -46,6 +46,9 @@ export const acs_entrance = z
       .describe(
         'ID of the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
       ),
+    space_ids: z
+      .array(z.string().uuid())
+      .describe('IDs of the spaces that the entrance is in.'),
     created_at: z
       .string()
       .datetime()

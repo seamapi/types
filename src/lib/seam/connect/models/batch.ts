@@ -42,12 +42,7 @@ export const spaces_batch = z
       })
       .array()
       .optional(),
-    acs_entrances: acs_entrance
-      .extend({
-        space_ids: z.array(z.string().uuid()),
-      })
-      .array()
-      .optional(),
+    acs_entrances: acs_entrance.array().optional(),
     connected_accounts: connected_account.array().optional(),
     acs_systems: acs_system.array().optional(),
   })
@@ -69,6 +64,10 @@ export const access_methods_batch = z.object({
   spaces: space.array().optional(),
   devices: device.array().optional(),
   acs_entrances: acs_entrance.array().optional(),
+  access_grants: access_grant.array().optional(),
+  access_methods: access_method.array().optional(),
+  instant_keys: instant_key.array().optional(),
+  client_sessions: client_session.array().optional(),
 })
 
 export const workspaces_batch = z
