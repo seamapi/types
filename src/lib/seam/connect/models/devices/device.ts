@@ -691,9 +691,6 @@ export const device = z
   .object({
     device_id: z.string().uuid().describe('ID of the device.'),
     device_type: any_device_type.describe('Type of the device.'),
-    space_ids: z
-      .array(z.string().uuid())
-      .describe('IDs of the spaces the device is in.'),
     nickname: z
       .string()
       .optional()
