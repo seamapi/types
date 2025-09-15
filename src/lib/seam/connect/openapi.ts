@@ -2895,18 +2895,13 @@ export default {
             description:
               'dormakaba Community-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
             properties: {
-              access_point_name: {
-                description:
-                  'Name of the access point in the dormakaba Community access system.',
-                type: 'string',
-              },
               access_point_profile: {
                 description:
                   'Type of access point profile in the dormakaba Community access system.',
                 type: 'string',
               },
             },
-            required: ['access_point_name', 'access_point_profile'],
+            required: ['access_point_profile'],
             type: 'object',
           },
           errors: {
@@ -19851,21 +19846,13 @@ export default {
                               description:
                                 'dormakaba Community-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
                               properties: {
-                                access_point_name: {
-                                  description:
-                                    'Name of the access point in the dormakaba Community access system.',
-                                  type: 'string',
-                                },
                                 access_point_profile: {
                                   description:
                                     'Type of access point profile in the dormakaba Community access system.',
                                   type: 'string',
                                 },
                               },
-                              required: [
-                                'access_point_name',
-                                'access_point_profile',
-                              ],
+                              required: ['access_point_profile'],
                               type: 'object',
                             },
                             errors: {
