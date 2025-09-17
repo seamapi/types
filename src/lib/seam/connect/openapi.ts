@@ -56509,8 +56509,13 @@ export default {
                     format: 'uuid',
                     type: 'string',
                   },
+                  user_identity_key: {
+                    description:
+                      'Key of the user identity to which you want to add an access system user.',
+                    type: 'string',
+                  },
                 },
-                required: ['user_identity_id', 'acs_user_id'],
+                required: ['acs_user_id'],
                 type: 'object',
               },
             },
@@ -56565,8 +56570,13 @@ export default {
                     format: 'uuid',
                     type: 'string',
                   },
+                  user_identity_key: {
+                    description:
+                      'Key of the user identity to which you want to add an access system user.',
+                    type: 'string',
+                  },
                 },
-                required: ['user_identity_id', 'acs_user_id'],
+                required: ['acs_user_id'],
                 type: 'object',
               },
             },
