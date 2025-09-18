@@ -37653,6 +37653,12 @@ export default {
                     type: 'string',
                     'x-undocumented': 'Not supported.',
                   },
+                  excluded_providers: {
+                    description:
+                      'List of provider keys to exclude from the Connect Webview. These providers will not be shown when the user tries to connect an account.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
                   provider_category: {
                     description:
                       'Specifies the category of providers that you want to include. To list all providers within a category, use [`/devices/list_device_providers`](https://docs.seam.co/latest/api/devices/list_device_providers) with the desired `provider_category` filter.',
