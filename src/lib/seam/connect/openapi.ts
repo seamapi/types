@@ -56496,7 +56496,7 @@ export default {
     '/user_identities/add_acs_user': {
       post: {
         description:
-          'Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          "Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).\n\nYou must specify either `user_identity_id` or `user_identity_key` to identify the user identity.\n\nIf `user_identity_key` is provided, but the user identity doesn't exist, a new user identity will be created automatically using information from the ACS user.",
         operationId: 'userIdentitiesAddAcsUserPost',
         requestBody: {
           content: {
@@ -56557,7 +56557,7 @@ export default {
       },
       put: {
         description:
-          'Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          "Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).\n\nYou must specify either `user_identity_id` or `user_identity_key` to identify the user identity.\n\nIf `user_identity_key` is provided, but the user identity doesn't exist, a new user identity will be created automatically using information from the ACS user.",
         operationId: 'userIdentitiesAddAcsUserPut',
         requestBody: {
           content: {
