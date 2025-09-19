@@ -11860,7 +11860,7 @@ export default {
                                 'Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.',
                               type: 'boolean',
                             },
-                            can_program: {
+                            can_use_with_thermostat_daily_programs: {
                               description:
                                 'Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.',
                               type: 'boolean',
@@ -11972,7 +11972,7 @@ export default {
                             'climate_preset_key',
                             'can_edit',
                             'can_delete',
-                            'can_program',
+                            'can_use_with_thermostat_daily_programs',
                             'display_name',
                             'manual_override_allowed',
                           ],
@@ -12014,7 +12014,7 @@ export default {
                               'Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.',
                             type: 'boolean',
                           },
-                          can_program: {
+                          can_use_with_thermostat_daily_programs: {
                             description:
                               'Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.',
                             type: 'boolean',
@@ -12134,7 +12134,7 @@ export default {
                               'Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.',
                             type: 'boolean',
                           },
-                          can_program: {
+                          can_use_with_thermostat_daily_programs: {
                             description:
                               'Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.',
                             type: 'boolean',
