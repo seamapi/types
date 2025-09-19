@@ -12311,6 +12311,14 @@ export default {
                         type: 'number',
                         'x-property-group-key': 'thermostats',
                       },
+                      max_unique_climate_presets_per_thermostat_weekly_program:
+                        {
+                          description:
+                            'Maximum number of climate presets that the thermostat can support for weekly programming.',
+                          format: 'float',
+                          type: 'number',
+                          'x-property-group-key': 'thermostats',
+                        },
                       min_cooling_set_point_celsius: {
                         description:
                           'Minimum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.',
