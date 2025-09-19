@@ -42458,17 +42458,6 @@ export default {
           },
           {
             in: 'query',
-            name: 'limit',
-            schema: {
-              default: 500,
-              description:
-                'Numerical limit on the number of devices to return.',
-              format: 'float',
-              type: 'number',
-            },
-          },
-          {
-            in: 'query',
             name: 'created_before',
             schema: {
               description:
@@ -42597,6 +42586,17 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 22_900,
+              description:
+                'Numerical limit on the number of devices to return.',
+              format: 'float',
+              type: 'number',
+            },
+          },
         ],
         responses: {
           200: {
@@ -42609,8 +42609,9 @@ export default {
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                   },
-                  required: ['devices', 'ok'],
+                  required: ['devices', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
@@ -42875,7 +42876,7 @@ export default {
                     'x-undocumented': 'Only used internally.',
                   },
                   limit: {
-                    default: 500,
+                    default: 22_900,
                     description:
                       'Numerical limit on the number of devices to return.',
                     format: 'float',
@@ -42975,8 +42976,9 @@ export default {
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                   },
-                  required: ['devices', 'ok'],
+                  required: ['devices', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
