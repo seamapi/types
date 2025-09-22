@@ -48348,6 +48348,7 @@ export default {
                 'reservation_created',
                 'reservation_time_updated',
                 'reservation_deleted',
+                'space_name_updated',
               ],
               type: 'string',
             },
@@ -48548,6 +48549,7 @@ export default {
                       'reservation_created',
                       'reservation_time_updated',
                       'reservation_deleted',
+                      'space_name_updated',
                     ],
                     type: 'string',
                   },
@@ -48822,6 +48824,19 @@ export default {
                           required: ['rule'],
                           type: 'object',
                         },
+                        space_name_updated: {
+                          properties: {
+                            config: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            rule: {
+                              enum: ['space_name_updated'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['rule'],
+                          type: 'object',
+                        },
                       },
                       type: 'object',
                     },
@@ -48923,6 +48938,19 @@ export default {
                           required: ['rule'],
                           type: 'object',
                         },
+                        space_name_updated: {
+                          properties: {
+                            config: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            rule: {
+                              enum: ['space_name_updated'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['rule'],
+                          type: 'object',
+                        },
                       },
                       type: 'object',
                     },
@@ -49016,6 +49044,17 @@ export default {
                           config: { properties: {}, type: 'object' },
                           rule: {
                             enum: ['reservation_time_updated'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule'],
+                        type: 'object',
+                      },
+                      space_name_updated: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['space_name_updated'],
                             type: 'string',
                           },
                         },
@@ -49123,6 +49162,17 @@ export default {
                           config: { properties: {}, type: 'object' },
                           rule: {
                             enum: ['reservation_time_updated'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule'],
+                        type: 'object',
+                      },
+                      space_name_updated: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['space_name_updated'],
                             type: 'string',
                           },
                         },
