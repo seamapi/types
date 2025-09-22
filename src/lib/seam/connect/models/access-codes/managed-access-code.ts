@@ -157,14 +157,6 @@ const august_device_programming_delay_error = common_access_code_error
   })
   .describe('Access code has not yet been fully moved to the device.')
 
-const august_device_slots_full = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('august_device_slots_full')
-      .describe(error_code_description),
-  })
-  .describe('All access code slots on the device are full.')
-
 const august_lock_temporarily_offline_error = common_access_code_error
   .extend({
     error_code: z
@@ -255,7 +247,6 @@ const access_code_error = z
     code_modified_external_to_seam_error,
     august_lock_invalid_code_length,
     august_device_programming_delay_error,
-    august_device_slots_full,
     august_lock_missing_keypad,
     august_lock_temporarily_offline_error,
     salto_ks_user_not_subscribed,
@@ -318,7 +309,6 @@ const _access_code_error_map = z.object({
   august_lock_temporarily_offline: august_lock_temporarily_offline_error
     .optional()
     .nullable(),
-  august_device_slots_full: august_device_slots_full.optional().nullable(),
   august_lock_missing_keypad: august_lock_missing_keypad.optional().nullable(),
   salto_ks_user_not_subscribed: salto_ks_user_not_subscribed
     .optional()
