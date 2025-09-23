@@ -50492,6 +50492,19 @@ export default {
                           required: ['rule'],
                           type: 'object',
                         },
+                        user_identity_name_updated: {
+                          properties: {
+                            config: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            rule: {
+                              enum: ['user_identity_name_updated'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['rule'],
+                          type: 'object',
+                        },
                       },
                       type: 'object',
                     },
@@ -50606,6 +50619,19 @@ export default {
                           required: ['rule'],
                           type: 'object',
                         },
+                        user_identity_name_updated: {
+                          properties: {
+                            config: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            rule: {
+                              enum: ['user_identity_name_updated'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['rule'],
+                          type: 'object',
+                        },
                       },
                       type: 'object',
                     },
@@ -50710,6 +50736,17 @@ export default {
                           config: { properties: {}, type: 'object' },
                           rule: {
                             enum: ['space_name_updated'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule'],
+                        type: 'object',
+                      },
+                      user_identity_name_updated: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['user_identity_name_updated'],
                             type: 'string',
                           },
                         },
@@ -50828,6 +50865,17 @@ export default {
                           config: { properties: {}, type: 'object' },
                           rule: {
                             enum: ['space_name_updated'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule'],
+                        type: 'object',
+                      },
+                      user_identity_name_updated: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['user_identity_name_updated'],
                             type: 'string',
                           },
                         },
