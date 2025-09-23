@@ -156,3 +156,16 @@ export const user_identity = z.object({
 `)
 
 export type UserIdentity = z.output<typeof user_identity>
+
+// Unmanaged user identity schema - excludes keys since unmanaged user identities cannot have keys
+export const unmanaged_user_identity = user_identity.omit({
+  user_identity_key: true,
+}).describe(`
+  ---
+  draft: Early access.
+  route_path: /user_identities/unmanaged
+  ---
+  Represents an unmanaged user identity. Unmanaged user identities do not have keys.
+  `)
+
+export type UnmanagedUserIdentity = z.output<typeof unmanaged_user_identity>
