@@ -119,3 +119,19 @@ export const access_grant = z.object({
   `)
 
 export type AccessGrant = z.infer<typeof access_grant>
+
+// Unmanaged access grant schema - excludes client sessions, instant keys, customization profiles, and keys
+export const unmanaged_access_grant = access_grant.omit({
+  client_session_token: true,
+  instant_key_url: true,
+  customization_profile_id: true,
+  access_grant_key: true,
+}).describe(`
+  ---
+  draft: Early access.
+  route_path: /access_grants/unmanaged
+  ---
+  Represents an unmanaged Access Grant. Unmanaged Access Grants do not have client sessions, instant keys, customization profiles, or keys.
+  `)
+
+export type UnmanagedAccessGrant = z.infer<typeof unmanaged_access_grant>

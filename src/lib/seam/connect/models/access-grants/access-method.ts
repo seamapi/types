@@ -100,3 +100,18 @@ export const access_method = z.object({
   `)
 
 export type AccessMethod = z.infer<typeof access_method>
+
+// Unmanaged access method schema - excludes client sessions, instant keys, customization profiles, and keys
+export const unmanaged_access_method = access_method.omit({
+  instant_key_url: true,
+  client_session_token: true,
+  customization_profile_id: true,
+}).describe(`
+  ---
+  draft: Early access.
+  route_path: /access_methods/unmanaged
+  ---
+  Represents an unmanaged access method. Unmanaged access methods do not have client sessions, instant keys, customization profiles, or keys.
+  `)
+
+export type UnmanagedAccessMethod = z.infer<typeof unmanaged_access_method>

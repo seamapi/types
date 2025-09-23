@@ -29106,6 +29106,956 @@ export default {
         'x-title': 'List Access Grants',
       },
     },
+    '/access_grants/unmanaged/get': {
+      get: {
+        description:
+          'Get an unmanaged Access Grant (where is_managed = false).',
+        operationId: 'accessGrantsUnmanagedGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'access_grant_id',
+            required: true,
+            schema: {
+              description: 'ID of unmanaged Access Grant to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_grant: {
+                      description:
+                        'Represents an unmanaged Access Grant. Unmanaged Access Grants do not have client sessions, instant keys, customization profiles, or keys.',
+                      properties: {
+                        access_grant_id: {
+                          description: 'ID of the Access Grant.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        access_method_ids: {
+                          description:
+                            'IDs of the access methods created for the Access Grant.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                        created_at: {
+                          description:
+                            'Date and time at which the Access Grant was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        display_name: {
+                          description: 'Display name of the Access Grant.',
+                          type: 'string',
+                        },
+                        ends_at: {
+                          description:
+                            'Date and time at which the Access Grant ends.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        location_ids: {
+                          deprecated: true,
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                          'x-deprecated': 'Use `space_ids`.',
+                        },
+                        name: {
+                          description:
+                            'Name of the Access Grant. If not provided, the display name will be computed.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        requested_access_methods: {
+                          description:
+                            'Access methods that the user requested for the Access Grant.',
+                          items: {
+                            properties: {
+                              code: {
+                                description:
+                                  "Specific PIN code to use for this access method. Only applicable when mode is 'code'.",
+                                maxLength: 9,
+                                minLength: 4,
+                                pattern: '^\\d+$',
+                                type: 'string',
+                              },
+                              created_access_method_ids: {
+                                description:
+                                  'IDs of the access methods created for the requested access method.',
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
+                              created_at: {
+                                description:
+                                  'Date and time at which the requested access method was added to the Access Grant.',
+                                format: 'date-time',
+                                type: 'string',
+                              },
+                              display_name: {
+                                description:
+                                  'Display name of the access method.',
+                                type: 'string',
+                              },
+                              mode: {
+                                description:
+                                  'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                                enum: ['code', 'card', 'mobile_key'],
+                                type: 'string',
+                              },
+                            },
+                            required: [
+                              'display_name',
+                              'mode',
+                              'created_at',
+                              'created_access_method_ids',
+                            ],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                        space_ids: {
+                          description:
+                            'IDs of the spaces to which the Access Grant gives access.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                        starts_at: {
+                          description:
+                            'Date and time at which the Access Grant starts.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        user_identity_id: {
+                          description:
+                            'ID of user identity to which the Access Grant gives access.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        warnings: {
+                          description:
+                            'Warnings associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
+                          items: {
+                            description:
+                              'Warning associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
+                            discriminator: { propertyName: 'warning_code' },
+                            oneOf: [
+                              {
+                                description:
+                                  'Indicates that the [access grant](https://docs.seam.co/latest/capability-guides/access-grants) is being deleted.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['being_deleted'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                          type: 'array',
+                        },
+                        workspace_id: {
+                          description:
+                            'ID of the Seam workspace associated with the Access Grant.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'workspace_id',
+                        'access_grant_id',
+                        'user_identity_id',
+                        'location_ids',
+                        'space_ids',
+                        'requested_access_methods',
+                        'access_method_ids',
+                        'name',
+                        'display_name',
+                        'created_at',
+                        'starts_at',
+                        'ends_at',
+                        'warnings',
+                      ],
+                      type: 'object',
+                      'x-draft': 'Early access.',
+                      'x-route-path': '/access_grants/unmanaged',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_grant', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/access_grants/unmanaged/get',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['access_grants', 'unmanaged'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'access_grant',
+        'x-response-key': 'access_grant',
+        'x-title': 'Get an Unmanaged Access Grant',
+      },
+      post: {
+        description:
+          'Get an unmanaged Access Grant (where is_managed = false).',
+        operationId: 'accessGrantsUnmanagedGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_grant_id: {
+                    description: 'ID of unmanaged Access Grant to get.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['access_grant_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_grant: {
+                      description:
+                        'Represents an unmanaged Access Grant. Unmanaged Access Grants do not have client sessions, instant keys, customization profiles, or keys.',
+                      properties: {
+                        access_grant_id: {
+                          description: 'ID of the Access Grant.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        access_method_ids: {
+                          description:
+                            'IDs of the access methods created for the Access Grant.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                        created_at: {
+                          description:
+                            'Date and time at which the Access Grant was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        display_name: {
+                          description: 'Display name of the Access Grant.',
+                          type: 'string',
+                        },
+                        ends_at: {
+                          description:
+                            'Date and time at which the Access Grant ends.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        location_ids: {
+                          deprecated: true,
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                          'x-deprecated': 'Use `space_ids`.',
+                        },
+                        name: {
+                          description:
+                            'Name of the Access Grant. If not provided, the display name will be computed.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        requested_access_methods: {
+                          description:
+                            'Access methods that the user requested for the Access Grant.',
+                          items: {
+                            properties: {
+                              code: {
+                                description:
+                                  "Specific PIN code to use for this access method. Only applicable when mode is 'code'.",
+                                maxLength: 9,
+                                minLength: 4,
+                                pattern: '^\\d+$',
+                                type: 'string',
+                              },
+                              created_access_method_ids: {
+                                description:
+                                  'IDs of the access methods created for the requested access method.',
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
+                              created_at: {
+                                description:
+                                  'Date and time at which the requested access method was added to the Access Grant.',
+                                format: 'date-time',
+                                type: 'string',
+                              },
+                              display_name: {
+                                description:
+                                  'Display name of the access method.',
+                                type: 'string',
+                              },
+                              mode: {
+                                description:
+                                  'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                                enum: ['code', 'card', 'mobile_key'],
+                                type: 'string',
+                              },
+                            },
+                            required: [
+                              'display_name',
+                              'mode',
+                              'created_at',
+                              'created_access_method_ids',
+                            ],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                        space_ids: {
+                          description:
+                            'IDs of the spaces to which the Access Grant gives access.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                        starts_at: {
+                          description:
+                            'Date and time at which the Access Grant starts.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        user_identity_id: {
+                          description:
+                            'ID of user identity to which the Access Grant gives access.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        warnings: {
+                          description:
+                            'Warnings associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
+                          items: {
+                            description:
+                              'Warning associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
+                            discriminator: { propertyName: 'warning_code' },
+                            oneOf: [
+                              {
+                                description:
+                                  'Indicates that the [access grant](https://docs.seam.co/latest/capability-guides/access-grants) is being deleted.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['being_deleted'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                          type: 'array',
+                        },
+                        workspace_id: {
+                          description:
+                            'ID of the Seam workspace associated with the Access Grant.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'workspace_id',
+                        'access_grant_id',
+                        'user_identity_id',
+                        'location_ids',
+                        'space_ids',
+                        'requested_access_methods',
+                        'access_method_ids',
+                        'name',
+                        'display_name',
+                        'created_at',
+                        'starts_at',
+                        'ends_at',
+                        'warnings',
+                      ],
+                      type: 'object',
+                      'x-draft': 'Early access.',
+                      'x-route-path': '/access_grants/unmanaged',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_grant', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/access_grants/unmanaged/get',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['access_grants', 'unmanaged'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'access_grant',
+        'x-response-key': 'access_grant',
+        'x-title': 'Get an Unmanaged Access Grant',
+      },
+    },
+    '/access_grants/unmanaged/list': {
+      get: {
+        description: 'Gets unmanaged Access Grants (where is_managed = false).',
+        operationId: 'accessGrantsUnmanagedListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            schema: {
+              description:
+                'ID of user identity by which you want to filter the list of unmanaged Access Grants.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_system_id',
+            schema: {
+              description:
+                'ID of the access system by which you want to filter the list of unmanaged Access Grants.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_entrance_id',
+            schema: {
+              description:
+                'ID of the entrance by which you want to filter the list of unmanaged Access Grants.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_grants: {
+                      items: {
+                        description:
+                          'Represents an unmanaged Access Grant. Unmanaged Access Grants do not have client sessions, instant keys, customization profiles, or keys.',
+                        properties: {
+                          access_grant_id: {
+                            description: 'ID of the Access Grant.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          access_method_ids: {
+                            description:
+                              'IDs of the access methods created for the Access Grant.',
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                          created_at: {
+                            description:
+                              'Date and time at which the Access Grant was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          display_name: {
+                            description: 'Display name of the Access Grant.',
+                            type: 'string',
+                          },
+                          ends_at: {
+                            description:
+                              'Date and time at which the Access Grant ends.',
+                            format: 'date-time',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          location_ids: {
+                            deprecated: true,
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                            'x-deprecated': 'Use `space_ids`.',
+                          },
+                          name: {
+                            description:
+                              'Name of the Access Grant. If not provided, the display name will be computed.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          requested_access_methods: {
+                            description:
+                              'Access methods that the user requested for the Access Grant.',
+                            items: {
+                              properties: {
+                                code: {
+                                  description:
+                                    "Specific PIN code to use for this access method. Only applicable when mode is 'code'.",
+                                  maxLength: 9,
+                                  minLength: 4,
+                                  pattern: '^\\d+$',
+                                  type: 'string',
+                                },
+                                created_access_method_ids: {
+                                  description:
+                                    'IDs of the access methods created for the requested access method.',
+                                  items: { format: 'uuid', type: 'string' },
+                                  type: 'array',
+                                },
+                                created_at: {
+                                  description:
+                                    'Date and time at which the requested access method was added to the Access Grant.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                display_name: {
+                                  description:
+                                    'Display name of the access method.',
+                                  type: 'string',
+                                },
+                                mode: {
+                                  description:
+                                    'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                                  enum: ['code', 'card', 'mobile_key'],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'display_name',
+                                'mode',
+                                'created_at',
+                                'created_access_method_ids',
+                              ],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
+                          space_ids: {
+                            description:
+                              'IDs of the spaces to which the Access Grant gives access.',
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                          starts_at: {
+                            description:
+                              'Date and time at which the Access Grant starts.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          user_identity_id: {
+                            description:
+                              'ID of user identity to which the Access Grant gives access.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          warnings: {
+                            description:
+                              'Warnings associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
+                            items: {
+                              description:
+                                'Warning associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
+                              discriminator: { propertyName: 'warning_code' },
+                              oneOf: [
+                                {
+                                  description:
+                                    'Indicates that the [access grant](https://docs.seam.co/latest/capability-guides/access-grants) is being deleted.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['being_deleted'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                              ],
+                            },
+                            type: 'array',
+                          },
+                          workspace_id: {
+                            description:
+                              'ID of the Seam workspace associated with the Access Grant.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'workspace_id',
+                          'access_grant_id',
+                          'user_identity_id',
+                          'location_ids',
+                          'space_ids',
+                          'requested_access_methods',
+                          'access_method_ids',
+                          'name',
+                          'display_name',
+                          'created_at',
+                          'starts_at',
+                          'ends_at',
+                          'warnings',
+                        ],
+                        type: 'object',
+                        'x-draft': 'Early access.',
+                        'x-route-path': '/access_grants/unmanaged',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_grants', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/access_grants/unmanaged/list',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['access_grants', 'unmanaged'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'access_grants',
+        'x-response-key': 'access_grants',
+        'x-title': 'List Unmanaged Access Grants',
+      },
+      post: {
+        description: 'Gets unmanaged Access Grants (where is_managed = false).',
+        operationId: 'accessGrantsUnmanagedListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_entrance_id: {
+                    description:
+                      'ID of the entrance by which you want to filter the list of unmanaged Access Grants.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_system_id: {
+                    description:
+                      'ID of the access system by which you want to filter the list of unmanaged Access Grants.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of user identity by which you want to filter the list of unmanaged Access Grants.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_grants: {
+                      items: {
+                        description:
+                          'Represents an unmanaged Access Grant. Unmanaged Access Grants do not have client sessions, instant keys, customization profiles, or keys.',
+                        properties: {
+                          access_grant_id: {
+                            description: 'ID of the Access Grant.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          access_method_ids: {
+                            description:
+                              'IDs of the access methods created for the Access Grant.',
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                          created_at: {
+                            description:
+                              'Date and time at which the Access Grant was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          display_name: {
+                            description: 'Display name of the Access Grant.',
+                            type: 'string',
+                          },
+                          ends_at: {
+                            description:
+                              'Date and time at which the Access Grant ends.',
+                            format: 'date-time',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          location_ids: {
+                            deprecated: true,
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                            'x-deprecated': 'Use `space_ids`.',
+                          },
+                          name: {
+                            description:
+                              'Name of the Access Grant. If not provided, the display name will be computed.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          requested_access_methods: {
+                            description:
+                              'Access methods that the user requested for the Access Grant.',
+                            items: {
+                              properties: {
+                                code: {
+                                  description:
+                                    "Specific PIN code to use for this access method. Only applicable when mode is 'code'.",
+                                  maxLength: 9,
+                                  minLength: 4,
+                                  pattern: '^\\d+$',
+                                  type: 'string',
+                                },
+                                created_access_method_ids: {
+                                  description:
+                                    'IDs of the access methods created for the requested access method.',
+                                  items: { format: 'uuid', type: 'string' },
+                                  type: 'array',
+                                },
+                                created_at: {
+                                  description:
+                                    'Date and time at which the requested access method was added to the Access Grant.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                display_name: {
+                                  description:
+                                    'Display name of the access method.',
+                                  type: 'string',
+                                },
+                                mode: {
+                                  description:
+                                    'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                                  enum: ['code', 'card', 'mobile_key'],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'display_name',
+                                'mode',
+                                'created_at',
+                                'created_access_method_ids',
+                              ],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
+                          space_ids: {
+                            description:
+                              'IDs of the spaces to which the Access Grant gives access.',
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                          starts_at: {
+                            description:
+                              'Date and time at which the Access Grant starts.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          user_identity_id: {
+                            description:
+                              'ID of user identity to which the Access Grant gives access.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          warnings: {
+                            description:
+                              'Warnings associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
+                            items: {
+                              description:
+                                'Warning associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
+                              discriminator: { propertyName: 'warning_code' },
+                              oneOf: [
+                                {
+                                  description:
+                                    'Indicates that the [access grant](https://docs.seam.co/latest/capability-guides/access-grants) is being deleted.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['being_deleted'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                              ],
+                            },
+                            type: 'array',
+                          },
+                          workspace_id: {
+                            description:
+                              'ID of the Seam workspace associated with the Access Grant.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'workspace_id',
+                          'access_grant_id',
+                          'user_identity_id',
+                          'location_ids',
+                          'space_ids',
+                          'requested_access_methods',
+                          'access_method_ids',
+                          'name',
+                          'display_name',
+                          'created_at',
+                          'starts_at',
+                          'ends_at',
+                          'warnings',
+                        ],
+                        type: 'object',
+                        'x-draft': 'Early access.',
+                        'x-route-path': '/access_grants/unmanaged',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_grants', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/access_grants/unmanaged/list',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['access_grants', 'unmanaged'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'access_grants',
+        'x-response-key': 'access_grants',
+        'x-title': 'List Unmanaged Access Grants',
+      },
+    },
     '/access_grants/update': {
       patch: {
         description: "Updates an existing Access Grant's time window.",
@@ -30153,6 +31103,711 @@ export default {
         'x-fern-sdk-return-value': 'access_methods',
         'x-response-key': 'access_methods',
         'x-title': 'List Access Methods',
+      },
+    },
+    '/access_methods/unmanaged/get': {
+      get: {
+        description:
+          'Gets an unmanaged access method (where is_managed = false).',
+        operationId: 'accessMethodsUnmanagedGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'access_method_id',
+            required: true,
+            schema: {
+              description: 'ID of unmanaged access method to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_method: {
+                      description:
+                        'Represents an unmanaged access method. Unmanaged access methods do not have client sessions, instant keys, customization profiles, or keys.',
+                      properties: {
+                        access_method_id: {
+                          description: 'ID of the access method.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        code: {
+                          description:
+                            'The actual PIN code for code access methods.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        created_at: {
+                          description:
+                            'Date and time at which the access method was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        display_name: {
+                          description: 'Display name of the access method.',
+                          type: 'string',
+                        },
+                        is_encoding_required: {
+                          description:
+                            'Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.',
+                          type: 'boolean',
+                        },
+                        is_issued: {
+                          description:
+                            'Indicates whether the access method has been issued.',
+                          type: 'boolean',
+                        },
+                        issued_at: {
+                          description:
+                            'Date and time at which the access method was issued.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        mode: {
+                          description:
+                            'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                          enum: ['code', 'card', 'mobile_key'],
+                          type: 'string',
+                        },
+                        warnings: {
+                          description:
+                            'Warnings associated with the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods).',
+                          items: {
+                            description:
+                              'Warning associated with the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods).',
+                            discriminator: { propertyName: 'warning_code' },
+                            oneOf: [
+                              {
+                                description:
+                                  'Indicates that the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods) is being deleted.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['being_deleted'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                          type: 'array',
+                        },
+                        workspace_id: {
+                          description:
+                            'ID of the Seam workspace associated with the access method.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'workspace_id',
+                        'access_method_id',
+                        'display_name',
+                        'mode',
+                        'created_at',
+                        'issued_at',
+                        'is_issued',
+                        'warnings',
+                      ],
+                      type: 'object',
+                      'x-draft': 'Early access.',
+                      'x-route-path': '/access_methods/unmanaged',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_method', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_methods/unmanaged/get',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['access_methods', 'unmanaged'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'access_method',
+        'x-response-key': 'access_method',
+        'x-title': 'Get an Unmanaged Access Method',
+      },
+      post: {
+        description:
+          'Gets an unmanaged access method (where is_managed = false).',
+        operationId: 'accessMethodsUnmanagedGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_method_id: {
+                    description: 'ID of unmanaged access method to get.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['access_method_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_method: {
+                      description:
+                        'Represents an unmanaged access method. Unmanaged access methods do not have client sessions, instant keys, customization profiles, or keys.',
+                      properties: {
+                        access_method_id: {
+                          description: 'ID of the access method.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        code: {
+                          description:
+                            'The actual PIN code for code access methods.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        created_at: {
+                          description:
+                            'Date and time at which the access method was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        display_name: {
+                          description: 'Display name of the access method.',
+                          type: 'string',
+                        },
+                        is_encoding_required: {
+                          description:
+                            'Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.',
+                          type: 'boolean',
+                        },
+                        is_issued: {
+                          description:
+                            'Indicates whether the access method has been issued.',
+                          type: 'boolean',
+                        },
+                        issued_at: {
+                          description:
+                            'Date and time at which the access method was issued.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        mode: {
+                          description:
+                            'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                          enum: ['code', 'card', 'mobile_key'],
+                          type: 'string',
+                        },
+                        warnings: {
+                          description:
+                            'Warnings associated with the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods).',
+                          items: {
+                            description:
+                              'Warning associated with the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods).',
+                            discriminator: { propertyName: 'warning_code' },
+                            oneOf: [
+                              {
+                                description:
+                                  'Indicates that the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods) is being deleted.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['being_deleted'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                          type: 'array',
+                        },
+                        workspace_id: {
+                          description:
+                            'ID of the Seam workspace associated with the access method.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'workspace_id',
+                        'access_method_id',
+                        'display_name',
+                        'mode',
+                        'created_at',
+                        'issued_at',
+                        'is_issued',
+                        'warnings',
+                      ],
+                      type: 'object',
+                      'x-draft': 'Early access.',
+                      'x-route-path': '/access_methods/unmanaged',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_method', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_methods/unmanaged/get',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['access_methods', 'unmanaged'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'access_method',
+        'x-response-key': 'access_method',
+        'x-title': 'Get an Unmanaged Access Method',
+      },
+    },
+    '/access_methods/unmanaged/list': {
+      get: {
+        description:
+          'Lists all unmanaged access methods (where is_managed = false), usually filtered by Access Grant.',
+        operationId: 'accessMethodsUnmanagedListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'access_grant_id',
+            required: true,
+            schema: {
+              description:
+                'ID of Access Grant to list unmanaged access methods for.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_id',
+            required: false,
+            schema: {
+              description:
+                'ID of the device for which you want to retrieve all unmanaged access methods.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_entrance_id',
+            required: false,
+            schema: {
+              description:
+                'ID of the entrance for which you want to retrieve all unmanaged access methods.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'space_id',
+            required: false,
+            schema: {
+              description:
+                'ID of the space for which you want to retrieve all unmanaged access methods.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_methods: {
+                      items: {
+                        description:
+                          'Represents an unmanaged access method. Unmanaged access methods do not have client sessions, instant keys, customization profiles, or keys.',
+                        properties: {
+                          access_method_id: {
+                            description: 'ID of the access method.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          code: {
+                            description:
+                              'The actual PIN code for code access methods.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          created_at: {
+                            description:
+                              'Date and time at which the access method was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          display_name: {
+                            description: 'Display name of the access method.',
+                            type: 'string',
+                          },
+                          is_encoding_required: {
+                            description:
+                              'Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.',
+                            type: 'boolean',
+                          },
+                          is_issued: {
+                            description:
+                              'Indicates whether the access method has been issued.',
+                            type: 'boolean',
+                          },
+                          issued_at: {
+                            description:
+                              'Date and time at which the access method was issued.',
+                            format: 'date-time',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          mode: {
+                            description:
+                              'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                            enum: ['code', 'card', 'mobile_key'],
+                            type: 'string',
+                          },
+                          warnings: {
+                            description:
+                              'Warnings associated with the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods).',
+                            items: {
+                              description:
+                                'Warning associated with the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods).',
+                              discriminator: { propertyName: 'warning_code' },
+                              oneOf: [
+                                {
+                                  description:
+                                    'Indicates that the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods) is being deleted.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['being_deleted'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                              ],
+                            },
+                            type: 'array',
+                          },
+                          workspace_id: {
+                            description:
+                              'ID of the Seam workspace associated with the access method.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'workspace_id',
+                          'access_method_id',
+                          'display_name',
+                          'mode',
+                          'created_at',
+                          'issued_at',
+                          'is_issued',
+                          'warnings',
+                        ],
+                        type: 'object',
+                        'x-draft': 'Early access.',
+                        'x-route-path': '/access_methods/unmanaged',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_methods', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_methods/unmanaged/list',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['access_methods', 'unmanaged'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'access_methods',
+        'x-response-key': 'access_methods',
+        'x-title': 'List Unmanaged Access Methods',
+      },
+      post: {
+        description:
+          'Lists all unmanaged access methods (where is_managed = false), usually filtered by Access Grant.',
+        operationId: 'accessMethodsUnmanagedListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_grant_id: {
+                    description:
+                      'ID of Access Grant to list unmanaged access methods for.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_entrance_id: {
+                    description:
+                      'ID of the entrance for which you want to retrieve all unmanaged access methods.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  device_id: {
+                    description:
+                      'ID of the device for which you want to retrieve all unmanaged access methods.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  space_id: {
+                    description:
+                      'ID of the space for which you want to retrieve all unmanaged access methods.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['access_grant_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_methods: {
+                      items: {
+                        description:
+                          'Represents an unmanaged access method. Unmanaged access methods do not have client sessions, instant keys, customization profiles, or keys.',
+                        properties: {
+                          access_method_id: {
+                            description: 'ID of the access method.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          code: {
+                            description:
+                              'The actual PIN code for code access methods.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          created_at: {
+                            description:
+                              'Date and time at which the access method was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          display_name: {
+                            description: 'Display name of the access method.',
+                            type: 'string',
+                          },
+                          is_encoding_required: {
+                            description:
+                              'Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.',
+                            type: 'boolean',
+                          },
+                          is_issued: {
+                            description:
+                              'Indicates whether the access method has been issued.',
+                            type: 'boolean',
+                          },
+                          issued_at: {
+                            description:
+                              'Date and time at which the access method was issued.',
+                            format: 'date-time',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          mode: {
+                            description:
+                              'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                            enum: ['code', 'card', 'mobile_key'],
+                            type: 'string',
+                          },
+                          warnings: {
+                            description:
+                              'Warnings associated with the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods).',
+                            items: {
+                              description:
+                                'Warning associated with the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods).',
+                              discriminator: { propertyName: 'warning_code' },
+                              oneOf: [
+                                {
+                                  description:
+                                    'Indicates that the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods) is being deleted.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['being_deleted'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                              ],
+                            },
+                            type: 'array',
+                          },
+                          workspace_id: {
+                            description:
+                              'ID of the Seam workspace associated with the access method.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'workspace_id',
+                          'access_method_id',
+                          'display_name',
+                          'mode',
+                          'created_at',
+                          'issued_at',
+                          'is_issued',
+                          'warnings',
+                        ],
+                        type: 'object',
+                        'x-draft': 'Early access.',
+                        'x-route-path': '/access_methods/unmanaged',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_methods', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_methods/unmanaged/list',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['access_methods', 'unmanaged'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'access_methods',
+        'x-response-key': 'access_methods',
+        'x-title': 'List Unmanaged Access Methods',
       },
     },
     '/acs/access_groups/add_user': {
@@ -58278,6 +59933,976 @@ export default {
         'x-fern-sdk-method-name': 'revoke_access_to_device',
         'x-response-key': null,
         'x-title': 'Revoke Access to a Device from a User Identity',
+      },
+    },
+    '/user_identities/unmanaged/get': {
+      get: {
+        description:
+          'Returns a specified unmanaged [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) (where is_managed = false).',
+        operationId: 'userIdentitiesUnmanagedGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the unmanaged user identity that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    user_identity: {
+                      description:
+                        'Represents an unmanaged user identity. Unmanaged user identities do not have keys.',
+                      properties: {
+                        acs_user_ids: {
+                          description:
+                            'Array of access system user IDs associated with the user identity.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                        created_at: {
+                          description:
+                            'Date and time at which the user identity was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        display_name: { minLength: 1, type: 'string' },
+                        email_address: {
+                          description:
+                            'Unique email address for the user identity.',
+                          format: 'email',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        errors: {
+                          description:
+                            'Array of errors associated with the user identity. Each error object within the array contains fields like "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
+                          items: {
+                            description:
+                              'Errors associated with the user identity.',
+                            discriminator: { propertyName: 'error_code' },
+                            oneOf: [
+                              {
+                                description:
+                                  'Indicates that there is an issue with an access system user associated with this user identity.',
+                                properties: {
+                                  acs_system_id: {
+                                    description:
+                                      'ID of the access system that the user identity is associated with.',
+                                    format: 'uuid',
+                                    type: 'string',
+                                  },
+                                  acs_user_id: {
+                                    description:
+                                      'ID of the access system user that has an issue.',
+                                    format: 'uuid',
+                                    type: 'string',
+                                  },
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the error.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  error_code: {
+                                    description:
+                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                    enum: ['issue_with_acs_user'],
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'error_code',
+                                  'acs_user_id',
+                                  'acs_system_id',
+                                ],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                          type: 'array',
+                        },
+                        full_name: {
+                          minLength: 1,
+                          nullable: true,
+                          type: 'string',
+                        },
+                        phone_number: {
+                          description:
+                            'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        user_identity_id: {
+                          description: 'ID of the user identity.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        warnings: {
+                          description:
+                            'Array of warnings associated with the user identity. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
+                          items: {
+                            description:
+                              'Warnings associated with the user identity.',
+                            discriminator: { propertyName: 'warning_code' },
+                            oneOf: [
+                              {
+                                description:
+                                  'Indicates that the user identity is currently being deleted.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['being_deleted'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  "Indicates that the ACS user's profile does not match the user identity's profile",
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: [
+                                      'acs_user_profile_does_not_match_user_identity',
+                                    ],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                          type: 'array',
+                        },
+                        workspace_id: {
+                          description:
+                            'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the user identity.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'user_identity_id',
+                        'email_address',
+                        'phone_number',
+                        'display_name',
+                        'full_name',
+                        'created_at',
+                        'workspace_id',
+                        'errors',
+                        'warnings',
+                        'acs_user_ids',
+                      ],
+                      type: 'object',
+                      'x-draft': 'Early access.',
+                      'x-route-path': '/user_identities/unmanaged',
+                    },
+                  },
+                  required: ['user_identity', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/user_identities/unmanaged/get',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities', 'unmanaged'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'user_identity',
+        'x-response-key': 'user_identity',
+        'x-title': 'Get an Unmanaged User Identity',
+      },
+      post: {
+        description:
+          'Returns a specified unmanaged [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) (where is_managed = false).',
+        operationId: 'userIdentitiesUnmanagedGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  user_identity_id: {
+                    description:
+                      'ID of the unmanaged user identity that you want to get.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['user_identity_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    user_identity: {
+                      description:
+                        'Represents an unmanaged user identity. Unmanaged user identities do not have keys.',
+                      properties: {
+                        acs_user_ids: {
+                          description:
+                            'Array of access system user IDs associated with the user identity.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                        created_at: {
+                          description:
+                            'Date and time at which the user identity was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        display_name: { minLength: 1, type: 'string' },
+                        email_address: {
+                          description:
+                            'Unique email address for the user identity.',
+                          format: 'email',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        errors: {
+                          description:
+                            'Array of errors associated with the user identity. Each error object within the array contains fields like "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
+                          items: {
+                            description:
+                              'Errors associated with the user identity.',
+                            discriminator: { propertyName: 'error_code' },
+                            oneOf: [
+                              {
+                                description:
+                                  'Indicates that there is an issue with an access system user associated with this user identity.',
+                                properties: {
+                                  acs_system_id: {
+                                    description:
+                                      'ID of the access system that the user identity is associated with.',
+                                    format: 'uuid',
+                                    type: 'string',
+                                  },
+                                  acs_user_id: {
+                                    description:
+                                      'ID of the access system user that has an issue.',
+                                    format: 'uuid',
+                                    type: 'string',
+                                  },
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the error.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  error_code: {
+                                    description:
+                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                    enum: ['issue_with_acs_user'],
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'error_code',
+                                  'acs_user_id',
+                                  'acs_system_id',
+                                ],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                          type: 'array',
+                        },
+                        full_name: {
+                          minLength: 1,
+                          nullable: true,
+                          type: 'string',
+                        },
+                        phone_number: {
+                          description:
+                            'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        user_identity_id: {
+                          description: 'ID of the user identity.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        warnings: {
+                          description:
+                            'Array of warnings associated with the user identity. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
+                          items: {
+                            description:
+                              'Warnings associated with the user identity.',
+                            discriminator: { propertyName: 'warning_code' },
+                            oneOf: [
+                              {
+                                description:
+                                  'Indicates that the user identity is currently being deleted.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['being_deleted'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  "Indicates that the ACS user's profile does not match the user identity's profile",
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: [
+                                      'acs_user_profile_does_not_match_user_identity',
+                                    ],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                          type: 'array',
+                        },
+                        workspace_id: {
+                          description:
+                            'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the user identity.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'user_identity_id',
+                        'email_address',
+                        'phone_number',
+                        'display_name',
+                        'full_name',
+                        'created_at',
+                        'workspace_id',
+                        'errors',
+                        'warnings',
+                        'acs_user_ids',
+                      ],
+                      type: 'object',
+                      'x-draft': 'Early access.',
+                      'x-route-path': '/user_identities/unmanaged',
+                    },
+                  },
+                  required: ['user_identity', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/user_identities/unmanaged/get',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities', 'unmanaged'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'user_identity',
+        'x-response-key': 'user_identity',
+        'x-title': 'Get an Unmanaged User Identity',
+      },
+    },
+    '/user_identities/unmanaged/list': {
+      get: {
+        description:
+          'Returns a list of all unmanaged [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) (where is_managed = false).',
+        operationId: 'userIdentitiesUnmanagedListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned unmanaged user identities to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address` or `user_identity_id`.',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    user_identities: {
+                      items: {
+                        description:
+                          'Represents an unmanaged user identity. Unmanaged user identities do not have keys.',
+                        properties: {
+                          acs_user_ids: {
+                            description:
+                              'Array of access system user IDs associated with the user identity.',
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                          created_at: {
+                            description:
+                              'Date and time at which the user identity was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          display_name: { minLength: 1, type: 'string' },
+                          email_address: {
+                            description:
+                              'Unique email address for the user identity.',
+                            format: 'email',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          errors: {
+                            description:
+                              'Array of errors associated with the user identity. Each error object within the array contains fields like "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
+                            items: {
+                              description:
+                                'Errors associated with the user identity.',
+                              discriminator: { propertyName: 'error_code' },
+                              oneOf: [
+                                {
+                                  description:
+                                    'Indicates that there is an issue with an access system user associated with this user identity.',
+                                  properties: {
+                                    acs_system_id: {
+                                      description:
+                                        'ID of the access system that the user identity is associated with.',
+                                      format: 'uuid',
+                                      type: 'string',
+                                    },
+                                    acs_user_id: {
+                                      description:
+                                        'ID of the access system user that has an issue.',
+                                      format: 'uuid',
+                                      type: 'string',
+                                    },
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the error.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    error_code: {
+                                      description:
+                                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                      enum: ['issue_with_acs_user'],
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'error_code',
+                                    'acs_user_id',
+                                    'acs_system_id',
+                                  ],
+                                  type: 'object',
+                                },
+                              ],
+                            },
+                            type: 'array',
+                          },
+                          full_name: {
+                            minLength: 1,
+                            nullable: true,
+                            type: 'string',
+                          },
+                          phone_number: {
+                            description:
+                              'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          user_identity_id: {
+                            description: 'ID of the user identity.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          warnings: {
+                            description:
+                              'Array of warnings associated with the user identity. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
+                            items: {
+                              description:
+                                'Warnings associated with the user identity.',
+                              discriminator: { propertyName: 'warning_code' },
+                              oneOf: [
+                                {
+                                  description:
+                                    'Indicates that the user identity is currently being deleted.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['being_deleted'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    "Indicates that the ACS user's profile does not match the user identity's profile",
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: [
+                                        'acs_user_profile_does_not_match_user_identity',
+                                      ],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                              ],
+                            },
+                            type: 'array',
+                          },
+                          workspace_id: {
+                            description:
+                              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the user identity.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'user_identity_id',
+                          'email_address',
+                          'phone_number',
+                          'display_name',
+                          'full_name',
+                          'created_at',
+                          'workspace_id',
+                          'errors',
+                          'warnings',
+                          'acs_user_ids',
+                        ],
+                        type: 'object',
+                        'x-draft': 'Early access.',
+                        'x-route-path': '/user_identities/unmanaged',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['user_identities', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/user_identities/unmanaged/list',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities', 'unmanaged'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'user_identities',
+        'x-response-key': 'user_identities',
+        'x-title': 'List Unmanaged User Identities',
+      },
+      post: {
+        description:
+          'Returns a list of all unmanaged [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) (where is_managed = false).',
+        operationId: 'userIdentitiesUnmanagedListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  search: {
+                    description:
+                      'String for which to search. Filters returned unmanaged user identities to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address` or `user_identity_id`.',
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    user_identities: {
+                      items: {
+                        description:
+                          'Represents an unmanaged user identity. Unmanaged user identities do not have keys.',
+                        properties: {
+                          acs_user_ids: {
+                            description:
+                              'Array of access system user IDs associated with the user identity.',
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                          created_at: {
+                            description:
+                              'Date and time at which the user identity was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          display_name: { minLength: 1, type: 'string' },
+                          email_address: {
+                            description:
+                              'Unique email address for the user identity.',
+                            format: 'email',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          errors: {
+                            description:
+                              'Array of errors associated with the user identity. Each error object within the array contains fields like "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
+                            items: {
+                              description:
+                                'Errors associated with the user identity.',
+                              discriminator: { propertyName: 'error_code' },
+                              oneOf: [
+                                {
+                                  description:
+                                    'Indicates that there is an issue with an access system user associated with this user identity.',
+                                  properties: {
+                                    acs_system_id: {
+                                      description:
+                                        'ID of the access system that the user identity is associated with.',
+                                      format: 'uuid',
+                                      type: 'string',
+                                    },
+                                    acs_user_id: {
+                                      description:
+                                        'ID of the access system user that has an issue.',
+                                      format: 'uuid',
+                                      type: 'string',
+                                    },
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the error.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    error_code: {
+                                      description:
+                                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                      enum: ['issue_with_acs_user'],
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'error_code',
+                                    'acs_user_id',
+                                    'acs_system_id',
+                                  ],
+                                  type: 'object',
+                                },
+                              ],
+                            },
+                            type: 'array',
+                          },
+                          full_name: {
+                            minLength: 1,
+                            nullable: true,
+                            type: 'string',
+                          },
+                          phone_number: {
+                            description:
+                              'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          user_identity_id: {
+                            description: 'ID of the user identity.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          warnings: {
+                            description:
+                              'Array of warnings associated with the user identity. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
+                            items: {
+                              description:
+                                'Warnings associated with the user identity.',
+                              discriminator: { propertyName: 'warning_code' },
+                              oneOf: [
+                                {
+                                  description:
+                                    'Indicates that the user identity is currently being deleted.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['being_deleted'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    "Indicates that the ACS user's profile does not match the user identity's profile",
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: [
+                                        'acs_user_profile_does_not_match_user_identity',
+                                      ],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                              ],
+                            },
+                            type: 'array',
+                          },
+                          workspace_id: {
+                            description:
+                              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the user identity.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'user_identity_id',
+                          'email_address',
+                          'phone_number',
+                          'display_name',
+                          'full_name',
+                          'created_at',
+                          'workspace_id',
+                          'errors',
+                          'warnings',
+                          'acs_user_ids',
+                        ],
+                        type: 'object',
+                        'x-draft': 'Early access.',
+                        'x-route-path': '/user_identities/unmanaged',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['user_identities', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/user_identities/unmanaged/list',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities', 'unmanaged'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'user_identities',
+        'x-response-key': 'user_identities',
+        'x-title': 'List Unmanaged User Identities',
       },
     },
     '/user_identities/update': {
