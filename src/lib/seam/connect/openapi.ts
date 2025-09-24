@@ -53532,6 +53532,11 @@ export default {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
+                  customer_key: {
+                    description:
+                      'Customer key for which you want to create the space.',
+                    type: 'string',
+                  },
                   device_ids: {
                     description:
                       'IDs of the devices that you want to add to the new space.',
@@ -54445,6 +54450,11 @@ export default {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
+                  customer_key: {
+                    description:
+                      'Customer key for which you want to update the space.',
+                    type: 'string',
+                  },
                   device_ids: {
                     description:
                       'IDs of the devices that you want to set for the space. If specified, this will replace all existing devices.',
@@ -54515,6 +54525,11 @@ export default {
                       'IDs of the entrances that you want to set for the space. If specified, this will replace all existing entrances.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
+                  },
+                  customer_key: {
+                    description:
+                      'Customer key for which you want to update the space.',
+                    type: 'string',
                   },
                   device_ids: {
                     description:
