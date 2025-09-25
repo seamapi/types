@@ -20775,6 +20775,15 @@ export default {
             type: 'string',
           },
           name: { description: 'Name of the space.', type: 'string' },
+          parent_space_id: {
+            format: 'uuid',
+            type: 'string',
+            'x-undocumented': 'Only used internally.',
+          },
+          parent_space_key: {
+            type: 'string',
+            'x-undocumented': 'Only used internally.',
+          },
           space_id: {
             description: 'ID of the space.',
             format: 'uuid',
@@ -52678,6 +52687,82 @@ export default {
         'x-response-key': null,
         'x-title': 'Update Customer Portal Settings',
         'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
+    '/seam/customer/v1/spaces/create': {
+      post: {
+        description: 'Creates a new space with optional parent space support.',
+        operationId: 'seamCustomerV1SpacesCreatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_entrance_ids: {
+                    description:
+                      'IDs of the entrances that you want to add to the new space.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                  device_ids: {
+                    description:
+                      'IDs of the devices that you want to add to the new space.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                  name: {
+                    description: 'Name of the space that you want to create.',
+                    type: 'string',
+                  },
+                  parent_space_key: {
+                    description:
+                      'Space key of the parent space for this space.',
+                    type: 'string',
+                  },
+                  parent_space_name: {
+                    description: 'Name of the parent space for this space.',
+                    type: 'string',
+                  },
+                  space_key: {
+                    description:
+                      'Unique key for the space within the workspace.',
+                    type: 'string',
+                  },
+                },
+                required: ['name'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    space: { $ref: '#/components/schemas/space' },
+                  },
+                  required: ['space', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/spaces/create',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'spaces'],
+        'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'space',
+        'x-response-key': 'space',
+        'x-title': 'Create a Space',
       },
     },
     '/seam/instant_key/v1/client_sessions/exchange_short_code': {
