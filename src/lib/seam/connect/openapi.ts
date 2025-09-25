@@ -40494,6 +40494,13 @@ export default {
                                     required: ['property_listing_key'],
                                     type: 'object',
                                   },
+                                  {
+                                    properties: {
+                                      site_key: { type: 'string' },
+                                    },
+                                    required: ['site_key'],
+                                    type: 'object',
+                                  },
                                 ],
                               },
                               {
@@ -40783,6 +40790,11 @@ export default {
                                     'Your display name for this location resource.',
                                   type: 'string',
                                 },
+                                parent_site_key: {
+                                  description:
+                                    'Your unique identifier for the site.',
+                                  type: 'string',
+                                },
                               },
                               required: ['name', 'common_area_key'],
                               type: 'object',
@@ -41052,6 +41064,11 @@ export default {
                                     'Your display name for this location resource.',
                                   type: 'string',
                                 },
+                                parent_site_key: {
+                                  description:
+                                    'Your unique identifier for the site.',
+                                  type: 'string',
+                                },
                                 room_key: {
                                   description:
                                     'Your unique identifier for the room.',
@@ -41059,6 +41076,26 @@ export default {
                                 },
                               },
                               required: ['name', 'room_key'],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
+                          sites: {
+                            description: 'List of general sites or areas.',
+                            items: {
+                              properties: {
+                                name: {
+                                  description:
+                                    'Your display name for this location resource.',
+                                  type: 'string',
+                                },
+                                site_key: {
+                                  description:
+                                    'Your unique identifier for the site.',
+                                  type: 'string',
+                                },
+                              },
+                              required: ['name', 'site_key'],
                               type: 'object',
                             },
                             type: 'array',
@@ -41121,6 +41158,11 @@ export default {
                                 name: {
                                   description:
                                     'Your display name for this location resource.',
+                                  type: 'string',
+                                },
+                                parent_site_key: {
+                                  description:
+                                    'Your unique identifier for the site.',
                                   type: 'string',
                                 },
                                 unit_key: {
@@ -41831,6 +41873,10 @@ export default {
                             'Your display name for this location resource.',
                           type: 'string',
                         },
+                        parent_site_key: {
+                          description: 'Your unique identifier for the site.',
+                          type: 'string',
+                        },
                       },
                       required: ['name', 'common_area_key'],
                       type: 'object',
@@ -42097,12 +42143,35 @@ export default {
                             'Your display name for this location resource.',
                           type: 'string',
                         },
+                        parent_site_key: {
+                          description: 'Your unique identifier for the site.',
+                          type: 'string',
+                        },
                         room_key: {
                           description: 'Your unique identifier for the room.',
                           type: 'string',
                         },
                       },
                       required: ['name', 'room_key'],
+                      type: 'object',
+                    },
+                    type: 'array',
+                  },
+                  sites: {
+                    description: 'List of general sites or areas.',
+                    items: {
+                      properties: {
+                        name: {
+                          description:
+                            'Your display name for this location resource.',
+                          type: 'string',
+                        },
+                        site_key: {
+                          description: 'Your unique identifier for the site.',
+                          type: 'string',
+                        },
+                      },
+                      required: ['name', 'site_key'],
                       type: 'object',
                     },
                     type: 'array',
@@ -42162,6 +42231,10 @@ export default {
                         name: {
                           description:
                             'Your display name for this location resource.',
+                          type: 'string',
+                        },
+                        parent_site_key: {
+                          description: 'Your unique identifier for the site.',
                           type: 'string',
                         },
                         unit_key: {
@@ -51641,6 +51714,13 @@ export default {
                                       required: ['property_listing_key'],
                                       type: 'object',
                                     },
+                                    {
+                                      properties: {
+                                        site_key: { type: 'string' },
+                                      },
+                                      required: ['site_key'],
+                                      type: 'object',
+                                    },
                                   ],
                                 },
                                 {
@@ -51844,6 +51924,13 @@ export default {
                                         },
                                       },
                                       required: ['property_listing_key'],
+                                      type: 'object',
+                                    },
+                                    {
+                                      properties: {
+                                        site_key: { type: 'string' },
+                                      },
+                                      required: ['site_key'],
                                       type: 'object',
                                     },
                                   ],
@@ -53139,6 +53226,7 @@ export default {
                           is_draft: { type: 'boolean' },
                           name: { type: 'string' },
                           needs_review: { type: 'boolean' },
+                          parent_partner_resource_key: { type: 'string' },
                           partner_resource_key: { type: 'string' },
                         },
                         required: [
@@ -53239,6 +53327,7 @@ export default {
                           is_draft: { type: 'boolean' },
                           name: { type: 'string' },
                           needs_review: { type: 'boolean' },
+                          parent_partner_resource_key: { type: 'string' },
                           partner_resource_key: { type: 'string' },
                         },
                         required: [

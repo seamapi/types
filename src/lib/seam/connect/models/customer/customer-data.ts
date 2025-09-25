@@ -14,6 +14,7 @@ import {
   property_listing_resource,
   property_resource,
   room_resource,
+  site_resource,
   unit_resource,
 } from './location-resources.js'
 import {
@@ -32,6 +33,10 @@ export const customer_data = z.object({
     .array(neutral_resource)
     .optional()
     .describe('List of general spaces or areas.'),
+  sites: z
+    .array(site_resource)
+    .optional()
+    .describe('List of general sites or areas.'),
   properties: z
     .array(property_resource)
     .optional()
