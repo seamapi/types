@@ -40267,8 +40267,14 @@ export default {
                       ],
                     },
                     description:
-                      'Custom metadata that you want to associate with the connected account. Supports up to 50 JSON key:value pairs. [Adding custom metadata to a connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account) enables you to store custom information, like customer details or internal IDs from your application. Then, you can [filter connected accounts by the desired metadata](https://docs.seam.co/latest/core-concepts/connected-accounts/filtering-connected-accounts-by-custom-metadata).',
+                      'Custom metadata that you want to associate with the connected account. Entirely replaces the existing custom metadata object. If a new Connect Webview contains custom metadata and is used to reconnect a connected account, the custom metadata from the Connect Webview will entirely replace the entire custom metadata object on the connected account. Supports up to 50 JSON key:value pairs. [Adding custom metadata to a connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account) enables you to store custom information, like customer details or internal IDs from your application. Then, you can [filter connected accounts by the desired metadata](https://docs.seam.co/latest/core-concepts/connected-accounts/filtering-connected-accounts-by-custom-metadata).',
                     type: 'object',
+                  },
+                  customer_key: {
+                    description:
+                      'The customer key to associate with this connected account. If provided, the connected account and all resources under the connected account will be moved to this customer. ',
+                    minLength: 1,
+                    type: 'string',
                   },
                 },
                 required: ['connected_account_id'],
