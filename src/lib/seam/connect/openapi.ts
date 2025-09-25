@@ -39282,7 +39282,7 @@ export default {
                   },
                   customer_key: {
                     description:
-                      'Optional unique string key that can be used to identify the customer. If provided, the customer will be created or retrieved based on this key.',
+                      'Associate the Connect Webview, the connected account, and all resources under the connected account with a customer. If the connected account already exists, it will be associated with the customer. If the connected account already exists, but is already associated with a customer, the Connect Webview will show an error.',
                     type: 'string',
                   },
                   device_selection_mode: {
@@ -40231,6 +40231,100 @@ export default {
       },
     },
     '/connected_accounts/update': {
+      patch: {
+        description:
+          'Updates a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+        operationId: 'connectedAccountsUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  accepted_capabilities: {
+                    description:
+                      'List of accepted device capabilities that restrict the types of devices that can be connected through this connected account. Valid values are `lock`, `thermostat`, `noise_sensor`, and `access_control`.',
+                    items: {
+                      description:
+                        '\n  High-level device capabilities that can be restricted in connect webviews.\n  These represent the main device categories that customers can opt into.\n',
+                      enum: [
+                        'lock',
+                        'thermostat',
+                        'noise_sensor',
+                        'access_control',
+                      ],
+                      type: 'string',
+                    },
+                    type: 'array',
+                  },
+                  automatically_manage_new_devices: {
+                    description:
+                      'Indicates whether newly-added devices should appear as [managed devices](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).',
+                    type: 'boolean',
+                  },
+                  connected_account_id: {
+                    description:
+                      'ID of the connected account that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  custom_metadata: {
+                    additionalProperties: {
+                      nullable: true,
+                      oneOf: [
+                        { maxLength: 500, type: 'string' },
+                        { type: 'boolean' },
+                      ],
+                    },
+                    description:
+                      'Custom metadata that you want to associate with the connected account. Entirely replaces the existing custom metadata object. If a new Connect Webview contains custom metadata and is used to reconnect a connected account, the custom metadata from the Connect Webview will entirely replace the entire custom metadata object on the connected account. Supports up to 50 JSON key:value pairs. [Adding custom metadata to a connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account) enables you to store custom information, like customer details or internal IDs from your application. Then, you can [filter connected accounts by the desired metadata](https://docs.seam.co/latest/core-concepts/connected-accounts/filtering-connected-accounts-by-custom-metadata).',
+                    type: 'object',
+                  },
+                  customer_key: {
+                    description:
+                      'The customer key to associate with this connected account. If provided, the connected account and all resources under the connected account will be moved to this customer. May only be provided if the connected account is not already associated with a customer.',
+                    minLength: 1,
+                    type: 'string',
+                  },
+                },
+                required: ['connected_account_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    connected_account: {
+                      $ref: '#/components/schemas/connected_account',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['connected_account', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/connected_accounts/update',
+        tags: ['/connected_accounts'],
+        'x-fern-sdk-group-name': ['connected_accounts'],
+        'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
+        'x-title': 'Update a Connected Account',
+      },
       post: {
         description:
           'Updates a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
@@ -40281,7 +40375,7 @@ export default {
                   },
                   customer_key: {
                     description:
-                      'The customer key to associate with this connected account. If provided, the connected account and all resources under the connected account will be moved to this customer. ',
+                      'The customer key to associate with this connected account. If provided, the connected account and all resources under the connected account will be moved to this customer. May only be provided if the connected account is not already associated with a customer.',
                     minLength: 1,
                     type: 'string',
                   },
