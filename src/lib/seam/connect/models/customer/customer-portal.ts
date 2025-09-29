@@ -11,6 +11,12 @@ const base_feature = z.object({
 })
 
 const base_connect_feature = base_feature.extend({
+  accepted_providers: z
+    .array(z.string())
+    .optional()
+    .describe(
+      'List of provider keys to allow for the connect feature. These providers will be shown when the customer tries to connect an account.',
+    ),
   excluded_providers: z
     .array(z.string())
     .optional()
