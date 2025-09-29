@@ -52865,6 +52865,139 @@ export default {
         'x-title': 'Create a Space',
       },
     },
+    '/seam/customer/v1/spaces/list': {
+      get: {
+        description: 'Returns a list of all spaces.',
+        operationId: 'seamCustomerV1SpacesListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned spaces to include all records that satisfy a partial match using `name`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'connected_account_id',
+            schema: {
+              description:
+                'Filter spaces to only include those that contain devices or access control systems belonging to the specified connected account.',
+              format: 'uuid',
+              type: 'string',
+              'x-draft': 'Needs review.',
+              'x-undocumented': 'Only used internally.',
+            },
+          },
+          {
+            in: 'query',
+            name: 'space_key',
+            schema: {
+              description: 'Filter spaces by space_key.',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    spaces: {
+                      items: { $ref: '#/components/schemas/space' },
+                      type: 'array',
+                    },
+                  },
+                  required: ['spaces', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/spaces/list',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'spaces'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'spaces',
+        'x-response-key': 'spaces',
+        'x-title': 'List Spaces',
+      },
+      post: {
+        description: 'Returns a list of all spaces.',
+        operationId: 'seamCustomerV1SpacesListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connected_account_id: {
+                    description:
+                      'Filter spaces to only include those that contain devices or access control systems belonging to the specified connected account.',
+                    format: 'uuid',
+                    type: 'string',
+                    'x-draft': 'Needs review.',
+                    'x-undocumented': 'Only used internally.',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned spaces to include all records that satisfy a partial match using `name`.',
+                    minLength: 1,
+                    type: 'string',
+                  },
+                  space_key: {
+                    description: 'Filter spaces by space_key.',
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    spaces: {
+                      items: { $ref: '#/components/schemas/space' },
+                      type: 'array',
+                    },
+                  },
+                  required: ['spaces', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/spaces/list',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'spaces'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'spaces',
+        'x-response-key': 'spaces',
+        'x-title': 'List Spaces',
+      },
+    },
     '/seam/instant_key/v1/client_sessions/exchange_short_code': {
       post: {
         description:
