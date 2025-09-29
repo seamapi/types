@@ -40480,6 +40480,12 @@ export default {
                             description:
                               'Configuration for the connect accounts feature.',
                             properties: {
+                              accepted_providers: {
+                                description:
+                                  'List of provider keys to allow for the connect feature. These providers will be shown when the customer tries to connect an account.',
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
                               exclude: {
                                 default: false,
                                 description:
