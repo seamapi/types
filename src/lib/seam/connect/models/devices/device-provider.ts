@@ -53,6 +53,7 @@ export const DEVICE_PROVIDERS = {
   KWIKSET2: 'kwikset2',
   KEYNEST: 'keynest',
   DORMAKABA_AMBIANCE: 'dormakaba_ambiance',
+  ULTRALOQ: 'ultraloq',
 } as const
 
 export type DeviceProviderName =
