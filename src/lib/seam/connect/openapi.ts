@@ -30149,6 +30149,132 @@ export default {
         'x-title': 'List Unmanaged Access Grants',
       },
     },
+    '/access_grants/unmanaged/update': {
+      patch: {
+        description:
+          'Updates an unmanaged Access Grant to make it managed.\n\nThis endpoint can only be used to convert unmanaged access grants to managed ones by setting `is_managed` to `true`. It cannot be used to convert managed access grants back to unmanaged.\n\nWhen converting an unmanaged access grant to managed, all associated access methods will also be converted to managed.',
+        operationId: 'accessGrantsUnmanagedUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_grant_id: {
+                    description: 'ID of the unmanaged Access Grant to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  access_grant_key: {
+                    description:
+                      'Unique key for the access grant. If not provided, the existing key will be preserved.',
+                    type: 'string',
+                  },
+                  is_managed: {
+                    description:
+                      'Must be set to true to convert the unmanaged access grant to managed.',
+                    enum: [true],
+                    type: 'boolean',
+                  },
+                },
+                required: ['access_grant_id', 'is_managed'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/access_grants/unmanaged/update',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['access_grants', 'unmanaged'],
+        'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
+        'x-title': 'Update an Unmanaged Access Grant',
+      },
+      post: {
+        description:
+          'Updates an unmanaged Access Grant to make it managed.\n\nThis endpoint can only be used to convert unmanaged access grants to managed ones by setting `is_managed` to `true`. It cannot be used to convert managed access grants back to unmanaged.\n\nWhen converting an unmanaged access grant to managed, all associated access methods will also be converted to managed.',
+        operationId: 'accessGrantsUnmanagedUpdatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_grant_id: {
+                    description: 'ID of the unmanaged Access Grant to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  access_grant_key: {
+                    description:
+                      'Unique key for the access grant. If not provided, the existing key will be preserved.',
+                    type: 'string',
+                  },
+                  is_managed: {
+                    description:
+                      'Must be set to true to convert the unmanaged access grant to managed.',
+                    enum: [true],
+                    type: 'boolean',
+                  },
+                },
+                required: ['access_grant_id', 'is_managed'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/access_grants/unmanaged/update',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['access_grants', 'unmanaged'],
+        'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
+        'x-title': 'Update an Unmanaged Access Grant',
+      },
+    },
     '/access_grants/update': {
       patch: {
         description: "Updates an existing Access Grant's time window.",
@@ -61463,6 +61589,132 @@ export default {
         'x-fern-sdk-return-value': 'user_identities',
         'x-response-key': 'user_identities',
         'x-title': 'List Unmanaged User Identities',
+      },
+    },
+    '/user_identities/unmanaged/update': {
+      patch: {
+        description:
+          'Updates an unmanaged [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) to make it managed.\n\nThis endpoint can only be used to convert unmanaged user identities to managed ones by setting `is_managed` to `true`. It cannot be used to convert managed user identities back to unmanaged.',
+        operationId: 'userIdentitiesUnmanagedUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  is_managed: {
+                    description:
+                      'Must be set to true to convert the unmanaged user identity to managed.',
+                    enum: [true],
+                    type: 'boolean',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the unmanaged user identity that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_key: {
+                    description:
+                      'Unique key for the user identity. If not provided, the existing key will be preserved.',
+                    type: 'string',
+                  },
+                },
+                required: ['user_identity_id', 'is_managed'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/user_identities/unmanaged/update',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities', 'unmanaged'],
+        'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
+        'x-title': 'Update an Unmanaged User Identity',
+      },
+      post: {
+        description:
+          'Updates an unmanaged [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) to make it managed.\n\nThis endpoint can only be used to convert unmanaged user identities to managed ones by setting `is_managed` to `true`. It cannot be used to convert managed user identities back to unmanaged.',
+        operationId: 'userIdentitiesUnmanagedUpdatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  is_managed: {
+                    description:
+                      'Must be set to true to convert the unmanaged user identity to managed.',
+                    enum: [true],
+                    type: 'boolean',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the unmanaged user identity that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_key: {
+                    description:
+                      'Unique key for the user identity. If not provided, the existing key will be preserved.',
+                    type: 'string',
+                  },
+                },
+                required: ['user_identity_id', 'is_managed'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/user_identities/unmanaged/update',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities', 'unmanaged'],
+        'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
+        'x-title': 'Update an Unmanaged User Identity',
       },
     },
     '/user_identities/update': {
