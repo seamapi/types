@@ -29115,6 +29115,90 @@ export default {
         'x-title': 'List Access Grants',
       },
     },
+    '/access_grants/request_access_methods': {
+      post: {
+        description:
+          'Adds additional requested access methods to an existing Access Grant.',
+        operationId: 'accessGrantsRequestAccessMethodsPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_grant_id: {
+                    description:
+                      'ID of the Access Grant to add access methods to.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  requested_access_methods: {
+                    description:
+                      'Array of requested access methods to add to the access grant.',
+                    items: {
+                      properties: {
+                        code: {
+                          description:
+                            "Specific PIN code to use for this access method. Only applicable when mode is 'code'.",
+                          maxLength: 9,
+                          minLength: 4,
+                          pattern: '^\\d+$',
+                          type: 'string',
+                        },
+                        mode: {
+                          description:
+                            'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                          enum: ['code', 'card', 'mobile_key'],
+                          type: 'string',
+                        },
+                      },
+                      required: ['mode'],
+                      type: 'object',
+                    },
+                    minItems: 1,
+                    type: 'array',
+                  },
+                },
+                required: ['access_grant_id', 'requested_access_methods'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_grant: { $ref: '#/components/schemas/access_grant' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_grant', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/access_grants/request_access_methods',
+        tags: [],
+        'x-draft': 'Early access.',
+        'x-fern-sdk-group-name': ['access_grants'],
+        'x-fern-sdk-method-name': 'request_access_methods',
+        'x-fern-sdk-return-value': 'access_grant',
+        'x-response-key': 'access_grant',
+        'x-title': 'Add Requested Access Methods to Access Grant',
+      },
+    },
     '/access_grants/unmanaged/get': {
       get: {
         description:
