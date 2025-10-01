@@ -24,7 +24,19 @@ const base_connect_feature = base_feature.extend({
       'List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account.',
     ),
 })
-const base_manage_devices_feature = base_feature
+const base_manage_devices_feature = base_feature.extend({
+  reservations: z
+    .object({
+      exclude: z
+        .boolean()
+        .default(false)
+        .describe(
+          'Indicates whether the customer can view reservations for their properties.',
+        ),
+    })
+    .default({ exclude: false })
+    .describe('Configuration for the reservations feature.'),
+})
 const base_organize_feature = base_feature
 
 const base_configure_feature = base_feature.extend({
@@ -46,7 +58,10 @@ const base_features = z.object({
   connect: base_connect_feature
     .default({})
     .describe('Configuration for the connect accounts feature.'),
-  manage_devices: base_manage_devices_feature
+  manage_reservations: base_manage_devices_feature
+    .default({})
+    .describe('Configuration for the manage reservations feature.'),
+  manage_devices: base_connect_feature
     .default({})
     .describe('Configuration for the manage devices feature.'),
   organize: base_organize_feature
@@ -57,27 +72,31 @@ const base_features = z.object({
     .describe('Configuration for the configure feature.'),
 })
 
-export const portal_configuration = z
-  .object({
-    features: base_features.default({}),
-    is_embedded: z
-      .boolean()
-      .default(false)
-      .describe('Whether the portal is embedded in another application.'),
-    landing_page: z
-      .object({
-        manage: z
-          .union([location_key_aliases, access_grant_key_aliases])
-          .optional(),
-      })
-      .optional()
-      .describe('Configuration for the landing page when the portal loads.'),
-  })
+export const portal_configuration_base = z.object({
+  features: base_features.default({}),
+  is_embedded: z
+    .boolean()
+    .default(false)
+    .describe('Whether the portal is embedded in another application.'),
+  landing_page: z
+    .object({
+      manage: z
+        .union([location_key_aliases, access_grant_key_aliases])
+        .optional(),
+    })
+    .optional()
+    .describe('Configuration for the landing page when the portal loads.'),
+})
+
+export const portal_configuration = portal_configuration_base
   .default({
     features: {
       connect: { exclude: false },
       organize: { exclude: false },
-      manage_devices: { exclude: false },
+      manage_reservations: { exclude: false },
+      manage_devices: {
+        exclude: false,
+      },
       configure: {
         exclude: false,
         allow_instant_key_customization: false, // default
