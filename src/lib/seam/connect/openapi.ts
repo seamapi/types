@@ -40663,6 +40663,7 @@ export default {
                         },
                         connect: { exclude: false },
                         manage_devices: { exclude: false },
+                        manage_reservations: { exclude: false },
                         organize: { exclude: false },
                       },
                       is_embedded: false,
@@ -40729,11 +40730,51 @@ export default {
                             description:
                               'Configuration for the manage devices feature.',
                             properties: {
+                              accepted_providers: {
+                                description:
+                                  'List of provider keys to allow for the connect feature. These providers will be shown when the customer tries to connect an account.',
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
                               exclude: {
                                 default: false,
                                 description:
                                   'Whether to exclude this feature from the portal.',
                                 type: 'boolean',
+                              },
+                              excluded_providers: {
+                                description:
+                                  'List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account.',
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                            },
+                            type: 'object',
+                          },
+                          manage_reservations: {
+                            default: {},
+                            description:
+                              'Configuration for the manage reservations feature.',
+                            properties: {
+                              exclude: {
+                                default: false,
+                                description:
+                                  'Whether to exclude this feature from the portal.',
+                                type: 'boolean',
+                              },
+                              reservations: {
+                                default: { exclude: false },
+                                description:
+                                  'Configuration for the reservations feature.',
+                                properties: {
+                                  exclude: {
+                                    default: false,
+                                    description:
+                                      'Indicates whether the customer can view reservations for their properties.',
+                                    type: 'boolean',
+                                  },
+                                },
+                                type: 'object',
                               },
                             },
                             type: 'object',
@@ -51952,23 +51993,58 @@ export default {
                           type: 'string',
                         },
                         features: {
+                          default: { $ref: '#/components/schemas/access_code' },
                           properties: {
                             configure: {
+                              default: {
+                                $ref: '#/components/schemas/access_code',
+                              },
+                              description:
+                                'Configuration for the configure feature.',
                               properties: {
                                 allow_access_automation_rule_customization: {
+                                  default: false,
+                                  description:
+                                    'Indicates whether the customer can customize the access automation rules for their properties.',
                                   type: 'boolean',
                                 },
                                 allow_instant_key_customization: {
+                                  default: false,
+                                  description:
+                                    'Indicates whether the customer can customize the Instant Key profile for their properties.',
                                   type: 'boolean',
                                 },
-                                exclude: { type: 'boolean' },
+                                exclude: {
+                                  default: false,
+                                  description:
+                                    'Whether to exclude this feature from the portal.',
+                                  type: 'boolean',
+                                },
                               },
                               type: 'object',
                             },
                             connect: {
+                              default: {
+                                $ref: '#/components/schemas/access_code',
+                              },
+                              description:
+                                'Configuration for the connect accounts feature.',
                               properties: {
-                                exclude: { type: 'boolean' },
+                                accepted_providers: {
+                                  description:
+                                    'List of provider keys to allow for the connect feature. These providers will be shown when the customer tries to connect an account.',
+                                  items: { type: 'string' },
+                                  type: 'array',
+                                },
+                                exclude: {
+                                  default: false,
+                                  description:
+                                    'Whether to exclude this feature from the portal.',
+                                  type: 'boolean',
+                                },
                                 excluded_providers: {
+                                  description:
+                                    'List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account.',
                                   items: { type: 'string' },
                                   type: 'array',
                                 },
@@ -51976,18 +52052,91 @@ export default {
                               type: 'object',
                             },
                             manage_devices: {
-                              properties: { exclude: { type: 'boolean' } },
+                              default: {
+                                $ref: '#/components/schemas/access_code',
+                              },
+                              description:
+                                'Configuration for the manage devices feature.',
+                              properties: {
+                                accepted_providers: {
+                                  description:
+                                    'List of provider keys to allow for the connect feature. These providers will be shown when the customer tries to connect an account.',
+                                  items: { type: 'string' },
+                                  type: 'array',
+                                },
+                                exclude: {
+                                  default: false,
+                                  description:
+                                    'Whether to exclude this feature from the portal.',
+                                  type: 'boolean',
+                                },
+                                excluded_providers: {
+                                  description:
+                                    'List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account.',
+                                  items: { type: 'string' },
+                                  type: 'array',
+                                },
+                              },
+                              type: 'object',
+                            },
+                            manage_reservations: {
+                              default: {
+                                $ref: '#/components/schemas/access_code',
+                              },
+                              description:
+                                'Configuration for the manage reservations feature.',
+                              properties: {
+                                exclude: {
+                                  default: false,
+                                  description:
+                                    'Whether to exclude this feature from the portal.',
+                                  type: 'boolean',
+                                },
+                                reservations: {
+                                  default: { exclude: false },
+                                  description:
+                                    'Configuration for the reservations feature.',
+                                  properties: {
+                                    exclude: {
+                                      default: false,
+                                      description:
+                                        'Indicates whether the customer can view reservations for their properties.',
+                                      type: 'boolean',
+                                    },
+                                  },
+                                  type: 'object',
+                                },
+                              },
                               type: 'object',
                             },
                             organize: {
-                              properties: { exclude: { type: 'boolean' } },
+                              default: {
+                                $ref: '#/components/schemas/access_code',
+                              },
+                              description:
+                                'Configuration for the organize feature.',
+                              properties: {
+                                exclude: {
+                                  default: false,
+                                  description:
+                                    'Whether to exclude this feature from the portal.',
+                                  type: 'boolean',
+                                },
+                              },
                               type: 'object',
                             },
                           },
                           type: 'object',
                         },
-                        is_embedded: { type: 'boolean' },
+                        is_embedded: {
+                          default: false,
+                          description:
+                            'Whether the portal is embedded in another application.',
+                          type: 'boolean',
+                        },
                         landing_page: {
+                          description:
+                            'Configuration for the landing page when the portal loads.',
                           properties: {
                             manage: {
                               oneOf: [
@@ -52164,23 +52313,58 @@ export default {
                           type: 'string',
                         },
                         features: {
+                          default: { $ref: '#/components/schemas/access_code' },
                           properties: {
                             configure: {
+                              default: {
+                                $ref: '#/components/schemas/access_code',
+                              },
+                              description:
+                                'Configuration for the configure feature.',
                               properties: {
                                 allow_access_automation_rule_customization: {
+                                  default: false,
+                                  description:
+                                    'Indicates whether the customer can customize the access automation rules for their properties.',
                                   type: 'boolean',
                                 },
                                 allow_instant_key_customization: {
+                                  default: false,
+                                  description:
+                                    'Indicates whether the customer can customize the Instant Key profile for their properties.',
                                   type: 'boolean',
                                 },
-                                exclude: { type: 'boolean' },
+                                exclude: {
+                                  default: false,
+                                  description:
+                                    'Whether to exclude this feature from the portal.',
+                                  type: 'boolean',
+                                },
                               },
                               type: 'object',
                             },
                             connect: {
+                              default: {
+                                $ref: '#/components/schemas/access_code',
+                              },
+                              description:
+                                'Configuration for the connect accounts feature.',
                               properties: {
-                                exclude: { type: 'boolean' },
+                                accepted_providers: {
+                                  description:
+                                    'List of provider keys to allow for the connect feature. These providers will be shown when the customer tries to connect an account.',
+                                  items: { type: 'string' },
+                                  type: 'array',
+                                },
+                                exclude: {
+                                  default: false,
+                                  description:
+                                    'Whether to exclude this feature from the portal.',
+                                  type: 'boolean',
+                                },
                                 excluded_providers: {
+                                  description:
+                                    'List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account.',
                                   items: { type: 'string' },
                                   type: 'array',
                                 },
@@ -52188,18 +52372,91 @@ export default {
                               type: 'object',
                             },
                             manage_devices: {
-                              properties: { exclude: { type: 'boolean' } },
+                              default: {
+                                $ref: '#/components/schemas/access_code',
+                              },
+                              description:
+                                'Configuration for the manage devices feature.',
+                              properties: {
+                                accepted_providers: {
+                                  description:
+                                    'List of provider keys to allow for the connect feature. These providers will be shown when the customer tries to connect an account.',
+                                  items: { type: 'string' },
+                                  type: 'array',
+                                },
+                                exclude: {
+                                  default: false,
+                                  description:
+                                    'Whether to exclude this feature from the portal.',
+                                  type: 'boolean',
+                                },
+                                excluded_providers: {
+                                  description:
+                                    'List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account.',
+                                  items: { type: 'string' },
+                                  type: 'array',
+                                },
+                              },
+                              type: 'object',
+                            },
+                            manage_reservations: {
+                              default: {
+                                $ref: '#/components/schemas/access_code',
+                              },
+                              description:
+                                'Configuration for the manage reservations feature.',
+                              properties: {
+                                exclude: {
+                                  default: false,
+                                  description:
+                                    'Whether to exclude this feature from the portal.',
+                                  type: 'boolean',
+                                },
+                                reservations: {
+                                  default: { exclude: false },
+                                  description:
+                                    'Configuration for the reservations feature.',
+                                  properties: {
+                                    exclude: {
+                                      default: false,
+                                      description:
+                                        'Indicates whether the customer can view reservations for their properties.',
+                                      type: 'boolean',
+                                    },
+                                  },
+                                  type: 'object',
+                                },
+                              },
                               type: 'object',
                             },
                             organize: {
-                              properties: { exclude: { type: 'boolean' } },
+                              default: {
+                                $ref: '#/components/schemas/access_code',
+                              },
+                              description:
+                                'Configuration for the organize feature.',
+                              properties: {
+                                exclude: {
+                                  default: false,
+                                  description:
+                                    'Whether to exclude this feature from the portal.',
+                                  type: 'boolean',
+                                },
+                              },
                               type: 'object',
                             },
                           },
                           type: 'object',
                         },
-                        is_embedded: { type: 'boolean' },
+                        is_embedded: {
+                          default: false,
+                          description:
+                            'Whether the portal is embedded in another application.',
+                          type: 'boolean',
+                        },
                         landing_page: {
+                          description:
+                            'Configuration for the landing page when the portal loads.',
                           properties: {
                             manage: {
                               oneOf: [
