@@ -51362,6 +51362,174 @@ export default {
         'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
+    '/seam/customer/v1/connectors/create': {
+      post: {
+        description:
+          'Creates a new connector for a customer in a workspace. The connector will be activated and start syncing data from the external API.',
+        operationId: 'seamCustomerV1ConnectorsCreatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  config: {
+                    description:
+                      'Instance-specific configuration for the connector',
+                    oneOf: [
+                      {
+                        properties: {
+                          access_token: { minLength: 1, type: 'string' },
+                          client: { minLength: 1, type: 'string' },
+                          client_token: { minLength: 1, type: 'string' },
+                          enterprise_ids: {
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                        },
+                        required: ['client_token', 'access_token', 'client'],
+                        type: 'object',
+                      },
+                      { properties: {}, type: 'object' },
+                    ],
+                  },
+                  connector_type: {
+                    description: 'Type of connector to create',
+                    enum: ['mews', 'mock'],
+                    type: 'string',
+                  },
+                  customer_key: {
+                    description: 'Key identifying the customer',
+                    minLength: 1,
+                    type: 'string',
+                  },
+                },
+                required: ['connector_type', 'customer_key', 'config'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    connector: {
+                      properties: {
+                        connector_id: { type: 'string' },
+                        connector_type: { type: 'string' },
+                        error: { type: 'string' },
+                        status: {
+                          enum: ['active', 'inactive', 'error'],
+                          type: 'string',
+                        },
+                        webhook_subscription: {
+                          properties: {
+                            events: {
+                              items: { type: 'string' },
+                              type: 'array',
+                            },
+                            status: {
+                              enum: ['active', 'inactive', 'error'],
+                              type: 'string',
+                            },
+                            subscription_id: { type: 'string' },
+                            webhook_url: { type: 'string' },
+                          },
+                          required: [
+                            'subscription_id',
+                            'webhook_url',
+                            'events',
+                            'status',
+                          ],
+                          type: 'object',
+                        },
+                      },
+                      required: ['connector_id', 'connector_type', 'status'],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['connector', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ api_key: [] }],
+        summary: '/seam/customer/v1/connectors/create',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'connectors'],
+        'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'connector',
+        'x-response-key': 'connector',
+        'x-title': 'Create Connector',
+      },
+    },
+    '/seam/customer/v1/connectors/sync': {
+      post: {
+        description:
+          'Triggers an immediate data sync for a connector by scheduling a polling task.',
+        operationId: 'seamCustomerV1ConnectorsSyncPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connector_id: {
+                    description: 'ID of the connector to sync',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['connector_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    connector_sync: {
+                      properties: {
+                        connector_id: { type: 'string' },
+                        message: { type: 'string' },
+                        status: { type: 'string' },
+                      },
+                      required: ['connector_id', 'status', 'message'],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['connector_sync', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ api_key: [] }],
+        summary: '/seam/customer/v1/connectors/sync',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'connectors'],
+        'x-fern-sdk-method-name': 'sync',
+        'x-fern-sdk-return-value': 'connector_sync',
+        'x-response-key': 'connector_sync',
+        'x-title': 'Sync Connector Data',
+      },
+    },
     '/seam/customer/v1/events/list': {
       get: {
         description:
@@ -53425,6 +53593,59 @@ export default {
         'x-fern-sdk-return-value': 'spaces',
         'x-response-key': 'spaces',
         'x-title': 'List Spaces',
+      },
+    },
+    '/seam/customer/v1/webhooks/connectors/[workspace_id]/[connector_id]': {
+      post: {
+        description:
+          'Receives webhook events from external connector APIs and processes them into partner resources.',
+        operationId:
+          'seamCustomerV1WebhooksConnectorsByWorkspaceIdByConnectorIdPost',
+        requestBody: {
+          content: {
+            'application/json': { schema: { properties: {}, type: 'object' } },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    error: { type: 'string' },
+                    ok: { type: 'boolean' },
+                    processed_events: { format: 'float', type: 'number' },
+                    success: { type: 'boolean' },
+                  },
+                  required: ['success', 'processed_events', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary:
+          '/seam/customer/v1/webhooks/connectors/[workspace_id]/[connector_id]',
+        tags: ['/webhooks'],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'customer',
+          'v1',
+          'webhooks',
+          'connectors',
+          '[workspace_id]',
+        ],
+        'x-fern-sdk-method-name': 'by_connector_id',
+        'x-response-key': null,
+        'x-title': 'Connector Webhook Endpoint',
       },
     },
     '/seam/instant_key/v1/client_sessions/exchange_short_code': {
