@@ -24,19 +24,17 @@ const base_connect_feature = base_feature.extend({
       'List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account.',
     ),
 })
-const base_manage_devices_feature = base_feature.extend({
-  reservations: z
-    .object({
-      exclude: z
-        .boolean()
-        .default(false)
-        .describe(
-          'Indicates whether the customer can view reservations for their properties.',
-        ),
-    })
-    .default({ exclude: false })
-    .describe('Configuration for the reservations feature.'),
+const base_manage_devices_feature = base_feature
+
+const base_manage_feature = base_feature.extend({
+  exclude_reservation_management: z
+    .boolean()
+    .default(false)
+    .describe(
+      'Indicates whether the customer can manage reservations for their properties.',
+    ),
 })
+
 const base_organize_feature = base_feature
 
 const base_configure_feature = base_feature.extend({
@@ -58,12 +56,15 @@ const base_features = z.object({
   connect: base_connect_feature
     .default({})
     .describe('Configuration for the connect accounts feature.'),
-  manage_reservations: base_manage_devices_feature
+  manage: base_manage_feature
     .default({})
-    .describe('Configuration for the manage reservations feature.'),
-  manage_devices: base_connect_feature
-    .default({})
-    .describe('Configuration for the manage devices feature.'),
+    .describe('Configuration for the manage feature.'),
+  manage_devices: base_manage_devices_feature.default({}).describe(`
+      Configuration for the manage devices feature.
+      ---
+      deprecated: Use \`manage\` instead.
+      ---
+    `),
   organize: base_organize_feature
     .default({})
     .describe('Configuration for the organize feature.'),
@@ -93,7 +94,7 @@ export const portal_configuration = portal_configuration_base
     features: {
       connect: { exclude: false },
       organize: { exclude: false },
-      manage_reservations: { exclude: false },
+      manage: { exclude: false, exclude_reservation_management: false },
       manage_devices: {
         exclude: false,
       },
