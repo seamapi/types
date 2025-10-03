@@ -31,9 +31,23 @@ const no_credential_on_encoder_error = z
   })
   .describe('Error to indicate that there is no credential on the encoder.')
 
+const no_card_on_encoder_error = z
+  .object({
+    type: z
+      .literal('no_card_on_encoder')
+      .describe('Error type to indicate that there is no card on the encoder.'),
+    message: z
+      .string()
+      .describe(
+        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+      ),
+  })
+  .describe('Error to indicate that there is no card on the encoder.')
+
 const error = z.union([
   ...common_action_attempt_errors,
   no_credential_on_encoder_error,
+  no_card_on_encoder_error,
 ])
 
 const warning = z

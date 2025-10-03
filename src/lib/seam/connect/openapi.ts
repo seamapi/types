@@ -5684,6 +5684,25 @@ export default {
                     required: ['type', 'message'],
                     type: 'object',
                   },
+                  {
+                    description:
+                      'Error to indicate that there is no card on the encoder.',
+                    properties: {
+                      message: {
+                        description:
+                          'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                        type: 'string',
+                      },
+                      type: {
+                        description:
+                          'Error type to indicate that there is no card on the encoder.',
+                        enum: ['no_card_on_encoder'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['type', 'message'],
+                    type: 'object',
+                  },
                 ],
               },
               result: {
@@ -6787,6 +6806,25 @@ export default {
                         description:
                           'Error type to indicate that the affected credential cannot be reissued.',
                         enum: ['credential_cannot_be_reissued'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['type', 'message'],
+                    type: 'object',
+                  },
+                  {
+                    description:
+                      'Error to indicate that there is no card on the encoder.',
+                    properties: {
+                      message: {
+                        description:
+                          'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                        type: 'string',
+                      },
+                      type: {
+                        description:
+                          'Error type to indicate that there is no card on the encoder.',
+                        enum: ['no_card_on_encoder'],
                         type: 'string',
                       },
                     },
