@@ -62,11 +62,25 @@ const credential_cannot_be_reissued = z
     'Error to indicate that the affected credential cannot be reissued.',
   )
 
+const no_card_on_encoder_error = z
+  .object({
+    type: z
+      .literal('no_card_on_encoder')
+      .describe('Error type to indicate that there is no card on the encoder.'),
+    message: z
+      .string()
+      .describe(
+        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+      ),
+  })
+  .describe('Error to indicate that there is no card on the encoder.')
+
 const error = z.union([
   ...common_action_attempt_errors,
   no_credential_on_encoder_error,
   incompatible_card_format_error,
   credential_cannot_be_reissued,
+  no_card_on_encoder_error,
 ])
 
 const result = acs_credential
