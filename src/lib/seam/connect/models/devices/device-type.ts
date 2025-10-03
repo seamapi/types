@@ -29,6 +29,7 @@ export const LOCK_DEVICE_TYPE = {
   DORMAKABA_ORACODE_DOOR: 'dormakaba_oracode_door',
   TEDEE_LOCK: 'tedee_lock',
   AKILES_LOCK: 'akiles_lock',
+  ULTRALOQ_LOCK: 'ultraloq_lock',
 } as const
 
 type LockDeviceTypeFromMapping =
