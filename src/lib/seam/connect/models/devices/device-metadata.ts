@@ -684,11 +684,13 @@ export const device_metadata = z
       })
       .partial()
       .describe(`Metadata for a KeyNest device.`),
+
     ultraloq_metadata: z
       .object({
-        device_id: z.string().describe(`Device ID for a Ultraloq device.`),
+        device_id: z.string().describe(`Device ID for an Ultraloq device.`),
+        device_name: z.string().describe(`Device name for an Ultraloq device.`),
       })
-      .describe(`Metadata for a Ultraloq device.`),
+      .describe(`Metadata for an Ultraloq device.`),
   })
   .partial().describe(`
           ---
