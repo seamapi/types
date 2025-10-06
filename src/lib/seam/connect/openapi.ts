@@ -60442,6 +60442,37 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 500,
+              description: 'Maximum number of records to return per page.',
+              exclusiveMinimum: true,
+              minimum: 0,
+              type: 'integer',
+            },
+          },
+          {
+            in: 'query',
+            name: 'created_before',
+            schema: {
+              description:
+                'Timestamp by which to limit returned user identities. Returns user identities created before this timestamp.',
+              format: 'date-time',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              nullable: true,
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -60450,12 +60481,13 @@ export default {
                 schema: {
                   properties: {
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                     user_identities: {
                       items: { $ref: '#/components/schemas/user_identity' },
                       type: 'array',
                     },
                   },
-                  required: ['user_identities', 'ok'],
+                  required: ['user_identities', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
@@ -60488,10 +60520,30 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  created_before: {
+                    description:
+                      'Timestamp by which to limit returned user identities. Returns user identities created before this timestamp.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
                   credential_manager_acs_system_id: {
                     description:
                       '`acs_system_id` of the credential manager by which you want to filter the list of user identities.',
                     format: 'uuid',
+                    type: 'string',
+                  },
+                  limit: {
+                    default: 500,
+                    description:
+                      'Maximum number of records to return per page.',
+                    exclusiveMinimum: true,
+                    minimum: 0,
+                    type: 'integer',
+                  },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    nullable: true,
                     type: 'string',
                   },
                   search: {
@@ -60512,12 +60564,13 @@ export default {
                 schema: {
                   properties: {
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                     user_identities: {
                       items: { $ref: '#/components/schemas/user_identity' },
                       type: 'array',
                     },
                   },
-                  required: ['user_identities', 'ok'],
+                  required: ['user_identities', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
@@ -61615,6 +61668,37 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 500,
+              description: 'Maximum number of records to return per page.',
+              exclusiveMinimum: true,
+              minimum: 0,
+              type: 'integer',
+            },
+          },
+          {
+            in: 'query',
+            name: 'created_before',
+            schema: {
+              description:
+                'Timestamp by which to limit returned unmanaged user identities. Returns user identities created before this timestamp.',
+              format: 'date-time',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              nullable: true,
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -61623,6 +61707,7 @@ export default {
                 schema: {
                   properties: {
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                     user_identities: {
                       items: {
                         description:
@@ -61817,7 +61902,7 @@ export default {
                       type: 'array',
                     },
                   },
-                  required: ['user_identities', 'ok'],
+                  required: ['user_identities', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
@@ -61850,6 +61935,26 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  created_before: {
+                    description:
+                      'Timestamp by which to limit returned unmanaged user identities. Returns user identities created before this timestamp.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
+                  limit: {
+                    default: 500,
+                    description:
+                      'Maximum number of records to return per page.',
+                    exclusiveMinimum: true,
+                    minimum: 0,
+                    type: 'integer',
+                  },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    nullable: true,
+                    type: 'string',
+                  },
                   search: {
                     description:
                       'String for which to search. Filters returned unmanaged user identities to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address` or `user_identity_id`.',
@@ -61868,6 +61973,7 @@ export default {
                 schema: {
                   properties: {
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                     user_identities: {
                       items: {
                         description:
@@ -62062,7 +62168,7 @@ export default {
                       type: 'array',
                     },
                   },
-                  required: ['user_identities', 'ok'],
+                  required: ['user_identities', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
