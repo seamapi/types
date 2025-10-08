@@ -20864,6 +20864,36 @@ export default {
         'x-draft': 'Early access.',
         'x-route-path': '/spaces',
       },
+      staff_member: {
+        description: 'Represents a staff member for a specific customer.',
+        properties: {
+          email_address: {
+            description: 'Email address associated with the user identity.',
+            type: 'string',
+          },
+          name: {
+            description: 'Your display name for this user identity resource.',
+            type: 'string',
+          },
+          phone_number: {
+            description: 'Phone number associated with the user identity.',
+            type: 'string',
+          },
+          site_keys: {
+            description:
+              'List of unique identifiers for the sites the staff member is associated with.',
+            items: { type: 'string' },
+            type: 'array',
+          },
+          staff_member_key: {
+            description: 'Your unique identifier for the staff.',
+            type: 'string',
+          },
+        },
+        required: ['name', 'staff_member_key', 'site_keys'],
+        type: 'object',
+        'x-route-path': '/seam/customer/v1/staff_members',
+      },
       thermostat_daily_program: {
         description:
           'Represents a thermostat daily program, consisting of a set of periods, each of which has a starting time and the key that identifies the climate preset to apply at the starting time.',
@@ -41657,6 +41687,49 @@ export default {
                             },
                             type: 'array',
                           },
+                          staff_members: {
+                            description: 'List of staff members.',
+                            items: {
+                              description:
+                                'Represents a staff member for a specific customer.',
+                              properties: {
+                                email_address: {
+                                  description:
+                                    'Email address associated with the user identity.',
+                                  type: 'string',
+                                },
+                                name: {
+                                  description:
+                                    'Your display name for this user identity resource.',
+                                  type: 'string',
+                                },
+                                phone_number: {
+                                  description:
+                                    'Phone number associated with the user identity.',
+                                  type: 'string',
+                                },
+                                site_keys: {
+                                  description:
+                                    'List of unique identifiers for the sites the staff member is associated with.',
+                                  items: { type: 'string' },
+                                  type: 'array',
+                                },
+                                staff_member_key: {
+                                  description:
+                                    'Your unique identifier for the staff.',
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'name',
+                                'staff_member_key',
+                                'site_keys',
+                              ],
+                              type: 'object',
+                              'x-route-path': '/seam/customer/v1/staff_members',
+                            },
+                            type: 'array',
+                          },
                           tenants: {
                             description: 'List of tenants.',
                             items: {
@@ -42729,6 +42802,44 @@ export default {
                       },
                       required: ['name', 'space_key'],
                       type: 'object',
+                    },
+                    type: 'array',
+                  },
+                  staff_members: {
+                    description: 'List of staff members.',
+                    items: {
+                      description:
+                        'Represents a staff member for a specific customer.',
+                      properties: {
+                        email_address: {
+                          description:
+                            'Email address associated with the user identity.',
+                          type: 'string',
+                        },
+                        name: {
+                          description:
+                            'Your display name for this user identity resource.',
+                          type: 'string',
+                        },
+                        phone_number: {
+                          description:
+                            'Phone number associated with the user identity.',
+                          type: 'string',
+                        },
+                        site_keys: {
+                          description:
+                            'List of unique identifiers for the sites the staff member is associated with.',
+                          items: { type: 'string' },
+                          type: 'array',
+                        },
+                        staff_member_key: {
+                          description: 'Your unique identifier for the staff.',
+                          type: 'string',
+                        },
+                      },
+                      required: ['name', 'staff_member_key', 'site_keys'],
+                      type: 'object',
+                      'x-route-path': '/seam/customer/v1/staff_members',
                     },
                     type: 'array',
                   },
@@ -53780,6 +53891,172 @@ export default {
         'x-fern-sdk-return-value': 'spaces',
         'x-response-key': 'spaces',
         'x-title': 'List Spaces',
+      },
+    },
+    '/seam/customer/v1/staff_members/list': {
+      get: {
+        description:
+          'Returns a list of staff members for a specific customer. This endpoint is designed for customer portals and supports filtering by space_key.\nProvided space_key or space_id can be a child space, in which case the staff members for the parent space will be returned.',
+        operationId: 'seamCustomerV1StaffMembersListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'space_key',
+            schema: {
+              description: 'Filter staff members by space key.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'space_id',
+            schema: {
+              description: 'Filter staff members by space ID (UUID).',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 500,
+              description: 'Maximum number of records to return per page.',
+              exclusiveMinimum: true,
+              minimum: 0,
+              type: 'integer',
+            },
+          },
+          {
+            in: 'query',
+            name: 'created_before',
+            schema: {
+              description:
+                'Timestamp by which to limit returned staff members. Returns staff members created before this timestamp.',
+              format: 'date-time',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              nullable: true,
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
+                    staff_members: {
+                      items: { $ref: '#/components/schemas/staff_member' },
+                      type: 'array',
+                    },
+                  },
+                  required: ['staff_members', 'pagination', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/staff_members/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'staff_members'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'staff_members',
+        'x-response-key': 'staff_members',
+        'x-title': 'List Staff Members for Customer Space',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+      post: {
+        description:
+          'Returns a list of staff members for a specific customer. This endpoint is designed for customer portals and supports filtering by space_key.\nProvided space_key or space_id can be a child space, in which case the staff members for the parent space will be returned.',
+        operationId: 'seamCustomerV1StaffMembersListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  created_before: {
+                    description:
+                      'Timestamp by which to limit returned staff members. Returns staff members created before this timestamp.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
+                  limit: {
+                    default: 500,
+                    description:
+                      'Maximum number of records to return per page.',
+                    exclusiveMinimum: true,
+                    minimum: 0,
+                    type: 'integer',
+                  },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    nullable: true,
+                    type: 'string',
+                  },
+                  space_id: {
+                    description: 'Filter staff members by space ID (UUID).',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  space_key: {
+                    description: 'Filter staff members by space key.',
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
+                    staff_members: {
+                      items: { $ref: '#/components/schemas/staff_member' },
+                      type: 'array',
+                    },
+                  },
+                  required: ['staff_members', 'pagination', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/staff_members/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'staff_members'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'staff_members',
+        'x-response-key': 'staff_members',
+        'x-title': 'List Staff Members for Customer Space',
+        'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
     '/seam/customer/v1/webhooks/connectors/[workspace_id]/[connector_id]': {

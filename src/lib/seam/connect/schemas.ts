@@ -26,6 +26,7 @@ export {
   noise_threshold,
   pagination,
   seam_event,
+  staff_member_resource,
   thermostat_daily_program,
   thermostat_schedule,
   thermostat_weekly_program,
