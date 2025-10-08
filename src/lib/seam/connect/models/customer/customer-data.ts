@@ -20,6 +20,7 @@ import {
 import {
   guest_resource,
   resident_resource,
+  staff_member_resource,
   tenant_resource,
   user_identity_resource,
   user_resource,
@@ -82,6 +83,10 @@ export const customer_data = z.object({
     .array(user_identity_resource)
     .optional()
     .describe('List of user identities.'),
+  staff_members: z
+    .array(staff_member_resource)
+    .optional()
+    .describe('List of staff members.'),
 
   // Access grant resources
   reservations: z

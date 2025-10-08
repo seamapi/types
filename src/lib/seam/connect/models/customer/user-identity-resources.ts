@@ -32,6 +32,23 @@ export const user_resource = base_user_identity_resource.extend({
   user_key: z.string().describe('Your unique identifier for the user.'),
 })
 
+// staff resource
+export const staff_member_resource = base_user_identity_resource.extend({
+  staff_member_key: z
+    .string()
+    .describe('Your unique identifier for the staff.'),
+  site_keys: z
+    .array(z.string())
+    .describe(
+      'List of unique identifiers for the sites the staff member is associated with.',
+    ),
+}).describe(`
+  ---
+  route_path: /seam/customer/v1/staff_members
+  ---
+  Represents a staff member for a specific customer.
+`)
+
 export const user_identity_resource = base_user_identity_resource.extend({
   user_identity_key: z
     .string()
@@ -45,6 +62,7 @@ export const user_identity_resource_union = z.union([
   resident_resource,
   user_resource,
   user_identity_resource,
+  staff_member_resource,
 ])
 
 // All user identity key aliases for use in references
