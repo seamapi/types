@@ -47,6 +47,10 @@ export const access_grant = z.object({
     .string()
     .optional()
     .describe('Unique key for the access grant within the workspace.'),
+  reservation_key: z
+    .string()
+    .optional()
+    .describe('Reservation key for the access grant.'),
   user_identity_id: z
     .string()
     .uuid()

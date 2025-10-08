@@ -1896,6 +1896,10 @@ export default {
             },
             type: 'array',
           },
+          reservation_key: {
+            description: 'Reservation key for the access grant.',
+            type: 'string',
+          },
           space_ids: {
             description:
               'IDs of the spaces to which the Access Grant gives access.',
@@ -28450,6 +28454,10 @@ export default {
                         },
                         type: 'array',
                       },
+                      reservation_key: {
+                        description: 'Reservation key for the access grant.',
+                        type: 'string',
+                      },
                       space_ids: {
                         description:
                           'Set of IDs of existing spaces to which access is being granted.',
@@ -29369,6 +29377,10 @@ export default {
                           },
                           type: 'array',
                         },
+                        reservation_key: {
+                          description: 'Reservation key for the access grant.',
+                          type: 'string',
+                        },
                         space_ids: {
                           description:
                             'IDs of the spaces to which the Access Grant gives access.',
@@ -29598,6 +29610,10 @@ export default {
                             type: 'object',
                           },
                           type: 'array',
+                        },
+                        reservation_key: {
+                          description: 'Reservation key for the access grant.',
+                          type: 'string',
                         },
                         space_ids: {
                           description:
@@ -29846,6 +29862,11 @@ export default {
                             },
                             type: 'array',
                           },
+                          reservation_key: {
+                            description:
+                              'Reservation key for the access grant.',
+                            type: 'string',
+                          },
                           space_ids: {
                             description:
                               'IDs of the spaces to which the Access Grant gives access.',
@@ -30089,6 +30110,11 @@ export default {
                               type: 'object',
                             },
                             type: 'array',
+                          },
+                          reservation_key: {
+                            description:
+                              'Reservation key for the access grant.',
+                            type: 'string',
                           },
                           space_ids: {
                             description:
