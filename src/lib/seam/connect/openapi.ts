@@ -2903,13 +2903,12 @@ export default {
             description:
               'Hotek-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
             properties: {
-              display_name: {
+              common_area_name: {
                 description: 'Display name of the entrance.',
                 type: 'string',
               },
-              door_type: {
-                description: 'Type of door.',
-                enum: ['common_area', 'guest'],
+              common_area_number: {
+                description: 'Display name of the entrance.',
                 type: 'string',
               },
               room_number: {
@@ -2917,7 +2916,6 @@ export default {
                 type: 'string',
               },
             },
-            required: ['room_number', 'display_name', 'door_type'],
             type: 'object',
           },
           latch_metadata: {
@@ -19937,13 +19935,12 @@ export default {
                               description:
                                 'Hotek-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
                               properties: {
-                                display_name: {
+                                common_area_name: {
                                   description: 'Display name of the entrance.',
                                   type: 'string',
                                 },
-                                door_type: {
-                                  description: 'Type of door.',
-                                  enum: ['common_area', 'guest'],
+                                common_area_number: {
+                                  description: 'Display name of the entrance.',
                                   type: 'string',
                                 },
                                 room_number: {
@@ -19951,11 +19948,6 @@ export default {
                                   type: 'string',
                                 },
                               },
-                              required: [
-                                'room_number',
-                                'display_name',
-                                'door_type',
-                              ],
                               type: 'object',
                             },
                             latch_metadata: {
@@ -36363,6 +36355,119 @@ export default {
         'x-fern-sdk-return-value': 'acs_systems',
         'x-response-key': 'acs_systems',
         'x-title': 'List Compatible Credential Manager ACS Systems',
+      },
+    },
+    '/acs/systems/report_devices': {
+      post: {
+        description:
+          'Reports ACS system resources including encoders and entrances with their metadata.\n\nThis endpoint allows reporting of:\n- ACS encoders with removal status and encoder port metadata\n- ACS entrances with room number metadata',
+        operationId: 'acsSystemsReportDevicesPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_encoders: {
+                    default: [],
+                    description: 'Array of ACS encoders to report',
+                    items: {
+                      properties: {
+                        hotek_metadata: {
+                          properties: {
+                            encoder_number: {
+                              description:
+                                'The encoder number determined by the USB port connection.',
+                              type: 'string',
+                            },
+                          },
+                          required: ['encoder_number'],
+                          type: 'object',
+                        },
+                        is_removed: {
+                          default: false,
+                          description: 'Whether the encoder is removed',
+                          type: 'boolean',
+                        },
+                      },
+                      required: ['hotek_metadata'],
+                      type: 'object',
+                    },
+                    type: 'array',
+                  },
+                  acs_entrances: {
+                    default: [],
+                    description: 'Array of ACS entrances to report',
+                    items: {
+                      properties: {
+                        hotek_metadata: {
+                          description:
+                            'Hotek-specific metadata associated with the entrance.',
+                          properties: {
+                            common_area_name: {
+                              description: 'The common area name',
+                              type: 'string',
+                            },
+                            common_area_number: {
+                              description: 'The room number identifier',
+                              type: 'string',
+                            },
+                            room_number: {
+                              description: 'The room number identifier',
+                              type: 'string',
+                            },
+                          },
+                          type: 'object',
+                        },
+                        is_removed: {
+                          default: false,
+                          description: 'Whether the entrance is removed',
+                          type: 'boolean',
+                        },
+                      },
+                      required: ['hotek_metadata'],
+                      type: 'object',
+                    },
+                    type: 'array',
+                  },
+                  acs_system_id: {
+                    description: 'ID of the ACS system to report resources for',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['acs_system_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/systems/report_devices',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'systems'],
+        'x-fern-sdk-method-name': 'report_devices',
+        'x-response-key': null,
+        'x-title': 'Report ACS Resources',
       },
     },
     '/acs/users/add_to_access_group': {
