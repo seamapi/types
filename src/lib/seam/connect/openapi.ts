@@ -53290,6 +53290,16 @@ export default {
           },
           {
             in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned reservations to include all records that satisfy a partial match using `reservation_id`, `reservation_key`, `name`, `guest_name`, or space names.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'page_cursor',
             schema: {
               description:
@@ -53407,6 +53417,12 @@ export default {
                     description:
                       "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
                     nullable: true,
+                    type: 'string',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned reservations to include all records that satisfy a partial match using `reservation_id`, `reservation_key`, `name`, `guest_name`, or space names.',
+                    minLength: 1,
                     type: 'string',
                   },
                   space_id: {
