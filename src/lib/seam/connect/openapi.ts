@@ -2820,6 +2820,11 @@ export default {
             required: ['door_type', 'door_name'],
             type: 'object',
           },
+          can_belong_to_reservation: {
+            description:
+              'Indicates whether the ACS entrance can belong to a reservation via an access_grant.reservation_key.',
+            type: 'boolean',
+          },
           can_unlock_with_card: {
             description:
               'Indicates whether the ACS entrance can be unlocked with card credentials.',
@@ -19851,6 +19856,11 @@ export default {
                               },
                               required: ['door_type', 'door_name'],
                               type: 'object',
+                            },
+                            can_belong_to_reservation: {
+                              description:
+                                'Indicates whether the ACS entrance can belong to a reservation via an access_grant.reservation_key.',
+                              type: 'boolean',
                             },
                             can_unlock_with_card: {
                               description:
