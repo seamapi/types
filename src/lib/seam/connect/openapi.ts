@@ -29082,6 +29082,14 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'reservation_key',
+            schema: {
+              description: 'Filter Access Grants by reservation_key.',
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -29154,6 +29162,10 @@ export default {
                     format: 'uuid',
                     type: 'string',
                     'x-deprecated': 'Use `space_id`.',
+                  },
+                  reservation_key: {
+                    description: 'Filter Access Grants by reservation_key.',
+                    type: 'string',
                   },
                   space_id: {
                     description:
@@ -29795,6 +29807,14 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'reservation_key',
+            schema: {
+              description: 'Filter unmanaged Access Grants by reservation_key.',
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -30031,6 +30051,11 @@ export default {
                     description:
                       'ID of the access system by which you want to filter the list of unmanaged Access Grants.',
                     format: 'uuid',
+                    type: 'string',
+                  },
+                  reservation_key: {
+                    description:
+                      'Filter unmanaged Access Grants by reservation_key.',
                     type: 'string',
                   },
                   user_identity_id: {
