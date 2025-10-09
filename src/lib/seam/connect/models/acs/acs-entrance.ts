@@ -30,6 +30,12 @@ export const acs_entrance_capability_flags = z.object({
     .describe(
       'Indicates whether the ACS entrance can be unlocked with pin codes.',
     ),
+  can_belong_to_reservation: z
+    .boolean()
+    .optional()
+    .describe(
+      'Indicates whether the ACS entrance can belong to a reservation via an access_grant.reservation_key.',
+    ),
 })
 
 export const acs_entrance = z
