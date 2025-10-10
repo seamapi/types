@@ -3872,6 +3872,37 @@ export default {
                   type: 'object',
                 },
                 {
+                  description:
+                    'User exists in Seam but has not been pushed to the provider yet. Will be created when a credential is issued.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is intentionally deferring the creation of the user on the access control system until the appropriate time.',
+                      enum: ['deferring_creation'],
+                      type: 'string',
+                    },
+                    scheduled_at: {
+                      description:
+                        'Optional: When the user creation is scheduled to occur.',
+                      format: 'date-time',
+                      nullable: true,
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'mutation_code'],
+                  type: 'object',
+                },
+                {
                   properties: {
                     created_at: {
                       description:
@@ -23712,6 +23743,37 @@ export default {
                       description:
                         'Mutation code to indicate that Seam is in the process of pushing a user deletion to the integrated access system.',
                       enum: ['deleting'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'mutation_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'User exists in Seam but has not been pushed to the provider yet. Will be created when a credential is issued.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is intentionally deferring the creation of the user on the access control system until the appropriate time.',
+                      enum: ['deferring_creation'],
+                      type: 'string',
+                    },
+                    scheduled_at: {
+                      description:
+                        'Optional: When the user creation is scheduled to occur.',
+                      format: 'date-time',
+                      nullable: true,
                       type: 'string',
                     },
                   },
