@@ -34,6 +34,24 @@ const deleting = common_pending_mutation
     'Seam is in the process of pushing a user deletion to the integrated access system.',
   )
 
+const deferring_creation = common_pending_mutation
+  .extend({
+    mutation_code: z
+      .literal('deferring_creation')
+      .describe(
+        'Mutation code to indicate that Seam is intentionally deferring the creation of the user on the access control system until the appropriate time.',
+      ),
+    scheduled_at: z
+      .string()
+      .datetime()
+      .optional()
+      .nullable()
+      .describe('Optional: When the user creation is scheduled to occur.'),
+  })
+  .describe(
+    'User exists in Seam but has not been pushed to the provider yet. Will be created when a credential is issued.',
+  )
+
 const acs_user_info = z.object({
   email_address: z
     .string()
@@ -145,6 +163,7 @@ export const acs_user_pending_mutations = z.discriminatedUnion(
   [
     creating,
     deleting,
+    deferring_creation,
     updating_user_information_mutation,
     updating_access_schedule_mutation,
     updating_suspension_state_mutation,
@@ -157,6 +176,7 @@ export type AcsUserPendingMutation = z.infer<typeof acs_user_pending_mutations>
 const _acs_user_pending_mutations_map = z.object({
   creating: creating.optional().nullable(),
   deleting: deleting.optional().nullable(),
+  deferring_creation: deferring_creation.optional().nullable(),
   updating_access_schedule: updating_access_schedule_mutation
     .optional()
     .nullable(),
