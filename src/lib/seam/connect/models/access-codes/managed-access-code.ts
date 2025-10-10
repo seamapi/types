@@ -229,6 +229,14 @@ const dormakaba_oracode_no_valid_user_level = common_access_code_error
   })
   .describe('No valid user level for Oracode.')
 
+const keynest_unsupported_third_party_locker = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('keynest_unsupported_third_party_locker')
+      .describe(error_code_description),
+  })
+  .describe('KeyNest locker is not supported.')
+
 const access_code_error = z
   .discriminatedUnion('error_code', [
     smartthings_failed_to_set_access_code_error,
@@ -256,6 +264,7 @@ const access_code_error = z
     wyze_potential_duplicate_code,
     dormakaba_oracode_no_valid_user_level,
     kwikset_insufficient_permissions,
+    keynest_unsupported_third_party_locker,
   ])
   .describe(
     'Errors associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
@@ -324,6 +333,9 @@ const _access_code_error_map = z.object({
     .optional()
     .nullable(),
   dormakaba_oracode_no_valid_user_level: dormakaba_oracode_no_valid_user_level
+    .optional()
+    .nullable(),
+  keynest_unsupported_third_party_locker: keynest_unsupported_third_party_locker
     .optional()
     .nullable(),
 })

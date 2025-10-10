@@ -809,6 +809,36 @@ export default {
                   type: 'object',
                 },
                 {
+                  description: 'KeyNest locker is not supported.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['keynest_unsupported_third_party_locker'],
+                      type: 'string',
+                    },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                },
+                {
                   description: 'Indicates that the account is disconnected.',
                   properties: {
                     created_at: {
@@ -21856,6 +21886,36 @@ export default {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['kwikset_insufficient_permissions'],
+                      type: 'string',
+                    },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'KeyNest locker is not supported.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['keynest_unsupported_third_party_locker'],
                       type: 'string',
                     },
                     is_access_code_error: {
