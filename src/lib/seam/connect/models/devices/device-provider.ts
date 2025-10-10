@@ -95,6 +95,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'sensi',
     'assa_abloy_vostio',
     'avigilon_alta',
+    'keynest',
   ],
 
   consumer_smartlocks: [
