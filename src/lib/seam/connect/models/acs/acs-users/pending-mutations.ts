@@ -181,7 +181,7 @@ const _acs_user_pending_mutations_map = z.object({
     .optional()
     .nullable(),
   updating_group_membership: z
-    .map(z.string().uuid(), updating_group_membership_mutation)
+    .record(z.string().uuid(), updating_group_membership_mutation)
     .optional()
     .nullable(),
   updating_suspension_state: updating_suspension_state_mutation
