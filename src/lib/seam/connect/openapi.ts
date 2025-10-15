@@ -41027,6 +41027,7 @@ export default {
                         manage: {
                           exclude: false,
                           exclude_reservation_management: false,
+                          exclude_staff_management: false,
                         },
                         manage_devices: { exclude: false },
                         organize: { exclude: false },
@@ -41105,6 +41106,12 @@ export default {
                                 default: false,
                                 description:
                                   'Indicates whether the customer can manage reservations for their properties.',
+                                type: 'boolean',
+                              },
+                              exclude_staff_management: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can manage staff for their properties.',
                                 type: 'boolean',
                               },
                             },
@@ -52676,6 +52683,12 @@ export default {
                                     'Indicates whether the customer can manage reservations for their properties.',
                                   type: 'boolean',
                                 },
+                                exclude_staff_management: {
+                                  default: false,
+                                  description:
+                                    'Indicates whether the customer can manage staff for their properties.',
+                                  type: 'boolean',
+                                },
                               },
                               type: 'object',
                             },
@@ -52974,6 +52987,12 @@ export default {
                                   default: false,
                                   description:
                                     'Indicates whether the customer can manage reservations for their properties.',
+                                  type: 'boolean',
+                                },
+                                exclude_staff_management: {
+                                  default: false,
+                                  description:
+                                    'Indicates whether the customer can manage staff for their properties.',
                                   type: 'boolean',
                                 },
                               },

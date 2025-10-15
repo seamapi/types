@@ -33,6 +33,12 @@ const base_manage_feature = base_feature.extend({
     .describe(
       'Indicates whether the customer can manage reservations for their properties.',
     ),
+  exclude_staff_management: z
+    .boolean()
+    .default(false)
+    .describe(
+      'Indicates whether the customer can manage staff for their properties.',
+    ),
 })
 
 const base_organize_feature = base_feature
@@ -94,7 +100,11 @@ export const portal_configuration = portal_configuration_base
     features: {
       connect: { exclude: false },
       organize: { exclude: false },
-      manage: { exclude: false, exclude_reservation_management: false },
+      manage: {
+        exclude: false,
+        exclude_reservation_management: false,
+        exclude_staff_management: false,
+      },
       manage_devices: {
         exclude: false,
       },
