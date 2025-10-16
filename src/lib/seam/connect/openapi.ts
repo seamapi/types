@@ -51459,6 +51459,69 @@ export default {
                       },
                       type: 'object',
                     },
+                    climate_rules: {
+                      properties: {
+                        rules: {
+                          properties: {
+                            delete_on_reservation_end: {
+                              properties: { enabled: { type: 'boolean' } },
+                              required: ['enabled'],
+                              type: 'object',
+                            },
+                            reservation_created: {
+                              properties: {
+                                enabled: { type: 'boolean' },
+                                fallback_preset: {
+                                  properties: {
+                                    fan_mode: {
+                                      enum: ['on', 'auto', 'circulate'],
+                                      type: 'string',
+                                    },
+                                    is_override_allowed: { type: 'boolean' },
+                                    mode: {
+                                      enum: ['heat', 'cool', 'auto'],
+                                      type: 'string',
+                                    },
+                                    override_period_minutes: {
+                                      format: 'float',
+                                      type: 'number',
+                                    },
+                                    temperature: {
+                                      format: 'float',
+                                      type: 'number',
+                                    },
+                                    temperature_unit: {
+                                      enum: ['celsius', 'fahrenheit'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'mode',
+                                    'temperature',
+                                    'temperature_unit',
+                                    'fan_mode',
+                                    'is_override_allowed',
+                                    'override_period_minutes',
+                                  ],
+                                  type: 'object',
+                                },
+                                occupied_preset_key: { type: 'string' },
+                              },
+                              required: ['enabled'],
+                              type: 'object',
+                            },
+                            update_on_time_change: {
+                              properties: { enabled: { type: 'boolean' } },
+                              required: ['enabled'],
+                              type: 'object',
+                            },
+                          },
+                          type: 'object',
+                        },
+                      },
+                      required: ['rules'],
+                      type: 'object',
+                    },
                     ok: { type: 'boolean' },
                   },
                   required: ['ok'],
@@ -51586,6 +51649,69 @@ export default {
                       },
                       type: 'object',
                     },
+                    climate_rules: {
+                      properties: {
+                        rules: {
+                          properties: {
+                            delete_on_reservation_end: {
+                              properties: { enabled: { type: 'boolean' } },
+                              required: ['enabled'],
+                              type: 'object',
+                            },
+                            reservation_created: {
+                              properties: {
+                                enabled: { type: 'boolean' },
+                                fallback_preset: {
+                                  properties: {
+                                    fan_mode: {
+                                      enum: ['on', 'auto', 'circulate'],
+                                      type: 'string',
+                                    },
+                                    is_override_allowed: { type: 'boolean' },
+                                    mode: {
+                                      enum: ['heat', 'cool', 'auto'],
+                                      type: 'string',
+                                    },
+                                    override_period_minutes: {
+                                      format: 'float',
+                                      type: 'number',
+                                    },
+                                    temperature: {
+                                      format: 'float',
+                                      type: 'number',
+                                    },
+                                    temperature_unit: {
+                                      enum: ['celsius', 'fahrenheit'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'mode',
+                                    'temperature',
+                                    'temperature_unit',
+                                    'fan_mode',
+                                    'is_override_allowed',
+                                    'override_period_minutes',
+                                  ],
+                                  type: 'object',
+                                },
+                                occupied_preset_key: { type: 'string' },
+                              },
+                              required: ['enabled'],
+                              type: 'object',
+                            },
+                            update_on_time_change: {
+                              properties: { enabled: { type: 'boolean' } },
+                              required: ['enabled'],
+                              type: 'object',
+                            },
+                          },
+                          type: 'object',
+                        },
+                      },
+                      required: ['rules'],
+                      type: 'object',
+                    },
                     ok: { type: 'boolean' },
                   },
                   required: ['ok'],
@@ -51702,6 +51828,69 @@ export default {
                           },
                         },
                         required: ['rule'],
+                        type: 'object',
+                      },
+                    },
+                    type: 'object',
+                  },
+                  climate_rules: {
+                    description: 'Climate automation rules configuration.',
+                    properties: {
+                      rules: {
+                        properties: {
+                          delete_on_reservation_end: {
+                            properties: { enabled: { type: 'boolean' } },
+                            required: ['enabled'],
+                            type: 'object',
+                          },
+                          reservation_created: {
+                            properties: {
+                              enabled: { type: 'boolean' },
+                              fallback_preset: {
+                                properties: {
+                                  fan_mode: {
+                                    enum: ['on', 'auto', 'circulate'],
+                                    type: 'string',
+                                  },
+                                  is_override_allowed: { type: 'boolean' },
+                                  mode: {
+                                    enum: ['heat', 'cool', 'auto'],
+                                    type: 'string',
+                                  },
+                                  override_period_minutes: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  temperature: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  temperature_unit: {
+                                    enum: ['celsius', 'fahrenheit'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'mode',
+                                  'temperature',
+                                  'temperature_unit',
+                                  'fan_mode',
+                                  'is_override_allowed',
+                                  'override_period_minutes',
+                                ],
+                                type: 'object',
+                              },
+                              occupied_preset_key: { type: 'string' },
+                            },
+                            required: ['enabled'],
+                            type: 'object',
+                          },
+                          update_on_time_change: {
+                            properties: { enabled: { type: 'boolean' } },
+                            required: ['enabled'],
+                            type: 'object',
+                          },
+                        },
                         type: 'object',
                       },
                     },
@@ -51831,6 +52020,69 @@ export default {
                           },
                         },
                         required: ['rule'],
+                        type: 'object',
+                      },
+                    },
+                    type: 'object',
+                  },
+                  climate_rules: {
+                    description: 'Climate automation rules configuration.',
+                    properties: {
+                      rules: {
+                        properties: {
+                          delete_on_reservation_end: {
+                            properties: { enabled: { type: 'boolean' } },
+                            required: ['enabled'],
+                            type: 'object',
+                          },
+                          reservation_created: {
+                            properties: {
+                              enabled: { type: 'boolean' },
+                              fallback_preset: {
+                                properties: {
+                                  fan_mode: {
+                                    enum: ['on', 'auto', 'circulate'],
+                                    type: 'string',
+                                  },
+                                  is_override_allowed: { type: 'boolean' },
+                                  mode: {
+                                    enum: ['heat', 'cool', 'auto'],
+                                    type: 'string',
+                                  },
+                                  override_period_minutes: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  temperature: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  temperature_unit: {
+                                    enum: ['celsius', 'fahrenheit'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'mode',
+                                  'temperature',
+                                  'temperature_unit',
+                                  'fan_mode',
+                                  'is_override_allowed',
+                                  'override_period_minutes',
+                                ],
+                                type: 'object',
+                              },
+                              occupied_preset_key: { type: 'string' },
+                            },
+                            required: ['enabled'],
+                            type: 'object',
+                          },
+                          update_on_time_change: {
+                            properties: { enabled: { type: 'boolean' } },
+                            required: ['enabled'],
+                            type: 'object',
+                          },
+                        },
                         type: 'object',
                       },
                     },
