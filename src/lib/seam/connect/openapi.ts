@@ -51601,6 +51601,32 @@ export default {
                           required: ['rule'],
                           type: 'object',
                         },
+                        staff_member_created: {
+                          properties: {
+                            config: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            rule: {
+                              enum: ['staff_member_created'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['rule', 'config'],
+                          type: 'object',
+                        },
+                        staff_member_name_updated: {
+                          properties: {
+                            config: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            rule: {
+                              enum: ['staff_member_name_updated'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['rule'],
+                          type: 'object',
+                        },
                         user_identity_name_updated: {
                           properties: {
                             config: {
@@ -51785,6 +51811,32 @@ export default {
                             },
                             rule: {
                               enum: ['space_name_updated'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['rule'],
+                          type: 'object',
+                        },
+                        staff_member_created: {
+                          properties: {
+                            config: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            rule: {
+                              enum: ['staff_member_created'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['rule', 'config'],
+                          type: 'object',
+                        },
+                        staff_member_name_updated: {
+                          properties: {
+                            config: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            rule: {
+                              enum: ['staff_member_name_updated'],
                               type: 'string',
                             },
                           },
@@ -51977,6 +52029,28 @@ export default {
                         required: ['rule'],
                         type: 'object',
                       },
+                      staff_member_created: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['staff_member_created'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule', 'config'],
+                        type: 'object',
+                      },
+                      staff_member_name_updated: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['staff_member_name_updated'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule'],
+                        type: 'object',
+                      },
                       user_identity_name_updated: {
                         properties: {
                           config: { properties: {}, type: 'object' },
@@ -52163,6 +52237,28 @@ export default {
                           config: { properties: {}, type: 'object' },
                           rule: {
                             enum: ['space_name_updated'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule'],
+                        type: 'object',
+                      },
+                      staff_member_created: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['staff_member_created'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule', 'config'],
+                        type: 'object',
+                      },
+                      staff_member_name_updated: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['staff_member_name_updated'],
                             type: 'string',
                           },
                         },
