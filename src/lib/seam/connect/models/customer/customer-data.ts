@@ -27,7 +27,13 @@ import {
 } from './user-identity-resources.js'
 
 export const customer_data = z.object({
-  customer_key: z.string().describe('Your unique identifier for the customer.'),
+  customer_key: z
+    .string()
+    .min(1)
+    .refine((val) => val === val.trim(), {
+      message: 'Must not have leading or trailing whitespace',
+    })
+    .describe('Your unique identifier for the customer.'),
 
   // Location resources
   spaces: z

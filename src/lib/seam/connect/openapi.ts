@@ -28518,6 +28518,7 @@ export default {
                       access_grant_key: {
                         description:
                           'Unique key for the access grant within the workspace.',
+                        minLength: 1,
                         type: 'string',
                       },
                       acs_entrance_ids: {
@@ -28621,7 +28622,7 @@ export default {
                       space_keys: {
                         description:
                           'Set of keys of existing spaces to which access is being granted.',
-                        items: { type: 'string' },
+                        items: { minLength: 1, type: 'string' },
                         type: 'array',
                       },
                       starts_at: {
@@ -38879,6 +38880,7 @@ export default {
                   customer_key: {
                     description:
                       'Customer key that you want to associate with the new client session.',
+                    minLength: 1,
                     type: 'string',
                   },
                   expires_at: {
@@ -38979,6 +38981,7 @@ export default {
                   customer_key: {
                     description:
                       'Customer key that you want to associate with the new client session.',
+                    minLength: 1,
                     type: 'string',
                   },
                   expires_at: {
@@ -39868,6 +39871,7 @@ export default {
                   customer_key: {
                     description:
                       'Associate the Connect Webview, the connected account, and all resources under the connected account with a customer. If the connected account already exists, it will be associated with the customer. If the connected account already exists, but is already associated with a customer, the Connect Webview will show an error.',
+                    minLength: 1,
                     type: 'string',
                   },
                   device_selection_mode: {
@@ -41278,6 +41282,7 @@ export default {
                                 access_grant_key: {
                                   description:
                                     'Your unique identifier for the access grant.',
+                                  minLength: 1,
                                   type: 'string',
                                 },
                                 building_keys: {
@@ -41386,6 +41391,7 @@ export default {
                                 booking_key: {
                                   description:
                                     'Your unique identifier for the booking.',
+                                  minLength: 1,
                                   type: 'string',
                                 },
                                 building_keys: {
@@ -41494,6 +41500,7 @@ export default {
                                 building_key: {
                                   description:
                                     'Your unique identifier for the building.',
+                                  minLength: 1,
                                   type: 'string',
                                 },
                                 name: {
@@ -41514,6 +41521,7 @@ export default {
                                 common_area_key: {
                                   description:
                                     'Your unique identifier for the common area.',
+                                  minLength: 1,
                                   type: 'string',
                                 },
                                 name: {
@@ -41524,6 +41532,7 @@ export default {
                                 parent_site_key: {
                                   description:
                                     'Your unique identifier for the site.',
+                                  minLength: 1,
                                   type: 'string',
                                 },
                               },
@@ -41535,6 +41544,7 @@ export default {
                           customer_key: {
                             description:
                               'Your unique identifier for the customer.',
+                            minLength: 1,
                             type: 'string',
                           },
                           facilities: {
@@ -41544,6 +41554,7 @@ export default {
                                 facility_key: {
                                   description:
                                     'Your unique identifier for the facility.',
+                                  minLength: 1,
                                   type: 'string',
                                 },
                                 name: {
@@ -41569,6 +41580,7 @@ export default {
                                 guest_key: {
                                   description:
                                     'Your unique identifier for the guest.',
+                                  minLength: 1,
                                   type: 'string',
                                 },
                                 name: {
@@ -41594,6 +41606,7 @@ export default {
                                 listing_key: {
                                   description:
                                     'Your unique identifier for the listing.',
+                                  minLength: 1,
                                   type: 'string',
                                 },
                                 name: {
@@ -41620,6 +41633,7 @@ export default {
                                 property_key: {
                                   description:
                                     'Your unique identifier for the property.',
+                                  minLength: 1,
                                   type: 'string',
                                 },
                               },
@@ -41640,6 +41654,7 @@ export default {
                                 property_listing_key: {
                                   description:
                                     'Your unique identifier for the property listing.',
+                                  minLength: 1,
                                   type: 'string',
                                 },
                               },
@@ -41705,6 +41720,7 @@ export default {
                                 reservation_key: {
                                   description:
                                     'Your unique identifier for the reservation.',
+                                  minLength: 1,
                                   type: 'string',
                                 },
                                 resident_key: {
@@ -41778,6 +41794,7 @@ export default {
                                 resident_key: {
                                   description:
                                     'Your unique identifier for the resident.',
+                                  minLength: 1,
                                   type: 'string',
                                 },
                               },
@@ -41798,11 +41815,13 @@ export default {
                                 parent_site_key: {
                                   description:
                                     'Your unique identifier for the site.',
+                                  minLength: 1,
                                   type: 'string',
                                 },
                                 room_key: {
                                   description:
                                     'Your unique identifier for the room.',
+                                  minLength: 1,
                                   type: 'string',
                                 },
                               },
@@ -41823,6 +41842,7 @@ export default {
                                 site_key: {
                                   description:
                                     'Your unique identifier for the site.',
+                                  minLength: 1,
                                   type: 'string',
                                 },
                               },
@@ -41843,6 +41863,7 @@ export default {
                                 space_key: {
                                   description:
                                     'Your unique identifier for the space.',
+                                  minLength: 1,
                                   type: 'string',
                                 },
                               },
@@ -41916,6 +41937,7 @@ export default {
                                 tenant_key: {
                                   description:
                                     'Your unique identifier for the tenant.',
+                                  minLength: 1,
                                   type: 'string',
                                 },
                               },
@@ -41937,11 +41959,13 @@ export default {
                                 parent_site_key: {
                                   description:
                                     'Your unique identifier for the site.',
+                                  minLength: 1,
                                   type: 'string',
                                 },
                                 unit_key: {
                                   description:
                                     'Your unique identifier for the unit.',
+                                  minLength: 1,
                                   type: 'string',
                                 },
                               },
@@ -41972,6 +41996,7 @@ export default {
                                 user_identity_key: {
                                   description:
                                     'Your unique identifier for the user identity.',
+                                  minLength: 1,
                                   type: 'string',
                                 },
                               },
@@ -42002,6 +42027,7 @@ export default {
                                 user_key: {
                                   description:
                                     'Your unique identifier for the user.',
+                                  minLength: 1,
                                   type: 'string',
                                 },
                               },
@@ -42404,6 +42430,7 @@ export default {
                         access_grant_key: {
                           description:
                             'Your unique identifier for the access grant.',
+                          minLength: 1,
                           type: 'string',
                         },
                         building_keys: {
@@ -42512,6 +42539,7 @@ export default {
                         booking_key: {
                           description:
                             'Your unique identifier for the booking.',
+                          minLength: 1,
                           type: 'string',
                         },
                         building_keys: {
@@ -42620,6 +42648,7 @@ export default {
                         building_key: {
                           description:
                             'Your unique identifier for the building.',
+                          minLength: 1,
                           type: 'string',
                         },
                         name: {
@@ -42640,6 +42669,7 @@ export default {
                         common_area_key: {
                           description:
                             'Your unique identifier for the common area.',
+                          minLength: 1,
                           type: 'string',
                         },
                         name: {
@@ -42649,6 +42679,7 @@ export default {
                         },
                         parent_site_key: {
                           description: 'Your unique identifier for the site.',
+                          minLength: 1,
                           type: 'string',
                         },
                       },
@@ -42659,6 +42690,7 @@ export default {
                   },
                   customer_key: {
                     description: 'Your unique identifier for the customer.',
+                    minLength: 1,
                     type: 'string',
                   },
                   facilities: {
@@ -42668,6 +42700,7 @@ export default {
                         facility_key: {
                           description:
                             'Your unique identifier for the facility.',
+                          minLength: 1,
                           type: 'string',
                         },
                         name: {
@@ -42692,6 +42725,7 @@ export default {
                         },
                         guest_key: {
                           description: 'Your unique identifier for the guest.',
+                          minLength: 1,
                           type: 'string',
                         },
                         name: {
@@ -42717,6 +42751,7 @@ export default {
                         listing_key: {
                           description:
                             'Your unique identifier for the listing.',
+                          minLength: 1,
                           type: 'string',
                         },
                         name: {
@@ -42742,6 +42777,7 @@ export default {
                         property_key: {
                           description:
                             'Your unique identifier for the property.',
+                          minLength: 1,
                           type: 'string',
                         },
                       },
@@ -42762,6 +42798,7 @@ export default {
                         property_listing_key: {
                           description:
                             'Your unique identifier for the property listing.',
+                          minLength: 1,
                           type: 'string',
                         },
                       },
@@ -42827,6 +42864,7 @@ export default {
                         reservation_key: {
                           description:
                             'Your unique identifier for the reservation.',
+                          minLength: 1,
                           type: 'string',
                         },
                         resident_key: {
@@ -42900,6 +42938,7 @@ export default {
                         resident_key: {
                           description:
                             'Your unique identifier for the resident.',
+                          minLength: 1,
                           type: 'string',
                         },
                       },
@@ -42919,10 +42958,12 @@ export default {
                         },
                         parent_site_key: {
                           description: 'Your unique identifier for the site.',
+                          minLength: 1,
                           type: 'string',
                         },
                         room_key: {
                           description: 'Your unique identifier for the room.',
+                          minLength: 1,
                           type: 'string',
                         },
                       },
@@ -42942,6 +42983,7 @@ export default {
                         },
                         site_key: {
                           description: 'Your unique identifier for the site.',
+                          minLength: 1,
                           type: 'string',
                         },
                       },
@@ -42961,6 +43003,7 @@ export default {
                         },
                         space_key: {
                           description: 'Your unique identifier for the space.',
+                          minLength: 1,
                           type: 'string',
                         },
                       },
@@ -43028,6 +43071,7 @@ export default {
                         },
                         tenant_key: {
                           description: 'Your unique identifier for the tenant.',
+                          minLength: 1,
                           type: 'string',
                         },
                       },
@@ -43047,10 +43091,12 @@ export default {
                         },
                         parent_site_key: {
                           description: 'Your unique identifier for the site.',
+                          minLength: 1,
                           type: 'string',
                         },
                         unit_key: {
                           description: 'Your unique identifier for the unit.',
+                          minLength: 1,
                           type: 'string',
                         },
                       },
@@ -43081,6 +43127,7 @@ export default {
                         user_identity_key: {
                           description:
                             'Your unique identifier for the user identity.',
+                          minLength: 1,
                           type: 'string',
                         },
                       },
@@ -43110,6 +43157,7 @@ export default {
                         },
                         user_key: {
                           description: 'Your unique identifier for the user.',
+                          minLength: 1,
                           type: 'string',
                         },
                       },
@@ -55248,6 +55296,7 @@ export default {
                   customer_key: {
                     description:
                       'Customer key for which you want to create the space.',
+                    minLength: 1,
                     type: 'string',
                   },
                   device_ids: {
@@ -56166,6 +56215,7 @@ export default {
                   customer_key: {
                     description:
                       'Customer key for which you want to update the space.',
+                    minLength: 1,
                     type: 'string',
                   },
                   device_ids: {
@@ -56242,6 +56292,7 @@ export default {
                   customer_key: {
                     description:
                       'Customer key for which you want to update the space.',
+                    minLength: 1,
                     type: 'string',
                   },
                   device_ids: {
@@ -59659,6 +59710,7 @@ export default {
                   customer_key: {
                     description:
                       'Customer key for which you want to connect accounts.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -59730,6 +59782,7 @@ export default {
             schema: {
               description:
                 'Customer key for which you want to create a new building block magic link.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -59749,6 +59802,7 @@ export default {
                   },
                   space_key: {
                     description: 'Your unique identifier for the space.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -59814,6 +59868,7 @@ export default {
                   customer_key: {
                     description:
                       'Customer key for which you want to create a new building block magic link.',
+                    minLength: 1,
                     type: 'string',
                   },
                   spaces: {
@@ -59828,6 +59883,7 @@ export default {
                         },
                         space_key: {
                           description: 'Your unique identifier for the space.',
+                          minLength: 1,
                           type: 'string',
                         },
                       },
@@ -59890,6 +59946,7 @@ export default {
                   customer_key: {
                     description:
                       'Customer key for which you want to manage devices.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -59946,6 +60003,7 @@ export default {
                   customer_key: {
                     description:
                       'Customer key for which you want to organize spaces.',
+                    minLength: 1,
                     type: 'string',
                   },
                   spaces: {
@@ -59960,6 +60018,7 @@ export default {
                         },
                         space_key: {
                           description: 'Your unique identifier for the space.',
+                          minLength: 1,
                           type: 'string',
                         },
                       },

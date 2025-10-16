@@ -7,17 +7,39 @@ const base_location_resource = z.object({
 
 // Location resource types with their key aliases
 export const neutral_resource = base_location_resource.extend({
-  space_key: z.string().describe('Your unique identifier for the space.'),
+  space_key: z
+    .string()
+    .min(1)
+    .refine((val) => val === val.trim(), {
+      message: 'Must not have leading or trailing whitespace',
+    })
+    .describe('Your unique identifier for the space.'),
 })
 
 export const property_resource = base_location_resource.extend({
-  property_key: z.string().describe('Your unique identifier for the property.'),
+  property_key: z
+    .string()
+    .min(1)
+    .refine((val) => val === val.trim(), {
+      message: 'Must not have leading or trailing whitespace',
+    })
+    .describe('Your unique identifier for the property.'),
 })
 
 export const room_resource = base_location_resource.extend({
-  room_key: z.string().describe('Your unique identifier for the room.'),
+  room_key: z
+    .string()
+    .min(1)
+    .refine((val) => val === val.trim(), {
+      message: 'Must not have leading or trailing whitespace',
+    })
+    .describe('Your unique identifier for the room.'),
   parent_site_key: z
     .string()
+    .min(1)
+    .refine((val) => val === val.trim(), {
+      message: 'Must not have leading or trailing whitespace',
+    })
     .optional()
     .describe('Your unique identifier for the site.'),
 })
@@ -25,41 +47,87 @@ export const room_resource = base_location_resource.extend({
 export const common_area_resource = base_location_resource.extend({
   common_area_key: z
     .string()
+    .min(1)
+    .refine((val) => val === val.trim(), {
+      message: 'Must not have leading or trailing whitespace',
+    })
     .describe('Your unique identifier for the common area.'),
   parent_site_key: z
     .string()
+    .min(1)
+    .refine((val) => val === val.trim(), {
+      message: 'Must not have leading or trailing whitespace',
+    })
     .optional()
     .describe('Your unique identifier for the site.'),
 })
 
 export const unit_resource = base_location_resource.extend({
-  unit_key: z.string().describe('Your unique identifier for the unit.'),
+  unit_key: z
+    .string()
+    .min(1)
+    .refine((val) => val === val.trim(), {
+      message: 'Must not have leading or trailing whitespace',
+    })
+    .describe('Your unique identifier for the unit.'),
   parent_site_key: z
     .string()
+    .min(1)
+    .refine((val) => val === val.trim(), {
+      message: 'Must not have leading or trailing whitespace',
+    })
     .optional()
     .describe('Your unique identifier for the site.'),
 })
 
 export const facility_resource = base_location_resource.extend({
-  facility_key: z.string().describe('Your unique identifier for the facility.'),
+  facility_key: z
+    .string()
+    .min(1)
+    .refine((val) => val === val.trim(), {
+      message: 'Must not have leading or trailing whitespace',
+    })
+    .describe('Your unique identifier for the facility.'),
 })
 
 export const building_resource = base_location_resource.extend({
-  building_key: z.string().describe('Your unique identifier for the building.'),
+  building_key: z
+    .string()
+    .min(1)
+    .refine((val) => val === val.trim(), {
+      message: 'Must not have leading or trailing whitespace',
+    })
+    .describe('Your unique identifier for the building.'),
 })
 
 export const listing_resource = base_location_resource.extend({
-  listing_key: z.string().describe('Your unique identifier for the listing.'),
+  listing_key: z
+    .string()
+    .min(1)
+    .refine((val) => val === val.trim(), {
+      message: 'Must not have leading or trailing whitespace',
+    })
+    .describe('Your unique identifier for the listing.'),
 })
 
 export const property_listing_resource = base_location_resource.extend({
   property_listing_key: z
     .string()
+    .min(1)
+    .refine((val) => val === val.trim(), {
+      message: 'Must not have leading or trailing whitespace',
+    })
     .describe('Your unique identifier for the property listing.'),
 })
 
 export const site_resource = base_location_resource.extend({
-  site_key: z.string().describe('Your unique identifier for the site.'),
+  site_key: z
+    .string()
+    .min(1)
+    .refine((val) => val === val.trim(), {
+      message: 'Must not have leading or trailing whitespace',
+    })
+    .describe('Your unique identifier for the site.'),
 })
 
 // Union of all location resource types
