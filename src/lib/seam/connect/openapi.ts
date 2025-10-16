@@ -54842,10 +54842,7 @@ export default {
                             items: {
                               properties: {
                                 device_id: { format: 'uuid', type: 'string' },
-                                device_type: {
-                                  enum: ['lock', 'thermostat', 'sensor'],
-                                  type: 'string',
-                                },
+                                device_type: { type: 'string' },
                                 name: { type: 'string' },
                               },
                               required: ['device_id', 'device_type', 'name'],
@@ -54943,10 +54940,7 @@ export default {
                             items: {
                               properties: {
                                 device_id: { format: 'uuid', type: 'string' },
-                                device_type: {
-                                  enum: ['lock', 'thermostat', 'sensor'],
-                                  type: 'string',
-                                },
+                                device_type: { type: 'string' },
                                 name: { type: 'string' },
                               },
                               required: ['device_id', 'device_type', 'name'],
