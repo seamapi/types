@@ -89,6 +89,10 @@ export const reservation_resource = base_access_grant_resource
   .extend({
     reservation_key: z
       .string()
+      .min(1)
+      .refine((val) => val === val.trim(), {
+        message: 'Must not have leading or trailing whitespace',
+      })
       .describe('Your unique identifier for the reservation.'),
   })
   .merge(user_identity_reference)
@@ -96,7 +100,13 @@ export const reservation_resource = base_access_grant_resource
 
 export const booking_resource = base_access_grant_resource
   .extend({
-    booking_key: z.string().describe('Your unique identifier for the booking.'),
+    booking_key: z
+      .string()
+      .min(1)
+      .refine((val) => val === val.trim(), {
+        message: 'Must not have leading or trailing whitespace',
+      })
+      .describe('Your unique identifier for the booking.'),
   })
   .merge(user_identity_reference)
   .merge(location_references)
@@ -105,6 +115,10 @@ export const access_grant_resource = base_access_grant_resource
   .extend({
     access_grant_key: z
       .string()
+      .min(1)
+      .refine((val) => val === val.trim(), {
+        message: 'Must not have leading or trailing whitespace',
+      })
       .describe('Your unique identifier for the access grant.'),
   })
   .merge(user_identity_reference)

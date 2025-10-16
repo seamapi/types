@@ -17,19 +17,43 @@ const base_user_identity_resource = z.object({
 
 // User identity resource types with their key aliases
 export const guest_resource = base_user_identity_resource.extend({
-  guest_key: z.string().describe('Your unique identifier for the guest.'),
+  guest_key: z
+    .string()
+    .min(1)
+    .refine((val) => val === val.trim(), {
+      message: 'Must not have leading or trailing whitespace',
+    })
+    .describe('Your unique identifier for the guest.'),
 })
 
 export const tenant_resource = base_user_identity_resource.extend({
-  tenant_key: z.string().describe('Your unique identifier for the tenant.'),
+  tenant_key: z
+    .string()
+    .min(1)
+    .refine((val) => val === val.trim(), {
+      message: 'Must not have leading or trailing whitespace',
+    })
+    .describe('Your unique identifier for the tenant.'),
 })
 
 export const resident_resource = base_user_identity_resource.extend({
-  resident_key: z.string().describe('Your unique identifier for the resident.'),
+  resident_key: z
+    .string()
+    .min(1)
+    .refine((val) => val === val.trim(), {
+      message: 'Must not have leading or trailing whitespace',
+    })
+    .describe('Your unique identifier for the resident.'),
 })
 
 export const user_resource = base_user_identity_resource.extend({
-  user_key: z.string().describe('Your unique identifier for the user.'),
+  user_key: z
+    .string()
+    .min(1)
+    .refine((val) => val === val.trim(), {
+      message: 'Must not have leading or trailing whitespace',
+    })
+    .describe('Your unique identifier for the user.'),
 })
 
 // staff resource
@@ -52,6 +76,10 @@ export const staff_member_resource = base_user_identity_resource.extend({
 export const user_identity_resource = base_user_identity_resource.extend({
   user_identity_key: z
     .string()
+    .min(1)
+    .refine((val) => val === val.trim(), {
+      message: 'Must not have leading or trailing whitespace',
+    })
     .describe('Your unique identifier for the user identity.'),
 })
 
