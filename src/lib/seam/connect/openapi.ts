@@ -20938,9 +20938,33 @@ export default {
       staff_member: {
         description: 'Represents a staff member for a specific customer.',
         properties: {
+          building_keys: {
+            description:
+              'List of unique identifiers for the buildings the staff member is associated with.',
+            items: { type: 'string' },
+            type: 'array',
+          },
+          common_area_keys: {
+            description:
+              'List of unique identifiers for the common areas the staff member is associated with.',
+            items: { type: 'string' },
+            type: 'array',
+          },
           email_address: {
             description: 'Email address associated with the user identity.',
             type: 'string',
+          },
+          facility_keys: {
+            description:
+              'List of unique identifiers for the facilities the staff member is associated with.',
+            items: { type: 'string' },
+            type: 'array',
+          },
+          listing_keys: {
+            description:
+              'List of unique identifiers for the listings the staff member is associated with.',
+            items: { type: 'string' },
+            type: 'array',
           },
           name: {
             description: 'Your display name for this user identity resource.',
@@ -20950,9 +20974,33 @@ export default {
             description: 'Phone number associated with the user identity.',
             type: 'string',
           },
+          property_keys: {
+            description:
+              'List of unique identifiers for the properties the staff member is associated with.',
+            items: { type: 'string' },
+            type: 'array',
+          },
+          property_listing_keys: {
+            description:
+              'List of unique identifiers for the property listings the staff member is associated with.',
+            items: { type: 'string' },
+            type: 'array',
+          },
+          room_keys: {
+            description:
+              'List of unique identifiers for the rooms the staff member is associated with.',
+            items: { type: 'string' },
+            type: 'array',
+          },
           site_keys: {
             description:
               'List of unique identifiers for the sites the staff member is associated with.',
+            items: { type: 'string' },
+            type: 'array',
+          },
+          space_keys: {
+            description:
+              'List of unique identifiers for the spaces the staff member is associated with.',
             items: { type: 'string' },
             type: 'array',
           },
@@ -20960,8 +21008,14 @@ export default {
             description: 'Your unique identifier for the staff.',
             type: 'string',
           },
+          unit_keys: {
+            description:
+              'List of unique identifiers for the units the staff member is associated with.',
+            items: { type: 'string' },
+            type: 'array',
+          },
         },
-        required: ['name', 'staff_member_key', 'site_keys'],
+        required: ['name', 'staff_member_key'],
         type: 'object',
         'x-route-path': '/seam/customer/v1/staff_members',
       },
@@ -41878,10 +41932,34 @@ export default {
                               description:
                                 'Represents a staff member for a specific customer.',
                               properties: {
+                                building_keys: {
+                                  description:
+                                    'List of unique identifiers for the buildings the staff member is associated with.',
+                                  items: { type: 'string' },
+                                  type: 'array',
+                                },
+                                common_area_keys: {
+                                  description:
+                                    'List of unique identifiers for the common areas the staff member is associated with.',
+                                  items: { type: 'string' },
+                                  type: 'array',
+                                },
                                 email_address: {
                                   description:
                                     'Email address associated with the user identity.',
                                   type: 'string',
+                                },
+                                facility_keys: {
+                                  description:
+                                    'List of unique identifiers for the facilities the staff member is associated with.',
+                                  items: { type: 'string' },
+                                  type: 'array',
+                                },
+                                listing_keys: {
+                                  description:
+                                    'List of unique identifiers for the listings the staff member is associated with.',
+                                  items: { type: 'string' },
+                                  type: 'array',
                                 },
                                 name: {
                                   description:
@@ -41893,9 +41971,33 @@ export default {
                                     'Phone number associated with the user identity.',
                                   type: 'string',
                                 },
+                                property_keys: {
+                                  description:
+                                    'List of unique identifiers for the properties the staff member is associated with.',
+                                  items: { type: 'string' },
+                                  type: 'array',
+                                },
+                                property_listing_keys: {
+                                  description:
+                                    'List of unique identifiers for the property listings the staff member is associated with.',
+                                  items: { type: 'string' },
+                                  type: 'array',
+                                },
+                                room_keys: {
+                                  description:
+                                    'List of unique identifiers for the rooms the staff member is associated with.',
+                                  items: { type: 'string' },
+                                  type: 'array',
+                                },
                                 site_keys: {
                                   description:
                                     'List of unique identifiers for the sites the staff member is associated with.',
+                                  items: { type: 'string' },
+                                  type: 'array',
+                                },
+                                space_keys: {
+                                  description:
+                                    'List of unique identifiers for the spaces the staff member is associated with.',
                                   items: { type: 'string' },
                                   type: 'array',
                                 },
@@ -41904,12 +42006,14 @@ export default {
                                     'Your unique identifier for the staff.',
                                   type: 'string',
                                 },
+                                unit_keys: {
+                                  description:
+                                    'List of unique identifiers for the units the staff member is associated with.',
+                                  items: { type: 'string' },
+                                  type: 'array',
+                                },
                               },
-                              required: [
-                                'name',
-                                'staff_member_key',
-                                'site_keys',
-                              ],
+                              required: ['name', 'staff_member_key'],
                               type: 'object',
                               'x-route-path': '/seam/customer/v1/staff_members',
                             },
@@ -43018,10 +43122,34 @@ export default {
                       description:
                         'Represents a staff member for a specific customer.',
                       properties: {
+                        building_keys: {
+                          description:
+                            'List of unique identifiers for the buildings the staff member is associated with.',
+                          items: { type: 'string' },
+                          type: 'array',
+                        },
+                        common_area_keys: {
+                          description:
+                            'List of unique identifiers for the common areas the staff member is associated with.',
+                          items: { type: 'string' },
+                          type: 'array',
+                        },
                         email_address: {
                           description:
                             'Email address associated with the user identity.',
                           type: 'string',
+                        },
+                        facility_keys: {
+                          description:
+                            'List of unique identifiers for the facilities the staff member is associated with.',
+                          items: { type: 'string' },
+                          type: 'array',
+                        },
+                        listing_keys: {
+                          description:
+                            'List of unique identifiers for the listings the staff member is associated with.',
+                          items: { type: 'string' },
+                          type: 'array',
                         },
                         name: {
                           description:
@@ -43033,9 +43161,33 @@ export default {
                             'Phone number associated with the user identity.',
                           type: 'string',
                         },
+                        property_keys: {
+                          description:
+                            'List of unique identifiers for the properties the staff member is associated with.',
+                          items: { type: 'string' },
+                          type: 'array',
+                        },
+                        property_listing_keys: {
+                          description:
+                            'List of unique identifiers for the property listings the staff member is associated with.',
+                          items: { type: 'string' },
+                          type: 'array',
+                        },
+                        room_keys: {
+                          description:
+                            'List of unique identifiers for the rooms the staff member is associated with.',
+                          items: { type: 'string' },
+                          type: 'array',
+                        },
                         site_keys: {
                           description:
                             'List of unique identifiers for the sites the staff member is associated with.',
+                          items: { type: 'string' },
+                          type: 'array',
+                        },
+                        space_keys: {
+                          description:
+                            'List of unique identifiers for the spaces the staff member is associated with.',
                           items: { type: 'string' },
                           type: 'array',
                         },
@@ -43043,8 +43195,14 @@ export default {
                           description: 'Your unique identifier for the staff.',
                           type: 'string',
                         },
+                        unit_keys: {
+                          description:
+                            'List of unique identifiers for the units the staff member is associated with.',
+                          items: { type: 'string' },
+                          type: 'array',
+                        },
                       },
-                      required: ['name', 'staff_member_key', 'site_keys'],
+                      required: ['name', 'staff_member_key'],
                       type: 'object',
                       'x-route-path': '/seam/customer/v1/staff_members',
                     },
@@ -54449,7 +54607,42 @@ export default {
                     ok: { type: 'boolean' },
                     pagination: { $ref: '#/components/schemas/pagination' },
                     staff_members: {
-                      items: { $ref: '#/components/schemas/staff_member' },
+                      items: {
+                        description:
+                          'Represents a staff member for a specific customer.',
+                        properties: {
+                          email_address: {
+                            description:
+                              'Email address associated with the user identity.',
+                            type: 'string',
+                          },
+                          name: {
+                            description:
+                              'Your display name for this user identity resource.',
+                            type: 'string',
+                          },
+                          phone_number: {
+                            description:
+                              'Phone number associated with the user identity.',
+                            type: 'string',
+                          },
+                          space_keys: {
+                            description:
+                              'List of unique identifiers for the spaces the staff member is associated with.',
+                            items: { type: 'string' },
+                            type: 'array',
+                          },
+                          staff_member_key: {
+                            description:
+                              'Your unique identifier for the staff.',
+                            type: 'string',
+                          },
+                          user_identity_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: ['staff_member_key', 'name'],
+                        type: 'object',
+                        'x-route-path': '/seam/customer/v1/staff_members',
+                      },
                       type: 'array',
                     },
                   },
@@ -54526,7 +54719,42 @@ export default {
                     ok: { type: 'boolean' },
                     pagination: { $ref: '#/components/schemas/pagination' },
                     staff_members: {
-                      items: { $ref: '#/components/schemas/staff_member' },
+                      items: {
+                        description:
+                          'Represents a staff member for a specific customer.',
+                        properties: {
+                          email_address: {
+                            description:
+                              'Email address associated with the user identity.',
+                            type: 'string',
+                          },
+                          name: {
+                            description:
+                              'Your display name for this user identity resource.',
+                            type: 'string',
+                          },
+                          phone_number: {
+                            description:
+                              'Phone number associated with the user identity.',
+                            type: 'string',
+                          },
+                          space_keys: {
+                            description:
+                              'List of unique identifiers for the spaces the staff member is associated with.',
+                            items: { type: 'string' },
+                            type: 'array',
+                          },
+                          staff_member_key: {
+                            description:
+                              'Your unique identifier for the staff.',
+                            type: 'string',
+                          },
+                          user_identity_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: ['staff_member_key', 'name'],
+                        type: 'object',
+                        'x-route-path': '/seam/customer/v1/staff_members',
+                      },
                       type: 'array',
                     },
                   },

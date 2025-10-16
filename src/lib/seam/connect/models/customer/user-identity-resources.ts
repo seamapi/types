@@ -61,8 +61,63 @@ export const staff_member_resource = base_user_identity_resource.extend({
   staff_member_key: z
     .string()
     .describe('Your unique identifier for the staff.'),
+  space_keys: z
+    .array(z.string())
+    .optional()
+    .describe(
+      'List of unique identifiers for the spaces the staff member is associated with.',
+    ),
+  property_keys: z
+    .array(z.string())
+    .optional()
+    .describe(
+      'List of unique identifiers for the properties the staff member is associated with.',
+    ),
+  room_keys: z
+    .array(z.string())
+    .optional()
+    .describe(
+      'List of unique identifiers for the rooms the staff member is associated with.',
+    ),
+  common_area_keys: z
+    .array(z.string())
+    .optional()
+    .describe(
+      'List of unique identifiers for the common areas the staff member is associated with.',
+    ),
+  unit_keys: z
+    .array(z.string())
+    .optional()
+    .describe(
+      'List of unique identifiers for the units the staff member is associated with.',
+    ),
+  facility_keys: z
+    .array(z.string())
+    .optional()
+    .describe(
+      'List of unique identifiers for the facilities the staff member is associated with.',
+    ),
+  building_keys: z
+    .array(z.string())
+    .optional()
+    .describe(
+      'List of unique identifiers for the buildings the staff member is associated with.',
+    ),
+  listing_keys: z
+    .array(z.string())
+    .optional()
+    .describe(
+      'List of unique identifiers for the listings the staff member is associated with.',
+    ),
+  property_listing_keys: z
+    .array(z.string())
+    .optional()
+    .describe(
+      'List of unique identifiers for the property listings the staff member is associated with.',
+    ),
   site_keys: z
     .array(z.string())
+    .optional()
     .describe(
       'List of unique identifiers for the sites the staff member is associated with.',
     ),
