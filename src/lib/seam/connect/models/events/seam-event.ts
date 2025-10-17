@@ -11,6 +11,7 @@ import { connected_account_events } from './connected-accounts.js'
 import { device_events } from './devices.js'
 import { enrollment_automation_events } from './enrollment-automations.js'
 import { phone_events } from './phones.js'
+import { space_events } from './spaces.js'
 
 export const seam_event = z.discriminatedUnion('event_type', [
   ...access_code_events,
@@ -24,6 +25,7 @@ export const seam_event = z.discriminatedUnion('event_type', [
   ...device_events,
   ...enrollment_automation_events,
   ...phone_events,
+  ...space_events,
 ]).describe(`
   ---
   route_path: /events
