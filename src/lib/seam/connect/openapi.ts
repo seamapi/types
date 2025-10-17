@@ -42353,6 +42353,15 @@ export default {
               type: 'array',
             },
           },
+          {
+            in: 'query',
+            name: 'staff_member_keys',
+            schema: {
+              description: 'List of staff member keys to delete.',
+              items: { type: 'string' },
+              type: 'array',
+            },
+          },
         ],
         responses: {
           200: {
@@ -42459,6 +42468,11 @@ export default {
                   },
                   space_keys: {
                     description: 'List of space keys to delete.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                  staff_member_keys: {
+                    description: 'List of staff member keys to delete.',
                     items: { type: 'string' },
                     type: 'array',
                   },

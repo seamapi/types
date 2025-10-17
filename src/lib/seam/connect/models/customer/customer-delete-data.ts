@@ -80,6 +80,10 @@ export const customer_delete_data = z.object({
     .array(z.string())
     .optional()
     .describe('List of access grant keys to delete.'),
+  staff_member_keys: z
+    .array(z.string())
+    .optional()
+    .describe('List of staff member keys to delete.'),
 })
 
 export type CustomerDeleteData = z.infer<typeof customer_delete_data>
