@@ -19466,6 +19466,70 @@ export default {
             type: 'object',
             'x-route-path': '/phones',
           },
+          {
+            description: 'A device was added or removed from a space.',
+            properties: {
+              acs_entrance_ids: {
+                description:
+                  'IDs of all ACS entrances currently attached to the space.',
+                items: { format: 'uuid', type: 'string' },
+                type: 'array',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              device_ids: {
+                description:
+                  'IDs of all devices currently attached to the space.',
+                items: { format: 'uuid', type: 'string' },
+                type: 'array',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                description: 'Type of the event.',
+                enum: ['space.device_membership_changed'],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              space_id: {
+                description: 'ID of the affected space.',
+                format: 'uuid',
+                type: 'string',
+              },
+              space_key: {
+                description: 'Unique key for the space within the workspace.',
+                type: 'string',
+              },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'space_id',
+              'event_type',
+              'device_ids',
+              'acs_entrance_ids',
+            ],
+            type: 'object',
+            'x-route-path': '/spaces',
+          },
         ],
         'x-route-path': '/events',
       },
@@ -42353,6 +42417,15 @@ export default {
               type: 'array',
             },
           },
+          {
+            in: 'query',
+            name: 'staff_member_keys',
+            schema: {
+              description: 'List of staff member keys to delete.',
+              items: { type: 'string' },
+              type: 'array',
+            },
+          },
         ],
         responses: {
           200: {
@@ -42459,6 +42532,11 @@ export default {
                   },
                   space_keys: {
                     description: 'List of space keys to delete.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                  staff_member_keys: {
+                    description: 'List of staff member keys to delete.',
                     items: { type: 'string' },
                     type: 'array',
                   },
@@ -46409,6 +46487,7 @@ export default {
                 'device.name_changed',
                 'enrollment_automation.deleted',
                 'phone.deactivated',
+                'space.device_membership_changed',
               ],
               type: 'string',
             },
@@ -46512,6 +46591,7 @@ export default {
                   'device.name_changed',
                   'enrollment_automation.deleted',
                   'phone.deactivated',
+                  'space.device_membership_changed',
                 ],
                 type: 'string',
               },
@@ -46770,6 +46850,7 @@ export default {
                       'device.name_changed',
                       'enrollment_automation.deleted',
                       'phone.deactivated',
+                      'space.device_membership_changed',
                     ],
                     type: 'string',
                   },
@@ -46869,6 +46950,7 @@ export default {
                         'device.name_changed',
                         'enrollment_automation.deleted',
                         'phone.deactivated',
+                        'space.device_membership_changed',
                       ],
                       type: 'string',
                     },
@@ -52689,6 +52771,7 @@ export default {
                 'device.name_changed',
                 'enrollment_automation.deleted',
                 'phone.deactivated',
+                'space.device_membership_changed',
               ],
               type: 'string',
             },
@@ -52793,6 +52876,7 @@ export default {
                   'device.name_changed',
                   'enrollment_automation.deleted',
                   'phone.deactivated',
+                  'space.device_membership_changed',
                 ],
                 type: 'string',
               },
@@ -52960,6 +53044,7 @@ export default {
                       'device.name_changed',
                       'enrollment_automation.deleted',
                       'phone.deactivated',
+                      'space.device_membership_changed',
                     ],
                     type: 'string',
                   },
@@ -53059,6 +53144,7 @@ export default {
                         'device.name_changed',
                         'enrollment_automation.deleted',
                         'phone.deactivated',
+                        'space.device_membership_changed',
                       ],
                       type: 'string',
                     },
