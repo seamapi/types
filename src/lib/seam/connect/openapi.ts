@@ -52477,14 +52477,18 @@ export default {
                       {
                         properties: {
                           access_token: { minLength: 1, type: 'string' },
-                          client: { minLength: 1, type: 'string' },
+                          client: {
+                            default: 'seam',
+                            minLength: 1,
+                            type: 'string',
+                          },
                           client_token: { minLength: 1, type: 'string' },
+                          enterprise_id: { format: 'uuid', type: 'string' },
                           enterprise_ids: {
                             items: { format: 'uuid', type: 'string' },
                             type: 'array',
                           },
                         },
-                        required: ['client_token', 'access_token', 'client'],
                         type: 'object',
                       },
                       { properties: {}, type: 'object' },
@@ -54959,59 +54963,6 @@ export default {
         'x-response-key': 'staff_members',
         'x-title': 'List Staff Members for Customer Space',
         'x-undocumented': 'Internal endpoint for customer portals.',
-      },
-    },
-    '/seam/customer/v1/webhooks/connectors/[workspace_id]/[connector_id]': {
-      post: {
-        description:
-          'Receives webhook events from external connector APIs and processes them into partner resources.',
-        operationId:
-          'seamCustomerV1WebhooksConnectorsByWorkspaceIdByConnectorIdPost',
-        requestBody: {
-          content: {
-            'application/json': { schema: { properties: {}, type: 'object' } },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    error: { type: 'string' },
-                    ok: { type: 'boolean' },
-                    processed_events: { format: 'float', type: 'number' },
-                    success: { type: 'boolean' },
-                  },
-                  required: ['success', 'processed_events', 'ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { pat_with_workspace: [] },
-          { console_session_with_workspace: [] },
-          { api_key: [] },
-        ],
-        summary:
-          '/seam/customer/v1/webhooks/connectors/[workspace_id]/[connector_id]',
-        tags: ['/webhooks'],
-        'x-fern-sdk-group-name': [
-          'seam',
-          'customer',
-          'v1',
-          'webhooks',
-          'connectors',
-          '[workspace_id]',
-        ],
-        'x-fern-sdk-method-name': 'by_connector_id',
-        'x-response-key': null,
-        'x-title': 'Connector Webhook Endpoint',
       },
     },
     '/seam/instant_key/v1/client_sessions/exchange_short_code': {
