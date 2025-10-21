@@ -54868,6 +54868,197 @@ export default {
         'x-title': 'List Spaces',
       },
     },
+    '/seam/customer/v1/staff_members/get': {
+      get: {
+        description: 'Returns a staff member for a specific customer.',
+        operationId: 'seamCustomerV1StaffMembersGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'staff_member_key',
+            required: true,
+            schema: {
+              description: 'Key of staff member to get.',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_grant: { $ref: '#/components/schemas/access_grant' },
+                    ok: { type: 'boolean' },
+                    spaces: {
+                      items: {
+                        properties: {
+                          child_space_keys: {
+                            items: { type: 'string' },
+                            type: 'array',
+                          },
+                          space_key: { type: 'string' },
+                        },
+                        required: ['space_key'],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    staff_member: {
+                      description:
+                        'Represents a staff member for a specific customer.',
+                      properties: {
+                        email_address: {
+                          description:
+                            'Email address associated with the user identity.',
+                          type: 'string',
+                        },
+                        name: {
+                          description:
+                            'Your display name for this user identity resource.',
+                          type: 'string',
+                        },
+                        phone_number: {
+                          description:
+                            'Phone number associated with the user identity.',
+                          type: 'string',
+                        },
+                        space_keys: {
+                          description:
+                            'List of unique identifiers for the spaces the staff member is associated with.',
+                          items: { type: 'string' },
+                          type: 'array',
+                        },
+                        staff_member_key: {
+                          description: 'Your unique identifier for the staff.',
+                          type: 'string',
+                        },
+                        user_identity_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: ['staff_member_key', 'name'],
+                      type: 'object',
+                      'x-route-path': '/seam/customer/v1/staff_members',
+                    },
+                  },
+                  required: ['access_grant', 'spaces', 'staff_member', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/staff_members/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'staff_members'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'staff_member',
+        'x-response-key': 'staff_member',
+        'x-title': 'Get Staff Member',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+      post: {
+        description: 'Returns a staff member for a specific customer.',
+        operationId: 'seamCustomerV1StaffMembersGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  staff_member_key: {
+                    description: 'Key of staff member to get.',
+                    type: 'string',
+                  },
+                },
+                required: ['staff_member_key'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_grant: { $ref: '#/components/schemas/access_grant' },
+                    ok: { type: 'boolean' },
+                    spaces: {
+                      items: {
+                        properties: {
+                          child_space_keys: {
+                            items: { type: 'string' },
+                            type: 'array',
+                          },
+                          space_key: { type: 'string' },
+                        },
+                        required: ['space_key'],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    staff_member: {
+                      description:
+                        'Represents a staff member for a specific customer.',
+                      properties: {
+                        email_address: {
+                          description:
+                            'Email address associated with the user identity.',
+                          type: 'string',
+                        },
+                        name: {
+                          description:
+                            'Your display name for this user identity resource.',
+                          type: 'string',
+                        },
+                        phone_number: {
+                          description:
+                            'Phone number associated with the user identity.',
+                          type: 'string',
+                        },
+                        space_keys: {
+                          description:
+                            'List of unique identifiers for the spaces the staff member is associated with.',
+                          items: { type: 'string' },
+                          type: 'array',
+                        },
+                        staff_member_key: {
+                          description: 'Your unique identifier for the staff.',
+                          type: 'string',
+                        },
+                        user_identity_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: ['staff_member_key', 'name'],
+                      type: 'object',
+                      'x-route-path': '/seam/customer/v1/staff_members',
+                    },
+                  },
+                  required: ['access_grant', 'spaces', 'staff_member', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/staff_members/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'staff_members'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'staff_member',
+        'x-response-key': 'staff_member',
+        'x-title': 'Get Staff Member',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
     '/seam/customer/v1/staff_members/list': {
       get: {
         description:
