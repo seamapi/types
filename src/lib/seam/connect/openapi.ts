@@ -52463,7 +52463,7 @@ export default {
     '/seam/customer/v1/connectors/create': {
       post: {
         description:
-          'Creates a new connector for a customer in a workspace. The connector will be activated and start syncing data from the external API.',
+          'Creates a new connector for a customer in a workspace. The connector will be activated and start syncing data from the external API.\nIf a connector already exists with the same unique_provider_resource_key, it will be updated instead of creating a new one.',
         operationId: 'seamCustomerV1ConnectorsCreatePost',
         requestBody: {
           content: {
@@ -52505,7 +52505,7 @@ export default {
                     type: 'string',
                   },
                 },
-                required: ['connector_type', 'customer_key', 'config'],
+                required: ['connector_type', 'config'],
                 type: 'object',
               },
             },
@@ -52563,7 +52563,11 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [{ api_key: [] }],
+        security: [
+          { api_key: [] },
+          { client_session_with_customer: [] },
+          { console_session_with_workspace: [] },
+        ],
         summary: '/seam/customer/v1/connectors/create',
         tags: [],
         'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'connectors'],
@@ -52571,6 +52575,141 @@ export default {
         'x-fern-sdk-return-value': 'connector',
         'x-response-key': 'connector',
         'x-title': 'Create Connector',
+        'x-undocumented': 'Internal endpoint for Console.',
+      },
+    },
+    '/seam/customer/v1/connectors/list': {
+      get: {
+        description:
+          'Lists connectors for a workspace (API key auth) or for a specific customer (customer client session auth).',
+        operationId: 'seamCustomerV1ConnectorsListGet',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    connectors: {
+                      items: {
+                        properties: {
+                          config: {
+                            additionalProperties: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            type: 'object',
+                          },
+                          connector_id: { type: 'string' },
+                          connector_type: { type: 'string' },
+                          created_at: { type: 'string' },
+                          status: {
+                            enum: ['active', 'inactive', 'error'],
+                            type: 'string',
+                          },
+                          updated_at: { type: 'string' },
+                        },
+                        required: [
+                          'connector_id',
+                          'connector_type',
+                          'status',
+                          'config',
+                          'created_at',
+                          'updated_at',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['connectors', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { client_session_with_customer: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/seam/customer/v1/connectors/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'connectors'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'connectors',
+        'x-response-key': 'connectors',
+        'x-title': 'List Connectors',
+        'x-undocumented': 'Internal endpoint for Console.',
+      },
+      post: {
+        description:
+          'Lists connectors for a workspace (API key auth) or for a specific customer (customer client session auth).',
+        operationId: 'seamCustomerV1ConnectorsListPost',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    connectors: {
+                      items: {
+                        properties: {
+                          config: {
+                            additionalProperties: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            type: 'object',
+                          },
+                          connector_id: { type: 'string' },
+                          connector_type: { type: 'string' },
+                          created_at: { type: 'string' },
+                          status: {
+                            enum: ['active', 'inactive', 'error'],
+                            type: 'string',
+                          },
+                          updated_at: { type: 'string' },
+                        },
+                        required: [
+                          'connector_id',
+                          'connector_type',
+                          'status',
+                          'config',
+                          'created_at',
+                          'updated_at',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['connectors', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { client_session_with_customer: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/seam/customer/v1/connectors/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'connectors'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'connectors',
+        'x-response-key': 'connectors',
+        'x-title': 'List Connectors',
+        'x-undocumented': 'Internal endpoint for Console.',
       },
     },
     '/seam/customer/v1/connectors/sync': {
