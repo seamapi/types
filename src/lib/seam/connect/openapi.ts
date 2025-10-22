@@ -52560,6 +52560,70 @@ export default {
         'x-undocumented': 'Internal endpoint for Console.',
       },
     },
+    '/seam/customer/v1/connectors/delete': {
+      post: {
+        description:
+          'Deletes a connector from a workspace. The connector must already be assigned to a workspace.\nThis will remove the connector row from the database and deactivate any active connections.',
+        operationId: 'seamCustomerV1ConnectorsDeletePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connector_id: {
+                    description: 'ID of the connector to delete',
+                    minLength: 1,
+                    type: 'string',
+                  },
+                },
+                required: ['connector_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    connector: {
+                      properties: {
+                        connector_id: { type: 'string' },
+                        connector_type: { type: 'string' },
+                        status: { enum: ['deleted'], type: 'string' },
+                      },
+                      required: ['connector_id', 'connector_type', 'status'],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['connector', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { client_session_with_customer: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/seam/customer/v1/connectors/delete',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'connectors'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-fern-sdk-return-value': 'connector',
+        'x-response-key': 'connector',
+        'x-title': 'Delete Connector',
+        'x-undocumented': 'Internal endpoint for Console.',
+      },
+    },
     '/seam/customer/v1/connectors/list': {
       get: {
         description:
@@ -52752,6 +52816,124 @@ export default {
         'x-response-key': 'connector_sync',
         'x-title': 'Sync Connector Data',
         'x-undocumented': 'Only used internally.',
+      },
+    },
+    '/seam/customer/v1/connectors/update': {
+      post: {
+        description:
+          'Updates an existing connector in a workspace. The connector must already be assigned to a workspace.\nThe connector will be reactivated with the new configuration.',
+        operationId: 'seamCustomerV1ConnectorsUpdatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  config: {
+                    description:
+                      'Instance-specific configuration for the connector',
+                    oneOf: [
+                      {
+                        properties: {
+                          access_token: { minLength: 1, type: 'string' },
+                          client: {
+                            default: 'seam',
+                            minLength: 1,
+                            type: 'string',
+                          },
+                          client_token: { minLength: 1, type: 'string' },
+                          enterprise_id: { format: 'uuid', type: 'string' },
+                          enterprise_ids: {
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      { properties: {}, type: 'object' },
+                    ],
+                  },
+                  connector_id: {
+                    description: 'ID of the connector to update',
+                    minLength: 1,
+                    type: 'string',
+                  },
+                  customer_key: {
+                    description: 'Key identifying the customer',
+                    minLength: 1,
+                    type: 'string',
+                  },
+                },
+                required: ['connector_id', 'config'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    connector: {
+                      properties: {
+                        connector_id: { type: 'string' },
+                        connector_type: { type: 'string' },
+                        error: { type: 'string' },
+                        status: {
+                          enum: ['active', 'inactive', 'error'],
+                          type: 'string',
+                        },
+                        webhook_subscription: {
+                          properties: {
+                            events: {
+                              items: { type: 'string' },
+                              type: 'array',
+                            },
+                            status: {
+                              enum: ['active', 'inactive', 'error'],
+                              type: 'string',
+                            },
+                            subscription_id: { type: 'string' },
+                            webhook_url: { type: 'string' },
+                          },
+                          required: [
+                            'subscription_id',
+                            'webhook_url',
+                            'events',
+                            'status',
+                          ],
+                          type: 'object',
+                        },
+                      },
+                      required: ['connector_id', 'connector_type', 'status'],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['connector', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { client_session_with_customer: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/seam/customer/v1/connectors/update',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'connectors'],
+        'x-fern-sdk-method-name': 'update',
+        'x-fern-sdk-return-value': 'connector',
+        'x-response-key': 'connector',
+        'x-title': 'Update Connector',
+        'x-undocumented': 'Internal endpoint for Console.',
       },
     },
     '/seam/customer/v1/events/list': {
