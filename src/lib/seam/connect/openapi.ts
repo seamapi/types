@@ -52769,6 +52769,7 @@ export default {
         'x-fern-sdk-return-value': 'connector_sync',
         'x-response-key': 'connector_sync',
         'x-title': 'Sync Connector Data',
+        'x-undocumented': 'Only used internally.',
       },
     },
     '/seam/customer/v1/events/list': {
@@ -54733,6 +54734,7 @@ export default {
         'x-fern-sdk-return-value': 'space',
         'x-response-key': 'space',
         'x-title': 'Create a Space',
+        'x-undocumented': 'Only used internally.',
       },
     },
     '/seam/customer/v1/spaces/list': {
@@ -54802,6 +54804,7 @@ export default {
         'x-fern-sdk-return-value': 'spaces',
         'x-response-key': 'spaces',
         'x-title': 'List Spaces',
+        'x-undocumented': 'Only used internally.',
       },
       post: {
         description: 'Returns a list of all spaces.',
@@ -54866,6 +54869,7 @@ export default {
         'x-fern-sdk-return-value': 'spaces',
         'x-response-key': 'spaces',
         'x-title': 'List Spaces',
+        'x-undocumented': 'Only used internally.',
       },
     },
     '/seam/customer/v1/staff_members/get': {
