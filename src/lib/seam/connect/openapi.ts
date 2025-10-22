@@ -51731,14 +51731,8 @@ export default {
                       properties: {
                         rules: {
                           properties: {
-                            delete_on_reservation_end: {
-                              properties: { enabled: { type: 'boolean' } },
-                              required: ['enabled'],
-                              type: 'object',
-                            },
                             reservation_created: {
                               properties: {
-                                enabled: { type: 'boolean' },
                                 fallback_preset: {
                                   properties: {
                                     fan_mode: {
@@ -51775,13 +51769,13 @@ export default {
                                 },
                                 occupied_preset_key: { type: 'string' },
                               },
-                              required: ['enabled'],
                               type: 'object',
                             },
-                            update_on_time_change: {
-                              properties: { enabled: { type: 'boolean' } },
-                              required: ['enabled'],
-                              type: 'object',
+                            reservation_deleted: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            reservation_time_updated: {
+                              $ref: '#/components/schemas/access_code',
                             },
                           },
                           type: 'object',
@@ -51947,14 +51941,8 @@ export default {
                       properties: {
                         rules: {
                           properties: {
-                            delete_on_reservation_end: {
-                              properties: { enabled: { type: 'boolean' } },
-                              required: ['enabled'],
-                              type: 'object',
-                            },
                             reservation_created: {
                               properties: {
-                                enabled: { type: 'boolean' },
                                 fallback_preset: {
                                   properties: {
                                     fan_mode: {
@@ -51991,13 +51979,13 @@ export default {
                                 },
                                 occupied_preset_key: { type: 'string' },
                               },
-                              required: ['enabled'],
                               type: 'object',
                             },
-                            update_on_time_change: {
-                              properties: { enabled: { type: 'boolean' } },
-                              required: ['enabled'],
-                              type: 'object',
+                            reservation_deleted: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            reservation_time_updated: {
+                              $ref: '#/components/schemas/access_code',
                             },
                           },
                           type: 'object',
@@ -52154,14 +52142,8 @@ export default {
                     properties: {
                       rules: {
                         properties: {
-                          delete_on_reservation_end: {
-                            properties: { enabled: { type: 'boolean' } },
-                            required: ['enabled'],
-                            type: 'object',
-                          },
                           reservation_created: {
                             properties: {
-                              enabled: { type: 'boolean' },
                               fallback_preset: {
                                 properties: {
                                   fan_mode: {
@@ -52198,12 +52180,14 @@ export default {
                               },
                               occupied_preset_key: { type: 'string' },
                             },
-                            required: ['enabled'],
                             type: 'object',
                           },
-                          update_on_time_change: {
-                            properties: { enabled: { type: 'boolean' } },
-                            required: ['enabled'],
+                          reservation_deleted: {
+                            properties: {},
+                            type: 'object',
+                          },
+                          reservation_time_updated: {
+                            properties: {},
                             type: 'object',
                           },
                         },
@@ -52368,14 +52352,8 @@ export default {
                     properties: {
                       rules: {
                         properties: {
-                          delete_on_reservation_end: {
-                            properties: { enabled: { type: 'boolean' } },
-                            required: ['enabled'],
-                            type: 'object',
-                          },
                           reservation_created: {
                             properties: {
-                              enabled: { type: 'boolean' },
                               fallback_preset: {
                                 properties: {
                                   fan_mode: {
@@ -52412,12 +52390,14 @@ export default {
                               },
                               occupied_preset_key: { type: 'string' },
                             },
-                            required: ['enabled'],
                             type: 'object',
                           },
-                          update_on_time_change: {
-                            properties: { enabled: { type: 'boolean' } },
-                            required: ['enabled'],
+                          reservation_deleted: {
+                            properties: {},
+                            type: 'object',
+                          },
+                          reservation_time_updated: {
+                            properties: {},
                             type: 'object',
                           },
                         },
