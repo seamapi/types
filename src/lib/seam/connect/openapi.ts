@@ -52807,7 +52807,7 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [{ api_key: [] }],
+        security: [{ api_key: [] }, { console_session_with_workspace: [] }],
         summary: '/seam/customer/v1/connectors/sync',
         tags: [],
         'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'connectors'],
