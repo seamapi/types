@@ -31292,6 +31292,7 @@ export default {
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/access_methods/get_related',
         tags: [],
@@ -31529,6 +31530,7 @@ export default {
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/access_methods/get_related',
         tags: [],
@@ -51158,6 +51160,84 @@ export default {
         'x-response-key': 'timeline',
         'x-title': 'Get Timeline Entries',
         'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/customer/v1/access_grants/list': {
+      get: {
+        description: 'Gets an Access Grant.',
+        operationId: 'seamCustomerV1AccessGrantsListGet',
+        parameters: [],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_grants: {
+                      items: { $ref: '#/components/schemas/access_grant' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_grants', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/access_grants/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'access_grants'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'access_grants',
+        'x-response-key': 'access_grants',
+        'x-title': 'List Access Grants (Other Access)',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+      post: {
+        description: 'Gets an Access Grant.',
+        operationId: 'seamCustomerV1AccessGrantsListPost',
+        requestBody: {
+          content: {
+            'application/json': { schema: { properties: {}, type: 'object' } },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_grants: {
+                      items: { $ref: '#/components/schemas/access_grant' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_grants', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/access_grants/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'access_grants'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'access_grants',
+        'x-response-key': 'access_grants',
+        'x-title': 'List Access Grants (Other Access)',
+        'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
     '/seam/customer/v1/automation_runs/list': {
