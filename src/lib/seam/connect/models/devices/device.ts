@@ -420,6 +420,17 @@ export const unknown_issue_with_phone = common_device_warning.extend({
     Indicates that an unknown issue occurred while syncing the state of the phone with the provider. This issue may affect the proper functioning of the phone.
     `)
 
+const hub_required_for_addtional_capabilities = common_device_warning.extend({
+  warning_code: z
+    .literal('hub_required_for_addtional_capabilities')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: locks
+    ---
+    Indicates that a hub or relay must be connected to unlock additional capabilities such as remote unlock.
+    `)
+
 const device_warning = z.discriminatedUnion('warning_code', [
   partial_backup_access_code_pool,
   many_active_backup_codes,
@@ -438,6 +449,7 @@ const device_warning = z.discriminatedUnion('warning_code', [
   salto_ks_subscription_limit_almost_reached,
   unknown_issue_with_phone,
   lockly_time_zone_not_configured,
+  hub_required_for_addtional_capabilities,
 ])
 
 export type DeviceWarning = z.infer<typeof device_warning>
@@ -482,6 +494,8 @@ const _device_warning_map = z.object({
   lockly_time_zone_not_configured: lockly_time_zone_not_configured
     .optional()
     .nullable(),
+  hub_required_for_addtional_capabilities:
+    hub_required_for_addtional_capabilities.optional().nullable(),
 })
 
 export type DeviceWarningMap = z.infer<typeof _device_warning_map>

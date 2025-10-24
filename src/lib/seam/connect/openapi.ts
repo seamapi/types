@@ -13145,6 +13145,32 @@ export default {
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Indicates that a hub or relay must be connected to unlock additional capabilities such as remote unlock.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['hub_required_for_addtional_capabilities'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
               ],
             },
             type: 'array',
@@ -25619,6 +25645,32 @@ export default {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that a hub or relay must be connected to unlock additional capabilities such as remote unlock.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['hub_required_for_addtional_capabilities'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
               ],
             },
