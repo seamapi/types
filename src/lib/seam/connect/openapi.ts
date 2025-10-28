@@ -51871,20 +51871,20 @@ export default {
                           properties: {
                             reservation_created: {
                               properties: {
-                                fallback_preset: {
+                                automated_occupied_preset: {
                                   properties: {
                                     fan_mode: {
                                       enum: ['on', 'auto', 'circulate'],
                                       type: 'string',
                                     },
                                     is_override_allowed: { type: 'boolean' },
+                                    max_override_period_minutes: {
+                                      format: 'float',
+                                      type: 'number',
+                                    },
                                     mode: {
                                       enum: ['heat', 'cool', 'auto'],
                                       type: 'string',
-                                    },
-                                    override_period_minutes: {
-                                      format: 'float',
-                                      type: 'number',
                                     },
                                     temperature: {
                                       format: 'float',
@@ -51901,11 +51901,46 @@ export default {
                                     'temperature_unit',
                                     'fan_mode',
                                     'is_override_allowed',
-                                    'override_period_minutes',
+                                    'max_override_period_minutes',
+                                  ],
+                                  type: 'object',
+                                },
+                                automated_unoccupied_preset: {
+                                  properties: {
+                                    fan_mode: {
+                                      enum: ['on', 'auto', 'circulate'],
+                                      type: 'string',
+                                    },
+                                    is_override_allowed: { type: 'boolean' },
+                                    max_override_period_minutes: {
+                                      format: 'float',
+                                      type: 'number',
+                                    },
+                                    mode: {
+                                      enum: ['heat', 'cool', 'auto'],
+                                      type: 'string',
+                                    },
+                                    temperature: {
+                                      format: 'float',
+                                      type: 'number',
+                                    },
+                                    temperature_unit: {
+                                      enum: ['celsius', 'fahrenheit'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'mode',
+                                    'temperature',
+                                    'temperature_unit',
+                                    'fan_mode',
+                                    'is_override_allowed',
+                                    'max_override_period_minutes',
                                   ],
                                   type: 'object',
                                 },
                                 occupied_preset_key: { type: 'string' },
+                                unoccupied_preset_key: { type: 'string' },
                               },
                               type: 'object',
                             },
@@ -52081,20 +52116,20 @@ export default {
                           properties: {
                             reservation_created: {
                               properties: {
-                                fallback_preset: {
+                                automated_occupied_preset: {
                                   properties: {
                                     fan_mode: {
                                       enum: ['on', 'auto', 'circulate'],
                                       type: 'string',
                                     },
                                     is_override_allowed: { type: 'boolean' },
+                                    max_override_period_minutes: {
+                                      format: 'float',
+                                      type: 'number',
+                                    },
                                     mode: {
                                       enum: ['heat', 'cool', 'auto'],
                                       type: 'string',
-                                    },
-                                    override_period_minutes: {
-                                      format: 'float',
-                                      type: 'number',
                                     },
                                     temperature: {
                                       format: 'float',
@@ -52111,11 +52146,46 @@ export default {
                                     'temperature_unit',
                                     'fan_mode',
                                     'is_override_allowed',
-                                    'override_period_minutes',
+                                    'max_override_period_minutes',
+                                  ],
+                                  type: 'object',
+                                },
+                                automated_unoccupied_preset: {
+                                  properties: {
+                                    fan_mode: {
+                                      enum: ['on', 'auto', 'circulate'],
+                                      type: 'string',
+                                    },
+                                    is_override_allowed: { type: 'boolean' },
+                                    max_override_period_minutes: {
+                                      format: 'float',
+                                      type: 'number',
+                                    },
+                                    mode: {
+                                      enum: ['heat', 'cool', 'auto'],
+                                      type: 'string',
+                                    },
+                                    temperature: {
+                                      format: 'float',
+                                      type: 'number',
+                                    },
+                                    temperature_unit: {
+                                      enum: ['celsius', 'fahrenheit'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'mode',
+                                    'temperature',
+                                    'temperature_unit',
+                                    'fan_mode',
+                                    'is_override_allowed',
+                                    'max_override_period_minutes',
                                   ],
                                   type: 'object',
                                 },
                                 occupied_preset_key: { type: 'string' },
+                                unoccupied_preset_key: { type: 'string' },
                               },
                               type: 'object',
                             },
@@ -52282,20 +52352,20 @@ export default {
                         properties: {
                           reservation_created: {
                             properties: {
-                              fallback_preset: {
+                              automated_occupied_preset: {
                                 properties: {
                                   fan_mode: {
                                     enum: ['on', 'auto', 'circulate'],
                                     type: 'string',
                                   },
                                   is_override_allowed: { type: 'boolean' },
+                                  max_override_period_minutes: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
                                   mode: {
                                     enum: ['heat', 'cool', 'auto'],
                                     type: 'string',
-                                  },
-                                  override_period_minutes: {
-                                    format: 'float',
-                                    type: 'number',
                                   },
                                   temperature: {
                                     format: 'float',
@@ -52312,11 +52382,46 @@ export default {
                                   'temperature_unit',
                                   'fan_mode',
                                   'is_override_allowed',
-                                  'override_period_minutes',
+                                  'max_override_period_minutes',
+                                ],
+                                type: 'object',
+                              },
+                              automated_unoccupied_preset: {
+                                properties: {
+                                  fan_mode: {
+                                    enum: ['on', 'auto', 'circulate'],
+                                    type: 'string',
+                                  },
+                                  is_override_allowed: { type: 'boolean' },
+                                  max_override_period_minutes: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  mode: {
+                                    enum: ['heat', 'cool', 'auto'],
+                                    type: 'string',
+                                  },
+                                  temperature: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  temperature_unit: {
+                                    enum: ['celsius', 'fahrenheit'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'mode',
+                                  'temperature',
+                                  'temperature_unit',
+                                  'fan_mode',
+                                  'is_override_allowed',
+                                  'max_override_period_minutes',
                                 ],
                                 type: 'object',
                               },
                               occupied_preset_key: { type: 'string' },
+                              unoccupied_preset_key: { type: 'string' },
                             },
                             type: 'object',
                           },
@@ -52492,20 +52597,20 @@ export default {
                         properties: {
                           reservation_created: {
                             properties: {
-                              fallback_preset: {
+                              automated_occupied_preset: {
                                 properties: {
                                   fan_mode: {
                                     enum: ['on', 'auto', 'circulate'],
                                     type: 'string',
                                   },
                                   is_override_allowed: { type: 'boolean' },
+                                  max_override_period_minutes: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
                                   mode: {
                                     enum: ['heat', 'cool', 'auto'],
                                     type: 'string',
-                                  },
-                                  override_period_minutes: {
-                                    format: 'float',
-                                    type: 'number',
                                   },
                                   temperature: {
                                     format: 'float',
@@ -52522,11 +52627,46 @@ export default {
                                   'temperature_unit',
                                   'fan_mode',
                                   'is_override_allowed',
-                                  'override_period_minutes',
+                                  'max_override_period_minutes',
+                                ],
+                                type: 'object',
+                              },
+                              automated_unoccupied_preset: {
+                                properties: {
+                                  fan_mode: {
+                                    enum: ['on', 'auto', 'circulate'],
+                                    type: 'string',
+                                  },
+                                  is_override_allowed: { type: 'boolean' },
+                                  max_override_period_minutes: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  mode: {
+                                    enum: ['heat', 'cool', 'auto'],
+                                    type: 'string',
+                                  },
+                                  temperature: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  temperature_unit: {
+                                    enum: ['celsius', 'fahrenheit'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'mode',
+                                  'temperature',
+                                  'temperature_unit',
+                                  'fan_mode',
+                                  'is_override_allowed',
+                                  'max_override_period_minutes',
                                 ],
                                 type: 'object',
                               },
                               occupied_preset_key: { type: 'string' },
+                              unoccupied_preset_key: { type: 'string' },
                             },
                             type: 'object',
                           },
