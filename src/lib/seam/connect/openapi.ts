@@ -29787,7 +29787,6 @@ export default {
                       required: [
                         'workspace_id',
                         'access_grant_id',
-                        'user_identity_id',
                         'location_ids',
                         'space_ids',
                         'requested_access_methods',
@@ -30021,7 +30020,6 @@ export default {
                       required: [
                         'workspace_id',
                         'access_grant_id',
-                        'user_identity_id',
                         'location_ids',
                         'space_ids',
                         'requested_access_methods',
@@ -30281,7 +30279,6 @@ export default {
                         required: [
                           'workspace_id',
                           'access_grant_id',
-                          'user_identity_id',
                           'location_ids',
                           'space_ids',
                           'requested_access_methods',
@@ -30535,7 +30532,6 @@ export default {
                         required: [
                           'workspace_id',
                           'access_grant_id',
-                          'user_identity_id',
                           'location_ids',
                           'space_ids',
                           'requested_access_methods',
