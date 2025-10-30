@@ -36739,6 +36739,8 @@ export default {
                     items: {
                       properties: {
                         hotek_metadata: {
+                          description:
+                            'Hotek-specific metadata associated with the entrance.',
                           properties: {
                             encoder_number: {
                               description:
