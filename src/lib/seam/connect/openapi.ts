@@ -36726,7 +36726,7 @@ export default {
     '/acs/systems/report_devices': {
       post: {
         description:
-          'Reports ACS system resources including encoders and entrances with their metadata.\n\nThis endpoint allows reporting of:\n- ACS encoders with removal status and encoder port metadata\n- ACS entrances with room number metadata',
+          'Reports ACS system device status including encoders and entrances.',
         operationId: 'acsSystemsReportDevicesPost',
         requestBody: {
           content: {
@@ -36835,7 +36835,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'systems'],
         'x-fern-sdk-method-name': 'report_devices',
         'x-response-key': null,
-        'x-title': 'Report ACS Resources',
+        'x-title': 'Report Devices',
       },
     },
     '/acs/users/add_to_access_group': {
