@@ -13,7 +13,6 @@ export type {
   ActionAttempt,
   Batch,
   Bridge,
-  BuildingBlockType,
   ClientSession,
   ClimatePreset,
   ConnectedAccount,

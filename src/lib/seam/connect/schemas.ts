@@ -10,7 +10,6 @@ export {
   batch,
   bridge,
   bridge_client_session,
-  building_block_type,
   client_session,
   common_failed_action_attempt,
   common_pending_action_attempt,
