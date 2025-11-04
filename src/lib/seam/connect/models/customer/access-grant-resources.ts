@@ -8,10 +8,12 @@ const base_access_grant_resource = z.object({
     .describe('Your name for this access grant resource.'),
   starts_at: z
     .string()
+    .datetime()
     .optional()
     .describe('Starting date and time for the access grant.'),
   ends_at: z
     .string()
+    .datetime()
     .optional()
     .describe('Ending date and time for the access grant.'),
   preferred_code: z

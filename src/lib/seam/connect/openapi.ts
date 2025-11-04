@@ -41486,6 +41486,7 @@ export default {
                                 ends_at: {
                                   description:
                                     'Ending date and time for the access grant.',
+                                  format: 'date-time',
                                   type: 'string',
                                 },
                                 facility_keys: {
@@ -41541,6 +41542,7 @@ export default {
                                 starts_at: {
                                   description:
                                     'Starting date and time for the access grant.',
+                                  format: 'date-time',
                                   type: 'string',
                                 },
                                 tenant_key: {
@@ -41595,6 +41597,7 @@ export default {
                                 ends_at: {
                                   description:
                                     'Ending date and time for the access grant.',
+                                  format: 'date-time',
                                   type: 'string',
                                 },
                                 facility_keys: {
@@ -41650,6 +41653,7 @@ export default {
                                 starts_at: {
                                   description:
                                     'Starting date and time for the access grant.',
+                                  format: 'date-time',
                                   type: 'string',
                                 },
                                 tenant_key: {
@@ -41868,6 +41872,7 @@ export default {
                                 ends_at: {
                                   description:
                                     'Ending date and time for the access grant.',
+                                  format: 'date-time',
                                   type: 'string',
                                 },
                                 facility_keys: {
@@ -41929,6 +41934,7 @@ export default {
                                 starts_at: {
                                   description:
                                     'Starting date and time for the access grant.',
+                                  format: 'date-time',
                                   type: 'string',
                                 },
                                 tenant_key: {
@@ -42698,6 +42704,7 @@ export default {
                         ends_at: {
                           description:
                             'Ending date and time for the access grant.',
+                          format: 'date-time',
                           type: 'string',
                         },
                         facility_keys: {
@@ -42753,6 +42760,7 @@ export default {
                         starts_at: {
                           description:
                             'Starting date and time for the access grant.',
+                          format: 'date-time',
                           type: 'string',
                         },
                         tenant_key: {
@@ -42807,6 +42815,7 @@ export default {
                         ends_at: {
                           description:
                             'Ending date and time for the access grant.',
+                          format: 'date-time',
                           type: 'string',
                         },
                         facility_keys: {
@@ -42862,6 +42871,7 @@ export default {
                         starts_at: {
                           description:
                             'Starting date and time for the access grant.',
+                          format: 'date-time',
                           type: 'string',
                         },
                         tenant_key: {
@@ -43076,6 +43086,7 @@ export default {
                         ends_at: {
                           description:
                             'Ending date and time for the access grant.',
+                          format: 'date-time',
                           type: 'string',
                         },
                         facility_keys: {
@@ -43137,6 +43148,7 @@ export default {
                         starts_at: {
                           description:
                             'Starting date and time for the access grant.',
+                          format: 'date-time',
                           type: 'string',
                         },
                         tenant_key: {
