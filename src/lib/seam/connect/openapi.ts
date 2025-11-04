@@ -19644,16 +19644,6 @@ export default {
         description:
           "Represents a Customer Portal. Customer Portal is a hosted, customizable interface for managing device access. It enables you to embed secure, pre-authenticated access flows into your product—either by sharing a link with users or embedding a view in an iframe.\n\nWith Customer Portal, you no longer need to build out frontend experiences for physical access, thermostats, and sensors. Instead, you can ship enterprise-grade access control experiences in a fraction of the time, while maintaining your product's branding and user experience.\n\nSeam hosts these flows, handling everything from account connection and device mapping to full-featured device control.",
         properties: {
-          building_block_type: {
-            description: 'Type of partner building block.',
-            enum: [
-              'connect_accounts',
-              'manage_devices',
-              'organize_spaces',
-              'console',
-            ],
-            type: 'string',
-          },
           created_at: {
             description: 'Date and time at which the magic link was created.',
             format: 'date-time',
@@ -19682,7 +19672,6 @@ export default {
         },
         required: [
           'url',
-          'building_block_type',
           'customer_key',
           'expires_at',
           'workspace_id',

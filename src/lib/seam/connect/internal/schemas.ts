@@ -28,7 +28,6 @@ export {
   bridge,
   bridge_client_session,
   bridge_connected_system,
-  building_block_type,
   building_resource,
   capabilities,
   climate_preset,
