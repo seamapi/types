@@ -44,6 +44,11 @@ const base_manage_feature = base_feature.extend({
 const base_organize_feature = base_feature
 
 const base_configure_feature = base_feature.extend({
+  customization_profile_id: z
+    .string()
+    .uuid()
+    .optional()
+    .describe('The ID of the customization profile to use for the portal.'),
   allow_access_automation_rule_customization: z
     .boolean()
     .default(false)

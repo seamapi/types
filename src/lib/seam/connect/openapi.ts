@@ -9408,6 +9408,15 @@ export default {
         description: 'A customization profile.',
         properties: {
           created_at: { format: 'date-time', type: 'string' },
+          customer_portal_theme: {
+            properties: {
+              primary_color: { type: 'string' },
+              primary_foreground_color: { type: 'string' },
+              secondary_color: { type: 'string' },
+              secondary_foreground_color: { type: 'string' },
+            },
+            type: 'object',
+          },
           customization_profile_id: { format: 'uuid', type: 'string' },
           logo_url: { format: 'uri', type: 'string' },
           name: { nullable: true, type: 'string' },
@@ -41231,6 +41240,12 @@ export default {
                                   'Indicates whether the customer can customize the Instant Key profile for their properties.',
                                 type: 'boolean',
                               },
+                              customization_profile_id: {
+                                description:
+                                  'The ID of the customization profile to use for the portal.',
+                                format: 'uuid',
+                                type: 'string',
+                              },
                               exclude: {
                                 default: false,
                                 description:
@@ -53892,6 +53907,12 @@ export default {
                                     'Indicates whether the customer can customize the Instant Key profile for their properties.',
                                   type: 'boolean',
                                 },
+                                customization_profile_id: {
+                                  description:
+                                    'The ID of the customization profile to use for the portal.',
+                                  format: 'uuid',
+                                  type: 'string',
+                                },
                                 exclude: {
                                   default: false,
                                   description:
@@ -54197,6 +54218,12 @@ export default {
                                   description:
                                     'Indicates whether the customer can customize the Instant Key profile for their properties.',
                                   type: 'boolean',
+                                },
+                                customization_profile_id: {
+                                  description:
+                                    'The ID of the customization profile to use for the portal.',
+                                  format: 'uuid',
+                                  type: 'string',
                                 },
                                 exclude: {
                                   default: false,
@@ -65135,11 +65162,19 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  customer_portal_theme: {
+                    properties: {
+                      primary_color: { type: 'string' },
+                      primary_foreground_color: { type: 'string' },
+                      secondary_color: { type: 'string' },
+                      secondary_foreground_color: { type: 'string' },
+                    },
+                    type: 'object',
+                  },
                   name: { default: null, nullable: true, type: 'string' },
                   primary_color: { type: 'string' },
                   secondary_color: { type: 'string' },
                 },
-                required: ['primary_color', 'secondary_color'],
                 type: 'object',
               },
             },
@@ -65405,6 +65440,16 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  customer_portal_theme: {
+                    nullable: true,
+                    properties: {
+                      primary_color: { type: 'string' },
+                      primary_foreground_color: { type: 'string' },
+                      secondary_color: { type: 'string' },
+                      secondary_foreground_color: { type: 'string' },
+                    },
+                    type: 'object',
+                  },
                   customization_profile_id: { format: 'uuid', type: 'string' },
                   name: { nullable: true, type: 'string' },
                   primary_color: { type: 'string' },
@@ -65454,6 +65499,16 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  customer_portal_theme: {
+                    nullable: true,
+                    properties: {
+                      primary_color: { type: 'string' },
+                      primary_foreground_color: { type: 'string' },
+                      secondary_color: { type: 'string' },
+                      secondary_foreground_color: { type: 'string' },
+                    },
+                    type: 'object',
+                  },
                   customization_profile_id: { format: 'uuid', type: 'string' },
                   name: { nullable: true, type: 'string' },
                   primary_color: { type: 'string' },
