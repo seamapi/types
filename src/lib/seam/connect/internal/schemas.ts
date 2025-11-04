@@ -39,6 +39,7 @@ export {
   connected_account,
   custom_metadata_input,
   customer_data,
+  customer_portal_theme,
   device_capability_flags,
   device_metadata,
   device_provider,
