@@ -40947,6 +40947,53 @@ export default {
         'x-title': 'List Connected Accounts',
       },
     },
+    '/connected_accounts/simulate/disconnect': {
+      post: {
+        description:
+          'Simulates a connected account becoming disconnected from Seam. Only applicable for [sandbox workspaces](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).',
+        operationId: 'connectedAccountsSimulateDisconnectPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connected_account_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['connected_account_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/connected_accounts/simulate/disconnect',
+        tags: ['/connected_accounts'],
+        'x-fern-sdk-group-name': ['connected_accounts', 'simulate'],
+        'x-fern-sdk-method-name': 'disconnect',
+        'x-response-key': null,
+        'x-title': 'Simulate Connected Account Disconnection',
+      },
+    },
     '/connected_accounts/sync': {
       post: {
         description:
