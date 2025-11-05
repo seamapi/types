@@ -56515,6 +56515,56 @@ export default {
         'x-undocumented': 'Mobile SDK only.',
       },
     },
+    '/seam/mobile_sdk/v1/report_salto_space_audit_trail': {
+      post: {
+        description: 'Reports audit trail data from Salto Space mobile SDK.',
+        operationId: 'seamMobileSdkV1ReportSaltoSpaceAuditTrailPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_system_id: { format: 'uuid', type: 'string' },
+                  salto_space_metadata: {
+                    properties: {
+                      justin_mobile_sdk_audit_trail_data: { type: 'string' },
+                    },
+                    required: ['justin_mobile_sdk_audit_trail_data'],
+                    type: 'object',
+                  },
+                },
+                required: ['acs_system_id', 'salto_space_metadata'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session: [] }],
+        summary: '/seam/mobile_sdk/v1/report_salto_space_audit_trail',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'mobile_sdk', 'v1'],
+        'x-fern-sdk-method-name': 'report_salto_space_audit_trail',
+        'x-response-key': null,
+        'x-title': 'Report Salto Space Audit Trail',
+        'x-undocumented': 'Mobile SDK only.',
+      },
+    },
     '/seam/partner/v1/building_blocks/spaces/auto_map': {
       get: {
         description:
