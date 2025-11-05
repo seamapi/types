@@ -52786,10 +52786,154 @@ export default {
         'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
+    '/seam/customer/v1/connectors/connector_types': {
+      get: {
+        description:
+          'Lists all available connector types and their required instance configuration schemas.',
+        operationId: 'seamCustomerV1ConnectorsConnectorTypesGet',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    connector_types: {
+                      items: {
+                        properties: {
+                          connector_type: { type: 'string' },
+                          description: { type: 'string' },
+                          display_name: { type: 'string' },
+                          instance_config_schema: {
+                            $ref: '#/components/schemas/access_code',
+                          },
+                          static_config: {
+                            properties: {
+                              base_api_url: { type: 'string' },
+                              polling_enabled: { type: 'boolean' },
+                              polling_frequency_minutes: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                            },
+                            required: [
+                              'base_api_url',
+                              'polling_enabled',
+                              'polling_frequency_minutes',
+                            ],
+                            type: 'object',
+                          },
+                        },
+                        required: [
+                          'connector_type',
+                          'display_name',
+                          'static_config',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['connector_types', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { client_session: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/seam/customer/v1/connectors/connector_types',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'connectors'],
+        'x-fern-sdk-method-name': 'connector_types',
+        'x-fern-sdk-return-value': 'connector_types',
+        'x-response-key': 'connector_types',
+        'x-title': 'List Connector Types',
+        'x-undocumented': 'Internal endpoint for Console.',
+      },
+      post: {
+        description:
+          'Lists all available connector types and their required instance configuration schemas.',
+        operationId: 'seamCustomerV1ConnectorsConnectorTypesPost',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    connector_types: {
+                      items: {
+                        properties: {
+                          connector_type: { type: 'string' },
+                          description: { type: 'string' },
+                          display_name: { type: 'string' },
+                          instance_config_schema: {
+                            $ref: '#/components/schemas/access_code',
+                          },
+                          static_config: {
+                            properties: {
+                              base_api_url: { type: 'string' },
+                              polling_enabled: { type: 'boolean' },
+                              polling_frequency_minutes: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                            },
+                            required: [
+                              'base_api_url',
+                              'polling_enabled',
+                              'polling_frequency_minutes',
+                            ],
+                            type: 'object',
+                          },
+                        },
+                        required: [
+                          'connector_type',
+                          'display_name',
+                          'static_config',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['connector_types', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { client_session: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/seam/customer/v1/connectors/connector_types',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'connectors'],
+        'x-fern-sdk-method-name': 'connector_types',
+        'x-fern-sdk-return-value': 'connector_types',
+        'x-response-key': 'connector_types',
+        'x-title': 'List Connector Types',
+        'x-undocumented': 'Internal endpoint for Console.',
+      },
+    },
     '/seam/customer/v1/connectors/create': {
       post: {
         description:
-          'Creates a new connector for a customer in a workspace. The connector will be activated and start syncing data from the external API.\nIf a connector already exists with the same unique_provider_resource_key, it will be updated instead of creating a new one.',
+          'Creates a new connector for a customer in a workspace. The connector will be activated and start syncing data from the external API.\nIf a connector already exists for the same customer, it will be updated instead of creating a new one.',
         operationId: 'seamCustomerV1ConnectorsCreatePost',
         requestBody: {
           content: {
@@ -52797,32 +52941,14 @@ export default {
               schema: {
                 properties: {
                   config: {
+                    additionalProperties: {},
                     description:
                       'Instance-specific configuration for the connector',
-                    oneOf: [
-                      {
-                        properties: {
-                          access_token: { minLength: 1, type: 'string' },
-                          client: {
-                            default: 'seam',
-                            minLength: 1,
-                            type: 'string',
-                          },
-                          client_token: { minLength: 1, type: 'string' },
-                          enterprise_id: { format: 'uuid', type: 'string' },
-                          enterprise_ids: {
-                            items: { format: 'uuid', type: 'string' },
-                            type: 'array',
-                          },
-                        },
-                        type: 'object',
-                      },
-                      { properties: {}, type: 'object' },
-                    ],
+                    type: 'object',
                   },
                   connector_type: {
                     description: 'Type of connector to create',
-                    enum: ['mews', 'mock'],
+                    enum: ['mock', 'mews', 'rms'],
                     type: 'string',
                   },
                   customer_key: {
@@ -53176,6 +53302,7 @@ export default {
                     description:
                       'Instance-specific configuration for the connector',
                     oneOf: [
+                      { properties: {}, type: 'object' },
                       {
                         properties: {
                           access_token: { minLength: 1, type: 'string' },
@@ -53185,15 +53312,39 @@ export default {
                             type: 'string',
                           },
                           client_token: { minLength: 1, type: 'string' },
-                          enterprise_id: { format: 'uuid', type: 'string' },
+                          enterprise_id: { type: 'string' },
                           enterprise_ids: {
-                            items: { format: 'uuid', type: 'string' },
+                            items: { type: 'string' },
                             type: 'array',
                           },
                         },
                         type: 'object',
                       },
-                      { properties: {}, type: 'object' },
+                      {
+                        properties: {
+                          client_id: {
+                            description: 'RMS client ID for authentication',
+                            minLength: 1,
+                            type: 'string',
+                          },
+                          client_password: {
+                            description:
+                              'RMS client password for authentication',
+                            minLength: 1,
+                            type: 'string',
+                          },
+                          property_id: {
+                            description:
+                              'Optional property ID for single-property connectors',
+                            oneOf: [
+                              { type: 'string' },
+                              { format: 'float', type: 'number' },
+                            ],
+                          },
+                        },
+                        required: ['client_id', 'client_password'],
+                        type: 'object',
+                      },
                     ],
                   },
                   connector_id: {
