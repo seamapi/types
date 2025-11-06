@@ -39833,7 +39833,6 @@ export default {
                     type: 'array',
                   },
                   automatically_manage_new_devices: {
-                    default: true,
                     description:
                       'Indicates whether newly-added devices should appear as [managed devices](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices). See also: [Customize the Behavior Settings of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-behavior-settings-of-your-connect-webviews).',
                     type: 'boolean',
@@ -41063,6 +41062,7 @@ export default {
                       features: {
                         configure: {
                           allow_access_automation_rule_customization: false,
+                          allow_automatic_management_of_new_devices: false,
                           allow_instant_key_customization: false,
                           exclude: false,
                         },
@@ -41091,6 +41091,12 @@ export default {
                                 default: false,
                                 description:
                                   'Indicates whether the customer can customize the access automation rules for their properties.',
+                                type: 'boolean',
+                              },
+                              allow_automatic_management_of_new_devices: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can automatically manage new devices for their properties.',
                                 type: 'boolean',
                               },
                               allow_instant_key_customization: {
@@ -45388,6 +45394,7 @@ export default {
           { api_key: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/devices/unmanaged/list',
         tags: ['/devices'],
@@ -45764,6 +45771,7 @@ export default {
           { api_key: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/devices/unmanaged/list',
         tags: ['/devices'],
@@ -53923,6 +53931,12 @@ export default {
                                     'Indicates whether the customer can customize the access automation rules for their properties.',
                                   type: 'boolean',
                                 },
+                                allow_automatic_management_of_new_devices: {
+                                  default: false,
+                                  description:
+                                    'Indicates whether the customer can automatically manage new devices for their properties.',
+                                  type: 'boolean',
+                                },
                                 allow_instant_key_customization: {
                                   default: false,
                                   description:
@@ -54233,6 +54247,12 @@ export default {
                                   default: false,
                                   description:
                                     'Indicates whether the customer can customize the access automation rules for their properties.',
+                                  type: 'boolean',
+                                },
+                                allow_automatic_management_of_new_devices: {
+                                  default: false,
+                                  description:
+                                    'Indicates whether the customer can automatically manage new devices for their properties.',
                                   type: 'boolean',
                                 },
                                 allow_instant_key_customization: {
