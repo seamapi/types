@@ -49,6 +49,12 @@ const base_configure_feature = base_feature.extend({
     .uuid()
     .optional()
     .describe('The ID of the customization profile to use for the portal.'),
+  allow_automatic_management_of_new_devices: z
+    .boolean()
+    .default(false)
+    .describe(
+      'Indicates whether the customer can automatically manage new devices for their properties.',
+    ),
   allow_access_automation_rule_customization: z
     .boolean()
     .default(false)
@@ -117,6 +123,7 @@ export const portal_configuration = portal_configuration_base
         exclude: false,
         allow_instant_key_customization: false, // default
         allow_access_automation_rule_customization: false, // default
+        allow_automatic_management_of_new_devices: false, // default
       },
     },
     is_embedded: false,
