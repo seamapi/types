@@ -29075,7 +29075,7 @@ export default {
                   'acs_entrances',
                   'connected_accounts',
                   'acs_systems',
-                  'user_identity',
+                  'user_identities',
                   'acs_access_groups',
                 ],
                 type: 'string',
@@ -29095,7 +29095,7 @@ export default {
                   'acs_entrances',
                   'connected_accounts',
                   'acs_systems',
-                  'user_identity',
+                  'user_identities',
                   'acs_access_groups',
                 ],
                 type: 'string',
@@ -29111,6 +29111,7 @@ export default {
                 schema: {
                   properties: {
                     batch: {
+                      description: 'A batch of workspace resources.',
                       properties: {
                         acs_access_groups: {
                           items: {
@@ -29126,7 +29127,6 @@ export default {
                           items: { $ref: '#/components/schemas/acs_system' },
                           type: 'array',
                         },
-                        batch_type: { enum: ['access_grants'], type: 'string' },
                         connected_accounts: {
                           items: {
                             $ref: '#/components/schemas/connected_account',
@@ -29146,7 +29146,6 @@ export default {
                           type: 'array',
                         },
                       },
-                      required: ['batch_type'],
                       type: 'object',
                     },
                     ok: { type: 'boolean' },
@@ -29168,7 +29167,15 @@ export default {
         ],
         summary: '/access_grants/get_related',
         tags: [],
-        'x-batch-type': 'access_grants',
+        'x-batch-keys': [
+          'spaces',
+          'devices',
+          'acs_entrances',
+          'connected_accounts',
+          'acs_systems',
+          'user_identities',
+          'acs_access_groups',
+        ],
         'x-draft': 'Early access.',
         'x-fern-sdk-group-name': ['access_grants'],
         'x-fern-sdk-method-name': 'get_related',
@@ -29199,7 +29206,7 @@ export default {
                         'acs_entrances',
                         'connected_accounts',
                         'acs_systems',
-                        'user_identity',
+                        'user_identities',
                         'acs_access_groups',
                       ],
                       type: 'string',
@@ -29214,7 +29221,7 @@ export default {
                         'acs_entrances',
                         'connected_accounts',
                         'acs_systems',
-                        'user_identity',
+                        'user_identities',
                         'acs_access_groups',
                       ],
                       type: 'string',
@@ -29235,6 +29242,7 @@ export default {
                 schema: {
                   properties: {
                     batch: {
+                      description: 'A batch of workspace resources.',
                       properties: {
                         acs_access_groups: {
                           items: {
@@ -29250,7 +29258,6 @@ export default {
                           items: { $ref: '#/components/schemas/acs_system' },
                           type: 'array',
                         },
-                        batch_type: { enum: ['access_grants'], type: 'string' },
                         connected_accounts: {
                           items: {
                             $ref: '#/components/schemas/connected_account',
@@ -29270,7 +29277,6 @@ export default {
                           type: 'array',
                         },
                       },
-                      required: ['batch_type'],
                       type: 'object',
                     },
                     ok: { type: 'boolean' },
@@ -29292,7 +29298,15 @@ export default {
         ],
         summary: '/access_grants/get_related',
         tags: [],
-        'x-batch-type': 'access_grants',
+        'x-batch-keys': [
+          'spaces',
+          'devices',
+          'acs_entrances',
+          'connected_accounts',
+          'acs_systems',
+          'user_identities',
+          'acs_access_groups',
+        ],
         'x-draft': 'Early access.',
         'x-fern-sdk-group-name': ['access_grants'],
         'x-fern-sdk-method-name': 'get_related',
@@ -31175,10 +31189,6 @@ export default {
                     batch: {
                       description: 'A batch of workspace resources.',
                       properties: {
-                        access_codes: {
-                          items: { $ref: '#/components/schemas/access_code' },
-                          type: 'array',
-                        },
                         access_grants: {
                           items: { $ref: '#/components/schemas/access_grant' },
                           type: 'array',
@@ -31187,48 +31197,15 @@ export default {
                           items: { $ref: '#/components/schemas/access_method' },
                           type: 'array',
                         },
-                        acs_access_groups: {
-                          items: {
-                            $ref: '#/components/schemas/acs_access_group',
-                          },
-                          type: 'array',
-                        },
                         acs_credentials: {
                           items: {
                             $ref: '#/components/schemas/acs_credential',
                           },
                           type: 'array',
                         },
-                        acs_encoders: {
-                          items: { $ref: '#/components/schemas/acs_encoder' },
-                          type: 'array',
-                        },
                         acs_entrances: {
                           items: { $ref: '#/components/schemas/acs_entrance' },
                           type: 'array',
-                        },
-                        acs_systems: {
-                          items: { $ref: '#/components/schemas/acs_system' },
-                          type: 'array',
-                        },
-                        acs_users: {
-                          items: { $ref: '#/components/schemas/acs_user' },
-                          type: 'array',
-                        },
-                        action_attempts: {
-                          items: {
-                            $ref: '#/components/schemas/action_attempt',
-                          },
-                          type: 'array',
-                        },
-                        batch_type: {
-                          enum: [
-                            'workspaces',
-                            'spaces',
-                            'access_grants',
-                            'access_methods',
-                          ],
-                          type: 'string',
                         },
                         client_sessions: {
                           items: {
@@ -31236,92 +31213,19 @@ export default {
                           },
                           type: 'array',
                         },
-                        connect_webviews: {
-                          items: {
-                            $ref: '#/components/schemas/connect_webview',
-                          },
-                          type: 'array',
-                        },
-                        customization_profiles: {
-                          items: {
-                            $ref: '#/components/schemas/customization_profile',
-                          },
-                          type: 'array',
-                        },
                         devices: {
                           items: { $ref: '#/components/schemas/device' },
-                          type: 'array',
-                        },
-                        events: {
-                          items: { $ref: '#/components/schemas/event' },
                           type: 'array',
                         },
                         instant_keys: {
                           items: { $ref: '#/components/schemas/instant_key' },
                           type: 'array',
                         },
-                        noise_thresholds: {
-                          items: {
-                            $ref: '#/components/schemas/noise_threshold',
-                          },
-                          type: 'array',
-                        },
                         spaces: {
                           items: { $ref: '#/components/schemas/space' },
                           type: 'array',
                         },
-                        thermostat_daily_programs: {
-                          items: {
-                            $ref: '#/components/schemas/thermostat_daily_program',
-                          },
-                          type: 'array',
-                        },
-                        thermostat_schedules: {
-                          items: {
-                            $ref: '#/components/schemas/thermostat_schedule',
-                          },
-                          type: 'array',
-                        },
-                        unmanaged_access_codes: {
-                          items: {
-                            $ref: '#/components/schemas/unmanaged_access_code',
-                          },
-                          type: 'array',
-                        },
-                        unmanaged_acs_access_groups: {
-                          items: {
-                            $ref: '#/components/schemas/unmanaged_acs_access_group',
-                          },
-                          type: 'array',
-                        },
-                        unmanaged_acs_credentials: {
-                          items: {
-                            $ref: '#/components/schemas/unmanaged_acs_credential',
-                          },
-                          type: 'array',
-                        },
-                        unmanaged_acs_users: {
-                          items: {
-                            $ref: '#/components/schemas/unmanaged_acs_user',
-                          },
-                          type: 'array',
-                        },
-                        unmanaged_devices: {
-                          items: {
-                            $ref: '#/components/schemas/unmanaged_device',
-                          },
-                          type: 'array',
-                        },
-                        user_identities: {
-                          items: { $ref: '#/components/schemas/user_identity' },
-                          type: 'array',
-                        },
-                        workspaces: {
-                          items: { $ref: '#/components/schemas/workspace' },
-                          type: 'array',
-                        },
                       },
-                      required: ['batch_type'],
                       type: 'object',
                     },
                     ok: { type: 'boolean' },
@@ -31344,7 +31248,16 @@ export default {
         ],
         summary: '/access_methods/get_related',
         tags: [],
-        'x-batch-type': 'access_methods',
+        'x-batch-keys': [
+          'spaces',
+          'devices',
+          'acs_entrances',
+          'access_grants',
+          'access_methods',
+          'instant_keys',
+          'client_sessions',
+          'acs_credentials',
+        ],
         'x-draft': 'Early access.',
         'x-fern-sdk-group-name': ['access_methods'],
         'x-fern-sdk-method-name': 'get_related',
@@ -31415,10 +31328,6 @@ export default {
                     batch: {
                       description: 'A batch of workspace resources.',
                       properties: {
-                        access_codes: {
-                          items: { $ref: '#/components/schemas/access_code' },
-                          type: 'array',
-                        },
                         access_grants: {
                           items: { $ref: '#/components/schemas/access_grant' },
                           type: 'array',
@@ -31427,48 +31336,15 @@ export default {
                           items: { $ref: '#/components/schemas/access_method' },
                           type: 'array',
                         },
-                        acs_access_groups: {
-                          items: {
-                            $ref: '#/components/schemas/acs_access_group',
-                          },
-                          type: 'array',
-                        },
                         acs_credentials: {
                           items: {
                             $ref: '#/components/schemas/acs_credential',
                           },
                           type: 'array',
                         },
-                        acs_encoders: {
-                          items: { $ref: '#/components/schemas/acs_encoder' },
-                          type: 'array',
-                        },
                         acs_entrances: {
                           items: { $ref: '#/components/schemas/acs_entrance' },
                           type: 'array',
-                        },
-                        acs_systems: {
-                          items: { $ref: '#/components/schemas/acs_system' },
-                          type: 'array',
-                        },
-                        acs_users: {
-                          items: { $ref: '#/components/schemas/acs_user' },
-                          type: 'array',
-                        },
-                        action_attempts: {
-                          items: {
-                            $ref: '#/components/schemas/action_attempt',
-                          },
-                          type: 'array',
-                        },
-                        batch_type: {
-                          enum: [
-                            'workspaces',
-                            'spaces',
-                            'access_grants',
-                            'access_methods',
-                          ],
-                          type: 'string',
                         },
                         client_sessions: {
                           items: {
@@ -31476,92 +31352,19 @@ export default {
                           },
                           type: 'array',
                         },
-                        connect_webviews: {
-                          items: {
-                            $ref: '#/components/schemas/connect_webview',
-                          },
-                          type: 'array',
-                        },
-                        customization_profiles: {
-                          items: {
-                            $ref: '#/components/schemas/customization_profile',
-                          },
-                          type: 'array',
-                        },
                         devices: {
                           items: { $ref: '#/components/schemas/device' },
-                          type: 'array',
-                        },
-                        events: {
-                          items: { $ref: '#/components/schemas/event' },
                           type: 'array',
                         },
                         instant_keys: {
                           items: { $ref: '#/components/schemas/instant_key' },
                           type: 'array',
                         },
-                        noise_thresholds: {
-                          items: {
-                            $ref: '#/components/schemas/noise_threshold',
-                          },
-                          type: 'array',
-                        },
                         spaces: {
                           items: { $ref: '#/components/schemas/space' },
                           type: 'array',
                         },
-                        thermostat_daily_programs: {
-                          items: {
-                            $ref: '#/components/schemas/thermostat_daily_program',
-                          },
-                          type: 'array',
-                        },
-                        thermostat_schedules: {
-                          items: {
-                            $ref: '#/components/schemas/thermostat_schedule',
-                          },
-                          type: 'array',
-                        },
-                        unmanaged_access_codes: {
-                          items: {
-                            $ref: '#/components/schemas/unmanaged_access_code',
-                          },
-                          type: 'array',
-                        },
-                        unmanaged_acs_access_groups: {
-                          items: {
-                            $ref: '#/components/schemas/unmanaged_acs_access_group',
-                          },
-                          type: 'array',
-                        },
-                        unmanaged_acs_credentials: {
-                          items: {
-                            $ref: '#/components/schemas/unmanaged_acs_credential',
-                          },
-                          type: 'array',
-                        },
-                        unmanaged_acs_users: {
-                          items: {
-                            $ref: '#/components/schemas/unmanaged_acs_user',
-                          },
-                          type: 'array',
-                        },
-                        unmanaged_devices: {
-                          items: {
-                            $ref: '#/components/schemas/unmanaged_device',
-                          },
-                          type: 'array',
-                        },
-                        user_identities: {
-                          items: { $ref: '#/components/schemas/user_identity' },
-                          type: 'array',
-                        },
-                        workspaces: {
-                          items: { $ref: '#/components/schemas/workspace' },
-                          type: 'array',
-                        },
                       },
-                      required: ['batch_type'],
                       type: 'object',
                     },
                     ok: { type: 'boolean' },
@@ -31584,7 +31387,16 @@ export default {
         ],
         summary: '/access_methods/get_related',
         tags: [],
-        'x-batch-type': 'access_methods',
+        'x-batch-keys': [
+          'spaces',
+          'devices',
+          'acs_entrances',
+          'access_grants',
+          'access_methods',
+          'instant_keys',
+          'client_sessions',
+          'acs_credentials',
+        ],
         'x-draft': 'Early access.',
         'x-fern-sdk-group-name': ['access_methods'],
         'x-fern-sdk-method-name': 'get_related',
@@ -57348,7 +57160,7 @@ export default {
                 schema: {
                   properties: {
                     batch: {
-                      description: 'ID of the affected access system user.',
+                      description: 'A batch of workspace resources.',
                       properties: {
                         acs_entrances: {
                           items: { $ref: '#/components/schemas/acs_entrance' },
@@ -57358,7 +57170,6 @@ export default {
                           items: { $ref: '#/components/schemas/acs_system' },
                           type: 'array',
                         },
-                        batch_type: { enum: ['spaces'], type: 'string' },
                         connected_accounts: {
                           items: {
                             $ref: '#/components/schemas/connected_account',
@@ -57374,7 +57185,6 @@ export default {
                           type: 'array',
                         },
                       },
-                      required: ['batch_type'],
                       type: 'object',
                     },
                     ok: { type: 'boolean' },
@@ -57397,7 +57207,13 @@ export default {
         ],
         summary: '/spaces/get_related',
         tags: [],
-        'x-batch-type': 'spaces',
+        'x-batch-keys': [
+          'spaces',
+          'devices',
+          'acs_entrances',
+          'connected_accounts',
+          'acs_systems',
+        ],
         'x-draft': 'Early access.',
         'x-fern-sdk-group-name': ['spaces'],
         'x-fern-sdk-method-name': 'get_related',
@@ -57464,7 +57280,7 @@ export default {
                 schema: {
                   properties: {
                     batch: {
-                      description: 'ID of the affected access system user.',
+                      description: 'A batch of workspace resources.',
                       properties: {
                         acs_entrances: {
                           items: { $ref: '#/components/schemas/acs_entrance' },
@@ -57474,7 +57290,6 @@ export default {
                           items: { $ref: '#/components/schemas/acs_system' },
                           type: 'array',
                         },
-                        batch_type: { enum: ['spaces'], type: 'string' },
                         connected_accounts: {
                           items: {
                             $ref: '#/components/schemas/connected_account',
@@ -57490,7 +57305,6 @@ export default {
                           type: 'array',
                         },
                       },
-                      required: ['batch_type'],
                       type: 'object',
                     },
                     ok: { type: 'boolean' },
@@ -57513,7 +57327,13 @@ export default {
         ],
         summary: '/spaces/get_related',
         tags: [],
-        'x-batch-type': 'spaces',
+        'x-batch-keys': [
+          'spaces',
+          'devices',
+          'acs_entrances',
+          'connected_accounts',
+          'acs_systems',
+        ],
         'x-draft': 'Early access.',
         'x-fern-sdk-group-name': ['spaces'],
         'x-fern-sdk-method-name': 'get_related',
@@ -65914,15 +65734,6 @@ export default {
                           },
                           type: 'array',
                         },
-                        batch_type: {
-                          enum: [
-                            'workspaces',
-                            'spaces',
-                            'access_grants',
-                            'access_methods',
-                          ],
-                          type: 'string',
-                        },
                         client_sessions: {
                           items: {
                             $ref: '#/components/schemas/client_session',
@@ -65932,6 +65743,12 @@ export default {
                         connect_webviews: {
                           items: {
                             $ref: '#/components/schemas/connect_webview',
+                          },
+                          type: 'array',
+                        },
+                        connected_accounts: {
+                          items: {
+                            $ref: '#/components/schemas/connected_account',
                           },
                           type: 'array',
                         },
@@ -66014,7 +65831,6 @@ export default {
                           type: 'array',
                         },
                       },
-                      required: ['batch_type'],
                       type: 'object',
                     },
                     ok: { type: 'boolean' },
@@ -66036,7 +65852,36 @@ export default {
         ],
         summary: '/workspaces/find_anything',
         tags: ['/workspaces'],
-        'x-batch-type': 'workspaces',
+        'x-batch-keys': [
+          'user_identities',
+          'workspaces',
+          'devices',
+          'acs_entrances',
+          'acs_systems',
+          'acs_users',
+          'acs_access_groups',
+          'acs_encoders',
+          'action_attempts',
+          'client_sessions',
+          'unmanaged_acs_users',
+          'unmanaged_acs_access_groups',
+          'unmanaged_devices',
+          'connect_webviews',
+          'spaces',
+          'access_methods',
+          'access_grants',
+          'connected_accounts',
+          'events',
+          'instant_keys',
+          'acs_credentials',
+          'unmanaged_acs_credentials',
+          'unmanaged_access_codes',
+          'access_codes',
+          'thermostat_daily_programs',
+          'thermostat_schedules',
+          'noise_thresholds',
+          'customization_profiles',
+        ],
         'x-fern-sdk-group-name': ['workspaces'],
         'x-fern-sdk-method-name': 'find_anything',
         'x-fern-sdk-return-value': 'batch',
@@ -66113,15 +65958,6 @@ export default {
                           },
                           type: 'array',
                         },
-                        batch_type: {
-                          enum: [
-                            'workspaces',
-                            'spaces',
-                            'access_grants',
-                            'access_methods',
-                          ],
-                          type: 'string',
-                        },
                         client_sessions: {
                           items: {
                             $ref: '#/components/schemas/client_session',
@@ -66131,6 +65967,12 @@ export default {
                         connect_webviews: {
                           items: {
                             $ref: '#/components/schemas/connect_webview',
+                          },
+                          type: 'array',
+                        },
+                        connected_accounts: {
+                          items: {
+                            $ref: '#/components/schemas/connected_account',
                           },
                           type: 'array',
                         },
@@ -66213,7 +66055,6 @@ export default {
                           type: 'array',
                         },
                       },
-                      required: ['batch_type'],
                       type: 'object',
                     },
                     ok: { type: 'boolean' },
@@ -66235,7 +66076,36 @@ export default {
         ],
         summary: '/workspaces/find_anything',
         tags: ['/workspaces'],
-        'x-batch-type': 'workspaces',
+        'x-batch-keys': [
+          'user_identities',
+          'workspaces',
+          'devices',
+          'acs_entrances',
+          'acs_systems',
+          'acs_users',
+          'acs_access_groups',
+          'acs_encoders',
+          'action_attempts',
+          'client_sessions',
+          'unmanaged_acs_users',
+          'unmanaged_acs_access_groups',
+          'unmanaged_devices',
+          'connect_webviews',
+          'spaces',
+          'access_methods',
+          'access_grants',
+          'connected_accounts',
+          'events',
+          'instant_keys',
+          'acs_credentials',
+          'unmanaged_acs_credentials',
+          'unmanaged_access_codes',
+          'access_codes',
+          'thermostat_daily_programs',
+          'thermostat_schedules',
+          'noise_thresholds',
+          'customization_profiles',
+        ],
         'x-fern-sdk-group-name': ['workspaces'],
         'x-fern-sdk-method-name': 'find_anything',
         'x-fern-sdk-return-value': 'batch',
