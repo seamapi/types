@@ -32,85 +32,13 @@ import {
 import { user_identity } from './user-identities/index.js'
 import { workspace } from './workspaces/index.js'
 
-export const spaces_batch = z
-  .object({
-    batch_type: z.literal('spaces'),
-    spaces: space.array().optional(),
-    devices: device.array().optional(),
-    acs_entrances: acs_entrance.array().optional(),
-    connected_accounts: connected_account.array().optional(),
-    acs_systems: acs_system.array().optional(),
-  })
-  .describe('ID of the affected access system user.')
-
-export const access_grants_batch = z.object({
-  batch_type: z.literal('access_grants'),
-  spaces: space.array().optional(),
-  devices: device.array().optional(),
-  acs_entrances: acs_entrance.array().optional(),
-  user_identities: user_identity.array().optional(),
-  connected_accounts: connected_account.array().optional(),
-  acs_systems: acs_system.array().optional(),
-  acs_access_groups: acs_access_group.array().optional(),
-})
-
-export const access_methods_batch = z.object({
-  batch_type: z.literal('access_methods'),
-  spaces: space.array().optional(),
-  devices: device.array().optional(),
-  acs_entrances: acs_entrance.array().optional(),
-  access_grants: access_grant.array().optional(),
-  access_methods: access_method.array().optional(),
-  instant_keys: instant_key.array().optional(),
-  client_sessions: client_session.array().optional(),
-})
-
-export const workspaces_batch = z
-  .object({
-    batch_type: z.literal('workspaces'),
-    user_identities: user_identity.array().optional(),
-    workspaces: workspace.array().optional(),
-    spaces: space.array().optional(),
-    devices: device.array().optional(),
-    acs_entrances: acs_entrance.array().optional(),
-    acs_systems: acs_system.array().optional(),
-    acs_users: acs_user.array().optional(),
-    acs_access_groups: acs_access_group.array().optional(),
-    acs_encoders: acs_encoder.array().optional(),
-    acs_credentials: acs_credential.array().optional(),
-    unmanaged_acs_credentials: unmanaged_acs_credential.array().optional(),
-    action_attempts: action_attempt.array().optional(),
-    client_sessions: client_session.array().optional(),
-    unmanaged_acs_users: unmanaged_acs_user.array().optional(),
-    unmanaged_acs_access_groups: unmanaged_acs_access_group.array().optional(),
-    unmanaged_devices: unmanaged_device.array().optional(),
-    connected_accounts: connected_account.array().optional(),
-    connect_webviews: connect_webview.array().optional(),
-    access_methods: access_method.array().optional(),
-    access_grants: access_grant.array().optional(),
-    events: seam_event.array().optional(),
-    instant_keys: instant_key.array().optional(),
-    access_codes: access_code.array().optional(),
-    unmanaged_access_codes: unmanaged_access_code.array().optional(),
-    thermostat_daily_programs: thermostat_daily_program.array().optional(),
-    thermostat_schedules: thermostat_schedule.array().optional(),
-    noise_thresholds: noise_threshold.array().optional(),
-    customization_profiles: customization_profile.array().optional(),
-  })
-  .describe('A batch of workspace resources.')
-
 export const batch = z
   .object({
-    batch_type: z.enum([
-      'workspaces',
-      'spaces',
-      'access_grants',
-      'access_methods',
-    ]),
     user_identities: user_identity.array().optional(),
     workspaces: workspace.array().optional(),
     spaces: space.array().optional(),
     devices: device.array().optional(),
+    connected_accounts: connected_account.array().optional(),
     acs_entrances: acs_entrance.array().optional(),
     acs_systems: acs_system.array().optional(),
     acs_users: acs_user.array().optional(),
@@ -136,20 +64,5 @@ export const batch = z
     customization_profiles: customization_profile.array().optional(),
   })
   .describe('A batch of workspace resources.')
-
-// TODO: Resolve type issues blocking this approach.
-// export const batch = z.discriminatedUnion("batch_type", [
-//   spaces_batch,
-//   access_grants_batch,
-//   access_methods_batch,
-//   workspaces_batch,
-// ]).describe(`
-//   ---
-//   route_path: /
-//   ---
-//   Represents a resource batch.
-// `)
-
-export type WorkspacesBatch = z.infer<typeof workspaces_batch>
 
 export type Batch = z.infer<typeof batch>
