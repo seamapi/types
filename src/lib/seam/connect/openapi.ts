@@ -41075,9 +41075,16 @@ export default {
                         organize: { exclude: false },
                       },
                       is_embedded: false,
+                      locale: 'auto',
                     },
                     description: 'Configuration for a customer portal',
                     properties: {
+                      customization_profile_id: {
+                        description:
+                          'The ID of the customization profile to use for the portal.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                       features: {
                         default: {},
                         properties: {
@@ -41097,12 +41104,6 @@ export default {
                                 description:
                                   'Indicates whether the customer can customize the Instant Key profile for their properties.',
                                 type: 'boolean',
-                              },
-                              customization_profile_id: {
-                                description:
-                                  'The ID of the customization profile to use for the portal.',
-                                format: 'uuid',
-                                type: 'string',
                               },
                               exclude: {
                                 default: false,
@@ -41311,6 +41312,12 @@ export default {
                           },
                         },
                         type: 'object',
+                      },
+                      locale: {
+                        default: 'auto',
+                        description: 'The locale to use for the portal.',
+                        enum: ['en-US', 'pt-PT', 'auto'],
+                        type: 'string',
                       },
                     },
                     type: 'object',
@@ -53927,6 +53934,12 @@ export default {
                           ],
                           type: 'string',
                         },
+                        customization_profile_id: {
+                          description:
+                            'The ID of the customization profile to use for the portal.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
                         features: {
                           default: { $ref: '#/components/schemas/access_code' },
                           properties: {
@@ -53948,12 +53961,6 @@ export default {
                                   description:
                                     'Indicates whether the customer can customize the Instant Key profile for their properties.',
                                   type: 'boolean',
-                                },
-                                customization_profile_id: {
-                                  description:
-                                    'The ID of the customization profile to use for the portal.',
-                                  format: 'uuid',
-                                  type: 'string',
                                 },
                                 exclude: {
                                   default: false,
@@ -54172,6 +54179,12 @@ export default {
                             },
                           },
                           type: 'object',
+                        },
+                        locale: {
+                          default: 'auto',
+                          description: 'The locale to use for the portal.',
+                          enum: ['en-US', 'pt-PT', 'auto'],
+                          type: 'string',
                         },
                       },
                       type: 'object',
@@ -54239,6 +54252,12 @@ export default {
                           ],
                           type: 'string',
                         },
+                        customization_profile_id: {
+                          description:
+                            'The ID of the customization profile to use for the portal.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
                         features: {
                           default: { $ref: '#/components/schemas/access_code' },
                           properties: {
@@ -54260,12 +54279,6 @@ export default {
                                   description:
                                     'Indicates whether the customer can customize the Instant Key profile for their properties.',
                                   type: 'boolean',
-                                },
-                                customization_profile_id: {
-                                  description:
-                                    'The ID of the customization profile to use for the portal.',
-                                  format: 'uuid',
-                                  type: 'string',
                                 },
                                 exclude: {
                                   default: false,
@@ -54484,6 +54497,12 @@ export default {
                             },
                           },
                           type: 'object',
+                        },
+                        locale: {
+                          default: 'auto',
+                          description: 'The locale to use for the portal.',
+                          enum: ['en-US', 'pt-PT', 'auto'],
+                          type: 'string',
                         },
                       },
                       type: 'object',

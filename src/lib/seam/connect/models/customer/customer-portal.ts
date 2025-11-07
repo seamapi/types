@@ -44,11 +44,6 @@ const base_manage_feature = base_feature.extend({
 const base_organize_feature = base_feature
 
 const base_configure_feature = base_feature.extend({
-  customization_profile_id: z
-    .string()
-    .uuid()
-    .optional()
-    .describe('The ID of the customization profile to use for the portal.'),
   allow_access_automation_rule_customization: z
     .boolean()
     .default(false)
@@ -98,6 +93,16 @@ export const portal_configuration_base = z.object({
     })
     .optional()
     .describe('Configuration for the landing page when the portal loads.'),
+  locale: z
+    .enum(['en-US', 'pt-PT', 'auto'])
+    .optional()
+    .default('auto')
+    .describe('The locale to use for the portal.'),
+  customization_profile_id: z
+    .string()
+    .uuid()
+    .optional()
+    .describe('The ID of the customization profile to use for the portal.'),
 })
 
 export const portal_configuration = portal_configuration_base
@@ -120,6 +125,7 @@ export const portal_configuration = portal_configuration_base
       },
     },
     is_embedded: false,
+    locale: 'auto',
   })
   .describe(`Configuration for a customer portal`)
 
