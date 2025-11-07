@@ -90,6 +90,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'honeywell_resideo',
     'visionline',
     'assa_abloy_credential_service',
+    'dormakaba_ambiance',
     'latch',
     'akiles',
     'sensi',
