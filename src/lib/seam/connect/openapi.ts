@@ -41062,7 +41062,6 @@ export default {
                       features: {
                         configure: {
                           allow_access_automation_rule_customization: false,
-                          allow_automatic_management_of_new_devices: false,
                           allow_instant_key_customization: false,
                           exclude: false,
                         },
@@ -41091,12 +41090,6 @@ export default {
                                 default: false,
                                 description:
                                   'Indicates whether the customer can customize the access automation rules for their properties.',
-                                type: 'boolean',
-                              },
-                              allow_automatic_management_of_new_devices: {
-                                default: false,
-                                description:
-                                  'Indicates whether the customer can automatically manage new devices for their properties.',
                                 type: 'boolean',
                               },
                               allow_instant_key_customization: {
@@ -53931,12 +53924,6 @@ export default {
                                     'Indicates whether the customer can customize the access automation rules for their properties.',
                                   type: 'boolean',
                                 },
-                                allow_automatic_management_of_new_devices: {
-                                  default: false,
-                                  description:
-                                    'Indicates whether the customer can automatically manage new devices for their properties.',
-                                  type: 'boolean',
-                                },
                                 allow_instant_key_customization: {
                                   default: false,
                                   description:
@@ -54247,12 +54234,6 @@ export default {
                                   default: false,
                                   description:
                                     'Indicates whether the customer can customize the access automation rules for their properties.',
-                                  type: 'boolean',
-                                },
-                                allow_automatic_management_of_new_devices: {
-                                  default: false,
-                                  description:
-                                    'Indicates whether the customer can automatically manage new devices for their properties.',
                                   type: 'boolean',
                                 },
                                 allow_instant_key_customization: {
