@@ -52649,7 +52649,7 @@ export default {
     '/seam/customer/v1/connectors/connector_types': {
       get: {
         description:
-          'Lists all available connector types and their required instance configuration schemas.',
+          'Lists all available connector types and their editable fields for UI input.',
         operationId: 'seamCustomerV1ConnectorsConnectorTypesGet',
         responses: {
           200: {
@@ -52663,30 +52663,39 @@ export default {
                           connector_type: { type: 'string' },
                           description: { type: 'string' },
                           display_name: { type: 'string' },
-                          instance_config_schema: {
-                            $ref: '#/components/schemas/access_code',
-                          },
-                          static_config: {
-                            properties: {
-                              base_api_url: { type: 'string' },
-                              polling_enabled: { type: 'boolean' },
-                              polling_frequency_minutes: {
-                                format: 'float',
-                                type: 'number',
+                          editable_fields: {
+                            items: {
+                              properties: {
+                                description: { type: 'string' },
+                                display_name: { type: 'string' },
+                                name: { type: 'string' },
+                                required: { type: 'boolean' },
+                                type: {
+                                  enum: [
+                                    'string',
+                                    'string[]',
+                                    'number',
+                                    'boolean',
+                                  ],
+                                  type: 'string',
+                                },
                               },
+                              required: [
+                                'name',
+                                'display_name',
+                                'description',
+                                'type',
+                                'required',
+                              ],
+                              type: 'object',
                             },
-                            required: [
-                              'base_api_url',
-                              'polling_enabled',
-                              'polling_frequency_minutes',
-                            ],
-                            type: 'object',
+                            type: 'array',
                           },
                         },
                         required: [
                           'connector_type',
                           'display_name',
-                          'static_config',
+                          'editable_fields',
                         ],
                         type: 'object',
                       },
@@ -52720,7 +52729,7 @@ export default {
       },
       post: {
         description:
-          'Lists all available connector types and their required instance configuration schemas.',
+          'Lists all available connector types and their editable fields for UI input.',
         operationId: 'seamCustomerV1ConnectorsConnectorTypesPost',
         responses: {
           200: {
@@ -52734,30 +52743,39 @@ export default {
                           connector_type: { type: 'string' },
                           description: { type: 'string' },
                           display_name: { type: 'string' },
-                          instance_config_schema: {
-                            $ref: '#/components/schemas/access_code',
-                          },
-                          static_config: {
-                            properties: {
-                              base_api_url: { type: 'string' },
-                              polling_enabled: { type: 'boolean' },
-                              polling_frequency_minutes: {
-                                format: 'float',
-                                type: 'number',
+                          editable_fields: {
+                            items: {
+                              properties: {
+                                description: { type: 'string' },
+                                display_name: { type: 'string' },
+                                name: { type: 'string' },
+                                required: { type: 'boolean' },
+                                type: {
+                                  enum: [
+                                    'string',
+                                    'string[]',
+                                    'number',
+                                    'boolean',
+                                  ],
+                                  type: 'string',
+                                },
                               },
+                              required: [
+                                'name',
+                                'display_name',
+                                'description',
+                                'type',
+                                'required',
+                              ],
+                              type: 'object',
                             },
-                            required: [
-                              'base_api_url',
-                              'polling_enabled',
-                              'polling_frequency_minutes',
-                            ],
-                            type: 'object',
+                            type: 'array',
                           },
                         },
                         required: [
                           'connector_type',
                           'display_name',
-                          'static_config',
+                          'editable_fields',
                         ],
                         type: 'object',
                       },
@@ -53182,6 +53200,7 @@ export default {
                       },
                       {
                         properties: {
+                          auth_token: { type: 'string' },
                           client_id: {
                             description: 'RMS client ID for authentication',
                             minLength: 1,
