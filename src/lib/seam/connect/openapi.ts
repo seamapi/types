@@ -56359,7 +56359,10 @@ export default {
                   acs_system_id: { format: 'uuid', type: 'string' },
                   salto_space_metadata: {
                     properties: {
-                      justin_mobile_sdk_audit_trail_data: { type: 'string' },
+                      justin_mobile_sdk_audit_trail_data: {
+                        minLength: 1,
+                        type: 'string',
+                      },
                     },
                     required: ['justin_mobile_sdk_audit_trail_data'],
                     type: 'object',
