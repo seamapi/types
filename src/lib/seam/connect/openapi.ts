@@ -41075,7 +41075,6 @@ export default {
                         organize: { exclude: false },
                       },
                       is_embedded: false,
-                      locale: 'auto',
                     },
                     description: 'Configuration for a customer portal',
                     properties: {
@@ -41314,9 +41313,8 @@ export default {
                         type: 'object',
                       },
                       locale: {
-                        default: 'auto',
                         description: 'The locale to use for the portal.',
-                        enum: ['en-US', 'pt-PT', 'auto'],
+                        enum: ['en-US', 'pt-PT'],
                         type: 'string',
                       },
                     },
@@ -54181,9 +54179,8 @@ export default {
                           type: 'object',
                         },
                         locale: {
-                          default: 'auto',
                           description: 'The locale to use for the portal.',
-                          enum: ['en-US', 'pt-PT', 'auto'],
+                          enum: ['en-US', 'pt-PT'],
                           type: 'string',
                         },
                       },
@@ -54499,9 +54496,8 @@ export default {
                           type: 'object',
                         },
                         locale: {
-                          default: 'auto',
                           description: 'The locale to use for the portal.',
-                          enum: ['en-US', 'pt-PT', 'auto'],
+                          enum: ['en-US', 'pt-PT'],
                           type: 'string',
                         },
                       },
