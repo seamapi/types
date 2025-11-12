@@ -41314,7 +41314,7 @@ export default {
                       },
                       locale: {
                         description: 'The locale to use for the portal.',
-                        enum: ['en-US', 'pt-PT'],
+                        enum: ['en-US', 'pt-PT', 'fr-FR', 'it-IT', 'es-ES'],
                         type: 'string',
                       },
                     },
@@ -54180,7 +54180,7 @@ export default {
                         },
                         locale: {
                           description: 'The locale to use for the portal.',
-                          enum: ['en-US', 'pt-PT'],
+                          enum: ['en-US', 'pt-PT', 'fr-FR', 'it-IT', 'es-ES'],
                           type: 'string',
                         },
                       },
@@ -54497,7 +54497,7 @@ export default {
                         },
                         locale: {
                           description: 'The locale to use for the portal.',
-                          enum: ['en-US', 'pt-PT'],
+                          enum: ['en-US', 'pt-PT', 'fr-FR', 'it-IT', 'es-ES'],
                           type: 'string',
                         },
                       },

@@ -94,7 +94,7 @@ export const portal_configuration_base = z.object({
     .optional()
     .describe('Configuration for the landing page when the portal loads.'),
   locale: z
-    .enum(['en-US', 'pt-PT'])
+    .enum(['en-US', 'pt-PT', 'fr-FR', 'it-IT', 'es-ES'])
     .optional()
     .describe('The locale to use for the portal.'),
   customization_profile_id: z
