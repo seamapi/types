@@ -47285,7 +47285,7 @@ export default {
     '/locks/get': {
       get: {
         description:
-          'Returns a specified [lock](https://docs.seam.co/latest/capability-guides/smart-locks). **Use `/devices/get` instead.**',
+          'Returns a specified [lock](https://docs.seam.co/latest/capability-guides/smart-locks).',
         operationId: 'locksGetGet',
         parameters: [
           {
@@ -47343,7 +47343,7 @@ export default {
       },
       post: {
         description:
-          'Returns a specified [lock](https://docs.seam.co/latest/capability-guides/smart-locks). **Use `/devices/get` instead.**',
+          'Returns a specified [lock](https://docs.seam.co/latest/capability-guides/smart-locks).',
         operationId: 'locksGetPost',
         requestBody: {
           content: {
