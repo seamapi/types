@@ -14,6 +14,11 @@ export const acs_entrance_salto_space_metadata = z
     door_description: z
       .string()
       .describe('Description of the door in the Salto Space access system.'),
+    audit_on_keys: z
+      .boolean()
+      .describe(
+        'Indicates whether AuditOnKeys is enabled for the door in the Salto Space access system.',
+      ),
     room_name: z
       .string()
       .describe('Name of the room in the Salto Space access system.'),
