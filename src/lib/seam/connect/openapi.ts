@@ -8471,6 +8471,125 @@ export default {
         ],
         'x-route-path': '/action_attempts',
       },
+      batch: {
+        description: 'A batch of workspace resources.',
+        properties: {
+          access_codes: {
+            items: { $ref: '#/components/schemas/access_code' },
+            type: 'array',
+          },
+          access_grants: {
+            items: { $ref: '#/components/schemas/access_grant' },
+            type: 'array',
+          },
+          access_methods: {
+            items: { $ref: '#/components/schemas/access_method' },
+            type: 'array',
+          },
+          acs_access_groups: {
+            items: { $ref: '#/components/schemas/acs_access_group' },
+            type: 'array',
+          },
+          acs_credentials: {
+            items: { $ref: '#/components/schemas/acs_credential' },
+            type: 'array',
+          },
+          acs_encoders: {
+            items: { $ref: '#/components/schemas/acs_encoder' },
+            type: 'array',
+          },
+          acs_entrances: {
+            items: { $ref: '#/components/schemas/acs_entrance' },
+            type: 'array',
+          },
+          acs_systems: {
+            items: { $ref: '#/components/schemas/acs_system' },
+            type: 'array',
+          },
+          acs_users: {
+            items: { $ref: '#/components/schemas/acs_user' },
+            type: 'array',
+          },
+          action_attempts: {
+            items: { $ref: '#/components/schemas/action_attempt' },
+            type: 'array',
+          },
+          client_sessions: {
+            items: { $ref: '#/components/schemas/client_session' },
+            type: 'array',
+          },
+          connect_webviews: {
+            items: { $ref: '#/components/schemas/connect_webview' },
+            type: 'array',
+          },
+          connected_accounts: {
+            items: { $ref: '#/components/schemas/connected_account' },
+            type: 'array',
+          },
+          customization_profiles: {
+            items: { $ref: '#/components/schemas/customization_profile' },
+            type: 'array',
+          },
+          devices: {
+            items: { $ref: '#/components/schemas/device' },
+            type: 'array',
+          },
+          events: {
+            items: { $ref: '#/components/schemas/event' },
+            type: 'array',
+          },
+          instant_keys: {
+            items: { $ref: '#/components/schemas/instant_key' },
+            type: 'array',
+          },
+          noise_thresholds: {
+            items: { $ref: '#/components/schemas/noise_threshold' },
+            type: 'array',
+          },
+          spaces: {
+            items: { $ref: '#/components/schemas/space' },
+            type: 'array',
+          },
+          thermostat_daily_programs: {
+            items: { $ref: '#/components/schemas/thermostat_daily_program' },
+            type: 'array',
+          },
+          thermostat_schedules: {
+            items: { $ref: '#/components/schemas/thermostat_schedule' },
+            type: 'array',
+          },
+          unmanaged_access_codes: {
+            items: { $ref: '#/components/schemas/unmanaged_access_code' },
+            type: 'array',
+          },
+          unmanaged_acs_access_groups: {
+            items: { $ref: '#/components/schemas/unmanaged_acs_access_group' },
+            type: 'array',
+          },
+          unmanaged_acs_credentials: {
+            items: { $ref: '#/components/schemas/unmanaged_acs_credential' },
+            type: 'array',
+          },
+          unmanaged_acs_users: {
+            items: { $ref: '#/components/schemas/unmanaged_acs_user' },
+            type: 'array',
+          },
+          unmanaged_devices: {
+            items: { $ref: '#/components/schemas/unmanaged_device' },
+            type: 'array',
+          },
+          user_identities: {
+            items: { $ref: '#/components/schemas/user_identity' },
+            type: 'array',
+          },
+          workspaces: {
+            items: { $ref: '#/components/schemas/workspace' },
+            type: 'array',
+          },
+        },
+        type: 'object',
+        'x-route-path': '/workspaces',
+      },
       bridge_client_session: {
         description:
           'Represents a [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) client session.',
