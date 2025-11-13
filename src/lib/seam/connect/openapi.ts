@@ -3035,6 +3035,11 @@ export default {
             description:
               'Salto Space-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
             properties: {
+              audit_on_keys: {
+                description:
+                  'Indicates whether AuditOnKeys is enabled for the door in the Salto Space access system.',
+                type: 'boolean',
+              },
               door_description: {
                 description:
                   'Description of the door in the Salto Space access system.',
@@ -20322,6 +20327,11 @@ export default {
                               description:
                                 'Salto Space-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
                               properties: {
+                                audit_on_keys: {
+                                  description:
+                                    'Indicates whether AuditOnKeys is enabled for the door in the Salto Space access system.',
+                                  type: 'boolean',
+                                },
                                 door_description: {
                                   description:
                                     'Description of the door in the Salto Space access system.',
