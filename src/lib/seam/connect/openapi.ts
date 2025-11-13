@@ -11621,8 +11621,12 @@ export default {
                             description: 'Device name for an Ultraloq device.',
                             type: 'string',
                           },
+                          device_type: {
+                            description: 'Device type for an Ultraloq device.',
+                            type: 'string',
+                          },
                         },
-                        required: ['device_id', 'device_name'],
+                        required: ['device_id', 'device_name', 'device_type'],
                         type: 'object',
                       },
                       visionline_metadata: {

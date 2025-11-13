@@ -689,6 +689,7 @@ export const device_metadata = z
       .object({
         device_id: z.string().describe(`Device ID for an Ultraloq device.`),
         device_name: z.string().describe(`Device name for an Ultraloq device.`),
+        device_type: z.string().describe(`Device type for an Ultraloq device.`),
       })
       .describe(`Metadata for an Ultraloq device.`),
   })
