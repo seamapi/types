@@ -40929,7 +40929,12 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  connected_account_id: { format: 'uuid', type: 'string' },
+                  connected_account_id: {
+                    description:
+                      'ID of the connected account you want to simulate as disconnected.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['connected_account_id'],
                 type: 'object',
@@ -40957,6 +40962,7 @@ export default {
           { api_key: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/connected_accounts/simulate/disconnect',
         tags: ['/connected_accounts'],
