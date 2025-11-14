@@ -2,6 +2,7 @@ import { z } from 'zod'
 
 import { phone_number } from '../../phone-number.js'
 import { schedule } from '../../schedule.js'
+import { acs_user_salto_space_metadata } from '../metadata/salto-space.js'
 import { acs_user_pending_mutations } from './pending-mutations.js'
 
 export const acs_user_external_type = z.enum([
@@ -311,6 +312,11 @@ const common_acs_user = z
     connected_account_id: z.string().uuid().describe(`
       The ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that is associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
     `),
+    salto_space_metadata: acs_user_salto_space_metadata
+      .optional()
+      .describe(
+        'Salto Space-specific metadata associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+      ),
   })
   .merge(user_fields)
 
