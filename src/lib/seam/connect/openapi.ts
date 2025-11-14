@@ -55604,6 +55604,198 @@ export default {
         'x-undocumented': 'Only used internally.',
       },
     },
+    '/seam/customer/v1/spaces/list_reservations': {
+      get: {
+        description:
+          'Returns a list of existing reservations for a specific space.\nIf issued_status is "issued", only reservations that have access methods issued will be returned.\nIf issued_status is "pending", only reservations that do not have access methods issued will be returned.\nIf issued_status is not provided, only reservations that do not have access methods issued will be returned.',
+        operationId: 'seamCustomerV1SpacesListReservationsGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'issued_status',
+            required: false,
+            schema: {
+              default: 'pending',
+              description: 'Filter reservations by issued status.',
+              enum: ['issued', 'pending'],
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'space_key',
+            required: true,
+            schema: {
+              description: 'Filter reservations by space key.',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    reservations: {
+                      items: {
+                        properties: {
+                          access_methods: {
+                            items: {
+                              $ref: '#/components/schemas/access_method',
+                            },
+                            type: 'array',
+                          },
+                          created_at: { format: 'date-time', type: 'string' },
+                          ends_at: {
+                            format: 'date-time',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          guest_name: { nullable: true, type: 'string' },
+                          has_issued_access: { type: 'boolean' },
+                          name: { nullable: true, type: 'string' },
+                          reservation_id: { format: 'uuid', type: 'string' },
+                          reservation_key: { type: 'string' },
+                          starts_at: {
+                            format: 'date-time',
+                            nullable: true,
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'reservation_id',
+                          'reservation_key',
+                          'name',
+                          'starts_at',
+                          'ends_at',
+                          'created_at',
+                          'guest_name',
+                          'has_issued_access',
+                          'access_methods',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['reservations', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/spaces/list_reservations',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'spaces'],
+        'x-fern-sdk-method-name': 'list_reservations',
+        'x-fern-sdk-return-value': 'reservations',
+        'x-response-key': 'reservations',
+        'x-title': 'List Reservations for Space',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+      post: {
+        description:
+          'Returns a list of existing reservations for a specific space.\nIf issued_status is "issued", only reservations that have access methods issued will be returned.\nIf issued_status is "pending", only reservations that do not have access methods issued will be returned.\nIf issued_status is not provided, only reservations that do not have access methods issued will be returned.',
+        operationId: 'seamCustomerV1SpacesListReservationsPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  issued_status: {
+                    default: 'pending',
+                    description: 'Filter reservations by issued status.',
+                    enum: ['issued', 'pending'],
+                    type: 'string',
+                  },
+                  space_key: {
+                    description: 'Filter reservations by space key.',
+                    type: 'string',
+                  },
+                },
+                required: ['space_key'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    reservations: {
+                      items: {
+                        properties: {
+                          access_methods: {
+                            items: {
+                              $ref: '#/components/schemas/access_method',
+                            },
+                            type: 'array',
+                          },
+                          created_at: { format: 'date-time', type: 'string' },
+                          ends_at: {
+                            format: 'date-time',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          guest_name: { nullable: true, type: 'string' },
+                          has_issued_access: { type: 'boolean' },
+                          name: { nullable: true, type: 'string' },
+                          reservation_id: { format: 'uuid', type: 'string' },
+                          reservation_key: { type: 'string' },
+                          starts_at: {
+                            format: 'date-time',
+                            nullable: true,
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'reservation_id',
+                          'reservation_key',
+                          'name',
+                          'starts_at',
+                          'ends_at',
+                          'created_at',
+                          'guest_name',
+                          'has_issued_access',
+                          'access_methods',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['reservations', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/spaces/list_reservations',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'spaces'],
+        'x-fern-sdk-method-name': 'list_reservations',
+        'x-fern-sdk-return-value': 'reservations',
+        'x-response-key': 'reservations',
+        'x-title': 'List Reservations for Space',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
     '/seam/customer/v1/staff_members/get': {
       get: {
         description: 'Returns a staff member for a specific customer.',
