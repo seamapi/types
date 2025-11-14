@@ -4158,6 +4158,18 @@ export default {
               'Phone number of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
             type: 'string',
           },
+          salto_space_metadata: {
+            description:
+              'Salto Space-specific metadata associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+            properties: {
+              audit_openings: {
+                description:
+                  'Indicates whether AuditOpenings is enabled for the user in the Salto Space access system.',
+                type: 'boolean',
+              },
+            },
+            type: 'object',
+          },
           user_identity_email_address: {
             description:
               'Email address of the user identity associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
@@ -24305,6 +24317,18 @@ export default {
             description:
               'Phone number of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
             type: 'string',
+          },
+          salto_space_metadata: {
+            description:
+              'Salto Space-specific metadata associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+            properties: {
+              audit_openings: {
+                description:
+                  'Indicates whether AuditOpenings is enabled for the user in the Salto Space access system.',
+                type: 'boolean',
+              },
+            },
+            type: 'object',
           },
           user_identity_email_address: {
             description:

@@ -32,3 +32,20 @@ export const acs_entrance_salto_space_metadata = z
 export type AcsEntranceSaltoSpaceMetadata = z.infer<
   typeof acs_entrance_salto_space_metadata
 >
+
+export const acs_user_salto_space_metadata = z
+  .object({
+    audit_openings: z
+      .boolean()
+      .optional()
+      .describe(
+        'Indicates whether AuditOpenings is enabled for the user in the Salto Space access system.',
+      ),
+  })
+  .describe(
+    'Salto Space-specific metadata associated with the access system user.',
+  )
+
+export type AcsUserSaltoSpaceMetadata = z.infer<
+  typeof acs_user_salto_space_metadata
+>
