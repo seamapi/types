@@ -4167,6 +4167,10 @@ export default {
                   'Indicates whether AuditOpenings is enabled for the user in the Salto Space access system.',
                 type: 'boolean',
               },
+              user_id: {
+                description: 'User ID in the Salto Space access system.',
+                type: 'string',
+              },
             },
             type: 'object',
           },
@@ -24326,6 +24330,10 @@ export default {
                 description:
                   'Indicates whether AuditOpenings is enabled for the user in the Salto Space access system.',
                 type: 'boolean',
+              },
+              user_id: {
+                description: 'User ID in the Salto Space access system.',
+                type: 'string',
               },
             },
             type: 'object',
