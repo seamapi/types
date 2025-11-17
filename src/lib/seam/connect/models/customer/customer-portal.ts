@@ -50,6 +50,12 @@ const base_configure_feature = base_feature.extend({
     .describe(
       'Indicates whether the customer can customize the access automation rules for their properties.',
     ),
+  allow_climate_automation_rule_customization: z
+    .boolean()
+    .default(false)
+    .describe(
+      'Indicates whether the customer can customize the climate automation rules for their properties.',
+    ),
   allow_instant_key_customization: z
     .boolean()
     .default(false)
@@ -121,6 +127,7 @@ export const portal_configuration = portal_configuration_base
         exclude: false,
         allow_instant_key_customization: false, // default
         allow_access_automation_rule_customization: false, // default
+        allow_climate_automation_rule_customization: false, // default
       },
     },
     is_embedded: false,
