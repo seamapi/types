@@ -52833,6 +52833,132 @@ export default {
         'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
+    '/seam/customer/v1/connectors/authorize': {
+      get: {
+        description:
+          'Returns the OAuth authorization URL for a global connector.\nThis endpoint only works for global connectors (connectors that support multiple customers).',
+        operationId: 'seamCustomerV1ConnectorsAuthorizeGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'workspace_slug',
+            required: true,
+            schema: {
+              description: 'Workspace slug',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'connector_name',
+            required: false,
+            schema: {
+              description:
+                'Connector name/type. If not provided, workspace_slug will be used as connector_name',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    connector_authorize: {
+                      properties: {
+                        authorize_url: { format: 'uri', type: 'string' },
+                        connector_type: { type: 'string' },
+                      },
+                      required: ['authorize_url', 'connector_type'],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['connector_authorize', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        summary: '/seam/customer/v1/connectors/authorize',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'connectors'],
+        'x-fern-sdk-method-name': 'authorize',
+        'x-fern-sdk-return-value': 'connector_authorize',
+        'x-response-key': 'connector_authorize',
+        'x-title': 'Get OAuth Authorization URL for Global Connector',
+        'x-undocumented': 'Internal endpoint for OAuth authorization.',
+      },
+      post: {
+        description:
+          'Returns the OAuth authorization URL for a global connector.\nThis endpoint only works for global connectors (connectors that support multiple customers).',
+        operationId: 'seamCustomerV1ConnectorsAuthorizePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connector_name: {
+                    description:
+                      'Connector name/type. If not provided, workspace_slug will be used as connector_name',
+                    minLength: 1,
+                    type: 'string',
+                  },
+                  workspace_slug: {
+                    description: 'Workspace slug',
+                    minLength: 1,
+                    type: 'string',
+                  },
+                },
+                required: ['workspace_slug'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    connector_authorize: {
+                      properties: {
+                        authorize_url: { format: 'uri', type: 'string' },
+                        connector_type: { type: 'string' },
+                      },
+                      required: ['authorize_url', 'connector_type'],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['connector_authorize', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        summary: '/seam/customer/v1/connectors/authorize',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'connectors'],
+        'x-fern-sdk-method-name': 'authorize',
+        'x-fern-sdk-return-value': 'connector_authorize',
+        'x-response-key': 'connector_authorize',
+        'x-title': 'Get OAuth Authorization URL for Global Connector',
+        'x-undocumented': 'Internal endpoint for OAuth authorization.',
+      },
+    },
     '/seam/customer/v1/connectors/connector_types': {
       get: {
         description:
@@ -53013,7 +53139,7 @@ export default {
                   },
                   connector_type: {
                     description: 'Type of connector to create',
-                    enum: ['mock', 'mews', 'rms'],
+                    enum: ['mock', 'mews', 'rms', 'cloudbeds'],
                     type: 'string',
                   },
                   customer_key: {
@@ -53382,6 +53508,7 @@ export default {
                             items: { type: 'string' },
                             type: 'array',
                           },
+                          is_demo: { default: true, type: 'boolean' },
                         },
                         type: 'object',
                       },
@@ -53409,6 +53536,28 @@ export default {
                           },
                         },
                         required: ['client_id', 'client_password'],
+                        type: 'object',
+                      },
+                      {
+                        properties: {
+                          access_token: {
+                            description:
+                              'OAuth2 access token for authentication',
+                            minLength: 1,
+                            type: 'string',
+                          },
+                          property_id: {
+                            description:
+                              'Optional property ID for single-property connectors',
+                            type: 'string',
+                          },
+                          refresh_token: {
+                            description:
+                              'OAuth2 refresh token for token refresh',
+                            minLength: 1,
+                            type: 'string',
+                          },
+                        },
                         type: 'object',
                       },
                     ],
