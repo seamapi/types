@@ -52841,7 +52841,7 @@ export default {
         parameters: [
           {
             in: 'query',
-            name: 'workspace_slug',
+            name: 'slug',
             required: true,
             schema: {
               description: 'Workspace slug',
@@ -52911,13 +52911,13 @@ export default {
                     minLength: 1,
                     type: 'string',
                   },
-                  workspace_slug: {
+                  slug: {
                     description: 'Workspace slug',
                     minLength: 1,
                     type: 'string',
                   },
                 },
-                required: ['workspace_slug'],
+                required: ['slug'],
                 type: 'object',
               },
             },
@@ -55402,6 +55402,7 @@ export default {
                       type: 'string',
                     },
                     ok: { type: 'boolean' },
+                    slug: { nullable: true, type: 'string' },
                   },
                   required: ['ok'],
                   type: 'object',
@@ -55444,6 +55445,7 @@ export default {
                       type: 'string',
                     },
                     ok: { type: 'boolean' },
+                    slug: { nullable: true, type: 'string' },
                   },
                   required: ['ok'],
                   type: 'object',
@@ -55484,6 +55486,11 @@ export default {
                       'gym_management',
                       'property_tours',
                     ],
+                    type: 'string',
+                  },
+                  slug: {
+                    description: 'Slug to set on the workspace.',
+                    nullable: true,
                     type: 'string',
                   },
                 },
@@ -55534,6 +55541,11 @@ export default {
                       'gym_management',
                       'property_tours',
                     ],
+                    type: 'string',
+                  },
+                  slug: {
+                    description: 'Slug to set on the workspace.',
+                    nullable: true,
                     type: 'string',
                   },
                 },
