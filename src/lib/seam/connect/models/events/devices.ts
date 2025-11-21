@@ -411,6 +411,31 @@ export const lock_unlocked_event = device_event.extend({
   method: lock_method.describe(
     'Method by which the affected lock device was unlocked. When the method is `keycode`, the `access_code_id` indicates the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used, if reported by the device.',
   ),
+  user_identity_id: z.string().uuid().optional().describe(`
+      undocumented: Unreleased.
+      ---
+      ID of the user identity associated with the unlock event.
+    `),
+  acs_system_id: z.string().uuid().optional().describe(`
+      undocumented: Unreleased.
+      ---
+      ID of the ACS system associated with the unlock event.
+    `),
+  acs_user_id: z.string().uuid().optional().describe(`
+      undocumented: Unreleased.
+      ---
+      ID of the ACS user associated with the unlock event.
+    `),
+  acs_entrance_id: z.string().uuid().optional().describe(`
+      undocumented: Unreleased.
+      ---
+      ID of the ACS entrance associated with the unlock event.
+    `),
+  device_id: z
+    .string()
+    .uuid()
+    .optional()
+    .describe('ID of the affected device.'),
 }).describe(`
   ---
   route_path: /locks

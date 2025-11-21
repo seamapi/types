@@ -18723,6 +18723,24 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
+              acs_entrance_id: {
+                description:
+                  '\n      undocumented: Unreleased.\n      ---\n      ID of the ACS entrance associated with the unlock event.\n    ',
+                format: 'uuid',
+                type: 'string',
+              },
+              acs_system_id: {
+                description:
+                  '\n      undocumented: Unreleased.\n      ---\n      ID of the ACS system associated with the unlock event.\n    ',
+                format: 'uuid',
+                type: 'string',
+              },
+              acs_user_id: {
+                description:
+                  '\n      undocumented: Unreleased.\n      ---\n      ID of the ACS user associated with the unlock event.\n    ',
+                format: 'uuid',
+                type: 'string',
+              },
               action_attempt_id: {
                 description:
                   'ID of the action attempt associated with the unlock action.',
@@ -18778,6 +18796,12 @@ export default {
                 format: 'date-time',
                 type: 'string',
               },
+              user_identity_id: {
+                description:
+                  '\n      undocumented: Unreleased.\n      ---\n      ID of the user identity associated with the unlock event.\n    ',
+                format: 'uuid',
+                type: 'string',
+              },
               workspace_id: {
                 description:
                   'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
@@ -18790,7 +18814,6 @@ export default {
               'workspace_id',
               'created_at',
               'occurred_at',
-              'device_id',
               'connected_account_id',
               'event_type',
               'method',
