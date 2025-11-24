@@ -431,6 +431,17 @@ const hub_required_for_addtional_capabilities = common_device_warning.extend({
     Indicates that a hub or relay must be connected to unlock additional capabilities such as remote unlock.
     `)
 
+const keynest_unsupported_locker = common_device_warning.extend({
+  warning_code: z
+    .literal('keynest_unsupported_locker')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: locks
+    ---
+    Indicates that the key is in a locker that does not support the access codes API.
+    `)
+
 const device_warning = z.discriminatedUnion('warning_code', [
   partial_backup_access_code_pool,
   many_active_backup_codes,
@@ -450,6 +461,7 @@ const device_warning = z.discriminatedUnion('warning_code', [
   unknown_issue_with_phone,
   lockly_time_zone_not_configured,
   hub_required_for_addtional_capabilities,
+  keynest_unsupported_locker,
 ])
 
 export type DeviceWarning = z.infer<typeof device_warning>
@@ -496,6 +508,7 @@ const _device_warning_map = z.object({
     .nullable(),
   hub_required_for_addtional_capabilities:
     hub_required_for_addtional_capabilities.optional().nullable(),
+  keynest_unsupported_locker: keynest_unsupported_locker.optional().nullable(),
 })
 
 export type DeviceWarningMap = z.infer<typeof _device_warning_map>
