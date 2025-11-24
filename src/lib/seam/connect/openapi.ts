@@ -11105,6 +11105,11 @@ export default {
                               'Whether the KeyNest device has a photo.',
                             type: 'boolean',
                           },
+                          is_quadient_locker: {
+                            description:
+                              'Whether the key is in a locker that does not support the access codes API.',
+                            type: 'boolean',
+                          },
                           key_id: {
                             description: 'Key ID for a KeyNest device.',
                             type: 'string',
@@ -13317,6 +13322,32 @@ export default {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['hub_required_for_addtional_capabilities'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    'Indicates that the key is in a locker that does not support the access codes API.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['keynest_unsupported_locker'],
                       type: 'string',
                     },
                   },
@@ -25851,6 +25882,32 @@ export default {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['hub_required_for_addtional_capabilities'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    'Indicates that the key is in a locker that does not support the access codes API.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['keynest_unsupported_locker'],
                       type: 'string',
                     },
                   },

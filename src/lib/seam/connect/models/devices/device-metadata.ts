@@ -681,6 +681,12 @@ export const device_metadata = z
         has_photo: z
           .boolean()
           .describe(`Whether the KeyNest device has a photo.`),
+        is_quadient_locker: z
+          .boolean()
+          .optional()
+          .describe(
+            `Whether the key is in a locker that does not support the access codes API.`,
+          ),
       })
       .partial()
       .describe(`Metadata for a KeyNest device.`),
