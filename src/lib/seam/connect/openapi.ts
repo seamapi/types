@@ -16527,10 +16527,6 @@ export default {
             description:
               'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was deleted.',
             properties: {
-              account_type: {
-                description: 'Type of connected account.',
-                type: 'string',
-              },
               connected_account_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -16543,6 +16539,10 @@ export default {
                 description:
                   'ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
+                type: 'string',
+              },
+              connected_account_type: {
+                description: 'undocumented: Unreleased.',
                 type: 'string',
               },
               created_at: {
@@ -16583,7 +16583,6 @@ export default {
               'occurred_at',
               'connected_account_id',
               'event_type',
-              'account_type',
             ],
             type: 'object',
             'x-route-path': '/connected_accounts',
