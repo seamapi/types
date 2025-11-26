@@ -107,6 +107,13 @@ export type ConnectedAccountCompletedFirstSyncEvent = z.infer<
 
 export const connected_account_deleted_event = connected_account_event.extend({
   event_type: z.literal('connected_account.deleted'),
+  account_type: z.string().describe('Type of connected account.'),
+  customer_key: z
+    .string()
+    .optional()
+    .describe(
+      'The customer key associated with this connected account, if any.',
+    ),
 }).describe(`
   ---
   route_path: /connected_accounts

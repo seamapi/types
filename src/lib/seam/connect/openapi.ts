@@ -16527,6 +16527,10 @@ export default {
             description:
               'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was deleted.',
             properties: {
+              account_type: {
+                description: 'Type of connected account.',
+                type: 'string',
+              },
               connected_account_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -16544,6 +16548,11 @@ export default {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with this connected account, if any.',
                 type: 'string',
               },
               event_id: {
@@ -16574,6 +16583,7 @@ export default {
               'occurred_at',
               'connected_account_id',
               'event_type',
+              'account_type',
             ],
             type: 'object',
             'x-route-path': '/connected_accounts',
