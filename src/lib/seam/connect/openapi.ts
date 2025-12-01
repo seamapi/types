@@ -51951,6 +51951,19 @@ export default {
                           required: ['rule'],
                           type: 'object',
                         },
+                        reservation_spaces_updated: {
+                          properties: {
+                            config: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            rule: {
+                              enum: ['reservation_spaces_updated'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['rule'],
+                          type: 'object',
+                        },
                         reservation_time_updated: {
                           properties: {
                             config: {
@@ -52202,6 +52215,19 @@ export default {
                             },
                             rule: {
                               enum: ['reservation_deleted'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['rule'],
+                          type: 'object',
+                        },
+                        reservation_spaces_updated: {
+                          properties: {
+                            config: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            rule: {
+                              enum: ['reservation_spaces_updated'],
                               type: 'string',
                             },
                           },
@@ -52465,6 +52491,17 @@ export default {
                         required: ['rule'],
                         type: 'object',
                       },
+                      reservation_spaces_updated: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['reservation_spaces_updated'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule'],
+                        type: 'object',
+                      },
                       reservation_time_updated: {
                         properties: {
                           config: { properties: {}, type: 'object' },
@@ -52716,6 +52753,17 @@ export default {
                           config: { properties: {}, type: 'object' },
                           rule: {
                             enum: ['reservation_deleted'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule'],
+                        type: 'object',
+                      },
+                      reservation_spaces_updated: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['reservation_spaces_updated'],
                             type: 'string',
                           },
                         },
