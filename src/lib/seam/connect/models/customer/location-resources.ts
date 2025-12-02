@@ -1,5 +1,7 @@
 import { z } from 'zod'
 
+import { custom_metadata_input } from '../custom-metadata.js'
+
 // Base location resource with common fields
 const base_location_resource = z.object({
   name: z.string().describe('Your display name for this location resource.'),
@@ -118,6 +120,11 @@ export const property_listing_resource = base_location_resource.extend({
       message: 'Must not have leading or trailing whitespace',
     })
     .describe('Your unique identifier for the property listing.'),
+  custom_metadata: custom_metadata_input
+    .optional()
+    .describe(
+      'Set key:value pairs. Accepts string or Boolean values. Adding custom metadata to a property listing enables you to store custom information, like customer details or internal IDs from your application.',
+    ),
 })
 
 export const site_resource = base_location_resource.extend({
