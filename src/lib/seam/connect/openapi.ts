@@ -41970,6 +41970,18 @@ export default {
                             description: 'List of property listings.',
                             items: {
                               properties: {
+                                custom_metadata: {
+                                  additionalProperties: {
+                                    nullable: true,
+                                    oneOf: [
+                                      { maxLength: 500, type: 'string' },
+                                      { type: 'boolean' },
+                                    ],
+                                  },
+                                  description:
+                                    'Set key:value pairs. Accepts string or Boolean values. Adding custom metadata to a property listing enables you to store custom information, like customer details or internal IDs from your application.',
+                                  type: 'object',
+                                },
                                 name: {
                                   description:
                                     'Your display name for this location resource.',
@@ -43184,6 +43196,18 @@ export default {
                     description: 'List of property listings.',
                     items: {
                       properties: {
+                        custom_metadata: {
+                          additionalProperties: {
+                            nullable: true,
+                            oneOf: [
+                              { maxLength: 500, type: 'string' },
+                              { type: 'boolean' },
+                            ],
+                          },
+                          description:
+                            'Set key:value pairs. Accepts string or Boolean values. Adding custom metadata to a property listing enables you to store custom information, like customer details or internal IDs from your application.',
+                          type: 'object',
+                        },
                         name: {
                           description:
                             'Your display name for this location resource.',
