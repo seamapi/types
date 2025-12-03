@@ -31,6 +31,10 @@ export const phone_session = z.object({
   user_identity: user_identity.describe('User identity.'),
 
   workspace_id: z.string().describe('Workspace ID.'),
+
+  is_sandbox_workspace: z
+    .boolean()
+    .describe('Whether the workspace is in sandbox mode.'),
 }).describe(`
   ---
   route_path: /seam/mobile_sdk/v1/phone_sessions

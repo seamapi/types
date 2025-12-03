@@ -20133,6 +20133,10 @@ export default {
       phone_session: {
         description: 'Represents a mobile phone session.',
         properties: {
+          is_sandbox_workspace: {
+            description: 'Whether the workspace is in sandbox mode.',
+            type: 'boolean',
+          },
           provider_sessions: {
             description: 'Phone provider sessions.',
             items: {
@@ -21168,7 +21172,12 @@ export default {
           },
           workspace_id: { description: 'Workspace ID.', type: 'string' },
         },
-        required: ['provider_sessions', 'user_identity', 'workspace_id'],
+        required: [
+          'provider_sessions',
+          'user_identity',
+          'workspace_id',
+          'is_sandbox_workspace',
+        ],
         type: 'object',
         'x-route-path': '/seam/mobile_sdk/v1/phone_sessions',
         'x-undocumented': 'Seam Mobile SDK only.',
