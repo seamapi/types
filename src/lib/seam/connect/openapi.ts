@@ -53409,7 +53409,7 @@ export default {
                   },
                   connector_type: {
                     description: 'Type of connector to create',
-                    enum: ['mock', 'mews', 'rms', 'cloudbeds'],
+                    enum: ['mock', 'mews', 'rms', 'cloudbeds', 'smoobu'],
                     type: 'string',
                   },
                   customer_key: {
@@ -53828,6 +53828,22 @@ export default {
                             type: 'string',
                           },
                         },
+                        type: 'object',
+                      },
+                      {
+                        properties: {
+                          api_key: {
+                            description: 'API key for Smoobu authentication',
+                            minLength: 1,
+                            type: 'string',
+                          },
+                          base_api_url: {
+                            description:
+                              'Optional base API URL (defaults to https://api.smoobu.com/api)',
+                            type: 'string',
+                          },
+                        },
+                        required: ['api_key'],
                         type: 'object',
                       },
                     ],
