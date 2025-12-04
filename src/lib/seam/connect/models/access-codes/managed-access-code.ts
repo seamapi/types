@@ -458,6 +458,16 @@ const kwikset_unable_to_confirm_code_warning = common_access_code_warning
   })
   .describe('Unable to confirm that the access code is set on Kwikset device.')
 
+const ultraloq_access_code_disabled = common_access_code_warning
+  .extend({
+    warning_code: z
+      .literal('ultraloq_access_code_disabled')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'Access code is disabled on Ultraloq device. Re-enable through the Ultraloq mobile app.',
+  )
+
 const access_code_warning = z
   .discriminatedUnion('warning_code', [
     smartthings_failed_to_set_access_code_warning,
@@ -472,6 +482,7 @@ const access_code_warning = z
     igloo_algopin_must_be_used_within_24_hours,
     management_transferred,
     kwikset_unable_to_confirm_code_warning,
+    ultraloq_access_code_disabled,
   ])
   .describe(
     'Warnings associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
@@ -504,6 +515,9 @@ const _access_code_warning_map = z.object({
     igloo_algopin_must_be_used_within_24_hours.optional().nullable(),
   management_transferred: management_transferred.optional().nullable(),
   kwikset_unable_to_confirm_code_warning: kwikset_unable_to_confirm_code_warning
+    .optional()
+    .nullable(),
+  ultraloq_access_code_disabled: ultraloq_access_code_disabled
     .optional()
     .nullable(),
 })
