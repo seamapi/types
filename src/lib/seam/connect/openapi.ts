@@ -46986,6 +46986,36 @@ export default {
               type: 'array',
             },
           },
+          {
+            in: 'query',
+            name: 'acs_entrance_id',
+            schema: {
+              description:
+                'ID of the ACS entrance for which you want to list events.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_user_id',
+            schema: {
+              description:
+                'ID of the ACS user for which you want to list events.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            schema: {
+              description:
+                'ID of the user identity for which you want to list events.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -47045,6 +47075,12 @@ export default {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
+                  acs_entrance_id: {
+                    description:
+                      'ID of the ACS entrance for which you want to list events.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   acs_system_id: {
                     description:
                       'ID of the access system for which you want to list events.',
@@ -47056,6 +47092,12 @@ export default {
                       'IDs of the access systems for which you want to list events.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
+                  },
+                  acs_user_id: {
+                    description:
+                      'ID of the ACS user for which you want to list events.',
+                    format: 'uuid',
+                    type: 'string',
                   },
                   between: {
                     description:
@@ -47321,6 +47363,12 @@ export default {
                     description: 'Offset for the events that you want to list.',
                     format: 'float',
                     type: 'number',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity for which you want to list events.',
+                    format: 'uuid',
+                    type: 'string',
                   },
                 },
                 type: 'object',
