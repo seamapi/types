@@ -38760,12 +38760,41 @@ export default {
           {
             in: 'query',
             name: 'action_attempt_ids',
-            required: true,
             schema: {
               description:
                 'IDs of the action attempts that you want to retrieve.',
               items: { format: 'uuid', type: 'string' },
               type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_id',
+            schema: {
+              description: 'ID of the device to filter action attempts by.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 500,
+              description: 'Maximum number of records to return per page.',
+              exclusiveMinimum: true,
+              minimum: 0,
+              type: 'integer',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              nullable: true,
+              type: 'string',
             },
           },
         ],
@@ -38780,8 +38809,9 @@ export default {
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                   },
-                  required: ['action_attempts', 'ok'],
+                  required: ['action_attempts', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
@@ -38819,8 +38849,27 @@ export default {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
+                  device_id: {
+                    description:
+                      'ID of the device to filter action attempts by.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  limit: {
+                    default: 500,
+                    description:
+                      'Maximum number of records to return per page.',
+                    exclusiveMinimum: true,
+                    minimum: 0,
+                    type: 'integer',
+                  },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    nullable: true,
+                    type: 'string',
+                  },
                 },
-                required: ['action_attempt_ids'],
                 type: 'object',
               },
             },
@@ -38837,8 +38886,9 @@ export default {
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                   },
-                  required: ['action_attempts', 'ok'],
+                  required: ['action_attempts', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
