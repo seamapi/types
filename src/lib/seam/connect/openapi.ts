@@ -52300,6 +52300,10 @@ export default {
                                   type: 'object',
                                 },
                                 occupied_preset_key: { type: 'string' },
+                                precondition_minutes_before_reservation: {
+                                  format: 'float',
+                                  type: 'number',
+                                },
                                 unoccupied_preset_key: { type: 'string' },
                               },
                               type: 'object',
@@ -52570,6 +52574,10 @@ export default {
                                   type: 'object',
                                 },
                                 occupied_preset_key: { type: 'string' },
+                                precondition_minutes_before_reservation: {
+                                  format: 'float',
+                                  type: 'number',
+                                },
                                 unoccupied_preset_key: { type: 'string' },
                               },
                               type: 'object',
@@ -52829,6 +52837,10 @@ export default {
                                 type: 'object',
                               },
                               occupied_preset_key: { type: 'string' },
+                              precondition_minutes_before_reservation: {
+                                format: 'float',
+                                type: 'number',
+                              },
                               unoccupied_preset_key: { type: 'string' },
                             },
                             type: 'object',
@@ -53097,6 +53109,10 @@ export default {
                                 type: 'object',
                               },
                               occupied_preset_key: { type: 'string' },
+                              precondition_minutes_before_reservation: {
+                                format: 'float',
+                                type: 'number',
+                              },
                               unoccupied_preset_key: { type: 'string' },
                             },
                             type: 'object',
