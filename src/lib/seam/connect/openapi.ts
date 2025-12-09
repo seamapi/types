@@ -41697,6 +41697,14 @@ export default {
                         enum: ['en-US', 'pt-PT', 'fr-FR', 'it-IT', 'es-ES'],
                         type: 'string',
                       },
+                      property_listing_filter: {
+                        additionalProperties: {
+                          oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                        },
+                        description:
+                          'Filter configuration for property listings based on their custom_metadata. Keys and values must match the custom_metadata stored on property listings.',
+                        type: 'object',
+                      },
                     },
                     type: 'object',
                   },
@@ -54870,6 +54878,14 @@ export default {
                           enum: ['en-US', 'pt-PT', 'fr-FR', 'it-IT', 'es-ES'],
                           type: 'string',
                         },
+                        property_listing_filter: {
+                          additionalProperties: {
+                            oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                          },
+                          description:
+                            'Filter configuration for property listings based on their custom_metadata. Keys and values must match the custom_metadata stored on property listings.',
+                          type: 'object',
+                        },
                       },
                       type: 'object',
                     },
@@ -55192,6 +55208,14 @@ export default {
                           description: 'The locale to use for the portal.',
                           enum: ['en-US', 'pt-PT', 'fr-FR', 'it-IT', 'es-ES'],
                           type: 'string',
+                        },
+                        property_listing_filter: {
+                          additionalProperties: {
+                            oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                          },
+                          description:
+                            'Filter configuration for property listings based on their custom_metadata. Keys and values must match the custom_metadata stored on property listings.',
+                          type: 'object',
                         },
                       },
                       type: 'object',
