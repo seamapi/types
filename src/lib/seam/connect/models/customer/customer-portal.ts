@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+import type { CustomMetadata } from '../custom-metadata.js'
 import { access_grant_key_aliases } from './access-grant-resources.js'
 import { location_key_aliases } from './location-resources.js'
 
@@ -108,6 +109,12 @@ export const portal_configuration_base = z.object({
     .uuid()
     .optional()
     .describe('The ID of the customization profile to use for the portal.'),
+  property_listing_filter: z
+    .record(z.string(), z.union([z.string(), z.boolean()]))
+    .optional()
+    .describe(
+      'Filter configuration for property listings based on their custom_metadata. Keys and values must match the custom_metadata stored on property listings.',
+    ),
 })
 
 export const portal_configuration = portal_configuration_base
@@ -132,7 +139,10 @@ export const portal_configuration = portal_configuration_base
     },
     is_embedded: false,
     locale: undefined,
+    property_listing_filter: undefined,
   })
   .describe(`Configuration for a customer portal`)
 
 export type PortalConfiguration = z.infer<typeof portal_configuration>
+
+export type PropertyListingFilter = CustomMetadata
