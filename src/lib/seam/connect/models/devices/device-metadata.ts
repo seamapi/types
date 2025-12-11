@@ -188,6 +188,12 @@ export const device_metadata = z
           .string()
           .describe(`Locked state for a Salto KS device.`),
         model: z.string().optional().describe(`Model for a Salto KS device.`),
+        has_custom_pin_subscription: z
+          .boolean()
+          .optional()
+          .describe(
+            `Indicates whether the site has a Salto KS subscription that supports custom PINs.`,
+          ),
       })
       .describe(`Metadata for a Salto KS device.`),
 

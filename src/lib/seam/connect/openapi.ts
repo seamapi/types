@@ -11455,6 +11455,11 @@ export default {
                               'Customer reference for a Salto KS device.',
                             type: 'string',
                           },
+                          has_custom_pin_subscription: {
+                            description:
+                              'Indicates whether the site has a Salto KS subscription that supports custom PINs.',
+                            type: 'boolean',
+                          },
                           lock_id: {
                             description: 'Lock ID for a Salto KS device.',
                             type: 'string',
