@@ -9570,6 +9570,31 @@ export default {
         type: 'object',
         'x-route-path': '/connected_accounts',
       },
+      customer: {
+        description:
+          'Represents a customer within a workspace. Customers are used to organize resources and manage access for different clients, such as hotels, property managers, and more.',
+        properties: {
+          created_at: {
+            description: 'Date and time at which the customer was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          customer_key: {
+            description: 'Unique key for the customer within the workspace.',
+            type: 'string',
+          },
+          workspace_id: {
+            description:
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the customer.',
+            format: 'uuid',
+            type: 'string',
+          },
+        },
+        required: ['customer_key', 'workspace_id', 'created_at'],
+        type: 'object',
+        'x-route-path': '/customers',
+        'x-undocumented': 'Internal resource.',
+      },
       customization_profile: {
         description: 'A customization profile.',
         properties: {
@@ -54524,6 +54549,136 @@ export default {
         'x-fern-sdk-return-value': 'connector',
         'x-response-key': 'connector',
         'x-title': 'Update Connector',
+        'x-undocumented': 'Internal endpoint for Console.',
+      },
+    },
+    '/seam/customer/v1/customers/list': {
+      get: {
+        description: 'Returns a list of all customers within the workspace.',
+        operationId: 'seamCustomerV1CustomersListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 500,
+              description: 'Maximum number of records to return per page.',
+              exclusiveMinimum: true,
+              minimum: 0,
+              type: 'integer',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              nullable: true,
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    customers: {
+                      items: { $ref: '#/components/schemas/customer' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
+                  },
+                  required: ['customers', 'pagination', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/seam/customer/v1/customers/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'customers'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'customers',
+        'x-response-key': 'customers',
+        'x-title': 'List Customers',
+        'x-undocumented': 'Internal endpoint for Console.',
+      },
+      post: {
+        description: 'Returns a list of all customers within the workspace.',
+        operationId: 'seamCustomerV1CustomersListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  limit: {
+                    default: 500,
+                    description:
+                      'Maximum number of records to return per page.',
+                    exclusiveMinimum: true,
+                    minimum: 0,
+                    type: 'integer',
+                  },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    nullable: true,
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    customers: {
+                      items: { $ref: '#/components/schemas/customer' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
+                  },
+                  required: ['customers', 'pagination', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/seam/customer/v1/customers/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'customers'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'customers',
+        'x-response-key': 'customers',
+        'x-title': 'List Customers',
         'x-undocumented': 'Internal endpoint for Console.',
       },
     },

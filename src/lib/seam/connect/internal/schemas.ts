@@ -37,6 +37,7 @@ export {
   connect_webview_device_selection_mode,
   connected_account,
   custom_metadata_input,
+  customer,
   customer_data,
   customer_portal_theme,
   device_capability_flags,
