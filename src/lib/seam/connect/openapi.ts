@@ -748,7 +748,8 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'No valid user level for Oracode.',
+                  description:
+                    'No Dormakaba Oracode user levels configured for the requested time range.',
                   properties: {
                     created_at: {
                       description:
@@ -759,7 +760,7 @@ export default {
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['dormakaba_oracode_no_valid_user_level'],
+                      enum: ['dormakaba_oracode_invalid_time_range'],
                       type: 'string',
                     },
                     is_access_code_error: {
@@ -22278,7 +22279,8 @@ export default {
                   type: 'object',
                 },
                 {
-                  description: 'No valid user level for Oracode.',
+                  description:
+                    'No Dormakaba Oracode user levels configured for the requested time range.',
                   properties: {
                     created_at: {
                       description:
@@ -22289,7 +22291,7 @@ export default {
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['dormakaba_oracode_no_valid_user_level'],
+                      enum: ['dormakaba_oracode_invalid_time_range'],
                       type: 'string',
                     },
                     is_access_code_error: {

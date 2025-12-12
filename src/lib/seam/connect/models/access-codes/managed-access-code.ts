@@ -221,13 +221,15 @@ const wyze_potential_duplicate_code = common_access_code_error
   })
   .describe('Potential duplicate access code detected.')
 
-const dormakaba_oracode_no_valid_user_level = common_access_code_error
+const dormakaba_oracode_invalid_time_range = common_access_code_error
   .extend({
     error_code: z
-      .literal('dormakaba_oracode_no_valid_user_level')
+      .literal('dormakaba_oracode_invalid_time_range')
       .describe(error_code_description),
   })
-  .describe('No valid user level for Oracode.')
+  .describe(
+    'No Dormakaba Oracode user levels configured for the requested time range.',
+  )
 
 const keynest_unsupported_third_party_locker = common_access_code_error
   .extend({
@@ -262,7 +264,7 @@ const access_code_error = z
     hubitat_no_free_positions_available,
     wyze_duplicate_code_name,
     wyze_potential_duplicate_code,
-    dormakaba_oracode_no_valid_user_level,
+    dormakaba_oracode_invalid_time_range,
     kwikset_insufficient_permissions,
     keynest_unsupported_third_party_locker,
   ])
@@ -332,7 +334,7 @@ const _access_code_error_map = z.object({
   wyze_potential_duplicate_code: wyze_potential_duplicate_code
     .optional()
     .nullable(),
-  dormakaba_oracode_no_valid_user_level: dormakaba_oracode_no_valid_user_level
+  dormakaba_oracode_invalid_time_range: dormakaba_oracode_invalid_time_range
     .optional()
     .nullable(),
   keynest_unsupported_third_party_locker: keynest_unsupported_third_party_locker
