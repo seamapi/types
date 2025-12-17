@@ -2227,27 +2227,58 @@ export default {
             description: 'Warnings associated with the `acs_access_group`.',
             items: {
               description: 'Warning associated with the `acs_access_group`.',
-              properties: {
-                created_at: {
+              oneOf: [
+                {
                   description:
-                    'Date and time at which Seam created the warning.',
-                  format: 'date-time',
-                  type: 'string',
+                    'An unknown issue occurred while syncing the state of this access group with the provider. This issue may affect the proper functioning of this access group.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['unknown_issue_with_acs_access_group'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
                 },
-                message: {
+                {
                   description:
-                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                  type: 'string',
+                    'Indicates that the access group is being deleted from the access system. This is a temporary state, and the access group will be deleted shortly.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['being_deleted'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
                 },
-                warning_code: {
-                  description:
-                    'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                  enum: ['unknown_issue_with_acs_access_group'],
-                  type: 'string',
-                },
-              },
-              required: ['created_at', 'message', 'warning_code'],
-              type: 'object',
+              ],
             },
             type: 'array',
           },
@@ -23421,27 +23452,58 @@ export default {
             description: 'Warnings associated with the `acs_access_group`.',
             items: {
               description: 'Warning associated with the `acs_access_group`.',
-              properties: {
-                created_at: {
+              oneOf: [
+                {
                   description:
-                    'Date and time at which Seam created the warning.',
-                  format: 'date-time',
-                  type: 'string',
+                    'An unknown issue occurred while syncing the state of this access group with the provider. This issue may affect the proper functioning of this access group.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['unknown_issue_with_acs_access_group'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
                 },
-                message: {
+                {
                   description:
-                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                  type: 'string',
+                    'Indicates that the access group is being deleted from the access system. This is a temporary state, and the access group will be deleted shortly.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['being_deleted'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
                 },
-                warning_code: {
-                  description:
-                    'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                  enum: ['unknown_issue_with_acs_access_group'],
-                  type: 'string',
-                },
-              },
-              required: ['created_at', 'message', 'warning_code'],
-              type: 'object',
+              ],
             },
             type: 'array',
           },
@@ -32759,6 +32821,104 @@ export default {
         'x-fern-sdk-method-name': 'add_user',
         'x-response-key': null,
         'x-title': 'Add an ACS User to an Access Group',
+      },
+    },
+    '/acs/access_groups/delete': {
+      delete: {
+        description:
+          'Deletes a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+        operationId: 'acsAccessGroupsDeleteDelete',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_access_group_id',
+            required: true,
+            schema: {
+              description: 'ID of the access group that you want to delete.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/access_groups/delete',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'access_groups'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete an Access Group',
+      },
+      post: {
+        description:
+          'Deletes a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+        operationId: 'acsAccessGroupsDeletePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_access_group_id: {
+                    description:
+                      'ID of the access group that you want to delete.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['acs_access_group_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/access_groups/delete',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'access_groups'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete an Access Group',
       },
     },
     '/acs/access_groups/get': {

@@ -41,14 +41,23 @@ export const unknown_issue_with_acs_access_group =
       'An unknown issue occurred while syncing the state of this access group with the provider. This issue may affect the proper functioning of this access group.',
     )
 
-const acs_access_group_warning = unknown_issue_with_acs_access_group.describe(
-  'Warning associated with the `acs_access_group`.',
-)
+const acs_access_group_being_deleted = common_acs_access_group_warning
+  .extend({
+    warning_code: z.literal('being_deleted').describe(warning_code_description),
+  })
+  .describe(
+    'Indicates that the access group is being deleted from the access system. This is a temporary state, and the access group will be deleted shortly.',
+  )
+
+const acs_access_group_warning = z
+  .union([unknown_issue_with_acs_access_group, acs_access_group_being_deleted])
+  .describe('Warning associated with the `acs_access_group`.')
 
 const _acs_access_group_warning_map = z.object({
   unknown_issue_with_acs_access_group: unknown_issue_with_acs_access_group
     .optional()
     .nullable(),
+  being_deleted: acs_access_group_being_deleted.optional().nullable(),
 })
 
 export type AcsAccessGroupWarningMap = z.infer<
