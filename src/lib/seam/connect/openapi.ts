@@ -54189,7 +54189,14 @@ export default {
                   },
                   connector_type: {
                     description: 'Type of connector to create',
-                    enum: ['mock', 'mews', 'rms', 'cloudbeds', 'smoobu'],
+                    enum: [
+                      'mock',
+                      'mews',
+                      'rms',
+                      'cloudbeds',
+                      'smoobu',
+                      'zonal',
+                    ],
                     type: 'string',
                   },
                   customer_key: {
