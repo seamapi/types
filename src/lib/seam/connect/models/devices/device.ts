@@ -316,16 +316,6 @@ const wyze_device_missing_gateway = common_device_warning.extend({
     Indicates that the Wyze Lock is not connected to a gateway.
     `)
 
-const functional_offline_device = common_device_warning
-  .extend({
-    warning_code: z
-      .literal('functional_offline_device')
-      .describe(warning_code_description),
-  })
-  .describe(
-    'Indicates that the device is offline but has some functionality available.',
-  )
-
 const third_party_integration_detected = common_device_warning
   .extend({
     warning_code: z
@@ -446,7 +436,6 @@ const device_warning = z.discriminatedUnion('warning_code', [
   partial_backup_access_code_pool,
   many_active_backup_codes,
   wyze_device_missing_gateway,
-  functional_offline_device,
   third_party_integration_detected,
   ttlock_lock_gateway_unlocking_not_enabled,
   ttlock_weak_gateway_signal,
@@ -481,7 +470,6 @@ const _device_warning_map = z.object({
   wyze_device_missing_gateway: wyze_device_missing_gateway
     .optional()
     .nullable(),
-  functional_offline_device: functional_offline_device.optional().nullable(),
   third_party_integration_detected: third_party_integration_detected
     .optional()
     .nullable(),
