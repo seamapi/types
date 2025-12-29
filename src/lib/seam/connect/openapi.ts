@@ -13047,31 +13047,6 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the device is offline but has some functionality available.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['functional_offline_device'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'created_at', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description:
                     'Indicates that a third-party integration has been detected.',
                   properties: {
                     created_at: {
@@ -25674,31 +25649,6 @@ export default {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['wyze_device_missing_gateway'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'created_at', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description:
-                    'Indicates that the device is offline but has some functionality available.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['functional_offline_device'],
                       type: 'string',
                     },
                   },
