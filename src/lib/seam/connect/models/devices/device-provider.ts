@@ -97,6 +97,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'assa_abloy_vostio',
     'avigilon_alta',
     'keynest',
+    'hotek',
   ],
 
   consumer_smartlocks: [
