@@ -9227,6 +9227,10 @@ export default {
               'Your unique key for the customer associated with this connected account.',
             type: 'string',
           },
+          display_name: {
+            description: 'Display name for the connected account.',
+            type: 'string',
+          },
           errors: {
             description: 'Errors associated with the connected account.',
             items: {
@@ -9394,6 +9398,7 @@ export default {
             type: 'array',
           },
           user_identifier: {
+            deprecated: true,
             description:
               'User identifier associated with the connected account.',
             properties: {
@@ -9424,6 +9429,7 @@ export default {
               },
             },
             type: 'object',
+            'x-deprecated': 'Use `display_name` instead.',
           },
           warnings: {
             description: 'Warnings associated with the connected account.',
@@ -9592,6 +9598,7 @@ export default {
         required: [
           'connected_account_id',
           'account_type_display_name',
+          'display_name',
           'errors',
           'warnings',
           'custom_metadata',

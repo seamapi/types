@@ -292,12 +292,17 @@ export const connected_account = z.object({
           'Indicates whether the user identifier associated with the connected account is exclusive.',
         ),
     })
-    .optional()
-    .describe('User identifier associated with the connected account.'),
+    .optional().describe(`
+      ---
+      deprecated: Use \`display_name\` instead.
+      ---
+      User identifier associated with the connected account.
+    `),
   account_type: z.string().optional().describe('Type of connected account.'),
   account_type_display_name: z
     .string()
     .describe('Display name for the connected account type.'),
+  display_name: z.string().describe('Display name for the connected account.'),
   errors: z
     .array(connected_account_error)
     .describe('Errors associated with the connected account.'),
