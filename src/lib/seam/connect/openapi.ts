@@ -54131,7 +54131,7 @@ export default {
     '/seam/customer/v1/connectors/create': {
       post: {
         description:
-          'Creates a new connector for a customer in a workspace. The connector will be activated and start syncing data from the external API.\nIf a connector already exists for the same customer, it will be updated instead of creating a new one.',
+          'Creates a new connector for a customer in a workspace. The connector will be activated and start syncing data from the external API.',
         operationId: 'seamCustomerV1ConnectorsCreatePost',
         requestBody: {
           content: {
@@ -54220,11 +54220,7 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [
-          { api_key: [] },
-          { client_session_with_customer: [] },
-          { console_session_with_workspace: [] },
-        ],
+        security: [{ api_key: [] }, { console_session_with_workspace: [] }],
         summary: '/seam/customer/v1/connectors/create',
         tags: [],
         'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'connectors'],
@@ -54245,11 +54241,15 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  connector_customer_id: { type: 'string' },
                   connector_id: {
                     description: 'ID of the connector to delete',
                     minLength: 1,
                     type: 'string',
                   },
+                  customer_id: { type: 'string' },
+                  customer_key: { type: 'string' },
+                  unique_provider_resource_key: { type: 'string' },
                 },
                 required: ['connector_id'],
                 type: 'object',
@@ -54284,11 +54284,7 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [
-          { api_key: [] },
-          { client_session_with_customer: [] },
-          { console_session_with_workspace: [] },
-        ],
+        security: [{ api_key: [] }, { console_session_with_workspace: [] }],
         summary: '/seam/customer/v1/connectors/delete',
         tags: [],
         'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'connectors'],
@@ -54443,13 +54439,44 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  connector_customer_id: {
+                    description: 'ID of the connector customer to sync',
+                    format: 'uuid',
+                    nullable: true,
+                    type: 'string',
+                  },
                   connector_id: {
                     description: 'ID of the connector to sync',
                     format: 'uuid',
                     type: 'string',
                   },
+                  connector_type: {
+                    description: 'Type of the connector to sync',
+                    type: 'string',
+                  },
+                  customer_id: {
+                    description: 'ID of the customer to sync',
+                    type: 'string',
+                  },
+                  customer_key: {
+                    description: 'Key of the customer to sync',
+                    type: 'string',
+                  },
+                  unique_provider_resource_key: {
+                    description:
+                      'Unique provider resource key of the connector to sync',
+                    nullable: true,
+                    type: 'string',
+                  },
                 },
-                required: ['connector_id'],
+                required: [
+                  'connector_id',
+                  'connector_type',
+                  'customer_id',
+                  'customer_key',
+                  'connector_customer_id',
+                  'unique_provider_resource_key',
+                ],
                 type: 'object',
               },
             },
@@ -54463,11 +54490,10 @@ export default {
                   properties: {
                     connector_sync: {
                       properties: {
-                        connector_id: { type: 'string' },
                         message: { type: 'string' },
                         status: { type: 'string' },
                       },
-                      required: ['connector_id', 'status', 'message'],
+                      required: ['status', 'message'],
                       type: 'object',
                     },
                     ok: { type: 'boolean' },
