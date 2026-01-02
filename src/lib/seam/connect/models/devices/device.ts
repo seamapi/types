@@ -432,6 +432,17 @@ const keynest_unsupported_locker = common_device_warning.extend({
     Indicates that the key is in a locker that does not support the access codes API.
     `)
 
+const accessory_keypad_setup_required = common_device_warning.extend({
+  warning_code: z
+    .literal('accessory_keypad_setup_required')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: locks
+    ---
+    Indicates that the accessory keypad exists, but is not linked to the Igloohome Bridge. Online access code programming will fail until the keypad is linked to the Igloohome Bridge in the Igloohome app.
+    `)
+
 const device_warning = z.discriminatedUnion('warning_code', [
   partial_backup_access_code_pool,
   many_active_backup_codes,
@@ -451,6 +462,7 @@ const device_warning = z.discriminatedUnion('warning_code', [
   lockly_time_zone_not_configured,
   hub_required_for_addtional_capabilities,
   keynest_unsupported_locker,
+  accessory_keypad_setup_required,
 ])
 
 export type DeviceWarning = z.infer<typeof device_warning>
@@ -497,6 +509,9 @@ const _device_warning_map = z.object({
   hub_required_for_addtional_capabilities:
     hub_required_for_addtional_capabilities.optional().nullable(),
   keynest_unsupported_locker: keynest_unsupported_locker.optional().nullable(),
+  accessory_keypad_setup_required: accessory_keypad_setup_required
+    .optional()
+    .nullable(),
 })
 
 export type DeviceWarningMap = z.infer<typeof _device_warning_map>
