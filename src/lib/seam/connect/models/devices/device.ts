@@ -399,6 +399,16 @@ const lockly_time_zone_not_configured = common_device_warning
     'Indicates that Seam detected that the Lockly device does not have a time zone configured. Time-bound codes may not work as expected.',
   )
 
+const ultraloq_time_zone_unknown = common_device_warning
+  .extend({
+    warning_code: z
+      .literal('ultraloq_time_zone_unknown')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'Indicates that Seam does not know the time zone of the Ultraloq device. Set a time zone to enable time-bound access codes.',
+  )
+
 export const unknown_issue_with_phone = common_device_warning.extend({
   warning_code: z
     .literal('unknown_issue_with_phone')
@@ -460,6 +470,7 @@ const device_warning = z.discriminatedUnion('warning_code', [
   salto_ks_subscription_limit_almost_reached,
   unknown_issue_with_phone,
   lockly_time_zone_not_configured,
+  ultraloq_time_zone_unknown,
   hub_required_for_addtional_capabilities,
   keynest_unsupported_locker,
   accessory_keypad_setup_required,
@@ -506,6 +517,7 @@ const _device_warning_map = z.object({
   lockly_time_zone_not_configured: lockly_time_zone_not_configured
     .optional()
     .nullable(),
+  ultraloq_time_zone_unknown: ultraloq_time_zone_unknown.optional().nullable(),
   hub_required_for_addtional_capabilities:
     hub_required_for_addtional_capabilities.optional().nullable(),
   keynest_unsupported_locker: keynest_unsupported_locker.optional().nullable(),
