@@ -420,9 +420,9 @@ export const unknown_issue_with_phone = common_device_warning.extend({
     Indicates that an unknown issue occurred while syncing the state of the phone with the provider. This issue may affect the proper functioning of the phone.
     `)
 
-const hub_required_for_addtional_capabilities = common_device_warning.extend({
+const hub_required_for_additional_capabilities = common_device_warning.extend({
   warning_code: z
-    .literal('hub_required_for_addtional_capabilities')
+    .literal('hub_required_for_additional_capabilities')
     .describe(warning_code_description),
 }).describe(`
     ---
@@ -471,7 +471,7 @@ const device_warning = z.discriminatedUnion('warning_code', [
   unknown_issue_with_phone,
   lockly_time_zone_not_configured,
   ultraloq_time_zone_unknown,
-  hub_required_for_addtional_capabilities,
+  hub_required_for_additional_capabilities,
   keynest_unsupported_locker,
   accessory_keypad_setup_required,
 ])
@@ -518,8 +518,8 @@ const _device_warning_map = z.object({
     .optional()
     .nullable(),
   ultraloq_time_zone_unknown: ultraloq_time_zone_unknown.optional().nullable(),
-  hub_required_for_addtional_capabilities:
-    hub_required_for_addtional_capabilities.optional().nullable(),
+  hub_required_for_additional_capabilities:
+    hub_required_for_additional_capabilities.optional().nullable(),
   keynest_unsupported_locker: keynest_unsupported_locker.optional().nullable(),
   accessory_keypad_setup_required: accessory_keypad_setup_required
     .optional()
