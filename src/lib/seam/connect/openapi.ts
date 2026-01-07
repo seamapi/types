@@ -54573,9 +54573,6 @@ export default {
                 },
                 required: [
                   'connector_id',
-                  'connector_type',
-                  'customer_id',
-                  'customer_key',
                   'connector_customer_id',
                   'unique_provider_resource_key',
                 ],
