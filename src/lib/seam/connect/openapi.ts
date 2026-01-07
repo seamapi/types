@@ -13426,7 +13426,7 @@ export default {
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['hub_required_for_addtional_capabilities'],
+                      enum: ['hub_required_for_additional_capabilities'],
                       type: 'string',
                     },
                   },
@@ -26087,7 +26087,7 @@ export default {
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['hub_required_for_addtional_capabilities'],
+                      enum: ['hub_required_for_additional_capabilities'],
                       type: 'string',
                     },
                   },
