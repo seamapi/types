@@ -54571,11 +54571,7 @@ export default {
                     type: 'string',
                   },
                 },
-                required: [
-                  'connector_id',
-                  'connector_customer_id',
-                  'unique_provider_resource_key',
-                ],
+                required: ['connector_id'],
                 type: 'object',
               },
             },
