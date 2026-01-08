@@ -18809,6 +18809,11 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
+              access_code_is_managed: {
+                description:
+                  'Whether the access code is managed by Seam (true) or unmanaged (false). Only present when access_code_id is set.',
+                type: 'boolean',
+              },
               action_attempt_id: {
                 description:
                   'ID of the action attempt associated with the lock action.',
@@ -18893,6 +18898,11 @@ export default {
                   'ID of the access code that was used to unlock the affected device.',
                 format: 'uuid',
                 type: 'string',
+              },
+              access_code_is_managed: {
+                description:
+                  'Whether the access code is managed by Seam (true) or unmanaged (false). Only present when access_code_id is set.',
+                type: 'boolean',
               },
               acs_entrance_id: {
                 description:

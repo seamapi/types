@@ -377,6 +377,12 @@ export const lock_locked_event = device_event.extend({
     .uuid()
     .optional()
     .describe('ID of the access code that was used to lock the device.'),
+  access_code_is_managed: z
+    .boolean()
+    .optional()
+    .describe(
+      'Whether the access code is managed by Seam (true) or unmanaged (false). Only present when access_code_id is set.',
+    ),
   action_attempt_id: z
     .string()
     .uuid()
@@ -402,6 +408,12 @@ export const lock_unlocked_event = device_event.extend({
     .optional()
     .describe(
       'ID of the access code that was used to unlock the affected device.',
+    ),
+  access_code_is_managed: z
+    .boolean()
+    .optional()
+    .describe(
+      'Whether the access code is managed by Seam (true) or unmanaged (false). Only present when access_code_id is set.',
     ),
   action_attempt_id: z
     .string()
