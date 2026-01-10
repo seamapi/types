@@ -54937,6 +54937,61 @@ export default {
         'x-undocumented': 'Internal endpoint for Console.',
       },
     },
+    '/seam/customer/v1/customers/open_portal': {
+      post: {
+        description:
+          'Opens an existing customer portal or creates a new one if the previous portal has expired.\nReturns an error if no portal was ever created for this customer.',
+        operationId: 'seamCustomerV1CustomersOpenPortalPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  customer_key: {
+                    description: 'The customer key to open a portal for.',
+                    type: 'string',
+                  },
+                },
+                required: ['customer_key'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    magic_link: { $ref: '#/components/schemas/magic_link' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['magic_link', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/seam/customer/v1/customers/open_portal',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'customers'],
+        'x-fern-sdk-method-name': 'open_portal',
+        'x-fern-sdk-return-value': 'magic_link',
+        'x-response-key': 'magic_link',
+        'x-title': 'Open Customer Portal',
+        'x-undocumented': 'Internal endpoint for Console.',
+      },
+    },
     '/seam/customer/v1/events/list': {
       get: {
         description:
