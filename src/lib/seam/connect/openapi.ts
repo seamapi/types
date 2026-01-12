@@ -55051,6 +55051,42 @@ export default {
                         required: ['api_key'],
                         type: 'object',
                       },
+                      {
+                        properties: {
+                          api_key: {
+                            description:
+                              'Zonal API key for X-API-Key header (required)',
+                            minLength: 1,
+                            type: 'string',
+                          },
+                          auth_token: { type: 'string' },
+                          hotel_id: {
+                            description:
+                              'Optional hotel ID for single-property mode',
+                            type: 'string',
+                          },
+                          id: {
+                            description:
+                              "Zonal ID used as 'token' in login request body (required)",
+                            minLength: 1,
+                            type: 'string',
+                          },
+                          is_staging: {
+                            default: false,
+                            description:
+                              'Use staging API instead of production',
+                            type: 'boolean',
+                          },
+                          secret: {
+                            description:
+                              'Zonal Secret for login request body (required)',
+                            minLength: 1,
+                            type: 'string',
+                          },
+                        },
+                        required: ['api_key', 'id', 'secret'],
+                        type: 'object',
+                      },
                     ],
                   },
                   connector_id: {
