@@ -2,6 +2,28 @@ import { z } from 'zod'
 
 import { requested_access_method } from './requested-access-method.js'
 
+const common_access_grant_error = z.object({
+  created_at: z
+    .string()
+    .datetime()
+    .describe('Date and time at which Seam created the error.'),
+  message: z
+    .string()
+    .describe(
+      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+    ),
+})
+
+const error_code_description =
+  'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.'
+
+const cannot_create_requested_access_methods_error =
+  common_access_grant_error.extend({
+    error_code: z
+      .literal('cannot_create_requested_access_methods')
+      .describe(error_code_description),
+  })
+
 const common_access_grant_warning = z.object({
   created_at: z
     .string()
@@ -16,6 +38,19 @@ const common_access_grant_warning = z.object({
 
 const warning_code_description =
   'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
+
+const access_grant_error = z.discriminatedUnion('error_code', [
+  cannot_create_requested_access_methods_error,
+])
+
+export type AccessGrantError = z.infer<typeof access_grant_error>
+
+export const _access_grant_error_map = z.object({
+  cannot_create_requested_access_methods:
+    cannot_create_requested_access_methods_error.optional().nullable(),
+})
+
+export type AccessGrantErrorMap = z.infer<typeof _access_grant_error_map>
 
 const being_deleted = common_access_grant_warning
   .extend({
@@ -106,6 +141,11 @@ export const access_grant = z.object({
     .array(access_grant_warning)
     .describe(
       'Warnings associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
+    ),
+  errors: z
+    .array(access_grant_error)
+    .describe(
+      'Errors associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
     ),
   customization_profile_id: z
     .string()

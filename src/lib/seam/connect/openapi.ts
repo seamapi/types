@@ -1888,6 +1888,39 @@ export default {
             nullable: true,
             type: 'string',
           },
+          errors: {
+            description:
+              'Errors associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
+            items: {
+              discriminator: { propertyName: 'error_code' },
+              oneOf: [
+                {
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['cannot_create_requested_access_methods'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
           instant_key_url: {
             description:
               'Instant Key URL. Only returned if the Access Grant has a single mobile_key access_method. ',
@@ -2031,6 +2064,7 @@ export default {
           'starts_at',
           'ends_at',
           'warnings',
+          'errors',
         ],
         type: 'object',
         'x-draft': 'Early access.',
@@ -30156,6 +30190,45 @@ export default {
                           nullable: true,
                           type: 'string',
                         },
+                        errors: {
+                          description:
+                            'Errors associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
+                          items: {
+                            discriminator: { propertyName: 'error_code' },
+                            oneOf: [
+                              {
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the error.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  error_code: {
+                                    description:
+                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                    enum: [
+                                      'cannot_create_requested_access_methods',
+                                    ],
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'error_code',
+                                ],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                          type: 'array',
+                        },
                         location_ids: {
                           deprecated: true,
                           items: { format: 'uuid', type: 'string' },
@@ -30298,6 +30371,7 @@ export default {
                         'starts_at',
                         'ends_at',
                         'warnings',
+                        'errors',
                       ],
                       type: 'object',
                       'x-draft': 'Early access.',
@@ -30389,6 +30463,45 @@ export default {
                           nullable: true,
                           type: 'string',
                         },
+                        errors: {
+                          description:
+                            'Errors associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
+                          items: {
+                            discriminator: { propertyName: 'error_code' },
+                            oneOf: [
+                              {
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the error.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  error_code: {
+                                    description:
+                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                    enum: [
+                                      'cannot_create_requested_access_methods',
+                                    ],
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'error_code',
+                                ],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                          type: 'array',
+                        },
                         location_ids: {
                           deprecated: true,
                           items: { format: 'uuid', type: 'string' },
@@ -30531,6 +30644,7 @@ export default {
                         'starts_at',
                         'ends_at',
                         'warnings',
+                        'errors',
                       ],
                       type: 'object',
                       'x-draft': 'Early access.',
@@ -30647,6 +30761,45 @@ export default {
                             nullable: true,
                             type: 'string',
                           },
+                          errors: {
+                            description:
+                              'Errors associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
+                            items: {
+                              discriminator: { propertyName: 'error_code' },
+                              oneOf: [
+                                {
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the error.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    error_code: {
+                                      description:
+                                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                      enum: [
+                                        'cannot_create_requested_access_methods',
+                                      ],
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'error_code',
+                                  ],
+                                  type: 'object',
+                                },
+                              ],
+                            },
+                            type: 'array',
+                          },
                           location_ids: {
                             deprecated: true,
                             items: { format: 'uuid', type: 'string' },
@@ -30790,6 +30943,7 @@ export default {
                           'starts_at',
                           'ends_at',
                           'warnings',
+                          'errors',
                         ],
                         type: 'object',
                         'x-draft': 'Early access.',
@@ -30900,6 +31054,45 @@ export default {
                             nullable: true,
                             type: 'string',
                           },
+                          errors: {
+                            description:
+                              'Errors associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
+                            items: {
+                              discriminator: { propertyName: 'error_code' },
+                              oneOf: [
+                                {
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the error.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    error_code: {
+                                      description:
+                                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                      enum: [
+                                        'cannot_create_requested_access_methods',
+                                      ],
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'error_code',
+                                  ],
+                                  type: 'object',
+                                },
+                              ],
+                            },
+                            type: 'array',
+                          },
                           location_ids: {
                             deprecated: true,
                             items: { format: 'uuid', type: 'string' },
@@ -31043,6 +31236,7 @@ export default {
                           'starts_at',
                           'ends_at',
                           'warnings',
+                          'errors',
                         ],
                         type: 'object',
                         'x-draft': 'Early access.',
