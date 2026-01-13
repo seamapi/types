@@ -29858,6 +29858,27 @@ export default {
           },
           {
             in: 'query',
+            name: 'limit',
+            schema: {
+              default: 500,
+              description:
+                'Numerical limit on the number of access grants to return.',
+              format: 'float',
+              type: 'number',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              nullable: true,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'user_identity_id',
             schema: {
               description:
@@ -29934,8 +29955,9 @@ export default {
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                   },
-                  required: ['access_grants', 'ok'],
+                  required: ['access_grants', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
@@ -29989,11 +30011,24 @@ export default {
                       'Customer key for which you want to list access grants.',
                     type: 'string',
                   },
+                  limit: {
+                    default: 500,
+                    description:
+                      'Numerical limit on the number of access grants to return.',
+                    format: 'float',
+                    type: 'number',
+                  },
                   location_id: {
                     deprecated: true,
                     format: 'uuid',
                     type: 'string',
                     'x-deprecated': 'Use `space_id`.',
+                  },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    nullable: true,
+                    type: 'string',
                   },
                   reservation_key: {
                     description: 'Filter Access Grants by reservation_key.',
@@ -30028,8 +30063,9 @@ export default {
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                   },
-                  required: ['access_grants', 'ok'],
+                  required: ['access_grants', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
