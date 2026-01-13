@@ -96,14 +96,6 @@ const igloohome_bridge_too_many_pending_jobs = common_access_code_error
   })
   .describe('Igloohome bridge has too many pending jobs in the queue.')
 
-const igloohome_bridge_offline = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('igloohome_bridge_offline')
-      .describe(error_code_description),
-  })
-  .describe('Igloohome bridge is offline.')
-
 const kwikset_unable_to_confirm_code = common_access_code_error
   .extend({
     error_code: z
@@ -241,8 +233,8 @@ const access_code_error = z
     duplicate_code_attempt_prevented,
     no_space_for_access_code_on_device,
     igloohome_bridge_too_many_pending_jobs,
-    igloohome_bridge_offline,
     kwikset_unable_to_confirm_code,
+
     kwikset_unable_to_confirm_deletion,
     code_modified_external_to_seam_error,
     august_lock_invalid_code_length,
@@ -286,7 +278,6 @@ const _access_code_error_map = z.object({
   igloohome_bridge_too_many_pending_jobs: igloohome_bridge_too_many_pending_jobs
     .optional()
     .nullable(),
-  igloohome_bridge_offline: igloohome_bridge_offline.optional().nullable(),
   kwikset_unable_to_confirm_code: kwikset_unable_to_confirm_code
     .optional()
     .nullable(),
