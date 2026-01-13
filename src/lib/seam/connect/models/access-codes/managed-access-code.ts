@@ -88,14 +88,6 @@ const no_space_for_access_code_on_device = common_access_code_error
   })
   .describe('No space for access code on device.')
 
-const igloohome_bridge_too_many_pending_jobs = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('igloohome_bridge_too_many_pending_jobs')
-      .describe(error_code_description),
-  })
-  .describe('Igloohome bridge has too many pending jobs in the queue.')
-
 const kwikset_unable_to_confirm_code = common_access_code_error
   .extend({
     error_code: z
@@ -232,7 +224,6 @@ const access_code_error = z
     duplicate_code_on_device,
     duplicate_code_attempt_prevented,
     no_space_for_access_code_on_device,
-    igloohome_bridge_too_many_pending_jobs,
     kwikset_unable_to_confirm_code,
 
     kwikset_unable_to_confirm_deletion,
@@ -273,9 +264,6 @@ const _access_code_error_map = z.object({
     .nullable(),
   duplicate_code_on_device: duplicate_code_on_device.optional().nullable(),
   duplicate_code_attempt_prevented: duplicate_code_attempt_prevented
-    .optional()
-    .nullable(),
-  igloohome_bridge_too_many_pending_jobs: igloohome_bridge_too_many_pending_jobs
     .optional()
     .nullable(),
   kwikset_unable_to_confirm_code: kwikset_unable_to_confirm_code
