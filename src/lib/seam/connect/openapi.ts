@@ -291,37 +291,6 @@ export default {
                 },
                 {
                   description:
-                    'Igloohome bridge has too many pending jobs in the queue.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['igloohome_bridge_too_many_pending_jobs'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                },
-                {
-                  description:
                     'Unable to confirm that the access code is set on Kwikset device.',
                   properties: {
                     created_at: {
@@ -22056,37 +22025,6 @@ export default {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['no_space_for_access_code_on_device'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                },
-                {
-                  description:
-                    'Igloohome bridge has too many pending jobs in the queue.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['igloohome_bridge_too_many_pending_jobs'],
                       type: 'string',
                     },
                     is_access_code_error: {
