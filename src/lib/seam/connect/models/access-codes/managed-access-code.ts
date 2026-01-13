@@ -132,15 +132,6 @@ const kwikset_insufficient_permissions = common_access_code_error
     'Admin role required—insufficient permissions to manage PINs on this Kwikset device. Please have a Home Admin update your role in the Kwikset app, or ask them to set the PIN.',
   )
 
-const igloohome_offline_access_code_no_variance_available =
-  common_access_code_error
-    .extend({
-      error_code: z
-        .literal('igloohome_offline_access_code_no_variance_available')
-        .describe(error_code_description),
-    })
-    .describe('Lock has reached maximum amount of codes.')
-
 const august_lock_invalid_code_length = common_access_code_error
   .extend({
     error_code: z
@@ -251,7 +242,6 @@ const access_code_error = z
     no_space_for_access_code_on_device,
     igloohome_bridge_too_many_pending_jobs,
     igloohome_bridge_offline,
-    igloohome_offline_access_code_no_variance_available,
     kwikset_unable_to_confirm_code,
     kwikset_unable_to_confirm_deletion,
     code_modified_external_to_seam_error,
@@ -297,8 +287,6 @@ const _access_code_error_map = z.object({
     .optional()
     .nullable(),
   igloohome_bridge_offline: igloohome_bridge_offline.optional().nullable(),
-  igloohome_offline_access_code_no_variance_available:
-    igloohome_offline_access_code_no_variance_available.optional().nullable(),
   kwikset_unable_to_confirm_code: kwikset_unable_to_confirm_code
     .optional()
     .nullable(),
