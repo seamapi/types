@@ -105,6 +105,25 @@ export type AccessGrantAccessTimesChangedEvent = z.infer<
   typeof access_grant_access_times_changed_event
 >
 
+export const access_grant_could_not_create_requested_access_methods_event =
+  access_grant_event.extend({
+    event_type: z.literal(
+      'access_grant.could_not_create_requested_access_methods',
+    ),
+    error_message: z
+      .string()
+      .describe('Description of why the access methods could not be created.'),
+  }).describe(`
+    ---
+    route_path: /access_grants
+    ---
+    One or more requested access methods could not be created for an Access Grant.
+  `)
+
+export type AccessGrantCouldNotCreateRequestedAccessMethodsEvent = z.infer<
+  typeof access_grant_could_not_create_requested_access_methods_event
+>
+
 export const access_grant_events = [
   access_grant_created_event,
   access_grant_deleted_event,
@@ -112,4 +131,5 @@ export const access_grant_events = [
   access_grant_access_granted_to_door_event,
   access_grant_access_to_door_lost_event,
   access_grant_access_times_changed_event,
+  access_grant_could_not_create_requested_access_methods_event,
 ] as const
