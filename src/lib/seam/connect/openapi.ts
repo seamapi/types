@@ -15256,6 +15256,60 @@ export default {
             'x-route-path': '/access_grants',
           },
           {
+            description:
+              'One or more requested access methods could not be created for an Access Grant.',
+            properties: {
+              access_grant_id: {
+                description: 'ID of the affected Access Grant.',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              error_message: {
+                description:
+                  'Description of why the access methods could not be created.',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: [
+                  'access_grant.could_not_create_requested_access_methods',
+                ],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'access_grant_id',
+              'event_type',
+              'error_message',
+            ],
+            type: 'object',
+            'x-route-path': '/access_grants',
+          },
+          {
             description: 'An access method was issued.',
             properties: {
               access_grant_ids: {
@@ -47786,6 +47840,7 @@ export default {
                 'access_grant.access_granted_to_door',
                 'access_grant.access_to_door_lost',
                 'access_grant.access_times_changed',
+                'access_grant.could_not_create_requested_access_methods',
                 'access_method.issued',
                 'access_method.revoked',
                 'access_method.card_encoding_required',
@@ -47892,6 +47947,7 @@ export default {
                   'access_grant.access_granted_to_door',
                   'access_grant.access_to_door_lost',
                   'access_grant.access_times_changed',
+                  'access_grant.could_not_create_requested_access_methods',
                   'access_method.issued',
                   'access_method.revoked',
                   'access_method.card_encoding_required',
@@ -48195,6 +48251,7 @@ export default {
                       'access_grant.access_granted_to_door',
                       'access_grant.access_to_door_lost',
                       'access_grant.access_times_changed',
+                      'access_grant.could_not_create_requested_access_methods',
                       'access_method.issued',
                       'access_method.revoked',
                       'access_method.card_encoding_required',
@@ -48297,6 +48354,7 @@ export default {
                         'access_grant.access_granted_to_door',
                         'access_grant.access_to_door_lost',
                         'access_grant.access_times_changed',
+                        'access_grant.could_not_create_requested_access_methods',
                         'access_method.issued',
                         'access_method.revoked',
                         'access_method.card_encoding_required',
@@ -55344,6 +55402,7 @@ export default {
                 'access_grant.access_granted_to_door',
                 'access_grant.access_to_door_lost',
                 'access_grant.access_times_changed',
+                'access_grant.could_not_create_requested_access_methods',
                 'access_method.issued',
                 'access_method.revoked',
                 'access_method.card_encoding_required',
@@ -55451,6 +55510,7 @@ export default {
                   'access_grant.access_granted_to_door',
                   'access_grant.access_to_door_lost',
                   'access_grant.access_times_changed',
+                  'access_grant.could_not_create_requested_access_methods',
                   'access_method.issued',
                   'access_method.revoked',
                   'access_method.card_encoding_required',
@@ -55621,6 +55681,7 @@ export default {
                       'access_grant.access_granted_to_door',
                       'access_grant.access_to_door_lost',
                       'access_grant.access_times_changed',
+                      'access_grant.could_not_create_requested_access_methods',
                       'access_method.issued',
                       'access_method.revoked',
                       'access_method.card_encoding_required',
@@ -55723,6 +55784,7 @@ export default {
                         'access_grant.access_granted_to_door',
                         'access_grant.access_to_door_lost',
                         'access_grant.access_times_changed',
+                        'access_grant.could_not_create_requested_access_methods',
                         'access_method.issued',
                         'access_method.revoked',
                         'access_method.card_encoding_required',
