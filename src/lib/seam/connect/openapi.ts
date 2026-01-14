@@ -48033,6 +48033,98 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'access_grant_id',
+            schema: {
+              description:
+                'ID of the access grant for which you want to list events.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'access_grant_ids',
+            schema: {
+              description:
+                'IDs of the access grants for which you want to list events.',
+              items: { format: 'uuid', type: 'string' },
+              maxItems: 100,
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'access_method_id',
+            schema: {
+              description:
+                'ID of the access method for which you want to list events.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'access_method_ids',
+            schema: {
+              description:
+                'IDs of the access methods for which you want to list events.',
+              items: { format: 'uuid', type: 'string' },
+              maxItems: 100,
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_credential_id',
+            schema: {
+              description:
+                'ID of the ACS credential for which you want to list events.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'space_id',
+            schema: {
+              description: 'ID of the space for which you want to list events.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'space_ids',
+            schema: {
+              description:
+                'IDs of the spaces for which you want to list events.',
+              items: { format: 'uuid', type: 'string' },
+              maxItems: 100,
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_access_group_id',
+            schema: {
+              description:
+                'ID of the ACS access group for which you want to list events.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_encoder_id',
+            schema: {
+              description:
+                'ID of the ACS encoder for which you want to list events.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -48091,6 +48183,50 @@ export default {
                       'IDs of the access codes for which you want to list events.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
+                  },
+                  access_grant_id: {
+                    description:
+                      'ID of the access grant for which you want to list events.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  access_grant_ids: {
+                    description:
+                      'IDs of the access grants for which you want to list events.',
+                    items: { format: 'uuid', type: 'string' },
+                    maxItems: 100,
+                    type: 'array',
+                  },
+                  access_method_id: {
+                    description:
+                      'ID of the access method for which you want to list events.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  access_method_ids: {
+                    description:
+                      'IDs of the access methods for which you want to list events.',
+                    items: { format: 'uuid', type: 'string' },
+                    maxItems: 100,
+                    type: 'array',
+                  },
+                  acs_access_group_id: {
+                    description:
+                      'ID of the ACS access group for which you want to list events.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_credential_id: {
+                    description:
+                      'ID of the ACS credential for which you want to list events.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_encoder_id: {
+                    description:
+                      'ID of the ACS encoder for which you want to list events.',
+                    format: 'uuid',
+                    type: 'string',
                   },
                   acs_entrance_id: {
                     description:
@@ -48381,6 +48517,19 @@ export default {
                     description:
                       'Timestamp to indicate the beginning generation time for the events that you want to list. You must include `since` or `between`.',
                     type: 'string',
+                  },
+                  space_id: {
+                    description:
+                      'ID of the space for which you want to list events.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  space_ids: {
+                    description:
+                      'IDs of the spaces for which you want to list events.',
+                    items: { format: 'uuid', type: 'string' },
+                    maxItems: 100,
+                    type: 'array',
                   },
                   unstable_offset: {
                     description: 'Offset for the events that you want to list.',
