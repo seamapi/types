@@ -29902,6 +29902,15 @@ export default {
         parameters: [
           {
             in: 'query',
+            name: 'access_grant_id',
+            schema: {
+              description: 'ID of the access grant to retrieve.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'customer_key',
             schema: {
               description:
@@ -30043,6 +30052,11 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  access_grant_id: {
+                    description: 'ID of the access grant to retrieve.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   access_grant_key: {
                     description: 'Filter Access Grants by access_grant_key.',
                     type: 'string',
