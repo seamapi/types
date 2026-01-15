@@ -528,6 +528,57 @@ const _device_warning_map = z.object({
 
 export type DeviceWarningMap = z.infer<typeof _device_warning_map>
 
+export const device_provider_info = z
+  .object({
+    provider_category: z
+      .string()
+      .describe(
+        'Provider category. Indicates the third-party provider type, such as `stable`, for stable integrations, or `internal`, for internal integrations.',
+      ),
+    device_provider_name: z
+      .string()
+      .describe(
+        'Device provider name. Corresponds to the integration type, such as `august`, `schlage`, `yale_access`, and so on.',
+      ),
+    display_name: z
+      .string()
+      .describe('Display name for the device provider type.'),
+    image_url: z
+      .string()
+      .url()
+      .optional()
+      .describe('Image URL for the device provider.'),
+  })
+  .describe(
+    'Provider of the device. Represents the third-party service through which the device is controlled.',
+  )
+
+export type DeviceProviderInfo = z.infer<typeof device_provider_info>
+
+export const device_manufacturer_info = z
+  .object({
+    manufacturer: z
+      .string()
+      .describe(
+        'Manufacturer identifier, such as `august`, `yale`, `salto`, and so on.',
+      ),
+    display_name: z
+      .string()
+      .describe(
+        'Display name for the manufacturer, such as `August`, `Yale`, `Salto`, and so on.',
+      ),
+    image_url: z
+      .string()
+      .url()
+      .optional()
+      .describe('Image URL for the manufacturer logo.'),
+  })
+  .describe(
+    'Manufacturer of the device. Represents the hardware brand, which may differ from the provider.',
+  )
+
+export type DeviceManufacturerInfo = z.infer<typeof device_manufacturer_info>
+
 export const common_device_properties = z.object({
   online: z.boolean().describe('Indicates whether the device is online.'),
   name: z.string().describe(`
@@ -866,6 +917,18 @@ export const device = z
         'Indicates whether Seam manages the device. See also [Managed and Unmanaged Devices](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).',
       ),
     custom_metadata,
+    device_provider: device_provider_info.optional().describe(`
+      ---
+      property_group_key: hardware
+      ---
+      Provider of the device. Represents the third-party service through which the device is controlled.
+    `),
+    device_manufacturer: device_manufacturer_info.optional().describe(`
+      ---
+      property_group_key: hardware
+      ---
+      Manufacturer of the device. Represents the hardware brand, which may differ from the provider.
+    `),
   })
   .merge(device_capability_flags).describe(`
     ---

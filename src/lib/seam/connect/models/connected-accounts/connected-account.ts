@@ -302,6 +302,11 @@ export const connected_account = z.object({
   account_type_display_name: z
     .string()
     .describe('Display name for the connected account type.'),
+  image_url: z
+    .string()
+    .url()
+    .optional()
+    .describe('Logo URL for the connected account provider.'),
   display_name: z.string().describe('Display name for the connected account.'),
   errors: z
     .array(connected_account_error)
