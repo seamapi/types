@@ -9338,6 +9338,11 @@ export default {
             },
             type: 'array',
           },
+          image_url: {
+            description: 'Logo URL for the connected account provider.',
+            format: 'uri',
+            type: 'string',
+          },
           user_identifier: {
             deprecated: true,
             description:
@@ -9674,6 +9679,62 @@ export default {
             description: 'ID of the device.',
             format: 'uuid',
             type: 'string',
+          },
+          device_manufacturer: {
+            description:
+              'Manufacturer of the device. Represents the hardware brand, which may differ from the provider.',
+            properties: {
+              display_name: {
+                description:
+                  'Display name for the manufacturer, such as `August`, `Yale`, `Salto`, and so on.',
+                type: 'string',
+              },
+              image_url: {
+                description: 'Image URL for the manufacturer logo.',
+                format: 'uri',
+                type: 'string',
+              },
+              manufacturer: {
+                description:
+                  'Manufacturer identifier, such as `august`, `yale`, `salto`, and so on.',
+                type: 'string',
+              },
+            },
+            required: ['manufacturer', 'display_name'],
+            type: 'object',
+            'x-property-group-key': 'hardware',
+          },
+          device_provider: {
+            description:
+              'Provider of the device. Represents the third-party service through which the device is controlled.',
+            properties: {
+              device_provider_name: {
+                description:
+                  'Device provider name. Corresponds to the integration type, such as `august`, `schlage`, `yale_access`, and so on.',
+                type: 'string',
+              },
+              display_name: {
+                description: 'Display name for the device provider type.',
+                type: 'string',
+              },
+              image_url: {
+                description: 'Image URL for the device provider.',
+                format: 'uri',
+                type: 'string',
+              },
+              provider_category: {
+                description:
+                  'Provider category. Indicates the third-party provider type, such as `stable`, for stable integrations, or `internal`, for internal integrations.',
+                type: 'string',
+              },
+            },
+            required: [
+              'provider_category',
+              'device_provider_name',
+              'display_name',
+            ],
+            type: 'object',
+            'x-property-group-key': 'hardware',
           },
           device_type: {
             description: 'Type of the device.',
