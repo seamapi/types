@@ -56768,6 +56768,10 @@ export default {
                                 type: 'string',
                               },
                               code: { nullable: true, type: 'string' },
+                              instant_key_url: {
+                                format: 'uri',
+                                type: 'string',
+                              },
                               is_card_encoding_required: { type: 'boolean' },
                               is_issued: { type: 'boolean' },
                               mode: { type: 'string' },
@@ -56884,6 +56888,10 @@ export default {
                                 type: 'string',
                               },
                               code: { nullable: true, type: 'string' },
+                              instant_key_url: {
+                                format: 'uri',
+                                type: 'string',
+                              },
                               is_card_encoding_required: { type: 'boolean' },
                               is_issued: { type: 'boolean' },
                               mode: { type: 'string' },
