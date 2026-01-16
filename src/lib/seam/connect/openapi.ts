@@ -27026,23 +27026,6 @@ export default {
                       'Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
                     type: 'boolean',
                   },
-                  is_offline_access_code: {
-                    description:
-                      'Indicates whether the access code is an [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes).',
-                    type: 'boolean',
-                  },
-                  is_one_time_use: {
-                    description:
-                      'Indicates whether the [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) is a single-use access code.',
-                    type: 'boolean',
-                  },
-                  max_time_rounding: {
-                    default: '1hour',
-                    description:
-                      'Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.',
-                    enum: ['1hour', '1day', '1h', '1d'],
-                    type: 'string',
-                  },
                   name: {
                     description:
                       "Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.\n\n       Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.\n\n       To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.\n\n       To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components).",
@@ -27055,7 +27038,7 @@ export default {
                   },
                   preferred_code_length: {
                     description:
-                      'Preferred code length. Only applicable if you do not specify a `code`. If the affected device does not support the preferred code length, Seam reverts to using the shortest supported code length.',
+                      'Preferred code length. If the affected devices do not support the preferred code length, Seam reverts to using the shortest supported code length.',
                     format: 'float',
                     type: 'number',
                   },
@@ -27063,16 +27046,6 @@ export default {
                     description:
                       'Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
-                  },
-                  use_backup_access_code_pool: {
-                    description:
-                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).',
-                    type: 'boolean',
-                  },
-                  use_offline_access_code: {
-                    deprecated: true,
-                    type: 'boolean',
-                    'x-deprecated': 'Use `is_offline_access_code` instead.',
                   },
                 },
                 required: ['device_ids'],
@@ -27166,23 +27139,6 @@ export default {
                       'Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
                     type: 'boolean',
                   },
-                  is_offline_access_code: {
-                    description:
-                      'Indicates whether the access code is an [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes).',
-                    type: 'boolean',
-                  },
-                  is_one_time_use: {
-                    description:
-                      'Indicates whether the [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) is a single-use access code.',
-                    type: 'boolean',
-                  },
-                  max_time_rounding: {
-                    default: '1hour',
-                    description:
-                      'Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.',
-                    enum: ['1hour', '1day', '1h', '1d'],
-                    type: 'string',
-                  },
                   name: {
                     description:
                       "Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.\n\n       Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.\n\n       To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.\n\n       To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components).",
@@ -27195,7 +27151,7 @@ export default {
                   },
                   preferred_code_length: {
                     description:
-                      'Preferred code length. Only applicable if you do not specify a `code`. If the affected device does not support the preferred code length, Seam reverts to using the shortest supported code length.',
+                      'Preferred code length. If the affected devices do not support the preferred code length, Seam reverts to using the shortest supported code length.',
                     format: 'float',
                     type: 'number',
                   },
@@ -27203,16 +27159,6 @@ export default {
                     description:
                       'Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
-                  },
-                  use_backup_access_code_pool: {
-                    description:
-                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).',
-                    type: 'boolean',
-                  },
-                  use_offline_access_code: {
-                    deprecated: true,
-                    type: 'boolean',
-                    'x-deprecated': 'Use `is_offline_access_code` instead.',
                   },
                 },
                 required: ['device_ids'],
