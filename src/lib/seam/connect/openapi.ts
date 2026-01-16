@@ -54414,6 +54414,189 @@ export default {
         'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
+    '/seam/customer/v1/connector_customers/list': {
+      get: {
+        description: 'Lists connector customers for a given connector.',
+        operationId: 'seamCustomerV1ConnectorCustomersListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'connector_id',
+            schema: {
+              description: 'ID of the connector.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    connector_customers: {
+                      items: {
+                        properties: {
+                          connector_customer_id: { type: 'string' },
+                          connector_id: { type: 'string' },
+                          created_at: { type: 'string' },
+                          customer_key: { type: 'string' },
+                          initial_sync_completed: { type: 'boolean' },
+                          initial_sync_status: {
+                            nullable: true,
+                            type: 'string',
+                          },
+                          instance_config: {
+                            additionalProperties: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            nullable: true,
+                            type: 'object',
+                          },
+                          status: { nullable: true, type: 'string' },
+                          updated_at: { type: 'string' },
+                        },
+                        required: [
+                          'connector_customer_id',
+                          'connector_id',
+                          'customer_key',
+                          'instance_config',
+                          'initial_sync_completed',
+                          'initial_sync_status',
+                          'status',
+                          'created_at',
+                          'updated_at',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['connector_customers', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { client_session_with_customer: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/seam/customer/v1/connector_customers/list',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'customer',
+          'v1',
+          'connector_customers',
+        ],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'connector_customers',
+        'x-response-key': 'connector_customers',
+        'x-title': 'List Connector Customers',
+        'x-undocumented': 'Internal endpoint for Console.',
+      },
+      post: {
+        description: 'Lists connector customers for a given connector.',
+        operationId: 'seamCustomerV1ConnectorCustomersListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connector_id: {
+                    description: 'ID of the connector.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    connector_customers: {
+                      items: {
+                        properties: {
+                          connector_customer_id: { type: 'string' },
+                          connector_id: { type: 'string' },
+                          created_at: { type: 'string' },
+                          customer_key: { type: 'string' },
+                          initial_sync_completed: { type: 'boolean' },
+                          initial_sync_status: {
+                            nullable: true,
+                            type: 'string',
+                          },
+                          instance_config: {
+                            additionalProperties: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            nullable: true,
+                            type: 'object',
+                          },
+                          status: { nullable: true, type: 'string' },
+                          updated_at: { type: 'string' },
+                        },
+                        required: [
+                          'connector_customer_id',
+                          'connector_id',
+                          'customer_key',
+                          'instance_config',
+                          'initial_sync_completed',
+                          'initial_sync_status',
+                          'status',
+                          'created_at',
+                          'updated_at',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['connector_customers', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { client_session_with_customer: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/seam/customer/v1/connector_customers/list',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'customer',
+          'v1',
+          'connector_customers',
+        ],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'connector_customers',
+        'x-response-key': 'connector_customers',
+        'x-title': 'List Connector Customers',
+        'x-undocumented': 'Internal endpoint for Console.',
+      },
+    },
     '/seam/customer/v1/connectors/authorize': {
       get: {
         description:
