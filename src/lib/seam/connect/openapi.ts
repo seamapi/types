@@ -55543,7 +55543,8 @@ export default {
                           auth_token: { type: 'string' },
                           hotel_id: {
                             description:
-                              'Optional hotel ID for single-property mode',
+                              'Hotel ID - required for identifying the customer',
+                            minLength: 1,
                             type: 'string',
                           },
                           id: {
@@ -55565,7 +55566,7 @@ export default {
                             type: 'string',
                           },
                         },
-                        required: ['api_key', 'id', 'secret'],
+                        required: ['api_key', 'id', 'secret', 'hotel_id'],
                         type: 'object',
                       },
                     ],
