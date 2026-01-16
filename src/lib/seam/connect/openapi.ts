@@ -55381,10 +55381,6 @@ export default {
                     description: 'Type of the connector to sync',
                     type: 'string',
                   },
-                  customer_id: {
-                    description: 'ID of the customer to sync',
-                    type: 'string',
-                  },
                   customer_key: {
                     description: 'Key of the customer to sync',
                     type: 'string',
@@ -55396,7 +55392,7 @@ export default {
                     type: 'string',
                   },
                 },
-                required: ['connector_id'],
+                required: ['connector_id', 'connector_type', 'customer_key'],
                 type: 'object',
               },
             },
