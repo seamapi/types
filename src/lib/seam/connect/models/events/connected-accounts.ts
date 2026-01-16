@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+import { connected_account_error } from '../connected-accounts/index.js'
 import { custom_metadata } from '../custom-metadata.js'
 import { common_event } from './common.js'
 
@@ -80,6 +81,9 @@ export type ConnectedAccountSuccessfulLoginEvent = z.infer<
 export const connected_account_disconnected_event =
   connected_account_event.extend({
     event_type: z.literal('connected_account.disconnected'),
+    connected_account_errors: z
+      .array(connected_account_error)
+      .describe('Errors associated with the connected account.'),
   }).describe(`
     ---
     route_path: /connected_accounts

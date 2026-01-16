@@ -16612,6 +16612,173 @@ export default {
                   'Custom metadata of the connected account, present when connected_account_id is provided.',
                 type: 'object',
               },
+              connected_account_errors: {
+                description: 'Errors associated with the connected account.',
+                items: {
+                  discriminator: { propertyName: 'error_code' },
+                  oneOf: [
+                    {
+                      description:
+                        'Indicates that the account is disconnected.',
+                      properties: {
+                        created_at: {
+                          description:
+                            'Date and time at which Seam created the error.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['account_disconnected'],
+                          type: 'string',
+                        },
+                        is_bridge_error: {
+                          description:
+                            'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
+                          type: 'boolean',
+                        },
+                        is_connected_account_error: {
+                          description:
+                            'Indicates whether the error is related specifically to the connected account.',
+                          type: 'boolean',
+                        },
+                        message: {
+                          description:
+                            'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                          type: 'string',
+                        },
+                      },
+                      required: ['created_at', 'message', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                      properties: {
+                        created_at: {
+                          description:
+                            'Date and time at which Seam created the error.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['bridge_disconnected'],
+                          type: 'string',
+                        },
+                        is_bridge_error: {
+                          description:
+                            'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
+                          type: 'boolean',
+                        },
+                        is_connected_account_error: {
+                          description:
+                            'Indicates whether the error is related specifically to the connected account.',
+                          type: 'boolean',
+                        },
+                        message: {
+                          description:
+                            'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                          type: 'string',
+                        },
+                      },
+                      required: ['created_at', 'message', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        'Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.',
+                      properties: {
+                        created_at: {
+                          description:
+                            'Date and time at which Seam created the error.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['salto_ks_subscription_limit_exceeded'],
+                          type: 'string',
+                        },
+                        is_bridge_error: {
+                          description:
+                            'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).',
+                          type: 'boolean',
+                        },
+                        is_connected_account_error: {
+                          description:
+                            'Indicates whether the error is related specifically to the connected account.',
+                          type: 'boolean',
+                        },
+                        message: {
+                          description:
+                            'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                          type: 'string',
+                        },
+                        salto_ks_metadata: {
+                          description:
+                            'Salto KS metadata associated with the connected account that has an error.',
+                          properties: {
+                            sites: {
+                              description:
+                                'Salto sites associated with the connected account that has an error.',
+                              items: {
+                                description:
+                                  'Salto site associated with the connected account that has an error.',
+                                properties: {
+                                  site_id: {
+                                    description:
+                                      'ID of a Salto site associated with the connected account that has an error.',
+                                    type: 'string',
+                                  },
+                                  site_name: {
+                                    description:
+                                      'Name of a Salto site associated with the connected account that has an error.',
+                                    type: 'string',
+                                  },
+                                  site_user_subscription_limit: {
+                                    description:
+                                      'Subscription limit of site users for a Salto site associated with the connected account that has an error.',
+                                    minimum: 0,
+                                    type: 'integer',
+                                  },
+                                  subscribed_site_user_count: {
+                                    description:
+                                      'Count of subscribed site users for a Salto site associated with the connected account that has an error.',
+                                    minimum: 0,
+                                    type: 'integer',
+                                  },
+                                },
+                                required: [
+                                  'site_id',
+                                  'site_name',
+                                  'subscribed_site_user_count',
+                                  'site_user_subscription_limit',
+                                ],
+                                type: 'object',
+                              },
+                              type: 'array',
+                            },
+                          },
+                          required: ['sites'],
+                          type: 'object',
+                        },
+                      },
+                      required: [
+                        'created_at',
+                        'message',
+                        'error_code',
+                        'salto_ks_metadata',
+                      ],
+                      type: 'object',
+                    },
+                  ],
+                },
+                type: 'array',
+              },
               connected_account_id: {
                 description:
                   'ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
@@ -16651,6 +16818,7 @@ export default {
               'occurred_at',
               'connected_account_id',
               'event_type',
+              'connected_account_errors',
             ],
             type: 'object',
             'x-route-path': '/connected_accounts',
