@@ -708,6 +708,24 @@ export const device_metadata = z
           .describe(`IANA timezone for the Ultraloq device.`),
       })
       .describe(`Metadata for an Ultraloq device.`),
+
+    korelock_metadata: z
+      .object({
+        device_id: z.string().describe(`Device ID for a Korelock device.`),
+        device_name: z.string().describe(`Device name for a Korelock device.`),
+        model_code: z.string().describe(`Model code for a Korelock device.`),
+        serial_number: z
+          .string()
+          .describe(`Serial number for a Korelock device.`),
+        firmware_version: z
+          .string()
+          .describe(`Firmware version for a Korelock device.`),
+        wifi_signal_strength: z
+          .number()
+          .describe(`WiFi signal strength (0-1) for a Korelock device.`),
+      })
+      .partial()
+      .describe(`Metadata for a Korelock device.`),
   })
   .partial().describe(`
           ---

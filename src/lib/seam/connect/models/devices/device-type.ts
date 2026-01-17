@@ -30,6 +30,7 @@ export const LOCK_DEVICE_TYPE = {
   TEDEE_LOCK: 'tedee_lock',
   AKILES_LOCK: 'akiles_lock',
   ULTRALOQ_LOCK: 'ultraloq_lock',
+  KORELOCK_LOCK: 'korelock_lock',
 } as const
 
 type LockDeviceTypeFromMapping =

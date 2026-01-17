@@ -52,6 +52,7 @@ export const DEVICE_PROVIDERS = {
   SENSI: 'sensi',
   KWIKSET2: 'kwikset2',
   KEYNEST: 'keynest',
+  KORELOCK: 'korelock',
   DORMAKABA_AMBIANCE: 'dormakaba_ambiance',
   ULTRALOQ: 'ultraloq',
 } as const
