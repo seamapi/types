@@ -10,11 +10,12 @@ export const access_code_code_constraint = z
         'cannot_specify_pin_code', // Dormakaba?
         'pin_code_matches_existing_set', // Salto
         'start_date_in_future', // Kwikset
-        'no_ascending_or_descending_sequence', // Tedee
+        'no_ascending_or_descending_sequence', // Tedee, Korelock
         'at_least_three_unique_digits', // Tedee
         'cannot_contain_089', // TTLock
         'cannot_contain_0789', // TTLock (for some cylinder devices only)
         'unique_first_four_digits', // Schlage
+        'no_all_same_digits', // Korelock
       ])
       .describe(`Code constraint type for access codes.`),
   })
