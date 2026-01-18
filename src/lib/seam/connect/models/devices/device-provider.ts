@@ -116,6 +116,8 @@ export const PROVIDER_CATEGORY_MAP = {
     'tedee',
   ],
 
+  beta: ['korelock'],
+
   thermostats: ['ecobee', 'nest', 'sensi', 'honeywell_resideo'],
   noise_sensors: ['minut', 'noiseaware'],
   access_control_systems: [
@@ -161,6 +163,7 @@ export const PROVIDER_CATEGORY_CAPABILITY_MAP: Record<
 > = {
   stable: ['lock', 'thermostat', 'noise_sensor', 'access_control'],
   consumer_smartlocks: ['lock'],
+  beta: ['lock', 'thermostat', 'noise_sensor', 'access_control'],
   thermostats: ['thermostat'],
   noise_sensors: ['noise_sensor'],
   access_control_systems: ['access_control'],
