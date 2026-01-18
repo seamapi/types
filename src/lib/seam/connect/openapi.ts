@@ -13659,6 +13659,7 @@ export default {
               enum: [
                 'stable',
                 'consumer_smartlocks',
+                'beta',
                 'thermostats',
                 'noise_sensors',
                 'access_control_systems',
@@ -40976,6 +40977,7 @@ export default {
                     enum: [
                       'stable',
                       'consumer_smartlocks',
+                      'beta',
                       'thermostats',
                       'noise_sensors',
                       'access_control_systems',
@@ -45576,6 +45578,7 @@ export default {
               enum: [
                 'stable',
                 'consumer_smartlocks',
+                'beta',
                 'thermostats',
                 'noise_sensors',
                 'access_control_systems',
@@ -45635,6 +45638,7 @@ export default {
                     enum: [
                       'stable',
                       'consumer_smartlocks',
+                      'beta',
                       'thermostats',
                       'noise_sensors',
                       'access_control_systems',
