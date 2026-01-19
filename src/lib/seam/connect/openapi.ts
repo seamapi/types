@@ -66301,6 +66301,16 @@ export default {
         parameters: [
           {
             in: 'query',
+            name: 'user_identity_ids',
+            schema: {
+              description:
+                'Array of user identity IDs by which to filter the list of user identities.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
             name: 'search',
             schema: {
               description:
@@ -66426,6 +66436,12 @@ export default {
                     description:
                       'String for which to search. Filters returned user identities to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address` or `user_identity_id`.',
                     type: 'string',
+                  },
+                  user_identity_ids: {
+                    description:
+                      'Array of user identity IDs by which to filter the list of user identities.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
                   },
                 },
                 type: 'object',
