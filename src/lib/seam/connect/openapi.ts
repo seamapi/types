@@ -59233,9 +59233,17 @@ export default {
                                   format: 'uuid',
                                   type: 'string',
                                 },
+                                connected_account_id: {
+                                  format: 'uuid',
+                                  type: 'string',
+                                },
                                 name: { type: 'string' },
                               },
-                              required: ['acs_entrance_id', 'name'],
+                              required: [
+                                'acs_entrance_id',
+                                'name',
+                                'connected_account_id',
+                              ],
                               type: 'object',
                             },
                             type: 'array',
@@ -59243,11 +59251,20 @@ export default {
                           devices: {
                             items: {
                               properties: {
+                                connected_account_id: {
+                                  format: 'uuid',
+                                  type: 'string',
+                                },
                                 device_id: { format: 'uuid', type: 'string' },
                                 device_type: { type: 'string' },
                                 name: { type: 'string' },
                               },
-                              required: ['device_id', 'device_type', 'name'],
+                              required: [
+                                'device_id',
+                                'device_type',
+                                'name',
+                                'connected_account_id',
+                              ],
                               type: 'object',
                             },
                             type: 'array',
@@ -59332,9 +59349,17 @@ export default {
                                   format: 'uuid',
                                   type: 'string',
                                 },
+                                connected_account_id: {
+                                  format: 'uuid',
+                                  type: 'string',
+                                },
                                 name: { type: 'string' },
                               },
-                              required: ['acs_entrance_id', 'name'],
+                              required: [
+                                'acs_entrance_id',
+                                'name',
+                                'connected_account_id',
+                              ],
                               type: 'object',
                             },
                             type: 'array',
@@ -59342,11 +59367,20 @@ export default {
                           devices: {
                             items: {
                               properties: {
+                                connected_account_id: {
+                                  format: 'uuid',
+                                  type: 'string',
+                                },
                                 device_id: { format: 'uuid', type: 'string' },
                                 device_type: { type: 'string' },
                                 name: { type: 'string' },
                               },
-                              required: ['device_id', 'device_type', 'name'],
+                              required: [
+                                'device_id',
+                                'device_type',
+                                'name',
+                                'connected_account_id',
+                              ],
                               type: 'object',
                             },
                             type: 'array',
