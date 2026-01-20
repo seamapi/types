@@ -15,7 +15,7 @@ on:
     secrets:
       registry_token:
         description: The package registry token.
-        required: true
+        required: false
     outputs:
       version:
         description: Version of the package.
