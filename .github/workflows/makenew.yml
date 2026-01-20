@@ -39,7 +39,7 @@ jobs:
     needs: repository
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_TOKEN }}
@@ -68,7 +68,7 @@ jobs:
         env:
           ORIGIN: https://github.com/seamapi/${{ github.event.inputs.repo }}.git
       - name: Commit
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           branch: main
           skip_fetch: true
