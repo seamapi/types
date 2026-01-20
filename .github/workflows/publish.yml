@@ -47,11 +47,12 @@ jobs:
     name: npm
     uses: ./.github/workflows/_publish.yml
     needs: build
+    permissions:
+      contents: read
+      id-token: write
     with:
       artifact_name: ${{ needs.build.outputs.artifact_name }}
       registry_url: https://registry.npmjs.org
-    secrets:
-      registry_token: ${{ secrets.NPM_TOKEN }}
   github:
     name: GitHub Packages
     uses: ./.github/workflows/_publish.yml
