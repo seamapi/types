@@ -53,13 +53,15 @@ Bootstrap a new TypeScript module in five minutes or less.
 
 ### Bootstrapping a new project
 
-1. [Trigger a makenew workflow from this repository][makenew workflow]. 🚀
+1. Enable [trusted publishing for this npm package][npm trusted publishing].
+2. [Trigger a makenew workflow from this repository][makenew workflow]. 🚀
    - Provide a value for each required input.
    - There are no defaults.
    - Example values are shown in parentheses.
-2. When the workflow completes, clone your new repo and start coding!
+3. When the workflow completes, clone your new repo and start coding!
 
 [makenew workflow]: https://github.com/seamapi/makenew-tsmodule/actions/workflows/makenew.yml
+[npm trusted publishing]: https://docs.npmjs.com/trusted-publishers#supported-cicd-providers
 
 ### Updating from this skeleton
 
@@ -179,7 +181,6 @@ _GitHub Actions should already be configured: this section is for reference only
 
 The following repository secrets must be set on [GitHub Actions]:
 
-- `NPM_TOKEN`: npm token for installing and publishing packages.
 - `GH_TOKEN`: A personal access token for the bot user with
   `packages:write` and `contents:write` permission.
 - `GIT_USER_NAME`: The GitHub bot user's real name.

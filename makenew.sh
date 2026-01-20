@@ -58,7 +58,7 @@ makenew () {
     read -p '> Short package description (Foos and bars.): ' mk_description
   fi
 
-  sed_delete README.md '10,80d'
+  sed_delete README.md '10,82d'
   sed_insert README.md '10i' 'TODO'
 
   find_replace "s/^  \"version\": \".*\"/  \"version\": \"0.0.0\"/g"
