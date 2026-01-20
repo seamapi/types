@@ -55257,8 +55257,13 @@ export default {
                           connector_id: { type: 'string' },
                           connector_type: { type: 'string' },
                           created_at: { type: 'string' },
+                          customer_key: { nullable: true, type: 'string' },
                           status: {
                             enum: ['active', 'inactive', 'error'],
+                            type: 'string',
+                          },
+                          unique_provider_resource_key: {
+                            nullable: true,
                             type: 'string',
                           },
                           updated_at: { type: 'string' },
@@ -55266,6 +55271,8 @@ export default {
                         required: [
                           'connector_id',
                           'connector_type',
+                          'customer_key',
+                          'unique_provider_resource_key',
                           'status',
                           'config',
                           'created_at',
@@ -55323,8 +55330,13 @@ export default {
                           connector_id: { type: 'string' },
                           connector_type: { type: 'string' },
                           created_at: { type: 'string' },
+                          customer_key: { nullable: true, type: 'string' },
                           status: {
                             enum: ['active', 'inactive', 'error'],
+                            type: 'string',
+                          },
+                          unique_provider_resource_key: {
+                            nullable: true,
                             type: 'string',
                           },
                           updated_at: { type: 'string' },
@@ -55332,6 +55344,8 @@ export default {
                         required: [
                           'connector_id',
                           'connector_type',
+                          'customer_key',
+                          'unique_provider_resource_key',
                           'status',
                           'config',
                           'created_at',
