@@ -15,7 +15,7 @@ on:
     secrets:
       registry_token:
         description: The package registry token.
-        required: true
+        required: false
 
 jobs:
   publish:
