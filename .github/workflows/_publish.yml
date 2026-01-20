@@ -30,13 +30,13 @@ jobs:
       version: ${{ steps.publish.outputs.version }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup
         uses: ./.github/actions/setup
         with:
           install_dependencies: 'false'
       - name: Download artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: ${{ inputs.artifact_name }}
           path: .
@@ -44,8 +44,7 @@ jobs:
         id: meta
         run: echo "tgz=$(ls *.tgz | head -n1)" >> $GITHUB_OUTPUT
       - name: Publish
-        id: publish
-        uses: JS-DevTools/npm-publish@v3
+        uses: JS-DevTools/npm-publish@v4
         with:
           access: public
           token: ${{ secrets.registry_token }}

@@ -84,8 +84,8 @@
     "preformat": "eslint --fix ."
   },
   "engines": {
-    "node": ">=20.9.0",
-    "npm": ">=10.1.0"
+    "node": ">=22.11.0",
+    "npm": ">=10.9.4"
   },
   "peerDependencies": {
     "zod": "^3.24.0"
@@ -93,9 +93,9 @@
   "devDependencies": {
     "@seamapi/blueprint": "^0.53.0",
     "@swc/core": "^1.11.29",
-    "@types/node": "^22.15.21",
+    "@types/node": "^25.0.9",
+    "del-cli": "^7.0.0",
     "concurrently": "^9.2.0",
-    "del-cli": "^6.0.0",
     "eslint": "^9.31.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-n": "^17.21.0",
