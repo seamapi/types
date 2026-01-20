@@ -93,7 +93,7 @@
   "devDependencies": {
     "@seamapi/blueprint": "^0.53.0",
     "@swc/core": "^1.11.29",
-    "@types/node": "^25.0.9",
+    "@types/node": "^24.10.9",
     "del-cli": "^7.0.0",
     "concurrently": "^9.2.0",
     "eslint": "^9.31.0",
