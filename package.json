@@ -1,6 +1,6 @@
 {
   "name": "@seamapi/makenew-tsmodule",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Package skeleton for a TypeScript module.",
   "type": "module",
   "main": "index.js",
@@ -65,15 +65,15 @@
     "report": "c8 report"
   },
   "engines": {
-    "node": ">=20.9.0",
-    "npm": ">=10.1.0"
+    "node": ">=22.11.0",
+    "npm": ">=10.9.4"
   },
   "devDependencies": {
     "@swc/core": "^1.11.29",
-    "@types/node": "^22.15.21",
+    "@types/node": "^25.0.9",
     "ava": "^6.0.1",
     "c8": "^10.1.2",
-    "del-cli": "^6.0.0",
+    "del-cli": "^7.0.0",
     "eslint": "^9.31.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
