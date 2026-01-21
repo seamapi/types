@@ -11115,7 +11115,7 @@ export default {
                             description: 'Device name for an igloohome device.',
                             type: 'string',
                           },
-                          is_keypad_linked_to_bridge: {
+                          is_accessory_keypad_linked_to_bridge: {
                             description:
                               'Indicates whether a keypad is linked to a bridge for an igloohome device.',
                             type: 'boolean',
