@@ -57153,6 +57153,10 @@ export default {
                         access_methods: {
                           items: {
                             properties: {
+                              access_grant_id: {
+                                format: 'uuid',
+                                type: 'string',
+                              },
                               access_method_id: {
                                 format: 'uuid',
                                 type: 'string',
@@ -57166,7 +57170,12 @@ export default {
                               is_issued: { type: 'boolean' },
                               mode: { type: 'string' },
                             },
-                            required: ['access_method_id', 'mode', 'is_issued'],
+                            required: [
+                              'access_method_id',
+                              'access_grant_id',
+                              'mode',
+                              'is_issued',
+                            ],
                             type: 'object',
                           },
                           type: 'array',
@@ -57273,6 +57282,10 @@ export default {
                         access_methods: {
                           items: {
                             properties: {
+                              access_grant_id: {
+                                format: 'uuid',
+                                type: 'string',
+                              },
                               access_method_id: {
                                 format: 'uuid',
                                 type: 'string',
@@ -57286,7 +57299,12 @@ export default {
                               is_issued: { type: 'boolean' },
                               mode: { type: 'string' },
                             },
-                            required: ['access_method_id', 'mode', 'is_issued'],
+                            required: [
+                              'access_method_id',
+                              'access_grant_id',
+                              'mode',
+                              'is_issued',
+                            ],
                             type: 'object',
                           },
                           type: 'array',
