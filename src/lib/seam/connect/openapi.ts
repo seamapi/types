@@ -57150,6 +57150,11 @@ export default {
                     ok: { type: 'boolean' },
                     reservation: {
                       properties: {
+                        access_grant_id: {
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
                         access_methods: {
                           items: {
                             properties: {
@@ -57221,6 +57226,7 @@ export default {
                         'created_at',
                         'guest_name',
                         'spaces',
+                        'access_grant_id',
                         'access_methods',
                       ],
                       type: 'object',
@@ -57279,6 +57285,11 @@ export default {
                     ok: { type: 'boolean' },
                     reservation: {
                       properties: {
+                        access_grant_id: {
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
                         access_methods: {
                           items: {
                             properties: {
@@ -57350,6 +57361,7 @@ export default {
                         'created_at',
                         'guest_name',
                         'spaces',
+                        'access_grant_id',
                         'access_methods',
                       ],
                       type: 'object',
