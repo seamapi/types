@@ -1,8 +1,24 @@
 import { z } from 'zod'
 
+import { common_event_error, common_event_warning } from '../common.js'
 import { common_acs_event } from './common.js'
 
 const acs_system_event = common_acs_event.extend({})
+
+const acs_system_event_issue_properties = {
+  acs_system_errors: z
+    .array(common_event_error)
+    .describe('Errors associated with the access control system.'),
+  acs_system_warnings: z
+    .array(common_event_warning)
+    .describe('Warnings associated with the access control system.'),
+  connected_account_errors: z
+    .array(common_event_error)
+    .describe('Errors associated with the connected account.'),
+  connected_account_warnings: z
+    .array(common_event_warning)
+    .describe('Warnings associated with the connected account.'),
+}
 
 export const acs_system_connected_event = acs_system_event.extend({
   event_type: z.literal('acs_system.connected'),
@@ -15,9 +31,11 @@ export const acs_system_connected_event = acs_system_event.extend({
 
 export type AcsSystemConnectedEvent = z.infer<typeof acs_system_connected_event>
 
-export const acs_system_disconnected_event = acs_system_event.extend({
-  event_type: z.literal('acs_system.disconnected'),
-}).describe(`
+export const acs_system_disconnected_event = acs_system_event
+  .extend({
+    event_type: z.literal('acs_system.disconnected'),
+  })
+  .extend(acs_system_event_issue_properties).describe(`
     ---
     route_path: /acs/systems
     ---

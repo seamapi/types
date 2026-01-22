@@ -1,7 +1,11 @@
 import { z } from 'zod'
 
 import { custom_metadata } from '../custom-metadata.js'
-import { common_event } from './common.js'
+import {
+  common_event,
+  common_event_error,
+  common_event_warning,
+} from './common.js'
 
 const access_code_event = common_event.extend({
   access_code_id: z.string().uuid().describe('ID of the affected access code.'),
@@ -26,6 +30,27 @@ const access_code_event = common_event.extend({
       'Custom metadata of the connected account, present when connected_account_id is provided.',
     ),
 })
+
+const access_code_event_issue_properties = {
+  connected_account_errors: z
+    .array(common_event_error)
+    .describe('Errors associated with the connected account.'),
+  connected_account_warnings: z
+    .array(common_event_warning)
+    .describe('Warnings associated with the connected account.'),
+  device_errors: z
+    .array(common_event_error)
+    .describe('Errors associated with the device.'),
+  device_warnings: z
+    .array(common_event_warning)
+    .describe('Warnings associated with the device.'),
+  access_code_errors: z
+    .array(common_event_error)
+    .describe('Errors associated with the access code.'),
+  access_code_warnings: z
+    .array(common_event_warning)
+    .describe('Warnings associated with the access code.'),
+}
 
 const code = z.string().describe('Code for the affected access code.')
 
@@ -92,10 +117,11 @@ export type AccessCodeRemovedFromDeviceEvent = z.infer<
   typeof access_code_removed_from_device_event
 >
 
-export const access_code_delay_in_setting_on_device_event =
-  access_code_event.extend({
+export const access_code_delay_in_setting_on_device_event = access_code_event
+  .extend({
     event_type: z.literal('access_code.delay_in_setting_on_device'),
-  }).describe(`
+  })
+  .extend(access_code_event_issue_properties).describe(`
     ---
     route_path: /access_codes
     ---
@@ -106,10 +132,11 @@ export type AccessCodeDelayInSettingOnDeviceEvent = z.infer<
   typeof access_code_delay_in_setting_on_device_event
 >
 
-export const access_code_failed_to_set_on_device_event =
-  access_code_event.extend({
+export const access_code_failed_to_set_on_device_event = access_code_event
+  .extend({
     event_type: z.literal('access_code.failed_to_set_on_device'),
-  }).describe(`
+  })
+  .extend(access_code_event_issue_properties).describe(`
     ---
     route_path: /access_codes
     ---
@@ -132,10 +159,11 @@ export const access_code_deleted_event = access_code_event.extend({
 
 export type AccessCodeDeletedEvent = z.infer<typeof access_code_deleted_event>
 
-export const access_code_delay_in_removing_from_device_event =
-  access_code_event.extend({
+export const access_code_delay_in_removing_from_device_event = access_code_event
+  .extend({
     event_type: z.literal('access_code.delay_in_removing_from_device'),
-  }).describe(`
+  })
+  .extend(access_code_event_issue_properties).describe(`
     ---
     route_path: /access_codes
     ---
@@ -146,10 +174,11 @@ export type AccessCodeDelayInRemovingFromDeviceEvent = z.infer<
   typeof access_code_delay_in_removing_from_device_event
 >
 
-export const access_code_failed_to_remove_from_device_event =
-  access_code_event.extend({
+export const access_code_failed_to_remove_from_device_event = access_code_event
+  .extend({
     event_type: z.literal('access_code.failed_to_remove_from_device'),
-  }).describe(`
+  })
+  .extend(access_code_event_issue_properties).describe(`
     ---
     route_path: /access_codes
     ---
@@ -218,9 +247,13 @@ export type UnmanagedAccessCodeConvertedToManagedEvent = z.infer<
 >
 
 export const unmanaged_access_code_failed_to_convert_to_managed_event =
-  access_code_event.extend({
-    event_type: z.literal('access_code.unmanaged.failed_to_convert_to_managed'),
-  }).describe(`
+  access_code_event
+    .extend({
+      event_type: z.literal(
+        'access_code.unmanaged.failed_to_convert_to_managed',
+      ),
+    })
+    .extend(access_code_event_issue_properties).describe(`
       ---
       route_path: /access_codes/unmanaged
       ---
