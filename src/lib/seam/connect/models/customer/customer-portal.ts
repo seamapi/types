@@ -115,6 +115,21 @@ export const portal_configuration_base = z.object({
     .describe(
       'Filter configuration for property listings based on their custom_metadata. Keys and values must match the custom_metadata stored on property listings.',
     ),
+  navigation_mode: z
+    .enum(['full', 'restricted'])
+    .default('full')
+    .describe(
+      "Navigation mode for the portal. 'restricted' tells frontend to hide navigation UI, typically used for embedded deep links.",
+    ),
+  deep_link: z
+    .object({
+      resource_type: z.enum(['reservation']),
+      resource_key: z.string(),
+    })
+    .optional()
+    .describe(
+      'Deep link target resource for initial redirect. When set, the portal will navigate directly to the specified resource.',
+    ),
 })
 
 export const portal_configuration = portal_configuration_base
