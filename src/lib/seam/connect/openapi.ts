@@ -42187,6 +42187,19 @@ export default {
                         format: 'uuid',
                         type: 'string',
                       },
+                      deep_link: {
+                        description:
+                          'Deep link target resource for initial redirect. When set, the portal will navigate directly to the specified resource.',
+                        properties: {
+                          resource_key: { type: 'string' },
+                          resource_type: {
+                            enum: ['reservation'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['resource_type', 'resource_key'],
+                        type: 'object',
+                      },
                       features: {
                         default: {},
                         properties: {
@@ -42424,6 +42437,13 @@ export default {
                       locale: {
                         description: 'The locale to use for the portal.',
                         enum: ['en-US', 'pt-PT', 'fr-FR', 'it-IT', 'es-ES'],
+                        type: 'string',
+                      },
+                      navigation_mode: {
+                        default: 'full',
+                        description:
+                          "Navigation mode for the portal. 'restricted' tells frontend to hide navigation UI, typically used for embedded deep links.",
+                        enum: ['full', 'restricted'],
                         type: 'string',
                       },
                       property_listing_filter: {
@@ -44520,6 +44540,87 @@ export default {
         'x-fern-sdk-method-name': 'push_data',
         'x-response-key': null,
         'x-title': 'Push Customer Data',
+      },
+    },
+    '/customers/reservations/create_deep_link': {
+      post: {
+        description:
+          'Creates a deep link URL for a specific reservation that can be embedded in an iframe.\nThe deep link creates a restricted customer portal that navigates directly to the reservation page,\nhiding the navigation UI to prevent context switching.\n\nThis is intended for PMS integrations (like RMS Cloud) to embed reservation management\nin their own portal without exposing the full customer portal.\n\nThe deep link expires after 7 days.',
+        operationId: 'customersReservationsCreateDeepLinkPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  customer_key: {
+                    description:
+                      'The customer_key identifying the customer who owns the reservation.',
+                    type: 'string',
+                  },
+                  reservation_key: {
+                    description:
+                      'The key of the reservation to create a deep link for.',
+                    type: 'string',
+                  },
+                },
+                required: ['customer_key', 'reservation_key'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    deep_link: {
+                      properties: {
+                        customer_portal_id: {
+                          description: 'The ID of the created customer portal.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        expires_at: {
+                          description: 'When the deep link expires.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        url: {
+                          description:
+                            'The deep link URL to embed in an iframe.',
+                          format: 'uri',
+                          type: 'string',
+                        },
+                      },
+                      required: ['url', 'expires_at', 'customer_portal_id'],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['deep_link', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/customers/reservations/create_deep_link',
+        tags: [],
+        'x-fern-sdk-group-name': ['customers', 'reservations'],
+        'x-fern-sdk-method-name': 'create_deep_link',
+        'x-fern-sdk-return-value': 'deep_link',
+        'x-response-key': 'deep_link',
+        'x-title': 'Create Reservation Deep Link',
       },
     },
     '/devices/delete': {
@@ -53062,6 +53163,68 @@ export default {
         'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
+    '/seam/customer/v1/access_methods/encode': {
+      post: {
+        description:
+          'Encodes an existing access method onto a plastic card placed on the specified encoder.\nThis endpoint is intended for use within embedded customer portals, such as deep links\nfor reservation management.',
+        operationId: 'seamCustomerV1AccessMethodsEncodePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_method_id: {
+                    description:
+                      'ID of the access method to encode onto a card.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_encoder_id: {
+                    description:
+                      'ID of the encoder to use for encoding the access method.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['acs_encoder_id', 'access_method_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/access_methods/encode',
+        tags: [],
+        'x-action-attempt-type': 'ENCODE_CREDENTIAL',
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'access_methods'],
+        'x-fern-sdk-method-name': 'encode',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
+        'x-title': 'Encode an Access Method',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
     '/seam/customer/v1/automation_runs/list': {
       get: {
         description:
@@ -55866,6 +56029,107 @@ export default {
         'x-undocumented': 'Internal endpoint for Console.',
       },
     },
+    '/seam/customer/v1/encoders/list': {
+      get: {
+        description:
+          'Returns a list of card encoders available to the customer.\nThis endpoint is intended for use within embedded customer portals, such as deep links\nfor reservation management, to allow staff to select an encoder for card encoding.',
+        operationId: 'seamCustomerV1EncodersListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'space_key',
+            schema: {
+              description:
+                'Optional filter to list encoders for a specific space.',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    encoders: {
+                      items: { $ref: '#/components/schemas/acs_encoder' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['encoders', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/encoders/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'encoders'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'encoders',
+        'x-response-key': 'encoders',
+        'x-title': 'List Encoders',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+      post: {
+        description:
+          'Returns a list of card encoders available to the customer.\nThis endpoint is intended for use within embedded customer portals, such as deep links\nfor reservation management, to allow staff to select an encoder for card encoding.',
+        operationId: 'seamCustomerV1EncodersListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  space_key: {
+                    description:
+                      'Optional filter to list encoders for a specific space.',
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    encoders: {
+                      items: { $ref: '#/components/schemas/acs_encoder' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['encoders', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/encoders/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'encoders'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'encoders',
+        'x-response-key': 'encoders',
+        'x-title': 'List Encoders',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
     '/seam/customer/v1/events/list': {
       get: {
         description:
@@ -56501,6 +56765,19 @@ export default {
                           format: 'uuid',
                           type: 'string',
                         },
+                        deep_link: {
+                          description:
+                            'Deep link target resource for initial redirect. When set, the portal will navigate directly to the specified resource.',
+                          properties: {
+                            resource_key: { type: 'string' },
+                            resource_type: {
+                              enum: ['reservation'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['resource_type', 'resource_key'],
+                          type: 'object',
+                        },
                         features: {
                           default: { $ref: '#/components/schemas/access_code' },
                           properties: {
@@ -56750,6 +57027,13 @@ export default {
                         locale: {
                           description: 'The locale to use for the portal.',
                           enum: ['en-US', 'pt-PT', 'fr-FR', 'it-IT', 'es-ES'],
+                          type: 'string',
+                        },
+                        navigation_mode: {
+                          default: 'full',
+                          description:
+                            "Navigation mode for the portal. 'restricted' tells frontend to hide navigation UI, typically used for embedded deep links.",
+                          enum: ['full', 'restricted'],
                           type: 'string',
                         },
                         property_listing_filter: {
@@ -56832,6 +57116,19 @@ export default {
                           format: 'uuid',
                           type: 'string',
                         },
+                        deep_link: {
+                          description:
+                            'Deep link target resource for initial redirect. When set, the portal will navigate directly to the specified resource.',
+                          properties: {
+                            resource_key: { type: 'string' },
+                            resource_type: {
+                              enum: ['reservation'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['resource_type', 'resource_key'],
+                          type: 'object',
+                        },
                         features: {
                           default: { $ref: '#/components/schemas/access_code' },
                           properties: {
@@ -57081,6 +57378,13 @@ export default {
                         locale: {
                           description: 'The locale to use for the portal.',
                           enum: ['en-US', 'pt-PT', 'fr-FR', 'it-IT', 'es-ES'],
+                          type: 'string',
+                        },
+                        navigation_mode: {
+                          default: 'full',
+                          description:
+                            "Navigation mode for the portal. 'restricted' tells frontend to hide navigation UI, typically used for embedded deep links.",
+                          enum: ['full', 'restricted'],
                           type: 'string',
                         },
                         property_listing_filter: {
