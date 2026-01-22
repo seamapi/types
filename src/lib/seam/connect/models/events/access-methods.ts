@@ -82,6 +82,19 @@ export const access_method_reissued_event = access_method_issued_event.extend({
     An access method was reissued.
   `)
 
+export const access_method_created_event = access_method_event.extend({
+  event_type: z.literal('access_method.created'),
+}).describe(`
+    ---
+    route_path: /access_methods
+    ---
+    An access method was created.
+  `)
+
+export type AccessMethodCreatedEvent = z.infer<
+  typeof access_method_created_event
+>
+
 export type AccessMethodRevokedEvent = z.infer<
   typeof access_method_revoked_event
 >
@@ -92,4 +105,5 @@ export const access_method_events = [
   access_method_card_encoding_required_event,
   access_method_deleted_event,
   access_method_reissued_event,
+  access_method_created_event,
 ] as const
