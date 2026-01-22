@@ -1,8 +1,11 @@
 import { z } from 'zod'
 
-import { connected_account_error } from '../connected-accounts/index.js'
 import { custom_metadata } from '../custom-metadata.js'
-import { common_event } from './common.js'
+import {
+  common_event,
+  common_event_error,
+  common_event_warning,
+} from './common.js'
 
 const connected_account_event = common_event.extend({
   connected_account_id: z
@@ -24,6 +27,15 @@ const connect_webview_id = z
   .describe(
     'ID of the [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) associated with the event.',
   )
+
+const connected_account_event_issue_properties = {
+  connected_account_errors: z
+    .array(common_event_error)
+    .describe('Errors associated with the connected account.'),
+  connected_account_warnings: z
+    .array(common_event_warning)
+    .describe('Warnings associated with the connected account.'),
+}
 
 export const connected_account_connected_event = connected_account_event.extend(
   {
@@ -78,13 +90,11 @@ export type ConnectedAccountSuccessfulLoginEvent = z.infer<
   typeof connected_account_successful_login_event
 >
 
-export const connected_account_disconnected_event =
-  connected_account_event.extend({
+export const connected_account_disconnected_event = connected_account_event
+  .extend({
     event_type: z.literal('connected_account.disconnected'),
-    connected_account_errors: z
-      .array(connected_account_error)
-      .describe('Errors associated with the connected account.'),
-  }).describe(`
+  })
+  .extend(connected_account_event_issue_properties).describe(`
     ---
     route_path: /connected_accounts
     ---
@@ -149,9 +159,11 @@ export type ConnectedAccountCompletedFirstSyncAfterReconnectionEvent = z.infer<
 >
 
 export const connected_account_reauthorization_requested_event =
-  connected_account_event.extend({
-    event_type: z.literal('connected_account.reauthorization_requested'),
-  }).describe(`
+  connected_account_event
+    .extend({
+      event_type: z.literal('connected_account.reauthorization_requested'),
+    })
+    .extend(connected_account_event_issue_properties).describe(`
     ---
     route_path: /connected_accounts
     ---

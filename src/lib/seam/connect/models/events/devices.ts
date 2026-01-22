@@ -2,7 +2,11 @@ import { z } from 'zod'
 
 import { custom_metadata } from '../custom-metadata.js'
 import { climate_setting } from '../thermostats/climate-preset.js'
-import { common_event } from './common.js'
+import {
+  common_event,
+  common_event_error,
+  common_event_warning,
+} from './common.js'
 
 const device_event = common_event.extend({
   device_id: z.string().uuid().describe('ID of the affected device.'),
@@ -41,6 +45,21 @@ const device_battery_status = z
 const disconnection_error_code = z
   .enum(['account_disconnected', 'hub_disconnected', 'device_disconnected'])
   .describe('Error code associated with the disconnection event, if any.')
+
+const device_event_issue_properties = {
+  connected_account_errors: z
+    .array(common_event_error)
+    .describe('Errors associated with the connected account.'),
+  connected_account_warnings: z
+    .array(common_event_warning)
+    .describe('Warnings associated with the connected account.'),
+  device_errors: z
+    .array(common_event_error)
+    .describe('Errors associated with the device.'),
+  device_warnings: z
+    .array(common_event_warning)
+    .describe('Warnings associated with the device.'),
+}
 
 export const lock_method = z
   .enum(['keycode', 'manual', 'automatic', 'unknown', 'seamapi'])
@@ -110,10 +129,12 @@ export type UnmanagedDeviceConnectedEvent = z.infer<
   typeof unmanaged_device_connected_event
 >
 
-export const device_disconnected_event = device_event.extend({
-  event_type: z.literal('device.disconnected'),
-  error_code: disconnection_error_code,
-}).describe(`
+export const device_disconnected_event = device_event
+  .extend({
+    event_type: z.literal('device.disconnected'),
+    error_code: disconnection_error_code,
+  })
+  .extend(device_event_issue_properties).describe(`
   ---
   route_path: /devices
   ---
@@ -122,10 +143,12 @@ export const device_disconnected_event = device_event.extend({
 
 export type DeviceDisconnectedEvent = z.infer<typeof device_disconnected_event>
 
-export const unmanaged_device_disconnected_event = device_event.extend({
-  event_type: z.literal('device.unmanaged.disconnected'),
-  error_code: disconnection_error_code,
-}).describe(`
+export const unmanaged_device_disconnected_event = device_event
+  .extend({
+    event_type: z.literal('device.unmanaged.disconnected'),
+    error_code: disconnection_error_code,
+  })
+  .extend(device_event_issue_properties).describe(`
   ---
   route_path: /devices/unmanaged
   ---
@@ -250,9 +273,11 @@ export type DeviceSaltoPrivacyModeDeactivatedEvent = z.infer<
   typeof device_salto_privacy_mode_deactivated_event
 >
 
-export const device_connection_became_flaky_event = device_event.extend({
-  event_type: z.literal('device.connection_became_flaky'),
-}).describe(`
+export const device_connection_became_flaky_event = device_event
+  .extend({
+    event_type: z.literal('device.connection_became_flaky'),
+  })
+  .extend(device_event_issue_properties).describe(`
   ---
   route_path: /devices
   ---
@@ -276,9 +301,11 @@ export type DeviceConnectionStabilizedEvent = z.infer<
   typeof device_connection_stabilized_event
 >
 
-export const device_error_subscription_required_event = device_event.extend({
-  event_type: z.literal('device.error.subscription_required'),
-}).describe(`
+export const device_error_subscription_required_event = device_event
+  .extend({
+    event_type: z.literal('device.error.subscription_required'),
+  })
+  .extend(device_event_issue_properties).describe(`
   ---
   route_path: /devices
   ---
@@ -316,9 +343,11 @@ export type DeviceAccessoryKeypadConnectedEvent = z.infer<
   typeof device_accessory_keypad_connected_event
 >
 
-export const device_accessory_keypad_disconnected_event = device_event.extend({
-  event_type: z.literal('device.accessory_keypad_disconnected'),
-}).describe(`
+export const device_accessory_keypad_disconnected_event = device_event
+  .extend({
+    event_type: z.literal('device.accessory_keypad_disconnected'),
+  })
+  .extend(device_event_issue_properties).describe(`
   ---
   route_path: /devices
   ---

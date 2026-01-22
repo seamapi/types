@@ -1,3 +1,4 @@
+export type { SeamEvent, SeamEventType } from '../models/events/seam-event.js'
 export type {
   AccessCode as ManagedAccessCode,
   Device as ManagedDevice,
