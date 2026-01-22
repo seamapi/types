@@ -1946,6 +1946,56 @@ export default {
                   required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Indicates that the access grant should have access to more locations than it currently does. Access methods are being created for the missing locations.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['underprovisioned_access'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the access grant has access to locations it should not have. Access methods are being removed from the extra locations.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['overprovisioned_access'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -15651,6 +15701,61 @@ export default {
                   "Indicates whether the code is a backup code (only present when mode is 'code' and a backup code was used).",
                 type: 'boolean',
               },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'access_method_id',
+              'access_grant_ids',
+              'event_type',
+            ],
+            type: 'object',
+            'x-route-path': '/access_methods',
+          },
+          {
+            description: 'An access method was created.',
+            properties: {
+              access_grant_ids: {
+                description:
+                  'IDs of the access grants associated with this access method.',
+                items: { format: 'uuid', type: 'string' },
+                type: 'array',
+              },
+              access_grant_keys: {
+                description:
+                  'Keys of the access grants associated with this access method (if present).',
+                items: { type: 'string' },
+                type: 'array',
+              },
+              access_method_id: {
+                description: 'ID of the affected access method.',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: { enum: ['access_method.created'], type: 'string' },
               occurred_at: {
                 description: 'Date and time at which the event occurred.',
                 format: 'date-time',
@@ -30606,6 +30711,64 @@ export default {
                                 ],
                                 type: 'object',
                               },
+                              {
+                                description:
+                                  'Indicates that the access grant should have access to more locations than it currently does. Access methods are being created for the missing locations.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['underprovisioned_access'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  'Indicates that the access grant has access to locations it should not have. Access methods are being removed from the extra locations.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['overprovisioned_access'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
                             ],
                           },
                           type: 'array',
@@ -30869,6 +31032,64 @@ export default {
                                     description:
                                       'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                                     enum: ['being_deleted'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  'Indicates that the access grant should have access to more locations than it currently does. Access methods are being created for the missing locations.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['underprovisioned_access'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  'Indicates that the access grant has access to locations it should not have. Access methods are being removed from the extra locations.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['overprovisioned_access'],
                                     type: 'string',
                                   },
                                 },
@@ -31178,6 +31399,64 @@ export default {
                                   ],
                                   type: 'object',
                                 },
+                                {
+                                  description:
+                                    'Indicates that the access grant should have access to more locations than it currently does. Access methods are being created for the missing locations.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['underprovisioned_access'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    'Indicates that the access grant has access to locations it should not have. Access methods are being removed from the extra locations.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['overprovisioned_access'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
                               ],
                             },
                             type: 'array',
@@ -31461,6 +31740,64 @@ export default {
                                       description:
                                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                                       enum: ['being_deleted'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    'Indicates that the access grant should have access to more locations than it currently does. Access methods are being created for the missing locations.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['underprovisioned_access'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    'Indicates that the access grant has access to locations it should not have. Access methods are being removed from the extra locations.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['overprovisioned_access'],
                                       type: 'string',
                                     },
                                   },
@@ -48134,6 +48471,7 @@ export default {
                 'access_method.card_encoding_required',
                 'access_method.deleted',
                 'access_method.reissued',
+                'access_method.created',
                 'acs_system.connected',
                 'acs_system.added',
                 'acs_system.disconnected',
@@ -48241,6 +48579,7 @@ export default {
                   'access_method.card_encoding_required',
                   'access_method.deleted',
                   'access_method.reissued',
+                  'access_method.created',
                   'acs_system.connected',
                   'acs_system.added',
                   'acs_system.disconnected',
@@ -48681,6 +49020,7 @@ export default {
                       'access_method.card_encoding_required',
                       'access_method.deleted',
                       'access_method.reissued',
+                      'access_method.created',
                       'acs_system.connected',
                       'acs_system.added',
                       'acs_system.disconnected',
@@ -48784,6 +49124,7 @@ export default {
                         'access_method.card_encoding_required',
                         'access_method.deleted',
                         'access_method.reissued',
+                        'access_method.created',
                         'acs_system.connected',
                         'acs_system.added',
                         'acs_system.disconnected',
@@ -56210,6 +56551,7 @@ export default {
                 'access_method.card_encoding_required',
                 'access_method.deleted',
                 'access_method.reissued',
+                'access_method.created',
                 'acs_system.connected',
                 'acs_system.added',
                 'acs_system.disconnected',
@@ -56318,6 +56660,7 @@ export default {
                   'access_method.card_encoding_required',
                   'access_method.deleted',
                   'access_method.reissued',
+                  'access_method.created',
                   'acs_system.connected',
                   'acs_system.added',
                   'acs_system.disconnected',
@@ -56489,6 +56832,7 @@ export default {
                       'access_method.card_encoding_required',
                       'access_method.deleted',
                       'access_method.reissued',
+                      'access_method.created',
                       'acs_system.connected',
                       'acs_system.added',
                       'acs_system.disconnected',
@@ -56592,6 +56936,7 @@ export default {
                         'access_method.card_encoding_required',
                         'access_method.deleted',
                         'access_method.reissued',
+                        'access_method.created',
                         'acs_system.connected',
                         'acs_system.added',
                         'acs_system.disconnected',

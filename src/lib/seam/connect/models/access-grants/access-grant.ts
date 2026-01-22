@@ -60,14 +60,40 @@ const being_deleted = common_access_grant_warning
     'Indicates that the [access grant](https://docs.seam.co/latest/capability-guides/access-grants) is being deleted.',
   )
 
+const underprovisioned_access = common_access_grant_warning
+  .extend({
+    warning_code: z
+      .literal('underprovisioned_access')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'Indicates that the access grant should have access to more locations than it currently does. Access methods are being created for the missing locations.',
+  )
+
+const overprovisioned_access = common_access_grant_warning
+  .extend({
+    warning_code: z
+      .literal('overprovisioned_access')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'Indicates that the access grant has access to locations it should not have. Access methods are being removed from the extra locations.',
+  )
+
 const access_grant_warning = z
-  .discriminatedUnion('warning_code', [being_deleted])
+  .discriminatedUnion('warning_code', [
+    being_deleted,
+    underprovisioned_access,
+    overprovisioned_access,
+  ])
   .describe(
     'Warning associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
   )
 
 const _access_grant_warning_map = z.object({
   being_deleted: being_deleted.optional().nullable(),
+  underprovisioned_access: underprovisioned_access.optional().nullable(),
+  overprovisioned_access: overprovisioned_access.optional().nullable(),
 })
 
 export type AccessGrantWarningMap = z.infer<typeof _access_grant_warning_map>
