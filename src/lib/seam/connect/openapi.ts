@@ -33420,6 +33420,12 @@ export default {
                     nullable: true,
                     type: 'string',
                   },
+                  space_ids: {
+                    description:
+                      'Array of location IDs to associate with the access grant. Updates which devices the grant applies to. Only supported for code-based access grants.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
                   starts_at: {
                     description:
                       'Date and time at which the validity of the grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
@@ -33487,6 +33493,12 @@ export default {
                     description: 'Display name for the access grant.',
                     nullable: true,
                     type: 'string',
+                  },
+                  space_ids: {
+                    description:
+                      'Array of location IDs to associate with the access grant. Updates which devices the grant applies to. Only supported for code-based access grants.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
                   },
                   starts_at: {
                     description:
@@ -54901,6 +54913,112 @@ export default {
         'x-fern-sdk-return-value': 'access_grants',
         'x-response-key': 'access_grants',
         'x-title': 'List Access Grants (Other Access)',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
+    '/seam/customer/v1/access_grants/update': {
+      patch: {
+        description:
+          'Updates the spaces (locations) associated with an Access Grant.',
+        operationId: 'seamCustomerV1AccessGrantsUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_grant_id: {
+                    description: 'ID of the Access Grant to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  space_ids: {
+                    description:
+                      'Array of location IDs to associate with the access grant.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                },
+                required: ['access_grant_id', 'space_ids'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/access_grants/update',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'access_grants'],
+        'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
+        'x-title': 'Update Access Grant Spaces',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+      post: {
+        description:
+          'Updates the spaces (locations) associated with an Access Grant.',
+        operationId: 'seamCustomerV1AccessGrantsUpdatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_grant_id: {
+                    description: 'ID of the Access Grant to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  space_ids: {
+                    description:
+                      'Array of location IDs to associate with the access grant.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                },
+                required: ['access_grant_id', 'space_ids'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/access_grants/update',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'access_grants'],
+        'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
+        'x-title': 'Update Access Grant Spaces',
         'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
