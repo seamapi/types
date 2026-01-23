@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+import { access_grant_pending_mutations } from './pending-mutations.js'
 import { requested_access_method } from './requested-access-method.js'
 
 const common_access_grant_error = z.object({
@@ -179,6 +180,11 @@ export const access_grant = z.object({
     .optional()
     .describe(
       'ID of the customization profile associated with the Access Grant.',
+    ),
+  pending_mutations: z
+    .array(access_grant_pending_mutations)
+    .describe(
+      'List of pending mutations for the access grant. This shows updates that are in progress.',
     ),
 }).describe(`
   ---
