@@ -1846,6 +1846,78 @@ export default {
             nullable: true,
             type: 'string',
           },
+          pending_mutations: {
+            description:
+              'List of pending mutations for the access grant. This shows updates that are in progress.',
+            items: {
+              discriminator: { propertyName: 'mutation_code' },
+              oneOf: [
+                {
+                  description:
+                    'Seam is in the process of updating the devices/locations associated with this access grant.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    from: {
+                      description: 'Previous location configuration.',
+                      properties: {
+                        device_ids: {
+                          description:
+                            'Previous device IDs where access codes existed.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                      },
+                      required: ['device_ids'],
+                      type: 'object',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of updating the locations (devices) associated with this access grant.',
+                      enum: ['updating_locations'],
+                      type: 'string',
+                    },
+                    to: {
+                      description: 'New location configuration.',
+                      properties: {
+                        common_code_key: {
+                          description:
+                            'Common code key to ensure PIN code reuse across devices.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        device_ids: {
+                          description:
+                            'New device IDs where access codes should be created.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                      },
+                      required: ['device_ids'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
           requested_access_methods: {
             description:
               'Access methods that the user requested for the Access Grant.',
@@ -2022,6 +2094,7 @@ export default {
           'ends_at',
           'warnings',
           'errors',
+          'pending_mutations',
         ],
         type: 'object',
         'x-draft': 'Early access.',
@@ -32005,6 +32078,86 @@ export default {
                           nullable: true,
                           type: 'string',
                         },
+                        pending_mutations: {
+                          description:
+                            'List of pending mutations for the access grant. This shows updates that are in progress.',
+                          items: {
+                            discriminator: { propertyName: 'mutation_code' },
+                            oneOf: [
+                              {
+                                description:
+                                  'Seam is in the process of updating the devices/locations associated with this access grant.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which the mutation was created.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  from: {
+                                    description:
+                                      'Previous location configuration.',
+                                    properties: {
+                                      device_ids: {
+                                        description:
+                                          'Previous device IDs where access codes existed.',
+                                        items: {
+                                          format: 'uuid',
+                                          type: 'string',
+                                        },
+                                        type: 'array',
+                                      },
+                                    },
+                                    required: ['device_ids'],
+                                    type: 'object',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the mutation.',
+                                    type: 'string',
+                                  },
+                                  mutation_code: {
+                                    description:
+                                      'Mutation code to indicate that Seam is in the process of updating the locations (devices) associated with this access grant.',
+                                    enum: ['updating_locations'],
+                                    type: 'string',
+                                  },
+                                  to: {
+                                    description: 'New location configuration.',
+                                    properties: {
+                                      common_code_key: {
+                                        description:
+                                          'Common code key to ensure PIN code reuse across devices.',
+                                        nullable: true,
+                                        type: 'string',
+                                      },
+                                      device_ids: {
+                                        description:
+                                          'New device IDs where access codes should be created.',
+                                        items: {
+                                          format: 'uuid',
+                                          type: 'string',
+                                        },
+                                        type: 'array',
+                                      },
+                                    },
+                                    required: ['device_ids'],
+                                    type: 'object',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'mutation_code',
+                                  'from',
+                                  'to',
+                                ],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                          type: 'array',
+                        },
                         requested_access_methods: {
                           description:
                             'Access methods that the user requested for the Access Grant.',
@@ -32194,6 +32347,7 @@ export default {
                         'ends_at',
                         'warnings',
                         'errors',
+                        'pending_mutations',
                       ],
                       type: 'object',
                       'x-draft': 'Early access.',
@@ -32336,6 +32490,86 @@ export default {
                           nullable: true,
                           type: 'string',
                         },
+                        pending_mutations: {
+                          description:
+                            'List of pending mutations for the access grant. This shows updates that are in progress.',
+                          items: {
+                            discriminator: { propertyName: 'mutation_code' },
+                            oneOf: [
+                              {
+                                description:
+                                  'Seam is in the process of updating the devices/locations associated with this access grant.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which the mutation was created.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  from: {
+                                    description:
+                                      'Previous location configuration.',
+                                    properties: {
+                                      device_ids: {
+                                        description:
+                                          'Previous device IDs where access codes existed.',
+                                        items: {
+                                          format: 'uuid',
+                                          type: 'string',
+                                        },
+                                        type: 'array',
+                                      },
+                                    },
+                                    required: ['device_ids'],
+                                    type: 'object',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the mutation.',
+                                    type: 'string',
+                                  },
+                                  mutation_code: {
+                                    description:
+                                      'Mutation code to indicate that Seam is in the process of updating the locations (devices) associated with this access grant.',
+                                    enum: ['updating_locations'],
+                                    type: 'string',
+                                  },
+                                  to: {
+                                    description: 'New location configuration.',
+                                    properties: {
+                                      common_code_key: {
+                                        description:
+                                          'Common code key to ensure PIN code reuse across devices.',
+                                        nullable: true,
+                                        type: 'string',
+                                      },
+                                      device_ids: {
+                                        description:
+                                          'New device IDs where access codes should be created.',
+                                        items: {
+                                          format: 'uuid',
+                                          type: 'string',
+                                        },
+                                        type: 'array',
+                                      },
+                                    },
+                                    required: ['device_ids'],
+                                    type: 'object',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'mutation_code',
+                                  'from',
+                                  'to',
+                                ],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                          type: 'array',
+                        },
                         requested_access_methods: {
                           description:
                             'Access methods that the user requested for the Access Grant.',
@@ -32525,6 +32759,7 @@ export default {
                         'ends_at',
                         'warnings',
                         'errors',
+                        'pending_mutations',
                       ],
                       type: 'object',
                       'x-draft': 'Early access.',
@@ -32692,6 +32927,87 @@ export default {
                             nullable: true,
                             type: 'string',
                           },
+                          pending_mutations: {
+                            description:
+                              'List of pending mutations for the access grant. This shows updates that are in progress.',
+                            items: {
+                              discriminator: { propertyName: 'mutation_code' },
+                              oneOf: [
+                                {
+                                  description:
+                                    'Seam is in the process of updating the devices/locations associated with this access grant.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which the mutation was created.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    from: {
+                                      description:
+                                        'Previous location configuration.',
+                                      properties: {
+                                        device_ids: {
+                                          description:
+                                            'Previous device IDs where access codes existed.',
+                                          items: {
+                                            format: 'uuid',
+                                            type: 'string',
+                                          },
+                                          type: 'array',
+                                        },
+                                      },
+                                      required: ['device_ids'],
+                                      type: 'object',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the mutation.',
+                                      type: 'string',
+                                    },
+                                    mutation_code: {
+                                      description:
+                                        'Mutation code to indicate that Seam is in the process of updating the locations (devices) associated with this access grant.',
+                                      enum: ['updating_locations'],
+                                      type: 'string',
+                                    },
+                                    to: {
+                                      description:
+                                        'New location configuration.',
+                                      properties: {
+                                        common_code_key: {
+                                          description:
+                                            'Common code key to ensure PIN code reuse across devices.',
+                                          nullable: true,
+                                          type: 'string',
+                                        },
+                                        device_ids: {
+                                          description:
+                                            'New device IDs where access codes should be created.',
+                                          items: {
+                                            format: 'uuid',
+                                            type: 'string',
+                                          },
+                                          type: 'array',
+                                        },
+                                      },
+                                      required: ['device_ids'],
+                                      type: 'object',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'mutation_code',
+                                    'from',
+                                    'to',
+                                  ],
+                                  type: 'object',
+                                },
+                              ],
+                            },
+                            type: 'array',
+                          },
                           requested_access_methods: {
                             description:
                               'Access methods that the user requested for the Access Grant.',
@@ -32882,6 +33198,7 @@ export default {
                           'ends_at',
                           'warnings',
                           'errors',
+                          'pending_mutations',
                         ],
                         type: 'object',
                         'x-draft': 'Early access.',
@@ -33043,6 +33360,87 @@ export default {
                             nullable: true,
                             type: 'string',
                           },
+                          pending_mutations: {
+                            description:
+                              'List of pending mutations for the access grant. This shows updates that are in progress.',
+                            items: {
+                              discriminator: { propertyName: 'mutation_code' },
+                              oneOf: [
+                                {
+                                  description:
+                                    'Seam is in the process of updating the devices/locations associated with this access grant.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which the mutation was created.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    from: {
+                                      description:
+                                        'Previous location configuration.',
+                                      properties: {
+                                        device_ids: {
+                                          description:
+                                            'Previous device IDs where access codes existed.',
+                                          items: {
+                                            format: 'uuid',
+                                            type: 'string',
+                                          },
+                                          type: 'array',
+                                        },
+                                      },
+                                      required: ['device_ids'],
+                                      type: 'object',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the mutation.',
+                                      type: 'string',
+                                    },
+                                    mutation_code: {
+                                      description:
+                                        'Mutation code to indicate that Seam is in the process of updating the locations (devices) associated with this access grant.',
+                                      enum: ['updating_locations'],
+                                      type: 'string',
+                                    },
+                                    to: {
+                                      description:
+                                        'New location configuration.',
+                                      properties: {
+                                        common_code_key: {
+                                          description:
+                                            'Common code key to ensure PIN code reuse across devices.',
+                                          nullable: true,
+                                          type: 'string',
+                                        },
+                                        device_ids: {
+                                          description:
+                                            'New device IDs where access codes should be created.',
+                                          items: {
+                                            format: 'uuid',
+                                            type: 'string',
+                                          },
+                                          type: 'array',
+                                        },
+                                      },
+                                      required: ['device_ids'],
+                                      type: 'object',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'mutation_code',
+                                    'from',
+                                    'to',
+                                  ],
+                                  type: 'object',
+                                },
+                              ],
+                            },
+                            type: 'array',
+                          },
                           requested_access_methods: {
                             description:
                               'Access methods that the user requested for the Access Grant.',
@@ -33233,6 +33631,7 @@ export default {
                           'ends_at',
                           'warnings',
                           'errors',
+                          'pending_mutations',
                         ],
                         type: 'object',
                         'x-draft': 'Early access.',
@@ -33420,12 +33819,6 @@ export default {
                     nullable: true,
                     type: 'string',
                   },
-                  space_ids: {
-                    description:
-                      'Array of location IDs to associate with the access grant. Updates which devices the grant applies to. Only supported for code-based access grants.',
-                    items: { format: 'uuid', type: 'string' },
-                    type: 'array',
-                  },
                   starts_at: {
                     description:
                       'Date and time at which the validity of the grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
@@ -33493,12 +33886,6 @@ export default {
                     description: 'Display name for the access grant.',
                     nullable: true,
                     type: 'string',
-                  },
-                  space_ids: {
-                    description:
-                      'Array of location IDs to associate with the access grant. Updates which devices the grant applies to. Only supported for code-based access grants.',
-                    items: { format: 'uuid', type: 'string' },
-                    type: 'array',
                   },
                   starts_at: {
                     description:
