@@ -18142,9 +18142,21 @@ export default {
                 description: 'Type of the action.',
                 type: 'string',
               },
+              connected_account_id: {
+                description:
+                  'ID of the connected account associated with the action attempt, if applicable.',
+                format: 'uuid',
+                type: 'string',
+              },
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              device_id: {
+                description:
+                  'ID of the device associated with the action attempt, if applicable.',
+                format: 'uuid',
                 type: 'string',
               },
               event_id: {
@@ -18195,9 +18207,21 @@ export default {
                 description: 'Type of the action.',
                 type: 'string',
               },
+              connected_account_id: {
+                description:
+                  'ID of the connected account associated with the action attempt, if applicable.',
+                format: 'uuid',
+                type: 'string',
+              },
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              device_id: {
+                description:
+                  'ID of the device associated with the action attempt, if applicable.',
+                format: 'uuid',
                 type: 'string',
               },
               event_id: {
@@ -18248,9 +18272,21 @@ export default {
                 description: 'Type of the action.',
                 type: 'string',
               },
+              connected_account_id: {
+                description:
+                  'ID of the connected account associated with the action attempt, if applicable.',
+                format: 'uuid',
+                type: 'string',
+              },
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              device_id: {
+                description:
+                  'ID of the device associated with the action attempt, if applicable.',
+                format: 'uuid',
                 type: 'string',
               },
               event_id: {
@@ -18301,9 +18337,21 @@ export default {
                 description: 'Type of the action.',
                 type: 'string',
               },
+              connected_account_id: {
+                description:
+                  'ID of the connected account associated with the action attempt, if applicable.',
+                format: 'uuid',
+                type: 'string',
+              },
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              device_id: {
+                description:
+                  'ID of the device associated with the action attempt, if applicable.',
+                format: 'uuid',
                 type: 'string',
               },
               event_id: {
@@ -18313,6 +18361,268 @@ export default {
               },
               event_type: {
                 enum: ['action_attempt.unlock_door.failed'],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              status: { description: 'Status of the action.', type: 'string' },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'action_attempt_id',
+              'action_type',
+              'status',
+              'event_type',
+            ],
+            type: 'object',
+            'x-route-path': '/action_attempts',
+          },
+          {
+            description:
+              'A simulate keypad code entry [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) succeeded.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the affected action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description: 'Type of the action.',
+                type: 'string',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the connected account associated with the action attempt, if applicable.',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              device_id: {
+                description:
+                  'ID of the device associated with the action attempt, if applicable.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: ['action_attempt.simulate_keypad_code_entry.succeeded'],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              status: { description: 'Status of the action.', type: 'string' },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'action_attempt_id',
+              'action_type',
+              'status',
+              'event_type',
+            ],
+            type: 'object',
+            'x-route-path': '/action_attempts',
+          },
+          {
+            description:
+              'A simulate keypad code entry [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the affected action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description: 'Type of the action.',
+                type: 'string',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the connected account associated with the action attempt, if applicable.',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              device_id: {
+                description:
+                  'ID of the device associated with the action attempt, if applicable.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: ['action_attempt.simulate_keypad_code_entry.failed'],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              status: { description: 'Status of the action.', type: 'string' },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'action_attempt_id',
+              'action_type',
+              'status',
+              'event_type',
+            ],
+            type: 'object',
+            'x-route-path': '/action_attempts',
+          },
+          {
+            description:
+              'A simulate manual lock via keypad [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) succeeded.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the affected action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description: 'Type of the action.',
+                type: 'string',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the connected account associated with the action attempt, if applicable.',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              device_id: {
+                description:
+                  'ID of the device associated with the action attempt, if applicable.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: [
+                  'action_attempt.simulate_manual_lock_via_keypad.succeeded',
+                ],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              status: { description: 'Status of the action.', type: 'string' },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'action_attempt_id',
+              'action_type',
+              'status',
+              'event_type',
+            ],
+            type: 'object',
+            'x-route-path': '/action_attempts',
+          },
+          {
+            description:
+              'A simulate manual lock via keypad [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the affected action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description: 'Type of the action.',
+                type: 'string',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the connected account associated with the action attempt, if applicable.',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              device_id: {
+                description:
+                  'ID of the device associated with the action attempt, if applicable.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: ['action_attempt.simulate_manual_lock_via_keypad.failed'],
                 type: 'string',
               },
               occurred_at: {
@@ -50298,6 +50608,10 @@ export default {
                 'action_attempt.lock_door.failed',
                 'action_attempt.unlock_door.succeeded',
                 'action_attempt.unlock_door.failed',
+                'action_attempt.simulate_keypad_code_entry.succeeded',
+                'action_attempt.simulate_keypad_code_entry.failed',
+                'action_attempt.simulate_manual_lock_via_keypad.succeeded',
+                'action_attempt.simulate_manual_lock_via_keypad.failed',
                 'connect_webview.login_succeeded',
                 'connect_webview.login_failed',
                 'device.connected',
@@ -50406,6 +50720,10 @@ export default {
                   'action_attempt.lock_door.failed',
                   'action_attempt.unlock_door.succeeded',
                   'action_attempt.unlock_door.failed',
+                  'action_attempt.simulate_keypad_code_entry.succeeded',
+                  'action_attempt.simulate_keypad_code_entry.failed',
+                  'action_attempt.simulate_manual_lock_via_keypad.succeeded',
+                  'action_attempt.simulate_manual_lock_via_keypad.failed',
                   'connect_webview.login_succeeded',
                   'connect_webview.login_failed',
                   'device.connected',
@@ -50847,6 +51165,10 @@ export default {
                       'action_attempt.lock_door.failed',
                       'action_attempt.unlock_door.succeeded',
                       'action_attempt.unlock_door.failed',
+                      'action_attempt.simulate_keypad_code_entry.succeeded',
+                      'action_attempt.simulate_keypad_code_entry.failed',
+                      'action_attempt.simulate_manual_lock_via_keypad.succeeded',
+                      'action_attempt.simulate_manual_lock_via_keypad.failed',
                       'connect_webview.login_succeeded',
                       'connect_webview.login_failed',
                       'device.connected',
@@ -50951,6 +51273,10 @@ export default {
                         'action_attempt.lock_door.failed',
                         'action_attempt.unlock_door.succeeded',
                         'action_attempt.unlock_door.failed',
+                        'action_attempt.simulate_keypad_code_entry.succeeded',
+                        'action_attempt.simulate_keypad_code_entry.failed',
+                        'action_attempt.simulate_manual_lock_via_keypad.succeeded',
+                        'action_attempt.simulate_manual_lock_via_keypad.failed',
                         'connect_webview.login_succeeded',
                         'connect_webview.login_failed',
                         'device.connected',
@@ -58484,6 +58810,10 @@ export default {
                 'action_attempt.lock_door.failed',
                 'action_attempt.unlock_door.succeeded',
                 'action_attempt.unlock_door.failed',
+                'action_attempt.simulate_keypad_code_entry.succeeded',
+                'action_attempt.simulate_keypad_code_entry.failed',
+                'action_attempt.simulate_manual_lock_via_keypad.succeeded',
+                'action_attempt.simulate_manual_lock_via_keypad.failed',
                 'connect_webview.login_succeeded',
                 'connect_webview.login_failed',
                 'device.connected',
@@ -58593,6 +58923,10 @@ export default {
                   'action_attempt.lock_door.failed',
                   'action_attempt.unlock_door.succeeded',
                   'action_attempt.unlock_door.failed',
+                  'action_attempt.simulate_keypad_code_entry.succeeded',
+                  'action_attempt.simulate_keypad_code_entry.failed',
+                  'action_attempt.simulate_manual_lock_via_keypad.succeeded',
+                  'action_attempt.simulate_manual_lock_via_keypad.failed',
                   'connect_webview.login_succeeded',
                   'connect_webview.login_failed',
                   'device.connected',
@@ -58765,6 +59099,10 @@ export default {
                       'action_attempt.lock_door.failed',
                       'action_attempt.unlock_door.succeeded',
                       'action_attempt.unlock_door.failed',
+                      'action_attempt.simulate_keypad_code_entry.succeeded',
+                      'action_attempt.simulate_keypad_code_entry.failed',
+                      'action_attempt.simulate_manual_lock_via_keypad.succeeded',
+                      'action_attempt.simulate_manual_lock_via_keypad.failed',
                       'connect_webview.login_succeeded',
                       'connect_webview.login_failed',
                       'device.connected',
@@ -58869,6 +59207,10 @@ export default {
                         'action_attempt.lock_door.failed',
                         'action_attempt.unlock_door.succeeded',
                         'action_attempt.unlock_door.failed',
+                        'action_attempt.simulate_keypad_code_entry.succeeded',
+                        'action_attempt.simulate_keypad_code_entry.failed',
+                        'action_attempt.simulate_manual_lock_via_keypad.succeeded',
+                        'action_attempt.simulate_manual_lock_via_keypad.failed',
                         'connect_webview.login_succeeded',
                         'connect_webview.login_failed',
                         'device.connected',
