@@ -62127,7 +62127,60 @@ export default {
                         properties: {
                           access_methods: {
                             items: {
-                              $ref: '#/components/schemas/access_method',
+                              properties: {
+                                access_method_id: {
+                                  format: 'uuid',
+                                  type: 'string',
+                                },
+                                is_issued: { type: 'boolean' },
+                                mode: { type: 'string' },
+                                pending_mutations: {
+                                  items: {
+                                    properties: {
+                                      created_at: {
+                                        format: 'date-time',
+                                        type: 'string',
+                                      },
+                                      message: { type: 'string' },
+                                      mutation_code: { type: 'string' },
+                                    },
+                                    required: [
+                                      'mutation_code',
+                                      'message',
+                                      'created_at',
+                                    ],
+                                    type: 'object',
+                                  },
+                                  type: 'array',
+                                },
+                                warnings: {
+                                  items: {
+                                    properties: {
+                                      created_at: {
+                                        format: 'date-time',
+                                        type: 'string',
+                                      },
+                                      message: { type: 'string' },
+                                      warning_code: { type: 'string' },
+                                    },
+                                    required: [
+                                      'warning_code',
+                                      'message',
+                                      'created_at',
+                                    ],
+                                    type: 'object',
+                                  },
+                                  type: 'array',
+                                },
+                              },
+                              required: [
+                                'access_method_id',
+                                'mode',
+                                'is_issued',
+                                'warnings',
+                                'pending_mutations',
+                              ],
+                              type: 'object',
                             },
                             type: 'array',
                           },
@@ -62139,6 +62192,25 @@ export default {
                           },
                           guest_name: { nullable: true, type: 'string' },
                           name: { nullable: true, type: 'string' },
+                          pending_mutations: {
+                            items: {
+                              properties: {
+                                created_at: {
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                message: { type: 'string' },
+                                mutation_code: { type: 'string' },
+                              },
+                              required: [
+                                'mutation_code',
+                                'message',
+                                'created_at',
+                              ],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
                           reservation_id: { format: 'uuid', type: 'string' },
                           reservation_key: { type: 'string' },
                           spaces: {
@@ -62158,6 +62230,25 @@ export default {
                             nullable: true,
                             type: 'string',
                           },
+                          warnings: {
+                            items: {
+                              properties: {
+                                created_at: {
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                message: { type: 'string' },
+                                warning_code: { type: 'string' },
+                              },
+                              required: [
+                                'warning_code',
+                                'message',
+                                'created_at',
+                              ],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
                         },
                         required: [
                           'reservation_id',
@@ -62167,6 +62258,8 @@ export default {
                           'ends_at',
                           'created_at',
                           'guest_name',
+                          'warnings',
+                          'pending_mutations',
                           'access_methods',
                           'spaces',
                         ],
@@ -62258,7 +62351,60 @@ export default {
                         properties: {
                           access_methods: {
                             items: {
-                              $ref: '#/components/schemas/access_method',
+                              properties: {
+                                access_method_id: {
+                                  format: 'uuid',
+                                  type: 'string',
+                                },
+                                is_issued: { type: 'boolean' },
+                                mode: { type: 'string' },
+                                pending_mutations: {
+                                  items: {
+                                    properties: {
+                                      created_at: {
+                                        format: 'date-time',
+                                        type: 'string',
+                                      },
+                                      message: { type: 'string' },
+                                      mutation_code: { type: 'string' },
+                                    },
+                                    required: [
+                                      'mutation_code',
+                                      'message',
+                                      'created_at',
+                                    ],
+                                    type: 'object',
+                                  },
+                                  type: 'array',
+                                },
+                                warnings: {
+                                  items: {
+                                    properties: {
+                                      created_at: {
+                                        format: 'date-time',
+                                        type: 'string',
+                                      },
+                                      message: { type: 'string' },
+                                      warning_code: { type: 'string' },
+                                    },
+                                    required: [
+                                      'warning_code',
+                                      'message',
+                                      'created_at',
+                                    ],
+                                    type: 'object',
+                                  },
+                                  type: 'array',
+                                },
+                              },
+                              required: [
+                                'access_method_id',
+                                'mode',
+                                'is_issued',
+                                'warnings',
+                                'pending_mutations',
+                              ],
+                              type: 'object',
                             },
                             type: 'array',
                           },
@@ -62270,6 +62416,25 @@ export default {
                           },
                           guest_name: { nullable: true, type: 'string' },
                           name: { nullable: true, type: 'string' },
+                          pending_mutations: {
+                            items: {
+                              properties: {
+                                created_at: {
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                message: { type: 'string' },
+                                mutation_code: { type: 'string' },
+                              },
+                              required: [
+                                'mutation_code',
+                                'message',
+                                'created_at',
+                              ],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
                           reservation_id: { format: 'uuid', type: 'string' },
                           reservation_key: { type: 'string' },
                           spaces: {
@@ -62289,6 +62454,25 @@ export default {
                             nullable: true,
                             type: 'string',
                           },
+                          warnings: {
+                            items: {
+                              properties: {
+                                created_at: {
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                message: { type: 'string' },
+                                warning_code: { type: 'string' },
+                              },
+                              required: [
+                                'warning_code',
+                                'message',
+                                'created_at',
+                              ],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
                         },
                         required: [
                           'reservation_id',
@@ -62298,6 +62482,8 @@ export default {
                           'ends_at',
                           'created_at',
                           'guest_name',
+                          'warnings',
+                          'pending_mutations',
                           'access_methods',
                           'spaces',
                         ],
