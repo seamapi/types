@@ -81,11 +81,25 @@ const overprovisioned_access = common_access_grant_warning
     'Indicates that the access grant has access to locations it should not have. Access methods are being removed from the extra locations.',
   )
 
+const updating_access_times = common_access_grant_warning
+  .extend({
+    warning_code: z
+      .literal('updating_access_times')
+      .describe(warning_code_description),
+    access_method_ids: z
+      .array(z.string().uuid())
+      .describe('IDs of the access methods being updated.'),
+  })
+  .describe(
+    'Indicates that the access times for this [access grant](https://docs.seam.co/latest/capability-guides/access-grants) are being updated.',
+  )
+
 const access_grant_warning = z
   .discriminatedUnion('warning_code', [
     being_deleted,
     underprovisioned_access,
     overprovisioned_access,
+    updating_access_times,
   ])
   .describe(
     'Warning associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
@@ -95,6 +109,7 @@ const _access_grant_warning_map = z.object({
   being_deleted: being_deleted.optional().nullable(),
   underprovisioned_access: underprovisioned_access.optional().nullable(),
   overprovisioned_access: overprovisioned_access.optional().nullable(),
+  updating_access_times: updating_access_times.optional().nullable(),
 })
 
 export type AccessGrantWarningMap = z.infer<typeof _access_grant_warning_map>

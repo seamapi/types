@@ -23,17 +23,155 @@ const being_deleted = common_access_method_warning
     'Indicates that the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods) is being deleted.',
   )
 
+const updating_access_times_warning = common_access_method_warning
+  .extend({
+    warning_code: z
+      .literal('updating_access_times')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'Indicates that the access times for this [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods) are being updated.',
+  )
+
 const access_method_warning = z
-  .discriminatedUnion('warning_code', [being_deleted])
+  .discriminatedUnion('warning_code', [
+    being_deleted,
+    updating_access_times_warning,
+  ])
   .describe(
     'Warning associated with the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods).',
   )
 
 const _access_method_warning_map = z.object({
   being_deleted: being_deleted.optional().nullable(),
+  updating_access_times: updating_access_times_warning.optional().nullable(),
 })
 
 export type AccessMethodWarningMap = z.infer<typeof _access_method_warning_map>
+
+// Pending mutations for access methods
+const common_pending_mutation = z.object({
+  created_at: z
+    .string()
+    .datetime()
+    .describe('Date and time at which the mutation was created.'),
+  message: z.string().describe('Detailed description of the mutation.'),
+})
+
+const provisioning_access_mutation = common_pending_mutation
+  .extend({
+    mutation_code: z
+      .literal('provisioning_access')
+      .describe(
+        'Mutation code to indicate that Seam is in the process of provisioning access for this access method on new devices.',
+      ),
+    from: z
+      .object({
+        device_ids: z
+          .array(z.string().uuid())
+          .describe('Previous device IDs where access was provisioned.'),
+      })
+      .describe('Previous device configuration.'),
+    to: z
+      .object({
+        device_ids: z
+          .array(z.string().uuid())
+          .describe('New device IDs where access is being provisioned.'),
+      })
+      .describe('New device configuration.'),
+  })
+  .describe(
+    'Seam is in the process of provisioning access for this access method on new devices.',
+  )
+
+const revoking_access_mutation = common_pending_mutation
+  .extend({
+    mutation_code: z
+      .literal('revoking_access')
+      .describe(
+        'Mutation code to indicate that Seam is in the process of revoking access for this access method from devices.',
+      ),
+    from: z
+      .object({
+        device_ids: z
+          .array(z.string().uuid())
+          .describe('Previous device IDs where access existed.'),
+      })
+      .describe('Previous device configuration.'),
+    to: z
+      .object({
+        device_ids: z
+          .array(z.string().uuid())
+          .describe('New device IDs where access should remain.'),
+      })
+      .describe('New device configuration.'),
+  })
+  .describe(
+    'Seam is in the process of revoking access for this access method from devices.',
+  )
+
+const updating_access_times_mutation = common_pending_mutation
+  .extend({
+    mutation_code: z
+      .literal('updating_access_times')
+      .describe(
+        'Mutation code to indicate that Seam is in the process of updating the access times for this access method.',
+      ),
+    from: z
+      .object({
+        starts_at: z
+          .string()
+          .datetime()
+          .nullable()
+          .describe('Previous start time for access.'),
+        ends_at: z
+          .string()
+          .datetime()
+          .nullable()
+          .describe('Previous end time for access.'),
+      })
+      .describe('Previous access time configuration.'),
+    to: z
+      .object({
+        starts_at: z
+          .string()
+          .datetime()
+          .nullable()
+          .describe('New start time for access.'),
+        ends_at: z
+          .string()
+          .datetime()
+          .nullable()
+          .describe('New end time for access.'),
+      })
+      .describe('New access time configuration.'),
+  })
+  .describe(
+    'Seam is in the process of updating the access times for this access method.',
+  )
+
+export const access_method_pending_mutations = z.discriminatedUnion(
+  'mutation_code',
+  [
+    provisioning_access_mutation,
+    revoking_access_mutation,
+    updating_access_times_mutation,
+  ],
+)
+
+export type AccessMethodPendingMutation = z.infer<
+  typeof access_method_pending_mutations
+>
+
+const _access_method_pending_mutations_map = z.object({
+  provisioning_access: provisioning_access_mutation.optional().nullable(),
+  revoking_access: revoking_access_mutation.optional().nullable(),
+  updating_access_times: updating_access_times_mutation.optional().nullable(),
+})
+
+export type AccessMethodPendingMutationsMap = z.infer<
+  typeof _access_method_pending_mutations_map
+>
 
 export const access_method = z.object({
   workspace_id: z
@@ -83,6 +221,11 @@ export const access_method = z.object({
     .array(access_method_warning)
     .describe(
       'Warnings associated with the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods).',
+    ),
+  pending_mutations: z
+    .array(access_method_pending_mutations)
+    .describe(
+      'Pending mutations for the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods). Indicates operations that are in progress.',
     ),
   customization_profile_id: z
     .string()

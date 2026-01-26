@@ -1914,6 +1914,80 @@ export default {
                   ],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Seam is in the process of updating the access times for this access grant.',
+                  properties: {
+                    access_method_ids: {
+                      description: 'IDs of the access methods being updated.',
+                      items: { format: 'uuid', type: 'string' },
+                      type: 'array',
+                    },
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    from: {
+                      description: 'Previous access time configuration.',
+                      properties: {
+                        ends_at: {
+                          description: 'Previous end time for access.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        starts_at: {
+                          description: 'Previous start time for access.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['starts_at', 'ends_at'],
+                      type: 'object',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of updating the access times for this access grant.',
+                      enum: ['updating_access_times'],
+                      type: 'string',
+                    },
+                    to: {
+                      description: 'New access time configuration.',
+                      properties: {
+                        ends_at: {
+                          description: 'New end time for access.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        starts_at: {
+                          description: 'New start time for access.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['starts_at', 'ends_at'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'access_method_ids',
+                    'from',
+                    'to',
+                  ],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -2068,6 +2142,41 @@ export default {
                   required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Indicates that the access times for this [access grant](https://docs.seam.co/latest/capability-guides/access-grants) are being updated.',
+                  properties: {
+                    access_method_ids: {
+                      description: 'IDs of the access methods being updated.',
+                      items: { format: 'uuid', type: 'string' },
+                      type: 'array',
+                    },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['updating_access_times'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'warning_code',
+                    'access_method_ids',
+                  ],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -2162,6 +2271,196 @@ export default {
             enum: ['code', 'card', 'mobile_key'],
             type: 'string',
           },
+          pending_mutations: {
+            description:
+              'Pending mutations for the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods). Indicates operations that are in progress.',
+            items: {
+              discriminator: { propertyName: 'mutation_code' },
+              oneOf: [
+                {
+                  description:
+                    'Seam is in the process of provisioning access for this access method on new devices.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    from: {
+                      description: 'Previous device configuration.',
+                      properties: {
+                        device_ids: {
+                          description:
+                            'Previous device IDs where access was provisioned.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                      },
+                      required: ['device_ids'],
+                      type: 'object',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of provisioning access for this access method on new devices.',
+                      enum: ['provisioning_access'],
+                      type: 'string',
+                    },
+                    to: {
+                      description: 'New device configuration.',
+                      properties: {
+                        device_ids: {
+                          description:
+                            'New device IDs where access is being provisioned.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                      },
+                      required: ['device_ids'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Seam is in the process of revoking access for this access method from devices.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    from: {
+                      description: 'Previous device configuration.',
+                      properties: {
+                        device_ids: {
+                          description:
+                            'Previous device IDs where access existed.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                      },
+                      required: ['device_ids'],
+                      type: 'object',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of revoking access for this access method from devices.',
+                      enum: ['revoking_access'],
+                      type: 'string',
+                    },
+                    to: {
+                      description: 'New device configuration.',
+                      properties: {
+                        device_ids: {
+                          description:
+                            'New device IDs where access should remain.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                      },
+                      required: ['device_ids'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Seam is in the process of updating the access times for this access method.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    from: {
+                      description: 'Previous access time configuration.',
+                      properties: {
+                        ends_at: {
+                          description: 'Previous end time for access.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        starts_at: {
+                          description: 'Previous start time for access.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['starts_at', 'ends_at'],
+                      type: 'object',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of updating the access times for this access method.',
+                      enum: ['updating_access_times'],
+                      type: 'string',
+                    },
+                    to: {
+                      description: 'New access time configuration.',
+                      properties: {
+                        ends_at: {
+                          description: 'New end time for access.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        starts_at: {
+                          description: 'New start time for access.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['starts_at', 'ends_at'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
           warnings: {
             description:
               'Warnings associated with the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods).',
@@ -2195,6 +2494,31 @@ export default {
                   required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Indicates that the access times for this [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods) are being updated.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['updating_access_times'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -2215,6 +2539,7 @@ export default {
           'issued_at',
           'is_issued',
           'warnings',
+          'pending_mutations',
         ],
         type: 'object',
         'x-draft': 'Early access.',
@@ -32464,6 +32789,87 @@ export default {
                                 ],
                                 type: 'object',
                               },
+                              {
+                                description:
+                                  'Seam is in the process of updating the access times for this access grant.',
+                                properties: {
+                                  access_method_ids: {
+                                    description:
+                                      'IDs of the access methods being updated.',
+                                    items: { format: 'uuid', type: 'string' },
+                                    type: 'array',
+                                  },
+                                  created_at: {
+                                    description:
+                                      'Date and time at which the mutation was created.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  from: {
+                                    description:
+                                      'Previous access time configuration.',
+                                    properties: {
+                                      ends_at: {
+                                        description:
+                                          'Previous end time for access.',
+                                        format: 'date-time',
+                                        nullable: true,
+                                        type: 'string',
+                                      },
+                                      starts_at: {
+                                        description:
+                                          'Previous start time for access.',
+                                        format: 'date-time',
+                                        nullable: true,
+                                        type: 'string',
+                                      },
+                                    },
+                                    required: ['starts_at', 'ends_at'],
+                                    type: 'object',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the mutation.',
+                                    type: 'string',
+                                  },
+                                  mutation_code: {
+                                    description:
+                                      'Mutation code to indicate that Seam is in the process of updating the access times for this access grant.',
+                                    enum: ['updating_access_times'],
+                                    type: 'string',
+                                  },
+                                  to: {
+                                    description:
+                                      'New access time configuration.',
+                                    properties: {
+                                      ends_at: {
+                                        description: 'New end time for access.',
+                                        format: 'date-time',
+                                        nullable: true,
+                                        type: 'string',
+                                      },
+                                      starts_at: {
+                                        description:
+                                          'New start time for access.',
+                                        format: 'date-time',
+                                        nullable: true,
+                                        type: 'string',
+                                      },
+                                    },
+                                    required: ['starts_at', 'ends_at'],
+                                    type: 'object',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'mutation_code',
+                                  'access_method_ids',
+                                  'from',
+                                  'to',
+                                ],
+                                type: 'object',
+                              },
                             ],
                           },
                           type: 'array',
@@ -32629,6 +33035,42 @@ export default {
                                   'created_at',
                                   'message',
                                   'warning_code',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  'Indicates that the access times for this [access grant](https://docs.seam.co/latest/capability-guides/access-grants) are being updated.',
+                                properties: {
+                                  access_method_ids: {
+                                    description:
+                                      'IDs of the access methods being updated.',
+                                    items: { format: 'uuid', type: 'string' },
+                                    type: 'array',
+                                  },
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['updating_access_times'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                  'access_method_ids',
                                 ],
                                 type: 'object',
                               },
@@ -32876,6 +33318,87 @@ export default {
                                 ],
                                 type: 'object',
                               },
+                              {
+                                description:
+                                  'Seam is in the process of updating the access times for this access grant.',
+                                properties: {
+                                  access_method_ids: {
+                                    description:
+                                      'IDs of the access methods being updated.',
+                                    items: { format: 'uuid', type: 'string' },
+                                    type: 'array',
+                                  },
+                                  created_at: {
+                                    description:
+                                      'Date and time at which the mutation was created.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  from: {
+                                    description:
+                                      'Previous access time configuration.',
+                                    properties: {
+                                      ends_at: {
+                                        description:
+                                          'Previous end time for access.',
+                                        format: 'date-time',
+                                        nullable: true,
+                                        type: 'string',
+                                      },
+                                      starts_at: {
+                                        description:
+                                          'Previous start time for access.',
+                                        format: 'date-time',
+                                        nullable: true,
+                                        type: 'string',
+                                      },
+                                    },
+                                    required: ['starts_at', 'ends_at'],
+                                    type: 'object',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the mutation.',
+                                    type: 'string',
+                                  },
+                                  mutation_code: {
+                                    description:
+                                      'Mutation code to indicate that Seam is in the process of updating the access times for this access grant.',
+                                    enum: ['updating_access_times'],
+                                    type: 'string',
+                                  },
+                                  to: {
+                                    description:
+                                      'New access time configuration.',
+                                    properties: {
+                                      ends_at: {
+                                        description: 'New end time for access.',
+                                        format: 'date-time',
+                                        nullable: true,
+                                        type: 'string',
+                                      },
+                                      starts_at: {
+                                        description:
+                                          'New start time for access.',
+                                        format: 'date-time',
+                                        nullable: true,
+                                        type: 'string',
+                                      },
+                                    },
+                                    required: ['starts_at', 'ends_at'],
+                                    type: 'object',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'mutation_code',
+                                  'access_method_ids',
+                                  'from',
+                                  'to',
+                                ],
+                                type: 'object',
+                              },
                             ],
                           },
                           type: 'array',
@@ -33041,6 +33564,42 @@ export default {
                                   'created_at',
                                   'message',
                                   'warning_code',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  'Indicates that the access times for this [access grant](https://docs.seam.co/latest/capability-guides/access-grants) are being updated.',
+                                properties: {
+                                  access_method_ids: {
+                                    description:
+                                      'IDs of the access methods being updated.',
+                                    items: { format: 'uuid', type: 'string' },
+                                    type: 'array',
+                                  },
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['updating_access_times'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                  'access_method_ids',
                                 ],
                                 type: 'object',
                               },
@@ -33314,6 +33873,88 @@ export default {
                                   ],
                                   type: 'object',
                                 },
+                                {
+                                  description:
+                                    'Seam is in the process of updating the access times for this access grant.',
+                                  properties: {
+                                    access_method_ids: {
+                                      description:
+                                        'IDs of the access methods being updated.',
+                                      items: { format: 'uuid', type: 'string' },
+                                      type: 'array',
+                                    },
+                                    created_at: {
+                                      description:
+                                        'Date and time at which the mutation was created.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    from: {
+                                      description:
+                                        'Previous access time configuration.',
+                                      properties: {
+                                        ends_at: {
+                                          description:
+                                            'Previous end time for access.',
+                                          format: 'date-time',
+                                          nullable: true,
+                                          type: 'string',
+                                        },
+                                        starts_at: {
+                                          description:
+                                            'Previous start time for access.',
+                                          format: 'date-time',
+                                          nullable: true,
+                                          type: 'string',
+                                        },
+                                      },
+                                      required: ['starts_at', 'ends_at'],
+                                      type: 'object',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the mutation.',
+                                      type: 'string',
+                                    },
+                                    mutation_code: {
+                                      description:
+                                        'Mutation code to indicate that Seam is in the process of updating the access times for this access grant.',
+                                      enum: ['updating_access_times'],
+                                      type: 'string',
+                                    },
+                                    to: {
+                                      description:
+                                        'New access time configuration.',
+                                      properties: {
+                                        ends_at: {
+                                          description:
+                                            'New end time for access.',
+                                          format: 'date-time',
+                                          nullable: true,
+                                          type: 'string',
+                                        },
+                                        starts_at: {
+                                          description:
+                                            'New start time for access.',
+                                          format: 'date-time',
+                                          nullable: true,
+                                          type: 'string',
+                                        },
+                                      },
+                                      required: ['starts_at', 'ends_at'],
+                                      type: 'object',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'mutation_code',
+                                    'access_method_ids',
+                                    'from',
+                                    'to',
+                                  ],
+                                  type: 'object',
+                                },
                               ],
                             },
                             type: 'array',
@@ -33480,6 +34121,42 @@ export default {
                                     'created_at',
                                     'message',
                                     'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    'Indicates that the access times for this [access grant](https://docs.seam.co/latest/capability-guides/access-grants) are being updated.',
+                                  properties: {
+                                    access_method_ids: {
+                                      description:
+                                        'IDs of the access methods being updated.',
+                                      items: { format: 'uuid', type: 'string' },
+                                      type: 'array',
+                                    },
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['updating_access_times'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                    'access_method_ids',
                                   ],
                                   type: 'object',
                                 },
@@ -33747,6 +34424,88 @@ export default {
                                   ],
                                   type: 'object',
                                 },
+                                {
+                                  description:
+                                    'Seam is in the process of updating the access times for this access grant.',
+                                  properties: {
+                                    access_method_ids: {
+                                      description:
+                                        'IDs of the access methods being updated.',
+                                      items: { format: 'uuid', type: 'string' },
+                                      type: 'array',
+                                    },
+                                    created_at: {
+                                      description:
+                                        'Date and time at which the mutation was created.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    from: {
+                                      description:
+                                        'Previous access time configuration.',
+                                      properties: {
+                                        ends_at: {
+                                          description:
+                                            'Previous end time for access.',
+                                          format: 'date-time',
+                                          nullable: true,
+                                          type: 'string',
+                                        },
+                                        starts_at: {
+                                          description:
+                                            'Previous start time for access.',
+                                          format: 'date-time',
+                                          nullable: true,
+                                          type: 'string',
+                                        },
+                                      },
+                                      required: ['starts_at', 'ends_at'],
+                                      type: 'object',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the mutation.',
+                                      type: 'string',
+                                    },
+                                    mutation_code: {
+                                      description:
+                                        'Mutation code to indicate that Seam is in the process of updating the access times for this access grant.',
+                                      enum: ['updating_access_times'],
+                                      type: 'string',
+                                    },
+                                    to: {
+                                      description:
+                                        'New access time configuration.',
+                                      properties: {
+                                        ends_at: {
+                                          description:
+                                            'New end time for access.',
+                                          format: 'date-time',
+                                          nullable: true,
+                                          type: 'string',
+                                        },
+                                        starts_at: {
+                                          description:
+                                            'New start time for access.',
+                                          format: 'date-time',
+                                          nullable: true,
+                                          type: 'string',
+                                        },
+                                      },
+                                      required: ['starts_at', 'ends_at'],
+                                      type: 'object',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'mutation_code',
+                                    'access_method_ids',
+                                    'from',
+                                    'to',
+                                  ],
+                                  type: 'object',
+                                },
                               ],
                             },
                             type: 'array',
@@ -33913,6 +34672,42 @@ export default {
                                     'created_at',
                                     'message',
                                     'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    'Indicates that the access times for this [access grant](https://docs.seam.co/latest/capability-guides/access-grants) are being updated.',
+                                  properties: {
+                                    access_method_ids: {
+                                      description:
+                                        'IDs of the access methods being updated.',
+                                      items: { format: 'uuid', type: 'string' },
+                                      type: 'array',
+                                    },
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['updating_access_times'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                    'access_method_ids',
                                   ],
                                   type: 'object',
                                 },
@@ -35033,6 +35828,218 @@ export default {
                           enum: ['code', 'card', 'mobile_key'],
                           type: 'string',
                         },
+                        pending_mutations: {
+                          description:
+                            'Pending mutations for the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods). Indicates operations that are in progress.',
+                          items: {
+                            discriminator: { propertyName: 'mutation_code' },
+                            oneOf: [
+                              {
+                                description:
+                                  'Seam is in the process of provisioning access for this access method on new devices.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which the mutation was created.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  from: {
+                                    description:
+                                      'Previous device configuration.',
+                                    properties: {
+                                      device_ids: {
+                                        description:
+                                          'Previous device IDs where access was provisioned.',
+                                        items: {
+                                          format: 'uuid',
+                                          type: 'string',
+                                        },
+                                        type: 'array',
+                                      },
+                                    },
+                                    required: ['device_ids'],
+                                    type: 'object',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the mutation.',
+                                    type: 'string',
+                                  },
+                                  mutation_code: {
+                                    description:
+                                      'Mutation code to indicate that Seam is in the process of provisioning access for this access method on new devices.',
+                                    enum: ['provisioning_access'],
+                                    type: 'string',
+                                  },
+                                  to: {
+                                    description: 'New device configuration.',
+                                    properties: {
+                                      device_ids: {
+                                        description:
+                                          'New device IDs where access is being provisioned.',
+                                        items: {
+                                          format: 'uuid',
+                                          type: 'string',
+                                        },
+                                        type: 'array',
+                                      },
+                                    },
+                                    required: ['device_ids'],
+                                    type: 'object',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'mutation_code',
+                                  'from',
+                                  'to',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  'Seam is in the process of revoking access for this access method from devices.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which the mutation was created.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  from: {
+                                    description:
+                                      'Previous device configuration.',
+                                    properties: {
+                                      device_ids: {
+                                        description:
+                                          'Previous device IDs where access existed.',
+                                        items: {
+                                          format: 'uuid',
+                                          type: 'string',
+                                        },
+                                        type: 'array',
+                                      },
+                                    },
+                                    required: ['device_ids'],
+                                    type: 'object',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the mutation.',
+                                    type: 'string',
+                                  },
+                                  mutation_code: {
+                                    description:
+                                      'Mutation code to indicate that Seam is in the process of revoking access for this access method from devices.',
+                                    enum: ['revoking_access'],
+                                    type: 'string',
+                                  },
+                                  to: {
+                                    description: 'New device configuration.',
+                                    properties: {
+                                      device_ids: {
+                                        description:
+                                          'New device IDs where access should remain.',
+                                        items: {
+                                          format: 'uuid',
+                                          type: 'string',
+                                        },
+                                        type: 'array',
+                                      },
+                                    },
+                                    required: ['device_ids'],
+                                    type: 'object',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'mutation_code',
+                                  'from',
+                                  'to',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  'Seam is in the process of updating the access times for this access method.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which the mutation was created.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  from: {
+                                    description:
+                                      'Previous access time configuration.',
+                                    properties: {
+                                      ends_at: {
+                                        description:
+                                          'Previous end time for access.',
+                                        format: 'date-time',
+                                        nullable: true,
+                                        type: 'string',
+                                      },
+                                      starts_at: {
+                                        description:
+                                          'Previous start time for access.',
+                                        format: 'date-time',
+                                        nullable: true,
+                                        type: 'string',
+                                      },
+                                    },
+                                    required: ['starts_at', 'ends_at'],
+                                    type: 'object',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the mutation.',
+                                    type: 'string',
+                                  },
+                                  mutation_code: {
+                                    description:
+                                      'Mutation code to indicate that Seam is in the process of updating the access times for this access method.',
+                                    enum: ['updating_access_times'],
+                                    type: 'string',
+                                  },
+                                  to: {
+                                    description:
+                                      'New access time configuration.',
+                                    properties: {
+                                      ends_at: {
+                                        description: 'New end time for access.',
+                                        format: 'date-time',
+                                        nullable: true,
+                                        type: 'string',
+                                      },
+                                      starts_at: {
+                                        description:
+                                          'New start time for access.',
+                                        format: 'date-time',
+                                        nullable: true,
+                                        type: 'string',
+                                      },
+                                    },
+                                    required: ['starts_at', 'ends_at'],
+                                    type: 'object',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'mutation_code',
+                                  'from',
+                                  'to',
+                                ],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                          type: 'array',
+                        },
                         warnings: {
                           description:
                             'Warnings associated with the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods).',
@@ -35070,6 +36077,35 @@ export default {
                                 ],
                                 type: 'object',
                               },
+                              {
+                                description:
+                                  'Indicates that the access times for this [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods) are being updated.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['updating_access_times'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
                             ],
                           },
                           type: 'array',
@@ -35090,6 +36126,7 @@ export default {
                         'issued_at',
                         'is_issued',
                         'warnings',
+                        'pending_mutations',
                       ],
                       type: 'object',
                       'x-draft': 'Early access.',
@@ -35196,6 +36233,218 @@ export default {
                           enum: ['code', 'card', 'mobile_key'],
                           type: 'string',
                         },
+                        pending_mutations: {
+                          description:
+                            'Pending mutations for the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods). Indicates operations that are in progress.',
+                          items: {
+                            discriminator: { propertyName: 'mutation_code' },
+                            oneOf: [
+                              {
+                                description:
+                                  'Seam is in the process of provisioning access for this access method on new devices.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which the mutation was created.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  from: {
+                                    description:
+                                      'Previous device configuration.',
+                                    properties: {
+                                      device_ids: {
+                                        description:
+                                          'Previous device IDs where access was provisioned.',
+                                        items: {
+                                          format: 'uuid',
+                                          type: 'string',
+                                        },
+                                        type: 'array',
+                                      },
+                                    },
+                                    required: ['device_ids'],
+                                    type: 'object',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the mutation.',
+                                    type: 'string',
+                                  },
+                                  mutation_code: {
+                                    description:
+                                      'Mutation code to indicate that Seam is in the process of provisioning access for this access method on new devices.',
+                                    enum: ['provisioning_access'],
+                                    type: 'string',
+                                  },
+                                  to: {
+                                    description: 'New device configuration.',
+                                    properties: {
+                                      device_ids: {
+                                        description:
+                                          'New device IDs where access is being provisioned.',
+                                        items: {
+                                          format: 'uuid',
+                                          type: 'string',
+                                        },
+                                        type: 'array',
+                                      },
+                                    },
+                                    required: ['device_ids'],
+                                    type: 'object',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'mutation_code',
+                                  'from',
+                                  'to',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  'Seam is in the process of revoking access for this access method from devices.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which the mutation was created.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  from: {
+                                    description:
+                                      'Previous device configuration.',
+                                    properties: {
+                                      device_ids: {
+                                        description:
+                                          'Previous device IDs where access existed.',
+                                        items: {
+                                          format: 'uuid',
+                                          type: 'string',
+                                        },
+                                        type: 'array',
+                                      },
+                                    },
+                                    required: ['device_ids'],
+                                    type: 'object',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the mutation.',
+                                    type: 'string',
+                                  },
+                                  mutation_code: {
+                                    description:
+                                      'Mutation code to indicate that Seam is in the process of revoking access for this access method from devices.',
+                                    enum: ['revoking_access'],
+                                    type: 'string',
+                                  },
+                                  to: {
+                                    description: 'New device configuration.',
+                                    properties: {
+                                      device_ids: {
+                                        description:
+                                          'New device IDs where access should remain.',
+                                        items: {
+                                          format: 'uuid',
+                                          type: 'string',
+                                        },
+                                        type: 'array',
+                                      },
+                                    },
+                                    required: ['device_ids'],
+                                    type: 'object',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'mutation_code',
+                                  'from',
+                                  'to',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  'Seam is in the process of updating the access times for this access method.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which the mutation was created.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  from: {
+                                    description:
+                                      'Previous access time configuration.',
+                                    properties: {
+                                      ends_at: {
+                                        description:
+                                          'Previous end time for access.',
+                                        format: 'date-time',
+                                        nullable: true,
+                                        type: 'string',
+                                      },
+                                      starts_at: {
+                                        description:
+                                          'Previous start time for access.',
+                                        format: 'date-time',
+                                        nullable: true,
+                                        type: 'string',
+                                      },
+                                    },
+                                    required: ['starts_at', 'ends_at'],
+                                    type: 'object',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the mutation.',
+                                    type: 'string',
+                                  },
+                                  mutation_code: {
+                                    description:
+                                      'Mutation code to indicate that Seam is in the process of updating the access times for this access method.',
+                                    enum: ['updating_access_times'],
+                                    type: 'string',
+                                  },
+                                  to: {
+                                    description:
+                                      'New access time configuration.',
+                                    properties: {
+                                      ends_at: {
+                                        description: 'New end time for access.',
+                                        format: 'date-time',
+                                        nullable: true,
+                                        type: 'string',
+                                      },
+                                      starts_at: {
+                                        description:
+                                          'New start time for access.',
+                                        format: 'date-time',
+                                        nullable: true,
+                                        type: 'string',
+                                      },
+                                    },
+                                    required: ['starts_at', 'ends_at'],
+                                    type: 'object',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'mutation_code',
+                                  'from',
+                                  'to',
+                                ],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                          type: 'array',
+                        },
                         warnings: {
                           description:
                             'Warnings associated with the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods).',
@@ -35233,6 +36482,35 @@ export default {
                                 ],
                                 type: 'object',
                               },
+                              {
+                                description:
+                                  'Indicates that the access times for this [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods) are being updated.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['updating_access_times'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
                             ],
                           },
                           type: 'array',
@@ -35253,6 +36531,7 @@ export default {
                         'issued_at',
                         'is_issued',
                         'warnings',
+                        'pending_mutations',
                       ],
                       type: 'object',
                       'x-draft': 'Early access.',
@@ -35391,6 +36670,219 @@ export default {
                             enum: ['code', 'card', 'mobile_key'],
                             type: 'string',
                           },
+                          pending_mutations: {
+                            description:
+                              'Pending mutations for the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods). Indicates operations that are in progress.',
+                            items: {
+                              discriminator: { propertyName: 'mutation_code' },
+                              oneOf: [
+                                {
+                                  description:
+                                    'Seam is in the process of provisioning access for this access method on new devices.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which the mutation was created.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    from: {
+                                      description:
+                                        'Previous device configuration.',
+                                      properties: {
+                                        device_ids: {
+                                          description:
+                                            'Previous device IDs where access was provisioned.',
+                                          items: {
+                                            format: 'uuid',
+                                            type: 'string',
+                                          },
+                                          type: 'array',
+                                        },
+                                      },
+                                      required: ['device_ids'],
+                                      type: 'object',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the mutation.',
+                                      type: 'string',
+                                    },
+                                    mutation_code: {
+                                      description:
+                                        'Mutation code to indicate that Seam is in the process of provisioning access for this access method on new devices.',
+                                      enum: ['provisioning_access'],
+                                      type: 'string',
+                                    },
+                                    to: {
+                                      description: 'New device configuration.',
+                                      properties: {
+                                        device_ids: {
+                                          description:
+                                            'New device IDs where access is being provisioned.',
+                                          items: {
+                                            format: 'uuid',
+                                            type: 'string',
+                                          },
+                                          type: 'array',
+                                        },
+                                      },
+                                      required: ['device_ids'],
+                                      type: 'object',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'mutation_code',
+                                    'from',
+                                    'to',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    'Seam is in the process of revoking access for this access method from devices.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which the mutation was created.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    from: {
+                                      description:
+                                        'Previous device configuration.',
+                                      properties: {
+                                        device_ids: {
+                                          description:
+                                            'Previous device IDs where access existed.',
+                                          items: {
+                                            format: 'uuid',
+                                            type: 'string',
+                                          },
+                                          type: 'array',
+                                        },
+                                      },
+                                      required: ['device_ids'],
+                                      type: 'object',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the mutation.',
+                                      type: 'string',
+                                    },
+                                    mutation_code: {
+                                      description:
+                                        'Mutation code to indicate that Seam is in the process of revoking access for this access method from devices.',
+                                      enum: ['revoking_access'],
+                                      type: 'string',
+                                    },
+                                    to: {
+                                      description: 'New device configuration.',
+                                      properties: {
+                                        device_ids: {
+                                          description:
+                                            'New device IDs where access should remain.',
+                                          items: {
+                                            format: 'uuid',
+                                            type: 'string',
+                                          },
+                                          type: 'array',
+                                        },
+                                      },
+                                      required: ['device_ids'],
+                                      type: 'object',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'mutation_code',
+                                    'from',
+                                    'to',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    'Seam is in the process of updating the access times for this access method.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which the mutation was created.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    from: {
+                                      description:
+                                        'Previous access time configuration.',
+                                      properties: {
+                                        ends_at: {
+                                          description:
+                                            'Previous end time for access.',
+                                          format: 'date-time',
+                                          nullable: true,
+                                          type: 'string',
+                                        },
+                                        starts_at: {
+                                          description:
+                                            'Previous start time for access.',
+                                          format: 'date-time',
+                                          nullable: true,
+                                          type: 'string',
+                                        },
+                                      },
+                                      required: ['starts_at', 'ends_at'],
+                                      type: 'object',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the mutation.',
+                                      type: 'string',
+                                    },
+                                    mutation_code: {
+                                      description:
+                                        'Mutation code to indicate that Seam is in the process of updating the access times for this access method.',
+                                      enum: ['updating_access_times'],
+                                      type: 'string',
+                                    },
+                                    to: {
+                                      description:
+                                        'New access time configuration.',
+                                      properties: {
+                                        ends_at: {
+                                          description:
+                                            'New end time for access.',
+                                          format: 'date-time',
+                                          nullable: true,
+                                          type: 'string',
+                                        },
+                                        starts_at: {
+                                          description:
+                                            'New start time for access.',
+                                          format: 'date-time',
+                                          nullable: true,
+                                          type: 'string',
+                                        },
+                                      },
+                                      required: ['starts_at', 'ends_at'],
+                                      type: 'object',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'mutation_code',
+                                    'from',
+                                    'to',
+                                  ],
+                                  type: 'object',
+                                },
+                              ],
+                            },
+                            type: 'array',
+                          },
                           warnings: {
                             description:
                               'Warnings associated with the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods).',
@@ -35428,6 +36920,35 @@ export default {
                                   ],
                                   type: 'object',
                                 },
+                                {
+                                  description:
+                                    'Indicates that the access times for this [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods) are being updated.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['updating_access_times'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
                               ],
                             },
                             type: 'array',
@@ -35448,6 +36969,7 @@ export default {
                           'issued_at',
                           'is_issued',
                           'warnings',
+                          'pending_mutations',
                         ],
                         type: 'object',
                         'x-draft': 'Early access.',
@@ -35576,6 +37098,219 @@ export default {
                             enum: ['code', 'card', 'mobile_key'],
                             type: 'string',
                           },
+                          pending_mutations: {
+                            description:
+                              'Pending mutations for the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods). Indicates operations that are in progress.',
+                            items: {
+                              discriminator: { propertyName: 'mutation_code' },
+                              oneOf: [
+                                {
+                                  description:
+                                    'Seam is in the process of provisioning access for this access method on new devices.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which the mutation was created.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    from: {
+                                      description:
+                                        'Previous device configuration.',
+                                      properties: {
+                                        device_ids: {
+                                          description:
+                                            'Previous device IDs where access was provisioned.',
+                                          items: {
+                                            format: 'uuid',
+                                            type: 'string',
+                                          },
+                                          type: 'array',
+                                        },
+                                      },
+                                      required: ['device_ids'],
+                                      type: 'object',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the mutation.',
+                                      type: 'string',
+                                    },
+                                    mutation_code: {
+                                      description:
+                                        'Mutation code to indicate that Seam is in the process of provisioning access for this access method on new devices.',
+                                      enum: ['provisioning_access'],
+                                      type: 'string',
+                                    },
+                                    to: {
+                                      description: 'New device configuration.',
+                                      properties: {
+                                        device_ids: {
+                                          description:
+                                            'New device IDs where access is being provisioned.',
+                                          items: {
+                                            format: 'uuid',
+                                            type: 'string',
+                                          },
+                                          type: 'array',
+                                        },
+                                      },
+                                      required: ['device_ids'],
+                                      type: 'object',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'mutation_code',
+                                    'from',
+                                    'to',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    'Seam is in the process of revoking access for this access method from devices.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which the mutation was created.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    from: {
+                                      description:
+                                        'Previous device configuration.',
+                                      properties: {
+                                        device_ids: {
+                                          description:
+                                            'Previous device IDs where access existed.',
+                                          items: {
+                                            format: 'uuid',
+                                            type: 'string',
+                                          },
+                                          type: 'array',
+                                        },
+                                      },
+                                      required: ['device_ids'],
+                                      type: 'object',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the mutation.',
+                                      type: 'string',
+                                    },
+                                    mutation_code: {
+                                      description:
+                                        'Mutation code to indicate that Seam is in the process of revoking access for this access method from devices.',
+                                      enum: ['revoking_access'],
+                                      type: 'string',
+                                    },
+                                    to: {
+                                      description: 'New device configuration.',
+                                      properties: {
+                                        device_ids: {
+                                          description:
+                                            'New device IDs where access should remain.',
+                                          items: {
+                                            format: 'uuid',
+                                            type: 'string',
+                                          },
+                                          type: 'array',
+                                        },
+                                      },
+                                      required: ['device_ids'],
+                                      type: 'object',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'mutation_code',
+                                    'from',
+                                    'to',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    'Seam is in the process of updating the access times for this access method.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which the mutation was created.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    from: {
+                                      description:
+                                        'Previous access time configuration.',
+                                      properties: {
+                                        ends_at: {
+                                          description:
+                                            'Previous end time for access.',
+                                          format: 'date-time',
+                                          nullable: true,
+                                          type: 'string',
+                                        },
+                                        starts_at: {
+                                          description:
+                                            'Previous start time for access.',
+                                          format: 'date-time',
+                                          nullable: true,
+                                          type: 'string',
+                                        },
+                                      },
+                                      required: ['starts_at', 'ends_at'],
+                                      type: 'object',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the mutation.',
+                                      type: 'string',
+                                    },
+                                    mutation_code: {
+                                      description:
+                                        'Mutation code to indicate that Seam is in the process of updating the access times for this access method.',
+                                      enum: ['updating_access_times'],
+                                      type: 'string',
+                                    },
+                                    to: {
+                                      description:
+                                        'New access time configuration.',
+                                      properties: {
+                                        ends_at: {
+                                          description:
+                                            'New end time for access.',
+                                          format: 'date-time',
+                                          nullable: true,
+                                          type: 'string',
+                                        },
+                                        starts_at: {
+                                          description:
+                                            'New start time for access.',
+                                          format: 'date-time',
+                                          nullable: true,
+                                          type: 'string',
+                                        },
+                                      },
+                                      required: ['starts_at', 'ends_at'],
+                                      type: 'object',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'mutation_code',
+                                    'from',
+                                    'to',
+                                  ],
+                                  type: 'object',
+                                },
+                              ],
+                            },
+                            type: 'array',
+                          },
                           warnings: {
                             description:
                               'Warnings associated with the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods).',
@@ -35613,6 +37348,35 @@ export default {
                                   ],
                                   type: 'object',
                                 },
+                                {
+                                  description:
+                                    'Indicates that the access times for this [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods) are being updated.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['updating_access_times'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
                               ],
                             },
                             type: 'array',
@@ -35633,6 +37397,7 @@ export default {
                           'issued_at',
                           'is_issued',
                           'warnings',
+                          'pending_mutations',
                         ],
                         type: 'object',
                         'x-draft': 'Early access.',
