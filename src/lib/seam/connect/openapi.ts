@@ -60311,6 +60311,80 @@ export default {
         'x-undocumented': 'Internal endpoint for Console.',
       },
     },
+    '/seam/customer/v1/customers/me': {
+      get: {
+        description:
+          'Returns the customer associated with the authenticated client session.',
+        operationId: 'seamCustomerV1CustomersMeGet',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    connector: {
+                      properties: { connector_type: { type: 'string' } },
+                      required: ['connector_type'],
+                      type: 'object',
+                    },
+                    customer: { $ref: '#/components/schemas/customer' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['customer', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/customers/me',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'customers'],
+        'x-fern-sdk-method-name': 'me',
+        'x-response-key': null,
+        'x-title': 'Me',
+      },
+      post: {
+        description:
+          'Returns the customer associated with the authenticated client session.',
+        operationId: 'seamCustomerV1CustomersMePost',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    connector: {
+                      properties: { connector_type: { type: 'string' } },
+                      required: ['connector_type'],
+                      type: 'object',
+                    },
+                    customer: { $ref: '#/components/schemas/customer' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['customer', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/customers/me',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'customers'],
+        'x-fern-sdk-method-name': 'me',
+        'x-response-key': null,
+        'x-title': 'Me',
+      },
+    },
     '/seam/customer/v1/customers/open_portal': {
       post: {
         description:
@@ -63117,6 +63191,73 @@ export default {
         'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
+    '/seam/customer/v1/spaces/push_common_areas': {
+      post: {
+        description:
+          'Pushes common areas for a customer, optionally nested under spaces.\nThe customer_key is taken from the authenticated client session.',
+        operationId: 'seamCustomerV1SpacesPushCommonAreasPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  common_areas: {
+                    items: {
+                      properties: { name: { type: 'string' } },
+                      required: ['name'],
+                      type: 'object',
+                    },
+                    type: 'array',
+                  },
+                  spaces: {
+                    items: {
+                      properties: {
+                        common_areas: {
+                          items: {
+                            properties: { name: { type: 'string' } },
+                            required: ['name'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                        name: { type: 'string' },
+                      },
+                      required: ['name', 'common_areas'],
+                      type: 'object',
+                    },
+                    type: 'array',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/spaces/push_common_areas',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'spaces'],
+        'x-fern-sdk-method-name': 'push_common_areas',
+        'x-response-key': null,
+        'x-title': 'Push Common Areas',
+      },
+    },
     '/seam/customer/v1/staff_members/get': {
       get: {
         description: 'Returns a staff member for a specific customer.',
@@ -64319,857 +64460,6 @@ export default {
         'x-response-key': 'spaces',
         'x-title': 'Do Auto-Mapping for Partner Resources that Map to Spaces',
         'x-undocumented': 'Partner building blocks/UI only.',
-      },
-    },
-    '/seam/v1/customers/push_data': {
-      post: {
-        description:
-          'Pushes customer data including resources like spaces, properties, rooms, users, etc.\nThe customer_key is taken from the authenticated client session.',
-        operationId: 'seamV1CustomersPushDataPost',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  access_grants: {
-                    description: 'List of access grants.',
-                    items: {
-                      properties: {
-                        access_grant_key: {
-                          description:
-                            'Your unique identifier for the access grant.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                        building_keys: {
-                          description:
-                            'Building keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        common_area_keys: {
-                          description:
-                            'Common area keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        ends_at: {
-                          description:
-                            'Ending date and time for the access grant.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        facility_keys: {
-                          description:
-                            'Facility keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        guest_key: {
-                          description:
-                            'Guest key associated with the access grant.',
-                          type: 'string',
-                        },
-                        listing_keys: {
-                          description:
-                            'Listing keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        name: {
-                          description:
-                            'Your name for this access grant resource.',
-                          type: 'string',
-                        },
-                        preferred_code: {
-                          description:
-                            'Preferred PIN code to use when creating access for this reservation.',
-                          type: 'string',
-                        },
-                        property_keys: {
-                          description:
-                            'Property keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        resident_key: {
-                          description:
-                            'Resident key associated with the access grant.',
-                          type: 'string',
-                        },
-                        room_keys: {
-                          description:
-                            'Room keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        space_keys: {
-                          description:
-                            'Space keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        starts_at: {
-                          description:
-                            'Starting date and time for the access grant.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        tenant_key: {
-                          description:
-                            'Tenant key associated with the access grant.',
-                          type: 'string',
-                        },
-                        unit_keys: {
-                          description:
-                            'Unit keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        user_identity_key: {
-                          description:
-                            'User identity key associated with the access grant.',
-                          type: 'string',
-                        },
-                        user_key: {
-                          description:
-                            'User key associated with the access grant.',
-                          type: 'string',
-                        },
-                      },
-                      required: ['access_grant_key'],
-                      type: 'object',
-                    },
-                    type: 'array',
-                  },
-                  bookings: {
-                    description: 'List of bookings.',
-                    items: {
-                      properties: {
-                        booking_key: {
-                          description:
-                            'Your unique identifier for the booking.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                        building_keys: {
-                          description:
-                            'Building keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        common_area_keys: {
-                          description:
-                            'Common area keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        ends_at: {
-                          description:
-                            'Ending date and time for the access grant.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        facility_keys: {
-                          description:
-                            'Facility keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        guest_key: {
-                          description:
-                            'Guest key associated with the access grant.',
-                          type: 'string',
-                        },
-                        listing_keys: {
-                          description:
-                            'Listing keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        name: {
-                          description:
-                            'Your name for this access grant resource.',
-                          type: 'string',
-                        },
-                        preferred_code: {
-                          description:
-                            'Preferred PIN code to use when creating access for this reservation.',
-                          type: 'string',
-                        },
-                        property_keys: {
-                          description:
-                            'Property keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        resident_key: {
-                          description:
-                            'Resident key associated with the access grant.',
-                          type: 'string',
-                        },
-                        room_keys: {
-                          description:
-                            'Room keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        space_keys: {
-                          description:
-                            'Space keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        starts_at: {
-                          description:
-                            'Starting date and time for the access grant.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        tenant_key: {
-                          description:
-                            'Tenant key associated with the access grant.',
-                          type: 'string',
-                        },
-                        unit_keys: {
-                          description:
-                            'Unit keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        user_identity_key: {
-                          description:
-                            'User identity key associated with the access grant.',
-                          type: 'string',
-                        },
-                        user_key: {
-                          description:
-                            'User key associated with the access grant.',
-                          type: 'string',
-                        },
-                      },
-                      required: ['booking_key'],
-                      type: 'object',
-                    },
-                    type: 'array',
-                  },
-                  buildings: {
-                    description: 'List of buildings.',
-                    items: {
-                      properties: {
-                        building_key: {
-                          description:
-                            'Your unique identifier for the building.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                        name: {
-                          description:
-                            'Your display name for this location resource.',
-                          type: 'string',
-                        },
-                      },
-                      required: ['name', 'building_key'],
-                      type: 'object',
-                    },
-                    type: 'array',
-                  },
-                  common_areas: {
-                    description: 'List of shared common areas.',
-                    items: {
-                      properties: {
-                        common_area_key: {
-                          description:
-                            'Your unique identifier for the common area.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                        name: {
-                          description:
-                            'Your display name for this location resource.',
-                          type: 'string',
-                        },
-                        parent_site_key: {
-                          description: 'Your unique identifier for the site.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                      },
-                      required: ['name', 'common_area_key'],
-                      type: 'object',
-                    },
-                    type: 'array',
-                  },
-                  facilities: {
-                    description: 'List of gym or fitness facilities.',
-                    items: {
-                      properties: {
-                        facility_key: {
-                          description:
-                            'Your unique identifier for the facility.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                        name: {
-                          description:
-                            'Your display name for this location resource.',
-                          type: 'string',
-                        },
-                      },
-                      required: ['name', 'facility_key'],
-                      type: 'object',
-                    },
-                    type: 'array',
-                  },
-                  guests: {
-                    description: 'List of guests.',
-                    items: {
-                      properties: {
-                        email_address: {
-                          description:
-                            'Email address associated with the user identity.',
-                          type: 'string',
-                        },
-                        guest_key: {
-                          description: 'Your unique identifier for the guest.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                        name: {
-                          description:
-                            'Your display name for this user identity resource.',
-                          type: 'string',
-                        },
-                        phone_number: {
-                          description:
-                            'Phone number associated with the user identity.',
-                          type: 'string',
-                        },
-                      },
-                      required: ['name', 'guest_key'],
-                      type: 'object',
-                    },
-                    type: 'array',
-                  },
-                  listings: {
-                    description: 'List of property listings.',
-                    items: {
-                      properties: {
-                        listing_key: {
-                          description:
-                            'Your unique identifier for the listing.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                        name: {
-                          description:
-                            'Your display name for this location resource.',
-                          type: 'string',
-                        },
-                      },
-                      required: ['name', 'listing_key'],
-                      type: 'object',
-                    },
-                    type: 'array',
-                  },
-                  properties: {
-                    description: 'List of short-term rental properties.',
-                    items: {
-                      properties: {
-                        name: {
-                          description:
-                            'Your display name for this location resource.',
-                          type: 'string',
-                        },
-                        property_key: {
-                          description:
-                            'Your unique identifier for the property.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                      },
-                      required: ['name', 'property_key'],
-                      type: 'object',
-                    },
-                    type: 'array',
-                  },
-                  property_listings: {
-                    description: 'List of property listings.',
-                    items: {
-                      properties: {
-                        custom_metadata: {
-                          additionalProperties: {
-                            nullable: true,
-                            oneOf: [
-                              { maxLength: 500, type: 'string' },
-                              { type: 'boolean' },
-                            ],
-                          },
-                          description:
-                            'Set key:value pairs. Accepts string or Boolean values. Adding custom metadata to a property listing enables you to store custom information, like customer details or internal IDs from your application.',
-                          type: 'object',
-                        },
-                        name: {
-                          description:
-                            'Your display name for this location resource.',
-                          type: 'string',
-                        },
-                        property_listing_key: {
-                          description:
-                            'Your unique identifier for the property listing.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                      },
-                      required: ['name', 'property_listing_key'],
-                      type: 'object',
-                    },
-                    type: 'array',
-                  },
-                  reservations: {
-                    description: 'List of reservations.',
-                    items: {
-                      properties: {
-                        building_keys: {
-                          description:
-                            'Building keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        common_area_keys: {
-                          description:
-                            'Common area keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        ends_at: {
-                          description:
-                            'Ending date and time for the access grant.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        facility_keys: {
-                          description:
-                            'Facility keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        guest_key: {
-                          description:
-                            'Guest key associated with the access grant.',
-                          type: 'string',
-                        },
-                        listing_keys: {
-                          description:
-                            'Listing keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        name: {
-                          description:
-                            'Your name for this access grant resource.',
-                          type: 'string',
-                        },
-                        preferred_code: {
-                          description:
-                            'Preferred PIN code to use when creating access for this reservation.',
-                          type: 'string',
-                        },
-                        property_keys: {
-                          description:
-                            'Property keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        reservation_key: {
-                          description:
-                            'Your unique identifier for the reservation.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                        resident_key: {
-                          description:
-                            'Resident key associated with the access grant.',
-                          type: 'string',
-                        },
-                        room_keys: {
-                          description:
-                            'Room keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        space_keys: {
-                          description:
-                            'Space keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        starts_at: {
-                          description:
-                            'Starting date and time for the access grant.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        tenant_key: {
-                          description:
-                            'Tenant key associated with the access grant.',
-                          type: 'string',
-                        },
-                        unit_keys: {
-                          description:
-                            'Unit keys associated with the access grant.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        user_identity_key: {
-                          description:
-                            'User identity key associated with the access grant.',
-                          type: 'string',
-                        },
-                        user_key: {
-                          description:
-                            'User key associated with the access grant.',
-                          type: 'string',
-                        },
-                      },
-                      required: ['reservation_key'],
-                      type: 'object',
-                    },
-                    type: 'array',
-                  },
-                  residents: {
-                    description: 'List of residents.',
-                    items: {
-                      properties: {
-                        email_address: {
-                          description:
-                            'Email address associated with the user identity.',
-                          type: 'string',
-                        },
-                        name: {
-                          description:
-                            'Your display name for this user identity resource.',
-                          type: 'string',
-                        },
-                        phone_number: {
-                          description:
-                            'Phone number associated with the user identity.',
-                          type: 'string',
-                        },
-                        resident_key: {
-                          description:
-                            'Your unique identifier for the resident.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                      },
-                      required: ['name', 'resident_key'],
-                      type: 'object',
-                    },
-                    type: 'array',
-                  },
-                  rooms: {
-                    description: 'List of hotel or hospitality rooms.',
-                    items: {
-                      properties: {
-                        name: {
-                          description:
-                            'Your display name for this location resource.',
-                          type: 'string',
-                        },
-                        parent_site_key: {
-                          description: 'Your unique identifier for the site.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                        room_key: {
-                          description: 'Your unique identifier for the room.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                      },
-                      required: ['name', 'room_key'],
-                      type: 'object',
-                    },
-                    type: 'array',
-                  },
-                  sites: {
-                    description: 'List of general sites or areas.',
-                    items: {
-                      properties: {
-                        name: {
-                          description:
-                            'Your display name for this location resource.',
-                          type: 'string',
-                        },
-                        site_key: {
-                          description: 'Your unique identifier for the site.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                      },
-                      required: ['name', 'site_key'],
-                      type: 'object',
-                    },
-                    type: 'array',
-                  },
-                  spaces: {
-                    description: 'List of general spaces or areas.',
-                    items: {
-                      properties: {
-                        name: {
-                          description:
-                            'Your display name for this location resource.',
-                          type: 'string',
-                        },
-                        space_key: {
-                          description: 'Your unique identifier for the space.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                      },
-                      required: ['name', 'space_key'],
-                      type: 'object',
-                    },
-                    type: 'array',
-                  },
-                  staff_members: {
-                    description: 'List of staff members.',
-                    items: {
-                      description:
-                        'Represents a staff member for a specific customer.',
-                      properties: {
-                        building_keys: {
-                          description:
-                            'List of unique identifiers for the buildings the staff member is associated with.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        common_area_keys: {
-                          description:
-                            'List of unique identifiers for the common areas the staff member is associated with.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        email_address: {
-                          description:
-                            'Email address associated with the user identity.',
-                          type: 'string',
-                        },
-                        facility_keys: {
-                          description:
-                            'List of unique identifiers for the facilities the staff member is associated with.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        listing_keys: {
-                          description:
-                            'List of unique identifiers for the listings the staff member is associated with.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        name: {
-                          description:
-                            'Your display name for this user identity resource.',
-                          type: 'string',
-                        },
-                        phone_number: {
-                          description:
-                            'Phone number associated with the user identity.',
-                          type: 'string',
-                        },
-                        property_keys: {
-                          description:
-                            'List of unique identifiers for the properties the staff member is associated with.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        property_listing_keys: {
-                          description:
-                            'List of unique identifiers for the property listings the staff member is associated with.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        room_keys: {
-                          description:
-                            'List of unique identifiers for the rooms the staff member is associated with.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        site_keys: {
-                          description:
-                            'List of unique identifiers for the sites the staff member is associated with.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        space_keys: {
-                          description:
-                            'List of unique identifiers for the spaces the staff member is associated with.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                        staff_member_key: {
-                          description: 'Your unique identifier for the staff.',
-                          type: 'string',
-                        },
-                        unit_keys: {
-                          description:
-                            'List of unique identifiers for the units the staff member is associated with.',
-                          items: { type: 'string' },
-                          type: 'array',
-                        },
-                      },
-                      required: ['name', 'staff_member_key'],
-                      type: 'object',
-                      'x-route-path': '/seam/customer/v1/staff_members',
-                    },
-                    type: 'array',
-                  },
-                  tenants: {
-                    description: 'List of tenants.',
-                    items: {
-                      properties: {
-                        email_address: {
-                          description:
-                            'Email address associated with the user identity.',
-                          type: 'string',
-                        },
-                        name: {
-                          description:
-                            'Your display name for this user identity resource.',
-                          type: 'string',
-                        },
-                        phone_number: {
-                          description:
-                            'Phone number associated with the user identity.',
-                          type: 'string',
-                        },
-                        tenant_key: {
-                          description: 'Your unique identifier for the tenant.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                      },
-                      required: ['name', 'tenant_key'],
-                      type: 'object',
-                    },
-                    type: 'array',
-                  },
-                  units: {
-                    description: 'List of multi-family residential units.',
-                    items: {
-                      properties: {
-                        name: {
-                          description:
-                            'Your display name for this location resource.',
-                          type: 'string',
-                        },
-                        parent_site_key: {
-                          description: 'Your unique identifier for the site.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                        unit_key: {
-                          description: 'Your unique identifier for the unit.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                      },
-                      required: ['name', 'unit_key'],
-                      type: 'object',
-                    },
-                    type: 'array',
-                  },
-                  user_identities: {
-                    description: 'List of user identities.',
-                    items: {
-                      properties: {
-                        email_address: {
-                          description:
-                            'Email address associated with the user identity.',
-                          type: 'string',
-                        },
-                        name: {
-                          description:
-                            'Your display name for this user identity resource.',
-                          type: 'string',
-                        },
-                        phone_number: {
-                          description:
-                            'Phone number associated with the user identity.',
-                          type: 'string',
-                        },
-                        user_identity_key: {
-                          description:
-                            'Your unique identifier for the user identity.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                      },
-                      required: ['name', 'user_identity_key'],
-                      type: 'object',
-                    },
-                    type: 'array',
-                  },
-                  users: {
-                    description: 'List of users.',
-                    items: {
-                      properties: {
-                        email_address: {
-                          description:
-                            'Email address associated with the user identity.',
-                          type: 'string',
-                        },
-                        name: {
-                          description:
-                            'Your display name for this user identity resource.',
-                          type: 'string',
-                        },
-                        phone_number: {
-                          description:
-                            'Phone number associated with the user identity.',
-                          type: 'string',
-                        },
-                        user_key: {
-                          description: 'Your unique identifier for the user.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                      },
-                      required: ['name', 'user_key'],
-                      type: 'object',
-                    },
-                    type: 'array',
-                  },
-                },
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [{ client_session_with_customer: [] }],
-        summary: '/seam/v1/customers/push_data',
-        tags: [],
-        'x-fern-sdk-group-name': ['seam', 'v1', 'customers'],
-        'x-fern-sdk-method-name': 'push_data',
-        'x-response-key': null,
-        'x-title': 'Push Customer Data',
       },
     },
     '/spaces/add_acs_entrances': {
