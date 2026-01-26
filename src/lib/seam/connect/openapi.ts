@@ -1854,7 +1854,7 @@ export default {
               oneOf: [
                 {
                   description:
-                    'Seam is in the process of updating the devices/locations associated with this access grant.',
+                    'Seam is in the process of updating the devices/spaces associated with this access grant.',
                   properties: {
                     created_at: {
                       description:
@@ -1881,8 +1881,8 @@ export default {
                     },
                     mutation_code: {
                       description:
-                        'Mutation code to indicate that Seam is in the process of updating the locations (devices) associated with this access grant.',
-                      enum: ['updating_locations'],
+                        'Mutation code to indicate that Seam is in the process of updating the spaces (devices) associated with this access grant.',
+                      enum: ['updating_spaces'],
                       type: 'string',
                     },
                     to: {
@@ -32396,7 +32396,7 @@ export default {
                             oneOf: [
                               {
                                 description:
-                                  'Seam is in the process of updating the devices/locations associated with this access grant.',
+                                  'Seam is in the process of updating the devices/spaces associated with this access grant.',
                                 properties: {
                                   created_at: {
                                     description:
@@ -32428,8 +32428,8 @@ export default {
                                   },
                                   mutation_code: {
                                     description:
-                                      'Mutation code to indicate that Seam is in the process of updating the locations (devices) associated with this access grant.',
-                                    enum: ['updating_locations'],
+                                      'Mutation code to indicate that Seam is in the process of updating the spaces (devices) associated with this access grant.',
+                                    enum: ['updating_spaces'],
                                     type: 'string',
                                   },
                                   to: {
@@ -32808,7 +32808,7 @@ export default {
                             oneOf: [
                               {
                                 description:
-                                  'Seam is in the process of updating the devices/locations associated with this access grant.',
+                                  'Seam is in the process of updating the devices/spaces associated with this access grant.',
                                 properties: {
                                   created_at: {
                                     description:
@@ -32840,8 +32840,8 @@ export default {
                                   },
                                   mutation_code: {
                                     description:
-                                      'Mutation code to indicate that Seam is in the process of updating the locations (devices) associated with this access grant.',
-                                    enum: ['updating_locations'],
+                                      'Mutation code to indicate that Seam is in the process of updating the spaces (devices) associated with this access grant.',
+                                    enum: ['updating_spaces'],
                                     type: 'string',
                                   },
                                   to: {
@@ -33245,7 +33245,7 @@ export default {
                               oneOf: [
                                 {
                                   description:
-                                    'Seam is in the process of updating the devices/locations associated with this access grant.',
+                                    'Seam is in the process of updating the devices/spaces associated with this access grant.',
                                   properties: {
                                     created_at: {
                                       description:
@@ -33277,8 +33277,8 @@ export default {
                                     },
                                     mutation_code: {
                                       description:
-                                        'Mutation code to indicate that Seam is in the process of updating the locations (devices) associated with this access grant.',
-                                      enum: ['updating_locations'],
+                                        'Mutation code to indicate that Seam is in the process of updating the spaces (devices) associated with this access grant.',
+                                      enum: ['updating_spaces'],
                                       type: 'string',
                                     },
                                     to: {
@@ -33678,7 +33678,7 @@ export default {
                               oneOf: [
                                 {
                                   description:
-                                    'Seam is in the process of updating the devices/locations associated with this access grant.',
+                                    'Seam is in the process of updating the devices/spaces associated with this access grant.',
                                   properties: {
                                     created_at: {
                                       description:
@@ -33710,8 +33710,8 @@ export default {
                                     },
                                     mutation_code: {
                                       description:
-                                        'Mutation code to indicate that Seam is in the process of updating the locations (devices) associated with this access grant.',
-                                      enum: ['updating_locations'],
+                                        'Mutation code to indicate that Seam is in the process of updating the spaces (devices) associated with this access grant.',
+                                      enum: ['updating_spaces'],
                                       type: 'string',
                                     },
                                     to: {
