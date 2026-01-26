@@ -8,12 +8,12 @@ const common_pending_mutation = z.object({
   message: z.string().describe('Detailed description of the mutation.'),
 })
 
-const updating_locations_mutation = common_pending_mutation
+const updating_spaces_mutation = common_pending_mutation
   .extend({
     mutation_code: z
-      .literal('updating_locations')
+      .literal('updating_spaces')
       .describe(
-        'Mutation code to indicate that Seam is in the process of updating the locations (devices) associated with this access grant.',
+        'Mutation code to indicate that Seam is in the process of updating the spaces (devices) associated with this access grant.',
       ),
     from: z
       .object({
@@ -36,12 +36,12 @@ const updating_locations_mutation = common_pending_mutation
       .describe('New location configuration.'),
   })
   .describe(
-    'Seam is in the process of updating the devices/locations associated with this access grant.',
+    'Seam is in the process of updating the devices/spaces associated with this access grant.',
   )
 
 export const access_grant_pending_mutations = z.discriminatedUnion(
   'mutation_code',
-  [updating_locations_mutation],
+  [updating_spaces_mutation],
 )
 
 export type AccessGrantPendingMutation = z.infer<
@@ -49,7 +49,7 @@ export type AccessGrantPendingMutation = z.infer<
 >
 
 const _access_grant_pending_mutations_map = z.object({
-  updating_locations: updating_locations_mutation.optional().nullable(),
+  updating_spaces: updating_spaces_mutation.optional().nullable(),
 })
 
 export type AccessGrantPendingMutationsMap = z.infer<
