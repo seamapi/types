@@ -723,6 +723,12 @@ export const device_metadata = z
         wifi_signal_strength: z
           .number()
           .describe(`WiFi signal strength (0-1) for a Korelock device.`),
+        location_id: z
+          .string()
+          .nullable()
+          .describe(
+            `Location ID for a Korelock device. Required for timebound access codes.`,
+          ),
       })
       .partial()
       .describe(`Metadata for a Korelock device.`),
