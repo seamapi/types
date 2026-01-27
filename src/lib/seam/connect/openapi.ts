@@ -11709,6 +11709,12 @@ export default {
                               'Firmware version for a Korelock device.',
                             type: 'string',
                           },
+                          location_id: {
+                            description:
+                              'Location ID for a Korelock device. Required for timebound access codes.',
+                            nullable: true,
+                            type: 'string',
+                          },
                           model_code: {
                             description: 'Model code for a Korelock device.',
                             type: 'string',
