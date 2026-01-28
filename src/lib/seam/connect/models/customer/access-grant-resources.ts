@@ -1,5 +1,7 @@
 import { z } from 'zod'
 
+import { custom_metadata_input } from '../custom-metadata.js'
+
 // Base access grant resource with common fields
 const base_access_grant_resource = z.object({
   name: z
@@ -96,6 +98,11 @@ export const reservation_resource = base_access_grant_resource
         message: 'Must not have leading or trailing whitespace',
       })
       .describe('Your unique identifier for the reservation.'),
+    custom_metadata: custom_metadata_input
+      .optional()
+      .describe(
+        'Set key:value pairs for filtering reservations by custom criteria.',
+      ),
   })
   .merge(user_identity_reference)
   .merge(location_references)

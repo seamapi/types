@@ -1,6 +1,5 @@
 import { z } from 'zod'
 
-import type { CustomMetadata } from '../custom-metadata.js'
 import { access_grant_key_aliases } from './access-grant-resources.js'
 import { location_key_aliases } from './location-resources.js'
 
@@ -109,11 +108,29 @@ export const portal_configuration_base = z.object({
     .uuid()
     .optional()
     .describe('The ID of the customization profile to use for the portal.'),
-  property_listing_filter: z
-    .record(z.string(), z.union([z.string(), z.boolean()]))
+  customer_resources_filters: z
+    .array(
+      z.object({
+        field: z
+          .string()
+          .regex(/^[a-zA-Z_]\w*$/, {
+            message:
+              'Field names must start with a letter or underscore and contain only alphanumeric characters and underscores',
+          })
+          .describe('The custom_metadata field name to filter on.'),
+        operation: z
+          .literal('=')
+          .describe(
+            "The comparison operation. Currently only '=' is supported.",
+          ),
+        value: z
+          .union([z.string(), z.boolean()])
+          .describe('The value to compare against.'),
+      }),
+    )
     .optional()
     .describe(
-      'Filter configuration for property listings based on their custom_metadata. Keys and values must match the custom_metadata stored on property listings.',
+      'Filter configuration for resources based on their custom_metadata. Each filter specifies a field, operation, and value to match against resource custom_metadata.',
     ),
   navigation_mode: z
     .enum(['full', 'restricted'])
@@ -154,10 +171,14 @@ export const portal_configuration = portal_configuration_base
     },
     is_embedded: false,
     locale: undefined,
-    property_listing_filter: undefined,
+    customer_resources_filters: undefined,
   })
   .describe(`Configuration for a customer portal`)
 
 export type PortalConfiguration = z.infer<typeof portal_configuration>
 
-export type PropertyListingFilter = CustomMetadata
+export type CustomerResourcesFilters = Array<{
+  field: string
+  operation: '='
+  value: string | boolean
+}>
