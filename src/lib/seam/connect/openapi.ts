@@ -46398,6 +46398,33 @@ export default {
                     },
                     description: 'Configuration for a customer portal',
                     properties: {
+                      customer_resources_filters: {
+                        description:
+                          'Filter configuration for resources based on their custom_metadata. Each filter specifies a field, operation, and value to match against resource custom_metadata.',
+                        items: {
+                          properties: {
+                            field: {
+                              description:
+                                'The custom_metadata field name to filter on.',
+                              pattern: '^[a-zA-Z_]\\w*$',
+                              type: 'string',
+                            },
+                            operation: {
+                              description:
+                                "The comparison operation. Currently only '=' is supported.",
+                              enum: ['='],
+                              type: 'string',
+                            },
+                            value: {
+                              description: 'The value to compare against.',
+                              oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                            },
+                          },
+                          required: ['field', 'operation', 'value'],
+                          type: 'object',
+                        },
+                        type: 'array',
+                      },
                       customization_profile_id: {
                         description:
                           'The ID of the customization profile to use for the portal.',
@@ -46662,14 +46689,6 @@ export default {
                           "Navigation mode for the portal. 'restricted' tells frontend to hide navigation UI, typically used for embedded deep links.",
                         enum: ['full', 'restricted'],
                         type: 'string',
-                      },
-                      property_listing_filter: {
-                        additionalProperties: {
-                          oneOf: [{ type: 'string' }, { type: 'boolean' }],
-                        },
-                        description:
-                          'Filter configuration for property listings based on their custom_metadata. Keys and values must match the custom_metadata stored on property listings.',
-                        type: 'object',
                       },
                     },
                     type: 'object',
@@ -47097,6 +47116,18 @@ export default {
                                     'Common area keys associated with the access grant.',
                                   items: { type: 'string' },
                                   type: 'array',
+                                },
+                                custom_metadata: {
+                                  additionalProperties: {
+                                    nullable: true,
+                                    oneOf: [
+                                      { maxLength: 500, type: 'string' },
+                                      { type: 'boolean' },
+                                    ],
+                                  },
+                                  description:
+                                    'Set key:value pairs for filtering reservations by custom criteria.',
+                                  type: 'object',
                                 },
                                 ends_at: {
                                   description:
@@ -48323,6 +48354,18 @@ export default {
                             'Common area keys associated with the access grant.',
                           items: { type: 'string' },
                           type: 'array',
+                        },
+                        custom_metadata: {
+                          additionalProperties: {
+                            nullable: true,
+                            oneOf: [
+                              { maxLength: 500, type: 'string' },
+                              { type: 'boolean' },
+                            ],
+                          },
+                          description:
+                            'Set key:value pairs for filtering reservations by custom criteria.',
+                          type: 'object',
                         },
                         ends_at: {
                           description:
@@ -61196,6 +61239,36 @@ export default {
                           ],
                           type: 'string',
                         },
+                        customer_resources_filters: {
+                          description:
+                            'Filter configuration for resources based on their custom_metadata. Each filter specifies a field, operation, and value to match against resource custom_metadata.',
+                          items: {
+                            properties: {
+                              field: {
+                                description:
+                                  'The custom_metadata field name to filter on.',
+                                pattern: '^[a-zA-Z_]\\w*$',
+                                type: 'string',
+                              },
+                              operation: {
+                                description:
+                                  "The comparison operation. Currently only '=' is supported.",
+                                enum: ['='],
+                                type: 'string',
+                              },
+                              value: {
+                                description: 'The value to compare against.',
+                                oneOf: [
+                                  { type: 'string' },
+                                  { type: 'boolean' },
+                                ],
+                              },
+                            },
+                            required: ['field', 'operation', 'value'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         customization_profile_id: {
                           description:
                             'The ID of the customization profile to use for the portal.',
@@ -61472,14 +61545,6 @@ export default {
                             "Navigation mode for the portal. 'restricted' tells frontend to hide navigation UI, typically used for embedded deep links.",
                           enum: ['full', 'restricted'],
                           type: 'string',
-                        },
-                        property_listing_filter: {
-                          additionalProperties: {
-                            oneOf: [{ type: 'string' }, { type: 'boolean' }],
-                          },
-                          description:
-                            'Filter configuration for property listings based on their custom_metadata. Keys and values must match the custom_metadata stored on property listings.',
-                          type: 'object',
                         },
                       },
                       type: 'object',
@@ -61547,6 +61612,36 @@ export default {
                           ],
                           type: 'string',
                         },
+                        customer_resources_filters: {
+                          description:
+                            'Filter configuration for resources based on their custom_metadata. Each filter specifies a field, operation, and value to match against resource custom_metadata.',
+                          items: {
+                            properties: {
+                              field: {
+                                description:
+                                  'The custom_metadata field name to filter on.',
+                                pattern: '^[a-zA-Z_]\\w*$',
+                                type: 'string',
+                              },
+                              operation: {
+                                description:
+                                  "The comparison operation. Currently only '=' is supported.",
+                                enum: ['='],
+                                type: 'string',
+                              },
+                              value: {
+                                description: 'The value to compare against.',
+                                oneOf: [
+                                  { type: 'string' },
+                                  { type: 'boolean' },
+                                ],
+                              },
+                            },
+                            required: ['field', 'operation', 'value'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         customization_profile_id: {
                           description:
                             'The ID of the customization profile to use for the portal.',
@@ -61823,14 +61918,6 @@ export default {
                             "Navigation mode for the portal. 'restricted' tells frontend to hide navigation UI, typically used for embedded deep links.",
                           enum: ['full', 'restricted'],
                           type: 'string',
-                        },
-                        property_listing_filter: {
-                          additionalProperties: {
-                            oneOf: [{ type: 'string' }, { type: 'boolean' }],
-                          },
-                          description:
-                            'Filter configuration for property listings based on their custom_metadata. Keys and values must match the custom_metadata stored on property listings.',
-                          type: 'object',
                         },
                       },
                       type: 'object',
