@@ -94,12 +94,33 @@ const updating_access_times = common_access_grant_warning
     'Indicates that the access times for this [access grant](https://docs.seam.co/latest/capability-guides/access-grants) are being updated.',
   )
 
+const requested_code_unavailable = common_access_grant_warning
+  .extend({
+    warning_code: z
+      .literal('requested_code_unavailable')
+      .describe(warning_code_description),
+    device_id: z
+      .string()
+      .uuid()
+      .describe('ID of the device where the requested code was unavailable.'),
+    original_code: z
+      .string()
+      .describe('The originally requested PIN code that was unavailable.'),
+    new_code: z
+      .string()
+      .describe('The new PIN code that was assigned instead.'),
+  })
+  .describe(
+    'Indicates that the requested PIN code was already in use on a device, so a different code was assigned.',
+  )
+
 const access_grant_warning = z
   .discriminatedUnion('warning_code', [
     being_deleted,
     underprovisioned_access,
     overprovisioned_access,
     updating_access_times,
+    requested_code_unavailable,
   ])
   .describe(
     'Warning associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
@@ -110,6 +131,10 @@ const _access_grant_warning_map = z.object({
   underprovisioned_access: underprovisioned_access.optional().nullable(),
   overprovisioned_access: overprovisioned_access.optional().nullable(),
   updating_access_times: updating_access_times.optional().nullable(),
+  requested_code_unavailable_by_device: z
+    .record(z.string().uuid(), requested_code_unavailable)
+    .optional()
+    .nullable(),
 })
 
 export type AccessGrantWarningMap = z.infer<typeof _access_grant_warning_map>

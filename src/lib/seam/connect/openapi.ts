@@ -2177,6 +2177,54 @@ export default {
                   ],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Indicates that the requested PIN code was already in use on a device, so a different code was assigned.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    device_id: {
+                      description:
+                        'ID of the device where the requested code was unavailable.',
+                      format: 'uuid',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    new_code: {
+                      description:
+                        'The new PIN code that was assigned instead.',
+                      type: 'string',
+                    },
+                    original_code: {
+                      description:
+                        'The originally requested PIN code that was unavailable.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['requested_code_unavailable'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'warning_code',
+                    'device_id',
+                    'original_code',
+                    'new_code',
+                  ],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -33080,6 +33128,54 @@ export default {
                                 ],
                                 type: 'object',
                               },
+                              {
+                                description:
+                                  'Indicates that the requested PIN code was already in use on a device, so a different code was assigned.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  device_id: {
+                                    description:
+                                      'ID of the device where the requested code was unavailable.',
+                                    format: 'uuid',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  new_code: {
+                                    description:
+                                      'The new PIN code that was assigned instead.',
+                                    type: 'string',
+                                  },
+                                  original_code: {
+                                    description:
+                                      'The originally requested PIN code that was unavailable.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['requested_code_unavailable'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                  'device_id',
+                                  'original_code',
+                                  'new_code',
+                                ],
+                                type: 'object',
+                              },
                             ],
                           },
                           type: 'array',
@@ -33606,6 +33702,54 @@ export default {
                                   'message',
                                   'warning_code',
                                   'access_method_ids',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  'Indicates that the requested PIN code was already in use on a device, so a different code was assigned.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  device_id: {
+                                    description:
+                                      'ID of the device where the requested code was unavailable.',
+                                    format: 'uuid',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  new_code: {
+                                    description:
+                                      'The new PIN code that was assigned instead.',
+                                    type: 'string',
+                                  },
+                                  original_code: {
+                                    description:
+                                      'The originally requested PIN code that was unavailable.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['requested_code_unavailable'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                  'device_id',
+                                  'original_code',
+                                  'new_code',
                                 ],
                                 type: 'object',
                               },
@@ -34166,6 +34310,54 @@ export default {
                                   ],
                                   type: 'object',
                                 },
+                                {
+                                  description:
+                                    'Indicates that the requested PIN code was already in use on a device, so a different code was assigned.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    device_id: {
+                                      description:
+                                        'ID of the device where the requested code was unavailable.',
+                                      format: 'uuid',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    new_code: {
+                                      description:
+                                        'The new PIN code that was assigned instead.',
+                                      type: 'string',
+                                    },
+                                    original_code: {
+                                      description:
+                                        'The originally requested PIN code that was unavailable.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['requested_code_unavailable'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                    'device_id',
+                                    'original_code',
+                                    'new_code',
+                                  ],
+                                  type: 'object',
+                                },
                               ],
                             },
                             type: 'array',
@@ -34714,6 +34906,54 @@ export default {
                                     'message',
                                     'warning_code',
                                     'access_method_ids',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    'Indicates that the requested PIN code was already in use on a device, so a different code was assigned.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    device_id: {
+                                      description:
+                                        'ID of the device where the requested code was unavailable.',
+                                      format: 'uuid',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    new_code: {
+                                      description:
+                                        'The new PIN code that was assigned instead.',
+                                      type: 'string',
+                                    },
+                                    original_code: {
+                                      description:
+                                        'The originally requested PIN code that was unavailable.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['requested_code_unavailable'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                    'device_id',
+                                    'original_code',
+                                    'new_code',
                                   ],
                                   type: 'object',
                                 },
