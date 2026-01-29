@@ -64595,6 +64595,14 @@ export default {
         parameters: [
           {
             in: 'query',
+            name: 'customer_key',
+            schema: {
+              description: 'Customer key for which to auto-map spaces.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'collection_key',
             schema: { description: 'Collection key.', type: 'string' },
           },
@@ -64680,7 +64688,11 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [{ client_session_with_customer: [] }],
+        security: [
+          { client_session_with_customer: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
         summary: '/seam/partner/v1/building_blocks/spaces/auto_map',
         tags: [],
         'x-fern-sdk-group-name': [
@@ -64707,6 +64719,10 @@ export default {
                 properties: {
                   collection_key: {
                     description: 'Collection key.',
+                    type: 'string',
+                  },
+                  customer_key: {
+                    description: 'Customer key for which to auto-map spaces.',
                     type: 'string',
                   },
                 },
@@ -64796,7 +64812,11 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [{ client_session_with_customer: [] }],
+        security: [
+          { client_session_with_customer: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
         summary: '/seam/partner/v1/building_blocks/spaces/auto_map',
         tags: [],
         'x-fern-sdk-group-name': [
