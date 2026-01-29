@@ -45743,6 +45743,16 @@ export default {
           },
           {
             in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned Connect Webviews to include all records that satisfy a partial match using `connect_webview_id`, `accepted_providers`, `custom_metadata`, or `customer_key`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'limit',
             schema: {
               default: 500,
@@ -45833,6 +45843,12 @@ export default {
                     description:
                       "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
                     nullable: true,
+                    type: 'string',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned Connect Webviews to include all records that satisfy a partial match using `connect_webview_id`, `accepted_providers`, `custom_metadata`, or `customer_key`.',
+                    minLength: 1,
                     type: 'string',
                   },
                   user_identifier_key: {
