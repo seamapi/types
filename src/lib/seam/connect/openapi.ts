@@ -65395,6 +65395,7 @@ export default {
                   'acs_entrances',
                   'connected_accounts',
                   'acs_systems',
+                  'access_methods',
                 ],
                 type: 'string',
               },
@@ -65412,6 +65413,7 @@ export default {
                   'acs_entrances',
                   'connected_accounts',
                   'acs_systems',
+                  'access_methods',
                 ],
                 type: 'string',
               },
@@ -65428,6 +65430,10 @@ export default {
                     batch: {
                       description: 'A batch of workspace resources.',
                       properties: {
+                        access_methods: {
+                          items: { $ref: '#/components/schemas/access_method' },
+                          type: 'array',
+                        },
                         acs_entrances: {
                           items: { $ref: '#/components/schemas/acs_entrance' },
                           type: 'array',
@@ -65480,6 +65486,7 @@ export default {
           'acs_entrances',
           'connected_accounts',
           'acs_systems',
+          'access_methods',
         ],
         'x-draft': 'Early access.',
         'x-fern-sdk-group-name': ['spaces'],
@@ -65504,6 +65511,7 @@ export default {
                         'acs_entrances',
                         'connected_accounts',
                         'acs_systems',
+                        'access_methods',
                       ],
                       type: 'string',
                     },
@@ -65517,6 +65525,7 @@ export default {
                         'acs_entrances',
                         'connected_accounts',
                         'acs_systems',
+                        'access_methods',
                       ],
                       type: 'string',
                     },
@@ -65549,6 +65558,10 @@ export default {
                     batch: {
                       description: 'A batch of workspace resources.',
                       properties: {
+                        access_methods: {
+                          items: { $ref: '#/components/schemas/access_method' },
+                          type: 'array',
+                        },
                         acs_entrances: {
                           items: { $ref: '#/components/schemas/acs_entrance' },
                           type: 'array',
@@ -65601,6 +65614,7 @@ export default {
           'acs_entrances',
           'connected_accounts',
           'acs_systems',
+          'access_methods',
         ],
         'x-draft': 'Early access.',
         'x-fern-sdk-group-name': ['spaces'],
