@@ -58332,6 +58332,14 @@ export default {
                                   minItems: 1,
                                   type: 'array',
                                 },
+                                card_count_on_reservation_create: {
+                                  minimum: 0,
+                                  type: 'integer',
+                                },
+                                code_count_on_reservation_create: {
+                                  minimum: 0,
+                                  type: 'integer',
+                                },
                                 method_issuance_strategy: {
                                   enum: [
                                     'first_available',
@@ -58605,6 +58613,14 @@ export default {
                                   },
                                   minItems: 1,
                                   type: 'array',
+                                },
+                                card_count_on_reservation_create: {
+                                  minimum: 0,
+                                  type: 'integer',
+                                },
+                                code_count_on_reservation_create: {
+                                  minimum: 0,
+                                  type: 'integer',
                                 },
                                 method_issuance_strategy: {
                                   enum: [
@@ -58882,6 +58898,14 @@ export default {
                                 minItems: 1,
                                 type: 'array',
                               },
+                              card_count_on_reservation_create: {
+                                minimum: 0,
+                                type: 'integer',
+                              },
+                              code_count_on_reservation_create: {
+                                minimum: 0,
+                                type: 'integer',
+                              },
                               method_issuance_strategy: {
                                 enum: [
                                   'first_available',
@@ -59153,6 +59177,14 @@ export default {
                                 },
                                 minItems: 1,
                                 type: 'array',
+                              },
+                              card_count_on_reservation_create: {
+                                minimum: 0,
+                                type: 'integer',
+                              },
+                              code_count_on_reservation_create: {
+                                minimum: 0,
+                                type: 'integer',
                               },
                               method_issuance_strategy: {
                                 enum: [
