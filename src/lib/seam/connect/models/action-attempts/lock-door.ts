@@ -21,7 +21,16 @@ const error = z
   })
   .describe('Error associated with the action.')
 
-const result = z.object({}).describe('Result of the action.')
+const result = z
+  .object({
+    was_confirmed_by_device: z
+      .boolean()
+      .optional()
+      .describe(
+        'Indicates whether the device confirmed that the lock action occurred.',
+      ),
+  })
+  .describe('Result of the action.')
 
 export const lock_door_action_attempt = z.discriminatedUnion('status', [
   common_pending_action_attempt

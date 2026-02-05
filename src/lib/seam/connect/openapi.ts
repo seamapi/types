@@ -4874,7 +4874,13 @@ export default {
               },
               result: {
                 description: 'Result of the action.',
-                properties: {},
+                properties: {
+                  was_confirmed_by_device: {
+                    description:
+                      'Indicates whether the device confirmed that the lock action occurred.',
+                    type: 'boolean',
+                  },
+                },
                 type: 'object',
               },
               status: { enum: ['success'], type: 'string' },
@@ -4987,7 +4993,13 @@ export default {
               },
               result: {
                 description: 'Result of the action.',
-                properties: {},
+                properties: {
+                  was_confirmed_by_device: {
+                    description:
+                      'Indicates whether the device confirmed that the unlock action occurred.',
+                    type: 'boolean',
+                  },
+                },
                 type: 'object',
               },
               status: { enum: ['success'], type: 'string' },
