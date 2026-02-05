@@ -19167,6 +19167,11 @@ export default {
                 format: 'date-time',
                 type: 'string',
               },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
               device_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -19233,6 +19238,11 @@ export default {
                 format: 'date-time',
                 type: 'string',
               },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
               device_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -19297,6 +19307,11 @@ export default {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
                 type: 'string',
               },
               device_custom_metadata: {
@@ -19368,6 +19383,11 @@ export default {
                 format: 'date-time',
                 type: 'string',
               },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
               device_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -19435,6 +19455,11 @@ export default {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
                 type: 'string',
               },
               device_custom_metadata: {
@@ -19556,6 +19581,11 @@ export default {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
                 type: 'string',
               },
               device_custom_metadata: {
@@ -19743,6 +19773,11 @@ export default {
                 format: 'date-time',
                 type: 'string',
               },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
               device_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -19879,6 +19914,11 @@ export default {
                 format: 'date-time',
                 type: 'string',
               },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
               device_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -19951,6 +19991,11 @@ export default {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
                 type: 'string',
               },
               device_custom_metadata: {
@@ -20034,6 +20079,11 @@ export default {
                 format: 'date-time',
                 type: 'string',
               },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
               device_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -20105,6 +20155,11 @@ export default {
                 format: 'date-time',
                 type: 'string',
               },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
               device_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -20171,6 +20226,11 @@ export default {
                 format: 'date-time',
                 type: 'string',
               },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
               device_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -20235,6 +20295,11 @@ export default {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
                 type: 'string',
               },
               device_custom_metadata: {
@@ -20306,6 +20371,11 @@ export default {
                 format: 'date-time',
                 type: 'string',
               },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
               device_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -20375,6 +20445,11 @@ export default {
                 format: 'date-time',
                 type: 'string',
               },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
               device_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -20442,6 +20517,11 @@ export default {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
                 type: 'string',
               },
               device_custom_metadata: {
@@ -20563,6 +20643,11 @@ export default {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
                 type: 'string',
               },
               device_custom_metadata: {
@@ -20690,6 +20775,11 @@ export default {
                 format: 'date-time',
                 type: 'string',
               },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
               device_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -20809,6 +20899,11 @@ export default {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
                 type: 'string',
               },
               device_custom_metadata: {
@@ -20936,6 +21031,11 @@ export default {
                 format: 'date-time',
                 type: 'string',
               },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
               device_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -21003,6 +21103,11 @@ export default {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
                 type: 'string',
               },
               device_custom_metadata: {
@@ -21124,6 +21229,11 @@ export default {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
                 type: 'string',
               },
               device_custom_metadata: {
@@ -21251,6 +21361,11 @@ export default {
                 format: 'date-time',
                 type: 'string',
               },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
               device_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -21367,6 +21482,11 @@ export default {
                 format: 'date-time',
                 type: 'string',
               },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
               device_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -21475,6 +21595,11 @@ export default {
                 format: 'date-time',
                 type: 'string',
               },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
               device_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -21559,6 +21684,11 @@ export default {
                 format: 'date-time',
                 type: 'string',
               },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
               device_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -21627,6 +21757,11 @@ export default {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
                 type: 'string',
               },
               device_custom_metadata: {
@@ -21723,6 +21858,11 @@ export default {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
                 type: 'string',
               },
               device_custom_metadata: {
@@ -21823,6 +21963,11 @@ export default {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
                 type: 'string',
               },
               device_custom_metadata: {
@@ -21940,6 +22085,11 @@ export default {
                 format: 'date-time',
                 type: 'string',
               },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
               device_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -22055,6 +22205,11 @@ export default {
                 format: 'date-time',
                 type: 'string',
               },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
               desired_temperature_celsius: {
                 description:
                   "Desired temperature, in °C, defined by the affected thermostat's cooling or heating set point.",
@@ -22150,6 +22305,11 @@ export default {
                 format: 'date-time',
                 type: 'string',
               },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
               device_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -22231,6 +22391,11 @@ export default {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
                 type: 'string',
               },
               device_custom_metadata: {

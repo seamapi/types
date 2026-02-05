@@ -16,6 +16,10 @@ const device_event = common_event.extend({
     .describe(
       'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
     ),
+  customer_key: z
+    .string()
+    .optional()
+    .describe('The customer key associated with the device, if any.'),
   device_custom_metadata: custom_metadata
     .optional()
     .describe(
