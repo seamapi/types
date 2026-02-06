@@ -60710,130 +60710,16 @@ export default {
               schema: {
                 properties: {
                   config: {
+                    additionalProperties: {},
                     description:
                       'Instance-specific configuration for the connector',
-                    oneOf: [
-                      { properties: {}, type: 'object' },
-                      {
-                        properties: {
-                          access_token: { minLength: 1, type: 'string' },
-                          client: {
-                            default: 'seam',
-                            minLength: 1,
-                            type: 'string',
-                          },
-                          client_token: { minLength: 1, type: 'string' },
-                          enterprise_id: { type: 'string' },
-                          enterprise_ids: {
-                            items: { type: 'string' },
-                            type: 'array',
-                          },
-                          is_demo: { default: true, type: 'boolean' },
-                        },
-                        type: 'object',
-                      },
-                      {
-                        properties: {
-                          auth_token: { type: 'string' },
-                          client_id: {
-                            description: 'RMS client ID for authentication',
-                            minLength: 1,
-                            type: 'string',
-                          },
-                          client_password: {
-                            description:
-                              'RMS client password for authentication',
-                            minLength: 1,
-                            type: 'string',
-                          },
-                          property_id: {
-                            description:
-                              'Optional property ID for single-property connectors',
-                            oneOf: [
-                              { type: 'string' },
-                              { format: 'float', type: 'number' },
-                            ],
-                          },
-                        },
-                        required: ['client_id', 'client_password'],
-                        type: 'object',
-                      },
-                      {
-                        properties: {
-                          access_token: {
-                            description:
-                              'OAuth2 access token for authentication',
-                            minLength: 1,
-                            type: 'string',
-                          },
-                          property_id: {
-                            description:
-                              'Optional property ID for single-property connectors',
-                            type: 'string',
-                          },
-                          refresh_token: {
-                            description:
-                              'OAuth2 refresh token for token refresh',
-                            minLength: 1,
-                            type: 'string',
-                          },
-                        },
-                        type: 'object',
-                      },
-                      {
-                        properties: {
-                          api_key: {
-                            description: 'API key for Smoobu authentication',
-                            minLength: 1,
-                            type: 'string',
-                          },
-                          base_api_url: {
-                            description:
-                              'Optional base API URL (defaults to https://api.smoobu.com/api)',
-                            type: 'string',
-                          },
-                        },
-                        required: ['api_key'],
-                        type: 'object',
-                      },
-                      {
-                        properties: {
-                          api_key: {
-                            description:
-                              'Zonal API key for X-API-Key header (required)',
-                            minLength: 1,
-                            type: 'string',
-                          },
-                          auth_token: { type: 'string' },
-                          hotel_id: {
-                            description:
-                              'Hotel ID - required for identifying the customer',
-                            minLength: 1,
-                            type: 'string',
-                          },
-                          id: {
-                            description:
-                              "Zonal ID used as 'token' in login request body (required)",
-                            minLength: 1,
-                            type: 'string',
-                          },
-                          is_staging: {
-                            default: false,
-                            description:
-                              'Use staging API instead of production',
-                            type: 'boolean',
-                          },
-                          secret: {
-                            description:
-                              'Zonal Secret for login request body (required)',
-                            minLength: 1,
-                            type: 'string',
-                          },
-                        },
-                        required: ['api_key', 'id', 'secret', 'hotel_id'],
-                        type: 'object',
-                      },
-                    ],
+                    type: 'object',
+                  },
+                  connector_customer_id: {
+                    description:
+                      'ID of the connector customer to update (for global connectors like Cloudbeds)',
+                    format: 'uuid',
+                    type: 'string',
                   },
                   connector_id: {
                     description: 'ID of the connector to update',
