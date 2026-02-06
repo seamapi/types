@@ -57301,8 +57301,9 @@ export default {
             schema: {
               default: 50,
               description:
-                'Maximum number of timeline entry groups to return per page.',
+                'Maximum number of timeline entry groups to return per page. Maximum 100.',
               exclusiveMinimum: true,
+              maximum: 100,
               minimum: 0,
               type: 'integer',
             },
@@ -57315,6 +57316,58 @@ export default {
               description:
                 'Timestamp by which to limit returned timeline entries. Returns entries created before this timestamp.',
               format: 'date-time',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'created_after',
+            required: false,
+            schema: {
+              description:
+                'Timestamp by which to limit returned timeline entries. Returns entries created after this timestamp.',
+              format: 'date-time',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'created_between',
+            required: false,
+            schema: {
+              description:
+                'Time range to filter timeline entries. Returns entries created between the two timestamps [start, end].',
+            },
+          },
+          {
+            in: 'query',
+            name: 'entry_types',
+            required: false,
+            schema: {
+              description:
+                'Filter timeline entries by entry type. If not specified, all entry types are returned.',
+              items: {
+                enum: [
+                  'resource_created',
+                  'resource_updated',
+                  'resource_deleted',
+                  'event',
+                  'provider_call',
+                  'automation_run',
+                ],
+                type: 'string',
+              },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'context_type',
+            required: false,
+            schema: {
+              description:
+                "Filter timeline entries by context type. 'request' for API requests, 'job' for background jobs.",
+              enum: ['request', 'job'],
               type: 'string',
             },
           },
@@ -57336,7 +57389,45 @@ export default {
                 schema: {
                   properties: {
                     ok: { type: 'boolean' },
-                    pagination: { $ref: '#/components/schemas/pagination' },
+                    pagination: {
+                      description:
+                        'Information about the current page of results.',
+                      properties: {
+                        has_next_page: {
+                          description:
+                            'Indicates whether there is another page of results after this one.',
+                          type: 'boolean',
+                        },
+                        next_page_cursor: {
+                          description:
+                            'Opaque value that can be used to select the next page of results via the `page_cursor` parameter.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        next_page_url: {
+                          description: 'URL to get the next page of results.',
+                          format: 'uri',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        page_size: {
+                          description: 'Number of items per page',
+                          type: 'integer',
+                        },
+                        total_count: {
+                          description: 'Total number of timeline entry groups',
+                          type: 'integer',
+                        },
+                      },
+                      required: [
+                        'next_page_cursor',
+                        'has_next_page',
+                        'next_page_url',
+                        'total_count',
+                        'page_size',
+                      ],
+                      type: 'object',
+                    },
                     timeline: {
                       properties: {
                         groups: {
@@ -57485,6 +57576,36 @@ export default {
                                             'entry_type',
                                             'description',
                                             'response_status_code',
+                                          ],
+                                          type: 'object',
+                                        },
+                                        {
+                                          properties: {
+                                            duration_ms: {
+                                              format: 'float',
+                                              type: 'number',
+                                            },
+                                            entry_type: {
+                                              enum: ['automation_run'],
+                                              type: 'string',
+                                            },
+                                            error_message: { type: 'string' },
+                                            rule_name: { type: 'string' },
+                                            skip_reason: { type: 'string' },
+                                            status: {
+                                              enum: [
+                                                'started',
+                                                'completed',
+                                                'failed',
+                                                'skipped',
+                                              ],
+                                              type: 'string',
+                                            },
+                                          },
+                                          required: [
+                                            'entry_type',
+                                            'rule_name',
+                                            'status',
                                           ],
                                           type: 'object',
                                         },
@@ -57553,17 +57674,50 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  context_type: {
+                    description:
+                      "Filter timeline entries by context type. 'request' for API requests, 'job' for background jobs.",
+                    enum: ['request', 'job'],
+                    type: 'string',
+                  },
+                  created_after: {
+                    description:
+                      'Timestamp by which to limit returned timeline entries. Returns entries created after this timestamp.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
                   created_before: {
                     description:
                       'Timestamp by which to limit returned timeline entries. Returns entries created before this timestamp.',
                     format: 'date-time',
                     type: 'string',
                   },
+                  created_between: {
+                    description:
+                      'Time range to filter timeline entries. Returns entries created between the two timestamps [start, end].',
+                  },
+                  entry_types: {
+                    description:
+                      'Filter timeline entries by entry type. If not specified, all entry types are returned.',
+                    items: {
+                      enum: [
+                        'resource_created',
+                        'resource_updated',
+                        'resource_deleted',
+                        'event',
+                        'provider_call',
+                        'automation_run',
+                      ],
+                      type: 'string',
+                    },
+                    type: 'array',
+                  },
                   limit: {
                     default: 50,
                     description:
-                      'Maximum number of timeline entry groups to return per page.',
+                      'Maximum number of timeline entry groups to return per page. Maximum 100.',
                     exclusiveMinimum: true,
+                    maximum: 100,
                     minimum: 0,
                     type: 'integer',
                   },
@@ -57591,7 +57745,45 @@ export default {
                 schema: {
                   properties: {
                     ok: { type: 'boolean' },
-                    pagination: { $ref: '#/components/schemas/pagination' },
+                    pagination: {
+                      description:
+                        'Information about the current page of results.',
+                      properties: {
+                        has_next_page: {
+                          description:
+                            'Indicates whether there is another page of results after this one.',
+                          type: 'boolean',
+                        },
+                        next_page_cursor: {
+                          description:
+                            'Opaque value that can be used to select the next page of results via the `page_cursor` parameter.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        next_page_url: {
+                          description: 'URL to get the next page of results.',
+                          format: 'uri',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        page_size: {
+                          description: 'Number of items per page',
+                          type: 'integer',
+                        },
+                        total_count: {
+                          description: 'Total number of timeline entry groups',
+                          type: 'integer',
+                        },
+                      },
+                      required: [
+                        'next_page_cursor',
+                        'has_next_page',
+                        'next_page_url',
+                        'total_count',
+                        'page_size',
+                      ],
+                      type: 'object',
+                    },
                     timeline: {
                       properties: {
                         groups: {
@@ -57740,6 +57932,36 @@ export default {
                                             'entry_type',
                                             'description',
                                             'response_status_code',
+                                          ],
+                                          type: 'object',
+                                        },
+                                        {
+                                          properties: {
+                                            duration_ms: {
+                                              format: 'float',
+                                              type: 'number',
+                                            },
+                                            entry_type: {
+                                              enum: ['automation_run'],
+                                              type: 'string',
+                                            },
+                                            error_message: { type: 'string' },
+                                            rule_name: { type: 'string' },
+                                            skip_reason: { type: 'string' },
+                                            status: {
+                                              enum: [
+                                                'started',
+                                                'completed',
+                                                'failed',
+                                                'skipped',
+                                              ],
+                                              type: 'string',
+                                            },
+                                          },
+                                          required: [
+                                            'entry_type',
+                                            'rule_name',
+                                            'status',
                                           ],
                                           type: 'object',
                                         },
