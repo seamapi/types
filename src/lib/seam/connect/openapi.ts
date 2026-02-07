@@ -30079,6 +30079,455 @@ export default {
         'x-title': 'Get an Access Code',
       },
     },
+    '/access_codes/get_timeline': {
+      get: {
+        description:
+          'Returns a chronological timeline of events for an access code.\n\nThe timeline includes state changes (create, update, delete), delivery lifecycle events\n(programming attempts, success/failure), and related device events.',
+        operationId: 'accessCodesGetTimelineGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'access_code_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the access code for which to retrieve the timeline.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            required: false,
+            schema: {
+              default: 50,
+              description:
+                'Maximum number of timeline events to return (default 50, max 200).',
+              format: 'float',
+              maximum: 200,
+              minimum: 1,
+              type: 'number',
+            },
+          },
+          {
+            in: 'query',
+            name: 'before',
+            required: false,
+            schema: {
+              description:
+                'Only return events that occurred before this timestamp (ISO 8601 format).',
+              format: 'date-time',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'after',
+            required: false,
+            schema: {
+              description:
+                'Only return events that occurred after this timestamp (ISO 8601 format).',
+              format: 'date-time',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'event_types',
+            required: false,
+            schema: {
+              description: 'Filter to only return specific event types.',
+              items: {
+                enum: [
+                  'access_code.created',
+                  'access_code.changed',
+                  'access_code.deleted',
+                  'access_code.modified_external_to_seam',
+                  'access_code.deleted_external_to_seam',
+                  'access_code.scheduled_on_device',
+                  'access_code.set_on_device',
+                  'access_code.removed_from_device',
+                  'access_code.delay_in_setting_on_device',
+                  'access_code.failed_to_set_on_device',
+                  'access_code.delay_in_removing_from_device',
+                  'access_code.failed_to_remove_from_device',
+                  'access_code.backup_access_code_pulled',
+                  'access_code.unmanaged.converted_to_managed',
+                  'access_code.unmanaged.failed_to_convert_to_managed',
+                ],
+                type: 'string',
+              },
+              type: 'array',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    pagination: {
+                      properties: {
+                        has_more: { type: 'boolean' },
+                        next_cursor: { nullable: true, type: 'string' },
+                        prev_cursor: { nullable: true, type: 'string' },
+                      },
+                      required: ['has_more', 'next_cursor', 'prev_cursor'],
+                      type: 'object',
+                    },
+                    timeline_events: {
+                      items: {
+                        properties: {
+                          actor: {
+                            description:
+                              'Information about who or what triggered this event.',
+                            properties: {
+                              display_name: {
+                                description:
+                                  'Human-readable name for the actor.',
+                                type: 'string',
+                              },
+                              id: {
+                                description:
+                                  'The ID of the actor (API key ID, user ID, etc.).',
+                                type: 'string',
+                              },
+                              type: {
+                                description:
+                                  'The type of actor that triggered this event.',
+                                enum: [
+                                  'api_key',
+                                  'console_user',
+                                  'system',
+                                  'external',
+                                ],
+                                type: 'string',
+                              },
+                            },
+                            required: ['type'],
+                            type: 'object',
+                          },
+                          description: {
+                            description:
+                              'Human-readable description of what happened.',
+                            type: 'string',
+                          },
+                          details: {
+                            additionalProperties: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            description:
+                              'Event-specific details and payload data.',
+                            type: 'object',
+                          },
+                          event_type: {
+                            description: 'The type of timeline event.',
+                            enum: [
+                              'access_code.created',
+                              'access_code.changed',
+                              'access_code.deleted',
+                              'access_code.modified_external_to_seam',
+                              'access_code.deleted_external_to_seam',
+                              'access_code.scheduled_on_device',
+                              'access_code.set_on_device',
+                              'access_code.removed_from_device',
+                              'access_code.delay_in_setting_on_device',
+                              'access_code.failed_to_set_on_device',
+                              'access_code.delay_in_removing_from_device',
+                              'access_code.failed_to_remove_from_device',
+                              'access_code.backup_access_code_pulled',
+                              'access_code.unmanaged.converted_to_managed',
+                              'access_code.unmanaged.failed_to_convert_to_managed',
+                            ],
+                            type: 'string',
+                          },
+                          occurred_at: {
+                            description:
+                              'ISO 8601 timestamp when the event occurred.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          related_resource_ids: {
+                            description:
+                              'IDs of related resources for cross-referencing.',
+                            properties: {
+                              action_attempt_id: {
+                                format: 'uuid',
+                                type: 'string',
+                              },
+                              connected_account_id: {
+                                format: 'uuid',
+                                type: 'string',
+                              },
+                              device_id: { format: 'uuid', type: 'string' },
+                              event_id: { format: 'uuid', type: 'string' },
+                            },
+                            type: 'object',
+                          },
+                          timeline_event_id: {
+                            description:
+                              'Unique identifier for this timeline event.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'timeline_event_id',
+                          'event_type',
+                          'occurred_at',
+                          'description',
+                          'actor',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['timeline_events', 'pagination', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { client_session: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/access_codes/get_timeline',
+        tags: ['/access_codes'],
+        'x-fern-sdk-group-name': ['access_codes'],
+        'x-fern-sdk-method-name': 'get_timeline',
+        'x-fern-sdk-return-value': 'timeline_events',
+        'x-response-key': 'timeline_events',
+        'x-title': 'Get Access Code Timeline',
+      },
+      post: {
+        description:
+          'Returns a chronological timeline of events for an access code.\n\nThe timeline includes state changes (create, update, delete), delivery lifecycle events\n(programming attempts, success/failure), and related device events.',
+        operationId: 'accessCodesGetTimelinePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_code_id: {
+                    description:
+                      'ID of the access code for which to retrieve the timeline.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  after: {
+                    description:
+                      'Only return events that occurred after this timestamp (ISO 8601 format).',
+                    format: 'date-time',
+                    type: 'string',
+                  },
+                  before: {
+                    description:
+                      'Only return events that occurred before this timestamp (ISO 8601 format).',
+                    format: 'date-time',
+                    type: 'string',
+                  },
+                  event_types: {
+                    description: 'Filter to only return specific event types.',
+                    items: {
+                      enum: [
+                        'access_code.created',
+                        'access_code.changed',
+                        'access_code.deleted',
+                        'access_code.modified_external_to_seam',
+                        'access_code.deleted_external_to_seam',
+                        'access_code.scheduled_on_device',
+                        'access_code.set_on_device',
+                        'access_code.removed_from_device',
+                        'access_code.delay_in_setting_on_device',
+                        'access_code.failed_to_set_on_device',
+                        'access_code.delay_in_removing_from_device',
+                        'access_code.failed_to_remove_from_device',
+                        'access_code.backup_access_code_pulled',
+                        'access_code.unmanaged.converted_to_managed',
+                        'access_code.unmanaged.failed_to_convert_to_managed',
+                      ],
+                      type: 'string',
+                    },
+                    type: 'array',
+                  },
+                  limit: {
+                    default: 50,
+                    description:
+                      'Maximum number of timeline events to return (default 50, max 200).',
+                    format: 'float',
+                    maximum: 200,
+                    minimum: 1,
+                    type: 'number',
+                  },
+                },
+                required: ['access_code_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    pagination: {
+                      properties: {
+                        has_more: { type: 'boolean' },
+                        next_cursor: { nullable: true, type: 'string' },
+                        prev_cursor: { nullable: true, type: 'string' },
+                      },
+                      required: ['has_more', 'next_cursor', 'prev_cursor'],
+                      type: 'object',
+                    },
+                    timeline_events: {
+                      items: {
+                        properties: {
+                          actor: {
+                            description:
+                              'Information about who or what triggered this event.',
+                            properties: {
+                              display_name: {
+                                description:
+                                  'Human-readable name for the actor.',
+                                type: 'string',
+                              },
+                              id: {
+                                description:
+                                  'The ID of the actor (API key ID, user ID, etc.).',
+                                type: 'string',
+                              },
+                              type: {
+                                description:
+                                  'The type of actor that triggered this event.',
+                                enum: [
+                                  'api_key',
+                                  'console_user',
+                                  'system',
+                                  'external',
+                                ],
+                                type: 'string',
+                              },
+                            },
+                            required: ['type'],
+                            type: 'object',
+                          },
+                          description: {
+                            description:
+                              'Human-readable description of what happened.',
+                            type: 'string',
+                          },
+                          details: {
+                            additionalProperties: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            description:
+                              'Event-specific details and payload data.',
+                            type: 'object',
+                          },
+                          event_type: {
+                            description: 'The type of timeline event.',
+                            enum: [
+                              'access_code.created',
+                              'access_code.changed',
+                              'access_code.deleted',
+                              'access_code.modified_external_to_seam',
+                              'access_code.deleted_external_to_seam',
+                              'access_code.scheduled_on_device',
+                              'access_code.set_on_device',
+                              'access_code.removed_from_device',
+                              'access_code.delay_in_setting_on_device',
+                              'access_code.failed_to_set_on_device',
+                              'access_code.delay_in_removing_from_device',
+                              'access_code.failed_to_remove_from_device',
+                              'access_code.backup_access_code_pulled',
+                              'access_code.unmanaged.converted_to_managed',
+                              'access_code.unmanaged.failed_to_convert_to_managed',
+                            ],
+                            type: 'string',
+                          },
+                          occurred_at: {
+                            description:
+                              'ISO 8601 timestamp when the event occurred.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          related_resource_ids: {
+                            description:
+                              'IDs of related resources for cross-referencing.',
+                            properties: {
+                              action_attempt_id: {
+                                format: 'uuid',
+                                type: 'string',
+                              },
+                              connected_account_id: {
+                                format: 'uuid',
+                                type: 'string',
+                              },
+                              device_id: { format: 'uuid', type: 'string' },
+                              event_id: { format: 'uuid', type: 'string' },
+                            },
+                            type: 'object',
+                          },
+                          timeline_event_id: {
+                            description:
+                              'Unique identifier for this timeline event.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'timeline_event_id',
+                          'event_type',
+                          'occurred_at',
+                          'description',
+                          'actor',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['timeline_events', 'pagination', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { client_session: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/access_codes/get_timeline',
+        tags: ['/access_codes'],
+        'x-fern-sdk-group-name': ['access_codes'],
+        'x-fern-sdk-method-name': 'get_timeline',
+        'x-fern-sdk-return-value': 'timeline_events',
+        'x-response-key': 'timeline_events',
+        'x-title': 'Get Access Code Timeline',
+      },
+    },
     '/access_codes/list': {
       get: {
         description:
