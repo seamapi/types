@@ -57803,6 +57803,7 @@ export default {
                   'event',
                   'provider_call',
                   'automation_run',
+                  'webhook_processed',
                 ],
                 type: 'string',
               },
@@ -58058,6 +58059,45 @@ export default {
                                           ],
                                           type: 'object',
                                         },
+                                        {
+                                          properties: {
+                                            connector_type: { type: 'string' },
+                                            entry_type: {
+                                              enum: ['webhook_processed'],
+                                              type: 'string',
+                                            },
+                                            error_message: { type: 'string' },
+                                            event_type: { type: 'string' },
+                                            parsed_event: {
+                                              additionalProperties: {
+                                                $ref: '#/components/schemas/access_code',
+                                              },
+                                              type: 'object',
+                                            },
+                                            raw_payload: {
+                                              additionalProperties: {
+                                                $ref: '#/components/schemas/access_code',
+                                              },
+                                              type: 'object',
+                                            },
+                                            skip_reason: { type: 'string' },
+                                            status: {
+                                              enum: [
+                                                'processed',
+                                                'skipped',
+                                                'failed',
+                                              ],
+                                              type: 'string',
+                                            },
+                                          },
+                                          required: [
+                                            'entry_type',
+                                            'connector_type',
+                                            'event_type',
+                                            'status',
+                                          ],
+                                          type: 'object',
+                                        },
                                       ],
                                     },
                                     created_at: { type: 'string' },
@@ -58156,6 +58196,7 @@ export default {
                         'event',
                         'provider_call',
                         'automation_run',
+                        'webhook_processed',
                       ],
                       type: 'string',
                     },
@@ -58410,6 +58451,45 @@ export default {
                                           required: [
                                             'entry_type',
                                             'rule_name',
+                                            'status',
+                                          ],
+                                          type: 'object',
+                                        },
+                                        {
+                                          properties: {
+                                            connector_type: { type: 'string' },
+                                            entry_type: {
+                                              enum: ['webhook_processed'],
+                                              type: 'string',
+                                            },
+                                            error_message: { type: 'string' },
+                                            event_type: { type: 'string' },
+                                            parsed_event: {
+                                              additionalProperties: {
+                                                $ref: '#/components/schemas/access_code',
+                                              },
+                                              type: 'object',
+                                            },
+                                            raw_payload: {
+                                              additionalProperties: {
+                                                $ref: '#/components/schemas/access_code',
+                                              },
+                                              type: 'object',
+                                            },
+                                            skip_reason: { type: 'string' },
+                                            status: {
+                                              enum: [
+                                                'processed',
+                                                'skipped',
+                                                'failed',
+                                              ],
+                                              type: 'string',
+                                            },
+                                          },
+                                          required: [
+                                            'entry_type',
+                                            'connector_type',
+                                            'event_type',
                                             'status',
                                           ],
                                           type: 'object',
