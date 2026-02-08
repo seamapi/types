@@ -150,6 +150,23 @@ const updating_access_times_mutation = common_pending_mutation
     'Seam is in the process of updating the access times for this access method.',
   )
 
+const notifying_connector_mutation = common_pending_mutation
+  .extend({
+    mutation_code: z
+      .literal('notifying_connector')
+      .describe(
+        "Mutation code to indicate that Seam is in the process of notifying the connector about this access method's issuance.",
+      ),
+    // Intentionally generic — each connector type has its own provider_data shape
+    // (e.g., Cloudbeds uses { keyId: string, keyType: string })
+    provider_data: z
+      .record(z.any())
+      .describe('Provider-specific data needed to notify the connector.'),
+  })
+  .describe(
+    "Seam is in the process of notifying the connector about this access method's issuance.",
+  )
+
 export const access_method_pending_mutations = z.discriminatedUnion(
   'mutation_code',
   [
@@ -167,6 +184,7 @@ const _access_method_pending_mutations_map = z.object({
   provisioning_access: provisioning_access_mutation.optional().nullable(),
   revoking_access: revoking_access_mutation.optional().nullable(),
   updating_access_times: updating_access_times_mutation.optional().nullable(),
+  notifying_connector: notifying_connector_mutation.optional().nullable(),
 })
 
 export type AccessMethodPendingMutationsMap = z.infer<
