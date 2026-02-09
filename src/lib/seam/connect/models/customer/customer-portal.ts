@@ -103,6 +103,12 @@ export const portal_configuration_base = z.object({
     .enum(['en-US', 'pt-PT', 'fr-FR', 'it-IT', 'es-ES'])
     .optional()
     .describe('The locale to use for the portal.'),
+  exclude_locale_picker: z
+    .boolean()
+    .default(false)
+    .describe(
+      'Whether to exclude the option to select a locale within the portal UI.',
+    ),
   customization_profile_id: z
     .string()
     .uuid()
@@ -170,6 +176,7 @@ export const portal_configuration = portal_configuration_base
       },
     },
     is_embedded: false,
+    exclude_locale_picker: false,
     locale: undefined,
     customer_resources_filters: undefined,
   })
