@@ -47270,6 +47270,7 @@ export default {
                 allOf: [
                   {
                     default: {
+                      exclude_locale_picker: false,
                       features: {
                         configure: {
                           allow_access_automation_rule_customization: false,
@@ -47335,6 +47336,12 @@ export default {
                         },
                         required: ['resource_type', 'resource_key'],
                         type: 'object',
+                      },
+                      exclude_locale_picker: {
+                        default: false,
+                        description:
+                          'Whether to exclude the option to select a locale within the portal UI.',
+                        type: 'boolean',
                       },
                       features: {
                         default: {},
@@ -62400,6 +62407,12 @@ export default {
                           required: ['resource_type', 'resource_key'],
                           type: 'object',
                         },
+                        exclude_locale_picker: {
+                          default: false,
+                          description:
+                            'Whether to exclude the option to select a locale within the portal UI.',
+                          type: 'boolean',
+                        },
                         features: {
                           default: { $ref: '#/components/schemas/access_code' },
                           properties: {
@@ -62772,6 +62785,12 @@ export default {
                           },
                           required: ['resource_type', 'resource_key'],
                           type: 'object',
+                        },
+                        exclude_locale_picker: {
+                          default: false,
+                          description:
+                            'Whether to exclude the option to select a locale within the portal UI.',
+                          type: 'boolean',
                         },
                         features: {
                           default: { $ref: '#/components/schemas/access_code' },
