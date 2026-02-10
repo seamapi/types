@@ -222,12 +222,21 @@ const account_reauthorization_requested = common_connected_account_warning
     'Indicates that the Connected Account requires reauthorization using a new Connect Webview. The account is still connected, but cannot access new features. Delaying reauthorization too long will eventually cause the Connected Account to become disconnected.',
   )
 
+const being_deleted = common_connected_account_warning
+  .extend({
+    warning_code: z.literal('being_deleted').describe(warning_code_description),
+  })
+  .describe(
+    'Indicates that the connected account is currently being deleted. All devices, access codes, and other resources associated with this account are in the process of being removed from Seam.',
+  )
+
 const connected_account_warning = z
   .discriminatedUnion('warning_code', [
     scheduled_maintenance_window,
     unknown_issue_with_connected_account,
     salto_ks_subscription_limit_almost_reached,
     account_reauthorization_requested,
+    being_deleted,
   ])
   .describe('Warning associated with the connected account.')
 
@@ -243,6 +252,7 @@ const _connected_account_warning_map = z.object({
   account_reauthorization_requested: account_reauthorization_requested
     .nullable()
     .optional(),
+  being_deleted: being_deleted.nullable().optional(),
 })
 
 export type ConnectedAccountWarningMap = z.infer<
