@@ -59350,6 +59350,10 @@ export default {
                                   minimum: 0,
                                   type: 'integer',
                                 },
+                                instant_key_max_use_count: {
+                                  minimum: 1,
+                                  type: 'integer',
+                                },
                                 method_issuance_strategy: {
                                   enum: [
                                     'first_available',
@@ -59630,6 +59634,10 @@ export default {
                                 },
                                 code_count_on_reservation_create: {
                                   minimum: 0,
+                                  type: 'integer',
+                                },
+                                instant_key_max_use_count: {
+                                  minimum: 1,
                                   type: 'integer',
                                 },
                                 method_issuance_strategy: {
@@ -59916,6 +59924,10 @@ export default {
                                 minimum: 0,
                                 type: 'integer',
                               },
+                              instant_key_max_use_count: {
+                                minimum: 1,
+                                type: 'integer',
+                              },
                               method_issuance_strategy: {
                                 enum: [
                                   'first_available',
@@ -60194,6 +60206,10 @@ export default {
                               },
                               code_count_on_reservation_create: {
                                 minimum: 0,
+                                type: 'integer',
+                              },
+                              instant_key_max_use_count: {
+                                minimum: 1,
                                 type: 'integer',
                               },
                               method_issuance_strategy: {
