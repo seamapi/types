@@ -16,6 +16,14 @@ export const requested_access_method = z.object({
     .describe(
       "Specific PIN code to use for this access method. Only applicable when mode is 'code'.",
     ),
+  instant_key_max_use_count: z
+    .number()
+    .int()
+    .min(1)
+    .optional()
+    .describe(
+      "Maximum number of times the instant key can be used. Only applicable when mode is 'mobile_key'. Defaults to 1 if not specified.",
+    ),
   created_at: z
     .string()
     .datetime()

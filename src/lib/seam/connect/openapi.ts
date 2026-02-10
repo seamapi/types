@@ -2021,6 +2021,12 @@ export default {
                   description: 'Display name of the access method.',
                   type: 'string',
                 },
+                instant_key_max_use_count: {
+                  description:
+                    "Maximum number of times the instant key can be used. Only applicable when mode is 'mobile_key'. Defaults to 1 if not specified.",
+                  minimum: 1,
+                  type: 'integer',
+                },
                 mode: {
                   description:
                     'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
@@ -32398,6 +32404,12 @@ export default {
                               pattern: '^\\d+$',
                               type: 'string',
                             },
+                            instant_key_max_use_count: {
+                              description:
+                                "Maximum number of times the instant key can be used. Only applicable when mode is 'mobile_key'. Defaults to 1 if not specified.",
+                              minimum: 1,
+                              type: 'integer',
+                            },
                             mode: {
                               description:
                                 'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
@@ -33242,6 +33254,12 @@ export default {
                           pattern: '^\\d+$',
                           type: 'string',
                         },
+                        instant_key_max_use_count: {
+                          description:
+                            "Maximum number of times the instant key can be used. Only applicable when mode is 'mobile_key'. Defaults to 1 if not specified.",
+                          minimum: 1,
+                          type: 'integer',
+                        },
                         mode: {
                           description:
                             'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
@@ -33593,6 +33611,12 @@ export default {
                                 description:
                                   'Display name of the access method.',
                                 type: 'string',
+                              },
+                              instant_key_max_use_count: {
+                                description:
+                                  "Maximum number of times the instant key can be used. Only applicable when mode is 'mobile_key'. Defaults to 1 if not specified.",
+                                minimum: 1,
+                                type: 'integer',
                               },
                               mode: {
                                 description:
@@ -34170,6 +34194,12 @@ export default {
                                 description:
                                   'Display name of the access method.',
                                 type: 'string',
+                              },
+                              instant_key_max_use_count: {
+                                description:
+                                  "Maximum number of times the instant key can be used. Only applicable when mode is 'mobile_key'. Defaults to 1 if not specified.",
+                                minimum: 1,
+                                type: 'integer',
                               },
                               mode: {
                                 description:
@@ -34775,6 +34805,12 @@ export default {
                                     'Display name of the access method.',
                                   type: 'string',
                                 },
+                                instant_key_max_use_count: {
+                                  description:
+                                    "Maximum number of times the instant key can be used. Only applicable when mode is 'mobile_key'. Defaults to 1 if not specified.",
+                                  minimum: 1,
+                                  type: 'integer',
+                                },
                                 mode: {
                                   description:
                                     'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
@@ -35373,6 +35409,12 @@ export default {
                                   description:
                                     'Display name of the access method.',
                                   type: 'string',
+                                },
+                                instant_key_max_use_count: {
+                                  description:
+                                    "Maximum number of times the instant key can be used. Only applicable when mode is 'mobile_key'. Defaults to 1 if not specified.",
+                                  minimum: 1,
+                                  type: 'integer',
                                 },
                                 mode: {
                                   description:
