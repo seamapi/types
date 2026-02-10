@@ -114,9 +114,10 @@ export const PROVIDER_CATEGORY_MAP = {
     'wyze',
     'lockly',
     'tedee',
+    'ultraloq',
   ],
 
-  beta: ['korelock'],
+  beta: ['korelock', 'ultraloq'],
 
   thermostats: ['ecobee', 'nest', 'sensi', 'honeywell_resideo'],
   noise_sensors: ['minut', 'noiseaware'],
