@@ -99,6 +99,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'avigilon_alta',
     'keynest',
     'hotek',
+    'ultraloq',
   ],
 
   consumer_smartlocks: [
@@ -117,7 +118,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'ultraloq',
   ],
 
-  beta: ['korelock', 'ultraloq'],
+  beta: ['korelock'],
 
   thermostats: ['ecobee', 'nest', 'sensi', 'honeywell_resideo'],
   noise_sensors: ['minut', 'noiseaware'],
