@@ -30624,6 +30624,16 @@ export default {
           },
           {
             in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned access codes to include all records that satisfy a partial match using `name`, `code` or `access_code_id`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'page_cursor',
             schema: {
               description:
@@ -30708,6 +30718,12 @@ export default {
                     description:
                       "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
                     nullable: true,
+                    type: 'string',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned access codes to include all records that satisfy a partial match using `name`, `code` or `access_code_id`.',
+                    minLength: 1,
                     type: 'string',
                   },
                   user_identifier_key: {
@@ -31417,6 +31433,17 @@ export default {
           },
           {
             in: 'query',
+            name: 'search',
+            required: false,
+            schema: {
+              description:
+                'String for which to search. Filters returned access codes to include all records that satisfy a partial match using `name`, `code` or `access_code_id`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'page_cursor',
             required: false,
             schema: {
@@ -31493,6 +31520,12 @@ export default {
                     description:
                       "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
                     nullable: true,
+                    type: 'string',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned access codes to include all records that satisfy a partial match using `name`, `code` or `access_code_id`.',
+                    minLength: 1,
                     type: 'string',
                   },
                   user_identifier_key: {
@@ -38748,6 +38781,16 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned access groups to include all records that satisfy a partial match using `name` or `acs_access_group_id`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -38803,6 +38846,12 @@ export default {
                     description:
                       'ID of the access system user for which you want to retrieve all access groups.',
                     format: 'uuid',
+                    type: 'string',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned access groups to include all records that satisfy a partial match using `name` or `acs_access_group_id`.',
+                    minLength: 1,
                     type: 'string',
                   },
                   user_identity_id: {
@@ -39345,6 +39394,16 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned access groups to include all records that satisfy a partial match using `name` or `acs_access_group_id`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -39404,6 +39463,12 @@ export default {
                     description:
                       'ID of the access system user for which you want to retrieve all unmanaged access groups.',
                     format: 'uuid',
+                    type: 'string',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned access groups to include all records that satisfy a partial match using `name` or `acs_access_group_id`.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -40865,67 +40930,82 @@ export default {
           content: {
             'application/json': {
               schema: {
-                oneOf: [
+                allOf: [
                   {
-                    description:
-                      'ID of the access system user for which you want to list unmanaged credentials.',
-                    properties: {
-                      acs_user_id: {
+                    oneOf: [
+                      {
                         description:
-                          'ID of the access system user for which you want to retrieve all credentials.',
-                        format: 'uuid',
-                        type: 'string',
+                          'ID of the access system user for which you want to list unmanaged credentials.',
+                        properties: {
+                          acs_user_id: {
+                            description:
+                              'ID of the access system user for which you want to retrieve all credentials.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: ['acs_user_id'],
+                        type: 'object',
                       },
-                    },
-                    required: ['acs_user_id'],
-                    type: 'object',
+                      {
+                        description:
+                          'ID of the access system for which you want to list unmanaged credentials.',
+                        properties: {
+                          acs_system_id: {
+                            description:
+                              'ID of the access system for which you want to retrieve all credentials.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: ['acs_system_id'],
+                        type: 'object',
+                      },
+                      {
+                        description:
+                          'ID of the access system and ID of the access system user for which you want to list unmanaged credentials.',
+                        properties: {
+                          acs_system_id: {
+                            description:
+                              'ID of the access system for which you want to retrieve all credentials.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          acs_user_id: {
+                            description:
+                              'ID of the access system user for which you want to retrieve all credentials.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: ['acs_user_id', 'acs_system_id'],
+                        type: 'object',
+                      },
+                      {
+                        description:
+                          'ID of the user identity for which you want to list unmanaged credentials.',
+                        properties: {
+                          user_identity_id: {
+                            description:
+                              'ID of the user identity for which you want to retrieve all credentials.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: ['user_identity_id'],
+                        type: 'object',
+                      },
+                    ],
                   },
                   {
-                    description:
-                      'ID of the access system for which you want to list unmanaged credentials.',
                     properties: {
-                      acs_system_id: {
+                      search: {
                         description:
-                          'ID of the access system for which you want to retrieve all credentials.',
-                        format: 'uuid',
+                          'String for which to search. Filters returned credentials to include all records that satisfy a partial match using `display_name`, `code`, `card_number`, `acs_user_id` or `acs_credential_id`.',
+                        minLength: 1,
                         type: 'string',
                       },
                     },
-                    required: ['acs_system_id'],
-                    type: 'object',
-                  },
-                  {
-                    description:
-                      'ID of the access system and ID of the access system user for which you want to list unmanaged credentials.',
-                    properties: {
-                      acs_system_id: {
-                        description:
-                          'ID of the access system for which you want to retrieve all credentials.',
-                        format: 'uuid',
-                        type: 'string',
-                      },
-                      acs_user_id: {
-                        description:
-                          'ID of the access system user for which you want to retrieve all credentials.',
-                        format: 'uuid',
-                        type: 'string',
-                      },
-                    },
-                    required: ['acs_user_id', 'acs_system_id'],
-                    type: 'object',
-                  },
-                  {
-                    description:
-                      'ID of the user identity for which you want to list unmanaged credentials.',
-                    properties: {
-                      user_identity_id: {
-                        description:
-                          'ID of the user identity for which you want to retrieve all credentials.',
-                        format: 'uuid',
-                        type: 'string',
-                      },
-                    },
-                    required: ['user_identity_id'],
                     type: 'object',
                   },
                 ],
@@ -42522,6 +42602,16 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned access systems to include all records that satisfy a partial match using `name` or `acs_system_id`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -42578,6 +42668,12 @@ export default {
                   customer_key: {
                     description:
                       'Customer key for which you want to list access systems.',
+                    type: 'string',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned access systems to include all records that satisfy a partial match using `name` or `acs_system_id`.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -44127,6 +44223,16 @@ export default {
               type: 'number',
             },
           },
+          {
+            in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned access system users to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address`, `acs_user_id`, `user_identity_id`, `user_identity_full_name` or `user_identity_phone_number`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -44187,6 +44293,12 @@ export default {
                       'Number of unmanaged access system users to return.',
                     format: 'float',
                     type: 'number',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned access system users to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address`, `acs_user_id`, `user_identity_id`, `user_identity_full_name` or `user_identity_phone_number`.',
+                    minLength: 1,
+                    type: 'string',
                   },
                   user_identity_email_address: {
                     description:
