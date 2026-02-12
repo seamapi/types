@@ -6287,7 +6287,7 @@ export default {
                   },
                   {
                     description:
-                      'Error to indicate that there is no card on the encoder.',
+                      'Error to indicate that the encoder is not online.',
                     properties: {
                       message: {
                         description:
@@ -6296,8 +6296,8 @@ export default {
                       },
                       type: {
                         description:
-                          'Error type to indicate that there is no card on the encoder.',
-                        enum: ['no_card_on_encoder'],
+                          'Error type to indicate that the encoder is not online.',
+                        enum: ['encoder_not_online'],
                         type: 'string',
                       },
                     },
@@ -7415,7 +7415,7 @@ export default {
                   },
                   {
                     description:
-                      'Error to indicate that there is no card on the encoder.',
+                      'Error to indicate that the encoder is not online.',
                     properties: {
                       message: {
                         description:
@@ -7424,8 +7424,8 @@ export default {
                       },
                       type: {
                         description:
-                          'Error type to indicate that there is no card on the encoder.',
-                        enum: ['no_card_on_encoder'],
+                          'Error type to indicate that the encoder is not online.',
+                        enum: ['encoder_not_online'],
                         type: 'string',
                       },
                     },
