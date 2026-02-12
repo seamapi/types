@@ -47397,7 +47397,7 @@ export default {
                         properties: {
                           resource_key: { type: 'string' },
                           resource_type: {
-                            enum: ['reservation'],
+                            enum: ['reservation', 'space'],
                             type: 'string',
                           },
                         },
@@ -62483,7 +62483,7 @@ export default {
                           properties: {
                             resource_key: { type: 'string' },
                             resource_type: {
-                              enum: ['reservation'],
+                              enum: ['reservation', 'space'],
                               type: 'string',
                             },
                           },
@@ -62862,7 +62862,7 @@ export default {
                           properties: {
                             resource_key: { type: 'string' },
                             resource_type: {
-                              enum: ['reservation'],
+                              enum: ['reservation', 'space'],
                               type: 'string',
                             },
                           },
