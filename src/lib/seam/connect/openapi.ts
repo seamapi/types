@@ -74538,6 +74538,12 @@ export default {
                     description: 'Name of the new workspace.',
                     type: 'string',
                   },
+                  organization_id: {
+                    description:
+                      'ID of the organization to associate with the new workspace.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   webview_logo_shape: {
                     deprecated: true,
                     enum: ['circle', 'square'],
