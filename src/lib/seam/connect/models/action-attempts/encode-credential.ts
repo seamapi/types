@@ -62,25 +62,25 @@ const credential_cannot_be_reissued = z
     'Error to indicate that the affected credential cannot be reissued.',
   )
 
-const no_card_on_encoder_error = z
+const encoder_not_online_error = z
   .object({
     type: z
-      .literal('no_card_on_encoder')
-      .describe('Error type to indicate that there is no card on the encoder.'),
+      .literal('encoder_not_online')
+      .describe('Error type to indicate that the encoder is not online.'),
     message: z
       .string()
       .describe(
         'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
       ),
   })
-  .describe('Error to indicate that there is no card on the encoder.')
+  .describe('Error to indicate that the encoder is not online.')
 
 const error = z.union([
   ...common_action_attempt_errors,
   no_credential_on_encoder_error,
   incompatible_card_format_error,
   credential_cannot_be_reissued,
-  no_card_on_encoder_error,
+  encoder_not_online_error,
 ])
 
 const result = acs_credential
