@@ -146,7 +146,7 @@ export const portal_configuration_base = z.object({
     ),
   deep_link: z
     .object({
-      resource_type: z.enum(['reservation']),
+      resource_type: z.enum(['reservation', 'space']),
       resource_key: z.string(),
     })
     .optional()
