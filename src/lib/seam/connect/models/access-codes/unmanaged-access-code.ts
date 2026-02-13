@@ -2,6 +2,20 @@ import { z } from 'zod'
 
 import { access_code } from './managed-access-code.js'
 
+export const dormakaba_oracode_unmanaged_access_code_metadata = z
+  .object({
+    ext_stay_id: z
+      .number()
+      .describe('Dormakaba Oracode stay ID associated with this access code.'),
+    ext_user_level: z
+      .string()
+      .nullable()
+      .describe(
+        'Dormakaba Oracode user level name associated with this access code.',
+      ),
+  })
+  .describe('Metadata for a dormakaba Oracode unmanaged access code.')
+
 export const unmanaged_access_code = access_code
   .pick({
     workspace_id: true,
@@ -25,6 +39,11 @@ export const unmanaged_access_code = access_code
       .enum(['set'])
       .describe(
         'Current status of the access code within the operational lifecycle. `set` indicates that the code is active and operational.',
+      ),
+    dormakaba_oracode_metadata: dormakaba_oracode_unmanaged_access_code_metadata
+      .nullable()
+      .describe(
+        'Metadata for a dormakaba Oracode unmanaged access code. Only present for unmanaged access codes from dormakaba Oracode devices.',
       ),
   }).describe(`
     ---
