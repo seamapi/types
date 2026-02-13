@@ -33,7 +33,6 @@ export const DEVICE_PROVIDERS = {
   NEST: 'nest',
   IGLOOHOME: 'igloohome',
   ECOBEE: 'ecobee',
-  HUBITAT: 'hubitat',
   FOUR_SUITES: 'four_suites',
   DORMAKABA_ORACODE: 'dormakaba_oracode',
   PTI: 'pti',

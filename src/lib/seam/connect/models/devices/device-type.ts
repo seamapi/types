@@ -24,7 +24,6 @@ export const LOCK_DEVICE_TYPE = {
   CONTROLBYWEB_DEVICE: 'controlbyweb_device',
   TTLOCK_LOCK: 'ttlock_lock',
   IGLOOHOME_LOCK: 'igloohome_lock',
-  HUBITAT_LOCK: 'hubitat_lock',
   FOUR_SUITES_DOOR: 'four_suites_door',
   DORMAKABA_ORACODE_DOOR: 'dormakaba_oracode_door',
   TEDEE_LOCK: 'tedee_lock',
