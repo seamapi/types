@@ -24527,6 +24527,27 @@ export default {
             format: 'uuid',
             type: 'string',
           },
+          dormakaba_oracode_metadata: {
+            description:
+              'Metadata for a dormakaba Oracode unmanaged access code. Only present for unmanaged access codes from dormakaba Oracode devices.',
+            nullable: true,
+            properties: {
+              ext_stay_id: {
+                description:
+                  'Dormakaba Oracode stay ID associated with this access code.',
+                format: 'float',
+                type: 'number',
+              },
+              ext_user_level: {
+                description:
+                  'Dormakaba Oracode user level name associated with this access code.',
+                nullable: true,
+                type: 'string',
+              },
+            },
+            required: ['ext_stay_id', 'ext_user_level'],
+            type: 'object',
+          },
           ends_at: {
             description:
               'Date and time after which the time-bound access code becomes inactive.',
@@ -26193,6 +26214,7 @@ export default {
           'warnings',
           'is_managed',
           'status',
+          'dormakaba_oracode_metadata',
         ],
         type: 'object',
         'x-route-path': '/access_codes/unmanaged',
