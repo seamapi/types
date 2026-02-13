@@ -156,22 +156,6 @@ const salto_ks_user_not_subscribed = common_access_code_error
   })
   .describe('Salto site user is not subscribed.')
 
-const hubitat_device_programming_delay = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('hubitat_device_programming_delay')
-      .describe(error_code_description),
-  })
-  .describe('Access code has not yet been fully moved to the device.')
-
-const hubitat_no_free_positions_available = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('hubitat_no_free_positions_available')
-      .describe(error_code_description),
-  })
-  .describe('No free positions available on the device.')
-
 const smartthings_no_free_slots_available = common_access_code_error
   .extend({
     error_code: z
@@ -233,8 +217,6 @@ const access_code_error = z
     august_lock_missing_keypad,
     august_lock_temporarily_offline_error,
     salto_ks_user_not_subscribed,
-    hubitat_device_programming_delay,
-    hubitat_no_free_positions_available,
     wyze_duplicate_code_name,
     wyze_potential_duplicate_code,
     dormakaba_oracode_invalid_time_range,
@@ -289,12 +271,6 @@ const _access_code_error_map = z.object({
     .nullable(),
   august_lock_missing_keypad: august_lock_missing_keypad.optional().nullable(),
   salto_ks_user_not_subscribed: salto_ks_user_not_subscribed
-    .optional()
-    .nullable(),
-  hubitat_device_programming_delay: hubitat_device_programming_delay
-    .optional()
-    .nullable(),
-  hubitat_no_free_positions_available: hubitat_no_free_positions_available
     .optional()
     .nullable(),
   wyze_duplicate_code_name: wyze_duplicate_code_name.optional().nullable(),

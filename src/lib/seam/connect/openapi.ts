@@ -534,67 +534,6 @@ export default {
                   type: 'object',
                 },
                 {
-                  description:
-                    'Access code has not yet been fully moved to the device.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['hubitat_device_programming_delay'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'No free positions available on the device.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['hubitat_no_free_positions_available'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                },
-                {
                   description: 'Duplicate access code name detected.',
                   properties: {
                     created_at: {
@@ -10303,7 +10242,6 @@ export default {
                   'controlbyweb_device',
                   'ttlock_lock',
                   'igloohome_lock',
-                  'hubitat_lock',
                   'four_suites_door',
                   'dormakaba_oracode_door',
                   'tedee_lock',
@@ -11595,25 +11533,6 @@ export default {
                           'honeywell_resideo_device_id',
                           'device_name',
                         ],
-                        type: 'object',
-                      },
-                      hubitat_metadata: {
-                        description: 'Metadata for a Hubitat device.',
-                        properties: {
-                          device_id: {
-                            description: 'Device ID for a Hubitat device.',
-                            type: 'string',
-                          },
-                          device_label: {
-                            description: 'Device label for a Hubitat device.',
-                            type: 'string',
-                          },
-                          device_name: {
-                            description: 'Device name for a Hubitat device.',
-                            type: 'string',
-                          },
-                        },
-                        required: ['device_id', 'device_name', 'device_label'],
                         type: 'object',
                       },
                       igloo_metadata: {
@@ -14172,7 +14091,6 @@ export default {
               'nest',
               'igloohome',
               'ecobee',
-              'hubitat',
               'four_suites',
               'dormakaba_oracode',
               'pti',
@@ -25049,67 +24967,6 @@ export default {
                   type: 'object',
                 },
                 {
-                  description:
-                    'Access code has not yet been fully moved to the device.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['hubitat_device_programming_delay'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'No free positions available on the device.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['hubitat_no_free_positions_available'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                },
-                {
                   description: 'Duplicate access code name detected.',
                   properties: {
                     created_at: {
@@ -27646,7 +27503,6 @@ export default {
                   'controlbyweb_device',
                   'ttlock_lock',
                   'igloohome_lock',
-                  'hubitat_lock',
                   'four_suites_door',
                   'dormakaba_oracode_door',
                   'tedee_lock',
@@ -46191,7 +46047,6 @@ export default {
                         'nest',
                         'igloohome',
                         'ecobee',
-                        'hubitat',
                         'four_suites',
                         'dormakaba_oracode',
                         'pti',
@@ -50297,7 +50152,6 @@ export default {
                     'controlbyweb_device',
                     'ttlock_lock',
                     'igloohome_lock',
-                    'hubitat_lock',
                     'four_suites_door',
                     'dormakaba_oracode_door',
                     'tedee_lock',
@@ -50370,7 +50224,6 @@ export default {
                       'controlbyweb_device',
                       'ttlock_lock',
                       'igloohome_lock',
-                      'hubitat_lock',
                       'four_suites_door',
                       'dormakaba_oracode_door',
                       'tedee_lock',
@@ -50443,7 +50296,6 @@ export default {
                 'two_n',
                 'ttlock',
                 'igloohome',
-                'hubitat',
                 'controlbyweb',
                 'dormakaba_oracode',
                 'tedee',
@@ -50742,7 +50594,6 @@ export default {
                           'controlbyweb_device',
                           'ttlock_lock',
                           'igloohome_lock',
-                          'hubitat_lock',
                           'four_suites_door',
                           'dormakaba_oracode_door',
                           'tedee_lock',
@@ -50813,7 +50664,6 @@ export default {
                             'controlbyweb_device',
                             'ttlock_lock',
                             'igloohome_lock',
-                            'hubitat_lock',
                             'four_suites_door',
                             'dormakaba_oracode_door',
                             'tedee_lock',
@@ -50948,7 +50798,6 @@ export default {
                       'two_n',
                       'ttlock',
                       'igloohome',
-                      'hubitat',
                       'controlbyweb',
                       'dormakaba_oracode',
                       'tedee',
@@ -52179,7 +52028,6 @@ export default {
                     'controlbyweb_device',
                     'ttlock_lock',
                     'igloohome_lock',
-                    'hubitat_lock',
                     'four_suites_door',
                     'dormakaba_oracode_door',
                     'tedee_lock',
@@ -52252,7 +52100,6 @@ export default {
                       'controlbyweb_device',
                       'ttlock_lock',
                       'igloohome_lock',
-                      'hubitat_lock',
                       'four_suites_door',
                       'dormakaba_oracode_door',
                       'tedee_lock',
@@ -52325,7 +52172,6 @@ export default {
                 'two_n',
                 'ttlock',
                 'igloohome',
-                'hubitat',
                 'controlbyweb',
                 'dormakaba_oracode',
                 'tedee',
@@ -52623,7 +52469,6 @@ export default {
                           'controlbyweb_device',
                           'ttlock_lock',
                           'igloohome_lock',
-                          'hubitat_lock',
                           'four_suites_door',
                           'dormakaba_oracode_door',
                           'tedee_lock',
@@ -52694,7 +52539,6 @@ export default {
                             'controlbyweb_device',
                             'ttlock_lock',
                             'igloohome_lock',
-                            'hubitat_lock',
                             'four_suites_door',
                             'dormakaba_oracode_door',
                             'tedee_lock',
@@ -52829,7 +52673,6 @@ export default {
                       'two_n',
                       'ttlock',
                       'igloohome',
-                      'hubitat',
                       'controlbyweb',
                       'dormakaba_oracode',
                       'tedee',
@@ -54846,7 +54689,6 @@ export default {
                 'controlbyweb_device',
                 'ttlock_lock',
                 'igloohome_lock',
-                'hubitat_lock',
                 'four_suites_door',
                 'dormakaba_oracode_door',
                 'tedee_lock',
@@ -54887,7 +54729,6 @@ export default {
                   'controlbyweb_device',
                   'ttlock_lock',
                   'igloohome_lock',
-                  'hubitat_lock',
                   'four_suites_door',
                   'dormakaba_oracode_door',
                   'tedee_lock',
@@ -54927,7 +54768,6 @@ export default {
                 'controlbyweb',
                 'ttlock',
                 'igloohome',
-                'hubitat',
                 'four_suites',
                 'dormakaba_oracode',
                 'tedee',
@@ -55217,7 +55057,6 @@ export default {
                       'controlbyweb_device',
                       'ttlock_lock',
                       'igloohome_lock',
-                      'hubitat_lock',
                       'four_suites_door',
                       'dormakaba_oracode_door',
                       'tedee_lock',
@@ -55255,7 +55094,6 @@ export default {
                         'controlbyweb_device',
                         'ttlock_lock',
                         'igloohome_lock',
-                        'hubitat_lock',
                         'four_suites_door',
                         'dormakaba_oracode_door',
                         'tedee_lock',
@@ -55355,7 +55193,6 @@ export default {
                       'controlbyweb',
                       'ttlock',
                       'igloohome',
-                      'hubitat',
                       'four_suites',
                       'dormakaba_oracode',
                       'tedee',

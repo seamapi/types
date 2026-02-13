@@ -493,14 +493,6 @@ export const device_metadata = z
       })
       .describe(`Metadata for a Honeywell Resideo device.`),
 
-    hubitat_metadata: z
-      .object({
-        device_id: z.string().describe(`Device ID for a Hubitat device.`),
-        device_name: z.string().describe(`Device name for a Hubitat device.`),
-        device_label: z.string().describe(`Device label for a Hubitat device.`),
-      })
-      .describe(`Metadata for a Hubitat device.`),
-
     dormakaba_oracode_metadata: z
       .object({
         door_id: z
