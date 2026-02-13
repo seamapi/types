@@ -47588,6 +47588,25 @@ export default {
                             description:
                               'Configuration for the manage feature.',
                             properties: {
+                              events: {
+                                description:
+                                  'Configuration for event type filtering in the manage feature.',
+                                properties: {
+                                  allowed_events: {
+                                    description:
+                                      'List of event types to show in the events filter. When set, only these event types will be available. Leave empty to show all events.',
+                                    items: { type: 'string' },
+                                    type: 'array',
+                                  },
+                                  default_events: {
+                                    description:
+                                      'List of event types that are pre-selected in the events filter when the user first loads the events tab.',
+                                    items: { type: 'string' },
+                                    type: 'array',
+                                  },
+                                },
+                                type: 'object',
+                              },
                               exclude: {
                                 default: false,
                                 description:
@@ -62680,6 +62699,25 @@ export default {
                               description:
                                 'Configuration for the manage feature.',
                               properties: {
+                                events: {
+                                  description:
+                                    'Configuration for event type filtering in the manage feature.',
+                                  properties: {
+                                    allowed_events: {
+                                      description:
+                                        'List of event types to show in the events filter. When set, only these event types will be available. Leave empty to show all events.',
+                                      items: { type: 'string' },
+                                      type: 'array',
+                                    },
+                                    default_events: {
+                                      description:
+                                        'List of event types that are pre-selected in the events filter when the user first loads the events tab.',
+                                      items: { type: 'string' },
+                                      type: 'array',
+                                    },
+                                  },
+                                  type: 'object',
+                                },
                                 exclude: {
                                   default: false,
                                   description:
@@ -63059,6 +63097,25 @@ export default {
                               description:
                                 'Configuration for the manage feature.',
                               properties: {
+                                events: {
+                                  description:
+                                    'Configuration for event type filtering in the manage feature.',
+                                  properties: {
+                                    allowed_events: {
+                                      description:
+                                        'List of event types to show in the events filter. When set, only these event types will be available. Leave empty to show all events.',
+                                      items: { type: 'string' },
+                                      type: 'array',
+                                    },
+                                    default_events: {
+                                      description:
+                                        'List of event types that are pre-selected in the events filter when the user first loads the events tab.',
+                                      items: { type: 'string' },
+                                      type: 'array',
+                                    },
+                                  },
+                                  type: 'object',
+                                },
                                 exclude: {
                                   default: false,
                                   description:

@@ -39,6 +39,23 @@ const base_manage_feature = base_feature.extend({
     .describe(
       'Indicates whether the customer can manage staff for their properties.',
     ),
+  events: z
+    .object({
+      allowed_events: z
+        .array(z.string())
+        .optional()
+        .describe(
+          'List of event types to show in the events filter. When set, only these event types will be available. Leave empty to show all events.',
+        ),
+      default_events: z
+        .array(z.string())
+        .optional()
+        .describe(
+          'List of event types that are pre-selected in the events filter when the user first loads the events tab.',
+        ),
+    })
+    .optional()
+    .describe('Configuration for event type filtering in the manage feature.'),
 })
 
 const base_organize_feature = base_feature
