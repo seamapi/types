@@ -1,6 +1,7 @@
 import { z } from 'zod'
 
 import { device_and_connected_account_error_options } from '../devices/index.js'
+import { dormakaba_oracode_access_code_metadata } from './dormakaba-oracode-metadata.js'
 
 const common_access_code_error = z.object({
   message: z
@@ -625,6 +626,12 @@ export const access_code = z.object({
     .boolean()
     .describe(
       'Indicates whether the access code is intended for use in offline scenarios. If `true`, this code can be created on a device without a network connection.',
+    ),
+  dormakaba_oracode_metadata: dormakaba_oracode_access_code_metadata
+    .nullable()
+    .optional()
+    .describe(
+      'Metadata for a dormakaba Oracode managed access code. Only present for access codes from dormakaba Oracode devices.',
     ),
 }).describe(`
   ---
