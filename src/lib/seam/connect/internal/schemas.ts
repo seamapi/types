@@ -43,7 +43,6 @@ export {
   device_capability_flags,
   device_metadata,
   device_provider,
-  dormakaba_oracode_access_code_metadata,
   dormakaba_oracode_time_slot,
   enrollment_automation,
   seam_event as event,

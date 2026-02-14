@@ -33,53 +33,6 @@ export default {
             format: 'uuid',
             type: 'string',
           },
-          dormakaba_oracode_metadata: {
-            description:
-              'Metadata for a dormakaba Oracode managed access code. Only present for access codes from dormakaba Oracode devices.',
-            nullable: true,
-            properties: {
-              ext_site_name: {
-                description: 'Dormakaba Oracode site name used for API calls.',
-                type: 'string',
-              },
-              ext_stay_id: {
-                description:
-                  'Dormakaba Oracode stay ID associated with this access code.',
-                format: 'float',
-                type: 'number',
-              },
-              ext_user_level: {
-                description:
-                  'Dormakaba Oracode user level name associated with this access code.',
-                nullable: true,
-                type: 'string',
-              },
-              is_cancellable: {
-                description:
-                  'Indicates whether the stay associated with this access code can be cancelled.',
-                type: 'boolean',
-              },
-              is_early_checkin_able: {
-                description:
-                  'Indicates whether early check-in is available for the stay associated with this access code.',
-                type: 'boolean',
-              },
-              is_extendable: {
-                description:
-                  'Indicates whether the stay associated with this access code can be extended.',
-                type: 'boolean',
-              },
-            },
-            required: [
-              'ext_stay_id',
-              'ext_user_level',
-              'ext_site_name',
-              'is_cancellable',
-              'is_extendable',
-              'is_early_checkin_able',
-            ],
-            type: 'object',
-          },
           ends_at: {
             description:
               'Date and time after which the time-bound access code becomes inactive.',
@@ -24497,10 +24450,6 @@ export default {
               'Metadata for a dormakaba Oracode unmanaged access code. Only present for unmanaged access codes from dormakaba Oracode devices.',
             nullable: true,
             properties: {
-              ext_site_name: {
-                description: 'Dormakaba Oracode site name used for API calls.',
-                type: 'string',
-              },
               ext_stay_id: {
                 description:
                   'Dormakaba Oracode stay ID associated with this access code.',
@@ -24513,30 +24462,8 @@ export default {
                 nullable: true,
                 type: 'string',
               },
-              is_cancellable: {
-                description:
-                  'Indicates whether the stay associated with this access code can be cancelled.',
-                type: 'boolean',
-              },
-              is_early_checkin_able: {
-                description:
-                  'Indicates whether early check-in is available for the stay associated with this access code.',
-                type: 'boolean',
-              },
-              is_extendable: {
-                description:
-                  'Indicates whether the stay associated with this access code can be extended.',
-                type: 'boolean',
-              },
             },
-            required: [
-              'ext_stay_id',
-              'ext_user_level',
-              'ext_site_name',
-              'is_cancellable',
-              'is_extendable',
-              'is_early_checkin_able',
-            ],
+            required: ['ext_stay_id', 'ext_user_level'],
             type: 'object',
           },
           ends_at: {
