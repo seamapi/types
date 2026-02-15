@@ -469,6 +469,42 @@ const _access_code_warning_map = z.object({
 
 export type AccessCodeWarningMap = z.infer<typeof _access_code_warning_map>
 
+export const dormakaba_oracode_access_code_metadata = z
+  .object({
+    ext_stay_id: z
+      .number()
+      .describe('Dormakaba Oracode stay ID associated with this access code.'),
+    ext_user_level: z
+      .string()
+      .nullable()
+      .describe(
+        'Dormakaba Oracode user level name associated with this access code.',
+      ),
+    ext_site_name: z
+      .string()
+      .optional()
+      .describe(
+        'Dormakaba Oracode site name associated with this access code.',
+      ),
+    is_cancellable: z
+      .boolean()
+      .optional()
+      .describe(
+        'Indicates whether the stay can be cancelled via the Dormakaba Oracode API.',
+      ),
+    is_extendable: z
+      .boolean()
+      .optional()
+      .describe(
+        'Indicates whether the stay can be extended via the Dormakaba Oracode API.',
+      ),
+    is_early_checkin_able: z
+      .boolean()
+      .optional()
+      .describe('Indicates whether early check-in is available for this stay.'),
+  })
+  .describe('Metadata for a dormakaba Oracode access code.')
+
 export const access_code = z.object({
   workspace_id: z
     .string()
@@ -625,6 +661,12 @@ export const access_code = z.object({
     .boolean()
     .describe(
       'Indicates whether the access code is intended for use in offline scenarios. If `true`, this code can be created on a device without a network connection.',
+    ),
+  dormakaba_oracode_metadata: dormakaba_oracode_access_code_metadata
+    .nullable()
+    .optional()
+    .describe(
+      'Metadata for a dormakaba Oracode managed access code. Only present for access codes from dormakaba Oracode devices.',
     ),
 }).describe(`
   ---
