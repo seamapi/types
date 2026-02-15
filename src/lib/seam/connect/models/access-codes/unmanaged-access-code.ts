@@ -1,20 +1,9 @@
 import { z } from 'zod'
 
-import { access_code } from './managed-access-code.js'
-
-export const dormakaba_oracode_unmanaged_access_code_metadata = z
-  .object({
-    ext_stay_id: z
-      .number()
-      .describe('Dormakaba Oracode stay ID associated with this access code.'),
-    ext_user_level: z
-      .string()
-      .nullable()
-      .describe(
-        'Dormakaba Oracode user level name associated with this access code.',
-      ),
-  })
-  .describe('Metadata for a dormakaba Oracode unmanaged access code.')
+import {
+  access_code,
+  dormakaba_oracode_access_code_metadata,
+} from './managed-access-code.js'
 
 export const unmanaged_access_code = access_code
   .pick({
@@ -40,7 +29,7 @@ export const unmanaged_access_code = access_code
       .describe(
         'Current status of the access code within the operational lifecycle. `set` indicates that the code is active and operational.',
       ),
-    dormakaba_oracode_metadata: dormakaba_oracode_unmanaged_access_code_metadata
+    dormakaba_oracode_metadata: dormakaba_oracode_access_code_metadata
       .nullable()
       .describe(
         'Metadata for a dormakaba Oracode unmanaged access code. Only present for unmanaged access codes from dormakaba Oracode devices.',
@@ -58,7 +47,7 @@ export const unmanaged_access_code = access_code
     Prior to using Seam to manage your devices, you may have used another lock management system to manage the access codes on your devices. Where possible, we help you keep any existing access codes on devices and transition those codes to ones managed by your Seam workspace.
 
     Not all providers support unmanaged access codes. The following providers do not support unmanaged access codes:
-    
+
     - [Kwikset](https://docs.seam.co/latest/device-and-system-integration-guides/kwikset-locks)
   `)
 
