@@ -12182,6 +12182,11 @@ export default {
                             description: 'Device name for a Sensi device.',
                             type: 'string',
                           },
+                          dual_setpoints_not_supported: {
+                            description:
+                              'Set to true when the device does not support the /dual-setpoints API endpoint.',
+                            type: 'boolean',
+                          },
                           product_type: {
                             description: 'Product type for a Sensi device.',
                             type: 'string',
