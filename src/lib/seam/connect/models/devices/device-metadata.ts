@@ -611,6 +611,12 @@ export const device_metadata = z
         device_id: z.string().describe(`Device ID for a Sensi device.`),
         device_name: z.string().describe(`Device name for a Sensi device.`),
         product_type: z.string().describe(`Product type for a Sensi device.`),
+        dual_setpoints_not_supported: z
+          .boolean()
+          .optional()
+          .describe(
+            `Set to true when the device does not support the /dual-setpoints API endpoint.`,
+          ),
       })
       .describe(`Metadata for a Sensi device.`),
 
