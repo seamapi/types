@@ -50530,7 +50530,7 @@ export default {
             name: 'search',
             schema: {
               description:
-                'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+                'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
               minLength: 1,
               type: 'string',
             },
@@ -50887,7 +50887,7 @@ export default {
                   },
                   search: {
                     description:
-                      'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+                      'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
                     minLength: 1,
                     type: 'string',
                   },
@@ -52395,7 +52395,7 @@ export default {
             name: 'search',
             schema: {
               description:
-                'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+                'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
               minLength: 1,
               type: 'string',
             },
@@ -52762,7 +52762,7 @@ export default {
                   },
                   search: {
                     description:
-                      'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+                      'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
                     minLength: 1,
                     type: 'string',
                   },
@@ -54994,7 +54994,7 @@ export default {
             name: 'search',
             schema: {
               description:
-                'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+                'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
               minLength: 1,
               type: 'string',
             },
@@ -55274,7 +55274,7 @@ export default {
                   },
                   search: {
                     description:
-                      'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+                      'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
                     minLength: 1,
                     type: 'string',
                   },
@@ -55826,7 +55826,7 @@ export default {
             name: 'search',
             schema: {
               description:
-                'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+                'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
               minLength: 1,
               type: 'string',
             },
@@ -56017,7 +56017,7 @@ export default {
                   },
                   search: {
                     description:
-                      'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+                      'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
                     minLength: 1,
                     type: 'string',
                   },
@@ -68516,7 +68516,7 @@ export default {
             name: 'search',
             schema: {
               description:
-                'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+                'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
               minLength: 1,
               type: 'string',
             },
@@ -68728,7 +68728,7 @@ export default {
                   },
                   search: {
                     description:
-                      'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
+                      'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
                     minLength: 1,
                     type: 'string',
                   },
