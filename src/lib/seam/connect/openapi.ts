@@ -12065,6 +12065,16 @@ export default {
                               'Customer reference for a Salto KS device.',
                             type: 'string',
                           },
+                          ext_site_id: {
+                            description:
+                              'Site ID for the Salto KS site to which the device belongs.',
+                            type: 'string',
+                          },
+                          ext_site_name: {
+                            description:
+                              'Site name for the Salto KS site to which the device belongs.',
+                            type: 'string',
+                          },
                           has_custom_pin_subscription: {
                             description:
                               'Indicates whether the site has a Salto KS subscription that supports custom PINs.',
@@ -12107,6 +12117,16 @@ export default {
                           customer_reference: {
                             description:
                               'Customer reference for a Salto device.',
+                            type: 'string',
+                          },
+                          ext_site_id: {
+                            description:
+                              'Site ID for the Salto KS site to which the device belongs.',
+                            type: 'string',
+                          },
+                          ext_site_name: {
+                            description:
+                              'Site name for the Salto KS site to which the device belongs.',
                             type: 'string',
                           },
                           lock_id: {
