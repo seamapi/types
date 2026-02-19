@@ -49,7 +49,12 @@ export default {
                 format: 'float',
                 type: 'number',
               },
-              ext_user_level: {
+              ext_user_level_id: {
+                description:
+                  'Dormakaba Oracode user level ID associated with this access code.',
+                type: 'string',
+              },
+              ext_user_level_name: {
                 description:
                   'Dormakaba Oracode user level name associated with this access code.',
                 nullable: true,
@@ -71,7 +76,7 @@ export default {
                 type: 'boolean',
               },
             },
-            required: ['ext_stay_id', 'ext_user_level'],
+            required: ['ext_stay_id', 'ext_user_level_name'],
             type: 'object',
           },
           ends_at: {
@@ -24507,7 +24512,12 @@ export default {
                 format: 'float',
                 type: 'number',
               },
-              ext_user_level: {
+              ext_user_level_id: {
+                description:
+                  'Dormakaba Oracode user level ID associated with this access code.',
+                type: 'string',
+              },
+              ext_user_level_name: {
                 description:
                   'Dormakaba Oracode user level name associated with this access code.',
                 nullable: true,
@@ -24529,7 +24539,7 @@ export default {
                 type: 'boolean',
               },
             },
-            required: ['ext_stay_id', 'ext_user_level'],
+            required: ['ext_stay_id', 'ext_user_level_name'],
             type: 'object',
           },
           ends_at: {
