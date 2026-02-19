@@ -474,7 +474,13 @@ export const dormakaba_oracode_access_code_metadata = z
     ext_stay_id: z
       .number()
       .describe('Dormakaba Oracode stay ID associated with this access code.'),
-    ext_user_level: z
+    ext_user_level_id: z
+      .string()
+      .optional()
+      .describe(
+        'Dormakaba Oracode user level ID associated with this access code.',
+      ),
+    ext_user_level_name: z
       .string()
       .nullable()
       .describe(
