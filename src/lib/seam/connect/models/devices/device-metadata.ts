@@ -168,6 +168,16 @@ export const device_metadata = z
       battery_level: z.string().describe(`Battery level for a Salto device.`),
       locked_state: z.string().describe(`Locked state for a Salto device.`),
       model: z.string().optional().describe(`Model for a Salto device.`),
+      ext_site_id: z
+        .string()
+        .optional()
+        .describe(`Site ID for the Salto KS site to which the device belongs.`),
+      ext_site_name: z
+        .string()
+        .optional()
+        .describe(
+          `Site name for the Salto KS site to which the device belongs.`,
+        ),
     }).describe(`
     ---
     deprecated: Use \`salto_ks_metadata \` instead.
@@ -193,6 +203,18 @@ export const device_metadata = z
           .optional()
           .describe(
             `Indicates whether the site has a Salto KS subscription that supports custom PINs.`,
+          ),
+        ext_site_id: z
+          .string()
+          .optional()
+          .describe(
+            `Site ID for the Salto KS site to which the device belongs.`,
+          ),
+        ext_site_name: z
+          .string()
+          .optional()
+          .describe(
+            `Site name for the Salto KS site to which the device belongs.`,
           ),
       })
       .describe(`Metadata for a Salto KS device.`),

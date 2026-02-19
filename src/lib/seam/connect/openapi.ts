@@ -49,7 +49,12 @@ export default {
                 format: 'float',
                 type: 'number',
               },
-              ext_user_level: {
+              ext_user_level_id: {
+                description:
+                  'Dormakaba Oracode user level ID associated with this access code.',
+                type: 'string',
+              },
+              ext_user_level_name: {
                 description:
                   'Dormakaba Oracode user level name associated with this access code.',
                 nullable: true,
@@ -71,7 +76,7 @@ export default {
                 type: 'boolean',
               },
             },
-            required: ['ext_stay_id', 'ext_user_level'],
+            required: ['ext_stay_id', 'ext_user_level_name'],
             type: 'object',
           },
           ends_at: {
@@ -12060,6 +12065,16 @@ export default {
                               'Customer reference for a Salto KS device.',
                             type: 'string',
                           },
+                          ext_site_id: {
+                            description:
+                              'Site ID for the Salto KS site to which the device belongs.',
+                            type: 'string',
+                          },
+                          ext_site_name: {
+                            description:
+                              'Site name for the Salto KS site to which the device belongs.',
+                            type: 'string',
+                          },
                           has_custom_pin_subscription: {
                             description:
                               'Indicates whether the site has a Salto KS subscription that supports custom PINs.',
@@ -12102,6 +12117,16 @@ export default {
                           customer_reference: {
                             description:
                               'Customer reference for a Salto device.',
+                            type: 'string',
+                          },
+                          ext_site_id: {
+                            description:
+                              'Site ID for the Salto KS site to which the device belongs.',
+                            type: 'string',
+                          },
+                          ext_site_name: {
+                            description:
+                              'Site name for the Salto KS site to which the device belongs.',
                             type: 'string',
                           },
                           lock_id: {
@@ -24507,7 +24532,12 @@ export default {
                 format: 'float',
                 type: 'number',
               },
-              ext_user_level: {
+              ext_user_level_id: {
+                description:
+                  'Dormakaba Oracode user level ID associated with this access code.',
+                type: 'string',
+              },
+              ext_user_level_name: {
                 description:
                   'Dormakaba Oracode user level name associated with this access code.',
                 nullable: true,
@@ -24529,7 +24559,7 @@ export default {
                 type: 'boolean',
               },
             },
-            required: ['ext_stay_id', 'ext_user_level'],
+            required: ['ext_stay_id', 'ext_user_level_name'],
             type: 'object',
           },
           ends_at: {
