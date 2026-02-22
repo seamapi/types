@@ -38,11 +38,6 @@ export default {
               'Metadata for a dormakaba Oracode managed access code. Only present for access codes from dormakaba Oracode devices.',
             nullable: true,
             properties: {
-              ext_site_name: {
-                description:
-                  'Dormakaba Oracode site name associated with this access code.',
-                type: 'string',
-              },
               ext_stay_id: {
                 description:
                   'Dormakaba Oracode stay ID associated with this access code.',
@@ -73,6 +68,11 @@ export default {
               is_extendable: {
                 description:
                   'Indicates whether the stay can be extended via the Dormakaba Oracode API.',
+                type: 'boolean',
+              },
+              is_overridable: {
+                description:
+                  'Indicates whether the access code can be overridden. When false, the maximum number of overrides has been reached.',
                 type: 'boolean',
               },
             },
@@ -24521,11 +24521,6 @@ export default {
               'Metadata for a dormakaba Oracode unmanaged access code. Only present for unmanaged access codes from dormakaba Oracode devices.',
             nullable: true,
             properties: {
-              ext_site_name: {
-                description:
-                  'Dormakaba Oracode site name associated with this access code.',
-                type: 'string',
-              },
               ext_stay_id: {
                 description:
                   'Dormakaba Oracode stay ID associated with this access code.',
@@ -24556,6 +24551,11 @@ export default {
               is_extendable: {
                 description:
                   'Indicates whether the stay can be extended via the Dormakaba Oracode API.',
+                type: 'boolean',
+              },
+              is_overridable: {
+                description:
+                  'Indicates whether the access code can be overridden. When false, the maximum number of overrides has been reached.',
                 type: 'boolean',
               },
             },
