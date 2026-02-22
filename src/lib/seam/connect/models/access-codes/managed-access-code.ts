@@ -486,12 +486,6 @@ export const dormakaba_oracode_access_code_metadata = z
       .describe(
         'Dormakaba Oracode user level name associated with this access code.',
       ),
-    ext_site_name: z
-      .string()
-      .optional()
-      .describe(
-        'Dormakaba Oracode site name associated with this access code.',
-      ),
     is_cancellable: z
       .boolean()
       .optional()
@@ -508,6 +502,12 @@ export const dormakaba_oracode_access_code_metadata = z
       .boolean()
       .optional()
       .describe('Indicates whether early check-in is available for this stay.'),
+    is_overridable: z
+      .boolean()
+      .optional()
+      .describe(
+        'Indicates whether the access code can be overridden. When false, the maximum number of overrides has been reached.',
+      ),
   })
   .describe('Metadata for a dormakaba Oracode access code.')
 
