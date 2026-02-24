@@ -57550,6 +57550,51 @@ export default {
         'x-undocumented': 'Seam Bridge Client only.',
       },
     },
+    '/seam/bridge/v1/bridge_client_sessions/refresh_tailscale_auth_key': {
+      post: {
+        description:
+          'Refreshes the Tailscale auth key for the [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) client session associated with the client session token used for authentication.',
+        operationId:
+          'seamBridgeV1BridgeClientSessionsRefreshTailscaleAuthKeyPost',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    bridge_client_session: {
+                      $ref: '#/components/schemas/bridge_client_session',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['bridge_client_session', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ bridge_client_session: [] }],
+        summary:
+          '/seam/bridge/v1/bridge_client_sessions/refresh_tailscale_auth_key',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'bridge',
+          'v1',
+          'bridge_client_sessions',
+        ],
+        'x-fern-sdk-method-name': 'refresh_tailscale_auth_key',
+        'x-fern-sdk-return-value': 'bridge_client_session',
+        'x-response-key': 'bridge_client_session',
+        'x-title':
+          'Refresh the Tailscale Auth Key for a Seam Bridge Client Session',
+        'x-undocumented': 'Seam Bridge Client only.',
+      },
+    },
     '/seam/bridge/v1/bridge_client_sessions/refresh_telemetry_token': {
       post: {
         description:
