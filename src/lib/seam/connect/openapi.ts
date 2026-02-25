@@ -2216,6 +2216,42 @@ export default {
                   ],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Indicates that a device in the access grant does not support access codes and was excluded from code materialization.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    device_id: {
+                      description:
+                        'ID of the device that does not support access codes.',
+                      format: 'uuid',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['device_does_not_support_access_codes'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'warning_code',
+                    'device_id',
+                  ],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -33868,6 +33904,44 @@ export default {
                                 ],
                                 type: 'object',
                               },
+                              {
+                                description:
+                                  'Indicates that a device in the access grant does not support access codes and was excluded from code materialization.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  device_id: {
+                                    description:
+                                      'ID of the device that does not support access codes.',
+                                    format: 'uuid',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: [
+                                      'device_does_not_support_access_codes',
+                                    ],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                  'device_id',
+                                ],
+                                type: 'object',
+                              },
                             ],
                           },
                           type: 'array',
@@ -34448,6 +34522,44 @@ export default {
                                   'device_id',
                                   'original_code',
                                   'new_code',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  'Indicates that a device in the access grant does not support access codes and was excluded from code materialization.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  device_id: {
+                                    description:
+                                      'ID of the device that does not support access codes.',
+                                    format: 'uuid',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: [
+                                      'device_does_not_support_access_codes',
+                                    ],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                  'device_id',
                                 ],
                                 type: 'object',
                               },
@@ -35062,6 +35174,44 @@ export default {
                                   ],
                                   type: 'object',
                                 },
+                                {
+                                  description:
+                                    'Indicates that a device in the access grant does not support access codes and was excluded from code materialization.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    device_id: {
+                                      description:
+                                        'ID of the device that does not support access codes.',
+                                      format: 'uuid',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: [
+                                        'device_does_not_support_access_codes',
+                                      ],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                    'device_id',
+                                  ],
+                                  type: 'object',
+                                },
                               ],
                             },
                             type: 'array',
@@ -35664,6 +35814,44 @@ export default {
                                     'device_id',
                                     'original_code',
                                     'new_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    'Indicates that a device in the access grant does not support access codes and was excluded from code materialization.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    device_id: {
+                                      description:
+                                        'ID of the device that does not support access codes.',
+                                      format: 'uuid',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: [
+                                        'device_does_not_support_access_codes',
+                                      ],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                    'device_id',
                                   ],
                                   type: 'object',
                                 },

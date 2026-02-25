@@ -114,6 +114,20 @@ const requested_code_unavailable = common_access_grant_warning
     'Indicates that the requested PIN code was already in use on a device, so a different code was assigned.',
   )
 
+const device_does_not_support_access_codes = common_access_grant_warning
+  .extend({
+    warning_code: z
+      .literal('device_does_not_support_access_codes')
+      .describe(warning_code_description),
+    device_id: z
+      .string()
+      .uuid()
+      .describe('ID of the device that does not support access codes.'),
+  })
+  .describe(
+    'Indicates that a device in the access grant does not support access codes and was excluded from code materialization.',
+  )
+
 const access_grant_warning = z
   .discriminatedUnion('warning_code', [
     being_deleted,
@@ -121,6 +135,7 @@ const access_grant_warning = z
     overprovisioned_access,
     updating_access_times,
     requested_code_unavailable,
+    device_does_not_support_access_codes,
   ])
   .describe(
     'Warning associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
@@ -133,6 +148,10 @@ const _access_grant_warning_map = z.object({
   updating_access_times: updating_access_times.optional().nullable(),
   requested_code_unavailable_by_device: z
     .record(z.string().uuid(), requested_code_unavailable)
+    .optional()
+    .nullable(),
+  device_does_not_support_access_codes: z
+    .record(z.string().uuid(), device_does_not_support_access_codes)
     .optional()
     .nullable(),
 })
