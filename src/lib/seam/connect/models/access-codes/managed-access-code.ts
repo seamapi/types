@@ -413,6 +413,12 @@ const ultraloq_access_code_disabled = common_access_code_warning
     'Access code is disabled on Ultraloq device. Re-enable through the Ultraloq mobile app.',
   )
 
+const being_deleted = common_access_code_warning
+  .extend({
+    warning_code: z.literal('being_deleted').describe(warning_code_description),
+  })
+  .describe('Access code is being deleted.')
+
 const access_code_warning = z
   .discriminatedUnion('warning_code', [
     smartthings_failed_to_set_access_code_warning,
@@ -428,6 +434,7 @@ const access_code_warning = z
     management_transferred,
     kwikset_unable_to_confirm_code_warning,
     ultraloq_access_code_disabled,
+    being_deleted,
   ])
   .describe(
     'Warnings associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
@@ -465,6 +472,7 @@ const _access_code_warning_map = z.object({
   ultraloq_access_code_disabled: ultraloq_access_code_disabled
     .optional()
     .nullable(),
+  being_deleted: being_deleted.optional().nullable(),
 })
 
 export type AccessCodeWarningMap = z.infer<typeof _access_code_warning_map>
