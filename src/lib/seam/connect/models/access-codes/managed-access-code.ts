@@ -198,6 +198,16 @@ const keynest_unsupported_third_party_locker = common_access_code_error
   })
   .describe('KeyNest locker is not supported.')
 
+const replaced_by_newer_access_code = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('replaced_by_newer_access_code')
+      .describe(error_code_description),
+  })
+  .describe(
+    'This access code was overridden on the device by a newer access code programmed to the same slot.',
+  )
+
 const access_code_error = z
   .discriminatedUnion('error_code', [
     smartthings_failed_to_set_access_code_error,
@@ -222,6 +232,7 @@ const access_code_error = z
     dormakaba_oracode_invalid_time_range,
     kwikset_insufficient_permissions,
     keynest_unsupported_third_party_locker,
+    replaced_by_newer_access_code,
   ])
   .describe(
     'Errors associated with the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
@@ -281,6 +292,9 @@ const _access_code_error_map = z.object({
     .optional()
     .nullable(),
   keynest_unsupported_third_party_locker: keynest_unsupported_third_party_locker
+    .optional()
+    .nullable(),
+  replaced_by_newer_access_code: replaced_by_newer_access_code
     .optional()
     .nullable(),
 })
