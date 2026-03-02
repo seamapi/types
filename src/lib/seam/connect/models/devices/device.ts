@@ -453,6 +453,27 @@ const accessory_keypad_setup_required = common_device_warning.extend({
     Indicates that the accessory keypad exists, but is not linked to the Igloohome Bridge. Online access code programming will fail until the keypad is linked to the Igloohome Bridge in the Igloohome app.
     `)
 
+const max_access_codes_reached = common_device_warning.extend({
+  warning_code: z
+    .literal('max_access_codes_reached')
+    .describe(warning_code_description),
+  active_access_code_count: z
+    .number()
+    .int()
+    .describe(
+      'Number of active access codes on the device when the warning was set.',
+    ),
+  max_active_access_code_count: z
+    .number()
+    .int()
+    .describe('Maximum number of active access codes supported by the device.'),
+}).describe(`
+    ---
+    variant_group_key: access_codes
+    ---
+    Indicates that the device has reached its maximum number of active access codes. Delete existing codes before creating new ones.
+    `)
+
 const device_warning = z.discriminatedUnion('warning_code', [
   partial_backup_access_code_pool,
   many_active_backup_codes,
@@ -474,6 +495,7 @@ const device_warning = z.discriminatedUnion('warning_code', [
   hub_required_for_additional_capabilities,
   keynest_unsupported_locker,
   accessory_keypad_setup_required,
+  max_access_codes_reached,
 ])
 
 export type DeviceWarning = z.infer<typeof device_warning>
@@ -524,6 +546,7 @@ const _device_warning_map = z.object({
   accessory_keypad_setup_required: accessory_keypad_setup_required
     .optional()
     .nullable(),
+  max_access_codes_reached: max_access_codes_reached.optional().nullable(),
 })
 
 export type DeviceWarningMap = z.infer<typeof _device_warning_map>
