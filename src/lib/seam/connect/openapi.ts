@@ -14149,6 +14149,48 @@ export default {
                   type: 'object',
                   'x-variant-group-key': 'locks',
                 },
+                {
+                  description:
+                    'Indicates that the device has reached its maximum number of active access codes. Delete existing codes before creating new ones.',
+                  properties: {
+                    active_access_code_count: {
+                      description:
+                        'Number of active access codes on the device when the warning was set.',
+                      type: 'integer',
+                    },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    max_active_access_code_count: {
+                      description:
+                        'Maximum number of active access codes supported by the device.',
+                      type: 'integer',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['max_access_codes_reached'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'created_at',
+                    'warning_code',
+                    'active_access_code_count',
+                    'max_active_access_code_count',
+                  ],
+                  type: 'object',
+                  'x-variant-group-key': 'access_codes',
+                },
               ],
             },
             type: 'array',
@@ -29048,6 +29090,48 @@ export default {
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
                   'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    'Indicates that the device has reached its maximum number of active access codes. Delete existing codes before creating new ones.',
+                  properties: {
+                    active_access_code_count: {
+                      description:
+                        'Number of active access codes on the device when the warning was set.',
+                      type: 'integer',
+                    },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    max_active_access_code_count: {
+                      description:
+                        'Maximum number of active access codes supported by the device.',
+                      type: 'integer',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['max_access_codes_reached'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'created_at',
+                    'warning_code',
+                    'active_access_code_count',
+                    'max_active_access_code_count',
+                  ],
+                  type: 'object',
+                  'x-variant-group-key': 'access_codes',
                 },
               ],
             },
