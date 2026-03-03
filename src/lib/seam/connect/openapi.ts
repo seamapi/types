@@ -61952,6 +61952,16 @@ export default {
         parameters: [
           {
             in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned customers to include all records that satisfy a partial match using `customer_key`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'limit',
             schema: {
               default: 500,
@@ -62029,6 +62039,12 @@ export default {
                     description:
                       "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
                     nullable: true,
+                    type: 'string',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned customers to include all records that satisfy a partial match using `customer_key`.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
