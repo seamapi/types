@@ -33008,7 +33008,6 @@ export default {
           {
             in: 'query',
             name: 'access_grant_ids',
-            required: true,
             schema: {
               description:
                 'IDs of the access grants that you want to get along with their related resources.',
@@ -33018,8 +33017,17 @@ export default {
           },
           {
             in: 'query',
+            name: 'access_grant_keys',
+            schema: {
+              description:
+                'Keys of the access grants that you want to get along with their related resources.',
+              items: { type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
             name: 'include',
-            required: false,
             schema: {
               items: {
                 enum: [
@@ -33039,7 +33047,6 @@ export default {
           {
             in: 'query',
             name: 'exclude',
-            required: false,
             schema: {
               items: {
                 enum: [
@@ -33152,6 +33159,12 @@ export default {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
+                  access_grant_keys: {
+                    description:
+                      'Keys of the access grants that you want to get along with their related resources.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
                   exclude: {
                     items: {
                       enum: [
@@ -33183,7 +33196,6 @@ export default {
                     type: 'array',
                   },
                 },
-                required: ['access_grant_ids'],
                 type: 'object',
               },
             },
