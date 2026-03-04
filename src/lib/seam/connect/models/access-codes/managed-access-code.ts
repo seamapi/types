@@ -493,20 +493,26 @@ export type AccessCodeWarningMap = z.infer<typeof _access_code_warning_map>
 
 export const dormakaba_oracode_access_code_metadata = z
   .object({
-    ext_stay_id: z
+    stay_id: z
       .number()
       .describe('Dormakaba Oracode stay ID associated with this access code.'),
-    ext_user_level_id: z
+    user_level_id: z
       .string()
       .optional()
       .describe(
         'Dormakaba Oracode user level ID associated with this access code.',
       ),
-    ext_user_level_name: z
+    user_level_name: z
       .string()
       .nullable()
       .describe(
         'Dormakaba Oracode user level name associated with this access code.',
+      ),
+    site_name: z
+      .string()
+      .optional()
+      .describe(
+        'Dormakaba Oracode site name associated with this access code.',
       ),
     is_cancellable: z
       .boolean()
