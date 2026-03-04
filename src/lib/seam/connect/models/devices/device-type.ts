@@ -16,7 +16,6 @@ export const LOCK_DEVICE_TYPE = {
   NUKI_LOCK: 'nuki_lock',
   SALTO_LOCK: 'salto_lock',
   SCHLAGE_LOCK: 'schlage_lock',
-  SEAM_RELAY: 'seam_relay',
   SMARTTHINGS_LOCK: 'smartthings_lock',
   WYZE_LOCK: 'wyze_lock',
   YALE_LOCK: 'yale_lock',

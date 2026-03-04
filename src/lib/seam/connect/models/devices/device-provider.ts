@@ -24,7 +24,6 @@ export const DEVICE_PROVIDERS = {
   LINEAR: 'linear',
   NOISEAWARE: 'noiseaware',
   NUKI: 'nuki',
-  SEAM_RELAY_ADMIN: 'seam_relay_admin',
   IGLOO: 'igloo',
   KWIKSET: 'kwikset',
   MINUT: 'minut',
