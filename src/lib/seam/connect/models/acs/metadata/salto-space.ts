@@ -2,11 +2,6 @@ import { z } from 'zod'
 
 export const acs_entrance_salto_space_metadata = z
   .object({
-    ext_door_id: z.string().describe(`
-    ---
-    deprecated: use door_id.
-    ---
-    `),
     door_id: z.string().describe('Door ID in the Salto Space access system.'),
     door_name: z
       .string()

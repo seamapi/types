@@ -38,23 +38,6 @@ export default {
               'Metadata for a dormakaba Oracode managed access code. Only present for access codes from dormakaba Oracode devices.',
             nullable: true,
             properties: {
-              ext_stay_id: {
-                description:
-                  'Dormakaba Oracode stay ID associated with this access code.',
-                format: 'float',
-                type: 'number',
-              },
-              ext_user_level_id: {
-                description:
-                  'Dormakaba Oracode user level ID associated with this access code.',
-                type: 'string',
-              },
-              ext_user_level_name: {
-                description:
-                  'Dormakaba Oracode user level name associated with this access code.',
-                nullable: true,
-                type: 'string',
-              },
               is_cancellable: {
                 description:
                   'Indicates whether the stay can be cancelled via the Dormakaba Oracode API.',
@@ -75,8 +58,30 @@ export default {
                   'Indicates whether the access code can be overridden. When false, the maximum number of overrides has been reached.',
                 type: 'boolean',
               },
+              site_name: {
+                description:
+                  'Dormakaba Oracode site name associated with this access code.',
+                type: 'string',
+              },
+              stay_id: {
+                description:
+                  'Dormakaba Oracode stay ID associated with this access code.',
+                format: 'float',
+                type: 'number',
+              },
+              user_level_id: {
+                description:
+                  'Dormakaba Oracode user level ID associated with this access code.',
+                type: 'string',
+              },
+              user_level_name: {
+                description:
+                  'Dormakaba Oracode user level name associated with this access code.',
+                nullable: true,
+                type: 'string',
+              },
             },
-            required: ['ext_stay_id', 'ext_user_level_name'],
+            required: ['stay_id', 'user_level_name'],
             type: 'object',
           },
           ends_at: {
@@ -3629,11 +3634,6 @@ export default {
                 description:
                   'Name of the door in the Salto Space access system.',
                 type: 'string',
-              },
-              ext_door_id: {
-                deprecated: true,
-                type: 'string',
-                'x-deprecated': 'use door_id.',
               },
               room_description: {
                 description:
@@ -11517,7 +11517,7 @@ export default {
                                   format: 'uuid',
                                   type: 'string',
                                 },
-                                ext_dormakaba_oracode_user_level_prefix: {
+                                dormakaba_oracode_user_level_prefix: {
                                   description:
                                     'Prefix for a user level for a dormakaba Oracode device.',
                                   format: 'float',
@@ -11564,7 +11564,7 @@ export default {
                                 'is_biweekly_mode',
                                 'is_one_shot',
                                 'is_master',
-                                'ext_dormakaba_oracode_user_level_prefix',
+                                'dormakaba_oracode_user_level_prefix',
                                 'dormakaba_oracode_user_level_id',
                               ],
                               type: 'object',
@@ -12155,16 +12155,6 @@ export default {
                               'Customer reference for a Salto KS device.',
                             type: 'string',
                           },
-                          ext_site_id: {
-                            description:
-                              'Site ID for the Salto KS site to which the device belongs.',
-                            type: 'string',
-                          },
-                          ext_site_name: {
-                            description:
-                              'Site name for the Salto KS site to which the device belongs.',
-                            type: 'string',
-                          },
                           has_custom_pin_subscription: {
                             description:
                               'Indicates whether the site has a Salto KS subscription that supports custom PINs.',
@@ -12184,6 +12174,16 @@ export default {
                           },
                           model: {
                             description: 'Model for a Salto KS device.',
+                            type: 'string',
+                          },
+                          site_id: {
+                            description:
+                              'Site ID for the Salto KS site to which the device belongs.',
+                            type: 'string',
+                          },
+                          site_name: {
+                            description:
+                              'Site name for the Salto KS site to which the device belongs.',
                             type: 'string',
                           },
                         },
@@ -12209,16 +12209,6 @@ export default {
                               'Customer reference for a Salto device.',
                             type: 'string',
                           },
-                          ext_site_id: {
-                            description:
-                              'Site ID for the Salto KS site to which the device belongs.',
-                            type: 'string',
-                          },
-                          ext_site_name: {
-                            description:
-                              'Site name for the Salto KS site to which the device belongs.',
-                            type: 'string',
-                          },
                           lock_id: {
                             description: 'Lock ID for a Salto device.',
                             type: 'string',
@@ -12233,6 +12223,16 @@ export default {
                           },
                           model: {
                             description: 'Model for a Salto device.',
+                            type: 'string',
+                          },
+                          site_id: {
+                            description:
+                              'Site ID for the Salto KS site to which the device belongs.',
+                            type: 'string',
+                          },
+                          site_name: {
+                            description:
+                              'Site name for the Salto KS site to which the device belongs.',
                             type: 'string',
                           },
                         },
@@ -23579,11 +23579,6 @@ export default {
                                     'Name of the door in the Salto Space access system.',
                                   type: 'string',
                                 },
-                                ext_door_id: {
-                                  deprecated: true,
-                                  type: 'string',
-                                  'x-deprecated': 'use door_id.',
-                                },
                                 room_description: {
                                   description:
                                     'Description of the room in the Salto Space access system.',
@@ -24676,23 +24671,6 @@ export default {
               'Metadata for a dormakaba Oracode unmanaged access code. Only present for unmanaged access codes from dormakaba Oracode devices.',
             nullable: true,
             properties: {
-              ext_stay_id: {
-                description:
-                  'Dormakaba Oracode stay ID associated with this access code.',
-                format: 'float',
-                type: 'number',
-              },
-              ext_user_level_id: {
-                description:
-                  'Dormakaba Oracode user level ID associated with this access code.',
-                type: 'string',
-              },
-              ext_user_level_name: {
-                description:
-                  'Dormakaba Oracode user level name associated with this access code.',
-                nullable: true,
-                type: 'string',
-              },
               is_cancellable: {
                 description:
                   'Indicates whether the stay can be cancelled via the Dormakaba Oracode API.',
@@ -24713,8 +24691,30 @@ export default {
                   'Indicates whether the access code can be overridden. When false, the maximum number of overrides has been reached.',
                 type: 'boolean',
               },
+              site_name: {
+                description:
+                  'Dormakaba Oracode site name associated with this access code.',
+                type: 'string',
+              },
+              stay_id: {
+                description:
+                  'Dormakaba Oracode stay ID associated with this access code.',
+                format: 'float',
+                type: 'number',
+              },
+              user_level_id: {
+                description:
+                  'Dormakaba Oracode user level ID associated with this access code.',
+                type: 'string',
+              },
+              user_level_name: {
+                description:
+                  'Dormakaba Oracode user level name associated with this access code.',
+                nullable: true,
+                type: 'string',
+              },
             },
-            required: ['ext_stay_id', 'ext_user_level_name'],
+            required: ['stay_id', 'user_level_name'],
             type: 'object',
           },
           ends_at: {

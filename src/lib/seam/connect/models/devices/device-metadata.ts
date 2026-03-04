@@ -42,7 +42,7 @@ export const dormakaba_oracode_time_slot = z
         `Indicates whether a time slot for a dormakaba Oracode device is a master time slot.`,
       ),
 
-    ext_dormakaba_oracode_user_level_prefix: z
+    dormakaba_oracode_user_level_prefix: z
       .number()
       .describe(`Prefix for a user level for a dormakaba Oracode device.`),
     dormakaba_oracode_user_level_id: z
@@ -168,11 +168,11 @@ export const device_metadata = z
       battery_level: z.string().describe(`Battery level for a Salto device.`),
       locked_state: z.string().describe(`Locked state for a Salto device.`),
       model: z.string().optional().describe(`Model for a Salto device.`),
-      ext_site_id: z
+      site_id: z
         .string()
         .optional()
         .describe(`Site ID for the Salto KS site to which the device belongs.`),
-      ext_site_name: z
+      site_name: z
         .string()
         .optional()
         .describe(
@@ -204,13 +204,13 @@ export const device_metadata = z
           .describe(
             `Indicates whether the site has a Salto KS subscription that supports custom PINs.`,
           ),
-        ext_site_id: z
+        site_id: z
           .string()
           .optional()
           .describe(
             `Site ID for the Salto KS site to which the device belongs.`,
           ),
-        ext_site_name: z
+        site_name: z
           .string()
           .optional()
           .describe(
