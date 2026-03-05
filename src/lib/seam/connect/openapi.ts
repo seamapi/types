@@ -63000,6 +63000,7 @@ export default {
                           description:
                             'Business vertical of the customer portal.',
                           enum: [
+                            'neutral',
                             'short_term_rental',
                             'hospitality',
                             'multi_family',
@@ -63398,6 +63399,7 @@ export default {
                           description:
                             'Business vertical of the customer portal.',
                           enum: [
+                            'neutral',
                             'short_term_rental',
                             'hospitality',
                             'multi_family',
@@ -64499,6 +64501,120 @@ export default {
         'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
+    '/seam/customer/v1/settings/business_verticals/list': {
+      get: {
+        description: 'Returns all available business verticals.',
+        operationId: 'seamCustomerV1SettingsBusinessVerticalsListGet',
+        parameters: [],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    business_verticals: {
+                      items: {
+                        description:
+                          'Business vertical of the customer portal.',
+                        enum: [
+                          'neutral',
+                          'short_term_rental',
+                          'hospitality',
+                          'multi_family',
+                          'gym_management',
+                          'property_tours',
+                        ],
+                        type: 'string',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['business_verticals', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_with_workspace: [] }],
+        summary: '/seam/customer/v1/settings/business_verticals/list',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'customer',
+          'v1',
+          'settings',
+          'business_verticals',
+        ],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'business_verticals',
+        'x-response-key': 'business_verticals',
+        'x-title': 'List Business Verticals',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+      post: {
+        description: 'Returns all available business verticals.',
+        operationId: 'seamCustomerV1SettingsBusinessVerticalsListPost',
+        requestBody: {
+          content: {
+            'application/json': { schema: { properties: {}, type: 'object' } },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    business_verticals: {
+                      items: {
+                        description:
+                          'Business vertical of the customer portal.',
+                        enum: [
+                          'neutral',
+                          'short_term_rental',
+                          'hospitality',
+                          'multi_family',
+                          'gym_management',
+                          'property_tours',
+                        ],
+                        type: 'string',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['business_verticals', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_with_workspace: [] }],
+        summary: '/seam/customer/v1/settings/business_verticals/list',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'customer',
+          'v1',
+          'settings',
+          'business_verticals',
+        ],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'business_verticals',
+        'x-response-key': 'business_verticals',
+        'x-title': 'List Business Verticals',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
     '/seam/customer/v1/settings/get': {
       get: {
         description: 'Retrieves the settings for a customer portal workspace.',
@@ -64512,6 +64628,7 @@ export default {
                     business_vertical: {
                       description: 'Business vertical of the customer portal.',
                       enum: [
+                        'neutral',
                         'short_term_rental',
                         'hospitality',
                         'multi_family',
@@ -64555,6 +64672,7 @@ export default {
                     business_vertical: {
                       description: 'Business vertical of the customer portal.',
                       enum: [
+                        'neutral',
                         'short_term_rental',
                         'hospitality',
                         'multi_family',
@@ -64599,6 +64717,7 @@ export default {
                   business_vertical: {
                     description: 'Business vertical to set on the workspace.',
                     enum: [
+                      'neutral',
                       'short_term_rental',
                       'hospitality',
                       'multi_family',
@@ -64654,6 +64773,7 @@ export default {
                   business_vertical: {
                     description: 'Business vertical to set on the workspace.',
                     enum: [
+                      'neutral',
                       'short_term_rental',
                       'hospitality',
                       'multi_family',
@@ -64696,6 +64816,386 @@ export default {
         'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
         'x-title': 'Update Customer Portal Settings',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
+    '/seam/customer/v1/settings/vertical_resource_aliases/get': {
+      get: {
+        description:
+          "Returns the resource aliases for the workspace's business vertical, mapping\ngeneric resource types (space, user_identity, access_grant) to their\nvertical-specific terminology. Defaults to neutral if no vertical is set.",
+        operationId: 'seamCustomerV1SettingsVerticalResourceAliasesGetGet',
+        parameters: [],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    vertical_resource_aliases: {
+                      properties: {
+                        access_grant: {
+                          description:
+                            'Primary access grant alias for this vertical.',
+                          properties: {
+                            collection_key: {
+                              description:
+                                'The key alias for a collection of resources.',
+                              type: 'string',
+                            },
+                            collection_label: {
+                              description:
+                                'Human-readable label for a collection of resources.',
+                              type: 'string',
+                            },
+                            resource_key: {
+                              description:
+                                'The key alias for a single resource.',
+                              type: 'string',
+                            },
+                            resource_label: {
+                              description:
+                                'Human-readable label for a single resource.',
+                              type: 'string',
+                            },
+                          },
+                          required: [
+                            'resource_key',
+                            'resource_label',
+                            'collection_key',
+                            'collection_label',
+                          ],
+                          type: 'object',
+                        },
+                        additional_spaces: {
+                          description:
+                            'Additional space aliases relevant to this vertical.',
+                          items: {
+                            properties: {
+                              collection_key: {
+                                description:
+                                  'The key alias for a collection of resources.',
+                                type: 'string',
+                              },
+                              collection_label: {
+                                description:
+                                  'Human-readable label for a collection of resources.',
+                                type: 'string',
+                              },
+                              resource_key: {
+                                description:
+                                  'The key alias for a single resource.',
+                                type: 'string',
+                              },
+                              resource_label: {
+                                description:
+                                  'Human-readable label for a single resource.',
+                                type: 'string',
+                              },
+                            },
+                            required: [
+                              'resource_key',
+                              'resource_label',
+                              'collection_key',
+                              'collection_label',
+                            ],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                        space: {
+                          description: 'Primary space alias for this vertical.',
+                          properties: {
+                            collection_key: {
+                              description:
+                                'The key alias for a collection of resources.',
+                              type: 'string',
+                            },
+                            collection_label: {
+                              description:
+                                'Human-readable label for a collection of resources.',
+                              type: 'string',
+                            },
+                            resource_key: {
+                              description:
+                                'The key alias for a single resource.',
+                              type: 'string',
+                            },
+                            resource_label: {
+                              description:
+                                'Human-readable label for a single resource.',
+                              type: 'string',
+                            },
+                          },
+                          required: [
+                            'resource_key',
+                            'resource_label',
+                            'collection_key',
+                            'collection_label',
+                          ],
+                          type: 'object',
+                        },
+                        user_identity: {
+                          description:
+                            'Primary user identity alias for this vertical.',
+                          properties: {
+                            collection_key: {
+                              description:
+                                'The key alias for a collection of resources.',
+                              type: 'string',
+                            },
+                            collection_label: {
+                              description:
+                                'Human-readable label for a collection of resources.',
+                              type: 'string',
+                            },
+                            resource_key: {
+                              description:
+                                'The key alias for a single resource.',
+                              type: 'string',
+                            },
+                            resource_label: {
+                              description:
+                                'Human-readable label for a single resource.',
+                              type: 'string',
+                            },
+                          },
+                          required: [
+                            'resource_key',
+                            'resource_label',
+                            'collection_key',
+                            'collection_label',
+                          ],
+                          type: 'object',
+                        },
+                      },
+                      required: [
+                        'space',
+                        'additional_spaces',
+                        'user_identity',
+                        'access_grant',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['vertical_resource_aliases', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { console_session_with_workspace: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/seam/customer/v1/settings/vertical_resource_aliases/get',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'customer',
+          'v1',
+          'settings',
+          'vertical_resource_aliases',
+        ],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'vertical_resource_aliases',
+        'x-response-key': 'vertical_resource_aliases',
+        'x-title': 'Get Vertical Resource Aliases',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+      post: {
+        description:
+          "Returns the resource aliases for the workspace's business vertical, mapping\ngeneric resource types (space, user_identity, access_grant) to their\nvertical-specific terminology. Defaults to neutral if no vertical is set.",
+        operationId: 'seamCustomerV1SettingsVerticalResourceAliasesGetPost',
+        requestBody: {
+          content: {
+            'application/json': { schema: { properties: {}, type: 'object' } },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    vertical_resource_aliases: {
+                      properties: {
+                        access_grant: {
+                          description:
+                            'Primary access grant alias for this vertical.',
+                          properties: {
+                            collection_key: {
+                              description:
+                                'The key alias for a collection of resources.',
+                              type: 'string',
+                            },
+                            collection_label: {
+                              description:
+                                'Human-readable label for a collection of resources.',
+                              type: 'string',
+                            },
+                            resource_key: {
+                              description:
+                                'The key alias for a single resource.',
+                              type: 'string',
+                            },
+                            resource_label: {
+                              description:
+                                'Human-readable label for a single resource.',
+                              type: 'string',
+                            },
+                          },
+                          required: [
+                            'resource_key',
+                            'resource_label',
+                            'collection_key',
+                            'collection_label',
+                          ],
+                          type: 'object',
+                        },
+                        additional_spaces: {
+                          description:
+                            'Additional space aliases relevant to this vertical.',
+                          items: {
+                            properties: {
+                              collection_key: {
+                                description:
+                                  'The key alias for a collection of resources.',
+                                type: 'string',
+                              },
+                              collection_label: {
+                                description:
+                                  'Human-readable label for a collection of resources.',
+                                type: 'string',
+                              },
+                              resource_key: {
+                                description:
+                                  'The key alias for a single resource.',
+                                type: 'string',
+                              },
+                              resource_label: {
+                                description:
+                                  'Human-readable label for a single resource.',
+                                type: 'string',
+                              },
+                            },
+                            required: [
+                              'resource_key',
+                              'resource_label',
+                              'collection_key',
+                              'collection_label',
+                            ],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                        space: {
+                          description: 'Primary space alias for this vertical.',
+                          properties: {
+                            collection_key: {
+                              description:
+                                'The key alias for a collection of resources.',
+                              type: 'string',
+                            },
+                            collection_label: {
+                              description:
+                                'Human-readable label for a collection of resources.',
+                              type: 'string',
+                            },
+                            resource_key: {
+                              description:
+                                'The key alias for a single resource.',
+                              type: 'string',
+                            },
+                            resource_label: {
+                              description:
+                                'Human-readable label for a single resource.',
+                              type: 'string',
+                            },
+                          },
+                          required: [
+                            'resource_key',
+                            'resource_label',
+                            'collection_key',
+                            'collection_label',
+                          ],
+                          type: 'object',
+                        },
+                        user_identity: {
+                          description:
+                            'Primary user identity alias for this vertical.',
+                          properties: {
+                            collection_key: {
+                              description:
+                                'The key alias for a collection of resources.',
+                              type: 'string',
+                            },
+                            collection_label: {
+                              description:
+                                'Human-readable label for a collection of resources.',
+                              type: 'string',
+                            },
+                            resource_key: {
+                              description:
+                                'The key alias for a single resource.',
+                              type: 'string',
+                            },
+                            resource_label: {
+                              description:
+                                'Human-readable label for a single resource.',
+                              type: 'string',
+                            },
+                          },
+                          required: [
+                            'resource_key',
+                            'resource_label',
+                            'collection_key',
+                            'collection_label',
+                          ],
+                          type: 'object',
+                        },
+                      },
+                      required: [
+                        'space',
+                        'additional_spaces',
+                        'user_identity',
+                        'access_grant',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['vertical_resource_aliases', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { console_session_with_workspace: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/seam/customer/v1/settings/vertical_resource_aliases/get',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'customer',
+          'v1',
+          'settings',
+          'vertical_resource_aliases',
+        ],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'vertical_resource_aliases',
+        'x-response-key': 'vertical_resource_aliases',
+        'x-title': 'Get Vertical Resource Aliases',
         'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
