@@ -33038,6 +33038,7 @@ export default {
                   'acs_systems',
                   'user_identities',
                   'acs_access_groups',
+                  'access_methods',
                 ],
                 type: 'string',
               },
@@ -33057,6 +33058,7 @@ export default {
                   'acs_systems',
                   'user_identities',
                   'acs_access_groups',
+                  'access_methods',
                 ],
                 type: 'string',
               },
@@ -33073,6 +33075,10 @@ export default {
                     batch: {
                       description: 'A batch of workspace resources.',
                       properties: {
+                        access_methods: {
+                          items: { $ref: '#/components/schemas/access_method' },
+                          type: 'array',
+                        },
                         acs_access_groups: {
                           items: {
                             $ref: '#/components/schemas/acs_access_group',
@@ -33136,6 +33142,7 @@ export default {
           'acs_systems',
           'user_identities',
           'acs_access_groups',
+          'access_methods',
         ],
         'x-draft': 'Early access.',
         'x-fern-sdk-group-name': ['access_grants'],
@@ -33175,6 +33182,7 @@ export default {
                         'acs_systems',
                         'user_identities',
                         'acs_access_groups',
+                        'access_methods',
                       ],
                       type: 'string',
                     },
@@ -33190,6 +33198,7 @@ export default {
                         'acs_systems',
                         'user_identities',
                         'acs_access_groups',
+                        'access_methods',
                       ],
                       type: 'string',
                     },
@@ -33210,6 +33219,10 @@ export default {
                     batch: {
                       description: 'A batch of workspace resources.',
                       properties: {
+                        access_methods: {
+                          items: { $ref: '#/components/schemas/access_method' },
+                          type: 'array',
+                        },
                         acs_access_groups: {
                           items: {
                             $ref: '#/components/schemas/acs_access_group',
@@ -33273,6 +33286,7 @@ export default {
           'acs_systems',
           'user_identities',
           'acs_access_groups',
+          'access_methods',
         ],
         'x-draft': 'Early access.',
         'x-fern-sdk-group-name': ['access_grants'],
