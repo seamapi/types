@@ -2,6 +2,7 @@ import { z } from 'zod'
 
 export const business_vertical = z
   .enum([
+    'neutral',
     'short_term_rental',
     'hospitality',
     'multi_family',
