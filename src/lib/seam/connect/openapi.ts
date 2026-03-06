@@ -63897,6 +63897,7 @@ export default {
                           type: 'string',
                         },
                         guest_name: { nullable: true, type: 'string' },
+                        is_resource_syncing: { type: 'boolean' },
                         name: { nullable: true, type: 'string' },
                         reservation_id: { format: 'uuid', type: 'string' },
                         reservation_key: { type: 'string' },
@@ -63929,6 +63930,7 @@ export default {
                         'starts_at',
                         'ends_at',
                         'created_at',
+                        'is_resource_syncing',
                         'guest_name',
                         'spaces',
                         'access_grant_id',
@@ -64032,6 +64034,7 @@ export default {
                           type: 'string',
                         },
                         guest_name: { nullable: true, type: 'string' },
+                        is_resource_syncing: { type: 'boolean' },
                         name: { nullable: true, type: 'string' },
                         reservation_id: { format: 'uuid', type: 'string' },
                         reservation_key: { type: 'string' },
@@ -64064,6 +64067,7 @@ export default {
                         'starts_at',
                         'ends_at',
                         'created_at',
+                        'is_resource_syncing',
                         'guest_name',
                         'spaces',
                         'access_grant_id',
@@ -64235,6 +64239,7 @@ export default {
                             type: 'string',
                           },
                           guest_name: { nullable: true, type: 'string' },
+                          is_resource_syncing: { type: 'boolean' },
                           name: { nullable: true, type: 'string' },
                           pending_mutations: {
                             items: {
@@ -64301,6 +64306,7 @@ export default {
                           'starts_at',
                           'ends_at',
                           'created_at',
+                          'is_resource_syncing',
                           'guest_name',
                           'warnings',
                           'pending_mutations',
@@ -64459,6 +64465,7 @@ export default {
                             type: 'string',
                           },
                           guest_name: { nullable: true, type: 'string' },
+                          is_resource_syncing: { type: 'boolean' },
                           name: { nullable: true, type: 'string' },
                           pending_mutations: {
                             items: {
@@ -64525,6 +64532,7 @@ export default {
                           'starts_at',
                           'ends_at',
                           'created_at',
+                          'is_resource_syncing',
                           'guest_name',
                           'warnings',
                           'pending_mutations',
