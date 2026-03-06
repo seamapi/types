@@ -2703,6 +2703,27 @@ export default {
             type: 'string',
             'x-deprecated': 'Use `external_type_display_name`.',
           },
+          access_schedule: {
+            description:
+              "`starts_at` and `ends_at` timestamps for the access group's access.",
+            properties: {
+              ends_at: {
+                description:
+                  "Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                format: 'date-time',
+                nullable: true,
+                type: 'string',
+              },
+              starts_at: {
+                description:
+                  "Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                format: 'date-time',
+                type: 'string',
+              },
+            },
+            required: ['starts_at', 'ends_at'],
+            type: 'object',
+          },
           acs_access_group_id: {
             description: 'ID of the access group.',
             format: 'uuid',
@@ -26402,6 +26423,27 @@ export default {
             deprecated: true,
             type: 'string',
             'x-deprecated': 'Use `external_type_display_name`.',
+          },
+          access_schedule: {
+            description:
+              "`starts_at` and `ends_at` timestamps for the access group's access.",
+            properties: {
+              ends_at: {
+                description:
+                  "Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                format: 'date-time',
+                nullable: true,
+                type: 'string',
+              },
+              starts_at: {
+                description:
+                  "Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                format: 'date-time',
+                type: 'string',
+              },
+            },
+            required: ['starts_at', 'ends_at'],
+            type: 'object',
           },
           acs_access_group_id: {
             description: 'ID of the access group.',

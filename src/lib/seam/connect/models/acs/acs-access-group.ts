@@ -1,5 +1,7 @@
 import { z } from 'zod'
 
+import { schedule } from '../schedule.js'
+
 // If changed, update seam.acs_access_group.external_type generated column
 export const acs_access_group_external_type = z.enum([
   'pti_unit',
@@ -111,6 +113,11 @@ const common_acs_access_group = z.object({
   warnings: z
     .array(acs_access_group_warning)
     .describe('Warnings associated with the `acs_access_group`.'),
+  access_schedule: schedule
+    .optional()
+    .describe(
+      "`starts_at` and `ends_at` timestamps for the access group's access.",
+    ),
 })
 
 export const acs_access_group = common_acs_access_group.extend({
