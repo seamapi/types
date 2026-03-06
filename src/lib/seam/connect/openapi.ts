@@ -63830,6 +63830,15 @@ export default {
         parameters: [
           {
             in: 'query',
+            name: 'customer_key',
+            schema: {
+              description:
+                'The customer_key identifying the customer. Required when not using client_session_with_customer auth.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'reservation_id',
             schema: {
               description: 'ID of the reservation to retrieve.',
@@ -63974,7 +63983,10 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [{ client_session_with_customer: [] }],
+        security: [
+          { client_session_with_customer: [] },
+          { console_session_with_workspace: [] },
+        ],
         summary: '/seam/customer/v1/reservations/get',
         tags: [],
         'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'reservations'],
@@ -63993,6 +64005,11 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  customer_key: {
+                    description:
+                      'The customer_key identifying the customer. Required when not using client_session_with_customer auth.',
+                    type: 'string',
+                  },
                   reservation_id: {
                     description: 'ID of the reservation to retrieve.',
                     format: 'uuid',
@@ -64136,7 +64153,10 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [{ client_session_with_customer: [] }],
+        security: [
+          { client_session_with_customer: [] },
+          { console_session_with_workspace: [] },
+        ],
         summary: '/seam/customer/v1/reservations/get',
         tags: [],
         'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'reservations'],
@@ -64153,6 +64173,15 @@ export default {
           'Returns a list of reservations for a specific customer. This endpoint is designed for customer portals and supports filtering by space_key.',
         operationId: 'seamCustomerV1ReservationsListGet',
         parameters: [
+          {
+            in: 'query',
+            name: 'customer_key',
+            schema: {
+              description:
+                'The customer_key identifying the customer. Required when not using client_session_with_customer auth.',
+              type: 'string',
+            },
+          },
           {
             in: 'query',
             name: 'space_key',
@@ -64378,7 +64407,10 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [{ client_session_with_customer: [] }],
+        security: [
+          { client_session_with_customer: [] },
+          { console_session_with_workspace: [] },
+        ],
         summary: '/seam/customer/v1/reservations/list',
         tags: [],
         'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'reservations'],
@@ -64401,6 +64433,11 @@ export default {
                     description:
                       'Timestamp by which to limit returned reservations. Returns reservations created before this timestamp.',
                     format: 'date-time',
+                    type: 'string',
+                  },
+                  customer_key: {
+                    description:
+                      'The customer_key identifying the customer. Required when not using client_session_with_customer auth.',
                     type: 'string',
                   },
                   limit: {
@@ -64604,7 +64641,10 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [{ client_session_with_customer: [] }],
+        security: [
+          { client_session_with_customer: [] },
+          { console_session_with_workspace: [] },
+        ],
         summary: '/seam/customer/v1/reservations/list',
         tags: [],
         'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'reservations'],
