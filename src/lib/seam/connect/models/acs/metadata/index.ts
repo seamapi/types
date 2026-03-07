@@ -1,4 +1,5 @@
 export * from './assa-abloy-vostio.js'
+export * from './brivo.js'
 export * from './dormakaba-ambiance.js'
 export * from './dormakaba-community.js'
 export * from './hotek.js'

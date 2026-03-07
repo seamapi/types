@@ -3452,6 +3452,29 @@ export default {
             required: ['door_type', 'door_name'],
             type: 'object',
           },
+          brivo_metadata: {
+            description:
+              'Brivo-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+            properties: {
+              access_point_id: {
+                description:
+                  'ID of the access point in the Brivo access system.',
+                type: 'string',
+              },
+              site_id: {
+                description: 'ID of the site that the access point belongs to.',
+                format: 'float',
+                type: 'number',
+              },
+              site_name: {
+                description:
+                  'Name of the site that the access point belongs to.',
+                type: 'string',
+              },
+            },
+            required: ['access_point_id', 'site_id', 'site_name'],
+            type: 'object',
+          },
           can_belong_to_reservation: {
             description:
               'Indicates whether the ACS entrance can belong to a reservation via an access_grant.reservation_key.',
@@ -23385,6 +23408,34 @@ export default {
                                 },
                               },
                               required: ['door_type', 'door_name'],
+                              type: 'object',
+                            },
+                            brivo_metadata: {
+                              description:
+                                'Brivo-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+                              properties: {
+                                access_point_id: {
+                                  description:
+                                    'ID of the access point in the Brivo access system.',
+                                  type: 'string',
+                                },
+                                site_id: {
+                                  description:
+                                    'ID of the site that the access point belongs to.',
+                                  format: 'float',
+                                  type: 'number',
+                                },
+                                site_name: {
+                                  description:
+                                    'Name of the site that the access point belongs to.',
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'access_point_id',
+                                'site_id',
+                                'site_name',
+                              ],
                               type: 'object',
                             },
                             can_belong_to_reservation: {
