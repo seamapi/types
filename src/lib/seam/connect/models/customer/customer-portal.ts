@@ -173,6 +173,14 @@ export const portal_configuration_base = z.object({
 })
 
 export const portal_configuration = portal_configuration_base
+  .extend({
+    _dev: z.boolean().default(false).describe(`
+        ---
+        undocumented: Internal developer mode flag.
+        ---
+        Whether the portal is in developer mode. Only available for Seam employees.
+      `),
+  })
   .default({
     features: {
       connect: { exclude: false },

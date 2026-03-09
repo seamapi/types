@@ -47988,6 +47988,13 @@ export default {
                     },
                     description: 'Configuration for a customer portal',
                     properties: {
+                      _dev: {
+                        default: false,
+                        description:
+                          'Whether the portal is in developer mode. Only available for Seam employees.',
+                        type: 'boolean',
+                        'x-undocumented': 'Internal developer mode flag.',
+                      },
                       customer_resources_filters: {
                         description:
                           'Filter configuration for resources based on their custom_metadata. Each filter specifies a field, operation, and value to match against resource custom_metadata.',
