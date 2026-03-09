@@ -2703,6 +2703,27 @@ export default {
             type: 'string',
             'x-deprecated': 'Use `external_type_display_name`.',
           },
+          access_schedule: {
+            description:
+              "`starts_at` and `ends_at` timestamps for the access group's access.",
+            properties: {
+              ends_at: {
+                description:
+                  "Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                format: 'date-time',
+                nullable: true,
+                type: 'string',
+              },
+              starts_at: {
+                description:
+                  "Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                format: 'date-time',
+                type: 'string',
+              },
+            },
+            required: ['starts_at', 'ends_at'],
+            type: 'object',
+          },
           acs_access_group_id: {
             description: 'ID of the access group.',
             format: 'uuid',
@@ -3429,6 +3450,29 @@ export default {
               },
             },
             required: ['door_type', 'door_name'],
+            type: 'object',
+          },
+          brivo_metadata: {
+            description:
+              'Brivo-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+            properties: {
+              access_point_id: {
+                description:
+                  'ID of the access point in the Brivo access system.',
+                type: 'string',
+              },
+              site_id: {
+                description: 'ID of the site that the access point belongs to.',
+                format: 'float',
+                type: 'number',
+              },
+              site_name: {
+                description:
+                  'Name of the site that the access point belongs to.',
+                type: 'string',
+              },
+            },
+            required: ['access_point_id', 'site_id', 'site_name'],
             type: 'object',
           },
           can_belong_to_reservation: {
@@ -10414,6 +10458,11 @@ export default {
                 enum: ['ios_phone', 'android_phone'],
                 type: 'string',
               },
+              {
+                description: 'Device type for cameras.',
+                enum: ['ring_camera'],
+                type: 'string',
+              },
             ],
           },
           display_name: {
@@ -12138,6 +12187,21 @@ export default {
                             description:
                               'Indicates whether the keypad is paired for a Nuki device.',
                             type: 'boolean',
+                          },
+                        },
+                        required: ['device_id', 'device_name'],
+                        type: 'object',
+                      },
+                      ring_metadata: {
+                        description: 'Metadata for a Ring device.',
+                        properties: {
+                          device_id: {
+                            description: 'Device ID for a Ring device.',
+                            type: 'string',
+                          },
+                          device_name: {
+                            description: 'Device name for a Ring device.',
+                            type: 'string',
                           },
                         },
                         required: ['device_id', 'device_name'],
@@ -23366,6 +23430,34 @@ export default {
                               required: ['door_type', 'door_name'],
                               type: 'object',
                             },
+                            brivo_metadata: {
+                              description:
+                                'Brivo-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+                              properties: {
+                                access_point_id: {
+                                  description:
+                                    'ID of the access point in the Brivo access system.',
+                                  type: 'string',
+                                },
+                                site_id: {
+                                  description:
+                                    'ID of the site that the access point belongs to.',
+                                  format: 'float',
+                                  type: 'number',
+                                },
+                                site_name: {
+                                  description:
+                                    'Name of the site that the access point belongs to.',
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'access_point_id',
+                                'site_id',
+                                'site_name',
+                              ],
+                              type: 'object',
+                            },
                             can_belong_to_reservation: {
                               description:
                                 'Indicates whether the ACS entrance can belong to a reservation via an access_grant.reservation_key.',
@@ -26403,6 +26495,27 @@ export default {
             type: 'string',
             'x-deprecated': 'Use `external_type_display_name`.',
           },
+          access_schedule: {
+            description:
+              "`starts_at` and `ends_at` timestamps for the access group's access.",
+            properties: {
+              ends_at: {
+                description:
+                  "Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                format: 'date-time',
+                nullable: true,
+                type: 'string',
+              },
+              starts_at: {
+                description:
+                  "Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                format: 'date-time',
+                type: 'string',
+              },
+            },
+            required: ['starts_at', 'ends_at'],
+            type: 'object',
+          },
           acs_access_group_id: {
             description: 'ID of the access group.',
             format: 'uuid',
@@ -27842,6 +27955,11 @@ export default {
               {
                 description: 'Device type for phones.\n          ',
                 enum: ['ios_phone', 'android_phone'],
+                type: 'string',
+              },
+              {
+                description: 'Device type for cameras.',
+                enum: ['ring_camera'],
                 type: 'string',
               },
             ],
@@ -33038,6 +33156,7 @@ export default {
                   'acs_systems',
                   'user_identities',
                   'acs_access_groups',
+                  'access_methods',
                 ],
                 type: 'string',
               },
@@ -33057,6 +33176,7 @@ export default {
                   'acs_systems',
                   'user_identities',
                   'acs_access_groups',
+                  'access_methods',
                 ],
                 type: 'string',
               },
@@ -33073,6 +33193,10 @@ export default {
                     batch: {
                       description: 'A batch of workspace resources.',
                       properties: {
+                        access_methods: {
+                          items: { $ref: '#/components/schemas/access_method' },
+                          type: 'array',
+                        },
                         acs_access_groups: {
                           items: {
                             $ref: '#/components/schemas/acs_access_group',
@@ -33136,6 +33260,7 @@ export default {
           'acs_systems',
           'user_identities',
           'acs_access_groups',
+          'access_methods',
         ],
         'x-draft': 'Early access.',
         'x-fern-sdk-group-name': ['access_grants'],
@@ -33175,6 +33300,7 @@ export default {
                         'acs_systems',
                         'user_identities',
                         'acs_access_groups',
+                        'access_methods',
                       ],
                       type: 'string',
                     },
@@ -33190,6 +33316,7 @@ export default {
                         'acs_systems',
                         'user_identities',
                         'acs_access_groups',
+                        'access_methods',
                       ],
                       type: 'string',
                     },
@@ -33210,6 +33337,10 @@ export default {
                     batch: {
                       description: 'A batch of workspace resources.',
                       properties: {
+                        access_methods: {
+                          items: { $ref: '#/components/schemas/access_method' },
+                          type: 'array',
+                        },
                         acs_access_groups: {
                           items: {
                             $ref: '#/components/schemas/acs_access_group',
@@ -33273,6 +33404,7 @@ export default {
           'acs_systems',
           'user_identities',
           'acs_access_groups',
+          'access_methods',
         ],
         'x-draft': 'Early access.',
         'x-fern-sdk-group-name': ['access_grants'],
@@ -47881,6 +48013,13 @@ export default {
                     },
                     description: 'Configuration for a customer portal',
                     properties: {
+                      _dev: {
+                        default: false,
+                        description:
+                          'Whether the portal is in developer mode. Only available for Seam employees.',
+                        type: 'boolean',
+                        'x-undocumented': 'Internal developer mode flag.',
+                      },
                       customer_resources_filters: {
                         description:
                           'Filter configuration for resources based on their custom_metadata. Each filter specifies a field, operation, and value to match against resource custom_metadata.',
@@ -50721,6 +50860,11 @@ export default {
                   enum: ['ios_phone', 'android_phone'],
                   type: 'string',
                 },
+                {
+                  description: 'Device type for cameras.',
+                  enum: ['ring_camera'],
+                  type: 'string',
+                },
               ],
             },
           },
@@ -50790,6 +50934,11 @@ export default {
                   {
                     description: 'Device type for phones.\n          ',
                     enum: ['ios_phone', 'android_phone'],
+                    type: 'string',
+                  },
+                  {
+                    description: 'Device type for cameras.',
+                    enum: ['ring_camera'],
                     type: 'string',
                   },
                 ],
@@ -51161,6 +51310,11 @@ export default {
                         enum: ['ios_phone', 'android_phone'],
                         type: 'string',
                       },
+                      {
+                        description: 'Device type for cameras.',
+                        enum: ['ring_camera'],
+                        type: 'string',
+                      },
                     ],
                   },
                   device_types: {
@@ -51229,6 +51383,11 @@ export default {
                         {
                           description: 'Device type for phones.\n          ',
                           enum: ['ios_phone', 'android_phone'],
+                          type: 'string',
+                        },
+                        {
+                          description: 'Device type for cameras.',
+                          enum: ['ring_camera'],
                           type: 'string',
                         },
                       ],
@@ -52591,6 +52750,11 @@ export default {
                   enum: ['ios_phone', 'android_phone'],
                   type: 'string',
                 },
+                {
+                  description: 'Device type for cameras.',
+                  enum: ['ring_camera'],
+                  type: 'string',
+                },
               ],
             },
           },
@@ -52660,6 +52824,11 @@ export default {
                   {
                     description: 'Device type for phones.\n          ',
                     enum: ['ios_phone', 'android_phone'],
+                    type: 'string',
+                  },
+                  {
+                    description: 'Device type for cameras.',
+                    enum: ['ring_camera'],
                     type: 'string',
                   },
                 ],
@@ -53030,6 +53199,11 @@ export default {
                         enum: ['ios_phone', 'android_phone'],
                         type: 'string',
                       },
+                      {
+                        description: 'Device type for cameras.',
+                        enum: ['ring_camera'],
+                        type: 'string',
+                      },
                     ],
                   },
                   device_types: {
@@ -53098,6 +53272,11 @@ export default {
                         {
                           description: 'Device type for phones.\n          ',
                           enum: ['ios_phone', 'android_phone'],
+                          type: 'string',
+                        },
+                        {
+                          description: 'Device type for cameras.',
+                          enum: ['ring_camera'],
                           type: 'string',
                         },
                       ],
@@ -63774,6 +63953,15 @@ export default {
         parameters: [
           {
             in: 'query',
+            name: 'customer_key',
+            schema: {
+              description:
+                'The customer_key identifying the customer. Required when not using client_session_with_customer auth.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'reservation_id',
             schema: {
               description: 'ID of the reservation to retrieve.',
@@ -63840,7 +64028,32 @@ export default {
                           nullable: true,
                           type: 'string',
                         },
+                        guest: {
+                          nullable: true,
+                          properties: {
+                            email_address: { nullable: true, type: 'string' },
+                            guest_key: { type: 'string' },
+                            is_resource_syncing: { type: 'boolean' },
+                            name: { nullable: true, type: 'string' },
+                            phone_number: { nullable: true, type: 'string' },
+                            user_identity_id: {
+                              format: 'uuid',
+                              nullable: true,
+                              type: 'string',
+                            },
+                          },
+                          required: [
+                            'guest_key',
+                            'name',
+                            'email_address',
+                            'phone_number',
+                            'user_identity_id',
+                            'is_resource_syncing',
+                          ],
+                          type: 'object',
+                        },
                         guest_name: { nullable: true, type: 'string' },
+                        is_resource_syncing: { type: 'boolean' },
                         name: { nullable: true, type: 'string' },
                         reservation_id: { format: 'uuid', type: 'string' },
                         reservation_key: { type: 'string' },
@@ -63873,7 +64086,9 @@ export default {
                         'starts_at',
                         'ends_at',
                         'created_at',
+                        'is_resource_syncing',
                         'guest_name',
+                        'guest',
                         'spaces',
                         'access_grant_id',
                         'access_methods',
@@ -63891,7 +64106,10 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [{ client_session_with_customer: [] }],
+        security: [
+          { client_session_with_customer: [] },
+          { console_session_with_workspace: [] },
+        ],
         summary: '/seam/customer/v1/reservations/get',
         tags: [],
         'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'reservations'],
@@ -63910,6 +64128,11 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  customer_key: {
+                    description:
+                      'The customer_key identifying the customer. Required when not using client_session_with_customer auth.',
+                    type: 'string',
+                  },
                   reservation_id: {
                     description: 'ID of the reservation to retrieve.',
                     format: 'uuid',
@@ -63975,7 +64198,32 @@ export default {
                           nullable: true,
                           type: 'string',
                         },
+                        guest: {
+                          nullable: true,
+                          properties: {
+                            email_address: { nullable: true, type: 'string' },
+                            guest_key: { type: 'string' },
+                            is_resource_syncing: { type: 'boolean' },
+                            name: { nullable: true, type: 'string' },
+                            phone_number: { nullable: true, type: 'string' },
+                            user_identity_id: {
+                              format: 'uuid',
+                              nullable: true,
+                              type: 'string',
+                            },
+                          },
+                          required: [
+                            'guest_key',
+                            'name',
+                            'email_address',
+                            'phone_number',
+                            'user_identity_id',
+                            'is_resource_syncing',
+                          ],
+                          type: 'object',
+                        },
                         guest_name: { nullable: true, type: 'string' },
+                        is_resource_syncing: { type: 'boolean' },
                         name: { nullable: true, type: 'string' },
                         reservation_id: { format: 'uuid', type: 'string' },
                         reservation_key: { type: 'string' },
@@ -64008,7 +64256,9 @@ export default {
                         'starts_at',
                         'ends_at',
                         'created_at',
+                        'is_resource_syncing',
                         'guest_name',
+                        'guest',
                         'spaces',
                         'access_grant_id',
                         'access_methods',
@@ -64026,7 +64276,10 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [{ client_session_with_customer: [] }],
+        security: [
+          { client_session_with_customer: [] },
+          { console_session_with_workspace: [] },
+        ],
         summary: '/seam/customer/v1/reservations/get',
         tags: [],
         'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'reservations'],
@@ -64043,6 +64296,15 @@ export default {
           'Returns a list of reservations for a specific customer. This endpoint is designed for customer portals and supports filtering by space_key.',
         operationId: 'seamCustomerV1ReservationsListGet',
         parameters: [
+          {
+            in: 'query',
+            name: 'customer_key',
+            schema: {
+              description:
+                'The customer_key identifying the customer. Required when not using client_session_with_customer auth.',
+              type: 'string',
+            },
+          },
           {
             in: 'query',
             name: 'space_key',
@@ -64179,6 +64441,7 @@ export default {
                             type: 'string',
                           },
                           guest_name: { nullable: true, type: 'string' },
+                          is_resource_syncing: { type: 'boolean' },
                           name: { nullable: true, type: 'string' },
                           pending_mutations: {
                             items: {
@@ -64245,6 +64508,7 @@ export default {
                           'starts_at',
                           'ends_at',
                           'created_at',
+                          'is_resource_syncing',
                           'guest_name',
                           'warnings',
                           'pending_mutations',
@@ -64266,7 +64530,10 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [{ client_session_with_customer: [] }],
+        security: [
+          { client_session_with_customer: [] },
+          { console_session_with_workspace: [] },
+        ],
         summary: '/seam/customer/v1/reservations/list',
         tags: [],
         'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'reservations'],
@@ -64289,6 +64556,11 @@ export default {
                     description:
                       'Timestamp by which to limit returned reservations. Returns reservations created before this timestamp.',
                     format: 'date-time',
+                    type: 'string',
+                  },
+                  customer_key: {
+                    description:
+                      'The customer_key identifying the customer. Required when not using client_session_with_customer auth.',
                     type: 'string',
                   },
                   limit: {
@@ -64403,6 +64675,7 @@ export default {
                             type: 'string',
                           },
                           guest_name: { nullable: true, type: 'string' },
+                          is_resource_syncing: { type: 'boolean' },
                           name: { nullable: true, type: 'string' },
                           pending_mutations: {
                             items: {
@@ -64469,6 +64742,7 @@ export default {
                           'starts_at',
                           'ends_at',
                           'created_at',
+                          'is_resource_syncing',
                           'guest_name',
                           'warnings',
                           'pending_mutations',
@@ -64490,7 +64764,10 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [{ client_session_with_customer: [] }],
+        security: [
+          { client_session_with_customer: [] },
+          { console_session_with_workspace: [] },
+        ],
         summary: '/seam/customer/v1/reservations/list',
         tags: [],
         'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'reservations'],

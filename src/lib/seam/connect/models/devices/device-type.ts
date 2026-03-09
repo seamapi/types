@@ -126,12 +126,29 @@ export const phone_device_type = z.enum(
 
 export type PhoneDeviceType = z.infer<typeof phone_device_type>
 
+/** Cameras */
+export const CAMERA_DEVICE_TYPE = {
+  RING_CAMERA: 'ring_camera',
+} as const
+
+type CameraDeviceTypeFromMapping =
+  (typeof CAMERA_DEVICE_TYPE)[keyof typeof CAMERA_DEVICE_TYPE]
+
+export const CAMERA_DEVICE_TYPE_LIST = Object.values(CAMERA_DEVICE_TYPE)
+
+export const camera_device_type = z
+  .enum(Object.values(CAMERA_DEVICE_TYPE) as [CameraDeviceTypeFromMapping])
+  .describe('Device type for cameras.')
+
+export type CameraDeviceType = z.infer<typeof camera_device_type>
+
 export const any_device_type = z.union([
   lock_device_type,
   key_device_type,
   noise_sensor_device_type,
   thermostat_device_type,
   phone_device_type,
+  camera_device_type,
 ])
 
 export type AnyDeviceType = z.infer<typeof any_device_type>
