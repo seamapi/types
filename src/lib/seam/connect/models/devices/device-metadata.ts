@@ -729,6 +729,13 @@ export const device_metadata = z
       })
       .describe(`Metadata for an Ultraloq device.`),
 
+    ring_metadata: z
+      .object({
+        device_id: z.string().describe(`Device ID for a Ring device.`),
+        device_name: z.string().describe(`Device name for a Ring device.`),
+      })
+      .describe(`Metadata for a Ring device.`),
+
     korelock_metadata: z
       .object({
         device_id: z.string().describe(`Device ID for a Korelock device.`),

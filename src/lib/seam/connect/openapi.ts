@@ -10458,6 +10458,11 @@ export default {
                 enum: ['ios_phone', 'android_phone'],
                 type: 'string',
               },
+              {
+                description: 'Device type for cameras.',
+                enum: ['ring_camera'],
+                type: 'string',
+              },
             ],
           },
           display_name: {
@@ -12182,6 +12187,21 @@ export default {
                             description:
                               'Indicates whether the keypad is paired for a Nuki device.',
                             type: 'boolean',
+                          },
+                        },
+                        required: ['device_id', 'device_name'],
+                        type: 'object',
+                      },
+                      ring_metadata: {
+                        description: 'Metadata for a Ring device.',
+                        properties: {
+                          device_id: {
+                            description: 'Device ID for a Ring device.',
+                            type: 'string',
+                          },
+                          device_name: {
+                            description: 'Device name for a Ring device.',
+                            type: 'string',
                           },
                         },
                         required: ['device_id', 'device_name'],
@@ -27935,6 +27955,11 @@ export default {
               {
                 description: 'Device type for phones.\n          ',
                 enum: ['ios_phone', 'android_phone'],
+                type: 'string',
+              },
+              {
+                description: 'Device type for cameras.',
+                enum: ['ring_camera'],
                 type: 'string',
               },
             ],
@@ -50835,6 +50860,11 @@ export default {
                   enum: ['ios_phone', 'android_phone'],
                   type: 'string',
                 },
+                {
+                  description: 'Device type for cameras.',
+                  enum: ['ring_camera'],
+                  type: 'string',
+                },
               ],
             },
           },
@@ -50904,6 +50934,11 @@ export default {
                   {
                     description: 'Device type for phones.\n          ',
                     enum: ['ios_phone', 'android_phone'],
+                    type: 'string',
+                  },
+                  {
+                    description: 'Device type for cameras.',
+                    enum: ['ring_camera'],
                     type: 'string',
                   },
                 ],
@@ -51275,6 +51310,11 @@ export default {
                         enum: ['ios_phone', 'android_phone'],
                         type: 'string',
                       },
+                      {
+                        description: 'Device type for cameras.',
+                        enum: ['ring_camera'],
+                        type: 'string',
+                      },
                     ],
                   },
                   device_types: {
@@ -51343,6 +51383,11 @@ export default {
                         {
                           description: 'Device type for phones.\n          ',
                           enum: ['ios_phone', 'android_phone'],
+                          type: 'string',
+                        },
+                        {
+                          description: 'Device type for cameras.',
+                          enum: ['ring_camera'],
                           type: 'string',
                         },
                       ],
@@ -52705,6 +52750,11 @@ export default {
                   enum: ['ios_phone', 'android_phone'],
                   type: 'string',
                 },
+                {
+                  description: 'Device type for cameras.',
+                  enum: ['ring_camera'],
+                  type: 'string',
+                },
               ],
             },
           },
@@ -52774,6 +52824,11 @@ export default {
                   {
                     description: 'Device type for phones.\n          ',
                     enum: ['ios_phone', 'android_phone'],
+                    type: 'string',
+                  },
+                  {
+                    description: 'Device type for cameras.',
+                    enum: ['ring_camera'],
                     type: 'string',
                   },
                 ],
@@ -53144,6 +53199,11 @@ export default {
                         enum: ['ios_phone', 'android_phone'],
                         type: 'string',
                       },
+                      {
+                        description: 'Device type for cameras.',
+                        enum: ['ring_camera'],
+                        type: 'string',
+                      },
                     ],
                   },
                   device_types: {
@@ -53212,6 +53272,11 @@ export default {
                         {
                           description: 'Device type for phones.\n          ',
                           enum: ['ios_phone', 'android_phone'],
+                          type: 'string',
+                        },
+                        {
+                          description: 'Device type for cameras.',
+                          enum: ['ring_camera'],
                           type: 'string',
                         },
                       ],
