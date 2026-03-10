@@ -2768,6 +2768,296 @@ export default {
           },
           is_managed: { enum: [true], type: 'boolean' },
           name: { description: 'Name of the access group.', type: 'string' },
+          pending_mutations: {
+            description:
+              'Collection of pending mutations for the access group. Represents operations that have been requested but not yet completed on the integrated access system.',
+            items: {
+              discriminator: { propertyName: 'mutation_code' },
+              oneOf: [
+                {
+                  description:
+                    'Seam is in the process of pushing an access group creation to the integrated access system.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing an access group creation to the integrated access system.',
+                      enum: ['creating'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'mutation_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Seam is in the process of pushing an access group deletion to the integrated access system.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing an access group deletion to the integrated access system.',
+                      enum: ['deleting'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'mutation_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Seam is in the process of pushing an access group information update to the integrated access system.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    from: {
+                      description: 'Old access group information.',
+                      properties: {
+                        name: {
+                          description: 'Name of the access group.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      type: 'object',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing updated access group information to the integrated access system.',
+                      enum: ['updating_group_information'],
+                      type: 'string',
+                    },
+                    to: {
+                      description: 'New access group information.',
+                      properties: {
+                        name: {
+                          description: 'Name of the access group.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Seam is in the process of pushing an access schedule update to the integrated access system.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    from: {
+                      description: 'Old access schedule information.',
+                      properties: {
+                        ends_at: {
+                          description: 'Ending time for the access schedule.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        starts_at: {
+                          description: 'Starting time for the access schedule.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['starts_at', 'ends_at'],
+                      type: 'object',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing updated access schedule information to the integrated access system.',
+                      enum: ['updating_access_schedule'],
+                      type: 'string',
+                    },
+                    to: {
+                      description: 'New access schedule information.',
+                      properties: {
+                        ends_at: {
+                          description: 'Ending time for the access schedule.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        starts_at: {
+                          description: 'Starting time for the access schedule.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['starts_at', 'ends_at'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Seam is in the process of pushing a user membership update to the integrated access system.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    from: {
+                      description: 'Old user membership.',
+                      properties: {
+                        acs_user_id: {
+                          description: 'Old user ID.',
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['acs_user_id'],
+                      type: 'object',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing updated user membership information to the integrated access system.',
+                      enum: ['updating_user_membership'],
+                      type: 'string',
+                    },
+                    to: {
+                      description: 'New user membership.',
+                      properties: {
+                        acs_user_id: {
+                          description: 'New user ID.',
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['acs_user_id'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Seam is in the process of pushing an entrance membership update to the integrated access system.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    from: {
+                      description: 'Old entrance membership.',
+                      properties: {
+                        acs_entrance_id: {
+                          description: 'Old entrance ID.',
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['acs_entrance_id'],
+                      type: 'object',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing updated entrance membership information to the integrated access system.',
+                      enum: ['updating_entrance_membership'],
+                      type: 'string',
+                    },
+                    to: {
+                      description: 'New entrance membership.',
+                      properties: {
+                        acs_entrance_id: {
+                          description: 'New entrance ID.',
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['acs_entrance_id'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
           warnings: {
             description: 'Warnings associated with the `acs_access_group`.',
             items: {
@@ -2847,6 +3137,7 @@ export default {
           'external_type_display_name',
           'created_at',
           'warnings',
+          'pending_mutations',
           'is_managed',
         ],
         type: 'object',
@@ -26574,6 +26865,296 @@ export default {
           },
           is_managed: { enum: [false], type: 'boolean' },
           name: { description: 'Name of the access group.', type: 'string' },
+          pending_mutations: {
+            description:
+              'Collection of pending mutations for the access group. Represents operations that have been requested but not yet completed on the integrated access system.',
+            items: {
+              discriminator: { propertyName: 'mutation_code' },
+              oneOf: [
+                {
+                  description:
+                    'Seam is in the process of pushing an access group creation to the integrated access system.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing an access group creation to the integrated access system.',
+                      enum: ['creating'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'mutation_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Seam is in the process of pushing an access group deletion to the integrated access system.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing an access group deletion to the integrated access system.',
+                      enum: ['deleting'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'mutation_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Seam is in the process of pushing an access group information update to the integrated access system.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    from: {
+                      description: 'Old access group information.',
+                      properties: {
+                        name: {
+                          description: 'Name of the access group.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      type: 'object',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing updated access group information to the integrated access system.',
+                      enum: ['updating_group_information'],
+                      type: 'string',
+                    },
+                    to: {
+                      description: 'New access group information.',
+                      properties: {
+                        name: {
+                          description: 'Name of the access group.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Seam is in the process of pushing an access schedule update to the integrated access system.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    from: {
+                      description: 'Old access schedule information.',
+                      properties: {
+                        ends_at: {
+                          description: 'Ending time for the access schedule.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        starts_at: {
+                          description: 'Starting time for the access schedule.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['starts_at', 'ends_at'],
+                      type: 'object',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing updated access schedule information to the integrated access system.',
+                      enum: ['updating_access_schedule'],
+                      type: 'string',
+                    },
+                    to: {
+                      description: 'New access schedule information.',
+                      properties: {
+                        ends_at: {
+                          description: 'Ending time for the access schedule.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        starts_at: {
+                          description: 'Starting time for the access schedule.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['starts_at', 'ends_at'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Seam is in the process of pushing a user membership update to the integrated access system.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    from: {
+                      description: 'Old user membership.',
+                      properties: {
+                        acs_user_id: {
+                          description: 'Old user ID.',
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['acs_user_id'],
+                      type: 'object',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing updated user membership information to the integrated access system.',
+                      enum: ['updating_user_membership'],
+                      type: 'string',
+                    },
+                    to: {
+                      description: 'New user membership.',
+                      properties: {
+                        acs_user_id: {
+                          description: 'New user ID.',
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['acs_user_id'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Seam is in the process of pushing an entrance membership update to the integrated access system.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    from: {
+                      description: 'Old entrance membership.',
+                      properties: {
+                        acs_entrance_id: {
+                          description: 'Old entrance ID.',
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['acs_entrance_id'],
+                      type: 'object',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing updated entrance membership information to the integrated access system.',
+                      enum: ['updating_entrance_membership'],
+                      type: 'string',
+                    },
+                    to: {
+                      description: 'New entrance membership.',
+                      properties: {
+                        acs_entrance_id: {
+                          description: 'New entrance ID.',
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['acs_entrance_id'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
           warnings: {
             description: 'Warnings associated with the `acs_access_group`.',
             items: {
@@ -26653,6 +27234,7 @@ export default {
           'external_type_display_name',
           'created_at',
           'warnings',
+          'pending_mutations',
           'is_managed',
         ],
         type: 'object',

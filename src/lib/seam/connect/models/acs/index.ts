@@ -1,4 +1,5 @@
 export * from './acs-access-group.js'
+export * from './acs-access-groups/index.js'
 export * from './acs-credential.js'
 export * from './acs-credential-pool.js'
 export * from './acs-credential-provisioning-automation.js'

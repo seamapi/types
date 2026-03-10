@@ -1,6 +1,7 @@
 import { z } from 'zod'
 
 import { schedule } from '../schedule.js'
+import { acs_access_group_pending_mutations } from './acs-access-groups/pending-mutations.js'
 
 // If changed, update seam.acs_access_group.external_type generated column
 export const acs_access_group_external_type = z.enum([
@@ -117,6 +118,11 @@ const common_acs_access_group = z.object({
     .optional()
     .describe(
       "`starts_at` and `ends_at` timestamps for the access group's access.",
+    ),
+  pending_mutations: z
+    .array(acs_access_group_pending_mutations)
+    .describe(
+      'Collection of pending mutations for the access group. Represents operations that have been requested but not yet completed on the integrated access system.',
     ),
 })
 
