@@ -36568,18 +36568,6 @@ export default {
       delete: {
         description: 'Deletes an access method.',
         operationId: 'accessMethodsDeleteDelete',
-        parameters: [
-          {
-            in: 'query',
-            name: 'access_method_id',
-            required: true,
-            schema: {
-              description: 'ID of access method to get.',
-              format: 'uuid',
-              type: 'string',
-            },
-          },
-        ],
         responses: {
           200: {
             content: {
@@ -36617,15 +36605,42 @@ export default {
           content: {
             'application/json': {
               schema: {
-                properties: {
-                  access_method_id: {
-                    description: 'ID of access method to get.',
-                    format: 'uuid',
-                    type: 'string',
+                oneOf: [
+                  {
+                    properties: {
+                      access_method_id: {
+                        description: 'ID of access method to delete.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                    },
+                    required: ['access_method_id'],
+                    type: 'object',
                   },
-                },
-                required: ['access_method_id'],
-                type: 'object',
+                  {
+                    properties: {
+                      access_grant_id: {
+                        description:
+                          'ID of access grant whose access methods should be deleted.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                    },
+                    required: ['access_grant_id'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      reservation_key: {
+                        description:
+                          'Reservation key of the access grant whose access methods should be deleted.',
+                        type: 'string',
+                      },
+                    },
+                    required: ['reservation_key'],
+                    type: 'object',
+                  },
+                ],
               },
             },
           },
