@@ -52,6 +52,7 @@ export const DEVICE_PROVIDERS = {
   KORELOCK: 'korelock',
   DORMAKABA_AMBIANCE: 'dormakaba_ambiance',
   ULTRALOQ: 'ultraloq',
+  RING: 'ring',
 } as const
 
 export type DeviceProviderName =
@@ -132,6 +133,8 @@ export const PROVIDER_CATEGORY_MAP = {
     'hotek',
   ],
 
+  cameras: ['ring'],
+
   internal_beta: ALL_DEVICE_PROVIDERS,
 } as const satisfies Record<string, readonly DeviceProviderName[]>
 
@@ -166,5 +169,12 @@ export const PROVIDER_CATEGORY_CAPABILITY_MAP: Record<
   thermostats: ['thermostat'],
   noise_sensors: ['noise_sensor'],
   access_control_systems: ['access_control'],
-  internal_beta: ['lock', 'thermostat', 'noise_sensor', 'access_control'],
+  cameras: ['camera'],
+  internal_beta: [
+    'lock',
+    'thermostat',
+    'noise_sensor',
+    'access_control',
+    'camera',
+  ],
 }
