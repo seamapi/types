@@ -98,6 +98,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'keynest',
     'hotek',
     'ultraloq',
+    'dormakaba_oracode',
   ],
 
   consumer_smartlocks: [
@@ -114,6 +115,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'lockly',
     'tedee',
     'ultraloq',
+    'dormakaba_oracode',
   ],
 
   beta: ['korelock'],
