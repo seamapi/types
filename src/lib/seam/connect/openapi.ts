@@ -62784,6 +62784,1224 @@ export default {
         'x-undocumented': 'Internal endpoint for Console.',
       },
     },
+    '/seam/customer/v1/customers/automations/get': {
+      get: {
+        description:
+          'Gets the automation configuration for a specific customer.\nReturns the merged configuration (customer overrides on top of workspace defaults).',
+        operationId: 'seamCustomerV1CustomersAutomationsGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'customer_key',
+            required: true,
+            schema: { description: 'Key of the customer.', type: 'string' },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    automation: {
+                      properties: {
+                        access_rules: {
+                          properties: {
+                            reservation_created: {
+                              properties: {
+                                config: {
+                                  properties: {
+                                    access_methods: {
+                                      items: {
+                                        enum: ['card', 'mobile_key', 'code'],
+                                        type: 'string',
+                                      },
+                                      minItems: 1,
+                                      type: 'array',
+                                    },
+                                    card_count_on_reservation_create: {
+                                      minimum: 0,
+                                      type: 'integer',
+                                    },
+                                    code_count_on_reservation_create: {
+                                      minimum: 0,
+                                      type: 'integer',
+                                    },
+                                    instant_key_max_use_count: {
+                                      minimum: 1,
+                                      type: 'integer',
+                                    },
+                                    method_issuance_strategy: {
+                                      enum: [
+                                        'first_available',
+                                        'first_two_available',
+                                        'all_available',
+                                      ],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'access_methods',
+                                    'method_issuance_strategy',
+                                  ],
+                                  type: 'object',
+                                },
+                                rule: {
+                                  enum: ['reservation_created'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['rule', 'config'],
+                              type: 'object',
+                            },
+                            reservation_deleted: {
+                              properties: {
+                                config: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                                rule: {
+                                  enum: ['reservation_deleted'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['rule'],
+                              type: 'object',
+                            },
+                            reservation_spaces_updated: {
+                              properties: {
+                                config: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                                rule: {
+                                  enum: ['reservation_spaces_updated'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['rule'],
+                              type: 'object',
+                            },
+                            reservation_time_updated: {
+                              properties: {
+                                config: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                                rule: {
+                                  enum: ['reservation_time_updated'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['rule'],
+                              type: 'object',
+                            },
+                            space_name_updated: {
+                              properties: {
+                                config: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                                rule: {
+                                  enum: ['space_name_updated'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['rule'],
+                              type: 'object',
+                            },
+                            staff_member_created: {
+                              properties: {
+                                config: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                                rule: {
+                                  enum: ['staff_member_created'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['rule', 'config'],
+                              type: 'object',
+                            },
+                            staff_member_name_updated: {
+                              properties: {
+                                config: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                                rule: {
+                                  enum: ['staff_member_name_updated'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['rule'],
+                              type: 'object',
+                            },
+                            user_identity_name_updated: {
+                              properties: {
+                                config: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                                rule: {
+                                  enum: ['user_identity_name_updated'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['rule'],
+                              type: 'object',
+                            },
+                          },
+                          type: 'object',
+                        },
+                        climate_rules: {
+                          properties: {
+                            rules: {
+                              properties: {
+                                reservation_created: {
+                                  properties: {
+                                    automated_occupied_preset: {
+                                      properties: {
+                                        cooling_set_point_celsius: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                        cooling_set_point_fahrenheit: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                        fan_mode: {
+                                          enum: ['on', 'auto', 'circulate'],
+                                          type: 'string',
+                                        },
+                                        heating_set_point_celsius: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                        heating_set_point_fahrenheit: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                        is_override_allowed: {
+                                          type: 'boolean',
+                                        },
+                                        max_override_period_minutes: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                        mode: {
+                                          enum: ['heat', 'cool', 'auto'],
+                                          type: 'string',
+                                        },
+                                      },
+                                      required: [
+                                        'mode',
+                                        'fan_mode',
+                                        'is_override_allowed',
+                                        'max_override_period_minutes',
+                                      ],
+                                      type: 'object',
+                                    },
+                                    automated_unoccupied_preset: {
+                                      properties: {
+                                        cooling_set_point_celsius: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                        cooling_set_point_fahrenheit: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                        fan_mode: {
+                                          enum: ['on', 'auto', 'circulate'],
+                                          type: 'string',
+                                        },
+                                        heating_set_point_celsius: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                        heating_set_point_fahrenheit: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                        is_override_allowed: {
+                                          type: 'boolean',
+                                        },
+                                        max_override_period_minutes: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                        mode: {
+                                          enum: ['heat', 'cool', 'auto'],
+                                          type: 'string',
+                                        },
+                                      },
+                                      required: [
+                                        'mode',
+                                        'fan_mode',
+                                        'is_override_allowed',
+                                        'max_override_period_minutes',
+                                      ],
+                                      type: 'object',
+                                    },
+                                    occupied_preset_key: { type: 'string' },
+                                    precondition_minutes_before_reservation: {
+                                      format: 'float',
+                                      type: 'number',
+                                    },
+                                    unoccupied_preset_key: { type: 'string' },
+                                  },
+                                  type: 'object',
+                                },
+                                reservation_deleted: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                                reservation_time_updated: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                              },
+                              type: 'object',
+                            },
+                          },
+                          required: ['rules'],
+                          type: 'object',
+                        },
+                      },
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['automation', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/seam/customer/v1/customers/automations/get',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'customer',
+          'v1',
+          'customers',
+          'automations',
+        ],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'automation',
+        'x-response-key': 'automation',
+        'x-title': 'Get Customer Automation Configuration',
+      },
+      post: {
+        description:
+          'Gets the automation configuration for a specific customer.\nReturns the merged configuration (customer overrides on top of workspace defaults).',
+        operationId: 'seamCustomerV1CustomersAutomationsGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  customer_key: {
+                    description: 'Key of the customer.',
+                    type: 'string',
+                  },
+                },
+                required: ['customer_key'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    automation: {
+                      properties: {
+                        access_rules: {
+                          properties: {
+                            reservation_created: {
+                              properties: {
+                                config: {
+                                  properties: {
+                                    access_methods: {
+                                      items: {
+                                        enum: ['card', 'mobile_key', 'code'],
+                                        type: 'string',
+                                      },
+                                      minItems: 1,
+                                      type: 'array',
+                                    },
+                                    card_count_on_reservation_create: {
+                                      minimum: 0,
+                                      type: 'integer',
+                                    },
+                                    code_count_on_reservation_create: {
+                                      minimum: 0,
+                                      type: 'integer',
+                                    },
+                                    instant_key_max_use_count: {
+                                      minimum: 1,
+                                      type: 'integer',
+                                    },
+                                    method_issuance_strategy: {
+                                      enum: [
+                                        'first_available',
+                                        'first_two_available',
+                                        'all_available',
+                                      ],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'access_methods',
+                                    'method_issuance_strategy',
+                                  ],
+                                  type: 'object',
+                                },
+                                rule: {
+                                  enum: ['reservation_created'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['rule', 'config'],
+                              type: 'object',
+                            },
+                            reservation_deleted: {
+                              properties: {
+                                config: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                                rule: {
+                                  enum: ['reservation_deleted'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['rule'],
+                              type: 'object',
+                            },
+                            reservation_spaces_updated: {
+                              properties: {
+                                config: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                                rule: {
+                                  enum: ['reservation_spaces_updated'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['rule'],
+                              type: 'object',
+                            },
+                            reservation_time_updated: {
+                              properties: {
+                                config: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                                rule: {
+                                  enum: ['reservation_time_updated'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['rule'],
+                              type: 'object',
+                            },
+                            space_name_updated: {
+                              properties: {
+                                config: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                                rule: {
+                                  enum: ['space_name_updated'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['rule'],
+                              type: 'object',
+                            },
+                            staff_member_created: {
+                              properties: {
+                                config: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                                rule: {
+                                  enum: ['staff_member_created'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['rule', 'config'],
+                              type: 'object',
+                            },
+                            staff_member_name_updated: {
+                              properties: {
+                                config: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                                rule: {
+                                  enum: ['staff_member_name_updated'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['rule'],
+                              type: 'object',
+                            },
+                            user_identity_name_updated: {
+                              properties: {
+                                config: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                                rule: {
+                                  enum: ['user_identity_name_updated'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['rule'],
+                              type: 'object',
+                            },
+                          },
+                          type: 'object',
+                        },
+                        climate_rules: {
+                          properties: {
+                            rules: {
+                              properties: {
+                                reservation_created: {
+                                  properties: {
+                                    automated_occupied_preset: {
+                                      properties: {
+                                        cooling_set_point_celsius: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                        cooling_set_point_fahrenheit: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                        fan_mode: {
+                                          enum: ['on', 'auto', 'circulate'],
+                                          type: 'string',
+                                        },
+                                        heating_set_point_celsius: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                        heating_set_point_fahrenheit: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                        is_override_allowed: {
+                                          type: 'boolean',
+                                        },
+                                        max_override_period_minutes: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                        mode: {
+                                          enum: ['heat', 'cool', 'auto'],
+                                          type: 'string',
+                                        },
+                                      },
+                                      required: [
+                                        'mode',
+                                        'fan_mode',
+                                        'is_override_allowed',
+                                        'max_override_period_minutes',
+                                      ],
+                                      type: 'object',
+                                    },
+                                    automated_unoccupied_preset: {
+                                      properties: {
+                                        cooling_set_point_celsius: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                        cooling_set_point_fahrenheit: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                        fan_mode: {
+                                          enum: ['on', 'auto', 'circulate'],
+                                          type: 'string',
+                                        },
+                                        heating_set_point_celsius: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                        heating_set_point_fahrenheit: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                        is_override_allowed: {
+                                          type: 'boolean',
+                                        },
+                                        max_override_period_minutes: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                        mode: {
+                                          enum: ['heat', 'cool', 'auto'],
+                                          type: 'string',
+                                        },
+                                      },
+                                      required: [
+                                        'mode',
+                                        'fan_mode',
+                                        'is_override_allowed',
+                                        'max_override_period_minutes',
+                                      ],
+                                      type: 'object',
+                                    },
+                                    occupied_preset_key: { type: 'string' },
+                                    precondition_minutes_before_reservation: {
+                                      format: 'float',
+                                      type: 'number',
+                                    },
+                                    unoccupied_preset_key: { type: 'string' },
+                                  },
+                                  type: 'object',
+                                },
+                                reservation_deleted: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                                reservation_time_updated: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                              },
+                              type: 'object',
+                            },
+                          },
+                          required: ['rules'],
+                          type: 'object',
+                        },
+                      },
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['automation', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/seam/customer/v1/customers/automations/get',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'customer',
+          'v1',
+          'customers',
+          'automations',
+        ],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'automation',
+        'x-response-key': 'automation',
+        'x-title': 'Get Customer Automation Configuration',
+      },
+    },
+    '/seam/customer/v1/customers/automations/update': {
+      patch: {
+        description:
+          'Updates the automation configuration for a specific customer.\nCreates a customer-level override if one does not already exist.',
+        operationId: 'seamCustomerV1CustomersAutomationsUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_rules: {
+                    description: 'Access automation rules configuration.',
+                    properties: {
+                      reservation_created: {
+                        properties: {
+                          config: {
+                            properties: {
+                              access_methods: {
+                                items: {
+                                  enum: ['card', 'mobile_key', 'code'],
+                                  type: 'string',
+                                },
+                                minItems: 1,
+                                type: 'array',
+                              },
+                              card_count_on_reservation_create: {
+                                minimum: 0,
+                                type: 'integer',
+                              },
+                              code_count_on_reservation_create: {
+                                minimum: 0,
+                                type: 'integer',
+                              },
+                              instant_key_max_use_count: {
+                                minimum: 1,
+                                type: 'integer',
+                              },
+                              method_issuance_strategy: {
+                                enum: [
+                                  'first_available',
+                                  'first_two_available',
+                                  'all_available',
+                                ],
+                                type: 'string',
+                              },
+                            },
+                            required: [
+                              'access_methods',
+                              'method_issuance_strategy',
+                            ],
+                            type: 'object',
+                          },
+                          rule: {
+                            enum: ['reservation_created'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule', 'config'],
+                        type: 'object',
+                      },
+                      reservation_deleted: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['reservation_deleted'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule'],
+                        type: 'object',
+                      },
+                      reservation_spaces_updated: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['reservation_spaces_updated'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule'],
+                        type: 'object',
+                      },
+                      reservation_time_updated: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['reservation_time_updated'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule'],
+                        type: 'object',
+                      },
+                      space_name_updated: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['space_name_updated'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule'],
+                        type: 'object',
+                      },
+                      staff_member_created: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['staff_member_created'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule', 'config'],
+                        type: 'object',
+                      },
+                      staff_member_name_updated: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['staff_member_name_updated'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule'],
+                        type: 'object',
+                      },
+                      user_identity_name_updated: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['user_identity_name_updated'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule'],
+                        type: 'object',
+                      },
+                    },
+                    type: 'object',
+                  },
+                  climate_rules: {
+                    description: 'Climate automation rules configuration.',
+                    properties: {
+                      rules: {
+                        properties: {
+                          reservation_created: {
+                            properties: {
+                              automated_occupied_preset: {
+                                properties: {
+                                  cooling_set_point_celsius: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  cooling_set_point_fahrenheit: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  fan_mode: {
+                                    enum: ['on', 'auto', 'circulate'],
+                                    type: 'string',
+                                  },
+                                  heating_set_point_celsius: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  heating_set_point_fahrenheit: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  is_override_allowed: { type: 'boolean' },
+                                  max_override_period_minutes: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  mode: {
+                                    enum: ['heat', 'cool', 'auto'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'mode',
+                                  'fan_mode',
+                                  'is_override_allowed',
+                                  'max_override_period_minutes',
+                                ],
+                                type: 'object',
+                              },
+                              automated_unoccupied_preset: {
+                                properties: {
+                                  cooling_set_point_celsius: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  cooling_set_point_fahrenheit: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  fan_mode: {
+                                    enum: ['on', 'auto', 'circulate'],
+                                    type: 'string',
+                                  },
+                                  heating_set_point_celsius: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  heating_set_point_fahrenheit: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  is_override_allowed: { type: 'boolean' },
+                                  max_override_period_minutes: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  mode: {
+                                    enum: ['heat', 'cool', 'auto'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'mode',
+                                  'fan_mode',
+                                  'is_override_allowed',
+                                  'max_override_period_minutes',
+                                ],
+                                type: 'object',
+                              },
+                              occupied_preset_key: { type: 'string' },
+                              precondition_minutes_before_reservation: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              unoccupied_preset_key: { type: 'string' },
+                            },
+                            type: 'object',
+                          },
+                          reservation_deleted: {
+                            properties: {},
+                            type: 'object',
+                          },
+                          reservation_time_updated: {
+                            properties: {},
+                            type: 'object',
+                          },
+                        },
+                        type: 'object',
+                      },
+                    },
+                    type: 'object',
+                  },
+                  customer_key: {
+                    description: 'Key of the customer.',
+                    type: 'string',
+                  },
+                },
+                required: ['customer_key'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/seam/customer/v1/customers/automations/update',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'customer',
+          'v1',
+          'customers',
+          'automations',
+        ],
+        'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
+        'x-title': 'Update Customer Automation Configuration',
+      },
+      post: {
+        description:
+          'Updates the automation configuration for a specific customer.\nCreates a customer-level override if one does not already exist.',
+        operationId: 'seamCustomerV1CustomersAutomationsUpdatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_rules: {
+                    description: 'Access automation rules configuration.',
+                    properties: {
+                      reservation_created: {
+                        properties: {
+                          config: {
+                            properties: {
+                              access_methods: {
+                                items: {
+                                  enum: ['card', 'mobile_key', 'code'],
+                                  type: 'string',
+                                },
+                                minItems: 1,
+                                type: 'array',
+                              },
+                              card_count_on_reservation_create: {
+                                minimum: 0,
+                                type: 'integer',
+                              },
+                              code_count_on_reservation_create: {
+                                minimum: 0,
+                                type: 'integer',
+                              },
+                              instant_key_max_use_count: {
+                                minimum: 1,
+                                type: 'integer',
+                              },
+                              method_issuance_strategy: {
+                                enum: [
+                                  'first_available',
+                                  'first_two_available',
+                                  'all_available',
+                                ],
+                                type: 'string',
+                              },
+                            },
+                            required: [
+                              'access_methods',
+                              'method_issuance_strategy',
+                            ],
+                            type: 'object',
+                          },
+                          rule: {
+                            enum: ['reservation_created'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule', 'config'],
+                        type: 'object',
+                      },
+                      reservation_deleted: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['reservation_deleted'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule'],
+                        type: 'object',
+                      },
+                      reservation_spaces_updated: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['reservation_spaces_updated'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule'],
+                        type: 'object',
+                      },
+                      reservation_time_updated: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['reservation_time_updated'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule'],
+                        type: 'object',
+                      },
+                      space_name_updated: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['space_name_updated'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule'],
+                        type: 'object',
+                      },
+                      staff_member_created: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['staff_member_created'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule', 'config'],
+                        type: 'object',
+                      },
+                      staff_member_name_updated: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['staff_member_name_updated'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule'],
+                        type: 'object',
+                      },
+                      user_identity_name_updated: {
+                        properties: {
+                          config: { properties: {}, type: 'object' },
+                          rule: {
+                            enum: ['user_identity_name_updated'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['rule'],
+                        type: 'object',
+                      },
+                    },
+                    type: 'object',
+                  },
+                  climate_rules: {
+                    description: 'Climate automation rules configuration.',
+                    properties: {
+                      rules: {
+                        properties: {
+                          reservation_created: {
+                            properties: {
+                              automated_occupied_preset: {
+                                properties: {
+                                  cooling_set_point_celsius: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  cooling_set_point_fahrenheit: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  fan_mode: {
+                                    enum: ['on', 'auto', 'circulate'],
+                                    type: 'string',
+                                  },
+                                  heating_set_point_celsius: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  heating_set_point_fahrenheit: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  is_override_allowed: { type: 'boolean' },
+                                  max_override_period_minutes: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  mode: {
+                                    enum: ['heat', 'cool', 'auto'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'mode',
+                                  'fan_mode',
+                                  'is_override_allowed',
+                                  'max_override_period_minutes',
+                                ],
+                                type: 'object',
+                              },
+                              automated_unoccupied_preset: {
+                                properties: {
+                                  cooling_set_point_celsius: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  cooling_set_point_fahrenheit: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  fan_mode: {
+                                    enum: ['on', 'auto', 'circulate'],
+                                    type: 'string',
+                                  },
+                                  heating_set_point_celsius: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  heating_set_point_fahrenheit: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  is_override_allowed: { type: 'boolean' },
+                                  max_override_period_minutes: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  mode: {
+                                    enum: ['heat', 'cool', 'auto'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'mode',
+                                  'fan_mode',
+                                  'is_override_allowed',
+                                  'max_override_period_minutes',
+                                ],
+                                type: 'object',
+                              },
+                              occupied_preset_key: { type: 'string' },
+                              precondition_minutes_before_reservation: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              unoccupied_preset_key: { type: 'string' },
+                            },
+                            type: 'object',
+                          },
+                          reservation_deleted: {
+                            properties: {},
+                            type: 'object',
+                          },
+                          reservation_time_updated: {
+                            properties: {},
+                            type: 'object',
+                          },
+                        },
+                        type: 'object',
+                      },
+                    },
+                    type: 'object',
+                  },
+                  customer_key: {
+                    description: 'Key of the customer.',
+                    type: 'string',
+                  },
+                },
+                required: ['customer_key'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/seam/customer/v1/customers/automations/update',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'customer',
+          'v1',
+          'customers',
+          'automations',
+        ],
+        'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
+        'x-title': 'Update Customer Automation Configuration',
+      },
+    },
     '/seam/customer/v1/customers/list': {
       get: {
         description: 'Returns a list of all customers within the workspace.',
