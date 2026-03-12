@@ -706,6 +706,35 @@ export const device_name_changed_event = device_event.extend({
 
 export type DeviceNameChangedEvent = z.infer<typeof device_name_changed_event>
 
+export const camera_activated_event = device_event.extend({
+  event_type: z.literal('camera.activated'),
+  activation_reason: z
+    .enum(['motion_detected'])
+    .describe('The reason the camera was activated.'),
+  motion_sub_type: z
+    .enum(['human', 'vehicle', 'package', 'other'])
+    .optional()
+    .describe('Sub-type of motion detected, if available.'),
+}).describe(`
+  ---
+  route_path: /devices
+  ---
+  A [camera](https://docs.seam.co/latest/core-concepts/devices) was activated, for example, by motion detection.
+`)
+
+export type CameraActivatedEvent = z.infer<typeof camera_activated_event>
+
+export const device_doorbell_rang_event = device_event.extend({
+  event_type: z.literal('device.doorbell_rang'),
+}).describe(`
+  ---
+  route_path: /devices
+  ---
+  A doorbell button was pressed on a [device](https://docs.seam.co/latest/core-concepts/devices).
+`)
+
+export type DeviceDoorbellRangEvent = z.infer<typeof device_doorbell_rang_event>
+
 export const device_events = [
   device_connected_event,
   device_added_event,
@@ -740,4 +769,6 @@ export const device_events = [
   temperature_reached_set_point_event,
   temperature_changed_event,
   device_name_changed_event,
+  camera_activated_event,
+  device_doorbell_rang_event,
 ] as const
