@@ -3054,6 +3054,48 @@ export default {
                   ],
                   type: 'object',
                 },
+                {
+                  description:
+                    'A scheduled user membership change is pending for this access group.',
+                  properties: {
+                    acs_user_id: {
+                      description:
+                        'ID of the user involved in the scheduled change.',
+                      format: 'uuid',
+                      type: 'string',
+                    },
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that a scheduled user membership change is pending for this access group.',
+                      enum: ['deferring_user_membership_update'],
+                      type: 'string',
+                    },
+                    variant: {
+                      description:
+                        'Whether the user is scheduled to be added to or removed from this access group.',
+                      enum: ['adding', 'removing'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'acs_user_id',
+                    'variant',
+                  ],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -5057,6 +5099,48 @@ export default {
                     'mutation_code',
                     'from',
                     'to',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'A scheduled access group membership change is pending for this user.',
+                  properties: {
+                    acs_access_group_id: {
+                      description:
+                        'ID of the access group involved in the scheduled change.',
+                      format: 'uuid',
+                      type: 'string',
+                    },
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that a scheduled access group membership change is pending for this user.',
+                      enum: ['deferring_group_membership_update'],
+                      type: 'string',
+                    },
+                    variant: {
+                      description:
+                        'Whether the user is scheduled to be added to or removed from the access group.',
+                      enum: ['adding', 'removing'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'acs_access_group_id',
+                    'variant',
                   ],
                   type: 'object',
                 },
@@ -27151,6 +27235,48 @@ export default {
                   ],
                   type: 'object',
                 },
+                {
+                  description:
+                    'A scheduled user membership change is pending for this access group.',
+                  properties: {
+                    acs_user_id: {
+                      description:
+                        'ID of the user involved in the scheduled change.',
+                      format: 'uuid',
+                      type: 'string',
+                    },
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that a scheduled user membership change is pending for this access group.',
+                      enum: ['deferring_user_membership_update'],
+                      type: 'string',
+                    },
+                    variant: {
+                      description:
+                        'Whether the user is scheduled to be added to or removed from this access group.',
+                      enum: ['adding', 'removing'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'acs_user_id',
+                    'variant',
+                  ],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -28245,6 +28371,48 @@ export default {
                     'mutation_code',
                     'from',
                     'to',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'A scheduled access group membership change is pending for this user.',
+                  properties: {
+                    acs_access_group_id: {
+                      description:
+                        'ID of the access group involved in the scheduled change.',
+                      format: 'uuid',
+                      type: 'string',
+                    },
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that a scheduled access group membership change is pending for this user.',
+                      enum: ['deferring_group_membership_update'],
+                      type: 'string',
+                    },
+                    variant: {
+                      description:
+                        'Whether the user is scheduled to be added to or removed from the access group.',
+                      enum: ['adding', 'removing'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'acs_access_group_id',
+                    'variant',
                   ],
                   type: 'object',
                 },

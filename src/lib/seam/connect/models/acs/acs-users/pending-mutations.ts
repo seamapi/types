@@ -158,6 +158,27 @@ const updating_group_membership_mutation = common_pending_mutation
     'Seam is in the process of pushing an access group membership update to the integrated access system.',
   )
 
+const deferring_group_membership_update_mutation = common_pending_mutation
+  .extend({
+    mutation_code: z
+      .literal('deferring_group_membership_update')
+      .describe(
+        'Mutation code to indicate that a scheduled access group membership change is pending for this user.',
+      ),
+    acs_access_group_id: z
+      .string()
+      .uuid()
+      .describe('ID of the access group involved in the scheduled change.'),
+    variant: z
+      .enum(['adding', 'removing'])
+      .describe(
+        'Whether the user is scheduled to be added to or removed from the access group.',
+      ),
+  })
+  .describe(
+    'A scheduled access group membership change is pending for this user.',
+  )
+
 export const acs_user_pending_mutations = z.discriminatedUnion(
   'mutation_code',
   [
@@ -168,6 +189,7 @@ export const acs_user_pending_mutations = z.discriminatedUnion(
     updating_access_schedule_mutation,
     updating_suspension_state_mutation,
     updating_group_membership_mutation,
+    deferring_group_membership_update_mutation,
   ],
 )
 
@@ -182,6 +204,10 @@ const _acs_user_pending_mutations_map = z.object({
     .nullable(),
   updating_group_membership: z
     .record(z.string().uuid(), updating_group_membership_mutation)
+    .optional()
+    .nullable(),
+  deferring_group_membership_update: z
+    .record(z.string().uuid(), deferring_group_membership_update_mutation)
     .optional()
     .nullable(),
   updating_suspension_state: updating_suspension_state_mutation
