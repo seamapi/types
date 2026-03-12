@@ -118,7 +118,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'dormakaba_oracode',
   ],
 
-  beta: ['korelock'],
+  beta: ['korelock', 'ring'],
 
   thermostats: ['ecobee', 'nest', 'sensi', 'honeywell_resideo'],
   noise_sensors: ['minut', 'noiseaware'],
