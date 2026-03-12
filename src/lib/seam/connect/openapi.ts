@@ -23088,6 +23088,159 @@ export default {
           },
           {
             description:
+              'A [camera](https://docs.seam.co/latest/core-concepts/devices) was activated, for example, by motion detection.',
+            properties: {
+              activation_reason: {
+                description: 'The reason the camera was activated.',
+                enum: ['motion_detected'],
+                type: 'string',
+              },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
+              },
+              device_id: {
+                description: 'ID of the affected device.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: { enum: ['camera.activated'], type: 'string' },
+              motion_sub_type: {
+                description: 'Sub-type of motion detected, if available.',
+                enum: ['human', 'vehicle', 'package', 'other'],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+              'activation_reason',
+            ],
+            type: 'object',
+            'x-route-path': '/devices',
+          },
+          {
+            description:
+              'A doorbell button was pressed on a [device](https://docs.seam.co/latest/core-concepts/devices).',
+            properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
+              },
+              device_id: {
+                description: 'ID of the affected device.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: { enum: ['device.doorbell_rang'], type: 'string' },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+            ],
+            type: 'object',
+            'x-route-path': '/devices',
+          },
+          {
+            description:
               'An [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) was deleted.',
             properties: {
               created_at: {
@@ -54914,6 +55067,8 @@ export default {
                 'thermostat.temperature_reached_set_point',
                 'thermostat.temperature_changed',
                 'device.name_changed',
+                'camera.activated',
+                'device.doorbell_rang',
                 'enrollment_automation.deleted',
                 'phone.deactivated',
                 'space.device_membership_changed',
@@ -55026,6 +55181,8 @@ export default {
                   'thermostat.temperature_reached_set_point',
                   'thermostat.temperature_changed',
                   'device.name_changed',
+                  'camera.activated',
+                  'device.doorbell_rang',
                   'enrollment_automation.deleted',
                   'phone.deactivated',
                   'space.device_membership_changed',
@@ -55471,6 +55628,8 @@ export default {
                       'thermostat.temperature_reached_set_point',
                       'thermostat.temperature_changed',
                       'device.name_changed',
+                      'camera.activated',
+                      'device.doorbell_rang',
                       'enrollment_automation.deleted',
                       'phone.deactivated',
                       'space.device_membership_changed',
@@ -55579,6 +55738,8 @@ export default {
                         'thermostat.temperature_reached_set_point',
                         'thermostat.temperature_changed',
                         'device.name_changed',
+                        'camera.activated',
+                        'device.doorbell_rang',
                         'enrollment_automation.deleted',
                         'phone.deactivated',
                         'space.device_membership_changed',
@@ -64693,6 +64854,8 @@ export default {
                 'thermostat.temperature_reached_set_point',
                 'thermostat.temperature_changed',
                 'device.name_changed',
+                'camera.activated',
+                'device.doorbell_rang',
                 'enrollment_automation.deleted',
                 'phone.deactivated',
                 'space.device_membership_changed',
@@ -64806,6 +64969,8 @@ export default {
                   'thermostat.temperature_reached_set_point',
                   'thermostat.temperature_changed',
                   'device.name_changed',
+                  'camera.activated',
+                  'device.doorbell_rang',
                   'enrollment_automation.deleted',
                   'phone.deactivated',
                   'space.device_membership_changed',
@@ -64982,6 +65147,8 @@ export default {
                       'thermostat.temperature_reached_set_point',
                       'thermostat.temperature_changed',
                       'device.name_changed',
+                      'camera.activated',
+                      'device.doorbell_rang',
                       'enrollment_automation.deleted',
                       'phone.deactivated',
                       'space.device_membership_changed',
@@ -65090,6 +65257,8 @@ export default {
                         'thermostat.temperature_reached_set_point',
                         'thermostat.temperature_changed',
                         'device.name_changed',
+                        'camera.activated',
+                        'device.doorbell_rang',
                         'enrollment_automation.deleted',
                         'phone.deactivated',
                         'space.device_membership_changed',
