@@ -33,10 +33,28 @@ const updating_access_times_warning = common_access_method_warning
     'Indicates that the access times for this [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods) are being updated.',
   )
 
+const pulled_backup_access_code_warning = common_access_method_warning
+  .extend({
+    warning_code: z
+      .literal('pulled_backup_access_code')
+      .describe(warning_code_description),
+    original_access_method_id: z
+      .string()
+      .uuid()
+      .optional()
+      .describe(
+        'ID of the original access method from which this backup access method was split, if applicable.',
+      ),
+  })
+  .describe(
+    'Indicates that all attempts to create an access code on this device before the start time failed and a backup access code was used to ensure access was provided in time.',
+  )
+
 const access_method_warning = z
   .discriminatedUnion('warning_code', [
     being_deleted,
     updating_access_times_warning,
+    pulled_backup_access_code_warning,
   ])
   .describe(
     'Warning associated with the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods).',
@@ -45,6 +63,9 @@ const access_method_warning = z
 const _access_method_warning_map = z.object({
   being_deleted: being_deleted.optional().nullable(),
   updating_access_times: updating_access_times_warning.optional().nullable(),
+  pulled_backup_access_code: pulled_backup_access_code_warning
+    .optional()
+    .nullable(),
 })
 
 export type AccessMethodWarningMap = z.infer<typeof _access_method_warning_map>

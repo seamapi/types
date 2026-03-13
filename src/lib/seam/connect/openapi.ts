@@ -2654,6 +2654,37 @@ export default {
                   required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Indicates that all attempts to create an access code on this device before the start time failed and a backup access code was used to ensure access was provided in time.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    original_access_method_id: {
+                      description:
+                        'ID of the original access method from which this backup access method was split, if applicable.',
+                      format: 'uuid',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['pulled_backup_access_code'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -38638,6 +38669,41 @@ export default {
                                 ],
                                 type: 'object',
                               },
+                              {
+                                description:
+                                  'Indicates that all attempts to create an access code on this device before the start time failed and a backup access code was used to ensure access was provided in time.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  original_access_method_id: {
+                                    description:
+                                      'ID of the original access method from which this backup access method was split, if applicable.',
+                                    format: 'uuid',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['pulled_backup_access_code'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
                             ],
                           },
                           type: 'array',
@@ -39033,6 +39099,41 @@ export default {
                                     description:
                                       'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                                     enum: ['updating_access_times'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  'Indicates that all attempts to create an access code on this device before the start time failed and a backup access code was used to ensure access was provided in time.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  original_access_method_id: {
+                                    description:
+                                      'ID of the original access method from which this backup access method was split, if applicable.',
+                                    format: 'uuid',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['pulled_backup_access_code'],
                                     type: 'string',
                                   },
                                 },
@@ -39481,6 +39582,41 @@ export default {
                                   ],
                                   type: 'object',
                                 },
+                                {
+                                  description:
+                                    'Indicates that all attempts to create an access code on this device before the start time failed and a backup access code was used to ensure access was provided in time.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    original_access_method_id: {
+                                      description:
+                                        'ID of the original access method from which this backup access method was split, if applicable.',
+                                      format: 'uuid',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['pulled_backup_access_code'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
                               ],
                             },
                             type: 'array',
@@ -39899,6 +40035,41 @@ export default {
                                       description:
                                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                                       enum: ['updating_access_times'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    'Indicates that all attempts to create an access code on this device before the start time failed and a backup access code was used to ensure access was provided in time.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    original_access_method_id: {
+                                      description:
+                                        'ID of the original access method from which this backup access method was split, if applicable.',
+                                      format: 'uuid',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['pulled_backup_access_code'],
                                       type: 'string',
                                     },
                                   },
