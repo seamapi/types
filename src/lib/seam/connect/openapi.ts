@@ -60728,6 +60728,7 @@ export default {
                                 type: 'array',
                               },
                               error: { type: 'string' },
+                              message: { type: 'string' },
                               rule: {
                                 enum: [
                                   'reservation_created',
@@ -60898,6 +60899,7 @@ export default {
                                 type: 'array',
                               },
                               error: { type: 'string' },
+                              message: { type: 'string' },
                               rule: {
                                 enum: [
                                   'reservation_created',
