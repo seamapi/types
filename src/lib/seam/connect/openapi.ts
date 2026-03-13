@@ -66281,6 +66281,48 @@ export default {
                         },
                         guest_name: { nullable: true, type: 'string' },
                         is_resource_syncing: { type: 'boolean' },
+                        last_automation_result: {
+                          nullable: true,
+                          properties: {
+                            actions: {
+                              items: {
+                                properties: {
+                                  access_grant_id: {
+                                    format: 'uuid',
+                                    type: 'string',
+                                  },
+                                  action_type: {
+                                    enum: [
+                                      'create',
+                                      'update',
+                                      'delete',
+                                      'skip',
+                                    ],
+                                    type: 'string',
+                                  },
+                                  message: { type: 'string' },
+                                  resource_type: { type: 'string' },
+                                  skip_reason: { type: 'string' },
+                                },
+                                required: ['action_type', 'resource_type'],
+                                type: 'object',
+                              },
+                              type: 'array',
+                            },
+                            created_at: { format: 'date-time', type: 'string' },
+                            error: { type: 'string' },
+                            message: { type: 'string' },
+                            rule: { type: 'string' },
+                            success: { type: 'boolean' },
+                          },
+                          required: [
+                            'success',
+                            'rule',
+                            'actions',
+                            'created_at',
+                          ],
+                          type: 'object',
+                        },
                         name: { nullable: true, type: 'string' },
                         reservation_id: { format: 'uuid', type: 'string' },
                         reservation_key: { type: 'string' },
@@ -66319,6 +66361,7 @@ export default {
                         'spaces',
                         'access_grant_id',
                         'access_methods',
+                        'last_automation_result',
                       ],
                       type: 'object',
                     },
@@ -66451,6 +66494,48 @@ export default {
                         },
                         guest_name: { nullable: true, type: 'string' },
                         is_resource_syncing: { type: 'boolean' },
+                        last_automation_result: {
+                          nullable: true,
+                          properties: {
+                            actions: {
+                              items: {
+                                properties: {
+                                  access_grant_id: {
+                                    format: 'uuid',
+                                    type: 'string',
+                                  },
+                                  action_type: {
+                                    enum: [
+                                      'create',
+                                      'update',
+                                      'delete',
+                                      'skip',
+                                    ],
+                                    type: 'string',
+                                  },
+                                  message: { type: 'string' },
+                                  resource_type: { type: 'string' },
+                                  skip_reason: { type: 'string' },
+                                },
+                                required: ['action_type', 'resource_type'],
+                                type: 'object',
+                              },
+                              type: 'array',
+                            },
+                            created_at: { format: 'date-time', type: 'string' },
+                            error: { type: 'string' },
+                            message: { type: 'string' },
+                            rule: { type: 'string' },
+                            success: { type: 'boolean' },
+                          },
+                          required: [
+                            'success',
+                            'rule',
+                            'actions',
+                            'created_at',
+                          ],
+                          type: 'object',
+                        },
                         name: { nullable: true, type: 'string' },
                         reservation_id: { format: 'uuid', type: 'string' },
                         reservation_key: { type: 'string' },
@@ -66489,6 +66574,7 @@ export default {
                         'spaces',
                         'access_grant_id',
                         'access_methods',
+                        'last_automation_result',
                       ],
                       type: 'object',
                     },
@@ -66669,6 +66755,51 @@ export default {
                           },
                           guest_name: { nullable: true, type: 'string' },
                           is_resource_syncing: { type: 'boolean' },
+                          last_automation_result: {
+                            nullable: true,
+                            properties: {
+                              actions: {
+                                items: {
+                                  properties: {
+                                    access_grant_id: {
+                                      format: 'uuid',
+                                      type: 'string',
+                                    },
+                                    action_type: {
+                                      enum: [
+                                        'create',
+                                        'update',
+                                        'delete',
+                                        'skip',
+                                      ],
+                                      type: 'string',
+                                    },
+                                    message: { type: 'string' },
+                                    resource_type: { type: 'string' },
+                                    skip_reason: { type: 'string' },
+                                  },
+                                  required: ['action_type', 'resource_type'],
+                                  type: 'object',
+                                },
+                                type: 'array',
+                              },
+                              created_at: {
+                                format: 'date-time',
+                                type: 'string',
+                              },
+                              error: { type: 'string' },
+                              message: { type: 'string' },
+                              rule: { type: 'string' },
+                              success: { type: 'boolean' },
+                            },
+                            required: [
+                              'success',
+                              'rule',
+                              'actions',
+                              'created_at',
+                            ],
+                            type: 'object',
+                          },
                           name: { nullable: true, type: 'string' },
                           pending_mutations: {
                             items: {
@@ -66741,6 +66872,7 @@ export default {
                           'pending_mutations',
                           'access_methods',
                           'spaces',
+                          'last_automation_result',
                         ],
                         type: 'object',
                       },
@@ -66903,6 +67035,51 @@ export default {
                           },
                           guest_name: { nullable: true, type: 'string' },
                           is_resource_syncing: { type: 'boolean' },
+                          last_automation_result: {
+                            nullable: true,
+                            properties: {
+                              actions: {
+                                items: {
+                                  properties: {
+                                    access_grant_id: {
+                                      format: 'uuid',
+                                      type: 'string',
+                                    },
+                                    action_type: {
+                                      enum: [
+                                        'create',
+                                        'update',
+                                        'delete',
+                                        'skip',
+                                      ],
+                                      type: 'string',
+                                    },
+                                    message: { type: 'string' },
+                                    resource_type: { type: 'string' },
+                                    skip_reason: { type: 'string' },
+                                  },
+                                  required: ['action_type', 'resource_type'],
+                                  type: 'object',
+                                },
+                                type: 'array',
+                              },
+                              created_at: {
+                                format: 'date-time',
+                                type: 'string',
+                              },
+                              error: { type: 'string' },
+                              message: { type: 'string' },
+                              rule: { type: 'string' },
+                              success: { type: 'boolean' },
+                            },
+                            required: [
+                              'success',
+                              'rule',
+                              'actions',
+                              'created_at',
+                            ],
+                            type: 'object',
+                          },
                           name: { nullable: true, type: 'string' },
                           pending_mutations: {
                             items: {
@@ -66975,6 +67152,7 @@ export default {
                           'pending_mutations',
                           'access_methods',
                           'spaces',
+                          'last_automation_result',
                         ],
                         type: 'object',
                       },
@@ -67966,6 +68144,51 @@ export default {
                           },
                           guest_name: { nullable: true, type: 'string' },
                           has_issued_access: { type: 'boolean' },
+                          last_automation_result: {
+                            nullable: true,
+                            properties: {
+                              actions: {
+                                items: {
+                                  properties: {
+                                    access_grant_id: {
+                                      format: 'uuid',
+                                      type: 'string',
+                                    },
+                                    action_type: {
+                                      enum: [
+                                        'create',
+                                        'update',
+                                        'delete',
+                                        'skip',
+                                      ],
+                                      type: 'string',
+                                    },
+                                    message: { type: 'string' },
+                                    resource_type: { type: 'string' },
+                                    skip_reason: { type: 'string' },
+                                  },
+                                  required: ['action_type', 'resource_type'],
+                                  type: 'object',
+                                },
+                                type: 'array',
+                              },
+                              created_at: {
+                                format: 'date-time',
+                                type: 'string',
+                              },
+                              error: { type: 'string' },
+                              message: { type: 'string' },
+                              rule: { type: 'string' },
+                              success: { type: 'boolean' },
+                            },
+                            required: [
+                              'success',
+                              'rule',
+                              'actions',
+                              'created_at',
+                            ],
+                            type: 'object',
+                          },
                           name: { nullable: true, type: 'string' },
                           reservation_id: { format: 'uuid', type: 'string' },
                           reservation_key: { type: 'string' },
@@ -67985,6 +68208,7 @@ export default {
                           'guest_name',
                           'has_issued_access',
                           'access_methods',
+                          'last_automation_result',
                         ],
                         type: 'object',
                       },
@@ -68061,6 +68285,51 @@ export default {
                           },
                           guest_name: { nullable: true, type: 'string' },
                           has_issued_access: { type: 'boolean' },
+                          last_automation_result: {
+                            nullable: true,
+                            properties: {
+                              actions: {
+                                items: {
+                                  properties: {
+                                    access_grant_id: {
+                                      format: 'uuid',
+                                      type: 'string',
+                                    },
+                                    action_type: {
+                                      enum: [
+                                        'create',
+                                        'update',
+                                        'delete',
+                                        'skip',
+                                      ],
+                                      type: 'string',
+                                    },
+                                    message: { type: 'string' },
+                                    resource_type: { type: 'string' },
+                                    skip_reason: { type: 'string' },
+                                  },
+                                  required: ['action_type', 'resource_type'],
+                                  type: 'object',
+                                },
+                                type: 'array',
+                              },
+                              created_at: {
+                                format: 'date-time',
+                                type: 'string',
+                              },
+                              error: { type: 'string' },
+                              message: { type: 'string' },
+                              rule: { type: 'string' },
+                              success: { type: 'boolean' },
+                            },
+                            required: [
+                              'success',
+                              'rule',
+                              'actions',
+                              'created_at',
+                            ],
+                            type: 'object',
+                          },
                           name: { nullable: true, type: 'string' },
                           reservation_id: { format: 'uuid', type: 'string' },
                           reservation_key: { type: 'string' },
@@ -68080,6 +68349,7 @@ export default {
                           'guest_name',
                           'has_issued_access',
                           'access_methods',
+                          'last_automation_result',
                         ],
                         type: 'object',
                       },
