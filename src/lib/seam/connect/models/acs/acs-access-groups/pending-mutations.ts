@@ -156,6 +156,18 @@ const deferring_user_membership_update = common_pending_mutation
     'A scheduled user membership change is pending for this access group.',
   )
 
+const deferring_deletion = common_pending_mutation
+  .extend({
+    mutation_code: z
+      .literal('deferring_deletion')
+      .describe(
+        'Mutation code to indicate that this access group is scheduled for deletion when its ends_at time passes.',
+      ),
+  })
+  .describe(
+    'This access group is scheduled for automatic deletion when its access window expires.',
+  )
+
 export const acs_access_group_pending_mutations = z.discriminatedUnion(
   'mutation_code',
   [
@@ -166,6 +178,7 @@ export const acs_access_group_pending_mutations = z.discriminatedUnion(
     updating_user_membership,
     updating_entrance_membership,
     deferring_user_membership_update,
+    deferring_deletion,
   ],
 )
 
@@ -190,6 +203,7 @@ const _acs_access_group_pending_mutations_map = z.object({
     .record(z.string().uuid(), deferring_user_membership_update)
     .optional()
     .nullable(),
+  deferring_deletion: deferring_deletion.optional().nullable(),
 })
 
 export type AcsAccessGroupPendingMutationsMap = z.infer<
