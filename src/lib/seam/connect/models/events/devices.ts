@@ -715,6 +715,16 @@ export const camera_activated_event = device_event.extend({
     .enum(['human', 'vehicle', 'package', 'other'])
     .optional()
     .describe('Sub-type of motion detected, if available.'),
+  image_url: z
+    .string()
+    .url()
+    .optional()
+    .describe('URL to a thumbnail image captured at the time of activation.'),
+  video_url: z
+    .string()
+    .url()
+    .optional()
+    .describe('URL to a short video clip captured at the time of activation.'),
 }).describe(`
   ---
   route_path: /devices
@@ -726,6 +736,20 @@ export type CameraActivatedEvent = z.infer<typeof camera_activated_event>
 
 export const device_doorbell_rang_event = device_event.extend({
   event_type: z.literal('device.doorbell_rang'),
+  image_url: z
+    .string()
+    .url()
+    .optional()
+    .describe(
+      'URL to a thumbnail image captured at the time the doorbell was pressed.',
+    ),
+  video_url: z
+    .string()
+    .url()
+    .optional()
+    .describe(
+      'URL to a short video clip captured at the time the doorbell was pressed.',
+    ),
 }).describe(`
   ---
   route_path: /devices
