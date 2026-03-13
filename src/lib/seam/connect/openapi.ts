@@ -61649,7 +61649,7 @@ export default {
     '/seam/customer/v1/automations/update': {
       patch: {
         description:
-          'Updates the automation configuration for a customer portal workspace.\nSupports both console session and customer client session authentication.',
+          'Updates the automation configuration for a customer portal workspace.',
         operationId: 'seamCustomerV1AutomationsUpdatePatch',
         requestBody: {
           content: {
@@ -61918,11 +61918,7 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [
-          { console_session_with_workspace: [] },
-          { api_key: [] },
-          { client_session_with_customer: [] },
-        ],
+        security: [{ console_session_with_workspace: [] }, { api_key: [] }],
         summary: '/seam/customer/v1/automations/update',
         tags: [],
         'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'automations'],
@@ -61933,7 +61929,7 @@ export default {
       },
       post: {
         description:
-          'Updates the automation configuration for a customer portal workspace.\nSupports both console session and customer client session authentication.',
+          'Updates the automation configuration for a customer portal workspace.',
         operationId: 'seamCustomerV1AutomationsUpdatePost',
         requestBody: {
           content: {
@@ -62202,11 +62198,7 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [
-          { console_session_with_workspace: [] },
-          { api_key: [] },
-          { client_session_with_customer: [] },
-        ],
+        security: [{ console_session_with_workspace: [] }, { api_key: [] }],
         summary: '/seam/customer/v1/automations/update',
         tags: [],
         'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'automations'],
@@ -64065,12 +64057,7 @@ export default {
                     },
                     type: 'object',
                   },
-                  customer_key: {
-                    description: 'Key of the customer.',
-                    type: 'string',
-                  },
                 },
-                required: ['customer_key'],
                 type: 'object',
               },
             },
@@ -64092,11 +64079,7 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [
-          { pat_with_workspace: [] },
-          { console_session_with_workspace: [] },
-          { api_key: [] },
-        ],
+        security: [{ client_session_with_customer: [] }],
         summary: '/seam/customer/v1/customers/automations/update',
         tags: [],
         'x-fern-sdk-group-name': [
@@ -64359,12 +64342,7 @@ export default {
                     },
                     type: 'object',
                   },
-                  customer_key: {
-                    description: 'Key of the customer.',
-                    type: 'string',
-                  },
                 },
-                required: ['customer_key'],
                 type: 'object',
               },
             },
@@ -64386,11 +64364,7 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [
-          { pat_with_workspace: [] },
-          { console_session_with_workspace: [] },
-          { api_key: [] },
-        ],
+        security: [{ client_session_with_customer: [] }],
         summary: '/seam/customer/v1/customers/automations/update',
         tags: [],
         'x-fern-sdk-group-name': [
