@@ -23162,6 +23162,12 @@ export default {
                 type: 'string',
               },
               event_type: { enum: ['camera.activated'], type: 'string' },
+              image_url: {
+                description:
+                  'URL to a thumbnail image captured at the time of activation.',
+                format: 'uri',
+                type: 'string',
+              },
               motion_sub_type: {
                 description: 'Sub-type of motion detected, if available.',
                 enum: ['human', 'vehicle', 'package', 'other'],
@@ -23170,6 +23176,12 @@ export default {
               occurred_at: {
                 description: 'Date and time at which the event occurred.',
                 format: 'date-time',
+                type: 'string',
+              },
+              video_url: {
+                description:
+                  'URL to a short video clip captured at the time of activation.',
+                format: 'uri',
                 type: 'string',
               },
               workspace_id: {
@@ -23239,9 +23251,21 @@ export default {
                 type: 'string',
               },
               event_type: { enum: ['device.doorbell_rang'], type: 'string' },
+              image_url: {
+                description:
+                  'URL to a thumbnail image captured at the time the doorbell was pressed.',
+                format: 'uri',
+                type: 'string',
+              },
               occurred_at: {
                 description: 'Date and time at which the event occurred.',
                 format: 'date-time',
+                type: 'string',
+              },
+              video_url: {
+                description:
+                  'URL to a short video clip captured at the time the doorbell was pressed.',
+                format: 'uri',
                 type: 'string',
               },
               workspace_id: {
