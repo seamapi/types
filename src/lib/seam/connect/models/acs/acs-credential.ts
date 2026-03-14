@@ -9,6 +9,7 @@ import {
 export const acs_credential_external_type = z.enum([
   'pti_card',
   'brivo_credential',
+  'brivo_digital_credential',
   'hid_credential',
   'visionline_card',
   'salto_ks_credential',
@@ -23,6 +24,7 @@ export const acs_credential_access_method_type = z.enum([
   'code',
   'card',
   'mobile_key',
+  'cloud_key',
 ])
 
 export type AcsCredentialExternalType = z.infer<
@@ -214,7 +216,7 @@ const common_acs_credential = z.object({
       'Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was encoded onto a card.',
     ),
   access_method: acs_credential_access_method_type.describe(
-    'Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`.',
+    'Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
   ),
   external_type: acs_credential_external_type
     .optional()
