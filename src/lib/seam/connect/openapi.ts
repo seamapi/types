@@ -3246,8 +3246,8 @@ export default {
         properties: {
           access_method: {
             description:
-              'Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`.',
-            enum: ['code', 'card', 'mobile_key'],
+              'Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+            enum: ['code', 'card', 'mobile_key', 'cloud_key'],
             type: 'string',
           },
           acs_credential_id: {
@@ -3360,6 +3360,7 @@ export default {
             enum: [
               'pti_card',
               'brivo_credential',
+              'brivo_digital_credential',
               'hid_credential',
               'visionline_card',
               'salto_ks_credential',
@@ -5807,8 +5808,8 @@ export default {
                         properties: {
                           access_method: {
                             description:
-                              'Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`.',
-                            enum: ['code', 'card', 'mobile_key'],
+                              'Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                            enum: ['code', 'card', 'mobile_key', 'cloud_key'],
                             type: 'string',
                           },
                           acs_credential_id: {
@@ -5926,6 +5927,7 @@ export default {
                             enum: [
                               'pti_card',
                               'brivo_credential',
+                              'brivo_digital_credential',
                               'hid_credential',
                               'visionline_card',
                               'salto_ks_credential',
@@ -6263,8 +6265,8 @@ export default {
                         properties: {
                           access_method: {
                             description:
-                              'Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`.',
-                            enum: ['code', 'card', 'mobile_key'],
+                              'Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                            enum: ['code', 'card', 'mobile_key', 'cloud_key'],
                             type: 'string',
                           },
                           acs_credential_id: {
@@ -6382,6 +6384,7 @@ export default {
                             enum: [
                               'pti_card',
                               'brivo_credential',
+                              'brivo_digital_credential',
                               'hid_credential',
                               'visionline_card',
                               'salto_ks_credential',
@@ -6938,8 +6941,8 @@ export default {
                     properties: {
                       access_method: {
                         description:
-                          'Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`.',
-                        enum: ['code', 'card', 'mobile_key'],
+                          'Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                        enum: ['code', 'card', 'mobile_key', 'cloud_key'],
                         type: 'string',
                       },
                       acs_credential_id: {
@@ -7056,6 +7059,7 @@ export default {
                         enum: [
                           'pti_card',
                           'brivo_credential',
+                          'brivo_digital_credential',
                           'hid_credential',
                           'visionline_card',
                           'salto_ks_credential',
@@ -7391,8 +7395,8 @@ export default {
                     properties: {
                       access_method: {
                         description:
-                          'Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`.',
-                        enum: ['code', 'card', 'mobile_key'],
+                          'Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                        enum: ['code', 'card', 'mobile_key', 'cloud_key'],
                         type: 'string',
                       },
                       acs_credential_id: {
@@ -7509,6 +7513,7 @@ export default {
                         enum: [
                           'pti_card',
                           'brivo_credential',
+                          'brivo_digital_credential',
                           'hid_credential',
                           'visionline_card',
                           'salto_ks_credential',
@@ -23985,8 +23990,8 @@ export default {
                     properties: {
                       access_method: {
                         description:
-                          'Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`.',
-                        enum: ['code', 'card', 'mobile_key'],
+                          'Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                        enum: ['code', 'card', 'mobile_key', 'cloud_key'],
                         type: 'string',
                       },
                       acs_credential_id: { nullable: true, type: 'string' },
@@ -24480,6 +24485,7 @@ export default {
                         enum: [
                           'pti_card',
                           'brivo_credential',
+                          'brivo_digital_credential',
                           'hid_credential',
                           'visionline_card',
                           'salto_ks_credential',
@@ -27629,8 +27635,8 @@ export default {
         properties: {
           access_method: {
             description:
-              'Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`.',
-            enum: ['code', 'card', 'mobile_key'],
+              'Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+            enum: ['code', 'card', 'mobile_key', 'cloud_key'],
             type: 'string',
           },
           acs_credential_id: {
@@ -27743,6 +27749,7 @@ export default {
             enum: [
               'pti_card',
               'brivo_credential',
+              'brivo_digital_credential',
               'hid_credential',
               'visionline_card',
               'salto_ks_credential',
@@ -41591,8 +41598,8 @@ export default {
                 properties: {
                   access_method: {
                     description:
-                      'Access method for the new credential. Supported values: `code`, `card`, `mobile_key`.',
-                    enum: ['code', 'card', 'mobile_key'],
+                      'Access method for the new credential. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                    enum: ['code', 'card', 'mobile_key', 'cloud_key'],
                     type: 'string',
                   },
                   acs_system_id: {
