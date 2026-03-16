@@ -61253,8 +61253,18 @@ export default {
     '/seam/customer/v1/automations/get': {
       get: {
         description:
-          'Gets the current automation configuration for a customer portal workspace.\nFor customer client sessions, returns customer-specific config if available,\notherwise falls back to workspace-level config.',
+          'Gets the current automation configuration for a customer portal workspace.\nWhen customer_key is provided, returns customer-specific config if available,\notherwise falls back to workspace-level config.',
         operationId: 'seamCustomerV1AutomationsGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'customer_key',
+            schema: {
+              description: 'Key of the customer to get automation config for.',
+              type: 'string',
+            },
+          },
+        ],
         responses: {
           200: {
             content: {
@@ -61524,11 +61534,7 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [
-          { console_session_with_workspace: [] },
-          { api_key: [] },
-          { client_session_with_customer: [] },
-        ],
+        security: [{ console_session_with_workspace: [] }, { api_key: [] }],
         summary: '/seam/customer/v1/automations/get',
         tags: [],
         'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'automations'],
@@ -61539,8 +61545,24 @@ export default {
       },
       post: {
         description:
-          'Gets the current automation configuration for a customer portal workspace.\nFor customer client sessions, returns customer-specific config if available,\notherwise falls back to workspace-level config.',
+          'Gets the current automation configuration for a customer portal workspace.\nWhen customer_key is provided, returns customer-specific config if available,\notherwise falls back to workspace-level config.',
         operationId: 'seamCustomerV1AutomationsGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  customer_key: {
+                    description:
+                      'Key of the customer to get automation config for.',
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
         responses: {
           200: {
             content: {
@@ -61810,11 +61832,7 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [
-          { console_session_with_workspace: [] },
-          { api_key: [] },
-          { client_session_with_customer: [] },
-        ],
+        security: [{ console_session_with_workspace: [] }, { api_key: [] }],
         summary: '/seam/customer/v1/automations/get',
         tags: [],
         'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'automations'],
@@ -62073,6 +62091,11 @@ export default {
                       },
                     },
                     type: 'object',
+                  },
+                  customer_key: {
+                    description:
+                      'Key of the customer to update automation config for.',
+                    type: 'string',
                   },
                 },
                 type: 'object',
@@ -62353,6 +62376,11 @@ export default {
                       },
                     },
                     type: 'object',
+                  },
+                  customer_key: {
+                    description:
+                      'Key of the customer to update automation config for.',
+                    type: 'string',
                   },
                 },
                 type: 'object',
@@ -63360,16 +63388,8 @@ export default {
     '/seam/customer/v1/customers/automations/get': {
       get: {
         description:
-          'Gets the automation configuration for a specific customer.\nReturns the merged configuration (customer overrides on top of workspace defaults).',
+          'Gets the automation configuration for the authenticated customer.\nReturns the merged configuration (customer overrides on top of workspace defaults).',
         operationId: 'seamCustomerV1CustomersAutomationsGetGet',
-        parameters: [
-          {
-            in: 'query',
-            name: 'customer_key',
-            required: true,
-            schema: { description: 'Key of the customer.', type: 'string' },
-          },
-        ],
         responses: {
           200: {
             content: {
@@ -63648,11 +63668,7 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [
-          { pat_with_workspace: [] },
-          { console_session_with_workspace: [] },
-          { api_key: [] },
-        ],
+        security: [{ client_session_with_customer: [] }],
         summary: '/seam/customer/v1/customers/automations/get',
         tags: [],
         'x-fern-sdk-group-name': [
@@ -63669,24 +63685,8 @@ export default {
       },
       post: {
         description:
-          'Gets the automation configuration for a specific customer.\nReturns the merged configuration (customer overrides on top of workspace defaults).',
+          'Gets the automation configuration for the authenticated customer.\nReturns the merged configuration (customer overrides on top of workspace defaults).',
         operationId: 'seamCustomerV1CustomersAutomationsGetPost',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  customer_key: {
-                    description: 'Key of the customer.',
-                    type: 'string',
-                  },
-                },
-                required: ['customer_key'],
-                type: 'object',
-              },
-            },
-          },
-        },
         responses: {
           200: {
             content: {
@@ -63965,11 +63965,7 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
-        security: [
-          { pat_with_workspace: [] },
-          { console_session_with_workspace: [] },
-          { api_key: [] },
-        ],
+        security: [{ client_session_with_customer: [] }],
         summary: '/seam/customer/v1/customers/automations/get',
         tags: [],
         'x-fern-sdk-group-name': [
