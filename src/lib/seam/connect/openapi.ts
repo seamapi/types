@@ -2855,6 +2855,30 @@ export default {
                 },
                 {
                   description:
+                    'This access group is scheduled for automatic deletion when its access window expires.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that this access group is scheduled for automatic deletion when its access window expires.',
+                      enum: ['deferring_deletion'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'mutation_code'],
+                  type: 'object',
+                },
+                {
+                  description:
                     'Seam is in the process of pushing an access group information update to the integrated access system.',
                   properties: {
                     created_at: {
@@ -3125,30 +3149,6 @@ export default {
                     'acs_user_id',
                     'variant',
                   ],
-                  type: 'object',
-                },
-                {
-                  description:
-                    'This access group is scheduled for automatic deletion when its access window expires.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which the mutation was created.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description: 'Detailed description of the mutation.',
-                      type: 'string',
-                    },
-                    mutation_code: {
-                      description:
-                        'Mutation code to indicate that this access group is scheduled for deletion when its ends_at time passes.',
-                      enum: ['deferring_deletion'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['created_at', 'message', 'mutation_code'],
                   type: 'object',
                 },
               ],
@@ -27253,6 +27253,30 @@ export default {
                 },
                 {
                   description:
+                    'This access group is scheduled for automatic deletion when its access window expires.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that this access group is scheduled for automatic deletion when its access window expires.',
+                      enum: ['deferring_deletion'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'mutation_code'],
+                  type: 'object',
+                },
+                {
+                  description:
                     'Seam is in the process of pushing an access group information update to the integrated access system.',
                   properties: {
                     created_at: {
@@ -27523,30 +27547,6 @@ export default {
                     'acs_user_id',
                     'variant',
                   ],
-                  type: 'object',
-                },
-                {
-                  description:
-                    'This access group is scheduled for automatic deletion when its access window expires.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which the mutation was created.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description: 'Detailed description of the mutation.',
-                      type: 'string',
-                    },
-                    mutation_code: {
-                      description:
-                        'Mutation code to indicate that this access group is scheduled for deletion when its ends_at time passes.',
-                      enum: ['deferring_deletion'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['created_at', 'message', 'mutation_code'],
                   type: 'object',
                 },
               ],
