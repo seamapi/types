@@ -38185,7 +38185,6 @@ export default {
           {
             in: 'query',
             name: 'access_grant_id',
-            required: true,
             schema: {
               description: 'ID of Access Grant to list access methods for.',
               format: 'uuid',
@@ -38194,8 +38193,16 @@ export default {
           },
           {
             in: 'query',
+            name: 'access_grant_key',
+            schema: {
+              description: 'Key of Access Grant to list access methods for.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'device_id',
-            required: false,
             schema: {
               description:
                 'ID of the device for which you want to retrieve all access methods.',
@@ -38206,7 +38213,6 @@ export default {
           {
             in: 'query',
             name: 'acs_entrance_id',
-            required: false,
             schema: {
               description:
                 'ID of the entrance for which you want to retrieve all access methods.',
@@ -38217,7 +38223,6 @@ export default {
           {
             in: 'query',
             name: 'space_id',
-            required: false,
             schema: {
               description:
                 'ID of the space for which you want to retrieve all access methods.',
@@ -38278,6 +38283,12 @@ export default {
                     format: 'uuid',
                     type: 'string',
                   },
+                  access_grant_key: {
+                    description:
+                      'Key of Access Grant to list access methods for.',
+                    minLength: 1,
+                    type: 'string',
+                  },
                   acs_entrance_id: {
                     description:
                       'ID of the entrance for which you want to retrieve all access methods.',
@@ -38297,7 +38308,6 @@ export default {
                     type: 'string',
                   },
                 },
-                required: ['access_grant_id'],
                 type: 'object',
               },
             },
