@@ -31979,7 +31979,7 @@ export default {
     '/access_codes/list': {
       get: {
         description:
-          'Returns a list of all [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nSpecify either `device_id` or `access_code_ids`.',
+          'Returns a list of all [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nSpecify `device_id`, `access_code_ids`, or `access_method_id`.',
         operationId: 'accessCodesListGet',
         parameters: [
           {
@@ -31996,7 +31996,7 @@ export default {
             name: 'device_id',
             schema: {
               description:
-                'ID of the device for which you want to list access codes. Specify either `device_id` or `access_code_ids`.',
+                'ID of the device for which you want to list access codes. Specify `device_id`, `access_code_ids`, or `access_method_id`.',
               format: 'uuid',
               type: 'string',
             },
@@ -32006,9 +32006,19 @@ export default {
             name: 'access_code_ids',
             schema: {
               description:
-                'IDs of the access codes that you want to retrieve. Specify either `device_id` or `access_code_ids`.',
+                'IDs of the access codes that you want to retrieve. Specify `device_id`, `access_code_ids`, or `access_method_id`.',
               items: { format: 'uuid', type: 'string' },
               type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'access_method_id',
+            schema: {
+              description:
+                'ID of the access method for which you want to list access codes. Specify `device_id`, `access_code_ids`, or `access_method_id`.',
+              format: 'uuid',
+              type: 'string',
             },
           },
           {
@@ -32092,7 +32102,7 @@ export default {
       },
       post: {
         description:
-          'Returns a list of all [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nSpecify either `device_id` or `access_code_ids`.',
+          'Returns a list of all [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nSpecify `device_id`, `access_code_ids`, or `access_method_id`.',
         operationId: 'accessCodesListPost',
         requestBody: {
           content: {
@@ -32101,9 +32111,15 @@ export default {
                 properties: {
                   access_code_ids: {
                     description:
-                      'IDs of the access codes that you want to retrieve. Specify either `device_id` or `access_code_ids`.',
+                      'IDs of the access codes that you want to retrieve. Specify `device_id`, `access_code_ids`, or `access_method_id`.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
+                  },
+                  access_method_id: {
+                    description:
+                      'ID of the access method for which you want to list access codes. Specify `device_id`, `access_code_ids`, or `access_method_id`.',
+                    format: 'uuid',
+                    type: 'string',
                   },
                   customer_key: {
                     description:
@@ -32112,7 +32128,7 @@ export default {
                   },
                   device_id: {
                     description:
-                      'ID of the device for which you want to list access codes. Specify either `device_id` or `access_code_ids`.',
+                      'ID of the device for which you want to list access codes. Specify `device_id`, `access_code_ids`, or `access_method_id`.',
                     format: 'uuid',
                     type: 'string',
                   },
