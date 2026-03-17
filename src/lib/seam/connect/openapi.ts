@@ -27111,7 +27111,6 @@ export default {
           'warnings',
           'is_managed',
           'status',
-          'dormakaba_oracode_metadata',
         ],
         type: 'object',
         'x-route-path': '/access_codes/unmanaged',

@@ -31,6 +31,7 @@ export const unmanaged_access_code = access_code
       ),
     dormakaba_oracode_metadata: dormakaba_oracode_access_code_metadata
       .nullable()
+      .optional()
       .describe(
         'Metadata for a dormakaba Oracode unmanaged access code. Only present for unmanaged access codes from dormakaba Oracode devices.',
       ),
