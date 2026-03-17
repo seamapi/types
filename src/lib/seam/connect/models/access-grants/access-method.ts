@@ -251,6 +251,12 @@ export const access_method = z.object({
     .describe(
       'Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.',
     ),
+  is_ready_for_encoding: z
+    .boolean()
+    .optional()
+    .describe(
+      'Indicates whether the access method is ready to be encoded. This is true when the credential has been created and the card has not yet been issued.',
+    ),
   code: z
     .string()
     .nullable()

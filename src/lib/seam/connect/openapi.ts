@@ -2394,6 +2394,11 @@ export default {
             description: 'Indicates whether the access method has been issued.',
             type: 'boolean',
           },
+          is_ready_for_encoding: {
+            description:
+              'Indicates whether the access method is ready to be encoded. This is true when the credential has been created and the card has not yet been issued.',
+            type: 'boolean',
+          },
           issued_at: {
             description: 'Date and time at which the access method was issued.',
             format: 'date-time',
@@ -38395,6 +38400,11 @@ export default {
                             'Indicates whether the access method has been issued.',
                           type: 'boolean',
                         },
+                        is_ready_for_encoding: {
+                          description:
+                            'Indicates whether the access method is ready to be encoded. This is true when the credential has been created and the card has not yet been issued.',
+                          type: 'boolean',
+                        },
                         issued_at: {
                           description:
                             'Date and time at which the access method was issued.',
@@ -38833,6 +38843,11 @@ export default {
                         is_issued: {
                           description:
                             'Indicates whether the access method has been issued.',
+                          type: 'boolean',
+                        },
+                        is_ready_for_encoding: {
+                          description:
+                            'Indicates whether the access method is ready to be encoded. This is true when the credential has been created and the card has not yet been issued.',
                           type: 'boolean',
                         },
                         issued_at: {
@@ -39307,6 +39322,11 @@ export default {
                               'Indicates whether the access method has been issued.',
                             type: 'boolean',
                           },
+                          is_ready_for_encoding: {
+                            description:
+                              'Indicates whether the access method is ready to be encoded. This is true when the credential has been created and the card has not yet been issued.',
+                            type: 'boolean',
+                          },
                           issued_at: {
                             description:
                               'Date and time at which the access method was issued.',
@@ -39768,6 +39788,11 @@ export default {
                           is_issued: {
                             description:
                               'Indicates whether the access method has been issued.',
+                            type: 'boolean',
+                          },
+                          is_ready_for_encoding: {
+                            description:
+                              'Indicates whether the access method is ready to be encoded. This is true when the credential has been created and the card has not yet been issued.',
                             type: 'boolean',
                           },
                           issued_at: {
