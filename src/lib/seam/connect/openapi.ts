@@ -61403,6 +61403,9 @@ export default {
                                   ],
                                   type: 'string',
                                 },
+                                prefer_guest_phone_last4_as_code: {
+                                  type: 'boolean',
+                                },
                               },
                               required: [
                                 'access_methods',
@@ -61701,6 +61704,9 @@ export default {
                                   ],
                                   type: 'string',
                                 },
+                                prefer_guest_phone_last4_as_code: {
+                                  type: 'boolean',
+                                },
                               },
                               required: [
                                 'access_methods',
@@ -61984,6 +61990,9 @@ export default {
                                   'all_available',
                                 ],
                                 type: 'string',
+                              },
+                              prefer_guest_phone_last4_as_code: {
+                                type: 'boolean',
                               },
                             },
                             required: [
@@ -62269,6 +62278,9 @@ export default {
                                   'all_available',
                                 ],
                                 type: 'string',
+                              },
+                              prefer_guest_phone_last4_as_code: {
+                                type: 'boolean',
                               },
                             },
                             required: [
@@ -63530,6 +63542,9 @@ export default {
                                       ],
                                       type: 'string',
                                     },
+                                    prefer_guest_phone_last4_as_code: {
+                                      type: 'boolean',
+                                    },
                                   },
                                   required: [
                                     'access_methods',
@@ -63826,6 +63841,9 @@ export default {
                                         'all_available',
                                       ],
                                       type: 'string',
+                                    },
+                                    prefer_guest_phone_last4_as_code: {
+                                      type: 'boolean',
                                     },
                                   },
                                   required: [
@@ -64124,6 +64142,9 @@ export default {
                                 ],
                                 type: 'string',
                               },
+                              prefer_guest_phone_last4_as_code: {
+                                type: 'boolean',
+                              },
                             },
                             required: [
                               'access_methods',
@@ -64408,6 +64429,9 @@ export default {
                                   'all_available',
                                 ],
                                 type: 'string',
+                              },
+                              prefer_guest_phone_last4_as_code: {
+                                type: 'boolean',
                               },
                             },
                             required: [
