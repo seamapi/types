@@ -37,6 +37,12 @@ export const acs_entrance_capability_flags = z.object({
     .describe(
       'Indicates whether the ACS entrance can belong to a reservation via an access_grant.reservation_key.',
     ),
+  can_unlock_with_cloud_key: z
+    .boolean()
+    .optional()
+    .describe(
+      'Indicates whether the ACS entrance can be remotely unlocked using a cloud_key credential.',
+    ),
 })
 
 export const acs_entrance = z

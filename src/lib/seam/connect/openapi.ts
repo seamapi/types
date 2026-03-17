@@ -3874,6 +3874,11 @@ export default {
               'Indicates whether the ACS entrance can be unlocked with card credentials.',
             type: 'boolean',
           },
+          can_unlock_with_cloud_key: {
+            description:
+              'Indicates whether the ACS entrance can be remotely unlocked using a cloud_key credential.',
+            type: 'boolean',
+          },
           can_unlock_with_code: {
             description:
               'Indicates whether the ACS entrance can be unlocked with pin codes.',
@@ -24094,6 +24099,11 @@ export default {
                                 'Indicates whether the ACS entrance can be unlocked with card credentials.',
                               type: 'boolean',
                             },
+                            can_unlock_with_cloud_key: {
+                              description:
+                                'Indicates whether the ACS entrance can be remotely unlocked using a cloud_key credential.',
+                              type: 'boolean',
+                            },
                             can_unlock_with_code: {
                               description:
                                 'Indicates whether the ACS entrance can be unlocked with pin codes.',
@@ -44199,6 +44209,70 @@ export default {
         'x-fern-sdk-return-value': 'acs_credentials',
         'x-response-key': 'acs_credentials',
         'x-title': 'List Credentials with Access to an Entrance',
+      },
+    },
+    '/acs/entrances/unlock': {
+      post: {
+        description:
+          'Remotely unlocks a specified [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) using a cloud_key credential. Returns an action attempt that tracks the progress of the unlock operation.',
+        operationId: 'acsEntrancesUnlockPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_credential_id: {
+                    description:
+                      'ID of the cloud_key credential to use for the unlock operation.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_entrance_id: {
+                    description: 'ID of the entrance to unlock.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['acs_entrance_id', 'acs_credential_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/entrances/unlock',
+        tags: ['/acs'],
+        'x-action-attempt-type': 'UNLOCK_DOOR',
+        'x-fern-sdk-group-name': ['acs', 'entrances'],
+        'x-fern-sdk-method-name': 'unlock',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
+        'x-title': 'Unlock an Entrance',
       },
     },
     '/acs/systems/get': {
