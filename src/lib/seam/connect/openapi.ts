@@ -61409,6 +61409,8 @@ export default {
                                   minItems: 1,
                                   type: 'array',
                                 },
+                                allow_shared_email_and_phone_across_user_identities:
+                                  { type: 'boolean' },
                                 card_count_on_reservation_create: {
                                   minimum: 0,
                                   type: 'integer',
@@ -61710,6 +61712,8 @@ export default {
                                   minItems: 1,
                                   type: 'array',
                                 },
+                                allow_shared_email_and_phone_across_user_identities:
+                                  { type: 'boolean' },
                                 card_count_on_reservation_create: {
                                   minimum: 0,
                                   type: 'integer',
@@ -61997,6 +62001,8 @@ export default {
                                 minItems: 1,
                                 type: 'array',
                               },
+                              allow_shared_email_and_phone_across_user_identities:
+                                { type: 'boolean' },
                               card_count_on_reservation_create: {
                                 minimum: 0,
                                 type: 'integer',
@@ -62285,6 +62291,8 @@ export default {
                                 minItems: 1,
                                 type: 'array',
                               },
+                              allow_shared_email_and_phone_across_user_identities:
+                                { type: 'boolean' },
                               card_count_on_reservation_create: {
                                 minimum: 0,
                                 type: 'integer',
@@ -63548,6 +63556,8 @@ export default {
                                       minItems: 1,
                                       type: 'array',
                                     },
+                                    allow_shared_email_and_phone_across_user_identities:
+                                      { type: 'boolean' },
                                     card_count_on_reservation_create: {
                                       minimum: 0,
                                       type: 'integer',
@@ -63848,6 +63858,8 @@ export default {
                                       minItems: 1,
                                       type: 'array',
                                     },
+                                    allow_shared_email_and_phone_across_user_identities:
+                                      { type: 'boolean' },
                                     card_count_on_reservation_create: {
                                       minimum: 0,
                                       type: 'integer',
@@ -64148,6 +64160,8 @@ export default {
                                 minItems: 1,
                                 type: 'array',
                               },
+                              allow_shared_email_and_phone_across_user_identities:
+                                { type: 'boolean' },
                               card_count_on_reservation_create: {
                                 minimum: 0,
                                 type: 'integer',
@@ -64436,6 +64450,8 @@ export default {
                                 minItems: 1,
                                 type: 'array',
                               },
+                              allow_shared_email_and_phone_across_user_identities:
+                                { type: 'boolean' },
                               card_count_on_reservation_create: {
                                 minimum: 0,
                                 type: 'integer',
