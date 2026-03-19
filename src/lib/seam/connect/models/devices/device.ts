@@ -463,6 +463,17 @@ const accessory_keypad_setup_required = common_device_warning.extend({
     Indicates that the accessory keypad exists, but is not linked to the Igloohome Bridge. Online access code programming will fail until the keypad is linked to the Igloohome Bridge in the Igloohome app.
     `)
 
+const unreliable_online_status = common_device_warning.extend({
+  warning_code: z
+    .literal('unreliable_online_status')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: locks
+    ---
+    Indicates that the device may optimistically be reported as online because the provider does not reliably report its online status.
+    `)
+
 const max_access_codes_reached = common_device_warning.extend({
   warning_code: z
     .literal('max_access_codes_reached')
@@ -506,6 +517,7 @@ const device_warning = z.discriminatedUnion('warning_code', [
   hub_required_for_additional_capabilities,
   keynest_unsupported_locker,
   accessory_keypad_setup_required,
+  unreliable_online_status,
   max_access_codes_reached,
 ])
 
@@ -560,6 +572,7 @@ const _device_warning_map = z.object({
   accessory_keypad_setup_required: accessory_keypad_setup_required
     .optional()
     .nullable(),
+  unreliable_online_status: unreliable_online_status.optional().nullable(),
   max_access_codes_reached: max_access_codes_reached.optional().nullable(),
 })
 

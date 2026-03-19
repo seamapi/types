@@ -14696,6 +14696,32 @@ export default {
                 },
                 {
                   description:
+                    'Indicates that the device may optimistically be reported as online because the provider does not reliably report its online status.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['unreliable_online_status'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
                     'Indicates that the device has reached its maximum number of active access codes. Delete existing codes before creating new ones.',
                   properties: {
                     active_access_code_count: {
@@ -30289,6 +30315,32 @@ export default {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['accessory_keypad_setup_required'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    'Indicates that the device may optimistically be reported as online because the provider does not reliably report its online status.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['unreliable_online_status'],
                       type: 'string',
                     },
                   },
