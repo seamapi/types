@@ -61503,10 +61503,6 @@ export default {
                                   minimum: 0,
                                   type: 'integer',
                                 },
-                                code_count_on_reservation_create: {
-                                  minimum: 0,
-                                  type: 'integer',
-                                },
                                 instant_key_max_use_count: {
                                   minimum: 1,
                                   type: 'integer',
@@ -61806,10 +61802,6 @@ export default {
                                   minimum: 0,
                                   type: 'integer',
                                 },
-                                code_count_on_reservation_create: {
-                                  minimum: 0,
-                                  type: 'integer',
-                                },
                                 instant_key_max_use_count: {
                                   minimum: 1,
                                   type: 'integer',
@@ -62092,10 +62084,6 @@ export default {
                               allow_shared_email_and_phone_across_user_identities:
                                 { type: 'boolean' },
                               card_count_on_reservation_create: {
-                                minimum: 0,
-                                type: 'integer',
-                              },
-                              code_count_on_reservation_create: {
                                 minimum: 0,
                                 type: 'integer',
                               },
@@ -62382,10 +62370,6 @@ export default {
                               allow_shared_email_and_phone_across_user_identities:
                                 { type: 'boolean' },
                               card_count_on_reservation_create: {
-                                minimum: 0,
-                                type: 'integer',
-                              },
-                              code_count_on_reservation_create: {
                                 minimum: 0,
                                 type: 'integer',
                               },
@@ -63650,10 +63634,6 @@ export default {
                                       minimum: 0,
                                       type: 'integer',
                                     },
-                                    code_count_on_reservation_create: {
-                                      minimum: 0,
-                                      type: 'integer',
-                                    },
                                     instant_key_max_use_count: {
                                       minimum: 1,
                                       type: 'integer',
@@ -63949,10 +63929,6 @@ export default {
                                     allow_shared_email_and_phone_across_user_identities:
                                       { type: 'boolean' },
                                     card_count_on_reservation_create: {
-                                      minimum: 0,
-                                      type: 'integer',
-                                    },
-                                    code_count_on_reservation_create: {
                                       minimum: 0,
                                       type: 'integer',
                                     },
@@ -64254,10 +64230,6 @@ export default {
                                 minimum: 0,
                                 type: 'integer',
                               },
-                              code_count_on_reservation_create: {
-                                minimum: 0,
-                                type: 'integer',
-                              },
                               instant_key_max_use_count: {
                                 minimum: 1,
                                 type: 'integer',
@@ -64541,10 +64513,6 @@ export default {
                               allow_shared_email_and_phone_across_user_identities:
                                 { type: 'boolean' },
                               card_count_on_reservation_create: {
-                                minimum: 0,
-                                type: 'integer',
-                              },
-                              code_count_on_reservation_create: {
                                 minimum: 0,
                                 type: 'integer',
                               },
