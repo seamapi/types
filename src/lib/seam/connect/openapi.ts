@@ -67587,6 +67587,129 @@ export default {
         'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
+    '/seam/customer/v1/reservations/list_access_grants': {
+      get: {
+        description:
+          'Lists access grants linked to a reservation by reservation_key.',
+        operationId: 'seamCustomerV1ReservationsListAccessGrantsGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'customer_key',
+            required: false,
+            schema: {
+              description:
+                'The customer_key identifying the customer. Required when not using client_session_with_customer auth.',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'reservation_key',
+            required: true,
+            schema: {
+              description: 'The reservation_key to filter access grants by.',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_grants: {
+                      items: { $ref: '#/components/schemas/access_grant' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_grants', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session_with_customer: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/seam/customer/v1/reservations/list_access_grants',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'reservations'],
+        'x-fern-sdk-method-name': 'list_access_grants',
+        'x-fern-sdk-return-value': 'access_grants',
+        'x-response-key': 'access_grants',
+        'x-title': 'List Access Grants for Reservation',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+      post: {
+        description:
+          'Lists access grants linked to a reservation by reservation_key.',
+        operationId: 'seamCustomerV1ReservationsListAccessGrantsPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  customer_key: {
+                    description:
+                      'The customer_key identifying the customer. Required when not using client_session_with_customer auth.',
+                    type: 'string',
+                  },
+                  reservation_key: {
+                    description:
+                      'The reservation_key to filter access grants by.',
+                    type: 'string',
+                  },
+                },
+                required: ['reservation_key'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_grants: {
+                      items: { $ref: '#/components/schemas/access_grant' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_grants', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session_with_customer: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/seam/customer/v1/reservations/list_access_grants',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'reservations'],
+        'x-fern-sdk-method-name': 'list_access_grants',
+        'x-fern-sdk-return-value': 'access_grants',
+        'x-response-key': 'access_grants',
+        'x-title': 'List Access Grants for Reservation',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
     '/seam/customer/v1/settings/business_verticals/list': {
       get: {
         description: 'Returns all available business verticals.',
