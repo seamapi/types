@@ -60182,6 +60182,12 @@ export default {
                                               items: { type: 'string' },
                                               type: 'array',
                                             },
+                                            properties_before: {
+                                              additionalProperties: {
+                                                $ref: '#/components/schemas/access_code',
+                                              },
+                                              type: 'object',
+                                            },
                                             properties_updated: {
                                               additionalProperties: {
                                                 $ref: '#/components/schemas/access_code',
@@ -60577,6 +60583,12 @@ export default {
                                             errors: {
                                               items: { type: 'string' },
                                               type: 'array',
+                                            },
+                                            properties_before: {
+                                              additionalProperties: {
+                                                $ref: '#/components/schemas/access_code',
+                                              },
+                                              type: 'object',
                                             },
                                             properties_updated: {
                                               additionalProperties: {
