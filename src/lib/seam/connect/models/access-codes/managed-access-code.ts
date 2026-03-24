@@ -427,6 +427,16 @@ const ultraloq_access_code_disabled = common_access_code_warning
     'Access code is disabled on Ultraloq device. Re-enable through the Ultraloq mobile app.',
   )
 
+const using_backup_access_code = common_access_code_warning
+  .extend({
+    warning_code: z
+      .literal('using_backup_access_code')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'A backup access code has been pulled and is being used in place of this access code.',
+  )
+
 const being_deleted = common_access_code_warning
   .extend({
     warning_code: z.literal('being_deleted').describe(warning_code_description),
@@ -448,6 +458,7 @@ const access_code_warning = z
     management_transferred,
     kwikset_unable_to_confirm_code_warning,
     ultraloq_access_code_disabled,
+    using_backup_access_code,
     being_deleted,
   ])
   .describe(
@@ -486,6 +497,7 @@ const _access_code_warning_map = z.object({
   ultraloq_access_code_disabled: ultraloq_access_code_disabled
     .optional()
     .nullable(),
+  using_backup_access_code: using_backup_access_code.optional().nullable(),
   being_deleted: being_deleted.optional().nullable(),
 })
 
