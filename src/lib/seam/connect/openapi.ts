@@ -49455,6 +49455,7 @@ export default {
                         manage: {
                           exclude: false,
                           exclude_reservation_management: false,
+                          exclude_reservation_technical_details: false,
                           exclude_staff_management: false,
                         },
                         manage_devices: { exclude: false },
@@ -49618,6 +49619,12 @@ export default {
                                 default: false,
                                 description:
                                   'Indicates whether the customer can manage reservations for their properties.',
+                                type: 'boolean',
+                              },
+                              exclude_reservation_technical_details: {
+                                default: false,
+                                description:
+                                  'Indicates whether to exclude technical details from reservation views.',
                                 type: 'boolean',
                               },
                               exclude_staff_management: {
@@ -66029,6 +66036,12 @@ export default {
                                     'Indicates whether the customer can manage reservations for their properties.',
                                   type: 'boolean',
                                 },
+                                exclude_reservation_technical_details: {
+                                  default: false,
+                                  description:
+                                    'Indicates whether to exclude technical details from reservation views.',
+                                  type: 'boolean',
+                                },
                                 exclude_staff_management: {
                                   default: false,
                                   description:
@@ -66426,6 +66439,12 @@ export default {
                                   default: false,
                                   description:
                                     'Indicates whether the customer can manage reservations for their properties.',
+                                  type: 'boolean',
+                                },
+                                exclude_reservation_technical_details: {
+                                  default: false,
+                                  description:
+                                    'Indicates whether to exclude technical details from reservation views.',
                                   type: 'boolean',
                                 },
                                 exclude_staff_management: {
