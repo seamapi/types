@@ -8835,6 +8835,119 @@ export default {
             type: 'object',
           },
           {
+            description: 'Configuring the auto-lock is pending.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of configuring the auto-lock on a lock.',
+                enum: ['CONFIGURE_AUTO_LOCK'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Configuring the auto-lock succeeded.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of configuring the auto-lock on a lock.',
+                enum: ['CONFIGURE_AUTO_LOCK'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
+              result: {
+                description: 'Result of the action.',
+                properties: {},
+                type: 'object',
+              },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Configuring the auto-lock failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of configuring the auto-lock on a lock.',
+                enum: ['CONFIGURE_AUTO_LOCK'],
+                type: 'string',
+              },
+              error: {
+                description: 'Error associated with the action.',
+                properties: {
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -10755,6 +10868,7 @@ export default {
         description:
           'Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that has been connected to Seam.',
         properties: {
+          can_configure_auto_lock: { type: 'boolean' },
           can_hvac_cool: { type: 'boolean' },
           can_hvac_heat: { type: 'boolean' },
           can_hvac_heat_cool: { type: 'boolean' },
@@ -12951,6 +13065,11 @@ export default {
                           features: {
                             description: 'Features for a TTLock device.',
                             properties: {
+                              auto_lock_time_config: {
+                                description:
+                                  'Indicates whether a TTLock device supports auto-lock time configuration.',
+                                type: 'boolean',
+                              },
                               incomplete_keyboard_passcode: {
                                 description:
                                   'Indicates whether a TTLock device supports an incomplete keyboard passcode.',
@@ -12989,6 +13108,7 @@ export default {
                               'lock_command',
                               'incomplete_keyboard_passcode',
                               'wifi',
+                              'auto_lock_time_config',
                             ],
                             type: 'object',
                           },
@@ -13162,6 +13282,19 @@ export default {
                         items: { format: 'float', type: 'number' },
                         type: 'array',
                         'x-undocumented': 'Marked as experimental.',
+                      },
+                      auto_lock_delay_seconds: {
+                        description:
+                          'The delay in seconds before the lock automatically locks after being unlocked.',
+                        format: 'float',
+                        type: 'number',
+                        'x-property-group-key': 'locks',
+                      },
+                      auto_lock_enabled: {
+                        description:
+                          'Indicates whether automatic locking is enabled.',
+                        type: 'boolean',
+                        'x-property-group-key': 'locks',
                       },
                       code_constraints: {
                         description:
@@ -14837,6 +14970,7 @@ export default {
       },
       device_provider: {
         properties: {
+          can_configure_auto_lock: { type: 'boolean' },
           can_hvac_cool: { type: 'boolean' },
           can_hvac_heat: { type: 'boolean' },
           can_hvac_heat_cool: { type: 'boolean' },
@@ -28945,6 +29079,7 @@ export default {
         description:
           'Represents an [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices). An unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).',
         properties: {
+          can_configure_auto_lock: { type: 'boolean' },
           can_hvac_cool: { type: 'boolean' },
           can_hvac_heat: { type: 'boolean' },
           can_hvac_heat_cool: { type: 'boolean' },
@@ -52543,6 +52678,7 @@ export default {
                   'can_simulate_hub_connection',
                   'can_simulate_hub_disconnection',
                   'can_simulate_paid_subscription',
+                  'can_configure_auto_lock',
                 ],
                 type: 'string',
               },
@@ -52575,6 +52711,7 @@ export default {
                   'can_simulate_hub_connection',
                   'can_simulate_hub_disconnection',
                   'can_simulate_paid_subscription',
+                  'can_configure_auto_lock',
                 ],
                 type: 'string',
               },
@@ -52875,6 +53012,7 @@ export default {
                         'can_simulate_hub_connection',
                         'can_simulate_hub_disconnection',
                         'can_simulate_paid_subscription',
+                        'can_configure_auto_lock',
                       ],
                       type: 'string',
                     },
@@ -52903,6 +53041,7 @@ export default {
                         'can_simulate_hub_connection',
                         'can_simulate_hub_disconnection',
                         'can_simulate_paid_subscription',
+                        'can_configure_auto_lock',
                       ],
                       type: 'string',
                     },
@@ -54426,6 +54565,7 @@ export default {
                   'can_simulate_hub_connection',
                   'can_simulate_hub_disconnection',
                   'can_simulate_paid_subscription',
+                  'can_configure_auto_lock',
                 ],
                 type: 'string',
               },
@@ -54458,6 +54598,7 @@ export default {
                   'can_simulate_hub_connection',
                   'can_simulate_hub_disconnection',
                   'can_simulate_paid_subscription',
+                  'can_configure_auto_lock',
                 ],
                 type: 'string',
               },
@@ -54768,6 +54909,7 @@ export default {
                         'can_simulate_hub_connection',
                         'can_simulate_hub_disconnection',
                         'can_simulate_paid_subscription',
+                        'can_configure_auto_lock',
                       ],
                       type: 'string',
                     },
@@ -54796,6 +54938,7 @@ export default {
                         'can_simulate_hub_connection',
                         'can_simulate_hub_disconnection',
                         'can_simulate_paid_subscription',
+                        'can_configure_auto_lock',
                       ],
                       type: 'string',
                     },
@@ -56671,6 +56814,78 @@ export default {
         'x-title': 'List Instant Keys',
       },
     },
+    '/locks/configure_auto_lock': {
+      post: {
+        description:
+          'Configures the auto-lock setting for a specified [lock](https://docs.seam.co/latest/capability-guides/smart-locks).',
+        operationId: 'locksConfigureAutoLockPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  auto_lock_delay_seconds: {
+                    description:
+                      'Delay in seconds before the lock automatically locks. Required when enabling auto-lock. Must be between 1 and 60.',
+                    format: 'float',
+                    maximum: 60,
+                    minimum: 1,
+                    type: 'number',
+                  },
+                  auto_lock_enabled: {
+                    description: 'Whether to enable or disable auto-lock.',
+                    type: 'boolean',
+                  },
+                  device_id: {
+                    description:
+                      'ID of the lock for which you want to configure the auto-lock.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['device_id', 'auto_lock_enabled'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/locks/configure_auto_lock',
+        tags: ['/locks'],
+        'x-action-attempt-type': 'CONFIGURE_AUTO_LOCK',
+        'x-fern-sdk-group-name': ['locks'],
+        'x-fern-sdk-method-name': 'configure_auto_lock',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
+        'x-title': 'Configure Auto-Lock',
+      },
+    },
     '/locks/get': {
       get: {
         description:
@@ -57038,6 +57253,7 @@ export default {
                   'can_simulate_hub_connection',
                   'can_simulate_hub_disconnection',
                   'can_simulate_paid_subscription',
+                  'can_configure_auto_lock',
                 ],
                 type: 'string',
               },
@@ -57070,6 +57286,7 @@ export default {
                   'can_simulate_hub_connection',
                   'can_simulate_hub_disconnection',
                   'can_simulate_paid_subscription',
+                  'can_configure_auto_lock',
                 ],
                 type: 'string',
               },
@@ -57295,6 +57512,7 @@ export default {
                         'can_simulate_hub_connection',
                         'can_simulate_hub_disconnection',
                         'can_simulate_paid_subscription',
+                        'can_configure_auto_lock',
                       ],
                       type: 'string',
                     },
@@ -57323,6 +57541,7 @@ export default {
                         'can_simulate_hub_connection',
                         'can_simulate_hub_disconnection',
                         'can_simulate_paid_subscription',
+                        'can_configure_auto_lock',
                       ],
                       type: 'string',
                     },
@@ -57867,6 +58086,7 @@ export default {
                   'can_simulate_hub_connection',
                   'can_simulate_hub_disconnection',
                   'can_simulate_paid_subscription',
+                  'can_configure_auto_lock',
                 ],
                 type: 'string',
               },
@@ -57899,6 +58119,7 @@ export default {
                   'can_simulate_hub_connection',
                   'can_simulate_hub_disconnection',
                   'can_simulate_paid_subscription',
+                  'can_configure_auto_lock',
                 ],
                 type: 'string',
               },
@@ -58068,6 +58289,7 @@ export default {
                         'can_simulate_hub_connection',
                         'can_simulate_hub_disconnection',
                         'can_simulate_paid_subscription',
+                        'can_configure_auto_lock',
                       ],
                       type: 'string',
                     },
@@ -58096,6 +58318,7 @@ export default {
                         'can_simulate_hub_connection',
                         'can_simulate_hub_disconnection',
                         'can_simulate_paid_subscription',
+                        'can_configure_auto_lock',
                       ],
                       type: 'string',
                     },
@@ -72839,6 +73062,7 @@ export default {
                   'can_simulate_hub_connection',
                   'can_simulate_hub_disconnection',
                   'can_simulate_paid_subscription',
+                  'can_configure_auto_lock',
                 ],
                 type: 'string',
               },
@@ -72871,6 +73095,7 @@ export default {
                   'can_simulate_hub_connection',
                   'can_simulate_hub_disconnection',
                   'can_simulate_paid_subscription',
+                  'can_configure_auto_lock',
                 ],
                 type: 'string',
               },
@@ -73054,6 +73279,7 @@ export default {
                         'can_simulate_hub_connection',
                         'can_simulate_hub_disconnection',
                         'can_simulate_paid_subscription',
+                        'can_configure_auto_lock',
                       ],
                       type: 'string',
                     },
@@ -73082,6 +73308,7 @@ export default {
                         'can_simulate_hub_connection',
                         'can_simulate_hub_disconnection',
                         'can_simulate_paid_subscription',
+                        'can_configure_auto_lock',
                       ],
                       type: 'string',
                     },

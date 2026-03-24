@@ -25,4 +25,16 @@ export const lock_capability_properties = z.object({
           ---
           Indicates whether the door is open.
           `),
+  auto_lock_enabled: z.boolean().optional().describe(`
+          ---
+          property_group_key: locks
+          ---
+          Indicates whether automatic locking is enabled.
+          `),
+  auto_lock_delay_seconds: z.number().optional().describe(`
+          ---
+          property_group_key: locks
+          ---
+          The delay in seconds before the lock automatically locks after being unlocked.
+          `),
 })

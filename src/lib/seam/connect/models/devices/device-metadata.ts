@@ -413,6 +413,11 @@ export const device_metadata = z
             wifi: z
               .boolean()
               .describe(`Indicates whether a TTLock device supports Wi-Fi.`),
+            auto_lock_time_config: z
+              .boolean()
+              .describe(
+                `Indicates whether a TTLock device supports auto-lock time configuration.`,
+              ),
           })
           .describe(`Features for a TTLock device.`),
         has_gateway: z
