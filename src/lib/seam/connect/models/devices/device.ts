@@ -29,6 +29,7 @@ export const device_capability_flags = z
     can_simulate_hub_connection: z.boolean(),
     can_simulate_hub_disconnection: z.boolean(),
     can_simulate_paid_subscription: z.boolean(),
+    can_configure_auto_lock: z.boolean(),
   })
   .partial()
 
