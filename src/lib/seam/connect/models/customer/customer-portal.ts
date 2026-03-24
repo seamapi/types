@@ -33,6 +33,12 @@ const base_manage_feature = base_feature.extend({
     .describe(
       'Indicates whether the customer can manage reservations for their properties.',
     ),
+  exclude_reservation_technical_details: z
+    .boolean()
+    .default(false)
+    .describe(
+      'Indicates whether to exclude technical details from reservation views.',
+    ),
   exclude_staff_management: z
     .boolean()
     .default(false)
@@ -188,6 +194,7 @@ export const portal_configuration = portal_configuration_base
       manage: {
         exclude: false,
         exclude_reservation_management: false,
+        exclude_reservation_technical_details: false,
         exclude_staff_management: false,
       },
       manage_devices: {
