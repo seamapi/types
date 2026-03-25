@@ -172,10 +172,12 @@ export const portal_configuration_base = z.object({
       resource_type: z.enum(['reservation', 'space']),
       resource_key: z.string(),
     })
-    .optional()
-    .describe(
-      'Deep link target resource for initial redirect. When set, the portal will navigate directly to the specified resource.',
-    ),
+    .optional().describe(`
+      ---
+      undocumented: Internal endpoint for customer portals.
+      ---
+      Deep link target resource for initial redirect. When set, the portal will navigate directly to the specified resource.
+    `),
 })
 
 export const portal_configuration = portal_configuration_base

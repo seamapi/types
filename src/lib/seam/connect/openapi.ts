@@ -25390,6 +25390,7 @@ export default {
         required: ['name', 'staff_member_key'],
         type: 'object',
         'x-route-path': '/seam/customer/v1/staff_members',
+        'x-undocumented': 'Internal resource for customer portals.',
       },
       thermostat_daily_program: {
         description:
@@ -31859,6 +31860,8 @@ export default {
                     },
                     timeline_events: {
                       items: {
+                        description:
+                          'Timeline event for access code lifecycle activity.',
                         properties: {
                           actor: {
                             description:
@@ -31924,6 +31927,7 @@ export default {
                               'access_code.unmanaged.failed_to_convert_to_managed',
                             ],
                             type: 'string',
+                            'x-undocumented': 'Unreleased.',
                           },
                           occurred_at: {
                             description:
@@ -31963,6 +31967,7 @@ export default {
                           'actor',
                         ],
                         type: 'object',
+                        'x-undocumented': 'Unreleased.',
                       },
                       type: 'array',
                     },
@@ -31991,6 +31996,7 @@ export default {
         'x-fern-sdk-return-value': 'timeline_events',
         'x-response-key': 'timeline_events',
         'x-title': 'Get Access Code Timeline',
+        'x-undocumented': 'Unreleased.',
       },
       post: {
         description:
@@ -32079,6 +32085,8 @@ export default {
                     },
                     timeline_events: {
                       items: {
+                        description:
+                          'Timeline event for access code lifecycle activity.',
                         properties: {
                           actor: {
                             description:
@@ -32144,6 +32152,7 @@ export default {
                               'access_code.unmanaged.failed_to_convert_to_managed',
                             ],
                             type: 'string',
+                            'x-undocumented': 'Unreleased.',
                           },
                           occurred_at: {
                             description:
@@ -32183,6 +32192,7 @@ export default {
                           'actor',
                         ],
                         type: 'object',
+                        'x-undocumented': 'Unreleased.',
                       },
                       type: 'array',
                     },
@@ -32211,6 +32221,7 @@ export default {
         'x-fern-sdk-return-value': 'timeline_events',
         'x-response-key': 'timeline_events',
         'x-title': 'Get Access Code Timeline',
+        'x-undocumented': 'Unreleased.',
       },
     },
     '/access_codes/list': {
@@ -49652,6 +49663,8 @@ export default {
                         },
                         required: ['resource_type', 'resource_key'],
                         type: 'object',
+                        'x-undocumented':
+                          'Internal endpoint for customer portals.',
                       },
                       exclude_locale_picker: {
                         default: false,
@@ -50654,6 +50667,8 @@ export default {
                               required: ['name', 'staff_member_key'],
                               type: 'object',
                               'x-route-path': '/seam/customer/v1/staff_members',
+                              'x-undocumented':
+                                'Internal resource for customer portals.',
                             },
                             type: 'array',
                           },
@@ -51887,6 +51902,8 @@ export default {
                       required: ['name', 'staff_member_key'],
                       type: 'object',
                       'x-route-path': '/seam/customer/v1/staff_members',
+                      'x-undocumented':
+                        'Internal resource for customer portals.',
                     },
                     type: 'array',
                   },
@@ -52121,6 +52138,7 @@ export default {
         'x-fern-sdk-return-value': 'deep_link',
         'x-response-key': 'deep_link',
         'x-title': 'Create Reservation Deep Link',
+        'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
     '/devices/delete': {
@@ -64193,6 +64211,7 @@ export default {
         'x-fern-sdk-return-value': 'automation',
         'x-response-key': 'automation',
         'x-title': 'Get Customer Automation Configuration',
+        'x-undocumented': 'Internal endpoint for customer portals.',
       },
       post: {
         description:
@@ -64491,6 +64510,7 @@ export default {
         'x-fern-sdk-return-value': 'automation',
         'x-response-key': 'automation',
         'x-title': 'Get Customer Automation Configuration',
+        'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
     '/seam/customer/v1/customers/automations/update': {
@@ -64779,6 +64799,7 @@ export default {
         'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
         'x-title': 'Update Customer Automation Configuration',
+        'x-undocumented': 'Internal endpoint for customer portals.',
       },
       post: {
         description:
@@ -65065,6 +65086,7 @@ export default {
         'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
         'x-title': 'Update Customer Automation Configuration',
+        'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
     '/seam/customer/v1/customers/list': {
@@ -65249,6 +65271,7 @@ export default {
         'x-fern-sdk-method-name': 'me',
         'x-response-key': null,
         'x-title': 'Me',
+        'x-undocumented': 'Internal endpoint for customer portals.',
       },
       post: {
         description:
@@ -65285,6 +65308,7 @@ export default {
         'x-fern-sdk-method-name': 'me',
         'x-response-key': null,
         'x-title': 'Me',
+        'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
     '/seam/customer/v1/customers/open_portal': {
@@ -66149,6 +66173,8 @@ export default {
                           },
                           required: ['resource_type', 'resource_key'],
                           type: 'object',
+                          'x-undocumented':
+                            'Internal endpoint for customer portals.',
                         },
                         exclude_locale_picker: {
                           default: false,
@@ -66554,6 +66580,8 @@ export default {
                           },
                           required: ['resource_type', 'resource_key'],
                           type: 'object',
+                          'x-undocumented':
+                            'Internal endpoint for customer portals.',
                         },
                         exclude_locale_picker: {
                           default: false,
@@ -69263,6 +69291,7 @@ export default {
         'x-fern-sdk-method-name': 'push_common_areas',
         'x-response-key': null,
         'x-title': 'Push Common Areas',
+        'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
     '/seam/customer/v1/staff_members/get': {
@@ -69336,6 +69365,8 @@ export default {
                       required: ['staff_member_key', 'name'],
                       type: 'object',
                       'x-route-path': '/seam/customer/v1/staff_members',
+                      'x-undocumented':
+                        'Internal resource for customer portals.',
                     },
                   },
                   required: ['access_grant', 'spaces', 'staff_member', 'ok'],
@@ -69433,6 +69464,8 @@ export default {
                       required: ['staff_member_key', 'name'],
                       type: 'object',
                       'x-route-path': '/seam/customer/v1/staff_members',
+                      'x-undocumented':
+                        'Internal resource for customer portals.',
                     },
                   },
                   required: ['access_grant', 'spaces', 'staff_member', 'ok'],
@@ -69555,6 +69588,8 @@ export default {
                         required: ['staff_member_key', 'name'],
                         type: 'object',
                         'x-route-path': '/seam/customer/v1/staff_members',
+                        'x-undocumented':
+                          'Internal resource for customer portals.',
                       },
                       type: 'array',
                     },
@@ -69667,6 +69702,8 @@ export default {
                         required: ['staff_member_key', 'name'],
                         type: 'object',
                         'x-route-path': '/seam/customer/v1/staff_members',
+                        'x-undocumented':
+                          'Internal resource for customer portals.',
                       },
                       type: 'array',
                     },
