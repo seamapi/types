@@ -6892,6 +6892,44 @@ export default {
                     required: ['type', 'message'],
                     type: 'object',
                   },
+                  {
+                    description:
+                      'Error to indicate that communication with the encoder timed out.',
+                    properties: {
+                      message: {
+                        description:
+                          'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                        type: 'string',
+                      },
+                      type: {
+                        description:
+                          'Error type to indicate that communication with the encoder timed out.',
+                        enum: ['encoder_timeout_error'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['type', 'message'],
+                    type: 'object',
+                  },
+                  {
+                    description:
+                      'Error to indicate that the Seam Bridge is disconnected or cannot reach the access control system.',
+                    properties: {
+                      message: {
+                        description:
+                          'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                        type: 'string',
+                      },
+                      type: {
+                        description:
+                          'Error type to indicate that the Seam Bridge is disconnected or cannot reach the access control system.',
+                        enum: ['bridge_disconnected'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['type', 'message'],
+                    type: 'object',
+                  },
                 ],
               },
               result: {
@@ -8016,6 +8054,44 @@ export default {
                         description:
                           'Error type to indicate that the encoder is not online.',
                         enum: ['encoder_not_online'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['type', 'message'],
+                    type: 'object',
+                  },
+                  {
+                    description:
+                      'Error to indicate that communication with the encoder timed out.',
+                    properties: {
+                      message: {
+                        description:
+                          'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                        type: 'string',
+                      },
+                      type: {
+                        description:
+                          'Error type to indicate that communication with the encoder timed out.',
+                        enum: ['encoder_timeout_error'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['type', 'message'],
+                    type: 'object',
+                  },
+                  {
+                    description:
+                      'Error to indicate that the Seam Bridge is disconnected or cannot reach the access control system.',
+                    properties: {
+                      message: {
+                        description:
+                          'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                        type: 'string',
+                      },
+                      type: {
+                        description:
+                          'Error type to indicate that the Seam Bridge is disconnected or cannot reach the access control system.',
+                        enum: ['bridge_disconnected'],
                         type: 'string',
                       },
                     },

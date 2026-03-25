@@ -75,12 +75,46 @@ const encoder_not_online_error = z
   })
   .describe('Error to indicate that the encoder is not online.')
 
+const encoder_timeout_error = z
+  .object({
+    type: z
+      .literal('encoder_timeout_error')
+      .describe(
+        'Error type to indicate that communication with the encoder timed out.',
+      ),
+    message: z
+      .string()
+      .describe(
+        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+      ),
+  })
+  .describe('Error to indicate that communication with the encoder timed out.')
+
+const bridge_disconnected_error = z
+  .object({
+    type: z
+      .literal('bridge_disconnected')
+      .describe(
+        'Error type to indicate that the Seam Bridge is disconnected or cannot reach the access control system.',
+      ),
+    message: z
+      .string()
+      .describe(
+        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+      ),
+  })
+  .describe(
+    'Error to indicate that the Seam Bridge is disconnected or cannot reach the access control system.',
+  )
+
 const error = z.union([
   ...common_action_attempt_errors,
   no_credential_on_encoder_error,
   incompatible_card_format_error,
   credential_cannot_be_reissued,
   encoder_not_online_error,
+  encoder_timeout_error,
+  bridge_disconnected_error,
 ])
 
 const result = acs_credential
