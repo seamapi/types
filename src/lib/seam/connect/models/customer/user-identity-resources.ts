@@ -124,6 +124,7 @@ export const staff_member_resource = base_user_identity_resource.extend({
 }).describe(`
   ---
   route_path: /seam/customer/v1/staff_members
+  undocumented: Internal resource for customer portals.
   ---
   Represents a staff member for a specific customer.
 `)
