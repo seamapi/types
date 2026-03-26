@@ -3,9 +3,9 @@ import { z } from 'zod'
 export const requested_access_method = z.object({
   display_name: z.string().describe('Display name of the access method.'),
   mode: z
-    .enum(['code', 'card', 'mobile_key'])
+    .enum(['code', 'card', 'mobile_key', 'cloud_key'])
     .describe(
-      'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+      'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
     ),
   code: z
     .string()

@@ -2099,8 +2099,8 @@ export default {
                 },
                 mode: {
                   description:
-                    'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                  enum: ['code', 'card', 'mobile_key'],
+                    'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                  enum: ['code', 'card', 'mobile_key', 'cloud_key'],
                   type: 'string',
                 },
               },
@@ -2432,8 +2432,8 @@ export default {
           },
           mode: {
             description:
-              'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-            enum: ['code', 'card', 'mobile_key'],
+              'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+            enum: ['code', 'card', 'mobile_key', 'cloud_key'],
             type: 'string',
           },
           pending_mutations: {
@@ -3906,7 +3906,7 @@ export default {
           },
           can_unlock_with_cloud_key: {
             description:
-              'Indicates whether the ACS entrance can be remotely unlocked using a cloud_key credential.',
+              'Indicates whether the ACS entrance can be unlocked with cloud key credentials.',
             type: 'boolean',
           },
           can_unlock_with_code: {
@@ -24367,7 +24367,7 @@ export default {
                             },
                             can_unlock_with_cloud_key: {
                               description:
-                                'Indicates whether the ACS entrance can be remotely unlocked using a cloud_key credential.',
+                                'Indicates whether the ACS entrance can be unlocked with cloud key credentials.',
                               type: 'boolean',
                             },
                             can_unlock_with_code: {
@@ -34219,8 +34219,8 @@ export default {
                             },
                             mode: {
                               description:
-                                'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                              enum: ['code', 'card', 'mobile_key'],
+                                'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                              enum: ['code', 'card', 'mobile_key', 'cloud_key'],
                               type: 'string',
                             },
                           },
@@ -35095,8 +35095,8 @@ export default {
                         },
                         mode: {
                           description:
-                            'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                          enum: ['code', 'card', 'mobile_key'],
+                            'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                          enum: ['code', 'card', 'mobile_key', 'cloud_key'],
                           type: 'string',
                         },
                       },
@@ -35453,8 +35453,13 @@ export default {
                               },
                               mode: {
                                 description:
-                                  'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                                enum: ['code', 'card', 'mobile_key'],
+                                  'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                                enum: [
+                                  'code',
+                                  'card',
+                                  'mobile_key',
+                                  'cloud_key',
+                                ],
                                 type: 'string',
                               },
                             },
@@ -36074,8 +36079,13 @@ export default {
                               },
                               mode: {
                                 description:
-                                  'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                                enum: ['code', 'card', 'mobile_key'],
+                                  'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                                enum: [
+                                  'code',
+                                  'card',
+                                  'mobile_key',
+                                  'cloud_key',
+                                ],
                                 type: 'string',
                               },
                             },
@@ -36743,8 +36753,13 @@ export default {
                                 },
                                 mode: {
                                   description:
-                                    'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                                  enum: ['code', 'card', 'mobile_key'],
+                                    'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                                  enum: [
+                                    'code',
+                                    'card',
+                                    'mobile_key',
+                                    'cloud_key',
+                                  ],
                                   type: 'string',
                                 },
                               },
@@ -37400,8 +37415,13 @@ export default {
                                 },
                                 mode: {
                                   description:
-                                    'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                                  enum: ['code', 'card', 'mobile_key'],
+                                    'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                                  enum: [
+                                    'code',
+                                    'card',
+                                    'mobile_key',
+                                    'cloud_key',
+                                  ],
                                   type: 'string',
                                 },
                               },
@@ -38799,8 +38819,8 @@ export default {
                         },
                         mode: {
                           description:
-                            'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                          enum: ['code', 'card', 'mobile_key'],
+                            'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                          enum: ['code', 'card', 'mobile_key', 'cloud_key'],
                           type: 'string',
                         },
                         pending_mutations: {
@@ -39244,8 +39264,8 @@ export default {
                         },
                         mode: {
                           description:
-                            'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                          enum: ['code', 'card', 'mobile_key'],
+                            'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                          enum: ['code', 'card', 'mobile_key', 'cloud_key'],
                           type: 'string',
                         },
                         pending_mutations: {
@@ -39721,8 +39741,8 @@ export default {
                           },
                           mode: {
                             description:
-                              'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                            enum: ['code', 'card', 'mobile_key'],
+                              'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                            enum: ['code', 'card', 'mobile_key', 'cloud_key'],
                             type: 'string',
                           },
                           pending_mutations: {
@@ -40190,8 +40210,8 @@ export default {
                           },
                           mode: {
                             description:
-                              'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
-                            enum: ['code', 'card', 'mobile_key'],
+                              'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                            enum: ['code', 'card', 'mobile_key', 'cloud_key'],
                             type: 'string',
                           },
                           pending_mutations: {

@@ -31,17 +31,17 @@ export const acs_entrance_capability_flags = z.object({
     .describe(
       'Indicates whether the ACS entrance can be unlocked with pin codes.',
     ),
+  can_unlock_with_cloud_key: z
+    .boolean()
+    .optional()
+    .describe(
+      'Indicates whether the ACS entrance can be unlocked with cloud key credentials.',
+    ),
   can_belong_to_reservation: z
     .boolean()
     .optional()
     .describe(
       'Indicates whether the ACS entrance can belong to a reservation via an access_grant.reservation_key.',
-    ),
-  can_unlock_with_cloud_key: z
-    .boolean()
-    .optional()
-    .describe(
-      'Indicates whether the ACS entrance can be remotely unlocked using a cloud_key credential.',
     ),
 })
 
