@@ -66994,6 +66994,762 @@ export default {
         'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
+    '/seam/customer/v1/portals/update': {
+      patch: {
+        description: 'Updates the configuration for a customer portal.',
+        operationId: 'seamCustomerV1PortalsUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  customer_portal_id: {
+                    description: 'ID of the customer portal to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  portal_configuration: {
+                    description:
+                      'Partial portal configuration to merge with the existing configuration.',
+                    properties: {
+                      customer_resources_filters: {
+                        description:
+                          'Filter configuration for resources based on their custom_metadata. Each filter specifies a field, operation, and value to match against resource custom_metadata.',
+                        items: {
+                          properties: {
+                            field: {
+                              description:
+                                'The custom_metadata field name to filter on.',
+                              pattern: '^[a-zA-Z_]\\w*$',
+                              type: 'string',
+                            },
+                            operation: {
+                              description:
+                                "The comparison operation. Currently only '=' is supported.",
+                              enum: ['='],
+                              type: 'string',
+                            },
+                            value: {
+                              description: 'The value to compare against.',
+                              oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                            },
+                          },
+                          required: ['field', 'operation', 'value'],
+                          type: 'object',
+                        },
+                        type: 'array',
+                      },
+                      customization_profile_id: {
+                        description:
+                          'The ID of the customization profile to use for the portal.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      deep_link: {
+                        description:
+                          'Deep link target resource for initial redirect. When set, the portal will navigate directly to the specified resource.',
+                        properties: {
+                          resource_key: { type: 'string' },
+                          resource_type: {
+                            enum: ['reservation', 'space'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['resource_type', 'resource_key'],
+                        type: 'object',
+                        'x-undocumented':
+                          'Internal endpoint for customer portals.',
+                      },
+                      exclude_locale_picker: {
+                        default: false,
+                        description:
+                          'Whether to exclude the option to select a locale within the portal UI.',
+                        type: 'boolean',
+                      },
+                      features: {
+                        default: {},
+                        properties: {
+                          configure: {
+                            default: {},
+                            description:
+                              'Configuration for the configure feature.',
+                            properties: {
+                              allow_access_automation_rule_customization: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can customize the access automation rules for their properties.',
+                                type: 'boolean',
+                              },
+                              allow_climate_automation_rule_customization: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can customize the climate automation rules for their properties.',
+                                type: 'boolean',
+                              },
+                              allow_instant_key_customization: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can customize the Instant Key profile for their properties.',
+                                type: 'boolean',
+                              },
+                              exclude: {
+                                default: false,
+                                description:
+                                  'Whether to exclude this feature from the portal.',
+                                type: 'boolean',
+                              },
+                            },
+                            type: 'object',
+                          },
+                          connect: {
+                            default: {},
+                            description:
+                              'Configuration for the connect accounts feature.',
+                            properties: {
+                              accepted_providers: {
+                                description:
+                                  'List of provider keys to allow for the connect feature. These providers will be shown when the customer tries to connect an account.',
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                              exclude: {
+                                default: false,
+                                description:
+                                  'Whether to exclude this feature from the portal.',
+                                type: 'boolean',
+                              },
+                              excluded_providers: {
+                                description:
+                                  'List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account.',
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                            },
+                            type: 'object',
+                          },
+                          manage: {
+                            default: {},
+                            description:
+                              'Configuration for the manage feature.',
+                            properties: {
+                              events: {
+                                description:
+                                  'Configuration for event type filtering in the manage feature.',
+                                properties: {
+                                  allowed_events: {
+                                    description:
+                                      'List of event types to show in the events filter. When set, only these event types will be available. Leave empty to show all events.',
+                                    items: { type: 'string' },
+                                    type: 'array',
+                                  },
+                                  default_events: {
+                                    description:
+                                      'List of event types that are pre-selected in the events filter when the user first loads the events tab.',
+                                    items: { type: 'string' },
+                                    type: 'array',
+                                  },
+                                },
+                                type: 'object',
+                              },
+                              exclude: {
+                                default: false,
+                                description:
+                                  'Whether to exclude this feature from the portal.',
+                                type: 'boolean',
+                              },
+                              exclude_reservation_management: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can manage reservations for their properties.',
+                                type: 'boolean',
+                              },
+                              exclude_reservation_technical_details: {
+                                default: false,
+                                description:
+                                  'Indicates whether to exclude technical details from reservation views.',
+                                type: 'boolean',
+                              },
+                              exclude_staff_management: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can manage staff for their properties.',
+                                type: 'boolean',
+                              },
+                            },
+                            type: 'object',
+                          },
+                          manage_devices: {
+                            default: {},
+                            description:
+                              'Configuration for the manage devices feature.\n---\ndeprecated: Use `manage` instead.\n---',
+                            properties: {
+                              exclude: {
+                                default: false,
+                                description:
+                                  'Whether to exclude this feature from the portal.',
+                                type: 'boolean',
+                              },
+                            },
+                            type: 'object',
+                          },
+                          organize: {
+                            default: {},
+                            description:
+                              'Configuration for the organize feature.',
+                            properties: {
+                              exclude: {
+                                default: false,
+                                description:
+                                  'Whether to exclude this feature from the portal.',
+                                type: 'boolean',
+                              },
+                            },
+                            type: 'object',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      is_embedded: {
+                        default: false,
+                        description:
+                          'Whether the portal is embedded in another application.',
+                        type: 'boolean',
+                      },
+                      landing_page: {
+                        description:
+                          'Configuration for the landing page when the portal loads.',
+                        properties: {
+                          manage: {
+                            oneOf: [
+                              {
+                                oneOf: [
+                                  {
+                                    properties: {
+                                      space_key: { type: 'string' },
+                                    },
+                                    required: ['space_key'],
+                                    type: 'object',
+                                  },
+                                  {
+                                    properties: {
+                                      property_key: { type: 'string' },
+                                    },
+                                    required: ['property_key'],
+                                    type: 'object',
+                                  },
+                                  {
+                                    properties: {
+                                      room_key: { type: 'string' },
+                                    },
+                                    required: ['room_key'],
+                                    type: 'object',
+                                  },
+                                  {
+                                    properties: {
+                                      common_area_key: { type: 'string' },
+                                    },
+                                    required: ['common_area_key'],
+                                    type: 'object',
+                                  },
+                                  {
+                                    properties: {
+                                      unit_key: { type: 'string' },
+                                    },
+                                    required: ['unit_key'],
+                                    type: 'object',
+                                  },
+                                  {
+                                    properties: {
+                                      facility_key: { type: 'string' },
+                                    },
+                                    required: ['facility_key'],
+                                    type: 'object',
+                                  },
+                                  {
+                                    properties: {
+                                      building_key: { type: 'string' },
+                                    },
+                                    required: ['building_key'],
+                                    type: 'object',
+                                  },
+                                  {
+                                    properties: {
+                                      listing_key: { type: 'string' },
+                                    },
+                                    required: ['listing_key'],
+                                    type: 'object',
+                                  },
+                                  {
+                                    properties: {
+                                      property_listing_key: { type: 'string' },
+                                    },
+                                    required: ['property_listing_key'],
+                                    type: 'object',
+                                  },
+                                  {
+                                    properties: {
+                                      site_key: { type: 'string' },
+                                    },
+                                    required: ['site_key'],
+                                    type: 'object',
+                                  },
+                                ],
+                              },
+                              {
+                                oneOf: [
+                                  {
+                                    properties: {
+                                      reservation_key: { type: 'string' },
+                                    },
+                                    required: ['reservation_key'],
+                                    type: 'object',
+                                  },
+                                  {
+                                    properties: {
+                                      booking_key: { type: 'string' },
+                                    },
+                                    required: ['booking_key'],
+                                    type: 'object',
+                                  },
+                                  {
+                                    properties: {
+                                      access_grant_key: { type: 'string' },
+                                    },
+                                    required: ['access_grant_key'],
+                                    type: 'object',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                        },
+                        type: 'object',
+                      },
+                      locale: {
+                        description: 'The locale to use for the portal.',
+                        enum: ['en-US', 'pt-PT', 'fr-FR', 'it-IT', 'es-ES'],
+                        type: 'string',
+                      },
+                      navigation_mode: {
+                        default: 'full',
+                        description:
+                          "Navigation mode for the portal. 'restricted' tells frontend to hide navigation UI, typically used for embedded deep links.",
+                        enum: ['full', 'restricted'],
+                        type: 'string',
+                      },
+                    },
+                    type: 'object',
+                  },
+                },
+                required: ['customer_portal_id', 'portal_configuration'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_with_workspace: [] }, { api_key: [] }],
+        summary: '/seam/customer/v1/portals/update',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'portals'],
+        'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
+        'x-title': 'Update Customer Portal Configuration',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+      post: {
+        description: 'Updates the configuration for a customer portal.',
+        operationId: 'seamCustomerV1PortalsUpdatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  customer_portal_id: {
+                    description: 'ID of the customer portal to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  portal_configuration: {
+                    description:
+                      'Partial portal configuration to merge with the existing configuration.',
+                    properties: {
+                      customer_resources_filters: {
+                        description:
+                          'Filter configuration for resources based on their custom_metadata. Each filter specifies a field, operation, and value to match against resource custom_metadata.',
+                        items: {
+                          properties: {
+                            field: {
+                              description:
+                                'The custom_metadata field name to filter on.',
+                              pattern: '^[a-zA-Z_]\\w*$',
+                              type: 'string',
+                            },
+                            operation: {
+                              description:
+                                "The comparison operation. Currently only '=' is supported.",
+                              enum: ['='],
+                              type: 'string',
+                            },
+                            value: {
+                              description: 'The value to compare against.',
+                              oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                            },
+                          },
+                          required: ['field', 'operation', 'value'],
+                          type: 'object',
+                        },
+                        type: 'array',
+                      },
+                      customization_profile_id: {
+                        description:
+                          'The ID of the customization profile to use for the portal.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      deep_link: {
+                        description:
+                          'Deep link target resource for initial redirect. When set, the portal will navigate directly to the specified resource.',
+                        properties: {
+                          resource_key: { type: 'string' },
+                          resource_type: {
+                            enum: ['reservation', 'space'],
+                            type: 'string',
+                          },
+                        },
+                        required: ['resource_type', 'resource_key'],
+                        type: 'object',
+                        'x-undocumented':
+                          'Internal endpoint for customer portals.',
+                      },
+                      exclude_locale_picker: {
+                        default: false,
+                        description:
+                          'Whether to exclude the option to select a locale within the portal UI.',
+                        type: 'boolean',
+                      },
+                      features: {
+                        default: {},
+                        properties: {
+                          configure: {
+                            default: {},
+                            description:
+                              'Configuration for the configure feature.',
+                            properties: {
+                              allow_access_automation_rule_customization: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can customize the access automation rules for their properties.',
+                                type: 'boolean',
+                              },
+                              allow_climate_automation_rule_customization: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can customize the climate automation rules for their properties.',
+                                type: 'boolean',
+                              },
+                              allow_instant_key_customization: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can customize the Instant Key profile for their properties.',
+                                type: 'boolean',
+                              },
+                              exclude: {
+                                default: false,
+                                description:
+                                  'Whether to exclude this feature from the portal.',
+                                type: 'boolean',
+                              },
+                            },
+                            type: 'object',
+                          },
+                          connect: {
+                            default: {},
+                            description:
+                              'Configuration for the connect accounts feature.',
+                            properties: {
+                              accepted_providers: {
+                                description:
+                                  'List of provider keys to allow for the connect feature. These providers will be shown when the customer tries to connect an account.',
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                              exclude: {
+                                default: false,
+                                description:
+                                  'Whether to exclude this feature from the portal.',
+                                type: 'boolean',
+                              },
+                              excluded_providers: {
+                                description:
+                                  'List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account.',
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                            },
+                            type: 'object',
+                          },
+                          manage: {
+                            default: {},
+                            description:
+                              'Configuration for the manage feature.',
+                            properties: {
+                              events: {
+                                description:
+                                  'Configuration for event type filtering in the manage feature.',
+                                properties: {
+                                  allowed_events: {
+                                    description:
+                                      'List of event types to show in the events filter. When set, only these event types will be available. Leave empty to show all events.',
+                                    items: { type: 'string' },
+                                    type: 'array',
+                                  },
+                                  default_events: {
+                                    description:
+                                      'List of event types that are pre-selected in the events filter when the user first loads the events tab.',
+                                    items: { type: 'string' },
+                                    type: 'array',
+                                  },
+                                },
+                                type: 'object',
+                              },
+                              exclude: {
+                                default: false,
+                                description:
+                                  'Whether to exclude this feature from the portal.',
+                                type: 'boolean',
+                              },
+                              exclude_reservation_management: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can manage reservations for their properties.',
+                                type: 'boolean',
+                              },
+                              exclude_reservation_technical_details: {
+                                default: false,
+                                description:
+                                  'Indicates whether to exclude technical details from reservation views.',
+                                type: 'boolean',
+                              },
+                              exclude_staff_management: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can manage staff for their properties.',
+                                type: 'boolean',
+                              },
+                            },
+                            type: 'object',
+                          },
+                          manage_devices: {
+                            default: {},
+                            description:
+                              'Configuration for the manage devices feature.\n---\ndeprecated: Use `manage` instead.\n---',
+                            properties: {
+                              exclude: {
+                                default: false,
+                                description:
+                                  'Whether to exclude this feature from the portal.',
+                                type: 'boolean',
+                              },
+                            },
+                            type: 'object',
+                          },
+                          organize: {
+                            default: {},
+                            description:
+                              'Configuration for the organize feature.',
+                            properties: {
+                              exclude: {
+                                default: false,
+                                description:
+                                  'Whether to exclude this feature from the portal.',
+                                type: 'boolean',
+                              },
+                            },
+                            type: 'object',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      is_embedded: {
+                        default: false,
+                        description:
+                          'Whether the portal is embedded in another application.',
+                        type: 'boolean',
+                      },
+                      landing_page: {
+                        description:
+                          'Configuration for the landing page when the portal loads.',
+                        properties: {
+                          manage: {
+                            oneOf: [
+                              {
+                                oneOf: [
+                                  {
+                                    properties: {
+                                      space_key: { type: 'string' },
+                                    },
+                                    required: ['space_key'],
+                                    type: 'object',
+                                  },
+                                  {
+                                    properties: {
+                                      property_key: { type: 'string' },
+                                    },
+                                    required: ['property_key'],
+                                    type: 'object',
+                                  },
+                                  {
+                                    properties: {
+                                      room_key: { type: 'string' },
+                                    },
+                                    required: ['room_key'],
+                                    type: 'object',
+                                  },
+                                  {
+                                    properties: {
+                                      common_area_key: { type: 'string' },
+                                    },
+                                    required: ['common_area_key'],
+                                    type: 'object',
+                                  },
+                                  {
+                                    properties: {
+                                      unit_key: { type: 'string' },
+                                    },
+                                    required: ['unit_key'],
+                                    type: 'object',
+                                  },
+                                  {
+                                    properties: {
+                                      facility_key: { type: 'string' },
+                                    },
+                                    required: ['facility_key'],
+                                    type: 'object',
+                                  },
+                                  {
+                                    properties: {
+                                      building_key: { type: 'string' },
+                                    },
+                                    required: ['building_key'],
+                                    type: 'object',
+                                  },
+                                  {
+                                    properties: {
+                                      listing_key: { type: 'string' },
+                                    },
+                                    required: ['listing_key'],
+                                    type: 'object',
+                                  },
+                                  {
+                                    properties: {
+                                      property_listing_key: { type: 'string' },
+                                    },
+                                    required: ['property_listing_key'],
+                                    type: 'object',
+                                  },
+                                  {
+                                    properties: {
+                                      site_key: { type: 'string' },
+                                    },
+                                    required: ['site_key'],
+                                    type: 'object',
+                                  },
+                                ],
+                              },
+                              {
+                                oneOf: [
+                                  {
+                                    properties: {
+                                      reservation_key: { type: 'string' },
+                                    },
+                                    required: ['reservation_key'],
+                                    type: 'object',
+                                  },
+                                  {
+                                    properties: {
+                                      booking_key: { type: 'string' },
+                                    },
+                                    required: ['booking_key'],
+                                    type: 'object',
+                                  },
+                                  {
+                                    properties: {
+                                      access_grant_key: { type: 'string' },
+                                    },
+                                    required: ['access_grant_key'],
+                                    type: 'object',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                        },
+                        type: 'object',
+                      },
+                      locale: {
+                        description: 'The locale to use for the portal.',
+                        enum: ['en-US', 'pt-PT', 'fr-FR', 'it-IT', 'es-ES'],
+                        type: 'string',
+                      },
+                      navigation_mode: {
+                        default: 'full',
+                        description:
+                          "Navigation mode for the portal. 'restricted' tells frontend to hide navigation UI, typically used for embedded deep links.",
+                        enum: ['full', 'restricted'],
+                        type: 'string',
+                      },
+                    },
+                    type: 'object',
+                  },
+                },
+                required: ['customer_portal_id', 'portal_configuration'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_with_workspace: [] }, { api_key: [] }],
+        summary: '/seam/customer/v1/portals/update',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'portals'],
+        'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
+        'x-title': 'Update Customer Portal Configuration',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
     '/seam/customer/v1/reservations/get': {
       get: {
         description:
