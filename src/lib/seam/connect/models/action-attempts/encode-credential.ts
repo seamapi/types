@@ -107,6 +107,23 @@ const bridge_disconnected_error = z
     'Error to indicate that the Seam Bridge is disconnected or cannot reach the access control system.',
   )
 
+const encoding_interrupted_error = z
+  .object({
+    type: z
+      .literal('encoding_interrupted')
+      .describe(
+        'Error type to indicate that encoding was interrupted, for example, if the card was removed from the encoder before writing was complete.',
+      ),
+    message: z
+      .string()
+      .describe(
+        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+      ),
+  })
+  .describe(
+    'Error to indicate that encoding was interrupted, for example, if the card was removed from the encoder before writing was complete.',
+  )
+
 const error = z.union([
   ...common_action_attempt_errors,
   no_credential_on_encoder_error,
@@ -115,6 +132,7 @@ const error = z.union([
   encoder_not_online_error,
   encoder_timeout_error,
   bridge_disconnected_error,
+  encoding_interrupted_error,
 ])
 
 const result = acs_credential

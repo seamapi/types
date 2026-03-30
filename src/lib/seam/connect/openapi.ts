@@ -8098,6 +8098,25 @@ export default {
                     required: ['type', 'message'],
                     type: 'object',
                   },
+                  {
+                    description:
+                      'Error to indicate that encoding was interrupted, for example, if the card was removed from the encoder before writing was complete.',
+                    properties: {
+                      message: {
+                        description:
+                          'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                        type: 'string',
+                      },
+                      type: {
+                        description:
+                          'Error type to indicate that encoding was interrupted, for example, if the card was removed from the encoder before writing was complete.',
+                        enum: ['encoding_interrupted'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['type', 'message'],
+                    type: 'object',
+                  },
                 ],
               },
               result: {
@@ -43762,7 +43781,10 @@ export default {
                       error_code: {
                         default: 'no_credential_on_encoder',
                         description: 'Code of the error to simulate.',
-                        enum: ['no_credential_on_encoder'],
+                        enum: [
+                          'no_credential_on_encoder',
+                          'encoding_interrupted',
+                        ],
                         type: 'string',
                       },
                     },
