@@ -6904,7 +6904,7 @@ export default {
                       type: {
                         description:
                           'Error type to indicate that communication with the encoder timed out.',
-                        enum: ['encoder_timeout_error'],
+                        enum: ['encoder_communication_timeout'],
                         type: 'string',
                       },
                     },
@@ -8072,7 +8072,7 @@ export default {
                       type: {
                         description:
                           'Error type to indicate that communication with the encoder timed out.',
-                        enum: ['encoder_timeout_error'],
+                        enum: ['encoder_communication_timeout'],
                         type: 'string',
                       },
                     },

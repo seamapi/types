@@ -75,10 +75,10 @@ const encoder_not_online_error = z
   })
   .describe('Error to indicate that the encoder is not online.')
 
-const encoder_timeout_error = z
+const encoder_communication_timeout = z
   .object({
     type: z
-      .literal('encoder_timeout_error')
+      .literal('encoder_communication_timeout')
       .describe(
         'Error type to indicate that communication with the encoder timed out.',
       ),
@@ -130,7 +130,7 @@ const error = z.union([
   incompatible_card_format_error,
   credential_cannot_be_reissued,
   encoder_not_online_error,
-  encoder_timeout_error,
+  encoder_communication_timeout,
   bridge_disconnected_error,
   encoding_interrupted_error,
 ])
