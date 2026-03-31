@@ -66846,6 +66846,12 @@ export default {
                             'Whether to exclude the option to select a locale within the portal UI.',
                           type: 'boolean',
                         },
+                        feature_flags: {
+                          properties: {
+                            RESERVATION_UI_V2: { type: 'boolean' },
+                          },
+                          type: 'object',
+                        },
                         features: {
                           default: { $ref: '#/components/schemas/access_code' },
                           properties: {
@@ -67252,6 +67258,12 @@ export default {
                           description:
                             'Whether to exclude the option to select a locale within the portal UI.',
                           type: 'boolean',
+                        },
+                        feature_flags: {
+                          properties: {
+                            RESERVATION_UI_V2: { type: 'boolean' },
+                          },
+                          type: 'object',
                         },
                         features: {
                           default: { $ref: '#/components/schemas/access_code' },
