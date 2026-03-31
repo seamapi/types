@@ -11739,15 +11739,20 @@ export default {
           },
           location: {
             description: 'Location information for the device.',
-            nullable: true,
             properties: {
               location_name: {
                 description: 'Name of the device location.\n          ',
                 type: 'string',
               },
-              timezone: {
+              time_zone: {
                 description: 'Time zone of the device location.\n          ',
                 type: 'string',
+              },
+              timezone: {
+                deprecated: true,
+                description: 'Time zone of the device location.',
+                type: 'string',
+                'x-deprecated': 'Use `time_zone` instead.',
               },
             },
             type: 'object',
@@ -15042,7 +15047,6 @@ export default {
           'display_name',
           'capabilities_supported',
           'properties',
-          'location',
           'connected_account_id',
           'workspace_id',
           'errors',
@@ -29885,15 +29889,20 @@ export default {
           is_managed: { enum: [false], type: 'boolean' },
           location: {
             description: 'Location information for the device.',
-            nullable: true,
             properties: {
               location_name: {
                 description: 'Name of the device location.\n          ',
                 type: 'string',
               },
-              timezone: {
+              time_zone: {
                 description: 'Time zone of the device location.\n          ',
                 type: 'string',
+              },
+              timezone: {
+                deprecated: true,
+                description: 'Time zone of the device location.',
+                type: 'string',
+                'x-deprecated': 'Use `time_zone` instead.',
               },
             },
             type: 'object',
@@ -30695,7 +30704,6 @@ export default {
           'device_id',
           'device_type',
           'connected_account_id',
-          'location',
           'capabilities_supported',
           'workspace_id',
           'errors',
