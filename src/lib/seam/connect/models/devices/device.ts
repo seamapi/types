@@ -879,16 +879,21 @@ export const device = z
     Properties of the device.
   `),
     location: z
-      // todo: optional instead of nullable
       .object({
         location_name: z.string().optional()
           .describe(`Name of the device location.
           `),
-        timezone: z.string().optional()
+        time_zone: z.string().optional()
           .describe(`Time zone of the device location.
           `),
+        timezone: z.string().optional().describe(`
+          ---
+          deprecated: Use \`time_zone\` instead.
+          ---
+          Time zone of the device location.
+          `),
       })
-      .nullable().describe(`
+      .optional().describe(`
           ---
           property_group_key: hardware
           ---
