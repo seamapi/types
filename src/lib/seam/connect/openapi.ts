@@ -63564,6 +63564,7 @@ export default {
                       'cloudbeds',
                       'smoobu',
                       'zonal',
+                      'ical',
                     ],
                     type: 'string',
                   },
