@@ -63698,6 +63698,543 @@ export default {
         'x-undocumented': 'Internal endpoint for Console.',
       },
     },
+    '/seam/customer/v1/connectors/ical/generate-config': {
+      post: {
+        description:
+          "Fetches an iCal feed URL and uses AI to generate a parsing config\nbased on the feed's structure and content.",
+        operationId: 'seamCustomerV1ConnectorsIcalGenerateConfigPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  ical_url: {
+                    description: 'iCal feed URL to analyze',
+                    format: 'uri',
+                    type: 'string',
+                  },
+                },
+                required: ['ical_url'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    generated_config: {
+                      properties: {
+                        ical_config: {
+                          properties: {
+                            default_check_in_time: {
+                              description:
+                                'Default check-in time (HH:MM) used when iCal gives date-only values',
+                              pattern: '^\\d{2}:\\d{2}$',
+                              type: 'string',
+                            },
+                            default_check_out_time: {
+                              description:
+                                'Default check-out time (HH:MM) used when iCal gives date-only values',
+                              pattern: '^\\d{2}:\\d{2}$',
+                              type: 'string',
+                            },
+                            fields: {
+                              properties: {
+                                ends_at: {
+                                  description: 'How to extract check-out date',
+                                  properties: {
+                                    pattern: {
+                                      description:
+                                        'Regex with capture group to extract value from the property',
+                                      type: 'string',
+                                    },
+                                    source: {
+                                      description:
+                                        'iCal property name to read from: UID, SUMMARY, DESCRIPTION, DTSTART, DTEND, etc.',
+                                      type: 'string',
+                                    },
+                                    type: {
+                                      description:
+                                        "Special type handling — 'date' parses iCal date formats",
+                                      enum: ['date'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: ['source'],
+                                  type: 'object',
+                                },
+                                guest_email: {
+                                  description: 'How to extract guest email',
+                                  properties: {
+                                    pattern: {
+                                      description:
+                                        'Regex with capture group to extract value from the property',
+                                      type: 'string',
+                                    },
+                                    source: {
+                                      description:
+                                        'iCal property name to read from: UID, SUMMARY, DESCRIPTION, DTSTART, DTEND, etc.',
+                                      type: 'string',
+                                    },
+                                    type: {
+                                      description:
+                                        "Special type handling — 'date' parses iCal date formats",
+                                      enum: ['date'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: ['source'],
+                                  type: 'object',
+                                },
+                                guest_name: {
+                                  description: 'How to extract guest name',
+                                  properties: {
+                                    pattern: {
+                                      description:
+                                        'Regex with capture group to extract value from the property',
+                                      type: 'string',
+                                    },
+                                    source: {
+                                      description:
+                                        'iCal property name to read from: UID, SUMMARY, DESCRIPTION, DTSTART, DTEND, etc.',
+                                      type: 'string',
+                                    },
+                                    type: {
+                                      description:
+                                        "Special type handling — 'date' parses iCal date formats",
+                                      enum: ['date'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: ['source'],
+                                  type: 'object',
+                                },
+                                guest_phone: {
+                                  description: 'How to extract guest phone',
+                                  properties: {
+                                    pattern: {
+                                      description:
+                                        'Regex with capture group to extract value from the property',
+                                      type: 'string',
+                                    },
+                                    source: {
+                                      description:
+                                        'iCal property name to read from: UID, SUMMARY, DESCRIPTION, DTSTART, DTEND, etc.',
+                                      type: 'string',
+                                    },
+                                    type: {
+                                      description:
+                                        "Special type handling — 'date' parses iCal date formats",
+                                      enum: ['date'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: ['source'],
+                                  type: 'object',
+                                },
+                                reservation_key: {
+                                  description:
+                                    'How to extract the reservation key (falls back to UID)',
+                                  properties: {
+                                    pattern: {
+                                      description:
+                                        'Regex with capture group to extract value from the property',
+                                      type: 'string',
+                                    },
+                                    source: {
+                                      description:
+                                        'iCal property name to read from: UID, SUMMARY, DESCRIPTION, DTSTART, DTEND, etc.',
+                                      type: 'string',
+                                    },
+                                    type: {
+                                      description:
+                                        "Special type handling — 'date' parses iCal date formats",
+                                      enum: ['date'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: ['source'],
+                                  type: 'object',
+                                },
+                                starts_at: {
+                                  description: 'How to extract check-in date',
+                                  properties: {
+                                    pattern: {
+                                      description:
+                                        'Regex with capture group to extract value from the property',
+                                      type: 'string',
+                                    },
+                                    source: {
+                                      description:
+                                        'iCal property name to read from: UID, SUMMARY, DESCRIPTION, DTSTART, DTEND, etc.',
+                                      type: 'string',
+                                    },
+                                    type: {
+                                      description:
+                                        "Special type handling — 'date' parses iCal date formats",
+                                      enum: ['date'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: ['source'],
+                                  type: 'object',
+                                },
+                              },
+                              required: ['starts_at', 'ends_at'],
+                              type: 'object',
+                            },
+                            filter: {
+                              description:
+                                'Optional filter to skip non-matching events',
+                              properties: {
+                                pattern: {
+                                  description:
+                                    'Regex pattern — events not matching are skipped',
+                                  type: 'string',
+                                },
+                                source: {
+                                  description:
+                                    'iCal property name to match against',
+                                  type: 'string',
+                                },
+                              },
+                              required: ['source', 'pattern'],
+                              type: 'object',
+                            },
+                            time_zone: {
+                              description:
+                                'IANA time zone (e.g. America/New_York) applied when dates have no time/timezone',
+                              type: 'string',
+                            },
+                          },
+                          required: ['fields'],
+                          type: 'object',
+                        },
+                      },
+                      required: ['ical_config'],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['generated_config', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ api_key: [] }, { console_session_with_workspace: [] }],
+        summary: '/seam/customer/v1/connectors/ical/generate-config',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'customer',
+          'v1',
+          'connectors',
+          'ical',
+        ],
+        'x-fern-sdk-method-name': 'generate-config',
+        'x-fern-sdk-return-value': 'generated_config',
+        'x-response-key': 'generated_config',
+        'x-title': 'Generate iCal Config',
+        'x-undocumented': 'Only used internally.',
+      },
+    },
+    '/seam/customer/v1/connectors/ical/validate-config': {
+      post: {
+        description:
+          'Fetches a sample iCal feed and validates the config against it,\nreturning the parsed reservations so the caller can verify\nextraction is correct.',
+        operationId: 'seamCustomerV1ConnectorsIcalValidateConfigPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  ical_config: {
+                    description: 'Config to validate',
+                    properties: {
+                      default_check_in_time: {
+                        description:
+                          'Default check-in time (HH:MM) used when iCal gives date-only values',
+                        pattern: '^\\d{2}:\\d{2}$',
+                        type: 'string',
+                      },
+                      default_check_out_time: {
+                        description:
+                          'Default check-out time (HH:MM) used when iCal gives date-only values',
+                        pattern: '^\\d{2}:\\d{2}$',
+                        type: 'string',
+                      },
+                      fields: {
+                        properties: {
+                          ends_at: {
+                            description: 'How to extract check-out date',
+                            properties: {
+                              pattern: {
+                                description:
+                                  'Regex with capture group to extract value from the property',
+                                type: 'string',
+                              },
+                              source: {
+                                description:
+                                  'iCal property name to read from: UID, SUMMARY, DESCRIPTION, DTSTART, DTEND, etc.',
+                                type: 'string',
+                              },
+                              type: {
+                                description:
+                                  "Special type handling — 'date' parses iCal date formats",
+                                enum: ['date'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['source'],
+                            type: 'object',
+                          },
+                          guest_email: {
+                            description: 'How to extract guest email',
+                            properties: {
+                              pattern: {
+                                description:
+                                  'Regex with capture group to extract value from the property',
+                                type: 'string',
+                              },
+                              source: {
+                                description:
+                                  'iCal property name to read from: UID, SUMMARY, DESCRIPTION, DTSTART, DTEND, etc.',
+                                type: 'string',
+                              },
+                              type: {
+                                description:
+                                  "Special type handling — 'date' parses iCal date formats",
+                                enum: ['date'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['source'],
+                            type: 'object',
+                          },
+                          guest_name: {
+                            description: 'How to extract guest name',
+                            properties: {
+                              pattern: {
+                                description:
+                                  'Regex with capture group to extract value from the property',
+                                type: 'string',
+                              },
+                              source: {
+                                description:
+                                  'iCal property name to read from: UID, SUMMARY, DESCRIPTION, DTSTART, DTEND, etc.',
+                                type: 'string',
+                              },
+                              type: {
+                                description:
+                                  "Special type handling — 'date' parses iCal date formats",
+                                enum: ['date'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['source'],
+                            type: 'object',
+                          },
+                          guest_phone: {
+                            description: 'How to extract guest phone',
+                            properties: {
+                              pattern: {
+                                description:
+                                  'Regex with capture group to extract value from the property',
+                                type: 'string',
+                              },
+                              source: {
+                                description:
+                                  'iCal property name to read from: UID, SUMMARY, DESCRIPTION, DTSTART, DTEND, etc.',
+                                type: 'string',
+                              },
+                              type: {
+                                description:
+                                  "Special type handling — 'date' parses iCal date formats",
+                                enum: ['date'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['source'],
+                            type: 'object',
+                          },
+                          reservation_key: {
+                            description:
+                              'How to extract the reservation key (falls back to UID)',
+                            properties: {
+                              pattern: {
+                                description:
+                                  'Regex with capture group to extract value from the property',
+                                type: 'string',
+                              },
+                              source: {
+                                description:
+                                  'iCal property name to read from: UID, SUMMARY, DESCRIPTION, DTSTART, DTEND, etc.',
+                                type: 'string',
+                              },
+                              type: {
+                                description:
+                                  "Special type handling — 'date' parses iCal date formats",
+                                enum: ['date'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['source'],
+                            type: 'object',
+                          },
+                          starts_at: {
+                            description: 'How to extract check-in date',
+                            properties: {
+                              pattern: {
+                                description:
+                                  'Regex with capture group to extract value from the property',
+                                type: 'string',
+                              },
+                              source: {
+                                description:
+                                  'iCal property name to read from: UID, SUMMARY, DESCRIPTION, DTSTART, DTEND, etc.',
+                                type: 'string',
+                              },
+                              type: {
+                                description:
+                                  "Special type handling — 'date' parses iCal date formats",
+                                enum: ['date'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['source'],
+                            type: 'object',
+                          },
+                        },
+                        required: ['starts_at', 'ends_at'],
+                        type: 'object',
+                      },
+                      filter: {
+                        description:
+                          'Optional filter to skip non-matching events',
+                        properties: {
+                          pattern: {
+                            description:
+                              'Regex pattern — events not matching are skipped',
+                            type: 'string',
+                          },
+                          source: {
+                            description: 'iCal property name to match against',
+                            type: 'string',
+                          },
+                        },
+                        required: ['source', 'pattern'],
+                        type: 'object',
+                      },
+                      time_zone: {
+                        description:
+                          'IANA time zone (e.g. America/New_York) applied when dates have no time/timezone',
+                        type: 'string',
+                      },
+                    },
+                    required: ['fields'],
+                    type: 'object',
+                  },
+                  ical_url: {
+                    description: 'iCal feed URL to validate against',
+                    format: 'uri',
+                    type: 'string',
+                  },
+                },
+                required: ['ical_url', 'ical_config'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    validation_result: {
+                      properties: {
+                        errors: { items: { type: 'string' }, type: 'array' },
+                        filtered_events: { format: 'float', type: 'number' },
+                        is_valid: { type: 'boolean' },
+                        matched_events: { format: 'float', type: 'number' },
+                        reservations: {
+                          items: {
+                            properties: {
+                              ends_at: { nullable: true, type: 'string' },
+                              guest_email: { nullable: true, type: 'string' },
+                              guest_name: { nullable: true, type: 'string' },
+                              guest_phone: { nullable: true, type: 'string' },
+                              reservation_key: {
+                                nullable: true,
+                                type: 'string',
+                              },
+                              starts_at: { nullable: true, type: 'string' },
+                              uid: { type: 'string' },
+                            },
+                            required: [
+                              'uid',
+                              'reservation_key',
+                              'guest_name',
+                              'guest_email',
+                              'guest_phone',
+                              'starts_at',
+                              'ends_at',
+                            ],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                        total_events: { format: 'float', type: 'number' },
+                      },
+                      required: [
+                        'is_valid',
+                        'total_events',
+                        'matched_events',
+                        'filtered_events',
+                        'reservations',
+                        'errors',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['validation_result', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ api_key: [] }, { console_session_with_workspace: [] }],
+        summary: '/seam/customer/v1/connectors/ical/validate-config',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'customer',
+          'v1',
+          'connectors',
+          'ical',
+        ],
+        'x-fern-sdk-method-name': 'validate-config',
+        'x-fern-sdk-return-value': 'validation_result',
+        'x-response-key': 'validation_result',
+        'x-title': 'Validate iCal Config',
+        'x-undocumented': 'Only used internally.',
+      },
+    },
     '/seam/customer/v1/connectors/list': {
       get: {
         description:
