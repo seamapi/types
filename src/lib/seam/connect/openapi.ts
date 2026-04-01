@@ -61214,6 +61214,88 @@ export default {
         'x-undocumented': 'Internal endpoint for Console',
       },
     },
+    '/seam/console/v1/workspace/feature_flags/list': {
+      get: {
+        description: 'Lists workspace feature flags.',
+        operationId: 'seamConsoleV1WorkspaceFeatureFlagsListGet',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    feature_flags: {
+                      additionalProperties: { type: 'boolean' },
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['feature_flags', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_with_workspace: [] }],
+        summary: '/seam/console/v1/workspace/feature_flags/list',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'workspace',
+          'feature_flags',
+        ],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'feature_flags',
+        'x-response-key': 'feature_flags',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+      post: {
+        description: 'Lists workspace feature flags.',
+        operationId: 'seamConsoleV1WorkspaceFeatureFlagsListPost',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    feature_flags: {
+                      additionalProperties: { type: 'boolean' },
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['feature_flags', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_with_workspace: [] }],
+        summary: '/seam/console/v1/workspace/feature_flags/list',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'workspace',
+          'feature_flags',
+        ],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'feature_flags',
+        'x-response-key': 'feature_flags',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
     '/seam/customer/v1/access_grants/list': {
       get: {
         description: 'Gets an Access Grant.',
