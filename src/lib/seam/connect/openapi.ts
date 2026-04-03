@@ -78421,6 +78421,119 @@ export default {
         'x-title': 'List Accessible Devices for a User Identity',
       },
     },
+    '/user_identities/list_accessible_entrances': {
+      get: {
+        description:
+          'Returns a list of all [ACS entrances](https://docs.seam.co/latest/api/acs/entrances) accessible to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This includes entrances derived from the access grants assigned to the user identity and entrances accessible through ACS users linked to the user identity.',
+        operationId: 'userIdentitiesListAccessibleEntrancesGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the user identity for which you want to retrieve all accessible entrances.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_entrances: {
+                      items: { $ref: '#/components/schemas/acs_entrance' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_entrances', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/user_identities/list_accessible_entrances',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'list_accessible_entrances',
+        'x-fern-sdk-return-value': 'acs_entrances',
+        'x-response-key': 'acs_entrances',
+        'x-title': 'List Accessible Entrances for a User Identity',
+      },
+      post: {
+        description:
+          'Returns a list of all [ACS entrances](https://docs.seam.co/latest/api/acs/entrances) accessible to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This includes entrances derived from the access grants assigned to the user identity and entrances accessible through ACS users linked to the user identity.',
+        operationId: 'userIdentitiesListAccessibleEntrancesPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity for which you want to retrieve all accessible entrances.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['user_identity_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_entrances: {
+                      items: { $ref: '#/components/schemas/acs_entrance' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_entrances', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/user_identities/list_accessible_entrances',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'list_accessible_entrances',
+        'x-fern-sdk-return-value': 'acs_entrances',
+        'x-response-key': 'acs_entrances',
+        'x-title': 'List Accessible Entrances for a User Identity',
+      },
+    },
     '/user_identities/list_acs_systems': {
       get: {
         description:
