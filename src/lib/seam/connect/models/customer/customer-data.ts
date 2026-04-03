@@ -26,15 +26,7 @@ import {
   user_resource,
 } from './user-identity-resources.js'
 
-export const customer_data = z.object({
-  customer_key: z
-    .string()
-    .min(1)
-    .refine((val) => val === val.trim(), {
-      message: 'Must not have leading or trailing whitespace',
-    })
-    .describe('Your unique identifier for the customer.'),
-
+export const external_resources = z.object({
   // Location resources
   spaces: z
     .array(neutral_resource)
@@ -105,6 +97,20 @@ export const customer_data = z.object({
     .optional()
     .describe('List of access grants.'),
 })
+
+export type ExternalResources = z.infer<typeof external_resources>
+
+export const customer_data = z
+  .object({
+    customer_key: z
+      .string()
+      .min(1)
+      .refine((val) => val === val.trim(), {
+        message: 'Must not have leading or trailing whitespace',
+      })
+      .describe('Your unique identifier for the customer.'),
+  })
+  .merge(external_resources)
 
 export type CustomerData = z.infer<typeof customer_data>
 

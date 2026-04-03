@@ -16,6 +16,14 @@ export const neutral_resource = base_location_resource.extend({
       message: 'Must not have leading or trailing whitespace',
     })
     .describe('Your unique identifier for the space.'),
+  parent_site_key: z
+    .string()
+    .min(1)
+    .refine((val) => val === val.trim(), {
+      message: 'Must not have leading or trailing whitespace',
+    })
+    .describe('Your unique identifier for the site.')
+    .optional(),
 })
 
 export const property_resource = base_location_resource.extend({
