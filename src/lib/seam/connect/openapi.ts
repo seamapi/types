@@ -50691,6 +50691,12 @@ export default {
                                     'Your display name for this location resource.',
                                   type: 'string',
                                 },
+                                parent_site_key: {
+                                  description:
+                                    'Your unique identifier for the site.',
+                                  minLength: 1,
+                                  type: 'string',
+                                },
                                 space_key: {
                                   description:
                                     'Your unique identifier for the space.',
@@ -51926,6 +51932,11 @@ export default {
                         name: {
                           description:
                             'Your display name for this location resource.',
+                          type: 'string',
+                        },
+                        parent_site_key: {
+                          description: 'Your unique identifier for the site.',
+                          minLength: 1,
                           type: 'string',
                         },
                         space_key: {
@@ -76832,6 +76843,11 @@ export default {
                       'Your display name for this location resource.',
                     type: 'string',
                   },
+                  parent_site_key: {
+                    description: 'Your unique identifier for the site.',
+                    minLength: 1,
+                    type: 'string',
+                  },
                   space_key: {
                     description: 'Your unique identifier for the space.',
                     minLength: 1,
@@ -76911,6 +76927,11 @@ export default {
                         name: {
                           description:
                             'Your display name for this location resource.',
+                          type: 'string',
+                        },
+                        parent_site_key: {
+                          description: 'Your unique identifier for the site.',
+                          minLength: 1,
                           type: 'string',
                         },
                         space_key: {
@@ -77046,6 +77067,11 @@ export default {
                         name: {
                           description:
                             'Your display name for this location resource.',
+                          type: 'string',
+                        },
+                        parent_site_key: {
+                          description: 'Your unique identifier for the site.',
+                          minLength: 1,
                           type: 'string',
                         },
                         space_key: {
