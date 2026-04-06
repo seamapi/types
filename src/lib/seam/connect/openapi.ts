@@ -34920,7 +34920,9 @@ export default {
             in: 'query',
             name: 'access_grant_key',
             schema: {
-              description: 'Filter Access Grants by access_grant_key.',
+              description:
+                'Filter Access Grants by access_grant_key. Use null to filter for Access Grants without an access_grant_key.',
+              nullable: true,
               type: 'string',
             },
           },
@@ -34985,7 +34987,9 @@ export default {
                     type: 'array',
                   },
                   access_grant_key: {
-                    description: 'Filter Access Grants by access_grant_key.',
+                    description:
+                      'Filter Access Grants by access_grant_key. Use null to filter for Access Grants without an access_grant_key.',
+                    nullable: true,
                     type: 'string',
                   },
                   acs_entrance_id: {
