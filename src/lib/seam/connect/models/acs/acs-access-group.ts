@@ -18,6 +18,45 @@ export type AcsAccessGroupExternalType = z.infer<
   typeof acs_access_group_external_type
 >
 
+const common_acs_access_group_error = z.object({
+  created_at: z
+    .string()
+    .datetime()
+    .describe('Date and time at which Seam created the error.'),
+  message: z
+    .string()
+    .describe(
+      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+    ),
+})
+
+const error_code_description =
+  'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.'
+
+const acs_access_groups_failed_to_create_on_acs_system =
+  common_acs_access_group_error
+    .extend({
+      error_code: z
+        .literal('failed_to_create_on_acs_system')
+        .describe(error_code_description),
+    })
+    .describe(
+      `Indicates that the [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups) was not created on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).`,
+    )
+
+const acs_access_group_errors = z
+  .discriminatedUnion('error_code', [
+    acs_access_groups_failed_to_create_on_acs_system,
+  ])
+  .describe('Error associated with the `acs_access_group`.')
+
+const _acs_access_group_error_map = z.object({
+  failed_to_create_on_acs_system:
+    acs_access_groups_failed_to_create_on_acs_system.optional().nullable(),
+})
+
+export type AcsAccessGroupErrorMap = z.infer<typeof _acs_access_group_error_map>
+
 const common_acs_access_group_warning = z.object({
   created_at: z
     .string()
@@ -111,6 +150,9 @@ const common_acs_access_group = z.object({
     .string()
     .datetime()
     .describe('Date and time at which the access group was created.'),
+  errors: z
+    .array(acs_access_group_errors)
+    .describe('Errors associated with the `acs_access_group`.'),
   warnings: z
     .array(acs_access_group_warning)
     .describe('Warnings associated with the `acs_access_group`.'),
