@@ -20,6 +20,10 @@ export const space = z.object({
     .describe('Date and time at which the space was created.'),
   device_count: z.number().describe('Number of devices in the space.'),
   acs_entrance_count: z.number().describe('Number of entrances in the space.'),
+  customer_key: z
+    .string()
+    .optional()
+    .describe('Customer key associated with the space.'),
   parent_space_id: z.string().uuid().optional().describe(`
     ---
     undocumented: Only used internally.
