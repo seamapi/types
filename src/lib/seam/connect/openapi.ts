@@ -72961,6 +72961,26 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 500,
+              description: 'Maximum number of records to return per page.',
+              format: 'float',
+              type: 'number',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              nullable: true,
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -72969,12 +72989,13 @@ export default {
                 schema: {
                   properties: {
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                     spaces: {
                       items: { $ref: '#/components/schemas/space' },
                       type: 'array',
                     },
                   },
-                  required: ['spaces', 'ok'],
+                  required: ['spaces', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
@@ -73020,6 +73041,19 @@ export default {
                       'Customer key for which you want to list spaces.',
                     type: 'string',
                   },
+                  limit: {
+                    default: 500,
+                    description:
+                      'Maximum number of records to return per page.',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    nullable: true,
+                    type: 'string',
+                  },
                   search: {
                     description:
                       'String for which to search. Filters returned spaces to include all records that satisfy a partial match using `name`.',
@@ -73043,12 +73077,13 @@ export default {
                 schema: {
                   properties: {
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                     spaces: {
                       items: { $ref: '#/components/schemas/space' },
                       type: 'array',
                     },
                   },
-                  required: ['spaces', 'ok'],
+                  required: ['spaces', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
