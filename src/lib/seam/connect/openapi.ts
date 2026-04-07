@@ -2808,6 +2808,41 @@ export default {
             type: 'string',
           },
           display_name: { type: 'string' },
+          errors: {
+            description: 'Errors associated with the `acs_access_group`.',
+            items: {
+              description: 'Error associated with the `acs_access_group`.',
+              discriminator: { propertyName: 'error_code' },
+              oneOf: [
+                {
+                  description:
+                    'Indicates that the [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups) was not created on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['failed_to_create_on_acs_system'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
           external_type: {
             description:
               'Brand-specific terminology for the access group type.',
@@ -3263,6 +3298,7 @@ export default {
           'external_type',
           'external_type_display_name',
           'created_at',
+          'errors',
           'warnings',
           'pending_mutations',
           'is_managed',
@@ -27490,6 +27526,41 @@ export default {
             type: 'string',
           },
           display_name: { type: 'string' },
+          errors: {
+            description: 'Errors associated with the `acs_access_group`.',
+            items: {
+              description: 'Error associated with the `acs_access_group`.',
+              discriminator: { propertyName: 'error_code' },
+              oneOf: [
+                {
+                  description:
+                    'Indicates that the [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups) was not created on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['failed_to_create_on_acs_system'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
           external_type: {
             description:
               'Brand-specific terminology for the access group type.',
@@ -27945,6 +28016,7 @@ export default {
           'external_type',
           'external_type_display_name',
           'created_at',
+          'errors',
           'warnings',
           'pending_mutations',
           'is_managed',
