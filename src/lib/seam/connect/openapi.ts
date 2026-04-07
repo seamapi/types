@@ -25394,6 +25394,10 @@ export default {
             format: 'date-time',
             type: 'string',
           },
+          customer_key: {
+            description: 'Customer key associated with the space.',
+            type: 'string',
+          },
           device_count: {
             description: 'Number of devices in the space.',
             format: 'float',
@@ -72936,7 +72940,7 @@ export default {
             name: 'search',
             schema: {
               description:
-                'String for which to search. Filters returned spaces to include all records that satisfy a partial match using `name`.',
+                'String for which to search. Filters returned spaces to include all records that satisfy a partial match using `name`, `space_key`, or `customer_key`.',
               minLength: 1,
               type: 'string',
             },
@@ -73056,7 +73060,7 @@ export default {
                   },
                   search: {
                     description:
-                      'String for which to search. Filters returned spaces to include all records that satisfy a partial match using `name`.',
+                      'String for which to search. Filters returned spaces to include all records that satisfy a partial match using `name`, `space_key`, or `customer_key`.',
                     minLength: 1,
                     type: 'string',
                   },
