@@ -34994,6 +34994,16 @@ export default {
           },
           {
             in: 'query',
+            name: 'access_code_id',
+            schema: {
+              description:
+                'ID of the access code by which you want to filter the list of Access Grants.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'access_grant_key',
             schema: {
               description:
@@ -35057,6 +35067,12 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  access_code_id: {
+                    description:
+                      'ID of the access code by which you want to filter the list of Access Grants.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   access_grant_ids: {
                     description: 'IDs of the access grants to retrieve.',
                     items: { format: 'uuid', type: 'string' },
@@ -38733,6 +38749,16 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'access_code_id',
+            schema: {
+              description:
+                'ID of the access code for which you want to retrieve all access methods.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -38780,6 +38806,12 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  access_code_id: {
+                    description:
+                      'ID of the access code for which you want to retrieve all access methods.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   access_grant_id: {
                     description:
                       'ID of Access Grant to list access methods for.',
