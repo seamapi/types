@@ -32406,7 +32406,7 @@ export default {
     '/access_codes/list': {
       get: {
         description:
-          'Returns a list of all [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nSpecify `device_id`, `access_code_ids`, or `access_method_id`.',
+          'Returns a list of all [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nSpecify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.',
         operationId: 'accessCodesListGet',
         parameters: [
           {
@@ -32423,7 +32423,7 @@ export default {
             name: 'device_id',
             schema: {
               description:
-                'ID of the device for which you want to list access codes. Specify `device_id`, `access_code_ids`, or `access_method_id`.',
+                'ID of the device for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.',
               format: 'uuid',
               type: 'string',
             },
@@ -32433,7 +32433,7 @@ export default {
             name: 'access_code_ids',
             schema: {
               description:
-                'IDs of the access codes that you want to retrieve. Specify `device_id`, `access_code_ids`, or `access_method_id`.',
+                'IDs of the access codes that you want to retrieve. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.',
               items: { format: 'uuid', type: 'string' },
               type: 'array',
             },
@@ -32443,7 +32443,17 @@ export default {
             name: 'access_method_id',
             schema: {
               description:
-                'ID of the access method for which you want to list access codes. Specify `device_id`, `access_code_ids`, or `access_method_id`.',
+                'ID of the access method for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'access_grant_id',
+            schema: {
+              description:
+                'ID of the access grant for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.',
               format: 'uuid',
               type: 'string',
             },
@@ -32529,7 +32539,7 @@ export default {
       },
       post: {
         description:
-          'Returns a list of all [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nSpecify `device_id`, `access_code_ids`, or `access_method_id`.',
+          'Returns a list of all [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).\n\nSpecify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.',
         operationId: 'accessCodesListPost',
         requestBody: {
           content: {
@@ -32538,13 +32548,19 @@ export default {
                 properties: {
                   access_code_ids: {
                     description:
-                      'IDs of the access codes that you want to retrieve. Specify `device_id`, `access_code_ids`, or `access_method_id`.',
+                      'IDs of the access codes that you want to retrieve. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
+                  access_grant_id: {
+                    description:
+                      'ID of the access grant for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   access_method_id: {
                     description:
-                      'ID of the access method for which you want to list access codes. Specify `device_id`, `access_code_ids`, or `access_method_id`.',
+                      'ID of the access method for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -32555,7 +32571,7 @@ export default {
                   },
                   device_id: {
                     description:
-                      'ID of the device for which you want to list access codes. Specify `device_id`, `access_code_ids`, or `access_method_id`.',
+                      'ID of the device for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -34994,6 +35010,16 @@ export default {
           },
           {
             in: 'query',
+            name: 'access_code_id',
+            schema: {
+              description:
+                'ID of the access code by which you want to filter the list of Access Grants.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'access_grant_key',
             schema: {
               description:
@@ -35057,6 +35083,12 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  access_code_id: {
+                    description:
+                      'ID of the access code by which you want to filter the list of Access Grants.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   access_grant_ids: {
                     description: 'IDs of the access grants to retrieve.',
                     items: { format: 'uuid', type: 'string' },
@@ -38733,6 +38765,16 @@ export default {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'access_code_id',
+            schema: {
+              description:
+                'ID of the access code for which you want to retrieve all access methods.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -38780,6 +38822,12 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  access_code_id: {
+                    description:
+                      'ID of the access code for which you want to retrieve all access methods.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   access_grant_id: {
                     description:
                       'ID of Access Grant to list access methods for.',
