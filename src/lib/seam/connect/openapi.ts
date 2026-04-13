@@ -13098,6 +13098,10 @@ export default {
                               'Set to true when the device does not support the /dual-setpoints API endpoint.',
                             type: 'boolean',
                           },
+                          enforced_setpoint_range_celsius: {
+                            description:
+                              'Enforced setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error.',
+                          },
                           product_type: {
                             description: 'Product type for a Sensi device.',
                             type: 'string',
