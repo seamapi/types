@@ -69054,7 +69054,7 @@ export default {
             name: 'between',
             schema: {
               description:
-                'Lower and upper timestamps to define an exclusive interval containing the reservations that you want to list.',
+                'Lower and upper timestamps to filter reservations whose time range overlaps with the given interval.',
               items: {
                 oneOf: [
                   { type: 'string' },
@@ -69323,7 +69323,7 @@ export default {
                 properties: {
                   between: {
                     description:
-                      'Lower and upper timestamps to define an exclusive interval containing the reservations that you want to list.',
+                      'Lower and upper timestamps to filter reservations whose time range overlaps with the given interval.',
                     items: {
                       oneOf: [
                         { type: 'string' },
