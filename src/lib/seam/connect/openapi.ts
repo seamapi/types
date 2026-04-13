@@ -8153,6 +8153,25 @@ export default {
                     required: ['type', 'message'],
                     type: 'object',
                   },
+                  {
+                    description:
+                      'Error to indicate that the credential is being deleted and can no longer be encoded.',
+                    properties: {
+                      message: {
+                        description:
+                          'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                        type: 'string',
+                      },
+                      type: {
+                        description:
+                          'Error type to indicate that the credential is being deleted and can no longer be encoded.',
+                        enum: ['credential_being_deleted'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['type', 'message'],
+                    type: 'object',
+                  },
                 ],
               },
               result: {

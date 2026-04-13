@@ -124,6 +124,23 @@ const encoding_interrupted_error = z
     'Error to indicate that encoding was interrupted, for example, if the card was removed from the encoder before writing was complete.',
   )
 
+const credential_being_deleted_error = z
+  .object({
+    type: z
+      .literal('credential_being_deleted')
+      .describe(
+        'Error type to indicate that the credential is being deleted and can no longer be encoded.',
+      ),
+    message: z
+      .string()
+      .describe(
+        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+      ),
+  })
+  .describe(
+    'Error to indicate that the credential is being deleted and can no longer be encoded.',
+  )
+
 const error = z.union([
   ...common_action_attempt_errors,
   no_credential_on_encoder_error,
@@ -133,6 +150,7 @@ const error = z.union([
   encoder_communication_timeout,
   bridge_disconnected_error,
   encoding_interrupted_error,
+  credential_being_deleted_error,
 ])
 
 const result = acs_credential
