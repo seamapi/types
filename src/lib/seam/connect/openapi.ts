@@ -69041,6 +69041,33 @@ export default {
           },
           {
             in: 'query',
+            name: 'created_after',
+            schema: {
+              description:
+                'Timestamp by which to limit returned reservations. Returns reservations created after this timestamp.',
+              format: 'date-time',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'between',
+            schema: {
+              description:
+                'Lower and upper timestamps to define an exclusive interval containing the reservations that you want to list.',
+              items: {
+                oneOf: [
+                  { type: 'string' },
+                  { format: 'date-time', type: 'string' },
+                ],
+              },
+              maxItems: 2,
+              minItems: 2,
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
             name: 'search',
             schema: {
               description:
@@ -69294,6 +69321,25 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  between: {
+                    description:
+                      'Lower and upper timestamps to define an exclusive interval containing the reservations that you want to list.',
+                    items: {
+                      oneOf: [
+                        { type: 'string' },
+                        { format: 'date-time', type: 'string' },
+                      ],
+                    },
+                    maxItems: 2,
+                    minItems: 2,
+                    type: 'array',
+                  },
+                  created_after: {
+                    description:
+                      'Timestamp by which to limit returned reservations. Returns reservations created after this timestamp.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
                   created_before: {
                     description:
                       'Timestamp by which to limit returned reservations. Returns reservations created before this timestamp.',
