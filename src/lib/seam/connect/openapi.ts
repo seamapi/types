@@ -8172,6 +8172,25 @@ export default {
                     required: ['type', 'message'],
                     type: 'object',
                   },
+                  {
+                    description:
+                      'Error to indicate that the credential was deleted while encoding was in progress.',
+                    properties: {
+                      message: {
+                        description:
+                          'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                        type: 'string',
+                      },
+                      type: {
+                        description:
+                          'Error type to indicate that the credential was deleted while encoding was in progress.',
+                        enum: ['credential_deleted'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['type', 'message'],
+                    type: 'object',
+                  },
                 ],
               },
               result: {

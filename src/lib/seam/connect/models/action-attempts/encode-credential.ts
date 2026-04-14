@@ -141,6 +141,23 @@ const credential_being_deleted_error = z
     'Error to indicate that the credential is being deleted and can no longer be encoded.',
   )
 
+const credential_deleted_error = z
+  .object({
+    type: z
+      .literal('credential_deleted')
+      .describe(
+        'Error type to indicate that the credential was deleted while encoding was in progress.',
+      ),
+    message: z
+      .string()
+      .describe(
+        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+      ),
+  })
+  .describe(
+    'Error to indicate that the credential was deleted while encoding was in progress.',
+  )
+
 const error = z.union([
   ...common_action_attempt_errors,
   no_credential_on_encoder_error,
@@ -151,6 +168,7 @@ const error = z.union([
   bridge_disconnected_error,
   encoding_interrupted_error,
   credential_being_deleted_error,
+  credential_deleted_error,
 ])
 
 const result = acs_credential
