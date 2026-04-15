@@ -78559,7 +78559,7 @@ export default {
     '/user_identities/list_accessible_devices': {
       get: {
         description:
-          'Returns a list of all [devices](https://docs.seam.co/latest/core-concepts/devices) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Returns a list of all [devices](https://docs.seam.co/latest/core-concepts/devices) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This includes devices derived from the access grants assigned to the user identity and devices directly linked to the user identity.',
         operationId: 'userIdentitiesListAccessibleDevicesGet',
         parameters: [
           {
@@ -78603,6 +78603,7 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [
+          { client_session: [] },
           { api_key: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
@@ -78617,7 +78618,7 @@ export default {
       },
       post: {
         description:
-          'Returns a list of all [devices](https://docs.seam.co/latest/core-concepts/devices) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Returns a list of all [devices](https://docs.seam.co/latest/core-concepts/devices) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This includes devices derived from the access grants assigned to the user identity and devices directly linked to the user identity.',
         operationId: 'userIdentitiesListAccessibleDevicesPost',
         requestBody: {
           content: {
@@ -78666,6 +78667,7 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [
+          { client_session: [] },
           { api_key: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
