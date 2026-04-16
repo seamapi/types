@@ -1376,6 +1376,241 @@ export default {
             nullable: true,
             type: 'string',
           },
+          pending_mutations: {
+            description:
+              'Collection of pending mutations for the access code. Indicates changes that Seam is in the process of pushing to the device.',
+            items: {
+              discriminator: { propertyName: 'mutation_code' },
+              oneOf: [
+                {
+                  description:
+                    'Seam is in the process of setting an access code on the device.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of setting an access code on the device.',
+                      enum: ['creating'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'mutation_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Seam is in the process of removing an access code from the device.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of removing an access code from the device.',
+                      enum: ['deleting'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'mutation_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Seam is in the process of pushing an updated PIN code to the device.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    from: {
+                      description: 'Previous code configuration.',
+                      properties: {
+                        code: {
+                          description: 'Previous PIN code.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['code'],
+                      type: 'object',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing an updated PIN code to the device.',
+                      enum: ['updating_code'],
+                      type: 'string',
+                    },
+                    to: {
+                      description: 'New code configuration.',
+                      properties: {
+                        code: {
+                          description: 'New PIN code.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['code'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Seam is in the process of pushing an updated access code name to the device.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    from: {
+                      description: 'Previous name configuration.',
+                      properties: {
+                        name: {
+                          description: 'Previous access code name.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['name'],
+                      type: 'object',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing an updated access code name to the device.',
+                      enum: ['updating_name'],
+                      type: 'string',
+                    },
+                    to: {
+                      description: 'New name configuration.',
+                      properties: {
+                        name: {
+                          description: 'New access code name.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['name'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Seam is in the process of pushing an updated time frame to the device.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    from: {
+                      description: 'Previous time frame configuration.',
+                      properties: {
+                        ends_at: {
+                          description: 'Previous end time for the access code.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        starts_at: {
+                          description:
+                            'Previous start time for the access code.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['starts_at', 'ends_at'],
+                      type: 'object',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of pushing updated access code time frame to the device.',
+                      enum: ['updating_time_frame'],
+                      type: 'string',
+                    },
+                    to: {
+                      description: 'New time frame configuration.',
+                      properties: {
+                        ends_at: {
+                          description: 'New end time for the access code.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        starts_at: {
+                          description: 'New start time for the access code.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['starts_at', 'ends_at'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
           pulled_backup_access_code_id: {
             description:
               'Identifier of the pulled backup access code. Used to associate the pulled backup access code with the original access code.',
@@ -1815,6 +2050,7 @@ export default {
           'is_external_modification_allowed',
           'is_one_time_use',
           'is_offline_access_code',
+          'pending_mutations',
         ],
         type: 'object',
         'x-route-path': '/access_codes',
