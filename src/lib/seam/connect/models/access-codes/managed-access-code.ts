@@ -1,6 +1,7 @@
 import { z } from 'zod'
 
 import { device_and_connected_account_error_options } from '../devices/index.js'
+import { access_code_pending_mutations } from './pending-mutations.js'
 
 const common_access_code_error = z.object({
   message: z
@@ -713,6 +714,11 @@ export const access_code = z.object({
     .optional()
     .describe(
       'Metadata for a dormakaba Oracode managed access code. Only present for access codes from dormakaba Oracode devices.',
+    ),
+  pending_mutations: z
+    .array(access_code_pending_mutations)
+    .describe(
+      'Collection of pending mutations for the access code. Indicates changes that Seam is in the process of pushing to the device.',
     ),
 }).describe(`
   ---
