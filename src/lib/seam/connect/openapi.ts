@@ -67364,6 +67364,9 @@ export default {
                         feature_flags: {
                           properties: {
                             RESERVATION_UI_V2: { type: 'boolean' },
+                            SALTO_KS_ENTRANCES_ONLY_FOR_SPACES: {
+                              type: 'boolean',
+                            },
                           },
                           type: 'object',
                         },
@@ -67777,6 +67780,9 @@ export default {
                         feature_flags: {
                           properties: {
                             RESERVATION_UI_V2: { type: 'boolean' },
+                            SALTO_KS_ENTRANCES_ONLY_FOR_SPACES: {
+                              type: 'boolean',
+                            },
                           },
                           type: 'object',
                         },
