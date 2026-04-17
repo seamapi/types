@@ -1408,6 +1408,41 @@ export default {
                 },
                 {
                   description:
+                    "Seam is waiting until closer to the access code's start time before programming it on the device.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        "Mutation code to indicate that Seam is waiting until closer to the access code's start time before programming it on the device.",
+                      enum: ['deferring_creation'],
+                      type: 'string',
+                    },
+                    scheduled_at: {
+                      description:
+                        'Date and time at which Seam will attempt to program this access code on the device.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'scheduled_at',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
                     'Seam is in the process of removing an access code from the device.',
                   properties: {
                     created_at: {

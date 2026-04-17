@@ -18,6 +18,24 @@ const creating = common_pending_mutation
   })
   .describe('Seam is in the process of setting an access code on the device.')
 
+const deferring_creation = common_pending_mutation
+  .extend({
+    mutation_code: z
+      .literal('deferring_creation')
+      .describe(
+        "Mutation code to indicate that Seam is waiting until closer to the access code's start time before programming it on the device.",
+      ),
+    scheduled_at: z
+      .string()
+      .datetime()
+      .describe(
+        'Date and time at which Seam will attempt to program this access code on the device.',
+      ),
+  })
+  .describe(
+    "Seam is waiting until closer to the access code's start time before programming it on the device.",
+  )
+
 const deleting = common_pending_mutation
   .extend({
     mutation_code: z
@@ -116,7 +134,14 @@ const updating_time_frame = common_pending_mutation
 
 export const access_code_pending_mutations = z.discriminatedUnion(
   'mutation_code',
-  [creating, deleting, updating_code, updating_name, updating_time_frame],
+  [
+    creating,
+    deferring_creation,
+    deleting,
+    updating_code,
+    updating_name,
+    updating_time_frame,
+  ],
 )
 
 export type AccessCodePendingMutation = z.infer<
@@ -134,6 +159,7 @@ const internal_recreate_fields = z.object({
 
 const _access_code_pending_mutations_map = z.object({
   creating: creating.optional().nullable(),
+  deferring_creation: deferring_creation.optional().nullable(),
   deleting: deleting.optional().nullable(),
   updating_code: updating_code
     .merge(internal_recreate_fields)
