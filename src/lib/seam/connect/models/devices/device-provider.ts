@@ -53,6 +53,7 @@ export const DEVICE_PROVIDERS = {
   DORMAKABA_AMBIANCE: 'dormakaba_ambiance',
   ULTRALOQ: 'ultraloq',
   RING: 'ring',
+  ICAL: 'ical',
 } as const
 
 export type DeviceProviderName =
@@ -137,6 +138,8 @@ export const PROVIDER_CATEGORY_MAP = {
 
   cameras: ['ring'],
 
+  connectors: ['ical'],
+
   internal_beta: ALL_DEVICE_PROVIDERS,
 } as const satisfies Record<string, readonly DeviceProviderName[]>
 
@@ -172,6 +175,7 @@ export const PROVIDER_CATEGORY_CAPABILITY_MAP: Record<
   noise_sensors: ['noise_sensor'],
   access_control_systems: ['access_control'],
   cameras: ['camera'],
+  connectors: [],
   internal_beta: [
     'lock',
     'thermostat',
