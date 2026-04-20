@@ -2474,6 +2474,33 @@ export default {
                       format: 'date-time',
                       type: 'string',
                     },
+                    failed_devices: {
+                      description:
+                        'Devices whose access codes could not be revoked during reconciliation. Present when the provider does not support revoking an offline access code (e.g. Dormakaba oracode with exhausted override budget).',
+                      items: {
+                        properties: {
+                          device_id: {
+                            description:
+                              'Device whose access code could not be revoked.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          error_code: {
+                            description:
+                              'Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`).',
+                            type: 'string',
+                          },
+                          message: {
+                            description:
+                              'Human-readable description of why revocation failed.',
+                            type: 'string',
+                          },
+                        },
+                        required: ['device_id', 'error_code', 'message'],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
                     message: {
                       description:
                         'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
@@ -36004,6 +36031,37 @@ export default {
                                     format: 'date-time',
                                     type: 'string',
                                   },
+                                  failed_devices: {
+                                    description:
+                                      'Devices whose access codes could not be revoked during reconciliation. Present when the provider does not support revoking an offline access code (e.g. Dormakaba oracode with exhausted override budget).',
+                                    items: {
+                                      properties: {
+                                        device_id: {
+                                          description:
+                                            'Device whose access code could not be revoked.',
+                                          format: 'uuid',
+                                          type: 'string',
+                                        },
+                                        error_code: {
+                                          description:
+                                            'Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`).',
+                                          type: 'string',
+                                        },
+                                        message: {
+                                          description:
+                                            'Human-readable description of why revocation failed.',
+                                          type: 'string',
+                                        },
+                                      },
+                                      required: [
+                                        'device_id',
+                                        'error_code',
+                                        'message',
+                                      ],
+                                      type: 'object',
+                                    },
+                                    type: 'array',
+                                  },
                                   message: {
                                     description:
                                       'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
@@ -36629,6 +36687,37 @@ export default {
                                       'Date and time at which Seam created the warning.',
                                     format: 'date-time',
                                     type: 'string',
+                                  },
+                                  failed_devices: {
+                                    description:
+                                      'Devices whose access codes could not be revoked during reconciliation. Present when the provider does not support revoking an offline access code (e.g. Dormakaba oracode with exhausted override budget).',
+                                    items: {
+                                      properties: {
+                                        device_id: {
+                                          description:
+                                            'Device whose access code could not be revoked.',
+                                          format: 'uuid',
+                                          type: 'string',
+                                        },
+                                        error_code: {
+                                          description:
+                                            'Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`).',
+                                          type: 'string',
+                                        },
+                                        message: {
+                                          description:
+                                            'Human-readable description of why revocation failed.',
+                                          type: 'string',
+                                        },
+                                      },
+                                      required: [
+                                        'device_id',
+                                        'error_code',
+                                        'message',
+                                      ],
+                                      type: 'object',
+                                    },
+                                    type: 'array',
                                   },
                                   message: {
                                     description:
@@ -37305,6 +37394,37 @@ export default {
                                       format: 'date-time',
                                       type: 'string',
                                     },
+                                    failed_devices: {
+                                      description:
+                                        'Devices whose access codes could not be revoked during reconciliation. Present when the provider does not support revoking an offline access code (e.g. Dormakaba oracode with exhausted override budget).',
+                                      items: {
+                                        properties: {
+                                          device_id: {
+                                            description:
+                                              'Device whose access code could not be revoked.',
+                                            format: 'uuid',
+                                            type: 'string',
+                                          },
+                                          error_code: {
+                                            description:
+                                              'Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`).',
+                                            type: 'string',
+                                          },
+                                          message: {
+                                            description:
+                                              'Human-readable description of why revocation failed.',
+                                            type: 'string',
+                                          },
+                                        },
+                                        required: [
+                                          'device_id',
+                                          'error_code',
+                                          'message',
+                                        ],
+                                        type: 'object',
+                                      },
+                                      type: 'array',
+                                    },
                                     message: {
                                       description:
                                         'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
@@ -37966,6 +38086,37 @@ export default {
                                         'Date and time at which Seam created the warning.',
                                       format: 'date-time',
                                       type: 'string',
+                                    },
+                                    failed_devices: {
+                                      description:
+                                        'Devices whose access codes could not be revoked during reconciliation. Present when the provider does not support revoking an offline access code (e.g. Dormakaba oracode with exhausted override budget).',
+                                      items: {
+                                        properties: {
+                                          device_id: {
+                                            description:
+                                              'Device whose access code could not be revoked.',
+                                            format: 'uuid',
+                                            type: 'string',
+                                          },
+                                          error_code: {
+                                            description:
+                                              'Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`).',
+                                            type: 'string',
+                                          },
+                                          message: {
+                                            description:
+                                              'Human-readable description of why revocation failed.',
+                                            type: 'string',
+                                          },
+                                        },
+                                        required: [
+                                          'device_id',
+                                          'error_code',
+                                          'message',
+                                        ],
+                                        type: 'object',
+                                      },
+                                      type: 'array',
                                     },
                                     message: {
                                       description:

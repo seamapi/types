@@ -71,11 +71,32 @@ const underprovisioned_access = common_access_grant_warning
     'Indicates that the access grant should have access to more locations than it currently does. Access methods are being created for the missing locations.',
   )
 
+const overprovisioned_failed_device = z.object({
+  device_id: z
+    .string()
+    .uuid()
+    .describe('Device whose access code could not be revoked.'),
+  error_code: z
+    .string()
+    .describe(
+      'Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`).',
+    ),
+  message: z
+    .string()
+    .describe('Human-readable description of why revocation failed.'),
+})
+
 const overprovisioned_access = common_access_grant_warning
   .extend({
     warning_code: z
       .literal('overprovisioned_access')
       .describe(warning_code_description),
+    failed_devices: z
+      .array(overprovisioned_failed_device)
+      .optional()
+      .describe(
+        'Devices whose access codes could not be revoked during reconciliation. Present when the provider does not support revoking an offline access code (e.g. Dormakaba oracode with exhausted override budget).',
+      ),
   })
   .describe(
     'Indicates that the access grant has access to locations it should not have. Access methods are being removed from the extra locations.',
