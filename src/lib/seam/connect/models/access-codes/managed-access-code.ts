@@ -368,6 +368,17 @@ const schlage_creation_outage = common_access_code_warning
   })
   .describe('Received an error when attempting to create this code.')
 
+const schlage_access_code_ambiguous_timezone_dst_risk =
+  common_access_code_warning
+    .extend({
+      warning_code: z
+        .literal('schlage_access_code_ambiguous_timezone_dst_risk')
+        .describe(warning_code_description),
+    })
+    .describe(
+      "The Schlage device's timezone is ambiguous and this code's schedule crosses a daylight-saving transition in at least one plausible timezone. A 1-hour safety buffer has been applied to the side of the schedule affected by the transition (`ends_at` for spring-forward, `starts_at` for fall-back) so the code stays active through the shift — the code may be usable up to 1 hour beyond your requested window. Set the device's timezone via `/devices/report_provider_metadata` to clear the buffer and guarantee exact DST handling.",
+    )
+
 const delay_in_setting_on_device = common_access_code_warning
   .extend({
     warning_code: z
@@ -449,6 +460,7 @@ const access_code_warning = z
     smartthings_failed_to_set_access_code_warning,
     schlage_detected_duplicate,
     schlage_creation_outage,
+    schlage_access_code_ambiguous_timezone_dst_risk,
     code_modified_external_to_seam_warning,
     delay_in_setting_on_device,
     delay_in_removing_from_device,
@@ -473,6 +485,8 @@ const _access_code_warning_map = z.object({
     smartthings_failed_to_set_access_code_warning.optional().nullable(),
   schlage_detected_duplicate: schlage_detected_duplicate.optional().nullable(),
   schlage_creation_outage: schlage_creation_outage.optional().nullable(),
+  schlage_access_code_ambiguous_timezone_dst_risk:
+    schlage_access_code_ambiguous_timezone_dst_risk.optional().nullable(),
   code_modified_external_to_seam_warning: code_modified_external_to_seam_warning
     .optional()
     .nullable(),
