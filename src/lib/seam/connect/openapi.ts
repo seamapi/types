@@ -61305,6 +61305,190 @@ export default {
         'x-undocumented': 'Seam Bridge Client only.',
       },
     },
+    '/seam/connect_webview/v1/get_current_pane': {
+      get: {
+        description:
+          'Returns the current render pane for a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).',
+        operationId: 'seamConnectWebviewV1GetCurrentPaneGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'connect_webview_id',
+            required: true,
+            schema: { format: 'uuid', type: 'string' },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    pane: { $ref: '#/components/schemas/access_code' },
+                  },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_with_workspace: [] }],
+        summary: '/seam/connect_webview/v1/get_current_pane',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'connect_webview', 'v1'],
+        'x-fern-sdk-method-name': 'get_current_pane',
+        'x-fern-sdk-return-value': 'pane',
+        'x-response-key': 'pane',
+        'x-title': 'Get Current Pane',
+        'x-undocumented':
+          'Internal endpoint for driving Connect Webview flows programmatically.',
+      },
+      post: {
+        description:
+          'Returns the current render pane for a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).',
+        operationId: 'seamConnectWebviewV1GetCurrentPanePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connect_webview_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['connect_webview_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    pane: { $ref: '#/components/schemas/access_code' },
+                  },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_with_workspace: [] }],
+        summary: '/seam/connect_webview/v1/get_current_pane',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'connect_webview', 'v1'],
+        'x-fern-sdk-method-name': 'get_current_pane',
+        'x-fern-sdk-return-value': 'pane',
+        'x-response-key': 'pane',
+        'x-title': 'Get Current Pane',
+        'x-undocumented':
+          'Internal endpoint for driving Connect Webview flows programmatically.',
+      },
+    },
+    '/seam/connect_webview/v1/reset': {
+      post: {
+        description:
+          'Resets an errored [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) so its login flow can be retried.',
+        operationId: 'seamConnectWebviewV1ResetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connect_webview_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['connect_webview_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_with_workspace: [] }],
+        summary: '/seam/connect_webview/v1/reset',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'connect_webview', 'v1'],
+        'x-fern-sdk-method-name': 'reset',
+        'x-fern-sdk-return-value': 'ok',
+        'x-response-key': 'ok',
+        'x-title': 'Reset Connect Webview',
+        'x-undocumented':
+          'Internal endpoint for driving Connect Webview flows programmatically.',
+      },
+    },
+    '/seam/connect_webview/v1/submit': {
+      post: {
+        description:
+          'Submits pane arguments to advance a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) login state machine.',
+        operationId: 'seamConnectWebviewV1SubmitPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connect_webview_id: { format: 'uuid', type: 'string' },
+                  submit_args: {},
+                },
+                required: ['connect_webview_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_with_workspace: [] }],
+        summary: '/seam/connect_webview/v1/submit',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'connect_webview', 'v1'],
+        'x-fern-sdk-method-name': 'submit',
+        'x-fern-sdk-return-value': 'ok',
+        'x-response-key': 'ok',
+        'x-title': 'Submit Connect Webview Pane',
+        'x-undocumented':
+          'Internal endpoint for driving Connect Webview flows programmatically.',
+      },
+    },
     '/seam/console/v1/get_resource_locator': {
       get: {
         description:
