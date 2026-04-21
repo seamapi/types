@@ -11306,6 +11306,48 @@ export default {
         'x-route-path': '/customers',
         'x-undocumented': 'Internal resource.',
       },
+      customer_portal: {
+        description:
+          "Represents a Customer Portal. Customer Portal is a hosted, customizable interface for managing device access. It enables you to embed secure, pre-authenticated access flows into your product—either by sharing a link with users or embedding a view in an iframe.\n\nWith Customer Portal, you no longer need to build out frontend experiences for physical access, thermostats, and sensors. Instead, you can ship enterprise-grade access control experiences in a fraction of the time, while maintaining your product's branding and user experience.\n\nSeam hosts these flows, handling everything from account connection and device mapping to full-featured device control.",
+        properties: {
+          created_at: {
+            description:
+              'Date and time at which the customer portal link was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          customer_key: {
+            description: 'Customer key for the customer portal.',
+            type: 'string',
+          },
+          expires_at: {
+            description:
+              'Date and time at which the customer portal link expires.',
+            format: 'date-time',
+            type: 'string',
+          },
+          url: {
+            description: 'URL for the customer portal.',
+            format: 'uri',
+            type: 'string',
+          },
+          workspace_id: {
+            description:
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the customer portal.',
+            format: 'uuid',
+            type: 'string',
+          },
+        },
+        required: [
+          'url',
+          'customer_key',
+          'expires_at',
+          'workspace_id',
+          'created_at',
+        ],
+        type: 'object',
+        'x-route-path': '/customers',
+      },
       customization_profile: {
         description: 'A customization profile.',
         properties: {
@@ -51571,46 +51613,7 @@ export default {
                 schema: {
                   properties: {
                     customer_portal: {
-                      description:
-                        "Represents a Customer Portal. Customer Portal is a hosted, customizable interface for managing device access. It enables you to embed secure, pre-authenticated access flows into your product—either by sharing a link with users or embedding a view in an iframe.\n\nWith Customer Portal, you no longer need to build out frontend experiences for physical access, thermostats, and sensors. Instead, you can ship enterprise-grade access control experiences in a fraction of the time, while maintaining your product's branding and user experience.\n\nSeam hosts these flows, handling everything from account connection and device mapping to full-featured device control.",
-                      properties: {
-                        created_at: {
-                          description:
-                            'Date and time at which the customer portal link was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        customer_key: {
-                          description: 'Customer key for the customer portal.',
-                          type: 'string',
-                        },
-                        expires_at: {
-                          description:
-                            'Date and time at which the customer portal link expires.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        url: {
-                          description: 'URL for the customer portal.',
-                          format: 'uri',
-                          type: 'string',
-                        },
-                        workspace_id: {
-                          description:
-                            'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the customer portal.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'url',
-                        'customer_key',
-                        'expires_at',
-                        'workspace_id',
-                        'created_at',
-                      ],
-                      type: 'object',
-                      'x-route-path': '/customers',
+                      $ref: '#/components/schemas/customer_portal',
                     },
                     magic_link: { $ref: '#/components/schemas/magic_link' },
                     ok: { type: 'boolean' },
