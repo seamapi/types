@@ -82,7 +82,7 @@ export const connected_account_successful_login_event =
     deprecated: Use \`connect_webview.login_succeeded\`.
     route_path: /connected_accounts
     ---
-    A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) had a successful login using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).
+    A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) had a successful login using a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).
   `)
 
 /** @deprecated Rely on ConnectWebviewLoginSucceededEvent instead */

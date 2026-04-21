@@ -3066,7 +3066,7 @@ export default {
       },
       acs_access_group: {
         description:
-          'Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.\n\nSome access control systems use [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups), which are sets of users, combined with sets of permissions. These permissions include both the set of areas or assets that the users can access and the schedule during which the users can access these areas or assets. Instead of assigning access rights individually to each access control system user, which can be time-consuming and error-prone, administrators can assign users to an access group, thereby ensuring that the users inherit all the permissions associated with the access group. Using access groups streamlines the process of managing large numbers of access control system users, especially in bigger organizations or complexes.\n\nTo learn whether your access control system supports access groups, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides/overview#access-control-systems).',
+          'Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.\n\nSome access control systems use [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups), which are sets of users, combined with sets of permissions. These permissions include both the set of areas or assets that the users can access and the schedule during which the users can access these areas or assets. Instead of assigning access rights individually to each access control system user, which can be time-consuming and error-prone, administrators can assign users to an access group, thereby ensuring that the users inherit all the permissions associated with the access group. Using access groups streamlines the process of managing large numbers of access control system users, especially in bigger organizations or complexes.\n\nTo learn whether your access control system supports access groups, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides/overview#access-control-systems).',
         properties: {
           access_group_type: {
             deprecated: true,
@@ -3139,7 +3139,7 @@ export default {
               oneOf: [
                 {
                   description:
-                    'Indicates that the [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups) was not created on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
+                    'Indicates that the [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups) was not created on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
                   properties: {
                     created_at: {
                       description:
@@ -4643,7 +4643,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://docs.seam.co/latest/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).\n  For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](https://docs.seam.co/latest/core-concepts/workspaces).\n  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).',
+                    'Indicates that [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://docs.seam.co/latest/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).\n  For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](https://docs.seam.co/latest/core-concepts/workspaces).\n  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).',
                   properties: {
                     created_at: {
                       description:
@@ -4718,7 +4718,7 @@ export default {
                 },
                 {
                   description:
-                    'Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) to restore access.',
+                    'Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) to restore access.',
                   properties: {
                     created_at: {
                       description:
@@ -17860,7 +17860,7 @@ export default {
               },
               acs_entrance_id: {
                 description:
-                  'ID of the affected [entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details).',
+                  'ID of the affected [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
                 format: 'uuid',
                 type: 'string',
               },
@@ -17913,7 +17913,7 @@ export default {
               },
               acs_entrance_id: {
                 description:
-                  'ID of the affected [entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details).',
+                  'ID of the affected [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
                 format: 'uuid',
                 type: 'string',
               },
@@ -19159,7 +19159,7 @@ export default {
           },
           {
             description:
-              'An [access system entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was added.',
+              'An [access system entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) was added.',
             properties: {
               acs_entrance_id: { format: 'uuid', type: 'string' },
               acs_system_id: {
@@ -19209,7 +19209,7 @@ export default {
           },
           {
             description:
-              'An [access system entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was removed.',
+              'An [access system entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) was removed.',
             properties: {
               acs_entrance_id: { format: 'uuid', type: 'string' },
               acs_system_id: {
@@ -19431,7 +19431,7 @@ export default {
           {
             deprecated: true,
             description:
-              'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) had a successful login using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).',
+              'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) had a successful login using a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).',
             properties: {
               connect_webview_id: {
                 description:
@@ -20410,11 +20410,11 @@ export default {
           },
           {
             description:
-              'A [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) login succeeded.',
+              'A [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) login succeeded.',
             properties: {
               connect_webview_id: {
                 description:
-                  'ID of the affected [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).',
+                  'ID of the affected [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).',
                 format: 'uuid',
                 type: 'string',
               },
@@ -20477,11 +20477,11 @@ export default {
           },
           {
             description:
-              'A [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) login failed.',
+              'A [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) login failed.',
             properties: {
               connect_webview_id: {
                 description:
-                  'ID of the affected [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).',
+                  'ID of the affected [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).',
                 format: 'uuid',
                 type: 'string',
               },
@@ -27911,7 +27911,7 @@ export default {
               oneOf: [
                 {
                   description:
-                    'Indicates that the [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups) was not created on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
+                    'Indicates that the [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups) was not created on the [access system](https://docs.seam.co/latest/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
                   properties: {
                     created_at: {
                       description:
@@ -31635,7 +31635,7 @@ export default {
                   },
                   use_backup_access_code_pool: {
                     description:
-                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).',
+                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).',
                     type: 'boolean',
                   },
                   use_offline_access_code: {
@@ -34062,7 +34062,7 @@ export default {
                   },
                   use_backup_access_code_pool: {
                     description:
-                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).',
+                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).',
                     type: 'boolean',
                   },
                   use_offline_access_code: {
@@ -34216,7 +34216,7 @@ export default {
                   },
                   use_backup_access_code_pool: {
                     description:
-                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).',
+                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).',
                     type: 'boolean',
                   },
                   use_offline_access_code: {
@@ -34370,7 +34370,7 @@ export default {
                   },
                   use_backup_access_code_pool: {
                     description:
-                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).',
+                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).',
                     type: 'boolean',
                   },
                   use_offline_access_code: {
@@ -41239,7 +41239,7 @@ export default {
     '/acs/access_groups/add_user': {
       post: {
         description:
-          'Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsAddUserPost',
         requestBody: {
           content: {
@@ -41301,7 +41301,7 @@ export default {
       },
       put: {
         description:
-          'Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsAddUserPut',
         requestBody: {
           content: {
@@ -41365,7 +41365,7 @@ export default {
     '/acs/access_groups/delete': {
       delete: {
         description:
-          'Deletes a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Deletes a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsDeleteDelete',
         parameters: [
           {
@@ -41410,7 +41410,7 @@ export default {
       },
       post: {
         description:
-          'Deletes a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Deletes a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsDeletePost',
         requestBody: {
           content: {
@@ -41463,7 +41463,7 @@ export default {
     '/acs/access_groups/get': {
       get: {
         description:
-          'Returns a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Returns a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsGetGet',
         parameters: [
           {
@@ -41513,7 +41513,7 @@ export default {
       },
       post: {
         description:
-          'Returns a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Returns a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsGetPost',
         requestBody: {
           content: {
@@ -41570,7 +41570,7 @@ export default {
     '/acs/access_groups/list': {
       get: {
         description:
-          'Returns a list of all [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Returns a list of all [access groups](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsListGet',
         parameters: [
           {
@@ -41651,7 +41651,7 @@ export default {
       },
       post: {
         description:
-          'Returns a list of all [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Returns a list of all [access groups](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsListPost',
         requestBody: {
           content: {
@@ -41727,7 +41727,7 @@ export default {
     '/acs/access_groups/list_accessible_entrances': {
       get: {
         description:
-          'Returns a list of all accessible entrances for a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Returns a list of all accessible entrances for a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsListAccessibleEntrancesGet',
         parameters: [
           {
@@ -41779,7 +41779,7 @@ export default {
       },
       post: {
         description:
-          'Returns a list of all accessible entrances for a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Returns a list of all accessible entrances for a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsListAccessibleEntrancesPost',
         requestBody: {
           content: {
@@ -41838,7 +41838,7 @@ export default {
     '/acs/access_groups/list_users': {
       get: {
         description:
-          'Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsListUsersGet',
         parameters: [
           {
@@ -41890,7 +41890,7 @@ export default {
       },
       post: {
         description:
-          'Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsListUsersPost',
         requestBody: {
           content: {
@@ -41949,7 +41949,7 @@ export default {
     '/acs/access_groups/remove_user': {
       delete: {
         description:
-          'Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsRemoveUserDelete',
         parameters: [
           {
@@ -42016,7 +42016,7 @@ export default {
       },
       post: {
         description:
-          'Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsRemoveUserPost',
         requestBody: {
           content: {
@@ -42080,7 +42080,7 @@ export default {
     '/acs/access_groups/unmanaged/get': {
       get: {
         description:
-          'Returns a specified unmanaged [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Returns a specified unmanaged [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsUnmanagedGetGet',
         parameters: [
           {
@@ -42133,7 +42133,7 @@ export default {
       },
       post: {
         description:
-          'Returns a specified unmanaged [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Returns a specified unmanaged [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsUnmanagedGetPost',
         requestBody: {
           content: {
@@ -42193,7 +42193,7 @@ export default {
     '/acs/access_groups/unmanaged/list': {
       get: {
         description:
-          'Returns a list of all unmanaged [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Returns a list of all unmanaged [access groups](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsUnmanagedListGet',
         parameters: [
           {
@@ -42268,7 +42268,7 @@ export default {
       },
       post: {
         description:
-          'Returns a list of all unmanaged [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Returns a list of all unmanaged [access groups](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsUnmanagedListPost',
         requestBody: {
           content: {
@@ -45840,7 +45840,7 @@ export default {
     '/acs/users/add_to_access_group': {
       post: {
         description:
-          'Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsUsersAddToAccessGroupPost',
         requestBody: {
           content: {
@@ -45896,7 +45896,7 @@ export default {
       },
       put: {
         description:
-          'Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsUsersAddToAccessGroupPut',
         requestBody: {
           content: {
@@ -46693,7 +46693,7 @@ export default {
     '/acs/users/remove_from_access_group': {
       delete: {
         description:
-          'Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsUsersRemoveFromAccessGroupDelete',
         parameters: [
           {
@@ -46760,7 +46760,7 @@ export default {
       },
       post: {
         description:
-          'Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
+          'Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsUsersRemoveFromAccessGroupPost',
         requestBody: {
           content: {
@@ -57824,7 +57824,7 @@ export default {
     '/instant_keys/get': {
       get: {
         description:
-          'Gets an [instant key](https://docs.seam.co/latest/capability-guides/mobile-access/instant-keys).',
+          'Gets an [instant key](https://docs.seam.co/latest/capability-guides/instant-keys).',
         operationId: 'instantKeysGetGet',
         parameters: [
           {
@@ -57880,7 +57880,7 @@ export default {
       },
       post: {
         description:
-          'Gets an [instant key](https://docs.seam.co/latest/capability-guides/mobile-access/instant-keys).',
+          'Gets an [instant key](https://docs.seam.co/latest/capability-guides/instant-keys).',
         operationId: 'instantKeysGetPost',
         requestBody: {
           content: {
@@ -57939,7 +57939,7 @@ export default {
     '/instant_keys/list': {
       get: {
         description:
-          'Returns a list of all [instant keys](https://docs.seam.co/latest/capability-guides/mobile-access/instant-keys).',
+          'Returns a list of all [instant keys](https://docs.seam.co/latest/capability-guides/instant-keys).',
         operationId: 'instantKeysListGet',
         parameters: [
           {
@@ -57990,7 +57990,7 @@ export default {
       },
       post: {
         description:
-          'Returns a list of all [instant keys](https://docs.seam.co/latest/capability-guides/mobile-access/instant-keys).',
+          'Returns a list of all [instant keys](https://docs.seam.co/latest/capability-guides/instant-keys).',
         operationId: 'instantKeysListPost',
         requestBody: {
           content: {
@@ -78683,7 +78683,7 @@ export default {
     '/user_identities/delete': {
       delete: {
         description:
-          'Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://docs.seam.co/latest/api/access-control-systems/credentials), [acs users](https://docs.seam.co/latest/api/access-control-systems/users) and [client sessions](https://docs.seam.co/latest/api/client_sessions).',
+          'Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://docs.seam.co/latest/api/acs/credentials), [acs users](https://docs.seam.co/latest/api/acs/users) and [client sessions](https://docs.seam.co/latest/api/client_sessions).',
         operationId: 'userIdentitiesDeleteDelete',
         parameters: [
           {
@@ -78727,7 +78727,7 @@ export default {
       },
       post: {
         description:
-          'Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://docs.seam.co/latest/api/access-control-systems/credentials), [acs users](https://docs.seam.co/latest/api/access-control-systems/users) and [client sessions](https://docs.seam.co/latest/api/client_sessions).',
+          'Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://docs.seam.co/latest/api/acs/credentials), [acs users](https://docs.seam.co/latest/api/acs/users) and [client sessions](https://docs.seam.co/latest/api/client_sessions).',
         operationId: 'userIdentitiesDeletePost',
         requestBody: {
           content: {
@@ -79195,7 +79195,7 @@ export default {
     '/user_identities/generate_instant_key': {
       post: {
         description:
-          'Generates a new [instant key](https://docs.seam.co/latest/capability-guides/mobile-access/instant-keys) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Generates a new [instant key](https://docs.seam.co/latest/capability-guides/instant-keys) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesGenerateInstantKeyPost',
         requestBody: {
           content: {
