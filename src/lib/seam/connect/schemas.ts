@@ -17,6 +17,7 @@ export {
   connect_webview,
   connected_account,
   custom_metadata,
+  customer_portal,
   customization_profile,
   device,
   device_provider,
