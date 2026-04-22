@@ -178,7 +178,7 @@ export const acs_access_group = common_acs_access_group.extend({
 
     Some access control systems use [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups), which are sets of users, combined with sets of permissions. These permissions include both the set of areas or assets that the users can access and the schedule during which the users can access these areas or assets. Instead of assigning access rights individually to each access control system user, which can be time-consuming and error-prone, administrators can assign users to an access group, thereby ensuring that the users inherit all the permissions associated with the access group. Using access groups streamlines the process of managing large numbers of access control system users, especially in bigger organizations or complexes.
 
-    To learn whether your access control system supports access groups, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides/overview#access-control-systems).
+    To learn whether your access control system supports access groups, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
   `)
 export const unmanaged_acs_access_group = common_acs_access_group.extend({
   is_managed: z.literal(false),
