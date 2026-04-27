@@ -73,6 +73,7 @@ export {
   resident_resource,
   room_resource,
   space,
+  space_customer_data,
   neutral_resource as space_resource,
   staff_member_resource,
   tenant_resource,

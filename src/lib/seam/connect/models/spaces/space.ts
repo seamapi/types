@@ -1,5 +1,30 @@
 import { z } from 'zod'
 
+const time_of_day_re = /^([01]\d|2[0-3]):[0-5]\d(:[0-5]\d)?$/
+
+export const space_customer_data = z
+  .object({
+    time_zone: z
+      .string()
+      .nullish()
+      .describe('IANA time zone for the space, e.g. America/Los_Angeles.'),
+    default_checkin_time: z
+      .string()
+      .regex(time_of_day_re)
+      .nullish()
+      .describe(
+        'Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.',
+      ),
+    default_checkout_time: z
+      .string()
+      .regex(time_of_day_re)
+      .nullish()
+      .describe(
+        'Default check-out time for reservations at the space, as HH:mm or HH:mm:ss.',
+      ),
+  })
+  .describe('Reservation/stay-related defaults for the space.')
+
 export const space = z.object({
   space_id: z.string().uuid().describe('ID of the space.'),
   workspace_id: z
@@ -24,6 +49,7 @@ export const space = z.object({
     .string()
     .optional()
     .describe('Customer key associated with the space.'),
+  customer_data: space_customer_data.optional(),
   parent_space_id: z.string().uuid().optional().describe(`
     ---
     undocumented: Only used internally.
