@@ -25784,6 +25784,32 @@ export default {
             format: 'date-time',
             type: 'string',
           },
+          customer_data: {
+            description: 'Reservation/stay-related defaults for the space.',
+            properties: {
+              default_checkin_time: {
+                description:
+                  'Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.',
+                nullable: true,
+                pattern: '^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$',
+                type: 'string',
+              },
+              default_checkout_time: {
+                description:
+                  'Default check-out time for reservations at the space, as HH:mm or HH:mm:ss.',
+                nullable: true,
+                pattern: '^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$',
+                type: 'string',
+              },
+              time_zone: {
+                description:
+                  'IANA time zone for the space, e.g. America/Los_Angeles.',
+                nullable: true,
+                type: 'string',
+              },
+            },
+            type: 'object',
+          },
           customer_key: {
             description: 'Customer key associated with the space.',
             type: 'string',
@@ -73637,6 +73663,33 @@ export default {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
+                  customer_data: {
+                    description:
+                      'Reservation/stay-related defaults for the space.',
+                    properties: {
+                      default_checkin_time: {
+                        description:
+                          'Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.',
+                        nullable: true,
+                        pattern: '^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$',
+                        type: 'string',
+                      },
+                      default_checkout_time: {
+                        description:
+                          'Default check-out time for reservations at the space, as HH:mm or HH:mm:ss.',
+                        nullable: true,
+                        pattern: '^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$',
+                        type: 'string',
+                      },
+                      time_zone: {
+                        description:
+                          'IANA time zone for the space, e.g. America/Los_Angeles.',
+                        nullable: true,
+                        type: 'string',
+                      },
+                    },
+                    type: 'object',
+                  },
                   customer_key: {
                     description:
                       'Customer key for which you want to create the space.',
@@ -74602,6 +74655,33 @@ export default {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
+                  customer_data: {
+                    description:
+                      'Reservation/stay-related defaults for the space. Only the keys you provide are updated; omit a key to leave it unchanged. Pass null on a key to clear it.',
+                    properties: {
+                      default_checkin_time: {
+                        description:
+                          'Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.',
+                        nullable: true,
+                        pattern: '^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$',
+                        type: 'string',
+                      },
+                      default_checkout_time: {
+                        description:
+                          'Default check-out time for reservations at the space, as HH:mm or HH:mm:ss.',
+                        nullable: true,
+                        pattern: '^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$',
+                        type: 'string',
+                      },
+                      time_zone: {
+                        description:
+                          'IANA time zone for the space, e.g. America/Los_Angeles.',
+                        nullable: true,
+                        type: 'string',
+                      },
+                    },
+                    type: 'object',
+                  },
                   customer_key: {
                     description:
                       'Customer key for which you want to update the space.',
@@ -74677,6 +74757,33 @@ export default {
                       'IDs of the entrances that you want to set for the space. If specified, this will replace all existing entrances.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
+                  },
+                  customer_data: {
+                    description:
+                      'Reservation/stay-related defaults for the space. Only the keys you provide are updated; omit a key to leave it unchanged. Pass null on a key to clear it.',
+                    properties: {
+                      default_checkin_time: {
+                        description:
+                          'Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.',
+                        nullable: true,
+                        pattern: '^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$',
+                        type: 'string',
+                      },
+                      default_checkout_time: {
+                        description:
+                          'Default check-out time for reservations at the space, as HH:mm or HH:mm:ss.',
+                        nullable: true,
+                        pattern: '^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$',
+                        type: 'string',
+                      },
+                      time_zone: {
+                        description:
+                          'IANA time zone for the space, e.g. America/Los_Angeles.',
+                        nullable: true,
+                        type: 'string',
+                      },
+                    },
+                    type: 'object',
                   },
                   customer_key: {
                     description:
