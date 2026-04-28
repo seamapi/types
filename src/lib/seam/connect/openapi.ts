@@ -22973,10 +22973,15 @@ export default {
                 type: 'string',
               },
               event_type: { enum: ['lock.locked'], type: 'string' },
+              is_bluetooth_action: {
+                description:
+                  "\n      Whether the lock action was performed over Bluetooth by a remote client (such as the provider's mobile app), rather than a direct physical interaction or a Seam-initiated remote action.\n    ",
+                type: 'boolean',
+              },
               method: {
                 description:
                   'Method by which the affected lock device was locked. When the method is `keycode`, the `access_code_id` indicates the access code that was used, if reported by the device.',
-                enum: ['keycode', 'manual', 'automatic', 'unknown', 'seamapi'],
+                enum: ['keycode', 'manual', 'automatic', 'unknown', 'remote'],
                 type: 'string',
               },
               occurred_at: {
@@ -23086,10 +23091,15 @@ export default {
                 type: 'string',
               },
               event_type: { enum: ['lock.unlocked'], type: 'string' },
+              is_bluetooth_action: {
+                description:
+                  "\n      Whether the unlock action was performed over Bluetooth by a remote client (such as the provider's mobile app), rather than a direct physical interaction or a Seam-initiated remote action.\n    ",
+                type: 'boolean',
+              },
               method: {
                 description:
                   'Method by which the affected lock device was unlocked. When the method is `keycode`, the `access_code_id` indicates the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used, if reported by the device.',
-                enum: ['keycode', 'manual', 'automatic', 'unknown', 'seamapi'],
+                enum: ['keycode', 'manual', 'automatic', 'unknown', 'remote'],
                 type: 'string',
               },
               occurred_at: {
