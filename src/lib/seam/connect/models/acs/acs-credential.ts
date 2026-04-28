@@ -9,7 +9,6 @@ import {
 export const acs_credential_external_type = z.enum([
   'pti_card',
   'brivo_credential',
-  'brivo_digital_credential',
   'hid_credential',
   'visionline_card',
   'salto_ks_credential',

@@ -3796,7 +3796,6 @@ export default {
             enum: [
               'pti_card',
               'brivo_credential',
-              'brivo_digital_credential',
               'hid_credential',
               'visionline_card',
               'salto_ks_credential',
@@ -6368,7 +6367,6 @@ export default {
                             enum: [
                               'pti_card',
                               'brivo_credential',
-                              'brivo_digital_credential',
                               'hid_credential',
                               'visionline_card',
                               'salto_ks_credential',
@@ -6825,7 +6823,6 @@ export default {
                             enum: [
                               'pti_card',
                               'brivo_credential',
-                              'brivo_digital_credential',
                               'hid_credential',
                               'visionline_card',
                               'salto_ks_credential',
@@ -7538,7 +7535,6 @@ export default {
                         enum: [
                           'pti_card',
                           'brivo_credential',
-                          'brivo_digital_credential',
                           'hid_credential',
                           'visionline_card',
                           'salto_ks_credential',
@@ -7992,7 +7988,6 @@ export default {
                         enum: [
                           'pti_card',
                           'brivo_credential',
-                          'brivo_digital_credential',
                           'hid_credential',
                           'visionline_card',
                           'salto_ks_credential',
@@ -25267,7 +25262,6 @@ export default {
                         enum: [
                           'pti_card',
                           'brivo_credential',
-                          'brivo_digital_credential',
                           'hid_credential',
                           'visionline_card',
                           'salto_ks_credential',
@@ -28647,7 +28641,6 @@ export default {
             enum: [
               'pti_card',
               'brivo_credential',
-              'brivo_digital_credential',
               'hid_credential',
               'visionline_card',
               'salto_ks_credential',
