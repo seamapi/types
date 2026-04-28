@@ -149,6 +149,31 @@ const device_does_not_support_access_codes = common_access_grant_warning
     'Indicates that a device in the access grant does not support access codes and was excluded from code materialization.',
   )
 
+const device_time_constraints_violated_reason = z.enum([
+  'duration_exceeds_max',
+  'times_do_not_match_slots',
+  'ongoing_not_supported',
+])
+
+const device_time_constraints_violated = common_access_grant_warning
+  .extend({
+    warning_code: z
+      .literal('device_time_constraints_violated')
+      .describe(warning_code_description),
+    device_id: z
+      .string()
+      .uuid()
+      .describe(
+        'ID of the device whose time constraints the access grant violates.',
+      ),
+    reason: device_time_constraints_violated_reason.describe(
+      "Specific reason why the grant's times are not programmable on the device.",
+    ),
+  })
+  .describe(
+    "Indicates that a device in the access grant cannot program an access code for the grant's time range because of device-specific time constraints.",
+  )
+
 const access_grant_warning = z
   .discriminatedUnion('warning_code', [
     being_deleted,
@@ -157,6 +182,7 @@ const access_grant_warning = z
     updating_access_times,
     requested_code_unavailable,
     device_does_not_support_access_codes,
+    device_time_constraints_violated,
   ])
   .describe(
     'Warning associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
@@ -173,6 +199,10 @@ const _access_grant_warning_map = z.object({
     .nullable(),
   device_does_not_support_access_codes: z
     .record(z.string().uuid(), device_does_not_support_access_codes)
+    .optional()
+    .nullable(),
+  device_time_constraints_violated: z
+    .record(z.string().uuid(), device_time_constraints_violated)
     .optional()
     .nullable(),
 })

@@ -2660,6 +2660,53 @@ export default {
                   ],
                   type: 'object',
                 },
+                {
+                  description:
+                    "Indicates that a device in the access grant cannot program an access code for the grant's time range because of device-specific time constraints.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    device_id: {
+                      description:
+                        'ID of the device whose time constraints the access grant violates.',
+                      format: 'uuid',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    reason: {
+                      description:
+                        "Specific reason why the grant's times are not programmable on the device.",
+                      enum: [
+                        'duration_exceeds_max',
+                        'times_do_not_match_slots',
+                        'ongoing_not_supported',
+                      ],
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['device_time_constraints_violated'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'warning_code',
+                    'device_id',
+                    'reason',
+                  ],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -36323,6 +36370,53 @@ export default {
                                 ],
                                 type: 'object',
                               },
+                              {
+                                description:
+                                  "Indicates that a device in the access grant cannot program an access code for the grant's time range because of device-specific time constraints.",
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  device_id: {
+                                    description:
+                                      'ID of the device whose time constraints the access grant violates.',
+                                    format: 'uuid',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  reason: {
+                                    description:
+                                      "Specific reason why the grant's times are not programmable on the device.",
+                                    enum: [
+                                      'duration_exceeds_max',
+                                      'times_do_not_match_slots',
+                                      'ongoing_not_supported',
+                                    ],
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['device_time_constraints_violated'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                  'device_id',
+                                  'reason',
+                                ],
+                                type: 'object',
+                              },
                             ],
                           },
                           type: 'array',
@@ -36976,6 +37070,53 @@ export default {
                                   'message',
                                   'warning_code',
                                   'device_id',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  "Indicates that a device in the access grant cannot program an access code for the grant's time range because of device-specific time constraints.",
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  device_id: {
+                                    description:
+                                      'ID of the device whose time constraints the access grant violates.',
+                                    format: 'uuid',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  reason: {
+                                    description:
+                                      "Specific reason why the grant's times are not programmable on the device.",
+                                    enum: [
+                                      'duration_exceeds_max',
+                                      'times_do_not_match_slots',
+                                      'ongoing_not_supported',
+                                    ],
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['device_time_constraints_violated'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                  'device_id',
+                                  'reason',
                                 ],
                                 type: 'object',
                               },
@@ -37684,6 +37825,55 @@ export default {
                                   ],
                                   type: 'object',
                                 },
+                                {
+                                  description:
+                                    "Indicates that a device in the access grant cannot program an access code for the grant's time range because of device-specific time constraints.",
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    device_id: {
+                                      description:
+                                        'ID of the device whose time constraints the access grant violates.',
+                                      format: 'uuid',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    reason: {
+                                      description:
+                                        "Specific reason why the grant's times are not programmable on the device.",
+                                      enum: [
+                                        'duration_exceeds_max',
+                                        'times_do_not_match_slots',
+                                        'ongoing_not_supported',
+                                      ],
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: [
+                                        'device_time_constraints_violated',
+                                      ],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                    'device_id',
+                                    'reason',
+                                  ],
+                                  type: 'object',
+                                },
                               ],
                             },
                             type: 'array',
@@ -38373,6 +38563,55 @@ export default {
                                     'message',
                                     'warning_code',
                                     'device_id',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    "Indicates that a device in the access grant cannot program an access code for the grant's time range because of device-specific time constraints.",
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    device_id: {
+                                      description:
+                                        'ID of the device whose time constraints the access grant violates.',
+                                      format: 'uuid',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    reason: {
+                                      description:
+                                        "Specific reason why the grant's times are not programmable on the device.",
+                                      enum: [
+                                        'duration_exceeds_max',
+                                        'times_do_not_match_slots',
+                                        'ongoing_not_supported',
+                                      ],
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: [
+                                        'device_time_constraints_violated',
+                                      ],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                    'device_id',
+                                    'reason',
                                   ],
                                   type: 'object',
                                 },
