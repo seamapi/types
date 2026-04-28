@@ -66,9 +66,9 @@ const device_event_issue_properties = {
 }
 
 export const lock_method = z
-  .enum(['keycode', 'manual', 'automatic', 'unknown', 'seamapi'])
+  .enum(['keycode', 'manual', 'automatic', 'unknown', 'remote'])
   .describe(
-    'Method by which the affected lock device was locked or unlocked. When the method is `keycode`, the `access_code_id` indicates the access code that was used, if reported by the device.',
+    'Method by which the affected lock device was locked or unlocked. When the method is `keycode`, the `access_code_id` indicates the access code that was used, if reported by the device. The `remote` method indicates any remote (un)lock action, including Bluetooth, mobile app, or Seam API. For Seam-initiated remote (un)locks, look up the `action_attempt_id`.',
   )
 export type LockMethod = z.infer<typeof lock_method>
 
@@ -424,6 +424,9 @@ export const lock_locked_event = device_event.extend({
   method: lock_method.describe(
     'Method by which the affected lock device was locked. When the method is `keycode`, the `access_code_id` indicates the access code that was used, if reported by the device.',
   ),
+  is_bluetooth_action: z.boolean().optional().describe(`
+      Whether the lock action was performed over Bluetooth by a remote client (such as the provider's mobile app), rather than a direct physical interaction or a Seam-initiated remote action.
+    `),
 }).describe(`
   ---
   route_path: /locks
@@ -481,6 +484,9 @@ export const lock_unlocked_event = device_event.extend({
     .uuid()
     .optional()
     .describe('ID of the affected device.'),
+  is_bluetooth_action: z.boolean().optional().describe(`
+      Whether the unlock action was performed over Bluetooth by a remote client (such as the provider's mobile app), rather than a direct physical interaction or a Seam-initiated remote action.
+    `),
 }).describe(`
   ---
   route_path: /locks
