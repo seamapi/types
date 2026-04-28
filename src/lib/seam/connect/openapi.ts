@@ -73771,6 +73771,122 @@ export default {
         'x-title': 'Add Entrances to a Space',
       },
     },
+    '/spaces/add_connected_account': {
+      post: {
+        description:
+          'Adds a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) to a specific space.',
+        operationId: 'spacesAddConnectedAccountPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connected_account_id: {
+                    description:
+                      'ID of the connected account that you want to add to the space.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  space_id: {
+                    description:
+                      'ID of the space to which you want to add the connected account.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['space_id', 'connected_account_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/spaces/add_connected_account',
+        tags: [],
+        'x-fern-sdk-group-name': ['spaces'],
+        'x-fern-sdk-method-name': 'add_connected_account',
+        'x-response-key': null,
+        'x-title': 'Add a Connected Account to a Space',
+      },
+      put: {
+        description:
+          'Adds a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) to a specific space.',
+        operationId: 'spacesAddConnectedAccountPut',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connected_account_id: {
+                    description:
+                      'ID of the connected account that you want to add to the space.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  space_id: {
+                    description:
+                      'ID of the space to which you want to add the connected account.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['space_id', 'connected_account_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/spaces/add_connected_account',
+        tags: [],
+        'x-fern-sdk-group-name': ['spaces'],
+        'x-fern-sdk-method-name': 'add_connected_account',
+        'x-response-key': null,
+        'x-title': 'Add a Connected Account to a Space',
+      },
+    },
     '/spaces/add_devices': {
       post: {
         description: 'Adds devices to a specific space.',
@@ -74763,6 +74879,122 @@ export default {
         'x-fern-sdk-method-name': 'remove_acs_entrances',
         'x-response-key': null,
         'x-title': 'Remove Entrances from a Space',
+      },
+    },
+    '/spaces/remove_connected_account': {
+      delete: {
+        description:
+          'Removes a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) from a specific space.',
+        operationId: 'spacesRemoveConnectedAccountDelete',
+        parameters: [
+          {
+            in: 'query',
+            name: 'space_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the space from which you want to remove the connected account.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'connected_account_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the connected account that you want to remove from the space.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/spaces/remove_connected_account',
+        tags: [],
+        'x-fern-sdk-group-name': ['spaces'],
+        'x-fern-sdk-method-name': 'remove_connected_account',
+        'x-response-key': null,
+        'x-title': 'Remove a Connected Account from a Space',
+      },
+      post: {
+        description:
+          'Removes a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) from a specific space.',
+        operationId: 'spacesRemoveConnectedAccountPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connected_account_id: {
+                    description:
+                      'ID of the connected account that you want to remove from the space.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  space_id: {
+                    description:
+                      'ID of the space from which you want to remove the connected account.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['space_id', 'connected_account_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/spaces/remove_connected_account',
+        tags: [],
+        'x-fern-sdk-group-name': ['spaces'],
+        'x-fern-sdk-method-name': 'remove_connected_account',
+        'x-response-key': null,
+        'x-title': 'Remove a Connected Account from a Space',
       },
     },
     '/spaces/remove_devices': {
