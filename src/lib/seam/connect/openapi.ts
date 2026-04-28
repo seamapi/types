@@ -50172,6 +50172,16 @@ export default {
           },
           {
             in: 'query',
+            name: 'space_id',
+            schema: {
+              description:
+                'ID of the space by which you want to filter connected accounts.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'search',
             schema: {
               description:
@@ -50279,6 +50289,12 @@ export default {
                     description:
                       'String for which to search. Filters returned connected accounts to include all records that satisfy a partial match using `connected_account_id`, `account_type`, `customer_key`, `custom_metadata`, `user_identifier.username`, `user_identifier.email` or `user_identifier.phone`.',
                     minLength: 1,
+                    type: 'string',
+                  },
+                  space_id: {
+                    description:
+                      'ID of the space by which you want to filter connected accounts.',
+                    format: 'uuid',
                     type: 'string',
                   },
                   user_identifier_key: {
