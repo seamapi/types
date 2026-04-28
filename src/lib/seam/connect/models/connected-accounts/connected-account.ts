@@ -126,7 +126,7 @@ export type ConnectedAccountError = z.infer<typeof connected_account_error>
 
 export type ConnectedAccountWarning = z.infer<typeof connected_account_warning>
 
-const _connected_account_error_map = z.object({
+export const connected_account_error_map = z.object({
   account_disconnected: account_disconnected.nullable().optional(),
   bridge_disconnected: bridge_disconnected.nullable().optional(),
   salto_ks_subscription_limit_exceeded: salto_ks_subscription_limit_exceeded
@@ -135,7 +135,7 @@ const _connected_account_error_map = z.object({
 })
 
 export type ConnectedAccountErrorMap = z.infer<
-  typeof _connected_account_error_map
+  typeof connected_account_error_map
 >
 
 export const unknown_issue_with_connected_account =
@@ -240,7 +240,7 @@ const connected_account_warning = z
   ])
   .describe('Warning associated with the connected account.')
 
-const _connected_account_warning_map = z.object({
+export const connected_account_warning_map = z.object({
   scheduled_maintenance_window: scheduled_maintenance_window
     .nullable()
     .optional(),
@@ -256,7 +256,7 @@ const _connected_account_warning_map = z.object({
 })
 
 export type ConnectedAccountWarningMap = z.infer<
-  typeof _connected_account_warning_map
+  typeof connected_account_warning_map
 >
 
 export const connected_account = z.object({

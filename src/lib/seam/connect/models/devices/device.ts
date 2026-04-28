@@ -215,7 +215,7 @@ export const device_error = z
 
 export type DeviceError = z.infer<typeof device_error>
 
-const _device_error_map = z.object({
+export const device_error_map = z.object({
   device_offline: device_offline.optional().nullable(),
   device_removed: device_removed.optional().nullable(),
   hub_disconnected: hub_disconnected.optional().nullable(),
@@ -238,7 +238,7 @@ const _device_error_map = z.object({
   lockly_missing_wifi_bridge: lockly_missing_wifi_bridge.optional().nullable(),
 })
 
-export type DeviceErrorMap = z.infer<typeof _device_error_map>
+export type DeviceErrorMap = z.infer<typeof device_error_map>
 
 const warning_code_description =
   'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
@@ -524,7 +524,7 @@ const device_warning = z.discriminatedUnion('warning_code', [
 
 export type DeviceWarning = z.infer<typeof device_warning>
 
-const _device_warning_map = z.object({
+export const device_warning_map = z.object({
   partial_backup_access_code_pool: partial_backup_access_code_pool
     .optional()
     .nullable(),
@@ -577,7 +577,7 @@ const _device_warning_map = z.object({
   max_access_codes_reached: max_access_codes_reached.optional().nullable(),
 })
 
-export type DeviceWarningMap = z.infer<typeof _device_warning_map>
+export type DeviceWarningMap = z.infer<typeof device_warning_map>
 
 export const device_provider_info = z
   .object({
