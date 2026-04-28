@@ -309,6 +309,17 @@ const salto_ks_subscription_limit_almost_reached = common_device_warning
     'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site.',
   )
 
+const salto_ks_lock_access_code_support_removed = common_device_warning.extend({
+  warning_code: z
+    .literal('salto_ks_lock_access_code_support_removed')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: access_codes
+    ---
+    Indicates that a change in the reported device model has been detected for this Salto KS lock, which may occur after an IQ hub reset. Access code support may be affected. See https://help.getseam.com/articles/5098842588-salto-ks-lock-loses-access-code-support for troubleshooting steps.
+  `)
+
 const wyze_device_missing_gateway = common_device_warning.extend({
   warning_code: z
     .literal('wyze_device_missing_gateway')
@@ -511,6 +522,7 @@ const device_warning = z.discriminatedUnion('warning_code', [
   salto_ks_office_mode,
   salto_ks_privacy_mode,
   salto_ks_subscription_limit_almost_reached,
+  salto_ks_lock_access_code_support_removed,
   unknown_issue_with_phone,
   lockly_time_zone_not_configured,
   ultraloq_time_zone_unknown,
@@ -559,6 +571,8 @@ export const device_warning_map = z.object({
   salto_ks_privacy_mode: salto_ks_privacy_mode.optional().nullable(),
   salto_ks_subscription_limit_almost_reached:
     salto_ks_subscription_limit_almost_reached.optional().nullable(),
+  salto_ks_lock_access_code_support_removed:
+    salto_ks_lock_access_code_support_removed.optional().nullable(),
   unknown_issue_with_phone: unknown_issue_with_phone.optional().nullable(),
   lockly_time_zone_not_configured: lockly_time_zone_not_configured
     .optional()
