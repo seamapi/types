@@ -65434,18 +65434,6 @@ export default {
                   ical_config: {
                     description: 'Config to validate',
                     properties: {
-                      default_check_in_time: {
-                        description:
-                          'Default check-in time (HH:MM) used when iCal gives date-only values',
-                        pattern: '^\\d{2}:\\d{2}$',
-                        type: 'string',
-                      },
-                      default_check_out_time: {
-                        description:
-                          'Default check-out time (HH:MM) used when iCal gives date-only values',
-                        pattern: '^\\d{2}:\\d{2}$',
-                        type: 'string',
-                      },
                       fields: {
                         properties: {
                           ends_at: {
@@ -65607,11 +65595,6 @@ export default {
                         },
                         required: ['source', 'pattern'],
                         type: 'object',
-                      },
-                      time_zone: {
-                        description:
-                          'IANA time zone (e.g. America/New_York) applied when dates have no time/timezone',
-                        type: 'string',
                       },
                     },
                     required: ['fields'],
