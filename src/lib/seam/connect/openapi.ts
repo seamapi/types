@@ -22947,7 +22947,7 @@ export default {
               },
               action_attempt_id: {
                 description:
-                  'ID of the action attempt associated with the lock action.',
+                  'ID of the Seam action attempt that triggered this lock. Present only when the lock was initiated through Seam (via a `LOCK_DOOR` action attempt).',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22994,14 +22994,19 @@ export default {
                 type: 'string',
               },
               event_type: { enum: ['lock.locked'], type: 'string' },
-              is_bluetooth_action: {
+              is_via_bluetooth: {
                 description:
                   "\n      Whether the lock action was performed over Bluetooth by a remote client (such as the provider's mobile app), rather than a direct physical interaction or a Seam-initiated remote action.\n    ",
                 type: 'boolean',
               },
+              is_via_nfc: {
+                description:
+                  '\n      Whether the lock action was performed by an NFC credential tap (such as an Apple Home Key or an NFC key fob) presented to the lock, rather than a direct physical interaction or a Seam-initiated remote action.\n    ',
+                type: 'boolean',
+              },
               method: {
                 description:
-                  'Method by which the affected lock device was locked. When the method is `keycode`, the `access_code_id` indicates the access code that was used, if reported by the device.',
+                  'Method by which the lock was locked. `keycode`: an access code was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or button press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by an auto-relock timer. `unknown`: could not be determined.',
                 enum: ['keycode', 'manual', 'automatic', 'unknown', 'remote'],
                 type: 'string',
               },
@@ -23065,7 +23070,7 @@ export default {
               },
               action_attempt_id: {
                 description:
-                  'ID of the action attempt associated with the unlock action.',
+                  'ID of the Seam action attempt that triggered this unlock. Present only when the unlock was initiated through Seam (via an `UNLOCK_DOOR` action attempt).',
                 format: 'uuid',
                 type: 'string',
               },
@@ -23112,14 +23117,19 @@ export default {
                 type: 'string',
               },
               event_type: { enum: ['lock.unlocked'], type: 'string' },
-              is_bluetooth_action: {
+              is_via_bluetooth: {
                 description:
                   "\n      Whether the unlock action was performed over Bluetooth by a remote client (such as the provider's mobile app), rather than a direct physical interaction or a Seam-initiated remote action.\n    ",
                 type: 'boolean',
               },
+              is_via_nfc: {
+                description:
+                  '\n      Whether the unlock action was performed by an NFC credential tap (such as an Apple Home Key or an NFC key fob) presented to the lock, rather than a direct physical interaction or a Seam-initiated remote action.\n    ',
+                type: 'boolean',
+              },
               method: {
                 description:
-                  'Method by which the affected lock device was unlocked. When the method is `keycode`, the `access_code_id` indicates the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used, if reported by the device.',
+                  'Method by which the lock was unlocked. `keycode`: an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or handle press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by a time-based schedule. `unknown`: could not be determined.',
                 enum: ['keycode', 'manual', 'automatic', 'unknown', 'remote'],
                 type: 'string',
               },

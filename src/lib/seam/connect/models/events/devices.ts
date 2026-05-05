@@ -68,7 +68,7 @@ const device_event_issue_properties = {
 export const lock_method = z
   .enum(['keycode', 'manual', 'automatic', 'unknown', 'remote'])
   .describe(
-    'Method by which the affected lock device was locked or unlocked. When the method is `keycode`, the `access_code_id` indicates the access code that was used, if reported by the device. The `remote` method indicates any remote (un)lock action, including Bluetooth, mobile app, or Seam API. For Seam-initiated remote (un)locks, look up the `action_attempt_id`.',
+    'Method by which the affected lock device was locked or unlocked. `keycode`: locked or unlocked using an access code (see `access_code_id`). `manual`: a direct physical action, such as turning a thumbturn or pressing a button. `remote`: a remote action initiated via an app, Bluetooth, or the Seam API (see `action_attempt_id` for Seam-initiated actions; see `is_via_bluetooth` or `is_via_nfc` for the specific transport). `automatic`: triggered automatically without user interaction, for example by an auto-relock timer. `unknown`: the method could not be determined from the provider event.',
   )
 export type LockMethod = z.infer<typeof lock_method>
 
@@ -420,12 +420,17 @@ export const lock_locked_event = device_event.extend({
     .string()
     .uuid()
     .optional()
-    .describe('ID of the action attempt associated with the lock action.'),
+    .describe(
+      'ID of the Seam action attempt that triggered this lock. Present only when the lock was initiated through Seam (via a `LOCK_DOOR` action attempt).',
+    ),
   method: lock_method.describe(
-    'Method by which the affected lock device was locked. When the method is `keycode`, the `access_code_id` indicates the access code that was used, if reported by the device.',
+    'Method by which the lock was locked. `keycode`: an access code was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or button press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by an auto-relock timer. `unknown`: could not be determined.',
   ),
-  is_bluetooth_action: z.boolean().optional().describe(`
+  is_via_bluetooth: z.boolean().optional().describe(`
       Whether the lock action was performed over Bluetooth by a remote client (such as the provider's mobile app), rather than a direct physical interaction or a Seam-initiated remote action.
+    `),
+  is_via_nfc: z.boolean().optional().describe(`
+      Whether the lock action was performed by an NFC credential tap (such as an Apple Home Key or an NFC key fob) presented to the lock, rather than a direct physical interaction or a Seam-initiated remote action.
     `),
 }).describe(`
   ---
@@ -455,9 +460,11 @@ export const lock_unlocked_event = device_event.extend({
     .string()
     .uuid()
     .optional()
-    .describe('ID of the action attempt associated with the unlock action.'),
+    .describe(
+      'ID of the Seam action attempt that triggered this unlock. Present only when the unlock was initiated through Seam (via an `UNLOCK_DOOR` action attempt).',
+    ),
   method: lock_method.describe(
-    'Method by which the affected lock device was unlocked. When the method is `keycode`, the `access_code_id` indicates the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used, if reported by the device.',
+    'Method by which the lock was unlocked. `keycode`: an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or handle press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by a time-based schedule. `unknown`: could not be determined.',
   ),
   user_identity_id: z.string().uuid().optional().describe(`
       undocumented: Unreleased.
@@ -484,8 +491,11 @@ export const lock_unlocked_event = device_event.extend({
     .uuid()
     .optional()
     .describe('ID of the affected device.'),
-  is_bluetooth_action: z.boolean().optional().describe(`
+  is_via_bluetooth: z.boolean().optional().describe(`
       Whether the unlock action was performed over Bluetooth by a remote client (such as the provider's mobile app), rather than a direct physical interaction or a Seam-initiated remote action.
+    `),
+  is_via_nfc: z.boolean().optional().describe(`
+      Whether the unlock action was performed by an NFC credential tap (such as an Apple Home Key or an NFC key fob) presented to the lock, rather than a direct physical interaction or a Seam-initiated remote action.
     `),
 }).describe(`
   ---
