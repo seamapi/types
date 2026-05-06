@@ -1,4 +1,11 @@
-export default {
+// Self-contained record type so the emitted .d.ts does not reference any
+// external package (the downstream `seamapi/types` repo re-exports this file
+// and does not depend on `openapi3-ts`). Wide enough to accept the generated
+// literal; specific enough to give tsgo a named type to point at instead of
+// inferring from the 83k-line literal (TS7056).
+type OpenAPISpec = Record<string, unknown>
+
+const openapi: OpenAPISpec = {
   components: {
     schemas: {
       access_code: {
@@ -83913,3 +83920,5 @@ export default {
     { description: 'workspaces', name: '/workspaces' },
   ],
 }
+
+export default openapi
