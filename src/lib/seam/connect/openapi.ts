@@ -282,6 +282,12 @@ const openapi: OpenAPISpec = {
                         'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
                       type: 'string',
                     },
+                    unmanaged_access_code_id: {
+                      description:
+                        'ID of the unmanaged access code that conflicts with this managed access code, when Seam can identify it.',
+                      format: 'uuid',
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
@@ -26475,6 +26481,12 @@ const openapi: OpenAPISpec = {
                     message: {
                       description:
                         'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    unmanaged_access_code_id: {
+                      description:
+                        'ID of the unmanaged access code that conflicts with this managed access code, when Seam can identify it.',
+                      format: 'uuid',
                       type: 'string',
                     },
                   },
