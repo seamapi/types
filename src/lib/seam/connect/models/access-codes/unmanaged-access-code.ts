@@ -25,9 +25,9 @@ export const unmanaged_access_code = access_code
       .literal(false)
       .describe('Indicates that Seam does not manage the access code.'),
     status: z
-      .enum(['set'])
+      .enum(['set', 'unset'])
       .describe(
-        'Current status of the access code within the operational lifecycle. `set` indicates that the code is active and operational.',
+        'Current status of the access code within the operational lifecycle. `set` indicates that the code is active and operational. `unset` indicates that the code exists on the provider but is not usable on the device.',
       ),
     dormakaba_oracode_metadata: dormakaba_oracode_access_code_metadata
       .nullable()

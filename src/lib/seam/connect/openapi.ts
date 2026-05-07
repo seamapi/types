@@ -27565,8 +27565,8 @@ const openapi: OpenAPISpec = {
           },
           status: {
             description:
-              'Current status of the access code within the operational lifecycle. `set` indicates that the code is active and operational.',
-            enum: ['set'],
+              'Current status of the access code within the operational lifecycle. `set` indicates that the code is active and operational. `unset` indicates that the code exists on the provider but is not usable on the device.',
+            enum: ['set', 'unset'],
             type: 'string',
           },
           type: {
