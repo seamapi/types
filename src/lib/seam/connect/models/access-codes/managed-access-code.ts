@@ -77,6 +77,13 @@ const duplicate_code_on_device = common_access_code_error
       .describe(
         'ID of the unmanaged access code that conflicts with this managed access code, when Seam can identify it.',
       ),
+    managed_access_code_id: z
+      .string()
+      .uuid()
+      .optional()
+      .describe(
+        'ID of the managed access code that conflicts with this managed access code, when Seam can identify it.',
+      ),
   })
   .describe('Duplicate access code detected on device.')
 

@@ -277,6 +277,12 @@ const openapi: OpenAPISpec = {
                       enum: [true],
                       type: 'boolean',
                     },
+                    managed_access_code_id: {
+                      description:
+                        'ID of the managed access code that conflicts with this managed access code, when Seam can identify it.',
+                      format: 'uuid',
+                      type: 'string',
+                    },
                     message: {
                       description:
                         'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
@@ -26477,6 +26483,12 @@ const openapi: OpenAPISpec = {
                         'Indicates that this is an access code error.',
                       enum: [true],
                       type: 'boolean',
+                    },
+                    managed_access_code_id: {
+                      description:
+                        'ID of the managed access code that conflicts with this managed access code, when Seam can identify it.',
+                      format: 'uuid',
+                      type: 'string',
                     },
                     message: {
                       description:
