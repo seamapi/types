@@ -113,6 +113,12 @@ export const access_grant_could_not_create_requested_access_methods_event =
     error_message: z
       .string()
       .describe('Description of why the access methods could not be created.'),
+    missing_device_ids: z
+      .array(z.string().uuid())
+      .optional()
+      .describe(
+        'IDs of the devices that did not receive a requested access method. Use these to identify which specific devices failed without having to fetch the Access Grant.',
+      ),
   }).describe(`
     ---
     route_path: /access_grants
