@@ -2205,6 +2205,12 @@ const openapi: OpenAPISpec = {
                         'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
                       type: 'string',
                     },
+                    missing_device_ids: {
+                      description:
+                        'IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure.',
+                      items: { format: 'uuid', type: 'string' },
+                      type: 'array',
+                    },
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
@@ -18170,6 +18176,12 @@ const openapi: OpenAPISpec = {
                   'access_grant.could_not_create_requested_access_methods',
                 ],
                 type: 'string',
+              },
+              missing_device_ids: {
+                description:
+                  'IDs of the devices that did not receive a requested access method. Use these to identify which specific devices failed without having to fetch the Access Grant.',
+                items: { format: 'uuid', type: 'string' },
+                type: 'array',
               },
               occurred_at: {
                 description: 'Date and time at which the event occurred.',
@@ -35953,6 +35965,12 @@ const openapi: OpenAPISpec = {
                                       'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
                                     type: 'string',
                                   },
+                                  missing_device_ids: {
+                                    description:
+                                      'IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure.',
+                                    items: { format: 'uuid', type: 'string' },
+                                    type: 'array',
+                                  },
                                 },
                                 required: [
                                   'created_at',
@@ -36655,6 +36673,12 @@ const openapi: OpenAPISpec = {
                                     description:
                                       'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
                                     type: 'string',
+                                  },
+                                  missing_device_ids: {
+                                    description:
+                                      'IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure.',
+                                    items: { format: 'uuid', type: 'string' },
+                                    type: 'array',
                                   },
                                 },
                                 required: [
@@ -37405,6 +37429,12 @@ const openapi: OpenAPISpec = {
                                         'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
                                       type: 'string',
                                     },
+                                    missing_device_ids: {
+                                      description:
+                                        'IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure.',
+                                      items: { format: 'uuid', type: 'string' },
+                                      type: 'array',
+                                    },
                                   },
                                   required: [
                                     'created_at',
@@ -38145,6 +38175,12 @@ const openapi: OpenAPISpec = {
                                       description:
                                         'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
                                       type: 'string',
+                                    },
+                                    missing_device_ids: {
+                                      description:
+                                        'IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure.',
+                                      items: { format: 'uuid', type: 'string' },
+                                      type: 'array',
                                     },
                                   },
                                   required: [

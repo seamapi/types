@@ -23,6 +23,12 @@ const cannot_create_requested_access_methods_error =
     error_code: z
       .literal('cannot_create_requested_access_methods')
       .describe(error_code_description),
+    missing_device_ids: z
+      .array(z.string().uuid())
+      .optional()
+      .describe(
+        'IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure.',
+      ),
   })
 
 const common_access_grant_warning = z.object({
