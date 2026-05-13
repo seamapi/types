@@ -4301,6 +4301,54 @@ const openapi: OpenAPISpec = {
             required: ['door_type', 'door_name'],
             type: 'object',
           },
+          avigilon_alta_metadata: {
+            description:
+              'Avigilon Alta-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+            properties: {
+              entry_name: {
+                description: 'Entry name for an Avigilon Alta system.',
+                type: 'string',
+              },
+              entry_relays_total_count: {
+                description:
+                  'Total count of entry relays for an Avigilon Alta system.',
+                format: 'float',
+                type: 'number',
+              },
+              org_name: {
+                description: 'Organization name for an Avigilon Alta system.',
+                type: 'string',
+              },
+              site_id: {
+                description: 'Site ID for an Avigilon Alta system.',
+                format: 'float',
+                type: 'number',
+              },
+              site_name: {
+                description: 'Site name for an Avigilon Alta system.',
+                type: 'string',
+              },
+              zone_id: {
+                description: 'Zone ID for an Avigilon Alta system.',
+                format: 'float',
+                type: 'number',
+              },
+              zone_name: {
+                description: 'Zone name for an Avigilon Alta system.',
+                type: 'string',
+              },
+            },
+            required: [
+              'entry_name',
+              'org_name',
+              'zone_id',
+              'zone_name',
+              'site_id',
+              'site_name',
+              'entry_relays_total_count',
+            ],
+            type: 'object',
+          },
           brivo_metadata: {
             description:
               'Brivo-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
@@ -4846,7 +4894,7 @@ const openapi: OpenAPISpec = {
               'Brand-specific terminology for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) type.',
             enum: [
               'pti_site',
-              'alta_org',
+              'avigilon_alta_org',
               'salto_ks_site',
               'salto_space_system',
               'brivo_account',
@@ -4904,7 +4952,7 @@ const openapi: OpenAPISpec = {
             deprecated: true,
             enum: [
               'pti_site',
-              'alta_org',
+              'avigilon_alta_org',
               'salto_ks_site',
               'salto_space_system',
               'brivo_account',
@@ -24893,6 +24941,60 @@ const openapi: OpenAPISpec = {
                                 },
                               },
                               required: ['door_type', 'door_name'],
+                              type: 'object',
+                            },
+                            avigilon_alta_metadata: {
+                              description:
+                                'Avigilon Alta-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+                              properties: {
+                                entry_name: {
+                                  description:
+                                    'Entry name for an Avigilon Alta system.',
+                                  type: 'string',
+                                },
+                                entry_relays_total_count: {
+                                  description:
+                                    'Total count of entry relays for an Avigilon Alta system.',
+                                  format: 'float',
+                                  type: 'number',
+                                },
+                                org_name: {
+                                  description:
+                                    'Organization name for an Avigilon Alta system.',
+                                  type: 'string',
+                                },
+                                site_id: {
+                                  description:
+                                    'Site ID for an Avigilon Alta system.',
+                                  format: 'float',
+                                  type: 'number',
+                                },
+                                site_name: {
+                                  description:
+                                    'Site name for an Avigilon Alta system.',
+                                  type: 'string',
+                                },
+                                zone_id: {
+                                  description:
+                                    'Zone ID for an Avigilon Alta system.',
+                                  format: 'float',
+                                  type: 'number',
+                                },
+                                zone_name: {
+                                  description:
+                                    'Zone name for an Avigilon Alta system.',
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'entry_name',
+                                'org_name',
+                                'zone_id',
+                                'zone_name',
+                                'site_id',
+                                'site_name',
+                                'entry_relays_total_count',
+                              ],
                               type: 'object',
                             },
                             brivo_metadata: {
