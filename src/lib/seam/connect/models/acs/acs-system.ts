@@ -17,7 +17,7 @@ export const acs_location = z.object({
 // If changed, update seam.acs_system.external_type generated column
 export const acs_system_external_type = z.enum([
   'pti_site',
-  'alta_org',
+  'avigilon_alta_org',
   'salto_ks_site',
   'salto_space_system',
   'brivo_account',
