@@ -41,6 +41,7 @@ export const DEVICE_PROVIDERS = {
   ASSA_ABLOY_CREDENTIAL_SERVICE: 'assa_abloy_credential_service',
   TEDEE: 'tedee',
   HONEYWELL_RESIDEO: 'honeywell_resideo',
+  FIRST_ALERT: 'first_alert',
   LATCH: 'latch',
   AKILES: 'akiles',
   VOSTIO: 'assa_abloy_vostio',
@@ -120,9 +121,9 @@ export const PROVIDER_CATEGORY_MAP = {
     'dormakaba_oracode',
   ],
 
-  beta: ['korelock'],
+  beta: ['korelock', 'first_alert'],
 
-  thermostats: ['ecobee', 'nest', 'sensi', 'honeywell_resideo'],
+  thermostats: ['ecobee', 'nest', 'sensi', 'honeywell_resideo', 'first_alert'],
   noise_sensors: ['minut', 'noiseaware'],
   access_control_systems: [
     'brivo',
