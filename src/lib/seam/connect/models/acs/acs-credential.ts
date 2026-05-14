@@ -17,6 +17,7 @@ export const acs_credential_external_type = z.enum([
   'latch_access',
   'dormakaba_ambiance_credential',
   'hotek_card',
+  'salto_ks_tag',
 ])
 
 export const acs_credential_access_method_type = z.enum([
