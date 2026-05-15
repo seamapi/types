@@ -13770,6 +13770,13 @@ const openapi: OpenAPISpec = {
                             format: 'float',
                             type: 'number',
                           },
+                          timezone_raw_offset_ms: {
+                            description:
+                              'Lock-side timezone offset in milliseconds east of UTC, as configured in the TTLock app. Source of truth for the lock\'s wall-clock interpretation of access code start/end times — a misconfigured value here is the typical cause of customer "codes offset by N hours" reports. Diagnostic only; Seam does not convert times based on this value.',
+                            format: 'float',
+                            nullable: true,
+                            type: 'number',
+                          },
                           wireless_keypads: {
                             description:
                               'Wireless keypads for a TTLock device.',
