@@ -73442,6 +73442,16 @@ const openapi: OpenAPISpec = {
             name: 'collection_key',
             schema: { description: 'Collection key.', type: 'string' },
           },
+          {
+            in: 'query',
+            name: 'connected_account_id',
+            schema: {
+              description:
+                'Connected account to scope auto-mapping to. Filters partner resources by the matching connector and limits available devices/entrances to this account.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
         ],
         responses: {
           200: {
@@ -73555,6 +73565,12 @@ const openapi: OpenAPISpec = {
                 properties: {
                   collection_key: {
                     description: 'Collection key.',
+                    type: 'string',
+                  },
+                  connected_account_id: {
+                    description:
+                      'Connected account to scope auto-mapping to. Filters partner resources by the matching connector and limits available devices/entrances to this account.',
+                    format: 'uuid',
                     type: 'string',
                   },
                   customer_key: {
