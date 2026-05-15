@@ -55,6 +55,7 @@ export const DEVICE_PROVIDERS = {
   ULTRALOQ: 'ultraloq',
   RING: 'ring',
   ICAL: 'ical',
+  LODGIFY: 'lodgify',
 } as const
 
 export type DeviceProviderName =
@@ -142,7 +143,7 @@ export const PROVIDER_CATEGORY_MAP = {
 
   cameras: ['ring'],
 
-  connectors: ['ical'],
+  connectors: ['ical', 'lodgify'],
 
   internal_beta: ALL_DEVICE_PROVIDERS,
 } as const satisfies Record<string, readonly DeviceProviderName[]>
