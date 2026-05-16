@@ -230,6 +230,16 @@ const being_deleted = common_connected_account_warning
     'Indicates that the connected account is currently being deleted. All devices, access codes, and other resources associated with this account are in the process of being removed from Seam.',
   )
 
+const provider_service_unavailable = common_connected_account_warning
+  .extend({
+    warning_code: z
+      .literal('provider_service_unavailable')
+      .describe(warning_code_description),
+  })
+  .describe(
+    "Indicates that the connected account's provider service is temporarily unavailable. Seam will automatically retry and reconnect when the service becomes available again.",
+  )
+
 const connected_account_warning = z
   .discriminatedUnion('warning_code', [
     scheduled_maintenance_window,
@@ -237,6 +247,7 @@ const connected_account_warning = z
     salto_ks_subscription_limit_almost_reached,
     account_reauthorization_requested,
     being_deleted,
+    provider_service_unavailable,
   ])
   .describe('Warning associated with the connected account.')
 
@@ -253,6 +264,9 @@ export const connected_account_warning_map = z.object({
     .nullable()
     .optional(),
   being_deleted: being_deleted.nullable().optional(),
+  provider_service_unavailable: provider_service_unavailable
+    .nullable()
+    .optional(),
 })
 
 export type ConnectedAccountWarningMap = z.infer<
