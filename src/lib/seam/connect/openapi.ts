@@ -31963,11 +31963,6 @@ const openapi: OpenAPISpec = {
       },
     },
     securitySchemes: {
-      access_token: {
-        bearerFormat: 'API Token',
-        scheme: 'bearer',
-        type: 'http',
-      },
       api_key: { bearerFormat: 'API Key', scheme: 'bearer', type: 'http' },
       bridge_client_session: {
         bearerFormat: 'Bridge Client Session Token',
@@ -32726,7 +32721,7 @@ const openapi: OpenAPISpec = {
         },
         security: [
           { api_key: [] },
-          { access_token: [] },
+          { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { client_session: [] },
           { client_session_with_customer: [] },
@@ -32792,7 +32787,7 @@ const openapi: OpenAPISpec = {
         },
         security: [
           { api_key: [] },
-          { access_token: [] },
+          { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { client_session: [] },
           { client_session_with_customer: [] },
@@ -45454,7 +45449,7 @@ const openapi: OpenAPISpec = {
         },
         security: [
           { api_key: [] },
-          { access_token: [] },
+          { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { client_session_with_customer: [] },
           { client_session: [] },
@@ -45509,7 +45504,7 @@ const openapi: OpenAPISpec = {
         },
         security: [
           { api_key: [] },
-          { access_token: [] },
+          { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { client_session_with_customer: [] },
           { client_session: [] },
