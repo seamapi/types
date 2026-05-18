@@ -5716,6 +5716,62 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Seam is in the process of assigning or unassigning a credential to the user on the integrated access system.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    from: {
+                      description: 'Previous credential assignment.',
+                      properties: {
+                        acs_credential_id: {
+                          description: 'Previous credential ID.',
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['acs_credential_id'],
+                      type: 'object',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of assigning or unassigning a credential to the user on the integrated access system.',
+                      enum: ['updating_credential_assignment'],
+                      type: 'string',
+                    },
+                    to: {
+                      description: 'New credential assignment.',
+                      properties: {
+                        acs_credential_id: {
+                          description: 'New credential ID.',
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['acs_credential_id'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -29798,6 +29854,62 @@ const openapi: OpenAPISpec = {
                     'mutation_code',
                     'acs_access_group_id',
                     'variant',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Seam is in the process of assigning or unassigning a credential to the user on the integrated access system.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    from: {
+                      description: 'Previous credential assignment.',
+                      properties: {
+                        acs_credential_id: {
+                          description: 'Previous credential ID.',
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['acs_credential_id'],
+                      type: 'object',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of assigning or unassigning a credential to the user on the integrated access system.',
+                      enum: ['updating_credential_assignment'],
+                      type: 'string',
+                    },
+                    to: {
+                      description: 'New credential assignment.',
+                      properties: {
+                        acs_credential_id: {
+                          description: 'New credential ID.',
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['acs_credential_id'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
                   ],
                   type: 'object',
                 },

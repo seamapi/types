@@ -179,6 +179,36 @@ const deferring_group_membership_update_mutation = common_pending_mutation
     'A scheduled access group membership change is pending for this user.',
   )
 
+const updating_credential_assignment_mutation = common_pending_mutation
+  .extend({
+    mutation_code: z
+      .literal('updating_credential_assignment')
+      .describe(
+        'Mutation code to indicate that Seam is in the process of assigning or unassigning a credential to the user on the integrated access system.',
+      ),
+    from: z
+      .object({
+        acs_credential_id: z
+          .string()
+          .uuid()
+          .nullable()
+          .describe('Previous credential ID.'),
+      })
+      .describe('Previous credential assignment.'),
+    to: z
+      .object({
+        acs_credential_id: z
+          .string()
+          .uuid()
+          .nullable()
+          .describe('New credential ID.'),
+      })
+      .describe('New credential assignment.'),
+  })
+  .describe(
+    'Seam is in the process of assigning or unassigning a credential to the user on the integrated access system.',
+  )
+
 export const acs_user_pending_mutations = z.discriminatedUnion(
   'mutation_code',
   [
@@ -190,6 +220,7 @@ export const acs_user_pending_mutations = z.discriminatedUnion(
     updating_suspension_state_mutation,
     updating_group_membership_mutation,
     deferring_group_membership_update_mutation,
+    updating_credential_assignment_mutation,
   ],
 )
 
@@ -208,6 +239,10 @@ const _acs_user_pending_mutations_map = z.object({
     .nullable(),
   deferring_group_membership_update: z
     .record(z.string().uuid(), deferring_group_membership_update_mutation)
+    .optional()
+    .nullable(),
+  updating_credential_assignment: z
+    .record(z.string().uuid(), updating_credential_assignment_mutation)
     .optional()
     .nullable(),
   updating_suspension_state: updating_suspension_state_mutation
