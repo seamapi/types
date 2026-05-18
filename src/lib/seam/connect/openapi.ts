@@ -72025,6 +72025,12 @@ const openapi: OpenAPISpec = {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
+                  connected_account_ids: {
+                    description:
+                      'IDs of connected accounts (third-party accounts) to associate with the new space. Persisted on seam.location_third_party_account so the UI can show which provider account a space came from.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
                   device_ids: {
                     description:
                       'IDs of the devices that you want to add to the new space.',
@@ -73631,6 +73637,10 @@ const openapi: OpenAPISpec = {
                             },
                             type: 'array',
                           },
+                          connected_account_ids: {
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
                           devices: {
                             items: {
                               properties: {
@@ -73664,6 +73674,7 @@ const openapi: OpenAPISpec = {
                           'partner_resource_key',
                           'devices',
                           'acs_entrances',
+                          'connected_account_ids',
                         ],
                         type: 'object',
                       },
@@ -73761,6 +73772,10 @@ const openapi: OpenAPISpec = {
                             },
                             type: 'array',
                           },
+                          connected_account_ids: {
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
                           devices: {
                             items: {
                               properties: {
@@ -73794,6 +73809,7 @@ const openapi: OpenAPISpec = {
                           'partner_resource_key',
                           'devices',
                           'acs_entrances',
+                          'connected_account_ids',
                         ],
                         type: 'object',
                       },
@@ -74193,6 +74209,12 @@ const openapi: OpenAPISpec = {
                   acs_entrance_ids: {
                     description:
                       'IDs of the entrances that you want to add to the new space.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                  connected_account_ids: {
+                    description:
+                      'IDs of connected accounts to associate with the new space. Persisted on seam.location_third_party_account so the UI can show which provider account(s) a space came from.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
