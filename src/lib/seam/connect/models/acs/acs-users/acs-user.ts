@@ -13,6 +13,7 @@ export const acs_user_external_type = z.enum([
   'latch_user',
   'dormakaba_community_user',
   'salto_space_user',
+  'avigilon_alta_user',
 ])
 
 export type AcsUserExternalType = z.infer<typeof acs_user_external_type>
