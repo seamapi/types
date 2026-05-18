@@ -70209,6 +70209,11 @@ const openapi: OpenAPISpec = {
                           },
                           type: 'array',
                         },
+                        connected_account_id: {
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
                         created_at: { format: 'date-time', type: 'string' },
                         ends_at: {
                           format: 'date-time',
@@ -70321,6 +70326,7 @@ const openapi: OpenAPISpec = {
                         'spaces',
                         'access_grant_id',
                         'access_methods',
+                        'connected_account_id',
                         'last_automation_result',
                       ],
                       type: 'object',
@@ -70422,6 +70428,11 @@ const openapi: OpenAPISpec = {
                           },
                           type: 'array',
                         },
+                        connected_account_id: {
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
                         created_at: { format: 'date-time', type: 'string' },
                         ends_at: {
                           format: 'date-time',
@@ -70534,6 +70545,7 @@ const openapi: OpenAPISpec = {
                         'spaces',
                         'access_grant_id',
                         'access_methods',
+                        'connected_account_id',
                         'last_automation_result',
                       ],
                       type: 'object',
@@ -70734,6 +70746,11 @@ const openapi: OpenAPISpec = {
                             },
                             type: 'array',
                           },
+                          connected_account_id: {
+                            format: 'uuid',
+                            nullable: true,
+                            type: 'string',
+                          },
                           created_at: { format: 'date-time', type: 'string' },
                           ends_at: {
                             format: 'date-time',
@@ -70859,6 +70876,7 @@ const openapi: OpenAPISpec = {
                           'pending_mutations',
                           'access_methods',
                           'spaces',
+                          'connected_account_id',
                           'last_automation_result',
                         ],
                         type: 'object',
@@ -71033,6 +71051,11 @@ const openapi: OpenAPISpec = {
                             },
                             type: 'array',
                           },
+                          connected_account_id: {
+                            format: 'uuid',
+                            nullable: true,
+                            type: 'string',
+                          },
                           created_at: { format: 'date-time', type: 'string' },
                           ends_at: {
                             format: 'date-time',
@@ -71158,6 +71181,7 @@ const openapi: OpenAPISpec = {
                           'pending_mutations',
                           'access_methods',
                           'spaces',
+                          'connected_account_id',
                           'last_automation_result',
                         ],
                         type: 'object',
