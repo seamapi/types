@@ -18,6 +18,7 @@ export const acs_credential_external_type = z.enum([
   'dormakaba_ambiance_credential',
   'hotek_card',
   'salto_ks_tag',
+  'avigilon_alta_credential',
 ])
 
 export const acs_credential_access_method_type = z.enum([
