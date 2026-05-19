@@ -13,6 +13,47 @@ import {
 } from './metadata/index.js'
 import { acs_entrance_salto_space_metadata } from './metadata/salto-space.js'
 
+const warning_code_description =
+  'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
+
+const common_acs_entrance_warning = z.object({
+  created_at: z
+    .string()
+    .datetime()
+    .describe('Date and time at which Seam created the warning.'),
+  message: z
+    .string()
+    .describe(
+      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+    ),
+})
+
+const salto_ks_entrance_access_code_support_removed =
+  common_acs_entrance_warning
+    .extend({
+      warning_code: z
+        .literal('salto_ks_entrance_access_code_support_removed')
+        .describe(warning_code_description),
+    })
+    .describe(
+      'Indicates that a change in the reported device model has been detected for this Salto KS entrance, which may occur after an IQ hub reset. Access code support may be affected. See https://help.getseam.com/articles/5098842588-salto-ks-lock-loses-access-code-support for troubleshooting steps.',
+    )
+
+const acs_entrance_warning = z
+  .discriminatedUnion('warning_code', [
+    salto_ks_entrance_access_code_support_removed,
+  ])
+  .describe(
+    'Warning associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+  )
+
+const _acs_entrance_warning_map = z.object({
+  salto_ks_entrance_access_code_support_removed:
+    salto_ks_entrance_access_code_support_removed.optional().nullable(),
+})
+
+export type AcsEntranceWarningMap = z.infer<typeof _acs_entrance_warning_map>
+
 export const acs_entrance_capability_flags = z.object({
   can_unlock_with_mobile_key: z
     .boolean()
@@ -97,6 +138,11 @@ export const acs_entrance = z
       )
       .describe(
         'Errors associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+      ),
+    warnings: z
+      .array(acs_entrance_warning)
+      .describe(
+        'Warnings associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
       ),
     latch_metadata: acs_entrance_latch_metadata
       .optional()

@@ -4651,6 +4651,43 @@ const openapi: OpenAPISpec = {
             required: ['door_name', 'door_category'],
             type: 'object',
           },
+          warnings: {
+            description:
+              'Warnings associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+            items: {
+              description:
+                'Warning associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+              discriminator: { propertyName: 'warning_code' },
+              oneOf: [
+                {
+                  description:
+                    'Indicates that a change in the reported device model has been detected for this Salto KS entrance, which may occur after an IQ hub reset. Access code support may be affected. See https://help.getseam.com/articles/5098842588-salto-ks-lock-loses-access-code-support for troubleshooting steps.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_ks_entrance_access_code_support_removed'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
         },
         required: [
           'acs_system_id',
@@ -4660,6 +4697,7 @@ const openapi: OpenAPISpec = {
           'display_name',
           'connected_account_id',
           'errors',
+          'warnings',
         ],
         type: 'object',
         'x-route-path': '/acs/entrances',
@@ -25428,6 +25466,49 @@ const openapi: OpenAPISpec = {
                               required: ['door_name', 'door_category'],
                               type: 'object',
                             },
+                            warnings: {
+                              description:
+                                'Warnings associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+                              items: {
+                                description:
+                                  'Warning associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+                                discriminator: { propertyName: 'warning_code' },
+                                oneOf: [
+                                  {
+                                    description:
+                                      'Indicates that a change in the reported device model has been detected for this Salto KS entrance, which may occur after an IQ hub reset. Access code support may be affected. See https://help.getseam.com/articles/5098842588-salto-ks-lock-loses-access-code-support for troubleshooting steps.',
+                                    properties: {
+                                      created_at: {
+                                        description:
+                                          'Date and time at which Seam created the warning.',
+                                        format: 'date-time',
+                                        type: 'string',
+                                      },
+                                      message: {
+                                        description:
+                                          'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                        type: 'string',
+                                      },
+                                      warning_code: {
+                                        description:
+                                          'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                        enum: [
+                                          'salto_ks_entrance_access_code_support_removed',
+                                        ],
+                                        type: 'string',
+                                      },
+                                    },
+                                    required: [
+                                      'created_at',
+                                      'message',
+                                      'warning_code',
+                                    ],
+                                    type: 'object',
+                                  },
+                                ],
+                              },
+                              type: 'array',
+                            },
                           },
                           required: [
                             'acs_system_id',
@@ -25437,6 +25518,7 @@ const openapi: OpenAPISpec = {
                             'display_name',
                             'connected_account_id',
                             'errors',
+                            'warnings',
                           ],
                           type: 'object',
                           'x-route-path': '/acs/entrances',
