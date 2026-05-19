@@ -65779,6 +65779,137 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Internal endpoint for Console.',
       },
     },
+    '/seam/customer/v1/connectors/external_sites/list': {
+      get: {
+        description:
+          "Lists sites/properties available from the external system for a given connected account by calling the connector's live API.",
+        operationId: 'seamCustomerV1ConnectorsExternalSitesListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'connected_account_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the connected account to list external sites for',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    external_sites: {
+                      items: {
+                        properties: {
+                          key: { type: 'string' },
+                          name: { type: 'string' },
+                        },
+                        required: ['key', 'name'],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['external_sites', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ api_key: [] }, { console_session_with_workspace: [] }],
+        summary: '/seam/customer/v1/connectors/external_sites/list',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'customer',
+          'v1',
+          'connectors',
+          'external_sites',
+        ],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'external_sites',
+        'x-response-key': 'external_sites',
+        'x-title': 'List External Sites for a Connected Account',
+        'x-undocumented': 'Internal endpoint for Console.',
+      },
+      post: {
+        description:
+          "Lists sites/properties available from the external system for a given connected account by calling the connector's live API.",
+        operationId: 'seamCustomerV1ConnectorsExternalSitesListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connected_account_id: {
+                    description:
+                      'ID of the connected account to list external sites for',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['connected_account_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    external_sites: {
+                      items: {
+                        properties: {
+                          key: { type: 'string' },
+                          name: { type: 'string' },
+                        },
+                        required: ['key', 'name'],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['external_sites', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ api_key: [] }, { console_session_with_workspace: [] }],
+        summary: '/seam/customer/v1/connectors/external_sites/list',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'customer',
+          'v1',
+          'connectors',
+          'external_sites',
+        ],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'external_sites',
+        'x-response-key': 'external_sites',
+        'x-title': 'List External Sites for a Connected Account',
+        'x-undocumented': 'Internal endpoint for Console.',
+      },
+    },
     '/seam/customer/v1/connectors/ical/validate-config': {
       post: {
         description:
