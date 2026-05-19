@@ -355,6 +355,24 @@ export const connected_account = z.object({
     .describe(
       'List of capabilities that were accepted during the account connection process.',
     ),
+  default_checkin_time: z
+    .string()
+    .optional()
+    .describe(
+      'Default reservation check-in time for this connected account, as `HH:mm` (24-hour). Sourced from the connector configuration — set during the connect_webview for providers like Lodgify whose API does not expose check-in times.',
+    ),
+  default_checkout_time: z
+    .string()
+    .optional()
+    .describe(
+      'Default reservation check-out time for this connected account, as `HH:mm` (24-hour). Sourced from the connector configuration.',
+    ),
+  time_zone: z
+    .string()
+    .optional()
+    .describe(
+      'IANA time zone (e.g. America/Los_Angeles) for this connected account. Sourced from the connector configuration.',
+    ),
 }).describe(`
   ---
   route_path: /connected_accounts

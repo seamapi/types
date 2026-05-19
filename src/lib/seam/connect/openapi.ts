@@ -11052,6 +11052,16 @@ const openapi: OpenAPISpec = {
               'Your unique key for the customer associated with this connected account.',
             type: 'string',
           },
+          default_checkin_time: {
+            description:
+              'Default reservation check-in time for this connected account, as `HH:mm` (24-hour). Sourced from the connector configuration — set during the connect_webview for providers like Lodgify whose API does not expose check-in times.',
+            type: 'string',
+          },
+          default_checkout_time: {
+            description:
+              'Default reservation check-out time for this connected account, as `HH:mm` (24-hour). Sourced from the connector configuration.',
+            type: 'string',
+          },
           display_name: {
             description: 'Display name for the connected account.',
             type: 'string',
@@ -11225,6 +11235,11 @@ const openapi: OpenAPISpec = {
           image_url: {
             description: 'Logo URL for the connected account provider.',
             format: 'uri',
+            type: 'string',
+          },
+          time_zone: {
+            description:
+              'IANA time zone (e.g. America/Los_Angeles) for this connected account. Sourced from the connector configuration.',
             type: 'string',
           },
           user_identifier: {
@@ -72049,6 +72064,33 @@ const openapi: OpenAPISpec = {
                       'IDs of connected accounts (third-party accounts) to associate with the new space. Persisted on seam.location_third_party_account so the UI can show which provider account a space came from.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
+                  },
+                  customer_data: {
+                    description:
+                      "Reservation/stay-related defaults for the space. When omitted and `connected_account_ids` is provided, `default_checkin_time` / `default_checkout_time` / `time_zone` are auto-inherited from the first connected account's connector configuration.",
+                    properties: {
+                      default_checkin_time: {
+                        description:
+                          'Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.',
+                        nullable: true,
+                        pattern: '^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$',
+                        type: 'string',
+                      },
+                      default_checkout_time: {
+                        description:
+                          'Default check-out time for reservations at the space, as HH:mm or HH:mm:ss.',
+                        nullable: true,
+                        pattern: '^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$',
+                        type: 'string',
+                      },
+                      time_zone: {
+                        description:
+                          'IANA time zone for the space, e.g. America/Los_Angeles.',
+                        nullable: true,
+                        type: 'string',
+                      },
+                    },
+                    type: 'object',
                   },
                   device_ids: {
                     description:
