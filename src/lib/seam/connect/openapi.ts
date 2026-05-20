@@ -70839,6 +70839,16 @@ const openapi: OpenAPISpec = {
           },
           {
             in: 'query',
+            name: 'connected_account_id',
+            schema: {
+              description:
+                'Filter reservations by the connected account whose connector discovered them.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'limit',
             schema: {
               default: 500,
@@ -71158,6 +71168,12 @@ const openapi: OpenAPISpec = {
                     maxItems: 2,
                     minItems: 2,
                     type: 'array',
+                  },
+                  connected_account_id: {
+                    description:
+                      'Filter reservations by the connected account whose connector discovered them.',
+                    format: 'uuid',
+                    type: 'string',
                   },
                   created_after: {
                     description:
