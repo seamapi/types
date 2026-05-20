@@ -56,6 +56,7 @@ export const DEVICE_PROVIDERS = {
   RING: 'ring',
   ICAL: 'ical',
   LODGIFY: 'lodgify',
+  HOSTAWAY: 'hostaway',
 } as const
 
 export type DeviceProviderName =
@@ -143,7 +144,7 @@ export const PROVIDER_CATEGORY_MAP = {
 
   cameras: ['ring'],
 
-  connectors: ['ical', 'lodgify'],
+  connectors: ['ical', 'lodgify', 'hostaway'],
 
   internal_beta: ALL_DEVICE_PROVIDERS,
 } as const satisfies Record<string, readonly DeviceProviderName[]>
