@@ -29,6 +29,18 @@ export const unmanaged_access_code = access_code
       .describe(
         'Current status of the access code within the operational lifecycle. `set` indicates that the code is active and operational. `unset` indicates that the code exists on the provider but is not usable on the device.',
       ),
+    cannot_be_managed: z
+      .literal(true)
+      .optional()
+      .describe(
+        'Indicates that Seam cannot convert this unmanaged access code to a managed access code. Some providers do not support management of unmanaged access codes through API integrations.',
+      ),
+    cannot_delete_unmanaged_access_code: z
+      .literal(true)
+      .optional()
+      .describe(
+        'Indicates that Seam cannot delete this unmanaged access code through the provider. If this access code needs to be deleted, it will only be possible from the manufacturer app.',
+      ),
     dormakaba_oracode_metadata: dormakaba_oracode_access_code_metadata
       .nullable()
       .optional()

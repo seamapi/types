@@ -26545,6 +26545,18 @@ const openapi: OpenAPISpec = {
             format: 'uuid',
             type: 'string',
           },
+          cannot_be_managed: {
+            description:
+              'Indicates that Seam cannot convert this unmanaged access code to a managed access code. Some providers do not support management of unmanaged access codes through API integrations.',
+            enum: [true],
+            type: 'boolean',
+          },
+          cannot_delete_unmanaged_access_code: {
+            description:
+              'Indicates that Seam cannot delete this unmanaged access code through the provider. If this access code needs to be deleted, it will only be possible from the manufacturer app.',
+            enum: [true],
+            type: 'boolean',
+          },
           code: {
             description:
               'Code used for access. Typically, a numeric or alphanumeric string.',
