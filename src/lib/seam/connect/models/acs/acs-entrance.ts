@@ -39,9 +39,20 @@ const salto_ks_entrance_access_code_support_removed =
       'Indicates that a change in the reported device model has been detected for this Salto KS entrance, which may occur after an IQ hub reset. Access code support may be affected. See https://help.getseam.com/articles/5098842588-salto-ks-lock-loses-access-code-support for troubleshooting steps.',
     )
 
+const entrance_shares_zone = common_acs_entrance_warning
+  .extend({
+    warning_code: z
+      .literal('entrance_shares_zone')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'Indicates that this entrance shares a zone with other entrances in Avigilon Alta and cannot be added to an access group individually.',
+  )
+
 const acs_entrance_warning = z
   .discriminatedUnion('warning_code', [
     salto_ks_entrance_access_code_support_removed,
+    entrance_shares_zone,
   ])
   .describe(
     'Warning associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
@@ -50,6 +61,7 @@ const acs_entrance_warning = z
 const _acs_entrance_warning_map = z.object({
   salto_ks_entrance_access_code_support_removed:
     salto_ks_entrance_access_code_support_removed.optional().nullable(),
+  entrance_shares_zone: entrance_shares_zone.optional().nullable(),
 })
 
 export type AcsEntranceWarningMap = z.infer<typeof _acs_entrance_warning_map>

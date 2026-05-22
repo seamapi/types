@@ -3150,6 +3150,7 @@ const openapi: OpenAPISpec = {
               'salto_space_group',
               'dormakaba_community_access_group',
               'dormakaba_ambiance_access_group',
+              'avigilon_alta_group',
             ],
             type: 'string',
             'x-deprecated': 'Use `external_type`.',
@@ -3249,6 +3250,7 @@ const openapi: OpenAPISpec = {
               'salto_space_group',
               'dormakaba_community_access_group',
               'dormakaba_ambiance_access_group',
+              'avigilon_alta_group',
             ],
             type: 'string',
           },
@@ -4678,6 +4680,31 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['salto_ks_entrance_access_code_support_removed'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that this entrance shares a zone with other entrances in Avigilon Alta and cannot be added to an access group individually.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['entrance_shares_zone'],
                       type: 'string',
                     },
                   },
@@ -25506,6 +25533,35 @@ const openapi: OpenAPISpec = {
                                     ],
                                     type: 'object',
                                   },
+                                  {
+                                    description:
+                                      'Indicates that this entrance shares a zone with other entrances in Avigilon Alta and cannot be added to an access group individually.',
+                                    properties: {
+                                      created_at: {
+                                        description:
+                                          'Date and time at which Seam created the warning.',
+                                        format: 'date-time',
+                                        type: 'string',
+                                      },
+                                      message: {
+                                        description:
+                                          'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                        type: 'string',
+                                      },
+                                      warning_code: {
+                                        description:
+                                          'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                        enum: ['entrance_shares_zone'],
+                                        type: 'string',
+                                      },
+                                    },
+                                    required: [
+                                      'created_at',
+                                      'message',
+                                      'warning_code',
+                                    ],
+                                    type: 'object',
+                                  },
                                 ],
                               },
                               type: 'array',
@@ -28363,6 +28419,7 @@ const openapi: OpenAPISpec = {
               'salto_space_group',
               'dormakaba_community_access_group',
               'dormakaba_ambiance_access_group',
+              'avigilon_alta_group',
             ],
             type: 'string',
             'x-deprecated': 'Use `external_type`.',
@@ -28462,6 +28519,7 @@ const openapi: OpenAPISpec = {
               'salto_space_group',
               'dormakaba_community_access_group',
               'dormakaba_ambiance_access_group',
+              'avigilon_alta_group',
             ],
             type: 'string',
           },
