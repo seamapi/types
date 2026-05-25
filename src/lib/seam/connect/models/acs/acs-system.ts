@@ -116,6 +116,16 @@ const salto_ks_certification_expired = common_acs_system_error
   .describe(
     'Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.',
   )
+const provider_service_unavailable = common_acs_system_error
+  .extend({
+    error_code: z
+      .literal('provider_service_unavailable')
+      .describe(error_code_description),
+  })
+  .describe(
+    "Indicates that the access control system provider's service is temporarily unavailable. Seam will automatically retry and reconnect when the service becomes available again.",
+  )
+
 const acs_system_error = z
   .discriminatedUnion('error_code', [
     seam_bridge_disconnected,
@@ -125,6 +135,7 @@ const acs_system_error = z
     acs_system_disconnected,
     account_disconnected,
     salto_ks_certification_expired,
+    provider_service_unavailable,
   ])
   .describe(
     'Error associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
@@ -142,6 +153,9 @@ const _acs_system_error_map = z.object({
   acs_system_disconnected: acs_system_disconnected.optional().nullable(),
   account_disconnected: account_disconnected.optional().nullable(),
   salto_ks_certification_expired: salto_ks_certification_expired
+    .optional()
+    .nullable(),
+  provider_service_unavailable: provider_service_unavailable
     .optional()
     .nullable(),
 })
