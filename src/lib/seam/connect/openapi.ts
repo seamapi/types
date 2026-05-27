@@ -52205,6 +52205,13 @@ const openapi: OpenAPISpec = {
                             description: 'List of general spaces or areas.',
                             items: {
                               properties: {
+                                duration_minutes: {
+                                  description:
+                                    'Default duration of this space in minutes, when the space represents a fixed-length bookable slot (e.g. an appointment type). Used to interpret reservations booked against this space.',
+                                  exclusiveMinimum: true,
+                                  minimum: 0,
+                                  type: 'integer',
+                                },
                                 name: {
                                   description:
                                     'Your display name for this location resource.',
@@ -53451,6 +53458,13 @@ const openapi: OpenAPISpec = {
                     description: 'List of general spaces or areas.',
                     items: {
                       properties: {
+                        duration_minutes: {
+                          description:
+                            'Default duration of this space in minutes, when the space represents a fixed-length bookable slot (e.g. an appointment type). Used to interpret reservations booked against this space.',
+                          exclusiveMinimum: true,
+                          minimum: 0,
+                          type: 'integer',
+                        },
                         name: {
                           description:
                             'Your display name for this location resource.',
@@ -79368,6 +79382,13 @@ const openapi: OpenAPISpec = {
                 'Optional list of spaces that you want to include in the new building block magic link.',
               items: {
                 properties: {
+                  duration_minutes: {
+                    description:
+                      'Default duration of this space in minutes, when the space represents a fixed-length bookable slot (e.g. an appointment type). Used to interpret reservations booked against this space.',
+                    exclusiveMinimum: true,
+                    minimum: 0,
+                    type: 'integer',
+                  },
                   name: {
                     description:
                       'Your display name for this location resource.',
@@ -79454,6 +79475,13 @@ const openapi: OpenAPISpec = {
                       'Optional list of spaces that you want to include in the new building block magic link.',
                     items: {
                       properties: {
+                        duration_minutes: {
+                          description:
+                            'Default duration of this space in minutes, when the space represents a fixed-length bookable slot (e.g. an appointment type). Used to interpret reservations booked against this space.',
+                          exclusiveMinimum: true,
+                          minimum: 0,
+                          type: 'integer',
+                        },
                         name: {
                           description:
                             'Your display name for this location resource.',
@@ -79594,6 +79622,13 @@ const openapi: OpenAPISpec = {
                       'Optional list of spaces that you want to include in the new building block magic link.',
                     items: {
                       properties: {
+                        duration_minutes: {
+                          description:
+                            'Default duration of this space in minutes, when the space represents a fixed-length bookable slot (e.g. an appointment type). Used to interpret reservations booked against this space.',
+                          exclusiveMinimum: true,
+                          minimum: 0,
+                          type: 'integer',
+                        },
                         name: {
                           description:
                             'Your display name for this location resource.',
