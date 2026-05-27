@@ -8,6 +8,7 @@ import { lock_door_action_attempt } from './lock-door.js'
 import { push_thermostat_programs_action_attempt } from './push-thermostat-programs.js'
 import { reset_sandbox_workspace_action_attempt } from './reset-sandbox-workspace.js'
 import { scan_credential_action_attempt } from './scan-credential.js'
+import { scan_to_assign_credential_action_attempt } from './scan-to-assign-credential.js'
 import { set_fan_mode_action_attempt } from './set-fan-mode.js'
 import { set_hvac_mode_action_attempt } from './set-hvac-mode.js'
 import { simulate_keypad_code_entry_action_attempt } from './simulate-keypad-code-entry.js'
@@ -19,6 +20,7 @@ export const action_attempt = z.union([
   ...unlock_door_action_attempt.options,
   ...scan_credential_action_attempt.options,
   ...encode_credential_action_attempt.options,
+  ...scan_to_assign_credential_action_attempt.options,
   ...reset_sandbox_workspace_action_attempt.options,
   ...set_fan_mode_action_attempt.options,
   ...set_hvac_mode_action_attempt.options,

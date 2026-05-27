@@ -8786,6 +8786,590 @@ const openapi: OpenAPISpec = {
             type: 'object',
           },
           {
+            description:
+              'Scanning a physical card and assigning the credential is pending.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of scanning a physical card and assigning the credential to an ACS user.',
+                enum: ['SCAN_TO_ASSIGN_CREDENTIAL'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description:
+              'Scanning a physical card and assigning the credential succeeded.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of scanning a physical card and assigning the credential to an ACS user.',
+                enum: ['SCAN_TO_ASSIGN_CREDENTIAL'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of a scan to assign attempt. If the attempt was successful, includes the credential data that was scanned and assigned.',
+                properties: {
+                  access_method: {
+                    description:
+                      'Access method for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                    enum: ['code', 'card', 'mobile_key', 'cloud_key'],
+                    type: 'string',
+                  },
+                  acs_credential_id: {
+                    description:
+                      'ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_credential_pool_id: { format: 'uuid', type: 'string' },
+                  acs_system_id: {
+                    description:
+                      'ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_user_id: {
+                    description:
+                      'ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  assa_abloy_vostio_metadata: {
+                    description:
+                      'Vostio-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+                    properties: {
+                      auto_join: {
+                        description:
+                          'Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors.',
+                        type: 'boolean',
+                      },
+                      door_names: {
+                        description:
+                          'Names of the doors to which to grant access in the Vostio access system.',
+                        items: { type: 'string' },
+                        type: 'array',
+                      },
+                      endpoint_id: {
+                        description: 'Endpoint ID in the Vostio access system.',
+                        type: 'string',
+                      },
+                      key_id: {
+                        description: 'Key ID in the Vostio access system.',
+                        type: 'string',
+                      },
+                      key_issuing_request_id: {
+                        description:
+                          'Key issuing request ID in the Vostio access system.',
+                        type: 'string',
+                      },
+                      override_guest_acs_entrance_ids: {
+                        description:
+                          'IDs of the guest entrances to override in the Vostio access system.',
+                        items: { type: 'string' },
+                        type: 'array',
+                      },
+                    },
+                    type: 'object',
+                  },
+                  card_number: {
+                    description:
+                      'Number of the card associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  code: {
+                    description:
+                      'Access (PIN) code for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  connected_account_id: {
+                    description:
+                      'ID of the [connected account](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials#connected-accounts) to which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  created_at: {
+                    description:
+                      'Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was created.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
+                  display_name: {
+                    description:
+                      'Display name that corresponds to the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type.',
+                    minLength: 1,
+                    type: 'string',
+                  },
+                  ends_at: {
+                    description:
+                      'Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                    type: 'string',
+                  },
+                  errors: {
+                    description:
+                      'Errors associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+                    items: {
+                      properties: {
+                        error_code: { type: 'string' },
+                        message: { type: 'string' },
+                      },
+                      required: ['error_code', 'message'],
+                      type: 'object',
+                    },
+                    type: 'array',
+                  },
+                  external_type: {
+                    description:
+                      'Brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
+                    enum: [
+                      'pti_card',
+                      'brivo_credential',
+                      'hid_credential',
+                      'visionline_card',
+                      'salto_ks_credential',
+                      'assa_abloy_vostio_key',
+                      'salto_space_key',
+                      'latch_access',
+                      'dormakaba_ambiance_credential',
+                      'hotek_card',
+                      'salto_ks_tag',
+                      'avigilon_alta_credential',
+                    ],
+                    type: 'string',
+                  },
+                  external_type_display_name: {
+                    description:
+                      'Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) type.',
+                    type: 'string',
+                  },
+                  is_issued: {
+                    description:
+                      'Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been encoded onto a card.',
+                    type: 'boolean',
+                  },
+                  is_latest_desired_state_synced_with_provider: {
+                    description:
+                      'Indicates whether the latest state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) has been synced from Seam to the provider.',
+                    nullable: true,
+                    type: 'boolean',
+                  },
+                  is_managed: { enum: [true], type: 'boolean' },
+                  is_multi_phone_sync_credential: {
+                    description:
+                      'Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                    type: 'boolean',
+                  },
+                  is_one_time_use: {
+                    description:
+                      'Indicates whether the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use.',
+                    type: 'boolean',
+                  },
+                  issued_at: {
+                    description:
+                      'Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was encoded onto a card.',
+                    format: 'date-time',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  latest_desired_state_synced_with_provider_at: {
+                    description:
+                      'Date and time at which the state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was most recently synced from Seam to the provider.',
+                    format: 'date-time',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  parent_acs_credential_id: {
+                    description:
+                      'ID of the parent [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  starts_at: {
+                    description:
+                      'Date and time at which the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the [user identity](https://docs.seam.co/latest/api/user_identities) to whom the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) belongs.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  visionline_metadata: {
+                    description:
+                      'Visionline-specific metadata for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+                    properties: {
+                      auto_join: {
+                        description:
+                          'Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors.',
+                        type: 'boolean',
+                      },
+                      card_function_type: {
+                        description:
+                          'Card function type in the Visionline access system.',
+                        enum: ['guest', 'staff'],
+                        type: 'string',
+                      },
+                      card_id: {
+                        description:
+                          'ID of the card in the Visionline access system.',
+                        type: 'string',
+                      },
+                      common_acs_entrance_ids: {
+                        description:
+                          'Common entrance IDs in the Visionline access system.',
+                        items: { format: 'uuid', type: 'string' },
+                        type: 'array',
+                      },
+                      credential_id: {
+                        description:
+                          'ID of the credential in the Visionline access system.',
+                        type: 'string',
+                      },
+                      guest_acs_entrance_ids: {
+                        description:
+                          'Guest entrance IDs in the Visionline access system.',
+                        items: { format: 'uuid', type: 'string' },
+                        type: 'array',
+                      },
+                      is_valid: {
+                        description:
+                          'Indicates whether the credential is valid.',
+                        type: 'boolean',
+                      },
+                      joiner_acs_credential_ids: {
+                        description:
+                          'IDs of the credentials to which you want to join.',
+                        items: { format: 'uuid', type: 'string' },
+                        type: 'array',
+                      },
+                    },
+                    required: ['card_function_type'],
+                    type: 'object',
+                  },
+                  warnings: {
+                    description:
+                      'Warnings associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+                    items: {
+                      description:
+                        'Warning associated with the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+                      discriminator: { propertyName: 'warning_code' },
+                      oneOf: [
+                        {
+                          description:
+                            'Indicates that the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is waiting to be issued.',
+                          properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which Seam created the warning.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            message: {
+                              description:
+                                'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                              type: 'string',
+                            },
+                            warning_code: {
+                              description:
+                                'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                              enum: ['waiting_to_be_issued'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['created_at', 'message', 'warning_code'],
+                          type: 'object',
+                        },
+                        {
+                          description:
+                            "Indicates that the schedule of one of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials)'s children was modified externally.",
+                          properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which Seam created the warning.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            message: {
+                              description:
+                                'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                              type: 'string',
+                            },
+                            warning_code: {
+                              description:
+                                'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                              enum: ['schedule_externally_modified'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['created_at', 'message', 'warning_code'],
+                          type: 'object',
+                        },
+                        {
+                          description:
+                            'Indicates that the schedule of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.',
+                          properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which Seam created the warning.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            message: {
+                              description:
+                                'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                              type: 'string',
+                            },
+                            warning_code: {
+                              description:
+                                'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                              enum: ['schedule_modified'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['created_at', 'message', 'warning_code'],
+                          type: 'object',
+                        },
+                        {
+                          description:
+                            'Indicates that the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) is being deleted.',
+                          properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which Seam created the warning.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            message: {
+                              description:
+                                'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                              type: 'string',
+                            },
+                            warning_code: {
+                              description:
+                                'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                              enum: ['being_deleted'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['created_at', 'message', 'warning_code'],
+                          type: 'object',
+                        },
+                        {
+                          description:
+                            'An unknown issue occurred while syncing the state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.',
+                          properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which Seam created the warning.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            message: {
+                              description:
+                                'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                              type: 'string',
+                            },
+                            warning_code: {
+                              description:
+                                'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                              enum: ['unknown_issue_with_acs_credential'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['created_at', 'message', 'warning_code'],
+                          type: 'object',
+                        },
+                        {
+                          description:
+                            'Access permissions for the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.',
+                          properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which Seam created the warning.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            message: {
+                              description:
+                                'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                              type: 'string',
+                            },
+                            warning_code: {
+                              description:
+                                'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                              enum: ['needs_to_be_reissued'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['created_at', 'message', 'warning_code'],
+                          type: 'object',
+                        },
+                      ],
+                    },
+                    type: 'array',
+                  },
+                  workspace_id: {
+                    description:
+                      'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: [
+                  'acs_credential_id',
+                  'connected_account_id',
+                  'acs_system_id',
+                  'display_name',
+                  'access_method',
+                  'created_at',
+                  'workspace_id',
+                  'errors',
+                  'warnings',
+                  'is_managed',
+                ],
+                type: 'object',
+              },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description:
+              'Scanning a physical card and assigning the credential failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of scanning a physical card and assigning the credential to an ACS user.',
+                enum: ['SCAN_TO_ASSIGN_CREDENTIAL'],
+                type: 'string',
+              },
+              error: {
+                oneOf: [
+                  {
+                    description:
+                      "Error that doesn't fit into other specific error categories.",
+                    properties: {
+                      message: {
+                        description:
+                          'Message for the error associated with the action attempt.',
+                        type: 'string',
+                      },
+                      type: {
+                        description:
+                          'Type of the error associated with the action attempt.',
+                        enum: ['uncategorized_error'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['type', 'message'],
+                    type: 'object',
+                  },
+                  {
+                    description: 'Error to indicate an expired action attempt.',
+                    properties: {
+                      message: {
+                        description:
+                          'Message for the error associated with the action attempt.',
+                        type: 'string',
+                      },
+                      type: {
+                        description:
+                          'Type of the error associated with the action attempt.',
+                        enum: ['action_attempt_expired'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['type', 'message'],
+                    type: 'object',
+                  },
+                  {
+                    description:
+                      'Error to indicate that there is no credential on the encoder.',
+                    properties: {
+                      message: {
+                        description:
+                          'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                        type: 'string',
+                      },
+                      type: {
+                        description:
+                          'Error type to indicate that there is no credential on the encoder.',
+                        enum: ['no_credential_on_encoder'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['type', 'message'],
+                    type: 'object',
+                  },
+                ],
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
             description: 'Resetting a sandbox workspace is pending.',
             properties: {
               action_attempt_id: {
@@ -45262,6 +45846,78 @@ const openapi: OpenAPISpec = {
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
         'x-title': 'Scan a Credential',
+      },
+    },
+    '/acs/encoders/scan_to_assign_credential': {
+      post: {
+        description:
+          'Scans a physical card placed on the specified [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) and assigns the scanned credential to an ACS user. Provide either an `acs_user_id` or a `user_identity_id`.',
+        operationId: 'acsEncodersScanToAssignCredentialPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_encoder_id: {
+                    description:
+                      'ID of the `acs_encoder` to use to scan the credential.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_user_id: {
+                    description:
+                      'ID of the `acs_user` to assign the scanned credential to.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the `user_identity` to assign the scanned credential to. If the ACS system contains an ACS user linked to this user identity, it is used. Otherwise, one is created.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['acs_encoder_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+          { client_session_with_customer: [] },
+        ],
+        summary: '/acs/encoders/scan_to_assign_credential',
+        tags: ['/acs'],
+        'x-action-attempt-type': 'SCAN_TO_ASSIGN_CREDENTIAL',
+        'x-fern-sdk-group-name': ['acs', 'encoders'],
+        'x-fern-sdk-method-name': 'scan_to_assign_credential',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
+        'x-title': 'Scan to Assign a Credential',
       },
     },
     '/acs/encoders/simulate/next_credential_encode_will_fail': {
