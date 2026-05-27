@@ -24,6 +24,14 @@ export const neutral_resource = base_location_resource.extend({
     })
     .describe('Your unique identifier for the site.')
     .optional(),
+  duration_minutes: z
+    .number()
+    .int()
+    .positive()
+    .optional()
+    .describe(
+      'Default duration of this space in minutes, when the space represents a fixed-length bookable slot (e.g. an appointment type). Used to interpret reservations booked against this space.',
+    ),
 })
 
 export const property_resource = base_location_resource.extend({
