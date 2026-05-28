@@ -58,6 +58,7 @@ export const DEVICE_PROVIDERS = {
   LODGIFY: 'lodgify',
   HOSTAWAY: 'hostaway',
   ACUITY_SCHEDULING: 'acuity_scheduling',
+  OMNITEC: 'omnitec',
 } as const
 
 export type DeviceProviderName =
