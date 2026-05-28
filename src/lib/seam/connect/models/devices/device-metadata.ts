@@ -645,6 +645,17 @@ export const device_metadata = z
           .describe(
             `Whether the Omnitec lock has a connected gateway for remote operations.`,
           ),
+        timezone_raw_offset_ms: z
+          .number()
+          .describe(
+            `Static UTC offset of the Omnitec lock in milliseconds. Does not account for DST.`,
+          ),
+        time_zone: z
+          .string()
+          .optional()
+          .describe(
+            `IANA timezone of the Omnitec lock, set during connect webview. Used for DST-aware timestamp adjustment.`,
+          ),
       })
       .describe(`Metadata for an Omnitec device.`),
 

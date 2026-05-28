@@ -14227,12 +14227,24 @@ const openapi: OpenAPISpec = {
                             description: 'Lock name for an Omnitec device.',
                             type: 'string',
                           },
+                          time_zone: {
+                            description:
+                              'IANA timezone of the Omnitec lock, set during connect webview. Used for DST-aware timestamp adjustment.',
+                            type: 'string',
+                          },
+                          timezone_raw_offset_ms: {
+                            description:
+                              'Static UTC offset of the Omnitec lock in milliseconds. Does not account for DST.',
+                            format: 'float',
+                            type: 'number',
+                          },
                         },
                         required: [
                           'lock_id',
                           'lock_name',
                           'lock_mac',
                           'has_gateway',
+                          'timezone_raw_offset_ms',
                         ],
                         type: 'object',
                       },
