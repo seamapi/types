@@ -633,6 +633,21 @@ export const device_metadata = z
       })
       .describe(`Metadata for an ASSA ABLOY Vostio system.`),
 
+    omnitec_metadata: z
+      .object({
+        lock_id: z.number().describe(`Lock ID for an Omnitec device.`),
+        lock_name: z.string().describe(`Lock name for an Omnitec device.`),
+        lock_mac: z
+          .string()
+          .describe(`Bluetooth MAC address for an Omnitec device.`),
+        has_gateway: z
+          .boolean()
+          .describe(
+            `Whether the Omnitec lock has a connected gateway for remote operations.`,
+          ),
+      })
+      .describe(`Metadata for an Omnitec device.`),
+
     tado_metadata: z
       .object({
         serial_no: z.string().describe(`Serial number for a tado° device.`),
