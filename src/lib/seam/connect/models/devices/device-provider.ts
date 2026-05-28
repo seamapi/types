@@ -107,6 +107,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'dormakaba_oracode',
     'ring',
     'first_alert',
+    'korelock',
   ],
 
   consumer_smartlocks: [
@@ -124,9 +125,10 @@ export const PROVIDER_CATEGORY_MAP = {
     'tedee',
     'ultraloq',
     'dormakaba_oracode',
+    'korelock',
   ],
 
-  beta: ['korelock', 'omnitec'],
+  beta: ['omnitec'],
 
   thermostats: ['ecobee', 'nest', 'sensi', 'honeywell_resideo', 'first_alert'],
   noise_sensors: ['minut', 'noiseaware'],
