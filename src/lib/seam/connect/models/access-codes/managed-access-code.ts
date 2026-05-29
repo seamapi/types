@@ -163,14 +163,6 @@ const salto_ks_user_not_subscribed = common_access_code_error
   })
   .describe('Salto site user is not subscribed.')
 
-const smartthings_no_free_slots_available = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('smartthings_no_free_slots_available')
-      .describe(error_code_description),
-  })
-  .describe('No free slots available on the device.')
-
 const wyze_duplicate_code_name = common_access_code_error
   .extend({
     error_code: z
@@ -219,7 +211,6 @@ const access_code_error = z
   .discriminatedUnion('error_code', [
     smartthings_failed_to_set_access_code_error,
     smartthings_failed_to_set_after_multiple_retries,
-    smartthings_no_free_slots_available,
     failed_to_set_on_device,
     failed_to_remove_from_device,
     duplicate_code_on_device,
@@ -251,9 +242,6 @@ const _access_code_error_map = z.object({
     smartthings_failed_to_set_access_code_error.optional().nullable(),
   smartthings_failed_to_set_after_multiple_retries:
     smartthings_failed_to_set_after_multiple_retries.optional().nullable(),
-  smartthings_no_free_slots_available: smartthings_no_free_slots_available
-    .optional()
-    .nullable(),
   failed_to_set_on_device: failed_to_set_on_device.optional().nullable(),
   failed_to_remove_from_device: failed_to_remove_from_device
     .optional()
