@@ -32747,7 +32747,7 @@ const openapi: OpenAPISpec = {
                   },
                   code: {
                     description: 'Code to be used for access.',
-                    maxLength: 9,
+                    maxLength: 12,
                     minLength: 4,
                     pattern: '^\\d+$',
                     type: 'string',
@@ -32900,7 +32900,7 @@ const openapi: OpenAPISpec = {
                   },
                   code: {
                     description: 'Code to be used for access.',
-                    maxLength: 9,
+                    maxLength: 12,
                     minLength: 4,
                     pattern: '^\\d+$',
                     type: 'string',
@@ -33018,7 +33018,7 @@ const openapi: OpenAPISpec = {
                   },
                   code: {
                     description: 'Code to be used for access.',
-                    maxLength: 9,
+                    maxLength: 12,
                     minLength: 4,
                     pattern: '^\\d+$',
                     type: 'string',
@@ -35178,7 +35178,7 @@ const openapi: OpenAPISpec = {
                   },
                   code: {
                     description: 'Code to be used for access.',
-                    maxLength: 9,
+                    maxLength: 12,
                     minLength: 4,
                     pattern: '^\\d+$',
                     type: 'string',
@@ -35332,7 +35332,7 @@ const openapi: OpenAPISpec = {
                   },
                   code: {
                     description: 'Code to be used for access.',
-                    maxLength: 9,
+                    maxLength: 12,
                     minLength: 4,
                     pattern: '^\\d+$',
                     type: 'string',
@@ -35486,7 +35486,7 @@ const openapi: OpenAPISpec = {
                   },
                   code: {
                     description: 'Code to be used for access.',
-                    maxLength: 9,
+                    maxLength: 12,
                     minLength: 4,
                     pattern: '^\\d+$',
                     type: 'string',
