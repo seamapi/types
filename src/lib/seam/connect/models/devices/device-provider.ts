@@ -108,6 +108,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'ring',
     'first_alert',
     'korelock',
+    'omnitec',
   ],
 
   consumer_smartlocks: [
@@ -128,7 +129,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'korelock',
   ],
 
-  beta: ['omnitec'],
+  beta: [],
 
   thermostats: ['ecobee', 'nest', 'sensi', 'honeywell_resideo', 'first_alert'],
   noise_sensors: ['minut', 'noiseaware'],
