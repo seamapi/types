@@ -139,14 +139,6 @@ const august_lock_invalid_code_length = common_access_code_error
   })
   .describe('Invalid code length for August lock.')
 
-const august_device_programming_delay_error = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('august_device_programming_delay')
-      .describe(error_code_description),
-  })
-  .describe('Access code has not yet been fully moved to the device.')
-
 const august_lock_temporarily_offline_error = common_access_code_error
   .extend({
     error_code: z
@@ -238,7 +230,6 @@ const access_code_error = z
     kwikset_unable_to_confirm_deletion,
     code_modified_external_to_seam_error,
     august_lock_invalid_code_length,
-    august_device_programming_delay_error,
     august_lock_missing_keypad,
     august_lock_temporarily_offline_error,
     salto_ks_user_not_subscribed,
@@ -289,9 +280,6 @@ const _access_code_error_map = z.object({
   august_lock_invalid_code_length: august_lock_invalid_code_length
     .optional()
     .nullable(),
-  august_device_programming_delay: august_device_programming_delay_error
-    .optional()
-    .nullable(),
   august_lock_temporarily_offline: august_lock_temporarily_offline_error
     .optional()
     .nullable(),
@@ -339,14 +327,6 @@ const smartthings_failed_to_set_access_code_warning = common_access_code_warning
       .describe(warning_code_description),
   })
   .describe('Failed to set code on SmartThings device.')
-
-const august_device_programming_delay_warning = common_access_code_warning
-  .extend({
-    warning_code: z
-      .literal('august_device_programming_delay')
-      .describe(warning_code_description),
-  })
-  .describe('Access code has not yet been fully moved to the device.')
 
 const august_lock_temporarily_offline_warning = common_access_code_warning
   .extend({
@@ -479,7 +459,6 @@ const access_code_warning = z
     delay_in_setting_on_device,
     delay_in_removing_from_device,
     third_party_integration_detected,
-    august_device_programming_delay_warning,
     august_lock_temporarily_offline_warning,
     igloo_algopin_must_be_used_within_24_hours,
     management_transferred,
@@ -509,9 +488,6 @@ const _access_code_warning_map = z.object({
     .optional()
     .nullable(),
   third_party_integration_detected: third_party_integration_detected
-    .optional()
-    .nullable(),
-  august_device_programming_delay: august_device_programming_delay_warning
     .optional()
     .nullable(),
   august_lock_temporarily_offline: august_lock_temporarily_offline_warning

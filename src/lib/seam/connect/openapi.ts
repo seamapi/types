@@ -483,37 +483,6 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
-                  description:
-                    'Access code has not yet been fully moved to the device.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_device_programming_delay'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                },
-                {
                   description: 'August lock is missing a keypad.',
                   properties: {
                     created_at: {
@@ -1889,31 +1858,6 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['third_party_integration_detected'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description:
-                    'Access code has not yet been fully moved to the device.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_device_programming_delay'],
                       type: 'string',
                     },
                   },
@@ -27777,37 +27721,6 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
-                  description:
-                    'Access code has not yet been fully moved to the device.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_device_programming_delay'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                },
-                {
                   description: 'August lock is missing a keypad.',
                   properties: {
                     created_at: {
@@ -28872,31 +28785,6 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['third_party_integration_detected'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description:
-                    'Access code has not yet been fully moved to the device.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_device_programming_delay'],
                       type: 'string',
                     },
                   },
