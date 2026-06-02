@@ -11850,6 +11850,11 @@ const openapi: OpenAPISpec = {
               "For iCal connected accounts, the platform that produced the feed (for example, `airbnb`, `vrbo`, or `booking`), or `unknown` when it could not be determined. Intended for rendering the source platform's logo.",
             type: 'string',
           },
+          ical_url: {
+            description:
+              'For iCal connected accounts, the feed URL for the connection. Sourced from the connector configuration.',
+            type: 'string',
+          },
           image_url: {
             description: 'Logo URL for the connected account provider.',
             format: 'uri',

@@ -379,6 +379,12 @@ export const connected_account = z.object({
     .describe(
       "For iCal connected accounts, the platform that produced the feed (for example, `airbnb`, `vrbo`, or `booking`), or `unknown` when it could not be determined. Intended for rendering the source platform's logo.",
     ),
+  ical_url: z
+    .string()
+    .optional()
+    .describe(
+      'For iCal connected accounts, the feed URL for the connection. Sourced from the connector configuration.',
+    ),
 }).describe(`
   ---
   route_path: /connected_accounts
