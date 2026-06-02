@@ -36559,6 +36559,16 @@ const openapi: OpenAPISpec = {
           },
           {
             in: 'query',
+            name: 'device_id',
+            schema: {
+              description:
+                'ID of the device by which you want to filter the list of Access Grants.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'location_id',
             schema: {
               deprecated: true,
@@ -36683,6 +36693,12 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description:
                       'Customer key for which you want to list access grants.',
+                    type: 'string',
+                  },
+                  device_id: {
+                    description:
+                      'ID of the device by which you want to filter the list of Access Grants.',
+                    format: 'uuid',
                     type: 'string',
                   },
                   limit: {
