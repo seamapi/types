@@ -373,6 +373,12 @@ export const connected_account = z.object({
     .describe(
       'IANA time zone (e.g. America/Los_Angeles) for this connected account. Sourced from the connector configuration.',
     ),
+  ical_feed_origin: z
+    .string()
+    .optional()
+    .describe(
+      "For iCal connected accounts, the platform that produced the feed (for example, `airbnb`, `vrbo`, or `booking`), or `unknown` when it could not be determined. Intended for rendering the source platform's logo.",
+    ),
 }).describe(`
   ---
   route_path: /connected_accounts

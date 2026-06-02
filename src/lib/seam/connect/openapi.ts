@@ -11845,6 +11845,11 @@ const openapi: OpenAPISpec = {
             },
             type: 'array',
           },
+          ical_feed_origin: {
+            description:
+              "For iCal connected accounts, the platform that produced the feed (for example, `airbnb`, `vrbo`, or `booking`), or `unknown` when it could not be determined. Intended for rendering the source platform's logo.",
+            type: 'string',
+          },
           image_url: {
             description: 'Logo URL for the connected account provider.',
             format: 'uri',
@@ -51666,6 +51671,13 @@ const openapi: OpenAPISpec = {
                     minLength: 1,
                     type: 'string',
                   },
+                  display_name: {
+                    description:
+                      'Human-readable name for the connected account, shown in the dashboard. For example, `Booking from Airbnb House 1`.',
+                    maxLength: 255,
+                    minLength: 1,
+                    type: 'string',
+                  },
                 },
                 required: ['connected_account_id'],
                 type: 'object',
@@ -51758,6 +51770,13 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description:
                       'The customer key to associate with this connected account. If provided, the connected account and all resources under the connected account will be moved to this customer. May only be provided if the connected account is not already associated with a customer.',
+                    minLength: 1,
+                    type: 'string',
+                  },
+                  display_name: {
+                    description:
+                      'Human-readable name for the connected account, shown in the dashboard. For example, `Booking from Airbnb House 1`.',
+                    maxLength: 255,
                     minLength: 1,
                     type: 'string',
                   },
