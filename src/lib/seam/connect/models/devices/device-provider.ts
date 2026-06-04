@@ -57,6 +57,7 @@ export const DEVICE_PROVIDERS = {
   ICAL: 'ical',
   LODGIFY: 'lodgify',
   HOSTAWAY: 'hostaway',
+  GUESTY: 'guesty',
   ACUITY_SCHEDULING: 'acuity_scheduling',
   OMNITEC: 'omnitec',
 } as const
@@ -149,7 +150,7 @@ export const PROVIDER_CATEGORY_MAP = {
 
   cameras: ['ring'],
 
-  connectors: ['ical', 'lodgify', 'hostaway', 'acuity_scheduling'],
+  connectors: ['ical', 'lodgify', 'hostaway', 'guesty', 'acuity_scheduling'],
 
   internal_beta: ALL_DEVICE_PROVIDERS,
 } as const satisfies Record<string, readonly DeviceProviderName[]>
