@@ -169,7 +169,14 @@ const wyze_duplicate_code_name = common_access_code_error
       .literal('wyze_duplicate_code_name')
       .describe(error_code_description),
   })
-  .describe('Duplicate access code name detected.')
+  .describe(
+    `
+    ---
+    deprecated: Use \`duplicate_code_on_device\` instead.
+    ---
+    Duplicate access code name detected.
+    `,
+  )
 
 const wyze_potential_duplicate_code = common_access_code_error
   .extend({
@@ -177,7 +184,14 @@ const wyze_potential_duplicate_code = common_access_code_error
       .literal('wyze_potential_duplicate_code')
       .describe(error_code_description),
   })
-  .describe('Potential duplicate access code detected.')
+  .describe(
+    `
+    ---
+    deprecated: Use \`duplicate_code_on_device\` instead.
+    ---
+    Potential duplicate access code detected.
+    `,
+  )
 
 const dormakaba_oracode_invalid_time_range = common_access_code_error
   .extend({
@@ -340,7 +354,14 @@ const schlage_detected_duplicate = common_access_code_warning
       .literal('schlage_detected_duplicate')
       .describe(warning_code_description),
   })
-  .describe('Duplicate access code detected.')
+  .describe(
+    `
+    ---
+    deprecated: Use \`duplicate_code_on_device\` error instead.
+    ---
+    Duplicate access code detected.
+    `,
+  )
 
 const schlage_creation_outage = common_access_code_warning
   .extend({

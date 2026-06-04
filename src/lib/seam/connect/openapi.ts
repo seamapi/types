@@ -543,6 +543,7 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
+                  deprecated: true,
                   description: 'Duplicate access code name detected.',
                   properties: {
                     created_at: {
@@ -571,8 +572,10 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-deprecated': 'Use `duplicate_code_on_device` instead.',
                 },
                 {
+                  deprecated: true,
                   description: 'Potential duplicate access code detected.',
                   properties: {
                     created_at: {
@@ -601,6 +604,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-deprecated': 'Use `duplicate_code_on_device` instead.',
                 },
                 {
                   description:
@@ -1671,6 +1675,7 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
+                  deprecated: true,
                   description: 'Duplicate access code detected.',
                   properties: {
                     created_at: {
@@ -1693,6 +1698,8 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'warning_code'],
                   type: 'object',
+                  'x-deprecated':
+                    'Use `duplicate_code_on_device` error instead.',
                 },
                 {
                   description:
@@ -27781,6 +27788,7 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
+                  deprecated: true,
                   description: 'Duplicate access code name detected.',
                   properties: {
                     created_at: {
@@ -27809,8 +27817,10 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-deprecated': 'Use `duplicate_code_on_device` instead.',
                 },
                 {
+                  deprecated: true,
                   description: 'Potential duplicate access code detected.',
                   properties: {
                     created_at: {
@@ -27839,6 +27849,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-deprecated': 'Use `duplicate_code_on_device` instead.',
                 },
                 {
                   description:
@@ -28598,6 +28609,7 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
+                  deprecated: true,
                   description: 'Duplicate access code detected.',
                   properties: {
                     created_at: {
@@ -28620,6 +28632,8 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'warning_code'],
                   type: 'object',
+                  'x-deprecated':
+                    'Use `duplicate_code_on_device` error instead.',
                 },
                 {
                   description:
