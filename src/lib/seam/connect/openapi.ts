@@ -45754,6 +45754,19 @@ const openapi: OpenAPISpec = {
                     format: 'uuid',
                     type: 'string',
                   },
+                  salto_ks_metadata: {
+                    description:
+                      'Salto KS-specific metadata for the scan action.',
+                    properties: {
+                      detect_new_tags: {
+                        default: false,
+                        description:
+                          'When true, activates tag registration mode on the encoder to detect new, unregistered tags. When false, only detects existing tags already registered in the system. Defaults to false.',
+                        type: 'boolean',
+                      },
+                    },
+                    type: 'object',
+                  },
                 },
                 required: ['acs_encoder_id'],
                 type: 'object',
@@ -45818,6 +45831,19 @@ const openapi: OpenAPISpec = {
                       'ID of the `acs_user` to assign the scanned credential to.',
                     format: 'uuid',
                     type: 'string',
+                  },
+                  salto_ks_metadata: {
+                    description:
+                      'Salto KS-specific metadata for the scan action.',
+                    properties: {
+                      detect_new_tags: {
+                        default: false,
+                        description:
+                          'When true, activates tag registration mode on the encoder to detect new, unregistered tags. When false, only detects existing tags already registered in the system. Defaults to false.',
+                        type: 'boolean',
+                      },
+                    },
+                    type: 'object',
                   },
                   user_identity_id: {
                     description:
