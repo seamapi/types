@@ -61,7 +61,14 @@ const device_offline = common_device_error
   .extend({
     error_code: z.literal('device_offline').describe(error_code_description),
   })
-  .describe('Indicates that the device is offline.')
+  .describe(
+    `
+    ---
+    deprecated: Use \`device_disconnected\` instead.
+    ---
+    Indicates that the device is offline.
+    `,
+  )
 
 const device_removed = common_device_error
   .extend({
@@ -127,6 +134,7 @@ const august_lock_missing_bridge = common_device_error.extend({
     .describe(error_code_description),
 }).describe(`
     ---
+    deprecated: Use \`hub_disconnected\` instead.
     variant_group_key: locks
     ---
     Indicates that the lock is not connected to a bridge.
@@ -156,6 +164,9 @@ const ttlock_lock_not_paired_to_gateway = common_device_error.extend({
     .literal('ttlock_lock_not_paired_to_gateway')
     .describe(error_code_description),
 }).describe(`
+    ---
+    deprecated: Use \`hub_disconnected\` instead.
+    ---
     Indicates that the lock is not paired with a gateway.
     `)
 
@@ -191,6 +202,9 @@ const lockly_missing_wifi_bridge = common_device_error.extend({
     .literal('lockly_missing_wifi_bridge')
     .describe(error_code_description),
 }).describe(`
+    ---
+    deprecated: Use \`hub_disconnected\` instead.
+    ---
     Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
     `)
 
@@ -325,6 +339,9 @@ const wyze_device_missing_gateway = common_device_warning.extend({
     .literal('wyze_device_missing_gateway')
     .describe(warning_code_description),
 }).describe(`
+    ---
+    deprecated: Use \`hub_disconnected\` device error instead.
+    ---
     Indicates that the Wyze Lock is not connected to a gateway.
     `)
 

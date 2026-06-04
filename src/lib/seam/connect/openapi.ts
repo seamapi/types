@@ -812,6 +812,7 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'locks',
                 },
                 {
+                  deprecated: true,
                   description: 'Indicates that the device is offline.',
                   properties: {
                     created_at: {
@@ -845,6 +846,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-deprecated': 'Use `device_disconnected` instead.',
                 },
                 {
                   description: 'Indicates that the device has been removed.',
@@ -1026,6 +1028,7 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'locks',
                 },
                 {
+                  deprecated: true,
                   description:
                     'Indicates that the lock is not connected to a bridge.',
                   properties: {
@@ -1060,11 +1063,13 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-deprecated': 'Use `hub_disconnected` instead.',
                   'x-variant-group-key': 'locks',
                 },
                 {
+                  deprecated: true,
                   description:
-                    '\n    Indicates that the lock is not paired with a gateway.\n    ',
+                    'Indicates that the lock is not paired with a gateway.',
                   properties: {
                     created_at: {
                       description:
@@ -1097,6 +1102,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-deprecated': 'Use `hub_disconnected` instead.',
                 },
                 {
                   description: 'Indicates that device credentials are missing.',
@@ -1206,8 +1212,9 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
+                  deprecated: true,
                   description:
-                    '\n    Indicates that the Lockly lock is not connected to a Wi-Fi bridge.\n    ',
+                    'Indicates that the Lockly lock is not connected to a Wi-Fi bridge.',
                   properties: {
                     created_at: {
                       description:
@@ -1240,6 +1247,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-deprecated': 'Use `hub_disconnected` instead.',
                 },
                 {
                   description:
@@ -12520,6 +12528,7 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'locks',
                 },
                 {
+                  deprecated: true,
                   description: 'Indicates that the device is offline.',
                   properties: {
                     created_at: {
@@ -12553,6 +12562,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-deprecated': 'Use `device_disconnected` instead.',
                 },
                 {
                   description: 'Indicates that the device has been removed.',
@@ -12734,6 +12744,7 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'locks',
                 },
                 {
+                  deprecated: true,
                   description:
                     'Indicates that the lock is not connected to a bridge.',
                   properties: {
@@ -12768,11 +12779,13 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-deprecated': 'Use `hub_disconnected` instead.',
                   'x-variant-group-key': 'locks',
                 },
                 {
+                  deprecated: true,
                   description:
-                    '\n    Indicates that the lock is not paired with a gateway.\n    ',
+                    'Indicates that the lock is not paired with a gateway.',
                   properties: {
                     created_at: {
                       description:
@@ -12805,6 +12818,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-deprecated': 'Use `hub_disconnected` instead.',
                 },
                 {
                   description: 'Indicates that device credentials are missing.',
@@ -12914,8 +12928,9 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
+                  deprecated: true,
                   description:
-                    '\n    Indicates that the Lockly lock is not connected to a Wi-Fi bridge.\n    ',
+                    'Indicates that the Lockly lock is not connected to a Wi-Fi bridge.',
                   properties: {
                     created_at: {
                       description:
@@ -12948,6 +12963,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-deprecated': 'Use `hub_disconnected` instead.',
                 },
                 {
                   description:
@@ -15784,8 +15800,9 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'access_codes',
                 },
                 {
+                  deprecated: true,
                   description:
-                    '\n    Indicates that the Wyze Lock is not connected to a gateway.\n    ',
+                    'Indicates that the Wyze Lock is not connected to a gateway.',
                   properties: {
                     created_at: {
                       description:
@@ -15807,6 +15824,8 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-deprecated':
+                    'Use `hub_disconnected` device error instead.',
                 },
                 {
                   description:
@@ -28031,6 +28050,7 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'locks',
                 },
                 {
+                  deprecated: true,
                   description: 'Indicates that the device is offline.',
                   properties: {
                     created_at: {
@@ -28064,6 +28084,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-deprecated': 'Use `device_disconnected` instead.',
                 },
                 {
                   description: 'Indicates that the device has been removed.',
@@ -28245,6 +28266,7 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'locks',
                 },
                 {
+                  deprecated: true,
                   description:
                     'Indicates that the lock is not connected to a bridge.',
                   properties: {
@@ -28279,11 +28301,13 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-deprecated': 'Use `hub_disconnected` instead.',
                   'x-variant-group-key': 'locks',
                 },
                 {
+                  deprecated: true,
                   description:
-                    '\n    Indicates that the lock is not paired with a gateway.\n    ',
+                    'Indicates that the lock is not paired with a gateway.',
                   properties: {
                     created_at: {
                       description:
@@ -28316,6 +28340,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-deprecated': 'Use `hub_disconnected` instead.',
                 },
                 {
                   description: 'Indicates that device credentials are missing.',
@@ -28425,8 +28450,9 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
+                  deprecated: true,
                   description:
-                    '\n    Indicates that the Lockly lock is not connected to a Wi-Fi bridge.\n    ',
+                    'Indicates that the Lockly lock is not connected to a Wi-Fi bridge.',
                   properties: {
                     created_at: {
                       description:
@@ -28459,6 +28485,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-deprecated': 'Use `hub_disconnected` instead.',
                 },
                 {
                   description:
@@ -31031,6 +31058,7 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'locks',
                 },
                 {
+                  deprecated: true,
                   description: 'Indicates that the device is offline.',
                   properties: {
                     created_at: {
@@ -31064,6 +31092,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-deprecated': 'Use `device_disconnected` instead.',
                 },
                 {
                   description: 'Indicates that the device has been removed.',
@@ -31245,6 +31274,7 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'locks',
                 },
                 {
+                  deprecated: true,
                   description:
                     'Indicates that the lock is not connected to a bridge.',
                   properties: {
@@ -31279,11 +31309,13 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-deprecated': 'Use `hub_disconnected` instead.',
                   'x-variant-group-key': 'locks',
                 },
                 {
+                  deprecated: true,
                   description:
-                    '\n    Indicates that the lock is not paired with a gateway.\n    ',
+                    'Indicates that the lock is not paired with a gateway.',
                   properties: {
                     created_at: {
                       description:
@@ -31316,6 +31348,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-deprecated': 'Use `hub_disconnected` instead.',
                 },
                 {
                   description: 'Indicates that device credentials are missing.',
@@ -31425,8 +31458,9 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
+                  deprecated: true,
                   description:
-                    '\n    Indicates that the Lockly lock is not connected to a Wi-Fi bridge.\n    ',
+                    'Indicates that the Lockly lock is not connected to a Wi-Fi bridge.',
                   properties: {
                     created_at: {
                       description:
@@ -31459,6 +31493,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-deprecated': 'Use `hub_disconnected` instead.',
                 },
                 {
                   description:
@@ -31751,8 +31786,9 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'access_codes',
                 },
                 {
+                  deprecated: true,
                   description:
-                    '\n    Indicates that the Wyze Lock is not connected to a gateway.\n    ',
+                    'Indicates that the Wyze Lock is not connected to a gateway.',
                   properties: {
                     created_at: {
                       description:
@@ -31774,6 +31810,8 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-deprecated':
+                    'Use `hub_disconnected` device error instead.',
                 },
                 {
                   description:
@@ -57109,7 +57147,7 @@ const openapi: OpenAPISpec = {
     '/devices/simulate/connect_to_hub': {
       post: {
         description:
-          'Simulates bringing the Wi‑Fi hub (bridge) back online for a device.\nOnly applicable for sandbox workspaces and currently\nimplemented for August and TTLock locks.\nThis will clear the corresponding `hub_disconnected` or\n`ttlock_lock_not_paired_to_gateway` error on the device.',
+          'Simulates bringing the Wi‑Fi hub (bridge) back online for a device.\nOnly applicable for sandbox workspaces and currently\nimplemented for August and TTLock locks.\nThis will clear the `hub_disconnected` error on the device.',
         operationId: 'devicesSimulateConnectToHubPost',
         requestBody: {
           content: {
@@ -57215,7 +57253,7 @@ const openapi: OpenAPISpec = {
     '/devices/simulate/disconnect_from_hub': {
       post: {
         description:
-          'Simulates taking the Wi‑Fi hub (bridge) offline for a device.\nOnly applicable for sandbox workspaces and currently\nimplemented for August, TTLock, and IglooHome devices.\nThis will set the corresponding `hub_disconnected` or\n`ttlock_lock_not_paired_to_gateway` error on the device, or mark the\nIglooHome bridge offline in sandbox.',
+          'Simulates taking the Wi‑Fi hub (bridge) offline for a device.\nOnly applicable for sandbox workspaces and currently\nimplemented for August, TTLock, and IglooHome devices.\nThis will set the `hub_disconnected` error on the device, or mark the\nIglooHome bridge offline in sandbox.',
         operationId: 'devicesSimulateDisconnectFromHubPost',
         requestBody: {
           content: {
