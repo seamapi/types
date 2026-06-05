@@ -22,13 +22,28 @@ const common_access_code_error = z.object({
 const error_code_description =
   'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.'
 
+const provider_issue = common_access_code_error
+  .extend({
+    error_code: z.literal('provider_issue').describe(error_code_description),
+  })
+  .describe(
+    'Indicates a provider-specific issue that prevents the access code from being set or managed. Check the error message for details.',
+  )
+
 const smartthings_failed_to_set_access_code_error = common_access_code_error
   .extend({
     error_code: z
       .literal('smartthings_failed_to_set_access_code')
       .describe(error_code_description),
   })
-  .describe('Failed to set code on SmartThings device.')
+  .describe(
+    `
+    ---
+    deprecated: Handled by the generic \`failed_to_set_on_device\` system.
+    ---
+    Failed to set code on SmartThings device.
+    `,
+  )
 
 const smartthings_failed_to_set_after_multiple_retries =
   common_access_code_error
@@ -37,7 +52,14 @@ const smartthings_failed_to_set_after_multiple_retries =
         .literal('smartthings_failed_to_set_after_multiple_retries')
         .describe(error_code_description),
     })
-    .describe('Failed to set code after multiple retries.')
+    .describe(
+      `
+    ---
+    deprecated: Handled by the generic \`failed_to_set_on_device\` system.
+    ---
+    Failed to set code after multiple retries.
+    `,
+    )
 
 const modified_field = z.object({
   field: z
@@ -172,7 +194,12 @@ const kwikset_insufficient_permissions = common_access_code_error
       .describe(error_code_description),
   })
   .describe(
-    'Admin role required—insufficient permissions to manage PINs on this Kwikset device. Please have a Home Admin update your role in the Kwikset app, or ask them to set the PIN.',
+    `
+    ---
+    deprecated: Use \`provider_issue\` instead.
+    ---
+    Admin role required—insufficient permissions to manage PINs on this Kwikset device. Please have a Home Admin update your role in the Kwikset app, or ask them to set the PIN.
+    `,
   )
 
 const august_lock_invalid_code_length = common_access_code_error
@@ -181,7 +208,14 @@ const august_lock_invalid_code_length = common_access_code_error
       .literal('august_lock_invalid_code_length')
       .describe(error_code_description),
   })
-  .describe('Invalid code length for August lock.')
+  .describe(
+    `
+    ---
+    deprecated: Use \`provider_issue\` instead.
+    ---
+    Invalid code length for August lock.
+    `,
+  )
 
 const august_lock_temporarily_offline_error = common_access_code_error
   .extend({
@@ -189,7 +223,14 @@ const august_lock_temporarily_offline_error = common_access_code_error
       .literal('august_lock_temporarily_offline')
       .describe(error_code_description),
   })
-  .describe('August lock is temporarily offline.')
+  .describe(
+    `
+    ---
+    deprecated: Use \`provider_issue\` instead.
+    ---
+    August lock is temporarily offline.
+    `,
+  )
 
 const august_lock_missing_keypad = common_access_code_error
   .extend({
@@ -197,7 +238,24 @@ const august_lock_missing_keypad = common_access_code_error
       .literal('august_lock_missing_keypad')
       .describe(error_code_description),
   })
-  .describe('August lock is missing a keypad.')
+  .describe(
+    `
+    ---
+    deprecated: Use \`provider_issue\` instead.
+    ---
+    August lock is missing a keypad.
+    `,
+  )
+
+const access_code_inactive_error = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('access_code_inactive')
+      .describe(error_code_description),
+  })
+  .describe(
+    'Indicates that the access code is disabled or inactive on the device. The code exists but will not grant access until re-enabled.',
+  )
 
 const salto_ks_user_not_subscribed = common_access_code_error
   .extend({
@@ -205,7 +263,14 @@ const salto_ks_user_not_subscribed = common_access_code_error
       .literal('salto_ks_user_not_subscribed')
       .describe(error_code_description),
   })
-  .describe('Salto site user is not subscribed.')
+  .describe(
+    `
+    ---
+    deprecated: Use \`access_code_inactive\` instead.
+    ---
+    Salto site user is not subscribed.
+    `,
+  )
 
 const wyze_duplicate_code_name = common_access_code_error
   .extend({
@@ -244,7 +309,12 @@ const dormakaba_oracode_invalid_time_range = common_access_code_error
       .describe(error_code_description),
   })
   .describe(
-    'No Dormakaba Oracode user levels configured for the requested time range.',
+    `
+    ---
+    deprecated: Use \`provider_issue\` instead.
+    ---
+    No Dormakaba Oracode user levels configured for the requested time range.
+    `,
   )
 
 const keynest_unsupported_third_party_locker = common_access_code_error
@@ -253,7 +323,14 @@ const keynest_unsupported_third_party_locker = common_access_code_error
       .literal('keynest_unsupported_third_party_locker')
       .describe(error_code_description),
   })
-  .describe('KeyNest locker is not supported.')
+  .describe(
+    `
+    ---
+    deprecated: Use \`provider_issue\` instead.
+    ---
+    KeyNest locker is not supported.
+    `,
+  )
 
 const replaced_by_newer_access_code = common_access_code_error
   .extend({
@@ -267,6 +344,7 @@ const replaced_by_newer_access_code = common_access_code_error
 
 const access_code_error = z
   .discriminatedUnion('error_code', [
+    provider_issue,
     smartthings_failed_to_set_access_code_error,
     smartthings_failed_to_set_after_multiple_retries,
     failed_to_set_on_device,
@@ -282,6 +360,7 @@ const access_code_error = z
     august_lock_invalid_code_length,
     august_lock_missing_keypad,
     august_lock_temporarily_offline_error,
+    access_code_inactive_error,
     salto_ks_user_not_subscribed,
     wyze_duplicate_code_name,
     wyze_potential_duplicate_code,
@@ -297,6 +376,7 @@ const access_code_error = z
 export type AccessCodeError = z.infer<typeof access_code_error>
 
 const _access_code_error_map = z.object({
+  provider_issue: provider_issue.optional().nullable(),
   smartthings_failed_to_set_access_code:
     smartthings_failed_to_set_access_code_error.optional().nullable(),
   smartthings_failed_to_set_after_multiple_retries:
@@ -334,6 +414,7 @@ const _access_code_error_map = z.object({
     .optional()
     .nullable(),
   august_lock_missing_keypad: august_lock_missing_keypad.optional().nullable(),
+  access_code_inactive: access_code_inactive_error.optional().nullable(),
   salto_ks_user_not_subscribed: salto_ks_user_not_subscribed
     .optional()
     .nullable(),
@@ -423,13 +504,30 @@ const schlage_detected_duplicate = common_access_code_warning
     `,
   )
 
+const provider_issue_warning = common_access_code_warning
+  .extend({
+    warning_code: z
+      .literal('provider_issue')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'Indicates a provider-specific issue that may affect the access code. Check the warning message for details.',
+  )
+
 const schlage_creation_outage = common_access_code_warning
   .extend({
     warning_code: z
       .literal('schlage_creation_outage')
       .describe(warning_code_description),
   })
-  .describe('Received an error when attempting to create this code.')
+  .describe(
+    `
+    ---
+    deprecated: Use \`provider_issue\` instead.
+    ---
+    Received an error when attempting to create this code.
+    `,
+  )
 
 const schlage_access_code_ambiguous_timezone_dst_risk =
   common_access_code_warning
@@ -535,6 +633,7 @@ const being_deleted = common_access_code_warning
 
 const access_code_warning = z
   .discriminatedUnion('warning_code', [
+    provider_issue_warning,
     smartthings_failed_to_set_access_code_warning,
     schlage_detected_duplicate,
     schlage_creation_outage,
@@ -559,6 +658,7 @@ const access_code_warning = z
 export type AccessCodeWarning = z.infer<typeof access_code_warning>
 
 const _access_code_warning_map = z.object({
+  provider_issue: provider_issue_warning.optional().nullable(),
   smartthings_failed_to_set_access_code:
     smartthings_failed_to_set_access_code_warning.optional().nullable(),
   schlage_detected_duplicate: schlage_detected_duplicate.optional().nullable(),
