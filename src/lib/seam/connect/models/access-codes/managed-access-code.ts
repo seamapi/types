@@ -39,11 +39,33 @@ const smartthings_failed_to_set_after_multiple_retries =
     })
     .describe('Failed to set code after multiple retries.')
 
+const modified_field = z.object({
+  field: z
+    .string()
+    .describe(
+      'The name of the field that was changed (e.g. `code`, `starts_at`, `ends_at`).',
+    ),
+  from: z.string().nullable().describe('The previous value of the field.'),
+  to: z.string().nullable().describe('The new value of the field.'),
+})
+
 const code_modified_external_to_seam_error = common_access_code_error
   .extend({
     error_code: z
       .literal('code_modified_external_to_seam')
       .describe(error_code_description),
+    change_type: z
+      .enum(['modified', 'removed'])
+      .optional()
+      .describe(
+        "Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device.",
+      ),
+    modified_fields: z
+      .array(modified_field)
+      .optional()
+      .describe(
+        'List of fields that were changed externally, with their previous and new values.',
+      ),
   })
   .describe(
     'Code was modified or removed externally after Seam successfully set it on the device.',
@@ -369,6 +391,18 @@ const code_modified_external_to_seam_warning = common_access_code_warning
     warning_code: z
       .literal('code_modified_external_to_seam')
       .describe(warning_code_description),
+    change_type: z
+      .enum(['modified', 'removed'])
+      .optional()
+      .describe(
+        "Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device.",
+      ),
+    modified_fields: z
+      .array(modified_field)
+      .optional()
+      .describe(
+        'List of fields that were changed externally, with their previous and new values.',
+      ),
   })
   .describe(
     'Code was modified or removed externally after Seam successfully set it on the device.',

@@ -432,6 +432,12 @@ const openapi: OpenAPISpec = {
                   description:
                     'Code was modified or removed externally after Seam successfully set it on the device.',
                   properties: {
+                    change_type: {
+                      description:
+                        "Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device.",
+                      enum: ['modified', 'removed'],
+                      type: 'string',
+                    },
                     created_at: {
                       description:
                         'Date and time at which Seam created the error.',
@@ -454,6 +460,32 @@ const openapi: OpenAPISpec = {
                       description:
                         'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
                       type: 'string',
+                    },
+                    modified_fields: {
+                      description:
+                        'List of fields that were changed externally, with their previous and new values.',
+                      items: {
+                        properties: {
+                          field: {
+                            description:
+                              'The name of the field that was changed (e.g. `code`, `starts_at`, `ends_at`).',
+                            type: 'string',
+                          },
+                          from: {
+                            description: 'The previous value of the field.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          to: {
+                            description: 'The new value of the field.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                        },
+                        required: ['field', 'from', 'to'],
+                        type: 'object',
+                      },
+                      type: 'array',
                     },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
@@ -1792,6 +1824,12 @@ const openapi: OpenAPISpec = {
                   description:
                     'Code was modified or removed externally after Seam successfully set it on the device.',
                   properties: {
+                    change_type: {
+                      description:
+                        "Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device.",
+                      enum: ['modified', 'removed'],
+                      type: 'string',
+                    },
                     created_at: {
                       description:
                         'Date and time at which Seam created the warning.',
@@ -1802,6 +1840,32 @@ const openapi: OpenAPISpec = {
                       description:
                         'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
                       type: 'string',
+                    },
+                    modified_fields: {
+                      description:
+                        'List of fields that were changed externally, with their previous and new values.',
+                      items: {
+                        properties: {
+                          field: {
+                            description:
+                              'The name of the field that was changed (e.g. `code`, `starts_at`, `ends_at`).',
+                            type: 'string',
+                          },
+                          from: {
+                            description: 'The previous value of the field.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          to: {
+                            description: 'The new value of the field.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                        },
+                        required: ['field', 'from', 'to'],
+                        type: 'object',
+                      },
+                      type: 'array',
                     },
                     warning_code: {
                       description:
@@ -27741,6 +27805,12 @@ const openapi: OpenAPISpec = {
                   description:
                     'Code was modified or removed externally after Seam successfully set it on the device.',
                   properties: {
+                    change_type: {
+                      description:
+                        "Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device.",
+                      enum: ['modified', 'removed'],
+                      type: 'string',
+                    },
                     created_at: {
                       description:
                         'Date and time at which Seam created the error.',
@@ -27763,6 +27833,32 @@ const openapi: OpenAPISpec = {
                       description:
                         'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
                       type: 'string',
+                    },
+                    modified_fields: {
+                      description:
+                        'List of fields that were changed externally, with their previous and new values.',
+                      items: {
+                        properties: {
+                          field: {
+                            description:
+                              'The name of the field that was changed (e.g. `code`, `starts_at`, `ends_at`).',
+                            type: 'string',
+                          },
+                          from: {
+                            description: 'The previous value of the field.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          to: {
+                            description: 'The new value of the field.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                        },
+                        required: ['field', 'from', 'to'],
+                        type: 'object',
+                      },
+                      type: 'array',
                     },
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
@@ -28790,6 +28886,12 @@ const openapi: OpenAPISpec = {
                   description:
                     'Code was modified or removed externally after Seam successfully set it on the device.',
                   properties: {
+                    change_type: {
+                      description:
+                        "Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device.",
+                      enum: ['modified', 'removed'],
+                      type: 'string',
+                    },
                     created_at: {
                       description:
                         'Date and time at which Seam created the warning.',
@@ -28800,6 +28902,32 @@ const openapi: OpenAPISpec = {
                       description:
                         'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
                       type: 'string',
+                    },
+                    modified_fields: {
+                      description:
+                        'List of fields that were changed externally, with their previous and new values.',
+                      items: {
+                        properties: {
+                          field: {
+                            description:
+                              'The name of the field that was changed (e.g. `code`, `starts_at`, `ends_at`).',
+                            type: 'string',
+                          },
+                          from: {
+                            description: 'The previous value of the field.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          to: {
+                            description: 'The new value of the field.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                        },
+                        required: ['field', 'from', 'to'],
+                        type: 'object',
+                      },
+                      type: 'array',
                     },
                     warning_code: {
                       description:
