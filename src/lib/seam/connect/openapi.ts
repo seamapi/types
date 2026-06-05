@@ -331,6 +331,38 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
+                    'Indicates that the provider cannot confirm whether the access code was set or removed on the device.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['access_code_state_unconfirmed'],
+                      type: 'string',
+                    },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  deprecated: true,
+                  description:
                     'Unable to confirm that the access code is set on Kwikset device.',
                   properties: {
                     created_at: {
@@ -359,8 +391,11 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-deprecated':
+                    'Use `access_code_state_unconfirmed` instead.',
                 },
                 {
+                  deprecated: true,
                   description:
                     'Unable to confirm the deletion of the access code on Kwikset device.',
                   properties: {
@@ -390,6 +425,8 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-deprecated':
+                    'Use `access_code_state_unconfirmed` instead.',
                 },
                 {
                   description:
@@ -1949,6 +1986,32 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
+                    'Indicates that the access code is disabled or inactive on the device. The code exists but will not grant access until re-enabled.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['access_code_inactive'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  deprecated: true,
+                  description:
                     'Access code is disabled on Ultraloq device. Re-enable through the Ultraloq mobile app.',
                   properties: {
                     created_at: {
@@ -1971,6 +2034,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'warning_code'],
                   type: 'object',
+                  'x-deprecated': 'Use `access_code_inactive` instead.',
                 },
                 {
                   description:
@@ -27576,6 +27640,38 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
+                    'Indicates that the provider cannot confirm whether the access code was set or removed on the device.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['access_code_state_unconfirmed'],
+                      type: 'string',
+                    },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  deprecated: true,
+                  description:
                     'Unable to confirm that the access code is set on Kwikset device.',
                   properties: {
                     created_at: {
@@ -27604,8 +27700,11 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-deprecated':
+                    'Use `access_code_state_unconfirmed` instead.',
                 },
                 {
+                  deprecated: true,
                   description:
                     'Unable to confirm the deletion of the access code on Kwikset device.',
                   properties: {
@@ -27635,6 +27734,8 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-deprecated':
+                    'Use `access_code_state_unconfirmed` instead.',
                 },
                 {
                   description:
@@ -28883,6 +28984,32 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
+                    'Indicates that the access code is disabled or inactive on the device. The code exists but will not grant access until re-enabled.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['access_code_inactive'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  deprecated: true,
+                  description:
                     'Access code is disabled on Ultraloq device. Re-enable through the Ultraloq mobile app.',
                   properties: {
                     created_at: {
@@ -28905,6 +29032,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'warning_code'],
                   type: 'object',
+                  'x-deprecated': 'Use `access_code_inactive` instead.',
                 },
                 {
                   description:
