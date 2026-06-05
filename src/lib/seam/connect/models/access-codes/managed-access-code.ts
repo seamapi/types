@@ -103,13 +103,30 @@ const no_space_for_access_code_on_device = common_access_code_error
   })
   .describe('No space for access code on device.')
 
+const access_code_state_unconfirmed = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('access_code_state_unconfirmed')
+      .describe(error_code_description),
+  })
+  .describe(
+    'Indicates that the provider cannot confirm whether the access code was set or removed on the device.',
+  )
+
 const kwikset_unable_to_confirm_code = common_access_code_error
   .extend({
     error_code: z
       .literal('kwikset_unable_to_confirm_code')
       .describe(error_code_description),
   })
-  .describe('Unable to confirm that the access code is set on Kwikset device.')
+  .describe(
+    `
+    ---
+    deprecated: Use \`access_code_state_unconfirmed\` instead.
+    ---
+    Unable to confirm that the access code is set on Kwikset device.
+    `,
+  )
 
 const kwikset_unable_to_confirm_deletion = common_access_code_error
   .extend({
@@ -118,7 +135,12 @@ const kwikset_unable_to_confirm_deletion = common_access_code_error
       .describe(error_code_description),
   })
   .describe(
-    'Unable to confirm the deletion of the access code on Kwikset device.',
+    `
+    ---
+    deprecated: Use \`access_code_state_unconfirmed\` instead.
+    ---
+    Unable to confirm the deletion of the access code on Kwikset device.
+    `,
   )
 
 const kwikset_insufficient_permissions = common_access_code_error
@@ -230,6 +252,7 @@ const access_code_error = z
     duplicate_code_on_device,
     duplicate_code_attempt_prevented,
     no_space_for_access_code_on_device,
+    access_code_state_unconfirmed,
     kwikset_unable_to_confirm_code,
 
     kwikset_unable_to_confirm_deletion,
@@ -265,6 +288,9 @@ const _access_code_error_map = z.object({
     .nullable(),
   duplicate_code_on_device: duplicate_code_on_device.optional().nullable(),
   duplicate_code_attempt_prevented: duplicate_code_attempt_prevented
+    .optional()
+    .nullable(),
+  access_code_state_unconfirmed: access_code_state_unconfirmed
     .optional()
     .nullable(),
   kwikset_unable_to_confirm_code: kwikset_unable_to_confirm_code
@@ -432,6 +458,16 @@ const kwikset_unable_to_confirm_code_warning = common_access_code_warning
   })
   .describe('Unable to confirm that the access code is set on Kwikset device.')
 
+const access_code_inactive = common_access_code_warning
+  .extend({
+    warning_code: z
+      .literal('access_code_inactive')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'Indicates that the access code is disabled or inactive on the device. The code exists but will not grant access until re-enabled.',
+  )
+
 const ultraloq_access_code_disabled = common_access_code_warning
   .extend({
     warning_code: z
@@ -439,7 +475,12 @@ const ultraloq_access_code_disabled = common_access_code_warning
       .describe(warning_code_description),
   })
   .describe(
-    'Access code is disabled on Ultraloq device. Re-enable through the Ultraloq mobile app.',
+    `
+    ---
+    deprecated: Use \`access_code_inactive\` instead.
+    ---
+    Access code is disabled on Ultraloq device. Re-enable through the Ultraloq mobile app.
+    `,
   )
 
 const using_backup_access_code = common_access_code_warning
@@ -472,6 +513,7 @@ const access_code_warning = z
     igloo_algopin_must_be_used_within_24_hours,
     management_transferred,
     kwikset_unable_to_confirm_code_warning,
+    access_code_inactive,
     ultraloq_access_code_disabled,
     using_backup_access_code,
     being_deleted,
@@ -508,6 +550,7 @@ const _access_code_warning_map = z.object({
   kwikset_unable_to_confirm_code_warning: kwikset_unable_to_confirm_code_warning
     .optional()
     .nullable(),
+  access_code_inactive: access_code_inactive.optional().nullable(),
   ultraloq_access_code_disabled: ultraloq_access_code_disabled
     .optional()
     .nullable(),
