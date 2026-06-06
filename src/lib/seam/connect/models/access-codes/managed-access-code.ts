@@ -187,19 +187,14 @@ const kwikset_unable_to_confirm_deletion = common_access_code_error
     `,
   )
 
-const kwikset_insufficient_permissions = common_access_code_error
+const insufficient_permissions = common_access_code_error
   .extend({
     error_code: z
-      .literal('kwikset_insufficient_permissions')
+      .literal('insufficient_permissions')
       .describe(error_code_description),
   })
   .describe(
-    `
-    ---
-    deprecated: Use \`provider_issue\` instead.
-    ---
-    Admin role required—insufficient permissions to manage PINs on this Kwikset device. Please have a Home Admin update your role in the Kwikset app, or ask them to set the PIN.
-    `,
+    'Admin role required—insufficient permissions to manage PINs on this device. Please have an admin update your role, or ask them to set the PIN.',
   )
 
 const august_lock_invalid_code_length = common_access_code_error
@@ -365,7 +360,7 @@ const access_code_error = z
     wyze_duplicate_code_name,
     wyze_potential_duplicate_code,
     dormakaba_oracode_invalid_time_range,
-    kwikset_insufficient_permissions,
+    insufficient_permissions,
     keynest_unsupported_third_party_locker,
     replaced_by_newer_access_code,
   ])
@@ -401,9 +396,7 @@ const _access_code_error_map = z.object({
   kwikset_unable_to_confirm_deletion: kwikset_unable_to_confirm_deletion
     .optional()
     .nullable(),
-  kwikset_insufficient_permissions: kwikset_insufficient_permissions
-    .optional()
-    .nullable(),
+  insufficient_permissions: insufficient_permissions.optional().nullable(),
   code_modified_external_to_seam_error: code_modified_external_to_seam_error
     .optional()
     .nullable(),

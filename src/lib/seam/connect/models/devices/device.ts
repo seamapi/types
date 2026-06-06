@@ -524,6 +524,17 @@ const max_access_codes_reached = common_device_warning.extend({
     Indicates that the device has reached its maximum number of active access codes. Delete existing codes before creating new ones.
     `)
 
+const insufficient_permissions = common_device_warning.extend({
+  warning_code: z
+    .literal('insufficient_permissions')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: locks
+    ---
+    Indicates that the connected Kwikset account has member-level access to this lock's home. Admin or owner access is required to manage access codes and control the lock remotely.
+    `)
+
 const device_warning = z.discriminatedUnion('warning_code', [
   partial_backup_access_code_pool,
   many_active_backup_codes,
@@ -549,6 +560,7 @@ const device_warning = z.discriminatedUnion('warning_code', [
   accessory_keypad_setup_required,
   unreliable_online_status,
   max_access_codes_reached,
+  insufficient_permissions,
 ])
 
 export type DeviceWarning = z.infer<typeof device_warning>
@@ -606,6 +618,7 @@ export const device_warning_map = z.object({
     .nullable(),
   unreliable_online_status: unreliable_online_status.optional().nullable(),
   max_access_codes_reached: max_access_codes_reached.optional().nullable(),
+  insufficient_permissions: insufficient_permissions.optional().nullable(),
 })
 
 export type DeviceWarningMap = z.infer<typeof device_warning_map>
