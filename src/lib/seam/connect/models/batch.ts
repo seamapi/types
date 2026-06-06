@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import { z, type ZodTypeAny } from 'zod'
 
 import { access_code, unmanaged_access_code } from './access-codes/index.js'
 import { access_grant } from './access-grants/access-grant.js'
@@ -32,7 +32,43 @@ import {
 import { user_identity } from './user-identities/index.js'
 import { workspace } from './workspaces/index.js'
 
-export const batch = z.object({
+type BatchKey =
+  | 'user_identities'
+  | 'workspaces'
+  | 'spaces'
+  | 'devices'
+  | 'connected_accounts'
+  | 'acs_entrances'
+  | 'acs_systems'
+  | 'acs_users'
+  | 'acs_access_groups'
+  | 'acs_encoders'
+  | 'acs_credentials'
+  | 'unmanaged_acs_credentials'
+  | 'action_attempts'
+  | 'client_sessions'
+  | 'unmanaged_acs_users'
+  | 'unmanaged_acs_access_groups'
+  | 'unmanaged_devices'
+  | 'connect_webviews'
+  | 'access_methods'
+  | 'access_grants'
+  | 'events'
+  | 'instant_keys'
+  | 'access_codes'
+  | 'unmanaged_access_codes'
+  | 'thermostat_daily_programs'
+  | 'thermostat_schedules'
+  | 'noise_thresholds'
+  | 'customization_profiles'
+
+// Explicit annotation prevents tsgo TS7056 — the device/access-code
+// discriminated unions push the inferred literal past the serialization cap.
+type BatchShape = z.ZodObject<
+  Record<BatchKey, z.ZodOptional<z.ZodArray<ZodTypeAny>>>
+>
+
+export const batch: BatchShape = z.object({
   user_identities: user_identity.array().optional(),
   workspaces: workspace.array().optional(),
   spaces: space.array().optional(),

@@ -785,9 +785,8 @@ const openapi: OpenAPISpec = {
                   'x-deprecated': 'Use `provider_issue` instead.',
                 },
                 {
-                  deprecated: true,
                   description:
-                    'Admin role required—insufficient permissions to manage PINs on this Kwikset device. Please have a Home Admin update your role in the Kwikset app, or ask them to set the PIN.',
+                    'Admin role required—insufficient permissions to manage PINs on this device. Please have an admin update your role, or ask them to set the PIN.',
                   properties: {
                     created_at: {
                       description:
@@ -798,7 +797,7 @@ const openapi: OpenAPISpec = {
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['kwikset_insufficient_permissions'],
+                      enum: ['insufficient_permissions'],
                       type: 'string',
                     },
                     is_access_code_error: {
@@ -815,7 +814,6 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
-                  'x-deprecated': 'Use `provider_issue` instead.',
                 },
                 {
                   deprecated: true,
@@ -16654,6 +16652,32 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                   'x-variant-group-key': 'access_codes',
                 },
+                {
+                  description:
+                    "Indicates that the connected Kwikset account has member-level access to this lock's home. Admin or owner access is required to manage access codes and control the lock remotely.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['insufficient_permissions'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
               ],
             },
             type: 'array',
@@ -28331,9 +28355,8 @@ const openapi: OpenAPISpec = {
                   'x-deprecated': 'Use `provider_issue` instead.',
                 },
                 {
-                  deprecated: true,
                   description:
-                    'Admin role required—insufficient permissions to manage PINs on this Kwikset device. Please have a Home Admin update your role in the Kwikset app, or ask them to set the PIN.',
+                    'Admin role required—insufficient permissions to manage PINs on this device. Please have an admin update your role, or ask them to set the PIN.',
                   properties: {
                     created_at: {
                       description:
@@ -28344,7 +28367,7 @@ const openapi: OpenAPISpec = {
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['kwikset_insufficient_permissions'],
+                      enum: ['insufficient_permissions'],
                       type: 'string',
                     },
                     is_access_code_error: {
@@ -28361,7 +28384,6 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
-                  'x-deprecated': 'Use `provider_issue` instead.',
                 },
                 {
                   deprecated: true,
@@ -32917,6 +32939,32 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                   'x-variant-group-key': 'access_codes',
+                },
+                {
+                  description:
+                    "Indicates that the connected Kwikset account has member-level access to this lock's home. Admin or owner access is required to manage access codes and control the lock remotely.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['insufficient_permissions'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
               ],
             },
