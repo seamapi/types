@@ -59,11 +59,22 @@ const entrance_setup_required = common_acs_entrance_warning
     'Indicates that this entrance requires additional configuration in the access control system before Seam can fully manage it.',
   )
 
+const salto_ks_privacy_mode = common_acs_entrance_warning
+  .extend({
+    warning_code: z
+      .literal('salto_ks_privacy_mode')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'Indicates that this entrance is in privacy mode. When privacy mode is enabled, access codes, mobile keys, and remote unlocks will not work unless the user has admin access.',
+  )
+
 const acs_entrance_warning = z
   .discriminatedUnion('warning_code', [
     salto_ks_entrance_access_code_support_removed,
     entrance_shares_zone,
     entrance_setup_required,
+    salto_ks_privacy_mode,
   ])
   .describe(
     'Warning associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
@@ -74,6 +85,7 @@ const _acs_entrance_warning_map = z.object({
     salto_ks_entrance_access_code_support_removed.optional().nullable(),
   entrance_shares_zone: entrance_shares_zone.optional().nullable(),
   entrance_setup_required: entrance_setup_required.optional().nullable(),
+  salto_ks_privacy_mode: salto_ks_privacy_mode.optional().nullable(),
 })
 
 export type AcsEntranceWarningMap = z.infer<typeof _acs_entrance_warning_map>
@@ -217,6 +229,12 @@ export const acs_entrance = z
       .optional()
       .describe(
         'Avigilon Alta-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+      ),
+    is_locked: z
+      .boolean()
+      .optional()
+      .describe(
+        'Indicates whether the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) is currently locked.',
       ),
   })
   .merge(acs_entrance_capability_flags).describe(`

@@ -4650,6 +4650,11 @@ const openapi: OpenAPISpec = {
             },
             type: 'object',
           },
+          is_locked: {
+            description:
+              'Indicates whether the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) is currently locked.',
+            type: 'boolean',
+          },
           latch_metadata: {
             description:
               'Latch-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
@@ -4896,6 +4901,31 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['entrance_setup_required'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that this entrance is in privacy mode. When privacy mode is enabled, access codes, mobile keys, and remote unlocks will not work unless the user has admin access.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_ks_privacy_mode'],
                       type: 'string',
                     },
                   },
@@ -26178,6 +26208,11 @@ const openapi: OpenAPISpec = {
                               },
                               type: 'object',
                             },
+                            is_locked: {
+                              description:
+                                'Indicates whether the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) is currently locked.',
+                              type: 'boolean',
+                            },
                             latch_metadata: {
                               description:
                                 'Latch-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
@@ -26444,6 +26479,35 @@ const openapi: OpenAPISpec = {
                                         description:
                                           'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                                         enum: ['entrance_setup_required'],
+                                        type: 'string',
+                                      },
+                                    },
+                                    required: [
+                                      'created_at',
+                                      'message',
+                                      'warning_code',
+                                    ],
+                                    type: 'object',
+                                  },
+                                  {
+                                    description:
+                                      'Indicates that this entrance is in privacy mode. When privacy mode is enabled, access codes, mobile keys, and remote unlocks will not work unless the user has admin access.',
+                                    properties: {
+                                      created_at: {
+                                        description:
+                                          'Date and time at which Seam created the warning.',
+                                        format: 'date-time',
+                                        type: 'string',
+                                      },
+                                      message: {
+                                        description:
+                                          'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                        type: 'string',
+                                      },
+                                      warning_code: {
+                                        description:
+                                          'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                        enum: ['salto_ks_privacy_mode'],
                                         type: 'string',
                                       },
                                     },
