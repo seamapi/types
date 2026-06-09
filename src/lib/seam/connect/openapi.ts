@@ -41511,6 +41511,70 @@ const openapi: OpenAPISpec = {
         'x-title': 'List Access Methods',
       },
     },
+    '/access_methods/unlock_door': {
+      post: {
+        description:
+          'Remotely unlocks a specified [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) using the cloud key credential associated with an access method. Returns an action attempt that tracks the progress of the unlock operation.',
+        operationId: 'accessMethodsUnlockDoorPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_method_id: {
+                    description:
+                      'ID of the cloud_key `access_method` to use for the unlock operation.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_entrance_id: {
+                    description: 'ID of the entrance to unlock.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['access_method_id', 'acs_entrance_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_methods/unlock_door',
+        tags: [],
+        'x-action-attempt-type': 'UNLOCK_DOOR',
+        'x-fern-sdk-group-name': ['access_methods'],
+        'x-fern-sdk-method-name': 'unlock_door',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
+        'x-title': 'Unlock a Door with an Access Method',
+      },
+    },
     '/access_methods/unmanaged/get': {
       get: {
         description:
