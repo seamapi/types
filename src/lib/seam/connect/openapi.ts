@@ -40694,6 +40694,69 @@ const openapi: OpenAPISpec = {
         'x-title': 'Update an Access Grant',
       },
     },
+    '/access_methods/assign_card': {
+      post: {
+        description:
+          'Assigns an existing card credential to a card-mode access method, identified by `card_number`.',
+        operationId: 'accessMethodsAssignCardPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_method_id: {
+                    description:
+                      'ID of the card-mode `access_method` to assign the card to.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  card_number: {
+                    description:
+                      'Card number of the card credential to assign.',
+                    type: 'string',
+                  },
+                },
+                required: ['access_method_id', 'card_number'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_method: {
+                      $ref: '#/components/schemas/access_method',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_method', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_methods/assign_card',
+        tags: [],
+        'x-fern-sdk-group-name': ['access_methods'],
+        'x-fern-sdk-method-name': 'assign_card',
+        'x-fern-sdk-return-value': 'access_method',
+        'x-response-key': 'access_method',
+        'x-title': 'Assign a Card to an Access Method',
+      },
+    },
     '/access_methods/delete': {
       delete: {
         description: 'Deletes an access method.',
