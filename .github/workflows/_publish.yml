@@ -44,6 +44,7 @@ jobs:
         id: meta
         run: echo "tgz=$(ls *.tgz | head -n1)" >> $GITHUB_OUTPUT
       - name: Publish
+        id: publish
         uses: JS-DevTools/npm-publish@v4
         with:
           access: public
