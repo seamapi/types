@@ -33378,7 +33378,7 @@ const openapi: OpenAPISpec = {
     '/access_codes/create': {
       post: {
         description:
-          'Creates a new [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+          'Creates a new [access code](https://docs.seam.co/latest/low-level-apis/access-codes). For granting access, we recommend [Access Grants](https://docs.seam.co/latest/use-cases/granting-access) instead: they work across both standalone smart locks and access control systems and manage the underlying codes for you. Use this low-level endpoint only when you need direct control over a code on a single device, such as setting a custom PIN value.',
         operationId: 'accessCodesCreatePost',
         requestBody: {
           content: {
@@ -36400,7 +36400,8 @@ const openapi: OpenAPISpec = {
     },
     '/access_grants/create': {
       post: {
-        description: 'Creates a new Access Grant.',
+        description:
+          'Creates a new [Access Grant](https://docs.seam.co/latest/use-cases/granting-access/access-grants). Access Grants are the default and recommended way to grant a user access to any physical space, irrespective of the locking hardware. They work with both standalone smart locks (using `device_ids`) and access control systems (using `acs_entrance_ids` or `space_ids`), and can issue PIN codes, key cards, and mobile keys through a single request.',
         operationId: 'accessGrantsCreatePost',
         requestBody: {
           content: {
@@ -44727,7 +44728,7 @@ const openapi: OpenAPISpec = {
     '/acs/credentials/create': {
       post: {
         description:
-          'Creates a new [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+          'Creates a new [credential](https://docs.seam.co/latest/low-level-apis/managing-credentials) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). For granting access, we recommend [Access Grants](https://docs.seam.co/latest/use-cases/granting-access) instead: they create and manage the underlying credentials for you, across access systems and standalone smart locks alike. Use this low-level endpoint only when you need direct control over an individual ACS credential.',
         operationId: 'acsCredentialsCreatePost',
         requestBody: {
           content: {
