@@ -257,6 +257,18 @@ export const access_method = z.object({
     .describe(
       'Indicates whether the access method is ready to be encoded. This is true when the credential has been created and the card has not yet been issued.',
     ),
+  is_assignment_required: z
+    .boolean()
+    .optional()
+    .describe(
+      'Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment.',
+    ),
+  is_ready_for_assignment: z
+    .boolean()
+    .optional()
+    .describe(
+      'Indicates whether the access method is ready for card assignment. This is true when the access method is in card mode, has not yet been issued, and the system supports credential assignment.',
+    ),
   code: z
     .string()
     .nullable()
