@@ -2969,6 +2969,11 @@ const openapi: OpenAPISpec = {
             format: 'uri',
             type: 'string',
           },
+          is_assignment_required: {
+            description:
+              'Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment.',
+            type: 'boolean',
+          },
           is_encoding_required: {
             description:
               'Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.',
@@ -2976,6 +2981,11 @@ const openapi: OpenAPISpec = {
           },
           is_issued: {
             description: 'Indicates whether the access method has been issued.',
+            type: 'boolean',
+          },
+          is_ready_for_assignment: {
+            description:
+              'Indicates whether the access method is ready for card assignment. This is true when the access method is in card mode, has not yet been issued, and the system supports credential assignment.',
             type: 'boolean',
           },
           is_ready_for_encoding: {
@@ -41623,6 +41633,11 @@ const openapi: OpenAPISpec = {
                           description: 'Display name of the access method.',
                           type: 'string',
                         },
+                        is_assignment_required: {
+                          description:
+                            'Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment.',
+                          type: 'boolean',
+                        },
                         is_encoding_required: {
                           description:
                             'Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.',
@@ -41631,6 +41646,11 @@ const openapi: OpenAPISpec = {
                         is_issued: {
                           description:
                             'Indicates whether the access method has been issued.',
+                          type: 'boolean',
+                        },
+                        is_ready_for_assignment: {
+                          description:
+                            'Indicates whether the access method is ready for card assignment. This is true when the access method is in card mode, has not yet been issued, and the system supports credential assignment.',
                           type: 'boolean',
                         },
                         is_ready_for_encoding: {
@@ -42067,6 +42087,11 @@ const openapi: OpenAPISpec = {
                           description: 'Display name of the access method.',
                           type: 'string',
                         },
+                        is_assignment_required: {
+                          description:
+                            'Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment.',
+                          type: 'boolean',
+                        },
                         is_encoding_required: {
                           description:
                             'Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.',
@@ -42075,6 +42100,11 @@ const openapi: OpenAPISpec = {
                         is_issued: {
                           description:
                             'Indicates whether the access method has been issued.',
+                          type: 'boolean',
+                        },
+                        is_ready_for_assignment: {
+                          description:
+                            'Indicates whether the access method is ready for card assignment. This is true when the access method is in card mode, has not yet been issued, and the system supports credential assignment.',
                           type: 'boolean',
                         },
                         is_ready_for_encoding: {
@@ -42543,6 +42573,11 @@ const openapi: OpenAPISpec = {
                             description: 'Display name of the access method.',
                             type: 'string',
                           },
+                          is_assignment_required: {
+                            description:
+                              'Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment.',
+                            type: 'boolean',
+                          },
                           is_encoding_required: {
                             description:
                               'Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.',
@@ -42551,6 +42586,11 @@ const openapi: OpenAPISpec = {
                           is_issued: {
                             description:
                               'Indicates whether the access method has been issued.',
+                            type: 'boolean',
+                          },
+                          is_ready_for_assignment: {
+                            description:
+                              'Indicates whether the access method is ready for card assignment. This is true when the access method is in card mode, has not yet been issued, and the system supports credential assignment.',
                             type: 'boolean',
                           },
                           is_ready_for_encoding: {
@@ -43011,6 +43051,11 @@ const openapi: OpenAPISpec = {
                             description: 'Display name of the access method.',
                             type: 'string',
                           },
+                          is_assignment_required: {
+                            description:
+                              'Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment.',
+                            type: 'boolean',
+                          },
                           is_encoding_required: {
                             description:
                               'Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.',
@@ -43019,6 +43064,11 @@ const openapi: OpenAPISpec = {
                           is_issued: {
                             description:
                               'Indicates whether the access method has been issued.',
+                            type: 'boolean',
+                          },
+                          is_ready_for_assignment: {
+                            description:
+                              'Indicates whether the access method is ready for card assignment. This is true when the access method is in card mode, has not yet been issued, and the system supports credential assignment.',
                             type: 'boolean',
                           },
                           is_ready_for_encoding: {
