@@ -14,7 +14,7 @@ const device_event = common_event.extend({
     .string()
     .uuid()
     .describe(
-      'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
+      'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
     ),
   customer_key: z
     .string()
@@ -78,7 +78,7 @@ export const device_connected_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  The status of a [device](https://docs.seam.co/latest/core-concepts/devices) changed from offline to online. That is, the \`device.properties.online\` property changed from \`false\` to \`true\`. Note that some devices operate entirely in offline mode, so Seam never emits a \`device.connected\` event for these devices.
+  The status of a [device](https://docs.seam.co/core-concepts/devices) changed from offline to online. That is, the \`device.properties.online\` property changed from \`false\` to \`true\`. Note that some devices operate entirely in offline mode, so Seam never emits a \`device.connected\` event for these devices.
 `)
 
 export type DeviceConnectedEvent = z.infer<typeof device_connected_event>
@@ -89,7 +89,7 @@ export const device_added_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A [device](https://docs.seam.co/latest/core-concepts/devices) was added to Seam or was re-added to Seam after having been removed.
+  A [device](https://docs.seam.co/core-concepts/devices) was added to Seam or was re-added to Seam after having been removed.
 `)
 
 export type DeviceAddedEvent = z.infer<typeof device_added_event>
@@ -100,7 +100,7 @@ export const device_converted_to_unmanaged_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A managed device was successfully converted to an [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).
+  A managed device was successfully converted to an [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices).
 `)
 
 export type DeviceConvertedToUnmanagedEvent = z.infer<
@@ -113,7 +113,7 @@ export const unmanaged_device_converted_to_managed_event = device_event.extend({
   ---
   route_path: /devices/unmanaged
   ---
-  An [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices) was successfully converted to a managed device.
+  An [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices) was successfully converted to a managed device.
 `)
 
 export type UnmanagedDeviceConvertedToManagedEvent = z.infer<
@@ -126,7 +126,7 @@ export const unmanaged_device_connected_event = device_event.extend({
   ---
   route_path: /devices/unmanaged
   ---
-  The status of an [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices) changed from offline to online. That is, the \`device.properties.online\` property changed from \`false\` to \`true\`.
+  The status of an [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices) changed from offline to online. That is, the \`device.properties.online\` property changed from \`false\` to \`true\`.
 `)
 
 export type UnmanagedDeviceConnectedEvent = z.infer<
@@ -142,7 +142,7 @@ export const device_disconnected_event = device_event
   ---
   route_path: /devices
   ---
-  The status of a [device](https://docs.seam.co/latest/core-concepts/devices) changed from online to offline. That is, the \`device.properties.online\` property changed from \`true\` to \`false\`.
+  The status of a [device](https://docs.seam.co/core-concepts/devices) changed from online to offline. That is, the \`device.properties.online\` property changed from \`true\` to \`false\`.
 `)
 
 export type DeviceDisconnectedEvent = z.infer<typeof device_disconnected_event>
@@ -156,7 +156,7 @@ export const unmanaged_device_disconnected_event = device_event
   ---
   route_path: /devices/unmanaged
   ---
-  The status of an [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices) changed from online to offline. That is, the \`device.properties.online\` property changed from \`true\` to \`false\`.
+  The status of an [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices) changed from online to offline. That is, the \`device.properties.online\` property changed from \`true\` to \`false\`.
 `)
 
 export type UnmanagedDeviceDisconnectedEvent = z.infer<
@@ -169,7 +169,7 @@ export const device_tampered_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A [device](https://docs.seam.co/latest/core-concepts/devices) detected that it was tampered with, for example, opened or moved.
+  A [device](https://docs.seam.co/core-concepts/devices) detected that it was tampered with, for example, opened or moved.
 `)
 
 export type DeviceTamperedEvent = z.infer<typeof device_tampered_event>
@@ -181,7 +181,7 @@ export const device_low_battery_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A [device](https://docs.seam.co/latest/core-concepts/devices) battery level dropped below the low threshold.
+  A [device](https://docs.seam.co/core-concepts/devices) battery level dropped below the low threshold.
 `)
 
 export type DeviceLowBatteryEvent = z.infer<typeof device_low_battery_event>
@@ -194,7 +194,7 @@ export const device_battery_status_changed_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A [device](https://docs.seam.co/latest/core-concepts/devices) battery status changed since the last \`battery_status_changed\` event.
+  A [device](https://docs.seam.co/core-concepts/devices) battery status changed since the last \`battery_status_changed\` event.
 `)
 
 export type DeviceBatteryStatusChangedEvent = z.infer<
@@ -207,7 +207,7 @@ export const device_removed_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A [device](https://docs.seam.co/latest/core-concepts/devices) was removed externally from the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).
+  A [device](https://docs.seam.co/core-concepts/devices) was removed externally from the [connected account](https://docs.seam.co/core-concepts/connected-accounts).
 `)
 
 export type DeviceRemovedEvent = z.infer<typeof device_removed_event>
@@ -218,7 +218,7 @@ export const device_deleted_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A [device](https://docs.seam.co/latest/core-concepts/devices) was deleted.
+  A [device](https://docs.seam.co/core-concepts/devices) was deleted.
 `)
 
 export type DeviceDeletedEvent = z.infer<typeof device_deleted_event>
@@ -230,7 +230,7 @@ export const device_third_party_integration_detected_event =
     ---
     route_path: /devices
     ---
-    Seam detected that a [device](https://docs.seam.co/latest/core-concepts/devices) is using a third-party integration that will interfere with Seam device management.
+    Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is using a third-party integration that will interfere with Seam device management.
   `)
 
 export type DeviceThirdPartyIntegrationDetectedEvent = z.infer<
@@ -244,7 +244,7 @@ export const device_third_party_integration_no_longer_detected_event =
     ---
     route_path: /devices
     ---
-    Seam detected that a [device](https://docs.seam.co/latest/core-concepts/devices) is no longer using a third-party integration that was interfering with Seam device management.
+    Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is no longer using a third-party integration that was interfering with Seam device management.
   `)
 
 export type DeviceThirdPartyIntegrationNoLongerDetectedEvent = z.infer<
@@ -257,7 +257,7 @@ export const device_salto_privacy_mode_activated_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A [Salto device](https://docs.seam.co/latest/device-and-system-integration-guides/salto-locks) activated privacy mode.
+  A [Salto device](https://docs.seam.co/device-and-system-integration-guides/salto-locks) activated privacy mode.
 `)
 
 export type DeviceSaltoPrivacyModeActivatedEvent = z.infer<
@@ -270,7 +270,7 @@ export const device_salto_privacy_mode_deactivated_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A [Salto device](https://docs.seam.co/latest/device-and-system-integration-guides/salto-locks) deactivated privacy mode.
+  A [Salto device](https://docs.seam.co/device-and-system-integration-guides/salto-locks) deactivated privacy mode.
 `)
 
 export type DeviceSaltoPrivacyModeDeactivatedEvent = z.infer<
@@ -285,7 +285,7 @@ export const device_connection_became_flaky_event = device_event
   ---
   route_path: /devices
   ---
-  Seam detected a flaky [device](https://docs.seam.co/latest/core-concepts/devices) connection.
+  Seam detected a flaky [device](https://docs.seam.co/core-concepts/devices) connection.
 `)
 
 export type DeviceConnectionBecameFlakyEvent = z.infer<
@@ -298,7 +298,7 @@ export const device_connection_stabilized_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  Seam detected that a previously-flaky [device](https://docs.seam.co/latest/core-concepts/devices) connection stabilized.
+  Seam detected that a previously-flaky [device](https://docs.seam.co/core-concepts/devices) connection stabilized.
 `)
 
 export type DeviceConnectionStabilizedEvent = z.infer<
@@ -313,7 +313,7 @@ export const device_error_subscription_required_event = device_event
   ---
   route_path: /devices
   ---
-  A third-party subscription is required to use all [device](https://docs.seam.co/latest/core-concepts/devices) features.
+  A third-party subscription is required to use all [device](https://docs.seam.co/core-concepts/devices) features.
 `)
 
 export type DeviceErrorSubscriptionRequiredEvent = z.infer<
@@ -327,7 +327,7 @@ export const device_error_subscription_required_resolved_event =
     ---
     route_path: /devices
     ---
-    A third-party subscription is active or no longer required to use all [device](https://docs.seam.co/latest/core-concepts/devices) features.
+    A third-party subscription is active or no longer required to use all [device](https://docs.seam.co/core-concepts/devices) features.
   `)
 
 export type DeviceErrorSubscriptionRequiredResolvedEvent = z.infer<
@@ -340,7 +340,7 @@ export const device_accessory_keypad_connected_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  An accessory keypad was connected to a [device](https://docs.seam.co/latest/core-concepts/devices).
+  An accessory keypad was connected to a [device](https://docs.seam.co/core-concepts/devices).
 `)
 
 export type DeviceAccessoryKeypadConnectedEvent = z.infer<
@@ -355,7 +355,7 @@ export const device_accessory_keypad_disconnected_event = device_event
   ---
   route_path: /devices
   ---
-  An accessory keypad was disconnected from a [device](https://docs.seam.co/latest/core-concepts/devices).
+  An accessory keypad was disconnected from a [device](https://docs.seam.co/core-concepts/devices).
 `)
 
 export type DeviceAccessoryKeypadDisconnectedEvent = z.infer<
@@ -396,7 +396,7 @@ export const noise_sensor_noise_threshold_triggered_event = device_event.extend(
     ---
     route_path: /noise_sensors/noise_thresholds
     ---
-    Extended periods of noise or noise exceeding a [threshold](https://docs.seam.co/latest/capability-guides/noise-sensors#what-is-a-threshold) were detected.
+    Extended periods of noise or noise exceeding a [threshold](https://docs.seam.co/capability-guides/noise-sensors#what-is-a-threshold) were detected.
   `)
 
 export type NoiseSensorNoiseThresholdTriggeredEvent = z.infer<
@@ -436,7 +436,7 @@ export const lock_locked_event = device_event.extend({
   ---
   route_path: /locks
   ---
-  A [lock](https://docs.seam.co/latest/capability-guides/smart-locks) was locked.
+  A [lock](https://docs.seam.co/capability-guides/smart-locks) was locked.
 `)
 
 export type LockLockedEvent = z.infer<typeof lock_locked_event>
@@ -464,7 +464,7 @@ export const lock_unlocked_event = device_event.extend({
       'ID of the Seam action attempt that triggered this unlock. Present only when the unlock was initiated through Seam (via an `UNLOCK_DOOR` action attempt).',
     ),
   method: lock_method.describe(
-    'Method by which the lock was unlocked. `keycode`: an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or handle press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by a time-based schedule. `unknown`: could not be determined.',
+    'Method by which the lock was unlocked. `keycode`: an [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes) was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or handle press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by a time-based schedule. `unknown`: could not be determined.',
   ),
   user_identity_id: z.string().uuid().optional().describe(`
       undocumented: Unreleased.
@@ -501,7 +501,7 @@ export const lock_unlocked_event = device_event.extend({
   ---
   route_path: /locks
   ---
-  A [lock](https://docs.seam.co/latest/capability-guides/smart-locks) was unlocked.
+  A [lock](https://docs.seam.co/capability-guides/smart-locks) was unlocked.
 `)
 
 export type LockUnlockedEvent = z.infer<typeof lock_unlocked_event>
@@ -517,7 +517,7 @@ export const lock_access_denied_event = device_event.extend({
   ---
   route_path: /locks
   ---
-  The [lock](https://docs.seam.co/latest/capability-guides/smart-locks) denied access to a user after one or more consecutive invalid attempts to unlock the device.
+  The [lock](https://docs.seam.co/capability-guides/smart-locks) denied access to a user after one or more consecutive invalid attempts to unlock the device.
 `)
 
 export type LockAccessDeniedEvent = z.infer<typeof lock_access_denied_event>
@@ -543,7 +543,7 @@ export const thermostat_climate_preset_activated_event = device_event.extend({
   ---
   route_path: /thermostats
   ---
-  A thermostat [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) was activated.
+  A thermostat [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) was activated.
 `)
 
 export type ThermostatClimatePresetActivatedEvent = z.infer<
@@ -574,7 +574,7 @@ export const thermostat_manually_adjusted_event = device_event
     ---
     route_path: /thermostats
     ---
-    A [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) was adjusted manually.
+    A [thermostat](https://docs.seam.co/capability-guides/thermostats) was adjusted manually.
   `)
 
 export type ThermostatManuallyAdjustedEvent = z.infer<
@@ -609,7 +609,7 @@ export const temperature_threshold_exceeded_event = device_event.extend({
   ---
   route_path: /thermostats
   ---
-  A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temperature reading exceeded the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
+  A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature reading exceeded the set [threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
 `)
 
 export type TemperatureThresholdExceededEvent = z.infer<
@@ -655,7 +655,7 @@ export const temperature_threshold_no_longer_exceeded_event =
     ---
     route_path: /thermostats
     ---
-    A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temperature reading no longer exceeds the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
+    A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature reading no longer exceeds the set [threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
   `)
 
 export type TemperatureThresholdNoLongerExceededEvent = z.infer<
@@ -686,7 +686,7 @@ export const temperature_reached_set_point_event = device_event.extend({
   ---
   route_path: /thermostats
   ---
-  A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temperature reading is within 1 °C of the configured cooling or heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+  A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature reading is within 1 °C of the configured cooling or heating [set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 `)
 
 export type TemperatureReachedSetPointEvent = z.infer<
@@ -705,7 +705,7 @@ export const temperature_changed_event = device_event.extend({
   ---
   route_path: /thermostats
   ---
-  A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) reported temperature changed by at least 1 °C.
+  A [thermostat's](https://docs.seam.co/capability-guides/thermostats) reported temperature changed by at least 1 °C.
 `)
 
 export type TemperatureChangedEvent = z.infer<typeof temperature_changed_event>
@@ -717,7 +717,7 @@ export const device_name_changed_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  The name of a [device](https://docs.seam.co/latest/core-concepts/devices) was changed.
+  The name of a [device](https://docs.seam.co/core-concepts/devices) was changed.
 `)
 
 export type DeviceNameChangedEvent = z.infer<typeof device_name_changed_event>
@@ -745,7 +745,7 @@ export const camera_activated_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A [camera](https://docs.seam.co/latest/core-concepts/devices) was activated, for example, by motion detection.
+  A [camera](https://docs.seam.co/core-concepts/devices) was activated, for example, by motion detection.
 `)
 
 export type CameraActivatedEvent = z.infer<typeof camera_activated_event>
@@ -770,7 +770,7 @@ export const device_doorbell_rang_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A doorbell button was pressed on a [device](https://docs.seam.co/latest/core-concepts/devices).
+  A doorbell button was pressed on a [device](https://docs.seam.co/core-concepts/devices).
 `)
 
 export type DeviceDoorbellRangEvent = z.infer<typeof device_doorbell_rang_event>

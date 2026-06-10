@@ -31,7 +31,7 @@ export const space = z.object({
     .string()
     .uuid()
     .describe(
-      'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the space.',
+      'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the space.',
     ),
   space_key: z
     .string()
