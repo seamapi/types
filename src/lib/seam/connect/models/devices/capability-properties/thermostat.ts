@@ -104,121 +104,121 @@ export const thermostat_capability_properties = z
           ---
           property_group_key: thermostats
           ---
-          Available [climate presets](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) for the thermostat.
+          Available [climate presets](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) for the thermostat.
           `),
     fallback_climate_preset_key: z.string().min(1).nullable().describe(`
           ---
           property_group_key: thermostats
           ---
-          Key of the [fallback climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) for the thermostat.
+          Key of the [fallback climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) for the thermostat.
           `),
     active_thermostat_schedule: thermostat_schedule.nullable().describe(`
           ---
           property_group_key: thermostats
           deprecated: Use \`active_thermostat_schedule_id\` with \`/thermostats/schedules/get\` instead.
           ---
-          Active [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
+          Active [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
           `),
     active_thermostat_schedule_id: z.string().uuid().nullable().describe(`
           ---
           property_group_key: thermostats
           ---
-          ID of the active [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
+          ID of the active [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
           `),
     thermostat_daily_programs: z.array(thermostat_daily_program).optional()
       .describe(`
           ---
           property_group_key: thermostats
           ---
-          Configured [daily programs](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.
+          Configured [daily programs](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.
           `),
     thermostat_weekly_program: thermostat_weekly_program.nullable().optional()
       .describe(`
           ---
           property_group_key: thermostats
           ---
-          Current [weekly program](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.
+          Current [weekly program](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.
           `),
     min_cooling_set_point_celsius: z.number().describe(`
           ---
           property_group_key: thermostats
           ---
-          Minimum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.
+          Minimum [cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.
           `),
     min_cooling_set_point_fahrenheit: z.number().describe(`
           ---
           property_group_key: thermostats
           ---
-          Minimum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.
+          Minimum [cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.
           `),
     max_cooling_set_point_celsius: z.number().describe(`
           ---
           property_group_key: thermostats
           ---
-          Maximum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.
+          Maximum [cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.
           `),
     max_cooling_set_point_fahrenheit: z.number().describe(`
           ---
           property_group_key: thermostats
           ---
-          Maximum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.
+          Maximum [cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.
           `),
     min_heating_set_point_celsius: z.number().describe(`
           ---
           property_group_key: thermostats
           ---
-          Minimum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.
+          Minimum [heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.
           `),
     min_heating_set_point_fahrenheit: z.number().describe(`
           ---
           property_group_key: thermostats
           ---
-          Minimum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.
+          Minimum [heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.
           `),
     max_heating_set_point_celsius: z.number().describe(`
           ---
           property_group_key: thermostats
           ---
-          Maximum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.
+          Maximum [heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.
           `),
     max_heating_set_point_fahrenheit: z.number().describe(`
           ---
           property_group_key: thermostats
           ---
-          Maximum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.
+          Maximum [heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.
           `),
     min_heating_cooling_delta_celsius: z.number().describe(`
           ---
           property_group_key: thermostats
           ---
-          Minimum [temperature difference](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °C between the cooling and heating set points when in heat-cool (auto) mode.
+          Minimum [temperature difference](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °C between the cooling and heating set points when in heat-cool (auto) mode.
           `),
     min_heating_cooling_delta_fahrenheit: z.number().describe(`
           ---
           property_group_key: thermostats
           ---
-          Minimum [temperature difference](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °F between the cooling and heating set points when in heat-cool (auto) mode.
+          Minimum [temperature difference](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °F between the cooling and heating set points when in heat-cool (auto) mode.
           `),
     temperature_threshold: z
       .object({
         lower_limit_celsius: z.number().nullable()
-          .describe(`Lower limit in °C within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+          .describe(`Lower limit in °C within the current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
           `),
         lower_limit_fahrenheit: z.number().nullable()
-          .describe(`Lower limit in °F within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+          .describe(`Lower limit in °F within the current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
           `),
         upper_limit_celsius: z.number().nullable()
-          .describe(`Upper limit in °C within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+          .describe(`Upper limit in °C within the current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
           `),
         upper_limit_fahrenheit: z.number().nullable()
-          .describe(`Upper limit in °F within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+          .describe(`Upper limit in °F within the current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
           `),
       })
       .optional().describe(`
           ---
           property_group_key: thermostats
           ---
-          Current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+          Current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
           `),
     thermostat_daily_program_period_precision_minutes: z.number().optional()
       .describe(`
