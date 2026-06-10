@@ -11,7 +11,7 @@ export const thermostat_daily_program_period = z
     climate_preset_key: z
       .string()
       .describe(
-        'Key of the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.',
+        'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.',
       ),
   })
   .describe(
@@ -40,7 +40,7 @@ export const thermostat_daily_program = z.object({
     .string()
     .uuid()
     .describe(
-      'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the thermostat daily program.',
+      'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program.',
     ),
   created_at: z
     .string()
