@@ -8,7 +8,7 @@ const connect_webview_event = common_event.extend({
     .string()
     .uuid()
     .describe(
-      'ID of the affected [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).',
+      'ID of the affected [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).',
     ),
 })
 
@@ -16,7 +16,7 @@ const connected_account_id = z
   .string()
   .uuid()
   .describe(
-    'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+    'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.',
   )
 
 const connected_account_custom_metadata = custom_metadata
@@ -40,7 +40,7 @@ export const connect_webview_login_succeeded_event =
     ---
     route_path: /connect_webviews
     ---
-    A [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) login succeeded.
+    A [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) login succeeded.
   `)
 
 export type ConnectWebviewLoginSucceededEvent = z.infer<
@@ -53,7 +53,7 @@ export const connect_webview_login_failed_event = connect_webview_event.extend({
     ---
     route_path: /connect_webviews
     ---
-    A [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) login failed.
+    A [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) login failed.
   `)
 
 export type ConnectWebviewLoginFailedEvent = z.infer<
