@@ -25,13 +25,13 @@ export const phone = z.object({
     .describe(`Display name of the phone. Defaults to \`nickname\` (if it is set) or \`properties.appearance.name\`, otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.
   `),
   workspace_id: basePhoneDeviceSchema.shape.workspace_id
-    .describe(`ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the phone.
+    .describe(`ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the phone.
   `),
   created_at: basePhoneDeviceSchema.shape.created_at
     .describe(`Date and time at which the phone was created.
   `),
   custom_metadata: basePhoneDeviceSchema.shape.custom_metadata
-    .describe(`Optional [custom metadata](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device) for the phone.
+    .describe(`Optional [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) for the phone.
   `),
 
   errors: z

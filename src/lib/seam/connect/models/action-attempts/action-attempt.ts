@@ -38,7 +38,7 @@ export const action_attempt = z.union([
 
   When you request for a device to perform an action, the Seam API immediately returns an action attempt object. In the background, the Seam API performs the action.
 
-  See also [Action Attempts](https://docs.seam.co/core-concepts/action-attempts).
+  See also [Action Attempts](https://docs.seam.co/latest/core-concepts/action-attempts).
 `)
 
 export type ActionAttempt = z.infer<typeof action_attempt>

@@ -6,7 +6,7 @@ export const bridge = z.object({
     .string()
     .uuid()
     .describe(
-      'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains Seam Bridge.',
+      'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains Seam Bridge.',
     ),
   created_at: z
     .string()
@@ -17,6 +17,6 @@ export const bridge = z.object({
 undocumented: Unreleased.
 route_path: /bridges
 ---
-Represents [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).
+Represents [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).
 `)
 export type Bridge = z.infer<typeof bridge>
