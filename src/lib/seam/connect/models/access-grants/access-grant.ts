@@ -64,7 +64,7 @@ const being_deleted = common_access_grant_warning
     warning_code: z.literal('being_deleted').describe(warning_code_description),
   })
   .describe(
-    'Indicates that the [access grant](https://docs.seam.co/capability-guides/access-grants) is being deleted.',
+    'Indicates that the [access grant](https://docs.seam.co/latest/capability-guides/access-grants) is being deleted.',
   )
 
 const underprovisioned_access = common_access_grant_warning
@@ -118,7 +118,7 @@ const updating_access_times = common_access_grant_warning
       .describe('IDs of the access methods being updated.'),
   })
   .describe(
-    'Indicates that the access times for this [access grant](https://docs.seam.co/capability-guides/access-grants) are being updated.',
+    'Indicates that the access times for this [access grant](https://docs.seam.co/latest/capability-guides/access-grants) are being updated.',
   )
 
 const requested_code_unavailable = common_access_grant_warning
@@ -191,7 +191,7 @@ const access_grant_warning = z
     device_time_constraints_violated,
   ])
   .describe(
-    'Warning associated with the [access grant](https://docs.seam.co/capability-guides/access-grants).',
+    'Warning associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
   )
 
 const _access_grant_warning_map = z.object({
@@ -283,12 +283,12 @@ export const access_grant = z.object({
   warnings: z
     .array(access_grant_warning)
     .describe(
-      'Warnings associated with the [access grant](https://docs.seam.co/capability-guides/access-grants).',
+      'Warnings associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
     ),
   errors: z
     .array(access_grant_error)
     .describe(
-      'Errors associated with the [access grant](https://docs.seam.co/capability-guides/access-grants).',
+      'Errors associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).',
     ),
   customization_profile_id: z
     .string()
