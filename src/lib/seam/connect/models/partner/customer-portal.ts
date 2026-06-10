@@ -12,7 +12,7 @@ export const customer_portal = z
       .string()
       .uuid()
       .describe(
-        'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the customer portal.',
+        'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the customer portal.',
       ),
     created_at: z
       .string()
