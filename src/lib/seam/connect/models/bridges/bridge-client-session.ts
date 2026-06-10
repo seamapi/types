@@ -144,7 +144,7 @@ export const bridge_client_session = z.object({
   route_path: /seam/bridge/v1/bridge_client_sessions
   undocumented: Seam Bridge client only.
   ---
-  Represents a [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) client session.
+  Represents a [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) client session.
 `)
 
 export type BridgeClientSession = z.infer<typeof bridge_client_session>
