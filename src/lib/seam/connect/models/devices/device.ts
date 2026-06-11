@@ -470,6 +470,15 @@ const hub_required_for_additional_capabilities = common_device_warning.extend({
     Indicates that a hub or relay must be connected to unlock additional capabilities such as remote unlock.
     `)
 
+const provider_issue = common_device_warning.extend({
+  warning_code: z.literal('provider_issue').describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: access_codes
+    ---
+    Indicates a provider-specific issue that may affect device functionality.
+    `)
+
 const keynest_unsupported_locker = common_device_warning.extend({
   warning_code: z
     .literal('keynest_unsupported_locker')
@@ -556,6 +565,7 @@ const device_warning = z.discriminatedUnion('warning_code', [
   ultraloq_time_zone_unknown,
   two_n_device_missing_timezone,
   hub_required_for_additional_capabilities,
+  provider_issue,
   keynest_unsupported_locker,
   accessory_keypad_setup_required,
   unreliable_online_status,
@@ -612,6 +622,7 @@ export const device_warning_map = z.object({
     .nullable(),
   hub_required_for_additional_capabilities:
     hub_required_for_additional_capabilities.optional().nullable(),
+  provider_issue: provider_issue.optional().nullable(),
   keynest_unsupported_locker: keynest_unsupported_locker.optional().nullable(),
   accessory_keypad_setup_required: accessory_keypad_setup_required
     .optional()
