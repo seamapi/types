@@ -45,7 +45,7 @@ const acs_entrance_id = z
   .string()
   .uuid()
   .describe(
-    'ID of the affected [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+    'ID of the affected [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).',
   )
 
 export const access_grant_access_granted_to_door_event =

@@ -24,7 +24,7 @@ const acs_encoder_error =
   acs_encoder_removed
     // ])
     .describe(
-      'Error associated with the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
+      'Error associated with the [encoder](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
     )
 
 const _acs_encoder_error_map = z.object({
@@ -38,47 +38,47 @@ export const acs_encoder = z.object({
     .string()
     .uuid()
     .describe(
-      'ID of the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners.',
+      'ID of the [encoder](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners.',
     ),
   acs_system_id: z
     .string()
     .uuid()
     .describe(
-      'ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
+      'ID of the [access control system](https://docs.seam.co/capability-guides/access-systems) that contains the [encoder](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
     ),
   connected_account_id: z
     .string()
     .uuid()
     .describe(
-      'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
+      'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) that contains the [encoder](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
     ),
   workspace_id: z
     .string()
     .uuid()
     .describe(
-      'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
+      'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [encoder](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
     ),
   errors: z
     .array(acs_encoder_error)
     .describe(
-      'Errors associated with the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
+      'Errors associated with the [encoder](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
     ),
   created_at: z
     .string()
     .datetime()
     .describe(
-      'Date and time at which the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) was created.',
+      'Date and time at which the [encoder](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners) was created.',
     ),
   display_name: z
     .string()
     .describe(
-      'Display name for the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
+      'Display name for the [encoder](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
     ),
 }).describe(`
   ---
   route_path: /acs/encoders
   ---
-  Represents a hardware device that encodes [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) data onto physical cards within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+  Represents a hardware device that encodes [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) data onto physical cards within an [access control system](https://docs.seam.co/capability-guides/access-systems).
 
   Some access control systems require credentials to be encoded onto plastic key cards using a card encoder. This process involves the following two key steps:
 
@@ -89,9 +89,9 @@ export const acs_encoder = z.object({
 
   Separately, the Seam API also supports card scanning, which enables you to scan and read the encoded data on a card. You can use this action to confirm consistency with access control system records or diagnose discrepancies if needed.
 
-   See [Working with Card Encoders and Scanners](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).
+   See [Working with Card Encoders and Scanners](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners).
 
-  To verify if your access control system requires a card encoder, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
+  To verify if your access control system requires a card encoder, see the corresponding [system integration guide](https://docs.seam.co/device-and-system-integration-guides#access-control-systems).
 `)
 
 export type AcsEncoder = z.infer<typeof acs_encoder>

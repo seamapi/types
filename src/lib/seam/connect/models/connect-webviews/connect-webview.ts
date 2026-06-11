@@ -15,7 +15,7 @@ export const connect_webview = z.object({
     .string()
     .uuid()
     .describe(
-      'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the Connect Webview.',
+      'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the Connect Webview.',
     ),
   created_at: z
     .string()
@@ -26,7 +26,7 @@ export const connect_webview = z.object({
     .uuid()
     .nullable()
     .describe(
-      'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the Connect Webview.',
+      'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the Connect Webview.',
     ),
   url: z
     .string()
@@ -40,7 +40,7 @@ export const connect_webview = z.object({
   accepted_providers: z
     .array(z.string())
     .describe(
-      'List of accepted [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).',
+      'List of accepted [provider keys](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).',
     ),
 
   accepted_capabilities: z
@@ -97,12 +97,12 @@ export const connect_webview = z.object({
   automatically_manage_new_devices: z
     .boolean()
     .describe(
-      'Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API.',
+      'Indicates whether Seam should [import all new devices](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API.',
     ),
   wait_for_device_creation: z
     .boolean()
     .describe(
-      'Indicates whether Seam should [finish syncing all devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#wait_for_device_creation) in a newly-connected account before completing the associated Connect Webview.',
+      'Indicates whether Seam should [finish syncing all devices](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#wait_for_device_creation) in a newly-connected account before completing the associated Connect Webview.',
     ),
   authorized_at: z
     .string()
@@ -115,7 +115,7 @@ export const connect_webview = z.object({
     .string()
     .nullable()
     .describe(
-      'Selected provider of the Connect Webview, one of the [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).',
+      'Selected provider of the Connect Webview, one of the [provider keys](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).',
     ),
   customer_key: z
     .string()
@@ -125,7 +125,7 @@ export const connect_webview = z.object({
   ---
   route_path: /connect_webviews
   ---
-  Represents a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).
+  Represents a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).
 
   Connect Webviews are fully-embedded client-side components that you add to your app. Your users interact with your embedded Connect Webviews to link their IoT device or system accounts to Seam. That is, Connect Webviews walk your users through the process of logging in to their device or system accounts. Seam handles all the authentication steps, and—once your user has completed the authorization through your app—you can access and control their devices or systems using the Seam API.
   
