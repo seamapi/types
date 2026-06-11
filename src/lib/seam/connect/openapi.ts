@@ -78241,12 +78241,6 @@ const openapi: OpenAPISpec = {
                     },
                     type: 'object',
                   },
-                  customer_key: {
-                    description:
-                      'Customer key for which you want to update the space.',
-                    minLength: 1,
-                    type: 'string',
-                  },
                   device_ids: {
                     description:
                       'IDs of the devices that you want to set for the space. If specified, this will replace all existing devices.',
@@ -78343,12 +78337,6 @@ const openapi: OpenAPISpec = {
                       },
                     },
                     type: 'object',
-                  },
-                  customer_key: {
-                    description:
-                      'Customer key for which you want to update the space.',
-                    minLength: 1,
-                    type: 'string',
                   },
                   device_ids: {
                     description:
