@@ -131,7 +131,7 @@ export const user_identity = z.object({
     .string()
     .uuid()
     .describe(
-      'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the user identity.',
+      'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the user identity.',
     ),
   errors: z
     .array(user_identity_errors)
@@ -152,7 +152,7 @@ export const user_identity = z.object({
   ---
   route_path: /user_identities
   ---
-  Represents a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with an application user account.
+  Represents a [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with an application user account.
 `)
 
 export type UserIdentity = z.output<typeof user_identity>

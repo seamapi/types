@@ -6,7 +6,7 @@ export const common_event = z.object({
     .string()
     .uuid()
     .describe(
-      'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
+      'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
     ),
   created_at: z
     .string()

@@ -12,7 +12,7 @@ const connected_account_event = common_event.extend({
     .string()
     .uuid()
     .describe(
-      'ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+      'ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).',
     ),
   connected_account_custom_metadata: custom_metadata
     .optional()
@@ -25,7 +25,7 @@ const connect_webview_id = z
   .string()
   .uuid()
   .describe(
-    'ID of the [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) associated with the event.',
+    'ID of the [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) associated with the event.',
   )
 
 const connected_account_event_issue_properties = {
@@ -52,7 +52,7 @@ export const connected_account_connected_event = connected_account_event.extend(
   ---
   route_path: /connected_accounts
   ---
-  A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was connected for the first time or was reconnected after being disconnected.
+  A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was connected for the first time or was reconnected after being disconnected.
 `)
 
 export type ConnectedAccountConnectedEvent = z.infer<
@@ -66,7 +66,7 @@ export const connected_account_created_event = connected_account_event.extend({
   ---
   route_path: /connected_accounts
   ---
-  A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was created.
+  A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was created.
 `)
 
 export type ConnectedAccountCreatedEvent = z.infer<
@@ -82,7 +82,7 @@ export const connected_account_successful_login_event =
     deprecated: Use \`connect_webview.login_succeeded\`.
     route_path: /connected_accounts
     ---
-    A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) had a successful login using a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).
+    A [connected account](https://docs.seam.co/core-concepts/connected-accounts) had a successful login using a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).
   `)
 
 /** @deprecated Rely on ConnectWebviewLoginSucceededEvent instead */
@@ -98,7 +98,7 @@ export const connected_account_disconnected_event = connected_account_event
     ---
     route_path: /connected_accounts
     ---
-    A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was disconnected.
+    A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was disconnected.
   `)
 
 export type ConnectedAccountDisconnectedEvent = z.infer<
@@ -112,7 +112,7 @@ export const connected_account_completed_first_sync_event =
     ---
     route_path: /connected_accounts
     ---
-    A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) completed the first sync with Seam, and the corresponding devices or systems are now available.
+    A [connected account](https://docs.seam.co/core-concepts/connected-accounts) completed the first sync with Seam, and the corresponding devices or systems are now available.
   `)
 
 export type ConnectedAccountCompletedFirstSyncEvent = z.infer<
@@ -135,7 +135,7 @@ export const connected_account_deleted_event = connected_account_event.extend({
   ---
   route_path: /connected_accounts
   ---
-  A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was deleted.
+  A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was deleted.
 `)
 
 export type ConnectedAccountDeletedEvent = z.infer<
@@ -151,7 +151,7 @@ export const connected_account_completed_first_sync_after_reconnection_event =
     ---
     route_path: /connected_accounts
     ---
-    A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) completed the first sync after reconnection with Seam, and the corresponding devices or systems are now available.
+    A [connected account](https://docs.seam.co/core-concepts/connected-accounts) completed the first sync after reconnection with Seam, and the corresponding devices or systems are now available.
   `)
 
 export type ConnectedAccountCompletedFirstSyncAfterReconnectionEvent = z.infer<
@@ -167,7 +167,7 @@ export const connected_account_reauthorization_requested_event =
     ---
     route_path: /connected_accounts
     ---
-    A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) requires reauthorization using a new Connect Webview. The account is still connected, but cannot access new features. Delaying reauthorization too long will eventually cause the Connected Account to become disconnected.
+    A [connected account](https://docs.seam.co/core-concepts/connected-accounts) requires reauthorization using a new Connect Webview. The account is still connected, but cannot access new features. Delaying reauthorization too long will eventually cause the Connected Account to become disconnected.
   `)
 
 export type ConnectedAccountReauthorizationRequestedEvent = z.infer<
