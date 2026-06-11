@@ -9609,7 +9609,7 @@ const openapi: OpenAPISpec = {
               },
               action_type: {
                 description:
-                  'Action attempt to track the status of assigning an existing credential to an access method.',
+                  'Action attempt to track the status of assigning a pre-registered card credential to an access method.',
                 enum: ['ASSIGN_CREDENTIAL'],
                 type: 'string',
               },
@@ -9645,7 +9645,7 @@ const openapi: OpenAPISpec = {
               },
               action_type: {
                 description:
-                  'Action attempt to track the status of assigning an existing credential to an access method.',
+                  'Action attempt to track the status of assigning a pre-registered card credential to an access method.',
                 enum: ['ASSIGN_CREDENTIAL'],
                 type: 'string',
               },
@@ -9656,7 +9656,7 @@ const openapi: OpenAPISpec = {
               },
               result: {
                 description:
-                  'Result of an assignment attempt. If the attempt was successful, includes the updated access method with the assigned credential.',
+                  'Result of assigning a credential. If successful, includes the updated access method with the assigned credential.',
                 properties: {
                   access_method_id: {
                     description: 'ID of the access method.',
@@ -10062,7 +10062,7 @@ const openapi: OpenAPISpec = {
               },
               action_type: {
                 description:
-                  'Action attempt to track the status of assigning an existing credential to an access method.',
+                  'Action attempt to track the status of assigning a pre-registered card credential to an access method.',
                 enum: ['ASSIGN_CREDENTIAL'],
                 type: 'string',
               },
@@ -41304,7 +41304,7 @@ const openapi: OpenAPISpec = {
     '/access_methods/assign_card': {
       post: {
         description:
-          'Assigns a pre-registered card credential to a card-mode access method, identified by `card_number`. Use this endpoint for access systems that use pre-registered cards, where a physical card must be associated with an access method before it can be issued.',
+          'Assigns a pre-registered card credential, identified by `card_number`, to a card-mode access method. Use this endpoint for access systems that use pre-registered cards, where a physical card must be associated with an access method before it can be used for access. Assigning a card credential also triggers issuance of the access method.',
         operationId: 'accessMethodsAssignCardPost',
         requestBody: {
           content: {
