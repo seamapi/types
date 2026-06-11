@@ -37052,8 +37052,7 @@ const openapi: OpenAPISpec = {
                         type: 'string',
                       },
                       location: {
-                        description:
-                          'When used, creates a new location with the given entrances and devices, and gives the user access to this location.',
+                        deprecated: true,
                         properties: {
                           acs_entrance_ids: {
                             default: [],
@@ -37077,6 +37076,8 @@ const openapi: OpenAPISpec = {
                           },
                         },
                         type: 'object',
+                        'x-deprecated':
+                          'Create a space first, then reference it using `space_ids`.',
                       },
                       location_ids: {
                         deprecated: true,
