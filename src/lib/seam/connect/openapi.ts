@@ -9599,6 +9599,550 @@ const openapi: OpenAPISpec = {
             type: 'object',
           },
           {
+            description:
+              'Assigning a credential to an access method is pending.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of assigning an existing credential to an access method.',
+                enum: ['ASSIGN_CREDENTIAL'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description:
+              'Assigning a credential to an access method succeeded.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of assigning an existing credential to an access method.',
+                enum: ['ASSIGN_CREDENTIAL'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of an assignment attempt. If the attempt was successful, includes the updated access method with the assigned credential.',
+                properties: {
+                  access_method_id: {
+                    description: 'ID of the access method.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  client_session_token: {
+                    description:
+                      'Token of the client session associated with the access method.',
+                    type: 'string',
+                  },
+                  code: {
+                    description: 'The actual PIN code for code access methods.',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  created_at: {
+                    description:
+                      'Date and time at which the access method was created.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
+                  customization_profile_id: {
+                    description:
+                      'ID of the customization profile associated with the access method.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  display_name: {
+                    description: 'Display name of the access method.',
+                    type: 'string',
+                  },
+                  instant_key_url: {
+                    description:
+                      'URL of the Instant Key for mobile key access methods.',
+                    format: 'uri',
+                    type: 'string',
+                  },
+                  is_assignment_required: {
+                    description:
+                      'Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment.',
+                    type: 'boolean',
+                  },
+                  is_encoding_required: {
+                    description:
+                      'Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.',
+                    type: 'boolean',
+                  },
+                  is_issued: {
+                    description:
+                      'Indicates whether the access method has been issued.',
+                    type: 'boolean',
+                  },
+                  is_ready_for_assignment: {
+                    description:
+                      'Indicates whether the access method is ready for card assignment. This is true when the access method is in card mode, has not yet been issued, and the system supports credential assignment.',
+                    type: 'boolean',
+                  },
+                  is_ready_for_encoding: {
+                    description:
+                      'Indicates whether the access method is ready to be encoded. This is true when the credential has been created and the card has not yet been issued.',
+                    type: 'boolean',
+                  },
+                  issued_at: {
+                    description:
+                      'Date and time at which the access method was issued.',
+                    format: 'date-time',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  mode: {
+                    description:
+                      'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                    enum: ['code', 'card', 'mobile_key', 'cloud_key'],
+                    type: 'string',
+                  },
+                  pending_mutations: {
+                    description:
+                      'Pending mutations for the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods). Indicates operations that are in progress.',
+                    items: {
+                      discriminator: { propertyName: 'mutation_code' },
+                      oneOf: [
+                        {
+                          description:
+                            'Seam is in the process of provisioning access for this access method on new devices.',
+                          properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which the mutation was created.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            from: {
+                              description: 'Previous device configuration.',
+                              properties: {
+                                device_ids: {
+                                  description:
+                                    'Previous device IDs where access was provisioned.',
+                                  items: { format: 'uuid', type: 'string' },
+                                  type: 'array',
+                                },
+                              },
+                              required: ['device_ids'],
+                              type: 'object',
+                            },
+                            message: {
+                              description:
+                                'Detailed description of the mutation.',
+                              type: 'string',
+                            },
+                            mutation_code: {
+                              description:
+                                'Mutation code to indicate that Seam is in the process of provisioning access for this access method on new devices.',
+                              enum: ['provisioning_access'],
+                              type: 'string',
+                            },
+                            to: {
+                              description: 'New device configuration.',
+                              properties: {
+                                device_ids: {
+                                  description:
+                                    'New device IDs where access is being provisioned.',
+                                  items: { format: 'uuid', type: 'string' },
+                                  type: 'array',
+                                },
+                              },
+                              required: ['device_ids'],
+                              type: 'object',
+                            },
+                          },
+                          required: [
+                            'created_at',
+                            'message',
+                            'mutation_code',
+                            'from',
+                            'to',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          description:
+                            'Seam is in the process of revoking access for this access method from devices.',
+                          properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which the mutation was created.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            from: {
+                              description: 'Previous device configuration.',
+                              properties: {
+                                device_ids: {
+                                  description:
+                                    'Previous device IDs where access existed.',
+                                  items: { format: 'uuid', type: 'string' },
+                                  type: 'array',
+                                },
+                              },
+                              required: ['device_ids'],
+                              type: 'object',
+                            },
+                            message: {
+                              description:
+                                'Detailed description of the mutation.',
+                              type: 'string',
+                            },
+                            mutation_code: {
+                              description:
+                                'Mutation code to indicate that Seam is in the process of revoking access for this access method from devices.',
+                              enum: ['revoking_access'],
+                              type: 'string',
+                            },
+                            to: {
+                              description: 'New device configuration.',
+                              properties: {
+                                device_ids: {
+                                  description:
+                                    'New device IDs where access should remain.',
+                                  items: { format: 'uuid', type: 'string' },
+                                  type: 'array',
+                                },
+                              },
+                              required: ['device_ids'],
+                              type: 'object',
+                            },
+                          },
+                          required: [
+                            'created_at',
+                            'message',
+                            'mutation_code',
+                            'from',
+                            'to',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          description:
+                            'Seam is in the process of updating the access times for this access method.',
+                          properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which the mutation was created.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            from: {
+                              description:
+                                'Previous access time configuration.',
+                              properties: {
+                                ends_at: {
+                                  description: 'Previous end time for access.',
+                                  format: 'date-time',
+                                  nullable: true,
+                                  type: 'string',
+                                },
+                                starts_at: {
+                                  description:
+                                    'Previous start time for access.',
+                                  format: 'date-time',
+                                  nullable: true,
+                                  type: 'string',
+                                },
+                              },
+                              required: ['starts_at', 'ends_at'],
+                              type: 'object',
+                            },
+                            message: {
+                              description:
+                                'Detailed description of the mutation.',
+                              type: 'string',
+                            },
+                            mutation_code: {
+                              description:
+                                'Mutation code to indicate that Seam is in the process of updating the access times for this access method.',
+                              enum: ['updating_access_times'],
+                              type: 'string',
+                            },
+                            to: {
+                              description: 'New access time configuration.',
+                              properties: {
+                                ends_at: {
+                                  description: 'New end time for access.',
+                                  format: 'date-time',
+                                  nullable: true,
+                                  type: 'string',
+                                },
+                                starts_at: {
+                                  description: 'New start time for access.',
+                                  format: 'date-time',
+                                  nullable: true,
+                                  type: 'string',
+                                },
+                              },
+                              required: ['starts_at', 'ends_at'],
+                              type: 'object',
+                            },
+                          },
+                          required: [
+                            'created_at',
+                            'message',
+                            'mutation_code',
+                            'from',
+                            'to',
+                          ],
+                          type: 'object',
+                        },
+                      ],
+                    },
+                    type: 'array',
+                  },
+                  warnings: {
+                    description:
+                      'Warnings associated with the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods).',
+                    items: {
+                      description:
+                        'Warning associated with the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods).',
+                      discriminator: { propertyName: 'warning_code' },
+                      oneOf: [
+                        {
+                          description:
+                            'Indicates that the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods) is being deleted.',
+                          properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which Seam created the warning.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            message: {
+                              description:
+                                'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                              type: 'string',
+                            },
+                            warning_code: {
+                              description:
+                                'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                              enum: ['being_deleted'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['created_at', 'message', 'warning_code'],
+                          type: 'object',
+                        },
+                        {
+                          description:
+                            'Indicates that the access times for this [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods) are being updated.',
+                          properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which Seam created the warning.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            message: {
+                              description:
+                                'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                              type: 'string',
+                            },
+                            warning_code: {
+                              description:
+                                'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                              enum: ['updating_access_times'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['created_at', 'message', 'warning_code'],
+                          type: 'object',
+                        },
+                        {
+                          description:
+                            'Indicates that all attempts to create an access code on this device before the start time failed and a backup access code was used to ensure access was provided in time.',
+                          properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which Seam created the warning.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            message: {
+                              description:
+                                'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                              type: 'string',
+                            },
+                            original_access_method_id: {
+                              description:
+                                'ID of the original access method from which this backup access method was split, if applicable.',
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            warning_code: {
+                              description:
+                                'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                              enum: ['pulled_backup_access_code'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['created_at', 'message', 'warning_code'],
+                          type: 'object',
+                        },
+                      ],
+                    },
+                    type: 'array',
+                  },
+                  workspace_id: {
+                    description:
+                      'ID of the Seam workspace associated with the access method.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: [
+                  'workspace_id',
+                  'access_method_id',
+                  'display_name',
+                  'mode',
+                  'created_at',
+                  'issued_at',
+                  'is_issued',
+                  'warnings',
+                  'pending_mutations',
+                ],
+                type: 'object',
+              },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Assigning a credential to an access method failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of assigning an existing credential to an access method.',
+                enum: ['ASSIGN_CREDENTIAL'],
+                type: 'string',
+              },
+              error: {
+                oneOf: [
+                  {
+                    description:
+                      "Error that doesn't fit into other specific error categories.",
+                    properties: {
+                      message: {
+                        description:
+                          'Message for the error associated with the action attempt.',
+                        type: 'string',
+                      },
+                      type: {
+                        description:
+                          'Type of the error associated with the action attempt.',
+                        enum: ['uncategorized_error'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['type', 'message'],
+                    type: 'object',
+                  },
+                  {
+                    description: 'Error to indicate an expired action attempt.',
+                    properties: {
+                      message: {
+                        description:
+                          'Message for the error associated with the action attempt.',
+                        type: 'string',
+                      },
+                      type: {
+                        description:
+                          'Type of the error associated with the action attempt.',
+                        enum: ['action_attempt_expired'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['type', 'message'],
+                    type: 'object',
+                  },
+                  {
+                    description:
+                      'Error to indicate that no matching credential was found.',
+                    properties: {
+                      message: {
+                        description:
+                          'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                        type: 'string',
+                      },
+                      type: {
+                        description:
+                          'Error type to indicate that no matching credential was found.',
+                        enum: ['credential_not_found'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['type', 'message'],
+                    type: 'object',
+                  },
+                ],
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
             description: 'Resetting a sandbox workspace is pending.',
             properties: {
               action_attempt_id: {
@@ -40707,7 +41251,7 @@ const openapi: OpenAPISpec = {
     '/access_methods/assign_card': {
       post: {
         description:
-          'Assigns an existing card credential to a card-mode access method, identified by `card_number`.',
+          'Assigns a pre-registered card credential to a card-mode access method, identified by `card_number`. Use this endpoint for access systems that use pre-registered cards, where a physical card must be associated with an access method before it can be issued.',
         operationId: 'accessMethodsAssignCardPost',
         requestBody: {
           content: {
@@ -40716,13 +41260,12 @@ const openapi: OpenAPISpec = {
                 properties: {
                   access_method_id: {
                     description:
-                      'ID of the card-mode `access_method` to assign the card to.',
+                      'ID of the `access_method` to assign the credential to.',
                     format: 'uuid',
                     type: 'string',
                   },
                   card_number: {
-                    description:
-                      'Card number of the card credential to assign.',
+                    description: 'Card number of the credential to assign.',
                     type: 'string',
                   },
                 },
@@ -40738,12 +41281,12 @@ const openapi: OpenAPISpec = {
               'application/json': {
                 schema: {
                   properties: {
-                    access_method: {
-                      $ref: '#/components/schemas/access_method',
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
                     },
                     ok: { type: 'boolean' },
                   },
-                  required: ['access_method', 'ok'],
+                  required: ['action_attempt', 'ok'],
                   type: 'object',
                 },
               },
@@ -40760,11 +41303,12 @@ const openapi: OpenAPISpec = {
         ],
         summary: '/access_methods/assign_card',
         tags: [],
+        'x-action-attempt-type': 'ASSIGN_CREDENTIAL',
         'x-fern-sdk-group-name': ['access_methods'],
         'x-fern-sdk-method-name': 'assign_card',
-        'x-fern-sdk-return-value': 'access_method',
-        'x-response-key': 'access_method',
-        'x-title': 'Assign a Card to an Access Method',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
+        'x-title': 'Assign a Card Credential to an Access Method',
       },
     },
     '/access_methods/delete': {

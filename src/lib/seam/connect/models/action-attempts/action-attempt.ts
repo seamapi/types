@@ -1,6 +1,7 @@
 import { z } from 'zod'
 
 import { activate_climate_preset_action_attempt } from './activate-climate-preset.js'
+import { assign_credential_action_attempt } from './assign-credential.js'
 import { configure_auto_lock_action_attempt } from './configure-auto-lock.js'
 import { deprecated_action_attempts } from './deprecated.js'
 import { encode_credential_action_attempt } from './encode-credential.js'
@@ -21,6 +22,7 @@ export const action_attempt = z.union([
   ...scan_credential_action_attempt.options,
   ...encode_credential_action_attempt.options,
   ...scan_to_assign_credential_action_attempt.options,
+  ...assign_credential_action_attempt.options,
   ...reset_sandbox_workspace_action_attempt.options,
   ...set_fan_mode_action_attempt.options,
   ...set_hvac_mode_action_attempt.options,
