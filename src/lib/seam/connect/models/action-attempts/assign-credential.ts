@@ -11,7 +11,7 @@ import {
 const action_type = z
   .literal('ASSIGN_CREDENTIAL')
   .describe(
-    'Action attempt to track the status of assigning an existing credential to an access method.',
+    'Action attempt to track the status of assigning a pre-registered card credential to an access method.',
   )
 
 const credential_not_found_error = z
@@ -35,7 +35,7 @@ const error = z.union([
 ])
 
 const result = access_method.describe(
-  'Result of an assignment attempt. If the attempt was successful, includes the updated access method with the assigned credential.',
+  'Result of assigning a credential. If successful, includes the updated access method with the assigned credential.',
 )
 
 export const assign_credential_action_attempt = z.discriminatedUnion('status', [
