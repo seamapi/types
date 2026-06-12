@@ -28,6 +28,7 @@ export {
   bridge_client_session,
   bridge_connected_system,
   building_resource,
+  camera_device_type,
   capabilities,
   climate_preset,
   climate_setting,
