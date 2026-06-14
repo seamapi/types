@@ -23,12 +23,12 @@ export const bridge_connected_system = z.object({
     .string()
     .uuid()
     .describe(
-      'ID of the [access system](https://docs.seam.co/capability-guides/access-systems) associated with Seam Bridge.',
+      'ID of the [access system](https://docs.seam.co/low-level-apis/access-systems) associated with Seam Bridge.',
     ),
   acs_system_display_name: z
     .string()
     .describe(
-      'Display name for the [access system](https://docs.seam.co/capability-guides/access-systems) associated with Seam Bridge.',
+      'Display name for the [access system](https://docs.seam.co/low-level-apis/access-systems) associated with Seam Bridge.',
     ),
   workspace_id: z
     .string()

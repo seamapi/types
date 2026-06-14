@@ -20,7 +20,7 @@ const being_deleted = common_access_method_warning
     warning_code: z.literal('being_deleted').describe(warning_code_description),
   })
   .describe(
-    'Indicates that the [access method](https://docs.seam.co/capability-guides/access-grants/delivering-access-methods) is being deleted.',
+    'Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) is being deleted.',
   )
 
 const updating_access_times_warning = common_access_method_warning
@@ -30,7 +30,7 @@ const updating_access_times_warning = common_access_method_warning
       .describe(warning_code_description),
   })
   .describe(
-    'Indicates that the access times for this [access method](https://docs.seam.co/capability-guides/access-grants/delivering-access-methods) are being updated.',
+    'Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) are being updated.',
   )
 
 const pulled_backup_access_code_warning = common_access_method_warning
@@ -57,7 +57,7 @@ const access_method_warning = z
     pulled_backup_access_code_warning,
   ])
   .describe(
-    'Warning associated with the [access method](https://docs.seam.co/capability-guides/access-grants/delivering-access-methods).',
+    'Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
   )
 
 const _access_method_warning_map = z.object({
@@ -277,12 +277,12 @@ export const access_method = z.object({
   warnings: z
     .array(access_method_warning)
     .describe(
-      'Warnings associated with the [access method](https://docs.seam.co/capability-guides/access-grants/delivering-access-methods).',
+      'Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
     ),
   pending_mutations: z
     .array(access_method_pending_mutations)
     .describe(
-      'Pending mutations for the [access method](https://docs.seam.co/capability-guides/access-grants/delivering-access-methods). Indicates operations that are in progress.',
+      'Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress.',
     ),
   customization_profile_id: z
     .string()

@@ -114,7 +114,7 @@ const empty_backup_access_code_pool = common_device_error.extend({
     ---
     variant_group_key: access_codes
     ---
-    Indicates that the [backup access code pool](https://docs.seam.co/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
+    Indicates that the [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.
     `)
 
 const august_lock_not_authorized = common_device_error.extend({

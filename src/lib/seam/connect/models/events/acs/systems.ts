@@ -26,7 +26,7 @@ export const acs_system_connected_event = acs_system_event.extend({
     ---
     route_path: /acs/systems
     ---
-    An [access system](https://docs.seam.co/capability-guides/access-systems) was connected.
+    An [access system](https://docs.seam.co/low-level-apis/access-systems) was connected.
   `)
 
 export type AcsSystemConnectedEvent = z.infer<typeof acs_system_connected_event>
@@ -39,7 +39,7 @@ export const acs_system_disconnected_event = acs_system_event
     ---
     route_path: /acs/systems
     ---
-    An [access system](https://docs.seam.co/capability-guides/access-systems) was disconnected.
+    An [access system](https://docs.seam.co/low-level-apis/access-systems) was disconnected.
   `)
 
 export type AcsSystemDisconnectedEvent = z.infer<
@@ -52,7 +52,7 @@ export const acs_system_added_event = acs_system_event.extend({
     ---
     route_path: /acs/systems
     ---
-    An [access system](https://docs.seam.co/capability-guides/access-systems) was added.
+    An [access system](https://docs.seam.co/low-level-apis/access-systems) was added.
   `)
 
 export type AcsSystemAddedEvent = z.infer<typeof acs_system_added_event>

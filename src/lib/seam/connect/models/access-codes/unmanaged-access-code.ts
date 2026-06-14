@@ -51,7 +51,7 @@ export const unmanaged_access_code = access_code
     ---
     route_path: /access_codes/unmanaged
     ---
-    Represents an [unmanaged smart lock access code](https://docs.seam.co/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).
+    Represents an [unmanaged smart lock access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes).
 
     An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly.
 

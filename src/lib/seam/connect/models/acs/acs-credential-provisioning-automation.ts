@@ -23,7 +23,7 @@ export const enrollment_automation = z.object({
     .string()
     .uuid()
     .describe(
-      'ID of the associated [ACS system](https://docs.seam.co/capability-guides/access-systems) that serves as the credential manager.',
+      'ID of the associated [ACS system](https://docs.seam.co/low-level-apis/access-systems) that serves as the credential manager.',
     ),
   user_identity_id: z
     .string()
