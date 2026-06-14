@@ -5381,6 +5381,31 @@ const openapi: OpenAPISpec = {
                   required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Indicates that the access control system requires additional setup before it can be fully operational. Follow the instructions in the warning message to complete the setup.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['setup_required'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -12936,6 +12961,31 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['provider_service_unavailable'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the connected account requires additional setup before it can be fully operational. Follow the instructions in the warning message to complete the setup.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['setup_required'],
                       type: 'string',
                     },
                   },
