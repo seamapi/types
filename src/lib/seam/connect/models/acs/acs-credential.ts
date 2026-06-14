@@ -315,6 +315,8 @@ export const acs_credential = common_acs_credential.merge(
   An access control system generally uses digital means of access to authorize a user trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.
 
   For each \`acs_credential\`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type.
+
+  For granting a person access to a space, [Access Grants](https://docs.seam.co/use-cases/granting-access) are the default and recommended approach. Use the lower-level ACS credential API directly only when you specifically need to manage individual credentials.
 `)
 
 export const unmanaged_acs_credential = common_acs_credential.merge(
