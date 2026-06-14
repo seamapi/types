@@ -204,10 +204,21 @@ const time_zone_does_not_match_location = common_acs_system_warning
     'Indicates the [access control system](https://docs.seam.co/low-level-apis/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
   )
 
+const setup_required = common_acs_system_warning
+  .extend({
+    warning_code: z
+      .literal('setup_required')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'Indicates that the access control system requires additional setup before it can be fully operational. Follow the instructions in the warning message to complete the setup.',
+  )
+
 const acs_system_warning = z
   .discriminatedUnion('warning_code', [
     salto_ks_subscription_limit_almost_reached,
     time_zone_does_not_match_location,
+    setup_required,
   ])
   .describe(
     'Warning associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
@@ -219,6 +230,7 @@ const _acs_system_warning_map = z.object({
   time_zone_does_not_match_location: time_zone_does_not_match_location
     .optional()
     .nullable(),
+  setup_required: setup_required.optional().nullable(),
 })
 
 export type AcsSystemWarningMap = z.infer<typeof _acs_system_warning_map>

@@ -240,6 +240,16 @@ const provider_service_unavailable = common_connected_account_warning
     "Indicates that the connected account's provider service is temporarily unavailable. Seam will automatically retry and reconnect when the service becomes available again.",
   )
 
+const setup_required = common_connected_account_warning
+  .extend({
+    warning_code: z
+      .literal('setup_required')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'Indicates that the connected account requires additional setup before it can be fully operational. Follow the instructions in the warning message to complete the setup.',
+  )
+
 const connected_account_warning = z
   .discriminatedUnion('warning_code', [
     scheduled_maintenance_window,
@@ -248,6 +258,7 @@ const connected_account_warning = z
     account_reauthorization_requested,
     being_deleted,
     provider_service_unavailable,
+    setup_required,
   ])
   .describe('Warning associated with the connected account.')
 
@@ -267,6 +278,7 @@ export const connected_account_warning_map = z.object({
   provider_service_unavailable: provider_service_unavailable
     .nullable()
     .optional(),
+  setup_required: setup_required.nullable().optional(),
 })
 
 export type ConnectedAccountWarningMap = z.infer<
