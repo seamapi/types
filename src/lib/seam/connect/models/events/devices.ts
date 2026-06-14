@@ -436,7 +436,7 @@ export const lock_locked_event = device_event.extend({
   ---
   route_path: /locks
   ---
-  A [lock](https://docs.seam.co/capability-guides/smart-locks) was locked.
+  A [lock](https://docs.seam.co/low-level-apis/smart-locks) was locked.
 `)
 
 export type LockLockedEvent = z.infer<typeof lock_locked_event>
@@ -464,7 +464,7 @@ export const lock_unlocked_event = device_event.extend({
       'ID of the Seam action attempt that triggered this unlock. Present only when the unlock was initiated through Seam (via an `UNLOCK_DOOR` action attempt).',
     ),
   method: lock_method.describe(
-    'Method by which the lock was unlocked. `keycode`: an [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes) was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or handle press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by a time-based schedule. `unknown`: could not be determined.',
+    'Method by which the lock was unlocked. `keycode`: an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or handle press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by a time-based schedule. `unknown`: could not be determined.',
   ),
   user_identity_id: z.string().uuid().optional().describe(`
       undocumented: Unreleased.
@@ -501,7 +501,7 @@ export const lock_unlocked_event = device_event.extend({
   ---
   route_path: /locks
   ---
-  A [lock](https://docs.seam.co/capability-guides/smart-locks) was unlocked.
+  A [lock](https://docs.seam.co/low-level-apis/smart-locks) was unlocked.
 `)
 
 export type LockUnlockedEvent = z.infer<typeof lock_unlocked_event>
@@ -517,7 +517,7 @@ export const lock_access_denied_event = device_event.extend({
   ---
   route_path: /locks
   ---
-  The [lock](https://docs.seam.co/capability-guides/smart-locks) denied access to a user after one or more consecutive invalid attempts to unlock the device.
+  The [lock](https://docs.seam.co/low-level-apis/smart-locks) denied access to a user after one or more consecutive invalid attempts to unlock the device.
 `)
 
 export type LockAccessDeniedEvent = z.infer<typeof lock_access_denied_event>

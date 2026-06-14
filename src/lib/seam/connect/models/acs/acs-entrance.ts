@@ -77,7 +77,7 @@ const acs_entrance_warning = z
     salto_ks_privacy_mode,
   ])
   .describe(
-    'Warning associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).',
+    'Warning associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
   )
 
 const _acs_entrance_warning_map = z.object({
@@ -129,13 +129,13 @@ export const acs_entrance = z
       .string()
       .uuid()
       .describe(
-        'ID of the [access control system](https://docs.seam.co/capability-guides/access-systems) that contains the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).',
+        'ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems) that contains the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
       ),
     acs_entrance_id: z
       .string()
       .uuid()
       .describe(
-        'ID of the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).',
+        'ID of the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
       ),
     space_ids: z
       .array(z.string().uuid())
@@ -144,18 +144,18 @@ export const acs_entrance = z
       .string()
       .datetime()
       .describe(
-        'Date and time at which the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details) was created.',
+        'Date and time at which the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) was created.',
       ),
     display_name: z
       .string()
       .describe(
-        'Display name for the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).',
+        'Display name for the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
       ),
     connected_account_id: z
       .string()
       .uuid()
       .describe(
-        'ID of the [connected account](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details) associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).',
+        'ID of the [connected account](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
       ),
     errors: z
       .array(
@@ -173,75 +173,75 @@ export const acs_entrance = z
         }),
       )
       .describe(
-        'Errors associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).',
+        'Errors associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
       ),
     warnings: z
       .array(acs_entrance_warning)
       .describe(
-        'Warnings associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).',
+        'Warnings associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
       ),
     latch_metadata: acs_entrance_latch_metadata
       .optional()
       .describe(
-        'Latch-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).',
+        'Latch-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
       ),
     hotek_metadata: acs_entrance_hotek_metadata
       .optional()
       .describe(
-        'Hotek-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).',
+        'Hotek-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
       ),
     visionline_metadata: acs_entrance_visionline_metadata
       .optional()
       .describe(
-        'Visionline-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).',
+        'Visionline-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
       ),
     salto_ks_metadata: acs_entrance_salto_ks_metadata
       .optional()
       .describe(
-        'Salto KS-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).',
+        'Salto KS-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
       ),
     dormakaba_community_metadata: acs_entrance_dormakaba_community_metadata
       .optional()
       .describe(
-        'dormakaba Community-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).',
+        'dormakaba Community-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
       ),
     assa_abloy_vostio_metadata: acs_entrance_assa_abloy_vostio_metadata
       .optional()
       .describe(
-        'ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).',
+        'ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
       ),
     salto_space_metadata: acs_entrance_salto_space_metadata
       .optional()
       .describe(
-        'Salto Space-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).',
+        'Salto Space-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
       ),
     dormakaba_ambiance_metadata: acs_entrance_dormakaba_ambiance_metadata
       .optional()
       .describe(
-        'dormakaba Ambiance-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).',
+        'dormakaba Ambiance-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
       ),
     brivo_metadata: acs_entrance_brivo_metadata
       .optional()
       .describe(
-        'Brivo-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).',
+        'Brivo-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
       ),
     avigilon_alta_metadata: acs_entrance_avigilon_alta_metadata
       .optional()
       .describe(
-        'Avigilon Alta-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).',
+        'Avigilon Alta-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
       ),
     is_locked: z
       .boolean()
       .optional()
       .describe(
-        'Indicates whether the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details) is currently locked.',
+        'Indicates whether the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) is currently locked.',
       ),
   })
   .merge(acs_entrance_capability_flags).describe(`
   ---
   route_path: /acs/entrances
   ---
-  Represents an [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details) within an [access control system](https://docs.seam.co/capability-guides/access-systems).
+  Represents an [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) within an [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
   In an access control system, an entrance is a secured door, gate, zone, or other method of entry. You can list details for all the \`acs_entrance\` resources in your workspace or get these details for a specific \`acs_entrance\`. You can also list all entrances associated with a specific credential, and you can list all credentials associated with a specific entrance.
 `)
