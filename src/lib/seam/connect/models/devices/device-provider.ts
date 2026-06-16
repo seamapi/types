@@ -51,8 +51,10 @@ export const DEVICE_PROVIDERS = {
   SENSI: 'sensi',
   KEYNEST: 'keynest',
   KORELOCK: 'korelock',
+  KEYINCODE: 'keyincode',
   DORMAKABA_AMBIANCE: 'dormakaba_ambiance',
   ULTRALOQ: 'ultraloq',
+  SIFELY: 'sifely',
   RING: 'ring',
   ICAL: 'ical',
   LODGIFY: 'lodgify',
@@ -109,6 +111,8 @@ export const PROVIDER_CATEGORY_MAP = {
     'ring',
     'first_alert',
     'korelock',
+    'keyincode',
+    'sifely',
     'omnitec',
   ],
 
@@ -128,6 +132,8 @@ export const PROVIDER_CATEGORY_MAP = {
     'ultraloq',
     'dormakaba_oracode',
     'korelock',
+    'keyincode',
+    'sifely',
   ],
 
   beta: [],
