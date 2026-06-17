@@ -116,10 +116,21 @@ export const salto_ks_subscription_limit_exceeded =
       'Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.',
     )
 
+export const dormakaba_sites_disconnected = common_connected_account_error
+  .extend({
+    error_code: z
+      .literal('dormakaba_sites_disconnected')
+      .describe(error_code_description),
+  })
+  .describe(
+    'Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.',
+  )
+
 export const connected_account_error = z.discriminatedUnion('error_code', [
   account_disconnected,
   bridge_disconnected,
   salto_ks_subscription_limit_exceeded,
+  dormakaba_sites_disconnected,
 ])
 
 export type ConnectedAccountError = z.infer<typeof connected_account_error>
@@ -130,6 +141,9 @@ export const connected_account_error_map = z.object({
   account_disconnected: account_disconnected.nullable().optional(),
   bridge_disconnected: bridge_disconnected.nullable().optional(),
   salto_ks_subscription_limit_exceeded: salto_ks_subscription_limit_exceeded
+    .nullable()
+    .optional(),
+  dormakaba_sites_disconnected: dormakaba_sites_disconnected
     .nullable()
     .optional(),
 })
@@ -250,6 +264,16 @@ const setup_required = common_connected_account_warning
     'Indicates that the connected account requires additional setup before it can be fully operational. Follow the instructions in the warning message to complete the setup.',
   )
 
+const dormakaba_sites_unapproved = common_connected_account_warning
+  .extend({
+    warning_code: z
+      .literal('dormakaba_sites_unapproved')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'Indicates that one or more dormakaba sites associated with the connected account are not approved. Contact support@getseam.com to finish setting up your account.',
+  )
+
 const connected_account_warning = z
   .discriminatedUnion('warning_code', [
     scheduled_maintenance_window,
@@ -259,6 +283,7 @@ const connected_account_warning = z
     being_deleted,
     provider_service_unavailable,
     setup_required,
+    dormakaba_sites_unapproved,
   ])
   .describe('Warning associated with the connected account.')
 
@@ -279,6 +304,7 @@ export const connected_account_warning_map = z.object({
     .nullable()
     .optional(),
   setup_required: setup_required.nullable().optional(),
+  dormakaba_sites_unapproved: dormakaba_sites_unapproved.nullable().optional(),
 })
 
 export type ConnectedAccountWarningMap = z.infer<

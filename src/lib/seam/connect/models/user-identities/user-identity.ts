@@ -91,9 +91,7 @@ const user_identity_warnings = z
   .describe('Warnings associated with the user identity.')
 
 const _user_identity_warning_map = z.object({
-  user_identity_being_deleted: user_identity_being_deleted
-    .optional()
-    .nullable(),
+  being_deleted: user_identity_being_deleted.optional().nullable(),
   acs_user_profile_does_not_match_user_identity:
     acs_user_profile_does_not_match_user_identity.optional().nullable(),
 })
