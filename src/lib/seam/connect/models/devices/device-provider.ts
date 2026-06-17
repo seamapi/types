@@ -54,6 +54,7 @@ export const DEVICE_PROVIDERS = {
   KEYINCODE: 'keyincode',
   DORMAKABA_AMBIANCE: 'dormakaba_ambiance',
   ULTRALOQ: 'ultraloq',
+  DUSAW: 'dusaw',
   SIFELY: 'sifely',
   RING: 'ring',
   ICAL: 'ical',
@@ -114,6 +115,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'keyincode',
     'sifely',
     'omnitec',
+    'dusaw',
   ],
 
   consumer_smartlocks: [
@@ -132,6 +134,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'ultraloq',
     'dormakaba_oracode',
     'korelock',
+    'dusaw',
     'keyincode',
     'sifely',
   ],
