@@ -56,6 +56,7 @@ export const DEVICE_PROVIDERS = {
   ULTRALOQ: 'ultraloq',
   DUSAW: 'dusaw',
   SIFELY: 'sifely',
+  THIRTY_THREE_LOCK: 'thirty_three_lock',
   RING: 'ring',
   ICAL: 'ical',
   LODGIFY: 'lodgify',
@@ -116,6 +117,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'sifely',
     'omnitec',
     'dusaw',
+    'thirty_three_lock',
   ],
 
   consumer_smartlocks: [
@@ -137,6 +139,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'dusaw',
     'keyincode',
     'sifely',
+    'thirty_three_lock',
   ],
 
   beta: [],
