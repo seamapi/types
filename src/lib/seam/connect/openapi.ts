@@ -1437,6 +1437,41 @@ const openapi: OpenAPISpec = {
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['dormakaba_sites_disconnected'],
+                      type: 'string',
+                    },
+                    is_bridge_error: {
+                      description:
+                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
+                      type: 'boolean',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates whether the error is related specifically to the connected account.',
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -12700,6 +12735,41 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['dormakaba_sites_disconnected'],
+                      type: 'string',
+                    },
+                    is_bridge_error: {
+                      description:
+                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
+                      type: 'boolean',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates whether the error is related specifically to the connected account.',
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -12986,6 +13056,31 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['setup_required'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that one or more dormakaba sites associated with the connected account are not approved. Contact support@getseam.com to finish setting up your account.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['dormakaba_sites_unapproved'],
                       type: 'string',
                     },
                   },
@@ -13855,6 +13950,41 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['bridge_disconnected'],
+                      type: 'string',
+                    },
+                    is_bridge_error: {
+                      description:
+                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
+                      type: 'boolean',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates whether the error is related specifically to the connected account.',
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['dormakaba_sites_disconnected'],
                       type: 'string',
                     },
                     is_bridge_error: {
@@ -29640,6 +29770,41 @@ const openapi: OpenAPISpec = {
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['dormakaba_sites_disconnected'],
+                      type: 'string',
+                    },
+                    is_bridge_error: {
+                      description:
+                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
+                      type: 'boolean',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates whether the error is related specifically to the connected account.',
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -32716,6 +32881,41 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['bridge_disconnected'],
+                      type: 'string',
+                    },
+                    is_bridge_error: {
+                      description:
+                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
+                      type: 'boolean',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates whether the error is related specifically to the connected account.',
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['dormakaba_sites_disconnected'],
                       type: 'string',
                     },
                     is_bridge_error: {
