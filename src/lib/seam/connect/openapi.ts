@@ -75125,6 +75125,27 @@ const openapi: OpenAPISpec = {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'parent_space_id',
+            schema: {
+              description:
+                'Filter spaces to only include those whose parent space has the specified `parent_space_id`.',
+              format: 'uuid',
+              type: 'string',
+              'x-undocumented': 'Only used internally.',
+            },
+          },
+          {
+            in: 'query',
+            name: 'parent_space_key',
+            schema: {
+              description:
+                'Filter spaces to only include those whose parent space has the specified `parent_space_key`.',
+              type: 'string',
+              'x-undocumented': 'Only used internally.',
+            },
+          },
         ],
         responses: {
           200: {
@@ -75176,6 +75197,19 @@ const openapi: OpenAPISpec = {
                     format: 'uuid',
                     type: 'string',
                     'x-draft': 'Needs review.',
+                    'x-undocumented': 'Only used internally.',
+                  },
+                  parent_space_id: {
+                    description:
+                      'Filter spaces to only include those whose parent space has the specified `parent_space_id`.',
+                    format: 'uuid',
+                    type: 'string',
+                    'x-undocumented': 'Only used internally.',
+                  },
+                  parent_space_key: {
+                    description:
+                      'Filter spaces to only include those whose parent space has the specified `parent_space_key`.',
+                    type: 'string',
                     'x-undocumented': 'Only used internally.',
                   },
                   search: {
@@ -77815,6 +77849,27 @@ const openapi: OpenAPISpec = {
           },
           {
             in: 'query',
+            name: 'parent_space_id',
+            schema: {
+              description:
+                'Filter spaces to only include those whose parent space has the specified `parent_space_id`.',
+              format: 'uuid',
+              type: 'string',
+              'x-undocumented': 'Only used internally.',
+            },
+          },
+          {
+            in: 'query',
+            name: 'parent_space_key',
+            schema: {
+              description:
+                'Filter spaces to only include those whose parent space has the specified `parent_space_key`.',
+              type: 'string',
+              'x-undocumented': 'Only used internally.',
+            },
+          },
+          {
+            in: 'query',
             name: 'limit',
             schema: {
               default: 500,
@@ -77904,6 +77959,19 @@ const openapi: OpenAPISpec = {
                       "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
                     nullable: true,
                     type: 'string',
+                  },
+                  parent_space_id: {
+                    description:
+                      'Filter spaces to only include those whose parent space has the specified `parent_space_id`.',
+                    format: 'uuid',
+                    type: 'string',
+                    'x-undocumented': 'Only used internally.',
+                  },
+                  parent_space_key: {
+                    description:
+                      'Filter spaces to only include those whose parent space has the specified `parent_space_key`.',
+                    type: 'string',
+                    'x-undocumented': 'Only used internally.',
                   },
                   search: {
                     description:
