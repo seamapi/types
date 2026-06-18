@@ -73,11 +73,11 @@ export const access_code_changed_event = access_code_event.extend({
         property: z
           .string()
           .describe('Name of the property that changed (e.g. `code`).'),
-        previous_value: z
+        from: z
           .string()
           .nullable()
           .describe('Previous value of the property, or null if not set.'),
-        new_value: z
+        to: z
           .string()
           .nullable()
           .describe('New value of the property, or null if cleared.'),
