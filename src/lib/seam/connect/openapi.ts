@@ -65387,6 +65387,401 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Internal endpoint for Console',
       },
     },
+    '/seam/console/v1/sites/create': {
+      post: {
+        description:
+          'Creates a new site, a top-level space in the property hierarchy.',
+        operationId: 'seamConsoleV1SitesCreatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  name: {
+                    description: 'Name of the site that you want to create.',
+                    type: 'string',
+                  },
+                  site_key: {
+                    description:
+                      'Unique key for the site within the workspace.',
+                    type: 'string',
+                  },
+                },
+                required: ['name'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    site: { $ref: '#/components/schemas/space' },
+                  },
+                  required: ['site', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/seam/console/v1/sites/create',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'sites'],
+        'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'site',
+        'x-response-key': 'site',
+        'x-title': 'Create a Site',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/sites/delete': {
+      delete: {
+        description: 'Deletes a site.',
+        operationId: 'seamConsoleV1SitesDeleteDelete',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  site_id: {
+                    description: 'ID of the site that you want to delete.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['site_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/seam/console/v1/sites/delete',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'sites'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete a Site',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+      post: {
+        description: 'Deletes a site.',
+        operationId: 'seamConsoleV1SitesDeletePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  site_id: {
+                    description: 'ID of the site that you want to delete.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['site_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/seam/console/v1/sites/delete',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'sites'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete a Site',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/sites/list': {
+      get: {
+        description: 'Lists sites (top-level spaces) in the workspace.',
+        operationId: 'seamConsoleV1SitesListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters sites to those with a partial match on `name` or `site_key`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    sites: {
+                      items: { $ref: '#/components/schemas/space' },
+                      type: 'array',
+                    },
+                  },
+                  required: ['sites', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/seam/console/v1/sites/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'sites'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'sites',
+        'x-response-key': 'sites',
+        'x-title': 'List Sites',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+      post: {
+        description: 'Lists sites (top-level spaces) in the workspace.',
+        operationId: 'seamConsoleV1SitesListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  search: {
+                    description:
+                      'String for which to search. Filters sites to those with a partial match on `name` or `site_key`.',
+                    minLength: 1,
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    sites: {
+                      items: { $ref: '#/components/schemas/space' },
+                      type: 'array',
+                    },
+                  },
+                  required: ['sites', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/seam/console/v1/sites/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'sites'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'sites',
+        'x-response-key': 'sites',
+        'x-title': 'List Sites',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/sites/update': {
+      patch: {
+        description: 'Updates an existing site.',
+        operationId: 'seamConsoleV1SitesUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  name: {
+                    description: 'New name for the site.',
+                    type: 'string',
+                  },
+                  site_id: {
+                    description: 'ID of the site that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  site_key: {
+                    description:
+                      'New unique key for the site within the workspace.',
+                    type: 'string',
+                  },
+                },
+                required: ['site_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    site: { $ref: '#/components/schemas/space' },
+                  },
+                  required: ['site', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/seam/console/v1/sites/update',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'sites'],
+        'x-fern-sdk-method-name': 'update',
+        'x-fern-sdk-return-value': 'site',
+        'x-response-key': 'site',
+        'x-title': 'Update a Site',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+      post: {
+        description: 'Updates an existing site.',
+        operationId: 'seamConsoleV1SitesUpdatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  name: {
+                    description: 'New name for the site.',
+                    type: 'string',
+                  },
+                  site_id: {
+                    description: 'ID of the site that you want to update.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  site_key: {
+                    description:
+                      'New unique key for the site within the workspace.',
+                    type: 'string',
+                  },
+                },
+                required: ['site_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    site: { $ref: '#/components/schemas/space' },
+                  },
+                  required: ['site', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/seam/console/v1/sites/update',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'sites'],
+        'x-fern-sdk-method-name': 'update',
+        'x-fern-sdk-return-value': 'site',
+        'x-response-key': 'site',
+        'x-title': 'Update a Site',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
     '/seam/console/v1/timelines/get': {
       get: {
         description:
