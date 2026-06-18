@@ -67,6 +67,30 @@ export type AccessCodeCreatedEvent = z.infer<typeof access_code_created_event>
 
 export const access_code_changed_event = access_code_event.extend({
   event_type: z.literal('access_code.changed'),
+  changed_properties: z
+    .array(
+      z.object({
+        property: z
+          .string()
+          .describe('Name of the property that changed (e.g. `code`).'),
+        previous_value: z
+          .string()
+          .nullable()
+          .describe('Previous value of the property, or null if not set.'),
+        new_value: z
+          .string()
+          .nullable()
+          .describe('New value of the property, or null if cleared.'),
+      }),
+    )
+    .optional()
+    .describe('List of properties that changed on the access code.'),
+  change_reason: z
+    .string()
+    .optional()
+    .describe(
+      'Human-readable reason for the change (e.g. `ongoing code auto-renewed`).',
+    ),
 }).describe(`
     ---
     route_path: /access_codes

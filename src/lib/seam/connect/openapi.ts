@@ -17736,6 +17736,39 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              change_reason: {
+                description:
+                  'Human-readable reason for the change (e.g. `ongoing code auto-renewed`).',
+                type: 'string',
+              },
+              changed_properties: {
+                description:
+                  'List of properties that changed on the access code.',
+                items: {
+                  properties: {
+                    new_value: {
+                      description:
+                        'New value of the property, or null if cleared.',
+                      nullable: true,
+                      type: 'string',
+                    },
+                    previous_value: {
+                      description:
+                        'Previous value of the property, or null if not set.',
+                      nullable: true,
+                      type: 'string',
+                    },
+                    property: {
+                      description:
+                        'Name of the property that changed (e.g. `code`).',
+                      type: 'string',
+                    },
+                  },
+                  required: ['property', 'previous_value', 'new_value'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
               connected_account_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
