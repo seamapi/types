@@ -17746,13 +17746,7 @@ const openapi: OpenAPISpec = {
                   'List of properties that changed on the access code.',
                 items: {
                   properties: {
-                    new_value: {
-                      description:
-                        'New value of the property, or null if cleared.',
-                      nullable: true,
-                      type: 'string',
-                    },
-                    previous_value: {
+                    from: {
                       description:
                         'Previous value of the property, or null if not set.',
                       nullable: true,
@@ -17763,8 +17757,14 @@ const openapi: OpenAPISpec = {
                         'Name of the property that changed (e.g. `code`).',
                       type: 'string',
                     },
+                    to: {
+                      description:
+                        'New value of the property, or null if cleared.',
+                      nullable: true,
+                      type: 'string',
+                    },
                   },
-                  required: ['property', 'previous_value', 'new_value'],
+                  required: ['property', 'from', 'to'],
                   type: 'object',
                 },
                 type: 'array',
