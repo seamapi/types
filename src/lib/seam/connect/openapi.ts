@@ -79054,6 +79054,19 @@ const openapi: OpenAPISpec = {
                     type: 'array',
                   },
                   name: { description: 'Name of the space.', type: 'string' },
+                  parent_space_id: {
+                    description:
+                      'Reassign this space to the parent space (site) with this `parent_space_id`.',
+                    format: 'uuid',
+                    type: 'string',
+                    'x-undocumented': 'Only used internally.',
+                  },
+                  parent_space_key: {
+                    description:
+                      'Reassign this space to the parent space (site) with this `parent_space_key`.',
+                    type: 'string',
+                    'x-undocumented': 'Only used internally.',
+                  },
                   space_id: {
                     description: 'ID of the space that you want to update.',
                     format: 'uuid',
@@ -79151,6 +79164,19 @@ const openapi: OpenAPISpec = {
                     type: 'array',
                   },
                   name: { description: 'Name of the space.', type: 'string' },
+                  parent_space_id: {
+                    description:
+                      'Reassign this space to the parent space (site) with this `parent_space_id`.',
+                    format: 'uuid',
+                    type: 'string',
+                    'x-undocumented': 'Only used internally.',
+                  },
+                  parent_space_key: {
+                    description:
+                      'Reassign this space to the parent space (site) with this `parent_space_key`.',
+                    type: 'string',
+                    'x-undocumented': 'Only used internally.',
+                  },
                   space_id: {
                     description: 'ID of the space that you want to update.',
                     format: 'uuid',
