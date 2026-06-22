@@ -28041,6 +28041,11 @@ const openapi: OpenAPISpec = {
           customer_data: {
             description: 'Reservation/stay-related defaults for the space.',
             properties: {
+              address: {
+                description: 'Postal address for the space.',
+                nullable: true,
+                type: 'string',
+              },
               default_checkin_time: {
                 description:
                   'Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.',
@@ -28076,6 +28081,25 @@ const openapi: OpenAPISpec = {
           display_name: {
             description: 'Display name for the space.',
             type: 'string',
+          },
+          geolocation: {
+            description:
+              'Geographic coordinates (latitude and longitude) of the space.',
+            nullable: true,
+            properties: {
+              latitude: {
+                description: 'Latitude of the space, in decimal degrees.',
+                format: 'float',
+                type: 'number',
+              },
+              longitude: {
+                description: 'Longitude of the space, in decimal degrees.',
+                format: 'float',
+                type: 'number',
+              },
+            },
+            required: ['latitude', 'longitude'],
+            type: 'object',
           },
           name: { description: 'Name of the space.', type: 'string' },
           parent_space_id: {
@@ -54557,12 +54581,67 @@ const openapi: OpenAPISpec = {
                             description: 'List of general spaces or areas.',
                             items: {
                               properties: {
+                                customer_data: {
+                                  description:
+                                    'Reservation/stay-related defaults for the space (time zone, default check-in/out times, address).',
+                                  properties: {
+                                    address: {
+                                      description:
+                                        'Postal address for the space.',
+                                      nullable: true,
+                                      type: 'string',
+                                    },
+                                    default_checkin_time: {
+                                      description:
+                                        'Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.',
+                                      nullable: true,
+                                      pattern:
+                                        '^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$',
+                                      type: 'string',
+                                    },
+                                    default_checkout_time: {
+                                      description:
+                                        'Default check-out time for reservations at the space, as HH:mm or HH:mm:ss.',
+                                      nullable: true,
+                                      pattern:
+                                        '^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$',
+                                      type: 'string',
+                                    },
+                                    time_zone: {
+                                      description:
+                                        'IANA time zone for the space, e.g. America/Los_Angeles.',
+                                      nullable: true,
+                                      type: 'string',
+                                    },
+                                  },
+                                  type: 'object',
+                                },
                                 duration_minutes: {
                                   description:
                                     'Default duration of this space in minutes, when the space represents a fixed-length bookable slot (e.g. an appointment type). Used to interpret reservations booked against this space.',
                                   exclusiveMinimum: true,
                                   minimum: 0,
                                   type: 'integer',
+                                },
+                                geolocation: {
+                                  description:
+                                    'Geographic coordinates (latitude and longitude) of the space.',
+                                  properties: {
+                                    latitude: {
+                                      description:
+                                        'Latitude of the space, in decimal degrees.',
+                                      format: 'float',
+                                      type: 'number',
+                                    },
+                                    longitude: {
+                                      description:
+                                        'Longitude of the space, in decimal degrees.',
+                                      format: 'float',
+                                      type: 'number',
+                                    },
+                                  },
+                                  required: ['latitude', 'longitude'],
+                                  type: 'object',
                                 },
                                 name: {
                                   description:
@@ -55810,12 +55889,66 @@ const openapi: OpenAPISpec = {
                     description: 'List of general spaces or areas.',
                     items: {
                       properties: {
+                        customer_data: {
+                          description:
+                            'Reservation/stay-related defaults for the space (time zone, default check-in/out times, address).',
+                          properties: {
+                            address: {
+                              description: 'Postal address for the space.',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            default_checkin_time: {
+                              description:
+                                'Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.',
+                              nullable: true,
+                              pattern:
+                                '^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$',
+                              type: 'string',
+                            },
+                            default_checkout_time: {
+                              description:
+                                'Default check-out time for reservations at the space, as HH:mm or HH:mm:ss.',
+                              nullable: true,
+                              pattern:
+                                '^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$',
+                              type: 'string',
+                            },
+                            time_zone: {
+                              description:
+                                'IANA time zone for the space, e.g. America/Los_Angeles.',
+                              nullable: true,
+                              type: 'string',
+                            },
+                          },
+                          type: 'object',
+                        },
                         duration_minutes: {
                           description:
                             'Default duration of this space in minutes, when the space represents a fixed-length bookable slot (e.g. an appointment type). Used to interpret reservations booked against this space.',
                           exclusiveMinimum: true,
                           minimum: 0,
                           type: 'integer',
+                        },
+                        geolocation: {
+                          description:
+                            'Geographic coordinates (latitude and longitude) of the space.',
+                          properties: {
+                            latitude: {
+                              description:
+                                'Latitude of the space, in decimal degrees.',
+                              format: 'float',
+                              type: 'number',
+                            },
+                            longitude: {
+                              description:
+                                'Longitude of the space, in decimal degrees.',
+                              format: 'float',
+                              type: 'number',
+                            },
+                          },
+                          required: ['latitude', 'longitude'],
+                          type: 'object',
                         },
                         name: {
                           description:
@@ -75634,6 +75767,11 @@ const openapi: OpenAPISpec = {
                     description:
                       "Reservation/stay-related defaults for the space. When omitted and `connected_account_ids` is provided, `default_checkin_time` / `default_checkout_time` / `time_zone` are auto-inherited from the first connected account's connector configuration.",
                     properties: {
+                      address: {
+                        description: 'Postal address for the space.',
+                        nullable: true,
+                        type: 'string',
+                      },
                       default_checkin_time: {
                         description:
                           'Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.',
@@ -77882,6 +78020,11 @@ const openapi: OpenAPISpec = {
                     description:
                       'Reservation/stay-related defaults for the space.',
                     properties: {
+                      address: {
+                        description: 'Postal address for the space.',
+                        nullable: true,
+                        type: 'string',
+                      },
                       default_checkin_time: {
                         description:
                           'Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.',
@@ -79024,6 +79167,11 @@ const openapi: OpenAPISpec = {
                     description:
                       'Reservation/stay-related defaults for the space. Only the keys you provide are updated; omit a key to leave it unchanged. Pass null on a key to clear it.',
                     properties: {
+                      address: {
+                        description: 'Postal address for the space.',
+                        nullable: true,
+                        type: 'string',
+                      },
                       default_checkin_time: {
                         description:
                           'Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.',
@@ -79134,6 +79282,11 @@ const openapi: OpenAPISpec = {
                     description:
                       'Reservation/stay-related defaults for the space. Only the keys you provide are updated; omit a key to leave it unchanged. Pass null on a key to clear it.',
                     properties: {
+                      address: {
+                        description: 'Postal address for the space.',
+                        nullable: true,
+                        type: 'string',
+                      },
                       default_checkin_time: {
                         description:
                           'Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.',
@@ -82677,12 +82830,64 @@ const openapi: OpenAPISpec = {
                 'Optional list of spaces that you want to include in the new building block magic link.',
               items: {
                 properties: {
+                  customer_data: {
+                    description:
+                      'Reservation/stay-related defaults for the space (time zone, default check-in/out times, address).',
+                    properties: {
+                      address: {
+                        description: 'Postal address for the space.',
+                        nullable: true,
+                        type: 'string',
+                      },
+                      default_checkin_time: {
+                        description:
+                          'Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.',
+                        nullable: true,
+                        pattern: '^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$',
+                        type: 'string',
+                      },
+                      default_checkout_time: {
+                        description:
+                          'Default check-out time for reservations at the space, as HH:mm or HH:mm:ss.',
+                        nullable: true,
+                        pattern: '^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$',
+                        type: 'string',
+                      },
+                      time_zone: {
+                        description:
+                          'IANA time zone for the space, e.g. America/Los_Angeles.',
+                        nullable: true,
+                        type: 'string',
+                      },
+                    },
+                    type: 'object',
+                  },
                   duration_minutes: {
                     description:
                       'Default duration of this space in minutes, when the space represents a fixed-length bookable slot (e.g. an appointment type). Used to interpret reservations booked against this space.',
                     exclusiveMinimum: true,
                     minimum: 0,
                     type: 'integer',
+                  },
+                  geolocation: {
+                    description:
+                      'Geographic coordinates (latitude and longitude) of the space.',
+                    properties: {
+                      latitude: {
+                        description:
+                          'Latitude of the space, in decimal degrees.',
+                        format: 'float',
+                        type: 'number',
+                      },
+                      longitude: {
+                        description:
+                          'Longitude of the space, in decimal degrees.',
+                        format: 'float',
+                        type: 'number',
+                      },
+                    },
+                    required: ['latitude', 'longitude'],
+                    type: 'object',
                   },
                   name: {
                     description:
@@ -82770,12 +82975,66 @@ const openapi: OpenAPISpec = {
                       'Optional list of spaces that you want to include in the new building block magic link.',
                     items: {
                       properties: {
+                        customer_data: {
+                          description:
+                            'Reservation/stay-related defaults for the space (time zone, default check-in/out times, address).',
+                          properties: {
+                            address: {
+                              description: 'Postal address for the space.',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            default_checkin_time: {
+                              description:
+                                'Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.',
+                              nullable: true,
+                              pattern:
+                                '^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$',
+                              type: 'string',
+                            },
+                            default_checkout_time: {
+                              description:
+                                'Default check-out time for reservations at the space, as HH:mm or HH:mm:ss.',
+                              nullable: true,
+                              pattern:
+                                '^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$',
+                              type: 'string',
+                            },
+                            time_zone: {
+                              description:
+                                'IANA time zone for the space, e.g. America/Los_Angeles.',
+                              nullable: true,
+                              type: 'string',
+                            },
+                          },
+                          type: 'object',
+                        },
                         duration_minutes: {
                           description:
                             'Default duration of this space in minutes, when the space represents a fixed-length bookable slot (e.g. an appointment type). Used to interpret reservations booked against this space.',
                           exclusiveMinimum: true,
                           minimum: 0,
                           type: 'integer',
+                        },
+                        geolocation: {
+                          description:
+                            'Geographic coordinates (latitude and longitude) of the space.',
+                          properties: {
+                            latitude: {
+                              description:
+                                'Latitude of the space, in decimal degrees.',
+                              format: 'float',
+                              type: 'number',
+                            },
+                            longitude: {
+                              description:
+                                'Longitude of the space, in decimal degrees.',
+                              format: 'float',
+                              type: 'number',
+                            },
+                          },
+                          required: ['latitude', 'longitude'],
+                          type: 'object',
                         },
                         name: {
                           description:
@@ -82917,12 +83176,66 @@ const openapi: OpenAPISpec = {
                       'Optional list of spaces that you want to include in the new building block magic link.',
                     items: {
                       properties: {
+                        customer_data: {
+                          description:
+                            'Reservation/stay-related defaults for the space (time zone, default check-in/out times, address).',
+                          properties: {
+                            address: {
+                              description: 'Postal address for the space.',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            default_checkin_time: {
+                              description:
+                                'Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.',
+                              nullable: true,
+                              pattern:
+                                '^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$',
+                              type: 'string',
+                            },
+                            default_checkout_time: {
+                              description:
+                                'Default check-out time for reservations at the space, as HH:mm or HH:mm:ss.',
+                              nullable: true,
+                              pattern:
+                                '^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$',
+                              type: 'string',
+                            },
+                            time_zone: {
+                              description:
+                                'IANA time zone for the space, e.g. America/Los_Angeles.',
+                              nullable: true,
+                              type: 'string',
+                            },
+                          },
+                          type: 'object',
+                        },
                         duration_minutes: {
                           description:
                             'Default duration of this space in minutes, when the space represents a fixed-length bookable slot (e.g. an appointment type). Used to interpret reservations booked against this space.',
                           exclusiveMinimum: true,
                           minimum: 0,
                           type: 'integer',
+                        },
+                        geolocation: {
+                          description:
+                            'Geographic coordinates (latitude and longitude) of the space.',
+                          properties: {
+                            latitude: {
+                              description:
+                                'Latitude of the space, in decimal degrees.',
+                              format: 'float',
+                              type: 'number',
+                            },
+                            longitude: {
+                              description:
+                                'Longitude of the space, in decimal degrees.',
+                              format: 'float',
+                              type: 'number',
+                            },
+                          },
+                          required: ['latitude', 'longitude'],
+                          type: 'object',
                         },
                         name: {
                           description:
