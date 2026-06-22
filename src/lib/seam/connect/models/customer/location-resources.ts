@@ -1,6 +1,7 @@
 import { z } from 'zod'
 
 import { custom_metadata_input } from '../custom-metadata.js'
+import { space_customer_data, space_geolocation } from '../spaces/space.js'
 
 // Base location resource with common fields
 const base_location_resource = z.object({
@@ -32,6 +33,14 @@ export const neutral_resource = base_location_resource.extend({
     .describe(
       'Default duration of this space in minutes, when the space represents a fixed-length bookable slot (e.g. an appointment type). Used to interpret reservations booked against this space.',
     ),
+  customer_data: space_customer_data
+    .optional()
+    .describe(
+      'Reservation/stay-related defaults for the space (time zone, default check-in/out times, address).',
+    ),
+  geolocation: space_geolocation
+    .optional()
+    .describe('Geographic coordinates (latitude and longitude) of the space.'),
 })
 
 export const property_resource = base_location_resource.extend({

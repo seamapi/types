@@ -22,8 +22,18 @@ export const space_customer_data = z
       .describe(
         'Default check-out time for reservations at the space, as HH:mm or HH:mm:ss.',
       ),
+    address: z.string().nullish().describe('Postal address for the space.'),
   })
   .describe('Reservation/stay-related defaults for the space.')
+
+export const space_geolocation = z
+  .object({
+    latitude: z.number().describe('Latitude of the space, in decimal degrees.'),
+    longitude: z
+      .number()
+      .describe('Longitude of the space, in decimal degrees.'),
+  })
+  .describe('Geographic coordinates of the space.')
 
 export const space = z.object({
   space_id: z.string().uuid().describe('ID of the space.'),
@@ -50,6 +60,9 @@ export const space = z.object({
     .optional()
     .describe('Customer key associated with the space.'),
   customer_data: space_customer_data.optional(),
+  geolocation: space_geolocation
+    .nullish()
+    .describe('Geographic coordinates (latitude and longitude) of the space.'),
   parent_space_id: z.string().uuid().optional().describe(`
     ---
     undocumented: Only used internally.
