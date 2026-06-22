@@ -52321,6 +52321,7 @@ const openapi: OpenAPISpec = {
                         'yale_access',
                         'hid_cm',
                         'google_nest',
+                        'slack',
                       ],
                       type: 'string',
                     },
