@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-import { phone_number } from '../../phone-number.js'
+import { loose_phone_number } from '../../phone-number.js'
 
 const common_pending_mutation = z.object({
   created_at: z
@@ -62,7 +62,7 @@ const acs_user_info = z.object({
     .string()
     .nullable()
     .describe('Full name of the access system user.'),
-  phone_number: phone_number
+  phone_number: loose_phone_number
     .optional()
     .nullable()
     .describe('Phone number of the access system user.'),
@@ -276,10 +276,10 @@ const _acs_user_pending_mutations_map = z.object({
     .extend({
       mutation_code: z.literal('updating_user_information'),
       from: z.object({
-        phone_number: phone_number.nullable(),
+        phone_number: loose_phone_number.nullable(),
       }),
       to: z.object({
-        phone_number: phone_number.nullable(),
+        phone_number: loose_phone_number.nullable(),
       }),
     })
     .optional()

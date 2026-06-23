@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-import { phone_number } from '../phone-number.js'
+import { loose_phone_number } from '../phone-number.js'
 
 const common_user_identity_error = z.object({
   created_at: z
@@ -114,7 +114,7 @@ export const user_identity = z.object({
     .email()
     .nullable()
     .describe('Unique email address for the user identity.'),
-  phone_number: phone_number
+  phone_number: loose_phone_number
     .nullable()
     .describe(
       'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
