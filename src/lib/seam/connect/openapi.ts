@@ -36042,6 +36042,7 @@ const openapi: OpenAPISpec = {
         },
         security: [
           { client_session: [] },
+          { client_session_with_customer: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
@@ -36114,6 +36115,7 @@ const openapi: OpenAPISpec = {
         },
         security: [
           { client_session: [] },
+          { client_session_with_customer: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
@@ -36178,6 +36180,7 @@ const openapi: OpenAPISpec = {
         },
         security: [
           { client_session: [] },
+          { client_session_with_customer: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
@@ -36240,6 +36243,7 @@ const openapi: OpenAPISpec = {
         },
         security: [
           { client_session: [] },
+          { client_session_with_customer: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
@@ -36312,6 +36316,7 @@ const openapi: OpenAPISpec = {
         },
         security: [
           { client_session: [] },
+          { client_session_with_customer: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
@@ -36379,6 +36384,7 @@ const openapi: OpenAPISpec = {
         },
         security: [
           { client_session: [] },
+          { client_session_with_customer: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
@@ -36638,6 +36644,7 @@ const openapi: OpenAPISpec = {
         },
         security: [
           { client_session: [] },
+          { client_session_with_customer: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
@@ -36705,6 +36712,7 @@ const openapi: OpenAPISpec = {
         },
         security: [
           { client_session: [] },
+          { client_session_with_customer: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
