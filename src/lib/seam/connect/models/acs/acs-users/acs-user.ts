@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-import { phone_number } from '../../phone-number.js'
+import { loose_phone_number } from '../../phone-number.js'
 import { schedule } from '../../schedule.js'
 import { acs_user_salto_space_metadata } from '../metadata/salto-space.js'
 import { acs_user_pending_mutations } from './pending-mutations.js'
@@ -200,7 +200,7 @@ const user_fields = z.object({
     .describe(
       'Email address of the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
     ),
-  phone_number: phone_number
+  phone_number: loose_phone_number
     .optional()
     .describe(
       'Phone number of the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
