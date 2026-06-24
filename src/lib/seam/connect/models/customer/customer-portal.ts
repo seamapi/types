@@ -123,7 +123,18 @@ export const portal_configuration_base = z.object({
     .optional()
     .describe('Configuration for the landing page when the portal loads.'),
   locale: z
-    .enum(['en-US', 'pt-PT', 'fr-FR', 'it-IT', 'es-ES'])
+    .enum([
+      'en-US',
+      'pt-PT',
+      'fr-FR',
+      'it-IT',
+      'es-ES',
+      'de-DE',
+      'nl-NL',
+      'el-GR',
+      'pl-PL',
+      'ru-RU',
+    ])
     .optional()
     .describe('The locale to use for the portal.'),
   exclude_locale_picker: z
