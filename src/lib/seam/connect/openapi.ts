@@ -53963,7 +53963,18 @@ const openapi: OpenAPISpec = {
                       },
                       locale: {
                         description: 'The locale to use for the portal.',
-                        enum: ['en-US', 'pt-PT', 'fr-FR', 'it-IT', 'es-ES'],
+                        enum: [
+                          'en-US',
+                          'pt-PT',
+                          'fr-FR',
+                          'it-IT',
+                          'es-ES',
+                          'de-DE',
+                          'nl-NL',
+                          'el-GR',
+                          'pl-PL',
+                          'ru-RU',
+                        ],
                         type: 'string',
                       },
                       navigation_mode: {
@@ -72629,7 +72640,18 @@ const openapi: OpenAPISpec = {
                         },
                         locale: {
                           description: 'The locale to use for the portal.',
-                          enum: ['en-US', 'pt-PT', 'fr-FR', 'it-IT', 'es-ES'],
+                          enum: [
+                            'en-US',
+                            'pt-PT',
+                            'fr-FR',
+                            'it-IT',
+                            'es-ES',
+                            'de-DE',
+                            'nl-NL',
+                            'el-GR',
+                            'pl-PL',
+                            'ru-RU',
+                          ],
                           type: 'string',
                         },
                         navigation_mode: {
@@ -73045,7 +73067,18 @@ const openapi: OpenAPISpec = {
                         },
                         locale: {
                           description: 'The locale to use for the portal.',
-                          enum: ['en-US', 'pt-PT', 'fr-FR', 'it-IT', 'es-ES'],
+                          enum: [
+                            'en-US',
+                            'pt-PT',
+                            'fr-FR',
+                            'it-IT',
+                            'es-ES',
+                            'de-DE',
+                            'nl-NL',
+                            'el-GR',
+                            'pl-PL',
+                            'ru-RU',
+                          ],
                           type: 'string',
                         },
                         navigation_mode: {
@@ -73414,7 +73447,18 @@ const openapi: OpenAPISpec = {
                       },
                       locale: {
                         description: 'The locale to use for the portal.',
-                        enum: ['en-US', 'pt-PT', 'fr-FR', 'it-IT', 'es-ES'],
+                        enum: [
+                          'en-US',
+                          'pt-PT',
+                          'fr-FR',
+                          'it-IT',
+                          'es-ES',
+                          'de-DE',
+                          'nl-NL',
+                          'el-GR',
+                          'pl-PL',
+                          'ru-RU',
+                        ],
                         type: 'string',
                       },
                       navigation_mode: {
@@ -73791,7 +73835,18 @@ const openapi: OpenAPISpec = {
                       },
                       locale: {
                         description: 'The locale to use for the portal.',
-                        enum: ['en-US', 'pt-PT', 'fr-FR', 'it-IT', 'es-ES'],
+                        enum: [
+                          'en-US',
+                          'pt-PT',
+                          'fr-FR',
+                          'it-IT',
+                          'es-ES',
+                          'de-DE',
+                          'nl-NL',
+                          'el-GR',
+                          'pl-PL',
+                          'ru-RU',
+                        ],
                         type: 'string',
                       },
                       navigation_mode: {
