@@ -13178,6 +13178,8 @@ const openapi: OpenAPISpec = {
           created_at: { format: 'date-time', type: 'string' },
           customer_portal_theme: {
             properties: {
+              font_family: { type: 'string' },
+              mono_font_family: { type: 'string' },
               primary_color: { type: 'string' },
               primary_foreground_color: { type: 'string' },
               secondary_color: { type: 'string' },
@@ -87158,6 +87160,8 @@ const openapi: OpenAPISpec = {
                 properties: {
                   customer_portal_theme: {
                     properties: {
+                      font_family: { type: 'string' },
+                      mono_font_family: { type: 'string' },
                       primary_color: { type: 'string' },
                       primary_foreground_color: { type: 'string' },
                       secondary_color: { type: 'string' },
@@ -87437,6 +87441,8 @@ const openapi: OpenAPISpec = {
                   customer_portal_theme: {
                     nullable: true,
                     properties: {
+                      font_family: { type: 'string' },
+                      mono_font_family: { type: 'string' },
                       primary_color: { type: 'string' },
                       primary_foreground_color: { type: 'string' },
                       secondary_color: { type: 'string' },
@@ -87496,6 +87502,8 @@ const openapi: OpenAPISpec = {
                   customer_portal_theme: {
                     nullable: true,
                     properties: {
+                      font_family: { type: 'string' },
+                      mono_font_family: { type: 'string' },
                       primary_color: { type: 'string' },
                       primary_foreground_color: { type: 'string' },
                       secondary_color: { type: 'string' },

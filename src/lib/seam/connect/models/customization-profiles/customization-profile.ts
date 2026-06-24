@@ -7,6 +7,8 @@ export const customer_portal_theme = z.object({
   primary_foreground_color: hex_color_code.optional(),
   secondary_color: hex_color_code.optional(),
   secondary_foreground_color: hex_color_code.optional(),
+  font_family: z.string().optional(),
+  mono_font_family: z.string().optional(),
 })
 
 export const customization_profile = z.object({
