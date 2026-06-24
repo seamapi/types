@@ -74379,6 +74379,15 @@ const openapi: OpenAPISpec = {
           },
           {
             in: 'query',
+            name: 'user_identity_id',
+            schema: {
+              description: 'Filter reservations by the guest user identity ID.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'limit',
             schema: {
               default: 500,
@@ -74749,6 +74758,12 @@ const openapi: OpenAPISpec = {
                   },
                   space_key: {
                     description: 'Filter reservations by space key.',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'Filter reservations by the guest user identity ID.',
+                    format: 'uuid',
                     type: 'string',
                   },
                 },
