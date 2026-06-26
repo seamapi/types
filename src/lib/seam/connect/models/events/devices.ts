@@ -214,6 +214,13 @@ export type DeviceRemovedEvent = z.infer<typeof device_removed_event>
 
 export const device_deleted_event = device_event.extend({
   event_type: z.literal('device.deleted'),
+  device_name: z
+    .string()
+    .nullable()
+    .optional()
+    .describe(
+      'Name of the deleted device, captured at deletion time. The device record no longer exists when this event fires, so the name is preserved here. Null when the device had no resolvable name.',
+    ),
 }).describe(`
   ---
   route_path: /devices
