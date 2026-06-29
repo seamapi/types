@@ -62,6 +62,30 @@ const base_manage_feature = base_feature.extend({
     })
     .optional()
     .describe('Configuration for event type filtering in the manage feature.'),
+  device_management_confirmation: z
+    .object({
+      title: z
+        .string()
+        .optional()
+        .describe('Custom title for the confirmation modal.'),
+      body: z
+        .string()
+        .optional()
+        .describe(
+          'Custom body text for the confirmation modal. May include the {count} token, which is replaced with the number of devices that will begin being managed.',
+        ),
+      confirm_button_label: z
+        .string()
+        .optional()
+        .describe('Custom label for the confirm button.'),
+      cancel_button_label: z
+        .string()
+        .optional()
+        .describe('Custom label for the cancel button.'),
+    })
+    .optional().describe(`
+      Custom copy for the confirmation modal shown before unmanaged devices are added to a space and begin being managed (and billed). Only takes effect when the MANAGE_DEVICES_CONFIRMATION_MODAL feature flag is enabled for the workspace. Any omitted string falls back to a localized default.
+    `),
 })
 
 const base_organize_feature = base_feature
