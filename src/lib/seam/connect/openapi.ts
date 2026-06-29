@@ -53776,6 +53776,33 @@ const openapi: OpenAPISpec = {
                             description:
                               'Configuration for the manage feature.',
                             properties: {
+                              device_management_confirmation: {
+                                description:
+                                  '\n      Custom copy for the confirmation modal shown before unmanaged devices are added to a space and begin being managed (and billed). Only takes effect when the MANAGE_DEVICES_CONFIRMATION_MODAL feature flag is enabled for the workspace. Any omitted string falls back to a localized default.\n    ',
+                                properties: {
+                                  body: {
+                                    description:
+                                      'Custom body text for the confirmation modal. May include the {count} token, which is replaced with the number of devices that will begin being managed.',
+                                    type: 'string',
+                                  },
+                                  cancel_button_label: {
+                                    description:
+                                      'Custom label for the cancel button.',
+                                    type: 'string',
+                                  },
+                                  confirm_button_label: {
+                                    description:
+                                      'Custom label for the confirm button.',
+                                    type: 'string',
+                                  },
+                                  title: {
+                                    description:
+                                      'Custom title for the confirmation modal.',
+                                    type: 'string',
+                                  },
+                                },
+                                type: 'object',
+                              },
                               events: {
                                 description:
                                   'Configuration for event type filtering in the manage feature.',
@@ -72368,6 +72395,9 @@ const openapi: OpenAPISpec = {
                         },
                         feature_flags: {
                           properties: {
+                            MANAGE_DEVICES_CONFIRMATION_MODAL: {
+                              type: 'boolean',
+                            },
                             RESERVATION_UI_V2: { type: 'boolean' },
                             SALTO_KS_ENTRANCES_ONLY_FOR_SPACES: {
                               type: 'boolean',
@@ -72447,6 +72477,33 @@ const openapi: OpenAPISpec = {
                               description:
                                 'Configuration for the manage feature.',
                               properties: {
+                                device_management_confirmation: {
+                                  description:
+                                    '\n      Custom copy for the confirmation modal shown before unmanaged devices are added to a space and begin being managed (and billed). Only takes effect when the MANAGE_DEVICES_CONFIRMATION_MODAL feature flag is enabled for the workspace. Any omitted string falls back to a localized default.\n    ',
+                                  properties: {
+                                    body: {
+                                      description:
+                                        'Custom body text for the confirmation modal. May include the {count} token, which is replaced with the number of devices that will begin being managed.',
+                                      type: 'string',
+                                    },
+                                    cancel_button_label: {
+                                      description:
+                                        'Custom label for the cancel button.',
+                                      type: 'string',
+                                    },
+                                    confirm_button_label: {
+                                      description:
+                                        'Custom label for the confirm button.',
+                                      type: 'string',
+                                    },
+                                    title: {
+                                      description:
+                                        'Custom title for the confirmation modal.',
+                                      type: 'string',
+                                    },
+                                  },
+                                  type: 'object',
+                                },
                                 events: {
                                   description:
                                     'Configuration for event type filtering in the manage feature.',
@@ -72795,6 +72852,9 @@ const openapi: OpenAPISpec = {
                         },
                         feature_flags: {
                           properties: {
+                            MANAGE_DEVICES_CONFIRMATION_MODAL: {
+                              type: 'boolean',
+                            },
                             RESERVATION_UI_V2: { type: 'boolean' },
                             SALTO_KS_ENTRANCES_ONLY_FOR_SPACES: {
                               type: 'boolean',
@@ -72874,6 +72934,33 @@ const openapi: OpenAPISpec = {
                               description:
                                 'Configuration for the manage feature.',
                               properties: {
+                                device_management_confirmation: {
+                                  description:
+                                    '\n      Custom copy for the confirmation modal shown before unmanaged devices are added to a space and begin being managed (and billed). Only takes effect when the MANAGE_DEVICES_CONFIRMATION_MODAL feature flag is enabled for the workspace. Any omitted string falls back to a localized default.\n    ',
+                                  properties: {
+                                    body: {
+                                      description:
+                                        'Custom body text for the confirmation modal. May include the {count} token, which is replaced with the number of devices that will begin being managed.',
+                                      type: 'string',
+                                    },
+                                    cancel_button_label: {
+                                      description:
+                                        'Custom label for the cancel button.',
+                                      type: 'string',
+                                    },
+                                    confirm_button_label: {
+                                      description:
+                                        'Custom label for the confirm button.',
+                                      type: 'string',
+                                    },
+                                    title: {
+                                      description:
+                                        'Custom title for the confirmation modal.',
+                                      type: 'string',
+                                    },
+                                  },
+                                  type: 'object',
+                                },
                                 events: {
                                   description:
                                     'Configuration for event type filtering in the manage feature.',
@@ -73260,6 +73347,33 @@ const openapi: OpenAPISpec = {
                             description:
                               'Configuration for the manage feature.',
                             properties: {
+                              device_management_confirmation: {
+                                description:
+                                  '\n      Custom copy for the confirmation modal shown before unmanaged devices are added to a space and begin being managed (and billed). Only takes effect when the MANAGE_DEVICES_CONFIRMATION_MODAL feature flag is enabled for the workspace. Any omitted string falls back to a localized default.\n    ',
+                                properties: {
+                                  body: {
+                                    description:
+                                      'Custom body text for the confirmation modal. May include the {count} token, which is replaced with the number of devices that will begin being managed.',
+                                    type: 'string',
+                                  },
+                                  cancel_button_label: {
+                                    description:
+                                      'Custom label for the cancel button.',
+                                    type: 'string',
+                                  },
+                                  confirm_button_label: {
+                                    description:
+                                      'Custom label for the confirm button.',
+                                    type: 'string',
+                                  },
+                                  title: {
+                                    description:
+                                      'Custom title for the confirmation modal.',
+                                    type: 'string',
+                                  },
+                                },
+                                type: 'object',
+                              },
                               events: {
                                 description:
                                   'Configuration for event type filtering in the manage feature.',
@@ -73648,6 +73762,33 @@ const openapi: OpenAPISpec = {
                             description:
                               'Configuration for the manage feature.',
                             properties: {
+                              device_management_confirmation: {
+                                description:
+                                  '\n      Custom copy for the confirmation modal shown before unmanaged devices are added to a space and begin being managed (and billed). Only takes effect when the MANAGE_DEVICES_CONFIRMATION_MODAL feature flag is enabled for the workspace. Any omitted string falls back to a localized default.\n    ',
+                                properties: {
+                                  body: {
+                                    description:
+                                      'Custom body text for the confirmation modal. May include the {count} token, which is replaced with the number of devices that will begin being managed.',
+                                    type: 'string',
+                                  },
+                                  cancel_button_label: {
+                                    description:
+                                      'Custom label for the cancel button.',
+                                    type: 'string',
+                                  },
+                                  confirm_button_label: {
+                                    description:
+                                      'Custom label for the confirm button.',
+                                    type: 'string',
+                                  },
+                                  title: {
+                                    description:
+                                      'Custom title for the confirmation modal.',
+                                    type: 'string',
+                                  },
+                                },
+                                type: 'object',
+                              },
                               events: {
                                 description:
                                   'Configuration for event type filtering in the manage feature.',
