@@ -30,37 +30,6 @@ const provider_issue = common_access_code_error
     'Indicates a provider-specific issue that prevents the access code from being set or managed. Check the error message for details.',
   )
 
-const smartthings_failed_to_set_access_code_error = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('smartthings_failed_to_set_access_code')
-      .describe(error_code_description),
-  })
-  .describe(
-    `
-    ---
-    deprecated: Handled by the generic \`failed_to_set_on_device\` system.
-    ---
-    Failed to set code on SmartThings device.
-    `,
-  )
-
-const smartthings_failed_to_set_after_multiple_retries =
-  common_access_code_error
-    .extend({
-      error_code: z
-        .literal('smartthings_failed_to_set_after_multiple_retries')
-        .describe(error_code_description),
-    })
-    .describe(
-      `
-    ---
-    deprecated: Handled by the generic \`failed_to_set_on_device\` system.
-    ---
-    Failed to set code after multiple retries.
-    `,
-    )
-
 const modified_field = z.object({
   field: z
     .string()
@@ -157,36 +126,6 @@ const access_code_state_unconfirmed = common_access_code_error
     'Indicates that the provider cannot confirm whether the access code was set or removed on the device.',
   )
 
-const kwikset_unable_to_confirm_code = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('kwikset_unable_to_confirm_code')
-      .describe(error_code_description),
-  })
-  .describe(
-    `
-    ---
-    deprecated: Use \`access_code_state_unconfirmed\` instead.
-    ---
-    Unable to confirm that the access code is set on Kwikset device.
-    `,
-  )
-
-const kwikset_unable_to_confirm_deletion = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('kwikset_unable_to_confirm_deletion')
-      .describe(error_code_description),
-  })
-  .describe(
-    `
-    ---
-    deprecated: Use \`access_code_state_unconfirmed\` instead.
-    ---
-    Unable to confirm the deletion of the access code on Kwikset device.
-    `,
-  )
-
 const insufficient_permissions = common_access_code_error
   .extend({
     error_code: z
@@ -195,51 +134,6 @@ const insufficient_permissions = common_access_code_error
   })
   .describe(
     'Admin role required—insufficient permissions to manage PINs on this device. Please have an admin update your role, or ask them to set the PIN.',
-  )
-
-const august_lock_invalid_code_length = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('august_lock_invalid_code_length')
-      .describe(error_code_description),
-  })
-  .describe(
-    `
-    ---
-    deprecated: Use \`provider_issue\` instead.
-    ---
-    Invalid code length for August lock.
-    `,
-  )
-
-const august_lock_temporarily_offline_error = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('august_lock_temporarily_offline')
-      .describe(error_code_description),
-  })
-  .describe(
-    `
-    ---
-    deprecated: Use \`provider_issue\` instead.
-    ---
-    August lock is temporarily offline.
-    `,
-  )
-
-const august_lock_missing_keypad = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('august_lock_missing_keypad')
-      .describe(error_code_description),
-  })
-  .describe(
-    `
-    ---
-    deprecated: Use \`provider_issue\` instead.
-    ---
-    August lock is missing a keypad.
-    `,
   )
 
 const access_code_inactive_error = common_access_code_error
@@ -267,66 +161,6 @@ const salto_ks_user_not_subscribed = common_access_code_error
     `,
   )
 
-const wyze_duplicate_code_name = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('wyze_duplicate_code_name')
-      .describe(error_code_description),
-  })
-  .describe(
-    `
-    ---
-    deprecated: Use \`duplicate_code_on_device\` instead.
-    ---
-    Duplicate access code name detected.
-    `,
-  )
-
-const wyze_potential_duplicate_code = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('wyze_potential_duplicate_code')
-      .describe(error_code_description),
-  })
-  .describe(
-    `
-    ---
-    deprecated: Use \`duplicate_code_on_device\` instead.
-    ---
-    Potential duplicate access code detected.
-    `,
-  )
-
-const dormakaba_oracode_invalid_time_range = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('dormakaba_oracode_invalid_time_range')
-      .describe(error_code_description),
-  })
-  .describe(
-    `
-    ---
-    deprecated: Use \`provider_issue\` instead.
-    ---
-    No Dormakaba Oracode user levels configured for the requested time range.
-    `,
-  )
-
-const keynest_unsupported_third_party_locker = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('keynest_unsupported_third_party_locker')
-      .describe(error_code_description),
-  })
-  .describe(
-    `
-    ---
-    deprecated: Use \`provider_issue\` instead.
-    ---
-    KeyNest locker is not supported.
-    `,
-  )
-
 const replaced_by_newer_access_code = common_access_code_error
   .extend({
     error_code: z
@@ -340,28 +174,16 @@ const replaced_by_newer_access_code = common_access_code_error
 const access_code_error = z
   .discriminatedUnion('error_code', [
     provider_issue,
-    smartthings_failed_to_set_access_code_error,
-    smartthings_failed_to_set_after_multiple_retries,
     failed_to_set_on_device,
     failed_to_remove_from_device,
     duplicate_code_on_device,
     duplicate_code_attempt_prevented,
     no_space_for_access_code_on_device,
     access_code_state_unconfirmed,
-    kwikset_unable_to_confirm_code,
-
-    kwikset_unable_to_confirm_deletion,
     code_modified_external_to_seam_error,
-    august_lock_invalid_code_length,
-    august_lock_missing_keypad,
-    august_lock_temporarily_offline_error,
     access_code_inactive_error,
     salto_ks_user_not_subscribed,
-    wyze_duplicate_code_name,
-    wyze_potential_duplicate_code,
-    dormakaba_oracode_invalid_time_range,
     insufficient_permissions,
-    keynest_unsupported_third_party_locker,
     replaced_by_newer_access_code,
   ])
   .describe(
@@ -372,10 +194,6 @@ export type AccessCodeError = z.infer<typeof access_code_error>
 
 const _access_code_error_map = z.object({
   provider_issue: provider_issue.optional().nullable(),
-  smartthings_failed_to_set_access_code:
-    smartthings_failed_to_set_access_code_error.optional().nullable(),
-  smartthings_failed_to_set_after_multiple_retries:
-    smartthings_failed_to_set_after_multiple_retries.optional().nullable(),
   failed_to_set_on_device: failed_to_set_on_device.optional().nullable(),
   failed_to_remove_from_device: failed_to_remove_from_device
     .optional()
@@ -390,35 +208,12 @@ const _access_code_error_map = z.object({
   access_code_state_unconfirmed: access_code_state_unconfirmed
     .optional()
     .nullable(),
-  kwikset_unable_to_confirm_code: kwikset_unable_to_confirm_code
-    .optional()
-    .nullable(),
-  kwikset_unable_to_confirm_deletion: kwikset_unable_to_confirm_deletion
-    .optional()
-    .nullable(),
   insufficient_permissions: insufficient_permissions.optional().nullable(),
   code_modified_external_to_seam_error: code_modified_external_to_seam_error
     .optional()
     .nullable(),
-  august_lock_invalid_code_length: august_lock_invalid_code_length
-    .optional()
-    .nullable(),
-  august_lock_temporarily_offline: august_lock_temporarily_offline_error
-    .optional()
-    .nullable(),
-  august_lock_missing_keypad: august_lock_missing_keypad.optional().nullable(),
   access_code_inactive: access_code_inactive_error.optional().nullable(),
   salto_ks_user_not_subscribed: salto_ks_user_not_subscribed
-    .optional()
-    .nullable(),
-  wyze_duplicate_code_name: wyze_duplicate_code_name.optional().nullable(),
-  wyze_potential_duplicate_code: wyze_potential_duplicate_code
-    .optional()
-    .nullable(),
-  dormakaba_oracode_invalid_time_range: dormakaba_oracode_invalid_time_range
-    .optional()
-    .nullable(),
-  keynest_unsupported_third_party_locker: keynest_unsupported_third_party_locker
     .optional()
     .nullable(),
   replaced_by_newer_access_code: replaced_by_newer_access_code
@@ -443,22 +238,6 @@ const common_access_code_warning = z.object({
 
 const warning_code_description =
   'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
-
-const smartthings_failed_to_set_access_code_warning = common_access_code_warning
-  .extend({
-    warning_code: z
-      .literal('smartthings_failed_to_set_access_code')
-      .describe(warning_code_description),
-  })
-  .describe('Failed to set code on SmartThings device.')
-
-const august_lock_temporarily_offline_warning = common_access_code_warning
-  .extend({
-    warning_code: z
-      .literal('august_lock_temporarily_offline')
-      .describe(error_code_description),
-  })
-  .describe('August lock is temporarily offline.')
 
 const code_modified_external_to_seam_warning = common_access_code_warning
   .extend({
@@ -505,21 +284,6 @@ const provider_issue_warning = common_access_code_warning
   })
   .describe(
     'Indicates a provider-specific issue that may affect the access code. Check the warning message for details.',
-  )
-
-const schlage_creation_outage = common_access_code_warning
-  .extend({
-    warning_code: z
-      .literal('schlage_creation_outage')
-      .describe(warning_code_description),
-  })
-  .describe(
-    `
-    ---
-    deprecated: Use \`provider_issue\` instead.
-    ---
-    Received an error when attempting to create this code.
-    `,
   )
 
 const schlage_access_code_ambiguous_timezone_dst_risk =
@@ -575,14 +339,6 @@ const management_transferred = common_access_code_warning
   })
   .describe('Management was transferred to another workspace.')
 
-const kwikset_unable_to_confirm_code_warning = common_access_code_warning
-  .extend({
-    warning_code: z
-      .literal('kwikset_unable_to_confirm_code')
-      .describe(warning_code_description),
-  })
-  .describe('Unable to confirm that the access code is set on Kwikset device.')
-
 const access_code_inactive = common_access_code_warning
   .extend({
     warning_code: z
@@ -591,21 +347,6 @@ const access_code_inactive = common_access_code_warning
   })
   .describe(
     'Indicates that the access code is disabled or inactive on the device. The code exists but will not grant access until re-enabled.',
-  )
-
-const ultraloq_access_code_disabled = common_access_code_warning
-  .extend({
-    warning_code: z
-      .literal('ultraloq_access_code_disabled')
-      .describe(warning_code_description),
-  })
-  .describe(
-    `
-    ---
-    deprecated: Use \`access_code_inactive\` instead.
-    ---
-    Access code is disabled on Ultraloq device. Re-enable through the Ultraloq mobile app.
-    `,
   )
 
 const using_backup_access_code = common_access_code_warning
@@ -627,20 +368,15 @@ const being_deleted = common_access_code_warning
 const access_code_warning = z
   .discriminatedUnion('warning_code', [
     provider_issue_warning,
-    smartthings_failed_to_set_access_code_warning,
     schlage_detected_duplicate,
-    schlage_creation_outage,
     schlage_access_code_ambiguous_timezone_dst_risk,
     code_modified_external_to_seam_warning,
     delay_in_setting_on_device,
     delay_in_removing_from_device,
     third_party_integration_detected,
-    august_lock_temporarily_offline_warning,
     igloo_algopin_must_be_used_within_24_hours,
     management_transferred,
-    kwikset_unable_to_confirm_code_warning,
     access_code_inactive,
-    ultraloq_access_code_disabled,
     using_backup_access_code,
     being_deleted,
   ])
@@ -652,10 +388,7 @@ export type AccessCodeWarning = z.infer<typeof access_code_warning>
 
 const _access_code_warning_map = z.object({
   provider_issue: provider_issue_warning.optional().nullable(),
-  smartthings_failed_to_set_access_code:
-    smartthings_failed_to_set_access_code_warning.optional().nullable(),
   schlage_detected_duplicate: schlage_detected_duplicate.optional().nullable(),
-  schlage_creation_outage: schlage_creation_outage.optional().nullable(),
   schlage_access_code_ambiguous_timezone_dst_risk:
     schlage_access_code_ambiguous_timezone_dst_risk.optional().nullable(),
   code_modified_external_to_seam_warning: code_modified_external_to_seam_warning
@@ -668,19 +401,10 @@ const _access_code_warning_map = z.object({
   third_party_integration_detected: third_party_integration_detected
     .optional()
     .nullable(),
-  august_lock_temporarily_offline: august_lock_temporarily_offline_warning
-    .optional()
-    .nullable(),
   igloo_algopin_must_be_used_within_24_hours:
     igloo_algopin_must_be_used_within_24_hours.optional().nullable(),
   management_transferred: management_transferred.optional().nullable(),
-  kwikset_unable_to_confirm_code_warning: kwikset_unable_to_confirm_code_warning
-    .optional()
-    .nullable(),
   access_code_inactive: access_code_inactive.optional().nullable(),
-  ultraloq_access_code_disabled: ultraloq_access_code_disabled
-    .optional()
-    .nullable(),
   using_backup_access_code: using_backup_access_code.optional().nullable(),
   being_deleted: being_deleted.optional().nullable(),
 })
