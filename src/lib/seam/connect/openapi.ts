@@ -136,74 +136,6 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
-                  deprecated: true,
-                  description: 'Failed to set code on SmartThings device.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['smartthings_failed_to_set_access_code'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated':
-                    'Handled by the generic `failed_to_set_on_device` system.',
-                },
-                {
-                  deprecated: true,
-                  description: 'Failed to set code after multiple retries.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: [
-                        'smartthings_failed_to_set_after_multiple_retries',
-                      ],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated':
-                    'Handled by the generic `failed_to_set_on_device` system.',
-                },
-                {
                   description: 'Failed to set code on device.',
                   properties: {
                     created_at: {
@@ -398,74 +330,6 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
-                  deprecated: true,
-                  description:
-                    'Unable to confirm that the access code is set on Kwikset device.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['kwikset_unable_to_confirm_code'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated':
-                    'Use `access_code_state_unconfirmed` instead.',
-                },
-                {
-                  deprecated: true,
-                  description:
-                    'Unable to confirm the deletion of the access code on Kwikset device.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['kwikset_unable_to_confirm_deletion'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated':
-                    'Use `access_code_state_unconfirmed` instead.',
-                },
-                {
                   description:
                     'Code was modified or removed externally after Seam successfully set it on the device.',
                   properties: {
@@ -527,102 +391,6 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
-                },
-                {
-                  deprecated: true,
-                  description: 'Invalid code length for August lock.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_lock_invalid_code_length'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated': 'Use `provider_issue` instead.',
-                },
-                {
-                  deprecated: true,
-                  description: 'August lock is missing a keypad.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_lock_missing_keypad'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated': 'Use `provider_issue` instead.',
-                },
-                {
-                  deprecated: true,
-                  description: 'August lock is temporarily offline.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_lock_temporarily_offline'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated': 'Use `provider_issue` instead.',
                 },
                 {
                   description:
@@ -688,103 +456,6 @@ const openapi: OpenAPISpec = {
                   'x-deprecated': 'Use `access_code_inactive` instead.',
                 },
                 {
-                  deprecated: true,
-                  description: 'Duplicate access code name detected.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['wyze_duplicate_code_name'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated': 'Use `duplicate_code_on_device` instead.',
-                },
-                {
-                  deprecated: true,
-                  description: 'Potential duplicate access code detected.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['wyze_potential_duplicate_code'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated': 'Use `duplicate_code_on_device` instead.',
-                },
-                {
-                  deprecated: true,
-                  description:
-                    'No Dormakaba Oracode user levels configured for the requested time range.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['dormakaba_oracode_invalid_time_range'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated': 'Use `provider_issue` instead.',
-                },
-                {
                   description:
                     'Admin role required—insufficient permissions to manage PINs on this device. Please have an admin update your role, or ask them to set the PIN.',
                   properties: {
@@ -814,38 +485,6 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
-                },
-                {
-                  deprecated: true,
-                  description: 'KeyNest locker is not supported.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['keynest_unsupported_third_party_locker'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated': 'Use `provider_issue` instead.',
                 },
                 {
                   description:
@@ -1860,30 +1499,6 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
-                  description: 'Failed to set code on SmartThings device.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['smartthings_failed_to_set_access_code'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
                   deprecated: true,
                   description: 'Duplicate access code detected.',
                   properties: {
@@ -1909,33 +1524,6 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                   'x-deprecated':
                     'Use `duplicate_code_on_device` error instead.',
-                },
-                {
-                  deprecated: true,
-                  description:
-                    'Received an error when attempting to create this code.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['schlage_creation_outage'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                  'x-deprecated': 'Use `provider_issue` instead.',
                 },
                 {
                   description:
@@ -2093,30 +1681,6 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
-                  description: 'August lock is temporarily offline.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_lock_temporarily_offline'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
                   description: 'Algopins must be used within 24 hours.',
                   properties: {
                     created_at: {
@@ -2167,31 +1731,6 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Unable to confirm that the access code is set on Kwikset device.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['kwikset_unable_to_confirm_code'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description:
                     'Indicates that the access code is disabled or inactive on the device. The code exists but will not grant access until re-enabled.',
                   properties: {
                     created_at: {
@@ -2214,33 +1753,6 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'warning_code'],
                   type: 'object',
-                },
-                {
-                  deprecated: true,
-                  description:
-                    'Access code is disabled on Ultraloq device. Re-enable through the Ultraloq mobile app.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['ultraloq_access_code_disabled'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                  'x-deprecated': 'Use `access_code_inactive` instead.',
                 },
                 {
                   description:
@@ -28542,74 +28054,6 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
-                  deprecated: true,
-                  description: 'Failed to set code on SmartThings device.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['smartthings_failed_to_set_access_code'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated':
-                    'Handled by the generic `failed_to_set_on_device` system.',
-                },
-                {
-                  deprecated: true,
-                  description: 'Failed to set code after multiple retries.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: [
-                        'smartthings_failed_to_set_after_multiple_retries',
-                      ],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated':
-                    'Handled by the generic `failed_to_set_on_device` system.',
-                },
-                {
                   description: 'Failed to set code on device.',
                   properties: {
                     created_at: {
@@ -28804,74 +28248,6 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
-                  deprecated: true,
-                  description:
-                    'Unable to confirm that the access code is set on Kwikset device.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['kwikset_unable_to_confirm_code'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated':
-                    'Use `access_code_state_unconfirmed` instead.',
-                },
-                {
-                  deprecated: true,
-                  description:
-                    'Unable to confirm the deletion of the access code on Kwikset device.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['kwikset_unable_to_confirm_deletion'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated':
-                    'Use `access_code_state_unconfirmed` instead.',
-                },
-                {
                   description:
                     'Code was modified or removed externally after Seam successfully set it on the device.',
                   properties: {
@@ -28933,102 +28309,6 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
-                },
-                {
-                  deprecated: true,
-                  description: 'Invalid code length for August lock.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_lock_invalid_code_length'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated': 'Use `provider_issue` instead.',
-                },
-                {
-                  deprecated: true,
-                  description: 'August lock is missing a keypad.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_lock_missing_keypad'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated': 'Use `provider_issue` instead.',
-                },
-                {
-                  deprecated: true,
-                  description: 'August lock is temporarily offline.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_lock_temporarily_offline'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated': 'Use `provider_issue` instead.',
                 },
                 {
                   description:
@@ -29094,103 +28374,6 @@ const openapi: OpenAPISpec = {
                   'x-deprecated': 'Use `access_code_inactive` instead.',
                 },
                 {
-                  deprecated: true,
-                  description: 'Duplicate access code name detected.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['wyze_duplicate_code_name'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated': 'Use `duplicate_code_on_device` instead.',
-                },
-                {
-                  deprecated: true,
-                  description: 'Potential duplicate access code detected.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['wyze_potential_duplicate_code'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated': 'Use `duplicate_code_on_device` instead.',
-                },
-                {
-                  deprecated: true,
-                  description:
-                    'No Dormakaba Oracode user levels configured for the requested time range.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['dormakaba_oracode_invalid_time_range'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated': 'Use `provider_issue` instead.',
-                },
-                {
                   description:
                     'Admin role required—insufficient permissions to manage PINs on this device. Please have an admin update your role, or ask them to set the PIN.',
                   properties: {
@@ -29220,38 +28403,6 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
-                },
-                {
-                  deprecated: true,
-                  description: 'KeyNest locker is not supported.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['keynest_unsupported_third_party_locker'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated': 'Use `provider_issue` instead.',
                 },
                 {
                   description:
@@ -29955,30 +29106,6 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
-                  description: 'Failed to set code on SmartThings device.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['smartthings_failed_to_set_access_code'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
                   deprecated: true,
                   description: 'Duplicate access code detected.',
                   properties: {
@@ -30004,33 +29131,6 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                   'x-deprecated':
                     'Use `duplicate_code_on_device` error instead.',
-                },
-                {
-                  deprecated: true,
-                  description:
-                    'Received an error when attempting to create this code.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['schlage_creation_outage'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                  'x-deprecated': 'Use `provider_issue` instead.',
                 },
                 {
                   description:
@@ -30188,30 +29288,6 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
-                  description: 'August lock is temporarily offline.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_lock_temporarily_offline'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
                   description: 'Algopins must be used within 24 hours.',
                   properties: {
                     created_at: {
@@ -30262,31 +29338,6 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Unable to confirm that the access code is set on Kwikset device.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['kwikset_unable_to_confirm_code'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description:
                     'Indicates that the access code is disabled or inactive on the device. The code exists but will not grant access until re-enabled.',
                   properties: {
                     created_at: {
@@ -30309,33 +29360,6 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'warning_code'],
                   type: 'object',
-                },
-                {
-                  deprecated: true,
-                  description:
-                    'Access code is disabled on Ultraloq device. Re-enable through the Ultraloq mobile app.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['ultraloq_access_code_disabled'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                  'x-deprecated': 'Use `access_code_inactive` instead.',
                 },
                 {
                   description:
