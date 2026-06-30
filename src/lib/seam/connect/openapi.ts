@@ -13189,6 +13189,13 @@ const openapi: OpenAPISpec = {
           },
           customization_profile_id: { format: 'uuid', type: 'string' },
           logo_url: { format: 'uri', type: 'string' },
+          message_overrides: {
+            additionalProperties: {
+              additionalProperties: { type: 'string' },
+              type: 'object',
+            },
+            type: 'object',
+          },
           name: { nullable: true, type: 'string' },
           primary_color: { type: 'string' },
           secondary_color: { type: 'string' },
@@ -87316,6 +87323,13 @@ const openapi: OpenAPISpec = {
                     },
                     type: 'object',
                   },
+                  message_overrides: {
+                    additionalProperties: {
+                      additionalProperties: { type: 'string' },
+                      type: 'object',
+                    },
+                    type: 'object',
+                  },
                   name: { default: null, nullable: true, type: 'string' },
                   primary_color: { type: 'string' },
                   secondary_color: { type: 'string' },
@@ -87598,6 +87612,14 @@ const openapi: OpenAPISpec = {
                     type: 'object',
                   },
                   customization_profile_id: { format: 'uuid', type: 'string' },
+                  message_overrides: {
+                    additionalProperties: {
+                      additionalProperties: { type: 'string' },
+                      type: 'object',
+                    },
+                    nullable: true,
+                    type: 'object',
+                  },
                   name: { nullable: true, type: 'string' },
                   primary_color: { type: 'string' },
                   secondary_color: { type: 'string' },
@@ -87659,6 +87681,14 @@ const openapi: OpenAPISpec = {
                     type: 'object',
                   },
                   customization_profile_id: { format: 'uuid', type: 'string' },
+                  message_overrides: {
+                    additionalProperties: {
+                      additionalProperties: { type: 'string' },
+                      type: 'object',
+                    },
+                    nullable: true,
+                    type: 'object',
+                  },
                   name: { nullable: true, type: 'string' },
                   primary_color: { type: 'string' },
                   secondary_color: { type: 'string' },
