@@ -13,9 +13,7 @@ const device_event = common_event.extend({
   connected_account_id: z
     .string()
     .uuid()
-    .describe(
-      'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
-    ),
+    .describe('ID of the connected account associated with the event.'),
   customer_key: z
     .string()
     .optional()
@@ -78,7 +76,7 @@ export const device_connected_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  The status of a [device](https://docs.seam.co/core-concepts/devices) changed from offline to online. That is, the \`device.properties.online\` property changed from \`false\` to \`true\`. Note that some devices operate entirely in offline mode, so Seam never emits a \`device.connected\` event for these devices.
+  The status of a device changed from offline to online. That is, the \`device.properties.online\` property changed from \`false\` to \`true\`. Note that some devices operate entirely in offline mode, so Seam never emits a \`device.connected\` event for these devices.
 `)
 
 export type DeviceConnectedEvent = z.infer<typeof device_connected_event>
@@ -89,7 +87,7 @@ export const device_added_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A [device](https://docs.seam.co/core-concepts/devices) was added to Seam or was re-added to Seam after having been removed.
+  A device was added to Seam or was re-added to Seam after having been removed.
 `)
 
 export type DeviceAddedEvent = z.infer<typeof device_added_event>
@@ -142,7 +140,7 @@ export const device_disconnected_event = device_event
   ---
   route_path: /devices
   ---
-  The status of a [device](https://docs.seam.co/core-concepts/devices) changed from online to offline. That is, the \`device.properties.online\` property changed from \`true\` to \`false\`.
+  The status of a device changed from online to offline. That is, the \`device.properties.online\` property changed from \`true\` to \`false\`.
 `)
 
 export type DeviceDisconnectedEvent = z.infer<typeof device_disconnected_event>
@@ -169,7 +167,7 @@ export const device_tampered_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A [device](https://docs.seam.co/core-concepts/devices) detected that it was tampered with, for example, opened or moved.
+  A device detected that it was tampered with, for example, opened or moved.
 `)
 
 export type DeviceTamperedEvent = z.infer<typeof device_tampered_event>
@@ -181,7 +179,7 @@ export const device_low_battery_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A [device](https://docs.seam.co/core-concepts/devices) battery level dropped below the low threshold.
+  A device battery level dropped below the low threshold.
 `)
 
 export type DeviceLowBatteryEvent = z.infer<typeof device_low_battery_event>
@@ -194,7 +192,7 @@ export const device_battery_status_changed_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A [device](https://docs.seam.co/core-concepts/devices) battery status changed since the last \`battery_status_changed\` event.
+  A device battery status changed since the last \`battery_status_changed\` event.
 `)
 
 export type DeviceBatteryStatusChangedEvent = z.infer<
@@ -207,7 +205,7 @@ export const device_removed_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A [device](https://docs.seam.co/core-concepts/devices) was removed externally from the [connected account](https://docs.seam.co/core-concepts/connected-accounts).
+  A device was removed externally from the connected account.
 `)
 
 export type DeviceRemovedEvent = z.infer<typeof device_removed_event>
@@ -225,7 +223,7 @@ export const device_deleted_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A [device](https://docs.seam.co/core-concepts/devices) was deleted.
+  A device was deleted.
 `)
 
 export type DeviceDeletedEvent = z.infer<typeof device_deleted_event>
@@ -237,7 +235,7 @@ export const device_third_party_integration_detected_event =
     ---
     route_path: /devices
     ---
-    Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is using a third-party integration that will interfere with Seam device management.
+    Seam detected that a device is using a third-party integration that will interfere with Seam device management.
   `)
 
 export type DeviceThirdPartyIntegrationDetectedEvent = z.infer<
@@ -251,7 +249,7 @@ export const device_third_party_integration_no_longer_detected_event =
     ---
     route_path: /devices
     ---
-    Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is no longer using a third-party integration that was interfering with Seam device management.
+    Seam detected that a device is no longer using a third-party integration that was interfering with Seam device management.
   `)
 
 export type DeviceThirdPartyIntegrationNoLongerDetectedEvent = z.infer<
@@ -292,7 +290,7 @@ export const device_connection_became_flaky_event = device_event
   ---
   route_path: /devices
   ---
-  Seam detected a flaky [device](https://docs.seam.co/core-concepts/devices) connection.
+  Seam detected a flaky device connection.
 `)
 
 export type DeviceConnectionBecameFlakyEvent = z.infer<
@@ -305,7 +303,7 @@ export const device_connection_stabilized_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  Seam detected that a previously-flaky [device](https://docs.seam.co/core-concepts/devices) connection stabilized.
+  Seam detected that a previously-flaky device connection stabilized.
 `)
 
 export type DeviceConnectionStabilizedEvent = z.infer<
@@ -320,7 +318,7 @@ export const device_error_subscription_required_event = device_event
   ---
   route_path: /devices
   ---
-  A third-party subscription is required to use all [device](https://docs.seam.co/core-concepts/devices) features.
+  A third-party subscription is required to use all device features.
 `)
 
 export type DeviceErrorSubscriptionRequiredEvent = z.infer<
@@ -334,7 +332,7 @@ export const device_error_subscription_required_resolved_event =
     ---
     route_path: /devices
     ---
-    A third-party subscription is active or no longer required to use all [device](https://docs.seam.co/core-concepts/devices) features.
+    A third-party subscription is active or no longer required to use all device features.
   `)
 
 export type DeviceErrorSubscriptionRequiredResolvedEvent = z.infer<
@@ -347,7 +345,7 @@ export const device_accessory_keypad_connected_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  An accessory keypad was connected to a [device](https://docs.seam.co/core-concepts/devices).
+  An accessory keypad was connected to a device.
 `)
 
 export type DeviceAccessoryKeypadConnectedEvent = z.infer<
@@ -362,7 +360,7 @@ export const device_accessory_keypad_disconnected_event = device_event
   ---
   route_path: /devices
   ---
-  An accessory keypad was disconnected from a [device](https://docs.seam.co/core-concepts/devices).
+  An accessory keypad was disconnected from a device.
 `)
 
 export type DeviceAccessoryKeypadDisconnectedEvent = z.infer<
@@ -724,7 +722,7 @@ export const device_name_changed_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  The name of a [device](https://docs.seam.co/core-concepts/devices) was changed.
+  The name of a device was changed.
 `)
 
 export type DeviceNameChangedEvent = z.infer<typeof device_name_changed_event>
@@ -752,7 +750,7 @@ export const camera_activated_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A [camera](https://docs.seam.co/core-concepts/devices) was activated, for example, by motion detection.
+  A camera was activated, for example, by motion detection.
 `)
 
 export type CameraActivatedEvent = z.infer<typeof camera_activated_event>
@@ -777,7 +775,7 @@ export const device_doorbell_rang_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A doorbell button was pressed on a [device](https://docs.seam.co/core-concepts/devices).
+  A doorbell button was pressed on a device.
 `)
 
 export type DeviceDoorbellRangEvent = z.infer<typeof device_doorbell_rang_event>

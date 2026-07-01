@@ -15,7 +15,7 @@ export const client_session_deleted_event = client_session_event.extend({
     ---
     route_path: /client_sessions
     ---
-    A [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens) was deleted.
+    A client session was deleted.
   `)
 
 export type ClientSessionDeletedEvent = z.infer<

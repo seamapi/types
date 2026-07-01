@@ -33,9 +33,7 @@ export const bridge_connected_system = z.object({
   workspace_id: z
     .string()
     .uuid()
-    .describe(
-      'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) with which Seam Bridge is paired.',
-    ),
+    .describe('ID of the workspace with which Seam Bridge is paired.'),
   workspace_display_name: z
     .string()
     .describe(

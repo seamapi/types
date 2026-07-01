@@ -128,9 +128,7 @@ export const user_identity = z.object({
   workspace_id: z
     .string()
     .uuid()
-    .describe(
-      'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the user identity.',
-    ),
+    .describe('ID of the workspace that contains the user identity.'),
   errors: z
     .array(user_identity_errors)
     .describe(

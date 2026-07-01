@@ -118,15 +118,11 @@ const common_acs_access_group = z.object({
   workspace_id: z
     .string()
     .uuid()
-    .describe(
-      'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the access group.',
-    ),
+    .describe('ID of the workspace that contains the access group.'),
   connected_account_id: z
     .string()
     .uuid()
-    .describe(
-      'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) that contains the access group.',
-    ),
+    .describe('ID of the connected account that contains the access group.'),
   name: z.string().describe('Name of the access group.'),
   access_group_type: acs_access_group_external_type.describe(`
     ---

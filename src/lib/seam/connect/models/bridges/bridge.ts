@@ -5,9 +5,7 @@ export const bridge = z.object({
   workspace_id: z
     .string()
     .uuid()
-    .describe(
-      'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains Seam Bridge.',
-    ),
+    .describe('ID of the workspace that contains Seam Bridge.'),
   created_at: z
     .string()
     .datetime()

@@ -2915,7 +2915,7 @@ const openapi: OpenAPISpec = {
           },
           connected_account_id: {
             description:
-              'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) that contains the access group.',
+              'ID of the connected account that contains the access group.',
             format: 'uuid',
             type: 'string',
           },
@@ -3398,8 +3398,7 @@ const openapi: OpenAPISpec = {
             type: 'array',
           },
           workspace_id: {
-            description:
-              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the access group.',
+            description: 'ID of the workspace that contains the access group.',
             format: 'uuid',
             type: 'string',
           },
@@ -3829,7 +3828,7 @@ const openapi: OpenAPISpec = {
           },
           workspace_id: {
             description:
-              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'ID of the workspace that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
             format: 'uuid',
             type: 'string',
           },
@@ -3916,7 +3915,7 @@ const openapi: OpenAPISpec = {
           },
           connected_account_id: {
             description:
-              'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) that contains the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
+              'ID of the connected account that contains the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
             format: 'uuid',
             type: 'string',
           },
@@ -3962,7 +3961,7 @@ const openapi: OpenAPISpec = {
           },
           workspace_id: {
             description:
-              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
+              'ID of the workspace that contains the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
             format: 'uuid',
             type: 'string',
           },
@@ -4519,7 +4518,7 @@ const openapi: OpenAPISpec = {
           acs_user_count: { format: 'float', type: 'number' },
           connected_account_id: {
             description:
-              'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+              'ID of the connected account associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
             format: 'uuid',
             type: 'string',
           },
@@ -4959,7 +4958,7 @@ const openapi: OpenAPISpec = {
           },
           workspace_id: {
             description:
-              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+              'ID of the workspace that contains the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
             format: 'uuid',
             type: 'string',
           },
@@ -5020,7 +5019,7 @@ const openapi: OpenAPISpec = {
           },
           connected_account_id: {
             description:
-              '\n      The ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) that is associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).\n    ',
+              '\n      The ID of the connected account that is associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).\n    ',
             format: 'uuid',
             type: 'string',
           },
@@ -5814,7 +5813,7 @@ const openapi: OpenAPISpec = {
           },
           workspace_id: {
             description:
-              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'ID of the workspace that contains the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
             format: 'uuid',
             type: 'string',
           },
@@ -6703,7 +6702,7 @@ const openapi: OpenAPISpec = {
                           },
                           workspace_id: {
                             description:
-                              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'ID of the workspace that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
                             format: 'uuid',
                             type: 'string',
                           },
@@ -7161,7 +7160,7 @@ const openapi: OpenAPISpec = {
                           },
                           workspace_id: {
                             description:
-                              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'ID of the workspace that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
                             format: 'uuid',
                             type: 'string',
                           },
@@ -7873,7 +7872,7 @@ const openapi: OpenAPISpec = {
                       },
                       workspace_id: {
                         description:
-                          'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'ID of the workspace that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
                         format: 'uuid',
                         type: 'string',
                       },
@@ -8328,7 +8327,7 @@ const openapi: OpenAPISpec = {
                       },
                       workspace_id: {
                         description:
-                          'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'ID of the workspace that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
                         format: 'uuid',
                         type: 'string',
                       },
@@ -9049,7 +9048,7 @@ const openapi: OpenAPISpec = {
                   },
                   workspace_id: {
                     description:
-                      'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                      'ID of the workspace that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -11737,7 +11736,7 @@ const openapi: OpenAPISpec = {
           },
           workspace_id: {
             description:
-              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) with which Seam Bridge is paired.',
+              'ID of the workspace with which Seam Bridge is paired.',
             format: 'uuid',
             type: 'string',
           },
@@ -11761,8 +11760,7 @@ const openapi: OpenAPISpec = {
           "Represents a [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens). If you want to restrict your users' access to their own devices, use client sessions.\n\nYou create each client session with a custom `user_identifier_key`. Normally, the `user_identifier_key` is a user ID that your application provides.\n\nWhen calling the Seam API from your backend using an API key, you can pass the `user_identifier_key` as a parameter to limit results to the associated client session. For example, `/devices/list?user_identifier_key=123` only returns devices associated with the client session created with the `user_identifier_key` `123`.\n\nA client session has a token that you can use with the Seam JavaScript SDK to make requests from the client (browser) directly to the Seam API. The token restricts the user's access to only the devices that they own.\n\nSee also [Get Started with React](https://docs.seam.co/ui-components/overview/getting-started-with-seam-components/get-started-with-react-components-and-client-session-tokens).",
         properties: {
           client_session_id: {
-            description:
-              'ID of the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens).',
+            description: 'ID of the client session.',
             format: 'uuid',
             type: 'string',
           },
@@ -11828,7 +11826,7 @@ const openapi: OpenAPISpec = {
           },
           workspace_id: {
             description:
-              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens).',
+              'ID of the workspace associated with the client session.',
             format: 'uuid',
             type: 'string',
           },
@@ -11911,7 +11909,7 @@ const openapi: OpenAPISpec = {
           },
           connected_account_id: {
             description:
-              'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the Connect Webview.',
+              'ID of the connected account associated with the Connect Webview.',
             format: 'uuid',
             nullable: true,
             type: 'string',
@@ -11983,7 +11981,7 @@ const openapi: OpenAPISpec = {
           },
           workspace_id: {
             description:
-              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the Connect Webview.',
+              'ID of the workspace that contains the Connect Webview.',
             format: 'uuid',
             type: 'string',
           },
@@ -12631,8 +12629,7 @@ const openapi: OpenAPISpec = {
             type: 'string',
           },
           workspace_id: {
-            description:
-              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the customer.',
+            description: 'ID of the workspace associated with the customer.',
             format: 'uuid',
             type: 'string',
           },
@@ -12669,7 +12666,7 @@ const openapi: OpenAPISpec = {
           },
           workspace_id: {
             description:
-              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the customer portal.',
+              'ID of the workspace associated with the customer portal.',
             format: 'uuid',
             type: 'string',
           },
@@ -15451,7 +15448,7 @@ const openapi: OpenAPISpec = {
                           },
                           workspace_id: {
                             description:
-                              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the thermostat schedule.',
+                              'ID of the workspace that contains the thermostat schedule.',
                             format: 'uuid',
                             type: 'string',
                           },
@@ -16153,7 +16150,7 @@ const openapi: OpenAPISpec = {
                             },
                             workspace_id: {
                               description:
-                                'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the thermostat daily program.',
+                                'ID of the workspace that contains the thermostat daily program.',
                               format: 'uuid',
                               type: 'string',
                             },
@@ -17154,7 +17151,7 @@ const openapi: OpenAPISpec = {
           },
           workspace_id: {
             description:
-              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the enrollment automation.',
+              'ID of the workspace that contains the enrollment automation.',
             format: 'uuid',
             type: 'string',
           },
@@ -17172,7 +17169,7 @@ const openapi: OpenAPISpec = {
       },
       event: {
         description:
-          "Represents an event. Events let you know when something interesting happens in your workspace. For example, when a lock is unlocked, Seam creates a `lock.unlocked` event. When a device's battery level is low, Seam creates a `device.battery_low` event.\n\nAs with other API resources, you can retrieve an individual event or a list of events. Seam also provides a separate [webhook](https://docs.seam.co/developer-tools/webhooks) system for sending the event objects directly to an endpoint on your sever. Manage webhooks through [Seam Console](https://console.seam.co). You can also use the webhooks sandbox in Seam Console to see the different payloads for each event and test them against your own endpoints.",
+          "Represents an event. Events let you know when something interesting happens in your workspace. For example, when a lock is unlocked, Seam creates a `lock.unlocked` event. When a device's battery level is low, Seam creates a `device.battery_low` event.\n\nAs with other API resources, you can retrieve an individual event or a list of events. Seam also provides a separate webhook system for sending the event objects directly to an endpoint on your sever. Manage webhooks through [Seam Console](https://console.seam.co). You can also use the webhooks sandbox in Seam Console to see the different payloads for each event and test them against your own endpoints.",
         discriminator: { propertyName: 'event_type' },
         oneOf: [
           {
@@ -17194,7 +17191,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+                  'ID of the connected account associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -17229,8 +17226,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -17300,7 +17296,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+                  'ID of the connected account associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -17335,8 +17331,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -17373,7 +17368,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+                  'ID of the connected account associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -17440,8 +17435,7 @@ const openapi: OpenAPISpec = {
                 type: 'object',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -17481,7 +17475,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+                  'ID of the connected account associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -17548,8 +17542,7 @@ const openapi: OpenAPISpec = {
                 type: 'object',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -17589,7 +17582,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+                  'ID of the connected account associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -17666,8 +17659,7 @@ const openapi: OpenAPISpec = {
                 type: 'object',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -17711,7 +17703,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+                  'ID of the connected account associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -17749,8 +17741,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -17792,7 +17783,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+                  'ID of the connected account associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -17830,8 +17821,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -17869,7 +17859,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+                  'ID of the connected account associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -17907,8 +17897,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -18023,7 +18012,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+                  'ID of the connected account associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -18139,8 +18128,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -18261,7 +18249,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+                  'ID of the connected account associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -18377,8 +18365,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -18426,7 +18413,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+                  'ID of the connected account associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -18461,8 +18448,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -18578,7 +18564,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+                  'ID of the connected account associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -18694,8 +18680,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -18816,7 +18801,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+                  'ID of the connected account associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -18932,8 +18917,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -18976,7 +18960,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+                  'ID of the connected account associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -19014,8 +18998,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -19052,7 +19035,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+                  'ID of the connected account associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -19090,8 +19073,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -19129,7 +19111,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+                  'ID of the connected account associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -19167,8 +19149,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -19206,7 +19187,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+                  'ID of the connected account associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -19244,8 +19225,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -19360,7 +19340,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+                  'ID of the connected account associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -19476,8 +19456,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -19520,7 +19499,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+                  'ID of the connected account associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -19558,8 +19537,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -19596,7 +19574,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+                  'ID of the connected account associated with the affected access code.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -19634,8 +19612,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -19678,8 +19655,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -19720,8 +19696,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -19766,8 +19741,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -19818,8 +19792,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -19871,8 +19844,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -19929,8 +19901,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -19988,8 +19959,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -20053,8 +20023,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -20108,8 +20077,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -20167,8 +20135,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -20222,8 +20189,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -20287,8 +20253,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -20342,8 +20307,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -20391,8 +20355,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -20439,8 +20402,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -20593,8 +20555,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -20650,8 +20611,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -20704,8 +20664,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -20758,8 +20717,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -20815,8 +20773,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -20865,8 +20822,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -20915,8 +20871,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -20969,8 +20924,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21023,8 +20977,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21079,8 +21032,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21129,8 +21081,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21179,8 +21130,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21198,8 +21148,7 @@ const openapi: OpenAPISpec = {
             'x-route-path': '/acs/entrances',
           },
           {
-            description:
-              'A [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens) was deleted.',
+            description: 'A client session was deleted.',
             properties: {
               client_session_id: {
                 description: 'ID of the affected client session.',
@@ -21223,8 +21172,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21242,11 +21190,11 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was connected for the first time or was reconnected after being disconnected.',
+              'A connected account was connected for the first time or was reconnected after being disconnected.',
             properties: {
               connect_webview_id: {
                 description:
-                  'ID of the [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) associated with the event.',
+                  'ID of the Connect Webview associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21259,8 +21207,7 @@ const openapi: OpenAPISpec = {
                 type: 'object',
               },
               connected_account_id: {
-                description:
-                  'ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).',
+                description: 'ID of the affected connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21289,8 +21236,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21307,12 +21253,11 @@ const openapi: OpenAPISpec = {
             'x-route-path': '/connected_accounts',
           },
           {
-            description:
-              'A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was created.',
+            description: 'A connected account was created.',
             properties: {
               connect_webview_id: {
                 description:
-                  'ID of the [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) associated with the event.',
+                  'ID of the Connect Webview associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21325,8 +21270,7 @@ const openapi: OpenAPISpec = {
                 type: 'object',
               },
               connected_account_id: {
-                description:
-                  'ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).',
+                description: 'ID of the affected connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21350,8 +21294,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21371,11 +21314,11 @@ const openapi: OpenAPISpec = {
           {
             deprecated: true,
             description:
-              'A [connected account](https://docs.seam.co/core-concepts/connected-accounts) had a successful login using a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).',
+              'A connected account had a successful login using a Connect Webview.',
             properties: {
               connect_webview_id: {
                 description:
-                  'ID of the [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) associated with the event.',
+                  'ID of the Connect Webview associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21388,8 +21331,7 @@ const openapi: OpenAPISpec = {
                 type: 'object',
               },
               connected_account_id: {
-                description:
-                  'ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).',
+                description: 'ID of the affected connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21413,8 +21355,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21433,8 +21374,7 @@ const openapi: OpenAPISpec = {
             'x-route-path': '/connected_accounts',
           },
           {
-            description:
-              'A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was disconnected.',
+            description: 'A connected account was disconnected.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -21471,8 +21411,7 @@ const openapi: OpenAPISpec = {
                 type: 'array',
               },
               connected_account_id: {
-                description:
-                  'ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).',
+                description: 'ID of the affected connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21522,8 +21461,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21543,7 +21481,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A [connected account](https://docs.seam.co/core-concepts/connected-accounts) completed the first sync with Seam, and the corresponding devices or systems are now available.',
+              'A connected account completed the first sync with Seam, and the corresponding devices or systems are now available.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -21554,8 +21492,7 @@ const openapi: OpenAPISpec = {
                 type: 'object',
               },
               connected_account_id: {
-                description:
-                  'ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).',
+                description: 'ID of the affected connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21579,8 +21516,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21597,8 +21533,7 @@ const openapi: OpenAPISpec = {
             'x-route-path': '/connected_accounts',
           },
           {
-            description:
-              'A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was deleted.',
+            description: 'A connected account was deleted.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -21609,8 +21544,7 @@ const openapi: OpenAPISpec = {
                 type: 'object',
               },
               connected_account_id: {
-                description:
-                  'ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).',
+                description: 'ID of the affected connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21643,8 +21577,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21662,7 +21595,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A [connected account](https://docs.seam.co/core-concepts/connected-accounts) completed the first sync after reconnection with Seam, and the corresponding devices or systems are now available.',
+              'A connected account completed the first sync after reconnection with Seam, and the corresponding devices or systems are now available.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -21673,8 +21606,7 @@ const openapi: OpenAPISpec = {
                 type: 'object',
               },
               connected_account_id: {
-                description:
-                  'ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).',
+                description: 'ID of the affected connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21700,8 +21632,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21719,7 +21650,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A [connected account](https://docs.seam.co/core-concepts/connected-accounts) requires reauthorization using a new Connect Webview. The account is still connected, but cannot access new features. Delaying reauthorization too long will eventually cause the Connected Account to become disconnected.',
+              'A connected account requires reauthorization using a new Connect Webview. The account is still connected, but cannot access new features. Delaying reauthorization too long will eventually cause the Connected Account to become disconnected.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -21756,8 +21687,7 @@ const openapi: OpenAPISpec = {
                 type: 'array',
               },
               connected_account_id: {
-                description:
-                  'ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).',
+                description: 'ID of the affected connected account.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21807,8 +21737,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21827,8 +21756,7 @@ const openapi: OpenAPISpec = {
             'x-route-path': '/connected_accounts',
           },
           {
-            description:
-              'A lock door [action attempt](https://docs.seam.co/core-concepts/action-attempts) succeeded.',
+            description: 'A lock door action attempt succeeded.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the affected action attempt.',
@@ -21872,8 +21800,7 @@ const openapi: OpenAPISpec = {
               },
               status: { description: 'Status of the action.', type: 'string' },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21892,8 +21819,7 @@ const openapi: OpenAPISpec = {
             'x-route-path': '/action_attempts',
           },
           {
-            description:
-              'A lock door [action attempt](https://docs.seam.co/core-concepts/action-attempts) failed.',
+            description: 'A lock door action attempt failed.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the affected action attempt.',
@@ -21937,8 +21863,7 @@ const openapi: OpenAPISpec = {
               },
               status: { description: 'Status of the action.', type: 'string' },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -21957,8 +21882,7 @@ const openapi: OpenAPISpec = {
             'x-route-path': '/action_attempts',
           },
           {
-            description:
-              'An unlock door [action attempt](https://docs.seam.co/core-concepts/action-attempts) succeeded.',
+            description: 'An unlock door action attempt succeeded.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the affected action attempt.',
@@ -22002,8 +21926,7 @@ const openapi: OpenAPISpec = {
               },
               status: { description: 'Status of the action.', type: 'string' },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22022,8 +21945,7 @@ const openapi: OpenAPISpec = {
             'x-route-path': '/action_attempts',
           },
           {
-            description:
-              'An unlock door [action attempt](https://docs.seam.co/core-concepts/action-attempts) failed.',
+            description: 'An unlock door action attempt failed.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the affected action attempt.',
@@ -22067,8 +21989,7 @@ const openapi: OpenAPISpec = {
               },
               status: { description: 'Status of the action.', type: 'string' },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22088,7 +22009,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A simulate keypad code entry [action attempt](https://docs.seam.co/core-concepts/action-attempts) succeeded.',
+              'A simulate keypad code entry action attempt succeeded.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the affected action attempt.',
@@ -22132,8 +22053,7 @@ const openapi: OpenAPISpec = {
               },
               status: { description: 'Status of the action.', type: 'string' },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22152,8 +22072,7 @@ const openapi: OpenAPISpec = {
             'x-route-path': '/action_attempts',
           },
           {
-            description:
-              'A simulate keypad code entry [action attempt](https://docs.seam.co/core-concepts/action-attempts) failed.',
+            description: 'A simulate keypad code entry action attempt failed.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the affected action attempt.',
@@ -22197,8 +22116,7 @@ const openapi: OpenAPISpec = {
               },
               status: { description: 'Status of the action.', type: 'string' },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22218,7 +22136,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A simulate manual lock via keypad [action attempt](https://docs.seam.co/core-concepts/action-attempts) succeeded.',
+              'A simulate manual lock via keypad action attempt succeeded.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the affected action attempt.',
@@ -22264,8 +22182,7 @@ const openapi: OpenAPISpec = {
               },
               status: { description: 'Status of the action.', type: 'string' },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22285,7 +22202,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A simulate manual lock via keypad [action attempt](https://docs.seam.co/core-concepts/action-attempts) failed.',
+              'A simulate manual lock via keypad action attempt failed.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the affected action attempt.',
@@ -22329,8 +22246,7 @@ const openapi: OpenAPISpec = {
               },
               status: { description: 'Status of the action.', type: 'string' },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22349,12 +22265,10 @@ const openapi: OpenAPISpec = {
             'x-route-path': '/action_attempts',
           },
           {
-            description:
-              'A [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) login succeeded.',
+            description: 'A Connect Webview login succeeded.',
             properties: {
               connect_webview_id: {
-                description:
-                  'ID of the affected [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).',
+                description: 'ID of the affected Connect Webview.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22368,7 +22282,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22397,8 +22311,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22416,12 +22329,10 @@ const openapi: OpenAPISpec = {
             'x-route-path': '/connect_webviews',
           },
           {
-            description:
-              'A [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) login failed.',
+            description: 'A Connect Webview login failed.',
             properties: {
               connect_webview_id: {
-                description:
-                  'ID of the affected [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).',
+                description: 'ID of the affected Connect Webview.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22445,8 +22356,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22464,7 +22374,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'The status of a [device](https://docs.seam.co/core-concepts/devices) changed from offline to online. That is, the `device.properties.online` property changed from `false` to `true`. Note that some devices operate entirely in offline mode, so Seam never emits a `device.connected` event for these devices.',
+              'The status of a device changed from offline to online. That is, the `device.properties.online` property changed from `false` to `true`. Note that some devices operate entirely in offline mode, so Seam never emits a `device.connected` event for these devices.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -22476,7 +22386,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22515,8 +22425,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22535,7 +22444,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A [device](https://docs.seam.co/core-concepts/devices) was added to Seam or was re-added to Seam after having been removed.',
+              'A device was added to Seam or was re-added to Seam after having been removed.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -22547,7 +22456,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22586,8 +22495,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22618,7 +22526,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22660,8 +22568,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22692,7 +22599,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22734,8 +22641,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22766,7 +22672,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22808,8 +22714,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22828,7 +22733,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'The status of a [device](https://docs.seam.co/core-concepts/devices) changed from online to offline. That is, the `device.properties.online` property changed from `true` to `false`.',
+              'The status of a device changed from online to offline. That is, the `device.properties.online` property changed from `true` to `false`.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -22866,7 +22771,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22993,8 +22898,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -23056,7 +22960,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -23186,8 +23090,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -23211,7 +23114,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A [device](https://docs.seam.co/core-concepts/devices) detected that it was tampered with, for example, opened or moved.',
+              'A device detected that it was tampered with, for example, opened or moved.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -23223,7 +23126,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -23262,8 +23165,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -23282,7 +23184,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A [device](https://docs.seam.co/core-concepts/devices) battery level dropped below the low threshold.',
+              'A device battery level dropped below the low threshold.',
             properties: {
               battery_level: {
                 description:
@@ -23302,7 +23204,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -23341,8 +23243,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -23362,7 +23263,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A [device](https://docs.seam.co/core-concepts/devices) battery status changed since the last `battery_status_changed` event.',
+              'A device battery status changed since the last `battery_status_changed` event.',
             properties: {
               battery_level: {
                 description:
@@ -23388,7 +23289,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -23430,8 +23331,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -23452,7 +23352,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A [device](https://docs.seam.co/core-concepts/devices) was removed externally from the [connected account](https://docs.seam.co/core-concepts/connected-accounts).',
+              'A device was removed externally from the connected account.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -23464,7 +23364,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -23503,8 +23403,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -23522,8 +23421,7 @@ const openapi: OpenAPISpec = {
             'x-route-path': '/devices',
           },
           {
-            description:
-              'A [device](https://docs.seam.co/core-concepts/devices) was deleted.',
+            description: 'A device was deleted.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -23535,7 +23433,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -23580,8 +23478,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -23600,7 +23497,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is using a third-party integration that will interfere with Seam device management.',
+              'Seam detected that a device is using a third-party integration that will interfere with Seam device management.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -23612,7 +23509,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -23654,8 +23551,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -23674,7 +23570,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is no longer using a third-party integration that was interfering with Seam device management.',
+              'Seam detected that a device is no longer using a third-party integration that was interfering with Seam device management.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -23686,7 +23582,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -23728,8 +23624,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -23760,7 +23655,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -23802,8 +23697,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -23834,7 +23728,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -23876,8 +23770,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -23895,8 +23788,7 @@ const openapi: OpenAPISpec = {
             'x-route-path': '/devices',
           },
           {
-            description:
-              'Seam detected a flaky [device](https://docs.seam.co/core-concepts/devices) connection.',
+            description: 'Seam detected a flaky device connection.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -23934,7 +23826,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -24054,8 +23946,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -24078,7 +23969,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'Seam detected that a previously-flaky [device](https://docs.seam.co/core-concepts/devices) connection stabilized.',
+              'Seam detected that a previously-flaky device connection stabilized.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -24090,7 +23981,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -24132,8 +24023,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -24152,7 +24042,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A third-party subscription is required to use all [device](https://docs.seam.co/core-concepts/devices) features.',
+              'A third-party subscription is required to use all device features.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -24190,7 +24080,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -24310,8 +24200,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -24334,7 +24223,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A third-party subscription is active or no longer required to use all [device](https://docs.seam.co/core-concepts/devices) features.',
+              'A third-party subscription is active or no longer required to use all device features.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -24346,7 +24235,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -24388,8 +24277,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -24407,8 +24295,7 @@ const openapi: OpenAPISpec = {
             'x-route-path': '/devices',
           },
           {
-            description:
-              'An accessory keypad was connected to a [device](https://docs.seam.co/core-concepts/devices).',
+            description: 'An accessory keypad was connected to a device.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -24420,7 +24307,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -24462,8 +24349,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -24481,8 +24367,7 @@ const openapi: OpenAPISpec = {
             'x-route-path': '/devices',
           },
           {
-            description:
-              'An accessory keypad was disconnected from a [device](https://docs.seam.co/core-concepts/devices).',
+            description: 'An accessory keypad was disconnected from a device.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -24520,7 +24405,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -24640,8 +24525,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -24676,7 +24560,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -24748,8 +24632,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -24797,7 +24680,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -24852,8 +24735,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -24920,7 +24802,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -24981,8 +24863,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -25019,7 +24900,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -25058,8 +24939,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -25094,7 +24974,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -25148,8 +25028,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -25183,7 +25062,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -25267,8 +25146,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -25300,7 +25178,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -25382,8 +25260,7 @@ const openapi: OpenAPISpec = {
                 type: 'number',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -25420,7 +25297,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -25502,8 +25379,7 @@ const openapi: OpenAPISpec = {
                 type: 'number',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -25540,7 +25416,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -25606,8 +25482,7 @@ const openapi: OpenAPISpec = {
                 type: 'number',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -25640,7 +25515,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -25694,8 +25569,7 @@ const openapi: OpenAPISpec = {
                 type: 'number',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -25715,8 +25589,7 @@ const openapi: OpenAPISpec = {
             'x-route-path': '/thermostats',
           },
           {
-            description:
-              'The name of a [device](https://docs.seam.co/core-concepts/devices) was changed.',
+            description: 'The name of a device was changed.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -25728,7 +25601,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -25771,8 +25644,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -25792,7 +25664,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A [camera](https://docs.seam.co/core-concepts/devices) was activated, for example, by motion detection.',
+              'A camera was activated, for example, by motion detection.',
             properties: {
               activation_reason: {
                 description: 'The reason the camera was activated.',
@@ -25809,7 +25681,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -25865,8 +25737,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -25885,8 +25756,7 @@ const openapi: OpenAPISpec = {
             'x-route-path': '/devices',
           },
           {
-            description:
-              'A doorbell button was pressed on a [device](https://docs.seam.co/core-concepts/devices).',
+            description: 'A doorbell button was pressed on a device.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -25898,7 +25768,7 @@ const openapi: OpenAPISpec = {
               },
               connected_account_id: {
                 description:
-                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.',
+                  'ID of the connected account associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -25949,8 +25819,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -25996,8 +25865,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -26046,8 +25914,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -26108,8 +25975,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -26172,8 +26038,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -26236,8 +26101,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -26264,7 +26128,7 @@ const openapi: OpenAPISpec = {
         properties: {
           client_session_id: {
             description:
-              'ID of the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens) associated with the Instant Key.',
+              'ID of the client session associated with the Instant Key.',
             format: 'uuid',
             type: 'string',
           },
@@ -26321,8 +26185,7 @@ const openapi: OpenAPISpec = {
             type: 'string',
           },
           workspace_id: {
-            description:
-              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the Instant Key.',
+            description: 'ID of the workspace that contains the Instant Key.',
             format: 'uuid',
             type: 'string',
           },
@@ -26363,8 +26226,7 @@ const openapi: OpenAPISpec = {
             type: 'string',
           },
           workspace_id: {
-            description:
-              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the magic link.',
+            description: 'ID of the workspace associated with the magic link.',
             format: 'uuid',
             type: 'string',
           },
@@ -26565,8 +26427,7 @@ const openapi: OpenAPISpec = {
             type: 'array',
           },
           workspace_id: {
-            description:
-              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the phone.\n  ',
+            description: 'ID of the workspace that contains the phone.\n  ',
             format: 'uuid',
             type: 'string',
           },
@@ -27635,7 +27496,7 @@ const openapi: OpenAPISpec = {
                       },
                       workspace_id: {
                         description:
-                          'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'ID of the workspace that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
                         format: 'uuid',
                         type: 'string',
                       },
@@ -27853,7 +27714,7 @@ const openapi: OpenAPISpec = {
               },
               workspace_id: {
                 description:
-                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the user identity.',
+                  'ID of the workspace that contains the user identity.',
                 format: 'uuid',
                 type: 'string',
               },
@@ -27982,8 +27843,7 @@ const openapi: OpenAPISpec = {
             type: 'string',
           },
           workspace_id: {
-            description:
-              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the space.',
+            description: 'ID of the workspace associated with the space.',
             format: 'uuid',
             type: 'string',
           },
@@ -28138,7 +27998,7 @@ const openapi: OpenAPISpec = {
           },
           workspace_id: {
             description:
-              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the thermostat daily program.',
+              'ID of the workspace that contains the thermostat daily program.',
             format: 'uuid',
             type: 'string',
           },
@@ -28235,7 +28095,7 @@ const openapi: OpenAPISpec = {
           },
           workspace_id: {
             description:
-              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the thermostat schedule.',
+              'ID of the workspace that contains the thermostat schedule.',
             format: 'uuid',
             type: 'string',
           },
@@ -29836,7 +29696,7 @@ const openapi: OpenAPISpec = {
           },
           connected_account_id: {
             description:
-              'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) that contains the access group.',
+              'ID of the connected account that contains the access group.',
             format: 'uuid',
             type: 'string',
           },
@@ -30319,8 +30179,7 @@ const openapi: OpenAPISpec = {
             type: 'array',
           },
           workspace_id: {
-            description:
-              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the access group.',
+            description: 'ID of the workspace that contains the access group.',
             format: 'uuid',
             type: 'string',
           },
@@ -30751,7 +30610,7 @@ const openapi: OpenAPISpec = {
           },
           workspace_id: {
             description:
-              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'ID of the workspace that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
             format: 'uuid',
             type: 'string',
           },
@@ -30811,7 +30670,7 @@ const openapi: OpenAPISpec = {
           },
           connected_account_id: {
             description:
-              '\n      The ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) that is associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).\n    ',
+              '\n      The ID of the connected account that is associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).\n    ',
             format: 'uuid',
             type: 'string',
           },
@@ -31605,7 +31464,7 @@ const openapi: OpenAPISpec = {
           },
           workspace_id: {
             description:
-              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'ID of the workspace that contains the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
             format: 'uuid',
             type: 'string',
           },
@@ -33458,8 +33317,7 @@ const openapi: OpenAPISpec = {
             type: 'array',
           },
           workspace_id: {
-            description:
-              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the user identity.',
+            description: 'ID of the workspace that contains the user identity.',
             format: 'uuid',
             type: 'string',
           },
@@ -33500,11 +33358,7 @@ const openapi: OpenAPISpec = {
               'URL for the [webhook](https://docs.seam.co/developer-tools/webhooks).',
             type: 'string',
           },
-          webhook_id: {
-            description:
-              'ID of the [webhook](https://docs.seam.co/developer-tools/webhooks).',
-            type: 'string',
-          },
+          webhook_id: { description: 'ID of the webhook.', type: 'string' },
         },
         required: ['webhook_id', 'url'],
         type: 'object',
@@ -33578,7 +33432,7 @@ const openapi: OpenAPISpec = {
           },
           organization_id: {
             description:
-              'ID of the organization to which the [workspace](https://docs.seam.co/core-concepts/workspaces) belongs, or `null` if the workspace is not assigned to an organization.',
+              'ID of the organization to which the workspace belongs, or `null` if the workspace is not assigned to an organization.',
             format: 'uuid',
             nullable: true,
             type: 'string',
@@ -33589,8 +33443,7 @@ const openapi: OpenAPISpec = {
             type: 'string',
           },
           workspace_id: {
-            description:
-              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces).',
+            description: 'ID of the workspace.',
             format: 'uuid',
             type: 'string',
           },
@@ -50469,7 +50322,7 @@ const openapi: OpenAPISpec = {
                         },
                         workspace_id: {
                           description:
-                            'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains Seam Bridge.',
+                            'ID of the workspace that contains Seam Bridge.',
                           format: 'uuid',
                           type: 'string',
                         },
@@ -50549,7 +50402,7 @@ const openapi: OpenAPISpec = {
                         },
                         workspace_id: {
                           description:
-                            'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains Seam Bridge.',
+                            'ID of the workspace that contains Seam Bridge.',
                           format: 'uuid',
                           type: 'string',
                         },
@@ -50616,7 +50469,7 @@ const openapi: OpenAPISpec = {
                           },
                           workspace_id: {
                             description:
-                              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains Seam Bridge.',
+                              'ID of the workspace that contains Seam Bridge.',
                             format: 'uuid',
                             type: 'string',
                           },
@@ -50687,7 +50540,7 @@ const openapi: OpenAPISpec = {
                           },
                           workspace_id: {
                             description:
-                              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains Seam Bridge.',
+                              'ID of the workspace that contains Seam Bridge.',
                             format: 'uuid',
                             type: 'string',
                           },
@@ -85020,7 +84873,7 @@ const openapi: OpenAPISpec = {
                         },
                         workspace_id: {
                           description:
-                            'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the user identity.',
+                            'ID of the workspace that contains the user identity.',
                           format: 'uuid',
                           type: 'string',
                         },
@@ -85263,7 +85116,7 @@ const openapi: OpenAPISpec = {
                         },
                         workspace_id: {
                           description:
-                            'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the user identity.',
+                            'ID of the workspace that contains the user identity.',
                           format: 'uuid',
                           type: 'string',
                         },
@@ -85534,7 +85387,7 @@ const openapi: OpenAPISpec = {
                           },
                           workspace_id: {
                             description:
-                              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the user identity.',
+                              'ID of the workspace that contains the user identity.',
                             format: 'uuid',
                             type: 'string',
                           },
@@ -85800,7 +85653,7 @@ const openapi: OpenAPISpec = {
                           },
                           workspace_id: {
                             description:
-                              'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the user identity.',
+                              'ID of the workspace that contains the user identity.',
                             format: 'uuid',
                             type: 'string',
                           },

@@ -3,12 +3,7 @@ import { z } from 'zod'
 import { hex_color_code } from '../colors.js'
 
 export const workspace = z.object({
-  workspace_id: z
-    .string()
-    .uuid()
-    .describe(
-      'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces).',
-    ),
+  workspace_id: z.string().uuid().describe('ID of the workspace.'),
   name: z
     .string()
     .describe(
@@ -86,7 +81,7 @@ export const workspace = z.object({
     .uuid()
     .nullable()
     .describe(
-      'ID of the organization to which the [workspace](https://docs.seam.co/core-concepts/workspaces) belongs, or `null` if the workspace is not assigned to an organization.',
+      'ID of the organization to which the workspace belongs, or `null` if the workspace is not assigned to an organization.',
     ),
 }).describe(`
   ---

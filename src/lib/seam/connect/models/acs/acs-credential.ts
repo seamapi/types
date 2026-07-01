@@ -240,7 +240,7 @@ const common_acs_credential = z.object({
     .string()
     .uuid()
     .describe(
-      'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+      'ID of the workspace that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
     ),
   starts_at: z
     .string()
