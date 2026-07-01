@@ -5,9 +5,7 @@ export const instant_key = z.object({
   workspace_id: z
     .string()
     .uuid()
-    .describe(
-      'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the Instant Key.',
-    ),
+    .describe('ID of the workspace that contains the Instant Key.'),
   created_at: z
     .string()
     .datetime()
@@ -21,9 +19,7 @@ export const instant_key = z.object({
   client_session_id: z
     .string()
     .uuid()
-    .describe(
-      'ID of the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens) associated with the Instant Key.',
-    ),
+    .describe('ID of the client session associated with the Instant Key.'),
   user_identity_id: z
     .string()
     .uuid()

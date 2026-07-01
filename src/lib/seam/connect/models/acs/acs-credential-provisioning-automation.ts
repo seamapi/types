@@ -38,9 +38,7 @@ export const enrollment_automation = z.object({
   workspace_id: z
     .string()
     .uuid()
-    .describe(
-      'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the enrollment automation.',
-    ),
+    .describe('ID of the workspace that contains the enrollment automation.'),
 }).describe(`
   ---
   route_path: /user_identities/enrollment_automations

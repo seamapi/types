@@ -7,9 +7,7 @@ export const customer = z.object({
   workspace_id: z
     .string()
     .uuid()
-    .describe(
-      'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the customer.',
-    ),
+    .describe('ID of the workspace associated with the customer.'),
   created_at: z
     .string()
     .datetime()

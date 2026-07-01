@@ -50,13 +50,13 @@ export const acs_encoder = z.object({
     .string()
     .uuid()
     .describe(
-      'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) that contains the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
+      'ID of the connected account that contains the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
     ),
   workspace_id: z
     .string()
     .uuid()
     .describe(
-      'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
+      'ID of the workspace that contains the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
     ),
   errors: z
     .array(acs_encoder_error)

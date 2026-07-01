@@ -32,7 +32,7 @@ export const action_attempt_lock_door_succeeded_event =
     ---
     route_path: /action_attempts
     ---
-    A lock door [action attempt](https://docs.seam.co/core-concepts/action-attempts) succeeded.
+    A lock door action attempt succeeded.
   `)
 
 export const action_attempt_lock_door_failed_event =
@@ -42,7 +42,7 @@ export const action_attempt_lock_door_failed_event =
     ---
     route_path: /action_attempts
     ---
-    A lock door [action attempt](https://docs.seam.co/core-concepts/action-attempts) failed.
+    A lock door action attempt failed.
   `)
 
 export const action_attempt_unlock_door_succeeded_event =
@@ -52,7 +52,7 @@ export const action_attempt_unlock_door_succeeded_event =
     ---
     route_path: /action_attempts
     ---
-    An unlock door [action attempt](https://docs.seam.co/core-concepts/action-attempts) succeeded.
+    An unlock door action attempt succeeded.
   `)
 
 export const action_attempt_unlock_door_failed_event =
@@ -62,7 +62,7 @@ export const action_attempt_unlock_door_failed_event =
     ---
     route_path: /action_attempts
     ---
-    An unlock door [action attempt](https://docs.seam.co/core-concepts/action-attempts) failed.
+    An unlock door action attempt failed.
   `)
 
 export const action_attempt_simulate_keypad_code_entry_succeeded_event =
@@ -74,7 +74,7 @@ export const action_attempt_simulate_keypad_code_entry_succeeded_event =
     ---
     route_path: /action_attempts
     ---
-    A simulate keypad code entry [action attempt](https://docs.seam.co/core-concepts/action-attempts) succeeded.
+    A simulate keypad code entry action attempt succeeded.
   `)
 
 export const action_attempt_simulate_keypad_code_entry_failed_event =
@@ -84,7 +84,7 @@ export const action_attempt_simulate_keypad_code_entry_failed_event =
     ---
     route_path: /action_attempts
     ---
-    A simulate keypad code entry [action attempt](https://docs.seam.co/core-concepts/action-attempts) failed.
+    A simulate keypad code entry action attempt failed.
   `)
 
 export const action_attempt_simulate_manual_lock_via_keypad_succeeded_event =
@@ -96,7 +96,7 @@ export const action_attempt_simulate_manual_lock_via_keypad_succeeded_event =
     ---
     route_path: /action_attempts
     ---
-    A simulate manual lock via keypad [action attempt](https://docs.seam.co/core-concepts/action-attempts) succeeded.
+    A simulate manual lock via keypad action attempt succeeded.
   `)
 
 export const action_attempt_simulate_manual_lock_via_keypad_failed_event =
@@ -108,7 +108,7 @@ export const action_attempt_simulate_manual_lock_via_keypad_failed_event =
     ---
     route_path: /action_attempts
     ---
-    A simulate manual lock via keypad [action attempt](https://docs.seam.co/core-concepts/action-attempts) failed.
+    A simulate manual lock via keypad action attempt failed.
   `)
 
 export const action_attempt_events = [

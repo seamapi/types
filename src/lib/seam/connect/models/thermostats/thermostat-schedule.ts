@@ -54,9 +54,7 @@ export const thermostat_schedule = z.object({
   workspace_id: z
     .string()
     .uuid()
-    .describe(
-      'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the thermostat schedule.',
-    ),
+    .describe('ID of the workspace that contains the thermostat schedule.'),
   created_at: z
     .string()
     .datetime()

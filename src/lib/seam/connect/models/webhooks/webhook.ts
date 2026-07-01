@@ -1,11 +1,7 @@
 import { z } from 'zod'
 
 export const webhook = z.object({
-  webhook_id: z
-    .string()
-    .describe(
-      'ID of the [webhook](https://docs.seam.co/developer-tools/webhooks).',
-    ),
+  webhook_id: z.string().describe('ID of the webhook.'),
   url: z
     .string()
     .describe(
