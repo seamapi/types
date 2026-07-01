@@ -71429,7 +71429,7 @@ const openapi: OpenAPISpec = {
                             MANAGE_DEVICES_CONFIRMATION_MODAL: {
                               type: 'boolean',
                             },
-                            RESERVATION_UI_V2: { type: 'boolean' },
+                            RESERVATION_LEGACY: { type: 'boolean' },
                             SALTO_KS_ENTRANCES_ONLY_FOR_SPACES: {
                               type: 'boolean',
                             },
@@ -71886,7 +71886,7 @@ const openapi: OpenAPISpec = {
                             MANAGE_DEVICES_CONFIRMATION_MODAL: {
                               type: 'boolean',
                             },
-                            RESERVATION_UI_V2: { type: 'boolean' },
+                            RESERVATION_LEGACY: { type: 'boolean' },
                             SALTO_KS_ENTRANCES_ONLY_FOR_SPACES: {
                               type: 'boolean',
                             },
