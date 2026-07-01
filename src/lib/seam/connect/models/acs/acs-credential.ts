@@ -162,7 +162,11 @@ const common_acs_credential = z.object({
     .describe(
       'ID of the [connected account](https://docs.seam.co/low-level-apis/access-systems/managing-credentials#connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
     ),
-  acs_credential_pool_id: z.string().uuid().optional(),
+  acs_credential_pool_id: z
+    .string()
+    .uuid()
+    .optional()
+    .describe('ID of the credential pool to which the credential belongs.'),
   acs_system_id: z
     .string()
     .uuid()
@@ -304,7 +308,9 @@ const common_acs_credential = z.object({
 
 export const acs_credential = common_acs_credential.merge(
   z.object({
-    is_managed: z.literal(true),
+    is_managed: z
+      .literal(true)
+      .describe('Indicates whether Seam manages the credential.'),
   }),
 ).describe(`
   ---
@@ -340,7 +346,12 @@ export const acs_credential_on_encoder = z.object({
       'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was created.',
     ),
 
-  is_issued: z.boolean().nullable(),
+  is_issued: z
+    .boolean()
+    .nullable()
+    .describe(
+      'Indicates whether the credential has been issued (encoded onto a card).',
+    ),
 
   starts_at: z
     .string()

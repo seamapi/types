@@ -1,16 +1,18 @@
 import { z } from 'zod'
 
-export const hvac_mode_setting = z.enum([
-  'off',
-  'heat',
-  'cool',
-  'heat_cool',
-  'eco',
-])
+export const hvac_mode_setting = z
+  .enum(['off', 'heat', 'cool', 'heat_cool', 'eco'])
+  .describe(
+    'HVAC mode setting for the thermostat, such as `heat`, `cool`, `heat_cool`, `eco`, or `off`.',
+  )
 
 export type HvacModeSetting = z.infer<typeof hvac_mode_setting>
 
-export const fan_mode_setting = z.enum(['auto', 'on', 'circulate'])
+export const fan_mode_setting = z
+  .enum(['auto', 'on', 'circulate'])
+  .describe(
+    'Fan mode setting for the thermostat, such as `auto`, `on`, or `circulate`.',
+  )
 
 export type FanModeSetting = z.infer<typeof fan_mode_setting>
 
@@ -20,13 +22,10 @@ export type AvailableFanModeSettings = z.infer<
   typeof available_fan_mode_settings
 >
 
-export const climate_preset_mode = z.enum([
-  'home',
-  'away',
-  'wake',
-  'sleep',
-  'occupied',
-  'unoccupied',
-])
+export const climate_preset_mode = z
+  .enum(['home', 'away', 'wake', 'sleep', 'occupied', 'unoccupied'])
+  .describe(
+    'Climate preset mode for the thermostat, such as `home`, `away`, `wake`, `sleep`, `occupied`, or `unoccupied`.',
+  )
 
 export type ClimatePresetMode = z.infer<typeof climate_preset_mode>

@@ -20,7 +20,9 @@ export const unmanaged_device = device
     custom_metadata: true,
   })
   .extend({
-    is_managed: z.literal(false),
+    is_managed: z
+      .literal(false)
+      .describe('Indicates that Seam does not manage the device.'),
     properties: common_device_properties.pick({
       accessory_keypad: true,
       name: true,

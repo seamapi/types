@@ -221,7 +221,13 @@ const common_acs_user = z
       .describe(
         'ID of the [access system](https://docs.seam.co/low-level-apis/access-systems) that contains the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
       ),
-    hid_acs_system_id: z.string().uuid().optional(),
+    hid_acs_system_id: z
+      .string()
+      .uuid()
+      .optional()
+      .describe(
+        'ID of the HID access control system associated with the user.',
+      ),
     workspace_id: z
       .string()
       .uuid()
@@ -323,7 +329,9 @@ const common_acs_user = z
 
 export const acs_user = common_acs_user.merge(
   z.object({
-    is_managed: z.literal(true),
+    is_managed: z
+      .literal(true)
+      .describe('Indicates whether Seam manages the access system user.'),
   }),
 ).describe(`
   ---

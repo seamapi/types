@@ -37,21 +37,27 @@ export const phone = z.object({
   errors: z
     .array(
       z.object({
-        error_code: z.string(),
-        message: z.string(),
+        error_code: z
+          .string()
+          .describe('Unique identifier of the type of error.'),
+        message: z.string().describe('Detailed description of the error.'),
       }),
     )
     .describe('Errors associated with the phone.'),
   warnings: z
     .array(
       z.object({
-        warning_code: z.string(),
-        message: z.string(),
+        warning_code: z
+          .string()
+          .describe('Unique identifier of the type of warning.'),
+        message: z.string().describe('Detailed description of the warning.'),
       }),
     )
     .describe('Warnings associated with the phone.'),
-  device_type: phone_device_type,
-  properties: phone_specific_properties,
+  device_type: phone_device_type.describe(
+    'Type of the phone device, such as `ios_phone` or `android_phone`.',
+  ),
+  properties: phone_specific_properties.describe('Properties of the phone.'),
 }).describe(`
   ---
   route_path: /phones

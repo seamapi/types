@@ -134,7 +134,7 @@ const common_acs_access_group = z.object({
     deprecated: Use \`external_type_display_name\`.
     ---
     `),
-  display_name: z.string(),
+  display_name: z.string().describe('Display name for the access group.'),
   external_type: acs_access_group_external_type.describe(
     'Brand-specific terminology for the access group type.',
   ),
@@ -166,7 +166,9 @@ const common_acs_access_group = z.object({
 })
 
 export const acs_access_group = common_acs_access_group.extend({
-  is_managed: z.literal(true),
+  is_managed: z
+    .literal(true)
+    .describe('Indicates whether Seam manages the access group.'),
 }).describe(`
     ---
     route_path: /acs/access_groups

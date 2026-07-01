@@ -119,8 +119,15 @@ export const user_identity = z.object({
     .describe(
       'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
     ),
-  display_name: z.string().min(1),
-  full_name: z.string().min(1).nullable(),
+  display_name: z
+    .string()
+    .min(1)
+    .describe('Display name for the user identity.'),
+  full_name: z
+    .string()
+    .min(1)
+    .nullable()
+    .describe('Full name of the user associated with the user identity.'),
   created_at: z
     .string()
     .datetime()
