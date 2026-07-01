@@ -316,7 +316,7 @@ export const acs_system = z
       .string()
       .uuid()
       .describe(
-        'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+        'ID of the workspace that contains the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
       ),
     connected_account_ids: z.array(z.string().uuid()).describe(`
       ---
@@ -328,7 +328,7 @@ export const acs_system = z
       .string()
       .uuid()
       .describe(
-        'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+        'ID of the connected account associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
       ),
     image_url: z
       .string()

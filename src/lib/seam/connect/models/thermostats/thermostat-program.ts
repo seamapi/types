@@ -40,7 +40,7 @@ export const thermostat_daily_program = z.object({
     .string()
     .uuid()
     .describe(
-      'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the thermostat daily program.',
+      'ID of the workspace that contains the thermostat daily program.',
     ),
   created_at: z
     .string()

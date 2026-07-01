@@ -10,9 +10,7 @@ export const magic_link = z.object({
   workspace_id: z
     .string()
     .uuid()
-    .describe(
-      'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the magic link.',
-    ),
+    .describe('ID of the workspace associated with the magic link.'),
   created_at: z
     .string()
     .datetime()

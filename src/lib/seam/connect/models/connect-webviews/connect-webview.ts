@@ -14,9 +14,7 @@ export const connect_webview = z.object({
   workspace_id: z
     .string()
     .uuid()
-    .describe(
-      'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the Connect Webview.',
-    ),
+    .describe('ID of the workspace that contains the Connect Webview.'),
   created_at: z
     .string()
     .datetime()
@@ -26,7 +24,7 @@ export const connect_webview = z.object({
     .uuid()
     .nullable()
     .describe(
-      'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the Connect Webview.',
+      'ID of the connected account associated with the Connect Webview.',
     ),
   url: z
     .string()

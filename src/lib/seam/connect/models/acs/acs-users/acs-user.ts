@@ -226,7 +226,7 @@ const common_acs_user = z
       .string()
       .uuid()
       .describe(
-        'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+        'ID of the workspace that contains the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
       ),
     created_at: z
       .string()
@@ -311,7 +311,7 @@ const common_acs_user = z
         The last time an internal sync job completed for this access system user.
       `),
     connected_account_id: z.string().uuid().describe(`
-      The ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) that is associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).
+      The ID of the connected account that is associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).
     `),
     salto_space_metadata: acs_user_salto_space_metadata
       .optional()

@@ -1,18 +1,11 @@
 import { z } from 'zod'
 
 export const client_session = z.object({
-  client_session_id: z
-    .string()
-    .uuid()
-    .describe(
-      'ID of the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens).',
-    ),
+  client_session_id: z.string().uuid().describe('ID of the client session.'),
   workspace_id: z
     .string()
     .uuid()
-    .describe(
-      'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens).',
-    ),
+    .describe('ID of the workspace associated with the client session.'),
   created_at: z
     .string()
     .datetime()

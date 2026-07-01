@@ -17,7 +17,7 @@ const access_code_event = common_event.extend({
     .string()
     .uuid()
     .describe(
-      'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+      'ID of the connected account associated with the affected access code.',
     ),
   device_custom_metadata: custom_metadata
     .optional()
