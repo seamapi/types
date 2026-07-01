@@ -17356,6 +17356,334 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
+              'The name of an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed on the device.',
+            properties: {
+              access_code_id: {
+                description: 'ID of the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              description: {
+                description:
+                  'Human-readable description of the change and its source.',
+                type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
+              },
+              device_id: {
+                description:
+                  'ID of the device associated with the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: ['access_code.name_changed'],
+                type: 'string',
+              },
+              from: {
+                properties: {
+                  name: {
+                    description: 'Previous name of the access code.',
+                    nullable: true,
+                    type: 'string',
+                  },
+                },
+                required: ['name'],
+                type: 'object',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              to: {
+                properties: {
+                  name: {
+                    description: 'New name of the access code.',
+                    nullable: true,
+                    type: 'string',
+                  },
+                },
+                required: ['name'],
+                type: 'object',
+              },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'access_code_id',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+              'from',
+              'to',
+              'description',
+            ],
+            type: 'object',
+            'x-route-path': '/access_codes',
+          },
+          {
+            description:
+              'The pin code of an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed on the device.',
+            properties: {
+              access_code_id: {
+                description: 'ID of the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              description: {
+                description:
+                  'Human-readable description of the change and its source.',
+                type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
+              },
+              device_id: {
+                description:
+                  'ID of the device associated with the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: ['access_code.code_changed'],
+                type: 'string',
+              },
+              from: {
+                properties: {
+                  code: {
+                    description: 'Previous pin code.',
+                    nullable: true,
+                    type: 'string',
+                  },
+                },
+                required: ['code'],
+                type: 'object',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              to: {
+                properties: {
+                  code: {
+                    description: 'New pin code.',
+                    nullable: true,
+                    type: 'string',
+                  },
+                },
+                required: ['code'],
+                type: 'object',
+              },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'access_code_id',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+              'from',
+              'to',
+              'description',
+            ],
+            type: 'object',
+            'x-route-path': '/access_codes',
+          },
+          {
+            description:
+              'The time frame of an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed on the device.',
+            properties: {
+              access_code_id: {
+                description: 'ID of the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              description: {
+                description:
+                  'Human-readable description of the change and its source.',
+                type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
+              },
+              device_id: {
+                description:
+                  'ID of the device associated with the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: ['access_code.time_frame_changed'],
+                type: 'string',
+              },
+              from: {
+                properties: {
+                  ends_at: {
+                    description: 'Previous end time.',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  starts_at: {
+                    description: 'Previous start time.',
+                    nullable: true,
+                    type: 'string',
+                  },
+                },
+                required: ['starts_at', 'ends_at'],
+                type: 'object',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              to: {
+                properties: {
+                  ends_at: {
+                    description: 'New end time.',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  starts_at: {
+                    description: 'New start time.',
+                    nullable: true,
+                    type: 'string',
+                  },
+                },
+                required: ['starts_at', 'ends_at'],
+                type: 'object',
+              },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'access_code_id',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+              'from',
+              'to',
+              'description',
+            ],
+            type: 'object',
+            'x-route-path': '/access_codes',
+          },
+          {
+            description:
               'An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was [scheduled natively](https://docs.seam.co/low-level-apis/smart-locks/access-codes#native-scheduling) on a device.',
             properties: {
               access_code_id: {
@@ -59843,6 +60171,9 @@ const openapi: OpenAPISpec = {
               enum: [
                 'access_code.created',
                 'access_code.changed',
+                'access_code.name_changed',
+                'access_code.code_changed',
+                'access_code.time_frame_changed',
                 'access_code.scheduled_on_device',
                 'access_code.set_on_device',
                 'access_code.removed_from_device',
@@ -59957,6 +60288,9 @@ const openapi: OpenAPISpec = {
                 enum: [
                   'access_code.created',
                   'access_code.changed',
+                  'access_code.name_changed',
+                  'access_code.code_changed',
+                  'access_code.time_frame_changed',
                   'access_code.scheduled_on_device',
                   'access_code.set_on_device',
                   'access_code.removed_from_device',
@@ -60404,6 +60738,9 @@ const openapi: OpenAPISpec = {
                     enum: [
                       'access_code.created',
                       'access_code.changed',
+                      'access_code.name_changed',
+                      'access_code.code_changed',
+                      'access_code.time_frame_changed',
                       'access_code.scheduled_on_device',
                       'access_code.set_on_device',
                       'access_code.removed_from_device',
@@ -60514,6 +60851,9 @@ const openapi: OpenAPISpec = {
                       enum: [
                         'access_code.created',
                         'access_code.changed',
+                        'access_code.name_changed',
+                        'access_code.code_changed',
+                        'access_code.time_frame_changed',
                         'access_code.scheduled_on_device',
                         'access_code.set_on_device',
                         'access_code.removed_from_device',
@@ -70782,6 +71122,9 @@ const openapi: OpenAPISpec = {
               enum: [
                 'access_code.created',
                 'access_code.changed',
+                'access_code.name_changed',
+                'access_code.code_changed',
+                'access_code.time_frame_changed',
                 'access_code.scheduled_on_device',
                 'access_code.set_on_device',
                 'access_code.removed_from_device',
@@ -70897,6 +71240,9 @@ const openapi: OpenAPISpec = {
                 enum: [
                   'access_code.created',
                   'access_code.changed',
+                  'access_code.name_changed',
+                  'access_code.code_changed',
+                  'access_code.time_frame_changed',
                   'access_code.scheduled_on_device',
                   'access_code.set_on_device',
                   'access_code.removed_from_device',
@@ -71075,6 +71421,9 @@ const openapi: OpenAPISpec = {
                     enum: [
                       'access_code.created',
                       'access_code.changed',
+                      'access_code.name_changed',
+                      'access_code.code_changed',
+                      'access_code.time_frame_changed',
                       'access_code.scheduled_on_device',
                       'access_code.set_on_device',
                       'access_code.removed_from_device',
@@ -71185,6 +71534,9 @@ const openapi: OpenAPISpec = {
                       enum: [
                         'access_code.created',
                         'access_code.changed',
+                        'access_code.name_changed',
+                        'access_code.code_changed',
+                        'access_code.time_frame_changed',
                         'access_code.scheduled_on_device',
                         'access_code.set_on_device',
                         'access_code.removed_from_device',

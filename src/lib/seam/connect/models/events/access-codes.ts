@@ -100,6 +100,74 @@ export const access_code_changed_event = access_code_event.extend({
 
 export type AccessCodeChangedEvent = z.infer<typeof access_code_changed_event>
 
+export const access_code_name_changed_event = access_code_event.extend({
+  event_type: z.literal('access_code.name_changed'),
+  from: z.object({
+    name: z.string().nullable().describe('Previous name of the access code.'),
+  }),
+  to: z.object({
+    name: z.string().nullable().describe('New name of the access code.'),
+  }),
+  description: z
+    .string()
+    .describe('Human-readable description of the change and its source.'),
+}).describe(`
+    ---
+    route_path: /access_codes
+    ---
+    The name of an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed on the device.
+  `)
+
+export type AccessCodeNameChangedEvent = z.infer<
+  typeof access_code_name_changed_event
+>
+
+export const access_code_code_changed_event = access_code_event.extend({
+  event_type: z.literal('access_code.code_changed'),
+  from: z.object({
+    code: z.string().nullable().describe('Previous pin code.'),
+  }),
+  to: z.object({
+    code: z.string().nullable().describe('New pin code.'),
+  }),
+  description: z
+    .string()
+    .describe('Human-readable description of the change and its source.'),
+}).describe(`
+    ---
+    route_path: /access_codes
+    ---
+    The pin code of an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed on the device.
+  `)
+
+export type AccessCodeCodeChangedEvent = z.infer<
+  typeof access_code_code_changed_event
+>
+
+export const access_code_time_frame_changed_event = access_code_event.extend({
+  event_type: z.literal('access_code.time_frame_changed'),
+  from: z.object({
+    starts_at: z.string().nullable().describe('Previous start time.'),
+    ends_at: z.string().nullable().describe('Previous end time.'),
+  }),
+  to: z.object({
+    starts_at: z.string().nullable().describe('New start time.'),
+    ends_at: z.string().nullable().describe('New end time.'),
+  }),
+  description: z
+    .string()
+    .describe('Human-readable description of the change and its source.'),
+}).describe(`
+    ---
+    route_path: /access_codes
+    ---
+    The time frame of an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed on the device.
+  `)
+
+export type AccessCodeTimeFrameChangedEvent = z.infer<
+  typeof access_code_time_frame_changed_event
+>
+
 export const access_code_scheduled_on_device_event = access_code_event.extend({
   event_type: z.literal('access_code.scheduled_on_device'),
   code,
@@ -317,6 +385,9 @@ export type UnmanagedAccessCodeRemovedEvent = z.infer<
 export const access_code_events = [
   access_code_created_event,
   access_code_changed_event,
+  access_code_name_changed_event,
+  access_code_code_changed_event,
+  access_code_time_frame_changed_event,
   access_code_scheduled_on_device_event,
   access_code_set_on_device_event,
   access_code_removed_from_device_event,
