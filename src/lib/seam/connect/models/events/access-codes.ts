@@ -69,19 +69,21 @@ export const access_code_changed_event = access_code_event.extend({
   event_type: z.literal('access_code.changed'),
   changed_properties: z
     .array(
-      z.object({
-        property: z
-          .string()
-          .describe('Name of the property that changed (e.g. `code`).'),
-        from: z
-          .string()
-          .nullable()
-          .describe('Previous value of the property, or null if not set.'),
-        to: z
-          .string()
-          .nullable()
-          .describe('New value of the property, or null if cleared.'),
-      }),
+      z
+        .object({
+          property: z
+            .string()
+            .describe('Name of the property that changed (e.g. `code`).'),
+          from: z
+            .string()
+            .nullable()
+            .describe('Previous value of the property, or null if not set.'),
+          to: z
+            .string()
+            .nullable()
+            .describe('New value of the property, or null if cleared.'),
+        })
+        .describe('Record describing a single changed property.'),
     )
     .optional()
     .describe('List of properties that changed on the access code.'),
@@ -324,7 +326,9 @@ export type AccessCodeDeletedExternalToSeamEvent = z.infer<
 export const access_code_backup_access_code_pulled_event =
   access_code_event.extend({
     event_type: z.literal('access_code.backup_access_code_pulled'),
-    backup_access_code_id: z.string(),
+    backup_access_code_id: z
+      .string()
+      .describe('ID of the backup access code that was pulled from the pool.'),
   }).describe(`
     ---
     route_path: /access_codes

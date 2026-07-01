@@ -10,26 +10,96 @@ import { phone_specific_properties } from './phone-properties.js'
 
 export const device_capability_flags = z
   .object({
-    can_remotely_unlock: z.boolean(),
-    can_remotely_lock: z.boolean(),
-    can_program_offline_access_codes: z.boolean(),
-    can_program_online_access_codes: z.boolean(),
-    can_hvac_heat: z.boolean(),
-    can_hvac_cool: z.boolean(),
-    can_hvac_heat_cool: z.boolean(),
-    can_turn_off_hvac: z.boolean(),
-    can_simulate_removal: z.boolean(),
-    can_simulate_connection: z.boolean(),
-    can_simulate_disconnection: z.boolean(),
-    can_unlock_with_code: z.boolean(),
-    can_run_thermostat_programs: z.boolean(),
-    can_program_thermostat_programs_as_weekday_weekend: z.boolean(),
-    can_program_thermostat_programs_as_different_each_day: z.boolean(),
-    can_program_thermostat_programs_as_same_each_day: z.boolean(),
-    can_simulate_hub_connection: z.boolean(),
-    can_simulate_hub_disconnection: z.boolean(),
-    can_simulate_paid_subscription: z.boolean(),
-    can_configure_auto_lock: z.boolean(),
+    can_remotely_unlock: z
+      .boolean()
+      .describe('Indicates whether the device supports remote unlocking.'),
+    can_remotely_lock: z
+      .boolean()
+      .describe('Indicates whether the device supports remote locking.'),
+    can_program_offline_access_codes: z
+      .boolean()
+      .describe(
+        'Indicates whether the device supports programming offline access codes.',
+      ),
+    can_program_online_access_codes: z
+      .boolean()
+      .describe(
+        'Indicates whether the device supports programming online access codes.',
+      ),
+    can_hvac_heat: z
+      .boolean()
+      .describe('Indicates whether the thermostat supports heating.'),
+    can_hvac_cool: z
+      .boolean()
+      .describe('Indicates whether the thermostat supports cooling.'),
+    can_hvac_heat_cool: z
+      .boolean()
+      .describe(
+        'Indicates whether the thermostat supports simultaneous heating and cooling.',
+      ),
+    can_turn_off_hvac: z
+      .boolean()
+      .describe('Indicates whether the thermostat can be turned off.'),
+    can_simulate_removal: z
+      .boolean()
+      .describe(
+        'Indicates whether the device supports simulating removal in a sandbox.',
+      ),
+    can_simulate_connection: z
+      .boolean()
+      .describe(
+        'Indicates whether the device supports simulating connection in a sandbox.',
+      ),
+    can_simulate_disconnection: z
+      .boolean()
+      .describe(
+        'Indicates whether the device supports simulating disconnection in a sandbox.',
+      ),
+    can_unlock_with_code: z
+      .boolean()
+      .describe(
+        'Indicates whether the lock supports unlocking with an access code.',
+      ),
+    can_run_thermostat_programs: z
+      .boolean()
+      .describe(
+        'Indicates whether the thermostat supports running climate programs.',
+      ),
+    can_program_thermostat_programs_as_weekday_weekend: z
+      .boolean()
+      .describe(
+        'Indicates whether the thermostat supports weekday/weekend climate programs.',
+      ),
+    can_program_thermostat_programs_as_different_each_day: z
+      .boolean()
+      .describe(
+        'Indicates whether the thermostat supports different climate programs for each day of the week.',
+      ),
+    can_program_thermostat_programs_as_same_each_day: z
+      .boolean()
+      .describe(
+        'Indicates whether the thermostat supports a single climate program applied to every day.',
+      ),
+    can_simulate_hub_connection: z
+      .boolean()
+      .describe(
+        'Indicates whether the hub supports simulating connection in a sandbox.',
+      ),
+    can_simulate_hub_disconnection: z
+      .boolean()
+      .describe(
+        'Indicates whether the hub supports simulating disconnection in a sandbox.',
+      ),
+    can_simulate_paid_subscription: z
+      .boolean()
+      .describe(
+        'Indicates whether the device supports simulating a paid subscription in a sandbox.',
+      ),
+    can_configure_auto_lock: z
+      .boolean()
+      .describe(
+        'Indicates whether the lock supports configuring automatic locking.',
+      ),
   })
   .partial()
 

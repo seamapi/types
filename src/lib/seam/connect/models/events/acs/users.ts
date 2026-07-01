@@ -2,11 +2,12 @@ import { z } from 'zod'
 
 import { common_acs_event } from './common.js'
 
-const acs_user_event = common_acs_event
-  .extend({
-    acs_user_id: z.string().uuid(),
-  })
-  .describe('ID of the affected access system user.')
+const acs_user_event = common_acs_event.extend({
+  acs_user_id: z
+    .string()
+    .uuid()
+    .describe('ID of the affected access system user.'),
+})
 
 export const acs_user_deleted_event = acs_user_event.extend({
   event_type: z.literal('acs_user.deleted'),

@@ -175,10 +175,16 @@ export const PUBLIC_PROVIDER_CATEGORIES: typeof PROVIDER_CATEGORIES =
 
 export const device_provider = z
   .object({
-    device_provider_name: z.enum(ALL_DEVICE_PROVIDERS),
-    display_name: z.string(),
-    image_url: z.string(),
-    provider_categories: z.array(z.enum(PUBLIC_PROVIDER_CATEGORIES)),
+    device_provider_name: z
+      .enum(ALL_DEVICE_PROVIDERS)
+      .describe('Name of the device provider.'),
+    display_name: z.string().describe('Display name for the device provider.'),
+    image_url: z.string().describe('Image URL for the device provider.'),
+    provider_categories: z
+      .array(z.enum(PUBLIC_PROVIDER_CATEGORIES))
+      .describe(
+        'List of provider categories to which the device provider belongs, such as `stable`, `consumer_smartlocks`, `thermostats`, and so on.',
+      ),
   })
   .extend(device_capability_flags.shape).describe(`
     ---

@@ -2924,7 +2924,10 @@ const openapi: OpenAPISpec = {
             format: 'date-time',
             type: 'string',
           },
-          display_name: { type: 'string' },
+          display_name: {
+            description: 'Display name for the access group.',
+            type: 'string',
+          },
           errors: {
             description: 'Errors associated with the `acs_access_group`.',
             items: {
@@ -2980,7 +2983,11 @@ const openapi: OpenAPISpec = {
               'Display name that corresponds to the brand-specific terminology for the access group type.',
             type: 'string',
           },
-          is_managed: { enum: [true], type: 'boolean' },
+          is_managed: {
+            description: 'Indicates whether Seam manages the access group.',
+            enum: [true],
+            type: 'boolean',
+          },
           name: { description: 'Name of the access group.', type: 'string' },
           pending_mutations: {
             description:
@@ -3439,7 +3446,12 @@ const openapi: OpenAPISpec = {
             format: 'uuid',
             type: 'string',
           },
-          acs_credential_pool_id: { format: 'uuid', type: 'string' },
+          acs_credential_pool_id: {
+            description:
+              'ID of the credential pool to which the credential belongs.',
+            format: 'uuid',
+            type: 'string',
+          },
           acs_system_id: {
             description:
               'ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
@@ -3572,7 +3584,11 @@ const openapi: OpenAPISpec = {
             nullable: true,
             type: 'boolean',
           },
-          is_managed: { enum: [true], type: 'boolean' },
+          is_managed: {
+            description: 'Indicates whether Seam manages the credential.',
+            enum: [true],
+            type: 'boolean',
+          },
           is_multi_phone_sync_credential: {
             description:
               'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
@@ -4508,14 +4524,24 @@ const openapi: OpenAPISpec = {
         description:
           'Represents an [access control system](https://docs.seam.co/low-level-apis/access-systems).\n\nWithin an `acs_system`, create [`acs_user`s](https://docs.seam.co/api/acs/users#acs_user) and [`acs_credential`s](https://docs.seam.co/api/acs/credentials#acs_credential) to grant access to the `acs_user`s.\n\nFor details about the resources associated with an access control system, see the [access control systems namespace](https://docs.seam.co/api/acs).',
         properties: {
-          acs_access_group_count: { format: 'float', type: 'number' },
+          acs_access_group_count: {
+            description:
+              'Number of access groups in the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+            format: 'float',
+            type: 'number',
+          },
           acs_system_id: {
             description:
               'ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
             format: 'uuid',
             type: 'string',
           },
-          acs_user_count: { format: 'float', type: 'number' },
+          acs_user_count: {
+            description:
+              'Number of users in the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+            format: 'float',
+            type: 'number',
+          },
           connected_account_id: {
             description:
               'ID of the connected account associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
@@ -4592,7 +4618,11 @@ const openapi: OpenAPISpec = {
                       enum: ['bridge_disconnected'],
                       type: 'string',
                     },
-                    is_bridge_error: { type: 'boolean' },
+                    is_bridge_error: {
+                      description:
+                        'Indicates whether the error is related to the [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
+                      type: 'boolean',
+                    },
                     message: {
                       description:
                         'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
@@ -4799,6 +4829,8 @@ const openapi: OpenAPISpec = {
             type: 'boolean',
           },
           location: {
+            description:
+              'Location information for the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
             properties: {
               time_zone: {
                 description:
@@ -4843,6 +4875,8 @@ const openapi: OpenAPISpec = {
             'x-deprecated': 'Use `external_type_display_name`.',
           },
           visionline_metadata: {
+            description:
+              'Visionline-specific metadata for the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
             properties: {
               lan_address: {
                 description:
@@ -5222,8 +5256,18 @@ const openapi: OpenAPISpec = {
             minLength: 1,
             type: 'string',
           },
-          hid_acs_system_id: { format: 'uuid', type: 'string' },
-          is_managed: { enum: [true], type: 'boolean' },
+          hid_acs_system_id: {
+            description:
+              'ID of the HID access control system associated with the user.',
+            format: 'uuid',
+            type: 'string',
+          },
+          is_managed: {
+            description:
+              'Indicates whether Seam manages the access system user.',
+            enum: [true],
+            type: 'boolean',
+          },
           is_suspended: {
             description:
               'Indicates whether the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) is currently [suspended](https://docs.seam.co/low-level-apis/access-systems/user-management/suspending-and-unsuspending-users).',
@@ -6160,7 +6204,12 @@ const openapi: OpenAPISpec = {
                         nullable: true,
                         type: 'string',
                       },
-                      is_issued: { nullable: true, type: 'boolean' },
+                      is_issued: {
+                        description:
+                          'Indicates whether the credential has been issued (encoded onto a card).',
+                        nullable: true,
+                        type: 'boolean',
+                      },
                       starts_at: {
                         description:
                           'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) becomes usable.',
@@ -6281,6 +6330,8 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                           acs_credential_pool_id: {
+                            description:
+                              'ID of the credential pool to which the credential belongs.',
                             format: 'uuid',
                             type: 'string',
                           },
@@ -6418,7 +6469,12 @@ const openapi: OpenAPISpec = {
                             nullable: true,
                             type: 'boolean',
                           },
-                          is_managed: { enum: [true], type: 'boolean' },
+                          is_managed: {
+                            description:
+                              'Indicates whether Seam manages the credential.',
+                            enum: [true],
+                            type: 'boolean',
+                          },
                           is_multi_phone_sync_credential: {
                             description:
                               'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
@@ -6739,6 +6795,8 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                           acs_credential_pool_id: {
+                            description:
+                              'ID of the credential pool to which the credential belongs.',
                             format: 'uuid',
                             type: 'string',
                           },
@@ -7454,6 +7512,8 @@ const openapi: OpenAPISpec = {
                         type: 'string',
                       },
                       acs_credential_pool_id: {
+                        description:
+                          'ID of the credential pool to which the credential belongs.',
                         format: 'uuid',
                         type: 'string',
                       },
@@ -7590,7 +7650,12 @@ const openapi: OpenAPISpec = {
                         nullable: true,
                         type: 'boolean',
                       },
-                      is_managed: { enum: [true], type: 'boolean' },
+                      is_managed: {
+                        description:
+                          'Indicates whether Seam manages the credential.',
+                        enum: [true],
+                        type: 'boolean',
+                      },
                       is_multi_phone_sync_credential: {
                         description:
                           'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
@@ -7909,6 +7974,8 @@ const openapi: OpenAPISpec = {
                         type: 'string',
                       },
                       acs_credential_pool_id: {
+                        description:
+                          'ID of the credential pool to which the credential belongs.',
                         format: 'uuid',
                         type: 'string',
                       },
@@ -8657,7 +8724,12 @@ const openapi: OpenAPISpec = {
                     format: 'uuid',
                     type: 'string',
                   },
-                  acs_credential_pool_id: { format: 'uuid', type: 'string' },
+                  acs_credential_pool_id: {
+                    description:
+                      'ID of the credential pool to which the credential belongs.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   acs_system_id: {
                     description:
                       'ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
@@ -8790,7 +8862,12 @@ const openapi: OpenAPISpec = {
                     nullable: true,
                     type: 'boolean',
                   },
-                  is_managed: { enum: [true], type: 'boolean' },
+                  is_managed: {
+                    description:
+                      'Indicates whether Seam manages the credential.',
+                    enum: [true],
+                    type: 'boolean',
+                  },
                   is_multi_phone_sync_credential: {
                     description:
                       'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
@@ -11948,6 +12025,8 @@ const openapi: OpenAPISpec = {
             type: 'string',
           },
           device_selection_mode: {
+            description:
+              'Device selection mode of the Connect Webview. Supported values: `none`, `single`, `multiple`.',
             enum: ['none', 'single', 'multiple'],
             type: 'string',
           },
@@ -12725,30 +12804,103 @@ const openapi: OpenAPISpec = {
         description:
           'Represents a [device](https://docs.seam.co/core-concepts/devices) that has been connected to Seam.',
         properties: {
-          can_configure_auto_lock: { type: 'boolean' },
-          can_hvac_cool: { type: 'boolean' },
-          can_hvac_heat: { type: 'boolean' },
-          can_hvac_heat_cool: { type: 'boolean' },
-          can_program_offline_access_codes: { type: 'boolean' },
-          can_program_online_access_codes: { type: 'boolean' },
+          can_configure_auto_lock: {
+            description:
+              'Indicates whether the lock supports configuring automatic locking.',
+            type: 'boolean',
+          },
+          can_hvac_cool: {
+            description: 'Indicates whether the thermostat supports cooling.',
+            type: 'boolean',
+          },
+          can_hvac_heat: {
+            description: 'Indicates whether the thermostat supports heating.',
+            type: 'boolean',
+          },
+          can_hvac_heat_cool: {
+            description:
+              'Indicates whether the thermostat supports simultaneous heating and cooling.',
+            type: 'boolean',
+          },
+          can_program_offline_access_codes: {
+            description:
+              'Indicates whether the device supports programming offline access codes.',
+            type: 'boolean',
+          },
+          can_program_online_access_codes: {
+            description:
+              'Indicates whether the device supports programming online access codes.',
+            type: 'boolean',
+          },
           can_program_thermostat_programs_as_different_each_day: {
+            description:
+              'Indicates whether the thermostat supports different climate programs for each day of the week.',
             type: 'boolean',
           },
-          can_program_thermostat_programs_as_same_each_day: { type: 'boolean' },
+          can_program_thermostat_programs_as_same_each_day: {
+            description:
+              'Indicates whether the thermostat supports a single climate program applied to every day.',
+            type: 'boolean',
+          },
           can_program_thermostat_programs_as_weekday_weekend: {
+            description:
+              'Indicates whether the thermostat supports weekday/weekend climate programs.',
             type: 'boolean',
           },
-          can_remotely_lock: { type: 'boolean' },
-          can_remotely_unlock: { type: 'boolean' },
-          can_run_thermostat_programs: { type: 'boolean' },
-          can_simulate_connection: { type: 'boolean' },
-          can_simulate_disconnection: { type: 'boolean' },
-          can_simulate_hub_connection: { type: 'boolean' },
-          can_simulate_hub_disconnection: { type: 'boolean' },
-          can_simulate_paid_subscription: { type: 'boolean' },
-          can_simulate_removal: { type: 'boolean' },
-          can_turn_off_hvac: { type: 'boolean' },
-          can_unlock_with_code: { type: 'boolean' },
+          can_remotely_lock: {
+            description:
+              'Indicates whether the device supports remote locking.',
+            type: 'boolean',
+          },
+          can_remotely_unlock: {
+            description:
+              'Indicates whether the device supports remote unlocking.',
+            type: 'boolean',
+          },
+          can_run_thermostat_programs: {
+            description:
+              'Indicates whether the thermostat supports running climate programs.',
+            type: 'boolean',
+          },
+          can_simulate_connection: {
+            description:
+              'Indicates whether the device supports simulating connection in a sandbox.',
+            type: 'boolean',
+          },
+          can_simulate_disconnection: {
+            description:
+              'Indicates whether the device supports simulating disconnection in a sandbox.',
+            type: 'boolean',
+          },
+          can_simulate_hub_connection: {
+            description:
+              'Indicates whether the hub supports simulating connection in a sandbox.',
+            type: 'boolean',
+          },
+          can_simulate_hub_disconnection: {
+            description:
+              'Indicates whether the hub supports simulating disconnection in a sandbox.',
+            type: 'boolean',
+          },
+          can_simulate_paid_subscription: {
+            description:
+              'Indicates whether the device supports simulating a paid subscription in a sandbox.',
+            type: 'boolean',
+          },
+          can_simulate_removal: {
+            description:
+              'Indicates whether the device supports simulating removal in a sandbox.',
+            type: 'boolean',
+          },
+          can_turn_off_hvac: {
+            description: 'Indicates whether the thermostat can be turned off.',
+            type: 'boolean',
+          },
+          can_unlock_with_code: {
+            description:
+              'Indicates whether the lock supports unlocking with an access code.',
+            type: 'boolean',
+          },
           capabilities_supported: {
             description:
               '\n        Collection of capabilities that the device supports when connected to Seam. Values are `access_code`, which indicates that the device can manage and utilize digital PIN codes for secure access; `lock`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; `noise_detection`, which indicates that the device supports monitoring and responding to ambient noise levels; `thermostat`, which indicates that the device can regulate and adjust indoor temperatures; `battery`, which indicates that the device can manage battery life and health; and `phone`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](https://docs.seam.co/capability-guides/device-and-system-capabilities#capability-flags).\n        ',
@@ -15482,6 +15634,8 @@ const openapi: OpenAPISpec = {
                         description:
                           'Climate preset modes that the thermostat supports, such as "home", "away", "wake", "sleep", "occupied", and "unoccupied".',
                         items: {
+                          description:
+                            'Climate preset mode for the thermostat, such as `home`, `away`, `wake`, `sleep`, `occupied`, or `unoccupied`.',
                           enum: [
                             'home',
                             'away',
@@ -15636,6 +15790,8 @@ const openapi: OpenAPISpec = {
                         description:
                           'Fan mode settings that the thermostat supports.',
                         items: {
+                          description:
+                            'Fan mode setting for the thermostat, such as `auto`, `on`, or `circulate`.',
                           enum: ['auto', 'on', 'circulate'],
                           type: 'string',
                         },
@@ -15646,6 +15802,8 @@ const openapi: OpenAPISpec = {
                         description:
                           'HVAC mode settings that the thermostat supports.',
                         items: {
+                          description:
+                            'HVAC mode setting for the thermostat, such as `heat`, `cool`, `heat_cool`, `eco`, or `off`.',
                           enum: ['off', 'heat', 'cool', 'heat_cool', 'eco'],
                           type: 'string',
                         },
@@ -17005,31 +17163,105 @@ const openapi: OpenAPISpec = {
       },
       device_provider: {
         properties: {
-          can_configure_auto_lock: { type: 'boolean' },
-          can_hvac_cool: { type: 'boolean' },
-          can_hvac_heat: { type: 'boolean' },
-          can_hvac_heat_cool: { type: 'boolean' },
-          can_program_offline_access_codes: { type: 'boolean' },
-          can_program_online_access_codes: { type: 'boolean' },
+          can_configure_auto_lock: {
+            description:
+              'Indicates whether the lock supports configuring automatic locking.',
+            type: 'boolean',
+          },
+          can_hvac_cool: {
+            description: 'Indicates whether the thermostat supports cooling.',
+            type: 'boolean',
+          },
+          can_hvac_heat: {
+            description: 'Indicates whether the thermostat supports heating.',
+            type: 'boolean',
+          },
+          can_hvac_heat_cool: {
+            description:
+              'Indicates whether the thermostat supports simultaneous heating and cooling.',
+            type: 'boolean',
+          },
+          can_program_offline_access_codes: {
+            description:
+              'Indicates whether the device supports programming offline access codes.',
+            type: 'boolean',
+          },
+          can_program_online_access_codes: {
+            description:
+              'Indicates whether the device supports programming online access codes.',
+            type: 'boolean',
+          },
           can_program_thermostat_programs_as_different_each_day: {
+            description:
+              'Indicates whether the thermostat supports different climate programs for each day of the week.',
             type: 'boolean',
           },
-          can_program_thermostat_programs_as_same_each_day: { type: 'boolean' },
+          can_program_thermostat_programs_as_same_each_day: {
+            description:
+              'Indicates whether the thermostat supports a single climate program applied to every day.',
+            type: 'boolean',
+          },
           can_program_thermostat_programs_as_weekday_weekend: {
+            description:
+              'Indicates whether the thermostat supports weekday/weekend climate programs.',
             type: 'boolean',
           },
-          can_remotely_lock: { type: 'boolean' },
-          can_remotely_unlock: { type: 'boolean' },
-          can_run_thermostat_programs: { type: 'boolean' },
-          can_simulate_connection: { type: 'boolean' },
-          can_simulate_disconnection: { type: 'boolean' },
-          can_simulate_hub_connection: { type: 'boolean' },
-          can_simulate_hub_disconnection: { type: 'boolean' },
-          can_simulate_paid_subscription: { type: 'boolean' },
-          can_simulate_removal: { type: 'boolean' },
-          can_turn_off_hvac: { type: 'boolean' },
-          can_unlock_with_code: { type: 'boolean' },
+          can_remotely_lock: {
+            description:
+              'Indicates whether the device supports remote locking.',
+            type: 'boolean',
+          },
+          can_remotely_unlock: {
+            description:
+              'Indicates whether the device supports remote unlocking.',
+            type: 'boolean',
+          },
+          can_run_thermostat_programs: {
+            description:
+              'Indicates whether the thermostat supports running climate programs.',
+            type: 'boolean',
+          },
+          can_simulate_connection: {
+            description:
+              'Indicates whether the device supports simulating connection in a sandbox.',
+            type: 'boolean',
+          },
+          can_simulate_disconnection: {
+            description:
+              'Indicates whether the device supports simulating disconnection in a sandbox.',
+            type: 'boolean',
+          },
+          can_simulate_hub_connection: {
+            description:
+              'Indicates whether the hub supports simulating connection in a sandbox.',
+            type: 'boolean',
+          },
+          can_simulate_hub_disconnection: {
+            description:
+              'Indicates whether the hub supports simulating disconnection in a sandbox.',
+            type: 'boolean',
+          },
+          can_simulate_paid_subscription: {
+            description:
+              'Indicates whether the device supports simulating a paid subscription in a sandbox.',
+            type: 'boolean',
+          },
+          can_simulate_removal: {
+            description:
+              'Indicates whether the device supports simulating removal in a sandbox.',
+            type: 'boolean',
+          },
+          can_turn_off_hvac: {
+            description: 'Indicates whether the thermostat can be turned off.',
+            type: 'boolean',
+          },
+          can_unlock_with_code: {
+            description:
+              'Indicates whether the lock supports unlocking with an access code.',
+            type: 'boolean',
+          },
           device_provider_name: {
+            description: 'Name of the device provider.',
             enum: [
               'hotek',
               'dormakaba_community',
@@ -17094,9 +17326,17 @@ const openapi: OpenAPISpec = {
             ],
             type: 'string',
           },
-          display_name: { type: 'string' },
-          image_url: { type: 'string' },
+          display_name: {
+            description: 'Display name for the device provider.',
+            type: 'string',
+          },
+          image_url: {
+            description: 'Image URL for the device provider.',
+            type: 'string',
+          },
           provider_categories: {
+            description:
+              'List of provider categories to which the device provider belongs, such as `stable`, `consumer_smartlocks`, `thermostats`, and so on.',
             items: {
               enum: [
                 'stable',
@@ -17262,6 +17502,7 @@ const openapi: OpenAPISpec = {
                 description:
                   'List of properties that changed on the access code.',
                 items: {
+                  description: 'Record describing a single changed property.',
                   properties: {
                     from: {
                       description:
@@ -17922,6 +18163,8 @@ const openapi: OpenAPISpec = {
               access_code_errors: {
                 description: 'Errors associated with the access code.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -17953,6 +18196,8 @@ const openapi: OpenAPISpec = {
               access_code_warnings: {
                 description: 'Warnings associated with the access code.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -17987,6 +18232,8 @@ const openapi: OpenAPISpec = {
               connected_account_errors: {
                 description: 'Errors associated with the connected account.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -18019,6 +18266,8 @@ const openapi: OpenAPISpec = {
               connected_account_warnings: {
                 description: 'Warnings associated with the connected account.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -18058,6 +18307,8 @@ const openapi: OpenAPISpec = {
               device_errors: {
                 description: 'Errors associated with the device.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -18090,6 +18341,8 @@ const openapi: OpenAPISpec = {
               device_warnings: {
                 description: 'Warnings associated with the device.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -18159,6 +18412,8 @@ const openapi: OpenAPISpec = {
               access_code_errors: {
                 description: 'Errors associated with the access code.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -18190,6 +18445,8 @@ const openapi: OpenAPISpec = {
               access_code_warnings: {
                 description: 'Warnings associated with the access code.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -18224,6 +18481,8 @@ const openapi: OpenAPISpec = {
               connected_account_errors: {
                 description: 'Errors associated with the connected account.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -18256,6 +18515,8 @@ const openapi: OpenAPISpec = {
               connected_account_warnings: {
                 description: 'Warnings associated with the connected account.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -18295,6 +18556,8 @@ const openapi: OpenAPISpec = {
               device_errors: {
                 description: 'Errors associated with the device.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -18327,6 +18590,8 @@ const openapi: OpenAPISpec = {
               device_warnings: {
                 description: 'Warnings associated with the device.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -18474,6 +18739,8 @@ const openapi: OpenAPISpec = {
               access_code_errors: {
                 description: 'Errors associated with the access code.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -18505,6 +18772,8 @@ const openapi: OpenAPISpec = {
               access_code_warnings: {
                 description: 'Warnings associated with the access code.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -18539,6 +18808,8 @@ const openapi: OpenAPISpec = {
               connected_account_errors: {
                 description: 'Errors associated with the connected account.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -18571,6 +18842,8 @@ const openapi: OpenAPISpec = {
               connected_account_warnings: {
                 description: 'Warnings associated with the connected account.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -18610,6 +18883,8 @@ const openapi: OpenAPISpec = {
               device_errors: {
                 description: 'Errors associated with the device.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -18642,6 +18917,8 @@ const openapi: OpenAPISpec = {
               device_warnings: {
                 description: 'Warnings associated with the device.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -18711,6 +18988,8 @@ const openapi: OpenAPISpec = {
               access_code_errors: {
                 description: 'Errors associated with the access code.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -18742,6 +19021,8 @@ const openapi: OpenAPISpec = {
               access_code_warnings: {
                 description: 'Warnings associated with the access code.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -18776,6 +19057,8 @@ const openapi: OpenAPISpec = {
               connected_account_errors: {
                 description: 'Errors associated with the connected account.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -18808,6 +19091,8 @@ const openapi: OpenAPISpec = {
               connected_account_warnings: {
                 description: 'Warnings associated with the connected account.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -18847,6 +19132,8 @@ const openapi: OpenAPISpec = {
               device_errors: {
                 description: 'Errors associated with the device.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -18879,6 +19166,8 @@ const openapi: OpenAPISpec = {
               device_warnings: {
                 description: 'Warnings associated with the device.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -19100,7 +19389,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
-              backup_access_code_id: { type: 'string' },
+              backup_access_code_id: {
+                description:
+                  'ID of the backup access code that was pulled from the pool.',
+                type: 'string',
+              },
               connected_account_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -19250,6 +19543,8 @@ const openapi: OpenAPISpec = {
               access_code_errors: {
                 description: 'Errors associated with the access code.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -19281,6 +19576,8 @@ const openapi: OpenAPISpec = {
               access_code_warnings: {
                 description: 'Warnings associated with the access code.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -19315,6 +19612,8 @@ const openapi: OpenAPISpec = {
               connected_account_errors: {
                 description: 'Errors associated with the connected account.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -19347,6 +19646,8 @@ const openapi: OpenAPISpec = {
               connected_account_warnings: {
                 description: 'Warnings associated with the connected account.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -19386,6 +19687,8 @@ const openapi: OpenAPISpec = {
               device_errors: {
                 description: 'Errors associated with the device.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -19418,6 +19721,8 @@ const openapi: OpenAPISpec = {
               device_warnings: {
                 description: 'Warnings associated with the device.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -20426,6 +20731,8 @@ const openapi: OpenAPISpec = {
                 description:
                   'Errors associated with the access control system.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -20458,6 +20765,8 @@ const openapi: OpenAPISpec = {
                 description:
                   'Warnings associated with the access control system.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -20484,6 +20793,8 @@ const openapi: OpenAPISpec = {
               connected_account_errors: {
                 description: 'Errors associated with the connected account.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -20515,6 +20826,8 @@ const openapi: OpenAPISpec = {
               connected_account_warnings: {
                 description: 'Warnings associated with the connected account.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -20799,7 +21112,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
-              acs_user_id: { format: 'uuid', type: 'string' },
+              acs_user_id: {
+                description: 'ID of the affected access system user.',
+                format: 'uuid',
+                type: 'string',
+              },
               connected_account_id: {
                 description: 'ID of the connected account.',
                 format: 'uuid',
@@ -20848,7 +21165,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
-              acs_user_id: { format: 'uuid', type: 'string' },
+              acs_user_id: {
+                description: 'ID of the affected access system user.',
+                format: 'uuid',
+                type: 'string',
+              },
               connected_account_id: {
                 description: 'ID of the connected account.',
                 format: 'uuid',
@@ -21053,7 +21374,11 @@ const openapi: OpenAPISpec = {
             description:
               'An [access system entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) was added.',
             properties: {
-              acs_entrance_id: { format: 'uuid', type: 'string' },
+              acs_entrance_id: {
+                description: 'ID of the affected entrance.',
+                format: 'uuid',
+                type: 'string',
+              },
               acs_system_id: {
                 description: 'ID of the access system.',
                 format: 'uuid',
@@ -21102,7 +21427,11 @@ const openapi: OpenAPISpec = {
             description:
               'An [access system entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) was removed.',
             properties: {
-              acs_entrance_id: { format: 'uuid', type: 'string' },
+              acs_entrance_id: {
+                description: 'ID of the affected entrance.',
+                format: 'uuid',
+                type: 'string',
+              },
               acs_system_id: {
                 description: 'ID of the access system.',
                 format: 'uuid',
@@ -21387,6 +21716,8 @@ const openapi: OpenAPISpec = {
               connected_account_errors: {
                 description: 'Errors associated with the connected account.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -21418,6 +21749,8 @@ const openapi: OpenAPISpec = {
               connected_account_warnings: {
                 description: 'Warnings associated with the connected account.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -21663,6 +21996,8 @@ const openapi: OpenAPISpec = {
               connected_account_errors: {
                 description: 'Errors associated with the connected account.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -21694,6 +22029,8 @@ const openapi: OpenAPISpec = {
               connected_account_warnings: {
                 description: 'Warnings associated with the connected account.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -22746,6 +23083,8 @@ const openapi: OpenAPISpec = {
               connected_account_errors: {
                 description: 'Errors associated with the connected account.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -22778,6 +23117,8 @@ const openapi: OpenAPISpec = {
               connected_account_warnings: {
                 description: 'Warnings associated with the connected account.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -22822,6 +23163,8 @@ const openapi: OpenAPISpec = {
               device_errors: {
                 description: 'Errors associated with the device.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -22853,6 +23196,8 @@ const openapi: OpenAPISpec = {
               device_warnings: {
                 description: 'Warnings associated with the device.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -22935,6 +23280,8 @@ const openapi: OpenAPISpec = {
               connected_account_errors: {
                 description: 'Errors associated with the connected account.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -22967,6 +23314,8 @@ const openapi: OpenAPISpec = {
               connected_account_warnings: {
                 description: 'Warnings associated with the connected account.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -23011,6 +23360,8 @@ const openapi: OpenAPISpec = {
               device_errors: {
                 description: 'Errors associated with the device.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -23042,6 +23393,8 @@ const openapi: OpenAPISpec = {
               device_warnings: {
                 description: 'Warnings associated with the device.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -23801,6 +24154,8 @@ const openapi: OpenAPISpec = {
               connected_account_errors: {
                 description: 'Errors associated with the connected account.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -23833,6 +24188,8 @@ const openapi: OpenAPISpec = {
               connected_account_warnings: {
                 description: 'Warnings associated with the connected account.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -23877,6 +24234,8 @@ const openapi: OpenAPISpec = {
               device_errors: {
                 description: 'Errors associated with the device.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -23908,6 +24267,8 @@ const openapi: OpenAPISpec = {
               device_warnings: {
                 description: 'Warnings associated with the device.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -24055,6 +24416,8 @@ const openapi: OpenAPISpec = {
               connected_account_errors: {
                 description: 'Errors associated with the connected account.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -24087,6 +24450,8 @@ const openapi: OpenAPISpec = {
               connected_account_warnings: {
                 description: 'Warnings associated with the connected account.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -24131,6 +24496,8 @@ const openapi: OpenAPISpec = {
               device_errors: {
                 description: 'Errors associated with the device.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -24162,6 +24529,8 @@ const openapi: OpenAPISpec = {
               device_warnings: {
                 description: 'Warnings associated with the device.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -24380,6 +24749,8 @@ const openapi: OpenAPISpec = {
               connected_account_errors: {
                 description: 'Errors associated with the connected account.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -24412,6 +24783,8 @@ const openapi: OpenAPISpec = {
               connected_account_warnings: {
                 description: 'Warnings associated with the connected account.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -24456,6 +24829,8 @@ const openapi: OpenAPISpec = {
               device_errors: {
                 description: 'Errors associated with the device.',
                 items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -24487,6 +24862,8 @@ const openapi: OpenAPISpec = {
               device_warnings: {
                 description: 'Warnings associated with the device.',
                 items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
                   properties: {
                     created_at: {
                       description:
@@ -26337,7 +26714,8 @@ const openapi: OpenAPISpec = {
             type: 'string',
           },
           device_type: {
-            description: 'Device type for phones.\n          ',
+            description:
+              'Type of the phone device, such as `ios_phone` or `android_phone`.',
             enum: ['ios_phone', 'android_phone'],
             type: 'string',
           },
@@ -26350,8 +26728,14 @@ const openapi: OpenAPISpec = {
             description: 'Errors associated with the phone.',
             items: {
               properties: {
-                error_code: { type: 'string' },
-                message: { type: 'string' },
+                error_code: {
+                  description: 'Unique identifier of the type of error.',
+                  type: 'string',
+                },
+                message: {
+                  description: 'Detailed description of the error.',
+                  type: 'string',
+                },
               },
               required: ['error_code', 'message'],
               type: 'object',
@@ -26364,7 +26748,7 @@ const openapi: OpenAPISpec = {
             type: 'string',
           },
           properties: {
-            description: '\n          Properties of the phone.\n          ',
+            description: 'Properties of the phone.',
             properties: {
               assa_abloy_credential_service_metadata: {
                 description:
@@ -26418,8 +26802,14 @@ const openapi: OpenAPISpec = {
             description: 'Warnings associated with the phone.',
             items: {
               properties: {
-                message: { type: 'string' },
-                warning_code: { type: 'string' },
+                message: {
+                  description: 'Detailed description of the warning.',
+                  type: 'string',
+                },
+                warning_code: {
+                  description: 'Unique identifier of the type of warning.',
+                  type: 'string',
+                },
               },
               required: ['warning_code', 'message'],
               type: 'object',
@@ -26501,6 +26891,8 @@ const openapi: OpenAPISpec = {
                       },
                       acs_credential_id: { nullable: true, type: 'string' },
                       acs_credential_pool_id: {
+                        description:
+                          'ID of the credential pool to which the credential belongs.',
                         format: 'uuid',
                         type: 'string',
                       },
@@ -27214,7 +27606,12 @@ const openapi: OpenAPISpec = {
                         nullable: true,
                         type: 'boolean',
                       },
-                      is_managed: { enum: [true], type: 'boolean' },
+                      is_managed: {
+                        description:
+                          'Indicates whether Seam manages the credential.',
+                        enum: [true],
+                        type: 'boolean',
+                      },
                       is_multi_phone_sync_credential: {
                         description:
                           'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
@@ -27570,7 +27967,11 @@ const openapi: OpenAPISpec = {
                 format: 'date-time',
                 type: 'string',
               },
-              display_name: { minLength: 1, type: 'string' },
+              display_name: {
+                description: 'Display name for the user identity.',
+                minLength: 1,
+                type: 'string',
+              },
               email_address: {
                 description: 'Unique email address for the user identity.',
                 format: 'email',
@@ -27631,7 +28032,13 @@ const openapi: OpenAPISpec = {
                 },
                 type: 'array',
               },
-              full_name: { minLength: 1, nullable: true, type: 'string' },
+              full_name: {
+                description:
+                  'Full name of the user associated with the user identity.',
+                minLength: 1,
+                nullable: true,
+                type: 'string',
+              },
               phone_number: {
                 description:
                   'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
@@ -29705,7 +30112,10 @@ const openapi: OpenAPISpec = {
             format: 'date-time',
             type: 'string',
           },
-          display_name: { type: 'string' },
+          display_name: {
+            description: 'Display name for the access group.',
+            type: 'string',
+          },
           errors: {
             description: 'Errors associated with the `acs_access_group`.',
             items: {
@@ -30221,7 +30631,12 @@ const openapi: OpenAPISpec = {
             format: 'uuid',
             type: 'string',
           },
-          acs_credential_pool_id: { format: 'uuid', type: 'string' },
+          acs_credential_pool_id: {
+            description:
+              'ID of the credential pool to which the credential belongs.',
+            format: 'uuid',
+            type: 'string',
+          },
           acs_system_id: {
             description:
               'ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
@@ -30873,7 +31288,12 @@ const openapi: OpenAPISpec = {
             minLength: 1,
             type: 'string',
           },
-          hid_acs_system_id: { format: 'uuid', type: 'string' },
+          hid_acs_system_id: {
+            description:
+              'ID of the HID access control system associated with the user.',
+            format: 'uuid',
+            type: 'string',
+          },
           is_managed: { enum: [false], type: 'boolean' },
           is_suspended: {
             description:
@@ -31489,30 +31909,103 @@ const openapi: OpenAPISpec = {
         description:
           'Represents an [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices). An unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).',
         properties: {
-          can_configure_auto_lock: { type: 'boolean' },
-          can_hvac_cool: { type: 'boolean' },
-          can_hvac_heat: { type: 'boolean' },
-          can_hvac_heat_cool: { type: 'boolean' },
-          can_program_offline_access_codes: { type: 'boolean' },
-          can_program_online_access_codes: { type: 'boolean' },
+          can_configure_auto_lock: {
+            description:
+              'Indicates whether the lock supports configuring automatic locking.',
+            type: 'boolean',
+          },
+          can_hvac_cool: {
+            description: 'Indicates whether the thermostat supports cooling.',
+            type: 'boolean',
+          },
+          can_hvac_heat: {
+            description: 'Indicates whether the thermostat supports heating.',
+            type: 'boolean',
+          },
+          can_hvac_heat_cool: {
+            description:
+              'Indicates whether the thermostat supports simultaneous heating and cooling.',
+            type: 'boolean',
+          },
+          can_program_offline_access_codes: {
+            description:
+              'Indicates whether the device supports programming offline access codes.',
+            type: 'boolean',
+          },
+          can_program_online_access_codes: {
+            description:
+              'Indicates whether the device supports programming online access codes.',
+            type: 'boolean',
+          },
           can_program_thermostat_programs_as_different_each_day: {
+            description:
+              'Indicates whether the thermostat supports different climate programs for each day of the week.',
             type: 'boolean',
           },
-          can_program_thermostat_programs_as_same_each_day: { type: 'boolean' },
+          can_program_thermostat_programs_as_same_each_day: {
+            description:
+              'Indicates whether the thermostat supports a single climate program applied to every day.',
+            type: 'boolean',
+          },
           can_program_thermostat_programs_as_weekday_weekend: {
+            description:
+              'Indicates whether the thermostat supports weekday/weekend climate programs.',
             type: 'boolean',
           },
-          can_remotely_lock: { type: 'boolean' },
-          can_remotely_unlock: { type: 'boolean' },
-          can_run_thermostat_programs: { type: 'boolean' },
-          can_simulate_connection: { type: 'boolean' },
-          can_simulate_disconnection: { type: 'boolean' },
-          can_simulate_hub_connection: { type: 'boolean' },
-          can_simulate_hub_disconnection: { type: 'boolean' },
-          can_simulate_paid_subscription: { type: 'boolean' },
-          can_simulate_removal: { type: 'boolean' },
-          can_turn_off_hvac: { type: 'boolean' },
-          can_unlock_with_code: { type: 'boolean' },
+          can_remotely_lock: {
+            description:
+              'Indicates whether the device supports remote locking.',
+            type: 'boolean',
+          },
+          can_remotely_unlock: {
+            description:
+              'Indicates whether the device supports remote unlocking.',
+            type: 'boolean',
+          },
+          can_run_thermostat_programs: {
+            description:
+              'Indicates whether the thermostat supports running climate programs.',
+            type: 'boolean',
+          },
+          can_simulate_connection: {
+            description:
+              'Indicates whether the device supports simulating connection in a sandbox.',
+            type: 'boolean',
+          },
+          can_simulate_disconnection: {
+            description:
+              'Indicates whether the device supports simulating disconnection in a sandbox.',
+            type: 'boolean',
+          },
+          can_simulate_hub_connection: {
+            description:
+              'Indicates whether the hub supports simulating connection in a sandbox.',
+            type: 'boolean',
+          },
+          can_simulate_hub_disconnection: {
+            description:
+              'Indicates whether the hub supports simulating disconnection in a sandbox.',
+            type: 'boolean',
+          },
+          can_simulate_paid_subscription: {
+            description:
+              'Indicates whether the device supports simulating a paid subscription in a sandbox.',
+            type: 'boolean',
+          },
+          can_simulate_removal: {
+            description:
+              'Indicates whether the device supports simulating removal in a sandbox.',
+            type: 'boolean',
+          },
+          can_turn_off_hvac: {
+            description: 'Indicates whether the thermostat can be turned off.',
+            type: 'boolean',
+          },
+          can_unlock_with_code: {
+            description:
+              'Indicates whether the lock supports unlocking with an access code.',
+            type: 'boolean',
+          },
           capabilities_supported: {
             description:
               '\n        Collection of capabilities that the device supports when connected to Seam. Values are `access_code`, which indicates that the device can manage and utilize digital PIN codes for secure access; `lock`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; `noise_detection`, which indicates that the device supports monitoring and responding to ambient noise levels; `thermostat`, which indicates that the device can regulate and adjust indoor temperatures; `battery`, which indicates that the device can manage battery life and health; and `phone`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](https://docs.seam.co/capability-guides/device-and-system-capabilities#capability-flags).\n        ',
@@ -32240,7 +32733,11 @@ const openapi: OpenAPISpec = {
               thermostats: { name: 'Thermostats' },
             },
           },
-          is_managed: { enum: [false], type: 'boolean' },
+          is_managed: {
+            description: 'Indicates that Seam does not manage the device.',
+            enum: [false],
+            type: 'boolean',
+          },
           location: {
             description: 'Location information for the device.',
             properties: {
@@ -33176,7 +33673,11 @@ const openapi: OpenAPISpec = {
             format: 'date-time',
             type: 'string',
           },
-          display_name: { minLength: 1, type: 'string' },
+          display_name: {
+            description: 'Display name for the user identity.',
+            minLength: 1,
+            type: 'string',
+          },
           email_address: {
             description: 'Unique email address for the user identity.',
             format: 'email',
@@ -33237,7 +33738,13 @@ const openapi: OpenAPISpec = {
             },
             type: 'array',
           },
-          full_name: { minLength: 1, nullable: true, type: 'string' },
+          full_name: {
+            description:
+              'Full name of the user associated with the user identity.',
+            minLength: 1,
+            nullable: true,
+            type: 'string',
+          },
           phone_number: {
             description:
               'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
@@ -36595,6 +37102,8 @@ const openapi: OpenAPISpec = {
                                 type: 'string',
                               },
                               full_name: {
+                                description:
+                                  'Full name of the user associated with the user identity.',
                                 minLength: 1,
                                 nullable: true,
                                 type: 'string',
@@ -49856,7 +50365,12 @@ const openapi: OpenAPISpec = {
                     minLength: 1,
                     type: 'string',
                   },
-                  hid_acs_system_id: { format: 'uuid', type: 'string' },
+                  hid_acs_system_id: {
+                    description:
+                      'ID of the HID access control system associated with the user.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   phone_number: {
                     description:
                       'Phone number of the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
@@ -49962,7 +50476,12 @@ const openapi: OpenAPISpec = {
                     minLength: 1,
                     type: 'string',
                   },
-                  hid_acs_system_id: { format: 'uuid', type: 'string' },
+                  hid_acs_system_id: {
+                    description:
+                      'ID of the HID access control system associated with the user.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   phone_number: {
                     description:
                       'Phone number of the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
@@ -81208,6 +81727,8 @@ const openapi: OpenAPISpec = {
                   },
                   fan_mode: {
                     deprecated: true,
+                    description:
+                      'Fan mode setting for the thermostat, such as `auto`, `on`, or `circulate`.',
                     enum: ['auto', 'on', 'circulate'],
                     type: 'string',
                     'x-deprecated': 'Use `fan_mode_setting` instead.',
@@ -84720,7 +85241,11 @@ const openapi: OpenAPISpec = {
                           format: 'date-time',
                           type: 'string',
                         },
-                        display_name: { minLength: 1, type: 'string' },
+                        display_name: {
+                          description: 'Display name for the user identity.',
+                          minLength: 1,
+                          type: 'string',
+                        },
                         email_address: {
                           description:
                             'Unique email address for the user identity.',
@@ -84784,6 +85309,8 @@ const openapi: OpenAPISpec = {
                           type: 'array',
                         },
                         full_name: {
+                          description:
+                            'Full name of the user associated with the user identity.',
                           minLength: 1,
                           nullable: true,
                           type: 'string',
@@ -84963,7 +85490,11 @@ const openapi: OpenAPISpec = {
                           format: 'date-time',
                           type: 'string',
                         },
-                        display_name: { minLength: 1, type: 'string' },
+                        display_name: {
+                          description: 'Display name for the user identity.',
+                          minLength: 1,
+                          type: 'string',
+                        },
                         email_address: {
                           description:
                             'Unique email address for the user identity.',
@@ -85027,6 +85558,8 @@ const openapi: OpenAPISpec = {
                           type: 'array',
                         },
                         full_name: {
+                          description:
+                            'Full name of the user associated with the user identity.',
                           minLength: 1,
                           nullable: true,
                           type: 'string',
@@ -85234,7 +85767,11 @@ const openapi: OpenAPISpec = {
                             format: 'date-time',
                             type: 'string',
                           },
-                          display_name: { minLength: 1, type: 'string' },
+                          display_name: {
+                            description: 'Display name for the user identity.',
+                            minLength: 1,
+                            type: 'string',
+                          },
                           email_address: {
                             description:
                               'Unique email address for the user identity.',
@@ -85298,6 +85835,8 @@ const openapi: OpenAPISpec = {
                             type: 'array',
                           },
                           full_name: {
+                            description:
+                              'Full name of the user associated with the user identity.',
                             minLength: 1,
                             nullable: true,
                             type: 'string',
@@ -85500,7 +86039,11 @@ const openapi: OpenAPISpec = {
                             format: 'date-time',
                             type: 'string',
                           },
-                          display_name: { minLength: 1, type: 'string' },
+                          display_name: {
+                            description: 'Display name for the user identity.',
+                            minLength: 1,
+                            type: 'string',
+                          },
                           email_address: {
                             description:
                               'Unique email address for the user identity.',
@@ -85564,6 +86107,8 @@ const openapi: OpenAPISpec = {
                             type: 'array',
                           },
                           full_name: {
+                            description:
+                              'Full name of the user associated with the user identity.',
                             minLength: 1,
                             nullable: true,
                             type: 'string',

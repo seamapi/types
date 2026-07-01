@@ -63,7 +63,12 @@ const seam_bridge_disconnected = common_acs_system_error.extend({
 
 const bridge_disconnected = common_acs_system_error.extend({
   error_code: z.literal('bridge_disconnected').describe(error_code_description),
-  is_bridge_error: z.boolean().optional(),
+  is_bridge_error: z
+    .boolean()
+    .optional()
+    .describe(
+      'Indicates whether the error is related to the [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
+    ),
 })
   .describe(`Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
     See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).`)
@@ -251,8 +256,18 @@ export const acs_system = z
       .describe(
         'ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
       ),
-    acs_user_count: z.number().optional(),
-    acs_access_group_count: z.number().optional(),
+    acs_user_count: z
+      .number()
+      .optional()
+      .describe(
+        'Number of users in the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+      ),
+    acs_access_group_count: z
+      .number()
+      .optional()
+      .describe(
+        'Number of access groups in the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+      ),
     external_type: acs_system_external_type
       .describe(
         'Brand-specific terminology for the [access control system](https://docs.seam.co/low-level-apis/access-systems) type.',
@@ -285,7 +300,10 @@ export const acs_system = z
             'IP address or hostname of the main Visionline server relative to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) on the local network.',
           ),
       })
-      .optional(),
+      .optional()
+      .describe(
+        'Visionline-specific metadata for the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+      ),
     system_type: acs_system_external_type
       .describe(
         `
@@ -300,7 +318,9 @@ export const acs_system = z
       deprecated: Use \`external_type_display_name\`.
       ---
       `),
-    location: acs_location,
+    location: acs_location.describe(
+      'Location information for the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+    ),
     name: z
       .string()
       .describe(

@@ -32,7 +32,9 @@ export const connect_webview = z.object({
     .describe(
       'URL for the Connect Webview. You use the URL to display the Connect Webview flow to your user.',
     ),
-  device_selection_mode: connect_webview_device_selection_mode,
+  device_selection_mode: connect_webview_device_selection_mode.describe(
+    'Device selection mode of the Connect Webview. Supported values: `none`, `single`, `multiple`.',
+  ),
 
   // TODO: Use enum value.
   accepted_providers: z
