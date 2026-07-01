@@ -81,6 +81,13 @@ export const workspace = z.object({
     .describe(
       'Indicates whether publishable key authentication is enabled for this workspace.',
     ),
+  organization_id: z
+    .string()
+    .uuid()
+    .nullable()
+    .describe(
+      'ID of the organization to which the [workspace](https://docs.seam.co/core-concepts/workspaces) belongs, or `null` if the workspace is not assigned to an organization.',
+    ),
 }).describe(`
   ---
   route_path: /workspaces
