@@ -33242,6 +33242,13 @@ const openapi: OpenAPISpec = {
               'Name of the [workspace](https://docs.seam.co/core-concepts/workspaces).',
             type: 'string',
           },
+          organization_id: {
+            description:
+              'ID of the organization to which the [workspace](https://docs.seam.co/core-concepts/workspaces) belongs, or `null` if the workspace is not assigned to an organization.',
+            format: 'uuid',
+            nullable: true,
+            type: 'string',
+          },
           publishable_key: {
             description:
               'Publishable key for the [workspace](https://docs.seam.co/core-concepts/workspaces). This key is used to identify the workspace in client-side applications.',
@@ -33263,6 +33270,7 @@ const openapi: OpenAPISpec = {
           'is_suspended',
           'connect_partner_name',
           'is_publishable_key_auth_enabled',
+          'organization_id',
         ],
         type: 'object',
         'x-route-path': '/workspaces',
@@ -87516,6 +87524,12 @@ const openapi: OpenAPISpec = {
                     description: 'Name of the workspace.',
                     type: 'string',
                   },
+                  organization_id: {
+                    description:
+                      'ID of the organization to assign the workspace to. The authenticated user must be the owner of the workspace and an admin of the target organization.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -87596,6 +87610,12 @@ const openapi: OpenAPISpec = {
                   },
                   name: {
                     description: 'Name of the workspace.',
+                    type: 'string',
+                  },
+                  organization_id: {
+                    description:
+                      'ID of the organization to assign the workspace to. The authenticated user must be the owner of the workspace and an admin of the target organization.',
+                    format: 'uuid',
                     type: 'string',
                   },
                 },
