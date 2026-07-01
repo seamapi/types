@@ -102,12 +102,16 @@ export type AccessCodeChangedEvent = z.infer<typeof access_code_changed_event>
 
 export const access_code_name_changed_event = access_code_event.extend({
   event_type: z.literal('access_code.name_changed'),
-  from: z.object({
-    name: z.string().nullable().describe('Previous name of the access code.'),
-  }),
-  to: z.object({
-    name: z.string().nullable().describe('New name of the access code.'),
-  }),
+  from: z
+    .object({
+      name: z.string().nullable().describe('Previous name of the access code.'),
+    })
+    .describe('Previous access code name configuration.'),
+  to: z
+    .object({
+      name: z.string().nullable().describe('New name of the access code.'),
+    })
+    .describe('New access code name configuration.'),
   description: z
     .string()
     .describe('Human-readable description of the change and its source.'),
@@ -124,12 +128,16 @@ export type AccessCodeNameChangedEvent = z.infer<
 
 export const access_code_code_changed_event = access_code_event.extend({
   event_type: z.literal('access_code.code_changed'),
-  from: z.object({
-    code: z.string().nullable().describe('Previous pin code.'),
-  }),
-  to: z.object({
-    code: z.string().nullable().describe('New pin code.'),
-  }),
+  from: z
+    .object({
+      code: z.string().nullable().describe('Previous pin code.'),
+    })
+    .describe('Previous pin code configuration.'),
+  to: z
+    .object({
+      code: z.string().nullable().describe('New pin code.'),
+    })
+    .describe('New pin code configuration.'),
   description: z
     .string()
     .describe('Human-readable description of the change and its source.'),
@@ -146,14 +154,18 @@ export type AccessCodeCodeChangedEvent = z.infer<
 
 export const access_code_time_frame_changed_event = access_code_event.extend({
   event_type: z.literal('access_code.time_frame_changed'),
-  from: z.object({
-    starts_at: z.string().nullable().describe('Previous start time.'),
-    ends_at: z.string().nullable().describe('Previous end time.'),
-  }),
-  to: z.object({
-    starts_at: z.string().nullable().describe('New start time.'),
-    ends_at: z.string().nullable().describe('New end time.'),
-  }),
+  from: z
+    .object({
+      starts_at: z.string().nullable().describe('Previous start time.'),
+      ends_at: z.string().nullable().describe('Previous end time.'),
+    })
+    .describe('Previous time frame configuration.'),
+  to: z
+    .object({
+      starts_at: z.string().nullable().describe('New start time.'),
+      ends_at: z.string().nullable().describe('New end time.'),
+    })
+    .describe('New time frame configuration.'),
   description: z
     .string()
     .describe('Human-readable description of the change and its source.'),

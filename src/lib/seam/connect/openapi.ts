@@ -17411,6 +17411,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               from: {
+                description: 'Previous access code name configuration.',
                 properties: {
                   name: {
                     description: 'Previous name of the access code.',
@@ -17427,6 +17428,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               to: {
+                description: 'New access code name configuration.',
                 properties: {
                   name: {
                     description: 'New name of the access code.',
@@ -17517,6 +17519,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               from: {
+                description: 'Previous pin code configuration.',
                 properties: {
                   code: {
                     description: 'Previous pin code.',
@@ -17533,6 +17536,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               to: {
+                description: 'New pin code configuration.',
                 properties: {
                   code: {
                     description: 'New pin code.',
@@ -17623,6 +17627,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               from: {
+                description: 'Previous time frame configuration.',
                 properties: {
                   ends_at: {
                     description: 'Previous end time.',
@@ -17644,6 +17649,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               to: {
+                description: 'New time frame configuration.',
                 properties: {
                   ends_at: {
                     description: 'New end time.',
