@@ -40533,8 +40533,15 @@ const openapi: OpenAPISpec = {
               schema: {
                 properties: {
                   access_grant_id: {
-                    description: 'ID of the Access Grant to update.',
+                    description:
+                      'ID of the Access Grant to update. Provide either `access_grant_id` or `access_grant_key`.',
                     format: 'uuid',
+                    type: 'string',
+                  },
+                  access_grant_key: {
+                    description:
+                      'Key of the Access Grant to update. Provide either `access_grant_id` or `access_grant_key`.',
+                    minLength: 1,
                     type: 'string',
                   },
                   ends_at: {
@@ -40556,7 +40563,6 @@ const openapi: OpenAPISpec = {
                     type: 'string',
                   },
                 },
-                required: ['access_grant_id'],
                 type: 'object',
               },
             },
@@ -40600,8 +40606,15 @@ const openapi: OpenAPISpec = {
               schema: {
                 properties: {
                   access_grant_id: {
-                    description: 'ID of the Access Grant to update.',
+                    description:
+                      'ID of the Access Grant to update. Provide either `access_grant_id` or `access_grant_key`.',
                     format: 'uuid',
+                    type: 'string',
+                  },
+                  access_grant_key: {
+                    description:
+                      'Key of the Access Grant to update. Provide either `access_grant_id` or `access_grant_key`.',
+                    minLength: 1,
                     type: 'string',
                   },
                   ends_at: {
@@ -40623,7 +40636,6 @@ const openapi: OpenAPISpec = {
                     type: 'string',
                   },
                 },
-                required: ['access_grant_id'],
                 type: 'object',
               },
             },
