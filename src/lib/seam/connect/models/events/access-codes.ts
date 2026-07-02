@@ -182,6 +182,53 @@ export type AccessCodeTimeFrameChangedEvent = z.infer<
   typeof access_code_time_frame_changed_event
 >
 
+const requested_mutation = z
+  .object({
+    mutation_code: z
+      .enum([
+        'updating_name',
+        'updating_code',
+        'updating_time_frame',
+        'deleting',
+        'creating',
+        'deferring_creation',
+      ])
+      .describe(
+        'Code identifying the type of mutation requested, such as `updating_name`, `updating_code`, `updating_time_frame`, or `deleting`.',
+      ),
+    from: z
+      .record(z.string(), z.unknown())
+      .optional()
+      .describe(
+        'Previous property values before the requested change. Keys depend on the mutation type. Absent for non-property mutations like `deleting`.',
+      ),
+    to: z
+      .record(z.string(), z.unknown())
+      .optional()
+      .describe(
+        'New property values after the requested change. Keys depend on the mutation type. Absent for non-property mutations like `deleting`.',
+      ),
+  })
+  .describe('Record describing a single requested mutation.')
+
+export const access_code_mutations_requested_event = access_code_event.extend({
+  event_type: z.literal('access_code.mutations_requested'),
+  requested_mutations: z
+    .array(requested_mutation)
+    .describe(
+      'Array of mutations requested on the access code, each containing the mutation type and from/to values.',
+    ),
+}).describe(`
+    ---
+    route_path: /access_codes
+    ---
+    Mutations were requested on an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes). This event fires at request time, before the change is confirmed on the device.
+  `)
+
+export type AccessCodeMutationsRequestedEvent = z.infer<
+  typeof access_code_mutations_requested_event
+>
+
 export const access_code_scheduled_on_device_event = access_code_event.extend({
   event_type: z.literal('access_code.scheduled_on_device'),
   code,
@@ -404,6 +451,7 @@ export const access_code_events = [
   access_code_name_changed_event,
   access_code_code_changed_event,
   access_code_time_frame_changed_event,
+  access_code_mutations_requested_event,
   access_code_scheduled_on_device_event,
   access_code_set_on_device_event,
   access_code_removed_from_device_event,

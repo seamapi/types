@@ -17987,6 +17987,119 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
+              'Mutations were requested on an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes). This event fires at request time, before the change is confirmed on the device.',
+            properties: {
+              access_code_id: {
+                description: 'ID of the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the connected account associated with the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
+              },
+              device_id: {
+                description:
+                  'ID of the device associated with the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: ['access_code.mutations_requested'],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              requested_mutations: {
+                description:
+                  'Array of mutations requested on the access code, each containing the mutation type and from/to values.',
+                items: {
+                  description: 'Record describing a single requested mutation.',
+                  properties: {
+                    from: {
+                      additionalProperties: {},
+                      description:
+                        'Previous property values before the requested change. Keys depend on the mutation type. Absent for non-property mutations like `deleting`.',
+                      type: 'object',
+                    },
+                    mutation_code: {
+                      description:
+                        'Code identifying the type of mutation requested, such as `updating_name`, `updating_code`, `updating_time_frame`, or `deleting`.',
+                      enum: [
+                        'updating_name',
+                        'updating_code',
+                        'updating_time_frame',
+                        'deleting',
+                        'creating',
+                        'deferring_creation',
+                      ],
+                      type: 'string',
+                    },
+                    to: {
+                      additionalProperties: {},
+                      description:
+                        'New property values after the requested change. Keys depend on the mutation type. Absent for non-property mutations like `deleting`.',
+                      type: 'object',
+                    },
+                  },
+                  required: ['mutation_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              workspace_id: {
+                description: 'ID of the workspace associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'access_code_id',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+              'requested_mutations',
+            ],
+            type: 'object',
+            'x-route-path': '/access_codes',
+          },
+          {
+            description:
               'An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was [scheduled natively](https://docs.seam.co/low-level-apis/smart-locks/access-codes#native-scheduling) on a device.',
             properties: {
               access_code_id: {
@@ -60690,6 +60803,7 @@ const openapi: OpenAPISpec = {
                 'access_code.name_changed',
                 'access_code.code_changed',
                 'access_code.time_frame_changed',
+                'access_code.mutations_requested',
                 'access_code.scheduled_on_device',
                 'access_code.set_on_device',
                 'access_code.removed_from_device',
@@ -60807,6 +60921,7 @@ const openapi: OpenAPISpec = {
                   'access_code.name_changed',
                   'access_code.code_changed',
                   'access_code.time_frame_changed',
+                  'access_code.mutations_requested',
                   'access_code.scheduled_on_device',
                   'access_code.set_on_device',
                   'access_code.removed_from_device',
@@ -61257,6 +61372,7 @@ const openapi: OpenAPISpec = {
                       'access_code.name_changed',
                       'access_code.code_changed',
                       'access_code.time_frame_changed',
+                      'access_code.mutations_requested',
                       'access_code.scheduled_on_device',
                       'access_code.set_on_device',
                       'access_code.removed_from_device',
@@ -61370,6 +61486,7 @@ const openapi: OpenAPISpec = {
                         'access_code.name_changed',
                         'access_code.code_changed',
                         'access_code.time_frame_changed',
+                        'access_code.mutations_requested',
                         'access_code.scheduled_on_device',
                         'access_code.set_on_device',
                         'access_code.removed_from_device',
@@ -71641,6 +71758,7 @@ const openapi: OpenAPISpec = {
                 'access_code.name_changed',
                 'access_code.code_changed',
                 'access_code.time_frame_changed',
+                'access_code.mutations_requested',
                 'access_code.scheduled_on_device',
                 'access_code.set_on_device',
                 'access_code.removed_from_device',
@@ -71759,6 +71877,7 @@ const openapi: OpenAPISpec = {
                   'access_code.name_changed',
                   'access_code.code_changed',
                   'access_code.time_frame_changed',
+                  'access_code.mutations_requested',
                   'access_code.scheduled_on_device',
                   'access_code.set_on_device',
                   'access_code.removed_from_device',
@@ -71940,6 +72059,7 @@ const openapi: OpenAPISpec = {
                       'access_code.name_changed',
                       'access_code.code_changed',
                       'access_code.time_frame_changed',
+                      'access_code.mutations_requested',
                       'access_code.scheduled_on_device',
                       'access_code.set_on_device',
                       'access_code.removed_from_device',
@@ -72053,6 +72173,7 @@ const openapi: OpenAPISpec = {
                         'access_code.name_changed',
                         'access_code.code_changed',
                         'access_code.time_frame_changed',
+                        'access_code.mutations_requested',
                         'access_code.scheduled_on_device',
                         'access_code.set_on_device',
                         'access_code.removed_from_device',
