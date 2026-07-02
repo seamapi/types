@@ -618,6 +618,51 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'locks',
                 },
                 {
+                  description:
+                    'Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['dormakaba_sites_disconnected'],
+                      type: 'string',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is not a device error.',
+                      enum: [false],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                    'is_connected_account_error',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'connected_account',
+                  'x-variant-group-key': 'locks',
+                },
+                {
                   deprecated: true,
                   description: 'Indicates that the device is offline.',
                   properties: {
@@ -917,6 +962,7 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                   'x-deprecated': 'Use `hub_disconnected` instead.',
                   'x-resource-type': 'device',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description: 'Indicates that device credentials are missing.',
@@ -1066,6 +1112,7 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                   'x-deprecated': 'Use `hub_disconnected` instead.',
                   'x-resource-type': 'device',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -1081,42 +1128,6 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['bridge_disconnected'],
-                      type: 'string',
-                    },
-                    is_bridge_error: {
-                      description:
-                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
-                      type: 'boolean',
-                    },
-                    is_connected_account_error: {
-                      description:
-                        'Indicates whether the error is related specifically to the connected account.',
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['created_at', 'message', 'error_code'],
-                  type: 'object',
-                  'x-resource-type': 'connected_account',
-                },
-                {
-                  description:
-                    'Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['dormakaba_sites_disconnected'],
                       type: 'string',
                     },
                     is_bridge_error: {
@@ -13224,6 +13235,51 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'locks',
                 },
                 {
+                  description:
+                    'Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['dormakaba_sites_disconnected'],
+                      type: 'string',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is not a device error.',
+                      enum: [false],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                    'is_connected_account_error',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'connected_account',
+                  'x-variant-group-key': 'locks',
+                },
+                {
                   deprecated: true,
                   description: 'Indicates that the device is offline.',
                   properties: {
@@ -13523,6 +13579,7 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                   'x-deprecated': 'Use `hub_disconnected` instead.',
                   'x-resource-type': 'device',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description: 'Indicates that device credentials are missing.',
@@ -13672,6 +13729,7 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                   'x-deprecated': 'Use `hub_disconnected` instead.',
                   'x-resource-type': 'device',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -13687,42 +13745,6 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['bridge_disconnected'],
-                      type: 'string',
-                    },
-                    is_bridge_error: {
-                      description:
-                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
-                      type: 'boolean',
-                    },
-                    is_connected_account_error: {
-                      description:
-                        'Indicates whether the error is related specifically to the connected account.',
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['created_at', 'message', 'error_code'],
-                  type: 'object',
-                  'x-resource-type': 'connected_account',
-                },
-                {
-                  description:
-                    'Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['dormakaba_sites_disconnected'],
                       type: 'string',
                     },
                     is_bridge_error: {
@@ -16577,6 +16599,7 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                   'x-deprecated':
                     'Use `hub_disconnected` device error instead.',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -16630,8 +16653,7 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'locks',
                 },
                 {
-                  description:
-                    '\n    Indicates that the gateway signal is weak.\n    ',
+                  description: 'Indicates that the gateway signal is weak.',
                   properties: {
                     created_at: {
                       description:
@@ -16653,6 +16675,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -16857,6 +16880,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -16934,6 +16958,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -16959,6 +16984,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -16984,6 +17010,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -29343,6 +29370,51 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'locks',
                 },
                 {
+                  description:
+                    'Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['dormakaba_sites_disconnected'],
+                      type: 'string',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is not a device error.',
+                      enum: [false],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                    'is_connected_account_error',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'connected_account',
+                  'x-variant-group-key': 'locks',
+                },
+                {
                   deprecated: true,
                   description: 'Indicates that the device is offline.',
                   properties: {
@@ -29642,6 +29714,7 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                   'x-deprecated': 'Use `hub_disconnected` instead.',
                   'x-resource-type': 'device',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description: 'Indicates that device credentials are missing.',
@@ -29791,6 +29864,7 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                   'x-deprecated': 'Use `hub_disconnected` instead.',
                   'x-resource-type': 'device',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -29806,42 +29880,6 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['bridge_disconnected'],
-                      type: 'string',
-                    },
-                    is_bridge_error: {
-                      description:
-                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
-                      type: 'boolean',
-                    },
-                    is_connected_account_error: {
-                      description:
-                        'Indicates whether the error is related specifically to the connected account.',
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['created_at', 'message', 'error_code'],
-                  type: 'object',
-                  'x-resource-type': 'connected_account',
-                },
-                {
-                  description:
-                    'Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['dormakaba_sites_disconnected'],
                       type: 'string',
                     },
                     is_bridge_error: {
@@ -32456,6 +32494,51 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'locks',
                 },
                 {
+                  description:
+                    'Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['dormakaba_sites_disconnected'],
+                      type: 'string',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is not a device error.',
+                      enum: [false],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                    'is_connected_account_error',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'connected_account',
+                  'x-variant-group-key': 'locks',
+                },
+                {
                   deprecated: true,
                   description: 'Indicates that the device is offline.',
                   properties: {
@@ -32755,6 +32838,7 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                   'x-deprecated': 'Use `hub_disconnected` instead.',
                   'x-resource-type': 'device',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description: 'Indicates that device credentials are missing.',
@@ -32904,6 +32988,7 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                   'x-deprecated': 'Use `hub_disconnected` instead.',
                   'x-resource-type': 'device',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -32919,42 +33004,6 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['bridge_disconnected'],
-                      type: 'string',
-                    },
-                    is_bridge_error: {
-                      description:
-                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
-                      type: 'boolean',
-                    },
-                    is_connected_account_error: {
-                      description:
-                        'Indicates whether the error is related specifically to the connected account.',
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['created_at', 'message', 'error_code'],
-                  type: 'object',
-                  'x-resource-type': 'connected_account',
-                },
-                {
-                  description:
-                    'Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['dormakaba_sites_disconnected'],
                       type: 'string',
                     },
                     is_bridge_error: {
@@ -33263,6 +33312,7 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                   'x-deprecated':
                     'Use `hub_disconnected` device error instead.',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -33316,8 +33366,7 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'locks',
                 },
                 {
-                  description:
-                    '\n    Indicates that the gateway signal is weak.\n    ',
+                  description: 'Indicates that the gateway signal is weak.',
                   properties: {
                     created_at: {
                       description:
@@ -33339,6 +33388,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -33543,6 +33593,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -33620,6 +33671,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -33645,6 +33697,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -33670,6 +33723,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:

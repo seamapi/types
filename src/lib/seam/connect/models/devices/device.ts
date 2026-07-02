@@ -244,6 +244,26 @@ const salto_ks_subscription_limit_exceeded = common_device_error.extend({
     Indicates that the Salto site user limit has been reached.
     `)
 
+const dormakaba_sites_disconnected = common_device_error.extend({
+  error_code: z
+    .literal('dormakaba_sites_disconnected')
+    .describe(error_code_description),
+  is_connected_account_error: z
+    .literal(true)
+    .describe(
+      'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+    ),
+  is_device_error: z
+    .literal(false)
+    .describe('Indicates that the error is not a device error.'),
+}).describe(`
+    ---
+    resource_type: connected_account
+    variant_group_key: locks
+    ---
+    Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.
+    `)
+
 const ttlock_lock_not_paired_to_gateway = common_device_error.extend({
   error_code: z
     .literal('ttlock_lock_not_paired_to_gateway')
@@ -252,6 +272,7 @@ const ttlock_lock_not_paired_to_gateway = common_device_error.extend({
     ---
     resource_type: device
     deprecated: Use \`hub_disconnected\` instead.
+    variant_group_key: locks
     ---
     Indicates that the lock is not paired with a gateway.
     `)
@@ -298,6 +319,7 @@ const lockly_missing_wifi_bridge = common_device_error.extend({
     ---
     resource_type: device
     deprecated: Use \`hub_disconnected\` instead.
+    variant_group_key: locks
     ---
     Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
     `)
@@ -306,6 +328,7 @@ export const device_error = z
   .discriminatedUnion('error_code', [
     account_disconnected,
     salto_ks_subscription_limit_exceeded,
+    dormakaba_sites_disconnected,
     device_offline,
     device_removed,
     hub_disconnected,
@@ -335,6 +358,9 @@ export const device_error_map = z.object({
   august_lock_not_authorized: august_lock_not_authorized.optional().nullable(),
   august_lock_missing_bridge: august_lock_missing_bridge.optional().nullable(),
   salto_ks_subscription_limit_exceeded: salto_ks_subscription_limit_exceeded
+    .optional()
+    .nullable(),
+  dormakaba_sites_disconnected: dormakaba_sites_disconnected
     .optional()
     .nullable(),
   ttlock_lock_not_paired_to_gateway: ttlock_lock_not_paired_to_gateway
@@ -407,15 +433,18 @@ const salto_ks_privacy_mode = common_device_warning.extend({
     Indicates that the Salto KS lock is in Privacy Mode. Access Codes will not unlock doors.
   `)
 
-const salto_ks_subscription_limit_almost_reached = common_device_warning
-  .extend({
+const salto_ks_subscription_limit_almost_reached = common_device_warning.extend(
+  {
     warning_code: z
       .literal('salto_ks_subscription_limit_almost_reached')
       .describe(warning_code_description),
-  })
-  .describe(
-    'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site.',
-  )
+  },
+).describe(`
+    ---
+    variant_group_key: locks
+    ---
+    Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site.
+    `)
 
 const salto_ks_lock_access_code_support_removed = common_device_warning.extend({
   warning_code: z
@@ -435,6 +464,7 @@ const wyze_device_missing_gateway = common_device_warning.extend({
 }).describe(`
     ---
     deprecated: Use \`hub_disconnected\` device error instead.
+    variant_group_key: locks
     ---
     Indicates that the Wyze Lock is not connected to a gateway.
     `)
@@ -463,6 +493,9 @@ const ttlock_weak_gateway_signal = common_device_warning.extend({
     .literal('ttlock_weak_gateway_signal')
     .describe(warning_code_description),
 }).describe(`
+    ---
+    variant_group_key: locks
+    ---
     Indicates that the gateway signal is weak.
     `)
 
@@ -512,35 +545,38 @@ const device_has_flaky_connection = common_device_warning
   })
   .describe('Indicates that the device has a flaky connection.')
 
-const lockly_time_zone_not_configured = common_device_warning
-  .extend({
-    warning_code: z
-      .literal('lockly_time_zone_not_configured')
-      .describe(warning_code_description),
-  })
-  .describe(
-    'Indicates that Seam detected that the Lockly device does not have a time zone configured. Time-bound codes may not work as expected.',
-  )
+const lockly_time_zone_not_configured = common_device_warning.extend({
+  warning_code: z
+    .literal('lockly_time_zone_not_configured')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: locks
+    ---
+    Indicates that Seam detected that the Lockly device does not have a time zone configured. Time-bound codes may not work as expected.
+    `)
 
-const ultraloq_time_zone_unknown = common_device_warning
-  .extend({
-    warning_code: z
-      .literal('ultraloq_time_zone_unknown')
-      .describe(warning_code_description),
-  })
-  .describe(
-    'Indicates that Seam does not know the time zone of the Ultraloq device. Set a time zone to enable time-bound access codes.',
-  )
+const ultraloq_time_zone_unknown = common_device_warning.extend({
+  warning_code: z
+    .literal('ultraloq_time_zone_unknown')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: locks
+    ---
+    Indicates that Seam does not know the time zone of the Ultraloq device. Set a time zone to enable time-bound access codes.
+    `)
 
-const two_n_device_missing_timezone = common_device_warning
-  .extend({
-    warning_code: z
-      .literal('two_n_device_missing_timezone')
-      .describe(warning_code_description),
-  })
-  .describe(
-    'Indicates that the 2N device does not have a time zone configured. Configure a time zone on the device to enable access codes.',
-  )
+const two_n_device_missing_timezone = common_device_warning.extend({
+  warning_code: z
+    .literal('two_n_device_missing_timezone')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: locks
+    ---
+    Indicates that the 2N device does not have a time zone configured. Configure a time zone on the device to enable access codes.
+    `)
 
 export const unknown_issue_with_phone = common_device_warning.extend({
   warning_code: z
