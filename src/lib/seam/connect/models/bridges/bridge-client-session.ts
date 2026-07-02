@@ -15,8 +15,8 @@ const common_bridge_client_session_error = z.object({
 const error_code_description =
   'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.'
 
-export const bridge_lan_unreachable = common_bridge_client_session_error
-  .extend({
+export const bridge_lan_unreachable = common_bridge_client_session_error.extend(
+  {
     error_code: z
       .literal('bridge_lan_unreachable')
       .describe(error_code_description),
@@ -44,16 +44,25 @@ export const bridge_lan_unreachable = common_bridge_client_session_error
       .boolean()
       .nullable()
       .describe("Indicates whether Seam Bridge's SOCKS server is healthy."),
-  })
-  .describe("Indicates that Seam cannot reach Seam Bridge's LAN.")
+  },
+).describe(`
+    ---
+    resource_type: bridge_client_session
+    ---
+    Indicates that Seam cannot reach Seam Bridge's LAN.
+    `)
 
-export const no_communication_from_bridge = common_bridge_client_session_error
-  .extend({
+export const no_communication_from_bridge =
+  common_bridge_client_session_error.extend({
     error_code: z
       .literal('no_communication_from_bridge')
       .describe(error_code_description),
-  })
-  .describe('Indicates that Seam Bridge has stopped communicating with Seam.')
+  }).describe(`
+    ---
+    resource_type: bridge_client_session
+    ---
+    Indicates that Seam Bridge has stopped communicating with Seam.
+    `)
 
 export const bridge_client_session_error = z
   .discriminatedUnion('error_code', [

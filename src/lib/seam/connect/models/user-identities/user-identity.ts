@@ -49,27 +49,28 @@ const acs_user_profile_does_not_match_user_identity =
       "Indicates that the ACS user's profile does not match the user identity's profile",
     )
 
-const user_identity_issue_with_acs_user = common_user_identity_error
-  .extend({
-    error_code: z
-      .literal('issue_with_acs_user')
-      .describe(
-        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-      ),
-    acs_user_id: z
-      .string()
-      .uuid()
-      .describe('ID of the access system user that has an issue.'),
-    acs_system_id: z
-      .string()
-      .uuid()
-      .describe(
-        'ID of the access system that the user identity is associated with.',
-      ),
-  })
-  .describe(
-    'Indicates that there is an issue with an access system user associated with this user identity.',
-  )
+const user_identity_issue_with_acs_user = common_user_identity_error.extend({
+  error_code: z
+    .literal('issue_with_acs_user')
+    .describe(
+      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+    ),
+  acs_user_id: z
+    .string()
+    .uuid()
+    .describe('ID of the access system user that has an issue.'),
+  acs_system_id: z
+    .string()
+    .uuid()
+    .describe(
+      'ID of the access system that the user identity is associated with.',
+    ),
+}).describe(`
+    ---
+    resource_type: user_identity
+    ---
+    Indicates that there is an issue with an access system user associated with this user identity.
+    `)
 
 const _user_identity_error_map = z.object({
   issue_with_acs_user: z
