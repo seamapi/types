@@ -34342,7 +34342,6 @@ const openapi: OpenAPISpec = {
                     type: 'boolean',
                   },
                   max_time_rounding: {
-                    default: '1hour',
                     description:
                       'Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.',
                     enum: ['1hour', '1day', '1h', '1d'],
@@ -36781,7 +36780,6 @@ const openapi: OpenAPISpec = {
                     type: 'boolean',
                   },
                   max_time_rounding: {
-                    default: '1hour',
                     description:
                       'Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.',
                     enum: ['1hour', '1day', '1h', '1d'],
@@ -36935,7 +36933,6 @@ const openapi: OpenAPISpec = {
                     type: 'boolean',
                   },
                   max_time_rounding: {
-                    default: '1hour',
                     description:
                       'Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.',
                     enum: ['1hour', '1day', '1h', '1d'],
@@ -37089,7 +37086,6 @@ const openapi: OpenAPISpec = {
                     type: 'boolean',
                   },
                   max_time_rounding: {
-                    default: '1hour',
                     description:
                       'Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.',
                     enum: ['1hour', '1day', '1h', '1d'],
