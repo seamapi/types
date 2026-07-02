@@ -21,11 +21,13 @@ const acs_encoder_removed = common_acs_encoder_error.extend({
 
 const acs_encoder_error =
   // z.union([
-  acs_encoder_removed
-    // ])
-    .describe(
-      'Error associated with the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
-    )
+  // ])
+  acs_encoder_removed.describe(`
+    ---
+    resource_type: acs_encoder
+    ---
+    Error associated with the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
+    `)
 
 const _acs_encoder_error_map = z.object({
   acs_encoder_removed: acs_encoder_removed.optional().nullable(),

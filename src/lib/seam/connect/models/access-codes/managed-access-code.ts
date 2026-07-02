@@ -22,13 +22,14 @@ const common_access_code_error = z.object({
 const error_code_description =
   'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.'
 
-const provider_issue = common_access_code_error
-  .extend({
-    error_code: z.literal('provider_issue').describe(error_code_description),
-  })
-  .describe(
-    'Indicates a provider-specific issue that prevents the access code from being set or managed. Check the error message for details.',
-  )
+const provider_issue = common_access_code_error.extend({
+  error_code: z.literal('provider_issue').describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: access_code
+    ---
+    Indicates a provider-specific issue that prevents the access code from being set or managed. Check the error message for details.
+    `)
 
 const modified_field = z.object({
   field: z
@@ -40,111 +41,130 @@ const modified_field = z.object({
   to: z.string().nullable().describe('The new value of the field.'),
 })
 
-const code_modified_external_to_seam_error = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('code_modified_external_to_seam')
-      .describe(error_code_description),
-    change_type: z
-      .enum(['modified', 'removed'])
-      .optional()
-      .describe(
-        "Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device.",
-      ),
-    modified_fields: z
-      .array(modified_field)
-      .optional()
-      .describe(
-        'List of fields that were changed externally, with their previous and new values.',
-      ),
-  })
-  .describe(
-    'Code was modified or removed externally after Seam successfully set it on the device.',
-  )
+const code_modified_external_to_seam_error = common_access_code_error.extend({
+  error_code: z
+    .literal('code_modified_external_to_seam')
+    .describe(error_code_description),
+  change_type: z
+    .enum(['modified', 'removed'])
+    .optional()
+    .describe(
+      "Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device.",
+    ),
+  modified_fields: z
+    .array(modified_field)
+    .optional()
+    .describe(
+      'List of fields that were changed externally, with their previous and new values.',
+    ),
+}).describe(`
+    ---
+    resource_type: access_code
+    ---
+    Code was modified or removed externally after Seam successfully set it on the device.
+    `)
 
-const failed_to_set_on_device = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('failed_to_set_on_device')
-      .describe(error_code_description),
-  })
-  .describe('Failed to set code on device.')
+const failed_to_set_on_device = common_access_code_error.extend({
+  error_code: z
+    .literal('failed_to_set_on_device')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: access_code
+    ---
+    Failed to set code on device.
+    `)
 
-const failed_to_remove_from_device = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('failed_to_remove_from_device')
-      .describe(error_code_description),
-  })
-  .describe('Failed to remove code from device.')
+const failed_to_remove_from_device = common_access_code_error.extend({
+  error_code: z
+    .literal('failed_to_remove_from_device')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: access_code
+    ---
+    Failed to remove code from device.
+    `)
 
-const duplicate_code_on_device = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('duplicate_code_on_device')
-      .describe(error_code_description),
-    unmanaged_access_code_id: z
-      .string()
-      .uuid()
-      .optional()
-      .describe(
-        'ID of the unmanaged access code that conflicts with this managed access code, when Seam can identify it.',
-      ),
-    managed_access_code_id: z
-      .string()
-      .uuid()
-      .optional()
-      .describe(
-        'ID of the managed access code that conflicts with this managed access code, when Seam can identify it.',
-      ),
-  })
-  .describe('Duplicate access code detected on device.')
+const duplicate_code_on_device = common_access_code_error.extend({
+  error_code: z
+    .literal('duplicate_code_on_device')
+    .describe(error_code_description),
+  unmanaged_access_code_id: z
+    .string()
+    .uuid()
+    .optional()
+    .describe(
+      'ID of the unmanaged access code that conflicts with this managed access code, when Seam can identify it.',
+    ),
+  managed_access_code_id: z
+    .string()
+    .uuid()
+    .optional()
+    .describe(
+      'ID of the managed access code that conflicts with this managed access code, when Seam can identify it.',
+    ),
+}).describe(`
+    ---
+    resource_type: access_code
+    ---
+    Duplicate access code detected on device.
+    `)
 
-const duplicate_code_attempt_prevented = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('duplicate_code_attempt_prevented')
-      .describe(error_code_description),
-  })
-  .describe('An attempt to modify this access code was prevented.')
+const duplicate_code_attempt_prevented = common_access_code_error.extend({
+  error_code: z
+    .literal('duplicate_code_attempt_prevented')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: access_code
+    ---
+    An attempt to modify this access code was prevented.
+    `)
 
-const no_space_for_access_code_on_device = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('no_space_for_access_code_on_device')
-      .describe(error_code_description),
-  })
-  .describe('No space for access code on device.')
+const no_space_for_access_code_on_device = common_access_code_error.extend({
+  error_code: z
+    .literal('no_space_for_access_code_on_device')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: access_code
+    ---
+    No space for access code on device.
+    `)
 
-const access_code_state_unconfirmed = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('access_code_state_unconfirmed')
-      .describe(error_code_description),
-  })
-  .describe(
-    'Indicates that the provider cannot confirm whether the access code was set or removed on the device.',
-  )
+const access_code_state_unconfirmed = common_access_code_error.extend({
+  error_code: z
+    .literal('access_code_state_unconfirmed')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: access_code
+    ---
+    Indicates that the provider cannot confirm whether the access code was set or removed on the device.
+    `)
 
-const insufficient_permissions = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('insufficient_permissions')
-      .describe(error_code_description),
-  })
-  .describe(
-    'Admin role required—insufficient permissions to manage PINs on this device. Please have an admin update your role, or ask them to set the PIN.',
-  )
+const insufficient_permissions = common_access_code_error.extend({
+  error_code: z
+    .literal('insufficient_permissions')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: access_code
+    ---
+    Admin role required—insufficient permissions to manage PINs on this device. Please have an admin update your role, or ask them to set the PIN.
+    `)
 
-const access_code_inactive_error = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('access_code_inactive')
-      .describe(error_code_description),
-  })
-  .describe(
-    'Indicates that the access code is disabled or inactive on the device. The code exists but will not grant access until re-enabled.',
-  )
+const access_code_inactive_error = common_access_code_error.extend({
+  error_code: z
+    .literal('access_code_inactive')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: access_code
+    ---
+    Indicates that the access code is disabled or inactive on the device. The code exists but will not grant access until re-enabled.
+    `)
 
 const salto_ks_user_not_subscribed = common_access_code_error
   .extend({
@@ -155,21 +175,23 @@ const salto_ks_user_not_subscribed = common_access_code_error
   .describe(
     `
     ---
+    resource_type: access_code
     deprecated: Use \`access_code_inactive\` instead.
     ---
     Salto site user is not subscribed.
     `,
   )
 
-const replaced_by_newer_access_code = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('replaced_by_newer_access_code')
-      .describe(error_code_description),
-  })
-  .describe(
-    'This access code was overridden on the device by a newer access code programmed to the same slot.',
-  )
+const replaced_by_newer_access_code = common_access_code_error.extend({
+  error_code: z
+    .literal('replaced_by_newer_access_code')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: access_code
+    ---
+    This access code was overridden on the device by a newer access code programmed to the same slot.
+    `)
 
 const access_code_error = z
   .discriminatedUnion('error_code', [

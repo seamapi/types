@@ -134,6 +134,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   description: 'Failed to set code on device.',
@@ -164,6 +165,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   description: 'Failed to remove code from device.',
@@ -194,6 +196,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   description: 'Duplicate access code detected on device.',
@@ -236,6 +239,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   description:
@@ -267,6 +271,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   description: 'No space for access code on device.',
@@ -297,6 +302,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   description:
@@ -328,6 +334,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   description:
@@ -391,6 +398,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   description:
@@ -422,6 +430,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   deprecated: true,
@@ -454,6 +463,7 @@ const openapi: OpenAPISpec = {
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
                   'x-deprecated': 'Use `access_code_inactive` instead.',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   description:
@@ -485,6 +495,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   description:
@@ -516,6 +527,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   description: 'Indicates that the account is disconnected.',
@@ -558,6 +570,7 @@ const openapi: OpenAPISpec = {
                     'is_connected_account_error',
                   ],
                   type: 'object',
+                  'x-resource-type': 'connected_account',
                 },
                 {
                   description:
@@ -601,6 +614,7 @@ const openapi: OpenAPISpec = {
                     'is_connected_account_error',
                   ],
                   type: 'object',
+                  'x-resource-type': 'connected_account',
                   'x-variant-group-key': 'locks',
                 },
                 {
@@ -639,6 +653,7 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                   'x-deprecated': 'Use `device_disconnected` instead.',
+                  'x-resource-type': 'device',
                 },
                 {
                   description: 'Indicates that the device has been removed.',
@@ -674,6 +689,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                 },
                 {
                   description: 'Indicates that the hub is disconnected.',
@@ -709,6 +725,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                 },
                 {
                   description: 'Indicates that the device is disconnected.',
@@ -744,6 +761,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                 },
                 {
                   description:
@@ -780,6 +798,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                   'x-variant-group-key': 'access_codes',
                 },
                 {
@@ -817,6 +836,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                   'x-variant-group-key': 'locks',
                 },
                 {
@@ -856,6 +876,7 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                   'x-deprecated': 'Use `hub_disconnected` instead.',
+                  'x-resource-type': 'device',
                   'x-variant-group-key': 'locks',
                 },
                 {
@@ -895,6 +916,7 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                   'x-deprecated': 'Use `hub_disconnected` instead.',
+                  'x-resource-type': 'device',
                 },
                 {
                   description: 'Indicates that device credentials are missing.',
@@ -930,6 +952,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                 },
                 {
                   description: 'Indicates that the auxiliary heat is running.',
@@ -965,6 +988,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                   'x-variant-group-key': 'thermostats',
                 },
                 {
@@ -1002,6 +1026,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                 },
                 {
                   deprecated: true,
@@ -1040,6 +1065,7 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                   'x-deprecated': 'Use `hub_disconnected` instead.',
+                  'x-resource-type': 'device',
                 },
                 {
                   description:
@@ -1075,6 +1101,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'connected_account',
                 },
                 {
                   description:
@@ -1110,6 +1137,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'connected_account',
                 },
               ],
             },
@@ -2958,6 +2986,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'acs_access_group',
                 },
               ],
             },
@@ -3972,6 +4001,7 @@ const openapi: OpenAPISpec = {
               },
               required: ['created_at', 'message', 'error_code'],
               type: 'object',
+              'x-resource-type': 'acs_encoder',
             },
             type: 'array',
           },
@@ -4579,7 +4609,7 @@ const openapi: OpenAPISpec = {
               oneOf: [
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\n  This error might also occur if Seam Bridge is connected to the wrong [workspace](https://docs.seam.co/core-concepts/workspaces).\n  See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\nThis error might also occur if Seam Bridge is connected to the wrong [workspace](https://docs.seam.co/core-concepts/workspaces).\nSee also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -4601,10 +4631,11 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'acs_system',
                 },
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\n    See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\nSee also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -4631,10 +4662,11 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'acs_system',
                 },
                 {
                   description:
-                    'Indicates that [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://docs.seam.co/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).\n  For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](https://docs.seam.co/core-concepts/workspaces).\n  See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).',
+                    'Indicates that [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://docs.seam.co/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).\nFor example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](https://docs.seam.co/core-concepts/workspaces).\nSee also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).',
                   properties: {
                     created_at: {
                       description:
@@ -4656,6 +4688,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'acs_system',
                 },
                 {
                   description:
@@ -4681,6 +4714,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'acs_system',
                 },
                 {
                   description:
@@ -4706,6 +4740,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'acs_system',
                 },
                 {
                   description:
@@ -4731,6 +4766,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'acs_system',
                 },
                 {
                   description:
@@ -4756,6 +4792,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'acs_system',
                 },
                 {
                   description:
@@ -4781,6 +4818,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'acs_system',
                 },
               ],
             },
@@ -5110,6 +5148,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'acs_user',
                 },
                 {
                   description:
@@ -5133,6 +5172,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'acs_user',
                 },
                 {
                   description:
@@ -5156,6 +5196,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'acs_user',
                 },
                 {
                   description:
@@ -5179,6 +5220,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'acs_user',
                 },
                 {
                   description:
@@ -5202,6 +5244,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'acs_user',
                 },
                 {
                   description:
@@ -5225,6 +5268,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'acs_user',
                 },
               ],
             },
@@ -12200,6 +12244,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'connected_account',
                 },
                 {
                   description:
@@ -12235,6 +12280,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'connected_account',
                 },
                 {
                   description:
@@ -12323,6 +12369,7 @@ const openapi: OpenAPISpec = {
                     'salto_ks_metadata',
                   ],
                   type: 'object',
+                  'x-resource-type': 'connected_account',
                 },
                 {
                   description:
@@ -12358,6 +12405,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'connected_account',
                 },
               ],
             },
@@ -13123,6 +13171,7 @@ const openapi: OpenAPISpec = {
                     'is_connected_account_error',
                   ],
                   type: 'object',
+                  'x-resource-type': 'connected_account',
                 },
                 {
                   description:
@@ -13166,6 +13215,7 @@ const openapi: OpenAPISpec = {
                     'is_connected_account_error',
                   ],
                   type: 'object',
+                  'x-resource-type': 'connected_account',
                   'x-variant-group-key': 'locks',
                 },
                 {
@@ -13204,6 +13254,7 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                   'x-deprecated': 'Use `device_disconnected` instead.',
+                  'x-resource-type': 'device',
                 },
                 {
                   description: 'Indicates that the device has been removed.',
@@ -13239,6 +13290,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                 },
                 {
                   description: 'Indicates that the hub is disconnected.',
@@ -13274,6 +13326,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                 },
                 {
                   description: 'Indicates that the device is disconnected.',
@@ -13309,6 +13362,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                 },
                 {
                   description:
@@ -13345,6 +13399,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                   'x-variant-group-key': 'access_codes',
                 },
                 {
@@ -13382,6 +13437,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                   'x-variant-group-key': 'locks',
                 },
                 {
@@ -13421,6 +13477,7 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                   'x-deprecated': 'Use `hub_disconnected` instead.',
+                  'x-resource-type': 'device',
                   'x-variant-group-key': 'locks',
                 },
                 {
@@ -13460,6 +13517,7 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                   'x-deprecated': 'Use `hub_disconnected` instead.',
+                  'x-resource-type': 'device',
                 },
                 {
                   description: 'Indicates that device credentials are missing.',
@@ -13495,6 +13553,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                 },
                 {
                   description: 'Indicates that the auxiliary heat is running.',
@@ -13530,6 +13589,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                   'x-variant-group-key': 'thermostats',
                 },
                 {
@@ -13567,6 +13627,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                 },
                 {
                   deprecated: true,
@@ -13605,6 +13666,7 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                   'x-deprecated': 'Use `hub_disconnected` instead.',
+                  'x-resource-type': 'device',
                 },
                 {
                   description:
@@ -13640,6 +13702,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'connected_account',
                 },
                 {
                   description:
@@ -13675,6 +13738,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'connected_account',
                 },
               ],
             },
@@ -28676,6 +28740,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   description: 'Failed to set code on device.',
@@ -28706,6 +28771,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   description: 'Failed to remove code from device.',
@@ -28736,6 +28802,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   description: 'Duplicate access code detected on device.',
@@ -28778,6 +28845,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   description:
@@ -28809,6 +28877,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   description: 'No space for access code on device.',
@@ -28839,6 +28908,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   description:
@@ -28870,6 +28940,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   description:
@@ -28933,6 +29004,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   description:
@@ -28964,6 +29036,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   deprecated: true,
@@ -28996,6 +29069,7 @@ const openapi: OpenAPISpec = {
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
                   'x-deprecated': 'Use `access_code_inactive` instead.',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   description:
@@ -29027,6 +29101,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   description:
@@ -29058,6 +29133,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'access_code',
                 },
                 {
                   description: 'Indicates that the account is disconnected.',
@@ -29100,6 +29176,7 @@ const openapi: OpenAPISpec = {
                     'is_connected_account_error',
                   ],
                   type: 'object',
+                  'x-resource-type': 'connected_account',
                 },
                 {
                   description:
@@ -29143,6 +29220,7 @@ const openapi: OpenAPISpec = {
                     'is_connected_account_error',
                   ],
                   type: 'object',
+                  'x-resource-type': 'connected_account',
                   'x-variant-group-key': 'locks',
                 },
                 {
@@ -29181,6 +29259,7 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                   'x-deprecated': 'Use `device_disconnected` instead.',
+                  'x-resource-type': 'device',
                 },
                 {
                   description: 'Indicates that the device has been removed.',
@@ -29216,6 +29295,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                 },
                 {
                   description: 'Indicates that the hub is disconnected.',
@@ -29251,6 +29331,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                 },
                 {
                   description: 'Indicates that the device is disconnected.',
@@ -29286,6 +29367,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                 },
                 {
                   description:
@@ -29322,6 +29404,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                   'x-variant-group-key': 'access_codes',
                 },
                 {
@@ -29359,6 +29442,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                   'x-variant-group-key': 'locks',
                 },
                 {
@@ -29398,6 +29482,7 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                   'x-deprecated': 'Use `hub_disconnected` instead.',
+                  'x-resource-type': 'device',
                   'x-variant-group-key': 'locks',
                 },
                 {
@@ -29437,6 +29522,7 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                   'x-deprecated': 'Use `hub_disconnected` instead.',
+                  'x-resource-type': 'device',
                 },
                 {
                   description: 'Indicates that device credentials are missing.',
@@ -29472,6 +29558,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                 },
                 {
                   description: 'Indicates that the auxiliary heat is running.',
@@ -29507,6 +29594,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                   'x-variant-group-key': 'thermostats',
                 },
                 {
@@ -29544,6 +29632,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                 },
                 {
                   deprecated: true,
@@ -29582,6 +29671,7 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                   'x-deprecated': 'Use `hub_disconnected` instead.',
+                  'x-resource-type': 'device',
                 },
                 {
                   description:
@@ -29617,6 +29707,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'connected_account',
                 },
                 {
                   description:
@@ -29652,6 +29743,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'connected_account',
                 },
               ],
             },
@@ -30169,6 +30261,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'acs_access_group',
                 },
               ],
             },
@@ -31165,6 +31258,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'acs_user',
                 },
                 {
                   description:
@@ -31188,6 +31282,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'acs_user',
                 },
                 {
                   description:
@@ -31211,6 +31306,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'acs_user',
                 },
                 {
                   description:
@@ -31234,6 +31330,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'acs_user',
                 },
                 {
                   description:
@@ -31257,6 +31354,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'acs_user',
                 },
                 {
                   description:
@@ -31280,6 +31378,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'acs_user',
                 },
               ],
             },
@@ -32190,6 +32289,7 @@ const openapi: OpenAPISpec = {
                     'is_connected_account_error',
                   ],
                   type: 'object',
+                  'x-resource-type': 'connected_account',
                 },
                 {
                   description:
@@ -32233,6 +32333,7 @@ const openapi: OpenAPISpec = {
                     'is_connected_account_error',
                   ],
                   type: 'object',
+                  'x-resource-type': 'connected_account',
                   'x-variant-group-key': 'locks',
                 },
                 {
@@ -32271,6 +32372,7 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                   'x-deprecated': 'Use `device_disconnected` instead.',
+                  'x-resource-type': 'device',
                 },
                 {
                   description: 'Indicates that the device has been removed.',
@@ -32306,6 +32408,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                 },
                 {
                   description: 'Indicates that the hub is disconnected.',
@@ -32341,6 +32444,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                 },
                 {
                   description: 'Indicates that the device is disconnected.',
@@ -32376,6 +32480,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                 },
                 {
                   description:
@@ -32412,6 +32517,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                   'x-variant-group-key': 'access_codes',
                 },
                 {
@@ -32449,6 +32555,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                   'x-variant-group-key': 'locks',
                 },
                 {
@@ -32488,6 +32595,7 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                   'x-deprecated': 'Use `hub_disconnected` instead.',
+                  'x-resource-type': 'device',
                   'x-variant-group-key': 'locks',
                 },
                 {
@@ -32527,6 +32635,7 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                   'x-deprecated': 'Use `hub_disconnected` instead.',
+                  'x-resource-type': 'device',
                 },
                 {
                   description: 'Indicates that device credentials are missing.',
@@ -32562,6 +32671,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                 },
                 {
                   description: 'Indicates that the auxiliary heat is running.',
@@ -32597,6 +32707,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                   'x-variant-group-key': 'thermostats',
                 },
                 {
@@ -32634,6 +32745,7 @@ const openapi: OpenAPISpec = {
                     'error_code',
                   ],
                   type: 'object',
+                  'x-resource-type': 'device',
                 },
                 {
                   deprecated: true,
@@ -32672,6 +32784,7 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                   'x-deprecated': 'Use `hub_disconnected` instead.',
+                  'x-resource-type': 'device',
                 },
                 {
                   description:
@@ -32707,6 +32820,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'connected_account',
                 },
                 {
                   description:
@@ -32742,6 +32856,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'connected_account',
                 },
               ],
             },
