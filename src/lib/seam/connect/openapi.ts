@@ -1926,6 +1926,8 @@ const openapi: OpenAPISpec = {
               discriminator: { propertyName: 'error_code' },
               oneOf: [
                 {
+                  description:
+                    'Indicates that Seam could not create one or more of the requested access methods for the access grant.',
                   properties: {
                     created_at: {
                       description:
@@ -1953,6 +1955,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'access_grant',
                 },
               ],
             },
@@ -11724,6 +11727,7 @@ const openapi: OpenAPISpec = {
                     'is_bridge_socks_server_healthy',
                   ],
                   type: 'object',
+                  'x-resource-type': 'bridge_client_session',
                 },
                 {
                   description:
@@ -11749,6 +11753,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'created_at', 'error_code'],
                   type: 'object',
+                  'x-resource-type': 'bridge_client_session',
                 },
               ],
             },
@@ -28227,6 +28232,7 @@ const openapi: OpenAPISpec = {
                         'acs_system_id',
                       ],
                       type: 'object',
+                      'x-resource-type': 'user_identity',
                     },
                   ],
                 },
@@ -33984,6 +33990,7 @@ const openapi: OpenAPISpec = {
                     'acs_system_id',
                   ],
                   type: 'object',
+                  'x-resource-type': 'user_identity',
                 },
               ],
             },
@@ -38487,6 +38494,8 @@ const openapi: OpenAPISpec = {
                             discriminator: { propertyName: 'error_code' },
                             oneOf: [
                               {
+                                description:
+                                  'Indicates that Seam could not create one or more of the requested access methods for the access grant.',
                                 properties: {
                                   created_at: {
                                     description:
@@ -38520,6 +38529,7 @@ const openapi: OpenAPISpec = {
                                   'error_code',
                                 ],
                                 type: 'object',
+                                'x-resource-type': 'access_grant',
                               },
                             ],
                           },
@@ -39196,6 +39206,8 @@ const openapi: OpenAPISpec = {
                             discriminator: { propertyName: 'error_code' },
                             oneOf: [
                               {
+                                description:
+                                  'Indicates that Seam could not create one or more of the requested access methods for the access grant.',
                                 properties: {
                                   created_at: {
                                     description:
@@ -39229,6 +39241,7 @@ const openapi: OpenAPISpec = {
                                   'error_code',
                                 ],
                                 type: 'object',
+                                'x-resource-type': 'access_grant',
                               },
                             ],
                           },
@@ -39951,6 +39964,8 @@ const openapi: OpenAPISpec = {
                               discriminator: { propertyName: 'error_code' },
                               oneOf: [
                                 {
+                                  description:
+                                    'Indicates that Seam could not create one or more of the requested access methods for the access grant.',
                                   properties: {
                                     created_at: {
                                       description:
@@ -39984,6 +39999,7 @@ const openapi: OpenAPISpec = {
                                     'error_code',
                                   ],
                                   type: 'object',
+                                  'x-resource-type': 'access_grant',
                                 },
                               ],
                             },
@@ -40698,6 +40714,8 @@ const openapi: OpenAPISpec = {
                               discriminator: { propertyName: 'error_code' },
                               oneOf: [
                                 {
+                                  description:
+                                    'Indicates that Seam could not create one or more of the requested access methods for the access grant.',
                                   properties: {
                                     created_at: {
                                       description:
@@ -40731,6 +40749,7 @@ const openapi: OpenAPISpec = {
                                     'error_code',
                                   ],
                                   type: 'object',
+                                  'x-resource-type': 'access_grant',
                                 },
                               ],
                             },
@@ -85558,6 +85577,7 @@ const openapi: OpenAPISpec = {
                                   'acs_system_id',
                                 ],
                                 type: 'object',
+                                'x-resource-type': 'user_identity',
                               },
                             ],
                           },
@@ -85807,6 +85827,7 @@ const openapi: OpenAPISpec = {
                                   'acs_system_id',
                                 ],
                                 type: 'object',
+                                'x-resource-type': 'user_identity',
                               },
                             ],
                           },
@@ -86084,6 +86105,7 @@ const openapi: OpenAPISpec = {
                                     'acs_system_id',
                                   ],
                                   type: 'object',
+                                  'x-resource-type': 'user_identity',
                                 },
                               ],
                             },
@@ -86356,6 +86378,7 @@ const openapi: OpenAPISpec = {
                                     'acs_system_id',
                                   ],
                                   type: 'object',
+                                  'x-resource-type': 'user_identity',
                                 },
                               ],
                             },

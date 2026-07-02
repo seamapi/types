@@ -29,7 +29,12 @@ const cannot_create_requested_access_methods_error =
       .describe(
         'IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure.',
       ),
-  })
+  }).describe(`
+    ---
+    resource_type: access_grant
+    ---
+    Indicates that Seam could not create one or more of the requested access methods for the access grant.
+    `)
 
 const common_access_grant_warning = z.object({
   created_at: z
