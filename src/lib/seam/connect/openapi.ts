@@ -25267,6 +25267,24 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              acs_entrance_id: {
+                description:
+                  '\n      undocumented: Unreleased.\n      ---\n      ID of the ACS entrance associated with the access-denied event.\n    ',
+                format: 'uuid',
+                type: 'string',
+              },
+              acs_system_id: {
+                description:
+                  '\n      undocumented: Unreleased.\n      ---\n      ID of the ACS system associated with the access-denied event.\n    ',
+                format: 'uuid',
+                type: 'string',
+              },
+              acs_user_id: {
+                description:
+                  '\n      undocumented: Unreleased.\n      ---\n      ID of the ACS user associated with the access-denied event.\n    ',
+                format: 'uuid',
+                type: 'string',
+              },
               connected_account_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -25315,6 +25333,12 @@ const openapi: OpenAPISpec = {
                 format: 'date-time',
                 type: 'string',
               },
+              user_identity_id: {
+                description:
+                  '\n      undocumented: Unreleased.\n      ---\n      ID of the user identity associated with the access-denied event.\n    ',
+                format: 'uuid',
+                type: 'string',
+              },
               workspace_id: {
                 description: 'ID of the workspace associated with the event.',
                 format: 'uuid',
@@ -25326,7 +25350,6 @@ const openapi: OpenAPISpec = {
               'workspace_id',
               'created_at',
               'occurred_at',
-              'device_id',
               'connected_account_id',
               'event_type',
             ],

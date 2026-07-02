@@ -518,6 +518,31 @@ export const lock_access_denied_event = device_event.extend({
     .uuid()
     .optional()
     .describe('ID of the access code that was used in the unlock attempts.'),
+  user_identity_id: z.string().uuid().optional().describe(`
+      undocumented: Unreleased.
+      ---
+      ID of the user identity associated with the access-denied event.
+    `),
+  acs_system_id: z.string().uuid().optional().describe(`
+      undocumented: Unreleased.
+      ---
+      ID of the ACS system associated with the access-denied event.
+    `),
+  acs_user_id: z.string().uuid().optional().describe(`
+      undocumented: Unreleased.
+      ---
+      ID of the ACS user associated with the access-denied event.
+    `),
+  acs_entrance_id: z.string().uuid().optional().describe(`
+      undocumented: Unreleased.
+      ---
+      ID of the ACS entrance associated with the access-denied event.
+    `),
+  device_id: z
+    .string()
+    .uuid()
+    .optional()
+    .describe('ID of the affected device.'),
 }).describe(`
   ---
   route_path: /locks
