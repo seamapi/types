@@ -56,10 +56,14 @@ const seam_bridge_disconnected = common_acs_system_error.extend({
   error_code: z
     .literal('seam_bridge_disconnected')
     .describe(error_code_description),
-})
-  .describe(`Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
-  This error might also occur if Seam Bridge is connected to the wrong [workspace](https://docs.seam.co/core-concepts/workspaces).
-  See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).`)
+}).describe(`
+    ---
+    resource_type: acs_system
+    ---
+    Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
+    This error might also occur if Seam Bridge is connected to the wrong [workspace](https://docs.seam.co/core-concepts/workspaces).
+    See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+    `)
 
 const bridge_disconnected = common_acs_system_error.extend({
   error_code: z.literal('bridge_disconnected').describe(error_code_description),
@@ -69,67 +73,80 @@ const bridge_disconnected = common_acs_system_error.extend({
     .describe(
       'Indicates whether the error is related to the [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
     ),
-})
-  .describe(`Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
-    See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).`)
+}).describe(`
+    ---
+    resource_type: acs_system
+    ---
+    Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
+    See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+    `)
 
 const visionline_instance_unreachable = common_acs_system_error.extend({
   error_code: z
     .literal('visionline_instance_unreachable')
     .describe(error_code_description),
-})
-  .describe(`Indicates that [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://docs.seam.co/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).
-  For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](https://docs.seam.co/core-concepts/workspaces).
-  See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).`)
+}).describe(`
+    ---
+    resource_type: acs_system
+    ---
+    Indicates that [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://docs.seam.co/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).
+    For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](https://docs.seam.co/core-concepts/workspaces).
+    See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
+    `)
 
-const salto_ks_subscription_limit_exceeded = common_acs_system_error
-  .extend({
-    error_code: z
-      .literal('salto_ks_subscription_limit_exceeded')
-      .describe(error_code_description),
-  })
-  .describe(
-    'Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.',
-  )
+const salto_ks_subscription_limit_exceeded = common_acs_system_error.extend({
+  error_code: z
+    .literal('salto_ks_subscription_limit_exceeded')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: acs_system
+    ---
+    Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.
+    `)
 
-const acs_system_disconnected = common_acs_system_error
-  .extend({
-    error_code: z
-      .literal('acs_system_disconnected')
-      .describe(error_code_description),
-  })
-  .describe(
-    'Indicates that the [access control system](https://docs.seam.co/low-level-apis/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system) to resolve the issue.',
-  )
+const acs_system_disconnected = common_acs_system_error.extend({
+  error_code: z
+    .literal('acs_system_disconnected')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: acs_system
+    ---
+    Indicates that the [access control system](https://docs.seam.co/low-level-apis/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system) to resolve the issue.
+    `)
 
-const account_disconnected = common_acs_system_error
-  .extend({
-    error_code: z
-      .literal('account_disconnected')
-      .describe(error_code_description),
-  })
-  .describe(
-    'Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) to restore access.',
-  )
+const account_disconnected = common_acs_system_error.extend({
+  error_code: z
+    .literal('account_disconnected')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: acs_system
+    ---
+    Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) to restore access.
+    `)
 
-const salto_ks_certification_expired = common_acs_system_error
-  .extend({
-    error_code: z
-      .literal('salto_ks_certification_expired')
-      .describe(error_code_description),
-  })
-  .describe(
-    'Indicates that the [access control system](https://docs.seam.co/low-level-apis/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.',
-  )
-const provider_service_unavailable = common_acs_system_error
-  .extend({
-    error_code: z
-      .literal('provider_service_unavailable')
-      .describe(error_code_description),
-  })
-  .describe(
-    "Indicates that the access control system provider's service is temporarily unavailable. Seam will automatically retry and reconnect when the service becomes available again.",
-  )
+const salto_ks_certification_expired = common_acs_system_error.extend({
+  error_code: z
+    .literal('salto_ks_certification_expired')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: acs_system
+    ---
+    Indicates that the [access control system](https://docs.seam.co/low-level-apis/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.
+    `)
+const provider_service_unavailable = common_acs_system_error.extend({
+  error_code: z
+    .literal('provider_service_unavailable')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: acs_system
+    ---
+    Indicates that the access control system provider's service is temporarily unavailable. Seam will automatically retry and reconnect when the service becomes available again.
+    `)
 
 const acs_system_error = z
   .discriminatedUnion('error_code', [

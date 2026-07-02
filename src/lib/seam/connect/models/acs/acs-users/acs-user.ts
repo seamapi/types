@@ -30,53 +30,61 @@ const common_acs_user_error = z.object({
     ),
 })
 
-const acs_users_deleted_externally = common_acs_user_error
-  .extend({
-    error_code: z.literal('deleted_externally'),
-  })
-  .describe(
-    `Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was deleted from the [access system](https://docs.seam.co/low-level-apis/access-systems) outside of Seam.`,
-  )
+const acs_users_deleted_externally = common_acs_user_error.extend({
+  error_code: z.literal('deleted_externally'),
+}).describe(`
+    ---
+    resource_type: acs_user
+    ---
+    Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was deleted from the [access system](https://docs.seam.co/low-level-apis/access-systems) outside of Seam.
+    `)
 
-const acs_users_salto_ks_subscription_limit_exceeded = common_acs_user_error
-  .extend({
+const acs_users_salto_ks_subscription_limit_exceeded =
+  common_acs_user_error.extend({
     error_code: z.literal('salto_ks_subscription_limit_exceeded'),
-  })
-  .describe(
-    `Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.`,
-  )
+  }).describe(`
+    ---
+    resource_type: acs_user
+    ---
+    Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.
+    `)
 
-const acs_users_failed_to_create_on_acs_system = common_acs_user_error
-  .extend({
-    error_code: z.literal('failed_to_create_on_acs_system'),
-  })
-  .describe(
-    `Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was not created on the [access system](https://docs.seam.co/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).`,
-  )
+const acs_users_failed_to_create_on_acs_system = common_acs_user_error.extend({
+  error_code: z.literal('failed_to_create_on_acs_system'),
+}).describe(`
+    ---
+    resource_type: acs_user
+    ---
+    Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was not created on the [access system](https://docs.seam.co/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+    `)
 
-const acs_users_failed_to_update_on_acs_system = common_acs_user_error
-  .extend({
-    error_code: z.literal('failed_to_update_on_acs_system'),
-  })
-  .describe(
-    `Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was not updated on the [access system](https://docs.seam.co/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).`,
-  )
+const acs_users_failed_to_update_on_acs_system = common_acs_user_error.extend({
+  error_code: z.literal('failed_to_update_on_acs_system'),
+}).describe(`
+    ---
+    resource_type: acs_user
+    ---
+    Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was not updated on the [access system](https://docs.seam.co/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+    `)
 
-const acs_users_failed_to_delete_on_acs_system = common_acs_user_error
-  .extend({
-    error_code: z.literal('failed_to_delete_on_acs_system'),
-  })
-  .describe(
-    `Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was not deleted on the [access system](https://docs.seam.co/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).`,
-  )
+const acs_users_failed_to_delete_on_acs_system = common_acs_user_error.extend({
+  error_code: z.literal('failed_to_delete_on_acs_system'),
+}).describe(`
+    ---
+    resource_type: acs_user
+    ---
+    Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was not deleted on the [access system](https://docs.seam.co/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+    `)
 
-const acs_users_latch_conflict_with_resident_user = common_acs_user_error
-  .extend({
+const acs_users_latch_conflict_with_resident_user =
+  common_acs_user_error.extend({
     error_code: z.literal('latch_conflict_with_resident_user'),
-  })
-  .describe(
-    `Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).`,
-  )
+  }).describe(`
+    ---
+    resource_type: acs_user
+    ---
+    Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).
+    `)
 
 const acs_user_errors = z
   .discriminatedUnion('error_code', [

@@ -45,86 +45,91 @@ const common_connected_account_warning = z.object({
     ),
 })
 
-export const account_disconnected = common_connected_account_error
-  .extend({
-    error_code: z
-      .literal('account_disconnected')
-      .describe(error_code_description),
-  })
-  .describe('Indicates that the account is disconnected.')
+export const account_disconnected = common_connected_account_error.extend({
+  error_code: z
+    .literal('account_disconnected')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: connected_account
+    ---
+    Indicates that the account is disconnected.
+    `)
 
-export const bridge_disconnected = common_connected_account_error
-  .extend({
-    error_code: z
-      .literal('bridge_disconnected')
-      .describe(error_code_description),
-  })
-  .describe(
-    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
-  )
+export const bridge_disconnected = common_connected_account_error.extend({
+  error_code: z.literal('bridge_disconnected').describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: connected_account
+    ---
+    Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+    `)
 
 export const salto_ks_subscription_limit_exceeded =
-  common_connected_account_error
-    .extend({
-      error_code: z
-        .literal('salto_ks_subscription_limit_exceeded')
-        .describe(error_code_description),
-      salto_ks_metadata: z
-        .object({
-          sites: z
-            .array(
-              z
-                .object({
-                  site_id: z
-                    .string()
-                    .describe(
-                      'ID of a Salto site associated with the connected account that has an error.',
-                    ),
-                  site_name: z
-                    .string()
-                    .describe(
-                      'Name of a Salto site associated with the connected account that has an error.',
-                    ),
-                  subscribed_site_user_count: z
-                    .number()
-                    .int()
-                    .min(0)
-                    .describe(
-                      'Count of subscribed site users for a Salto site associated with the connected account that has an error.',
-                    ),
-                  site_user_subscription_limit: z
-                    .number()
-                    .int()
-                    .min(0)
-                    .describe(
-                      'Subscription limit of site users for a Salto site associated with the connected account that has an error.',
-                    ),
-                })
-                .describe(
-                  'Salto site associated with the connected account that has an error.',
-                ),
-            )
-            .describe(
-              'Salto sites associated with the connected account that has an error.',
-            ),
-        })
-        .describe(
-          'Salto KS metadata associated with the connected account that has an error.',
-        ),
-    })
-    .describe(
-      'Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.',
-    )
+  common_connected_account_error.extend({
+    error_code: z
+      .literal('salto_ks_subscription_limit_exceeded')
+      .describe(error_code_description),
+    salto_ks_metadata: z
+      .object({
+        sites: z
+          .array(
+            z
+              .object({
+                site_id: z
+                  .string()
+                  .describe(
+                    'ID of a Salto site associated with the connected account that has an error.',
+                  ),
+                site_name: z
+                  .string()
+                  .describe(
+                    'Name of a Salto site associated with the connected account that has an error.',
+                  ),
+                subscribed_site_user_count: z
+                  .number()
+                  .int()
+                  .min(0)
+                  .describe(
+                    'Count of subscribed site users for a Salto site associated with the connected account that has an error.',
+                  ),
+                site_user_subscription_limit: z
+                  .number()
+                  .int()
+                  .min(0)
+                  .describe(
+                    'Subscription limit of site users for a Salto site associated with the connected account that has an error.',
+                  ),
+              })
+              .describe(
+                'Salto site associated with the connected account that has an error.',
+              ),
+          )
+          .describe(
+            'Salto sites associated with the connected account that has an error.',
+          ),
+      })
+      .describe(
+        'Salto KS metadata associated with the connected account that has an error.',
+      ),
+  }).describe(`
+    ---
+    resource_type: connected_account
+    ---
+    Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.
+    `)
 
-export const dormakaba_sites_disconnected = common_connected_account_error
-  .extend({
+export const dormakaba_sites_disconnected =
+  common_connected_account_error.extend({
     error_code: z
       .literal('dormakaba_sites_disconnected')
       .describe(error_code_description),
-  })
-  .describe(
-    'Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.',
-  )
+  }).describe(`
+    ---
+    resource_type: connected_account
+    ---
+    Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.
+    `)
 
 export const connected_account_error = z.discriminatedUnion('error_code', [
   account_disconnected,

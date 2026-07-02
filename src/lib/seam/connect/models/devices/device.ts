@@ -134,47 +134,58 @@ const device_offline = common_device_error
   .describe(
     `
     ---
+    resource_type: device
     deprecated: Use \`device_disconnected\` instead.
     ---
     Indicates that the device is offline.
     `,
   )
 
-const device_removed = common_device_error
-  .extend({
-    error_code: z.literal('device_removed').describe(error_code_description),
-  })
-  .describe('Indicates that the device has been removed.')
+const device_removed = common_device_error.extend({
+  error_code: z.literal('device_removed').describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: device
+    ---
+    Indicates that the device has been removed.
+    `)
 
-const hub_disconnected = common_device_error
-  .extend({
-    error_code: z.literal('hub_disconnected').describe(error_code_description),
-  })
-  .describe('Indicates that the hub is disconnected.')
+const hub_disconnected = common_device_error.extend({
+  error_code: z.literal('hub_disconnected').describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: device
+    ---
+    Indicates that the hub is disconnected.
+    `)
 
-const device_disconnected = common_device_error
-  .extend({
-    error_code: z
-      .literal('device_disconnected')
-      .describe(error_code_description),
-  })
-  .describe('Indicates that the device is disconnected.')
+const device_disconnected = common_device_error.extend({
+  error_code: z.literal('device_disconnected').describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: device
+    ---
+    Indicates that the device is disconnected.
+    `)
 
-const account_disconnected = common_device_error
-  .extend({
-    error_code: z
-      .literal('account_disconnected')
-      .describe(error_code_description),
-    is_connected_account_error: z
-      .literal(true)
-      .describe(
-        'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
-      ),
-    is_device_error: z
-      .literal(false)
-      .describe('Indicates that the error is not a device error.'),
-  })
-  .describe('Indicates that the account is disconnected.')
+const account_disconnected = common_device_error.extend({
+  error_code: z
+    .literal('account_disconnected')
+    .describe(error_code_description),
+  is_connected_account_error: z
+    .literal(true)
+    .describe(
+      'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+    ),
+  is_device_error: z
+    .literal(false)
+    .describe('Indicates that the error is not a device error.'),
+}).describe(`
+    ---
+    resource_type: connected_account
+    ---
+    Indicates that the account is disconnected.
+    `)
 
 const empty_backup_access_code_pool = common_device_error.extend({
   error_code: z
@@ -182,6 +193,7 @@ const empty_backup_access_code_pool = common_device_error.extend({
     .describe(error_code_description),
 }).describe(`
     ---
+    resource_type: device
     variant_group_key: access_codes
     ---
     Indicates that the [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.
@@ -193,6 +205,7 @@ const august_lock_not_authorized = common_device_error.extend({
     .describe(error_code_description),
 }).describe(`
     ---
+    resource_type: device
     variant_group_key: locks
     ---
     Indicates that the user is not authorized to use the August lock.
@@ -204,6 +217,7 @@ const august_lock_missing_bridge = common_device_error.extend({
     .describe(error_code_description),
 }).describe(`
     ---
+    resource_type: device
     deprecated: Use \`hub_disconnected\` instead.
     variant_group_key: locks
     ---
@@ -224,6 +238,7 @@ const salto_ks_subscription_limit_exceeded = common_device_error.extend({
     .describe('Indicates that the error is not a device error.'),
 }).describe(`
     ---
+    resource_type: connected_account
     variant_group_key: locks
     ---
     Indicates that the Salto site user limit has been reached.
@@ -235,18 +250,22 @@ const ttlock_lock_not_paired_to_gateway = common_device_error.extend({
     .describe(error_code_description),
 }).describe(`
     ---
+    resource_type: device
     deprecated: Use \`hub_disconnected\` instead.
     ---
     Indicates that the lock is not paired with a gateway.
     `)
 
-const missing_device_credentials = common_device_error
-  .extend({
-    error_code: z
-      .literal('missing_device_credentials')
-      .describe(error_code_description),
-  })
-  .describe('Indicates that device credentials are missing.')
+const missing_device_credentials = common_device_error.extend({
+  error_code: z
+    .literal('missing_device_credentials')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: device
+    ---
+    Indicates that device credentials are missing.
+    `)
 
 const auxiliary_heat_running = common_device_error.extend({
   error_code: z
@@ -254,18 +273,22 @@ const auxiliary_heat_running = common_device_error.extend({
     .describe(error_code_description),
 }).describe(`
     ---
+    resource_type: device
     variant_group_key: thermostats
     ---
     Indicates that the auxiliary heat is running.
     `)
 
-const subscription_required = common_device_error
-  .extend({
-    error_code: z
-      .literal('subscription_required')
-      .describe(error_code_description),
-  })
-  .describe('Indicates that a subscription is required to connect.')
+const subscription_required = common_device_error.extend({
+  error_code: z
+    .literal('subscription_required')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: device
+    ---
+    Indicates that a subscription is required to connect.
+    `)
 
 const lockly_missing_wifi_bridge = common_device_error.extend({
   error_code: z
@@ -273,6 +296,7 @@ const lockly_missing_wifi_bridge = common_device_error.extend({
     .describe(error_code_description),
 }).describe(`
     ---
+    resource_type: device
     deprecated: Use \`hub_disconnected\` instead.
     ---
     Indicates that the Lockly lock is not connected to a Wi-Fi bridge.

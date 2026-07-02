@@ -35,15 +35,16 @@ const error_code_description =
   'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.'
 
 const acs_access_groups_failed_to_create_on_acs_system =
-  common_acs_access_group_error
-    .extend({
-      error_code: z
-        .literal('failed_to_create_on_acs_system')
-        .describe(error_code_description),
-    })
-    .describe(
-      `Indicates that the [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups) was not created on the [access system](https://docs.seam.co/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).`,
-    )
+  common_acs_access_group_error.extend({
+    error_code: z
+      .literal('failed_to_create_on_acs_system')
+      .describe(error_code_description),
+  }).describe(`
+    ---
+    resource_type: acs_access_group
+    ---
+    Indicates that the [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups) was not created on the [access system](https://docs.seam.co/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+    `)
 
 const acs_access_group_errors = z
   .discriminatedUnion('error_code', [
