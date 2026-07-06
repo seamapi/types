@@ -182,17 +182,6 @@ const salto_ks_user_not_subscribed = common_access_code_error
     `,
   )
 
-const replaced_by_newer_access_code = common_access_code_error.extend({
-  error_code: z
-    .literal('replaced_by_newer_access_code')
-    .describe(error_code_description),
-}).describe(`
-    ---
-    resource_type: access_code
-    ---
-    This access code was overridden on the device by a newer access code programmed to the same slot.
-    `)
-
 const access_code_error = z
   .discriminatedUnion('error_code', [
     provider_issue,
@@ -206,7 +195,6 @@ const access_code_error = z
     access_code_inactive_error,
     salto_ks_user_not_subscribed,
     insufficient_permissions,
-    replaced_by_newer_access_code,
   ])
   .describe(
     'Errors associated with the [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).',
@@ -236,9 +224,6 @@ const _access_code_error_map = z.object({
     .nullable(),
   access_code_inactive: access_code_inactive_error.optional().nullable(),
   salto_ks_user_not_subscribed: salto_ks_user_not_subscribed
-    .optional()
-    .nullable(),
-  replaced_by_newer_access_code: replaced_by_newer_access_code
     .optional()
     .nullable(),
 })
