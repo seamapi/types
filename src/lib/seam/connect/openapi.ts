@@ -498,38 +498,6 @@ const openapi: OpenAPISpec = {
                   'x-resource-type': 'access_code',
                 },
                 {
-                  description:
-                    'This access code was overridden on the device by a newer access code programmed to the same slot.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['replaced_by_newer_access_code'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-resource-type': 'access_code',
-                },
-                {
                   description: 'Indicates that the account is disconnected.',
                   properties: {
                     created_at: {
@@ -29204,38 +29172,6 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['insufficient_permissions'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-resource-type': 'access_code',
-                },
-                {
-                  description:
-                    'This access code was overridden on the device by a newer access code programmed to the same slot.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['replaced_by_newer_access_code'],
                       type: 'string',
                     },
                     is_access_code_error: {
