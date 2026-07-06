@@ -331,16 +331,6 @@ const management_transferred = common_access_code_warning
   })
   .describe('Management was transferred to another workspace.')
 
-const access_code_inactive = common_access_code_warning
-  .extend({
-    warning_code: z
-      .literal('access_code_inactive')
-      .describe(warning_code_description),
-  })
-  .describe(
-    'Indicates that the access code is disabled or inactive on the device. The code exists but will not grant access until re-enabled.',
-  )
-
 const using_backup_access_code = common_access_code_warning
   .extend({
     warning_code: z
@@ -367,7 +357,6 @@ const access_code_warning = z
     third_party_integration_detected,
     igloo_algopin_must_be_used_within_24_hours,
     management_transferred,
-    access_code_inactive,
     using_backup_access_code,
     being_deleted,
   ])
@@ -394,7 +383,6 @@ const _access_code_warning_map = z.object({
   igloo_algopin_must_be_used_within_24_hours:
     igloo_algopin_must_be_used_within_24_hours.optional().nullable(),
   management_transferred: management_transferred.optional().nullable(),
-  access_code_inactive: access_code_inactive.optional().nullable(),
   using_backup_access_code: using_backup_access_code.optional().nullable(),
   being_deleted: being_deleted.optional().nullable(),
 })
