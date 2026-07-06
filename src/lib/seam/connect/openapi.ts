@@ -1711,31 +1711,6 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the access code is disabled or inactive on the device. The code exists but will not grant access until re-enabled.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['access_code_inactive'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description:
                     'A backup access code has been pulled and is being used in place of this access code.',
                   properties: {
                     created_at: {
@@ -30085,31 +30060,6 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['management_transferred'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description:
-                    'Indicates that the access code is disabled or inactive on the device. The code exists but will not grant access until re-enabled.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['access_code_inactive'],
                       type: 'string',
                     },
                   },
