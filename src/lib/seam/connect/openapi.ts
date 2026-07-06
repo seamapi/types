@@ -1538,33 +1538,6 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
-                  deprecated: true,
-                  description: 'Duplicate access code detected.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['schlage_detected_duplicate'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                  'x-deprecated':
-                    'Use `duplicate_code_on_device` error instead.',
-                },
-                {
                   description:
                     "The Schlage device's timezone is ambiguous and this code's schedule crosses a daylight-saving transition in at least one plausible timezone. A 1-hour safety buffer has been applied to the side of the schedule affected by the transition (`ends_at` for spring-forward, `starts_at` for fall-back) so the code stays active through the shift — the code may be usable up to 1 hour beyond your requested window. Set the device's timezone via `/devices/report_provider_metadata` to clear the buffer and guarantee exact DST handling.",
                   properties: {
@@ -29977,33 +29950,6 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'warning_code'],
                   type: 'object',
-                },
-                {
-                  deprecated: true,
-                  description: 'Duplicate access code detected.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['schlage_detected_duplicate'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                  'x-deprecated':
-                    'Use `duplicate_code_on_device` error instead.',
                 },
                 {
                   description:
