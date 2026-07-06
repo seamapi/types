@@ -283,21 +283,6 @@ const code_modified_external_to_seam_warning = common_access_code_warning
     'Code was modified or removed externally after Seam successfully set it on the device.',
   )
 
-const schlage_detected_duplicate = common_access_code_warning
-  .extend({
-    warning_code: z
-      .literal('schlage_detected_duplicate')
-      .describe(warning_code_description),
-  })
-  .describe(
-    `
-    ---
-    deprecated: Use \`duplicate_code_on_device\` error instead.
-    ---
-    Duplicate access code detected.
-    `,
-  )
-
 const provider_issue_warning = common_access_code_warning
   .extend({
     warning_code: z
@@ -390,7 +375,6 @@ const being_deleted = common_access_code_warning
 const access_code_warning = z
   .discriminatedUnion('warning_code', [
     provider_issue_warning,
-    schlage_detected_duplicate,
     schlage_access_code_ambiguous_timezone_dst_risk,
     code_modified_external_to_seam_warning,
     delay_in_setting_on_device,
@@ -410,7 +394,6 @@ export type AccessCodeWarning = z.infer<typeof access_code_warning>
 
 const _access_code_warning_map = z.object({
   provider_issue: provider_issue_warning.optional().nullable(),
-  schlage_detected_duplicate: schlage_detected_duplicate.optional().nullable(),
   schlage_access_code_ambiguous_timezone_dst_risk:
     schlage_access_code_ambiguous_timezone_dst_risk.optional().nullable(),
   code_modified_external_to_seam_warning: code_modified_external_to_seam_warning
