@@ -28317,7 +28317,9 @@ const openapi: OpenAPISpec = {
             type: 'string',
           },
           customer_data: {
-            description: 'Reservation/stay-related defaults for the space.',
+            additionalProperties: { nullable: true, type: 'string' },
+            description:
+              'Reservation/stay-related defaults for the space. Also carries the provider/PMS-supplied name under a `<connector_type>_name` key (e.g. `guesty_name`), which Seam preserves when you rename the space (read-only — managed by Seam).',
             properties: {
               address: {
                 description: 'Postal address for the space.',

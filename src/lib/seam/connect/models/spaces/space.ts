@@ -57,7 +57,12 @@ export const space = z.object({
     .string()
     .optional()
     .describe('Customer key associated with the space.'),
-  customer_data: space_customer_data.optional(),
+  customer_data: space_customer_data
+    .catchall(z.string().nullish())
+    .describe(
+      'Reservation/stay-related defaults for the space. Also carries the provider/PMS-supplied name under a `<connector_type>_name` key (e.g. `guesty_name`), which Seam preserves when you rename the space (read-only — managed by Seam).',
+    )
+    .optional(),
   geolocation: space_geolocation
     .nullish()
     .describe('Geographic coordinates (latitude and longitude) of the space.'),
