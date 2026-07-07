@@ -1,3 +1,4 @@
+export type { AccessCodeMutationsRequestedEvent } from '../models/events/access-codes.js'
 export type { SeamEvent, SeamEventType } from '../models/events/seam-event.js'
 export type {
   AccessCode as ManagedAccessCode,
