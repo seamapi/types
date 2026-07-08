@@ -15507,6 +15507,170 @@ const openapi: OpenAPISpec = {
                         type: 'number',
                         'x-property-group-key': 'access_codes',
                       },
+                      offline_time_frame_options: {
+                        description:
+                          "Time frames that may be requested when creating an offline access code, expressed as a list of options. The caller picks one option (by matching the requested duration when the options' duration ranges do not overlap, or by `display_name` when they do) and satisfies that one option's rules. When `undefined`, any time frame works.",
+                        items: {
+                          description:
+                            'One way to make a code: a duration band plus the time-of-day and date rules that apply within it. Absence of a rule means unrestricted on that axis.',
+                          properties: {
+                            display_name: {
+                              description:
+                                'Label for this option. For a single-option device, the product name (for example, `algoPIN` or `SmartPIN`); for a multi-option device, a label that distinguishes it (for example, `Hourly` or `Fixed check-in times`).',
+                              type: 'string',
+                            },
+                            end_date_recurrence_rule: {
+                              description:
+                                'iCalendar recurrence rule (RRULE) that the check-out date must fall on. Constrains which calendar dates are selectable, independent of the time-of-day rules.',
+                              type: 'string',
+                            },
+                            matching_start_end_time: {
+                              description:
+                                'When `true`, the check-in and check-out must fall at the same time of day (the caller picks which). Mutually exclusive with `time_pairs`.',
+                              enum: [true],
+                              type: 'boolean',
+                            },
+                            max_duration: {
+                              description:
+                                'Maximum duration this option covers, as an ISO 8601 duration (for example, `PT672H` or `P367D`). Omitted when there is no maximum.',
+                              type: 'string',
+                            },
+                            min_duration: {
+                              description:
+                                'Minimum duration this option covers, as an ISO 8601 duration (for example, `PT1H` or `P29D`). Omitted when there is no minimum.',
+                              type: 'string',
+                            },
+                            start_date_recurrence_rule: {
+                              description:
+                                'iCalendar recurrence rule (RRULE) that the check-in date must fall on (for example, `FREQ=MONTHLY;BYDAY=1MO,3MO`). Constrains which calendar dates are selectable, independent of the time-of-day rules.',
+                              type: 'string',
+                            },
+                            time_pairs: {
+                              description:
+                                'Fixed check-in/check-out time pairings the caller chooses from. Mutually exclusive with `matching_start_end_time`.',
+                              items: {
+                                description:
+                                  'Fixed check-in/check-out time pairing. The caller picks one whole pairing; the two times cannot be mixed across pairs.',
+                                properties: {
+                                  check_in_time: {
+                                    description:
+                                      "Check-in time of day as a 24-hour `HH:MM` value, interpreted in the option's `time_zone`.",
+                                    type: 'string',
+                                  },
+                                  check_out_time: {
+                                    description:
+                                      "Check-out time of day as a 24-hour `HH:MM` value, interpreted in the option's `time_zone`. A `check_out_time` earlier on the clock than `check_in_time` means check-out falls on a later date.",
+                                    type: 'string',
+                                  },
+                                  display_name: {
+                                    description:
+                                      'Label for the check-in/check-out time pairing.',
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'display_name',
+                                  'check_in_time',
+                                  'check_out_time',
+                                ],
+                                type: 'object',
+                              },
+                              type: 'array',
+                            },
+                            time_zone: {
+                              description:
+                                'IANA time zone for interpreting `time_pairs` and the date recurrence rules. Present only when the option fixes times or dates.',
+                              type: 'string',
+                            },
+                          },
+                          required: ['display_name'],
+                          type: 'object',
+                        },
+                        type: 'array',
+                        'x-property-group-key': 'access_codes',
+                      },
+                      online_time_frame_options: {
+                        description:
+                          "Time frames that may be requested when creating an online access code, expressed as a list of options. The caller picks one option (by matching the requested duration when the options' duration ranges do not overlap, or by `display_name` when they do) and satisfies that one option's rules. When `undefined`, any time frame works.",
+                        items: {
+                          description:
+                            'One way to make a code: a duration band plus the time-of-day and date rules that apply within it. Absence of a rule means unrestricted on that axis.',
+                          properties: {
+                            display_name: {
+                              description:
+                                'Label for this option. For a single-option device, the product name (for example, `algoPIN` or `SmartPIN`); for a multi-option device, a label that distinguishes it (for example, `Hourly` or `Fixed check-in times`).',
+                              type: 'string',
+                            },
+                            end_date_recurrence_rule: {
+                              description:
+                                'iCalendar recurrence rule (RRULE) that the check-out date must fall on. Constrains which calendar dates are selectable, independent of the time-of-day rules.',
+                              type: 'string',
+                            },
+                            matching_start_end_time: {
+                              description:
+                                'When `true`, the check-in and check-out must fall at the same time of day (the caller picks which). Mutually exclusive with `time_pairs`.',
+                              enum: [true],
+                              type: 'boolean',
+                            },
+                            max_duration: {
+                              description:
+                                'Maximum duration this option covers, as an ISO 8601 duration (for example, `PT672H` or `P367D`). Omitted when there is no maximum.',
+                              type: 'string',
+                            },
+                            min_duration: {
+                              description:
+                                'Minimum duration this option covers, as an ISO 8601 duration (for example, `PT1H` or `P29D`). Omitted when there is no minimum.',
+                              type: 'string',
+                            },
+                            start_date_recurrence_rule: {
+                              description:
+                                'iCalendar recurrence rule (RRULE) that the check-in date must fall on (for example, `FREQ=MONTHLY;BYDAY=1MO,3MO`). Constrains which calendar dates are selectable, independent of the time-of-day rules.',
+                              type: 'string',
+                            },
+                            time_pairs: {
+                              description:
+                                'Fixed check-in/check-out time pairings the caller chooses from. Mutually exclusive with `matching_start_end_time`.',
+                              items: {
+                                description:
+                                  'Fixed check-in/check-out time pairing. The caller picks one whole pairing; the two times cannot be mixed across pairs.',
+                                properties: {
+                                  check_in_time: {
+                                    description:
+                                      "Check-in time of day as a 24-hour `HH:MM` value, interpreted in the option's `time_zone`.",
+                                    type: 'string',
+                                  },
+                                  check_out_time: {
+                                    description:
+                                      "Check-out time of day as a 24-hour `HH:MM` value, interpreted in the option's `time_zone`. A `check_out_time` earlier on the clock than `check_in_time` means check-out falls on a later date.",
+                                    type: 'string',
+                                  },
+                                  display_name: {
+                                    description:
+                                      'Label for the check-in/check-out time pairing.',
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'display_name',
+                                  'check_in_time',
+                                  'check_out_time',
+                                ],
+                                type: 'object',
+                              },
+                              type: 'array',
+                            },
+                            time_zone: {
+                              description:
+                                'IANA time zone for interpreting `time_pairs` and the date recurrence rules. Present only when the option fixes times or dates.',
+                              type: 'string',
+                            },
+                          },
+                          required: ['display_name'],
+                          type: 'object',
+                        },
+                        type: 'array',
+                        'x-property-group-key': 'access_codes',
+                      },
                       supported_code_lengths: {
                         description: 'Supported code lengths for access codes.',
                         items: { format: 'float', type: 'number' },

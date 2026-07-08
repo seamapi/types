@@ -41,6 +41,82 @@ export const access_code_constraint = z
 
 export type AccessCodeConstraint = z.infer<typeof access_code_constraint>
 
+const time_frame_option_time_pair = z
+  .object({
+    display_name: z
+      .string()
+      .describe('Label for the check-in/check-out time pairing.'),
+    check_in_time: z
+      .string()
+      .describe(
+        "Check-in time of day as a 24-hour `HH:MM` value, interpreted in the option's `time_zone`.",
+      ),
+    check_out_time: z
+      .string()
+      .describe(
+        "Check-out time of day as a 24-hour `HH:MM` value, interpreted in the option's `time_zone`. A `check_out_time` earlier on the clock than `check_in_time` means check-out falls on a later date.",
+      ),
+  })
+  .describe(
+    'Fixed check-in/check-out time pairing. The caller picks one whole pairing; the two times cannot be mixed across pairs.',
+  )
+
+export const time_frame_option = z
+  .object({
+    display_name: z
+      .string()
+      .describe(
+        'Label for this option. For a single-option device, the product name (for example, `algoPIN` or `SmartPIN`); for a multi-option device, a label that distinguishes it (for example, `Hourly` or `Fixed check-in times`).',
+      ),
+    min_duration: z
+      .string()
+      .optional()
+      .describe(
+        'Minimum duration this option covers, as an ISO 8601 duration (for example, `PT1H` or `P29D`). Omitted when there is no minimum.',
+      ),
+    max_duration: z
+      .string()
+      .optional()
+      .describe(
+        'Maximum duration this option covers, as an ISO 8601 duration (for example, `PT672H` or `P367D`). Omitted when there is no maximum.',
+      ),
+    matching_start_end_time: z
+      .literal(true)
+      .optional()
+      .describe(
+        'When `true`, the check-in and check-out must fall at the same time of day (the caller picks which). Mutually exclusive with `time_pairs`.',
+      ),
+    time_pairs: z
+      .array(time_frame_option_time_pair)
+      .optional()
+      .describe(
+        'Fixed check-in/check-out time pairings the caller chooses from. Mutually exclusive with `matching_start_end_time`.',
+      ),
+    start_date_recurrence_rule: z
+      .string()
+      .optional()
+      .describe(
+        'iCalendar recurrence rule (RRULE) that the check-in date must fall on (for example, `FREQ=MONTHLY;BYDAY=1MO,3MO`). Constrains which calendar dates are selectable, independent of the time-of-day rules.',
+      ),
+    end_date_recurrence_rule: z
+      .string()
+      .optional()
+      .describe(
+        'iCalendar recurrence rule (RRULE) that the check-out date must fall on. Constrains which calendar dates are selectable, independent of the time-of-day rules.',
+      ),
+    time_zone: z
+      .string()
+      .optional()
+      .describe(
+        'IANA time zone for interpreting `time_pairs` and the date recurrence rules. Present only when the option fixes times or dates.',
+      ),
+  })
+  .describe(
+    'One way to make a code: a duration band plus the time-of-day and date rules that apply within it. Absence of a rule means unrestricted on that axis.',
+  )
+
+export type TimeFrameOption = z.infer<typeof time_frame_option>
+
 export const access_code_capability_properties = z.object({
   _experimental_supported_code_from_access_codes_lengths: z
     .array(z.number())
@@ -59,6 +135,16 @@ export const access_code_capability_properties = z.object({
           property_group_key: access_codes
           ---
           Supported code lengths for access codes.`),
+  offline_time_frame_options: z.array(time_frame_option).optional().describe(`
+          ---
+          property_group_key: access_codes
+          ---
+          Time frames that may be requested when creating an offline access code, expressed as a list of options. The caller picks one option (by matching the requested duration when the options' duration ranges do not overlap, or by \`display_name\` when they do) and satisfies that one option's rules. When \`undefined\`, any time frame works.`),
+  online_time_frame_options: z.array(time_frame_option).optional().describe(`
+          ---
+          property_group_key: access_codes
+          ---
+          Time frames that may be requested when creating an online access code, expressed as a list of options. The caller picks one option (by matching the requested duration when the options' duration ranges do not overlap, or by \`display_name\` when they do) and satisfies that one option's rules. When \`undefined\`, any time frame works.`),
   max_active_codes_supported: z.number().optional().describe(`
           ---
           property_group_key: access_codes

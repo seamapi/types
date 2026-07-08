@@ -22,4 +22,4 @@ export const capability_properties = z.intersection(
   thermostat_capability_properties,
 )
 
-export type { AccessCodeConstraint } from './access-code.js'
+export type { AccessCodeConstraint, TimeFrameOption } from './access-code.js'
