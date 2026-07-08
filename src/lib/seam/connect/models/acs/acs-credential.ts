@@ -160,7 +160,7 @@ const common_acs_credential = z.object({
     .string()
     .uuid()
     .describe(
-      'ID of the [connected account](https://docs.seam.co/low-level-apis/access-systems/managing-credentials#connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+      'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
     ),
   acs_credential_pool_id: z
     .string()

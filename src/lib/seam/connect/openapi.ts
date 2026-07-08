@@ -1084,7 +1084,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -3474,7 +3474,7 @@ const openapi: OpenAPISpec = {
           },
           connected_account_id: {
             description:
-              'ID of the [connected account](https://docs.seam.co/low-level-apis/access-systems/managing-credentials#connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+              'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
             format: 'uuid',
             type: 'string',
           },
@@ -3878,7 +3878,7 @@ const openapi: OpenAPISpec = {
         properties: {
           acs_encoder_id: {
             description:
-              'ID of the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners.',
+              'ID of the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
             format: 'uuid',
             type: 'string',
           },
@@ -4482,7 +4482,7 @@ const openapi: OpenAPISpec = {
       },
       acs_system: {
         description:
-          'Represents an [access control system](https://docs.seam.co/low-level-apis/access-systems).\n\nWithin an `acs_system`, create [`acs_user`s](https://docs.seam.co/api/acs/users#acs_user) and [`acs_credential`s](https://docs.seam.co/api/acs/credentials#acs_credential) to grant access to the `acs_user`s.\n\nFor details about the resources associated with an access control system, see the [access control systems namespace](https://docs.seam.co/api/acs).',
+          'Represents an [access control system](https://docs.seam.co/low-level-apis/access-systems).\n\nWithin an `acs_system`, create [`acs_user`s](https://docs.seam.co/api/acs/users/object) and [`acs_credential`s](https://docs.seam.co/api/acs/credentials/object) to grant access to the `acs_user`s.\n\nFor details about the resources associated with an access control system, see the [access control systems namespace](https://docs.seam.co/api/acs).',
         properties: {
           acs_access_group_count: {
             description:
@@ -4539,7 +4539,7 @@ const openapi: OpenAPISpec = {
               oneOf: [
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\nThis error might also occur if Seam Bridge is connected to the wrong [workspace](https://docs.seam.co/core-concepts/workspaces).\nSee also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\nThis error might also occur if Seam Bridge is connected to the wrong [workspace](https://docs.seam.co/core-concepts/workspaces).\nSee also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -4565,7 +4565,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\nSee also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\nSee also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -4596,7 +4596,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://docs.seam.co/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).\nFor example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](https://docs.seam.co/core-concepts/workspaces).\nSee also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).',
+                    'Indicates that [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://docs.seam.co/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).\nFor example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](https://docs.seam.co/core-concepts/workspaces).\nSee also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-visionline_instance_unreachable).',
                   properties: {
                     created_at: {
                       description:
@@ -6374,7 +6374,7 @@ const openapi: OpenAPISpec = {
                           },
                           connected_account_id: {
                             description:
-                              'ID of the [connected account](https://docs.seam.co/low-level-apis/access-systems/managing-credentials#connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                              'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
                             format: 'uuid',
                             type: 'string',
                           },
@@ -6839,7 +6839,7 @@ const openapi: OpenAPISpec = {
                           },
                           connected_account_id: {
                             description:
-                              'ID of the [connected account](https://docs.seam.co/low-level-apis/access-systems/managing-credentials#connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                              'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
                             format: 'uuid',
                             type: 'string',
                           },
@@ -7555,7 +7555,7 @@ const openapi: OpenAPISpec = {
                       },
                       connected_account_id: {
                         description:
-                          'ID of the [connected account](https://docs.seam.co/low-level-apis/access-systems/managing-credentials#connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                          'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
                         format: 'uuid',
                         type: 'string',
                       },
@@ -8017,7 +8017,7 @@ const openapi: OpenAPISpec = {
                       },
                       connected_account_id: {
                         description:
-                          'ID of the [connected account](https://docs.seam.co/low-level-apis/access-systems/managing-credentials#connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                          'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
                         format: 'uuid',
                         type: 'string',
                       },
@@ -8767,7 +8767,7 @@ const openapi: OpenAPISpec = {
                   },
                   connected_account_id: {
                     description:
-                      'ID of the [connected account](https://docs.seam.co/low-level-apis/access-systems/managing-credentials#connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                      'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -12180,7 +12180,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -13649,7 +13649,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -26527,7 +26527,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [enrollment automation](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) was deleted.',
+              'An [enrollment automation](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) was deleted.',
             properties: {
               created_at: {
                 description: 'Date and time at which the event was created.',
@@ -27849,7 +27849,7 @@ const openapi: OpenAPISpec = {
                       },
                       connected_account_id: {
                         description:
-                          'ID of the [connected account](https://docs.seam.co/low-level-apis/access-systems/managing-credentials#connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                          'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
                         format: 'uuid',
                         type: 'string',
                       },
@@ -29918,7 +29918,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -30971,7 +30971,7 @@ const openapi: OpenAPISpec = {
           },
           connected_account_id: {
             description:
-              'ID of the [connected account](https://docs.seam.co/low-level-apis/access-systems/managing-credentials#connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+              'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
             format: 'uuid',
             type: 'string',
           },
@@ -32990,7 +32990,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -34434,7 +34434,7 @@ const openapi: OpenAPISpec = {
                   },
                   use_backup_access_code_pool: {
                     description:
-                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/api/access_codes/pull_backup_access_code).',
+                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/api/access_codes/pull_backup_access_code).',
                     type: 'boolean',
                   },
                   use_offline_access_code: {
@@ -34560,7 +34560,7 @@ const openapi: OpenAPISpec = {
                   },
                   use_backup_access_code_pool: {
                     description:
-                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/api/access_codes/pull_backup_access_code).',
+                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/api/access_codes/pull_backup_access_code).',
                     type: 'boolean',
                   },
                 },
@@ -34678,7 +34678,7 @@ const openapi: OpenAPISpec = {
                   },
                   use_backup_access_code_pool: {
                     description:
-                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/api/access_codes/pull_backup_access_code).',
+                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/api/access_codes/pull_backup_access_code).',
                     type: 'boolean',
                   },
                 },
@@ -36878,7 +36878,7 @@ const openapi: OpenAPISpec = {
                   },
                   use_backup_access_code_pool: {
                     description:
-                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/api/access_codes/pull_backup_access_code).',
+                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/api/access_codes/pull_backup_access_code).',
                     type: 'boolean',
                   },
                   use_offline_access_code: {
@@ -37031,7 +37031,7 @@ const openapi: OpenAPISpec = {
                   },
                   use_backup_access_code_pool: {
                     description:
-                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/api/access_codes/pull_backup_access_code).',
+                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/api/access_codes/pull_backup_access_code).',
                     type: 'boolean',
                   },
                   use_offline_access_code: {
@@ -37184,7 +37184,7 @@ const openapi: OpenAPISpec = {
                   },
                   use_backup_access_code_pool: {
                     description:
-                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/api/access_codes/pull_backup_access_code).',
+                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/api/access_codes/pull_backup_access_code).',
                     type: 'boolean',
                   },
                   use_offline_access_code: {

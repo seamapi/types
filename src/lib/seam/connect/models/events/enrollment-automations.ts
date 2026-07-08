@@ -16,7 +16,7 @@ export const enrollment_automation_deleted_event =
     ---
     route_path: /user_identities/enrollment_automations
     ---
-    An [enrollment automation](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) was deleted.
+    An [enrollment automation](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) was deleted.
   `)
 
 export type EnrollmentAutomationDeletedEvent = z.infer<

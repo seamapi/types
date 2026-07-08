@@ -40,7 +40,7 @@ export const acs_encoder = z.object({
     .string()
     .uuid()
     .describe(
-      'ID of the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners.',
+      'ID of the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
     ),
   acs_system_id: z
     .string()
