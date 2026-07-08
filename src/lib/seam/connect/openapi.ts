@@ -15516,17 +15516,17 @@ const openapi: OpenAPISpec = {
                           properties: {
                             display_name: {
                               description:
-                                'Label for this option. For a single-option device, the product name (for example, `algoPIN` or `SmartPIN`); for a multi-option device, a label that distinguishes it (for example, `Hourly` or `Fixed check-in times`).',
+                                'Label for this option. For a single-option device, the product name (for example, `algoPIN` or `SmartPIN`); for a multi-option device, a label that distinguishes it (for example, `Hourly` or `Fixed start times`).',
                               type: 'string',
                             },
                             end_date_recurrence_rule: {
                               description:
-                                'iCalendar recurrence rule (RRULE) that the check-out date must fall on. Constrains which calendar dates are selectable, independent of the time-of-day rules.',
+                                'iCalendar recurrence rule (RRULE) that the end date must fall on. Constrains which calendar dates are selectable, independent of the time-of-day rules.',
                               type: 'string',
                             },
                             matching_start_end_time: {
                               description:
-                                'When `true`, the check-in and check-out must fall at the same time of day (the caller picks which). Mutually exclusive with `time_pairs`.',
+                                'When `true`, the start and end must fall at the same time of day (the caller picks which). Mutually exclusive with `time_pairs`.',
                               enum: [true],
                               type: 'boolean',
                             },
@@ -15542,36 +15542,36 @@ const openapi: OpenAPISpec = {
                             },
                             start_date_recurrence_rule: {
                               description:
-                                'iCalendar recurrence rule (RRULE) that the check-in date must fall on (for example, `FREQ=MONTHLY;BYDAY=1MO,3MO`). Constrains which calendar dates are selectable, independent of the time-of-day rules.',
+                                'iCalendar recurrence rule (RRULE) that the start date must fall on (for example, `FREQ=MONTHLY;BYDAY=1MO,3MO`). Constrains which calendar dates are selectable, independent of the time-of-day rules.',
                               type: 'string',
                             },
                             time_pairs: {
                               description:
-                                'Fixed check-in/check-out time pairings the caller chooses from. Mutually exclusive with `matching_start_end_time`.',
+                                'Fixed start/end time pairings the caller chooses from. Mutually exclusive with `matching_start_end_time`.',
                               items: {
                                 description:
-                                  'Fixed check-in/check-out time pairing. The caller picks one whole pairing; the two times cannot be mixed across pairs.',
+                                  'Fixed start/end time pairing. The caller picks one whole pairing; the two times cannot be mixed across pairs.',
                                 properties: {
-                                  check_in_time: {
-                                    description:
-                                      "Check-in time of day as a 24-hour `HH:MM` value, interpreted in the option's `time_zone`.",
-                                    type: 'string',
-                                  },
-                                  check_out_time: {
-                                    description:
-                                      "Check-out time of day as a 24-hour `HH:MM` value, interpreted in the option's `time_zone`. A `check_out_time` earlier on the clock than `check_in_time` means check-out falls on a later date.",
-                                    type: 'string',
-                                  },
                                   display_name: {
                                     description:
-                                      'Label for the check-in/check-out time pairing.',
+                                      'Label for the start/end time pairing.',
+                                    type: 'string',
+                                  },
+                                  end_time: {
+                                    description:
+                                      "End time of day as a 24-hour `HH:MM` value, interpreted in the option's `time_zone`. An `end_time` earlier on the clock than `start_time` means the end falls on a later date.",
+                                    type: 'string',
+                                  },
+                                  start_time: {
+                                    description:
+                                      "Start time of day as a 24-hour `HH:MM` value, interpreted in the option's `time_zone`.",
                                     type: 'string',
                                   },
                                 },
                                 required: [
                                   'display_name',
-                                  'check_in_time',
-                                  'check_out_time',
+                                  'start_time',
+                                  'end_time',
                                 ],
                                 type: 'object',
                               },
@@ -15598,17 +15598,17 @@ const openapi: OpenAPISpec = {
                           properties: {
                             display_name: {
                               description:
-                                'Label for this option. For a single-option device, the product name (for example, `algoPIN` or `SmartPIN`); for a multi-option device, a label that distinguishes it (for example, `Hourly` or `Fixed check-in times`).',
+                                'Label for this option. For a single-option device, the product name (for example, `algoPIN` or `SmartPIN`); for a multi-option device, a label that distinguishes it (for example, `Hourly` or `Fixed start times`).',
                               type: 'string',
                             },
                             end_date_recurrence_rule: {
                               description:
-                                'iCalendar recurrence rule (RRULE) that the check-out date must fall on. Constrains which calendar dates are selectable, independent of the time-of-day rules.',
+                                'iCalendar recurrence rule (RRULE) that the end date must fall on. Constrains which calendar dates are selectable, independent of the time-of-day rules.',
                               type: 'string',
                             },
                             matching_start_end_time: {
                               description:
-                                'When `true`, the check-in and check-out must fall at the same time of day (the caller picks which). Mutually exclusive with `time_pairs`.',
+                                'When `true`, the start and end must fall at the same time of day (the caller picks which). Mutually exclusive with `time_pairs`.',
                               enum: [true],
                               type: 'boolean',
                             },
@@ -15624,36 +15624,36 @@ const openapi: OpenAPISpec = {
                             },
                             start_date_recurrence_rule: {
                               description:
-                                'iCalendar recurrence rule (RRULE) that the check-in date must fall on (for example, `FREQ=MONTHLY;BYDAY=1MO,3MO`). Constrains which calendar dates are selectable, independent of the time-of-day rules.',
+                                'iCalendar recurrence rule (RRULE) that the start date must fall on (for example, `FREQ=MONTHLY;BYDAY=1MO,3MO`). Constrains which calendar dates are selectable, independent of the time-of-day rules.',
                               type: 'string',
                             },
                             time_pairs: {
                               description:
-                                'Fixed check-in/check-out time pairings the caller chooses from. Mutually exclusive with `matching_start_end_time`.',
+                                'Fixed start/end time pairings the caller chooses from. Mutually exclusive with `matching_start_end_time`.',
                               items: {
                                 description:
-                                  'Fixed check-in/check-out time pairing. The caller picks one whole pairing; the two times cannot be mixed across pairs.',
+                                  'Fixed start/end time pairing. The caller picks one whole pairing; the two times cannot be mixed across pairs.',
                                 properties: {
-                                  check_in_time: {
-                                    description:
-                                      "Check-in time of day as a 24-hour `HH:MM` value, interpreted in the option's `time_zone`.",
-                                    type: 'string',
-                                  },
-                                  check_out_time: {
-                                    description:
-                                      "Check-out time of day as a 24-hour `HH:MM` value, interpreted in the option's `time_zone`. A `check_out_time` earlier on the clock than `check_in_time` means check-out falls on a later date.",
-                                    type: 'string',
-                                  },
                                   display_name: {
                                     description:
-                                      'Label for the check-in/check-out time pairing.',
+                                      'Label for the start/end time pairing.',
+                                    type: 'string',
+                                  },
+                                  end_time: {
+                                    description:
+                                      "End time of day as a 24-hour `HH:MM` value, interpreted in the option's `time_zone`. An `end_time` earlier on the clock than `start_time` means the end falls on a later date.",
+                                    type: 'string',
+                                  },
+                                  start_time: {
+                                    description:
+                                      "Start time of day as a 24-hour `HH:MM` value, interpreted in the option's `time_zone`.",
                                     type: 'string',
                                   },
                                 },
                                 required: [
                                   'display_name',
-                                  'check_in_time',
-                                  'check_out_time',
+                                  'start_time',
+                                  'end_time',
                                 ],
                                 type: 'object',
                               },
