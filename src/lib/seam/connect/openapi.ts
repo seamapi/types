@@ -25336,6 +25336,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              code: {
+                description:
+                  '\n      Code (PIN) that was used to lock the device, if known. Taken from the matched managed or unmanaged access code, or from the code reported by the provider when no access code matched.\n    ',
+                type: 'string',
+              },
               connected_account_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -25456,6 +25461,11 @@ const openapi: OpenAPISpec = {
                 description:
                   'ID of the Seam action attempt that triggered this unlock. Present only when the unlock was initiated through Seam (via an `UNLOCK_DOOR` action attempt).',
                 format: 'uuid',
+                type: 'string',
+              },
+              code: {
+                description:
+                  '\n      Code (PIN) that was used to unlock the affected device, if known. Taken from the matched managed or unmanaged access code, or from the code reported by the provider when no access code matched.\n    ',
                 type: 'string',
               },
               connected_account_custom_metadata: {
