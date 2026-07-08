@@ -62,7 +62,7 @@ const seam_bridge_disconnected = common_acs_system_error.extend({
     ---
     Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
     This error might also occur if Seam Bridge is connected to the wrong [workspace](https://docs.seam.co/core-concepts/workspaces).
-    See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+    See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).
     `)
 
 const bridge_disconnected = common_acs_system_error.extend({
@@ -78,7 +78,7 @@ const bridge_disconnected = common_acs_system_error.extend({
     resource_type: acs_system
     ---
     Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
-    See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+    See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).
     `)
 
 const visionline_instance_unreachable = common_acs_system_error.extend({
@@ -91,7 +91,7 @@ const visionline_instance_unreachable = common_acs_system_error.extend({
     ---
     Indicates that [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://docs.seam.co/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).
     For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](https://docs.seam.co/core-concepts/workspaces).
-    See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
+    See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-visionline_instance_unreachable).
     `)
 
 const salto_ks_subscription_limit_exceeded = common_acs_system_error.extend({
@@ -394,7 +394,7 @@ export const acs_system = z
     ---
     Represents an [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
-    Within an \`acs_system\`, create [\`acs_user\`s](https://docs.seam.co/api/acs/users#acs_user) and [\`acs_credential\`s](https://docs.seam.co/api/acs/credentials#acs_credential) to grant access to the \`acs_user\`s.
+    Within an \`acs_system\`, create [\`acs_user\`s](https://docs.seam.co/api/acs/users/object) and [\`acs_credential\`s](https://docs.seam.co/api/acs/credentials/object) to grant access to the \`acs_user\`s.
 
     For details about the resources associated with an access control system, see the [access control systems namespace](https://docs.seam.co/api/acs).
   `)
