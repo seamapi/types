@@ -1482,7 +1482,7 @@ const openapi: OpenAPISpec = {
               oneOf: [
                 {
                   description:
-                    'Indicates a provider-specific issue that may affect the access code. Check the warning message for details.',
+                    "The access code's PIN rotates periodically when the code is renewed. Retrieve the latest code before each use.",
                   properties: {
                     created_at: {
                       description:
@@ -1498,7 +1498,7 @@ const openapi: OpenAPISpec = {
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['provider_issue'],
+                      enum: ['code_rotates_periodically'],
                       type: 'string',
                     },
                   },
@@ -30005,7 +30005,7 @@ const openapi: OpenAPISpec = {
               oneOf: [
                 {
                   description:
-                    'Indicates a provider-specific issue that may affect the access code. Check the warning message for details.',
+                    "The access code's PIN rotates periodically when the code is renewed. Retrieve the latest code before each use.",
                   properties: {
                     created_at: {
                       description:
@@ -30021,7 +30021,7 @@ const openapi: OpenAPISpec = {
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['provider_issue'],
+                      enum: ['code_rotates_periodically'],
                       type: 'string',
                     },
                   },

@@ -268,14 +268,14 @@ const code_modified_external_to_seam_warning = common_access_code_warning
     'Code was modified or removed externally after Seam successfully set it on the device.',
   )
 
-const provider_issue_warning = common_access_code_warning
+const code_rotates_periodically = common_access_code_warning
   .extend({
     warning_code: z
-      .literal('provider_issue')
+      .literal('code_rotates_periodically')
       .describe(warning_code_description),
   })
   .describe(
-    'Indicates a provider-specific issue that may affect the access code. Check the warning message for details.',
+    "The access code's PIN rotates periodically when the code is renewed. Retrieve the latest code before each use.",
   )
 
 const schlage_access_code_ambiguous_timezone_dst_risk =
@@ -349,7 +349,7 @@ const being_deleted = common_access_code_warning
 
 const access_code_warning = z
   .discriminatedUnion('warning_code', [
-    provider_issue_warning,
+    code_rotates_periodically,
     schlage_access_code_ambiguous_timezone_dst_risk,
     code_modified_external_to_seam_warning,
     delay_in_setting_on_device,
@@ -367,7 +367,7 @@ const access_code_warning = z
 export type AccessCodeWarning = z.infer<typeof access_code_warning>
 
 const _access_code_warning_map = z.object({
-  provider_issue: provider_issue_warning.optional().nullable(),
+  code_rotates_periodically: code_rotates_periodically.optional().nullable(),
   schlage_access_code_ambiguous_timezone_dst_risk:
     schlage_access_code_ambiguous_timezone_dst_risk.optional().nullable(),
   code_modified_external_to_seam_warning: code_modified_external_to_seam_warning
