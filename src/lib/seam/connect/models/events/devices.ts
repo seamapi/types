@@ -415,6 +415,9 @@ export const lock_locked_event = device_event.extend({
     .uuid()
     .optional()
     .describe('ID of the access code that was used to lock the device.'),
+  code: z.string().optional().describe(`
+      Code (PIN) that was used to lock the device, if known. Taken from the matched managed or unmanaged access code, or from the code reported by the provider when no access code matched.
+    `),
   access_code_is_managed: z
     .boolean()
     .optional()
@@ -455,6 +458,9 @@ export const lock_unlocked_event = device_event.extend({
     .describe(
       'ID of the access code that was used to unlock the affected device.',
     ),
+  code: z.string().optional().describe(`
+      Code (PIN) that was used to unlock the affected device, if known. Taken from the matched managed or unmanaged access code, or from the code reported by the provider when no access code matched.
+    `),
   access_code_is_managed: z
     .boolean()
     .optional()
