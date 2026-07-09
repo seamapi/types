@@ -637,6 +637,10 @@ export const device_metadata = z
       .object({
         lock_id: z.number().describe(`Lock ID for an Omnitec device.`),
         lock_name: z.string().describe(`Lock name for an Omnitec device.`),
+        lock_alias: z
+          .string()
+          .optional()
+          .describe(`Operator-assigned alias for an Omnitec device.`),
         lock_mac: z
           .string()
           .describe(`Bluetooth MAC address for an Omnitec device.`),
