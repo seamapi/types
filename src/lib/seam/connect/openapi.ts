@@ -14893,6 +14893,11 @@ const openapi: OpenAPISpec = {
                               'Whether the Omnitec lock has a connected gateway for remote operations.',
                             type: 'boolean',
                           },
+                          lock_alias: {
+                            description:
+                              'Operator-assigned alias for an Omnitec device.',
+                            type: 'string',
+                          },
                           lock_id: {
                             description: 'Lock ID for an Omnitec device.',
                             format: 'float',
