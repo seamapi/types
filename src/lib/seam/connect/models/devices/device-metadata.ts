@@ -797,6 +797,21 @@ export const device_metadata = z
       })
       .partial()
       .describe(`Metadata for a Korelock device.`),
+
+    kisi_metadata: z
+      .object({
+        lock_id: z.number().describe(`Lock ID for a Kisi device.`),
+        lock_name: z.string().describe(`Lock name for a Kisi device.`),
+        place_name: z
+          .string()
+          .nullable()
+          .describe(`Place name for a Kisi device.`),
+        description: z
+          .string()
+          .nullable()
+          .describe(`Description for a Kisi device.`),
+      })
+      .describe(`Metadata for a Kisi device.`),
   })
   .partial().describe(`
           ---

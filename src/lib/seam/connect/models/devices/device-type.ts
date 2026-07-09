@@ -30,6 +30,7 @@ export const LOCK_DEVICE_TYPE = {
   ULTRALOQ_LOCK: 'ultraloq_lock',
   KEYINCODE_LOCK: 'keyincode_lock',
   OMNITEC_LOCK: 'omnitec_lock',
+  KISI_LOCK: 'kisi_lock',
 } as const
 
 type LockDeviceTypeFromMapping =

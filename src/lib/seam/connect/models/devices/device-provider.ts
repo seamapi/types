@@ -64,6 +64,7 @@ export const DEVICE_PROVIDERS = {
   GUESTY: 'guesty',
   ACUITY_SCHEDULING: 'acuity_scheduling',
   OMNITEC: 'omnitec',
+  KISI: 'kisi',
 } as const
 
 export type DeviceProviderName =
@@ -142,7 +143,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'thirty_three_lock',
   ],
 
-  beta: [],
+  beta: ['kisi'],
 
   thermostats: ['ecobee', 'nest', 'sensi', 'honeywell_resideo', 'first_alert'],
   noise_sensors: ['minut', 'noiseaware'],
