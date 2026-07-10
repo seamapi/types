@@ -15456,6 +15456,12 @@ const openapi: OpenAPISpec = {
                         type: 'boolean',
                         'x-property-group-key': 'locks',
                       },
+                      backup_access_code_pool_enabled: {
+                        description:
+                          'Indicates whether the [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) is currently enabled for the device. To disable it, set this to `false` using [/devices/update](https://docs.seam.co/api/devices/update).',
+                        type: 'boolean',
+                        'x-property-group-key': 'access_codes',
+                      },
                       code_constraints: {
                         description:
                           'Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific.',
@@ -60555,6 +60561,11 @@ const openapi: OpenAPISpec = {
             'application/json': {
               schema: {
                 properties: {
+                  backup_access_code_pool_enabled: {
+                    description:
+                      "Indicates whether the device's [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) is enabled. Set to `false` to disable the pool: Seam stops refilling it and removes any backup codes that have not yet been pulled into active use.",
+                    type: 'boolean',
+                  },
                   custom_metadata: {
                     additionalProperties: {
                       nullable: true,
@@ -60639,6 +60650,11 @@ const openapi: OpenAPISpec = {
             'application/json': {
               schema: {
                 properties: {
+                  backup_access_code_pool_enabled: {
+                    description:
+                      "Indicates whether the device's [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) is enabled. Set to `false` to disable the pool: Seam stops refilling it and removes any backup codes that have not yet been pulled into active use.",
+                    type: 'boolean',
+                  },
                   custom_metadata: {
                     additionalProperties: {
                       nullable: true,
