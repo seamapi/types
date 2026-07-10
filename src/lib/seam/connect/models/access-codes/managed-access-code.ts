@@ -133,17 +133,6 @@ const no_space_for_access_code_on_device = common_access_code_error.extend({
     No space for access code on device.
     `)
 
-const access_code_state_unconfirmed = common_access_code_error.extend({
-  error_code: z
-    .literal('access_code_state_unconfirmed')
-    .describe(error_code_description),
-}).describe(`
-    ---
-    resource_type: access_code
-    ---
-    Indicates that the provider cannot confirm whether the access code was set or removed on the device.
-    `)
-
 const insufficient_permissions = common_access_code_error.extend({
   error_code: z
     .literal('insufficient_permissions')
@@ -190,7 +179,6 @@ const access_code_error = z
     duplicate_code_on_device,
     duplicate_code_attempt_prevented,
     no_space_for_access_code_on_device,
-    access_code_state_unconfirmed,
     code_modified_external_to_seam_error,
     access_code_inactive_error,
     salto_ks_user_not_subscribed,
@@ -213,9 +201,6 @@ const _access_code_error_map = z.object({
     .nullable(),
   duplicate_code_on_device: duplicate_code_on_device.optional().nullable(),
   duplicate_code_attempt_prevented: duplicate_code_attempt_prevented
-    .optional()
-    .nullable(),
-  access_code_state_unconfirmed: access_code_state_unconfirmed
     .optional()
     .nullable(),
   insufficient_permissions: insufficient_permissions.optional().nullable(),
