@@ -65796,6 +65796,596 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Internal endpoint for Console',
       },
     },
+    '/seam/console/v1/lynx_migration/get_property_migration_status': {
+      get: {
+        description:
+          'Returns the most recent Lynx cutover run for a property (space), including a\nrollup of its per-reservation child runs by status. Returns a null run when the\nproperty has never been migrated.',
+        operationId: 'seamConsoleV1LynxMigrationGetPropertyMigrationStatusGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'space_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the space (property) to get the migration status for.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    lynx_migration_property_run: {
+                      nullable: true,
+                      properties: {
+                        child_status_counts: {
+                          additionalProperties: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          type: 'object',
+                        },
+                        created_at: { type: 'string' },
+                        lynx_migration_property_run_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        space_id: { format: 'uuid', type: 'string' },
+                        status: { type: 'string' },
+                        updated_at: { type: 'string' },
+                      },
+                      required: [
+                        'lynx_migration_property_run_id',
+                        'space_id',
+                        'status',
+                        'created_at',
+                        'updated_at',
+                        'child_status_counts',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['lynx_migration_property_run', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary:
+          '/seam/console/v1/lynx_migration/get_property_migration_status',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'lynx_migration'],
+        'x-fern-sdk-method-name': 'get_property_migration_status',
+        'x-fern-sdk-return-value': 'lynx_migration_property_run',
+        'x-response-key': 'lynx_migration_property_run',
+        'x-title': 'Get Lynx Migration Property Status',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+      post: {
+        description:
+          'Returns the most recent Lynx cutover run for a property (space), including a\nrollup of its per-reservation child runs by status. Returns a null run when the\nproperty has never been migrated.',
+        operationId: 'seamConsoleV1LynxMigrationGetPropertyMigrationStatusPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  space_id: {
+                    description:
+                      'ID of the space (property) to get the migration status for.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['space_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    lynx_migration_property_run: {
+                      nullable: true,
+                      properties: {
+                        child_status_counts: {
+                          additionalProperties: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          type: 'object',
+                        },
+                        created_at: { type: 'string' },
+                        lynx_migration_property_run_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        space_id: { format: 'uuid', type: 'string' },
+                        status: { type: 'string' },
+                        updated_at: { type: 'string' },
+                      },
+                      required: [
+                        'lynx_migration_property_run_id',
+                        'space_id',
+                        'status',
+                        'created_at',
+                        'updated_at',
+                        'child_status_counts',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['lynx_migration_property_run', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary:
+          '/seam/console/v1/lynx_migration/get_property_migration_status',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'lynx_migration'],
+        'x-fern-sdk-method-name': 'get_property_migration_status',
+        'x-fern-sdk-return-value': 'lynx_migration_property_run',
+        'x-response-key': 'lynx_migration_property_run',
+        'x-title': 'Get Lynx Migration Property Status',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/lynx_migration/get_reservation_migration_status': {
+      get: {
+        description:
+          'Returns the most recent per-reservation Lynx cutover run for an access grant.\nReturns a null run when the reservation has never been migrated. Keyed by\naccess_grant_id — a successful cutover deletes the access grant, but the run\nrecord outlives it, so status remains available after the migration completes.',
+        operationId:
+          'seamConsoleV1LynxMigrationGetReservationMigrationStatusGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'access_grant_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the access grant (reservation) to get the migration status for.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    lynx_migration_reservation_run: {
+                      nullable: true,
+                      properties: {
+                        access_grant_id: { format: 'uuid', type: 'string' },
+                        created_at: { type: 'string' },
+                        lynx_migration_run_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        status: { type: 'string' },
+                        updated_at: { type: 'string' },
+                      },
+                      required: [
+                        'lynx_migration_run_id',
+                        'access_grant_id',
+                        'status',
+                        'created_at',
+                        'updated_at',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['lynx_migration_reservation_run', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary:
+          '/seam/console/v1/lynx_migration/get_reservation_migration_status',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'lynx_migration'],
+        'x-fern-sdk-method-name': 'get_reservation_migration_status',
+        'x-fern-sdk-return-value': 'lynx_migration_reservation_run',
+        'x-response-key': 'lynx_migration_reservation_run',
+        'x-title': 'Get Lynx Migration Reservation Status',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+      post: {
+        description:
+          'Returns the most recent per-reservation Lynx cutover run for an access grant.\nReturns a null run when the reservation has never been migrated. Keyed by\naccess_grant_id — a successful cutover deletes the access grant, but the run\nrecord outlives it, so status remains available after the migration completes.',
+        operationId:
+          'seamConsoleV1LynxMigrationGetReservationMigrationStatusPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_grant_id: {
+                    description:
+                      'ID of the access grant (reservation) to get the migration status for.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['access_grant_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    lynx_migration_reservation_run: {
+                      nullable: true,
+                      properties: {
+                        access_grant_id: { format: 'uuid', type: 'string' },
+                        created_at: { type: 'string' },
+                        lynx_migration_run_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        status: { type: 'string' },
+                        updated_at: { type: 'string' },
+                      },
+                      required: [
+                        'lynx_migration_run_id',
+                        'access_grant_id',
+                        'status',
+                        'created_at',
+                        'updated_at',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['lynx_migration_reservation_run', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary:
+          '/seam/console/v1/lynx_migration/get_reservation_migration_status',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'lynx_migration'],
+        'x-fern-sdk-method-name': 'get_reservation_migration_status',
+        'x-fern-sdk-return-value': 'lynx_migration_reservation_run',
+        'x-response-key': 'lynx_migration_reservation_run',
+        'x-title': 'Get Lynx Migration Reservation Status',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/lynx_migration/list_property_reservations': {
+      get: {
+        description:
+          'Lists the reservations in a property (space) and classifies each for a Lynx\ncutover: which are eligible to migrate to Seam-managed access, and which are\nskipped (with a reason). Read-only — does not start a migration.',
+        operationId: 'seamConsoleV1LynxMigrationListPropertyReservationsGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'space_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the space (property) to plan a Lynx migration for.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    lynx_migration_property_plan: {
+                      properties: {
+                        eligible: {
+                          items: {
+                            properties: {
+                              access_grant_id: {
+                                format: 'uuid',
+                                type: 'string',
+                              },
+                              guest_name: { nullable: true, type: 'string' },
+                            },
+                            required: ['access_grant_id', 'guest_name'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                        eligible_count: { format: 'float', type: 'number' },
+                        skipped: {
+                          items: {
+                            properties: {
+                              access_grant_id: {
+                                format: 'uuid',
+                                type: 'string',
+                              },
+                              guest_name: { nullable: true, type: 'string' },
+                              reason: { nullable: true, type: 'string' },
+                            },
+                            required: [
+                              'access_grant_id',
+                              'guest_name',
+                              'reason',
+                            ],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                        space_id: { format: 'uuid', type: 'string' },
+                        total: { format: 'float', type: 'number' },
+                      },
+                      required: [
+                        'space_id',
+                        'total',
+                        'eligible_count',
+                        'eligible',
+                        'skipped',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['lynx_migration_property_plan', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/seam/console/v1/lynx_migration/list_property_reservations',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'lynx_migration'],
+        'x-fern-sdk-method-name': 'list_property_reservations',
+        'x-fern-sdk-return-value': 'lynx_migration_property_plan',
+        'x-response-key': 'lynx_migration_property_plan',
+        'x-title': 'List Lynx Migration Property Reservations',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+      post: {
+        description:
+          'Lists the reservations in a property (space) and classifies each for a Lynx\ncutover: which are eligible to migrate to Seam-managed access, and which are\nskipped (with a reason). Read-only — does not start a migration.',
+        operationId: 'seamConsoleV1LynxMigrationListPropertyReservationsPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  space_id: {
+                    description:
+                      'ID of the space (property) to plan a Lynx migration for.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['space_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    lynx_migration_property_plan: {
+                      properties: {
+                        eligible: {
+                          items: {
+                            properties: {
+                              access_grant_id: {
+                                format: 'uuid',
+                                type: 'string',
+                              },
+                              guest_name: { nullable: true, type: 'string' },
+                            },
+                            required: ['access_grant_id', 'guest_name'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                        eligible_count: { format: 'float', type: 'number' },
+                        skipped: {
+                          items: {
+                            properties: {
+                              access_grant_id: {
+                                format: 'uuid',
+                                type: 'string',
+                              },
+                              guest_name: { nullable: true, type: 'string' },
+                              reason: { nullable: true, type: 'string' },
+                            },
+                            required: [
+                              'access_grant_id',
+                              'guest_name',
+                              'reason',
+                            ],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                        space_id: { format: 'uuid', type: 'string' },
+                        total: { format: 'float', type: 'number' },
+                      },
+                      required: [
+                        'space_id',
+                        'total',
+                        'eligible_count',
+                        'eligible',
+                        'skipped',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['lynx_migration_property_plan', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/seam/console/v1/lynx_migration/list_property_reservations',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'lynx_migration'],
+        'x-fern-sdk-method-name': 'list_property_reservations',
+        'x-fern-sdk-return-value': 'lynx_migration_property_plan',
+        'x-response-key': 'lynx_migration_property_plan',
+        'x-title': 'List Lynx Migration Property Reservations',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/lynx_migration/migrate_property': {
+      post: {
+        description:
+          'Starts a Lynx cutover for a property (space): schedules a background task that\nplans the eligible reservations and migrates them to Seam-managed access a\nbounded number at a time. Idempotent — if a migration is already running for\nthe property, returns that run with `already_running: true`. Poll\n`/seam/console/v1/lynx_migration/get_property_migration_status` for progress.',
+        operationId: 'seamConsoleV1LynxMigrationMigratePropertyPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  space_id: {
+                    description: 'ID of the space (property) to migrate.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['space_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    lynx_migration_property_run: {
+                      properties: {
+                        already_running: { type: 'boolean' },
+                        lynx_migration_property_run_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        space_id: { format: 'uuid', type: 'string' },
+                        status: { type: 'string' },
+                      },
+                      required: [
+                        'lynx_migration_property_run_id',
+                        'space_id',
+                        'status',
+                        'already_running',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['lynx_migration_property_run', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/seam/console/v1/lynx_migration/migrate_property',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'lynx_migration'],
+        'x-fern-sdk-method-name': 'migrate_property',
+        'x-fern-sdk-return-value': 'lynx_migration_property_run',
+        'x-response-key': 'lynx_migration_property_run',
+        'x-title': 'Migrate a Property to Seam-Managed Access',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
     '/seam/console/v1/sites/create': {
       post: {
         description:
