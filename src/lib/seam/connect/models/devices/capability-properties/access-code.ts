@@ -153,6 +153,11 @@ export const access_code_capability_properties = z.object({
           property_group_key: access_codes
           ---
           Indicates whether the device supports a [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes).`),
+  backup_access_code_pool_enabled: z.boolean().optional().describe(`
+          ---
+          property_group_key: access_codes
+          ---
+          Indicates whether the [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) is currently enabled for the device. To disable it, set this to \`false\` using [/devices/update](https://docs.seam.co/api/devices/update).`),
   has_native_entry_events: z.boolean().optional().describe(`
           ---
           property_group_key: access_codes
