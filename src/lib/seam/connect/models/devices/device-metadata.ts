@@ -654,6 +654,13 @@ export const device_metadata = z
           .describe(
             `Static UTC offset of the Omnitec lock in milliseconds. Does not account for DST.`,
           ),
+        time_zone: z
+          .string()
+          .nullable()
+          .optional()
+          .describe(
+            `IANA time zone for the Omnitec device, used to schedule time-bound access codes at the correct local time (accounting for DST).`,
+          ),
       })
       .describe(`Metadata for an Omnitec device.`),
 

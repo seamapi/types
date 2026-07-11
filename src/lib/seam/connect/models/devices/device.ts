@@ -567,6 +567,28 @@ const ultraloq_time_zone_unknown = common_device_warning.extend({
     Indicates that Seam does not know the time zone of the Ultraloq device. Set a time zone to enable time-bound access codes.
     `)
 
+const time_zone_unknown = common_device_warning.extend({
+  warning_code: z
+    .literal('time_zone_unknown')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: locks
+    ---
+    Indicates that Seam does not know the device's time zone. Set a time zone to enable time-bound access codes.
+    `)
+
+const time_zone_mismatch = common_device_warning.extend({
+  warning_code: z
+    .literal('time_zone_mismatch')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: locks
+    ---
+    Indicates that the device's configured time zone does not match its hardware UTC offset. Time-bound access codes may activate at the wrong local time.
+    `)
+
 const two_n_device_missing_timezone = common_device_warning.extend({
   warning_code: z
     .literal('two_n_device_missing_timezone')
@@ -693,6 +715,8 @@ const device_warning = z.discriminatedUnion('warning_code', [
   unknown_issue_with_phone,
   lockly_time_zone_not_configured,
   ultraloq_time_zone_unknown,
+  time_zone_unknown,
+  time_zone_mismatch,
   two_n_device_missing_timezone,
   hub_required_for_additional_capabilities,
   provider_issue,
@@ -747,6 +771,8 @@ export const device_warning_map = z.object({
     .optional()
     .nullable(),
   ultraloq_time_zone_unknown: ultraloq_time_zone_unknown.optional().nullable(),
+  time_zone_unknown: time_zone_unknown.optional().nullable(),
+  time_zone_mismatch: time_zone_mismatch.optional().nullable(),
   two_n_device_missing_timezone: two_n_device_missing_timezone
     .optional()
     .nullable(),

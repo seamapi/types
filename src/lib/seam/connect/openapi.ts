@@ -14889,6 +14889,12 @@ const openapi: OpenAPISpec = {
                             description: 'Lock name for an Omnitec device.',
                             type: 'string',
                           },
+                          time_zone: {
+                            description:
+                              'IANA time zone for the Omnitec device, used to schedule time-bound access codes at the correct local time (accounting for DST).',
+                            nullable: true,
+                            type: 'string',
+                          },
                           timezone_raw_offset_ms: {
                             description:
                               'Static UTC offset of the Omnitec lock in milliseconds. Does not account for DST.',
@@ -17079,6 +17085,58 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['ultraloq_time_zone_unknown'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    "Indicates that Seam does not know the device's time zone. Set a time zone to enable time-bound access codes.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['time_zone_unknown'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    "Indicates that the device's configured time zone does not match its hardware UTC offset. Time-bound access codes may activate at the wrong local time.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['time_zone_mismatch'],
                       type: 'string',
                     },
                   },
@@ -33693,6 +33751,58 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['ultraloq_time_zone_unknown'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    "Indicates that Seam does not know the device's time zone. Set a time zone to enable time-bound access codes.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['time_zone_unknown'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    "Indicates that the device's configured time zone does not match its hardware UTC offset. Time-bound access codes may activate at the wrong local time.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['time_zone_mismatch'],
                       type: 'string',
                     },
                   },
