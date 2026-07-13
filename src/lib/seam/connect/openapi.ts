@@ -1442,7 +1442,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    "The Schlage device's timezone is ambiguous and this code's schedule crosses a daylight-saving transition in at least one plausible timezone. A 1-hour safety buffer has been applied to the side of the schedule affected by the transition (`ends_at` for spring-forward, `starts_at` for fall-back) so the code stays active through the shift — the code may be usable up to 1 hour beyond your requested window. Set the device's timezone via `/devices/report_provider_metadata` to clear the buffer and guarantee exact DST handling.",
+                    "The device's time zone is unknown and this code's time frame crosses a daylight-saving transition in at least one plausible time zone. A 1-hour safety buffer has been applied to the side of the time frame affected by the transition (`ends_at` for spring-forward, `starts_at` for fall-back) so the code stays active through the shift — the code may be usable up to 1 hour beyond your requested window. Set the device's time zone via `/devices/report_provider_metadata` to clear the buffer and guarantee exact handling.",
                   properties: {
                     created_at: {
                       description:
@@ -1458,7 +1458,7 @@ const openapi: OpenAPISpec = {
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['schlage_access_code_ambiguous_timezone_dst_risk'],
+                      enum: ['time_frame_adjusted_for_unknown_time_zone'],
                       type: 'string',
                     },
                   },
@@ -30022,7 +30022,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    "The Schlage device's timezone is ambiguous and this code's schedule crosses a daylight-saving transition in at least one plausible timezone. A 1-hour safety buffer has been applied to the side of the schedule affected by the transition (`ends_at` for spring-forward, `starts_at` for fall-back) so the code stays active through the shift — the code may be usable up to 1 hour beyond your requested window. Set the device's timezone via `/devices/report_provider_metadata` to clear the buffer and guarantee exact DST handling.",
+                    "The device's time zone is unknown and this code's time frame crosses a daylight-saving transition in at least one plausible time zone. A 1-hour safety buffer has been applied to the side of the time frame affected by the transition (`ends_at` for spring-forward, `starts_at` for fall-back) so the code stays active through the shift — the code may be usable up to 1 hour beyond your requested window. Set the device's time zone via `/devices/report_provider_metadata` to clear the buffer and guarantee exact handling.",
                   properties: {
                     created_at: {
                       description:
@@ -30038,7 +30038,7 @@ const openapi: OpenAPISpec = {
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['schlage_access_code_ambiguous_timezone_dst_risk'],
+                      enum: ['time_frame_adjusted_for_unknown_time_zone'],
                       type: 'string',
                     },
                   },
