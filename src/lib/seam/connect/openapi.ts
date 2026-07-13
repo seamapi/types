@@ -401,39 +401,6 @@ const openapi: OpenAPISpec = {
                   'x-resource-type': 'access_code',
                 },
                 {
-                  deprecated: true,
-                  description: 'Salto site user is not subscribed.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['salto_ks_user_not_subscribed'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated': 'Use `access_code_inactive` instead.',
-                  'x-resource-type': 'access_code',
-                },
-                {
                   description:
                     'Admin role required—insufficient permissions to manage PINs on this device. Please have an admin update your role, or ask them to set the PIN.',
                   properties: {
@@ -29322,39 +29289,6 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
-                  'x-resource-type': 'access_code',
-                },
-                {
-                  deprecated: true,
-                  description: 'Salto site user is not subscribed.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['salto_ks_user_not_subscribed'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-deprecated': 'Use `access_code_inactive` instead.',
                   'x-resource-type': 'access_code',
                 },
                 {
