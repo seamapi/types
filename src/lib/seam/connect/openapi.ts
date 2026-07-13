@@ -66010,7 +66010,7 @@ const openapi: OpenAPISpec = {
     '/seam/console/v1/lynx_migration/get_reservation_migration_status': {
       get: {
         description:
-          'Returns the most recent per-reservation Lynx cutover run for an access grant.\nReturns a null run when the reservation has never been migrated. Keyed by\naccess_grant_id — a successful cutover deletes the access grant, but the run\nrecord outlives it, so status remains available after the migration completes.',
+          'Returns the most recent per-reservation Lynx cutover run for an access grant.\nReturns a null run when the reservation has never been migrated. Keyed by\naccess_grant_id — a successful cutover deletes the access grant, but the run\nrecord outlives it, so status remains available after the migration completes.\n\nIncludes the codes the cutover deleted (snapshotted before deletion, so the\nhistory survives the hard-delete) and each connected-account sync it requested.',
         operationId:
           'seamConsoleV1LynxMigrationGetReservationMigrationStatusGet',
         parameters: [
@@ -66036,7 +66036,57 @@ const openapi: OpenAPISpec = {
                       nullable: true,
                       properties: {
                         access_grant_id: { format: 'uuid', type: 'string' },
+                        account_sync_requests: {
+                          items: {
+                            properties: {
+                              at: { type: 'string' },
+                              connected_account_ids: {
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
+                              phase: { type: 'string' },
+                            },
+                            required: ['at', 'phase', 'connected_account_ids'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         created_at: { type: 'string' },
+                        deleted_codes: {
+                          items: {
+                            properties: {
+                              access_code_id: {
+                                format: 'uuid',
+                                type: 'string',
+                              },
+                              code: { nullable: true, type: 'string' },
+                              device_id: {
+                                format: 'uuid',
+                                nullable: true,
+                                type: 'string',
+                              },
+                              ends_at: { nullable: true, type: 'string' },
+                              is_managed: { type: 'boolean' },
+                              name: { nullable: true, type: 'string' },
+                              origin: { type: 'string' },
+                              starts_at: { nullable: true, type: 'string' },
+                              type: { nullable: true, type: 'string' },
+                            },
+                            required: [
+                              'access_code_id',
+                              'code',
+                              'name',
+                              'is_managed',
+                              'device_id',
+                              'type',
+                              'starts_at',
+                              'ends_at',
+                              'origin',
+                            ],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         lynx_migration_run_id: {
                           format: 'uuid',
                           type: 'string',
@@ -66050,6 +66100,8 @@ const openapi: OpenAPISpec = {
                         'status',
                         'created_at',
                         'updated_at',
+                        'deleted_codes',
+                        'account_sync_requests',
                       ],
                       type: 'object',
                     },
@@ -66082,7 +66134,7 @@ const openapi: OpenAPISpec = {
       },
       post: {
         description:
-          'Returns the most recent per-reservation Lynx cutover run for an access grant.\nReturns a null run when the reservation has never been migrated. Keyed by\naccess_grant_id — a successful cutover deletes the access grant, but the run\nrecord outlives it, so status remains available after the migration completes.',
+          'Returns the most recent per-reservation Lynx cutover run for an access grant.\nReturns a null run when the reservation has never been migrated. Keyed by\naccess_grant_id — a successful cutover deletes the access grant, but the run\nrecord outlives it, so status remains available after the migration completes.\n\nIncludes the codes the cutover deleted (snapshotted before deletion, so the\nhistory survives the hard-delete) and each connected-account sync it requested.',
         operationId:
           'seamConsoleV1LynxMigrationGetReservationMigrationStatusPost',
         requestBody: {
@@ -66113,7 +66165,57 @@ const openapi: OpenAPISpec = {
                       nullable: true,
                       properties: {
                         access_grant_id: { format: 'uuid', type: 'string' },
+                        account_sync_requests: {
+                          items: {
+                            properties: {
+                              at: { type: 'string' },
+                              connected_account_ids: {
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
+                              phase: { type: 'string' },
+                            },
+                            required: ['at', 'phase', 'connected_account_ids'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         created_at: { type: 'string' },
+                        deleted_codes: {
+                          items: {
+                            properties: {
+                              access_code_id: {
+                                format: 'uuid',
+                                type: 'string',
+                              },
+                              code: { nullable: true, type: 'string' },
+                              device_id: {
+                                format: 'uuid',
+                                nullable: true,
+                                type: 'string',
+                              },
+                              ends_at: { nullable: true, type: 'string' },
+                              is_managed: { type: 'boolean' },
+                              name: { nullable: true, type: 'string' },
+                              origin: { type: 'string' },
+                              starts_at: { nullable: true, type: 'string' },
+                              type: { nullable: true, type: 'string' },
+                            },
+                            required: [
+                              'access_code_id',
+                              'code',
+                              'name',
+                              'is_managed',
+                              'device_id',
+                              'type',
+                              'starts_at',
+                              'ends_at',
+                              'origin',
+                            ],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         lynx_migration_run_id: {
                           format: 'uuid',
                           type: 'string',
@@ -66127,6 +66229,8 @@ const openapi: OpenAPISpec = {
                         'status',
                         'created_at',
                         'updated_at',
+                        'deleted_codes',
+                        'account_sync_requests',
                       ],
                       type: 'object',
                     },
