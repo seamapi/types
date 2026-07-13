@@ -17676,6 +17676,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -17782,6 +17787,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -17857,6 +17867,11 @@ const openapi: OpenAPISpec = {
                 description:
                   'ID of the device associated with the affected access code.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -17966,6 +17981,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -18071,6 +18091,11 @@ const openapi: OpenAPISpec = {
                 description:
                   'ID of the device associated with the affected access code.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -18183,6 +18208,11 @@ const openapi: OpenAPISpec = {
                 description:
                   'ID of the device associated with the affected access code.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -18302,6 +18332,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -18382,6 +18417,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -18456,6 +18496,11 @@ const openapi: OpenAPISpec = {
                 description:
                   'ID of the device associated with the affected access code.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -18700,6 +18745,11 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 type: 'array',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
               },
               event_id: {
                 description: 'ID of the event.',
@@ -18950,6 +19000,11 @@ const openapi: OpenAPISpec = {
                 },
                 type: 'array',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -19034,6 +19089,11 @@ const openapi: OpenAPISpec = {
                 description:
                   'ID of the device associated with the affected access code.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -19276,6 +19336,11 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 type: 'array',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
               },
               event_id: {
                 description: 'ID of the event.',
@@ -19526,6 +19591,11 @@ const openapi: OpenAPISpec = {
                 },
                 type: 'array',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -19607,6 +19677,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -19680,6 +19755,11 @@ const openapi: OpenAPISpec = {
                 description:
                   'ID of the device associated with the affected access code.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -19762,6 +19842,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -19836,6 +19921,11 @@ const openapi: OpenAPISpec = {
                 description:
                   'ID of the device associated with the affected access code.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -20081,6 +20171,11 @@ const openapi: OpenAPISpec = {
                 },
                 type: 'array',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -20162,6 +20257,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -20237,6 +20337,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -20283,6 +20388,11 @@ const openapi: OpenAPISpec = {
                 format: 'date-time',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -20322,6 +20432,11 @@ const openapi: OpenAPISpec = {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -20364,6 +20479,11 @@ const openapi: OpenAPISpec = {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -20417,6 +20537,11 @@ const openapi: OpenAPISpec = {
                 format: 'date-time',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -20467,6 +20592,11 @@ const openapi: OpenAPISpec = {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -20522,6 +20652,11 @@ const openapi: OpenAPISpec = {
                 description: 'The new end time for the access grant.',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -20574,6 +20709,11 @@ const openapi: OpenAPISpec = {
               error_message: {
                 description:
                   'Description of why the access methods could not be created.',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -20646,6 +20786,11 @@ const openapi: OpenAPISpec = {
                 format: 'date-time',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -20705,6 +20850,11 @@ const openapi: OpenAPISpec = {
                 format: 'date-time',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -20758,6 +20908,11 @@ const openapi: OpenAPISpec = {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -20815,6 +20970,11 @@ const openapi: OpenAPISpec = {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -20876,6 +21036,11 @@ const openapi: OpenAPISpec = {
                 format: 'date-time',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -20935,6 +21100,11 @@ const openapi: OpenAPISpec = {
                 format: 'date-time',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -20983,6 +21153,11 @@ const openapi: OpenAPISpec = {
                 format: 'date-time',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -21028,6 +21203,11 @@ const openapi: OpenAPISpec = {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -21191,6 +21371,11 @@ const openapi: OpenAPISpec = {
                 format: 'date-time',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -21247,6 +21432,11 @@ const openapi: OpenAPISpec = {
                 format: 'date-time',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -21298,6 +21488,11 @@ const openapi: OpenAPISpec = {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -21353,6 +21548,11 @@ const openapi: OpenAPISpec = {
                 format: 'date-time',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -21404,6 +21604,11 @@ const openapi: OpenAPISpec = {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -21462,6 +21667,11 @@ const openapi: OpenAPISpec = {
                 format: 'date-time',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -21513,6 +21723,11 @@ const openapi: OpenAPISpec = {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -21568,6 +21783,11 @@ const openapi: OpenAPISpec = {
                 format: 'date-time',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -21621,6 +21841,11 @@ const openapi: OpenAPISpec = {
                 format: 'date-time',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -21671,6 +21896,11 @@ const openapi: OpenAPISpec = {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -21729,6 +21959,11 @@ const openapi: OpenAPISpec = {
                 format: 'date-time',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -21782,6 +22017,11 @@ const openapi: OpenAPISpec = {
                 format: 'date-time',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -21822,6 +22062,11 @@ const openapi: OpenAPISpec = {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -21885,6 +22130,11 @@ const openapi: OpenAPISpec = {
                   'The customer key associated with this connected account, if any.',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -21941,6 +22191,11 @@ const openapi: OpenAPISpec = {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -22002,6 +22257,11 @@ const openapi: OpenAPISpec = {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -22114,6 +22374,11 @@ const openapi: OpenAPISpec = {
                 format: 'date-time',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -22167,6 +22432,11 @@ const openapi: OpenAPISpec = {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -22230,6 +22500,11 @@ const openapi: OpenAPISpec = {
                   'The customer key associated with this connected account, if any.',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -22281,6 +22556,11 @@ const openapi: OpenAPISpec = {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -22394,6 +22674,11 @@ const openapi: OpenAPISpec = {
                 format: 'date-time',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -22454,6 +22739,11 @@ const openapi: OpenAPISpec = {
                 description:
                   'ID of the device associated with the action attempt, if applicable.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -22519,6 +22809,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -22582,6 +22877,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -22643,6 +22943,11 @@ const openapi: OpenAPISpec = {
                 description:
                   'ID of the device associated with the action attempt, if applicable.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -22709,6 +23014,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -22770,6 +23080,11 @@ const openapi: OpenAPISpec = {
                 description:
                   'ID of the device associated with the action attempt, if applicable.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -22834,6 +23149,11 @@ const openapi: OpenAPISpec = {
                 description:
                   'ID of the device associated with the action attempt, if applicable.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -22902,6 +23222,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -22968,6 +23293,11 @@ const openapi: OpenAPISpec = {
                   'The customer key associated with this connect webview, if any.',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -23011,6 +23341,11 @@ const openapi: OpenAPISpec = {
               created_at: {
                 description: 'Date and time at which the event was created.',
                 format: 'date-time',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -23085,6 +23420,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -23155,6 +23495,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -23223,6 +23568,11 @@ const openapi: OpenAPISpec = {
               device_id: {
                 description: 'ID of the affected device.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -23298,6 +23648,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -23369,6 +23724,11 @@ const openapi: OpenAPISpec = {
               device_id: {
                 description: 'ID of the affected device.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -23564,6 +23924,11 @@ const openapi: OpenAPISpec = {
                   'hub_disconnected',
                   'device_disconnected',
                 ],
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -23763,6 +24128,11 @@ const openapi: OpenAPISpec = {
                 ],
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -23841,6 +24211,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -23917,6 +24292,11 @@ const openapi: OpenAPISpec = {
               device_id: {
                 description: 'ID of the affected device.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -24004,6 +24384,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -24077,6 +24462,11 @@ const openapi: OpenAPISpec = {
               device_id: {
                 description: 'ID of the affected device.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -24154,6 +24544,11 @@ const openapi: OpenAPISpec = {
                 nullable: true,
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -24222,6 +24617,11 @@ const openapi: OpenAPISpec = {
               device_id: {
                 description: 'ID of the affected device.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -24297,6 +24697,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -24370,6 +24775,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -24441,6 +24851,11 @@ const openapi: OpenAPISpec = {
               device_id: {
                 description: 'ID of the affected device.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -24627,6 +25042,11 @@ const openapi: OpenAPISpec = {
                 },
                 type: 'array',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -24702,6 +25122,11 @@ const openapi: OpenAPISpec = {
               device_id: {
                 description: 'ID of the affected device.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -24889,6 +25314,11 @@ const openapi: OpenAPISpec = {
                 },
                 type: 'array',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -24966,6 +25396,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -25036,6 +25471,11 @@ const openapi: OpenAPISpec = {
               device_id: {
                 description: 'ID of the affected device.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -25222,6 +25662,11 @@ const openapi: OpenAPISpec = {
                 },
                 type: 'array',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -25297,6 +25742,11 @@ const openapi: OpenAPISpec = {
               device_id: {
                 description: 'ID of the affected device.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -25422,6 +25872,11 @@ const openapi: OpenAPISpec = {
               device_id: {
                 description: 'ID of the affected device.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -25551,6 +26006,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -25667,6 +26127,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -25744,6 +26209,11 @@ const openapi: OpenAPISpec = {
               device_id: {
                 description: 'ID of the affected device.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -25844,6 +26314,11 @@ const openapi: OpenAPISpec = {
               device_id: {
                 description: 'ID of the affected device.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -25948,6 +26423,11 @@ const openapi: OpenAPISpec = {
               device_id: {
                 description: 'ID of the affected device.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -26067,6 +26547,11 @@ const openapi: OpenAPISpec = {
               device_id: {
                 description: 'ID of the affected device.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -26200,6 +26685,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -26285,6 +26775,11 @@ const openapi: OpenAPISpec = {
               device_id: {
                 description: 'ID of the affected device.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -26377,6 +26872,11 @@ const openapi: OpenAPISpec = {
                 description: 'The new name of the affected device.',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -26451,6 +26951,11 @@ const openapi: OpenAPISpec = {
               device_id: {
                 description: 'ID of the affected device.',
                 format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
                 type: 'string',
               },
               event_id: {
@@ -26540,6 +27045,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -26595,6 +27105,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -26647,6 +27162,11 @@ const openapi: OpenAPISpec = {
                 format: 'uuid',
                 type: 'string',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -26694,6 +27214,11 @@ const openapi: OpenAPISpec = {
                   'IDs of all devices currently attached to the space.',
                 items: { format: 'uuid', type: 'string' },
                 type: 'array',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
               },
               event_id: {
                 description: 'ID of the event.',
@@ -26758,6 +27283,11 @@ const openapi: OpenAPISpec = {
                 items: { format: 'uuid', type: 'string' },
                 type: 'array',
               },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
@@ -26820,6 +27350,11 @@ const openapi: OpenAPISpec = {
                   'IDs of all devices attached to the space when it was deleted.',
                 items: { format: 'uuid', type: 'string' },
                 type: 'array',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
               },
               event_id: {
                 description: 'ID of the event.',
