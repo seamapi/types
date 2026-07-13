@@ -155,22 +155,6 @@ const access_code_inactive_error = common_access_code_error.extend({
     Indicates that the access code is disabled or inactive on the device. The code exists but will not grant access until re-enabled.
     `)
 
-const salto_ks_user_not_subscribed = common_access_code_error
-  .extend({
-    error_code: z
-      .literal('salto_ks_user_not_subscribed')
-      .describe(error_code_description),
-  })
-  .describe(
-    `
-    ---
-    resource_type: access_code
-    deprecated: Use \`access_code_inactive\` instead.
-    ---
-    Salto site user is not subscribed.
-    `,
-  )
-
 const access_code_error = z
   .discriminatedUnion('error_code', [
     provider_issue,
@@ -181,7 +165,6 @@ const access_code_error = z
     no_space_for_access_code_on_device,
     code_modified_external_to_seam_error,
     access_code_inactive_error,
-    salto_ks_user_not_subscribed,
     insufficient_permissions,
   ])
   .describe(
@@ -208,9 +191,6 @@ const _access_code_error_map = z.object({
     .optional()
     .nullable(),
   access_code_inactive: access_code_inactive_error.optional().nullable(),
-  salto_ks_user_not_subscribed: salto_ks_user_not_subscribed
-    .optional()
-    .nullable(),
 })
 
 export type AccessCodeErrorMap = z.infer<typeof _access_code_error_map>
