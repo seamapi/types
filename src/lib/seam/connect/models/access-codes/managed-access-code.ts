@@ -243,16 +243,15 @@ const code_rotates_periodically = common_access_code_warning
     "The access code's PIN rotates periodically when the code is renewed. Retrieve the latest code before each use.",
   )
 
-const schlage_access_code_ambiguous_timezone_dst_risk =
-  common_access_code_warning
-    .extend({
-      warning_code: z
-        .literal('schlage_access_code_ambiguous_timezone_dst_risk')
-        .describe(warning_code_description),
-    })
-    .describe(
-      "The Schlage device's timezone is ambiguous and this code's schedule crosses a daylight-saving transition in at least one plausible timezone. A 1-hour safety buffer has been applied to the side of the schedule affected by the transition (`ends_at` for spring-forward, `starts_at` for fall-back) so the code stays active through the shift — the code may be usable up to 1 hour beyond your requested window. Set the device's timezone via `/devices/report_provider_metadata` to clear the buffer and guarantee exact DST handling.",
-    )
+const time_frame_adjusted_for_unknown_time_zone = common_access_code_warning
+  .extend({
+    warning_code: z
+      .literal('time_frame_adjusted_for_unknown_time_zone')
+      .describe(warning_code_description),
+  })
+  .describe(
+    "The device's time zone is unknown and this code's time frame crosses a daylight-saving transition in at least one plausible time zone. A 1-hour safety buffer has been applied to the side of the time frame affected by the transition (`ends_at` for spring-forward, `starts_at` for fall-back) so the code stays active through the shift — the code may be usable up to 1 hour beyond your requested window. Set the device's time zone via `/devices/report_provider_metadata` to clear the buffer and guarantee exact handling.",
+  )
 
 const delay_in_setting_on_device = common_access_code_warning
   .extend({
@@ -315,7 +314,7 @@ const being_deleted = common_access_code_warning
 const access_code_warning = z
   .discriminatedUnion('warning_code', [
     code_rotates_periodically,
-    schlage_access_code_ambiguous_timezone_dst_risk,
+    time_frame_adjusted_for_unknown_time_zone,
     code_modified_external_to_seam_warning,
     delay_in_setting_on_device,
     delay_in_removing_from_device,
@@ -333,8 +332,8 @@ export type AccessCodeWarning = z.infer<typeof access_code_warning>
 
 const _access_code_warning_map = z.object({
   code_rotates_periodically: code_rotates_periodically.optional().nullable(),
-  schlage_access_code_ambiguous_timezone_dst_risk:
-    schlage_access_code_ambiguous_timezone_dst_risk.optional().nullable(),
+  time_frame_adjusted_for_unknown_time_zone:
+    time_frame_adjusted_for_unknown_time_zone.optional().nullable(),
   code_modified_external_to_seam_warning: code_modified_external_to_seam_warning
     .optional()
     .nullable(),
