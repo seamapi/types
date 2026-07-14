@@ -242,38 +242,6 @@ const openapi: OpenAPISpec = {
                   'x-resource-type': 'access_code',
                 },
                 {
-                  description:
-                    'An attempt to modify this access code was prevented.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['duplicate_code_attempt_prevented'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-resource-type': 'access_code',
-                },
-                {
                   description: 'No space for access code on device.',
                   properties: {
                     created_at: {
@@ -29660,38 +29628,6 @@ const openapi: OpenAPISpec = {
                       description:
                         'ID of the unmanaged access code that conflicts with this managed access code, when Seam can identify it.',
                       format: 'uuid',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-resource-type': 'access_code',
-                },
-                {
-                  description:
-                    'An attempt to modify this access code was prevented.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['duplicate_code_attempt_prevented'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
                       type: 'string',
                     },
                   },

@@ -111,17 +111,6 @@ const duplicate_code_on_device = common_access_code_error.extend({
     Duplicate access code detected on device.
     `)
 
-const duplicate_code_attempt_prevented = common_access_code_error.extend({
-  error_code: z
-    .literal('duplicate_code_attempt_prevented')
-    .describe(error_code_description),
-}).describe(`
-    ---
-    resource_type: access_code
-    ---
-    An attempt to modify this access code was prevented.
-    `)
-
 const no_space_for_access_code_on_device = common_access_code_error.extend({
   error_code: z
     .literal('no_space_for_access_code_on_device')
@@ -161,7 +150,6 @@ const access_code_error = z
     failed_to_set_on_device,
     failed_to_remove_from_device,
     duplicate_code_on_device,
-    duplicate_code_attempt_prevented,
     no_space_for_access_code_on_device,
     code_modified_external_to_seam_error,
     access_code_inactive_error,
@@ -183,9 +171,6 @@ const _access_code_error_map = z.object({
     .optional()
     .nullable(),
   duplicate_code_on_device: duplicate_code_on_device.optional().nullable(),
-  duplicate_code_attempt_prevented: duplicate_code_attempt_prevented
-    .optional()
-    .nullable(),
   insufficient_permissions: insufficient_permissions.optional().nullable(),
   code_modified_external_to_seam_error: code_modified_external_to_seam_error
     .optional()
