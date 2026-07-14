@@ -66,6 +66,14 @@ const salto_ks_privacy_mode = common_acs_entrance_warning
       .describe(warning_code_description),
   })
   .describe(
+    'deprecated: Use `privacy_mode` instead. Indicates that this entrance is in privacy mode. When privacy mode is enabled, access codes, mobile keys, and remote unlocks will not work unless the user has admin access.',
+  )
+
+const privacy_mode = common_acs_entrance_warning
+  .extend({
+    warning_code: z.literal('privacy_mode').describe(warning_code_description),
+  })
+  .describe(
     'Indicates that this entrance is in privacy mode. When privacy mode is enabled, access codes, mobile keys, and remote unlocks will not work unless the user has admin access.',
   )
 
@@ -75,6 +83,7 @@ const acs_entrance_warning = z
     entrance_shares_zone,
     entrance_setup_required,
     salto_ks_privacy_mode,
+    privacy_mode,
   ])
   .describe(
     'Warning associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
@@ -86,6 +95,7 @@ const _acs_entrance_warning_map = z.object({
   entrance_shares_zone: entrance_shares_zone.optional().nullable(),
   entrance_setup_required: entrance_setup_required.optional().nullable(),
   salto_ks_privacy_mode: salto_ks_privacy_mode.optional().nullable(),
+  privacy_mode: privacy_mode.optional().nullable(),
 })
 
 export type AcsEntranceWarningMap = z.infer<typeof _acs_entrance_warning_map>

@@ -4343,7 +4343,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that this entrance is in privacy mode. When privacy mode is enabled, access codes, mobile keys, and remote unlocks will not work unless the user has admin access.',
+                    'deprecated: Use `privacy_mode` instead. Indicates that this entrance is in privacy mode. When privacy mode is enabled, access codes, mobile keys, and remote unlocks will not work unless the user has admin access.',
                   properties: {
                     created_at: {
                       description:
@@ -4360,6 +4360,31 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['salto_ks_privacy_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that this entrance is in privacy mode. When privacy mode is enabled, access codes, mobile keys, and remote unlocks will not work unless the user has admin access.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['privacy_mode'],
                       type: 'string',
                     },
                   },
@@ -16872,6 +16897,7 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'access_codes',
                 },
                 {
+                  deprecated: true,
                   description:
                     'Indicates that the Salto KS lock is in Privacy Mode. Access Codes will not unlock doors.',
                   properties: {
@@ -16890,6 +16916,33 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['salto_ks_privacy_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-deprecated': 'Use `privacy_mode` instead.',
+                  'x-variant-group-key': 'access_codes',
+                },
+                {
+                  description:
+                    'Indicates that the lock is in Privacy Mode. Access codes and remote unlock are blocked until Privacy Mode is disabled.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['privacy_mode'],
                       type: 'string',
                     },
                   },
@@ -28297,7 +28350,7 @@ const openapi: OpenAPISpec = {
                                   },
                                   {
                                     description:
-                                      'Indicates that this entrance is in privacy mode. When privacy mode is enabled, access codes, mobile keys, and remote unlocks will not work unless the user has admin access.',
+                                      'deprecated: Use `privacy_mode` instead. Indicates that this entrance is in privacy mode. When privacy mode is enabled, access codes, mobile keys, and remote unlocks will not work unless the user has admin access.',
                                     properties: {
                                       created_at: {
                                         description:
@@ -28314,6 +28367,35 @@ const openapi: OpenAPISpec = {
                                         description:
                                           'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                                         enum: ['salto_ks_privacy_mode'],
+                                        type: 'string',
+                                      },
+                                    },
+                                    required: [
+                                      'created_at',
+                                      'message',
+                                      'warning_code',
+                                    ],
+                                    type: 'object',
+                                  },
+                                  {
+                                    description:
+                                      'Indicates that this entrance is in privacy mode. When privacy mode is enabled, access codes, mobile keys, and remote unlocks will not work unless the user has admin access.',
+                                    properties: {
+                                      created_at: {
+                                        description:
+                                          'Date and time at which Seam created the warning.',
+                                        format: 'date-time',
+                                        type: 'string',
+                                      },
+                                      message: {
+                                        description:
+                                          'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                        type: 'string',
+                                      },
+                                      warning_code: {
+                                        description:
+                                          'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                        enum: ['privacy_mode'],
                                         type: 'string',
                                       },
                                     },
@@ -34008,6 +34090,7 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'access_codes',
                 },
                 {
+                  deprecated: true,
                   description:
                     'Indicates that the Salto KS lock is in Privacy Mode. Access Codes will not unlock doors.',
                   properties: {
@@ -34026,6 +34109,33 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['salto_ks_privacy_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-deprecated': 'Use `privacy_mode` instead.',
+                  'x-variant-group-key': 'access_codes',
+                },
+                {
+                  description:
+                    'Indicates that the lock is in Privacy Mode. Access codes and remote unlock are blocked until Privacy Mode is disabled.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['privacy_mode'],
                       type: 'string',
                     },
                   },
