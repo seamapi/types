@@ -428,9 +428,19 @@ const salto_ks_privacy_mode = common_device_warning.extend({
     .describe(warning_code_description),
 }).describe(`
     ---
+    deprecated: Use \`privacy_mode\` instead.
     variant_group_key: access_codes
     ---
     Indicates that the Salto KS lock is in Privacy Mode. Access Codes will not unlock doors.
+  `)
+
+const privacy_mode = common_device_warning.extend({
+  warning_code: z.literal('privacy_mode').describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: access_codes
+    ---
+    Indicates that the lock is in Privacy Mode. Access codes and remote unlock are blocked until Privacy Mode is disabled.
   `)
 
 const salto_ks_subscription_limit_almost_reached = common_device_warning.extend(
@@ -710,6 +720,7 @@ const device_warning = z.discriminatedUnion('warning_code', [
   device_has_flaky_connection,
   salto_ks_office_mode,
   salto_ks_privacy_mode,
+  privacy_mode,
   salto_ks_subscription_limit_almost_reached,
   salto_ks_lock_access_code_support_removed,
   unknown_issue_with_phone,
@@ -762,6 +773,7 @@ export const device_warning_map = z.object({
     .nullable(),
   salto_ks_office_mode: salto_ks_office_mode.optional().nullable(),
   salto_ks_privacy_mode: salto_ks_privacy_mode.optional().nullable(),
+  privacy_mode: privacy_mode.optional().nullable(),
   salto_ks_subscription_limit_almost_reached:
     salto_ks_subscription_limit_almost_reached.optional().nullable(),
   salto_ks_lock_access_code_support_removed:
