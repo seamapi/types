@@ -6,6 +6,7 @@ import {
   common_event,
   common_event_error,
   common_event_warning,
+  lock_access_denied_reason,
 } from './common.js'
 
 const device_event = common_event.extend({
@@ -549,6 +550,17 @@ export const lock_access_denied_event = device_event.extend({
     .uuid()
     .optional()
     .describe('ID of the affected device.'),
+  reason: z
+    .object({
+      reason_code: lock_access_denied_reason,
+      message: z
+        .string()
+        .describe('Human-readable explanation of why access was denied.'),
+    })
+    .optional()
+    .describe(
+      'Why access was denied, when the provider reports a determinable cause. Omitted when unknown.',
+    ),
 }).describe(`
   ---
   route_path: /locks
