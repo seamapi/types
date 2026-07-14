@@ -26164,6 +26164,32 @@ const openapi: OpenAPISpec = {
                 format: 'date-time',
                 type: 'string',
               },
+              reason: {
+                description:
+                  'Why access was denied, when the provider reports a determinable cause. Omitted when unknown.',
+                properties: {
+                  message: {
+                    description:
+                      'Human-readable explanation of why access was denied.',
+                    type: 'string',
+                  },
+                  reason_code: {
+                    description:
+                      'Normalized reason a lock denied access. Provider-agnostic; not all providers report every value.',
+                    enum: [
+                      'unknown_code',
+                      'expired_code',
+                      'blocklisted_code',
+                      'too_many_attempts',
+                      'blocked_by_privacy_mode',
+                      'credential_error',
+                    ],
+                    type: 'string',
+                  },
+                },
+                required: ['reason_code', 'message'],
+                type: 'object',
+              },
               user_identity_id: {
                 description:
                   '\n      undocumented: Unreleased.\n      ---\n      ID of the user identity associated with the access-denied event.\n    ',
