@@ -41,27 +41,29 @@ const modified_field = z.object({
   to: z.string().nullable().describe('The new value of the field.'),
 })
 
-const code_modified_external_to_seam_error = common_access_code_error.extend({
-  error_code: z
-    .literal('code_modified_external_to_seam')
-    .describe(error_code_description),
-  change_type: z
-    .enum(['modified', 'removed'])
-    .optional()
-    .describe(
-      "Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device.",
-    ),
-  modified_fields: z
-    .array(modified_field)
-    .optional()
-    .describe(
-      'List of fields that were changed externally, with their previous and new values.',
-    ),
-}).describe(`
+const conflicting_external_modification_error = common_access_code_error.extend(
+  {
+    error_code: z
+      .literal('conflicting_external_modification')
+      .describe(error_code_description),
+    change_type: z
+      .enum(['modified', 'removed'])
+      .optional()
+      .describe(
+        "Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device.",
+      ),
+    modified_fields: z
+      .array(modified_field)
+      .optional()
+      .describe(
+        'List of fields that were changed externally, with their previous and new values.',
+      ),
+  },
+).describe(`
     ---
     resource_type: access_code
     ---
-    Code was modified or removed externally after Seam successfully set it on the device.
+    Code was modified or removed externally after Seam successfully set it on the device. The external change conflicts with the state that Seam is trying to apply, so Seam will attempt to set the code on the device again.
     `)
 
 const failed_to_set_on_device = common_access_code_error.extend({
@@ -151,7 +153,7 @@ const access_code_error = z
     failed_to_remove_from_device,
     duplicate_code_on_device,
     no_space_for_access_code_on_device,
-    code_modified_external_to_seam_error,
+    conflicting_external_modification_error,
     access_code_inactive_error,
     insufficient_permissions,
   ])
@@ -172,7 +174,7 @@ const _access_code_error_map = z.object({
     .nullable(),
   duplicate_code_on_device: duplicate_code_on_device.optional().nullable(),
   insufficient_permissions: insufficient_permissions.optional().nullable(),
-  code_modified_external_to_seam_error: code_modified_external_to_seam_error
+  conflicting_external_modification: conflicting_external_modification_error
     .optional()
     .nullable(),
   access_code_inactive: access_code_inactive_error.optional().nullable(),
@@ -196,10 +198,10 @@ const common_access_code_warning = z.object({
 const warning_code_description =
   'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
 
-const code_modified_external_to_seam_warning = common_access_code_warning
+const external_modification_in_effect_warning = common_access_code_warning
   .extend({
     warning_code: z
-      .literal('code_modified_external_to_seam')
+      .literal('external_modification_in_effect')
       .describe(warning_code_description),
     change_type: z
       .enum(['modified', 'removed'])
@@ -215,7 +217,7 @@ const code_modified_external_to_seam_warning = common_access_code_warning
       ),
   })
   .describe(
-    'Code was modified or removed externally after Seam successfully set it on the device.',
+    'Code was modified or removed externally after Seam successfully set it on the device. External modification is allowed for this code, so the externally modified state is being honored.',
   )
 
 const code_rotates_periodically = common_access_code_warning
@@ -300,7 +302,7 @@ const access_code_warning = z
   .discriminatedUnion('warning_code', [
     code_rotates_periodically,
     time_frame_adjusted_for_unknown_time_zone,
-    code_modified_external_to_seam_warning,
+    external_modification_in_effect_warning,
     delay_in_setting_on_device,
     delay_in_removing_from_device,
     third_party_integration_detected,
@@ -319,7 +321,7 @@ const _access_code_warning_map = z.object({
   code_rotates_periodically: code_rotates_periodically.optional().nullable(),
   time_frame_adjusted_for_unknown_time_zone:
     time_frame_adjusted_for_unknown_time_zone.optional().nullable(),
-  code_modified_external_to_seam_warning: code_modified_external_to_seam_warning
+  external_modification_in_effect: external_modification_in_effect_warning
     .optional()
     .nullable(),
   delay_in_setting_on_device: delay_in_setting_on_device.optional().nullable(),

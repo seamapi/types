@@ -274,7 +274,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Code was modified or removed externally after Seam successfully set it on the device.',
+                    'Code was modified or removed externally after Seam successfully set it on the device. The external change conflicts with the state that Seam is trying to apply, so Seam will attempt to set the code on the device again.',
                   properties: {
                     change_type: {
                       description:
@@ -291,7 +291,7 @@ const openapi: OpenAPISpec = {
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['code_modified_external_to_seam'],
+                      enum: ['conflicting_external_modification'],
                       type: 'string',
                     },
                     is_access_code_error: {
@@ -1435,7 +1435,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Code was modified or removed externally after Seam successfully set it on the device.',
+                    'Code was modified or removed externally after Seam successfully set it on the device. External modification is allowed for this code, so the externally modified state is being honored.',
                   properties: {
                     change_type: {
                       description:
@@ -1483,7 +1483,7 @@ const openapi: OpenAPISpec = {
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['code_modified_external_to_seam'],
+                      enum: ['external_modification_in_effect'],
                       type: 'string',
                     },
                   },
@@ -29668,7 +29668,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Code was modified or removed externally after Seam successfully set it on the device.',
+                    'Code was modified or removed externally after Seam successfully set it on the device. The external change conflicts with the state that Seam is trying to apply, so Seam will attempt to set the code on the device again.',
                   properties: {
                     change_type: {
                       description:
@@ -29685,7 +29685,7 @@ const openapi: OpenAPISpec = {
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['code_modified_external_to_seam'],
+                      enum: ['conflicting_external_modification'],
                       type: 'string',
                     },
                     is_access_code_error: {
@@ -30518,7 +30518,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Code was modified or removed externally after Seam successfully set it on the device.',
+                    'Code was modified or removed externally after Seam successfully set it on the device. External modification is allowed for this code, so the externally modified state is being honored.',
                   properties: {
                     change_type: {
                       description:
@@ -30566,7 +30566,7 @@ const openapi: OpenAPISpec = {
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['code_modified_external_to_seam'],
+                      enum: ['external_modification_in_effect'],
                       type: 'string',
                     },
                   },
