@@ -60,3 +60,18 @@ export const common_event_warning = z
   .describe(
     'Warning associated with the resource, including the warning code, message, and creation timestamp.',
   )
+
+export const lock_access_denied_reason = z
+  .enum([
+    'unknown_code',
+    'expired_code',
+    'blocklisted_code',
+    'too_many_attempts',
+    'blocked_by_privacy_mode',
+    'credential_error',
+  ])
+  .describe(
+    'Normalized reason a lock denied access. Provider-agnostic; not all providers report every value.',
+  )
+
+export type LockAccessDeniedReason = z.infer<typeof lock_access_denied_reason>
