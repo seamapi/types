@@ -298,6 +298,14 @@ const being_deleted = common_access_code_warning
   })
   .describe('Access code is being deleted.')
 
+const unknown_issue_with_access_code = common_access_code_warning
+  .extend({
+    warning_code: z
+      .literal('unknown_issue_with_access_code')
+      .describe(warning_code_description),
+  })
+  .describe('An unknown issue occurred with the access code.')
+
 const access_code_warning = z
   .discriminatedUnion('warning_code', [
     code_rotates_periodically,
@@ -310,6 +318,7 @@ const access_code_warning = z
     management_transferred,
     using_backup_access_code,
     being_deleted,
+    unknown_issue_with_access_code,
   ])
   .describe(
     'Warnings associated with the [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).',
@@ -336,6 +345,9 @@ const _access_code_warning_map = z.object({
   management_transferred: management_transferred.optional().nullable(),
   using_backup_access_code: using_backup_access_code.optional().nullable(),
   being_deleted: being_deleted.optional().nullable(),
+  unknown_issue_with_access_code: unknown_issue_with_access_code
+    .optional()
+    .nullable(),
 })
 
 export type AccessCodeWarningMap = z.infer<typeof _access_code_warning_map>
