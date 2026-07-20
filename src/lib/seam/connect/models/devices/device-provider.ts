@@ -19,6 +19,7 @@ export const DEVICE_PROVIDERS = {
   DOORKING: 'doorking',
   SALTO: 'salto',
   SALTO_KS: 'salto_ks',
+  SALTO_KS_ACCEPT: 'salto_ks_accept',
   LOCKLY: 'lockly',
   TTLOCK: 'ttlock',
   LINEAR: 'linear',
@@ -143,7 +144,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'thirty_three_lock',
   ],
 
-  beta: ['kisi'],
+  beta: ['kisi', 'salto_ks_accept'],
 
   thermostats: ['ecobee', 'nest', 'sensi', 'honeywell_resideo', 'first_alert'],
   noise_sensors: ['minut', 'noiseaware'],
