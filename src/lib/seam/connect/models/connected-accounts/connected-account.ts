@@ -78,11 +78,13 @@ export const salto_ks_subscription_limit_exceeded =
               .object({
                 site_id: z
                   .string()
+                  .optional()
                   .describe(
                     'ID of a Salto site associated with the connected account that has an error.',
                   ),
                 site_name: z
                   .string()
+                  .optional()
                   .describe(
                     'Name of a Salto site associated with the connected account that has an error.',
                   ),
@@ -90,6 +92,7 @@ export const salto_ks_subscription_limit_exceeded =
                   .number()
                   .int()
                   .min(0)
+                  .optional()
                   .describe(
                     'Count of subscribed site users for a Salto site associated with the connected account that has an error.',
                   ),
@@ -97,18 +100,22 @@ export const salto_ks_subscription_limit_exceeded =
                   .number()
                   .int()
                   .min(0)
+                  .optional()
                   .describe(
                     'Subscription limit of site users for a Salto site associated with the connected account that has an error.',
                   ),
               })
+              .partial()
               .describe(
                 'Salto site associated with the connected account that has an error.',
               ),
           )
+          .optional()
           .describe(
             'Salto sites associated with the connected account that has an error.',
           ),
       })
+      .partial()
       .describe(
         'Salto KS metadata associated with the connected account that has an error.',
       ),
@@ -192,11 +199,13 @@ const salto_ks_subscription_limit_almost_reached =
                 .object({
                   site_id: z
                     .string()
+                    .optional()
                     .describe(
                       'ID of a Salto site associated with the connected account that has a warning.',
                     ),
                   site_name: z
                     .string()
+                    .optional()
                     .describe(
                       'Name of a Salto site associated with the connected account that has a warning.',
                     ),
@@ -204,6 +213,7 @@ const salto_ks_subscription_limit_almost_reached =
                     .number()
                     .int()
                     .min(0)
+                    .optional()
                     .describe(
                       'Subscription limit of site users for a Salto site associated with the connected account that has a warning.',
                     ),
@@ -211,18 +221,22 @@ const salto_ks_subscription_limit_almost_reached =
                     .number()
                     .int()
                     .min(0)
+                    .optional()
                     .describe(
                       'Count of subscribed site users for a Salto site associated with the connected account that has a warning.',
                     ),
                 })
+                .partial()
                 .describe(
                   'Salto site associated with the connected account that has a warning.',
                 ),
             )
+            .optional()
             .describe(
               'Salto sites associated with the connected account that has a warning.',
             ),
         })
+        .partial()
         .describe(
           'Salto KS metadata associated with the connected account that has a warning.',
         ),
