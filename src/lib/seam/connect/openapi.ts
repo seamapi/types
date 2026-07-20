@@ -67095,6 +67095,1727 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Internal endpoint for Console',
       },
     },
+    '/seam/console/v1/organizations/create': {
+      post: {
+        description: 'Creates an organization.',
+        operationId: 'seamConsoleV1OrganizationsCreatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  logo_image_base64: { type: 'string' },
+                  name: { maxLength: 255, minLength: 1, type: 'string' },
+                },
+                required: ['name'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    organization: {
+                      properties: {
+                        connect_webview_customization: {
+                          properties: {
+                            logo_shape: {
+                              enum: ['circle', 'square'],
+                              nullable: true,
+                              type: 'string',
+                            },
+                            primary_button_color: {
+                              nullable: true,
+                              type: 'string',
+                            },
+                            primary_button_text_color: {
+                              nullable: true,
+                              type: 'string',
+                            },
+                          },
+                          required: [
+                            'primary_button_color',
+                            'primary_button_text_color',
+                            'logo_shape',
+                          ],
+                          type: 'object',
+                        },
+                        created_at: { format: 'date-time', type: 'string' },
+                        logo_url: { nullable: true, type: 'string' },
+                        name: { type: 'string' },
+                        organization_id: { format: 'uuid', type: 'string' },
+                        updated_at: { format: 'date-time', type: 'string' },
+                      },
+                      required: [
+                        'organization_id',
+                        'name',
+                        'logo_url',
+                        'connect_webview_customization',
+                        'created_at',
+                        'updated_at',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['organization', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/organizations/create',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'organizations'],
+        'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'organization',
+        'x-response-key': 'organization',
+        'x-title': 'Create an Organization',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/organizations/customization_profiles/copy': {
+      post: {
+        description: 'Copies a customization profile to an organization.',
+        operationId: 'seamConsoleV1OrganizationsCustomizationProfilesCopyPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  destination_customization_profile_id: {
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  destination_workspace_id: { format: 'uuid', type: 'string' },
+                  source_customization_profile_id: {
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  source_workspace_id: { format: 'uuid', type: 'string' },
+                },
+                required: [
+                  'source_workspace_id',
+                  'source_customization_profile_id',
+                  'destination_workspace_id',
+                ],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    customization_profile: {
+                      $ref: '#/components/schemas/customization_profile',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['customization_profile', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/organizations/customization_profiles/copy',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'organizations',
+          'customization_profiles',
+        ],
+        'x-fern-sdk-method-name': 'copy',
+        'x-fern-sdk-return-value': 'customization_profile',
+        'x-response-key': 'customization_profile',
+        'x-title': 'Copy a Customization Profile',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/organizations/delete': {
+      post: {
+        description: 'Deletes an organization.',
+        operationId: 'seamConsoleV1OrganizationsDeletePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  organization_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['organization_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    organization: {
+                      properties: {
+                        connect_webview_customization: {
+                          properties: {
+                            logo_shape: {
+                              enum: ['circle', 'square'],
+                              nullable: true,
+                              type: 'string',
+                            },
+                            primary_button_color: {
+                              nullable: true,
+                              type: 'string',
+                            },
+                            primary_button_text_color: {
+                              nullable: true,
+                              type: 'string',
+                            },
+                          },
+                          required: [
+                            'primary_button_color',
+                            'primary_button_text_color',
+                            'logo_shape',
+                          ],
+                          type: 'object',
+                        },
+                        created_at: { format: 'date-time', type: 'string' },
+                        logo_url: { nullable: true, type: 'string' },
+                        name: { type: 'string' },
+                        organization_id: { format: 'uuid', type: 'string' },
+                        updated_at: { format: 'date-time', type: 'string' },
+                      },
+                      required: [
+                        'organization_id',
+                        'name',
+                        'logo_url',
+                        'connect_webview_customization',
+                        'created_at',
+                        'updated_at',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['organization', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/organizations/delete',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'organizations'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-fern-sdk-return-value': 'organization',
+        'x-response-key': 'organization',
+        'x-title': 'Delete an Organization',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/organizations/get': {
+      get: {
+        description: 'Returns a specified organization.',
+        operationId: 'seamConsoleV1OrganizationsGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'organization_id',
+            required: true,
+            schema: { format: 'uuid', type: 'string' },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    members: {
+                      items: {
+                        properties: {
+                          created_at: { format: 'date-time', type: 'string' },
+                          email: { nullable: true, type: 'string' },
+                          first_name: { nullable: true, type: 'string' },
+                          last_name: { nullable: true, type: 'string' },
+                          organization_id: { format: 'uuid', type: 'string' },
+                          organization_member_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          role: { enum: ['admin', 'member'], type: 'string' },
+                          user_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: [
+                          'organization_member_id',
+                          'organization_id',
+                          'user_id',
+                          'email',
+                          'first_name',
+                          'last_name',
+                          'role',
+                          'created_at',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                    organization: {
+                      properties: {
+                        connect_webview_customization: {
+                          properties: {
+                            logo_shape: {
+                              enum: ['circle', 'square'],
+                              nullable: true,
+                              type: 'string',
+                            },
+                            primary_button_color: {
+                              nullable: true,
+                              type: 'string',
+                            },
+                            primary_button_text_color: {
+                              nullable: true,
+                              type: 'string',
+                            },
+                          },
+                          required: [
+                            'primary_button_color',
+                            'primary_button_text_color',
+                            'logo_shape',
+                          ],
+                          type: 'object',
+                        },
+                        created_at: { format: 'date-time', type: 'string' },
+                        logo_url: { nullable: true, type: 'string' },
+                        name: { type: 'string' },
+                        organization_id: { format: 'uuid', type: 'string' },
+                        updated_at: { format: 'date-time', type: 'string' },
+                      },
+                      required: [
+                        'organization_id',
+                        'name',
+                        'logo_url',
+                        'connect_webview_customization',
+                        'created_at',
+                        'updated_at',
+                      ],
+                      type: 'object',
+                    },
+                    pending_invitations: {
+                      items: {
+                        properties: {
+                          email: { type: 'string' },
+                          expires_at: { format: 'date-time', type: 'string' },
+                          invited_at: { format: 'date-time', type: 'string' },
+                          organization_id: { format: 'uuid', type: 'string' },
+                          organization_invitation_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          role: { enum: ['admin', 'member'], type: 'string' },
+                          status: {
+                            enum: ['pending', 'accepted', 'revoked'],
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'organization_invitation_id',
+                          'organization_id',
+                          'email',
+                          'role',
+                          'status',
+                          'invited_at',
+                          'expires_at',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    workspaces: {
+                      items: { $ref: '#/components/schemas/workspace' },
+                      type: 'array',
+                    },
+                  },
+                  required: [
+                    'organization',
+                    'members',
+                    'pending_invitations',
+                    'workspaces',
+                    'ok',
+                  ],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/organizations/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'organizations'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'organization',
+        'x-response-key': 'organization',
+        'x-title': 'Get an Organization',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+      post: {
+        description: 'Returns a specified organization.',
+        operationId: 'seamConsoleV1OrganizationsGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  organization_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['organization_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    members: {
+                      items: {
+                        properties: {
+                          created_at: { format: 'date-time', type: 'string' },
+                          email: { nullable: true, type: 'string' },
+                          first_name: { nullable: true, type: 'string' },
+                          last_name: { nullable: true, type: 'string' },
+                          organization_id: { format: 'uuid', type: 'string' },
+                          organization_member_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          role: { enum: ['admin', 'member'], type: 'string' },
+                          user_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: [
+                          'organization_member_id',
+                          'organization_id',
+                          'user_id',
+                          'email',
+                          'first_name',
+                          'last_name',
+                          'role',
+                          'created_at',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                    organization: {
+                      properties: {
+                        connect_webview_customization: {
+                          properties: {
+                            logo_shape: {
+                              enum: ['circle', 'square'],
+                              nullable: true,
+                              type: 'string',
+                            },
+                            primary_button_color: {
+                              nullable: true,
+                              type: 'string',
+                            },
+                            primary_button_text_color: {
+                              nullable: true,
+                              type: 'string',
+                            },
+                          },
+                          required: [
+                            'primary_button_color',
+                            'primary_button_text_color',
+                            'logo_shape',
+                          ],
+                          type: 'object',
+                        },
+                        created_at: { format: 'date-time', type: 'string' },
+                        logo_url: { nullable: true, type: 'string' },
+                        name: { type: 'string' },
+                        organization_id: { format: 'uuid', type: 'string' },
+                        updated_at: { format: 'date-time', type: 'string' },
+                      },
+                      required: [
+                        'organization_id',
+                        'name',
+                        'logo_url',
+                        'connect_webview_customization',
+                        'created_at',
+                        'updated_at',
+                      ],
+                      type: 'object',
+                    },
+                    pending_invitations: {
+                      items: {
+                        properties: {
+                          email: { type: 'string' },
+                          expires_at: { format: 'date-time', type: 'string' },
+                          invited_at: { format: 'date-time', type: 'string' },
+                          organization_id: { format: 'uuid', type: 'string' },
+                          organization_invitation_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          role: { enum: ['admin', 'member'], type: 'string' },
+                          status: {
+                            enum: ['pending', 'accepted', 'revoked'],
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'organization_invitation_id',
+                          'organization_id',
+                          'email',
+                          'role',
+                          'status',
+                          'invited_at',
+                          'expires_at',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    workspaces: {
+                      items: { $ref: '#/components/schemas/workspace' },
+                      type: 'array',
+                    },
+                  },
+                  required: [
+                    'organization',
+                    'members',
+                    'pending_invitations',
+                    'workspaces',
+                    'ok',
+                  ],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/organizations/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'organizations'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'organization',
+        'x-response-key': 'organization',
+        'x-title': 'Get an Organization',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/organizations/invitations/revoke': {
+      post: {
+        description: 'Revokes an organization invitation.',
+        operationId: 'seamConsoleV1OrganizationsInvitationsRevokePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  organization_invitation_id: {
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['organization_invitation_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    organization_invitation: {
+                      properties: {
+                        email: { type: 'string' },
+                        expires_at: { format: 'date-time', type: 'string' },
+                        invited_at: { format: 'date-time', type: 'string' },
+                        organization_id: { format: 'uuid', type: 'string' },
+                        organization_invitation_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        role: { enum: ['admin', 'member'], type: 'string' },
+                        status: {
+                          enum: ['pending', 'accepted', 'revoked'],
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'organization_invitation_id',
+                        'organization_id',
+                        'email',
+                        'role',
+                        'status',
+                        'invited_at',
+                        'expires_at',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['organization_invitation', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/organizations/invitations/revoke',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'organizations',
+          'invitations',
+        ],
+        'x-fern-sdk-method-name': 'revoke',
+        'x-fern-sdk-return-value': 'organization_invitation',
+        'x-response-key': 'organization_invitation',
+        'x-title': 'Revoke an Organization Invitation',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/organizations/list': {
+      get: {
+        description: 'Returns a list of organizations.',
+        operationId: 'seamConsoleV1OrganizationsListGet',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    organizations: {
+                      items: {
+                        properties: {
+                          connect_webview_customization: {
+                            properties: {
+                              logo_shape: {
+                                enum: ['circle', 'square'],
+                                nullable: true,
+                                type: 'string',
+                              },
+                              primary_button_color: {
+                                nullable: true,
+                                type: 'string',
+                              },
+                              primary_button_text_color: {
+                                nullable: true,
+                                type: 'string',
+                              },
+                            },
+                            required: [
+                              'primary_button_color',
+                              'primary_button_text_color',
+                              'logo_shape',
+                            ],
+                            type: 'object',
+                          },
+                          created_at: { format: 'date-time', type: 'string' },
+                          logo_url: { nullable: true, type: 'string' },
+                          member_count: { format: 'float', type: 'number' },
+                          name: { type: 'string' },
+                          organization_id: { format: 'uuid', type: 'string' },
+                          updated_at: { format: 'date-time', type: 'string' },
+                          workspace_count: { format: 'float', type: 'number' },
+                        },
+                        required: [
+                          'organization_id',
+                          'name',
+                          'logo_url',
+                          'connect_webview_customization',
+                          'created_at',
+                          'updated_at',
+                          'workspace_count',
+                          'member_count',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['organizations', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/organizations/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'organizations'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'organizations',
+        'x-response-key': 'organizations',
+        'x-title': 'List Organizations',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+      post: {
+        description: 'Returns a list of organizations.',
+        operationId: 'seamConsoleV1OrganizationsListPost',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    organizations: {
+                      items: {
+                        properties: {
+                          connect_webview_customization: {
+                            properties: {
+                              logo_shape: {
+                                enum: ['circle', 'square'],
+                                nullable: true,
+                                type: 'string',
+                              },
+                              primary_button_color: {
+                                nullable: true,
+                                type: 'string',
+                              },
+                              primary_button_text_color: {
+                                nullable: true,
+                                type: 'string',
+                              },
+                            },
+                            required: [
+                              'primary_button_color',
+                              'primary_button_text_color',
+                              'logo_shape',
+                            ],
+                            type: 'object',
+                          },
+                          created_at: { format: 'date-time', type: 'string' },
+                          logo_url: { nullable: true, type: 'string' },
+                          member_count: { format: 'float', type: 'number' },
+                          name: { type: 'string' },
+                          organization_id: { format: 'uuid', type: 'string' },
+                          updated_at: { format: 'date-time', type: 'string' },
+                          workspace_count: { format: 'float', type: 'number' },
+                        },
+                        required: [
+                          'organization_id',
+                          'name',
+                          'logo_url',
+                          'connect_webview_customization',
+                          'created_at',
+                          'updated_at',
+                          'workspace_count',
+                          'member_count',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['organizations', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/organizations/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'organizations'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'organizations',
+        'x-response-key': 'organizations',
+        'x-title': 'List Organizations',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/organizations/members/add': {
+      post: {
+        description:
+          'Adds a member to an organization, inviting them by email if needed.',
+        operationId: 'seamConsoleV1OrganizationsMembersAddPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  email: { format: 'email', type: 'string' },
+                  organization_id: { format: 'uuid', type: 'string' },
+                  role: {
+                    default: 'member',
+                    enum: ['admin', 'member'],
+                    type: 'string',
+                  },
+                },
+                required: ['organization_id', 'email'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    organization_invitation: {
+                      properties: {
+                        email: { type: 'string' },
+                        expires_at: { format: 'date-time', type: 'string' },
+                        invited_at: { format: 'date-time', type: 'string' },
+                        organization_id: { format: 'uuid', type: 'string' },
+                        organization_invitation_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        role: { enum: ['admin', 'member'], type: 'string' },
+                        status: {
+                          enum: ['pending', 'accepted', 'revoked'],
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'organization_invitation_id',
+                        'organization_id',
+                        'email',
+                        'role',
+                        'status',
+                        'invited_at',
+                        'expires_at',
+                      ],
+                      type: 'object',
+                    },
+                    organization_member: {
+                      properties: {
+                        created_at: { format: 'date-time', type: 'string' },
+                        email: { nullable: true, type: 'string' },
+                        first_name: { nullable: true, type: 'string' },
+                        last_name: { nullable: true, type: 'string' },
+                        organization_id: { format: 'uuid', type: 'string' },
+                        organization_member_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        role: { enum: ['admin', 'member'], type: 'string' },
+                        user_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: [
+                        'organization_member_id',
+                        'organization_id',
+                        'user_id',
+                        'email',
+                        'first_name',
+                        'last_name',
+                        'role',
+                        'created_at',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/organizations/members/add',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'organizations',
+          'members',
+        ],
+        'x-fern-sdk-method-name': 'add',
+        'x-response-key': null,
+        'x-title': 'Add an Organization Member',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/organizations/members/remove': {
+      post: {
+        description: 'Removes a member from an organization.',
+        operationId: 'seamConsoleV1OrganizationsMembersRemovePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  organization_id: { format: 'uuid', type: 'string' },
+                  user_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['organization_id', 'user_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/organizations/members/remove',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'organizations',
+          'members',
+        ],
+        'x-fern-sdk-method-name': 'remove',
+        'x-response-key': null,
+        'x-title': 'Remove an Organization Member',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/organizations/members/update': {
+      post: {
+        description: 'Updates a member of an organization.',
+        operationId: 'seamConsoleV1OrganizationsMembersUpdatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  organization_id: { format: 'uuid', type: 'string' },
+                  role: { enum: ['admin', 'member'], type: 'string' },
+                  user_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['organization_id', 'user_id', 'role'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    organization_member: {
+                      properties: {
+                        created_at: { format: 'date-time', type: 'string' },
+                        email: { nullable: true, type: 'string' },
+                        first_name: { nullable: true, type: 'string' },
+                        last_name: { nullable: true, type: 'string' },
+                        organization_id: { format: 'uuid', type: 'string' },
+                        organization_member_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        role: { enum: ['admin', 'member'], type: 'string' },
+                        user_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: [
+                        'organization_member_id',
+                        'organization_id',
+                        'user_id',
+                        'email',
+                        'first_name',
+                        'last_name',
+                        'role',
+                        'created_at',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['organization_member', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/organizations/members/update',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'organizations',
+          'members',
+        ],
+        'x-fern-sdk-method-name': 'update',
+        'x-fern-sdk-return-value': 'organization_member',
+        'x-response-key': 'organization_member',
+        'x-title': 'Update an Organization Member',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/organizations/members/workspaces/grant': {
+      post: {
+        description: 'Grants an organization member access to a workspace.',
+        operationId: 'seamConsoleV1OrganizationsMembersWorkspacesGrantPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  organization_id: { format: 'uuid', type: 'string' },
+                  user_id: { format: 'uuid', type: 'string' },
+                  workspace_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['organization_id', 'user_id', 'workspace_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/organizations/members/workspaces/grant',
+        tags: ['/workspaces'],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'organizations',
+          'members',
+          'workspaces',
+        ],
+        'x-fern-sdk-method-name': 'grant',
+        'x-response-key': null,
+        'x-title': 'Grant an Organization Member Workspace Access',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/organizations/members/workspaces/list': {
+      get: {
+        description:
+          'Returns the workspaces an organization member can access.',
+        operationId: 'seamConsoleV1OrganizationsMembersWorkspacesListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'organization_id',
+            required: true,
+            schema: { format: 'uuid', type: 'string' },
+          },
+          {
+            in: 'query',
+            name: 'user_id',
+            required: true,
+            schema: { format: 'uuid', type: 'string' },
+          },
+        ],
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    workspaces: {
+                      items: {
+                        properties: {
+                          created_at: { format: 'date-time', type: 'string' },
+                          is_owner: { type: 'boolean' },
+                          is_sandbox: { type: 'boolean' },
+                          name: { type: 'string' },
+                          workspace_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: [
+                          'workspace_id',
+                          'name',
+                          'is_sandbox',
+                          'is_owner',
+                          'created_at',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['workspaces', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/organizations/members/workspaces/list',
+        tags: ['/workspaces'],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'organizations',
+          'members',
+          'workspaces',
+        ],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'workspaces',
+        'x-response-key': 'workspaces',
+        'x-title': "List an Organization Member's Workspaces",
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+      post: {
+        description:
+          'Returns the workspaces an organization member can access.',
+        operationId: 'seamConsoleV1OrganizationsMembersWorkspacesListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  organization_id: { format: 'uuid', type: 'string' },
+                  user_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['organization_id', 'user_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    workspaces: {
+                      items: {
+                        properties: {
+                          created_at: { format: 'date-time', type: 'string' },
+                          is_owner: { type: 'boolean' },
+                          is_sandbox: { type: 'boolean' },
+                          name: { type: 'string' },
+                          workspace_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: [
+                          'workspace_id',
+                          'name',
+                          'is_sandbox',
+                          'is_owner',
+                          'created_at',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['workspaces', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/organizations/members/workspaces/list',
+        tags: ['/workspaces'],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'organizations',
+          'members',
+          'workspaces',
+        ],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'workspaces',
+        'x-response-key': 'workspaces',
+        'x-title': "List an Organization Member's Workspaces",
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/organizations/members/workspaces/revoke': {
+      post: {
+        description: "Revokes an organization member's access to a workspace.",
+        operationId: 'seamConsoleV1OrganizationsMembersWorkspacesRevokePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  organization_id: { format: 'uuid', type: 'string' },
+                  user_id: { format: 'uuid', type: 'string' },
+                  workspace_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['organization_id', 'user_id', 'workspace_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/organizations/members/workspaces/revoke',
+        tags: ['/workspaces'],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'organizations',
+          'members',
+          'workspaces',
+        ],
+        'x-fern-sdk-method-name': 'revoke',
+        'x-response-key': null,
+        'x-title': "Revoke an Organization Member's Workspace Access",
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/organizations/update': {
+      patch: {
+        description: 'Updates an organization.',
+        operationId: 'seamConsoleV1OrganizationsUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connect_webview_customization: {
+                    properties: {
+                      logo_shape: {
+                        enum: ['circle', 'square'],
+                        nullable: true,
+                        type: 'string',
+                      },
+                      primary_button_color: { nullable: true, type: 'string' },
+                      primary_button_text_color: {
+                        nullable: true,
+                        type: 'string',
+                      },
+                    },
+                    type: 'object',
+                  },
+                  logo_image_base64: { nullable: true, type: 'string' },
+                  name: { maxLength: 255, minLength: 1, type: 'string' },
+                  organization_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['organization_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    organization: {
+                      properties: {
+                        connect_webview_customization: {
+                          properties: {
+                            logo_shape: {
+                              enum: ['circle', 'square'],
+                              nullable: true,
+                              type: 'string',
+                            },
+                            primary_button_color: {
+                              nullable: true,
+                              type: 'string',
+                            },
+                            primary_button_text_color: {
+                              nullable: true,
+                              type: 'string',
+                            },
+                          },
+                          required: [
+                            'primary_button_color',
+                            'primary_button_text_color',
+                            'logo_shape',
+                          ],
+                          type: 'object',
+                        },
+                        created_at: { format: 'date-time', type: 'string' },
+                        logo_url: { nullable: true, type: 'string' },
+                        name: { type: 'string' },
+                        organization_id: { format: 'uuid', type: 'string' },
+                        updated_at: { format: 'date-time', type: 'string' },
+                      },
+                      required: [
+                        'organization_id',
+                        'name',
+                        'logo_url',
+                        'connect_webview_customization',
+                        'created_at',
+                        'updated_at',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['organization', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/organizations/update',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'organizations'],
+        'x-fern-sdk-method-name': 'update',
+        'x-fern-sdk-return-value': 'organization',
+        'x-response-key': 'organization',
+        'x-title': 'Update an Organization',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+      post: {
+        description: 'Updates an organization.',
+        operationId: 'seamConsoleV1OrganizationsUpdatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connect_webview_customization: {
+                    properties: {
+                      logo_shape: {
+                        enum: ['circle', 'square'],
+                        nullable: true,
+                        type: 'string',
+                      },
+                      primary_button_color: { nullable: true, type: 'string' },
+                      primary_button_text_color: {
+                        nullable: true,
+                        type: 'string',
+                      },
+                    },
+                    type: 'object',
+                  },
+                  logo_image_base64: { nullable: true, type: 'string' },
+                  name: { maxLength: 255, minLength: 1, type: 'string' },
+                  organization_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['organization_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    organization: {
+                      properties: {
+                        connect_webview_customization: {
+                          properties: {
+                            logo_shape: {
+                              enum: ['circle', 'square'],
+                              nullable: true,
+                              type: 'string',
+                            },
+                            primary_button_color: {
+                              nullable: true,
+                              type: 'string',
+                            },
+                            primary_button_text_color: {
+                              nullable: true,
+                              type: 'string',
+                            },
+                          },
+                          required: [
+                            'primary_button_color',
+                            'primary_button_text_color',
+                            'logo_shape',
+                          ],
+                          type: 'object',
+                        },
+                        created_at: { format: 'date-time', type: 'string' },
+                        logo_url: { nullable: true, type: 'string' },
+                        name: { type: 'string' },
+                        organization_id: { format: 'uuid', type: 'string' },
+                        updated_at: { format: 'date-time', type: 'string' },
+                      },
+                      required: [
+                        'organization_id',
+                        'name',
+                        'logo_url',
+                        'connect_webview_customization',
+                        'created_at',
+                        'updated_at',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['organization', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/organizations/update',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'organizations'],
+        'x-fern-sdk-method-name': 'update',
+        'x-fern-sdk-return-value': 'organization',
+        'x-response-key': 'organization',
+        'x-title': 'Update an Organization',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/organizations/upload_logo': {
+      post: {
+        description: 'Uploads a logo image for an organization.',
+        operationId: 'seamConsoleV1OrganizationsUploadLogoPost',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    organization: {
+                      properties: {
+                        connect_webview_customization: {
+                          properties: {
+                            logo_shape: {
+                              enum: ['circle', 'square'],
+                              nullable: true,
+                              type: 'string',
+                            },
+                            primary_button_color: {
+                              nullable: true,
+                              type: 'string',
+                            },
+                            primary_button_text_color: {
+                              nullable: true,
+                              type: 'string',
+                            },
+                          },
+                          required: [
+                            'primary_button_color',
+                            'primary_button_text_color',
+                            'logo_shape',
+                          ],
+                          type: 'object',
+                        },
+                        created_at: { format: 'date-time', type: 'string' },
+                        logo_url: { nullable: true, type: 'string' },
+                        name: { type: 'string' },
+                        organization_id: { format: 'uuid', type: 'string' },
+                        updated_at: { format: 'date-time', type: 'string' },
+                      },
+                      required: [
+                        'organization_id',
+                        'name',
+                        'logo_url',
+                        'connect_webview_customization',
+                        'created_at',
+                        'updated_at',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['organization', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/organizations/upload_logo',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'organizations'],
+        'x-fern-sdk-method-name': 'upload_logo',
+        'x-fern-sdk-return-value': 'organization',
+        'x-response-key': 'organization',
+        'x-title': 'Upload an Organization Logo',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/organizations/workspaces/create': {
+      post: {
+        description: 'Creates a workspace in an organization.',
+        operationId: 'seamConsoleV1OrganizationsWorkspacesCreatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  is_sandbox: { default: false, type: 'boolean' },
+                  name: { minLength: 1, type: 'string' },
+                  organization_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['organization_id', 'name'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    workspace: { $ref: '#/components/schemas/workspace' },
+                  },
+                  required: ['workspace', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/organizations/workspaces/create',
+        tags: ['/workspaces'],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'organizations',
+          'workspaces',
+        ],
+        'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'workspace',
+        'x-response-key': 'workspace',
+        'x-title': 'Create an Organization Workspace',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/organizations/workspaces/remove': {
+      post: {
+        description: 'Removes a workspace from an organization.',
+        operationId: 'seamConsoleV1OrganizationsWorkspacesRemovePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  workspace_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['workspace_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/organizations/workspaces/remove',
+        tags: ['/workspaces'],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'organizations',
+          'workspaces',
+        ],
+        'x-fern-sdk-method-name': 'remove',
+        'x-response-key': null,
+        'x-title': 'Remove an Organization Workspace',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/organizations/workspaces/update': {
+      post: {
+        description: 'Updates a workspace in an organization.',
+        operationId: 'seamConsoleV1OrganizationsWorkspacesUpdatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  name: { minLength: 1, type: 'string' },
+                  workspace_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['workspace_id', 'name'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    workspace: { $ref: '#/components/schemas/workspace' },
+                  },
+                  required: ['workspace', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/organizations/workspaces/update',
+        tags: ['/workspaces'],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'organizations',
+          'workspaces',
+        ],
+        'x-fern-sdk-method-name': 'update',
+        'x-fern-sdk-return-value': 'workspace',
+        'x-response-key': 'workspace',
+        'x-title': 'Update an Organization Workspace',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
     '/seam/console/v1/sites/create': {
       post: {
         description:
