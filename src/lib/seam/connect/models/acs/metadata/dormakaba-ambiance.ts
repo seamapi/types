@@ -4,10 +4,12 @@ export const acs_entrance_dormakaba_ambiance_metadata = z
   .object({
     access_point_name: z
       .string()
+      .optional()
       .describe(
         'Name of the access point in the dormakaba Ambiance access system.',
       ),
   })
+  .partial()
   .describe(
     'dormakaba Ambiance-specific metadata associated with the entrance.',
   )

@@ -344,6 +344,7 @@ export const dormakaba_oracode_access_code_metadata = z
   .object({
     stay_id: z
       .number()
+      .optional()
       .describe('Dormakaba Oracode stay ID associated with this access code.'),
     user_level_id: z
       .string()
@@ -354,6 +355,7 @@ export const dormakaba_oracode_access_code_metadata = z
     user_level_name: z
       .string()
       .nullable()
+      .optional()
       .describe(
         'Dormakaba Oracode user level name associated with this access code.',
       ),
@@ -386,6 +388,7 @@ export const dormakaba_oracode_access_code_metadata = z
         'Indicates whether the access code can be overridden. When false, the maximum number of overrides has been reached.',
       ),
   })
+  .partial()
   .describe('Metadata for a dormakaba Oracode access code.')
 
 export const access_code = z.object({

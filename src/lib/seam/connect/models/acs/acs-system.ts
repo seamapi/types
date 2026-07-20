@@ -304,20 +304,24 @@ export const acs_system = z
       .object({
         mobile_access_uuid: z
           .string()
+          .optional()
           .describe(
             'Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.',
           ),
         system_id: z
           .string()
+          .optional()
           .describe(
             'Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager.',
           ),
         lan_address: z
           .string()
+          .optional()
           .describe(
             'IP address or hostname of the main Visionline server relative to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) on the local network.',
           ),
       })
+      .partial()
       .optional()
       .describe(
         'Visionline-specific metadata for the [access control system](https://docs.seam.co/low-level-apis/access-systems).',

@@ -88,16 +88,20 @@ export const climate_preset = z.object({
     .object({
       climate_ref: z
         .string()
+        .optional()
         .describe(`Reference to the Ecobee climate, if applicable.`),
       is_optimized: z
         .boolean()
+        .optional()
         .describe(`Indicates if the climate preset is optimized by Ecobee.`),
       owner: z
         .enum(['user', 'system'])
+        .optional()
         .describe(
           `Indicates whether the climate preset is owned by the user or the system.`,
         ),
     })
+    .partial()
     .optional().describe(`
     Metadata specific to the Ecobee climate, if applicable.
   `),

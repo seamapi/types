@@ -380,6 +380,7 @@ export const acs_credential_on_encoder = z.object({
     .object({
       card_id: z
         .string()
+        .optional()
         .describe(
           'Card ID for the Visionline card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
         ),
@@ -387,21 +388,25 @@ export const acs_credential_on_encoder = z.object({
 
       cancelled: z
         .boolean()
+        .optional()
         .describe(
           'Indicates whether the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is cancelled.',
         ),
       discarded: z
         .boolean()
+        .optional()
         .describe(
           'Indicates whether the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is discarded.',
         ),
       expired: z
         .boolean()
+        .optional()
         .describe(
           'Indicates whether the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is expired.',
         ),
       overwritten: z
         .boolean()
+        .optional()
         .describe(
           'Indicates whether the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is overwritten.',
         ),
@@ -413,12 +418,14 @@ export const acs_credential_on_encoder = z.object({
         ),
       pending_auto_update: z
         .boolean()
+        .optional()
         .describe(
           'Indicates whether the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is pending auto-update.',
         ),
 
       card_format: z
         .enum(['TLCode', 'rfid48'])
+        .optional()
         .describe(
           'Format of the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
         ),
@@ -431,6 +438,7 @@ export const acs_credential_on_encoder = z.object({
 
       number_of_issued_cards: z
         .number()
+        .optional()
         .describe(
           'Number of issued cards associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
         ),
@@ -448,6 +456,7 @@ export const acs_credential_on_encoder = z.object({
           'IDs of the common [entrances](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
         ),
     })
+    .partial()
     .optional()
     .describe(
       'Visionline-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',

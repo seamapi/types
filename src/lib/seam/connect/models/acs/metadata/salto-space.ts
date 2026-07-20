@@ -2,23 +2,31 @@ import { z } from 'zod'
 
 export const acs_entrance_salto_space_metadata = z
   .object({
-    door_id: z.string().describe('Door ID in the Salto Space access system.'),
+    door_id: z
+      .string()
+      .optional()
+      .describe('Door ID in the Salto Space access system.'),
     door_name: z
       .string()
+      .optional()
       .describe('Name of the door in the Salto Space access system.'),
     door_description: z
       .string()
+      .optional()
       .describe('Description of the door in the Salto Space access system.'),
     audit_on_keys: z
       .boolean()
+      .optional()
       .describe(
         'Indicates whether AuditOnKeys is enabled for the door in the Salto Space access system.',
       ),
     room_name: z
       .string()
+      .optional()
       .describe('Name of the room in the Salto Space access system.'),
     room_description: z
       .string()
+      .optional()
       .describe('Description of the room in the Salto Space access system.'),
   })
   .partial()
@@ -30,9 +38,13 @@ export type AcsEntranceSaltoSpaceMetadata = z.infer<
 
 export const acs_user_salto_space_metadata = z
   .object({
-    user_id: z.string().describe('User ID in the Salto Space access system.'),
+    user_id: z
+      .string()
+      .optional()
+      .describe('User ID in the Salto Space access system.'),
     audit_openings: z
       .boolean()
+      .optional()
       .describe(
         'Indicates whether AuditOpenings is enabled for the user in the Salto Space access system.',
       ),

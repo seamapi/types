@@ -4,10 +4,12 @@ export const acs_entrance_dormakaba_community_metadata = z
   .object({
     access_point_profile: z
       .string()
+      .optional()
       .describe(
         'Type of access point profile in the dormakaba Community access system.',
       ),
   })
+  .partial()
   .describe(
     'dormakaba Community-specific metadata associated with the entrance.',
   )

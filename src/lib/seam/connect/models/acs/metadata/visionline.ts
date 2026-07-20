@@ -4,30 +4,38 @@ export const acs_entrance_visionline_metadata = z
   .object({
     door_name: z
       .string()
+      .optional()
       .describe('Name of the door in the Visionline access system.'),
     door_category: z
       .enum(['entrance', 'guest', 'elevator reader', 'common', 'common (PMS)'])
+      .optional()
       .describe('Category of the door in the Visionline access system.'),
     profiles: z
       .array(
-        z.object({
-          visionline_door_profile_id: z
-            .string()
-            .describe('Door profile ID in the Visionline access system.'),
-          visionline_door_profile_type: z
-            .enum(['BLE', 'commonDoor', 'touch'])
-            .describe('Door profile type in the Visionline access system.'),
-        }),
+        z
+          .object({
+            visionline_door_profile_id: z
+              .string()
+              .optional()
+              .describe('Door profile ID in the Visionline access system.'),
+            visionline_door_profile_type: z
+              .enum(['BLE', 'commonDoor', 'touch'])
+              .optional()
+              .describe('Door profile type in the Visionline access system.'),
+          })
+          .partial(),
       )
       .optional()
       .describe('Profile for the door in the Visionline access system.'),
   })
+  .partial()
   .describe('Visionline-specific metadata associated with the entrance.')
 
 export const acs_credential_visionline_metadata = z
   .object({
     card_function_type: z
       .enum(['guest', 'staff'])
+      .optional()
       .describe('Card function type in the Visionline access system.'),
     joiner_acs_credential_ids: z
       .array(z.string().uuid())
@@ -60,6 +68,7 @@ export const acs_credential_visionline_metadata = z
       .optional()
       .describe('ID of the credential in the Visionline access system.'),
   })
+  .partial()
   .describe('Visionline-specific metadata associated with the credential.')
 
 export type AcsCredentialVisionlineMetadata = z.infer<

@@ -4,9 +4,11 @@ export const acs_entrance_assa_abloy_vostio_metadata = z
   .object({
     door_type: z
       .enum(['CommonDoor', 'EntranceDoor', 'GuestDoor', 'Elevator'])
+      .optional()
       .describe('Type of the door in the Vostio access system.'),
     door_name: z
       .string()
+      .optional()
       .describe('Name of the door in the Vostio access system.'),
     door_number: z
       .number()
@@ -23,6 +25,7 @@ export const acs_entrance_assa_abloy_vostio_metadata = z
       .optional()
       .describe('PMS ID of the door in the Vostio access system.'),
   })
+  .partial()
   .describe('ASSA ABLOY Vostio-specific metadata associated with the entrance.')
 
 export type AcsEntranceAssaAbloyVostioMetadata = z.infer<
@@ -65,6 +68,7 @@ export const acs_credential_vostio_metadata = z
       .optional()
       .describe('Endpoint ID in the Vostio access system.'),
   })
+  .partial()
   .describe(
     'ASSA ABLOY Vostio-specific metadata associated with the credential.',
   )

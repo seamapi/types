@@ -88,7 +88,6 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
             },
-            required: ['stay_id', 'user_level_name'],
             type: 'object',
           },
           ends_at: {
@@ -3542,7 +3541,6 @@ const openapi: OpenAPISpec = {
                 type: 'array',
               },
             },
-            required: ['card_function_type'],
             type: 'object',
           },
           warnings: {
@@ -3904,7 +3902,6 @@ const openapi: OpenAPISpec = {
                 type: 'boolean',
               },
             },
-            required: ['door_type', 'door_name'],
             type: 'object',
           },
           avigilon_alta_metadata: {
@@ -3944,15 +3941,6 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
             },
-            required: [
-              'entry_name',
-              'org_name',
-              'zone_id',
-              'zone_name',
-              'site_id',
-              'site_name',
-              'entry_relays_total_count',
-            ],
             type: 'object',
           },
           brivo_metadata: {
@@ -3975,7 +3963,6 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
             },
-            required: ['access_point_id', 'site_id', 'site_name'],
             type: 'object',
           },
           can_belong_to_reservation: {
@@ -4030,7 +4017,6 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
             },
-            required: ['access_point_name'],
             type: 'object',
           },
           dormakaba_community_metadata: {
@@ -4043,7 +4029,6 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
             },
-            required: ['access_point_profile'],
             type: 'object',
           },
           errors: {
@@ -4112,12 +4097,6 @@ const openapi: OpenAPISpec = {
                 type: 'boolean',
               },
             },
-            required: [
-              'accessibility_type',
-              'door_name',
-              'door_type',
-              'is_connected',
-            ],
             type: 'object',
           },
           salto_ks_metadata: {
@@ -4161,12 +4140,6 @@ const openapi: OpenAPISpec = {
                 type: 'boolean',
               },
             },
-            required: [
-              'door_name',
-              'locked_state',
-              'lock_type',
-              'battery_level',
-            ],
             type: 'object',
           },
           salto_space_metadata: {
@@ -4248,16 +4221,11 @@ const openapi: OpenAPISpec = {
                       type: 'string',
                     },
                   },
-                  required: [
-                    'visionline_door_profile_id',
-                    'visionline_door_profile_type',
-                  ],
                   type: 'object',
                 },
                 type: 'array',
               },
             },
-            required: ['door_name', 'door_category'],
             type: 'object',
           },
           warnings: {
@@ -4795,7 +4763,6 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
             },
-            required: ['mobile_access_uuid', 'system_id', 'lan_address'],
             type: 'object',
           },
           warnings: {
@@ -6194,16 +6161,6 @@ const openapi: OpenAPISpec = {
                             type: 'boolean',
                           },
                         },
-                        required: [
-                          'card_id',
-                          'cancelled',
-                          'discarded',
-                          'expired',
-                          'overwritten',
-                          'pending_auto_update',
-                          'card_format',
-                          'number_of_issued_cards',
-                        ],
                         type: 'object',
                       },
                     },
@@ -6474,7 +6431,6 @@ const openapi: OpenAPISpec = {
                                 type: 'array',
                               },
                             },
-                            required: ['card_function_type'],
                             type: 'object',
                           },
                           warnings: {
@@ -6935,7 +6891,6 @@ const openapi: OpenAPISpec = {
                                 type: 'array',
                               },
                             },
-                            required: ['card_function_type'],
                             type: 'object',
                           },
                           warnings: {
@@ -7657,7 +7612,6 @@ const openapi: OpenAPISpec = {
                             type: 'array',
                           },
                         },
-                        required: ['card_function_type'],
                         type: 'object',
                       },
                       warnings: {
@@ -8115,7 +8069,6 @@ const openapi: OpenAPISpec = {
                             type: 'array',
                           },
                         },
-                        required: ['card_function_type'],
                         type: 'object',
                       },
                       warnings: {
@@ -8871,7 +8824,6 @@ const openapi: OpenAPISpec = {
                         type: 'array',
                       },
                     },
-                    required: ['card_function_type'],
                     type: 'object',
                   },
                   warnings: {
@@ -12218,18 +12170,11 @@ const openapi: OpenAPISpec = {
                                 type: 'integer',
                               },
                             },
-                            required: [
-                              'site_id',
-                              'site_name',
-                              'subscribed_site_user_count',
-                              'site_user_subscription_limit',
-                            ],
                             type: 'object',
                           },
                           type: 'array',
                         },
                       },
-                      required: ['sites'],
                       type: 'object',
                     },
                   },
@@ -12441,18 +12386,11 @@ const openapi: OpenAPISpec = {
                                 type: 'integer',
                               },
                             },
-                            required: [
-                              'site_id',
-                              'site_name',
-                              'site_user_subscription_limit',
-                              'subscribed_site_user_count',
-                            ],
                             type: 'object',
                           },
                           type: 'array',
                         },
                       },
-                      required: ['sites'],
                       type: 'object',
                     },
                     warning_code: {
@@ -13910,7 +13848,6 @@ const openapi: OpenAPISpec = {
                                       type: 'boolean',
                                     },
                                   },
-                                  required: ['endpoint_id', 'is_active'],
                                   type: 'object',
                                 },
                                 type: 'array',
@@ -13921,7 +13858,6 @@ const openapi: OpenAPISpec = {
                                 type: 'boolean',
                               },
                             },
-                            required: ['has_active_endpoint', 'endpoints'],
                             type: 'object',
                           },
                           salto_space_credential_service_metadata: {
@@ -13934,7 +13870,6 @@ const openapi: OpenAPISpec = {
                                 type: 'boolean',
                               },
                             },
-                            required: ['has_active_phone'],
                             type: 'object',
                           },
                         },
@@ -13966,7 +13901,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: ['gadget_name', 'gadget_id', 'product_name'],
                         type: 'object',
                       },
                       assa_abloy_vostio_metadata: {
@@ -13979,7 +13913,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: ['encoder_name'],
                         type: 'object',
                       },
                       august_metadata: {
@@ -14016,12 +13949,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: [
-                          'lock_id',
-                          'lock_name',
-                          'house_name',
-                          'has_keypad',
-                        ],
                         type: 'object',
                       },
                       avigilon_alta_metadata: {
@@ -14064,15 +13991,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: [
-                          'entry_name',
-                          'org_name',
-                          'zone_id',
-                          'zone_name',
-                          'site_id',
-                          'site_name',
-                          'entry_relays_total_count',
-                        ],
                         type: 'object',
                       },
                       brivo_metadata: {
@@ -14109,7 +14027,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: ['device_id', 'device_name', 'relay_name'],
                         type: 'object',
                       },
                       dormakaba_oracode_metadata: {
@@ -14205,18 +14122,6 @@ const openapi: OpenAPISpec = {
                                   type: 'number',
                                 },
                               },
-                              required: [
-                                'name',
-                                'prefix',
-                                'check_in_time',
-                                'check_out_time',
-                                'is_24_hour',
-                                'is_biweekly_mode',
-                                'is_one_shot',
-                                'is_master',
-                                'dormakaba_oracode_user_level_prefix',
-                                'dormakaba_oracode_user_level_id',
-                              ],
                               type: 'object',
                             },
                             type: 'array',
@@ -14237,12 +14142,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: [
-                          'door_name',
-                          'door_is_wireless',
-                          'site_id',
-                          'site_name',
-                        ],
                         type: 'object',
                       },
                       ecobee_metadata: {
@@ -14257,7 +14156,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: ['ecobee_device_id', 'device_name'],
                         type: 'object',
                       },
                       four_suites_metadata: {
@@ -14279,11 +14177,6 @@ const openapi: OpenAPISpec = {
                             type: 'number',
                           },
                         },
-                        required: [
-                          'device_id',
-                          'device_name',
-                          'reclose_delay_in_seconds',
-                        ],
                         type: 'object',
                       },
                       genie_metadata: {
@@ -14298,7 +14191,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: ['device_name', 'door_name'],
                         type: 'object',
                       },
                       honeywell_resideo_metadata: {
@@ -14315,10 +14207,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: [
-                          'honeywell_resideo_device_id',
-                          'device_name',
-                        ],
                         type: 'object',
                       },
                       igloo_metadata: {
@@ -14337,7 +14225,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: ['device_id', 'bridge_id'],
                         type: 'object',
                       },
                       igloohome_metadata: {
@@ -14369,7 +14256,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: ['device_id', 'device_name'],
                         type: 'object',
                       },
                       keynest_metadata: {
@@ -14512,12 +14398,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: [
-                          'lock_id',
-                          'lock_name',
-                          'place_name',
-                          'description',
-                        ],
                         type: 'object',
                       },
                       korelock_metadata: {
@@ -14575,7 +14455,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: ['device_id', 'device_name', 'model_number'],
                         type: 'object',
                       },
                       lockly_metadata: {
@@ -14594,7 +14473,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: ['device_id', 'device_name'],
                         type: 'object',
                       },
                       minut_metadata: {
@@ -14628,7 +14506,6 @@ const openapi: OpenAPISpec = {
                                     type: 'number',
                                   },
                                 },
-                                required: ['time', 'value'],
                                 type: 'object',
                               },
                               humidity: {
@@ -14647,7 +14524,6 @@ const openapi: OpenAPISpec = {
                                     type: 'number',
                                   },
                                 },
-                                required: ['time', 'value'],
                                 type: 'object',
                               },
                               pressure: {
@@ -14666,7 +14542,6 @@ const openapi: OpenAPISpec = {
                                     type: 'number',
                                   },
                                 },
-                                required: ['time', 'value'],
                                 type: 'object',
                               },
                               sound: {
@@ -14685,7 +14560,6 @@ const openapi: OpenAPISpec = {
                                     type: 'number',
                                   },
                                 },
-                                required: ['time', 'value'],
                                 type: 'object',
                               },
                               temperature: {
@@ -14704,25 +14578,12 @@ const openapi: OpenAPISpec = {
                                     type: 'number',
                                   },
                                 },
-                                required: ['time', 'value'],
                                 type: 'object',
                               },
                             },
-                            required: [
-                              'temperature',
-                              'sound',
-                              'humidity',
-                              'pressure',
-                              'accelerometer_z',
-                            ],
                             type: 'object',
                           },
                         },
-                        required: [
-                          'device_id',
-                          'device_name',
-                          'latest_sensor_values',
-                        ],
                         type: 'object',
                       },
                       nest_metadata: {
@@ -14748,11 +14609,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: [
-                          'nest_device_id',
-                          'device_name',
-                          'device_custom_name',
-                        ],
                         type: 'object',
                       },
                       noiseaware_metadata: {
@@ -14785,13 +14641,6 @@ const openapi: OpenAPISpec = {
                             type: 'number',
                           },
                         },
-                        required: [
-                          'device_model',
-                          'noise_level_nrs',
-                          'noise_level_decibel',
-                          'device_name',
-                          'device_id',
-                        ],
                         type: 'object',
                       },
                       nuki_metadata: {
@@ -14821,7 +14670,6 @@ const openapi: OpenAPISpec = {
                             type: 'boolean',
                           },
                         },
-                        required: ['device_id', 'device_name'],
                         type: 'object',
                       },
                       omnitec_metadata: {
@@ -14864,13 +14712,6 @@ const openapi: OpenAPISpec = {
                             type: 'number',
                           },
                         },
-                        required: [
-                          'lock_id',
-                          'lock_name',
-                          'lock_mac',
-                          'has_gateway',
-                          'timezone_raw_offset_ms',
-                        ],
                         type: 'object',
                       },
                       ring_metadata: {
@@ -14885,7 +14726,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: ['device_id', 'device_name'],
                         type: 'object',
                       },
                       salto_ks_metadata: {
@@ -14932,13 +14772,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: [
-                          'lock_id',
-                          'customer_reference',
-                          'lock_type',
-                          'battery_level',
-                          'locked_state',
-                        ],
                         type: 'object',
                       },
                       salto_metadata: {
@@ -14981,13 +14814,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: [
-                          'lock_id',
-                          'customer_reference',
-                          'lock_type',
-                          'battery_level',
-                          'locked_state',
-                        ],
                         type: 'object',
                         'x-deprecated': 'Use `salto_ks_metadata ` instead.',
                       },
@@ -15007,7 +14833,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: ['device_id', 'device_name'],
                         type: 'object',
                       },
                       seam_bridge_metadata: {
@@ -15028,7 +14853,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: ['device_num', 'name'],
                         type: 'object',
                       },
                       sensi_metadata: {
@@ -15056,7 +14880,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: ['device_id', 'device_name', 'product_type'],
                         type: 'object',
                       },
                       smartthings_metadata: {
@@ -15081,7 +14904,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: ['device_id', 'device_name'],
                         type: 'object',
                       },
                       tado_metadata: {
@@ -15096,7 +14918,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: ['serial_no', 'device_type'],
                         type: 'object',
                       },
                       tedee_metadata: {
@@ -15134,14 +14955,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: [
-                          'device_id',
-                          'serial_number',
-                          'device_name',
-                          'device_model',
-                          'bridge_id',
-                          'bridge_name',
-                        ],
                         type: 'object',
                       },
                       ttlock_metadata: {
@@ -15190,15 +15003,6 @@ const openapi: OpenAPISpec = {
                                 type: 'boolean',
                               },
                             },
-                            required: [
-                              'passcode',
-                              'passcode_management',
-                              'unlock_via_gateway',
-                              'lock_command',
-                              'incomplete_keyboard_passcode',
-                              'wifi',
-                              'auto_lock_time_config',
-                            ],
                             type: 'object',
                           },
                           has_gateway: {
@@ -15239,21 +15043,11 @@ const openapi: OpenAPISpec = {
                                   type: 'string',
                                 },
                               },
-                              required: [
-                                'wireless_keypad_id',
-                                'wireless_keypad_name',
-                              ],
                               type: 'object',
                             },
                             type: 'array',
                           },
                         },
-                        required: [
-                          'lock_id',
-                          'lock_alias',
-                          'feature_value',
-                          'features',
-                        ],
                         type: 'object',
                       },
                       two_n_metadata: {
@@ -15269,7 +15063,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: ['device_id', 'device_name'],
                         type: 'object',
                       },
                       ultraloq_metadata: {
@@ -15294,12 +15087,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: [
-                          'device_id',
-                          'device_name',
-                          'device_type',
-                          'time_zone',
-                        ],
                         type: 'object',
                       },
                       visionline_metadata: {
@@ -15312,7 +15099,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: ['encoder_id'],
                         type: 'object',
                       },
                       wyze_metadata: {
@@ -15354,14 +15140,6 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                         },
-                        required: [
-                          'device_id',
-                          'device_name',
-                          'product_name',
-                          'product_type',
-                          'product_model',
-                          'device_info_model',
-                        ],
                         type: 'object',
                       },
                     },
@@ -15885,11 +15663,6 @@ const openapi: OpenAPISpec = {
                                   type: 'string',
                                 },
                               },
-                              required: [
-                                'climate_ref',
-                                'is_optimized',
-                                'owner',
-                              ],
                               type: 'object',
                             },
                             fan_mode_setting: {
@@ -16043,7 +15816,6 @@ const openapi: OpenAPISpec = {
                                 type: 'string',
                               },
                             },
-                            required: ['climate_ref', 'is_optimized', 'owner'],
                             type: 'object',
                           },
                           fan_mode_setting: {
@@ -16163,7 +15935,6 @@ const openapi: OpenAPISpec = {
                                 type: 'string',
                               },
                             },
-                            required: ['climate_ref', 'is_optimized', 'owner'],
                             type: 'object',
                           },
                           fan_mode_setting: {
@@ -27720,7 +27491,6 @@ const openapi: OpenAPISpec = {
                           type: 'boolean',
                         },
                       },
-                      required: ['endpoint_id', 'is_active'],
                       type: 'object',
                     },
                     type: 'array',
@@ -27731,7 +27501,6 @@ const openapi: OpenAPISpec = {
                     type: 'boolean',
                   },
                 },
-                required: ['has_active_endpoint', 'endpoints'],
                 type: 'object',
               },
               salto_space_credential_service_metadata: {
@@ -27744,7 +27513,6 @@ const openapi: OpenAPISpec = {
                     type: 'boolean',
                   },
                 },
-                required: ['has_active_phone'],
                 type: 'object',
               },
             },
@@ -27902,7 +27670,6 @@ const openapi: OpenAPISpec = {
                                   type: 'boolean',
                                 },
                               },
-                              required: ['door_type', 'door_name'],
                               type: 'object',
                             },
                             avigilon_alta_metadata: {
@@ -27948,15 +27715,6 @@ const openapi: OpenAPISpec = {
                                   type: 'string',
                                 },
                               },
-                              required: [
-                                'entry_name',
-                                'org_name',
-                                'zone_id',
-                                'zone_name',
-                                'site_id',
-                                'site_name',
-                                'entry_relays_total_count',
-                              ],
                               type: 'object',
                             },
                             brivo_metadata: {
@@ -27980,11 +27738,6 @@ const openapi: OpenAPISpec = {
                                   type: 'string',
                                 },
                               },
-                              required: [
-                                'access_point_id',
-                                'site_id',
-                                'site_name',
-                              ],
                               type: 'object',
                             },
                             can_belong_to_reservation: {
@@ -28039,7 +27792,6 @@ const openapi: OpenAPISpec = {
                                   type: 'string',
                                 },
                               },
-                              required: ['access_point_name'],
                               type: 'object',
                             },
                             dormakaba_community_metadata: {
@@ -28052,7 +27804,6 @@ const openapi: OpenAPISpec = {
                                   type: 'string',
                                 },
                               },
-                              required: ['access_point_profile'],
                               type: 'object',
                             },
                             errors: {
@@ -28125,12 +27876,6 @@ const openapi: OpenAPISpec = {
                                   type: 'boolean',
                                 },
                               },
-                              required: [
-                                'accessibility_type',
-                                'door_name',
-                                'door_type',
-                                'is_connected',
-                              ],
                               type: 'object',
                             },
                             salto_ks_metadata: {
@@ -28178,12 +27923,6 @@ const openapi: OpenAPISpec = {
                                   type: 'boolean',
                                 },
                               },
-                              required: [
-                                'door_name',
-                                'locked_state',
-                                'lock_type',
-                                'battery_level',
-                              ],
                               type: 'object',
                             },
                             salto_space_metadata: {
@@ -28267,16 +28006,11 @@ const openapi: OpenAPISpec = {
                                         type: 'string',
                                       },
                                     },
-                                    required: [
-                                      'visionline_door_profile_id',
-                                      'visionline_door_profile_type',
-                                    ],
                                     type: 'object',
                                   },
                                   type: 'array',
                                 },
                               },
-                              required: ['door_name', 'door_category'],
                               type: 'object',
                             },
                             warnings: {
@@ -28684,7 +28418,6 @@ const openapi: OpenAPISpec = {
                             type: 'array',
                           },
                         },
-                        required: ['card_function_type'],
                         type: 'object',
                       },
                       warnings: {
@@ -29592,7 +29325,6 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
             },
-            required: ['stay_id', 'user_level_name'],
             type: 'object',
           },
           ends_at: {
@@ -31705,7 +31437,6 @@ const openapi: OpenAPISpec = {
                 type: 'array',
               },
             },
-            required: ['card_function_type'],
             type: 'object',
           },
           warnings: {
@@ -83174,7 +82905,6 @@ const openapi: OpenAPISpec = {
                         type: 'string',
                       },
                     },
-                    required: ['climate_ref', 'is_optimized', 'owner'],
                     type: 'object',
                   },
                   fan_mode_setting: {
@@ -85988,7 +85718,6 @@ const openapi: OpenAPISpec = {
                         type: 'string',
                       },
                     },
-                    required: ['climate_ref', 'is_optimized', 'owner'],
                     type: 'object',
                   },
                   fan_mode_setting: {
@@ -86132,7 +85861,6 @@ const openapi: OpenAPISpec = {
                         type: 'string',
                       },
                     },
-                    required: ['climate_ref', 'is_optimized', 'owner'],
                     type: 'object',
                   },
                   fan_mode_setting: {
