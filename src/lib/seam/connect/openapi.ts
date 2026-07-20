@@ -36270,7 +36270,7 @@ const openapi: OpenAPISpec = {
     '/access_codes/list': {
       get: {
         description:
-          'Returns a list of all [access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes).\n\nSpecify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.',
+          'Returns a list of all [access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes).\n\nSpecify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`.',
         operationId: 'accessCodesListGet',
         parameters: [
           {
@@ -36287,7 +36287,7 @@ const openapi: OpenAPISpec = {
             name: 'device_id',
             schema: {
               description:
-                'ID of the device for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.',
+                'ID of the device for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`.',
               format: 'uuid',
               type: 'string',
             },
@@ -36297,7 +36297,7 @@ const openapi: OpenAPISpec = {
             name: 'access_code_ids',
             schema: {
               description:
-                'IDs of the access codes that you want to retrieve. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.',
+                'IDs of the access codes that you want to retrieve. Specify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`.',
               items: { format: 'uuid', type: 'string' },
               type: 'array',
             },
@@ -36307,7 +36307,7 @@ const openapi: OpenAPISpec = {
             name: 'access_method_id',
             schema: {
               description:
-                'ID of the access method for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.',
+                'ID of the access method for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`.',
               format: 'uuid',
               type: 'string',
             },
@@ -36317,8 +36317,17 @@ const openapi: OpenAPISpec = {
             name: 'access_grant_id',
             schema: {
               description:
-                'ID of the access grant for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.',
+                'ID of the access grant for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`.',
               format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'access_grant_key',
+            schema: {
+              description:
+                'Key of the access grant for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`.',
               type: 'string',
             },
           },
@@ -36403,7 +36412,7 @@ const openapi: OpenAPISpec = {
       },
       post: {
         description:
-          'Returns a list of all [access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes).\n\nSpecify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.',
+          'Returns a list of all [access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes).\n\nSpecify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`.',
         operationId: 'accessCodesListPost',
         requestBody: {
           content: {
@@ -36412,19 +36421,24 @@ const openapi: OpenAPISpec = {
                 properties: {
                   access_code_ids: {
                     description:
-                      'IDs of the access codes that you want to retrieve. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.',
+                      'IDs of the access codes that you want to retrieve. Specify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
                   access_grant_id: {
                     description:
-                      'ID of the access grant for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.',
+                      'ID of the access grant for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`.',
                     format: 'uuid',
+                    type: 'string',
+                  },
+                  access_grant_key: {
+                    description:
+                      'Key of the access grant for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`.',
                     type: 'string',
                   },
                   access_method_id: {
                     description:
-                      'ID of the access method for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.',
+                      'ID of the access method for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -36435,7 +36449,7 @@ const openapi: OpenAPISpec = {
                   },
                   device_id: {
                     description:
-                      'ID of the device for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.',
+                      'ID of the device for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`.',
                     format: 'uuid',
                     type: 'string',
                   },
