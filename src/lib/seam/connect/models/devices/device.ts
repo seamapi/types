@@ -211,19 +211,6 @@ const august_lock_not_authorized = common_device_error.extend({
     Indicates that the user is not authorized to use the August lock.
     `)
 
-const august_lock_missing_bridge = common_device_error.extend({
-  error_code: z
-    .literal('august_lock_missing_bridge')
-    .describe(error_code_description),
-}).describe(`
-    ---
-    resource_type: device
-    deprecated: Use \`hub_disconnected\` instead.
-    variant_group_key: locks
-    ---
-    Indicates that the lock is not connected to a bridge.
-    `)
-
 const salto_ks_subscription_limit_exceeded = common_device_error.extend({
   error_code: z
     .literal('salto_ks_subscription_limit_exceeded')
@@ -264,19 +251,6 @@ const dormakaba_sites_disconnected = common_device_error.extend({
     Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.
     `)
 
-const ttlock_lock_not_paired_to_gateway = common_device_error.extend({
-  error_code: z
-    .literal('ttlock_lock_not_paired_to_gateway')
-    .describe(error_code_description),
-}).describe(`
-    ---
-    resource_type: device
-    deprecated: Use \`hub_disconnected\` instead.
-    variant_group_key: locks
-    ---
-    Indicates that the lock is not paired with a gateway.
-    `)
-
 const missing_device_credentials = common_device_error.extend({
   error_code: z
     .literal('missing_device_credentials')
@@ -311,19 +285,6 @@ const subscription_required = common_device_error.extend({
     Indicates that a subscription is required to connect.
     `)
 
-const lockly_missing_wifi_bridge = common_device_error.extend({
-  error_code: z
-    .literal('lockly_missing_wifi_bridge')
-    .describe(error_code_description),
-}).describe(`
-    ---
-    resource_type: device
-    deprecated: Use \`hub_disconnected\` instead.
-    variant_group_key: locks
-    ---
-    Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
-    `)
-
 export const device_error = z
   .discriminatedUnion('error_code', [
     account_disconnected,
@@ -335,12 +296,9 @@ export const device_error = z
     device_disconnected,
     empty_backup_access_code_pool,
     august_lock_not_authorized,
-    august_lock_missing_bridge,
-    ttlock_lock_not_paired_to_gateway,
     missing_device_credentials,
     auxiliary_heat_running,
     subscription_required,
-    lockly_missing_wifi_bridge,
   ])
   .describe('Error associated with the device.')
 
@@ -356,20 +314,15 @@ export const device_error_map = z.object({
     .optional()
     .nullable(),
   august_lock_not_authorized: august_lock_not_authorized.optional().nullable(),
-  august_lock_missing_bridge: august_lock_missing_bridge.optional().nullable(),
   salto_ks_subscription_limit_exceeded: salto_ks_subscription_limit_exceeded
     .optional()
     .nullable(),
   dormakaba_sites_disconnected: dormakaba_sites_disconnected
     .optional()
     .nullable(),
-  ttlock_lock_not_paired_to_gateway: ttlock_lock_not_paired_to_gateway
-    .optional()
-    .nullable(),
   missing_device_credentials: missing_device_credentials.optional().nullable(),
   auxiliary_heat_running: auxiliary_heat_running.optional().nullable(),
   subscription_required: subscription_required.optional().nullable(),
-  lockly_missing_wifi_bridge: lockly_missing_wifi_bridge.optional().nullable(),
 })
 
 export type DeviceErrorMap = z.infer<typeof device_error_map>
@@ -466,18 +419,6 @@ const salto_ks_lock_access_code_support_removed = common_device_warning.extend({
     ---
     Indicates that a change in the reported device model has been detected for this Salto KS lock, which may occur after an IQ hub reset. Access code support may be affected. See https://help.getseam.com/articles/5098842588-salto-ks-lock-loses-access-code-support for troubleshooting steps.
   `)
-
-const wyze_device_missing_gateway = common_device_warning.extend({
-  warning_code: z
-    .literal('wyze_device_missing_gateway')
-    .describe(warning_code_description),
-}).describe(`
-    ---
-    deprecated: Use \`hub_disconnected\` device error instead.
-    variant_group_key: locks
-    ---
-    Indicates that the Wyze Lock is not connected to a gateway.
-    `)
 
 const third_party_integration_detected = common_device_warning
   .extend({
@@ -709,7 +650,6 @@ const insufficient_permissions = common_device_warning.extend({
 const device_warning = z.discriminatedUnion('warning_code', [
   partial_backup_access_code_pool,
   many_active_backup_codes,
-  wyze_device_missing_gateway,
   third_party_integration_detected,
   ttlock_lock_gateway_unlocking_not_enabled,
   ttlock_weak_gateway_signal,
@@ -750,9 +690,6 @@ export const device_warning_map = z.object({
       _event_id: z.string().uuid().optional(),
       _reason: z.string().optional(),
     })
-    .optional()
-    .nullable(),
-  wyze_device_missing_gateway: wyze_device_missing_gateway
     .optional()
     .nullable(),
   third_party_integration_detected: third_party_integration_detected

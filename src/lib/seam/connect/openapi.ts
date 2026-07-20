@@ -755,86 +755,6 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'locks',
                 },
                 {
-                  deprecated: true,
-                  description:
-                    'Indicates that the lock is not connected to a bridge.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_lock_missing_bridge'],
-                      type: 'string',
-                    },
-                    is_device_error: {
-                      description:
-                        'Indicates that the error is a device error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                  'x-deprecated': 'Use `hub_disconnected` instead.',
-                  'x-resource-type': 'device',
-                  'x-variant-group-key': 'locks',
-                },
-                {
-                  deprecated: true,
-                  description:
-                    'Indicates that the lock is not paired with a gateway.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['ttlock_lock_not_paired_to_gateway'],
-                      type: 'string',
-                    },
-                    is_device_error: {
-                      description:
-                        'Indicates that the error is a device error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                  'x-deprecated': 'Use `hub_disconnected` instead.',
-                  'x-resource-type': 'device',
-                  'x-variant-group-key': 'locks',
-                },
-                {
                   description: 'Indicates that device credentials are missing.',
                   properties: {
                     created_at: {
@@ -943,46 +863,6 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                   'x-resource-type': 'device',
-                },
-                {
-                  deprecated: true,
-                  description:
-                    'Indicates that the Lockly lock is not connected to a Wi-Fi bridge.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['lockly_missing_wifi_bridge'],
-                      type: 'string',
-                    },
-                    is_device_error: {
-                      description:
-                        'Indicates that the error is a device error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                  'x-deprecated': 'Use `hub_disconnected` instead.',
-                  'x-resource-type': 'device',
-                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -13321,86 +13201,6 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'locks',
                 },
                 {
-                  deprecated: true,
-                  description:
-                    'Indicates that the lock is not connected to a bridge.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_lock_missing_bridge'],
-                      type: 'string',
-                    },
-                    is_device_error: {
-                      description:
-                        'Indicates that the error is a device error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                  'x-deprecated': 'Use `hub_disconnected` instead.',
-                  'x-resource-type': 'device',
-                  'x-variant-group-key': 'locks',
-                },
-                {
-                  deprecated: true,
-                  description:
-                    'Indicates that the lock is not paired with a gateway.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['ttlock_lock_not_paired_to_gateway'],
-                      type: 'string',
-                    },
-                    is_device_error: {
-                      description:
-                        'Indicates that the error is a device error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                  'x-deprecated': 'Use `hub_disconnected` instead.',
-                  'x-resource-type': 'device',
-                  'x-variant-group-key': 'locks',
-                },
-                {
                   description: 'Indicates that device credentials are missing.',
                   properties: {
                     created_at: {
@@ -13509,46 +13309,6 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                   'x-resource-type': 'device',
-                },
-                {
-                  deprecated: true,
-                  description:
-                    'Indicates that the Lockly lock is not connected to a Wi-Fi bridge.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['lockly_missing_wifi_bridge'],
-                      type: 'string',
-                    },
-                    is_device_error: {
-                      description:
-                        'Indicates that the error is a device error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                  'x-deprecated': 'Use `hub_disconnected` instead.',
-                  'x-resource-type': 'device',
-                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -16435,35 +16195,6 @@ const openapi: OpenAPISpec = {
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
                   'x-variant-group-key': 'access_codes',
-                },
-                {
-                  deprecated: true,
-                  description:
-                    'Indicates that the Wyze Lock is not connected to a gateway.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['wyze_device_missing_gateway'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'created_at', 'warning_code'],
-                  type: 'object',
-                  'x-deprecated':
-                    'Use `hub_disconnected` device error instead.',
-                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -30017,86 +29748,6 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'locks',
                 },
                 {
-                  deprecated: true,
-                  description:
-                    'Indicates that the lock is not connected to a bridge.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_lock_missing_bridge'],
-                      type: 'string',
-                    },
-                    is_device_error: {
-                      description:
-                        'Indicates that the error is a device error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                  'x-deprecated': 'Use `hub_disconnected` instead.',
-                  'x-resource-type': 'device',
-                  'x-variant-group-key': 'locks',
-                },
-                {
-                  deprecated: true,
-                  description:
-                    'Indicates that the lock is not paired with a gateway.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['ttlock_lock_not_paired_to_gateway'],
-                      type: 'string',
-                    },
-                    is_device_error: {
-                      description:
-                        'Indicates that the error is a device error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                  'x-deprecated': 'Use `hub_disconnected` instead.',
-                  'x-resource-type': 'device',
-                  'x-variant-group-key': 'locks',
-                },
-                {
                   description: 'Indicates that device credentials are missing.',
                   properties: {
                     created_at: {
@@ -30205,46 +29856,6 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                   'x-resource-type': 'device',
-                },
-                {
-                  deprecated: true,
-                  description:
-                    'Indicates that the Lockly lock is not connected to a Wi-Fi bridge.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['lockly_missing_wifi_bridge'],
-                      type: 'string',
-                    },
-                    is_device_error: {
-                      description:
-                        'Indicates that the error is a device error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                  'x-deprecated': 'Use `hub_disconnected` instead.',
-                  'x-resource-type': 'device',
-                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -33118,86 +32729,6 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'locks',
                 },
                 {
-                  deprecated: true,
-                  description:
-                    'Indicates that the lock is not connected to a bridge.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_lock_missing_bridge'],
-                      type: 'string',
-                    },
-                    is_device_error: {
-                      description:
-                        'Indicates that the error is a device error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                  'x-deprecated': 'Use `hub_disconnected` instead.',
-                  'x-resource-type': 'device',
-                  'x-variant-group-key': 'locks',
-                },
-                {
-                  deprecated: true,
-                  description:
-                    'Indicates that the lock is not paired with a gateway.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['ttlock_lock_not_paired_to_gateway'],
-                      type: 'string',
-                    },
-                    is_device_error: {
-                      description:
-                        'Indicates that the error is a device error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                  'x-deprecated': 'Use `hub_disconnected` instead.',
-                  'x-resource-type': 'device',
-                  'x-variant-group-key': 'locks',
-                },
-                {
                   description: 'Indicates that device credentials are missing.',
                   properties: {
                     created_at: {
@@ -33306,46 +32837,6 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                   'x-resource-type': 'device',
-                },
-                {
-                  deprecated: true,
-                  description:
-                    'Indicates that the Lockly lock is not connected to a Wi-Fi bridge.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['lockly_missing_wifi_bridge'],
-                      type: 'string',
-                    },
-                    is_device_error: {
-                      description:
-                        'Indicates that the error is a device error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: [
-                    'message',
-                    'is_device_error',
-                    'created_at',
-                    'error_code',
-                  ],
-                  type: 'object',
-                  'x-deprecated': 'Use `hub_disconnected` instead.',
-                  'x-resource-type': 'device',
-                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
@@ -33641,35 +33132,6 @@ const openapi: OpenAPISpec = {
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
                   'x-variant-group-key': 'access_codes',
-                },
-                {
-                  deprecated: true,
-                  description:
-                    'Indicates that the Wyze Lock is not connected to a gateway.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['wyze_device_missing_gateway'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'created_at', 'warning_code'],
-                  type: 'object',
-                  'x-deprecated':
-                    'Use `hub_disconnected` device error instead.',
-                  'x-variant-group-key': 'locks',
                 },
                 {
                   description:
