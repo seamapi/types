@@ -81034,6 +81034,51 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Partner building blocks/UI only.',
       },
     },
+    '/seam/webhooks/[provider]/[subscription_id]': {
+      post: {
+        description:
+          'Receives an inbound webhook delivery for a provider subscription.',
+        operationId: 'seamWebhooksByProviderBySubscriptionIdPost',
+        parameters: [
+          {
+            in: 'query',
+            name: 'provider',
+            required: true,
+            schema: { type: 'string' },
+          },
+          {
+            in: 'query',
+            name: 'subscription_id',
+            required: true,
+            schema: { type: 'string' },
+          },
+        ],
+        requestBody: { content: { 'application/json': { schema: {} } } },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        summary: '/seam/webhooks/[provider]/[subscription_id]',
+        tags: ['/webhooks'],
+        'x-fern-sdk-group-name': ['seam', 'webhooks', '[provider]'],
+        'x-fern-sdk-method-name': 'by_subscription_id',
+        'x-response-key': null,
+        'x-title': 'Receive a Provider Webhook',
+        'x-undocumented': 'Internal endpoint for inbound provider webhooks',
+      },
+    },
     '/spaces/add_acs_entrances': {
       post: {
         description:
