@@ -91,6 +91,24 @@ export const access_method_created_event = access_method_event.extend({
     An access method was created.
   `)
 
+export const access_method_delay_in_issuing_event = access_method_event.extend({
+  event_type: z.literal('access_method.delay_in_issuing'),
+}).describe(`
+    ---
+    route_path: /access_methods
+    ---
+    Seam has not yet issued this access method, even though its access grant is about to begin, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and the accompanying \`delay_in_issuing\` warning clears automatically once issuance succeeds.
+  `)
+
+export const access_method_failed_to_issue_event = access_method_event.extend({
+  event_type: z.literal('access_method.failed_to_issue'),
+}).describe(`
+    ---
+    route_path: /access_methods
+    ---
+    Seam was unable to issue this access method before its access grant started, so the recipient may be unable to access the space. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and the accompanying \`failed_to_issue\` error clears automatically if the access method is eventually issued.
+  `)
+
 export type AccessMethodCreatedEvent = z.infer<
   typeof access_method_created_event
 >
@@ -106,4 +124,6 @@ export const access_method_events = [
   access_method_deleted_event,
   access_method_reissued_event,
   access_method_created_event,
+  access_method_delay_in_issuing_event,
+  access_method_failed_to_issue_event,
 ] as const

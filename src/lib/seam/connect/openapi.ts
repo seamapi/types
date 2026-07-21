@@ -2275,6 +2275,44 @@ const openapi: OpenAPISpec = {
             description: 'Display name of the access method.',
             type: 'string',
           },
+          errors: {
+            description:
+              'Errors associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+            items: {
+              description:
+                'Error associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+              discriminator: { propertyName: 'error_code' },
+              oneOf: [
+                {
+                  description:
+                    'Indicates that Seam was unable to issue this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) before its access grant started, so the recipient may be unable to access the space. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access method is eventually issued.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['failed_to_issue'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                  'x-resource-type': 'access_method',
+                },
+              ],
+            },
+            type: 'array',
+          },
           instant_key_url: {
             description:
               'URL of the Instant Key for mobile key access methods.',
@@ -2596,6 +2634,31 @@ const openapi: OpenAPISpec = {
                   required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Indicates that Seam has not yet issued this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant), even though its access grant is about to begin, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and this warning clears automatically once issuance succeeds.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['delay_in_issuing'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -2616,6 +2679,7 @@ const openapi: OpenAPISpec = {
           'issued_at',
           'is_issued',
           'warnings',
+          'errors',
           'pending_mutations',
         ],
         type: 'object',
@@ -9107,6 +9171,44 @@ const openapi: OpenAPISpec = {
                     description: 'Display name of the access method.',
                     type: 'string',
                   },
+                  errors: {
+                    description:
+                      'Errors associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+                    items: {
+                      description:
+                        'Error associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+                      discriminator: { propertyName: 'error_code' },
+                      oneOf: [
+                        {
+                          description:
+                            'Indicates that Seam was unable to issue this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) before its access grant started, so the recipient may be unable to access the space. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access method is eventually issued.',
+                          properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which Seam created the error.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            error_code: {
+                              description:
+                                'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                              enum: ['failed_to_issue'],
+                              type: 'string',
+                            },
+                            message: {
+                              description:
+                                'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                              type: 'string',
+                            },
+                          },
+                          required: ['created_at', 'message', 'error_code'],
+                          type: 'object',
+                          'x-resource-type': 'access_method',
+                        },
+                      ],
+                    },
+                    type: 'array',
+                  },
                   instant_key_url: {
                     description:
                       'URL of the Instant Key for mobile key access methods.',
@@ -9435,6 +9537,31 @@ const openapi: OpenAPISpec = {
                           required: ['created_at', 'message', 'warning_code'],
                           type: 'object',
                         },
+                        {
+                          description:
+                            'Indicates that Seam has not yet issued this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant), even though its access grant is about to begin, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and this warning clears automatically once issuance succeeds.',
+                          properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which Seam created the warning.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            message: {
+                              description:
+                                'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                              type: 'string',
+                            },
+                            warning_code: {
+                              description:
+                                'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                              enum: ['delay_in_issuing'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['created_at', 'message', 'warning_code'],
+                          type: 'object',
+                        },
                       ],
                     },
                     type: 'array',
@@ -9455,6 +9582,7 @@ const openapi: OpenAPISpec = {
                   'issued_at',
                   'is_issued',
                   'warnings',
+                  'errors',
                   'pending_mutations',
                 ],
                 type: 'object',
@@ -20662,6 +20790,132 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               event_type: { enum: ['access_method.created'], type: 'string' },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description: 'ID of the workspace associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'access_method_id',
+              'access_grant_ids',
+              'event_type',
+            ],
+            type: 'object',
+            'x-route-path': '/access_methods',
+          },
+          {
+            description:
+              'Seam has not yet issued this access method, even though its access grant is about to begin, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and the accompanying `delay_in_issuing` warning clears automatically once issuance succeeds.',
+            properties: {
+              access_grant_ids: {
+                description:
+                  'IDs of the access grants associated with this access method.',
+                items: { format: 'uuid', type: 'string' },
+                type: 'array',
+              },
+              access_grant_keys: {
+                description:
+                  'Keys of the access grants associated with this access method (if present).',
+                items: { type: 'string' },
+                type: 'array',
+              },
+              access_method_id: {
+                description: 'ID of the affected access method.',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: ['access_method.delay_in_issuing'],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description: 'ID of the workspace associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'access_method_id',
+              'access_grant_ids',
+              'event_type',
+            ],
+            type: 'object',
+            'x-route-path': '/access_methods',
+          },
+          {
+            description:
+              'Seam was unable to issue this access method before its access grant started, so the recipient may be unable to access the space. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and the accompanying `failed_to_issue` error clears automatically if the access method is eventually issued.',
+            properties: {
+              access_grant_ids: {
+                description:
+                  'IDs of the access grants associated with this access method.',
+                items: { format: 'uuid', type: 'string' },
+                type: 'array',
+              },
+              access_grant_keys: {
+                description:
+                  'Keys of the access grants associated with this access method (if present).',
+                items: { type: 'string' },
+                type: 'array',
+              },
+              access_method_id: {
+                description: 'ID of the affected access method.',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: ['access_method.failed_to_issue'],
+                type: 'string',
+              },
               occurred_at: {
                 description: 'Date and time at which the event occurred.',
                 format: 'date-time',
@@ -42562,6 +42816,48 @@ const openapi: OpenAPISpec = {
                           description: 'Display name of the access method.',
                           type: 'string',
                         },
+                        errors: {
+                          description:
+                            'Errors associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+                          items: {
+                            description:
+                              'Error associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+                            discriminator: { propertyName: 'error_code' },
+                            oneOf: [
+                              {
+                                description:
+                                  'Indicates that Seam was unable to issue this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) before its access grant started, so the recipient may be unable to access the space. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access method is eventually issued.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the error.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  error_code: {
+                                    description:
+                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                    enum: ['failed_to_issue'],
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'error_code',
+                                ],
+                                type: 'object',
+                                'x-resource-type': 'access_method',
+                              },
+                            ],
+                          },
+                          type: 'array',
+                        },
                         is_assignment_required: {
                           description:
                             'Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment.',
@@ -42913,6 +43209,35 @@ const openapi: OpenAPISpec = {
                                 ],
                                 type: 'object',
                               },
+                              {
+                                description:
+                                  'Indicates that Seam has not yet issued this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant), even though its access grant is about to begin, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and this warning clears automatically once issuance succeeds.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['delay_in_issuing'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
                             ],
                           },
                           type: 'array',
@@ -42933,6 +43258,7 @@ const openapi: OpenAPISpec = {
                         'issued_at',
                         'is_issued',
                         'warnings',
+                        'errors',
                         'pending_mutations',
                       ],
                       type: 'object',
@@ -43016,6 +43342,48 @@ const openapi: OpenAPISpec = {
                           description: 'Display name of the access method.',
                           type: 'string',
                         },
+                        errors: {
+                          description:
+                            'Errors associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+                          items: {
+                            description:
+                              'Error associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+                            discriminator: { propertyName: 'error_code' },
+                            oneOf: [
+                              {
+                                description:
+                                  'Indicates that Seam was unable to issue this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) before its access grant started, so the recipient may be unable to access the space. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access method is eventually issued.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the error.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  error_code: {
+                                    description:
+                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                    enum: ['failed_to_issue'],
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'error_code',
+                                ],
+                                type: 'object',
+                                'x-resource-type': 'access_method',
+                              },
+                            ],
+                          },
+                          type: 'array',
+                        },
                         is_assignment_required: {
                           description:
                             'Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment.',
@@ -43367,6 +43735,35 @@ const openapi: OpenAPISpec = {
                                 ],
                                 type: 'object',
                               },
+                              {
+                                description:
+                                  'Indicates that Seam has not yet issued this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant), even though its access grant is about to begin, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and this warning clears automatically once issuance succeeds.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['delay_in_issuing'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
                             ],
                           },
                           type: 'array',
@@ -43387,6 +43784,7 @@ const openapi: OpenAPISpec = {
                         'issued_at',
                         'is_issued',
                         'warnings',
+                        'errors',
                         'pending_mutations',
                       ],
                       type: 'object',
@@ -43502,6 +43900,48 @@ const openapi: OpenAPISpec = {
                             description: 'Display name of the access method.',
                             type: 'string',
                           },
+                          errors: {
+                            description:
+                              'Errors associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+                            items: {
+                              description:
+                                'Error associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+                              discriminator: { propertyName: 'error_code' },
+                              oneOf: [
+                                {
+                                  description:
+                                    'Indicates that Seam was unable to issue this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) before its access grant started, so the recipient may be unable to access the space. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access method is eventually issued.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the error.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    error_code: {
+                                      description:
+                                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                      enum: ['failed_to_issue'],
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'error_code',
+                                  ],
+                                  type: 'object',
+                                  'x-resource-type': 'access_method',
+                                },
+                              ],
+                            },
+                            type: 'array',
+                          },
                           is_assignment_required: {
                             description:
                               'Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment.',
@@ -43854,6 +44294,35 @@ const openapi: OpenAPISpec = {
                                   ],
                                   type: 'object',
                                 },
+                                {
+                                  description:
+                                    'Indicates that Seam has not yet issued this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant), even though its access grant is about to begin, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and this warning clears automatically once issuance succeeds.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['delay_in_issuing'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
                               ],
                             },
                             type: 'array',
@@ -43874,6 +44343,7 @@ const openapi: OpenAPISpec = {
                           'issued_at',
                           'is_issued',
                           'warnings',
+                          'errors',
                           'pending_mutations',
                         ],
                         type: 'object',
@@ -43980,6 +44450,48 @@ const openapi: OpenAPISpec = {
                             description: 'Display name of the access method.',
                             type: 'string',
                           },
+                          errors: {
+                            description:
+                              'Errors associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+                            items: {
+                              description:
+                                'Error associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+                              discriminator: { propertyName: 'error_code' },
+                              oneOf: [
+                                {
+                                  description:
+                                    'Indicates that Seam was unable to issue this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) before its access grant started, so the recipient may be unable to access the space. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access method is eventually issued.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the error.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    error_code: {
+                                      description:
+                                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                      enum: ['failed_to_issue'],
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'error_code',
+                                  ],
+                                  type: 'object',
+                                  'x-resource-type': 'access_method',
+                                },
+                              ],
+                            },
+                            type: 'array',
+                          },
                           is_assignment_required: {
                             description:
                               'Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment.',
@@ -44332,6 +44844,35 @@ const openapi: OpenAPISpec = {
                                   ],
                                   type: 'object',
                                 },
+                                {
+                                  description:
+                                    'Indicates that Seam has not yet issued this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant), even though its access grant is about to begin, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and this warning clears automatically once issuance succeeds.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['delay_in_issuing'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
                               ],
                             },
                             type: 'array',
@@ -44352,6 +44893,7 @@ const openapi: OpenAPISpec = {
                           'issued_at',
                           'is_issued',
                           'warnings',
+                          'errors',
                           'pending_mutations',
                         ],
                         type: 'object',
@@ -60867,6 +61409,8 @@ const openapi: OpenAPISpec = {
                 'access_method.deleted',
                 'access_method.reissued',
                 'access_method.created',
+                'access_method.delay_in_issuing',
+                'access_method.failed_to_issue',
                 'acs_system.connected',
                 'acs_system.added',
                 'acs_system.disconnected',
@@ -60985,6 +61529,8 @@ const openapi: OpenAPISpec = {
                   'access_method.deleted',
                   'access_method.reissued',
                   'access_method.created',
+                  'access_method.delay_in_issuing',
+                  'access_method.failed_to_issue',
                   'acs_system.connected',
                   'acs_system.added',
                   'acs_system.disconnected',
@@ -61436,6 +61982,8 @@ const openapi: OpenAPISpec = {
                       'access_method.deleted',
                       'access_method.reissued',
                       'access_method.created',
+                      'access_method.delay_in_issuing',
+                      'access_method.failed_to_issue',
                       'acs_system.connected',
                       'acs_system.added',
                       'acs_system.disconnected',
@@ -61550,6 +62098,8 @@ const openapi: OpenAPISpec = {
                         'access_method.deleted',
                         'access_method.reissued',
                         'access_method.created',
+                        'access_method.delay_in_issuing',
+                        'access_method.failed_to_issue',
                         'acs_system.connected',
                         'acs_system.added',
                         'acs_system.disconnected',
@@ -74346,6 +74896,8 @@ const openapi: OpenAPISpec = {
                 'access_method.deleted',
                 'access_method.reissued',
                 'access_method.created',
+                'access_method.delay_in_issuing',
+                'access_method.failed_to_issue',
                 'acs_system.connected',
                 'acs_system.added',
                 'acs_system.disconnected',
@@ -74465,6 +75017,8 @@ const openapi: OpenAPISpec = {
                   'access_method.deleted',
                   'access_method.reissued',
                   'access_method.created',
+                  'access_method.delay_in_issuing',
+                  'access_method.failed_to_issue',
                   'acs_system.connected',
                   'acs_system.added',
                   'acs_system.disconnected',
@@ -74647,6 +75201,8 @@ const openapi: OpenAPISpec = {
                       'access_method.deleted',
                       'access_method.reissued',
                       'access_method.created',
+                      'access_method.delay_in_issuing',
+                      'access_method.failed_to_issue',
                       'acs_system.connected',
                       'acs_system.added',
                       'acs_system.disconnected',
@@ -74761,6 +75317,8 @@ const openapi: OpenAPISpec = {
                         'access_method.deleted',
                         'access_method.reissued',
                         'access_method.created',
+                        'access_method.delay_in_issuing',
+                        'access_method.failed_to_issue',
                         'acs_system.connected',
                         'acs_system.added',
                         'acs_system.disconnected',
