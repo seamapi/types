@@ -50,11 +50,22 @@ const pulled_backup_access_code_warning = common_access_method_warning
     'Indicates that all attempts to create an access code on this device before the start time failed and a backup access code was used to ensure access was provided in time.',
   )
 
+const delay_in_issuing_warning = common_access_method_warning
+  .extend({
+    warning_code: z
+      .literal('delay_in_issuing')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'Indicates that Seam has not yet issued this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant), even though its access grant is about to begin, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and this warning clears automatically once issuance succeeds.',
+  )
+
 const access_method_warning = z
   .discriminatedUnion('warning_code', [
     being_deleted,
     updating_access_times_warning,
     pulled_backup_access_code_warning,
+    delay_in_issuing_warning,
   ])
   .describe(
     'Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
@@ -66,9 +77,46 @@ const _access_method_warning_map = z.object({
   pulled_backup_access_code: pulled_backup_access_code_warning
     .optional()
     .nullable(),
+  delay_in_issuing: delay_in_issuing_warning.optional().nullable(),
 })
 
 export type AccessMethodWarningMap = z.infer<typeof _access_method_warning_map>
+
+const common_access_method_error = z.object({
+  created_at: z
+    .string()
+    .datetime()
+    .describe('Date and time at which Seam created the error.'),
+  message: z
+    .string()
+    .describe(
+      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+    ),
+})
+
+const error_code_description =
+  'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.'
+
+const failed_to_issue_error = common_access_method_error.extend({
+  error_code: z.literal('failed_to_issue').describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: access_method
+    ---
+    Indicates that Seam was unable to issue this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) before its access grant started, so the recipient may be unable to access the space. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access method is eventually issued.
+  `)
+
+const access_method_error = z
+  .discriminatedUnion('error_code', [failed_to_issue_error])
+  .describe(
+    'Error associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+  )
+
+const _access_method_error_map = z.object({
+  failed_to_issue: failed_to_issue_error.optional().nullable(),
+})
+
+export type AccessMethodErrorMap = z.infer<typeof _access_method_error_map>
 
 // Pending mutations for access methods
 const common_pending_mutation = z.object({
@@ -278,6 +326,11 @@ export const access_method = z.object({
     .array(access_method_warning)
     .describe(
       'Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+    ),
+  errors: z
+    .array(access_method_error)
+    .describe(
+      'Errors associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
     ),
   pending_mutations: z
     .array(access_method_pending_mutations)
