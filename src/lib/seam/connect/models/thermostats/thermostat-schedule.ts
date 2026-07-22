@@ -74,6 +74,10 @@ export const thermostat_schedule = z.object({
           .describe(
             'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
           ),
+        created_at: z
+          .string()
+          .datetime()
+          .describe('Date and time at which Seam created the error.'),
       }),
     )
     .describe(

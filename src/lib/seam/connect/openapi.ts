@@ -3373,10 +3373,15 @@ const openapi: OpenAPISpec = {
               'Errors associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
             items: {
               properties: {
+                created_at: {
+                  description: 'Date and time at which Seam created the error.',
+                  format: 'date-time',
+                  type: 'string',
+                },
                 error_code: { type: 'string' },
                 message: { type: 'string' },
               },
-              required: ['error_code', 'message'],
+              required: ['error_code', 'message', 'created_at'],
               type: 'object',
             },
             type: 'array',
@@ -4005,6 +4010,11 @@ const openapi: OpenAPISpec = {
               'Errors associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
             items: {
               properties: {
+                created_at: {
+                  description: 'Date and time at which Seam created the error.',
+                  format: 'date-time',
+                  type: 'string',
+                },
                 error_code: {
                   description:
                     'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -4016,7 +4026,7 @@ const openapi: OpenAPISpec = {
                   type: 'string',
                 },
               },
-              required: ['error_code', 'message'],
+              required: ['error_code', 'message', 'created_at'],
               type: 'object',
             },
             type: 'array',
@@ -6260,10 +6270,16 @@ const openapi: OpenAPISpec = {
                               'Errors associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
                             items: {
                               properties: {
+                                created_at: {
+                                  description:
+                                    'Date and time at which Seam created the error.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
                                 error_code: { type: 'string' },
                                 message: { type: 'string' },
                               },
-                              required: ['error_code', 'message'],
+                              required: ['error_code', 'message', 'created_at'],
                               type: 'object',
                             },
                             type: 'array',
@@ -6725,10 +6741,16 @@ const openapi: OpenAPISpec = {
                               'Errors associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
                             items: {
                               properties: {
+                                created_at: {
+                                  description:
+                                    'Date and time at which Seam created the error.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
                                 error_code: { type: 'string' },
                                 message: { type: 'string' },
                               },
-                              required: ['error_code', 'message'],
+                              required: ['error_code', 'message', 'created_at'],
                               type: 'object',
                             },
                             type: 'array',
@@ -7441,10 +7463,16 @@ const openapi: OpenAPISpec = {
                           'Errors associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
                         items: {
                           properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which Seam created the error.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
                             error_code: { type: 'string' },
                             message: { type: 'string' },
                           },
-                          required: ['error_code', 'message'],
+                          required: ['error_code', 'message', 'created_at'],
                           type: 'object',
                         },
                         type: 'array',
@@ -7903,10 +7931,16 @@ const openapi: OpenAPISpec = {
                           'Errors associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
                         items: {
                           properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which Seam created the error.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
                             error_code: { type: 'string' },
                             message: { type: 'string' },
                           },
-                          required: ['error_code', 'message'],
+                          required: ['error_code', 'message', 'created_at'],
                           type: 'object',
                         },
                         type: 'array',
@@ -8653,10 +8687,16 @@ const openapi: OpenAPISpec = {
                       'Errors associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
                     items: {
                       properties: {
+                        created_at: {
+                          description:
+                            'Date and time at which Seam created the error.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
                         error_code: { type: 'string' },
                         message: { type: 'string' },
                       },
-                      required: ['error_code', 'message'],
+                      required: ['error_code', 'message', 'created_at'],
                       type: 'object',
                     },
                     type: 'array',
@@ -15401,6 +15441,12 @@ const openapi: OpenAPISpec = {
                               'Errors associated with the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
                             items: {
                               properties: {
+                                created_at: {
+                                  description:
+                                    'Date and time at which Seam created the error.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
                                 error_code: {
                                   description:
                                     'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -15412,7 +15458,7 @@ const openapi: OpenAPISpec = {
                                   type: 'string',
                                 },
                               },
-                              required: ['error_code', 'message'],
+                              required: ['error_code', 'message', 'created_at'],
                               type: 'object',
                             },
                             type: 'array',
@@ -27462,6 +27508,11 @@ const openapi: OpenAPISpec = {
             description: 'Errors associated with the phone.',
             items: {
               properties: {
+                created_at: {
+                  description: 'Date and time at which Seam created the error.',
+                  format: 'date-time',
+                  type: 'string',
+                },
                 error_code: {
                   description: 'Unique identifier of the type of error.',
                   type: 'string',
@@ -27471,7 +27522,7 @@ const openapi: OpenAPISpec = {
                   type: 'string',
                 },
               },
-              required: ['error_code', 'message'],
+              required: ['error_code', 'message', 'created_at'],
               type: 'object',
             },
             type: 'array',
@@ -27533,6 +27584,12 @@ const openapi: OpenAPISpec = {
             description: 'Warnings associated with the phone.',
             items: {
               properties: {
+                created_at: {
+                  description:
+                    'Date and time at which Seam created the warning.',
+                  format: 'date-time',
+                  type: 'string',
+                },
                 message: {
                   description: 'Detailed description of the warning.',
                   type: 'string',
@@ -27542,7 +27599,7 @@ const openapi: OpenAPISpec = {
                   type: 'string',
                 },
               },
-              required: ['warning_code', 'message'],
+              required: ['warning_code', 'message', 'created_at'],
               type: 'object',
             },
             type: 'array',
@@ -27822,6 +27879,12 @@ const openapi: OpenAPISpec = {
                                 'Errors associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
                               items: {
                                 properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the error.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
                                   error_code: {
                                     description:
                                       'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -27833,7 +27896,11 @@ const openapi: OpenAPISpec = {
                                     type: 'string',
                                   },
                                 },
-                                required: ['error_code', 'message'],
+                                required: [
+                                  'error_code',
+                                  'message',
+                                  'created_at',
+                                ],
                                 type: 'object',
                               },
                               type: 'array',
@@ -28289,10 +28356,16 @@ const openapi: OpenAPISpec = {
                           'Errors associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
                         items: {
                           properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which Seam created the error.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
                             error_code: { type: 'string' },
                             message: { type: 'string' },
                           },
-                          required: ['error_code', 'message'],
+                          required: ['error_code', 'message', 'created_at'],
                           type: 'object',
                         },
                         type: 'array',
@@ -29182,6 +29255,11 @@ const openapi: OpenAPISpec = {
               'Errors associated with the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
             items: {
               properties: {
+                created_at: {
+                  description: 'Date and time at which Seam created the error.',
+                  format: 'date-time',
+                  type: 'string',
+                },
                 error_code: {
                   description:
                     'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -29193,7 +29271,7 @@ const openapi: OpenAPISpec = {
                   type: 'string',
                 },
               },
-              required: ['error_code', 'message'],
+              required: ['error_code', 'message', 'created_at'],
               type: 'object',
             },
             type: 'array',
@@ -31220,10 +31298,15 @@ const openapi: OpenAPISpec = {
               'Errors associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
             items: {
               properties: {
+                created_at: {
+                  description: 'Date and time at which Seam created the error.',
+                  format: 'date-time',
+                  type: 'string',
+                },
                 error_code: { type: 'string' },
                 message: { type: 'string' },
               },
-              required: ['error_code', 'message'],
+              required: ['error_code', 'message', 'created_at'],
               type: 'object',
             },
             type: 'array',

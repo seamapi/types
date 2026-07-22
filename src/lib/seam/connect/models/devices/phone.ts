@@ -41,6 +41,10 @@ export const phone = z.object({
           .string()
           .describe('Unique identifier of the type of error.'),
         message: z.string().describe('Detailed description of the error.'),
+        created_at: z
+          .string()
+          .datetime()
+          .describe('Date and time at which Seam created the error.'),
       }),
     )
     .describe('Errors associated with the phone.'),
@@ -51,6 +55,10 @@ export const phone = z.object({
           .string()
           .describe('Unique identifier of the type of warning.'),
         message: z.string().describe('Detailed description of the warning.'),
+        created_at: z
+          .string()
+          .datetime()
+          .describe('Date and time at which Seam created the warning.'),
       }),
     )
     .describe('Warnings associated with the phone.'),
