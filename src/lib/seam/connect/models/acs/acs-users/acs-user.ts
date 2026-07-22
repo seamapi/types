@@ -149,6 +149,14 @@ const acs_users_salto_ks_user_not_subscribed = common_acs_user_warning
     'Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) is not subscribed on Salto KS, so they cannot unlock doors or perform any actions. This occurs when the their access schedule hasn’t started yet, if their access schedule has ended, if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.',
   )
 
+export const acs_user_inactive = common_acs_user_warning
+  .extend({
+    warning_code: z.literal('acs_user_inactive'),
+  })
+  .describe(
+    'Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) exists but is not currently able to gain access—for example, because their access schedule has not started yet or has ended, the access system has reached its limit for active users, or they have been unsubscribed or deactivated. Refer to the warning message for the provider-specific reason. This is distinct from `is_suspended`, which indicates the user has been explicitly blocked.',
+  )
+
 export const unknown_issue_with_acs_user = common_acs_user_warning
   .extend({
     warning_code: z.literal('unknown_issue_with_acs_user'),
@@ -170,6 +178,7 @@ const _acs_users_warning_map = z.object({
   salto_ks_user_not_subscribed: acs_users_salto_ks_user_not_subscribed
     .optional()
     .nullable(),
+  acs_user_inactive: acs_user_inactive.optional().nullable(),
   unknown_issue_with_acs_user: unknown_issue_with_acs_user
     .optional()
     .nullable(),
@@ -180,6 +189,7 @@ export const acs_users_warnings = z
   .discriminatedUnion('warning_code', [
     acs_users_being_deleted,
     acs_users_salto_ks_user_not_subscribed,
+    acs_user_inactive,
     unknown_issue_with_acs_user,
     latch_resident_user,
   ])
