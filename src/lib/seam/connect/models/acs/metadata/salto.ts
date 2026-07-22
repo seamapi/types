@@ -41,3 +41,19 @@ export const acs_entrance_salto_ks_metadata = z
 export type AcsEntranceSaltoKSMetadata = z.infer<
   typeof acs_entrance_salto_ks_metadata
 >
+
+export const acs_user_salto_ks_metadata = z
+  .object({
+    is_subscribed: z
+      .boolean()
+      .optional()
+      .describe(
+        "Indicates whether the user holds an active subscription slot on the Salto KS site. Only subscribed users can unlock doors and count against the site's user-subscription limit. A user may not be subscribed because their access schedule has not started or has ended, the site has reached its subscription limit, or they were manually unsubscribed. This is distinct from `is_suspended`, which reflects whether the user has been explicitly blocked.",
+      ),
+  })
+  .partial()
+  .describe(
+    'Salto KS-specific metadata associated with the access system user.',
+  )
+
+export type AcsUserSaltoKSMetadata = z.infer<typeof acs_user_salto_ks_metadata>

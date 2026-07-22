@@ -2,6 +2,7 @@ import { z } from 'zod'
 
 import { loose_phone_number } from '../../phone-number.js'
 import { schedule } from '../../schedule.js'
+import { acs_user_salto_ks_metadata } from '../metadata/salto.js'
 import { acs_user_salto_space_metadata } from '../metadata/salto-space.js'
 import { acs_user_pending_mutations } from './pending-mutations.js'
 
@@ -332,6 +333,11 @@ const common_acs_user = z
       .optional()
       .describe(
         'Salto Space-specific metadata associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+      ),
+    salto_ks_metadata: acs_user_salto_ks_metadata
+      .optional()
+      .describe(
+        'Salto KS-specific metadata associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
       ),
   })
   .merge(user_fields)
