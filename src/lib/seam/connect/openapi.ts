@@ -34556,6 +34556,11 @@ const openapi: OpenAPISpec = {
         scheme: 'bearer',
         type: 'http',
       },
+      internal_service_agent: {
+        bearerFormat: 'Internal Service Agent Key',
+        scheme: 'bearer',
+        type: 'http',
+      },
       pat_with_workspace: {
         bearerFormat: 'API Token',
         scheme: 'bearer',
@@ -34577,6 +34582,11 @@ const openapi: OpenAPISpec = {
         type: 'apiKey',
       },
       seam_workspace: { in: 'header', name: 'seam-workspace', type: 'apiKey' },
+      support_read_only_token: {
+        bearerFormat: 'Support Read-Only Token',
+        scheme: 'bearer',
+        type: 'http',
+      },
     },
   },
   info: { title: 'Seam Connect', version: '1.0.0' },
@@ -80635,6 +80645,95 @@ const openapi: OpenAPISpec = {
         'x-response-key': 'instant_key_preview',
         'x-title': 'Preview Instant Key',
         'x-undocumented': 'Seam Instant Key only.',
+      },
+    },
+    '/seam/mcp/v1/create_ro_token': {
+      post: {
+        description:
+          'Mints a short-lived, read-only token bound to a single workspace. Used by the Seam support agent to inspect a customer workspace via read-only public API endpoints.',
+        operationId: 'seamMcpV1CreateRoTokenPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  created_by: {
+                    description:
+                      'Identity of the automation minting the token (e.g. an agent session ID), recorded for auditing.',
+                    type: 'string',
+                  },
+                  workspace_id: {
+                    description:
+                      'ID of the workspace the token will be bound to.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['workspace_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    support_read_only_token: {
+                      properties: {
+                        created_at: {
+                          description:
+                            'Date and time at which the token was created.',
+                          type: 'string',
+                        },
+                        expires_at: {
+                          description:
+                            'Date and time at which the token expires. Tokens live for one hour.',
+                          type: 'string',
+                        },
+                        token: {
+                          description:
+                            'Support read-only token to use as a Bearer token.',
+                          type: 'string',
+                        },
+                        workspace_id: {
+                          description:
+                            'ID of the workspace the token is bound to.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'token',
+                        'workspace_id',
+                        'created_at',
+                        'expires_at',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['support_read_only_token', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ internal_service_agent: [] }],
+        summary: '/seam/mcp/v1/create_ro_token',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'mcp', 'v1'],
+        'x-fern-sdk-method-name': 'create_ro_token',
+        'x-fern-sdk-return-value': 'support_read_only_token',
+        'x-response-key': 'support_read_only_token',
+        'x-title': 'Create Support Read-Only Token',
+        'x-undocumented': 'Seam support agent only.',
       },
     },
     '/seam/mobile_sdk/v1/acs/credentials/list': {
