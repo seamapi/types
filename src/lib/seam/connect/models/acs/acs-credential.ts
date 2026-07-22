@@ -264,6 +264,10 @@ const common_acs_credential = z.object({
       z.object({
         error_code: z.string(),
         message: z.string(),
+        created_at: z
+          .string()
+          .datetime()
+          .describe('Date and time at which Seam created the error.'),
       }),
     )
     .describe(
