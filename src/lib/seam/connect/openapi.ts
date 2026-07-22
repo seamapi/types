@@ -79851,7 +79851,7 @@ const openapi: OpenAPISpec = {
                         'Internal resource for customer portals.',
                     },
                   },
-                  required: ['access_grant', 'spaces', 'staff_member', 'ok'],
+                  required: ['spaces', 'staff_member', 'ok'],
                   type: 'object',
                 },
               },
@@ -79950,7 +79950,7 @@ const openapi: OpenAPISpec = {
                         'Internal resource for customer portals.',
                     },
                   },
-                  required: ['access_grant', 'spaces', 'staff_member', 'ok'],
+                  required: ['spaces', 'staff_member', 'ok'],
                   type: 'object',
                 },
               },
@@ -80039,6 +80039,9 @@ const openapi: OpenAPISpec = {
                         description:
                           'Represents a staff member for a specific customer.',
                         properties: {
+                          access_grant: {
+                            $ref: '#/components/schemas/access_grant',
+                          },
                           email_address: {
                             description:
                               'Email address associated with the user identity.',
@@ -80153,6 +80156,9 @@ const openapi: OpenAPISpec = {
                         description:
                           'Represents a staff member for a specific customer.',
                         properties: {
+                          access_grant: {
+                            $ref: '#/components/schemas/access_grant',
+                          },
                           email_address: {
                             description:
                               'Email address associated with the user identity.',
