@@ -5569,6 +5569,18 @@ const openapi: OpenAPISpec = {
               'Phone number of the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
             type: 'string',
           },
+          salto_ks_metadata: {
+            description:
+              'Salto KS-specific metadata associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+            properties: {
+              is_subscribed: {
+                description:
+                  "Indicates whether the user holds an active subscription slot on the Salto KS site. Only subscribed users can unlock doors and count against the site's user-subscription limit. A user may not be subscribed because their access schedule has not started or has ended, the site has reached its subscription limit, or they were manually unsubscribed. This is distinct from `is_suspended`, which reflects whether the user has been explicitly blocked.",
+                type: 'boolean',
+              },
+            },
+            type: 'object',
+          },
           salto_space_metadata: {
             description:
               'Salto Space-specific metadata associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
@@ -32325,6 +32337,18 @@ const openapi: OpenAPISpec = {
             description:
               'Phone number of the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
             type: 'string',
+          },
+          salto_ks_metadata: {
+            description:
+              'Salto KS-specific metadata associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+            properties: {
+              is_subscribed: {
+                description:
+                  "Indicates whether the user holds an active subscription slot on the Salto KS site. Only subscribed users can unlock doors and count against the site's user-subscription limit. A user may not be subscribed because their access schedule has not started or has ended, the site has reached its subscription limit, or they were manually unsubscribed. This is distinct from `is_suspended`, which reflects whether the user has been explicitly blocked.",
+                type: 'boolean',
+              },
+            },
+            type: 'object',
           },
           salto_space_metadata: {
             description:
