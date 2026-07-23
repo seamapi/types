@@ -1,6 +1,6 @@
-import { argv } from 'node:process'
 import { writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
+import { argv } from 'node:process'
 
 import { createBlueprint, TypesModuleSchema } from '@seamapi/blueprint'
 
@@ -14,7 +14,10 @@ const blueprint = await createBlueprint(typesModule, { omitUndocumented })
 
 const content = JSON.stringify(blueprint, null, 2)
 
-const output = join('tmp', `connect-blueprint${omitUndocumented ? '-documented' : ''}.json`)
+const output = join(
+  'tmp',
+  `connect-blueprint${omitUndocumented ? '-documented' : ''}.json`,
+)
 
 await writeFile(output, Buffer.from(content))
 
