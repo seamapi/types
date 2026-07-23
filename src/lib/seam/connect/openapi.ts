@@ -27090,6 +27090,8 @@ const openapi: OpenAPISpec = {
             ],
             type: 'object',
             'x-route-path': '/user_identities/enrollment_automations',
+            'x-undocumented':
+              'Enrollment automations are deprecated and will be removed.',
           },
           {
             description: 'A phone device was deactivated.',
