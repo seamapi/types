@@ -109,6 +109,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'sensi',
     'assa_abloy_vostio',
     'avigilon_alta',
+    'kisi',
     'keynest',
     'hotek',
     'ultraloq',
@@ -144,7 +145,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'thirty_three_lock',
   ],
 
-  beta: ['kisi', 'salto_ks_accept'],
+  beta: ['salto_ks_accept'],
 
   thermostats: ['ecobee', 'nest', 'sensi', 'honeywell_resideo', 'first_alert'],
   noise_sensors: ['minut', 'noiseaware'],
