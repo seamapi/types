@@ -65,9 +65,9 @@ const device_event_issue_properties = {
 }
 
 export const lock_method = z
-  .enum(['keycode', 'manual', 'automatic', 'unknown', 'remote'])
+  .enum(['keycode', 'manual', 'automatic', 'unknown', 'remote', 'card'])
   .describe(
-    'Method by which the affected lock device was locked or unlocked. `keycode`: locked or unlocked using an access code (see `access_code_id`). `manual`: a direct physical action, such as turning a thumbturn or pressing a button. `remote`: a remote action initiated via an app, Bluetooth, or the Seam API (see `action_attempt_id` for Seam-initiated actions; see `is_via_bluetooth` or `is_via_nfc` for the specific transport). `automatic`: triggered automatically without user interaction, for example by an auto-relock timer. `unknown`: the method could not be determined from the provider event.',
+    'Method by which the affected lock device was locked or unlocked. `keycode`: locked or unlocked using an access code (see `access_code_id`). `manual`: a direct physical action, such as turning a thumbturn or pressing a button. `remote`: a remote action initiated via an app, Bluetooth, or the Seam API (see `action_attempt_id` for Seam-initiated actions; see `is_via_bluetooth` or `is_via_nfc` for the specific transport). `automatic`: triggered automatically without user interaction, for example by an auto-relock timer. `card`: a physical credential (RFID card or NFC wallet pass) was presented at the reader. `unknown`: the method could not be determined from the provider event.',
   )
 export type LockMethod = z.infer<typeof lock_method>
 
@@ -435,6 +435,26 @@ export const lock_locked_event = device_event.extend({
   method: lock_method.describe(
     'Method by which the lock was locked. `keycode`: an access code was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or button press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by an auto-relock timer. `unknown`: could not be determined.',
   ),
+  user_identity_id: z.string().uuid().optional().describe(`
+      undocumented: Unreleased.
+      ---
+      ID of the user identity associated with the lock event.
+    `),
+  acs_system_id: z.string().uuid().optional().describe(`
+      undocumented: Unreleased.
+      ---
+      ID of the ACS system associated with the lock event.
+    `),
+  acs_user_id: z.string().uuid().optional().describe(`
+      undocumented: Unreleased.
+      ---
+      ID of the ACS user associated with the lock event.
+    `),
+  acs_entrance_id: z.string().uuid().optional().describe(`
+      undocumented: Unreleased.
+      ---
+      ID of the ACS entrance associated with the lock event.
+    `),
   is_via_bluetooth: z.boolean().optional().describe(`
       Whether the lock action was performed over Bluetooth by a remote client (such as the provider's mobile app), rather than a direct physical interaction or a Seam-initiated remote action.
     `),

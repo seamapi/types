@@ -25712,6 +25712,24 @@ const openapi: OpenAPISpec = {
                   'Whether the access code is managed by Seam (true) or unmanaged (false). Only present when access_code_id is set.',
                 type: 'boolean',
               },
+              acs_entrance_id: {
+                description:
+                  '\n      undocumented: Unreleased.\n      ---\n      ID of the ACS entrance associated with the lock event.\n    ',
+                format: 'uuid',
+                type: 'string',
+              },
+              acs_system_id: {
+                description:
+                  '\n      undocumented: Unreleased.\n      ---\n      ID of the ACS system associated with the lock event.\n    ',
+                format: 'uuid',
+                type: 'string',
+              },
+              acs_user_id: {
+                description:
+                  '\n      undocumented: Unreleased.\n      ---\n      ID of the ACS user associated with the lock event.\n    ',
+                format: 'uuid',
+                type: 'string',
+              },
               action_attempt_id: {
                 description:
                   'ID of the Seam action attempt that triggered this lock. Present only when the lock was initiated through Seam (via a `LOCK_DOOR` action attempt).',
@@ -25784,12 +25802,25 @@ const openapi: OpenAPISpec = {
               method: {
                 description:
                   'Method by which the lock was locked. `keycode`: an access code was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or button press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by an auto-relock timer. `unknown`: could not be determined.',
-                enum: ['keycode', 'manual', 'automatic', 'unknown', 'remote'],
+                enum: [
+                  'keycode',
+                  'manual',
+                  'automatic',
+                  'unknown',
+                  'remote',
+                  'card',
+                ],
                 type: 'string',
               },
               occurred_at: {
                 description: 'Date and time at which the event occurred.',
                 format: 'date-time',
+                type: 'string',
+              },
+              user_identity_id: {
+                description:
+                  '\n      undocumented: Unreleased.\n      ---\n      ID of the user identity associated with the lock event.\n    ',
+                format: 'uuid',
                 type: 'string',
               },
               workspace_id: {
@@ -25916,7 +25947,14 @@ const openapi: OpenAPISpec = {
               method: {
                 description:
                   'Method by which the lock was unlocked. `keycode`: an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or handle press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by a time-based schedule. `unknown`: could not be determined.',
-                enum: ['keycode', 'manual', 'automatic', 'unknown', 'remote'],
+                enum: [
+                  'keycode',
+                  'manual',
+                  'automatic',
+                  'unknown',
+                  'remote',
+                  'card',
+                ],
                 type: 'string',
               },
               occurred_at: {
