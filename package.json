@@ -76,6 +76,7 @@
     "typecheck": "tsc",
     "docs:build": "typedoc",
     "blueprint": "tsx ./blueprint.ts",
+    "postblueprint": "tsx ./blueprint.ts --omit-undocumented",
     "preblueprint": "mkdirp tmp",
     "lint": "eslint .",
     "postlint": "prettier --check --ignore-path .gitignore .",
@@ -91,7 +92,7 @@
     "zod": "^3.24.0"
   },
   "devDependencies": {
-    "@seamapi/blueprint": "^0.59.0",
+    "@seamapi/blueprint": "^0.61.0",
     "@swc/core": "^1.11.29",
     "@types/node": "^24.10.9",
     "concurrently": "^9.2.0",
