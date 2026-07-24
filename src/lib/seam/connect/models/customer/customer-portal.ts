@@ -138,6 +138,12 @@ export const portal_configuration_base = z.object({
     .boolean()
     .default(false)
     .describe('Whether the portal is embedded in another application.'),
+  read_only: z
+    .boolean()
+    .default(false)
+    .describe(
+      "Whether the portal is read-only. When true, the customer can browse the portal but cannot perform any mutating action; write requests made with the portal's client session are rejected.",
+    ),
   landing_page: z
     .object({
       manage: z
@@ -245,6 +251,7 @@ export const portal_configuration = portal_configuration_base
       },
     },
     is_embedded: false,
+    read_only: false,
     exclude_locale_picker: false,
     locale: undefined,
     customer_resources_filters: undefined,
