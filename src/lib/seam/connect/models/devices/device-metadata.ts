@@ -1162,6 +1162,47 @@ export const device_metadata = z
       })
       .partial()
       .describe(`Metadata for a Kisi device.`),
+
+    aqara_metadata: z
+      .object({
+        did: z
+          .string()
+          .optional()
+          .describe(`Device ID (did) for an Aqara device.`),
+        parent_did: z
+          .string()
+          .optional()
+          .describe(`Parent gateway device ID for an Aqara device.`),
+        device_name: z
+          .string()
+          .optional()
+          .describe(`Device name for an Aqara device.`),
+        model: z
+          .string()
+          .optional()
+          .describe(`Model identifier for an Aqara device.`),
+        model_type: z
+          .number()
+          .optional()
+          .describe(`Model type for an Aqara device.`),
+        time_zone: z
+          .string()
+          .nullable()
+          .optional()
+          .describe(`Time zone reported for an Aqara device (e.g. GMT-07:00).`),
+        position_id: z
+          .string()
+          .nullable()
+          .optional()
+          .describe(`Position (room) ID for an Aqara device.`),
+        firmware_version: z
+          .string()
+          .nullable()
+          .optional()
+          .describe(`Firmware version for an Aqara device.`),
+      })
+      .partial()
+      .describe(`Metadata for an Aqara device.`),
   })
   .partial().describe(`
           ---
