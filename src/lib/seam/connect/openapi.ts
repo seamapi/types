@@ -54580,15 +54580,42 @@ const openapi: OpenAPISpec = {
                       deep_link: {
                         description:
                           'Deep link target resource for initial redirect. When set, the portal will navigate directly to the specified resource.',
-                        properties: {
-                          resource_key: { type: 'string' },
-                          resource_type: {
-                            enum: ['reservation', 'space'],
-                            type: 'string',
+                        discriminator: { propertyName: 'resource_type' },
+                        oneOf: [
+                          {
+                            properties: {
+                              resource_key: { type: 'string' },
+                              resource_type: {
+                                enum: ['reservation'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['resource_type', 'resource_key'],
+                            type: 'object',
                           },
-                        },
-                        required: ['resource_type', 'resource_key'],
-                        type: 'object',
+                          {
+                            properties: {
+                              resource_key: { type: 'string' },
+                              resource_type: {
+                                enum: ['space'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['resource_type', 'resource_key'],
+                            type: 'object',
+                          },
+                          {
+                            properties: {
+                              resource_id: { type: 'string' },
+                              resource_type: {
+                                enum: ['device'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['resource_type', 'resource_id'],
+                            type: 'object',
+                          },
+                        ],
                         'x-undocumented':
                           'Internal endpoint for customer portals.',
                       },
@@ -75939,15 +75966,42 @@ const openapi: OpenAPISpec = {
                         deep_link: {
                           description:
                             'Deep link target resource for initial redirect. When set, the portal will navigate directly to the specified resource.',
-                          properties: {
-                            resource_key: { type: 'string' },
-                            resource_type: {
-                              enum: ['reservation', 'space'],
-                              type: 'string',
+                          discriminator: { propertyName: 'resource_type' },
+                          oneOf: [
+                            {
+                              properties: {
+                                resource_key: { type: 'string' },
+                                resource_type: {
+                                  enum: ['reservation'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['resource_type', 'resource_key'],
+                              type: 'object',
                             },
-                          },
-                          required: ['resource_type', 'resource_key'],
-                          type: 'object',
+                            {
+                              properties: {
+                                resource_key: { type: 'string' },
+                                resource_type: {
+                                  enum: ['space'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['resource_type', 'resource_key'],
+                              type: 'object',
+                            },
+                            {
+                              properties: {
+                                resource_id: { type: 'string' },
+                                resource_type: {
+                                  enum: ['device'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['resource_type', 'resource_id'],
+                              type: 'object',
+                            },
+                          ],
                           'x-undocumented':
                             'Internal endpoint for customer portals.',
                         },
@@ -76405,15 +76459,42 @@ const openapi: OpenAPISpec = {
                         deep_link: {
                           description:
                             'Deep link target resource for initial redirect. When set, the portal will navigate directly to the specified resource.',
-                          properties: {
-                            resource_key: { type: 'string' },
-                            resource_type: {
-                              enum: ['reservation', 'space'],
-                              type: 'string',
+                          discriminator: { propertyName: 'resource_type' },
+                          oneOf: [
+                            {
+                              properties: {
+                                resource_key: { type: 'string' },
+                                resource_type: {
+                                  enum: ['reservation'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['resource_type', 'resource_key'],
+                              type: 'object',
                             },
-                          },
-                          required: ['resource_type', 'resource_key'],
-                          type: 'object',
+                            {
+                              properties: {
+                                resource_key: { type: 'string' },
+                                resource_type: {
+                                  enum: ['space'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['resource_type', 'resource_key'],
+                              type: 'object',
+                            },
+                            {
+                              properties: {
+                                resource_id: { type: 'string' },
+                                resource_type: {
+                                  enum: ['device'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['resource_type', 'resource_id'],
+                              type: 'object',
+                            },
+                          ],
                           'x-undocumented':
                             'Internal endpoint for customer portals.',
                         },
@@ -76845,15 +76926,42 @@ const openapi: OpenAPISpec = {
                       deep_link: {
                         description:
                           'Deep link target resource for initial redirect. When set, the portal will navigate directly to the specified resource.',
-                        properties: {
-                          resource_key: { type: 'string' },
-                          resource_type: {
-                            enum: ['reservation', 'space'],
-                            type: 'string',
+                        discriminator: { propertyName: 'resource_type' },
+                        oneOf: [
+                          {
+                            properties: {
+                              resource_key: { type: 'string' },
+                              resource_type: {
+                                enum: ['reservation'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['resource_type', 'resource_key'],
+                            type: 'object',
                           },
-                        },
-                        required: ['resource_type', 'resource_key'],
-                        type: 'object',
+                          {
+                            properties: {
+                              resource_key: { type: 'string' },
+                              resource_type: {
+                                enum: ['space'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['resource_type', 'resource_key'],
+                            type: 'object',
+                          },
+                          {
+                            properties: {
+                              resource_id: { type: 'string' },
+                              resource_type: {
+                                enum: ['device'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['resource_type', 'resource_id'],
+                            type: 'object',
+                          },
+                        ],
                         'x-undocumented':
                           'Internal endpoint for customer portals.',
                       },
@@ -77266,15 +77374,42 @@ const openapi: OpenAPISpec = {
                       deep_link: {
                         description:
                           'Deep link target resource for initial redirect. When set, the portal will navigate directly to the specified resource.',
-                        properties: {
-                          resource_key: { type: 'string' },
-                          resource_type: {
-                            enum: ['reservation', 'space'],
-                            type: 'string',
+                        discriminator: { propertyName: 'resource_type' },
+                        oneOf: [
+                          {
+                            properties: {
+                              resource_key: { type: 'string' },
+                              resource_type: {
+                                enum: ['reservation'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['resource_type', 'resource_key'],
+                            type: 'object',
                           },
-                        },
-                        required: ['resource_type', 'resource_key'],
-                        type: 'object',
+                          {
+                            properties: {
+                              resource_key: { type: 'string' },
+                              resource_type: {
+                                enum: ['space'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['resource_type', 'resource_key'],
+                            type: 'object',
+                          },
+                          {
+                            properties: {
+                              resource_id: { type: 'string' },
+                              resource_type: {
+                                enum: ['device'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['resource_type', 'resource_id'],
+                            type: 'object',
+                          },
+                        ],
                         'x-undocumented':
                           'Internal endpoint for customer portals.',
                       },

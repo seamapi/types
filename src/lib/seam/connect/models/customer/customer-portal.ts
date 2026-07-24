@@ -209,10 +209,24 @@ export const portal_configuration_base = z.object({
       "Navigation mode for the portal. 'restricted' tells frontend to hide navigation UI, typically used for embedded deep links.",
     ),
   deep_link: z
-    .object({
-      resource_type: z.enum(['reservation', 'space']),
-      resource_key: z.string(),
-    })
+    .discriminatedUnion('resource_type', [
+      // Customer-keyed resources: resolved to an internal id via a lookup.
+      z.object({
+        resource_type: z.literal('reservation'),
+        resource_key: z.string(),
+      }),
+      z.object({
+        resource_type: z.literal('space'),
+        resource_key: z.string(),
+      }),
+      // Seam-id resource: a device is addressed by its Seam device_id directly
+      // (there is no customer-facing device_key), so it carries resource_id
+      // rather than resource_key.
+      z.object({
+        resource_type: z.literal('device'),
+        resource_id: z.string(),
+      }),
+    ])
     .optional().describe(`
       ---
       undocumented: Internal endpoint for customer portals.
