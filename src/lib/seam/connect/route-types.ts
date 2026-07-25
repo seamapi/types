@@ -15567,6 +15567,29 @@ export type Routes = {
                     entry_relays_total_count?: (number | undefined) | undefined
                   }
                 | undefined
+              /** Akiles-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles gadget. */
+                    gadget_id?: (string | undefined) | undefined
+                    /** ID of the Akiles site the gadget belongs to. */
+                    site_id?: (string | undefined) | undefined
+                    /** Name of the Akiles site the gadget belongs to. */
+                    site_name?: (string | undefined) | undefined
+                    /** Actions the gadget exposes (for example, open). */
+                    actions?:
+                      | (
+                          | {
+                              /** ID of the gadget action. */
+                              id?: (string | undefined) | undefined
+                              /** Name of the gadget action. */
+                              name?: (string | undefined) | undefined
+                            }[]
+                          | undefined
+                        )
+                      | undefined
+                  }
+                | undefined
               /** Indicates whether the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) is currently locked. */
               is_locked?: boolean | undefined
               /** Indicates whether the ACS entrance can be unlocked with mobile key credentials. */
@@ -15834,6 +15857,7 @@ export type Routes = {
                     | 'assa_abloy_vostio_credential_service'
                     | 'hotek_site'
                     | 'kisi_organization'
+                    | 'akiles_organization'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [access control system](https://docs.seam.co/low-level-apis/access-systems) type. */
@@ -15871,6 +15895,7 @@ export type Routes = {
                     | 'assa_abloy_vostio_credential_service'
                     | 'hotek_site'
                     | 'kisi_organization'
+                    | 'akiles_organization'
                   )
                 | undefined
               /**
@@ -23832,6 +23857,29 @@ export type Routes = {
                     entry_relays_total_count?: (number | undefined) | undefined
                   }
                 | undefined
+              /** Akiles-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles gadget. */
+                    gadget_id?: (string | undefined) | undefined
+                    /** ID of the Akiles site the gadget belongs to. */
+                    site_id?: (string | undefined) | undefined
+                    /** Name of the Akiles site the gadget belongs to. */
+                    site_name?: (string | undefined) | undefined
+                    /** Actions the gadget exposes (for example, open). */
+                    actions?:
+                      | (
+                          | {
+                              /** ID of the gadget action. */
+                              id?: (string | undefined) | undefined
+                              /** Name of the gadget action. */
+                              name?: (string | undefined) | undefined
+                            }[]
+                          | undefined
+                        )
+                      | undefined
+                  }
+                | undefined
               /** Indicates whether the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) is currently locked. */
               is_locked?: boolean | undefined
               /** Indicates whether the ACS entrance can be unlocked with mobile key credentials. */
@@ -27625,6 +27673,29 @@ export type Routes = {
               entry_relays_total_count?: (number | undefined) | undefined
             }
           | undefined
+        /** Akiles-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). */
+        akiles_metadata?:
+          | {
+              /** ID of the Akiles gadget. */
+              gadget_id?: (string | undefined) | undefined
+              /** ID of the Akiles site the gadget belongs to. */
+              site_id?: (string | undefined) | undefined
+              /** Name of the Akiles site the gadget belongs to. */
+              site_name?: (string | undefined) | undefined
+              /** Actions the gadget exposes (for example, open). */
+              actions?:
+                | (
+                    | {
+                        /** ID of the gadget action. */
+                        id?: (string | undefined) | undefined
+                        /** Name of the gadget action. */
+                        name?: (string | undefined) | undefined
+                      }[]
+                    | undefined
+                  )
+                | undefined
+            }
+          | undefined
         /** Indicates whether the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) is currently locked. */
         is_locked?: boolean | undefined
         /** Indicates whether the ACS entrance can be unlocked with mobile key credentials. */
@@ -29758,6 +29829,29 @@ export type Routes = {
               site_name?: (string | undefined) | undefined
               /** Total count of entry relays for an Avigilon Alta system. */
               entry_relays_total_count?: (number | undefined) | undefined
+            }
+          | undefined
+        /** Akiles-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). */
+        akiles_metadata?:
+          | {
+              /** ID of the Akiles gadget. */
+              gadget_id?: (string | undefined) | undefined
+              /** ID of the Akiles site the gadget belongs to. */
+              site_id?: (string | undefined) | undefined
+              /** Name of the Akiles site the gadget belongs to. */
+              site_name?: (string | undefined) | undefined
+              /** Actions the gadget exposes (for example, open). */
+              actions?:
+                | (
+                    | {
+                        /** ID of the gadget action. */
+                        id?: (string | undefined) | undefined
+                        /** Name of the gadget action. */
+                        name?: (string | undefined) | undefined
+                      }[]
+                    | undefined
+                  )
+                | undefined
             }
           | undefined
         /** Indicates whether the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) is currently locked. */
@@ -37113,6 +37207,29 @@ export type Routes = {
               entry_relays_total_count?: (number | undefined) | undefined
             }
           | undefined
+        /** Akiles-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). */
+        akiles_metadata?:
+          | {
+              /** ID of the Akiles gadget. */
+              gadget_id?: (string | undefined) | undefined
+              /** ID of the Akiles site the gadget belongs to. */
+              site_id?: (string | undefined) | undefined
+              /** Name of the Akiles site the gadget belongs to. */
+              site_name?: (string | undefined) | undefined
+              /** Actions the gadget exposes (for example, open). */
+              actions?:
+                | (
+                    | {
+                        /** ID of the gadget action. */
+                        id?: (string | undefined) | undefined
+                        /** Name of the gadget action. */
+                        name?: (string | undefined) | undefined
+                      }[]
+                    | undefined
+                  )
+                | undefined
+            }
+          | undefined
         /** Indicates whether the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) is currently locked. */
         is_locked?: boolean | undefined
         /** Indicates whether the ACS entrance can be unlocked with mobile key credentials. */
@@ -37401,6 +37518,29 @@ export type Routes = {
               site_name?: (string | undefined) | undefined
               /** Total count of entry relays for an Avigilon Alta system. */
               entry_relays_total_count?: (number | undefined) | undefined
+            }
+          | undefined
+        /** Akiles-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). */
+        akiles_metadata?:
+          | {
+              /** ID of the Akiles gadget. */
+              gadget_id?: (string | undefined) | undefined
+              /** ID of the Akiles site the gadget belongs to. */
+              site_id?: (string | undefined) | undefined
+              /** Name of the Akiles site the gadget belongs to. */
+              site_name?: (string | undefined) | undefined
+              /** Actions the gadget exposes (for example, open). */
+              actions?:
+                | (
+                    | {
+                        /** ID of the gadget action. */
+                        id?: (string | undefined) | undefined
+                        /** Name of the gadget action. */
+                        name?: (string | undefined) | undefined
+                      }[]
+                    | undefined
+                  )
+                | undefined
             }
           | undefined
         /** Indicates whether the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) is currently locked. */
@@ -39692,6 +39832,7 @@ export type Routes = {
               | 'assa_abloy_vostio_credential_service'
               | 'hotek_site'
               | 'kisi_organization'
+              | 'akiles_organization'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [access control system](https://docs.seam.co/low-level-apis/access-systems) type. */
@@ -39729,6 +39870,7 @@ export type Routes = {
               | 'assa_abloy_vostio_credential_service'
               | 'hotek_site'
               | 'kisi_organization'
+              | 'akiles_organization'
             )
           | undefined
         /**
@@ -39900,6 +40042,7 @@ export type Routes = {
               | 'assa_abloy_vostio_credential_service'
               | 'hotek_site'
               | 'kisi_organization'
+              | 'akiles_organization'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [access control system](https://docs.seam.co/low-level-apis/access-systems) type. */
@@ -39937,6 +40080,7 @@ export type Routes = {
               | 'assa_abloy_vostio_credential_service'
               | 'hotek_site'
               | 'kisi_organization'
+              | 'akiles_organization'
             )
           | undefined
         /**
@@ -40104,6 +40248,7 @@ export type Routes = {
               | 'assa_abloy_vostio_credential_service'
               | 'hotek_site'
               | 'kisi_organization'
+              | 'akiles_organization'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [access control system](https://docs.seam.co/low-level-apis/access-systems) type. */
@@ -40141,6 +40286,7 @@ export type Routes = {
               | 'assa_abloy_vostio_credential_service'
               | 'hotek_site'
               | 'kisi_organization'
+              | 'akiles_organization'
             )
           | undefined
         /**
@@ -41606,6 +41752,29 @@ export type Routes = {
               site_name?: (string | undefined) | undefined
               /** Total count of entry relays for an Avigilon Alta system. */
               entry_relays_total_count?: (number | undefined) | undefined
+            }
+          | undefined
+        /** Akiles-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). */
+        akiles_metadata?:
+          | {
+              /** ID of the Akiles gadget. */
+              gadget_id?: (string | undefined) | undefined
+              /** ID of the Akiles site the gadget belongs to. */
+              site_id?: (string | undefined) | undefined
+              /** Name of the Akiles site the gadget belongs to. */
+              site_name?: (string | undefined) | undefined
+              /** Actions the gadget exposes (for example, open). */
+              actions?:
+                | (
+                    | {
+                        /** ID of the gadget action. */
+                        id?: (string | undefined) | undefined
+                        /** Name of the gadget action. */
+                        name?: (string | undefined) | undefined
+                      }[]
+                    | undefined
+                  )
+                | undefined
             }
           | undefined
         /** Indicates whether the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) is currently locked. */
@@ -102804,6 +102973,29 @@ export type Routes = {
                     entry_relays_total_count?: (number | undefined) | undefined
                   }
                 | undefined
+              /** Akiles-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles gadget. */
+                    gadget_id?: (string | undefined) | undefined
+                    /** ID of the Akiles site the gadget belongs to. */
+                    site_id?: (string | undefined) | undefined
+                    /** Name of the Akiles site the gadget belongs to. */
+                    site_name?: (string | undefined) | undefined
+                    /** Actions the gadget exposes (for example, open). */
+                    actions?:
+                      | (
+                          | {
+                              /** ID of the gadget action. */
+                              id?: (string | undefined) | undefined
+                              /** Name of the gadget action. */
+                              name?: (string | undefined) | undefined
+                            }[]
+                          | undefined
+                        )
+                      | undefined
+                  }
+                | undefined
               /** Indicates whether the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) is currently locked. */
               is_locked?: boolean | undefined
               /** Indicates whether the ACS entrance can be unlocked with mobile key credentials. */
@@ -105415,6 +105607,29 @@ export type Routes = {
                     entry_relays_total_count?: (number | undefined) | undefined
                   }
                 | undefined
+              /** Akiles-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles gadget. */
+                    gadget_id?: (string | undefined) | undefined
+                    /** ID of the Akiles site the gadget belongs to. */
+                    site_id?: (string | undefined) | undefined
+                    /** Name of the Akiles site the gadget belongs to. */
+                    site_name?: (string | undefined) | undefined
+                    /** Actions the gadget exposes (for example, open). */
+                    actions?:
+                      | (
+                          | {
+                              /** ID of the gadget action. */
+                              id?: (string | undefined) | undefined
+                              /** Name of the gadget action. */
+                              name?: (string | undefined) | undefined
+                            }[]
+                          | undefined
+                        )
+                      | undefined
+                  }
+                | undefined
               /** Indicates whether the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) is currently locked. */
               is_locked?: boolean | undefined
               /** Indicates whether the ACS entrance can be unlocked with mobile key credentials. */
@@ -105682,6 +105897,7 @@ export type Routes = {
                     | 'assa_abloy_vostio_credential_service'
                     | 'hotek_site'
                     | 'kisi_organization'
+                    | 'akiles_organization'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [access control system](https://docs.seam.co/low-level-apis/access-systems) type. */
@@ -105719,6 +105935,7 @@ export type Routes = {
                     | 'assa_abloy_vostio_credential_service'
                     | 'hotek_site'
                     | 'kisi_organization'
+                    | 'akiles_organization'
                   )
                 | undefined
               /**
@@ -135426,6 +135643,29 @@ export type Routes = {
               entry_relays_total_count?: (number | undefined) | undefined
             }
           | undefined
+        /** Akiles-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). */
+        akiles_metadata?:
+          | {
+              /** ID of the Akiles gadget. */
+              gadget_id?: (string | undefined) | undefined
+              /** ID of the Akiles site the gadget belongs to. */
+              site_id?: (string | undefined) | undefined
+              /** Name of the Akiles site the gadget belongs to. */
+              site_name?: (string | undefined) | undefined
+              /** Actions the gadget exposes (for example, open). */
+              actions?:
+                | (
+                    | {
+                        /** ID of the gadget action. */
+                        id?: (string | undefined) | undefined
+                        /** Name of the gadget action. */
+                        name?: (string | undefined) | undefined
+                      }[]
+                    | undefined
+                  )
+                | undefined
+            }
+          | undefined
         /** Indicates whether the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) is currently locked. */
         is_locked?: boolean | undefined
         /** Indicates whether the ACS entrance can be unlocked with mobile key credentials. */
@@ -135481,6 +135721,7 @@ export type Routes = {
               | 'assa_abloy_vostio_credential_service'
               | 'hotek_site'
               | 'kisi_organization'
+              | 'akiles_organization'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [access control system](https://docs.seam.co/low-level-apis/access-systems) type. */
@@ -135518,6 +135759,7 @@ export type Routes = {
               | 'assa_abloy_vostio_credential_service'
               | 'hotek_site'
               | 'kisi_organization'
+              | 'akiles_organization'
             )
           | undefined
         /**
@@ -138831,6 +139073,29 @@ export type Routes = {
                     entry_relays_total_count?: (number | undefined) | undefined
                   }
                 | undefined
+              /** Akiles-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles gadget. */
+                    gadget_id?: (string | undefined) | undefined
+                    /** ID of the Akiles site the gadget belongs to. */
+                    site_id?: (string | undefined) | undefined
+                    /** Name of the Akiles site the gadget belongs to. */
+                    site_name?: (string | undefined) | undefined
+                    /** Actions the gadget exposes (for example, open). */
+                    actions?:
+                      | (
+                          | {
+                              /** ID of the gadget action. */
+                              id?: (string | undefined) | undefined
+                              /** Name of the gadget action. */
+                              name?: (string | undefined) | undefined
+                            }[]
+                          | undefined
+                        )
+                      | undefined
+                  }
+                | undefined
               /** Indicates whether the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) is currently locked. */
               is_locked?: boolean | undefined
               /** Indicates whether the ACS entrance can be unlocked with mobile key credentials. */
@@ -138876,6 +139141,7 @@ export type Routes = {
                     | 'assa_abloy_vostio_credential_service'
                     | 'hotek_site'
                     | 'kisi_organization'
+                    | 'akiles_organization'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [access control system](https://docs.seam.co/low-level-apis/access-systems) type. */
@@ -138913,6 +139179,7 @@ export type Routes = {
                     | 'assa_abloy_vostio_credential_service'
                     | 'hotek_site'
                     | 'kisi_organization'
+                    | 'akiles_organization'
                   )
                 | undefined
               /**

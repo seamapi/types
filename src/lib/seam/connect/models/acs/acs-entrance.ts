@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+import { acs_entrance_akiles_metadata } from './metadata/akiles.js'
 import { acs_entrance_avigilon_alta_metadata } from './metadata/avigilon-alta.js'
 import { acs_entrance_dormakaba_ambiance_metadata } from './metadata/dormakaba-ambiance.js'
 import {
@@ -243,6 +244,11 @@ export const acs_entrance = z
       .optional()
       .describe(
         'Avigilon Alta-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+      ),
+    akiles_metadata: acs_entrance_akiles_metadata
+      .optional()
+      .describe(
+        'Akiles-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
       ),
     is_locked: z
       .boolean()
