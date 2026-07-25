@@ -3848,6 +3848,42 @@ const openapi: OpenAPISpec = {
             format: 'uuid',
             type: 'string',
           },
+          akiles_metadata: {
+            description:
+              'Akiles-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+            properties: {
+              actions: {
+                description: 'Actions the gadget exposes (for example, open).',
+                items: {
+                  properties: {
+                    id: {
+                      description: 'ID of the gadget action.',
+                      type: 'string',
+                    },
+                    name: {
+                      description: 'Name of the gadget action.',
+                      type: 'string',
+                    },
+                  },
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              gadget_id: {
+                description: 'ID of the Akiles gadget.',
+                type: 'string',
+              },
+              site_id: {
+                description: 'ID of the Akiles site the gadget belongs to.',
+                type: 'string',
+              },
+              site_name: {
+                description: 'Name of the Akiles site the gadget belongs to.',
+                type: 'string',
+              },
+            },
+            type: 'object',
+          },
           assa_abloy_vostio_metadata: {
             description:
               'ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
@@ -4652,6 +4688,7 @@ const openapi: OpenAPISpec = {
               'assa_abloy_vostio_credential_service',
               'hotek_site',
               'kisi_organization',
+              'akiles_organization',
             ],
             type: 'string',
           },
@@ -4713,6 +4750,7 @@ const openapi: OpenAPISpec = {
               'assa_abloy_vostio_credential_service',
               'hotek_site',
               'kisi_organization',
+              'akiles_organization',
             ],
             type: 'string',
             'x-deprecated': 'Use `external_type`.',
@@ -27824,6 +27862,46 @@ const openapi: OpenAPISpec = {
                                 'ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems) that contains the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
                               format: 'uuid',
                               type: 'string',
+                            },
+                            akiles_metadata: {
+                              description:
+                                'Akiles-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+                              properties: {
+                                actions: {
+                                  description:
+                                    'Actions the gadget exposes (for example, open).',
+                                  items: {
+                                    properties: {
+                                      id: {
+                                        description: 'ID of the gadget action.',
+                                        type: 'string',
+                                      },
+                                      name: {
+                                        description:
+                                          'Name of the gadget action.',
+                                        type: 'string',
+                                      },
+                                    },
+                                    type: 'object',
+                                  },
+                                  type: 'array',
+                                },
+                                gadget_id: {
+                                  description: 'ID of the Akiles gadget.',
+                                  type: 'string',
+                                },
+                                site_id: {
+                                  description:
+                                    'ID of the Akiles site the gadget belongs to.',
+                                  type: 'string',
+                                },
+                                site_name: {
+                                  description:
+                                    'Name of the Akiles site the gadget belongs to.',
+                                  type: 'string',
+                                },
+                              },
+                              type: 'object',
                             },
                             assa_abloy_vostio_metadata: {
                               description:
