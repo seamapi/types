@@ -37285,6 +37285,8 @@ export type Routes = {
       acs_system_id?: string | undefined
       /** ID of the credential for which you want to retrieve all entrances. */
       acs_credential_id?: string | undefined
+      /** ID of the access method for which you want to retrieve all entrances to which it grants access. */
+      access_method_id?: string | undefined
       /**
        * @deprecated Use `space_id`.*/
       location_id?: (string | null) | undefined
