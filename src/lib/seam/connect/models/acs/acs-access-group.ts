@@ -14,6 +14,7 @@ export const acs_access_group_external_type = z.enum([
   'dormakaba_ambiance_access_group',
   'avigilon_alta_group',
   'kisi_access_group',
+  'akiles_member_group',
 ])
 
 export type AcsAccessGroupExternalType = z.infer<
