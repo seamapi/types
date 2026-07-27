@@ -42928,7 +42928,7 @@ const openapi: OpenAPISpec = {
             name: 'device_id',
             schema: {
               description:
-                'ID of the device for which you want to retrieve all access methods.',
+                'ID of the device by which to filter the returned access methods. Must be combined with `access_grant_id`, `access_grant_key`, or `acs_entrance_id`.',
               format: 'uuid',
               type: 'string',
             },
@@ -42938,7 +42938,7 @@ const openapi: OpenAPISpec = {
             name: 'acs_entrance_id',
             schema: {
               description:
-                'ID of the entrance for which you want to retrieve all access methods.',
+                'ID of the entrance for which you want to retrieve all access methods that grant access to it.',
               format: 'uuid',
               type: 'string',
             },
@@ -42948,7 +42948,7 @@ const openapi: OpenAPISpec = {
             name: 'space_id',
             schema: {
               description:
-                'ID of the space for which you want to retrieve all access methods.',
+                'ID of the space by which to filter the returned access methods. Must be combined with `access_grant_id`, `access_grant_key`, or `acs_entrance_id`.',
               format: 'uuid',
               type: 'string',
             },
@@ -42958,8 +42958,29 @@ const openapi: OpenAPISpec = {
             name: 'access_code_id',
             schema: {
               description:
-                'ID of the access code for which you want to retrieve all access methods.',
+                'ID of the access code by which to filter the returned access methods. Must be combined with `access_grant_id`, `access_grant_key`, or `acs_entrance_id`.',
               format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 500,
+              description: 'Maximum number of records to return per page.',
+              exclusiveMinimum: true,
+              minimum: 0,
+              type: 'integer',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              nullable: true,
               type: 'string',
             },
           },
@@ -42975,8 +42996,9 @@ const openapi: OpenAPISpec = {
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                   },
-                  required: ['access_methods', 'ok'],
+                  required: ['access_methods', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
@@ -43013,7 +43035,7 @@ const openapi: OpenAPISpec = {
                 properties: {
                   access_code_id: {
                     description:
-                      'ID of the access code for which you want to retrieve all access methods.',
+                      'ID of the access code by which to filter the returned access methods. Must be combined with `access_grant_id`, `access_grant_key`, or `acs_entrance_id`.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -43031,19 +43053,33 @@ const openapi: OpenAPISpec = {
                   },
                   acs_entrance_id: {
                     description:
-                      'ID of the entrance for which you want to retrieve all access methods.',
+                      'ID of the entrance for which you want to retrieve all access methods that grant access to it.',
                     format: 'uuid',
                     type: 'string',
                   },
                   device_id: {
                     description:
-                      'ID of the device for which you want to retrieve all access methods.',
+                      'ID of the device by which to filter the returned access methods. Must be combined with `access_grant_id`, `access_grant_key`, or `acs_entrance_id`.',
                     format: 'uuid',
+                    type: 'string',
+                  },
+                  limit: {
+                    default: 500,
+                    description:
+                      'Maximum number of records to return per page.',
+                    exclusiveMinimum: true,
+                    minimum: 0,
+                    type: 'integer',
+                  },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    nullable: true,
                     type: 'string',
                   },
                   space_id: {
                     description:
-                      'ID of the space for which you want to retrieve all access methods.',
+                      'ID of the space by which to filter the returned access methods. Must be combined with `access_grant_id`, `access_grant_key`, or `acs_entrance_id`.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -43064,8 +43100,9 @@ const openapi: OpenAPISpec = {
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                   },
-                  required: ['access_methods', 'ok'],
+                  required: ['access_methods', 'pagination', 'ok'],
                   type: 'object',
                 },
               },

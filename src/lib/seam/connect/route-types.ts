@@ -24482,14 +24482,18 @@ export type Routes = {
       access_grant_id?: string | undefined
       /** Key of Access Grant to list access methods for. */
       access_grant_key?: string | undefined
-      /** ID of the device for which you want to retrieve all access methods. */
+      /** ID of the device by which to filter the returned access methods. Must be combined with `access_grant_id`, `access_grant_key`, or `acs_entrance_id`. */
       device_id?: string | undefined
-      /** ID of the entrance for which you want to retrieve all access methods. */
+      /** ID of the entrance for which you want to retrieve all access methods that grant access to it. */
       acs_entrance_id?: string | undefined
-      /** ID of the space for which you want to retrieve all access methods. */
+      /** ID of the space by which to filter the returned access methods. Must be combined with `access_grant_id`, `access_grant_key`, or `acs_entrance_id`. */
       space_id?: string | undefined
-      /** ID of the access code for which you want to retrieve all access methods. */
+      /** ID of the access code by which to filter the returned access methods. Must be combined with `access_grant_id`, `access_grant_key`, or `acs_entrance_id`. */
       access_code_id?: string | undefined
+      /** Maximum number of records to return per page. */
+      limit?: number
+      /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
+      page_cursor?: (string | undefined) | null
     }
     formData: {}
     jsonResponse: {
@@ -24632,6 +24636,15 @@ export type Routes = {
         /** ID of the customization profile associated with the access method. */
         customization_profile_id?: string | undefined
       }[]
+      /** Information about the current page of results. */
+      pagination: {
+        /** Opaque value that can be used to select the next page of results via the `page_cursor` parameter. */
+        next_page_cursor: string | null
+        /** Indicates whether there is another page of results after this one. */
+        has_next_page: boolean
+        /** URL to get the next page of results. */
+        next_page_url: string | null
+      }
     }
     maxDuration: undefined
   }
