@@ -16100,6 +16100,7 @@ export type Routes = {
                 | 'dormakaba_ambiance_access_group'
                 | 'avigilon_alta_group'
                 | 'kisi_access_group'
+                | 'akiles_member_group'
               /**
                * @deprecated Use `external_type_display_name`.*/
               access_group_type_display_name: string
@@ -16116,6 +16117,7 @@ export type Routes = {
                 | 'dormakaba_ambiance_access_group'
                 | 'avigilon_alta_group'
                 | 'kisi_access_group'
+                | 'akiles_member_group'
               /** Display name that corresponds to the brand-specific terminology for the access group type. */
               external_type_display_name: string
               /** Date and time at which the access group was created. */
@@ -27039,6 +27041,7 @@ export type Routes = {
           | 'dormakaba_ambiance_access_group'
           | 'avigilon_alta_group'
           | 'kisi_access_group'
+          | 'akiles_member_group'
         /**
          * @deprecated Use `external_type_display_name`.*/
         access_group_type_display_name: string
@@ -27055,6 +27058,7 @@ export type Routes = {
           | 'dormakaba_ambiance_access_group'
           | 'avigilon_alta_group'
           | 'kisi_access_group'
+          | 'akiles_member_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
         /** Date and time at which the access group was created. */
@@ -27257,6 +27261,7 @@ export type Routes = {
           | 'dormakaba_ambiance_access_group'
           | 'avigilon_alta_group'
           | 'kisi_access_group'
+          | 'akiles_member_group'
         /**
          * @deprecated Use `external_type_display_name`.*/
         access_group_type_display_name: string
@@ -27273,6 +27278,7 @@ export type Routes = {
           | 'dormakaba_ambiance_access_group'
           | 'avigilon_alta_group'
           | 'kisi_access_group'
+          | 'akiles_member_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
         /** Date and time at which the access group was created. */
@@ -28086,6 +28092,7 @@ export type Routes = {
           | 'dormakaba_ambiance_access_group'
           | 'avigilon_alta_group'
           | 'kisi_access_group'
+          | 'akiles_member_group'
         /**
          * @deprecated Use `external_type_display_name`.*/
         access_group_type_display_name: string
@@ -28102,6 +28109,7 @@ export type Routes = {
           | 'dormakaba_ambiance_access_group'
           | 'avigilon_alta_group'
           | 'kisi_access_group'
+          | 'akiles_member_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
         /** Date and time at which the access group was created. */
@@ -28301,6 +28309,7 @@ export type Routes = {
           | 'dormakaba_ambiance_access_group'
           | 'avigilon_alta_group'
           | 'kisi_access_group'
+          | 'akiles_member_group'
         /**
          * @deprecated Use `external_type_display_name`.*/
         access_group_type_display_name: string
@@ -28317,6 +28326,7 @@ export type Routes = {
           | 'dormakaba_ambiance_access_group'
           | 'avigilon_alta_group'
           | 'kisi_access_group'
+          | 'akiles_member_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
         /** Date and time at which the access group was created. */
@@ -139644,6 +139654,7 @@ export type Routes = {
                 | 'dormakaba_ambiance_access_group'
                 | 'avigilon_alta_group'
                 | 'kisi_access_group'
+                | 'akiles_member_group'
               /**
                * @deprecated Use `external_type_display_name`.*/
               access_group_type_display_name: string
@@ -139660,6 +139671,7 @@ export type Routes = {
                 | 'dormakaba_ambiance_access_group'
                 | 'avigilon_alta_group'
                 | 'kisi_access_group'
+                | 'akiles_member_group'
               /** Display name that corresponds to the brand-specific terminology for the access group type. */
               external_type_display_name: string
               /** Date and time at which the access group was created. */
@@ -142271,6 +142283,7 @@ export type Routes = {
                 | 'dormakaba_ambiance_access_group'
                 | 'avigilon_alta_group'
                 | 'kisi_access_group'
+                | 'akiles_member_group'
               /**
                * @deprecated Use `external_type_display_name`.*/
               access_group_type_display_name: string
@@ -142287,6 +142300,7 @@ export type Routes = {
                 | 'dormakaba_ambiance_access_group'
                 | 'avigilon_alta_group'
                 | 'kisi_access_group'
+                | 'akiles_member_group'
               /** Display name that corresponds to the brand-specific terminology for the access group type. */
               external_type_display_name: string
               /** Date and time at which the access group was created. */
