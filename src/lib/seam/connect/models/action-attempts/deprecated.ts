@@ -54,7 +54,7 @@ const create_access_code_action_attempt = z
         .describe('Creating an access code succeeded.'),
       result: z
         .object({
-          access_code: z.any().describe('Created access code.'),
+          access_code: z.record(z.any()).describe('Created access code.'),
         })
         .describe('Result of the action.'),
     }),
@@ -102,7 +102,12 @@ const update_access_code_action_attempt = z
         .describe('Updating an access code succeeded.'),
       result: z
         .object({
-          access_code: z.any().describe('Updated access code.'),
+          // Omitted when the update was a no-op, that is, when every
+          // requested value already matched the access code.
+          access_code: z
+            .record(z.any())
+            .optional()
+            .describe('Updated access code.'),
         })
         .describe('Result of the action.'),
     }),
@@ -128,7 +133,9 @@ const create_noise_threshold_action_attempt = z
         .describe('Creating a noise threshold succeeded.'),
       result: z
         .object({
-          noise_threshold: z.any().describe('Created noise threshold.'),
+          noise_threshold: z
+            .record(z.any())
+            .describe('Created noise threshold.'),
         })
         .describe('Result of the action.'),
     }),
@@ -176,7 +183,9 @@ const update_noise_threshold_action_attempt = z
         .describe('Updating a noise threshold succeeded.'),
       result: z
         .object({
-          noise_threshold: z.any().describe('Updated noise threshold.'),
+          noise_threshold: z
+            .record(z.any())
+            .describe('Updated noise threshold.'),
         })
         .describe('Result of the action.'),
     }),
