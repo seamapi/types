@@ -1,3 +1,4 @@
+export * from './akiles.js'
 export * from './assa-abloy-vostio.js'
 export * from './brivo.js'
 export * from './dormakaba-ambiance.js'
