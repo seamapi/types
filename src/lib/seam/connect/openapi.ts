@@ -10870,8 +10870,13 @@ const openapi: OpenAPISpec = {
               result: {
                 description: 'Result of the action.',
                 properties: {
-                  access_code: { description: 'Created access code.' },
+                  access_code: {
+                    additionalProperties: {},
+                    description: 'Created access code.',
+                    type: 'object',
+                  },
                 },
+                required: ['access_code'],
                 type: 'object',
               },
               status: { enum: ['success'], type: 'string' },
@@ -11086,7 +11091,11 @@ const openapi: OpenAPISpec = {
               result: {
                 description: 'Result of the action.',
                 properties: {
-                  access_code: { description: 'Updated access code.' },
+                  access_code: {
+                    additionalProperties: {},
+                    description: 'Updated access code.',
+                    type: 'object',
+                  },
                 },
                 type: 'object',
               },
@@ -11195,8 +11204,13 @@ const openapi: OpenAPISpec = {
               result: {
                 description: 'Result of the action.',
                 properties: {
-                  noise_threshold: { description: 'Created noise threshold.' },
+                  noise_threshold: {
+                    additionalProperties: {},
+                    description: 'Created noise threshold.',
+                    type: 'object',
+                  },
                 },
+                required: ['noise_threshold'],
                 type: 'object',
               },
               status: { enum: ['success'], type: 'string' },
@@ -11411,8 +11425,13 @@ const openapi: OpenAPISpec = {
               result: {
                 description: 'Result of the action.',
                 properties: {
-                  noise_threshold: { description: 'Updated noise threshold.' },
+                  noise_threshold: {
+                    additionalProperties: {},
+                    description: 'Updated noise threshold.',
+                    type: 'object',
+                  },
                 },
+                required: ['noise_threshold'],
                 type: 'object',
               },
               status: { enum: ['success'], type: 'string' },
@@ -14950,6 +14969,10 @@ const openapi: OpenAPISpec = {
                           enforced_setpoint_range_celsius: {
                             description:
                               'Enforced setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error.',
+                            items: { format: 'float', type: 'number' },
+                            maxItems: 2,
+                            minItems: 2,
+                            type: 'array',
                           },
                           product_type: {
                             description: 'Product type for a Sensi device.',
@@ -27805,10 +27828,16 @@ const openapi: OpenAPISpec = {
             nullable: true,
             type: 'string',
           },
-          provider_state: { description: 'Provider state for the phone.' },
+          provider_state: {
+            additionalProperties: {},
+            description: 'Provider state for the phone.',
+            nullable: true,
+            type: 'object',
+          },
         },
         required: [
           'phone_registration_id',
+          'provider_state',
           'provider_name',
           'is_being_activated',
         ],
@@ -28937,11 +28966,15 @@ const openapi: OpenAPISpec = {
                       type: 'string',
                     },
                     provider_state: {
+                      additionalProperties: {},
                       description: 'Provider state for the phone.',
+                      nullable: true,
+                      type: 'object',
                     },
                   },
                   required: [
                     'phone_registration_id',
+                    'provider_state',
                     'provider_name',
                     'is_being_activated',
                   ],
@@ -63354,7 +63387,11 @@ const openapi: OpenAPISpec = {
               schema: {
                 properties: {
                   connect_webview_id: { format: 'uuid', type: 'string' },
-                  submit_args: {},
+                  submit_args: {
+                    additionalProperties: {},
+                    nullable: true,
+                    type: 'object',
+                  },
                 },
                 required: ['connect_webview_id'],
                 type: 'object',
@@ -66369,6 +66406,10 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Time range to filter timeline entries. Returns entries created between the two timestamps [start, end].',
+              items: { format: 'date-time', type: 'string' },
+              maxItems: 2,
+              minItems: 2,
+              type: 'array',
             },
           },
           {
@@ -66773,6 +66814,10 @@ const openapi: OpenAPISpec = {
                   created_between: {
                     description:
                       'Time range to filter timeline entries. Returns entries created between the two timestamps [start, end].',
+                    items: { format: 'date-time', type: 'string' },
+                    maxItems: 2,
+                    minItems: 2,
+                    type: 'array',
                   },
                   entry_types: {
                     description:
