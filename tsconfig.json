@@ -6,9 +6,8 @@
     "skipLibCheck": true,
     "strict": true,
     "module": "nodenext",
-    "esModuleInterop": true,
     "moduleDetection": "force",
-    "target": "es2023",
+    "target": "es2025",
     "jsx": "react-jsx",
     "sourceMap": true,
     "newLine": "lf",
@@ -24,7 +23,7 @@
     "noUnusedParameters": true,
     "noUnusedLocals": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": "./",
+    "types": ["node"],
     "paths": {
       "@seamapi/types": ["./src/index.ts"],
       "@seamapi/types/connect": ["./src/connect.ts"],
@@ -33,5 +32,5 @@
     }
   },
   "files": ["src/index.ts", "src/connect.ts"],
-  "include": ["src/**/*", "blueprint.ts", "eslint.config.ts", "tsup.config.ts"]
+  "include": ["src/**/*", "blueprint.ts", "eslint.config.ts"]
 }

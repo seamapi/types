@@ -10,30 +10,18 @@
       "import": {
         "types": "./index.d.ts",
         "default": "./index.js"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
       }
     },
     "./connect": {
       "import": {
         "types": "./connect.d.ts",
         "default": "./connect.js"
-      },
-      "require": {
-        "types": "./dist/connect.d.cts",
-        "default": "./dist/connect.cjs"
       }
     },
     "./devicedb": {
       "import": {
         "types": "./devicedb.d.ts",
         "default": "./devicedb.js"
-      },
-      "require": {
-        "types": "./dist/devicedb.d.cts",
-        "default": "./dist/devicedb.cjs"
       }
     }
   },
@@ -60,16 +48,16 @@
     "devicedb.js",
     "devicedb.js.map",
     "devicedb.d.ts",
-    "dist",
     "lib",
-    "src"
+    "src",
+    "!test",
+    "!**/*.test.ts"
   ],
   "scripts": {
     "build": "npm run build:entrypoints",
     "prebuild": "concurrently --raw --group 'tsx src/index.ts' 'tsx src/connect.ts'  'tsx src/devicedb.ts'",
     "postbuild": "concurrently --raw --group 'node ./index.js' 'node ./connect.js'  'node ./devicedb.js'",
     "build:entrypoints": "npm run build:ts",
-    "postbuild:entrypoints": "tsup",
     "build:ts": "tsc --project tsconfig.build.json",
     "prebuild:ts": "del 'index.*' 'connect.*' 'devicedb.*' lib",
     "postbuild:ts": "tsc-alias --replacer ./tsc-alias-replacer.cjs --project tsconfig.build.json",
@@ -91,9 +79,18 @@
   "peerDependencies": {
     "zod": "^3.24.0"
   },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "^24.11.0 || ^22.11.0"
+    },
+    "packageManager": {
+      "name": "npm",
+      "version": "^11.12.0 || ^10.9.4"
+    }
+  },
   "devDependencies": {
     "@seamapi/blueprint": "^1.1.0",
-    "@swc/core": "^1.11.29",
     "@types/node": "^24.10.9",
     "concurrently": "^9.2.0",
     "del-cli": "^7.0.0",
@@ -104,14 +101,13 @@
     "eslint-plugin-unused-imports": "^4.1.4",
     "jiti": "^2.4.2",
     "mkdirp": "^3.0.1",
-    "neostandard": "^0.12.2",
+    "neostandard": "^0.13.0",
     "patch-package": "^8.0.0",
     "prettier": "^3.0.0",
     "tsc-alias": "^1.8.2",
-    "tsup": "^8.0.1",
     "tsx": "^4.6.2",
     "typedoc": "^0.28.7",
-    "typescript": "^5.8.3",
+    "typescript": "^6.0.3",
     "zod": "^3.24.0"
   }
 }
