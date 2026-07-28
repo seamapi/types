@@ -3298,6 +3298,17 @@ const openapi: OpenAPISpec = {
             format: 'uuid',
             type: 'string',
           },
+          akiles_metadata: {
+            description:
+              'Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+            properties: {
+              member_pin_id: {
+                description: 'ID of the Akiles member PIN.',
+                type: 'string',
+              },
+            },
+            type: 'object',
+          },
           assa_abloy_vostio_metadata: {
             description:
               'Vostio-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
@@ -3405,6 +3416,7 @@ const openapi: OpenAPISpec = {
               'salto_ks_tag',
               'avigilon_alta_credential',
               'kisi_credential',
+              'akiles_credential',
             ],
             type: 'string',
           },
@@ -6266,6 +6278,17 @@ const openapi: OpenAPISpec = {
                             format: 'uuid',
                             type: 'string',
                           },
+                          akiles_metadata: {
+                            description:
+                              'Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                            properties: {
+                              member_pin_id: {
+                                description: 'ID of the Akiles member PIN.',
+                                type: 'string',
+                              },
+                            },
+                            type: 'object',
+                          },
                           assa_abloy_vostio_metadata: {
                             description:
                               'Vostio-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
@@ -6376,6 +6399,7 @@ const openapi: OpenAPISpec = {
                               'salto_ks_tag',
                               'avigilon_alta_credential',
                               'kisi_credential',
+                              'akiles_credential',
                             ],
                             type: 'string',
                           },
@@ -6737,6 +6761,17 @@ const openapi: OpenAPISpec = {
                             format: 'uuid',
                             type: 'string',
                           },
+                          akiles_metadata: {
+                            description:
+                              'Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                            properties: {
+                              member_pin_id: {
+                                description: 'ID of the Akiles member PIN.',
+                                type: 'string',
+                              },
+                            },
+                            type: 'object',
+                          },
                           assa_abloy_vostio_metadata: {
                             description:
                               'Vostio-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
@@ -6847,6 +6882,7 @@ const openapi: OpenAPISpec = {
                               'salto_ks_tag',
                               'avigilon_alta_credential',
                               'kisi_credential',
+                              'akiles_credential',
                             ],
                             type: 'string',
                           },
@@ -7460,6 +7496,17 @@ const openapi: OpenAPISpec = {
                         format: 'uuid',
                         type: 'string',
                       },
+                      akiles_metadata: {
+                        description:
+                          'Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                        properties: {
+                          member_pin_id: {
+                            description: 'ID of the Akiles member PIN.',
+                            type: 'string',
+                          },
+                        },
+                        type: 'object',
+                      },
                       assa_abloy_vostio_metadata: {
                         description:
                           'Vostio-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
@@ -7569,6 +7616,7 @@ const openapi: OpenAPISpec = {
                           'salto_ks_tag',
                           'avigilon_alta_credential',
                           'kisi_credential',
+                          'akiles_credential',
                         ],
                         type: 'string',
                       },
@@ -7928,6 +7976,17 @@ const openapi: OpenAPISpec = {
                         format: 'uuid',
                         type: 'string',
                       },
+                      akiles_metadata: {
+                        description:
+                          'Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                        properties: {
+                          member_pin_id: {
+                            description: 'ID of the Akiles member PIN.',
+                            type: 'string',
+                          },
+                        },
+                        type: 'object',
+                      },
                       assa_abloy_vostio_metadata: {
                         description:
                           'Vostio-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
@@ -8037,6 +8096,7 @@ const openapi: OpenAPISpec = {
                           'salto_ks_tag',
                           'avigilon_alta_credential',
                           'kisi_credential',
+                          'akiles_credential',
                         ],
                         type: 'string',
                       },
@@ -8685,6 +8745,17 @@ const openapi: OpenAPISpec = {
                     format: 'uuid',
                     type: 'string',
                   },
+                  akiles_metadata: {
+                    description:
+                      'Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                    properties: {
+                      member_pin_id: {
+                        description: 'ID of the Akiles member PIN.',
+                        type: 'string',
+                      },
+                    },
+                    type: 'object',
+                  },
                   assa_abloy_vostio_metadata: {
                     description:
                       'Vostio-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
@@ -8793,6 +8864,7 @@ const openapi: OpenAPISpec = {
                       'salto_ks_tag',
                       'avigilon_alta_credential',
                       'kisi_credential',
+                      'akiles_credential',
                     ],
                     type: 'string',
                   },
@@ -28511,6 +28583,17 @@ const openapi: OpenAPISpec = {
                         format: 'uuid',
                         type: 'string',
                       },
+                      akiles_metadata: {
+                        description:
+                          'Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                        properties: {
+                          member_pin_id: {
+                            description: 'ID of the Akiles member PIN.',
+                            type: 'string',
+                          },
+                        },
+                        type: 'object',
+                      },
                       assa_abloy_vostio_metadata: {
                         description:
                           'Vostio-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
@@ -28620,6 +28703,7 @@ const openapi: OpenAPISpec = {
                           'salto_ks_tag',
                           'avigilon_alta_credential',
                           'kisi_credential',
+                          'akiles_credential',
                         ],
                         type: 'string',
                       },
@@ -32499,6 +32583,17 @@ const openapi: OpenAPISpec = {
             format: 'uuid',
             type: 'string',
           },
+          akiles_metadata: {
+            description:
+              'Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+            properties: {
+              member_pin_id: {
+                description: 'ID of the Akiles member PIN.',
+                type: 'string',
+              },
+            },
+            type: 'object',
+          },
           assa_abloy_vostio_metadata: {
             description:
               'Vostio-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
@@ -32606,6 +32701,7 @@ const openapi: OpenAPISpec = {
               'salto_ks_tag',
               'avigilon_alta_credential',
               'kisi_credential',
+              'akiles_credential',
             ],
             type: 'string',
           },

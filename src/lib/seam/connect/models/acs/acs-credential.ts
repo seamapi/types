@@ -1,6 +1,7 @@
 import { z } from 'zod'
 
 import {
+  acs_credential_akiles_metadata,
   acs_credential_visionline_metadata,
   acs_credential_vostio_metadata,
 } from './metadata/index.js'
@@ -20,6 +21,7 @@ export const acs_credential_external_type = z.enum([
   'salto_ks_tag',
   'avigilon_alta_credential',
   'kisi_credential',
+  'akiles_credential',
 ])
 
 export const acs_credential_access_method_type = z.enum([
@@ -308,6 +310,11 @@ const common_acs_credential = z.object({
     .optional()
     .describe(
       'Vostio-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+    ),
+  akiles_metadata: acs_credential_akiles_metadata
+    .optional()
+    .describe(
+      'Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
     ),
 })
 

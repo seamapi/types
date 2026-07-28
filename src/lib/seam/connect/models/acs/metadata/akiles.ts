@@ -29,3 +29,17 @@ export const acs_entrance_akiles_metadata = z
 export type AcsEntranceAkilesMetadata = z.infer<
   typeof acs_entrance_akiles_metadata
 >
+
+export const acs_credential_akiles_metadata = z
+  .object({
+    member_pin_id: z
+      .string()
+      .optional()
+      .describe('ID of the Akiles member PIN.'),
+  })
+  .partial()
+  .describe('Akiles-specific metadata for the credential.')
+
+export type AcsCredentialAkilesMetadata = z.infer<
+  typeof acs_credential_akiles_metadata
+>

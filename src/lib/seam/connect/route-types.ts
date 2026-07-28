@@ -257,6 +257,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -385,6 +386,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -439,6 +447,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -567,6 +576,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -696,6 +712,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -824,6 +841,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -874,6 +898,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -1002,6 +1027,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -1142,6 +1174,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -1264,6 +1297,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -3339,6 +3379,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -3467,6 +3508,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -3521,6 +3569,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -3649,6 +3698,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -3778,6 +3834,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -3906,6 +3963,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -3956,6 +4020,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -4084,6 +4149,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -4224,6 +4296,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -4346,6 +4419,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -8041,6 +8121,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -8169,6 +8250,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -8223,6 +8311,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -8351,6 +8440,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -8480,6 +8576,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -8608,6 +8705,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -8658,6 +8762,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -8786,6 +8891,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -8926,6 +9038,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -9048,6 +9161,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -10991,6 +11111,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -11119,6 +11240,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -11173,6 +11301,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -11301,6 +11430,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -11430,6 +11566,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -11558,6 +11695,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -11608,6 +11752,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -11736,6 +11881,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -11876,6 +12028,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -11998,6 +12151,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -17607,6 +17767,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -17735,6 +17896,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -17789,6 +17957,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -17917,6 +18086,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -18046,6 +18222,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -18174,6 +18351,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -18224,6 +18408,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -18352,6 +18537,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -18492,6 +18684,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -18614,6 +18807,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -19675,6 +19875,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -19803,6 +20004,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -19857,6 +20065,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -19985,6 +20194,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -20114,6 +20330,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -20242,6 +20459,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -20292,6 +20516,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -20420,6 +20645,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -20560,6 +20792,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -20682,6 +20915,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -24400,6 +24640,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -24522,6 +24763,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -24930,6 +25178,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -25058,6 +25307,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -25112,6 +25368,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -25240,6 +25497,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -25369,6 +25633,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -25497,6 +25762,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -25547,6 +25819,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -25675,6 +25948,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -25815,6 +26095,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -25937,6 +26218,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -28692,6 +28980,7 @@ export type Routes = {
               | 'salto_ks_tag'
               | 'avigilon_alta_credential'
               | 'kisi_credential'
+              | 'akiles_credential'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -28810,6 +29099,13 @@ export type Routes = {
               door_names?: (string[] | undefined) | undefined
               /** Endpoint ID in the Vostio access system. */
               endpoint_id?: (string | undefined) | undefined
+            }
+          | undefined
+        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+        akiles_metadata?:
+          | {
+              /** ID of the Akiles member PIN. */
+              member_pin_id?: (string | undefined) | undefined
             }
           | undefined
         /** Indicates whether Seam manages the credential. */
@@ -28942,6 +29238,7 @@ export type Routes = {
               | 'salto_ks_tag'
               | 'avigilon_alta_credential'
               | 'kisi_credential'
+              | 'akiles_credential'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -29060,6 +29357,13 @@ export type Routes = {
               door_names?: (string[] | undefined) | undefined
               /** Endpoint ID in the Vostio access system. */
               endpoint_id?: (string | undefined) | undefined
+            }
+          | undefined
+        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+        akiles_metadata?:
+          | {
+              /** ID of the Akiles member PIN. */
+              member_pin_id?: (string | undefined) | undefined
             }
           | undefined
         /** Indicates whether Seam manages the credential. */
@@ -29139,6 +29443,7 @@ export type Routes = {
               | 'salto_ks_tag'
               | 'avigilon_alta_credential'
               | 'kisi_credential'
+              | 'akiles_credential'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -29257,6 +29562,13 @@ export type Routes = {
               door_names?: (string[] | undefined) | undefined
               /** Endpoint ID in the Vostio access system. */
               endpoint_id?: (string | undefined) | undefined
+            }
+          | undefined
+        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+        akiles_metadata?:
+          | {
+              /** ID of the Akiles member PIN. */
+              member_pin_id?: (string | undefined) | undefined
             }
           | undefined
         /** Indicates whether Seam manages the credential. */
@@ -29341,6 +29653,7 @@ export type Routes = {
               | 'salto_ks_tag'
               | 'avigilon_alta_credential'
               | 'kisi_credential'
+              | 'akiles_credential'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -29459,6 +29772,13 @@ export type Routes = {
               door_names?: (string[] | undefined) | undefined
               /** Endpoint ID in the Vostio access system. */
               endpoint_id?: (string | undefined) | undefined
+            }
+          | undefined
+        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+        akiles_metadata?:
+          | {
+              /** ID of the Akiles member PIN. */
+              member_pin_id?: (string | undefined) | undefined
             }
           | undefined
         /** Indicates whether Seam manages the credential. */
@@ -29551,6 +29871,7 @@ export type Routes = {
               | 'salto_ks_tag'
               | 'avigilon_alta_credential'
               | 'kisi_credential'
+              | 'akiles_credential'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -29669,6 +29990,13 @@ export type Routes = {
               door_names?: (string[] | undefined) | undefined
               /** Endpoint ID in the Vostio access system. */
               endpoint_id?: (string | undefined) | undefined
+            }
+          | undefined
+        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+        akiles_metadata?:
+          | {
+              /** ID of the Akiles member PIN. */
+              member_pin_id?: (string | undefined) | undefined
             }
           | undefined
         /** Indicates whether Seam manages the credential. */
@@ -30030,6 +30358,7 @@ export type Routes = {
               | 'salto_ks_tag'
               | 'avigilon_alta_credential'
               | 'kisi_credential'
+              | 'akiles_credential'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -30148,6 +30477,13 @@ export type Routes = {
               door_names?: (string[] | undefined) | undefined
               /** Endpoint ID in the Vostio access system. */
               endpoint_id?: (string | undefined) | undefined
+            }
+          | undefined
+        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+        akiles_metadata?:
+          | {
+              /** ID of the Akiles member PIN. */
+              member_pin_id?: (string | undefined) | undefined
             }
           | undefined
         /** Indicates whether Seam manages the credential. */
@@ -30213,6 +30549,7 @@ export type Routes = {
               | 'salto_ks_tag'
               | 'avigilon_alta_credential'
               | 'kisi_credential'
+              | 'akiles_credential'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -30331,6 +30668,13 @@ export type Routes = {
               door_names?: (string[] | undefined) | undefined
               /** Endpoint ID in the Vostio access system. */
               endpoint_id?: (string | undefined) | undefined
+            }
+          | undefined
+        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+        akiles_metadata?:
+          | {
+              /** ID of the Akiles member PIN. */
+              member_pin_id?: (string | undefined) | undefined
             }
           | undefined
         is_managed: false
@@ -30413,6 +30757,7 @@ export type Routes = {
               | 'salto_ks_tag'
               | 'avigilon_alta_credential'
               | 'kisi_credential'
+              | 'akiles_credential'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -30531,6 +30876,13 @@ export type Routes = {
               door_names?: (string[] | undefined) | undefined
               /** Endpoint ID in the Vostio access system. */
               endpoint_id?: (string | undefined) | undefined
+            }
+          | undefined
+        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+        akiles_metadata?:
+          | {
+              /** ID of the Akiles member PIN. */
+              member_pin_id?: (string | undefined) | undefined
             }
           | undefined
         is_managed: false
@@ -30605,6 +30957,7 @@ export type Routes = {
               | 'salto_ks_tag'
               | 'avigilon_alta_credential'
               | 'kisi_credential'
+              | 'akiles_credential'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -30723,6 +31076,13 @@ export type Routes = {
               door_names?: (string[] | undefined) | undefined
               /** Endpoint ID in the Vostio access system. */
               endpoint_id?: (string | undefined) | undefined
+            }
+          | undefined
+        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+        akiles_metadata?:
+          | {
+              /** ID of the Akiles member PIN. */
+              member_pin_id?: (string | undefined) | undefined
             }
           | undefined
         /** Indicates whether Seam manages the credential. */
@@ -30955,6 +31315,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -31083,6 +31444,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -31137,6 +31505,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -31265,6 +31634,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -31394,6 +31770,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -31522,6 +31899,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -31572,6 +31956,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -31700,6 +32085,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -31840,6 +32232,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -31962,6 +32355,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -33118,6 +33518,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -33246,6 +33647,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -33300,6 +33708,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -33428,6 +33837,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -33557,6 +33973,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -33685,6 +34102,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -33735,6 +34159,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -33863,6 +34288,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -34003,6 +34435,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -34125,6 +34558,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -35173,6 +35613,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -35301,6 +35742,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -35355,6 +35803,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -35483,6 +35932,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -35612,6 +36068,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -35740,6 +36197,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -35790,6 +36254,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -35918,6 +36383,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -36058,6 +36530,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -36180,6 +36653,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -37751,6 +38231,7 @@ export type Routes = {
               | 'salto_ks_tag'
               | 'avigilon_alta_credential'
               | 'kisi_credential'
+              | 'akiles_credential'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -37869,6 +38350,13 @@ export type Routes = {
               door_names?: (string[] | undefined) | undefined
               /** Endpoint ID in the Vostio access system. */
               endpoint_id?: (string | undefined) | undefined
+            }
+          | undefined
+        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+        akiles_metadata?:
+          | {
+              /** ID of the Akiles member PIN. */
+              member_pin_id?: (string | undefined) | undefined
             }
           | undefined
         /** Indicates whether Seam manages the credential. */
@@ -38099,6 +38587,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -38227,6 +38716,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -38281,6 +38777,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -38409,6 +38906,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -38538,6 +39042,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -38666,6 +39171,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -38716,6 +39228,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -38844,6 +39357,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -38984,6 +39504,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -39106,6 +39627,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -42906,6 +43434,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -43034,6 +43563,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -43088,6 +43624,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -43216,6 +43753,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -43345,6 +43889,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -43473,6 +44018,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -43523,6 +44075,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -43651,6 +44204,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -43791,6 +44351,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -43913,6 +44474,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -44951,6 +45519,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -45079,6 +45648,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -45133,6 +45709,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -45261,6 +45838,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -45390,6 +45974,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -45518,6 +46103,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -45568,6 +46160,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -45696,6 +46289,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -45836,6 +46436,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -45958,6 +46559,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -64353,6 +64961,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -64481,6 +65090,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -64535,6 +65151,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -64663,6 +65280,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -64792,6 +65416,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -64920,6 +65545,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -64970,6 +65602,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -65098,6 +65731,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -65238,6 +65878,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -65360,6 +66001,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -74081,6 +74729,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -74209,6 +74858,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -74263,6 +74919,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -74391,6 +75048,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -74520,6 +75184,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -74648,6 +75313,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -74698,6 +75370,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -74826,6 +75499,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -74966,6 +75646,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -75088,6 +75769,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -76127,6 +76815,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -76255,6 +76944,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -76309,6 +77005,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -76437,6 +77134,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -76566,6 +77270,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -76694,6 +77399,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -76744,6 +77456,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -76872,6 +77585,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -77012,6 +77732,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -77134,6 +77855,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -78171,6 +78899,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -78299,6 +79028,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -78353,6 +79089,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -78481,6 +79218,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -78610,6 +79354,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -78738,6 +79483,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -78788,6 +79540,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -78916,6 +79669,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -79056,6 +79816,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -79178,6 +79939,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -80217,6 +80985,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -80345,6 +81114,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -80399,6 +81175,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -80527,6 +81304,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -80656,6 +81440,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -80784,6 +81569,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -80834,6 +81626,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -80962,6 +81755,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -81102,6 +81902,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -81224,6 +82025,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -86104,6 +86912,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -86232,6 +87041,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -86286,6 +87102,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -86414,6 +87231,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -86543,6 +87367,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -86671,6 +87496,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -86721,6 +87553,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -86849,6 +87682,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -86989,6 +87829,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -87111,6 +87952,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -88169,6 +89017,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -88297,6 +89146,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -88351,6 +89207,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -88479,6 +89336,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -88608,6 +89472,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -88736,6 +89601,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -88786,6 +89658,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -88914,6 +89787,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -89054,6 +89934,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -89176,6 +90057,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -90290,6 +91178,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -90418,6 +91307,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -90472,6 +91368,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -90600,6 +91497,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -90729,6 +91633,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -90857,6 +91762,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -90907,6 +91819,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -91035,6 +91948,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -91175,6 +92095,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -91297,6 +92218,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -94325,6 +95253,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -94453,6 +95382,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -94507,6 +95443,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -94635,6 +95572,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -94764,6 +95708,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -94892,6 +95837,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -94942,6 +95894,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -95070,6 +96023,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -95210,6 +96170,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -95332,6 +96293,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -102659,6 +103627,7 @@ export type Routes = {
               | 'salto_ks_tag'
               | 'avigilon_alta_credential'
               | 'kisi_credential'
+              | 'akiles_credential'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -102779,6 +103748,13 @@ export type Routes = {
               endpoint_id?: (string | undefined) | undefined
             }
           | undefined
+        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+        akiles_metadata?:
+          | {
+              /** ID of the Akiles member PIN. */
+              member_pin_id?: (string | undefined) | undefined
+            }
+          | undefined
         /** Indicates whether Seam manages the credential. */
         is_managed: true
       }[]
@@ -102867,6 +103843,7 @@ export type Routes = {
                   | 'salto_ks_tag'
                   | 'avigilon_alta_credential'
                   | 'kisi_credential'
+                  | 'akiles_credential'
                 )
               | undefined
             /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -102987,6 +103964,13 @@ export type Routes = {
                   door_names?: (string[] | undefined) | undefined
                   /** Endpoint ID in the Vostio access system. */
                   endpoint_id?: (string | undefined) | undefined
+                }
+              | undefined
+            /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+            akiles_metadata?:
+              | {
+                  /** ID of the Akiles member PIN. */
+                  member_pin_id?: (string | undefined) | undefined
                 }
               | undefined
             /** Indicates whether Seam manages the credential. */
@@ -106894,6 +107878,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -107022,6 +108007,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -107076,6 +108068,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -107204,6 +108197,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -107333,6 +108333,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -107461,6 +108462,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -107511,6 +108519,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -107639,6 +108648,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -107779,6 +108795,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -107901,6 +108918,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -108944,6 +109968,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -109072,6 +110097,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -109126,6 +110158,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -109254,6 +110287,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -109383,6 +110423,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -109511,6 +110552,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -109561,6 +110609,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -109689,6 +110738,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -109829,6 +110885,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -109951,6 +111008,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -111106,6 +112170,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -111234,6 +112299,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -111288,6 +112360,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -111416,6 +112489,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -111545,6 +112625,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -111673,6 +112754,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -111723,6 +112811,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -111851,6 +112940,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -111991,6 +113087,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -112113,6 +113210,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -115054,6 +116158,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -115182,6 +116287,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -115236,6 +116348,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -115364,6 +116477,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -115493,6 +116613,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -115621,6 +116742,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -115671,6 +116799,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -115799,6 +116928,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -115939,6 +117075,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -116061,6 +117198,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -117108,6 +118252,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -117236,6 +118381,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -117290,6 +118442,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -117418,6 +118571,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -117547,6 +118707,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -117675,6 +118836,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -117725,6 +118893,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -117853,6 +119022,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -117993,6 +119169,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -118115,6 +119292,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -123012,6 +124196,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -123140,6 +124325,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -123194,6 +124386,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -123322,6 +124515,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -123451,6 +124651,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -123579,6 +124780,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -123629,6 +124837,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -123757,6 +124966,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -123897,6 +125113,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -124019,6 +125236,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -125267,6 +126491,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -125395,6 +126620,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -125449,6 +126681,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -125577,6 +126810,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -125706,6 +126946,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -125834,6 +127075,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -125884,6 +127132,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -126012,6 +127261,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -126152,6 +127408,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -126274,6 +127531,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -127349,6 +128613,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -127477,6 +128742,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -127531,6 +128803,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -127659,6 +128932,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -127788,6 +129068,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -127916,6 +129197,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -127966,6 +129254,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -128094,6 +129383,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -128234,6 +129530,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -128356,6 +129653,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -129548,6 +130852,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -129676,6 +130981,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -129730,6 +131042,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -129858,6 +131171,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -129987,6 +131307,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -130115,6 +131436,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -130165,6 +131493,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -130293,6 +131622,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -130433,6 +131769,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -130555,6 +131892,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -140397,6 +141741,7 @@ export type Routes = {
                                     | 'salto_ks_tag'
                                     | 'avigilon_alta_credential'
                                     | 'kisi_credential'
+                                    | 'akiles_credential'
                                   )
                                 | undefined
                               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -140535,6 +141880,15 @@ export type Routes = {
                                       | undefined
                                     /** Endpoint ID in the Vostio access system. */
                                     endpoint_id?:
+                                      | (string | undefined)
+                                      | undefined
+                                  }
+                                | undefined
+                              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                              akiles_metadata?:
+                                | {
+                                    /** ID of the Akiles member PIN. */
+                                    member_pin_id?:
                                       | (string | undefined)
                                       | undefined
                                   }
@@ -140591,6 +141945,7 @@ export type Routes = {
                                     | 'salto_ks_tag'
                                     | 'avigilon_alta_credential'
                                     | 'kisi_credential'
+                                    | 'akiles_credential'
                                   )
                                 | undefined
                               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -140729,6 +142084,15 @@ export type Routes = {
                                       | undefined
                                     /** Endpoint ID in the Vostio access system. */
                                     endpoint_id?:
+                                      | (string | undefined)
+                                      | undefined
+                                  }
+                                | undefined
+                              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                              akiles_metadata?:
+                                | {
+                                    /** ID of the Akiles member PIN. */
+                                    member_pin_id?:
                                       | (string | undefined)
                                       | undefined
                                   }
@@ -140864,6 +142228,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -140992,6 +142357,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -141046,6 +142418,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -141174,6 +142547,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -141314,6 +142694,7 @@ export type Routes = {
                           | 'salto_ks_tag'
                           | 'avigilon_alta_credential'
                           | 'kisi_credential'
+                          | 'akiles_credential'
                         )
                       | undefined
                     /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -141442,6 +142823,13 @@ export type Routes = {
                           door_names?: (string[] | undefined) | undefined
                           /** Endpoint ID in the Vostio access system. */
                           endpoint_id?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                    akiles_metadata?:
+                      | {
+                          /** ID of the Akiles member PIN. */
+                          member_pin_id?: (string | undefined) | undefined
                         }
                       | undefined
                     /** Indicates whether Seam manages the credential. */
@@ -147793,6 +149181,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -147915,6 +149304,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
@@ -147967,6 +149363,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -148089,6 +149486,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               is_managed: false
@@ -149391,6 +150795,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -149519,6 +150924,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         /** Indicates whether Seam manages the credential. */
@@ -149573,6 +150985,7 @@ export type Routes = {
                               | 'salto_ks_tag'
                               | 'avigilon_alta_credential'
                               | 'kisi_credential'
+                              | 'akiles_credential'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -149701,6 +151114,13 @@ export type Routes = {
                               door_names?: (string[] | undefined) | undefined
                               /** Endpoint ID in the Vostio access system. */
                               endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
                             }
                           | undefined
                         is_managed: false
@@ -149830,6 +151250,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -149958,6 +151379,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   /** Indicates whether Seam manages the credential. */
@@ -150008,6 +151436,7 @@ export type Routes = {
                         | 'salto_ks_tag'
                         | 'avigilon_alta_credential'
                         | 'kisi_credential'
+                        | 'akiles_credential'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -150136,6 +151565,13 @@ export type Routes = {
                         door_names?: (string[] | undefined) | undefined
                         /** Endpoint ID in the Vostio access system. */
                         endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
                       }
                     | undefined
                   is_managed: false
@@ -150276,6 +151712,7 @@ export type Routes = {
                     | 'salto_ks_tag'
                     | 'avigilon_alta_credential'
                     | 'kisi_credential'
+                    | 'akiles_credential'
                   )
                 | undefined
               /** Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. */
@@ -150398,6 +151835,13 @@ export type Routes = {
                     door_names?: (string[] | undefined) | undefined
                     /** Endpoint ID in the Vostio access system. */
                     endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
                   }
                 | undefined
               /** Indicates whether Seam manages the credential. */
