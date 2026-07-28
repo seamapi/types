@@ -30820,6 +30820,1045 @@ const openapi: OpenAPISpec = {
         type: 'object',
         'x-route-path': '/access_codes/unmanaged',
       },
+      unmanaged_access_grant: {
+        description:
+          'Represents an unmanaged Access Grant. Unmanaged Access Grants do not have client sessions, instant keys, customization profiles, or keys.',
+        properties: {
+          access_grant_id: {
+            description: 'ID of the Access Grant.',
+            format: 'uuid',
+            type: 'string',
+          },
+          access_method_ids: {
+            description:
+              'IDs of the access methods created for the Access Grant.',
+            items: { format: 'uuid', type: 'string' },
+            type: 'array',
+          },
+          created_at: {
+            description: 'Date and time at which the Access Grant was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          display_name: {
+            description: 'Display name of the Access Grant.',
+            type: 'string',
+          },
+          ends_at: {
+            description: 'Date and time at which the Access Grant ends.',
+            format: 'date-time',
+            nullable: true,
+            type: 'string',
+          },
+          errors: {
+            description:
+              'Errors associated with the [access grant](https://docs.seam.co/use-cases/granting-access).',
+            items: {
+              discriminator: { propertyName: 'error_code' },
+              oneOf: [
+                {
+                  description:
+                    'Indicates that Seam could not create one or more of the requested access methods for the access grant.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['cannot_create_requested_access_methods'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    missing_device_ids: {
+                      description:
+                        'IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure.',
+                      items: { format: 'uuid', type: 'string' },
+                      type: 'array',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                  'x-resource-type': 'access_grant',
+                },
+              ],
+            },
+            type: 'array',
+          },
+          location_ids: {
+            deprecated: true,
+            items: { format: 'uuid', type: 'string' },
+            type: 'array',
+            'x-deprecated': 'Use `space_ids`.',
+          },
+          name: {
+            description:
+              'Name of the Access Grant. If not provided, the display name will be computed.',
+            nullable: true,
+            type: 'string',
+          },
+          pending_mutations: {
+            description:
+              'List of pending mutations for the access grant. This shows updates that are in progress.',
+            items: {
+              discriminator: { propertyName: 'mutation_code' },
+              oneOf: [
+                {
+                  description:
+                    'Seam is in the process of updating the devices/spaces associated with this access grant.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    from: {
+                      description: 'Previous location configuration.',
+                      properties: {
+                        device_ids: {
+                          description:
+                            'Previous device IDs where access codes existed.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                      },
+                      required: ['device_ids'],
+                      type: 'object',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of updating the spaces (devices) associated with this access grant.',
+                      enum: ['updating_spaces'],
+                      type: 'string',
+                    },
+                    to: {
+                      description: 'New location configuration.',
+                      properties: {
+                        common_code_key: {
+                          description:
+                            'Common code key to ensure PIN code reuse across devices.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        device_ids: {
+                          description:
+                            'New device IDs where access codes should be created.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                      },
+                      required: ['device_ids'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Seam is in the process of updating the access times for this access grant.',
+                  properties: {
+                    access_method_ids: {
+                      description: 'IDs of the access methods being updated.',
+                      items: { format: 'uuid', type: 'string' },
+                      type: 'array',
+                    },
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    from: {
+                      description: 'Previous access time configuration.',
+                      properties: {
+                        ends_at: {
+                          description: 'Previous end time for access.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        starts_at: {
+                          description: 'Previous start time for access.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['starts_at', 'ends_at'],
+                      type: 'object',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of updating the access times for this access grant.',
+                      enum: ['updating_access_times'],
+                      type: 'string',
+                    },
+                    to: {
+                      description: 'New access time configuration.',
+                      properties: {
+                        ends_at: {
+                          description: 'New end time for access.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        starts_at: {
+                          description: 'New start time for access.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['starts_at', 'ends_at'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'access_method_ids',
+                    'from',
+                    'to',
+                  ],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
+          requested_access_methods: {
+            description:
+              'Access methods that the user requested for the Access Grant.',
+            items: {
+              properties: {
+                code: {
+                  description:
+                    "Specific PIN code to use for this access method. Only applicable when mode is 'code'.",
+                  maxLength: 9,
+                  minLength: 4,
+                  pattern: '^\\d+$',
+                  type: 'string',
+                },
+                created_access_method_ids: {
+                  description:
+                    'IDs of the access methods created for the requested access method.',
+                  items: { format: 'uuid', type: 'string' },
+                  type: 'array',
+                },
+                created_at: {
+                  description:
+                    'Date and time at which the requested access method was added to the Access Grant.',
+                  format: 'date-time',
+                  type: 'string',
+                },
+                display_name: {
+                  description: 'Display name of the access method.',
+                  type: 'string',
+                },
+                instant_key_max_use_count: {
+                  description:
+                    "Maximum number of times the instant key can be used. Only applicable when mode is 'mobile_key'. Defaults to 1 if not specified.",
+                  minimum: 1,
+                  type: 'integer',
+                },
+                mode: {
+                  description:
+                    'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                  enum: ['code', 'card', 'mobile_key', 'cloud_key'],
+                  type: 'string',
+                },
+              },
+              required: [
+                'display_name',
+                'mode',
+                'created_at',
+                'created_access_method_ids',
+              ],
+              type: 'object',
+            },
+            type: 'array',
+          },
+          reservation_key: {
+            description: 'Reservation key for the access grant.',
+            type: 'string',
+          },
+          space_ids: {
+            description:
+              'IDs of the spaces to which the Access Grant gives access.',
+            items: { format: 'uuid', type: 'string' },
+            type: 'array',
+          },
+          starts_at: {
+            description: 'Date and time at which the Access Grant starts.',
+            format: 'date-time',
+            type: 'string',
+          },
+          user_identity_id: {
+            description:
+              'ID of user identity to which the Access Grant gives access.',
+            format: 'uuid',
+            type: 'string',
+          },
+          warnings: {
+            description:
+              'Warnings associated with the [access grant](https://docs.seam.co/use-cases/granting-access).',
+            items: {
+              description:
+                'Warning associated with the [access grant](https://docs.seam.co/use-cases/granting-access).',
+              discriminator: { propertyName: 'warning_code' },
+              oneOf: [
+                {
+                  description:
+                    'Indicates that the [access grant](https://docs.seam.co/use-cases/granting-access) is being deleted.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['being_deleted'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the access grant should have access to more locations than it currently does. Access methods are being created for the missing locations.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['underprovisioned_access'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the access grant has access to locations it should not have. Access methods are being removed from the extra locations.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    failed_devices: {
+                      description:
+                        'Devices whose access codes could not be revoked during reconciliation. Present when the provider does not support revoking an offline access code (e.g. Dormakaba oracode with exhausted override budget).',
+                      items: {
+                        properties: {
+                          device_id: {
+                            description:
+                              'Device whose access code could not be revoked.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          error_code: {
+                            description:
+                              'Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`).',
+                            type: 'string',
+                          },
+                          message: {
+                            description:
+                              'Human-readable description of why revocation failed.',
+                            type: 'string',
+                          },
+                        },
+                        required: ['device_id', 'error_code', 'message'],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['overprovisioned_access'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the access times for this [access grant](https://docs.seam.co/use-cases/granting-access) are being updated.',
+                  properties: {
+                    access_method_ids: {
+                      description: 'IDs of the access methods being updated.',
+                      items: { format: 'uuid', type: 'string' },
+                      type: 'array',
+                    },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['updating_access_times'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'warning_code',
+                    'access_method_ids',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the requested PIN code was already in use on a device, so a different code was assigned.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    device_id: {
+                      description:
+                        'ID of the device where the requested code was unavailable.',
+                      format: 'uuid',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    new_code: {
+                      description:
+                        'The new PIN code that was assigned instead.',
+                      type: 'string',
+                    },
+                    original_code: {
+                      description:
+                        'The originally requested PIN code that was unavailable.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['requested_code_unavailable'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'warning_code',
+                    'device_id',
+                    'original_code',
+                    'new_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that a device in the access grant does not support access codes and was excluded from code materialization.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    device_id: {
+                      description:
+                        'ID of the device that does not support access codes.',
+                      format: 'uuid',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['device_does_not_support_access_codes'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'warning_code',
+                    'device_id',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    "Indicates that a device in the access grant cannot program an access code for the grant's time range because of device-specific time constraints.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    device_id: {
+                      description:
+                        'ID of the device whose time constraints the access grant violates.',
+                      format: 'uuid',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    reason: {
+                      description:
+                        "Specific reason why the grant's times are not programmable on the device.",
+                      enum: [
+                        'duration_exceeds_max',
+                        'times_do_not_match_slots',
+                        'ongoing_not_supported',
+                      ],
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['device_time_constraints_violated'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'warning_code',
+                    'device_id',
+                    'reason',
+                  ],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
+          workspace_id: {
+            description:
+              'ID of the Seam workspace associated with the Access Grant.',
+            format: 'uuid',
+            type: 'string',
+          },
+        },
+        required: [
+          'workspace_id',
+          'access_grant_id',
+          'location_ids',
+          'space_ids',
+          'requested_access_methods',
+          'access_method_ids',
+          'name',
+          'display_name',
+          'created_at',
+          'starts_at',
+          'ends_at',
+          'warnings',
+          'errors',
+          'pending_mutations',
+        ],
+        type: 'object',
+        'x-draft': 'Early access.',
+        'x-route-path': '/access_grants/unmanaged',
+      },
+      unmanaged_access_method: {
+        description:
+          'Represents an unmanaged access method. Unmanaged access methods do not have client sessions, instant keys, customization profiles, or keys.',
+        properties: {
+          access_method_id: {
+            description: 'ID of the access method.',
+            format: 'uuid',
+            type: 'string',
+          },
+          code: {
+            description: 'The actual PIN code for code access methods.',
+            nullable: true,
+            type: 'string',
+          },
+          created_at: {
+            description:
+              'Date and time at which the access method was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          display_name: {
+            description: 'Display name of the access method.',
+            type: 'string',
+          },
+          errors: {
+            description:
+              'Errors associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+            items: {
+              description:
+                'Error associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+              discriminator: { propertyName: 'error_code' },
+              oneOf: [
+                {
+                  description:
+                    'Indicates that Seam was unable to issue this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) before its access grant started, so the recipient may be unable to access the space. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access method is eventually issued.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['failed_to_issue'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                  'x-resource-type': 'access_method',
+                },
+              ],
+            },
+            type: 'array',
+          },
+          is_assignment_required: {
+            description:
+              'Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment.',
+            type: 'boolean',
+          },
+          is_encoding_required: {
+            description:
+              'Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.',
+            type: 'boolean',
+          },
+          is_issued: {
+            description: 'Indicates whether the access method has been issued.',
+            type: 'boolean',
+          },
+          is_ready_for_assignment: {
+            description:
+              'Indicates whether the access method is ready for card assignment. This is true when the access method is in card mode, has not yet been issued, and the system supports credential assignment.',
+            type: 'boolean',
+          },
+          is_ready_for_encoding: {
+            description:
+              'Indicates whether the access method is ready to be encoded. This is true when the credential has been created and the card has not yet been issued.',
+            type: 'boolean',
+          },
+          issued_at: {
+            description: 'Date and time at which the access method was issued.',
+            format: 'date-time',
+            nullable: true,
+            type: 'string',
+          },
+          mode: {
+            description:
+              'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+            enum: ['code', 'card', 'mobile_key', 'cloud_key'],
+            type: 'string',
+          },
+          pending_mutations: {
+            description:
+              'Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress.',
+            items: {
+              discriminator: { propertyName: 'mutation_code' },
+              oneOf: [
+                {
+                  description:
+                    'Seam is in the process of provisioning access for this access method on new devices.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    from: {
+                      description: 'Previous device configuration.',
+                      properties: {
+                        device_ids: {
+                          description:
+                            'Previous device IDs where access was provisioned.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                      },
+                      required: ['device_ids'],
+                      type: 'object',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of provisioning access for this access method on new devices.',
+                      enum: ['provisioning_access'],
+                      type: 'string',
+                    },
+                    to: {
+                      description: 'New device configuration.',
+                      properties: {
+                        device_ids: {
+                          description:
+                            'New device IDs where access is being provisioned.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                      },
+                      required: ['device_ids'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Seam is in the process of revoking access for this access method from devices.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    from: {
+                      description: 'Previous device configuration.',
+                      properties: {
+                        device_ids: {
+                          description:
+                            'Previous device IDs where access existed.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                      },
+                      required: ['device_ids'],
+                      type: 'object',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of revoking access for this access method from devices.',
+                      enum: ['revoking_access'],
+                      type: 'string',
+                    },
+                    to: {
+                      description: 'New device configuration.',
+                      properties: {
+                        device_ids: {
+                          description:
+                            'New device IDs where access should remain.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                      },
+                      required: ['device_ids'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Seam is in the process of updating the access times for this access method.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    from: {
+                      description: 'Previous access time configuration.',
+                      properties: {
+                        ends_at: {
+                          description: 'Previous end time for access.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        starts_at: {
+                          description: 'Previous start time for access.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['starts_at', 'ends_at'],
+                      type: 'object',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that Seam is in the process of updating the access times for this access method.',
+                      enum: ['updating_access_times'],
+                      type: 'string',
+                    },
+                    to: {
+                      description: 'New access time configuration.',
+                      properties: {
+                        ends_at: {
+                          description: 'New end time for access.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        starts_at: {
+                          description: 'New start time for access.',
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['starts_at', 'ends_at'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'from',
+                    'to',
+                  ],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
+          warnings: {
+            description:
+              'Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+            items: {
+              description:
+                'Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+              discriminator: { propertyName: 'warning_code' },
+              oneOf: [
+                {
+                  description:
+                    'Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) is being deleted.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['being_deleted'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) are being updated.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['updating_access_times'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that all attempts to create an access code on this device before the start time failed and a backup access code was used to ensure access was provided in time.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    original_access_method_id: {
+                      description:
+                        'ID of the original access method from which this backup access method was split, if applicable.',
+                      format: 'uuid',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['pulled_backup_access_code'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that Seam has not yet issued this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant), even though its access grant is about to begin, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and this warning clears automatically once issuance succeeds.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['delay_in_issuing'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
+          workspace_id: {
+            description:
+              'ID of the Seam workspace associated with the access method.',
+            format: 'uuid',
+            type: 'string',
+          },
+        },
+        required: [
+          'workspace_id',
+          'access_method_id',
+          'display_name',
+          'mode',
+          'created_at',
+          'issued_at',
+          'is_issued',
+          'warnings',
+          'errors',
+          'pending_mutations',
+        ],
+        type: 'object',
+        'x-draft': 'Early access.',
+        'x-route-path': '/access_methods/unmanaged',
+      },
       unmanaged_acs_access_group: {
         properties: {
           access_group_type: {
@@ -34446,6 +35485,189 @@ const openapi: OpenAPISpec = {
           thermostats: { name: 'Thermostats' },
         },
         'x-route-path': '/devices/unmanaged',
+      },
+      unmanaged_user_identity: {
+        description:
+          'Represents an unmanaged user identity. Unmanaged user identities do not have keys.',
+        properties: {
+          acs_user_ids: {
+            description:
+              'Array of access system user IDs associated with the user identity.',
+            items: { format: 'uuid', type: 'string' },
+            type: 'array',
+          },
+          created_at: {
+            description:
+              'Date and time at which the user identity was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          display_name: {
+            description: 'Display name for the user identity.',
+            minLength: 1,
+            type: 'string',
+          },
+          email_address: {
+            description: 'Unique email address for the user identity.',
+            format: 'email',
+            nullable: true,
+            type: 'string',
+          },
+          errors: {
+            description:
+              'Array of errors associated with the user identity. Each error object within the array contains fields like "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
+            items: {
+              description: 'Errors associated with the user identity.',
+              discriminator: { propertyName: 'error_code' },
+              oneOf: [
+                {
+                  description:
+                    'Indicates that there is an issue with an access system user associated with this user identity.',
+                  properties: {
+                    acs_system_id: {
+                      description:
+                        'ID of the access system that the user identity is associated with.',
+                      format: 'uuid',
+                      type: 'string',
+                    },
+                    acs_user_id: {
+                      description:
+                        'ID of the access system user that has an issue.',
+                      format: 'uuid',
+                      type: 'string',
+                    },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['issue_with_acs_user'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'error_code',
+                    'acs_user_id',
+                    'acs_system_id',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'user_identity',
+                },
+              ],
+            },
+            type: 'array',
+          },
+          full_name: {
+            description:
+              'Full name of the user associated with the user identity.',
+            minLength: 1,
+            nullable: true,
+            type: 'string',
+          },
+          phone_number: {
+            description:
+              'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
+            nullable: true,
+            type: 'string',
+          },
+          user_identity_id: {
+            description: 'ID of the user identity.',
+            format: 'uuid',
+            type: 'string',
+          },
+          warnings: {
+            description:
+              'Array of warnings associated with the user identity. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
+            items: {
+              description: 'Warnings associated with the user identity.',
+              discriminator: { propertyName: 'warning_code' },
+              oneOf: [
+                {
+                  description:
+                    'Indicates that the user identity is currently being deleted.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['being_deleted'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    "Indicates that the ACS user's profile does not match the user identity's profile",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['acs_user_profile_does_not_match_user_identity'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
+          workspace_id: {
+            description: 'ID of the workspace that contains the user identity.',
+            format: 'uuid',
+            type: 'string',
+          },
+        },
+        required: [
+          'user_identity_id',
+          'email_address',
+          'phone_number',
+          'display_name',
+          'full_name',
+          'created_at',
+          'workspace_id',
+          'errors',
+          'warnings',
+          'acs_user_ids',
+        ],
+        type: 'object',
+        'x-draft': 'Early access.',
+        'x-route-path': '/user_identities/unmanaged',
       },
       user_identity: {
         description:
@@ -39072,663 +40294,7 @@ const openapi: OpenAPISpec = {
                 schema: {
                   properties: {
                     access_grant: {
-                      description:
-                        'Represents an unmanaged Access Grant. Unmanaged Access Grants do not have client sessions, instant keys, customization profiles, or keys.',
-                      properties: {
-                        access_grant_id: {
-                          description: 'ID of the Access Grant.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        access_method_ids: {
-                          description:
-                            'IDs of the access methods created for the Access Grant.',
-                          items: { format: 'uuid', type: 'string' },
-                          type: 'array',
-                        },
-                        created_at: {
-                          description:
-                            'Date and time at which the Access Grant was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        display_name: {
-                          description: 'Display name of the Access Grant.',
-                          type: 'string',
-                        },
-                        ends_at: {
-                          description:
-                            'Date and time at which the Access Grant ends.',
-                          format: 'date-time',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        errors: {
-                          description:
-                            'Errors associated with the [access grant](https://docs.seam.co/use-cases/granting-access).',
-                          items: {
-                            discriminator: { propertyName: 'error_code' },
-                            oneOf: [
-                              {
-                                description:
-                                  'Indicates that Seam could not create one or more of the requested access methods for the access grant.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the error.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  error_code: {
-                                    description:
-                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                    enum: [
-                                      'cannot_create_requested_access_methods',
-                                    ],
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  missing_device_ids: {
-                                    description:
-                                      'IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure.',
-                                    items: { format: 'uuid', type: 'string' },
-                                    type: 'array',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'error_code',
-                                ],
-                                type: 'object',
-                                'x-resource-type': 'access_grant',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        location_ids: {
-                          deprecated: true,
-                          items: { format: 'uuid', type: 'string' },
-                          type: 'array',
-                          'x-deprecated': 'Use `space_ids`.',
-                        },
-                        name: {
-                          description:
-                            'Name of the Access Grant. If not provided, the display name will be computed.',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        pending_mutations: {
-                          description:
-                            'List of pending mutations for the access grant. This shows updates that are in progress.',
-                          items: {
-                            discriminator: { propertyName: 'mutation_code' },
-                            oneOf: [
-                              {
-                                description:
-                                  'Seam is in the process of updating the devices/spaces associated with this access grant.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which the mutation was created.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  from: {
-                                    description:
-                                      'Previous location configuration.',
-                                    properties: {
-                                      device_ids: {
-                                        description:
-                                          'Previous device IDs where access codes existed.',
-                                        items: {
-                                          format: 'uuid',
-                                          type: 'string',
-                                        },
-                                        type: 'array',
-                                      },
-                                    },
-                                    required: ['device_ids'],
-                                    type: 'object',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the mutation.',
-                                    type: 'string',
-                                  },
-                                  mutation_code: {
-                                    description:
-                                      'Mutation code to indicate that Seam is in the process of updating the spaces (devices) associated with this access grant.',
-                                    enum: ['updating_spaces'],
-                                    type: 'string',
-                                  },
-                                  to: {
-                                    description: 'New location configuration.',
-                                    properties: {
-                                      common_code_key: {
-                                        description:
-                                          'Common code key to ensure PIN code reuse across devices.',
-                                        nullable: true,
-                                        type: 'string',
-                                      },
-                                      device_ids: {
-                                        description:
-                                          'New device IDs where access codes should be created.',
-                                        items: {
-                                          format: 'uuid',
-                                          type: 'string',
-                                        },
-                                        type: 'array',
-                                      },
-                                    },
-                                    required: ['device_ids'],
-                                    type: 'object',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'mutation_code',
-                                  'from',
-                                  'to',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Seam is in the process of updating the access times for this access grant.',
-                                properties: {
-                                  access_method_ids: {
-                                    description:
-                                      'IDs of the access methods being updated.',
-                                    items: { format: 'uuid', type: 'string' },
-                                    type: 'array',
-                                  },
-                                  created_at: {
-                                    description:
-                                      'Date and time at which the mutation was created.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  from: {
-                                    description:
-                                      'Previous access time configuration.',
-                                    properties: {
-                                      ends_at: {
-                                        description:
-                                          'Previous end time for access.',
-                                        format: 'date-time',
-                                        nullable: true,
-                                        type: 'string',
-                                      },
-                                      starts_at: {
-                                        description:
-                                          'Previous start time for access.',
-                                        format: 'date-time',
-                                        nullable: true,
-                                        type: 'string',
-                                      },
-                                    },
-                                    required: ['starts_at', 'ends_at'],
-                                    type: 'object',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the mutation.',
-                                    type: 'string',
-                                  },
-                                  mutation_code: {
-                                    description:
-                                      'Mutation code to indicate that Seam is in the process of updating the access times for this access grant.',
-                                    enum: ['updating_access_times'],
-                                    type: 'string',
-                                  },
-                                  to: {
-                                    description:
-                                      'New access time configuration.',
-                                    properties: {
-                                      ends_at: {
-                                        description: 'New end time for access.',
-                                        format: 'date-time',
-                                        nullable: true,
-                                        type: 'string',
-                                      },
-                                      starts_at: {
-                                        description:
-                                          'New start time for access.',
-                                        format: 'date-time',
-                                        nullable: true,
-                                        type: 'string',
-                                      },
-                                    },
-                                    required: ['starts_at', 'ends_at'],
-                                    type: 'object',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'mutation_code',
-                                  'access_method_ids',
-                                  'from',
-                                  'to',
-                                ],
-                                type: 'object',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        requested_access_methods: {
-                          description:
-                            'Access methods that the user requested for the Access Grant.',
-                          items: {
-                            properties: {
-                              code: {
-                                description:
-                                  "Specific PIN code to use for this access method. Only applicable when mode is 'code'.",
-                                maxLength: 9,
-                                minLength: 4,
-                                pattern: '^\\d+$',
-                                type: 'string',
-                              },
-                              created_access_method_ids: {
-                                description:
-                                  'IDs of the access methods created for the requested access method.',
-                                items: { format: 'uuid', type: 'string' },
-                                type: 'array',
-                              },
-                              created_at: {
-                                description:
-                                  'Date and time at which the requested access method was added to the Access Grant.',
-                                format: 'date-time',
-                                type: 'string',
-                              },
-                              display_name: {
-                                description:
-                                  'Display name of the access method.',
-                                type: 'string',
-                              },
-                              instant_key_max_use_count: {
-                                description:
-                                  "Maximum number of times the instant key can be used. Only applicable when mode is 'mobile_key'. Defaults to 1 if not specified.",
-                                minimum: 1,
-                                type: 'integer',
-                              },
-                              mode: {
-                                description:
-                                  'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
-                                enum: [
-                                  'code',
-                                  'card',
-                                  'mobile_key',
-                                  'cloud_key',
-                                ],
-                                type: 'string',
-                              },
-                            },
-                            required: [
-                              'display_name',
-                              'mode',
-                              'created_at',
-                              'created_access_method_ids',
-                            ],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        reservation_key: {
-                          description: 'Reservation key for the access grant.',
-                          type: 'string',
-                        },
-                        space_ids: {
-                          description:
-                            'IDs of the spaces to which the Access Grant gives access.',
-                          items: { format: 'uuid', type: 'string' },
-                          type: 'array',
-                        },
-                        starts_at: {
-                          description:
-                            'Date and time at which the Access Grant starts.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        user_identity_id: {
-                          description:
-                            'ID of user identity to which the Access Grant gives access.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        warnings: {
-                          description:
-                            'Warnings associated with the [access grant](https://docs.seam.co/use-cases/granting-access).',
-                          items: {
-                            description:
-                              'Warning associated with the [access grant](https://docs.seam.co/use-cases/granting-access).',
-                            discriminator: { propertyName: 'warning_code' },
-                            oneOf: [
-                              {
-                                description:
-                                  'Indicates that the [access grant](https://docs.seam.co/use-cases/granting-access) is being deleted.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['being_deleted'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Indicates that the access grant should have access to more locations than it currently does. Access methods are being created for the missing locations.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['underprovisioned_access'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Indicates that the access grant has access to locations it should not have. Access methods are being removed from the extra locations.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  failed_devices: {
-                                    description:
-                                      'Devices whose access codes could not be revoked during reconciliation. Present when the provider does not support revoking an offline access code (e.g. Dormakaba oracode with exhausted override budget).',
-                                    items: {
-                                      properties: {
-                                        device_id: {
-                                          description:
-                                            'Device whose access code could not be revoked.',
-                                          format: 'uuid',
-                                          type: 'string',
-                                        },
-                                        error_code: {
-                                          description:
-                                            'Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`).',
-                                          type: 'string',
-                                        },
-                                        message: {
-                                          description:
-                                            'Human-readable description of why revocation failed.',
-                                          type: 'string',
-                                        },
-                                      },
-                                      required: [
-                                        'device_id',
-                                        'error_code',
-                                        'message',
-                                      ],
-                                      type: 'object',
-                                    },
-                                    type: 'array',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['overprovisioned_access'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Indicates that the access times for this [access grant](https://docs.seam.co/use-cases/granting-access) are being updated.',
-                                properties: {
-                                  access_method_ids: {
-                                    description:
-                                      'IDs of the access methods being updated.',
-                                    items: { format: 'uuid', type: 'string' },
-                                    type: 'array',
-                                  },
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['updating_access_times'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                  'access_method_ids',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Indicates that the requested PIN code was already in use on a device, so a different code was assigned.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  device_id: {
-                                    description:
-                                      'ID of the device where the requested code was unavailable.',
-                                    format: 'uuid',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  new_code: {
-                                    description:
-                                      'The new PIN code that was assigned instead.',
-                                    type: 'string',
-                                  },
-                                  original_code: {
-                                    description:
-                                      'The originally requested PIN code that was unavailable.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['requested_code_unavailable'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                  'device_id',
-                                  'original_code',
-                                  'new_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Indicates that a device in the access grant does not support access codes and was excluded from code materialization.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  device_id: {
-                                    description:
-                                      'ID of the device that does not support access codes.',
-                                    format: 'uuid',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: [
-                                      'device_does_not_support_access_codes',
-                                    ],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                  'device_id',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  "Indicates that a device in the access grant cannot program an access code for the grant's time range because of device-specific time constraints.",
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  device_id: {
-                                    description:
-                                      'ID of the device whose time constraints the access grant violates.',
-                                    format: 'uuid',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  reason: {
-                                    description:
-                                      "Specific reason why the grant's times are not programmable on the device.",
-                                    enum: [
-                                      'duration_exceeds_max',
-                                      'times_do_not_match_slots',
-                                      'ongoing_not_supported',
-                                    ],
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['device_time_constraints_violated'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                  'device_id',
-                                  'reason',
-                                ],
-                                type: 'object',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        workspace_id: {
-                          description:
-                            'ID of the Seam workspace associated with the Access Grant.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'workspace_id',
-                        'access_grant_id',
-                        'location_ids',
-                        'space_ids',
-                        'requested_access_methods',
-                        'access_method_ids',
-                        'name',
-                        'display_name',
-                        'created_at',
-                        'starts_at',
-                        'ends_at',
-                        'warnings',
-                        'errors',
-                        'pending_mutations',
-                      ],
-                      type: 'object',
-                      'x-draft': 'Early access.',
-                      'x-route-path': '/access_grants/unmanaged',
+                      $ref: '#/components/schemas/unmanaged_access_grant',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -39786,663 +40352,7 @@ const openapi: OpenAPISpec = {
                 schema: {
                   properties: {
                     access_grant: {
-                      description:
-                        'Represents an unmanaged Access Grant. Unmanaged Access Grants do not have client sessions, instant keys, customization profiles, or keys.',
-                      properties: {
-                        access_grant_id: {
-                          description: 'ID of the Access Grant.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        access_method_ids: {
-                          description:
-                            'IDs of the access methods created for the Access Grant.',
-                          items: { format: 'uuid', type: 'string' },
-                          type: 'array',
-                        },
-                        created_at: {
-                          description:
-                            'Date and time at which the Access Grant was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        display_name: {
-                          description: 'Display name of the Access Grant.',
-                          type: 'string',
-                        },
-                        ends_at: {
-                          description:
-                            'Date and time at which the Access Grant ends.',
-                          format: 'date-time',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        errors: {
-                          description:
-                            'Errors associated with the [access grant](https://docs.seam.co/use-cases/granting-access).',
-                          items: {
-                            discriminator: { propertyName: 'error_code' },
-                            oneOf: [
-                              {
-                                description:
-                                  'Indicates that Seam could not create one or more of the requested access methods for the access grant.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the error.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  error_code: {
-                                    description:
-                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                    enum: [
-                                      'cannot_create_requested_access_methods',
-                                    ],
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  missing_device_ids: {
-                                    description:
-                                      'IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure.',
-                                    items: { format: 'uuid', type: 'string' },
-                                    type: 'array',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'error_code',
-                                ],
-                                type: 'object',
-                                'x-resource-type': 'access_grant',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        location_ids: {
-                          deprecated: true,
-                          items: { format: 'uuid', type: 'string' },
-                          type: 'array',
-                          'x-deprecated': 'Use `space_ids`.',
-                        },
-                        name: {
-                          description:
-                            'Name of the Access Grant. If not provided, the display name will be computed.',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        pending_mutations: {
-                          description:
-                            'List of pending mutations for the access grant. This shows updates that are in progress.',
-                          items: {
-                            discriminator: { propertyName: 'mutation_code' },
-                            oneOf: [
-                              {
-                                description:
-                                  'Seam is in the process of updating the devices/spaces associated with this access grant.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which the mutation was created.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  from: {
-                                    description:
-                                      'Previous location configuration.',
-                                    properties: {
-                                      device_ids: {
-                                        description:
-                                          'Previous device IDs where access codes existed.',
-                                        items: {
-                                          format: 'uuid',
-                                          type: 'string',
-                                        },
-                                        type: 'array',
-                                      },
-                                    },
-                                    required: ['device_ids'],
-                                    type: 'object',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the mutation.',
-                                    type: 'string',
-                                  },
-                                  mutation_code: {
-                                    description:
-                                      'Mutation code to indicate that Seam is in the process of updating the spaces (devices) associated with this access grant.',
-                                    enum: ['updating_spaces'],
-                                    type: 'string',
-                                  },
-                                  to: {
-                                    description: 'New location configuration.',
-                                    properties: {
-                                      common_code_key: {
-                                        description:
-                                          'Common code key to ensure PIN code reuse across devices.',
-                                        nullable: true,
-                                        type: 'string',
-                                      },
-                                      device_ids: {
-                                        description:
-                                          'New device IDs where access codes should be created.',
-                                        items: {
-                                          format: 'uuid',
-                                          type: 'string',
-                                        },
-                                        type: 'array',
-                                      },
-                                    },
-                                    required: ['device_ids'],
-                                    type: 'object',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'mutation_code',
-                                  'from',
-                                  'to',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Seam is in the process of updating the access times for this access grant.',
-                                properties: {
-                                  access_method_ids: {
-                                    description:
-                                      'IDs of the access methods being updated.',
-                                    items: { format: 'uuid', type: 'string' },
-                                    type: 'array',
-                                  },
-                                  created_at: {
-                                    description:
-                                      'Date and time at which the mutation was created.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  from: {
-                                    description:
-                                      'Previous access time configuration.',
-                                    properties: {
-                                      ends_at: {
-                                        description:
-                                          'Previous end time for access.',
-                                        format: 'date-time',
-                                        nullable: true,
-                                        type: 'string',
-                                      },
-                                      starts_at: {
-                                        description:
-                                          'Previous start time for access.',
-                                        format: 'date-time',
-                                        nullable: true,
-                                        type: 'string',
-                                      },
-                                    },
-                                    required: ['starts_at', 'ends_at'],
-                                    type: 'object',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the mutation.',
-                                    type: 'string',
-                                  },
-                                  mutation_code: {
-                                    description:
-                                      'Mutation code to indicate that Seam is in the process of updating the access times for this access grant.',
-                                    enum: ['updating_access_times'],
-                                    type: 'string',
-                                  },
-                                  to: {
-                                    description:
-                                      'New access time configuration.',
-                                    properties: {
-                                      ends_at: {
-                                        description: 'New end time for access.',
-                                        format: 'date-time',
-                                        nullable: true,
-                                        type: 'string',
-                                      },
-                                      starts_at: {
-                                        description:
-                                          'New start time for access.',
-                                        format: 'date-time',
-                                        nullable: true,
-                                        type: 'string',
-                                      },
-                                    },
-                                    required: ['starts_at', 'ends_at'],
-                                    type: 'object',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'mutation_code',
-                                  'access_method_ids',
-                                  'from',
-                                  'to',
-                                ],
-                                type: 'object',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        requested_access_methods: {
-                          description:
-                            'Access methods that the user requested for the Access Grant.',
-                          items: {
-                            properties: {
-                              code: {
-                                description:
-                                  "Specific PIN code to use for this access method. Only applicable when mode is 'code'.",
-                                maxLength: 9,
-                                minLength: 4,
-                                pattern: '^\\d+$',
-                                type: 'string',
-                              },
-                              created_access_method_ids: {
-                                description:
-                                  'IDs of the access methods created for the requested access method.',
-                                items: { format: 'uuid', type: 'string' },
-                                type: 'array',
-                              },
-                              created_at: {
-                                description:
-                                  'Date and time at which the requested access method was added to the Access Grant.',
-                                format: 'date-time',
-                                type: 'string',
-                              },
-                              display_name: {
-                                description:
-                                  'Display name of the access method.',
-                                type: 'string',
-                              },
-                              instant_key_max_use_count: {
-                                description:
-                                  "Maximum number of times the instant key can be used. Only applicable when mode is 'mobile_key'. Defaults to 1 if not specified.",
-                                minimum: 1,
-                                type: 'integer',
-                              },
-                              mode: {
-                                description:
-                                  'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
-                                enum: [
-                                  'code',
-                                  'card',
-                                  'mobile_key',
-                                  'cloud_key',
-                                ],
-                                type: 'string',
-                              },
-                            },
-                            required: [
-                              'display_name',
-                              'mode',
-                              'created_at',
-                              'created_access_method_ids',
-                            ],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        reservation_key: {
-                          description: 'Reservation key for the access grant.',
-                          type: 'string',
-                        },
-                        space_ids: {
-                          description:
-                            'IDs of the spaces to which the Access Grant gives access.',
-                          items: { format: 'uuid', type: 'string' },
-                          type: 'array',
-                        },
-                        starts_at: {
-                          description:
-                            'Date and time at which the Access Grant starts.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        user_identity_id: {
-                          description:
-                            'ID of user identity to which the Access Grant gives access.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        warnings: {
-                          description:
-                            'Warnings associated with the [access grant](https://docs.seam.co/use-cases/granting-access).',
-                          items: {
-                            description:
-                              'Warning associated with the [access grant](https://docs.seam.co/use-cases/granting-access).',
-                            discriminator: { propertyName: 'warning_code' },
-                            oneOf: [
-                              {
-                                description:
-                                  'Indicates that the [access grant](https://docs.seam.co/use-cases/granting-access) is being deleted.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['being_deleted'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Indicates that the access grant should have access to more locations than it currently does. Access methods are being created for the missing locations.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['underprovisioned_access'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Indicates that the access grant has access to locations it should not have. Access methods are being removed from the extra locations.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  failed_devices: {
-                                    description:
-                                      'Devices whose access codes could not be revoked during reconciliation. Present when the provider does not support revoking an offline access code (e.g. Dormakaba oracode with exhausted override budget).',
-                                    items: {
-                                      properties: {
-                                        device_id: {
-                                          description:
-                                            'Device whose access code could not be revoked.',
-                                          format: 'uuid',
-                                          type: 'string',
-                                        },
-                                        error_code: {
-                                          description:
-                                            'Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`).',
-                                          type: 'string',
-                                        },
-                                        message: {
-                                          description:
-                                            'Human-readable description of why revocation failed.',
-                                          type: 'string',
-                                        },
-                                      },
-                                      required: [
-                                        'device_id',
-                                        'error_code',
-                                        'message',
-                                      ],
-                                      type: 'object',
-                                    },
-                                    type: 'array',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['overprovisioned_access'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Indicates that the access times for this [access grant](https://docs.seam.co/use-cases/granting-access) are being updated.',
-                                properties: {
-                                  access_method_ids: {
-                                    description:
-                                      'IDs of the access methods being updated.',
-                                    items: { format: 'uuid', type: 'string' },
-                                    type: 'array',
-                                  },
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['updating_access_times'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                  'access_method_ids',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Indicates that the requested PIN code was already in use on a device, so a different code was assigned.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  device_id: {
-                                    description:
-                                      'ID of the device where the requested code was unavailable.',
-                                    format: 'uuid',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  new_code: {
-                                    description:
-                                      'The new PIN code that was assigned instead.',
-                                    type: 'string',
-                                  },
-                                  original_code: {
-                                    description:
-                                      'The originally requested PIN code that was unavailable.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['requested_code_unavailable'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                  'device_id',
-                                  'original_code',
-                                  'new_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Indicates that a device in the access grant does not support access codes and was excluded from code materialization.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  device_id: {
-                                    description:
-                                      'ID of the device that does not support access codes.',
-                                    format: 'uuid',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: [
-                                      'device_does_not_support_access_codes',
-                                    ],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                  'device_id',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  "Indicates that a device in the access grant cannot program an access code for the grant's time range because of device-specific time constraints.",
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  device_id: {
-                                    description:
-                                      'ID of the device whose time constraints the access grant violates.',
-                                    format: 'uuid',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  reason: {
-                                    description:
-                                      "Specific reason why the grant's times are not programmable on the device.",
-                                    enum: [
-                                      'duration_exceeds_max',
-                                      'times_do_not_match_slots',
-                                      'ongoing_not_supported',
-                                    ],
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['device_time_constraints_violated'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                  'device_id',
-                                  'reason',
-                                ],
-                                type: 'object',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        workspace_id: {
-                          description:
-                            'ID of the Seam workspace associated with the Access Grant.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'workspace_id',
-                        'access_grant_id',
-                        'location_ids',
-                        'space_ids',
-                        'requested_access_methods',
-                        'access_method_ids',
-                        'name',
-                        'display_name',
-                        'created_at',
-                        'starts_at',
-                        'ends_at',
-                        'warnings',
-                        'errors',
-                        'pending_mutations',
-                      ],
-                      type: 'object',
-                      'x-draft': 'Early access.',
-                      'x-route-path': '/access_grants/unmanaged',
+                      $ref: '#/components/schemas/unmanaged_access_grant',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -40546,668 +40456,7 @@ const openapi: OpenAPISpec = {
                   properties: {
                     access_grants: {
                       items: {
-                        description:
-                          'Represents an unmanaged Access Grant. Unmanaged Access Grants do not have client sessions, instant keys, customization profiles, or keys.',
-                        properties: {
-                          access_grant_id: {
-                            description: 'ID of the Access Grant.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          access_method_ids: {
-                            description:
-                              'IDs of the access methods created for the Access Grant.',
-                            items: { format: 'uuid', type: 'string' },
-                            type: 'array',
-                          },
-                          created_at: {
-                            description:
-                              'Date and time at which the Access Grant was created.',
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          display_name: {
-                            description: 'Display name of the Access Grant.',
-                            type: 'string',
-                          },
-                          ends_at: {
-                            description:
-                              'Date and time at which the Access Grant ends.',
-                            format: 'date-time',
-                            nullable: true,
-                            type: 'string',
-                          },
-                          errors: {
-                            description:
-                              'Errors associated with the [access grant](https://docs.seam.co/use-cases/granting-access).',
-                            items: {
-                              discriminator: { propertyName: 'error_code' },
-                              oneOf: [
-                                {
-                                  description:
-                                    'Indicates that Seam could not create one or more of the requested access methods for the access grant.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the error.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    error_code: {
-                                      description:
-                                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                      enum: [
-                                        'cannot_create_requested_access_methods',
-                                      ],
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    missing_device_ids: {
-                                      description:
-                                        'IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure.',
-                                      items: { format: 'uuid', type: 'string' },
-                                      type: 'array',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'error_code',
-                                  ],
-                                  type: 'object',
-                                  'x-resource-type': 'access_grant',
-                                },
-                              ],
-                            },
-                            type: 'array',
-                          },
-                          location_ids: {
-                            deprecated: true,
-                            items: { format: 'uuid', type: 'string' },
-                            type: 'array',
-                            'x-deprecated': 'Use `space_ids`.',
-                          },
-                          name: {
-                            description:
-                              'Name of the Access Grant. If not provided, the display name will be computed.',
-                            nullable: true,
-                            type: 'string',
-                          },
-                          pending_mutations: {
-                            description:
-                              'List of pending mutations for the access grant. This shows updates that are in progress.',
-                            items: {
-                              discriminator: { propertyName: 'mutation_code' },
-                              oneOf: [
-                                {
-                                  description:
-                                    'Seam is in the process of updating the devices/spaces associated with this access grant.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which the mutation was created.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    from: {
-                                      description:
-                                        'Previous location configuration.',
-                                      properties: {
-                                        device_ids: {
-                                          description:
-                                            'Previous device IDs where access codes existed.',
-                                          items: {
-                                            format: 'uuid',
-                                            type: 'string',
-                                          },
-                                          type: 'array',
-                                        },
-                                      },
-                                      required: ['device_ids'],
-                                      type: 'object',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the mutation.',
-                                      type: 'string',
-                                    },
-                                    mutation_code: {
-                                      description:
-                                        'Mutation code to indicate that Seam is in the process of updating the spaces (devices) associated with this access grant.',
-                                      enum: ['updating_spaces'],
-                                      type: 'string',
-                                    },
-                                    to: {
-                                      description:
-                                        'New location configuration.',
-                                      properties: {
-                                        common_code_key: {
-                                          description:
-                                            'Common code key to ensure PIN code reuse across devices.',
-                                          nullable: true,
-                                          type: 'string',
-                                        },
-                                        device_ids: {
-                                          description:
-                                            'New device IDs where access codes should be created.',
-                                          items: {
-                                            format: 'uuid',
-                                            type: 'string',
-                                          },
-                                          type: 'array',
-                                        },
-                                      },
-                                      required: ['device_ids'],
-                                      type: 'object',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'mutation_code',
-                                    'from',
-                                    'to',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Seam is in the process of updating the access times for this access grant.',
-                                  properties: {
-                                    access_method_ids: {
-                                      description:
-                                        'IDs of the access methods being updated.',
-                                      items: { format: 'uuid', type: 'string' },
-                                      type: 'array',
-                                    },
-                                    created_at: {
-                                      description:
-                                        'Date and time at which the mutation was created.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    from: {
-                                      description:
-                                        'Previous access time configuration.',
-                                      properties: {
-                                        ends_at: {
-                                          description:
-                                            'Previous end time for access.',
-                                          format: 'date-time',
-                                          nullable: true,
-                                          type: 'string',
-                                        },
-                                        starts_at: {
-                                          description:
-                                            'Previous start time for access.',
-                                          format: 'date-time',
-                                          nullable: true,
-                                          type: 'string',
-                                        },
-                                      },
-                                      required: ['starts_at', 'ends_at'],
-                                      type: 'object',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the mutation.',
-                                      type: 'string',
-                                    },
-                                    mutation_code: {
-                                      description:
-                                        'Mutation code to indicate that Seam is in the process of updating the access times for this access grant.',
-                                      enum: ['updating_access_times'],
-                                      type: 'string',
-                                    },
-                                    to: {
-                                      description:
-                                        'New access time configuration.',
-                                      properties: {
-                                        ends_at: {
-                                          description:
-                                            'New end time for access.',
-                                          format: 'date-time',
-                                          nullable: true,
-                                          type: 'string',
-                                        },
-                                        starts_at: {
-                                          description:
-                                            'New start time for access.',
-                                          format: 'date-time',
-                                          nullable: true,
-                                          type: 'string',
-                                        },
-                                      },
-                                      required: ['starts_at', 'ends_at'],
-                                      type: 'object',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'mutation_code',
-                                    'access_method_ids',
-                                    'from',
-                                    'to',
-                                  ],
-                                  type: 'object',
-                                },
-                              ],
-                            },
-                            type: 'array',
-                          },
-                          requested_access_methods: {
-                            description:
-                              'Access methods that the user requested for the Access Grant.',
-                            items: {
-                              properties: {
-                                code: {
-                                  description:
-                                    "Specific PIN code to use for this access method. Only applicable when mode is 'code'.",
-                                  maxLength: 9,
-                                  minLength: 4,
-                                  pattern: '^\\d+$',
-                                  type: 'string',
-                                },
-                                created_access_method_ids: {
-                                  description:
-                                    'IDs of the access methods created for the requested access method.',
-                                  items: { format: 'uuid', type: 'string' },
-                                  type: 'array',
-                                },
-                                created_at: {
-                                  description:
-                                    'Date and time at which the requested access method was added to the Access Grant.',
-                                  format: 'date-time',
-                                  type: 'string',
-                                },
-                                display_name: {
-                                  description:
-                                    'Display name of the access method.',
-                                  type: 'string',
-                                },
-                                instant_key_max_use_count: {
-                                  description:
-                                    "Maximum number of times the instant key can be used. Only applicable when mode is 'mobile_key'. Defaults to 1 if not specified.",
-                                  minimum: 1,
-                                  type: 'integer',
-                                },
-                                mode: {
-                                  description:
-                                    'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
-                                  enum: [
-                                    'code',
-                                    'card',
-                                    'mobile_key',
-                                    'cloud_key',
-                                  ],
-                                  type: 'string',
-                                },
-                              },
-                              required: [
-                                'display_name',
-                                'mode',
-                                'created_at',
-                                'created_access_method_ids',
-                              ],
-                              type: 'object',
-                            },
-                            type: 'array',
-                          },
-                          reservation_key: {
-                            description:
-                              'Reservation key for the access grant.',
-                            type: 'string',
-                          },
-                          space_ids: {
-                            description:
-                              'IDs of the spaces to which the Access Grant gives access.',
-                            items: { format: 'uuid', type: 'string' },
-                            type: 'array',
-                          },
-                          starts_at: {
-                            description:
-                              'Date and time at which the Access Grant starts.',
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          user_identity_id: {
-                            description:
-                              'ID of user identity to which the Access Grant gives access.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          warnings: {
-                            description:
-                              'Warnings associated with the [access grant](https://docs.seam.co/use-cases/granting-access).',
-                            items: {
-                              description:
-                                'Warning associated with the [access grant](https://docs.seam.co/use-cases/granting-access).',
-                              discriminator: { propertyName: 'warning_code' },
-                              oneOf: [
-                                {
-                                  description:
-                                    'Indicates that the [access grant](https://docs.seam.co/use-cases/granting-access) is being deleted.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['being_deleted'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Indicates that the access grant should have access to more locations than it currently does. Access methods are being created for the missing locations.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['underprovisioned_access'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Indicates that the access grant has access to locations it should not have. Access methods are being removed from the extra locations.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    failed_devices: {
-                                      description:
-                                        'Devices whose access codes could not be revoked during reconciliation. Present when the provider does not support revoking an offline access code (e.g. Dormakaba oracode with exhausted override budget).',
-                                      items: {
-                                        properties: {
-                                          device_id: {
-                                            description:
-                                              'Device whose access code could not be revoked.',
-                                            format: 'uuid',
-                                            type: 'string',
-                                          },
-                                          error_code: {
-                                            description:
-                                              'Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`).',
-                                            type: 'string',
-                                          },
-                                          message: {
-                                            description:
-                                              'Human-readable description of why revocation failed.',
-                                            type: 'string',
-                                          },
-                                        },
-                                        required: [
-                                          'device_id',
-                                          'error_code',
-                                          'message',
-                                        ],
-                                        type: 'object',
-                                      },
-                                      type: 'array',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['overprovisioned_access'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Indicates that the access times for this [access grant](https://docs.seam.co/use-cases/granting-access) are being updated.',
-                                  properties: {
-                                    access_method_ids: {
-                                      description:
-                                        'IDs of the access methods being updated.',
-                                      items: { format: 'uuid', type: 'string' },
-                                      type: 'array',
-                                    },
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['updating_access_times'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                    'access_method_ids',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Indicates that the requested PIN code was already in use on a device, so a different code was assigned.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    device_id: {
-                                      description:
-                                        'ID of the device where the requested code was unavailable.',
-                                      format: 'uuid',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    new_code: {
-                                      description:
-                                        'The new PIN code that was assigned instead.',
-                                      type: 'string',
-                                    },
-                                    original_code: {
-                                      description:
-                                        'The originally requested PIN code that was unavailable.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['requested_code_unavailable'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                    'device_id',
-                                    'original_code',
-                                    'new_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Indicates that a device in the access grant does not support access codes and was excluded from code materialization.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    device_id: {
-                                      description:
-                                        'ID of the device that does not support access codes.',
-                                      format: 'uuid',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: [
-                                        'device_does_not_support_access_codes',
-                                      ],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                    'device_id',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    "Indicates that a device in the access grant cannot program an access code for the grant's time range because of device-specific time constraints.",
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    device_id: {
-                                      description:
-                                        'ID of the device whose time constraints the access grant violates.',
-                                      format: 'uuid',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    reason: {
-                                      description:
-                                        "Specific reason why the grant's times are not programmable on the device.",
-                                      enum: [
-                                        'duration_exceeds_max',
-                                        'times_do_not_match_slots',
-                                        'ongoing_not_supported',
-                                      ],
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: [
-                                        'device_time_constraints_violated',
-                                      ],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                    'device_id',
-                                    'reason',
-                                  ],
-                                  type: 'object',
-                                },
-                              ],
-                            },
-                            type: 'array',
-                          },
-                          workspace_id: {
-                            description:
-                              'ID of the Seam workspace associated with the Access Grant.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: [
-                          'workspace_id',
-                          'access_grant_id',
-                          'location_ids',
-                          'space_ids',
-                          'requested_access_methods',
-                          'access_method_ids',
-                          'name',
-                          'display_name',
-                          'created_at',
-                          'starts_at',
-                          'ends_at',
-                          'warnings',
-                          'errors',
-                          'pending_mutations',
-                        ],
-                        type: 'object',
-                        'x-draft': 'Early access.',
-                        'x-route-path': '/access_grants/unmanaged',
+                        $ref: '#/components/schemas/unmanaged_access_grant',
                       },
                       type: 'array',
                     },
@@ -41298,668 +40547,7 @@ const openapi: OpenAPISpec = {
                   properties: {
                     access_grants: {
                       items: {
-                        description:
-                          'Represents an unmanaged Access Grant. Unmanaged Access Grants do not have client sessions, instant keys, customization profiles, or keys.',
-                        properties: {
-                          access_grant_id: {
-                            description: 'ID of the Access Grant.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          access_method_ids: {
-                            description:
-                              'IDs of the access methods created for the Access Grant.',
-                            items: { format: 'uuid', type: 'string' },
-                            type: 'array',
-                          },
-                          created_at: {
-                            description:
-                              'Date and time at which the Access Grant was created.',
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          display_name: {
-                            description: 'Display name of the Access Grant.',
-                            type: 'string',
-                          },
-                          ends_at: {
-                            description:
-                              'Date and time at which the Access Grant ends.',
-                            format: 'date-time',
-                            nullable: true,
-                            type: 'string',
-                          },
-                          errors: {
-                            description:
-                              'Errors associated with the [access grant](https://docs.seam.co/use-cases/granting-access).',
-                            items: {
-                              discriminator: { propertyName: 'error_code' },
-                              oneOf: [
-                                {
-                                  description:
-                                    'Indicates that Seam could not create one or more of the requested access methods for the access grant.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the error.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    error_code: {
-                                      description:
-                                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                      enum: [
-                                        'cannot_create_requested_access_methods',
-                                      ],
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    missing_device_ids: {
-                                      description:
-                                        'IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure.',
-                                      items: { format: 'uuid', type: 'string' },
-                                      type: 'array',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'error_code',
-                                  ],
-                                  type: 'object',
-                                  'x-resource-type': 'access_grant',
-                                },
-                              ],
-                            },
-                            type: 'array',
-                          },
-                          location_ids: {
-                            deprecated: true,
-                            items: { format: 'uuid', type: 'string' },
-                            type: 'array',
-                            'x-deprecated': 'Use `space_ids`.',
-                          },
-                          name: {
-                            description:
-                              'Name of the Access Grant. If not provided, the display name will be computed.',
-                            nullable: true,
-                            type: 'string',
-                          },
-                          pending_mutations: {
-                            description:
-                              'List of pending mutations for the access grant. This shows updates that are in progress.',
-                            items: {
-                              discriminator: { propertyName: 'mutation_code' },
-                              oneOf: [
-                                {
-                                  description:
-                                    'Seam is in the process of updating the devices/spaces associated with this access grant.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which the mutation was created.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    from: {
-                                      description:
-                                        'Previous location configuration.',
-                                      properties: {
-                                        device_ids: {
-                                          description:
-                                            'Previous device IDs where access codes existed.',
-                                          items: {
-                                            format: 'uuid',
-                                            type: 'string',
-                                          },
-                                          type: 'array',
-                                        },
-                                      },
-                                      required: ['device_ids'],
-                                      type: 'object',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the mutation.',
-                                      type: 'string',
-                                    },
-                                    mutation_code: {
-                                      description:
-                                        'Mutation code to indicate that Seam is in the process of updating the spaces (devices) associated with this access grant.',
-                                      enum: ['updating_spaces'],
-                                      type: 'string',
-                                    },
-                                    to: {
-                                      description:
-                                        'New location configuration.',
-                                      properties: {
-                                        common_code_key: {
-                                          description:
-                                            'Common code key to ensure PIN code reuse across devices.',
-                                          nullable: true,
-                                          type: 'string',
-                                        },
-                                        device_ids: {
-                                          description:
-                                            'New device IDs where access codes should be created.',
-                                          items: {
-                                            format: 'uuid',
-                                            type: 'string',
-                                          },
-                                          type: 'array',
-                                        },
-                                      },
-                                      required: ['device_ids'],
-                                      type: 'object',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'mutation_code',
-                                    'from',
-                                    'to',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Seam is in the process of updating the access times for this access grant.',
-                                  properties: {
-                                    access_method_ids: {
-                                      description:
-                                        'IDs of the access methods being updated.',
-                                      items: { format: 'uuid', type: 'string' },
-                                      type: 'array',
-                                    },
-                                    created_at: {
-                                      description:
-                                        'Date and time at which the mutation was created.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    from: {
-                                      description:
-                                        'Previous access time configuration.',
-                                      properties: {
-                                        ends_at: {
-                                          description:
-                                            'Previous end time for access.',
-                                          format: 'date-time',
-                                          nullable: true,
-                                          type: 'string',
-                                        },
-                                        starts_at: {
-                                          description:
-                                            'Previous start time for access.',
-                                          format: 'date-time',
-                                          nullable: true,
-                                          type: 'string',
-                                        },
-                                      },
-                                      required: ['starts_at', 'ends_at'],
-                                      type: 'object',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the mutation.',
-                                      type: 'string',
-                                    },
-                                    mutation_code: {
-                                      description:
-                                        'Mutation code to indicate that Seam is in the process of updating the access times for this access grant.',
-                                      enum: ['updating_access_times'],
-                                      type: 'string',
-                                    },
-                                    to: {
-                                      description:
-                                        'New access time configuration.',
-                                      properties: {
-                                        ends_at: {
-                                          description:
-                                            'New end time for access.',
-                                          format: 'date-time',
-                                          nullable: true,
-                                          type: 'string',
-                                        },
-                                        starts_at: {
-                                          description:
-                                            'New start time for access.',
-                                          format: 'date-time',
-                                          nullable: true,
-                                          type: 'string',
-                                        },
-                                      },
-                                      required: ['starts_at', 'ends_at'],
-                                      type: 'object',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'mutation_code',
-                                    'access_method_ids',
-                                    'from',
-                                    'to',
-                                  ],
-                                  type: 'object',
-                                },
-                              ],
-                            },
-                            type: 'array',
-                          },
-                          requested_access_methods: {
-                            description:
-                              'Access methods that the user requested for the Access Grant.',
-                            items: {
-                              properties: {
-                                code: {
-                                  description:
-                                    "Specific PIN code to use for this access method. Only applicable when mode is 'code'.",
-                                  maxLength: 9,
-                                  minLength: 4,
-                                  pattern: '^\\d+$',
-                                  type: 'string',
-                                },
-                                created_access_method_ids: {
-                                  description:
-                                    'IDs of the access methods created for the requested access method.',
-                                  items: { format: 'uuid', type: 'string' },
-                                  type: 'array',
-                                },
-                                created_at: {
-                                  description:
-                                    'Date and time at which the requested access method was added to the Access Grant.',
-                                  format: 'date-time',
-                                  type: 'string',
-                                },
-                                display_name: {
-                                  description:
-                                    'Display name of the access method.',
-                                  type: 'string',
-                                },
-                                instant_key_max_use_count: {
-                                  description:
-                                    "Maximum number of times the instant key can be used. Only applicable when mode is 'mobile_key'. Defaults to 1 if not specified.",
-                                  minimum: 1,
-                                  type: 'integer',
-                                },
-                                mode: {
-                                  description:
-                                    'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
-                                  enum: [
-                                    'code',
-                                    'card',
-                                    'mobile_key',
-                                    'cloud_key',
-                                  ],
-                                  type: 'string',
-                                },
-                              },
-                              required: [
-                                'display_name',
-                                'mode',
-                                'created_at',
-                                'created_access_method_ids',
-                              ],
-                              type: 'object',
-                            },
-                            type: 'array',
-                          },
-                          reservation_key: {
-                            description:
-                              'Reservation key for the access grant.',
-                            type: 'string',
-                          },
-                          space_ids: {
-                            description:
-                              'IDs of the spaces to which the Access Grant gives access.',
-                            items: { format: 'uuid', type: 'string' },
-                            type: 'array',
-                          },
-                          starts_at: {
-                            description:
-                              'Date and time at which the Access Grant starts.',
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          user_identity_id: {
-                            description:
-                              'ID of user identity to which the Access Grant gives access.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          warnings: {
-                            description:
-                              'Warnings associated with the [access grant](https://docs.seam.co/use-cases/granting-access).',
-                            items: {
-                              description:
-                                'Warning associated with the [access grant](https://docs.seam.co/use-cases/granting-access).',
-                              discriminator: { propertyName: 'warning_code' },
-                              oneOf: [
-                                {
-                                  description:
-                                    'Indicates that the [access grant](https://docs.seam.co/use-cases/granting-access) is being deleted.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['being_deleted'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Indicates that the access grant should have access to more locations than it currently does. Access methods are being created for the missing locations.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['underprovisioned_access'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Indicates that the access grant has access to locations it should not have. Access methods are being removed from the extra locations.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    failed_devices: {
-                                      description:
-                                        'Devices whose access codes could not be revoked during reconciliation. Present when the provider does not support revoking an offline access code (e.g. Dormakaba oracode with exhausted override budget).',
-                                      items: {
-                                        properties: {
-                                          device_id: {
-                                            description:
-                                              'Device whose access code could not be revoked.',
-                                            format: 'uuid',
-                                            type: 'string',
-                                          },
-                                          error_code: {
-                                            description:
-                                              'Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`).',
-                                            type: 'string',
-                                          },
-                                          message: {
-                                            description:
-                                              'Human-readable description of why revocation failed.',
-                                            type: 'string',
-                                          },
-                                        },
-                                        required: [
-                                          'device_id',
-                                          'error_code',
-                                          'message',
-                                        ],
-                                        type: 'object',
-                                      },
-                                      type: 'array',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['overprovisioned_access'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Indicates that the access times for this [access grant](https://docs.seam.co/use-cases/granting-access) are being updated.',
-                                  properties: {
-                                    access_method_ids: {
-                                      description:
-                                        'IDs of the access methods being updated.',
-                                      items: { format: 'uuid', type: 'string' },
-                                      type: 'array',
-                                    },
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['updating_access_times'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                    'access_method_ids',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Indicates that the requested PIN code was already in use on a device, so a different code was assigned.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    device_id: {
-                                      description:
-                                        'ID of the device where the requested code was unavailable.',
-                                      format: 'uuid',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    new_code: {
-                                      description:
-                                        'The new PIN code that was assigned instead.',
-                                      type: 'string',
-                                    },
-                                    original_code: {
-                                      description:
-                                        'The originally requested PIN code that was unavailable.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['requested_code_unavailable'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                    'device_id',
-                                    'original_code',
-                                    'new_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Indicates that a device in the access grant does not support access codes and was excluded from code materialization.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    device_id: {
-                                      description:
-                                        'ID of the device that does not support access codes.',
-                                      format: 'uuid',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: [
-                                        'device_does_not_support_access_codes',
-                                      ],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                    'device_id',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    "Indicates that a device in the access grant cannot program an access code for the grant's time range because of device-specific time constraints.",
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    device_id: {
-                                      description:
-                                        'ID of the device whose time constraints the access grant violates.',
-                                      format: 'uuid',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    reason: {
-                                      description:
-                                        "Specific reason why the grant's times are not programmable on the device.",
-                                      enum: [
-                                        'duration_exceeds_max',
-                                        'times_do_not_match_slots',
-                                        'ongoing_not_supported',
-                                      ],
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: [
-                                        'device_time_constraints_violated',
-                                      ],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                    'device_id',
-                                    'reason',
-                                  ],
-                                  type: 'object',
-                                },
-                              ],
-                            },
-                            type: 'array',
-                          },
-                          workspace_id: {
-                            description:
-                              'ID of the Seam workspace associated with the Access Grant.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: [
-                          'workspace_id',
-                          'access_grant_id',
-                          'location_ids',
-                          'space_ids',
-                          'requested_access_methods',
-                          'access_method_ids',
-                          'name',
-                          'display_name',
-                          'created_at',
-                          'starts_at',
-                          'ends_at',
-                          'warnings',
-                          'errors',
-                          'pending_mutations',
-                        ],
-                        type: 'object',
-                        'x-draft': 'Early access.',
-                        'x-route-path': '/access_grants/unmanaged',
+                        $ref: '#/components/schemas/unmanaged_access_grant',
                       },
                       type: 'array',
                     },
@@ -43217,478 +41805,7 @@ const openapi: OpenAPISpec = {
                 schema: {
                   properties: {
                     access_method: {
-                      description:
-                        'Represents an unmanaged access method. Unmanaged access methods do not have client sessions, instant keys, customization profiles, or keys.',
-                      properties: {
-                        access_method_id: {
-                          description: 'ID of the access method.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        code: {
-                          description:
-                            'The actual PIN code for code access methods.',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        created_at: {
-                          description:
-                            'Date and time at which the access method was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        display_name: {
-                          description: 'Display name of the access method.',
-                          type: 'string',
-                        },
-                        errors: {
-                          description:
-                            'Errors associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
-                          items: {
-                            description:
-                              'Error associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
-                            discriminator: { propertyName: 'error_code' },
-                            oneOf: [
-                              {
-                                description:
-                                  'Indicates that Seam was unable to issue this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) before its access grant started, so the recipient may be unable to access the space. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access method is eventually issued.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the error.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  error_code: {
-                                    description:
-                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                    enum: ['failed_to_issue'],
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'error_code',
-                                ],
-                                type: 'object',
-                                'x-resource-type': 'access_method',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        is_assignment_required: {
-                          description:
-                            'Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment.',
-                          type: 'boolean',
-                        },
-                        is_encoding_required: {
-                          description:
-                            'Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.',
-                          type: 'boolean',
-                        },
-                        is_issued: {
-                          description:
-                            'Indicates whether the access method has been issued.',
-                          type: 'boolean',
-                        },
-                        is_ready_for_assignment: {
-                          description:
-                            'Indicates whether the access method is ready for card assignment. This is true when the access method is in card mode, has not yet been issued, and the system supports credential assignment.',
-                          type: 'boolean',
-                        },
-                        is_ready_for_encoding: {
-                          description:
-                            'Indicates whether the access method is ready to be encoded. This is true when the credential has been created and the card has not yet been issued.',
-                          type: 'boolean',
-                        },
-                        issued_at: {
-                          description:
-                            'Date and time at which the access method was issued.',
-                          format: 'date-time',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        mode: {
-                          description:
-                            'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
-                          enum: ['code', 'card', 'mobile_key', 'cloud_key'],
-                          type: 'string',
-                        },
-                        pending_mutations: {
-                          description:
-                            'Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress.',
-                          items: {
-                            discriminator: { propertyName: 'mutation_code' },
-                            oneOf: [
-                              {
-                                description:
-                                  'Seam is in the process of provisioning access for this access method on new devices.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which the mutation was created.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  from: {
-                                    description:
-                                      'Previous device configuration.',
-                                    properties: {
-                                      device_ids: {
-                                        description:
-                                          'Previous device IDs where access was provisioned.',
-                                        items: {
-                                          format: 'uuid',
-                                          type: 'string',
-                                        },
-                                        type: 'array',
-                                      },
-                                    },
-                                    required: ['device_ids'],
-                                    type: 'object',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the mutation.',
-                                    type: 'string',
-                                  },
-                                  mutation_code: {
-                                    description:
-                                      'Mutation code to indicate that Seam is in the process of provisioning access for this access method on new devices.',
-                                    enum: ['provisioning_access'],
-                                    type: 'string',
-                                  },
-                                  to: {
-                                    description: 'New device configuration.',
-                                    properties: {
-                                      device_ids: {
-                                        description:
-                                          'New device IDs where access is being provisioned.',
-                                        items: {
-                                          format: 'uuid',
-                                          type: 'string',
-                                        },
-                                        type: 'array',
-                                      },
-                                    },
-                                    required: ['device_ids'],
-                                    type: 'object',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'mutation_code',
-                                  'from',
-                                  'to',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Seam is in the process of revoking access for this access method from devices.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which the mutation was created.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  from: {
-                                    description:
-                                      'Previous device configuration.',
-                                    properties: {
-                                      device_ids: {
-                                        description:
-                                          'Previous device IDs where access existed.',
-                                        items: {
-                                          format: 'uuid',
-                                          type: 'string',
-                                        },
-                                        type: 'array',
-                                      },
-                                    },
-                                    required: ['device_ids'],
-                                    type: 'object',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the mutation.',
-                                    type: 'string',
-                                  },
-                                  mutation_code: {
-                                    description:
-                                      'Mutation code to indicate that Seam is in the process of revoking access for this access method from devices.',
-                                    enum: ['revoking_access'],
-                                    type: 'string',
-                                  },
-                                  to: {
-                                    description: 'New device configuration.',
-                                    properties: {
-                                      device_ids: {
-                                        description:
-                                          'New device IDs where access should remain.',
-                                        items: {
-                                          format: 'uuid',
-                                          type: 'string',
-                                        },
-                                        type: 'array',
-                                      },
-                                    },
-                                    required: ['device_ids'],
-                                    type: 'object',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'mutation_code',
-                                  'from',
-                                  'to',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Seam is in the process of updating the access times for this access method.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which the mutation was created.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  from: {
-                                    description:
-                                      'Previous access time configuration.',
-                                    properties: {
-                                      ends_at: {
-                                        description:
-                                          'Previous end time for access.',
-                                        format: 'date-time',
-                                        nullable: true,
-                                        type: 'string',
-                                      },
-                                      starts_at: {
-                                        description:
-                                          'Previous start time for access.',
-                                        format: 'date-time',
-                                        nullable: true,
-                                        type: 'string',
-                                      },
-                                    },
-                                    required: ['starts_at', 'ends_at'],
-                                    type: 'object',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the mutation.',
-                                    type: 'string',
-                                  },
-                                  mutation_code: {
-                                    description:
-                                      'Mutation code to indicate that Seam is in the process of updating the access times for this access method.',
-                                    enum: ['updating_access_times'],
-                                    type: 'string',
-                                  },
-                                  to: {
-                                    description:
-                                      'New access time configuration.',
-                                    properties: {
-                                      ends_at: {
-                                        description: 'New end time for access.',
-                                        format: 'date-time',
-                                        nullable: true,
-                                        type: 'string',
-                                      },
-                                      starts_at: {
-                                        description:
-                                          'New start time for access.',
-                                        format: 'date-time',
-                                        nullable: true,
-                                        type: 'string',
-                                      },
-                                    },
-                                    required: ['starts_at', 'ends_at'],
-                                    type: 'object',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'mutation_code',
-                                  'from',
-                                  'to',
-                                ],
-                                type: 'object',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        warnings: {
-                          description:
-                            'Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
-                          items: {
-                            description:
-                              'Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
-                            discriminator: { propertyName: 'warning_code' },
-                            oneOf: [
-                              {
-                                description:
-                                  'Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) is being deleted.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['being_deleted'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) are being updated.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['updating_access_times'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Indicates that all attempts to create an access code on this device before the start time failed and a backup access code was used to ensure access was provided in time.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  original_access_method_id: {
-                                    description:
-                                      'ID of the original access method from which this backup access method was split, if applicable.',
-                                    format: 'uuid',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['pulled_backup_access_code'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Indicates that Seam has not yet issued this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant), even though its access grant is about to begin, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and this warning clears automatically once issuance succeeds.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['delay_in_issuing'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        workspace_id: {
-                          description:
-                            'ID of the Seam workspace associated with the access method.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'workspace_id',
-                        'access_method_id',
-                        'display_name',
-                        'mode',
-                        'created_at',
-                        'issued_at',
-                        'is_issued',
-                        'warnings',
-                        'errors',
-                        'pending_mutations',
-                      ],
-                      type: 'object',
-                      'x-draft': 'Early access.',
-                      'x-route-path': '/access_methods/unmanaged',
+                      $ref: '#/components/schemas/unmanaged_access_method',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -43744,478 +41861,7 @@ const openapi: OpenAPISpec = {
                 schema: {
                   properties: {
                     access_method: {
-                      description:
-                        'Represents an unmanaged access method. Unmanaged access methods do not have client sessions, instant keys, customization profiles, or keys.',
-                      properties: {
-                        access_method_id: {
-                          description: 'ID of the access method.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        code: {
-                          description:
-                            'The actual PIN code for code access methods.',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        created_at: {
-                          description:
-                            'Date and time at which the access method was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        display_name: {
-                          description: 'Display name of the access method.',
-                          type: 'string',
-                        },
-                        errors: {
-                          description:
-                            'Errors associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
-                          items: {
-                            description:
-                              'Error associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
-                            discriminator: { propertyName: 'error_code' },
-                            oneOf: [
-                              {
-                                description:
-                                  'Indicates that Seam was unable to issue this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) before its access grant started, so the recipient may be unable to access the space. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access method is eventually issued.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the error.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  error_code: {
-                                    description:
-                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                    enum: ['failed_to_issue'],
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'error_code',
-                                ],
-                                type: 'object',
-                                'x-resource-type': 'access_method',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        is_assignment_required: {
-                          description:
-                            'Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment.',
-                          type: 'boolean',
-                        },
-                        is_encoding_required: {
-                          description:
-                            'Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.',
-                          type: 'boolean',
-                        },
-                        is_issued: {
-                          description:
-                            'Indicates whether the access method has been issued.',
-                          type: 'boolean',
-                        },
-                        is_ready_for_assignment: {
-                          description:
-                            'Indicates whether the access method is ready for card assignment. This is true when the access method is in card mode, has not yet been issued, and the system supports credential assignment.',
-                          type: 'boolean',
-                        },
-                        is_ready_for_encoding: {
-                          description:
-                            'Indicates whether the access method is ready to be encoded. This is true when the credential has been created and the card has not yet been issued.',
-                          type: 'boolean',
-                        },
-                        issued_at: {
-                          description:
-                            'Date and time at which the access method was issued.',
-                          format: 'date-time',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        mode: {
-                          description:
-                            'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
-                          enum: ['code', 'card', 'mobile_key', 'cloud_key'],
-                          type: 'string',
-                        },
-                        pending_mutations: {
-                          description:
-                            'Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress.',
-                          items: {
-                            discriminator: { propertyName: 'mutation_code' },
-                            oneOf: [
-                              {
-                                description:
-                                  'Seam is in the process of provisioning access for this access method on new devices.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which the mutation was created.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  from: {
-                                    description:
-                                      'Previous device configuration.',
-                                    properties: {
-                                      device_ids: {
-                                        description:
-                                          'Previous device IDs where access was provisioned.',
-                                        items: {
-                                          format: 'uuid',
-                                          type: 'string',
-                                        },
-                                        type: 'array',
-                                      },
-                                    },
-                                    required: ['device_ids'],
-                                    type: 'object',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the mutation.',
-                                    type: 'string',
-                                  },
-                                  mutation_code: {
-                                    description:
-                                      'Mutation code to indicate that Seam is in the process of provisioning access for this access method on new devices.',
-                                    enum: ['provisioning_access'],
-                                    type: 'string',
-                                  },
-                                  to: {
-                                    description: 'New device configuration.',
-                                    properties: {
-                                      device_ids: {
-                                        description:
-                                          'New device IDs where access is being provisioned.',
-                                        items: {
-                                          format: 'uuid',
-                                          type: 'string',
-                                        },
-                                        type: 'array',
-                                      },
-                                    },
-                                    required: ['device_ids'],
-                                    type: 'object',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'mutation_code',
-                                  'from',
-                                  'to',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Seam is in the process of revoking access for this access method from devices.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which the mutation was created.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  from: {
-                                    description:
-                                      'Previous device configuration.',
-                                    properties: {
-                                      device_ids: {
-                                        description:
-                                          'Previous device IDs where access existed.',
-                                        items: {
-                                          format: 'uuid',
-                                          type: 'string',
-                                        },
-                                        type: 'array',
-                                      },
-                                    },
-                                    required: ['device_ids'],
-                                    type: 'object',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the mutation.',
-                                    type: 'string',
-                                  },
-                                  mutation_code: {
-                                    description:
-                                      'Mutation code to indicate that Seam is in the process of revoking access for this access method from devices.',
-                                    enum: ['revoking_access'],
-                                    type: 'string',
-                                  },
-                                  to: {
-                                    description: 'New device configuration.',
-                                    properties: {
-                                      device_ids: {
-                                        description:
-                                          'New device IDs where access should remain.',
-                                        items: {
-                                          format: 'uuid',
-                                          type: 'string',
-                                        },
-                                        type: 'array',
-                                      },
-                                    },
-                                    required: ['device_ids'],
-                                    type: 'object',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'mutation_code',
-                                  'from',
-                                  'to',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Seam is in the process of updating the access times for this access method.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which the mutation was created.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  from: {
-                                    description:
-                                      'Previous access time configuration.',
-                                    properties: {
-                                      ends_at: {
-                                        description:
-                                          'Previous end time for access.',
-                                        format: 'date-time',
-                                        nullable: true,
-                                        type: 'string',
-                                      },
-                                      starts_at: {
-                                        description:
-                                          'Previous start time for access.',
-                                        format: 'date-time',
-                                        nullable: true,
-                                        type: 'string',
-                                      },
-                                    },
-                                    required: ['starts_at', 'ends_at'],
-                                    type: 'object',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the mutation.',
-                                    type: 'string',
-                                  },
-                                  mutation_code: {
-                                    description:
-                                      'Mutation code to indicate that Seam is in the process of updating the access times for this access method.',
-                                    enum: ['updating_access_times'],
-                                    type: 'string',
-                                  },
-                                  to: {
-                                    description:
-                                      'New access time configuration.',
-                                    properties: {
-                                      ends_at: {
-                                        description: 'New end time for access.',
-                                        format: 'date-time',
-                                        nullable: true,
-                                        type: 'string',
-                                      },
-                                      starts_at: {
-                                        description:
-                                          'New start time for access.',
-                                        format: 'date-time',
-                                        nullable: true,
-                                        type: 'string',
-                                      },
-                                    },
-                                    required: ['starts_at', 'ends_at'],
-                                    type: 'object',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'mutation_code',
-                                  'from',
-                                  'to',
-                                ],
-                                type: 'object',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        warnings: {
-                          description:
-                            'Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
-                          items: {
-                            description:
-                              'Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
-                            discriminator: { propertyName: 'warning_code' },
-                            oneOf: [
-                              {
-                                description:
-                                  'Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) is being deleted.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['being_deleted'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) are being updated.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['updating_access_times'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Indicates that all attempts to create an access code on this device before the start time failed and a backup access code was used to ensure access was provided in time.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  original_access_method_id: {
-                                    description:
-                                      'ID of the original access method from which this backup access method was split, if applicable.',
-                                    format: 'uuid',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['pulled_backup_access_code'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Indicates that Seam has not yet issued this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant), even though its access grant is about to begin, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and this warning clears automatically once issuance succeeds.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['delay_in_issuing'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        workspace_id: {
-                          description:
-                            'ID of the Seam workspace associated with the access method.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'workspace_id',
-                        'access_method_id',
-                        'display_name',
-                        'mode',
-                        'created_at',
-                        'issued_at',
-                        'is_issued',
-                        'warnings',
-                        'errors',
-                        'pending_mutations',
-                      ],
-                      type: 'object',
-                      'x-draft': 'Early access.',
-                      'x-route-path': '/access_methods/unmanaged',
+                      $ref: '#/components/schemas/unmanaged_access_method',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -44303,479 +41949,7 @@ const openapi: OpenAPISpec = {
                   properties: {
                     access_methods: {
                       items: {
-                        description:
-                          'Represents an unmanaged access method. Unmanaged access methods do not have client sessions, instant keys, customization profiles, or keys.',
-                        properties: {
-                          access_method_id: {
-                            description: 'ID of the access method.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          code: {
-                            description:
-                              'The actual PIN code for code access methods.',
-                            nullable: true,
-                            type: 'string',
-                          },
-                          created_at: {
-                            description:
-                              'Date and time at which the access method was created.',
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          display_name: {
-                            description: 'Display name of the access method.',
-                            type: 'string',
-                          },
-                          errors: {
-                            description:
-                              'Errors associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
-                            items: {
-                              description:
-                                'Error associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
-                              discriminator: { propertyName: 'error_code' },
-                              oneOf: [
-                                {
-                                  description:
-                                    'Indicates that Seam was unable to issue this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) before its access grant started, so the recipient may be unable to access the space. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access method is eventually issued.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the error.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    error_code: {
-                                      description:
-                                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                      enum: ['failed_to_issue'],
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'error_code',
-                                  ],
-                                  type: 'object',
-                                  'x-resource-type': 'access_method',
-                                },
-                              ],
-                            },
-                            type: 'array',
-                          },
-                          is_assignment_required: {
-                            description:
-                              'Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment.',
-                            type: 'boolean',
-                          },
-                          is_encoding_required: {
-                            description:
-                              'Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.',
-                            type: 'boolean',
-                          },
-                          is_issued: {
-                            description:
-                              'Indicates whether the access method has been issued.',
-                            type: 'boolean',
-                          },
-                          is_ready_for_assignment: {
-                            description:
-                              'Indicates whether the access method is ready for card assignment. This is true when the access method is in card mode, has not yet been issued, and the system supports credential assignment.',
-                            type: 'boolean',
-                          },
-                          is_ready_for_encoding: {
-                            description:
-                              'Indicates whether the access method is ready to be encoded. This is true when the credential has been created and the card has not yet been issued.',
-                            type: 'boolean',
-                          },
-                          issued_at: {
-                            description:
-                              'Date and time at which the access method was issued.',
-                            format: 'date-time',
-                            nullable: true,
-                            type: 'string',
-                          },
-                          mode: {
-                            description:
-                              'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
-                            enum: ['code', 'card', 'mobile_key', 'cloud_key'],
-                            type: 'string',
-                          },
-                          pending_mutations: {
-                            description:
-                              'Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress.',
-                            items: {
-                              discriminator: { propertyName: 'mutation_code' },
-                              oneOf: [
-                                {
-                                  description:
-                                    'Seam is in the process of provisioning access for this access method on new devices.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which the mutation was created.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    from: {
-                                      description:
-                                        'Previous device configuration.',
-                                      properties: {
-                                        device_ids: {
-                                          description:
-                                            'Previous device IDs where access was provisioned.',
-                                          items: {
-                                            format: 'uuid',
-                                            type: 'string',
-                                          },
-                                          type: 'array',
-                                        },
-                                      },
-                                      required: ['device_ids'],
-                                      type: 'object',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the mutation.',
-                                      type: 'string',
-                                    },
-                                    mutation_code: {
-                                      description:
-                                        'Mutation code to indicate that Seam is in the process of provisioning access for this access method on new devices.',
-                                      enum: ['provisioning_access'],
-                                      type: 'string',
-                                    },
-                                    to: {
-                                      description: 'New device configuration.',
-                                      properties: {
-                                        device_ids: {
-                                          description:
-                                            'New device IDs where access is being provisioned.',
-                                          items: {
-                                            format: 'uuid',
-                                            type: 'string',
-                                          },
-                                          type: 'array',
-                                        },
-                                      },
-                                      required: ['device_ids'],
-                                      type: 'object',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'mutation_code',
-                                    'from',
-                                    'to',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Seam is in the process of revoking access for this access method from devices.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which the mutation was created.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    from: {
-                                      description:
-                                        'Previous device configuration.',
-                                      properties: {
-                                        device_ids: {
-                                          description:
-                                            'Previous device IDs where access existed.',
-                                          items: {
-                                            format: 'uuid',
-                                            type: 'string',
-                                          },
-                                          type: 'array',
-                                        },
-                                      },
-                                      required: ['device_ids'],
-                                      type: 'object',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the mutation.',
-                                      type: 'string',
-                                    },
-                                    mutation_code: {
-                                      description:
-                                        'Mutation code to indicate that Seam is in the process of revoking access for this access method from devices.',
-                                      enum: ['revoking_access'],
-                                      type: 'string',
-                                    },
-                                    to: {
-                                      description: 'New device configuration.',
-                                      properties: {
-                                        device_ids: {
-                                          description:
-                                            'New device IDs where access should remain.',
-                                          items: {
-                                            format: 'uuid',
-                                            type: 'string',
-                                          },
-                                          type: 'array',
-                                        },
-                                      },
-                                      required: ['device_ids'],
-                                      type: 'object',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'mutation_code',
-                                    'from',
-                                    'to',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Seam is in the process of updating the access times for this access method.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which the mutation was created.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    from: {
-                                      description:
-                                        'Previous access time configuration.',
-                                      properties: {
-                                        ends_at: {
-                                          description:
-                                            'Previous end time for access.',
-                                          format: 'date-time',
-                                          nullable: true,
-                                          type: 'string',
-                                        },
-                                        starts_at: {
-                                          description:
-                                            'Previous start time for access.',
-                                          format: 'date-time',
-                                          nullable: true,
-                                          type: 'string',
-                                        },
-                                      },
-                                      required: ['starts_at', 'ends_at'],
-                                      type: 'object',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the mutation.',
-                                      type: 'string',
-                                    },
-                                    mutation_code: {
-                                      description:
-                                        'Mutation code to indicate that Seam is in the process of updating the access times for this access method.',
-                                      enum: ['updating_access_times'],
-                                      type: 'string',
-                                    },
-                                    to: {
-                                      description:
-                                        'New access time configuration.',
-                                      properties: {
-                                        ends_at: {
-                                          description:
-                                            'New end time for access.',
-                                          format: 'date-time',
-                                          nullable: true,
-                                          type: 'string',
-                                        },
-                                        starts_at: {
-                                          description:
-                                            'New start time for access.',
-                                          format: 'date-time',
-                                          nullable: true,
-                                          type: 'string',
-                                        },
-                                      },
-                                      required: ['starts_at', 'ends_at'],
-                                      type: 'object',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'mutation_code',
-                                    'from',
-                                    'to',
-                                  ],
-                                  type: 'object',
-                                },
-                              ],
-                            },
-                            type: 'array',
-                          },
-                          warnings: {
-                            description:
-                              'Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
-                            items: {
-                              description:
-                                'Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
-                              discriminator: { propertyName: 'warning_code' },
-                              oneOf: [
-                                {
-                                  description:
-                                    'Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) is being deleted.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['being_deleted'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) are being updated.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['updating_access_times'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Indicates that all attempts to create an access code on this device before the start time failed and a backup access code was used to ensure access was provided in time.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    original_access_method_id: {
-                                      description:
-                                        'ID of the original access method from which this backup access method was split, if applicable.',
-                                      format: 'uuid',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['pulled_backup_access_code'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Indicates that Seam has not yet issued this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant), even though its access grant is about to begin, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and this warning clears automatically once issuance succeeds.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['delay_in_issuing'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                              ],
-                            },
-                            type: 'array',
-                          },
-                          workspace_id: {
-                            description:
-                              'ID of the Seam workspace associated with the access method.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: [
-                          'workspace_id',
-                          'access_method_id',
-                          'display_name',
-                          'mode',
-                          'created_at',
-                          'issued_at',
-                          'is_issued',
-                          'warnings',
-                          'errors',
-                          'pending_mutations',
-                        ],
-                        type: 'object',
-                        'x-draft': 'Early access.',
-                        'x-route-path': '/access_methods/unmanaged',
+                        $ref: '#/components/schemas/unmanaged_access_method',
                       },
                       type: 'array',
                     },
@@ -44855,479 +42029,7 @@ const openapi: OpenAPISpec = {
                   properties: {
                     access_methods: {
                       items: {
-                        description:
-                          'Represents an unmanaged access method. Unmanaged access methods do not have client sessions, instant keys, customization profiles, or keys.',
-                        properties: {
-                          access_method_id: {
-                            description: 'ID of the access method.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          code: {
-                            description:
-                              'The actual PIN code for code access methods.',
-                            nullable: true,
-                            type: 'string',
-                          },
-                          created_at: {
-                            description:
-                              'Date and time at which the access method was created.',
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          display_name: {
-                            description: 'Display name of the access method.',
-                            type: 'string',
-                          },
-                          errors: {
-                            description:
-                              'Errors associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
-                            items: {
-                              description:
-                                'Error associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
-                              discriminator: { propertyName: 'error_code' },
-                              oneOf: [
-                                {
-                                  description:
-                                    'Indicates that Seam was unable to issue this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) before its access grant started, so the recipient may be unable to access the space. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access method is eventually issued.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the error.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    error_code: {
-                                      description:
-                                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                      enum: ['failed_to_issue'],
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'error_code',
-                                  ],
-                                  type: 'object',
-                                  'x-resource-type': 'access_method',
-                                },
-                              ],
-                            },
-                            type: 'array',
-                          },
-                          is_assignment_required: {
-                            description:
-                              'Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment.',
-                            type: 'boolean',
-                          },
-                          is_encoding_required: {
-                            description:
-                              'Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.',
-                            type: 'boolean',
-                          },
-                          is_issued: {
-                            description:
-                              'Indicates whether the access method has been issued.',
-                            type: 'boolean',
-                          },
-                          is_ready_for_assignment: {
-                            description:
-                              'Indicates whether the access method is ready for card assignment. This is true when the access method is in card mode, has not yet been issued, and the system supports credential assignment.',
-                            type: 'boolean',
-                          },
-                          is_ready_for_encoding: {
-                            description:
-                              'Indicates whether the access method is ready to be encoded. This is true when the credential has been created and the card has not yet been issued.',
-                            type: 'boolean',
-                          },
-                          issued_at: {
-                            description:
-                              'Date and time at which the access method was issued.',
-                            format: 'date-time',
-                            nullable: true,
-                            type: 'string',
-                          },
-                          mode: {
-                            description:
-                              'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
-                            enum: ['code', 'card', 'mobile_key', 'cloud_key'],
-                            type: 'string',
-                          },
-                          pending_mutations: {
-                            description:
-                              'Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress.',
-                            items: {
-                              discriminator: { propertyName: 'mutation_code' },
-                              oneOf: [
-                                {
-                                  description:
-                                    'Seam is in the process of provisioning access for this access method on new devices.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which the mutation was created.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    from: {
-                                      description:
-                                        'Previous device configuration.',
-                                      properties: {
-                                        device_ids: {
-                                          description:
-                                            'Previous device IDs where access was provisioned.',
-                                          items: {
-                                            format: 'uuid',
-                                            type: 'string',
-                                          },
-                                          type: 'array',
-                                        },
-                                      },
-                                      required: ['device_ids'],
-                                      type: 'object',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the mutation.',
-                                      type: 'string',
-                                    },
-                                    mutation_code: {
-                                      description:
-                                        'Mutation code to indicate that Seam is in the process of provisioning access for this access method on new devices.',
-                                      enum: ['provisioning_access'],
-                                      type: 'string',
-                                    },
-                                    to: {
-                                      description: 'New device configuration.',
-                                      properties: {
-                                        device_ids: {
-                                          description:
-                                            'New device IDs where access is being provisioned.',
-                                          items: {
-                                            format: 'uuid',
-                                            type: 'string',
-                                          },
-                                          type: 'array',
-                                        },
-                                      },
-                                      required: ['device_ids'],
-                                      type: 'object',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'mutation_code',
-                                    'from',
-                                    'to',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Seam is in the process of revoking access for this access method from devices.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which the mutation was created.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    from: {
-                                      description:
-                                        'Previous device configuration.',
-                                      properties: {
-                                        device_ids: {
-                                          description:
-                                            'Previous device IDs where access existed.',
-                                          items: {
-                                            format: 'uuid',
-                                            type: 'string',
-                                          },
-                                          type: 'array',
-                                        },
-                                      },
-                                      required: ['device_ids'],
-                                      type: 'object',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the mutation.',
-                                      type: 'string',
-                                    },
-                                    mutation_code: {
-                                      description:
-                                        'Mutation code to indicate that Seam is in the process of revoking access for this access method from devices.',
-                                      enum: ['revoking_access'],
-                                      type: 'string',
-                                    },
-                                    to: {
-                                      description: 'New device configuration.',
-                                      properties: {
-                                        device_ids: {
-                                          description:
-                                            'New device IDs where access should remain.',
-                                          items: {
-                                            format: 'uuid',
-                                            type: 'string',
-                                          },
-                                          type: 'array',
-                                        },
-                                      },
-                                      required: ['device_ids'],
-                                      type: 'object',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'mutation_code',
-                                    'from',
-                                    'to',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Seam is in the process of updating the access times for this access method.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which the mutation was created.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    from: {
-                                      description:
-                                        'Previous access time configuration.',
-                                      properties: {
-                                        ends_at: {
-                                          description:
-                                            'Previous end time for access.',
-                                          format: 'date-time',
-                                          nullable: true,
-                                          type: 'string',
-                                        },
-                                        starts_at: {
-                                          description:
-                                            'Previous start time for access.',
-                                          format: 'date-time',
-                                          nullable: true,
-                                          type: 'string',
-                                        },
-                                      },
-                                      required: ['starts_at', 'ends_at'],
-                                      type: 'object',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the mutation.',
-                                      type: 'string',
-                                    },
-                                    mutation_code: {
-                                      description:
-                                        'Mutation code to indicate that Seam is in the process of updating the access times for this access method.',
-                                      enum: ['updating_access_times'],
-                                      type: 'string',
-                                    },
-                                    to: {
-                                      description:
-                                        'New access time configuration.',
-                                      properties: {
-                                        ends_at: {
-                                          description:
-                                            'New end time for access.',
-                                          format: 'date-time',
-                                          nullable: true,
-                                          type: 'string',
-                                        },
-                                        starts_at: {
-                                          description:
-                                            'New start time for access.',
-                                          format: 'date-time',
-                                          nullable: true,
-                                          type: 'string',
-                                        },
-                                      },
-                                      required: ['starts_at', 'ends_at'],
-                                      type: 'object',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'mutation_code',
-                                    'from',
-                                    'to',
-                                  ],
-                                  type: 'object',
-                                },
-                              ],
-                            },
-                            type: 'array',
-                          },
-                          warnings: {
-                            description:
-                              'Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
-                            items: {
-                              description:
-                                'Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
-                              discriminator: { propertyName: 'warning_code' },
-                              oneOf: [
-                                {
-                                  description:
-                                    'Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) is being deleted.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['being_deleted'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) are being updated.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['updating_access_times'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Indicates that all attempts to create an access code on this device before the start time failed and a backup access code was used to ensure access was provided in time.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    original_access_method_id: {
-                                      description:
-                                        'ID of the original access method from which this backup access method was split, if applicable.',
-                                      format: 'uuid',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['pulled_backup_access_code'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Indicates that Seam has not yet issued this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant), even though its access grant is about to begin, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and this warning clears automatically once issuance succeeds.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['delay_in_issuing'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                              ],
-                            },
-                            type: 'array',
-                          },
-                          workspace_id: {
-                            description:
-                              'ID of the Seam workspace associated with the access method.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: [
-                          'workspace_id',
-                          'access_method_id',
-                          'display_name',
-                          'mode',
-                          'created_at',
-                          'issued_at',
-                          'is_issued',
-                          'warnings',
-                          'errors',
-                          'pending_mutations',
-                        ],
-                        type: 'object',
-                        'x-draft': 'Early access.',
-                        'x-route-path': '/access_methods/unmanaged',
+                        $ref: '#/components/schemas/unmanaged_access_method',
                       },
                       type: 'array',
                     },
@@ -89579,201 +86281,7 @@ const openapi: OpenAPISpec = {
                   properties: {
                     ok: { type: 'boolean' },
                     user_identity: {
-                      description:
-                        'Represents an unmanaged user identity. Unmanaged user identities do not have keys.',
-                      properties: {
-                        acs_user_ids: {
-                          description:
-                            'Array of access system user IDs associated with the user identity.',
-                          items: { format: 'uuid', type: 'string' },
-                          type: 'array',
-                        },
-                        created_at: {
-                          description:
-                            'Date and time at which the user identity was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        display_name: {
-                          description: 'Display name for the user identity.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                        email_address: {
-                          description:
-                            'Unique email address for the user identity.',
-                          format: 'email',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        errors: {
-                          description:
-                            'Array of errors associated with the user identity. Each error object within the array contains fields like "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
-                          items: {
-                            description:
-                              'Errors associated with the user identity.',
-                            discriminator: { propertyName: 'error_code' },
-                            oneOf: [
-                              {
-                                description:
-                                  'Indicates that there is an issue with an access system user associated with this user identity.',
-                                properties: {
-                                  acs_system_id: {
-                                    description:
-                                      'ID of the access system that the user identity is associated with.',
-                                    format: 'uuid',
-                                    type: 'string',
-                                  },
-                                  acs_user_id: {
-                                    description:
-                                      'ID of the access system user that has an issue.',
-                                    format: 'uuid',
-                                    type: 'string',
-                                  },
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the error.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  error_code: {
-                                    description:
-                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                    enum: ['issue_with_acs_user'],
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'error_code',
-                                  'acs_user_id',
-                                  'acs_system_id',
-                                ],
-                                type: 'object',
-                                'x-resource-type': 'user_identity',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        full_name: {
-                          description:
-                            'Full name of the user associated with the user identity.',
-                          minLength: 1,
-                          nullable: true,
-                          type: 'string',
-                        },
-                        phone_number: {
-                          description:
-                            'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        user_identity_id: {
-                          description: 'ID of the user identity.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        warnings: {
-                          description:
-                            'Array of warnings associated with the user identity. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
-                          items: {
-                            description:
-                              'Warnings associated with the user identity.',
-                            discriminator: { propertyName: 'warning_code' },
-                            oneOf: [
-                              {
-                                description:
-                                  'Indicates that the user identity is currently being deleted.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['being_deleted'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  "Indicates that the ACS user's profile does not match the user identity's profile",
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: [
-                                      'acs_user_profile_does_not_match_user_identity',
-                                    ],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        workspace_id: {
-                          description:
-                            'ID of the workspace that contains the user identity.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'user_identity_id',
-                        'email_address',
-                        'phone_number',
-                        'display_name',
-                        'full_name',
-                        'created_at',
-                        'workspace_id',
-                        'errors',
-                        'warnings',
-                        'acs_user_ids',
-                      ],
-                      type: 'object',
-                      'x-draft': 'Early access.',
-                      'x-route-path': '/user_identities/unmanaged',
+                      $ref: '#/components/schemas/unmanaged_user_identity',
                     },
                   },
                   required: ['user_identity', 'ok'],
@@ -89830,201 +86338,7 @@ const openapi: OpenAPISpec = {
                   properties: {
                     ok: { type: 'boolean' },
                     user_identity: {
-                      description:
-                        'Represents an unmanaged user identity. Unmanaged user identities do not have keys.',
-                      properties: {
-                        acs_user_ids: {
-                          description:
-                            'Array of access system user IDs associated with the user identity.',
-                          items: { format: 'uuid', type: 'string' },
-                          type: 'array',
-                        },
-                        created_at: {
-                          description:
-                            'Date and time at which the user identity was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        display_name: {
-                          description: 'Display name for the user identity.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                        email_address: {
-                          description:
-                            'Unique email address for the user identity.',
-                          format: 'email',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        errors: {
-                          description:
-                            'Array of errors associated with the user identity. Each error object within the array contains fields like "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
-                          items: {
-                            description:
-                              'Errors associated with the user identity.',
-                            discriminator: { propertyName: 'error_code' },
-                            oneOf: [
-                              {
-                                description:
-                                  'Indicates that there is an issue with an access system user associated with this user identity.',
-                                properties: {
-                                  acs_system_id: {
-                                    description:
-                                      'ID of the access system that the user identity is associated with.',
-                                    format: 'uuid',
-                                    type: 'string',
-                                  },
-                                  acs_user_id: {
-                                    description:
-                                      'ID of the access system user that has an issue.',
-                                    format: 'uuid',
-                                    type: 'string',
-                                  },
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the error.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  error_code: {
-                                    description:
-                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                    enum: ['issue_with_acs_user'],
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'error_code',
-                                  'acs_user_id',
-                                  'acs_system_id',
-                                ],
-                                type: 'object',
-                                'x-resource-type': 'user_identity',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        full_name: {
-                          description:
-                            'Full name of the user associated with the user identity.',
-                          minLength: 1,
-                          nullable: true,
-                          type: 'string',
-                        },
-                        phone_number: {
-                          description:
-                            'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        user_identity_id: {
-                          description: 'ID of the user identity.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        warnings: {
-                          description:
-                            'Array of warnings associated with the user identity. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
-                          items: {
-                            description:
-                              'Warnings associated with the user identity.',
-                            discriminator: { propertyName: 'warning_code' },
-                            oneOf: [
-                              {
-                                description:
-                                  'Indicates that the user identity is currently being deleted.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['being_deleted'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  "Indicates that the ACS user's profile does not match the user identity's profile",
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: [
-                                      'acs_user_profile_does_not_match_user_identity',
-                                    ],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        workspace_id: {
-                          description:
-                            'ID of the workspace that contains the user identity.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'user_identity_id',
-                        'email_address',
-                        'phone_number',
-                        'display_name',
-                        'full_name',
-                        'created_at',
-                        'workspace_id',
-                        'errors',
-                        'warnings',
-                        'acs_user_ids',
-                      ],
-                      type: 'object',
-                      'x-draft': 'Early access.',
-                      'x-route-path': '/user_identities/unmanaged',
+                      $ref: '#/components/schemas/unmanaged_user_identity',
                     },
                   },
                   required: ['user_identity', 'ok'],
@@ -90109,201 +86423,7 @@ const openapi: OpenAPISpec = {
                     pagination: { $ref: '#/components/schemas/pagination' },
                     user_identities: {
                       items: {
-                        description:
-                          'Represents an unmanaged user identity. Unmanaged user identities do not have keys.',
-                        properties: {
-                          acs_user_ids: {
-                            description:
-                              'Array of access system user IDs associated with the user identity.',
-                            items: { format: 'uuid', type: 'string' },
-                            type: 'array',
-                          },
-                          created_at: {
-                            description:
-                              'Date and time at which the user identity was created.',
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          display_name: {
-                            description: 'Display name for the user identity.',
-                            minLength: 1,
-                            type: 'string',
-                          },
-                          email_address: {
-                            description:
-                              'Unique email address for the user identity.',
-                            format: 'email',
-                            nullable: true,
-                            type: 'string',
-                          },
-                          errors: {
-                            description:
-                              'Array of errors associated with the user identity. Each error object within the array contains fields like "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
-                            items: {
-                              description:
-                                'Errors associated with the user identity.',
-                              discriminator: { propertyName: 'error_code' },
-                              oneOf: [
-                                {
-                                  description:
-                                    'Indicates that there is an issue with an access system user associated with this user identity.',
-                                  properties: {
-                                    acs_system_id: {
-                                      description:
-                                        'ID of the access system that the user identity is associated with.',
-                                      format: 'uuid',
-                                      type: 'string',
-                                    },
-                                    acs_user_id: {
-                                      description:
-                                        'ID of the access system user that has an issue.',
-                                      format: 'uuid',
-                                      type: 'string',
-                                    },
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the error.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    error_code: {
-                                      description:
-                                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                      enum: ['issue_with_acs_user'],
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'error_code',
-                                    'acs_user_id',
-                                    'acs_system_id',
-                                  ],
-                                  type: 'object',
-                                  'x-resource-type': 'user_identity',
-                                },
-                              ],
-                            },
-                            type: 'array',
-                          },
-                          full_name: {
-                            description:
-                              'Full name of the user associated with the user identity.',
-                            minLength: 1,
-                            nullable: true,
-                            type: 'string',
-                          },
-                          phone_number: {
-                            description:
-                              'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
-                            nullable: true,
-                            type: 'string',
-                          },
-                          user_identity_id: {
-                            description: 'ID of the user identity.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          warnings: {
-                            description:
-                              'Array of warnings associated with the user identity. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
-                            items: {
-                              description:
-                                'Warnings associated with the user identity.',
-                              discriminator: { propertyName: 'warning_code' },
-                              oneOf: [
-                                {
-                                  description:
-                                    'Indicates that the user identity is currently being deleted.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['being_deleted'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    "Indicates that the ACS user's profile does not match the user identity's profile",
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: [
-                                        'acs_user_profile_does_not_match_user_identity',
-                                      ],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                              ],
-                            },
-                            type: 'array',
-                          },
-                          workspace_id: {
-                            description:
-                              'ID of the workspace that contains the user identity.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: [
-                          'user_identity_id',
-                          'email_address',
-                          'phone_number',
-                          'display_name',
-                          'full_name',
-                          'created_at',
-                          'workspace_id',
-                          'errors',
-                          'warnings',
-                          'acs_user_ids',
-                        ],
-                        type: 'object',
-                        'x-draft': 'Early access.',
-                        'x-route-path': '/user_identities/unmanaged',
+                        $ref: '#/components/schemas/unmanaged_user_identity',
                       },
                       type: 'array',
                     },
@@ -90383,201 +86503,7 @@ const openapi: OpenAPISpec = {
                     pagination: { $ref: '#/components/schemas/pagination' },
                     user_identities: {
                       items: {
-                        description:
-                          'Represents an unmanaged user identity. Unmanaged user identities do not have keys.',
-                        properties: {
-                          acs_user_ids: {
-                            description:
-                              'Array of access system user IDs associated with the user identity.',
-                            items: { format: 'uuid', type: 'string' },
-                            type: 'array',
-                          },
-                          created_at: {
-                            description:
-                              'Date and time at which the user identity was created.',
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          display_name: {
-                            description: 'Display name for the user identity.',
-                            minLength: 1,
-                            type: 'string',
-                          },
-                          email_address: {
-                            description:
-                              'Unique email address for the user identity.',
-                            format: 'email',
-                            nullable: true,
-                            type: 'string',
-                          },
-                          errors: {
-                            description:
-                              'Array of errors associated with the user identity. Each error object within the array contains fields like "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
-                            items: {
-                              description:
-                                'Errors associated with the user identity.',
-                              discriminator: { propertyName: 'error_code' },
-                              oneOf: [
-                                {
-                                  description:
-                                    'Indicates that there is an issue with an access system user associated with this user identity.',
-                                  properties: {
-                                    acs_system_id: {
-                                      description:
-                                        'ID of the access system that the user identity is associated with.',
-                                      format: 'uuid',
-                                      type: 'string',
-                                    },
-                                    acs_user_id: {
-                                      description:
-                                        'ID of the access system user that has an issue.',
-                                      format: 'uuid',
-                                      type: 'string',
-                                    },
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the error.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    error_code: {
-                                      description:
-                                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                      enum: ['issue_with_acs_user'],
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'error_code',
-                                    'acs_user_id',
-                                    'acs_system_id',
-                                  ],
-                                  type: 'object',
-                                  'x-resource-type': 'user_identity',
-                                },
-                              ],
-                            },
-                            type: 'array',
-                          },
-                          full_name: {
-                            description:
-                              'Full name of the user associated with the user identity.',
-                            minLength: 1,
-                            nullable: true,
-                            type: 'string',
-                          },
-                          phone_number: {
-                            description:
-                              'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
-                            nullable: true,
-                            type: 'string',
-                          },
-                          user_identity_id: {
-                            description: 'ID of the user identity.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          warnings: {
-                            description:
-                              'Array of warnings associated with the user identity. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
-                            items: {
-                              description:
-                                'Warnings associated with the user identity.',
-                              discriminator: { propertyName: 'warning_code' },
-                              oneOf: [
-                                {
-                                  description:
-                                    'Indicates that the user identity is currently being deleted.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['being_deleted'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    "Indicates that the ACS user's profile does not match the user identity's profile",
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: [
-                                        'acs_user_profile_does_not_match_user_identity',
-                                      ],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                              ],
-                            },
-                            type: 'array',
-                          },
-                          workspace_id: {
-                            description:
-                              'ID of the workspace that contains the user identity.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: [
-                          'user_identity_id',
-                          'email_address',
-                          'phone_number',
-                          'display_name',
-                          'full_name',
-                          'created_at',
-                          'workspace_id',
-                          'errors',
-                          'warnings',
-                          'acs_user_ids',
-                        ],
-                        type: 'object',
-                        'x-draft': 'Early access.',
-                        'x-route-path': '/user_identities/unmanaged',
+                        $ref: '#/components/schemas/unmanaged_user_identity',
                       },
                       type: 'array',
                     },
