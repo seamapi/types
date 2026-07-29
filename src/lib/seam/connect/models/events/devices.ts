@@ -436,21 +436,25 @@ export const lock_locked_event = device_event.extend({
     'Method by which the lock was locked. `keycode`: an access code was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or button press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by an auto-relock timer. `unknown`: could not be determined.',
   ),
   user_identity_id: z.string().uuid().optional().describe(`
+      ---
       undocumented: Unreleased.
       ---
       ID of the user identity associated with the lock event.
     `),
   acs_system_id: z.string().uuid().optional().describe(`
+      ---
       undocumented: Unreleased.
       ---
       ID of the ACS system associated with the lock event.
     `),
   acs_user_id: z.string().uuid().optional().describe(`
+      ---
       undocumented: Unreleased.
       ---
       ID of the ACS user associated with the lock event.
     `),
   acs_entrance_id: z.string().uuid().optional().describe(`
+      ---
       undocumented: Unreleased.
       ---
       ID of the ACS entrance associated with the lock event.
@@ -499,21 +503,25 @@ export const lock_unlocked_event = device_event.extend({
     'Method by which the lock was unlocked. `keycode`: an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or handle press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by a time-based schedule. `unknown`: could not be determined.',
   ),
   user_identity_id: z.string().uuid().optional().describe(`
+      ---
       undocumented: Unreleased.
       ---
       ID of the user identity associated with the unlock event.
     `),
   acs_system_id: z.string().uuid().optional().describe(`
+      ---
       undocumented: Unreleased.
       ---
       ID of the ACS system associated with the unlock event.
     `),
   acs_user_id: z.string().uuid().optional().describe(`
+      ---
       undocumented: Unreleased.
       ---
       ID of the ACS user associated with the unlock event.
     `),
   acs_entrance_id: z.string().uuid().optional().describe(`
+      ---
       undocumented: Unreleased.
       ---
       ID of the ACS entrance associated with the unlock event.
@@ -546,21 +554,25 @@ export const lock_access_denied_event = device_event.extend({
     .optional()
     .describe('ID of the access code that was used in the unlock attempts.'),
   user_identity_id: z.string().uuid().optional().describe(`
+      ---
       undocumented: Unreleased.
       ---
       ID of the user identity associated with the access-denied event.
     `),
   acs_system_id: z.string().uuid().optional().describe(`
+      ---
       undocumented: Unreleased.
       ---
       ID of the ACS system associated with the access-denied event.
     `),
   acs_user_id: z.string().uuid().optional().describe(`
+      ---
       undocumented: Unreleased.
       ---
       ID of the ACS user associated with the access-denied event.
     `),
   acs_entrance_id: z.string().uuid().optional().describe(`
+      ---
       undocumented: Unreleased.
       ---
       ID of the ACS entrance associated with the access-denied event.

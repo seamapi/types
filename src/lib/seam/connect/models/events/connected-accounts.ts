@@ -117,10 +117,11 @@ export type ConnectedAccountCompletedFirstSyncEvent = z.infer<
 
 export const connected_account_deleted_event = connected_account_event.extend({
   event_type: z.literal('connected_account.deleted'),
-  connected_account_type: z
-    .string()
-    .optional()
-    .describe(`undocumented: Unreleased.`),
+  connected_account_type: z.string().optional().describe(`
+      ---
+      undocumented: Unreleased.
+      ---
+    `),
   customer_key: z
     .string()
     .optional()

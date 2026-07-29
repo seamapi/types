@@ -4341,8 +4341,9 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
+                  deprecated: true,
                   description:
-                    'deprecated: Use `privacy_mode` instead. Indicates that this entrance is in privacy mode. When privacy mode is enabled, access codes, mobile keys, and remote unlocks will not work unless the user has admin access.',
+                    'Indicates that this entrance is in privacy mode. When privacy mode is enabled, access codes, mobile keys, and remote unlocks will not work unless the user has admin access.',
                   properties: {
                     created_at: {
                       description:
@@ -4364,6 +4365,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
+                  'x-deprecated': 'Use `privacy_mode` instead.',
                 },
                 {
                   description:
@@ -14982,7 +14984,7 @@ const openapi: OpenAPISpec = {
                           },
                         },
                         type: 'object',
-                        'x-deprecated': 'Use `salto_ks_metadata ` instead.',
+                        'x-deprecated': 'Use `salto_ks_metadata` instead.',
                       },
                       schlage_metadata: {
                         description: 'Metadata for a Schlage device.',
@@ -22557,8 +22559,8 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               connected_account_type: {
-                description: 'undocumented: Unreleased.',
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               created_at: {
                 description: 'Date and time at which the event was created.',
@@ -25898,21 +25900,24 @@ const openapi: OpenAPISpec = {
               },
               acs_entrance_id: {
                 description:
-                  '\n      undocumented: Unreleased.\n      ---\n      ID of the ACS entrance associated with the lock event.\n    ',
+                  'ID of the ACS entrance associated with the lock event.',
                 format: 'uuid',
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               acs_system_id: {
                 description:
-                  '\n      undocumented: Unreleased.\n      ---\n      ID of the ACS system associated with the lock event.\n    ',
+                  'ID of the ACS system associated with the lock event.',
                 format: 'uuid',
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               acs_user_id: {
                 description:
-                  '\n      undocumented: Unreleased.\n      ---\n      ID of the ACS user associated with the lock event.\n    ',
+                  'ID of the ACS user associated with the lock event.',
                 format: 'uuid',
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               action_attempt_id: {
                 description:
@@ -26003,9 +26008,10 @@ const openapi: OpenAPISpec = {
               },
               user_identity_id: {
                 description:
-                  '\n      undocumented: Unreleased.\n      ---\n      ID of the user identity associated with the lock event.\n    ',
+                  'ID of the user identity associated with the lock event.',
                 format: 'uuid',
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               workspace_id: {
                 description: 'ID of the workspace associated with the event.',
@@ -26043,21 +26049,24 @@ const openapi: OpenAPISpec = {
               },
               acs_entrance_id: {
                 description:
-                  '\n      undocumented: Unreleased.\n      ---\n      ID of the ACS entrance associated with the unlock event.\n    ',
+                  'ID of the ACS entrance associated with the unlock event.',
                 format: 'uuid',
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               acs_system_id: {
                 description:
-                  '\n      undocumented: Unreleased.\n      ---\n      ID of the ACS system associated with the unlock event.\n    ',
+                  'ID of the ACS system associated with the unlock event.',
                 format: 'uuid',
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               acs_user_id: {
                 description:
-                  '\n      undocumented: Unreleased.\n      ---\n      ID of the ACS user associated with the unlock event.\n    ',
+                  'ID of the ACS user associated with the unlock event.',
                 format: 'uuid',
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               action_attempt_id: {
                 description:
@@ -26148,9 +26157,10 @@ const openapi: OpenAPISpec = {
               },
               user_identity_id: {
                 description:
-                  '\n      undocumented: Unreleased.\n      ---\n      ID of the user identity associated with the unlock event.\n    ',
+                  'ID of the user identity associated with the unlock event.',
                 format: 'uuid',
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               workspace_id: {
                 description: 'ID of the workspace associated with the event.',
@@ -26182,21 +26192,24 @@ const openapi: OpenAPISpec = {
               },
               acs_entrance_id: {
                 description:
-                  '\n      undocumented: Unreleased.\n      ---\n      ID of the ACS entrance associated with the access-denied event.\n    ',
+                  'ID of the ACS entrance associated with the access-denied event.',
                 format: 'uuid',
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               acs_system_id: {
                 description:
-                  '\n      undocumented: Unreleased.\n      ---\n      ID of the ACS system associated with the access-denied event.\n    ',
+                  'ID of the ACS system associated with the access-denied event.',
                 format: 'uuid',
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               acs_user_id: {
                 description:
-                  '\n      undocumented: Unreleased.\n      ---\n      ID of the ACS user associated with the access-denied event.\n    ',
+                  'ID of the ACS user associated with the access-denied event.',
                 format: 'uuid',
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -26279,9 +26292,10 @@ const openapi: OpenAPISpec = {
               },
               user_identity_id: {
                 description:
-                  '\n      undocumented: Unreleased.\n      ---\n      ID of the user identity associated with the access-denied event.\n    ',
+                  'ID of the user identity associated with the access-denied event.',
                 format: 'uuid',
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               workspace_id: {
                 description: 'ID of the workspace associated with the event.',
@@ -28494,8 +28508,9 @@ const openapi: OpenAPISpec = {
                                     type: 'object',
                                   },
                                   {
+                                    deprecated: true,
                                     description:
-                                      'deprecated: Use `privacy_mode` instead. Indicates that this entrance is in privacy mode. When privacy mode is enabled, access codes, mobile keys, and remote unlocks will not work unless the user has admin access.',
+                                      'Indicates that this entrance is in privacy mode. When privacy mode is enabled, access codes, mobile keys, and remote unlocks will not work unless the user has admin access.',
                                     properties: {
                                       created_at: {
                                         description:
@@ -28521,6 +28536,8 @@ const openapi: OpenAPISpec = {
                                       'warning_code',
                                     ],
                                     type: 'object',
+                                    'x-deprecated':
+                                      'Use `privacy_mode` instead.',
                                   },
                                   {
                                     description:

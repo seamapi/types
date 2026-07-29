@@ -13891,7 +13891,7 @@ export type Routes = {
                     }
                   | undefined
                 /** Metada for a Salto device.
-                 * @deprecated Use `salto_ks_metadata ` instead.*/
+                 * @deprecated Use `salto_ks_metadata` instead.*/
                 salto_metadata?:
                   | {
                       /** Lock ID for a Salto device. */
@@ -22283,7 +22283,7 @@ export type Routes = {
                     }
                   | undefined
                 /** Metada for a Salto device.
-                 * @deprecated Use `salto_ks_metadata ` instead.*/
+                 * @deprecated Use `salto_ks_metadata` instead.*/
                 salto_metadata?:
                   | {
                       /** Lock ID for a Salto device. */
@@ -50269,7 +50269,7 @@ export type Routes = {
               }
             | undefined
           /** Metada for a Salto device.
-           * @deprecated Use `salto_ks_metadata ` instead.*/
+           * @deprecated Use `salto_ks_metadata` instead.*/
           salto_metadata?:
             | {
                 /** Lock ID for a Salto device. */
@@ -52382,7 +52382,7 @@ export type Routes = {
               }
             | undefined
           /** Metada for a Salto device.
-           * @deprecated Use `salto_ks_metadata ` instead.*/
+           * @deprecated Use `salto_ks_metadata` instead.*/
           salto_metadata?:
             | {
                 /** Lock ID for a Salto device. */
@@ -58762,7 +58762,7 @@ export type Routes = {
                     }
                   | undefined
                 event_type: 'connected_account.deleted'
-                /** undocumented: Unreleased. */
+                /**  */
                 connected_account_type?: string | undefined
                 /** The customer key associated with this connected account, if any. */
                 customer_key?: string | undefined
@@ -60030,29 +60030,13 @@ export type Routes = {
                   | 'unknown'
                   | 'remote'
                   | 'card'
-                /**
-              undocumented: Unreleased.
-              ---
-              ID of the user identity associated with the lock event.
-             */
+                /** ID of the user identity associated with the lock event. */
                 user_identity_id?: string | undefined
-                /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS system associated with the lock event.
-             */
+                /** ID of the ACS system associated with the lock event. */
                 acs_system_id?: string | undefined
-                /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS user associated with the lock event.
-             */
+                /** ID of the ACS user associated with the lock event. */
                 acs_user_id?: string | undefined
-                /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS entrance associated with the lock event.
-             */
+                /** ID of the ACS entrance associated with the lock event. */
                 acs_entrance_id?: string | undefined
                 /**
               Whether the lock action was performed over Bluetooth by a remote client (such as the provider's mobile app), rather than a direct physical interaction or a Seam-initiated remote action.
@@ -60111,29 +60095,13 @@ export type Routes = {
                   | 'unknown'
                   | 'remote'
                   | 'card'
-                /**
-              undocumented: Unreleased.
-              ---
-              ID of the user identity associated with the unlock event.
-             */
+                /** ID of the user identity associated with the unlock event. */
                 user_identity_id?: string | undefined
-                /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS system associated with the unlock event.
-             */
+                /** ID of the ACS system associated with the unlock event. */
                 acs_system_id?: string | undefined
-                /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS user associated with the unlock event.
-             */
+                /** ID of the ACS user associated with the unlock event. */
                 acs_user_id?: string | undefined
-                /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS entrance associated with the unlock event.
-             */
+                /** ID of the ACS entrance associated with the unlock event. */
                 acs_entrance_id?: string | undefined
                 /**
               Whether the unlock action was performed over Bluetooth by a remote client (such as the provider's mobile app), rather than a direct physical interaction or a Seam-initiated remote action.
@@ -60176,29 +60144,13 @@ export type Routes = {
                 event_type: 'lock.access_denied'
                 /** ID of the access code that was used in the unlock attempts. */
                 access_code_id?: string | undefined
-                /**
-              undocumented: Unreleased.
-              ---
-              ID of the user identity associated with the access-denied event.
-             */
+                /** ID of the user identity associated with the access-denied event. */
                 user_identity_id?: string | undefined
-                /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS system associated with the access-denied event.
-             */
+                /** ID of the ACS system associated with the access-denied event. */
                 acs_system_id?: string | undefined
-                /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS user associated with the access-denied event.
-             */
+                /** ID of the ACS user associated with the access-denied event. */
                 acs_user_id?: string | undefined
-                /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS entrance associated with the access-denied event.
-             */
+                /** ID of the ACS entrance associated with the access-denied event. */
                 acs_entrance_id?: string | undefined
                 /** Why access was denied, when the provider reports a determinable cause. Omitted when unknown. */
                 reason?:
@@ -62718,7 +62670,7 @@ export type Routes = {
                 }
               | undefined
             event_type: 'connected_account.deleted'
-            /** undocumented: Unreleased. */
+            /**  */
             connected_account_type?: string | undefined
             /** The customer key associated with this connected account, if any. */
             customer_key?: string | undefined
@@ -63986,29 +63938,13 @@ export type Routes = {
               | 'unknown'
               | 'remote'
               | 'card'
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the user identity associated with the lock event.
-             */
+            /** ID of the user identity associated with the lock event. */
             user_identity_id?: string | undefined
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS system associated with the lock event.
-             */
+            /** ID of the ACS system associated with the lock event. */
             acs_system_id?: string | undefined
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS user associated with the lock event.
-             */
+            /** ID of the ACS user associated with the lock event. */
             acs_user_id?: string | undefined
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS entrance associated with the lock event.
-             */
+            /** ID of the ACS entrance associated with the lock event. */
             acs_entrance_id?: string | undefined
             /**
               Whether the lock action was performed over Bluetooth by a remote client (such as the provider's mobile app), rather than a direct physical interaction or a Seam-initiated remote action.
@@ -64067,29 +64003,13 @@ export type Routes = {
               | 'unknown'
               | 'remote'
               | 'card'
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the user identity associated with the unlock event.
-             */
+            /** ID of the user identity associated with the unlock event. */
             user_identity_id?: string | undefined
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS system associated with the unlock event.
-             */
+            /** ID of the ACS system associated with the unlock event. */
             acs_system_id?: string | undefined
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS user associated with the unlock event.
-             */
+            /** ID of the ACS user associated with the unlock event. */
             acs_user_id?: string | undefined
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS entrance associated with the unlock event.
-             */
+            /** ID of the ACS entrance associated with the unlock event. */
             acs_entrance_id?: string | undefined
             /**
               Whether the unlock action was performed over Bluetooth by a remote client (such as the provider's mobile app), rather than a direct physical interaction or a Seam-initiated remote action.
@@ -64132,29 +64052,13 @@ export type Routes = {
             event_type: 'lock.access_denied'
             /** ID of the access code that was used in the unlock attempts. */
             access_code_id?: string | undefined
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the user identity associated with the access-denied event.
-             */
+            /** ID of the user identity associated with the access-denied event. */
             user_identity_id?: string | undefined
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS system associated with the access-denied event.
-             */
+            /** ID of the ACS system associated with the access-denied event. */
             acs_system_id?: string | undefined
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS user associated with the access-denied event.
-             */
+            /** ID of the ACS user associated with the access-denied event. */
             acs_user_id?: string | undefined
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS entrance associated with the access-denied event.
-             */
+            /** ID of the ACS entrance associated with the access-denied event. */
             acs_entrance_id?: string | undefined
             /** Why access was denied, when the provider reports a determinable cause. Omitted when unknown. */
             reason?:
@@ -67133,7 +67037,7 @@ export type Routes = {
               }
             | undefined
           /** Metada for a Salto device.
-           * @deprecated Use `salto_ks_metadata ` instead.*/
+           * @deprecated Use `salto_ks_metadata` instead.*/
           salto_metadata?:
             | {
                 /** Lock ID for a Salto device. */
@@ -69000,7 +68904,7 @@ export type Routes = {
               }
             | undefined
           /** Metada for a Salto device.
-           * @deprecated Use `salto_ks_metadata ` instead.*/
+           * @deprecated Use `salto_ks_metadata` instead.*/
           salto_metadata?:
             | {
                 /** Lock ID for a Salto device. */
@@ -71066,7 +70970,7 @@ export type Routes = {
               }
             | undefined
           /** Metada for a Salto device.
-           * @deprecated Use `salto_ks_metadata ` instead.*/
+           * @deprecated Use `salto_ks_metadata` instead.*/
           salto_metadata?:
             | {
                 /** Lock ID for a Salto device. */
@@ -72932,7 +72836,7 @@ export type Routes = {
               }
             | undefined
           /** Metada for a Salto device.
-           * @deprecated Use `salto_ks_metadata ` instead.*/
+           * @deprecated Use `salto_ks_metadata` instead.*/
           salto_metadata?:
             | {
                 /** Lock ID for a Salto device. */
@@ -83239,7 +83143,7 @@ export type Routes = {
               }
             | undefined
           /** Metada for a Salto device.
-           * @deprecated Use `salto_ks_metadata ` instead.*/
+           * @deprecated Use `salto_ks_metadata` instead.*/
           salto_metadata?:
             | {
                 /** Lock ID for a Salto device. */
@@ -85105,7 +85009,7 @@ export type Routes = {
               }
             | undefined
           /** Metada for a Salto device.
-           * @deprecated Use `salto_ks_metadata ` instead.*/
+           * @deprecated Use `salto_ks_metadata` instead.*/
           salto_metadata?:
             | {
                 /** Lock ID for a Salto device. */
@@ -100115,7 +100019,7 @@ export type Routes = {
                 }
               | undefined
             event_type: 'connected_account.deleted'
-            /** undocumented: Unreleased. */
+            /**  */
             connected_account_type?: string | undefined
             /** The customer key associated with this connected account, if any. */
             customer_key?: string | undefined
@@ -101383,29 +101287,13 @@ export type Routes = {
               | 'unknown'
               | 'remote'
               | 'card'
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the user identity associated with the lock event.
-             */
+            /** ID of the user identity associated with the lock event. */
             user_identity_id?: string | undefined
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS system associated with the lock event.
-             */
+            /** ID of the ACS system associated with the lock event. */
             acs_system_id?: string | undefined
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS user associated with the lock event.
-             */
+            /** ID of the ACS user associated with the lock event. */
             acs_user_id?: string | undefined
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS entrance associated with the lock event.
-             */
+            /** ID of the ACS entrance associated with the lock event. */
             acs_entrance_id?: string | undefined
             /**
               Whether the lock action was performed over Bluetooth by a remote client (such as the provider's mobile app), rather than a direct physical interaction or a Seam-initiated remote action.
@@ -101464,29 +101352,13 @@ export type Routes = {
               | 'unknown'
               | 'remote'
               | 'card'
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the user identity associated with the unlock event.
-             */
+            /** ID of the user identity associated with the unlock event. */
             user_identity_id?: string | undefined
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS system associated with the unlock event.
-             */
+            /** ID of the ACS system associated with the unlock event. */
             acs_system_id?: string | undefined
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS user associated with the unlock event.
-             */
+            /** ID of the ACS user associated with the unlock event. */
             acs_user_id?: string | undefined
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS entrance associated with the unlock event.
-             */
+            /** ID of the ACS entrance associated with the unlock event. */
             acs_entrance_id?: string | undefined
             /**
               Whether the unlock action was performed over Bluetooth by a remote client (such as the provider's mobile app), rather than a direct physical interaction or a Seam-initiated remote action.
@@ -101529,29 +101401,13 @@ export type Routes = {
             event_type: 'lock.access_denied'
             /** ID of the access code that was used in the unlock attempts. */
             access_code_id?: string | undefined
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the user identity associated with the access-denied event.
-             */
+            /** ID of the user identity associated with the access-denied event. */
             user_identity_id?: string | undefined
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS system associated with the access-denied event.
-             */
+            /** ID of the ACS system associated with the access-denied event. */
             acs_system_id?: string | undefined
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS user associated with the access-denied event.
-             */
+            /** ID of the ACS user associated with the access-denied event. */
             acs_user_id?: string | undefined
-            /**
-              undocumented: Unreleased.
-              ---
-              ID of the ACS entrance associated with the access-denied event.
-             */
+            /** ID of the ACS entrance associated with the access-denied event. */
             acs_entrance_id?: string | undefined
             /** Why access was denied, when the provider reports a determinable cause. Omitted when unknown. */
             reason?:
@@ -104966,7 +104822,7 @@ export type Routes = {
                     }
                   | undefined
                 /** Metada for a Salto device.
-                 * @deprecated Use `salto_ks_metadata ` instead.*/
+                 * @deprecated Use `salto_ks_metadata` instead.*/
                 salto_metadata?:
                   | {
                       /** Lock ID for a Salto device. */
@@ -114357,7 +114213,7 @@ export type Routes = {
               }
             | undefined
           /** Metada for a Salto device.
-           * @deprecated Use `salto_ks_metadata ` instead.*/
+           * @deprecated Use `salto_ks_metadata` instead.*/
           salto_metadata?:
             | {
                 /** Lock ID for a Salto device. */
@@ -120533,7 +120389,7 @@ export type Routes = {
               }
             | undefined
           /** Metada for a Salto device.
-           * @deprecated Use `salto_ks_metadata ` instead.*/
+           * @deprecated Use `salto_ks_metadata` instead.*/
           salto_metadata?:
             | {
                 /** Lock ID for a Salto device. */
@@ -122399,7 +122255,7 @@ export type Routes = {
               }
             | undefined
           /** Metada for a Salto device.
-           * @deprecated Use `salto_ks_metadata ` instead.*/
+           * @deprecated Use `salto_ks_metadata` instead.*/
           salto_metadata?:
             | {
                 /** Lock ID for a Salto device. */
@@ -133647,7 +133503,7 @@ export type Routes = {
               }
             | undefined
           /** Metada for a Salto device.
-           * @deprecated Use `salto_ks_metadata ` instead.*/
+           * @deprecated Use `salto_ks_metadata` instead.*/
           salto_metadata?:
             | {
                 /** Lock ID for a Salto device. */
@@ -135515,7 +135371,7 @@ export type Routes = {
               }
             | undefined
           /** Metada for a Salto device.
-           * @deprecated Use `salto_ks_metadata ` instead.*/
+           * @deprecated Use `salto_ks_metadata` instead.*/
           salto_metadata?:
             | {
                 /** Lock ID for a Salto device. */
@@ -138882,7 +138738,7 @@ export type Routes = {
                     }
                   | undefined
                 /** Metada for a Salto device.
-                 * @deprecated Use `salto_ks_metadata ` instead.*/
+                 * @deprecated Use `salto_ks_metadata` instead.*/
                 salto_metadata?:
                   | {
                       /** Lock ID for a Salto device. */
@@ -147184,7 +147040,7 @@ export type Routes = {
                       }
                     | undefined
                   event_type: 'connected_account.deleted'
-                  /** undocumented: Unreleased. */
+                  /**  */
                   connected_account_type?: string | undefined
                   /** The customer key associated with this connected account, if any. */
                   customer_key?: string | undefined
@@ -148452,29 +148308,13 @@ export type Routes = {
                     | 'unknown'
                     | 'remote'
                     | 'card'
-                  /**
-                  undocumented: Unreleased.
-                  ---
-                  ID of the user identity associated with the lock event.
-                 */
+                  /** ID of the user identity associated with the lock event. */
                   user_identity_id?: string | undefined
-                  /**
-                  undocumented: Unreleased.
-                  ---
-                  ID of the ACS system associated with the lock event.
-                 */
+                  /** ID of the ACS system associated with the lock event. */
                   acs_system_id?: string | undefined
-                  /**
-                  undocumented: Unreleased.
-                  ---
-                  ID of the ACS user associated with the lock event.
-                 */
+                  /** ID of the ACS user associated with the lock event. */
                   acs_user_id?: string | undefined
-                  /**
-                  undocumented: Unreleased.
-                  ---
-                  ID of the ACS entrance associated with the lock event.
-                 */
+                  /** ID of the ACS entrance associated with the lock event. */
                   acs_entrance_id?: string | undefined
                   /**
                   Whether the lock action was performed over Bluetooth by a remote client (such as the provider's mobile app), rather than a direct physical interaction or a Seam-initiated remote action.
@@ -148533,29 +148373,13 @@ export type Routes = {
                     | 'unknown'
                     | 'remote'
                     | 'card'
-                  /**
-                  undocumented: Unreleased.
-                  ---
-                  ID of the user identity associated with the unlock event.
-                 */
+                  /** ID of the user identity associated with the unlock event. */
                   user_identity_id?: string | undefined
-                  /**
-                  undocumented: Unreleased.
-                  ---
-                  ID of the ACS system associated with the unlock event.
-                 */
+                  /** ID of the ACS system associated with the unlock event. */
                   acs_system_id?: string | undefined
-                  /**
-                  undocumented: Unreleased.
-                  ---
-                  ID of the ACS user associated with the unlock event.
-                 */
+                  /** ID of the ACS user associated with the unlock event. */
                   acs_user_id?: string | undefined
-                  /**
-                  undocumented: Unreleased.
-                  ---
-                  ID of the ACS entrance associated with the unlock event.
-                 */
+                  /** ID of the ACS entrance associated with the unlock event. */
                   acs_entrance_id?: string | undefined
                   /**
                   Whether the unlock action was performed over Bluetooth by a remote client (such as the provider's mobile app), rather than a direct physical interaction or a Seam-initiated remote action.
@@ -148598,29 +148422,13 @@ export type Routes = {
                   event_type: 'lock.access_denied'
                   /** ID of the access code that was used in the unlock attempts. */
                   access_code_id?: string | undefined
-                  /**
-                  undocumented: Unreleased.
-                  ---
-                  ID of the user identity associated with the access-denied event.
-                 */
+                  /** ID of the user identity associated with the access-denied event. */
                   user_identity_id?: string | undefined
-                  /**
-                  undocumented: Unreleased.
-                  ---
-                  ID of the ACS system associated with the access-denied event.
-                 */
+                  /** ID of the ACS system associated with the access-denied event. */
                   acs_system_id?: string | undefined
-                  /**
-                  undocumented: Unreleased.
-                  ---
-                  ID of the ACS user associated with the access-denied event.
-                 */
+                  /** ID of the ACS user associated with the access-denied event. */
                   acs_user_id?: string | undefined
-                  /**
-                  undocumented: Unreleased.
-                  ---
-                  ID of the ACS entrance associated with the access-denied event.
-                 */
+                  /** ID of the ACS entrance associated with the access-denied event. */
                   acs_entrance_id?: string | undefined
                   /** Why access was denied, when the provider reports a determinable cause. Omitted when unknown. */
                   reason?:
