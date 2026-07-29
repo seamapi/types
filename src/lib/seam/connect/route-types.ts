@@ -94767,6 +94767,7 @@ export type Routes = {
         | 'LYNX_MIGRATION_ENABLED'
         | 'AURORA_CUSTOMER_FILTER_ENABLED'
         | 'AUTOMATION_IMMINENT_CHECK_IN_QUEUE'
+        | 'ACCESS_METHOD_DEADLINE_ERRORS'
       /** Whether the feature flag should be enabled for the workspace. */
       enabled: boolean
     }
@@ -94785,6 +94786,7 @@ export type Routes = {
           | 'LYNX_MIGRATION_ENABLED'
           | 'AURORA_CUSTOMER_FILTER_ENABLED'
           | 'AUTOMATION_IMMINENT_CHECK_IN_QUEUE'
+          | 'ACCESS_METHOD_DEADLINE_ERRORS'
         enabled: boolean
       }
     }
