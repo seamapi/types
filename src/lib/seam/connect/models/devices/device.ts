@@ -1043,6 +1043,9 @@ export const device = z
         location_name: z.string().optional()
           .describe(`Name of the device location.
           `),
+        room_name: z.string().optional()
+          .describe(`Name of the room within the device location, when the provider reports one.
+          `),
         time_zone: z.string().optional()
           .describe(`Time zone of the device location.
           `),
