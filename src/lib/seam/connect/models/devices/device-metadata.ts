@@ -678,6 +678,10 @@ export const device_metadata = z
           .string()
           .optional()
           .describe(`Device ID for a Google Nest device.`),
+        nest_structure_id: z
+          .string()
+          .optional()
+          .describe(`ID of the Google Nest structure containing the device.`),
         device_name: z
           .string()
           .optional()
@@ -689,6 +693,12 @@ export const device_metadata = z
           .optional()
           .describe(
             `Custom device name for a Google Nest device. The device owner sets this value.`,
+          ), // set by device owner
+        structure_name: z
+          .string()
+          .optional()
+          .describe(
+            `Name of the Google Nest structure containing the device. The device owner sets this value.`,
           ), // set by device owner
         display_name: z
           .string()

@@ -13709,6 +13709,11 @@ const openapi: OpenAPISpec = {
                 description: 'Name of the device location.\n          ',
                 type: 'string',
               },
+              room_name: {
+                description:
+                  'Name of the room within the device location, when the provider reports one.\n          ',
+                type: 'string',
+              },
               time_zone: {
                 description: 'Time zone of the device location.\n          ',
                 type: 'string',
@@ -14775,6 +14780,16 @@ const openapi: OpenAPISpec = {
                           },
                           nest_device_id: {
                             description: 'Device ID for a Google Nest device.',
+                            type: 'string',
+                          },
+                          nest_structure_id: {
+                            description:
+                              'ID of the Google Nest structure containing the device.',
+                            type: 'string',
+                          },
+                          structure_name: {
+                            description:
+                              'Name of the Google Nest structure containing the device. The device owner sets this value.',
                             type: 'string',
                           },
                         },
@@ -34662,6 +34677,11 @@ const openapi: OpenAPISpec = {
             properties: {
               location_name: {
                 description: 'Name of the device location.\n          ',
+                type: 'string',
+              },
+              room_name: {
+                description:
+                  'Name of the room within the device location, when the provider reports one.\n          ',
                 type: 'string',
               },
               time_zone: {
