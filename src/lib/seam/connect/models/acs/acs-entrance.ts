@@ -60,15 +60,16 @@ const entrance_setup_required = common_acs_entrance_warning
     'Indicates that this entrance requires additional configuration in the access control system before Seam can fully manage it.',
   )
 
-const salto_ks_privacy_mode = common_acs_entrance_warning
-  .extend({
-    warning_code: z
-      .literal('salto_ks_privacy_mode')
-      .describe(warning_code_description),
-  })
-  .describe(
-    'deprecated: Use `privacy_mode` instead. Indicates that this entrance is in privacy mode. When privacy mode is enabled, access codes, mobile keys, and remote unlocks will not work unless the user has admin access.',
-  )
+const salto_ks_privacy_mode = common_acs_entrance_warning.extend({
+  warning_code: z
+    .literal('salto_ks_privacy_mode')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    deprecated: Use \`privacy_mode\` instead.
+    ---
+    Indicates that this entrance is in privacy mode. When privacy mode is enabled, access codes, mobile keys, and remote unlocks will not work unless the user has admin access.
+  `)
 
 const privacy_mode = common_acs_entrance_warning
   .extend({

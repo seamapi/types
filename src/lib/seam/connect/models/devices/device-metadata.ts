@@ -264,7 +264,7 @@ export const device_metadata = z
       })
       .partial().describe(`
     ---
-    deprecated: Use \`salto_ks_metadata \` instead.
+    deprecated: Use \`salto_ks_metadata\` instead.
     ---
     Metada for a Salto device.
     `),
