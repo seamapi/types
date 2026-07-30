@@ -94767,6 +94767,8 @@ export type Routes = {
         | 'LYNX_MIGRATION_ENABLED'
         | 'AURORA_CUSTOMER_FILTER_ENABLED'
         | 'AUTOMATION_IMMINENT_CHECK_IN_QUEUE'
+        | 'ACCESS_METHOD_DEADLINE_ERRORS'
+        | 'GUARD_MATERIALIZATION_ON_UNREACHABLE_DEVICE'
       /** Whether the feature flag should be enabled for the workspace. */
       enabled: boolean
     }
@@ -94785,6 +94787,8 @@ export type Routes = {
           | 'LYNX_MIGRATION_ENABLED'
           | 'AURORA_CUSTOMER_FILTER_ENABLED'
           | 'AUTOMATION_IMMINENT_CHECK_IN_QUEUE'
+          | 'ACCESS_METHOD_DEADLINE_ERRORS'
+          | 'GUARD_MATERIALIZATION_ON_UNREACHABLE_DEVICE'
         enabled: boolean
       }
     }
