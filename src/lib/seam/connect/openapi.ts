@@ -368,38 +368,6 @@ const openapi: OpenAPISpec = {
                   'x-resource-type': 'access_code',
                 },
                 {
-                  description:
-                    'Admin role required—insufficient permissions to manage PINs on this device. Please have an admin update your role, or ask them to set the PIN.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['insufficient_permissions'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-resource-type': 'access_code',
-                },
-                {
                   description: 'Indicates that the account is disconnected.',
                   properties: {
                     created_at: {
@@ -486,6 +454,50 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                   'x-resource-type': 'connected_account',
                   'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    "Indicates that Seam's integration user does not have sufficient permissions on the provider's system to which this device belongs, so Seam cannot manage access codes or unlock the device. See the error message for specifics, then either reauthorize the connected account in Seam or grant the integration user the required permissions in the provider's system.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['insufficient_permissions'],
+                      type: 'string',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is not a device error.',
+                      enum: [false],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                    'is_connected_account_error',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'connected_account',
                 },
                 {
                   description:
@@ -17338,32 +17350,6 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                   'x-variant-group-key': 'access_codes',
                 },
-                {
-                  description:
-                    "Indicates that the connected Kwikset account has member-level access to this lock's home. Admin or owner access is required to manage access codes and control the lock remotely.",
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['insufficient_permissions'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'created_at', 'warning_code'],
-                  type: 'object',
-                  'x-variant-group-key': 'locks',
-                },
               ],
             },
             type: 'array',
@@ -30117,38 +30103,6 @@ const openapi: OpenAPISpec = {
                   'x-resource-type': 'access_code',
                 },
                 {
-                  description:
-                    'Admin role required—insufficient permissions to manage PINs on this device. Please have an admin update your role, or ask them to set the PIN.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['insufficient_permissions'],
-                      type: 'string',
-                    },
-                    is_access_code_error: {
-                      description:
-                        'Indicates that this is an access code error.',
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
-                  'x-resource-type': 'access_code',
-                },
-                {
                   description: 'Indicates that the account is disconnected.',
                   properties: {
                     created_at: {
@@ -30235,6 +30189,50 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                   'x-resource-type': 'connected_account',
                   'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    "Indicates that Seam's integration user does not have sufficient permissions on the provider's system to which this device belongs, so Seam cannot manage access codes or unlock the device. See the error message for specifics, then either reauthorize the connected account in Seam or grant the integration user the required permissions in the provider's system.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['insufficient_permissions'],
+                      type: 'string',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is not a device error.',
+                      enum: [false],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                    'is_connected_account_error',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'connected_account',
                 },
                 {
                   description:
@@ -35694,32 +35692,6 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                   'x-variant-group-key': 'access_codes',
-                },
-                {
-                  description:
-                    "Indicates that the connected Kwikset account has member-level access to this lock's home. Admin or owner access is required to manage access codes and control the lock remotely.",
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['insufficient_permissions'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'created_at', 'warning_code'],
-                  type: 'object',
-                  'x-variant-group-key': 'locks',
                 },
               ],
             },
