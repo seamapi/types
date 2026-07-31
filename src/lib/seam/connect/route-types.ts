@@ -2240,16 +2240,6 @@ export type Routes = {
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that this is an access code error. */
-              is_access_code_error: true
-              /** Date and time at which Seam created the error. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'insufficient_permissions'
-            }
-          | {
-              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-              message: string
               /** Indicates that the error is not a device error. */
               is_device_error: false
               /** Date and time at which Seam created the error. */
@@ -2268,6 +2258,18 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
             }
@@ -2773,16 +2775,6 @@ export type Routes = {
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that this is an access code error. */
-              is_access_code_error: true
-              /** Date and time at which Seam created the error. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'insufficient_permissions'
-            }
-          | {
-              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-              message: string
               /** Indicates that the error is not a device error. */
               is_device_error: false
               /** Date and time at which Seam created the error. */
@@ -2801,6 +2793,18 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
             }
@@ -5398,16 +5402,6 @@ export type Routes = {
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that this is an access code error. */
-              is_access_code_error: true
-              /** Date and time at which Seam created the error. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'insufficient_permissions'
-            }
-          | {
-              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-              message: string
               /** Indicates that the error is not a device error. */
               is_device_error: false
               /** Date and time at which Seam created the error. */
@@ -5426,6 +5420,18 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
             }
@@ -6032,16 +6038,6 @@ export type Routes = {
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that this is an access code error. */
-              is_access_code_error: true
-              /** Date and time at which Seam created the error. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'insufficient_permissions'
-            }
-          | {
-              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-              message: string
               /** Indicates that the error is not a device error. */
               is_device_error: false
               /** Date and time at which Seam created the error. */
@@ -6060,6 +6056,18 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
             }
@@ -6556,16 +6564,6 @@ export type Routes = {
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that this is an access code error. */
-              is_access_code_error: true
-              /** Date and time at which Seam created the error. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'insufficient_permissions'
-            }
-          | {
-              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-              message: string
               /** Indicates that the error is not a device error. */
               is_device_error: false
               /** Date and time at which Seam created the error. */
@@ -6584,6 +6582,18 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
             }
@@ -7057,16 +7067,6 @@ export type Routes = {
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that this is an access code error. */
-              is_access_code_error: true
-              /** Date and time at which Seam created the error. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'insufficient_permissions'
-            }
-          | {
-              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-              message: string
               /** Indicates that the error is not a device error. */
               is_device_error: false
               /** Date and time at which Seam created the error. */
@@ -7085,6 +7085,18 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
             }
@@ -7591,16 +7603,6 @@ export type Routes = {
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that this is an access code error. */
-              is_access_code_error: true
-              /** Date and time at which Seam created the error. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'insufficient_permissions'
-            }
-          | {
-              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-              message: string
               /** Indicates that the error is not a device error. */
               is_device_error: false
               /** Date and time at which Seam created the error. */
@@ -7619,6 +7621,18 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
             }
@@ -10118,16 +10132,6 @@ export type Routes = {
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that this is an access code error. */
-              is_access_code_error: true
-              /** Date and time at which Seam created the error. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'insufficient_permissions'
-            }
-          | {
-              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-              message: string
               /** Indicates that the error is not a device error. */
               is_device_error: false
               /** Date and time at which Seam created the error. */
@@ -10146,6 +10150,18 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
             }
@@ -10531,16 +10547,6 @@ export type Routes = {
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that this is an access code error. */
-              is_access_code_error: true
-              /** Date and time at which Seam created the error. */
-              created_at?: string | undefined
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'insufficient_permissions'
-            }
-          | {
-              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-              message: string
               /** Indicates that the error is not a device error. */
               is_device_error: false
               /** Date and time at which Seam created the error. */
@@ -10559,6 +10565,18 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
             }
@@ -15463,14 +15481,6 @@ export type Routes = {
                     active_access_code_count: number
                     /** Maximum number of active access codes supported by the device. */
                     max_active_access_code_count: number
-                  }
-                | {
-                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-                    message: string
-                    /** Date and time at which Seam created the warning. */
-                    created_at: string
-                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                    warning_code: 'insufficient_permissions'
                   }
               )[]
               /** Date and time at which the device object was created. */
@@ -23882,14 +23892,6 @@ export type Routes = {
                     active_access_code_count: number
                     /** Maximum number of active access codes supported by the device. */
                     max_active_access_code_count: number
-                  }
-                | {
-                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-                    message: string
-                    /** Date and time at which Seam created the warning. */
-                    created_at: string
-                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                    warning_code: 'insufficient_permissions'
                   }
               )[]
               /** Date and time at which the device object was created. */
@@ -51846,14 +51848,6 @@ export type Routes = {
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
             }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'insufficient_permissions'
-            }
         )[]
         /** Date and time at which the device object was created. */
         created_at: string
@@ -53978,14 +53972,6 @@ export type Routes = {
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
             }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'insufficient_permissions'
-            }
         )[]
         /** Date and time at which the device object was created. */
         created_at: string
@@ -56095,14 +56081,6 @@ export type Routes = {
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
             }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'insufficient_permissions'
-            }
         )[]
         /** Date and time at which the device object was created. */
         created_at: string
@@ -56933,14 +56911,6 @@ export type Routes = {
               active_access_code_count: number
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
-            }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'insufficient_permissions'
             }
         )[]
         /** Date and time at which the device object was created. */
@@ -68682,14 +68652,6 @@ export type Routes = {
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
             }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'insufficient_permissions'
-            }
         )[]
         /** Date and time at which the device object was created. */
         created_at: string
@@ -70567,14 +70529,6 @@ export type Routes = {
               active_access_code_count: number
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
-            }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'insufficient_permissions'
             }
         )[]
         /** Date and time at which the device object was created. */
@@ -72653,14 +72607,6 @@ export type Routes = {
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
             }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'insufficient_permissions'
-            }
         )[]
         /** Date and time at which the device object was created. */
         created_at: string
@@ -74537,14 +74483,6 @@ export type Routes = {
               active_access_code_count: number
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
-            }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'insufficient_permissions'
             }
         )[]
         /** Date and time at which the device object was created. */
@@ -84864,14 +84802,6 @@ export type Routes = {
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
             }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'insufficient_permissions'
-            }
         )[]
         /** Date and time at which the device object was created. */
         created_at: string
@@ -86748,14 +86678,6 @@ export type Routes = {
               active_access_code_count: number
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
-            }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'insufficient_permissions'
             }
         )[]
         /** Date and time at which the device object was created. */
@@ -106651,14 +106573,6 @@ export type Routes = {
                     /** Maximum number of active access codes supported by the device. */
                     max_active_access_code_count: number
                   }
-                | {
-                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-                    message: string
-                    /** Date and time at which Seam created the warning. */
-                    created_at: string
-                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                    warning_code: 'insufficient_permissions'
-                  }
               )[]
               /** Date and time at which the device object was created. */
               created_at: string
@@ -116003,14 +115917,6 @@ export type Routes = {
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
             }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'insufficient_permissions'
-            }
         )[]
         /** Date and time at which the device object was created. */
         created_at: string
@@ -122198,14 +122104,6 @@ export type Routes = {
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
             }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'insufficient_permissions'
-            }
         )[]
         /** Date and time at which the device object was created. */
         created_at: string
@@ -124082,14 +123980,6 @@ export type Routes = {
               active_access_code_count: number
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
-            }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'insufficient_permissions'
             }
         )[]
         /** Date and time at which the device object was created. */
@@ -135350,14 +135240,6 @@ export type Routes = {
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
             }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'insufficient_permissions'
-            }
         )[]
         /** Date and time at which the device object was created. */
         created_at: string
@@ -137236,14 +137118,6 @@ export type Routes = {
               active_access_code_count: number
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
-            }
-          | {
-              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Date and time at which Seam created the warning. */
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'insufficient_permissions'
             }
         )[]
         /** Date and time at which the device object was created. */
@@ -140696,14 +140570,6 @@ export type Routes = {
                     active_access_code_count: number
                     /** Maximum number of active access codes supported by the device. */
                     max_active_access_code_count: number
-                  }
-                | {
-                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-                    message: string
-                    /** Date and time at which Seam created the warning. */
-                    created_at: string
-                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                    warning_code: 'insufficient_permissions'
                   }
               )[]
               /** Date and time at which the device object was created. */
@@ -144914,14 +144780,6 @@ export type Routes = {
                     active_access_code_count: number
                     /** Maximum number of active access codes supported by the device. */
                     max_active_access_code_count: number
-                  }
-                | {
-                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-                    message: string
-                    /** Date and time at which Seam created the warning. */
-                    created_at: string
-                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                    warning_code: 'insufficient_permissions'
                   }
               )[]
               /** Date and time at which the device object was created. */
@@ -149842,16 +149700,6 @@ export type Routes = {
                 | {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
-                    /** Indicates that this is an access code error. */
-                    is_access_code_error: true
-                    /** Date and time at which Seam created the error. */
-                    created_at?: string | undefined
-                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                    error_code: 'insufficient_permissions'
-                  }
-                | {
-                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                    message: string
                     /** Indicates that the error is not a device error. */
                     is_device_error: false
                     /** Date and time at which Seam created the error. */
@@ -149870,6 +149718,18 @@ export type Routes = {
                     created_at: string
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
                     error_code: 'salto_ks_subscription_limit_exceeded'
+                    /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+                    is_connected_account_error: true
+                  }
+                | {
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Indicates that the error is not a device error. */
+                    is_device_error: false
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'insufficient_permissions'
                     /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
                     is_connected_account_error: true
                   }
@@ -150241,16 +150101,6 @@ export type Routes = {
                 | {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
-                    /** Indicates that this is an access code error. */
-                    is_access_code_error: true
-                    /** Date and time at which Seam created the error. */
-                    created_at?: string | undefined
-                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                    error_code: 'insufficient_permissions'
-                  }
-                | {
-                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                    message: string
                     /** Indicates that the error is not a device error. */
                     is_device_error: false
                     /** Date and time at which Seam created the error. */
@@ -150269,6 +150119,18 @@ export type Routes = {
                     created_at: string
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
                     error_code: 'salto_ks_subscription_limit_exceeded'
+                    /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+                    is_connected_account_error: true
+                  }
+                | {
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Indicates that the error is not a device error. */
+                    is_device_error: false
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'insufficient_permissions'
                     /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
                     is_connected_account_error: true
                   }

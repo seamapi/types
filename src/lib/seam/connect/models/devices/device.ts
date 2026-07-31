@@ -285,10 +285,7 @@ const subscription_required = common_device_error.extend({
     Indicates that a subscription is required to connect.
     `)
 
-// Named with an `_error` suffix because a device *warning* of the same code
-// already exists further down this file (Kwikset member-level access). Both are
-// valid: they live in separate maps, and the wire value is identical.
-const insufficient_permissions_error = common_device_error.extend({
+const insufficient_permissions = common_device_error.extend({
   error_code: z
     .literal('insufficient_permissions')
     .describe(error_code_description),
@@ -311,7 +308,7 @@ export const device_error = z
   .discriminatedUnion('error_code', [
     account_disconnected,
     salto_ks_subscription_limit_exceeded,
-    insufficient_permissions_error,
+    insufficient_permissions,
     dormakaba_sites_disconnected,
     device_offline,
     device_removed,
@@ -340,9 +337,7 @@ export const device_error_map = z.object({
   salto_ks_subscription_limit_exceeded: salto_ks_subscription_limit_exceeded
     .optional()
     .nullable(),
-  insufficient_permissions: insufficient_permissions_error
-    .optional()
-    .nullable(),
+  insufficient_permissions: insufficient_permissions.optional().nullable(),
   dormakaba_sites_disconnected: dormakaba_sites_disconnected
     .optional()
     .nullable(),
@@ -662,17 +657,6 @@ const max_access_codes_reached = common_device_warning.extend({
     Indicates that the device has reached its maximum number of active access codes. Delete existing codes before creating new ones.
     `)
 
-const insufficient_permissions = common_device_warning.extend({
-  warning_code: z
-    .literal('insufficient_permissions')
-    .describe(warning_code_description),
-}).describe(`
-    ---
-    variant_group_key: locks
-    ---
-    Indicates that the connected Kwikset account has member-level access to this lock's home. Admin or owner access is required to manage access codes and control the lock remotely.
-    `)
-
 const device_warning = z.discriminatedUnion('warning_code', [
   partial_backup_access_code_pool,
   many_active_backup_codes,
@@ -701,7 +685,6 @@ const device_warning = z.discriminatedUnion('warning_code', [
   accessory_keypad_setup_required,
   unreliable_online_status,
   max_access_codes_reached,
-  insufficient_permissions,
 ])
 
 export type DeviceWarning = z.infer<typeof device_warning>
@@ -760,7 +743,6 @@ export const device_warning_map = z.object({
     .nullable(),
   unreliable_online_status: unreliable_online_status.optional().nullable(),
   max_access_codes_reached: max_access_codes_reached.optional().nullable(),
-  insufficient_permissions: insufficient_permissions.optional().nullable(),
 })
 
 export type DeviceWarningMap = z.infer<typeof device_warning_map>

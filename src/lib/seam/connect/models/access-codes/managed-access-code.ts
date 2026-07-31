@@ -124,17 +124,6 @@ const no_space_for_access_code_on_device = common_access_code_error.extend({
     No space for access code on device.
     `)
 
-const insufficient_permissions = common_access_code_error.extend({
-  error_code: z
-    .literal('insufficient_permissions')
-    .describe(error_code_description),
-}).describe(`
-    ---
-    resource_type: access_code
-    ---
-    Admin role required—insufficient permissions to manage PINs on this device. Please have an admin update your role, or ask them to set the PIN.
-    `)
-
 const access_code_inactive_error = common_access_code_error.extend({
   error_code: z
     .literal('access_code_inactive')
@@ -155,7 +144,6 @@ const access_code_error = z
     no_space_for_access_code_on_device,
     conflicting_external_modification_error,
     access_code_inactive_error,
-    insufficient_permissions,
   ])
   .describe(
     'Errors associated with the [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).',
@@ -173,7 +161,6 @@ const _access_code_error_map = z.object({
     .optional()
     .nullable(),
   duplicate_code_on_device: duplicate_code_on_device.optional().nullable(),
-  insufficient_permissions: insufficient_permissions.optional().nullable(),
   conflicting_external_modification: conflicting_external_modification_error
     .optional()
     .nullable(),
@@ -460,21 +447,9 @@ export const access_code = z.object({
     .datetime()
     .describe('Date and time at which the access code was created.'),
   errors: z.array(
-    // Deduped on error_code, mirroring how device_and_connected_account_error_options
-    // already dedupes connected_account against device: a code defined for both an
-    // access code and a device/connected account would otherwise be a duplicate
-    // discriminator value and make zod throw at module load. The access-code
-    // variant wins, since this array hangs off an access code.
     z.discriminatedUnion('error_code', [
       ...access_code_error.options,
-      ...device_and_connected_account_error_options.filter(
-        (_device_or_connected_account_error) =>
-          !access_code_error.options.some(
-            (_access_code_error) =>
-              _access_code_error.shape.error_code.value ===
-              _device_or_connected_account_error.shape.error_code.value,
-          ),
-      ),
+      ...device_and_connected_account_error_options,
     ]),
   ).describe(`
         ---
